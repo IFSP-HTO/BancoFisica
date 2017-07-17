@@ -1,0 +1,49 @@
+<<echo=FALSE, results=hide>>=
+
+# Created by vinibrenobr11 on 12/06/2017 at 19:58
+
+# Define o número de vagões do trem, inclusive a locomotiva, entre 10 e 20
+elements <- sample(seq(from=10, to=20, by=1), 1)
+
+# Define a velocidade do trem entre 15 e 30 m/s
+speed <- sample(seq(from=15, to=30, by=1), 1)
+
+# Calcula os resultados dos itens A e B
+result_a <- round((20 * elements) / speed, 2)
+result_b <- round((20 * elements + 100) / speed, 2)
+@
+
+\begin{question}
+
+Uma composi\c{c}\~ao ferrovi\'aria (\Sexpr{elements-1} vag\~oes e uma locomotiva) desloca-se a \Sexpr{speed}m/s. Sendo o comprimento de cada elemento da composi\c{c}\~ao 20m, qual \'e o tempo em segundos que o trem gasta para ultrapassar:
+
+  \begin{answerlist}
+
+    \item Um sinaleiro?
+
+    \item Uma ponte de 100m de comprimento?
+
+  \end{answerlist}
+
+\end{question}
+
+%% SOLUTION
+
+\begin{solution}
+
+  \begin{answerlist}
+
+    \item \Sexpr{result_a}
+
+    \item \Sexpr{result_b}
+
+  \end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{result_a}|\Sexpr{result_b}}
+%% \exname{Q06Velm}
+%% \extol{0.02}
