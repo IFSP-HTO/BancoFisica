@@ -1,0 +1,106 @@
+<<echo=FALSE, results=hide>>=
+##SAMARA
+## Introductory Statistics - 3rd Edition - Sheldon Ross
+## Chapter 4, Problem 12, pag 166
+
+n <- sample(3:11,2)
+
+green <- c(1:6, 1:6, 1:6, 1:6, 1:6, 1:6)
+red <-  sort(green, decreasing = FALSE)
+dice <- data.frame(red, green)
+dice$sum <- dice$red + dice$green
+counts <- table(dice$sum)
+counts <- data.frame(counts)
+
+
+sub <- dice[which(dice$sum%in%n),]
+
+cc <- sample(sub$red,1)
+
+proba <- length(which(dice$sum==n[1]))/dim(dice)[1]
+
+probb <- length(which(dice$sum==n[2]))/dim(dice)[1]
+
+probc <- length(which(dice$red==cc))/dim(dice)[1]
+
+AinterC <- length(which(dice$sum==n[1] & dice$red==cc))/dim(dice)[1]
+
+BinterC <- length(which(dice$sum==n[2] & dice$red==cc))/dim(dice)[1]
+
+ACind <- isTRUE(AinterC==proba*probc)
+BCind <- isTRUE(BinterC==probb*probc)
+
+
+r <- sum(c(ACind,BCind))
+
+questions <- character(4)
+solutions <- logical(4)
+explanations <- character(4)
+
+explanations[1:4] <- " "
+
+solutions[3] <- isTRUE(r==2)
+
+solutions[4] <- isTRUE(r==0)
+
+solutions[1] <- isTRUE(r==1 & ACind==TRUE)
+
+solutions[2] <- isTRUE(r==1 & BCind==TRUE)
+
+
+
+questions[1] <- "Apenas os eventos $B$ e $C$ são independentes."
+
+questions[2] <-  "Apenas os eventos $A$ e $C$ são independentes."
+
+
+questions[3] <- "Os eventos $A$ e $C$ são independentes. Os eventos $B$ e $C$ são independentes."
+   
+questions[4] <- "Os eventos $A$ e $C$ não são independentes. Os eventos $B$ e $C$ não são independentes."
+
+colnames(dice) <- c("primeiro dado","segundo dado","soma")
+
+@
+
+\begin{question}
+  
+Considere o seguinte experimento: dois dados são lançados
+consecutivamente e observam-se seus resultados.
+
+Definem-se os eventos:
+
+$$A=\mbox{a soma dos dados é \Sexpr{n[1]}}$$
+
+$$B=\mbox{a soma dos dados é \Sexpr{n[2]}}$$
+
+$$C=\mbox{o resultado do primeiro dado é \Sexpr{cc}}$$
+
+Assinale a opção correta quanto à independência do evento $A$ com relação
+ao evento $C$ e do evento $B$ com relação ao evento $C$.
+
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(questions)
+@
+
+
+
+\end{question}
+
+%% SOLUTION
+
+\begin{solution}
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(
+  paste("\\textbf{", ifelse(solutions, "Verdadeiro", "Falso"), "}", sep = ""),
+  explanations)
+@
+
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q12prob}
+
+

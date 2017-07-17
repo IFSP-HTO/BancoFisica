@@ -1,0 +1,53 @@
+<<echo=FALSE, results=hide>>=
+##SAMARA
+
+
+verdes <- sample(seq(from=.6,to=.9,by=0.01),1)
+azuis <- 1-verdes
+
+cor <- sample(c("azul","verde"),1)
+
+cores <- ifelse(cor=="azul", "A","V")
+
+cores1 <- ifelse(cor=="azul", "T_A","T_V")
+
+correto <- sample(seq(from=.7,to=.9,by=.01),1)
+
+probTA=round(correto*azuis+(1-correto)*verdes,3) # prob test dizer Azul
+
+probTV=round(correto*verdes+(1-correto)*azuis,3) # prob test dizer Verde
+
+probAdadoTA <- round((correto*azuis)/probTA,3) # prob de ser Azul dado q test diz Azul
+
+probVdadoTV <- round((correto*verdes)/probTV,3)  # prob de ser Verde dado q test diz Verde
+
+resp <- ifelse(cor=="azul",probAdadoTA,probVdadoTV)
+
+probtmp <- ifelse(cor=="azul", azuis,verdes)
+@
+
+\begin{question}
+  
+  Numa cidade, $\Sexpr{verdes*100}\%$ dos taxis s\~ao verdes e
+  $\Sexpr{azuis*100}\%$ s\~ao azuis. Um grave acidente ocorreu na
+  cidade: um taxi bateu em outro carro e saiu sem prestar socorro. Uma
+  testemunha diz que o taxi era $\Sexpr{cor}$. O tribunal resolveu, no
+  entanto, testar a confiabilidade da testemunha e descobriu que, nas
+  condi\c{c}\~oes que existiam na noite do acidente, ela consegue determinar
+  corretamente a cor do taxi em $\Sexpr{correto*100}\%$ dos
+  casos. Qual a probabilidade da testemunha estar correta, ou seja, o taxi ser de fato da cor que a testemunha relatou? Arredonde para 3 decimais.
+  
+\end{question}
+
+\begin{solution}
+
+\Sexpr{resp}
+    
+    
+   
+\end{solution}
+
+%% \extype{num}
+%% \exsolution{\Sexpr{resp}}
+%% \exname{Q27prob}
+%% \extol{0.001}

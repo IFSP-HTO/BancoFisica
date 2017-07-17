@@ -1,0 +1,27 @@
+<<echo=FALSE, results=hide>>=
+
+# MARCELO C.
+
+temp <- sample(seq(from=60,to=160,by=10), 1)
+
+resp <- 200+200*(temp-20)*2.5e-5
+@
+
+\begin{question}
+
+Uma barra de alum\'inio tem comprimento de 200,0 cm a 20 $^{\circ}\mathrm{C}$. Qual o valor, em cent\'imetros, do seu comprimento a $\Sexpr{temp}$ $^{\circ}\mathrm{C}$? Escreva sua resposta com duas casas decimais. \textit{Dado: coeficiente de dilata\c{c}\~ao linear do alum\'inio} = $2,5 \cdot 10^{-5} K^{-1}$.
+
+\end{question}
+
+%% SOLUTION
+\begin{solution}:
+  
+  \Sexpr{resp}
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp}}
+%% \exname{Q03DilatL}
+%% \extol{0.1}

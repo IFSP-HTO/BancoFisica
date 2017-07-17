@@ -1,0 +1,53 @@
+<<echo=FALSE, results=hide>>=
+##PROGRAMADO POR: MARCELO C.
+
+compr = sample(seq(from=20,to=40,by=1),1)
+aleat = sample(1:5)
+
+dl=round(compr*25e-6*100*100,2)
+
+questions <- numeric(5)
+solutions <- logical(5)
+explanations <- character(5)
+
+questions[aleat[1]] <- dl
+solutions[aleat[1]] <- TRUE
+questions[aleat[2]] <- round(dl*2,2)
+solutions[aleat[2]] <- FALSE
+questions[aleat[3]] <- round(dl*0.6,2)
+solutions[aleat[3]] <- FALSE
+questions[aleat[4]] <- round(dl/2,2)
+solutions[aleat[4]] <- FALSE
+questions[aleat[5]] <- round(dl*0.8,2)
+solutions[aleat[5]] <- FALSE
+
+explanations[1:5] <- ""
+
+@
+
+\begin{question}
+
+Uma barra feita de um material com coeficiente de dilata\c{c}\~ao linear de $25.10^{-6}$ $^{\circ}{C}^{-1}$, possui comprimento de \Sexpr{compr} m a 0 $^{\circ}$C. Ao elevar a temperatura da barra para  $100^{\circ}C$, o aumento sofrido pela barra, em cent\'imetros, \'e de:
+
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(questions)
+@
+
+\end{question}
+
+
+\begin{solution}
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(
+  paste("\\textbf{", ifelse(solutions, "Verdadeiro", "Falso"), "}", sep = ""),
+  explanations)
+@
+
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q01TestDilatL}
+

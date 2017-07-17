@@ -1,0 +1,29 @@
+<<echo=FALSE, results=hide>>=
+
+# MARCELO C.
+
+compr <- sample(seq(from=10,to=20,by=1),1)
+temp <- sample(seq(from=70,to=150,by=10), 1)
+
+resp <- compr*(temp-20)*1.7e-2
+@
+
+\begin{question}
+
+Uma barra de cobre, homog\^enea e uniforme, mede $\Sexpr{compr}$ m, a 20$^\circ$~C. Calcule a varia\c{c}\~ao do comprimento dessa barra, em mil\'imetros, quando aquecida a $\Sexpr{temp} ^{\circ}\mathrm{C}$ . Arredonde o resultado para uma casa decimal caso necess\'ario.
+Dado: coeficiente de dilata\c{c}\~ao linear do cobre = $1,7\cdot10^{-5}$$^\circ$$C^{-1}$
+
+\end{question}
+
+%% SOLUTION
+\begin{solution}:
+  
+  \Sexpr{resp}
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp}}
+%% \exname{Q02DilatL}
+%% \extol{0.1}

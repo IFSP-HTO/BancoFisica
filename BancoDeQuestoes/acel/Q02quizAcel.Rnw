@@ -1,0 +1,47 @@
+<<echo=FALSE, results=hide>>=
+##PROGRAMADO POR: MARCELO C.
+
+questions <- character(5)
+solutions <- logical(5)
+explanations <- character(5)
+
+  questions[1] <- "Acelera\U00E7\U00E3o \U00E9 a altera\U00E7\U00E3o da velocidade devido \U00E0 varia\U00E7\U00E3o  da rapidez e/ou da orienta\U00E7\U00E3o."
+  solutions[1] <- TRUE
+  explanations[1] <- ""
+  questions[2] <- "Uma acelera\U00E7\U00E3o de 5 m/s^2 corresponde \U00E0 uma varia\U00E7\U00E3o na rapidez de 5 m/s a cada 1 segundo"
+  solutions[2] <- TRUE
+  explanations[2] <- ""
+  questions[3] <- "Uma acelera\U00E7\U00E3o de 5 km/h/s significa que a cada 1 segundo, a rapidez do m\U00F3vel varia de 5 km."
+  solutions[3] <- FALSE
+  explanations[3] <- ""
+  questions[4] <- "Um carro partindo do repouso com acelera\U00E7\U00E3o de 20 km/h/s atinge uma velocidade de 50 km/h em 2,5 segundos."
+  solutions[4] <- TRUE
+  explanations[4] <- ""
+  questions[5] <- "Se a acelera\U00E7\U00E3o da gravidade vale 10 m/s^2, uma pedra atirada para cima com velocidade de 10 m/s retorna \U00E0 mesma altura inicial apos 4 segundos"
+  solutions[5] <- FALSE
+  explanations[5] <- "Retorna \U00E0 mesma altura apos 2 segundos (1 segundo para subir e outro para descer)."
+@
+
+\begin{question}
+
+Quais das afirma\c{c}\~oes abaixo est\~ao corretas?  
+
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(questions)
+@
+
+\end{question}
+
+\begin{solution}
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(
+  paste("\\textbf{", ifelse(solutions, "Verdadeiro", "Falso"), "}", sep = ""),
+  explanations)
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{mchoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions)}}
+%% \exname{Q02quizAcel}

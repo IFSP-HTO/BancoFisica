@@ -1,0 +1,113 @@
+<<echo=FALSE, results=hide>>=
+##SAMARA
+
+# Adaptada do Livro Agresti e Franklin pag 224
+
+
+M <- sample(100:300,1)
+F <- sample(100:300,1)
+
+tot <- M+F
+
+aa <- sample(c("muito feliz","feliz","não muito feliz"), M, replace = TRUE, prob = c(.68,.29,(1-.68-.29)))
+
+pm <- sum(aa=="muito feliz")
+gm <- sum(aa=="feliz")
+mm <- sum(aa=="não muito feliz")
+
+
+bb <- sample(c("muito feliz","feliz","não muito feliz"), F, replace = TRUE, prob = c(.53,.43,(1-.53-.43)))
+
+pf <- sum(bb=="muito feliz")
+gf <- sum(bb=="feliz")
+mf <- sum(bb=="não muito feliz")
+
+
+
+itemA <- round(sum(c(pm,pf))/tot,3)
+
+itemB <- round(pm/M,3)
+
+itemC <- round(pf/F,3)
+
+probMFM <- pm/tot
+
+probMF <- (pm+pf)/tot
+
+probM <- M/tot
+
+itemD <- ifelse(probMFM==(probMF*probM),"verdadeiro","falso")
+
+
+@
+
+\begin{question}
+  
+  A tabela a seguir mostra resultados de uma pesquisa feita entre \Sexpr{tot}
+  adultos casados.
+  
+\begin{center}
+\begin{tabular}{cccc|c}
+ & \multicolumn{3}{c}{\textbf{Grau de Felicidade}} & \\
+ \textbf{Sexo} & Muito feliz & Feliz & N\~ao muito feliz & \textbf{ Total}\\
+ \hline
+ Masculino & \Sexpr{pm} & \Sexpr{gm} &  \Sexpr{mm}& \textbf{\Sexpr{sum(pm,gm,mm)}}\\
+ Feminino & \Sexpr{pf} & \Sexpr{gf} &  \Sexpr{mf}& \textbf{\Sexpr{sum(pf,gf,mf)}}\\
+ \hline
+\textbf{Total}& \textbf{\Sexpr{sum(pm,pf)}} & \textbf{\Sexpr{sum(gm,gf)}}& \textbf{\textbf{\Sexpr{sum(mm,mf)}}} & \textbf{\Sexpr{tot}}\\
+ \hline
+\end{tabular}
+\end{center}
+
+  
+ Utilizando os dados da pesquisa, responda as perguntas a seguir
+ (arredonde para 3 decimais).
+\begin{answerlist}
+\item Calcule a probabilidade de um adulto casado ser ``Muito feliz'',
+  dado que é do sexo masculino.
+  
+  \item Calcule a probabilidade de um adulto casado ser ``Muito feliz'',
+  dado que é do sexo feminino.
+  
+  \item Calcule a probabilidade de um adulto casado ser ``Muito feliz''.
+
+  \item Os eventos ``Muito feliz'' e ``sexo masculino'' são
+    independentes? Preencha com verdadeiro ou falso
+        (utilize apenas minúsculas).
+
+\end{answerlist}
+
+
+\end{question}
+
+%% SOLUTION
+\begin{solution}:
+\begin{answerlist}
+  
+\item \Sexpr{itemB}
+
+
+\item
+  
+  \Sexpr{itemC}
+
+\item
+  
+  \Sexpr{itemA}
+
+
+
+\item 
+  
+\Sexpr{itemD}
+
+
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exclozetype{num|num|num|string}
+%% \exsolution{\Sexpr{itemB}|\Sexpr{itemC}|\Sexpr{itemA}|\Sexpr{itemD}}
+%% \exname{Q23prob}
+%% \extol{0.003}

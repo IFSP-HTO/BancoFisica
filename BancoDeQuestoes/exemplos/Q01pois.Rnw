@@ -1,0 +1,68 @@
+<<echo=FALSE, results=hide>>=
+##SAMARA
+
+lambda <- sample(2:8,1)
+
+tmp <- qpois(p=c(.1,.90),lambda=lambda,lower.tail=TRUE)
+
+s <- sample(seq(from=tmp[1],to=tmp[2],by=1),1)
+
+
+itemA <- round(ppois(s,lambda=lambda,lower.tail=FALSE),3)
+itemB <- round(exp(-lambda),3)
+
+@
+
+\begin{question}
+  
+  Sabe-se que o número de ligações recebidas em um certo escritório durante um
+  período de 10 minutos segue uma distribuição de Poisson com
+  parâmetro $\lambda=\Sexpr{lambda}$.
+ 
+
+ 
+\begin{answerlist}
+\item Encontre a probabilidade do escritório receber mais do que \Sexpr{s}
+  ligações em um período de 10 minutos.
+  
+\item Encontre a probabilidade do escritório não receber nenhuma
+  ligação em um período de 10 minutos.
+  
+\end{answerlist}
+
+Arredonde sua resposta para 3 decimais.
+
+\end{question}
+
+%% SOLUTION
+\begin{solution}:
+  
+  $X$: número de ligações em um período de 10 minutos.
+  
+  $$X\sim\mbox{Poisson}(\lambda)$$
+  
+  $$\lambda=\Sexpr{lambda}$$
+  
+  $$P(X=k)=e^{-\Sexpr{lambda}}\frac{\Sexpr{lambda}^k}{k!}\,,\quad k=0,1,\ldots$$
+  
+  
+\begin{answerlist}
+  
+\item 
+  
+  \Sexpr{itemA}
+
+
+\item 
+  
+ \Sexpr{itemB}
+  
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{itemA}|\Sexpr{itemB}}
+%% \exname{Q01pois}
+%% \extol{0.001}
