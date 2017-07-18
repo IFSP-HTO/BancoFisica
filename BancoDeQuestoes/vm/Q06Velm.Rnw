@@ -6,7 +6,7 @@
 elements <- sample(seq(from=10, to=20, by=1), 1)
 
 # Define a velocidade do trem
-speed <- sample(seq(from=, to=30, by=1), 1)
+speed <- sample(seq(from=15, to=30, by=1), 1)
 
 # Define os resultado dos itens A e B
 result_a <- round((20 * elements) / speed, 2)
