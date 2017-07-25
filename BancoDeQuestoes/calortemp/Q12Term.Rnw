@@ -1,0 +1,28 @@
+<<echo=FALSE, results=hide>>=
+
+# Created by vinibrenobr11 on 24/07/2017
+
+# Define o valor que o terometro em Celsius estará marcando
+celsius_temp <- sample(seq(from=0, to=50, by=1), 1)
+
+# Define o resultado final, marcado em Kelvin
+kelvin_temp <- celsius_temp + 273
+@
+
+\begin{question}
+
+Dois Term\^ometros, um graduado na escala Kelvin e o outro graduado na escala Celsius, est\~ao mergulhados num l\'iquido. O segundo assinala \Sexpr{celsius_temp} graus Celsius. Quanto assinala o primeiro?
+  
+\end{question}
+
+%% SOLUTION
+\begin{solution}
+
+  \Sexpr{kelvin_temp} K
+  
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{kelvin_temp}}
+%% \exname{Q12Term}
