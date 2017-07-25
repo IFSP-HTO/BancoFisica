@@ -26,7 +26,7 @@ exams2moodle(myexam, n = 5, rule="none", schoice = list(shuffle = TRUE), name = 
              dir = "../Moodle",
              edir = "../BancoDeQuestoes/exemplos")
 
-############### dilatacao ##################
+############### dilatacao #################
 ## Definindo a pasta com as questoes do exame
 myexam <- dir("../BancoDeQuestoes/dilatterm", pattern = ".rnw", ignore.case=TRUE)
 ano <- 12017
