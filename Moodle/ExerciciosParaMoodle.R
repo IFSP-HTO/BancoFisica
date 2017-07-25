@@ -47,3 +47,14 @@ exams2moodle(myexam, n = 100, rule="none", schoice = list(shuffle = TRUE), name 
              encoding = "UTF-8",
              dir = "../Moodle",
              edir = "../BancoDeQuestoes/calortemp")
+
+############### aceleracao ##################
+## Definindo a pasta com as questoes do exame
+myexam <- dir("../BancoDeQuestoes/acel", pattern = ".rnw", ignore.case=TRUE)
+ano <- 12017
+## Cria o arquivo .xml para entrada no moodle
+set.seed(ano)
+exams2moodle(myexam, n = 100, rule="none", schoice = list(shuffle = TRUE), name = paste0("acel-",ano),
+             encoding = "UTF-8",
+             dir = "../Moodle",
+             edir = "../BancoDeQuestoes/acel")
