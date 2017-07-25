@@ -10,7 +10,7 @@ myexam <- dir("../BancoDeQuestoes/vm", pattern = ".rnw", ignore.case=TRUE)
 ano <- 12017
 ## Cria o arquivo .xml para entrada no moodle
 set.seed(ano)
-exams2moodle(myexam, n = 5, rule="none", schoice = list(shuffle = TRUE), name = paste0("vm-",ano),
+exams2moodle(myexam, n = 100, rule="none", schoice = list(shuffle = TRUE), name = paste0("vm-",ano),
              encoding = "UTF-8",
              dir = "../Moodle",
              edir = "../BancoDeQuestoes/vm")
@@ -36,3 +36,14 @@ exams2moodle(myexam, n = 100, rule="none", schoice = list(shuffle = TRUE), name 
              encoding = "UTF-8",
              dir = "../Moodle",
              edir = "../BancoDeQuestoes/dilatterm")
+
+############### calortemp ##################
+## Definindo a pasta com as questoes do exame
+myexam <- dir("../BancoDeQuestoes/calortemp", pattern = ".rnw", ignore.case=TRUE)
+ano <- 12017
+## Cria o arquivo .xml para entrada no moodle
+set.seed(ano)
+exams2moodle(myexam, n = 100, rule="none", schoice = list(shuffle = TRUE), name = paste0("calortemp-",ano),
+             encoding = "UTF-8",
+             dir = "../Moodle",
+             edir = "../BancoDeQuestoes/calortemp")
