@@ -11,10 +11,10 @@ questions[aleat[3]] <- "c) convecc/~ao e radiac/~ao"
 questions[aleat[4]] <- "d) conduc/~ao e convecc/~ao"
 questions[aleat[5]] <- "e) conduc/~ao e radiac/~ao"
 
-solutions[aleat[1]] <- TRUE
+solutions[aleat[1]] <- FALSE
 solutions[aleat[2]] <- FALSE
 solutions[aleat[3]] <- FALSE
-solutions[aleat[4]] <- FALSE
+solutions[aleat[4]] <- TRUE
 solutions[aleat[5]] <- FALSE
 
 @
