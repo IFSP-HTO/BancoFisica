@@ -1,0 +1,45 @@
+<<echo=FALSE, results=hide>>=
+##PROGRAMADO POR: CARLOS SANTANA, em 30 de julho de 2017.
+aleat = sample(1:5)
+
+questions <- numeric(5)
+solutions <- logical(5)
+
+questions[aleat[1]] <- "Na garrafa térmica, o vácuo existente entre as paredes duplas de vidro tem a finalidade de evitar trocas de calor por convecção."
+questions[aleat[2]] <- "As paredes espelhadas devem evitar que as ondas de calor saiam ou entrem por condução."
+questions[aleat[3]] <- "A garrafa deve permanecer bem fechada para evitar perdas de calor por convecção. "
+questions[aleat[4]] <- "O vácuo existente no interior das paredes duplas de vidro vai evitar perdas de calor por radiação."
+questions[aleat[5]] <- "As paredes espelhadas não têm função nas trocas de calor; foram apenas uma tentativa de tornar o produto mais agradável às pessoas que pretendessem comprá-lo."
+
+solutions[aleat[1]] <- FALSE
+solutions[aleat[2]] <- FALSE
+solutions[aleat[3]] <- TRUE
+solutions[aleat[4]] <- FALSE
+solutions[aleat[5]] <- FALSE
+
+@
+\usepackage[utf8]{inputenc}
+\begin{question}
+
+Considere a garrafa térmica esquematizada abaixo. Assinale a alternativa correta: 
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(questions)
+@
+
+\end{question}
+
+\begin{solution}
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(
+  paste("\\textbf{", ifelse(solutions, "Verdadeiro", "Falso"), "}"))
+@
+
+
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q10TestDilatL}
+%% \exusepackage[utf8]{inputenc}
