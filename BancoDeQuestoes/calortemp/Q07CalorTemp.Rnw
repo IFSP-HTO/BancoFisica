@@ -1,0 +1,47 @@
+<<echo=false, results=ride>>=
+##feito por NerdBoy;
+aleat = sample(1:5)
+
+questions <- numeric(5)
+solutions <- logical(5)
+
+##questões
+questions[aleat[1]]<-  "a operação I."
+questions[aleat[2]]<-  "a operação II."
+questions[aleat[3]]<-  "as operações I e II."
+questions[aleat[4]] <-  "as operações I e III."
+questions[aleat[5]] <-  "as operações II e III."
+
+solutions[aleat[1]] <-  FALSE
+solutions[aleat[2]] <-  FALSE
+solutions[aleat[3]] <-  TRUE
+solutions[aleat[4]] <-  FALSE
+solutions[aleat[5]] <-  FALSE
+
+@
+
+\begin{question}
+07) (Enem) A refrigeraç\~ao e o congelamento de alimentos s\~ao responsáveis por uma parte significativa do consumo de energia el\´etrica numa resid\^encia típica. Para diminuir as perdas t\´ermicas de uma geladeira, podem ser tomados alguns cuidados operacionais:
+
+I. Distribuir os alimentos nas prateleiras deixando espaços vazios entre eles, para que ocorra a circulaç\~ao do ar frio para baixo e do ar quente para cima.
+
+II. Manter as paredes do congelador com camada bem espessa de gelo, para que o aumento da massa de gelo aumente a troca de calor no congelador.
+
+III. Limpar o radiador (“grade” na parte de tr\´as) periodicamente, para que a gordura e a poeira que nele se depositam n\~ao reduzam a transfer\^encia de calor para o ambiente. 
+
+<<echo=false,results=ride>>=
+answerlist(question)
+@
+\end{question}
+
+\begin{solution}
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(
+  paste("\\textbf{", ifelse(solutions, "Verdadeiro", "Falso"), "}"))
+@
+\end{solution}
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q01TestDilatL}
+%% \exusepackage[utf8]{inputenc}

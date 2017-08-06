@@ -1,0 +1,45 @@
+<<echo=false,results=ride>>=
+##feito por Matheus Bertos
+##gera a resposta
+aleat = sample(5)
+questions <- numeric(5)
+solutions <- logical(5)
+
+questions[aleat[1]] <- "0\ºF"
+questions[aleat[2]] <- "10\ºF"
+questions[aleat[3]] <- "32\ºF"
+questions[aleat[4]] <- "46\ºF"
+questions[aleat[5]] <- "50\ºF"
+
+solutions[aleat[1]] <-  FALSE
+solutions[aleat[2]] <-  FALSE
+solutions[aleat[3]] <-  FALSE
+solutions[aleat[4]] <-  FALSE
+solutions[aleat[5]] <-  TRUE
+@
+\begin{question}
+<<>>=
+##pergunta
+@
+Num dia frio, um term\^metro na escala Celsius assinala 10 \ºC para o meio ambiente. Um outro termômetro graduado em Fahrenheit estar\´ marcando:
+
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(questions)
+@
+\end{question}
+
+\begin{solution}
+<<>>=
+##Resposta
+@
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(
+  paste("\\textbf{", ifelse(solutions, "Verdadeiro", "Falso"), "}"))
+@
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q01TestDilatL}
+%% \exusepackage[utf8]{inputenc}
