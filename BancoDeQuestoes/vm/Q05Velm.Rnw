@@ -18,7 +18,7 @@ $\Sexpr{d1}$ km iniciais, devido \`as boas condi\c{c}\~oes da estrada, o motoris
 \end{question}
 
 %% SOLUTION
-\begin{solution}:
+\begin{solution}
   
   \Sexpr{resp}
 
