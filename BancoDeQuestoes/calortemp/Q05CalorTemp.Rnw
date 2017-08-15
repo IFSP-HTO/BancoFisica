@@ -5,11 +5,11 @@ aleat = sample(1:5)
 questions <- numeric(5)
 solutions <- logical(5)
 
-questions[aleat[1]] <- "a) radiac/~ao e convecc/~ao"
-questions[aleat[2]] <- "b) radiac/~ao e conduc/~ao"
-questions[aleat[3]] <- "c) convecc/~ao e radiac/~ao"
-questions[aleat[4]] <- "d) conduc/~ao e convecc/~ao"
-questions[aleat[5]] <- "e) conduc/~ao e radiac/~ao"
+questions[aleat[1]] <- "a) radiac\~ao e convecc\~ao"
+questions[aleat[2]] <- "b) radiac\~ao e conduc\~ao"
+questions[aleat[3]] <- "c) convecc\~ao e radiac\~ao"
+questions[aleat[4]] <- "d) conduc\~ao e convecc\~ao"
+questions[aleat[5]] <- "e) conduc\~ao e radiac\~ao"
 
 solutions[aleat[1]] <- FALSE
 solutions[aleat[2]] <- FALSE
@@ -21,7 +21,10 @@ solutions[aleat[5]] <- FALSE
 \usepackage[utf8]{inputenc}
 \begin{question}
 
-Uma panela com /'agua est/'a sendo aquecida num fog/~ao. O calor das chamas se transmite atrav/'es da parede do fundo da panela para a /'agua que est/'a em contato com essa parede e da/'i para o restante da /'agua. 
+Uma panela com \'agua est\'a sendo aquecida num fog\~ao. O calor das chamas se transmite atrav\'es da parede do fundo da panela para a \'agua que est\'a em contato com essa parede e da\'i para o restante da \'agua.
+
+Na ordem desta descric\~ao, o calor se transmitiu predominantemente por:
+
 <<echo=FALSE, results=hide, results=tex>>=
 answerlist(questions)
 @
@@ -29,7 +32,6 @@ answerlist(questions)
 \end{question}
 
 \begin{solution}
-Na ordem desta descric/~ao, o calor se transmitiu predominantemente por:
 <<echo=FALSE, results=hide, results=tex>>=
 answerlist(
   paste("\\textbf{", ifelse(solutions, "Verdadeiro", "Falso"), "}"))
