@@ -21,12 +21,11 @@ explanations <- character(4)
 explanations[1:4] <- " "
 @
 
-
+\usepackage[utf8]{inputenc}
 \begin{question}
 
 
-Quais variáveis poderiam apresentar forte correlação positiva?
-
+Quais variáveis poderiam apresentar forte correlação positiva?
 
 <<echo=FALSE, results=hide, results=tex>>=
 answerlist(questions)
