@@ -5,11 +5,11 @@ aleat = sample(1:5)
 questions <- numeric(5)
 solutions <- logical(5)
 
-questions[aleat[1]] <- "a) radiac\~ao e convecc\~ao"
-questions[aleat[2]] <- "b) radiac\~ao e conduc\~ao"
-questions[aleat[3]] <- "c) convecc\~ao e radiac\~ao"
-questions[aleat[4]] <- "d) conduc\~ao e convecc\~ao"
-questions[aleat[5]] <- "e) conduc\~ao e radiac\~ao"
+questions[aleat[1]] <- "radiação e convecção"
+questions[aleat[2]] <- "radiação e conducção"
+questions[aleat[3]] <- "convecçãoo e radiacão"
+questions[aleat[4]] <- "conducção e convecção"
+questions[aleat[5]] <- "condução e radiação"
 
 solutions[aleat[1]] <- FALSE
 solutions[aleat[2]] <- FALSE
@@ -21,9 +21,7 @@ solutions[aleat[5]] <- FALSE
 \usepackage[utf8]{inputenc}
 \begin{question}
 
-Uma panela com \'agua est\'a sendo aquecida num fog\~ao. O calor das chamas se transmite atrav\'es da parede do fundo da panela para a \'agua que est\'a em contato com essa parede e da\'i para o restante da \'agua.
-
-Na ordem desta descric\~ao, o calor se transmitiu predominantemente por:
+Uma panela com água está sendo aquecida num fogão. O calor das chamas se transmite através da parede do fundo da panela para a água que está em contato com essa parede e dai para o restante da água. Na ordem desta descrição, o calor se transmitiu predominantemente por:
 
 <<echo=FALSE, results=hide, results=tex>>=
 answerlist(questions)
@@ -44,5 +42,5 @@ answerlist(
 %% META-INFORMATION
 %% \extype{schoice}
 %% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
-%% \exname{Q05TestDilatL}
+%% \exname{Q05CalorTemp}
 %% \exusepackage[utf8]{inputenc}
