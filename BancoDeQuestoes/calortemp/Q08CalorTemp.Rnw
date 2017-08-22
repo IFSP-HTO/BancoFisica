@@ -21,7 +21,8 @@ solutions[aleat[5]] <- FALSE
 \usepackage[utf8]{inputenc}
 \begin{question}
 
-Dois corpos A e B de massas 𝒎𝑨 e 𝒎𝑩 diferentes estão inicialmente a temperaturas T𝑨 e T𝑩 diferentes. Num dado instante, eles são colocados em contato térmico. Chamando de T′𝑨 e T′𝑩 as temperaturas de equilíbrio térmico dos corpos A e B respectivamente, podemos afirmar que:
+Dois corpos A e B de massas $m_a$ e $m_b$ diferentes estão inicialmente a temperaturas $T_a$ e $T_b$ diferentes. Num dado instante, eles são colocados em contato térmico. Chamando de $T'_a$ e $T'_b$ as temperaturas de equilíbrio térmico dos corpos A e B respectivamente, podemos afirmar que:
+
 <<echo=FALSE, results=hide, results=tex>>=
 answerlist(questions)
 @
