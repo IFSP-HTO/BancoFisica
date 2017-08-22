@@ -4,23 +4,24 @@
 
 # Determina a capacidade termica do corpo
 capac <- sample(seq(from=10, to=30, by=1), 1)
-# Determina a energia que o corpo receber� por minuto
+# Determina a energia que o corpo recebera por minuto
 c_recebido <- sample(seq(from=25, to=50, by=1), 1)
 
 # Calcula e arrendonda o resultado para 3 digitos: xx,x
 result <- signif((c_recebido * 20) / capac, digits = 3) 
 
 @
+\usepackage[utf8]{inputenc}
 \begin{question}
 
-(UEA) Se um corpo de capacidade t\'ermica igual a \Sexpr{capac} cal/\^C recebe calor de uma fonte durante 20 minutos com taxa constante de \Sexpr{c_recebido} cal/min, determine a varia\c{c}\~ao de temperatura sofrida por ele. Arredonde para 1 casa decimal.
+(UEA) Se um corpo de capacidade térmica igual a \Sexpr{capac} cal/°C recebe calor de uma fonte durante 20 minutos com taxa constante de \Sexpr{c_recebido} cal/min, determine a varia\c{c}\~ao de temperatura sofrida por ele. Arredonde para 1 casa decimal.
 
 \end{question}
 
 %% SOLUTION
 \begin{solution}
   
-  \Sexpr{result} ^C
+  \Sexpr{result} °C
   
 \end{solution}
 
