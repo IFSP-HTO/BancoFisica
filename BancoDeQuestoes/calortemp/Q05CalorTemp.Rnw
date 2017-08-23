@@ -6,9 +6,9 @@ questions <- numeric(5)
 solutions <- logical(5)
 
 questions[aleat[1]] <- "radiação e convecção"
-questions[aleat[2]] <- "radiação e conducção"
-questions[aleat[3]] <- "convecçãoo e radiacão"
-questions[aleat[4]] <- "conducção e convecção"
+questions[aleat[2]] <- "radiação e condução"
+questions[aleat[3]] <- "convecção e radiacão"
+questions[aleat[4]] <- "condução e convecção"
 questions[aleat[5]] <- "condução e radiação"
 
 solutions[aleat[1]] <- FALSE
