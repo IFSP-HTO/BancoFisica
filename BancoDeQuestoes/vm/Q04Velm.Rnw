@@ -1,7 +1,6 @@
 <<echo=FALSE, results=hide>>=
 
 # Created by vinibrenobr11 on 05/06/2017 at 20:37
-# atualizações Marcelo: velocidade máxima: 5 m/s; tempo entre 10 e 40 min; espaco entre numero e unidades; unidade de medida na frente do numero.
 
 lap <- 300
 speed <- sample(seq(from=1,to=5,by=1),1)
