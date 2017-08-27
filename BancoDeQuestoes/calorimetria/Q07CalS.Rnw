@@ -1,0 +1,33 @@
+<<echo=FALSE, results=HIDE>>=
+
+# Created by vinibrenobr11
+
+# Calorias absorvidas e temperatura do corpo 1
+cal_1 <- sample(seq(from=10, to=500, by=1))
+c_1 <- sample(seq(from=1, to=5, by=1))
+
+# Calorias absorvidas e temperatura do corpo 2
+cal_2 <- sample(seq(from=100, to=1500, by=1))
+c_l_result <- round((cal_2 * c_1) / cal_1 / 2, 1) # massa é 2m
+@
+\usepackage[utf8]{inputenc}
+\begin{question}
+
+Quando um corpo de certa massa m, formado por determinada mat\'eria, absorve \Sexpr{cal_1} cal, eleva sua temperatura em \Sexpr{c_1}\circ$C$. Outro corpo, formado pelo mesmo material, tem massa 2 m. Se esse outro corpo absorver \Sexpr{cal_2} cal, em quanto elevar\'a o valor de sua temperatura?
+\\
+Arredonde sua resposta para 1 casa decimal se necess\'ario
+
+\end{question}
+
+%% SOLUTION
+\begin{solution}
+  
+  \Sexpr{c_l_result}\circ$C$
+  
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{c_l_result}}
+%% \exname{Q07CalS}
+%% \extol{0.1}
