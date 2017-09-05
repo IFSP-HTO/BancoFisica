@@ -16,7 +16,7 @@ solutions[aleat[3]] <- FALSE
 solutions[aleat[4]] <- FALSE
 solutions[aleat[5]] <- TRUE
 
-f <- "https://goo.gl/BgS2fq"
+f <- "https://i.imgur.com/jYCduLd.gif"
 
 @
 \usepackage[portuguese]{babel}
