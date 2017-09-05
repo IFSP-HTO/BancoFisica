@@ -1,0 +1,42 @@
+<<echo=FALSE, results=hide>>=
+##PROGRAMADO POR: CARLOS SANTANA, em 28 de Agosto de 2017.
+aleat = sample(1:4)
+
+questions <- numeric(4)
+solutions <- logical(4)
+
+questions[aleat[1]] <- "O calor não pode passar espontaneamente de um corpo para outro de temperatura mais baixa que o primeiro."
+questions[aleat[2]] <- "Para produzir trabalho, continuamente, uma máquina térmica, operando em ciclos, deve, necessariamente, receber calor de uma fonte quente e ceder parte a uma fonte fria."
+questions[aleat[3]] <- "É impossível construir uma máquina, operando em ciclos, cujo único efeito seja retirar calor de uma fonte e convertê-lo a uma quantidade equivalente de trabalho."
+questions[aleat[4]] <- "É possível se converter calor totalmente em outra forma de energia."
+
+solutions[aleat[1]] <- FALSE
+solutions[aleat[2]] <- FALSE
+solutions[aleat[3]] <- TRUE
+solutions[aleat[4]] <- FALSE
+
+@
+\usepackage[utf8]{inputenc}
+\begin{question}
+Com base nas leis da termodinâmica, assinale verdadeiro ou falso:
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(questions)
+@
+
+\end{question}
+
+\begin{solution}
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(
+  paste("\\textbf{", ifelse(solutions, "Verdadeiro", "Falso"), "}"))
+@
+
+
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q01Termd}
+%% \exusepackage[utf8]{inputenc}
