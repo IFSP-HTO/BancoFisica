@@ -1,0 +1,34 @@
+<<echo=FALSE, results=hide>>=
+##PROGRAMADO POR: CARLOS SANTANA, em 10 de Setembro de 2017.
+## Isso funciona (metadata)?
+
+variacao <- sample(seq(from=-200,to=150,by=1),1)
+trabalho <- sample(seq(from=160,to=300,by=1),1)
+
+respConta <- variacao+trabalho
+respCondicao <- TRUE
+
+@
+\usepackage[utf8]{inputenc}
+\begin{question}
+
+(UFLA-adaptado) Numa transformação gasosa reversível, a variação de energia interna é de {\Sexpr{variacao}} J. Houve expansão e o trabalho realizado pelo gás é, em módulo, {\Sexpr{trabalho}} J. Nesse caso, determine o calor trocado com o meio e se o calor foi recebido ou cedido ao meio?
+
+<<echo=FALSE, results=hide, results=tex>>=
+@
+
+\end{question}
+
+\begin{solution}
+%% SOLUTION
+\Sexpr{resp}
+answerlist(
+  paste("\\textbf{", ifelse(solutions, "Verdadeiro", "Falso"), "}"))
+  
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num|boolean}
+%% \exsolution{\Sexpr{resp}\Sexpr{mchoice2string(respCondicao, single = TRUE)}}
+%% \exname{Q04Termd}
+%% \exusepackage[utf8]{inputenc}
