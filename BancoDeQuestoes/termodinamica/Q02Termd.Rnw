@@ -1,8 +1,8 @@
 <<echo=FALSE, results=hide>>=
 ##PROGRAMADO POR: CARLOS SANTANA, em 29 de Agosto de 2017.
 
-variacao <- 150
-trabalho <- 200
+variacao <- sample(seq(from=20,to=200,by=2),1)
+trabalho <- sample(seq(from=10,to=300,by=5),1)
 
 resp <- variacao+trabalho
 
