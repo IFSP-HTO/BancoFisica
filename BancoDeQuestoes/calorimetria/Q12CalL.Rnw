@@ -1,9 +1,8 @@
 <<echo=FALSE, results=HIDE>>=
 
-#t_f <- sample(seq(from=0, to=50, by=10), 1)
-#m <- sample(seq(from=10, to=500, by=10), 1)
-t_f <- 40
-m <- 100
+t_f <- sample(seq(from=0, to=50, by=10), 1)
+m <- sample(seq(from=10, to=500, by=10), 1)
+
 mct_1 <- m * 0.5 * 20 # Q Macete!
 mol_2 <- m * 80
 mct_3 <- m * t_f
