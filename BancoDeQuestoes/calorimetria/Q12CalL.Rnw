@@ -1,0 +1,36 @@
+<<echo=FALSE, results=HIDE>>=
+
+#t_f <- sample(seq(from=0, to=50, by=10), 1)
+#m <- sample(seq(from=10, to=500, by=10), 1)
+t_f <- 40
+m <- 100
+mct_1 <- m * 0.5 * 20 # Q Macete!
+mol_2 <- m * 80
+mct_3 <- m * t_f
+
+f_resp = mct_1 + mol_2 + mct_3
+@
+\usepackage[utf8]{inputenc}
+\begin{question}
+
+Calcule a quantidade de calor necess\'ario para que \Sexpr{m}g de gelo a -20\circ$C$ sejam transformados em \'agua l\'iquida a \Sexpr{t_f}\circ$C$
+
+Dados:
+Calor latente de fus\~ao do gelo = 80 cal/g
+Calor espec\'ifico sens\'ivel do gelo = 0,5 cal/g\circ$C$
+Calor espec\'ifico sens\'ivel da \'agua l\'iquida: = 1 cal/g\circ$C$.
+
+\end{question}
+
+%% SOLUTION
+\begin{solution}
+
+  \Sexpr{f_resp} cal
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{f_resp}}
+%% \exname{Q12CalL}
+%% \extol{0.3}

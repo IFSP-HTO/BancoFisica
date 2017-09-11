@@ -1,0 +1,44 @@
+<<echo=FALSE, results=HIDE>>=
+
+# Created by vinibrenobr11
+
+# Q = m*l
+
+m_a <- sample(seq(from=10, to=500, by=10), 1)
+m_b <- sample(seq(from=10, to=500, by=10), 1)
+
+resp_a <- m_a * 80
+resp_b <- m_b * 540
+@
+\usepackage[utf8]{inputenc}
+\begin{question}
+
+Sendo o calor latente de fus\~ao da \'agua = 80 cal/g e o 
+calor latente de vaporiza\c{c}\~ao da \'agua = 540 cal/g.
+Calcule a quantidade de calor necess\'ario para:
+
+\begin{answerlist}
+  \item Fundir \Sexpr{m_a}g de \'agua a 0\circ$C$
+  
+  \item Vaporizar \Sexpr{m_b}g de \'agua a 100\circ$C$
+  
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+  \begin{answerlist}
+    \item
+      \Sexpr{resp_a} cal
+      
+    \item
+      \Sexpr{resp_b} cal
+  \end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{resp_a}|\Sexpr{resp_b}}
+%% \exname{Q11CalL}
+%% \extol{0.3}
