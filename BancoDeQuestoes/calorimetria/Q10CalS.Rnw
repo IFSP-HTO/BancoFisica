@@ -1,0 +1,42 @@
+<<echo=FALSE, results=HIDE>>=
+
+# Created by vinibrenobr11
+
+temp <- sample(seq(from=0, to=150, by=10), 1)
+
+# Cria um arquivo jpeg
+jpeg("Q10CalS.jpg",width=330,height=330)
+
+# Coloca o plot no arquivo
+plot(range(0, 60), range(0, temp), type="o", col="blue", ylab="Temperatura (\U00BA C)", xlim=range(0, 60), xlab="Tempo (min)")
+
+# Fecha o arquivo
+dev.off()
+
+# C = Q/m.t
+# C = (600 * 60) / 600 * temp
+resp <- 60 * temp
+@
+\usepackage[utf8]{inputenc}
+\begin{question}
+
+Uma fonte fornece a 600g de uma subst\^ancia um fluxo de calor constante de 600 cal/min, fazendo com que a temperatura varie com o tempo, segundo o gr\'afico.
+Podemos afirmar que o calor espec\'ifico da subst\^ancia \'e:
+
+  \begin{figure}[h]
+    \includegraphics[height=3in]{Q10CalS.jpg}
+  \end{figure}
+  
+\end{question}
+
+\begin{solution}
+
+  \Sexpr{resp} cal/g \circ$C$
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp}}
+%% \exname{Q10CalS}
+%% \extol{0.1}
