@@ -1,0 +1,22 @@
+<<echo=FALSE, results=hide>>=
+##matheus Bertos
+
+	t1	<- sample(seq(from=3,to=10,by=1),1)
+	M	<- sample(seq(from=100,to=400,by=5),1)
+	result <- round(M*0.4*t1)
+	
+@
+\usepackage[portuguese]{babel}
+\begin{question}
+	O calor específico de determinado tipo de madeira é igual a 0,4 cal/g.°C. Quantas calorias devem ser absorvidas por um pedaço de \Sexpr{M} gramas dessa madeira para que sua temperatura se eleve em \Sexpr{t1} °C?
+\end{question}
+
+\begin{solution}:
+	\Sexpr{result} cal
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{result}}
+%% \exname{Q05CalorTemp}
+%% \extol{1}
