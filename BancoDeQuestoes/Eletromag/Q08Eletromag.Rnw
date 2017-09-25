@@ -1,0 +1,41 @@
+<<echo=FALSE, results=hide>>=
+##PROGRAMADO POR: CARLOS SANTANA, em 25 de Setembro de 2017.
+
+aleat = sample(1:5)
+
+questions <- numeric(5)
+solutions <- logical(5)
+
+questions[aleat[1]] <- "Possuem mesma amplitude e mesmos comprimentos de onda."
+questions[aleat[2]] <- "A onda 1 possui comprimento de onda maior que a onda 2."
+questions[aleat[3]] <- "Possuem iguais comprimentos de onda e amplitudes diferentes."
+questions[aleat[4]] <- "Possuem amplitude iguais e cmprimentos de onda diferentes."
+questions[aleat[5]] <- "Tudo o que se afirmou é incorreto."
+
+solutions[aleat[1]] <- FALSE
+solutions[aleat[2]] <- FALSE
+solutions[aleat[3]] <- FALSE
+solutions[aleat[4]] <- FALSE
+solutions[aleat[5]] <- TRUE
+
+@
+
+\usepackage[utf8]{inputenc}
+\begin{question}
+A figura a seguir representa ondas que se propagam com a mesma velocidade. Em relação às duas ondas, assinale a alternativa correta:
+\end{question}
+
+\begin{solution}
+
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(
+  paste("\\textbf{", ifelse(solutions, "Verdadeiro", "Falso"), "}"))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q08Eletromag}
+%% \exusepackage[utf8]{inputenc}  

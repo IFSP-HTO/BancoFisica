@@ -1,0 +1,42 @@
+<<echo=FALSE, results=hide>>=
+##PROGRAMADO POR: CARLOS SANTANA, em 25 de Setembro de 2017.
+
+aleat = sample(1:5)
+
+questions <- numeric(5)
+solutions <- logical(5)
+
+questions[aleat[1]] <- "Normal"
+questions[aleat[2]] <- "Acima do valor ideal"
+questions[aleat[3]] <- "Abaixo do valor ideal"
+questions[aleat[4]] <- "Próxima do limite inferior"
+questions[aleat[5]] <- "Próxima do limite superior"
+
+solutions[aleat[1]] <- FALSE
+solutions[aleat[2]] <- FALSE
+solutions[aleat[3]] <- FALSE
+solutions[aleat[4]] <- FALSE
+solutions[aleat[5]] <- TRUE
+
+@
+
+\usepackage[utf8]{inputenc}
+\begin{question}
+(ENEM-2016/2ª Aplicação) O eletrocardiograma, exame utilizado para avaliar o estado do coração de um paciente, trata-se do registro da atividade elétrica do coração ao longo de um certo intervalo de tempo. A figura representa o eletrocardiograma de um paciente adulto, descansado, não fumante, em um ambiente com temperatura agradável. Nessas condições, é considerado normal um ritmo cardíaco entre 60 e 100 batimentos por minuto. Com base no eletrocardiograma apresentado, identifica-se que a frequência cardíaca do paciente é:
+
+\end{question}
+
+\begin{solution}
+
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(
+  paste("\\textbf{", ifelse(solutions, "Verdadeiro", "Falso"), "}"))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q07Eletromag}
+%% \exusepackage[utf8]{inputenc}  

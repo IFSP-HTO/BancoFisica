@@ -1,0 +1,54 @@
+<<echo=FALSE, results=hide>>=
+##PROGRAMADO POR: CARLOS SANTANA, em 23 de Setembro de 2017.
+
+aleat = sample(1:10)
+
+questions <- numeric(10)
+solutions <- logical(10)
+
+questions[aleat[1]] <- "A propagação de ondas envolve necessariamente o transporte de matéria e energia."
+questions[aleat[2]] <- "A propagação de ondas envolve necessariamente o transporte de energia."
+questions[aleat[3]] <- "As ondas classificadas como longitudinais possuêm vibração paralela à propagação. Um exemplo desse tipo de onda é o som."
+questions[aleat[4]] <- "A vibração de uma corda no vilão é uma onda longitudinal."
+questions[aleat[5]] <- "O som é uma onda mecânica, longitudinal e tridimensional."
+questions[aleat[6]] <- "Todas as ondas eletromagnéticas são transversais."
+questions[aleat[7]] <- "A frequência representa o número de ondas geradas dentro de um intervalo de tempo específico. A unidade Hz (Hertz) significa ondas geradas por segundo."
+questions[aleat[8]] <- "O ultra-som é uma onda eletromagnética."
+questions[aleat[9]] <- "O raio-x é uma onda mecânica."
+questions[aleat[10]] <- "Se uma nave espacial explode no espaço, é impossível ouvir som, já que o mesmo não se propaga no vácuo."
+
+solutions[aleat[1]] <- FALSE
+solutions[aleat[2]] <- TRUE
+solutions[aleat[3]] <- TRUE
+solutions[aleat[4]] <- FALSE
+solutions[aleat[5]] <- TRUE
+solutions[aleat[6]] <- TRUE
+solutions[aleat[7]] <- TRUE
+solutions[aleat[8]] <- FALSE
+solutions[aleat[9]] <- FALSE
+solutions[aleat[10]] <- TRUE
+
+@
+
+\usepackage[utf8]{inputenc}
+\begin{question}
+Com respeito aos conceitos básicos da ondulatória, assinale as afirmações verdadeiras:
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(questions)
+@
+
+\end{question}
+
+\begin{solution}
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(
+  paste("\\textbf{", ifelse(solutions, "Verdadeiro", "Falso"), "}"))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q02Eletromag}
+%% \exusepackage[utf8]{inputenc}

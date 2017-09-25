@@ -1,0 +1,32 @@
+<<echo=FALSE, results=hide>>=
+##PROGRAMADO POR: CARLOS SANTANA, em 23 de Setembro de 2017.
+
+
+f <- "https://i.imgur.com/C3gg3jX.png"
+
+lambda = 16
+amplitude = 3
+resp = lambda*amplitude
+
+@
+
+\usepackage[utf8]{inputenc}
+\begin{question}
+Conforme a figura abaixo, uma onda se propaga em um meio unidimensional, com frequência de 4Hz.Determine a amplitude, comprimento de onda e a velocidade da onda.
+
+ \includegraphics[height=4cm]{\Sexpr{f}}
+ 
+\end{question}
+
+\begin{solution}
+
+
+\Sexpr{resp}
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp}}
+%% \exname{Q01Eletromag}
+%% \exusepackage[utf8]{inputenc}

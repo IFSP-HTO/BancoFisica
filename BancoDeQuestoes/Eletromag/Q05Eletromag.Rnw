@@ -1,0 +1,40 @@
+<<echo=FALSE, results=hide>>=
+##PROGRAMADO POR: CARLOS SANTANA, em 24 de Setembro de 2017.
+
+aleat = sample(1:4)
+
+questions <- numeric(4)
+solutions <- logical(4)
+
+questions[aleat[1]] <- "Quando um avião está voando nas vizinhanças de uma casa, algumas vezes a imagem da TV sofre pequenos tremores e fica ligeiramente fora de foco."
+questions[aleat[2]] <- "Uma pessoa escuta o som que vem de trás do muro."
+questions[aleat[3]] <- "Uma piscina cheia de água parece mais rasa quando observada de fora."
+questions[aleat[4]] <- "Uma pessoa vê sua imagem na superfície de um lago."
+
+solutions[aleat[1]] <- 1
+solutions[aleat[2]] <- 2
+solutions[aleat[3]] <- 4
+solutions[aleat[4]] <- 3
+
+@
+
+\usepackage[utf8]{inputenc}
+\begin{question}
+(UDESC 2008) Considere as situações cotidianas apresentadas abaixo. Assinale o
+número que indica corretamente os conceitos físicos utilizados para explicar cada uma delas, sendo: 1- Interferência, 2 - Difração, 3 – Reflexão, 4 - Refração.
+\end{question}
+
+\begin{solution}
+
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(
+  paste("\\textbf{", ifelse(solutions, "1", "2","3","4"), "}"))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q05Eletromag}
+%% \exusepackage[utf8]{inputenc}

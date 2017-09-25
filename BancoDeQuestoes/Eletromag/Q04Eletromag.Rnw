@@ -1,0 +1,33 @@
+<<echo=FALSE, results=hide>>=
+##PROGRAMADO POR: CARLOS SANTANA, em 24 de Setembro de 2017.
+
+gotas <- sample(seq(from=20,to=200,by=2),1)
+segundos <- sample(seq(from=2,to=80,by=2),1)
+
+freq <- round((gotas/segundos),2)
+@
+
+\usepackage[utf8]{inputenc}
+\begin{question}
+Uma pessoa descuidada não fechou a torneira corretamente, de tal forma
+que, desta torneira, pingam 100 gotas de água em 20 s.
+
+a) Qual é a frequência de gotejamento da torneira, em Hertz?
+b) Qual é o período de gotejamento?
+c) Se a velocidade das ondas na água é de 0,5 m/s,
+qual é a distância entre as ondulações?
+
+\end{question}
+
+\begin{solution}
+
+
+\Sexpr{resp}
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp}}
+%% \exname{Q04Eletromag}
+%% \exusepackage[utf8]{inputenc}
