@@ -1,0 +1,51 @@
+<<echo=FALSE, results=hide>>=
+#Programado por: Jmduly
+
+temp1 <- sample(seq(from=107, to=110, by=1),1)
+
+temp2 <- sample(seq(from=4,to=10, by=1),1)
+
+resp1 <- round(5/9*(temp1 - 32), digits = 1)
+
+resp2 <- round(5/9*((temp1-temp2) - 32), digits = 1)
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Um turista brasileiro sente-se mal durante uma viagem /`a Nova Iorque. Ao ser examinado em um hospital local a enfermeira lhe diz que sua temperatura no momento era $\Sexpr{temp1}$°, mas que ele deveria ficar tranquilo, pois já havia baixado $\Sexpr{temp2}$°. Após o susto, o turista percebeu que sua temperatura havia sido medida em uma escala Fahrenheit. 
+
+
+
+\\
+\begin{answerlist}
+
+  \item Qual era a sua temperatura anteriormente em ºC?
+  
+  \item E qual sua temperatura atual em ºC?
+  
+
+\end{answerlist}
+
+\end{question}
+
+ 
+  %% SOLUTION
+  \begin{solution}:
+    
+    \begin{answerlist}
+  \item
+  \Sexpr{resp1}ºC
+  
+  \item
+  \Sexpr{resp2}ºC
+  
+  \end{answerlist}
+  \end{solution}
+  
+  %% META-INFORMATION
+  %% \extype{cloze}
+  %% \exclozetype{num|num}
+  %% \exsolution{\Sexpr{resp1}|\Sexpr{resp2}}
+  %% \exname{Q20Term}
+  %% \extol{0.01|0.01}
