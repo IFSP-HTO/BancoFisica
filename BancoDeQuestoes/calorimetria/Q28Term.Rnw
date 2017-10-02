@@ -41,5 +41,5 @@
   %% \extype{cloze}
   %% \exclozetype{num}
   %% \exsolution{\Sexpr{resp1}}
-  %% \exname{Q28Term}
+  %% \exname{Q28Temp}
   %% \extol{0.01|}

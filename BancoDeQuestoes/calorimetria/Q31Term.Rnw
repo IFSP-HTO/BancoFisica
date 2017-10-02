@@ -1,0 +1,46 @@
+<<echo=FALSE, results=hide>>=
+  #Programado por: Jmduly
+  
+  vol1 <- sample(seq(from=1,to=3,by=1),1)
+  
+  vol2 <- sample(seq(from=500,to=1500,by=1),1)
+  
+  temp1 <- sample(100)
+  
+  temp2 <- sample(seq(from=100,to=150,by=1),1)
+  
+  resp1 <- round((vol1*10^3*temp2)+(vol2*temp1)/(mass1*10^3+mass2), digits = 1)
+  
+@
+  
+  \usepackage[utf8]{inputenc}
+  
+  \begin{question}
+  
+  Em uma cozinha, uma chaleira com $\Sexpr{vol1}$ L de água ferve. Para que ela pare, são adicionados $\Sexpr{vol2}$ mL de água à $\Sexpr{temp2}$ °C. 
+
+  \\
+  \begin{answerlist}
+  
+  \item Qual a temperatura do equilíbrio do sistema?
+
+  \end{answerlist}
+  
+  \end{question}
+  
+  %% SOLUTION
+  \begin{solution}:
+    
+    \begin{answerlist}
+  \item
+  \Sexpr{resp1}ºC
+  
+  \end{answerlist}
+  \end{solution}
+  
+  %% META-INFORMATION
+  %% \extype{cloze}
+  %% \exclozetype{num}
+  %% \exsolution{\Sexpr{resp1}}
+  %% \exname{Q31Temp}
+  %% \extol{0.01|}

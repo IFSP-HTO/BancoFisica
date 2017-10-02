@@ -1,0 +1,42 @@
+<<echo=FALSE, results=hide>>=
+  #Programado por: Jmduly
+  
+  mass  <- sample(seq(from=20,to=80,by=1),1)
+  
+  calor <- sample(seq(from=40,to=100,by=1),1)
+  
+  resp1 <- round((calor)/(mass), digits = 1)
+  
+@
+  
+  \usepackage[utf8]{inputenc}
+  
+  \begin{question}
+  
+  Inicialmente em estado líquido, um corpo com massa igual a $\Sexpr{mass}$ g, é resfriado e alcança devido ao resfriamento o estado de fusão. Sabendo que a quantidade de calor é $\Sexpr{calor}$ cal. 
+  
+  \\
+  \begin{answerlist}
+  
+  \item QUal o calor latente de fusão desse corpo?
+
+  \end{answerlist}
+  
+  \end{question}
+  
+  %% SOLUTION
+  \begin{solution}:
+    
+    \begin{answerlist}
+  \item
+  \Sexpr{resp1}cal/g
+  
+  \end{answerlist}
+  \end{solution}
+  
+  %% META-INFORMATION
+  %% \extype{cloze}
+  %% \exclozetype{num}
+  %% \exsolution{\Sexpr{resp1}}
+  %% \exname{Q27Term}
+  %% \extol{0.01|}

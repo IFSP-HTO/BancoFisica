@@ -1,0 +1,45 @@
+<<echo=FALSE, results=hide>>=
+  #Programado por: Jmduly
+  
+  mass1 <- sample(seq(from=200,to=1000,by=1),1)
+  
+  pot1 <- sample(seq(from=500,to=1100,by=1),1)
+  
+  temp1 <- sample(seq(from=100,to=150,by=1),1)
+  
+  resp1 <- round((mass1*3.3*10^-2*temp1)*4.186/(pot1), digits = 1)
+  
+@
+  
+  \usepackage[utf8]{inputenc}
+  
+  \begin{question}
+  
+  Uma fonte de potência constante igual a $\Sexpr{pot1}$ W é utilizada para aumentar a temperatura $\Sexpr{mass1}$ g de mercúrio a $\Sexpr{temp1}$ °C. Sendo o calor específico do mercúrio 0,033 cal/g°C e 1cal=4,186J.
+
+  \\
+  \begin{answerlist}
+  
+  \item Quanto tempo a fonte demora para realizar este aquecimento?
+
+
+  \end{answerlist}
+  
+  \end{question}
+  
+  %% SOLUTION
+  \begin{solution}:
+    
+    \begin{answerlist}
+  \item
+  \Sexpr{resp1}s
+  
+  \end{answerlist}
+  \end{solution}
+  
+  %% META-INFORMATION
+  %% \extype{cloze}
+  %% \exclozetype{num}
+  %% \exsolution{\Sexpr{resp1}}
+  %% \exname{Q32Temp}
+  %% \extol{0.01|}

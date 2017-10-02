@@ -1,0 +1,48 @@
+<<echo=FALSE, results=hide>>=
+  #Programado por: Jmduly
+  
+  press1 <- sample(seq(from=15,to=19,by=1),1)
+  
+  press2 <- sample(seq(from=10,to=14,by=1),1)
+  
+  time1  <- sample(seq(from=3,to=6,by=1),1)
+  
+  temp1  <- sample(seq(from=30,to=38,by=1),1)
+  
+  resp1  <- round(((press1)*(temp1+273)/(press2)), digits = 1)
+  
+  resp2  <- round(resp1-273, digits = 1)
+  
+@
+  
+  \usepackage[utf8]{inputenc}
+  
+  \begin{question}
+  
+  Antes de realizar uma viagem de carro, em um dia cuja temperatura era de $\Sexpr{temp1}$ ºC, um senhor calibrou os pneus utilizando $\Sexpr{press1}$ atm de pressão. Quando chegou ao destino, depois de $\Sexpr{time1}$ horas de viagem, mediu novamente a pressão dos pneus e constatou $\Sexpr{press2}$ atm de pressão. A variação de volume dos pneus foi desprezível.
+  \\
+  \begin{answerlist}
+  
+  \item Qual temperatura que se encontravam os pneus?
+
+
+  \end{answerlist}
+  
+  \end{question}
+  
+  %% SOLUTION
+  \begin{solution}:
+    
+    \begin{answerlist}
+  \item
+  \Sexpr{resp2}ºC
+  
+  \end{answerlist}
+  \end{solution}
+  
+  %% META-INFORMATION
+  %% \extype{cloze}
+  %% \exclozetype{num}
+  %% \exsolution{\Sexpr{resp1}}
+  %% \exname{Q36Temp}
+  %% \extol{0.01|}
