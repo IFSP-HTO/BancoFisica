@@ -3,11 +3,11 @@
   
   temp1  <- sample(seq(from=20,to=50,by=1),1)
   
-  press1 <- sample(seq(from=5000,to=10000,by=1),1)
+  press1 <- sample(seq(from=5000,to=15000,by=1),1)
   
   mol1   <- sample(seq(from=1,to=10,by=1),1)
   
-  resp1  <- round((mol1*0.082*(temp1+273))/(press1/10000), digits = 1)
+  resp1  <- round((mol1*0.082*(temp1+273))/(press1/100000), digits = 1)
   
 @
   
@@ -32,7 +32,7 @@
     
     \begin{answerlist}
   \item
-  \Sexpr{resp1}N/m²
+  \Sexpr{resp1}litros
   
   \end{answerlist}
   \end{solution}
