@@ -67,7 +67,9 @@ O nome da questão criada deve ser dado da seguinte maneira:
 onde: 
 
 **xx**: número sequencial de implementação: 01, 02, 03, etc.
+
 **Assunto**: Nome abreviado do assunto que se trata a questão. Ex: Ondas, Termd (termodinâmica), CalorTemp (Calor e temperatura), Eletrost (eletrostática), etc. Ex: Q15Eletrost.Rnw
+
 **Tipo**: Inserir a palavra Quiz apenas se a questão for de múltipla escolha ou verdadeiro e falso. Ex: Q02QuizOndas.
 
 Os arquivos .docx do diretório **BancoDeQuestões** possuem questões que estão sendo implementadas. As questões estão separadas por assunto, sendo que no topo de cada assunto possui o nome que deve ser utilizado na questão.
