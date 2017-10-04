@@ -58,12 +58,32 @@ Há ampla documentação sobre o tema na página do pacote [exams](https://cran.
 -   [Automatic Generation of Exams in R](https://cran.r-project.org/web/packages/exams/vignettes/exams.pdf)
 -   [Flexible Generation of E-Learning Exams in R: Moodle Quizzes, OLAT Assessments, and Beyond](https://cran.r-project.org/web/packages/exams/vignettes/exams2.pdf)
 
+### Nome das questões
+
+O nome da questão criada deve ser dado da seguinte maneira:
+
+**Qxx[Tipo]Assunto.Rnw**
+
+onde: 
+
+**xx**: número sequencial de implementação: 01, 02, 03, etc.
+**Assunto**: Nome abreviado do assunto que se trata a questão. Ex: Ondas, Termd (termodinâmica), CalorTemp (Calor e temperatura), Eletrost (eletrostática), etc. Ex: Q15Eletrost.Rnw
+**Tipo**: Inserir a palavra Quiz apenas se a questão for de múltipla escolha ou verdadeiro e falso. Ex: Q02QuizOndas.
+
+Os arquivos .docx do diretório **BancoDeQuestões** possuem questões que estão sendo implementadas. As questões estão separadas por assunto, sendo que no topo de cada assunto possui o nome que deve ser utilizado na questão.
+
 ### Acentos
 
-O pacote exams pode apresentar alguns problemas com acentos. Há duas soluções:
+O pacote exams pode apresentar alguns problemas com acentos. Há três soluções:
 
-1. Utilizar acentos em Latex como ```\{c}c``` para ç;
-2. Compilar a questão com:
+1. Inserir na questão a seguinte linha de código:
+
+```r
+\usepackage[utf8]{inputenc}
+```
+
+2. Utilizar acentos em Latex como ```\{c}c``` para ç;
+3. Compilar a questão com:
 
 ```r
 exams2pdf("file.Rmd", encoding = "UTF-8", template = "plain8")
@@ -73,7 +93,7 @@ exams2pdf("file.Rmd", encoding = "UTF-8", template = "plain8")
 
 Com o pacote exams é possível criar questões tanto em [Sweave](http://www.statistik.lmu.de/~leisch/Sweave/)(.Rnw) quanto em [rmarkdown](http://rmarkdown.rstudio.com/)(Rmd). O Sweave é uma forma de combinar Latex com a linguage R, de forma que codigos e figuras possam ser gerados na linguagem R e embebidos automaticamente no Latex. O rmarkdown, por outro lado, é um pacote mais recente que permite a criaçao de relatórios em [Markdown](https://pt.wikipedia.org/wiki/Markdown), mas que incluem sintaxe em R e em Latex.
 
-Todas as questões disponíveis no repositório, até o momento, foram feitas em Sweave. Ainda assim há vantagens em utilizar o rmakrdown, como:
+Todas as questões disponíveis no repositório, até o momento, foram feitas em Sweave. Ainda assim há vantagens em utilizar o rmarkdown, como:
 
 1.  Sintaxe muito simples;
 2.  Preview simplificado;
@@ -93,7 +113,7 @@ Preview:
 
 ![alt text](doc/figures/editR.gif)
 
-#### Rmakrdown
+#### Rmarkdown
 
 A seguir um exemplo simples de uma questão, em rmarkdown, compilável pelo pacote exams:
 
@@ -144,16 +164,10 @@ library(editR)
 editR(file = 'my_rmardown_question.Rmd')
 ```
 
-#### Git
-
-Guia prático de comandos do Git -> http://rogerdudler.github.io/git-guide/index.pt_BR.html
-
 ATENÇÃO
 -------
 
 Este banco de questões pode ser utilizado para gerar versões de uma mesma prova. Caso utilize o banco em uma prova, não disponibilizar as questões e soluções para os alunos. Cada aluno deverá revisar a prova individualmente. Isto é necessário pois o banco de questões não é grande o suficiente.
-
-http://rogerdudler.github.io/git-guide/index.pt_BR.html
 
 License
 -------
