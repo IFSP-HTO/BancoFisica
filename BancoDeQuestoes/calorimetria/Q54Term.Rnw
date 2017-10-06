@@ -1,0 +1,42 @@
+<<echo=FALSE, results=hide>>=
+  #Programado por: Jmduly
+  
+  q1     <- sample(seq(from=100,to=150,by=1),1)
+  
+  q2     <- sample(seq(from=40,to=70,by=1),1)
+  
+  resp1  <- round((1- q2/q1), digits = 1)
+    
+@
+  
+  \usepackage[utf8]{inputenc}
+  
+  \begin{question}
+  
+   Uma máquina térmica recebe de uma fonte quente $\Sexpr{q1}$ cal e transfere para uma fonte fria $\Sexpr{q2}$ cal.
+  
+  \\
+  \begin{answerlist}
+  
+  \item Qual o rendimento desta máquina?
+
+  \end{answerlist}
+  
+  \end{question}
+  
+  %% SOLUTION
+  \begin{solution}:
+    
+    \begin{answerlist}
+  \item
+  \Sexpr{resp1}
+  
+  \end{answerlist}
+  \end{solution}
+  
+  %% META-INFORMATION
+  %% \extype{cloze}
+  %% \exclozetype{num}
+  %% \exsolution{\Sexpr{resp1}}
+  %% \exname{Q54Term}
+  %% \extol{0.01|}
