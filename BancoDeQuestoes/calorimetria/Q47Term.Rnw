@@ -1,0 +1,48 @@
+<<echo=FALSE, results=hide>>=
+  #Programado por: Jmduly
+  
+  press1 <- sample(seq(from=2,to=8,by=1),1)
+  
+  vol1   <- sample(seq(from=90,to=150,by=1),1)
+  
+  mols1  <- sample(seq(from=1,to=5,by=1),1)
+  
+  resp1  <- round((press1*vol1)/(0.082*temp1), digits = 1)
+  
+@
+  
+  \usepackage[utf8]{inputenc}
+  
+  \begin{question}
+  
+   Um gás de $\Sexpr{mols1}$ ocupa volume de $\Sexpr{vol1}$ litros e está a uma pressão de $\Sexpr{press1}$ atm. (Dado: R = 0,082 atm.L/mol.K)
+
+
+
+  
+  \\
+  \begin{answerlist}
+  
+  \item Determine a temperatura que se encontra o gás.
+
+  \end{answerlist}
+  
+  \end{question}
+  
+  %% SOLUTION
+  \begin{solution}:
+    
+    \begin{answerlist}
+  \item
+  \Sexpr{resp1}K
+  
+  \end{answerlist}
+  \end{solution}
+  
+  %% META-INFORMATION
+  %% \extype{cloze}
+  %% \exclozetype{num}
+  %% \exsolution{\Sexpr{resp1}}
+  %% \exname{Q47Term}
+  %% \extol{0.01|}
+
