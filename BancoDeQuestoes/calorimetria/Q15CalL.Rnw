@@ -1,20 +1,8 @@
 <<echo=FALSE, results=hide>>=
-aleat=sample(1:5)
 
-questions <- character(5)
-solutions <- logical(5)
 
-questions[aleat[1]] <-"12"
-questions[aleat[2]] <-"10"
-questions[aleat[3]] <-"8"
-questions[aleat[4]] <-"6"
-questions[aleat[5]] <-"2"
-
-solutions[aleat[1]] <- FALSE
-solutions[aleat[2]] <- FALSE
-solutions[aleat[3]] <- FALSE
-solutions[aleat[4]] <- FALSE
-solutions[aleat[5]] <- TRUE
+m <- sample(seq(from=100,to=300,by=10),1)
+resp <- round(600/m)
 
 f <- "https://i.imgur.com/jYCduLd.gif"
 
@@ -24,8 +12,9 @@ f <- "https://i.imgur.com/jYCduLd.gif"
 \begin{question}
  
  \includegraphics[height=4cm]{\Sexpr{f}}
+  O gráfico representa a temperatura de uma amostra de massa \Sexpr{resp} de determinado metal, inicialmente sólido, em função da quantidade de calor por ela absorvida.
+  Pode-se afirmar que o calor latente de fusão desse metal, em cal/g é:
 
-  O gráfico representa a temperatura de uma amostra de massa 100g de determinado metal, inicialmente sólido, em função da quantidade de calor por ela absorvida.
  
 <<echo=FALSE, results=hide, results=tex>>=
 answerlist(questions)
@@ -44,4 +33,3 @@ answerlist(
 %% \extype{schoice}
 %% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
 %% \exname{Q15CalL}
-
