@@ -27,7 +27,7 @@ explanations[1:5] <- ""
 
 \begin{question}
 
-Uma barra feita de um material com coeficiente de dilata\c{c}\~ao linear de $25.10^{-6}$ $^{\circ}{C}^{-1}$, possui comprimento de \Sexpr{compr} m a 0 $^{\circ}$C. Ao elevar a temperatura da barra para  $100^{\circ}C$, o aumento sofrido pela barra, em cent\'imetros, \'e de:
+Uma barra feita de um material com coeficiente de dilata\c{c}\~ao linear de $25.10^{-6}$ <sup>C</sup> $^\circ C^{-1}$, possui comprimento de \Sexpr{compr} m a 0 $^{\circ}$C. Ao elevar a temperatura da barra para  $100^{\circ}C$, o aumento sofrido pela barra, em cent\'imetros, \'e de:
 
 <<echo=FALSE, results=hide, results=tex>>=
 answerlist(questions)
