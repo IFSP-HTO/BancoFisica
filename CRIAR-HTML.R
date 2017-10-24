@@ -232,17 +232,6 @@ exams2html(myexam, n = 1,solution=TRUE,
            edir = "./BancoDeQuestoes/optica",
            template = "templates/plain.html")
 
-#############################optica##########################
-## Definindo a pasta com as questoes do exame
-myexam <- dir("./BancoDeQuestoes/optica/", pattern = ".rnw", ignore.case=TRUE)
-
-## Gerando HTML com o arquivo da questao
-set.seed(12017)
-exams2html(myexam, n = 1,solution=TRUE,
-           encoding = "UTF-8",
-           edir = "./BancoDeQuestoes/optica",
-           template = "templates/plain.html")
-
 
 ########################termodinamica##########################
 ## Definindo a pasta com as questoes do exame
