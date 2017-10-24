@@ -1,0 +1,42 @@
+<<echo=FALSE, results=hide>>=
+  #Programado por: Jmduly
+  
+  press1 <- sample(seq(from=0.5,to=3,by=0.5),1)
+  
+  vol1   <- sample(seq(from=3,to=12,by=1),1)
+  
+  resp1  <- round((3/2*(press1*10^5)*vol1), digits = 1)
+
+@
+  
+  \usepackage[utf8]{inputenc}
+  
+  \begin{question}
+  
+  Considere $\Sexpr{vol1}$ m³ de gás ideal sob pressão de $\Sexpr{press1}$ atm?
+
+  \\
+  \begin{answerlist}
+  
+  \item Qual a energia interna do gás?
+
+  \end{answerlist}
+  
+  \end{question}
+  
+  %% SOLUTION
+  \begin{solution}:
+    
+    \begin{answerlist}
+  \item
+  \Sexpr{resp1}J
+  
+  \end{answerlist}
+  \end{solution}
+  
+  %% META-INFORMATION
+  %% \extype{cloze}
+  %% \exclozetype{num}
+  %% \exsolution{\Sexpr{resp1}}
+  %% \exname{Q59Term}
+  %% \extol{0.01|}
