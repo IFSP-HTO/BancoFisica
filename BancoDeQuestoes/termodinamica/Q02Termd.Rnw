@@ -1,0 +1,31 @@
+<<echo=FALSE, results=hide>>=
+##PROGRAMADO POR: CARLOS SANTANA, em 29 de Agosto de 2017.
+
+variacao <- 150
+trabalho <- 200
+
+resp <- variacao+trabalho
+
+
+@
+\usepackage[utf8]{inputenc}
+\begin{question}
+
+(UFLA-adaptado) Numa transformação gasosa reversível, a variação de energia interna é de {\Sexpr{variacao}} J. Houve expansão e o trabalho realizado pelo gás é, em módulo, {\Sexpr{trabalho}} J. Nesse caso, determine o calor trocado com o meio e se o calor foi recebido ou cedido ao meio?
+
+<<echo=FALSE, results=hide, results=tex>>=
+@
+
+\end{question}
+
+\begin{solution}
+%% SOLUTION
+\Sexpr{resp}
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp}}
+%% \exname{Q02Termd}
+%% \exusepackage[utf8]{inputenc}

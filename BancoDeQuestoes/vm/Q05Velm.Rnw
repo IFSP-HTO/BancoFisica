@@ -1,5 +1,6 @@
 <<echo=FALSE, results=hide>>=
 #domingo, 4 de junho de 2017 - Carlos Santana
+# 13/08/2017 questão modificada por vinibrenobr11 - corrigido MarceloC. 23/08/2017
 
 df <- sample(seq(from=450,to=490,by=1),1)
 d1 <- sample(seq(from=450,to=df,by=1),1)
@@ -7,25 +8,56 @@ d2 <- df-d1
 v1 <- sample(seq(from=90,to=120,by=1),1)
 v2 <- sample(seq(from=40,to=60,by=1),1)
 
-resp <- round((d1/v1)+(d2/v2),2)
+resp <- (d1/v1)+(d2/v2)
+resp1 <- resp
 
+questions <- solutions <- rep("", 3)
+type <- rep(c("schoice"), 3)
+
+questions[1] <- ""
+solutions[1] <- floor(resp)
+type[1] <- "num"
+
+questions[2] <- ""
+solutions[2] <- floor((resp - floor(resp)) * 60)
+type[2] <- "num"
+
+resp <- (resp - floor(resp)) * 60
+
+questions[3] <- ""
+solutions[3] <- round((resp - floor(resp)) * 60)
+type[3] <- "num"
 @
-\begin{question}
 
+\begin{question}
+  
 (ENEM-adaptado) Um autom\'ovel percorre uma estrada de $\Sexpr{df}$ km que liga duas cidades. Nos
-$\Sexpr{d1}$ km iniciais, devido \`as boas condi\c{c}\~oes da estrada, o motorista desenvolve uma velocidade escalar m\'edia de $\Sexpr{v1}$ km/h, mas nos $\Sexpr{d2}$ km restantes, devido \`a eros\~ao provocada pelas chuvas, s\'o consegue manter a velocidade escalar m\'edia de $\Sexpr{v2}$ km/h. Determine o tempo gasto (em horas, até dois decimais) no percurso entre as duas cidades.
+$\Sexpr{d1}$ km iniciais, devido \`as boas condi\c{c}\~oes da estrada, o motorista desenvolve uma velocidade escalar m\'edia de $\Sexpr{v1}$ km/h, mas nos $\Sexpr{d2}$ km restantes, devido \`a eros\~ao provocada pelas chuvas, s\'o consegue manter a velocidade escalar m\'edia de $\Sexpr{v2}$ km/h. Determine o tempo gasto (em horas, minutos e segundos) no percurso entre as duas cidades.
+
+  \begin{tabular}{l|c|c|c|}
+    \hline
+    ##ANSWER1## horas & ##ANSWER2## & minutos & ##ANSWER3## & segundos \\
+    \hline
+  \end{tabular}
+
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(questions)
+@ 
 
 \end{question}
 
 %% SOLUTION
 \begin{solution}:
   
-  \Sexpr{resp}
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(paste(solutions, ".", sep = ""))
+@
 
 \end{solution}
 
 %% META-INFORMATION
-%% \extype{num}
-%% \exsolution{\Sexpr{resp}}
-%% \exname{Q05Velm}
-%% \extol{0.002}
+%% \extype{cloze}
+%% \exsolution{\Sexpr{paste(solutions, collapse = "|")}}
+%% \exclozetype{\Sexpr{paste(type, collapse = "|")}}
+%% \exname{Q05velm}
+%% \extol{0|0|2}

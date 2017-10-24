@@ -1,0 +1,50 @@
+<<echo=FALSE, results=hide>>=
+#Programado por: Jmduly
+
+temp1 <- sample(seq(from=10, to=110, by=1),1)
+
+resp1 <- sample(temp1 - 273)
+
+resp2 <- round(5/9*((resp1) - 32), digits = 1)
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Um astrônomo analisa um buraco negro no espaço. Após muitos estudos ele chegou a conclusão que este corpo celeste tinha temperatura de $\Sexpr{temp1}$ K.
+
+
+
+
+\\
+\begin{answerlist}
+
+  \item Qual a temperatura do buraco negro na escala Celsius?
+  
+  \item E qual a temperatura do buraco negro na escala Fahrenheit?
+  
+
+\end{answerlist}
+
+\end{question}
+
+ 
+  %% SOLUTION
+  \begin{solution}:
+    
+    \begin{answerlist}
+  \item
+  \Sexpr{resp1}
+  
+  \item
+  \Sexpr{resp2}
+  
+  \end{answerlist}
+  \end{solution}
+  
+  %% META-INFORMATION
+  %% \extype{cloze}
+  %% \exclozetype{num|num}
+  %% \exsolution{\Sexpr{resp1}|\Sexpr{resp2}}
+  %% \exname{Q21Term}
+  %% \extol{0.01|0.01}

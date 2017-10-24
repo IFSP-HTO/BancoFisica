@@ -1,0 +1,44 @@
+<<echo=FALSE, results=hide>>=
+  #Programado por: Jmduly
+  
+  temp1  <- sample(seq(from=303,to=333,by=1),1)
+  
+  temp2  <- sample(seq(from=350,to=420,by=1),1)
+  
+  press2 <- sample(seq(from=1000,to=2000,by=1),1)
+  
+  resp1  <- round((press2*(temp1))/(temp2), digits = 1)
+  
+@
+  
+  \usepackage[utf8]{inputenc}
+  
+  \begin{question}
+  
+  Um gás que se encontra à temperatura de $\Sexpr{temp1}$ K é aquecido até $\Sexpr{temp2}$ K, sem mudar de volume. E a pressão exercida no final do processo de aquecimento foi de $\sexpr{press2}$ Pa
+  
+  \\
+  \begin{answerlist}
+  
+  \item Qual era a pressão inicial?
+
+  \end{answerlist}
+  
+  \end{question}
+  
+  %% SOLUTION
+  \begin{solution}:
+    
+    \begin{answerlist}
+  \item
+  \Sexpr{resp1}Pa
+  
+  \end{answerlist}
+  \end{solution}
+  
+  %% META-INFORMATION
+  %% \extype{cloze}
+  %% \exclozetype{num}
+  %% \exsolution{\Sexpr{resp1}}
+  %% \exname{Q43Term}
+  %% \extol{0.01|}

@@ -1,0 +1,38 @@
+<<echo=FALSE, results=hide>>=
+##PROGRAMADO POR: CARLOS SANTANA, em 05 de Setembro de 2017.
+
+#WIP: TENTAR BOTAR A TABELA COM AS VARIÁVEIS
+
+temperatura <- 127
+
+pressaoA <- sample(seq(from=1,to=2.5,by=0.1),1)
+volumeA <- sample(seq(from=0.1,to=2,by=0.1),1)
+
+pressaoB <- sample(seq(from=1,to=2.5,by=0.1),1)
+
+resp <- round(((pressaoA*volumeA)/temperatura)/(pressaoB/temperatura),1)
+
+@
+\usepackage[utf8]{inputenc}
+\begin{question}
+
+Considere um gás ideal encerrado dentro de um recipiente com êmbolo móvel. O gás passa por uma transformação isotérmica A -> B, cujas variáveis de estado são: Pressão A \Sexpr{pressaoA}atm, Volume A de \Sexpr{volumeA}L, Pressão B \Sexpr{pressaoB}atm e temperatura constante de \Sexpr{temperatura}°C, defina qual é o volume B.
+
+
+
+<<echo=FALSE, results=hide, results=tex>>=
+@
+
+\end{question}
+
+\begin{solution}
+%% SOLUTION
+\Sexpr{resp}
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp}}
+%% \exname{Q03Termd}
+%% \exusepackage[utf8]{inputenc}

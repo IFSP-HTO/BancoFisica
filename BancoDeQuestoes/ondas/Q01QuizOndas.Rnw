@@ -1,0 +1,64 @@
+<<echo=FALSE, results=hide>>=
+##PROGRAMADO POR: MARCELO C.
+
+## QUESTION/ANSWER GENERATION
+questions <- character(10)
+solutions <- logical(10)
+explanations <- character(10)
+aleat = sample(1:10)
+
+  questions[aleat[1]] <- "A propagação de ondas envolve necessariamente o transporte de matéria e energia."
+  solutions[aleat[1]] <- FALSE
+  explanations[aleat[1]] <- "falso. Não transporta matéria"
+  questions[aleat[2]] <- "A propagação de ondas envolve necessariamente o transporte de energia."
+  solutions[aleat[2]] <- TRUE
+  explanations[aleat[2]] <- ""
+  questions[aleat[3]] <- "As ondas classificadas como longitudinais possuem vibração paralela à propagação. Um exemplo desse tipo de onda é o som."
+  solutions[aleat[3]] <- TRUE
+  explanations[aleat[3]] <- ""
+  questions[aleat[4]] <- "A vibração de uma corda no violão é uma onda longitudinal"
+  solutions[aleat[4]] <- FALSE
+  explanations[aleat[4]] <- "Onda transversal"
+  questions[aleat[5]] <- "O som é uma onda mecânica, longitudinal e tridimensional."
+  solutions[aleat[5]] <- TRUE
+  explanations[aleat[5]] <- ""
+  questions[aleat[6]] <- "Todas as ondas eletromagnéticas são transversais."
+  solutions[aleat[6]] <- TRUE
+  explanations[aleat[6]] <- ""
+  questions[aleat[7]] <- "A frequência representa o número de ondas geradas dentro de um intervalo de tempo específico. A unidade Hz (Hertz) significa ondas geradas por segundo."
+  solutions[aleat[7]] <- TRUE
+  explanations[aleat[7]] <- ""
+  questions[aleat[8]] <- "O ultra-som é uma onda eletromagnética."
+  solutions[aleat[8]] <- FALSE
+  explanations[aleat[8]] <- "Falso. Ultra-som é uma onda mecânica"
+  questions[aleat[9]] <- "O raio-x é uma onda mecânica"
+  solutions[aleat[9]] <- FALSE
+  explanations[aleat[9]] <- "Falso. Raio-x é uma onda eletromagnética."
+  questions[aleat[10]] <- "Se uma nave espacial explode no espaço, é impossível ouvir som, já que o mesmo não se propaga no vácuo."
+  solutions[aleat[10]] <- TRUE
+  explanations[aleat[10]] <- ""
+@
+
+\begin{question}
+
+Com respeito aos conceitos básicos da ondulatória, assinale verdadeiro (V) ou falso (F):
+
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(questions)
+@
+\end{question}
+
+\begin{solution}
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(
+  paste("\\textbf{", ifelse(solutions, "Verdadeiro", "Falso"), "}", sep = ""),
+  explanations)
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{mchoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions)}}
+%% \exname{Q01QuizOndas}
+

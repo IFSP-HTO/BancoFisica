@@ -38,5 +38,5 @@ Quando um term\^ometro na escala Celsius sofrer uma varia\c{c}\~ao de $\Sexpr{dt
 %% \extype{cloze}
 %% \exclozetype{num|num}
 %% \exsolution{\Sexpr{resp1}|\Sexpr{resp2}}
-%% \exname{Q01term}
+%% \exname{Q13term}
 %% \extol{0.01}

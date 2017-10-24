@@ -1,0 +1,48 @@
+<<echo=FALSE, results=hide>>=
+  #Programado por: Jmduly
+  
+  press1 <- sample(seq(from=250,to=320,by=1),1)
+  
+  vol1   <- sample(seq(from=12,to=60,by=1),1)
+  
+  trab1  <- sample(seq(from=1,to=5,by=1),1)
+  
+  resp1  <- round((trab1/press1+vol1), digits = 1)
+  
+@
+  
+  \usepackage[utf8]{inputenc}
+  
+  \begin{question}
+  
+   Um gás ideal de volume $\Sexpr{vol1}$ m³ sofre uma transformação, permanecendo sob pressão constante igual a $\Sexpr{press1}$ Pa.
+
+
+
+  
+  \\
+  \begin{answerlist}
+  
+  \item Qual é o volume do gás quando o trabalho realizado por ele for $\Sexpr{trab1}$ kJ?
+
+  \end{answerlist}
+  
+  \end{question}
+  
+  %% SOLUTION
+  \begin{solution}:
+    
+    \begin{answerlist}
+  \item
+  \Sexpr{resp1}m³
+  
+  \end{answerlist}
+  \end{solution}
+  
+  %% META-INFORMATION
+  %% \extype{cloze}
+  %% \exclozetype{num}
+  %% \exsolution{\Sexpr{resp1}}
+  %% \exname{Q49Term}
+  %% \extol{0.01|}
+

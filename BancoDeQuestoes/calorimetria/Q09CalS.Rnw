@@ -1,0 +1,29 @@
+<<echo=FALSE, results=hide>>=
+# Programado por: Marcelo C.
+
+massa <- sample(seq(from=20, to= 300, by=10), 1)
+pot <- sample(seq(from=400, to= 500, by=50), 1)
+resp <- pot*30*60/(100*massa*1000)
+
+@
+\usepackage[utf8]{inputenc}
+\begin{question}
+
+Um bloco de \Sexpr{massa} kg feito de um material desconhecido é colocado por 30 minutos num forno de potência \Sexpr{pot} Watts. Após esse tempo, a variação de temperatura do bloco foi de 100 °C. Determine o calor específico sensível do metal, em cal/g°C. \textit{Arredonde sua resposta para 3 casas decimais.}
+\\
+Adote 1 cal = 4 Joules. 
+
+\end{question}
+
+%% SOLUTION
+\begin{solution}
+  
+  \Sexpr{resp} cal/g°C
+  
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp}}
+%% \exname{Q09CalS}
+%% \extol{0.001}

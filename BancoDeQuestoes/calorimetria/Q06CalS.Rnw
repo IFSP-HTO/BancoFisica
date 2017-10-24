@@ -1,0 +1,23 @@
+<<echo=FALSE, results=hide>>=
+##matheus Bertos
+
+	t1	<- sample(seq(from=20,to=60,by=2),1)
+	M	<- sample(seq(from=300,to=800,by=5),1)
+	result <- round(M*0.09*(80-t1))
+	
+@
+\usepackage[portuguese]{babel}
+
+\begin{question}
+	Quanta energia térmica é necessária fornecer a uma massa de \Sexpr{M} gramas de cobre para sua temperatura elevar-se de \Sexpr{t1} °C para 80 °C? Dado: calor específico do cobre: 0,09 cal/g°C
+\end{question}
+
+\begin{solution}:
+  \Sexpr{result} cal
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{result}}
+%% \exname{Q06CalorTemp}
+%% \extol{1}

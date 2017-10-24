@@ -1,0 +1,27 @@
+<<echo=FALSE, results=hide>>=
+
+#PROGRAMADO POR: MARCELO C.
+
+calor <- sample(seq(from=2000, to=8000, by=200), 1)
+resp <- calor/(200*40)
+
+@
+\usepackage[utf8]{inputenc}
+\begin{question}
+
+Em um experimento verifica-se que é necessário fornecer \Sexpr{calor} calorias a uma massa de 200 g de determinado material para que sua temperatura varie de 20°C para 60 °C. Qual é o valor do calor específico do material em cal/g°C? \textit{Arredonde sua resposta para 2 casas decimais.}
+
+\end{question}
+
+%% SOLUTION
+\begin{solution}
+  
+  \Sexpr{resp} cal/g°C
+  
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp}}
+%% \exname{Q02CalS}
+%% \extol{0.1}

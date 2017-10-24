@@ -1,0 +1,45 @@
+<<echo=FALSE, results=hide>>=
+  #Programado por: Jmduly
+  
+  temp1  <- sample(seq(from=15,to=25,by=1),1)
+  
+  temp2  <- sample(seq(from=30,to=40,by=1),1)
+  
+  vol1   <- sample(seq(from=21,to=32,by=1),1)
+  
+  resp1  <- round((press1*(temp2+273)/temp1+273), digits = 1)
+  
+@
+  
+  \usepackage[utf8]{inputenc}
+  
+  \begin{question}
+  
+  Um recipiente indeformável, hermeticamente fechado, contém $\Sexpr{vol1}$ litros de um gás perfeito a $\Sexpr{temp1}$ ºC, suportando a pressão de $\Sexpr{press1}$ atmosferas. A temperatura do gás é aumentada até atingir $\Sexpr{temp2}$ ºC.
+
+  \\
+  \begin{answerlist}
+  
+  \item Calcule a pressão final do gás.
+
+
+  \end{answerlist}
+  
+  \end{question}
+  
+  %% SOLUTION
+  \begin{solution}:
+    
+    \begin{answerlist}
+  \item
+  \Sexpr{resp1}atm
+  
+  \end{answerlist}
+  \end{solution}
+  
+  %% META-INFORMATION
+  %% \extype{cloze}
+  %% \exclozetype{num}
+  %% \exsolution{\Sexpr{resp1}}
+  %% \exname{Q40Term}
+  %% \extol{0.01|}

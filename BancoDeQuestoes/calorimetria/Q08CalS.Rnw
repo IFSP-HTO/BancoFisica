@@ -1,0 +1,31 @@
+<<echo=FALSE, results=hide>>=
+
+# Programado por: Marcelo C.
+
+tamb <- sample(seq(from=15, to=25, by=1), 1)
+tagua <- sample(seq(from=40, to=80, by=1), 1)
+qtd <- sample(seq(from=1, to= 4, by=1), 1)
+resp <- qtd*1000*(tagua-tamb)
+
+@
+\usepackage[utf8]{inputenc}
+\begin{question}
+
+A água escorre de uma torneira elétrica à temperatura de \Sexpr{tagua}°C. Coletando-se \Sexpr{qtd} litros de água que escorre dessa torneira em uma bacia, observa-se que após determinado tempo de exposição a água atinge a temperatura ambiente de \Sexpr{tamb}°C Determine, em módulo, a quantidade de calor cedida (em calorias) pela água ao meio ambiente? Despreze a quantidade de calor perdida para o ambiente enquanto se enche a bacia.
+\\
+Dado: densidade da água: 1g/cm³ ; calor específico da água: 1 cal/g°C. 
+
+\end{question}
+
+%% SOLUTION
+\begin{solution}
+  
+  \Sexpr{resp} cal
+  
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp}}
+%% \exname{Q08CalS}
+%% \extol{1}

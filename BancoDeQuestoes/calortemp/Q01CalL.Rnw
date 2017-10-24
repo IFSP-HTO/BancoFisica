@@ -1,0 +1,46 @@
+<<echo=FALSE, results=hide>>=
+##PROGRAMADO POR: MARCELO C.
+aleat = sample(1:5)
+
+questions <- numeric(5)
+solutions <- logical(5)
+
+questions[aleat[1]] <- "A madeira está mais quente que o ferro"
+questions[aleat[2]] <- "O ferro é melhor condutor de calor que a madeira"
+questions[aleat[3]] <- "O ferro está mais quente que a madeira"
+questions[aleat[4]] <- "O calor passa espontaneamente dos corpos frios para os corpos quentes"
+questions[aleat[5]] <- "A placa de ferro possui pouco calor"
+
+solutions[aleat[1]] <- FALSE
+solutions[aleat[2]] <- TRUE
+solutions[aleat[3]] <- FALSE
+solutions[aleat[4]] <- FALSE
+solutions[aleat[5]] <- FALSE
+
+@
+\usepackage[utf8]{inputenc}
+\begin{question}
+
+Sobre uma mesa encontramos uma placa de ferro e outra de madeira em equilíbrio térmico com o ambiente. Uma pessoa coloca uma das mãos sobre a placa de ferro e a outra sobre a placa de madeira. Essa pessoa sentirá a sensação que a placa de ferro está mais fria que a placa de madeira. Isto ocorre, pois:
+
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(questions)
+@
+
+\end{question}
+
+\begin{solution}
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(
+  paste("\\textbf{", ifelse(solutions, "Verdadeiro", "Falso"), "}"))
+@
+
+
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q01CalorTemp}
+%% \exusepackage[utf8]{inputenc}

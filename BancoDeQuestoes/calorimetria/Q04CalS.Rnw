@@ -1,0 +1,39 @@
+<<echo=FALSE, results=hide>>=
+#Marcelo C.
+
+Q <- sample(seq(from=2000, to=7500, by=100), 1)
+resp1 = Q/40
+resp2 = resp1/200
+@
+\usepackage[utf8]{inputenc}
+\begin{question}
+
+Um corpo de 200 g é aquecido de 20 °C para 70 °C ao receber \Sexpr{Q} cal. Determine:
+  
+  \begin{answerlist}
+    \item A capacidade térmica em cal/°C
+
+    \item O calor específico sensível em cal/g°C
+
+  \end{answerlist}
+
+\end{question}
+
+%% SOLUTION
+\begin{solution}
+  
+  \begin{answerlist}
+
+    \item \Sexpr{resp1}
+  
+    \item \Sexpr{resp2}
+  
+  \end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{resp1}|\Sexpr{resp2}}
+%% \exname{Q04CalS}
+%% \extol{0.1|0.01}

@@ -1,0 +1,35 @@
+<<echo=FALSE, results=hide>>=
+
+
+m <- sample(seq(from=100,to=300,by=10),1)
+resp <- round(600/m)
+
+f <- "https://i.imgur.com/jYCduLd.gif"
+
+@
+\usepackage[portuguese]{babel}
+
+\begin{question}
+ 
+ \includegraphics[height=4cm]{\Sexpr{f}}
+  O gráfico representa a temperatura de uma amostra de massa \Sexpr{resp} de determinado metal, inicialmente sólido, em função da quantidade de calor por ela absorvida.
+  Pode-se afirmar que o calor latente de fusão desse metal, em cal/g é:
+
+ 
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(questions)
+@
+\end{question}
+\begin{solution}
+
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(
+  paste("\\textbf{", ifelse(solutions, "Verdadeiro", "Falso"), "}"))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q15CalL}

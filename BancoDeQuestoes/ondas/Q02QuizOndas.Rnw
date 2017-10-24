@@ -1,0 +1,57 @@
+<<echo=FALSE, results=hide>>=
+##PROGRAMADO POR: MARCELO C.
+
+## QUESTION/ANSWER GENERATION
+questions <- character(7)
+solutions <- logical(7)
+explanations <- character(7)
+aleat = sample(1:7)
+
+  questions[aleat[1]] <- "São exemplos de ondas eletromagnéticas muito frequentes no cotidiano: ondas de rádio, sonoras, micro-ondas e raios X."
+  solutions[aleat[1]] <- FALSE
+  explanations[aleat[1]] <- "Falso! Onda sonora é mecânica"
+  questions[aleat[2]] <- "A difração ocorre apenas com ondas sonoras."
+  solutions[aleat[2]] <- FALSE
+  explanations[aleat[2]] <- "Falso. Ocorre com todas as ondas!"
+  questions[aleat[3]] <- "Em uma onda periódica, o comprimento de onda é a menor distância entre os pontos de máximo e mínimo."
+  solutions[aleat[3]] <- FALSE
+  explanations[aleat[3]] <- "Falso. Maior distância entre picos ou entre vales."
+  questions[aleat[4]] <- "Uma onda mecânica precisa de um meio para se propagar"
+  solutions[aleat[4]] <- TRUE
+  explanations[aleat[4]] <- ""
+  questions[aleat[5]] <- "Refração corresponde a mudança de meio de propagação de onda. A frequência da onda não se altera."
+  solutions[aleat[5]] <- TRUE
+  explanations[aleat[5]] <- ""
+  questions[aleat[6]] <- "Na difração, as ondas se espalham ao passar por um orifício/obstáculo"
+  solutions[aleat[6]] <- FALSE
+  explanations[aleat[6]] <- ""
+  questions[aleat[7]] <- "A interferência ocorre apenas com ondas eletromagnéticas."
+  solutions[aleat[7]] <- FALSE
+  explanations[aleat[7]] <- ""
+  
+@
+
+
+\begin{question}
+
+Com respeito aos conceitos básicos da ondulatória, assinale verdadeiro (V) ou falso (F):
+
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(questions)
+@
+\end{question}
+
+\begin{solution}
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(
+  paste("\\textbf{", ifelse(solutions, "Verdadeiro", "Falso"), "}", sep = ""),
+  explanations)
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{mchoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions)}}
+%% \exname{Q02QuizOndas}
+
