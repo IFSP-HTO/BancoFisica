@@ -23,6 +23,8 @@ O calor específico do zinco é aproximadamente igual a 0,1 cal/g°C. Determine:
 
   \item A quantidade de calor absorvida (em calorias) por uma massa de 1 g de zinco que eleva sua temperatura em $\Sexpr{dta}$°C
   
+  \item A quantidade de calor cedida ao meio ambiente (em calorias) por uma massa de $\Sexpr{mb}$ g de zinco se sua temperatura se elevar de 1°C
+
   \item A quantidade de calor cedida ao meio ambiente (em calorias) por uma massa de $\Sexpr{mc}$ g de zinco se sua temperatura diminuir em $\Sexpr{dtc}$°C.
   
   \item A quantidade de calor cedida ao meio ambiente (em calorias) por uma massa de 20 g de zinco se sua temperatura diminuir de 40°C para $\Sexpr{tdf}$°C
