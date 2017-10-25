@@ -23,7 +23,7 @@ aleat = sample(1:7)
   solutions[aleat[5]] <- TRUE
   explanations[aleat[5]] <- ""
   questions[aleat[6]] <- "Na difração, as ondas se espalham ao passar por um orifício/obstáculo"
-  solutions[aleat[6]] <- FALSE
+  solutions[aleat[6]] <- TRUE
   explanations[aleat[6]] <- ""
   questions[aleat[7]] <- "A interferência ocorre apenas com ondas eletromagnéticas."
   solutions[aleat[7]] <- FALSE
