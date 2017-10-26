@@ -9,31 +9,19 @@ resp <- round(5/9*(temp - 32), digits = 1)
 
 \begin{question}
 
-O verão de 1994 foi particularmente quente nos Estados Unidos da América. A diferença entre a máxima temperatura do verão e a mínima do inverno anterior foi de $\Sexpr{temp}$ºC. 
-
-\\
-\begin{answerlist}
-
-  \item Qual o valor dessa diferença temperaturam na escala Fahrenheit?
-  
-
-\end{answerlist}
+O verão de 1994 foi particularmente quente nos Estados Unidos da América. A diferença entre a máxima temperatura do verão e a mínima do inverno anterior foi de $\Sexpr{temp}$°C. Qual o valor dessa diferença temperaturam na escala Fahrenheit?
 
 \end{question}
 
 %% SOLUTION
-\begin{solution}:
+\begin{solution}
   
-  \begin{answerlist}
-    \item
-      \Sexpr{resp}ºC
-        
-  \end{answerlist}
+  \Sexpr{resp} °C
+  
 \end{solution}
 
 %% META-INFORMATION
-%% \extype{cloze}
-%% \exclozetype{num}
-%% \exsolution{\Sexpr{respa}}
-%% \exname{Q01CalS}
-%% \extol{0.01}
+%% \extype{num}
+%% \exsolution{\Sexpr{resp}}
+%% \exname{Q03CalS}
+%% \extol{0.1}

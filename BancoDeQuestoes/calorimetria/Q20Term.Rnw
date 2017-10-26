@@ -1,51 +1,47 @@
 <<echo=FALSE, results=hide>>=
-#Programado por: Jmduly
+#Programado por: Jmduly - correção Marcelo C (adequação das temperaturas)
 
-temp1 <- sample(seq(from=107, to=110, by=1),1)
+temp1 <- sample(seq(from=100, to=102, by=0.2),1)
 
-temp2 <- sample(seq(from=4,to=10, by=1),1)
+temp2 <- sample(seq(from=2.0,to=2.3, by=0.1),1)
 
 resp1 <- round(5/9*(temp1 - 32), digits = 1)
 
 resp2 <- round(5/9*((temp1-temp2) - 32), digits = 1)
 @
 \usepackage[utf8]{inputenc}
-
 \begin{question}
 
-Um turista brasileiro sente-se mal durante uma viagem /`a Nova Iorque. Ao ser examinado em um hospital local a enfermeira lhe diz que sua temperatura no momento era $\Sexpr{temp1}$°, mas que ele deveria ficar tranquilo, pois já havia baixado $\Sexpr{temp2}$°. Após o susto, o turista percebeu que sua temperatura havia sido medida em uma escala Fahrenheit. 
+Um turista brasileiro sente-se mal durante uma viagem à Nova Iorque. Ao ser examinado em um hospital local a enfermeira lhe diz que sua temperatura naquele momento era $\Sexpr{temp1}$°, mas que ele deveria ficar tranquilo, pois sua febre estava diminuindo, tendo já baixado $\Sexpr{temp2}$°. Após o susto, o turista percebeu que sua temperatura havia sido medida em uma escala Fahrenheit. 
 
-
-
-\\
 \begin{answerlist}
 
-  \item Qual era a sua temperatura anteriormente em ºC?
+  \item Qual era a sua temperatura anteriormente em °C?
   
-  \item E qual sua temperatura atual em ºC?
+  \item E qual sua temperatura atual em °C?
   
-
 \end{answerlist}
 
 \end{question}
 
- 
-  %% SOLUTION
-  \begin{solution}:
+
+%% SOLUTION
+\begin{solution}:
     
-    \begin{answerlist}
-  \item
-  \Sexpr{resp1}ºC
+  \begin{answerlist}
+    
+    \item
+    \Sexpr{resp1}°C
   
-  \item
-  \Sexpr{resp2}ºC
+    \item
+    \Sexpr{resp2}°C
   
   \end{answerlist}
-  \end{solution}
+\end{solution}
   
-  %% META-INFORMATION
-  %% \extype{cloze}
-  %% \exclozetype{num|num}
-  %% \exsolution{\Sexpr{resp1}|\Sexpr{resp2}}
-  %% \exname{Q20Term}
-  %% \extol{0.01|0.01}
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{resp1}|\Sexpr{resp2}}
+%% \exname{Q20Term}
+%% \extol{0.1|0.1}
