@@ -1,0 +1,42 @@
+<<echo=FALSE, results=hide>>=
+  #Programado por: Jmduly
+  
+  vol1   <- sample(seq(from=5000000,to=20000000,by=5000000),1)
+  
+  u      <- sample(seq(from=300000,to=45000000,by=300000),1)
+  
+  resp1  <- round((2/3*u)/(vol1*10^-6), digits = 1)
+
+@
+  
+  \usepackage[utf8]{inputenc}
+  
+  \begin{question}
+  
+  Considere um gás ideal de volume $\Sexpr{vol1}$ cm³ e que possui energia interna de $\Sexpr{u}$.
+
+  \\
+  \begin{answerlist}
+  
+  \item Qual a pressão realizada no gás?
+
+  \end{answerlist}
+  
+  \end{question}
+  
+  %% SOLUTION
+  \begin{solution}:
+    
+    \begin{answerlist}
+  \item
+  \Sexpr{resp1}Pa
+  
+  \end{answerlist}
+  \end{solution}
+  
+  %% META-INFORMATION
+  %% \extype{cloze}
+  %% \exclozetype{num}
+  %% \exsolution{\Sexpr{resp1}}
+  %% \exname{Q63Term}
+  %% \extol{0.01|}
