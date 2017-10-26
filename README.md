@@ -72,8 +72,7 @@ onde:
 
 **Tipo**: Inserir a palavra Quiz apenas se a questão for de múltipla escolha ou verdadeiro e falso. Ex: Q02QuizOndas.
 
-
-Após incluir uma nova questão na subpasta, inserir o seu título e texto no arquivo questoes.txt. Isso facilitará verificar as questões já implementadas sobre o assunto e evitar duplicações.
+Após incluir uma nova questão na subpasta, criar um pdf com todas as questões dentro da subpasta. Isso facilitará verificar as questões já implementadas sobre o assunto e evitar duplicações.
 
 Os arquivos .docx do diretório **BancoDeQuestões** possuem questões que estão sendo implementadas. As questões estão separadas por assunto, sendo que no topo de cada assunto possui o nome que deve ser utilizado na questão.
 
