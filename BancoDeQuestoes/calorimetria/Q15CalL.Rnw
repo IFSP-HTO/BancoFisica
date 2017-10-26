@@ -4,7 +4,7 @@
 m <- sample(seq(from=10,to=400,by=5),1)
 resp <- round(600/m,1)
 
-f <- "https://i.imgur.com/jYCduLd.gif"
+f <- "https://raw.githubusercontent.com/mcardinalian/BancoFisica/master/BancoDeQuestoes/calorimetria/Q15CalL.jpg?token=AYwnUqw6DMFtMBxgV8WVNEsNd55TqyO_ks5Z-2ZlwA%3D%3D"
 
 @
 \usepackage[portuguese]{babel}
