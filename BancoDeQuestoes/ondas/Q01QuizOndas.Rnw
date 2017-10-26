@@ -41,7 +41,7 @@ aleat = sample(1:10)
 
 \begin{question}
 
-Com respeito aos conceitos básicos da ondulatória, assinale verdadeiro (V) ou falso (F):
+Com respeito aos conceitos básicos da ondulatória, assinale as afirmações verdadeiras:
 
 <<echo=FALSE, results=hide, results=tex>>=
 answerlist(questions)

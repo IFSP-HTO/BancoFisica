@@ -1,36 +1,29 @@
 <<echo=FALSE, results=hide>>=
 ##MARCELO C.
 
-v <- sample(seq(from=36,to=126,by=18),1)
+v <- sample(seq(from=36,to=120,by=4),1)
 
-resp <- round(v/(3.6*5),2)
+resp <- round(v/(3.6*5),1)
 @
-
+\usepackage[portuguese]{babel}
 \begin{question}
   
-Um autom\'ovel est\'a com velocidade de $\Sexpr{v}$ km/h quando \'e freado, mantendo-se em movimento retil\'ineo com acelera\c{c}\~ao constante at\'e parar depois de 5 segundos do in\'icio da frenagem. 
-
-\begin{answerlist}
-Determine o m\'odulo da acelera\c{c}\~ao em $m/s^2$.
-Arredonde sua resposta final para 1 decimal.
-
-\end{answerlist}
+Um automóvel está com velocidade de $\Sexpr{v}$ km/h quando é freado, mantendo-se em movimento retilíneo com aceleração constante até parar depois de 5 segundos do início da frenagem. 
+Determine o módulo da aceleração em $m/s^2$. 
+\textit{Arredonde sua resposta final para 1 decimal.}
 
 \end{question}
 
 %% SOLUTION
 \begin{solution}:
 
-\begin{answerlist}
-
-\Sexpr{resp} $m/s^2$
+  \Sexpr{resp}
   
-\end{answerlist}
 \end{solution}
 
 %% META-INFORMATION
-%% \extype{cloze}
-%% \exclozetype{num}
+%% \extype{num}
 %% \exsolution{\Sexpr{resp}}
-%% \exname{Q01Acel}
-%% \extol{0.002}
+%% \exname{Q01Acel.Rnw}
+%% \extol{0.1}
+
