@@ -1,8 +1,8 @@
 <<echo=FALSE, results=hide>>=
 
 
-m <- sample(seq(from=100,to=300,by=10),1)
-resp <- round(600/m)
+m <- sample(seq(from=10,to=400,by=5),1)
+resp <- round(600/m,1)
 
 f <- "https://i.imgur.com/jYCduLd.gif"
 
@@ -11,25 +11,20 @@ f <- "https://i.imgur.com/jYCduLd.gif"
 
 \begin{question}
  
- \includegraphics[height=4cm]{\Sexpr{f}}
-  O gráfico representa a temperatura de uma amostra de massa \Sexpr{resp} de determinado metal, inicialmente sólido, em função da quantidade de calor por ela absorvida.
-  Pode-se afirmar que o calor latente de fusão desse metal, em cal/g é:
+O gráfico representa a temperatura de uma amostra de massa \Sexpr{m} gramas de determinado metal, inicialmente sólido, em função da quantidade de calor por ela absorvida. Determine o calor latente de fusão desse metal, em cal/g. \textit{Arredonde sua resposta para 1 casa decimal.}
 
- 
-<<echo=FALSE, results=hide, results=tex>>=
-answerlist(questions)
-@
+\includegraphics[height=10cm]{\Sexpr{f}}
+
 \end{question}
+
 \begin{solution}
-
-<<echo=FALSE, results=hide, results=tex>>=
-answerlist(
-  paste("\\textbf{", ifelse(solutions, "Verdadeiro", "Falso"), "}"))
-@
-
+  
+  \Sexpr{resp} cal/g
+  
 \end{solution}
 
 %% META-INFORMATION
-%% \extype{schoice}
-%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \extype{num}
+%% \exsolution{\Sexpr{resp}}
 %% \exname{Q15CalL}
+%% \extol{0.1}
