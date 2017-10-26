@@ -7,8 +7,8 @@ dtc <- sample(seq(from=2,to=40,by=1),1)
 mc <- sample(seq(from=10,to=200,by=10),1)
 tdf <- sample(seq(from=38,to=0,by=-1),1)
 
-respa <- 1*0.1*dta
-respb <- mb*0.1*1
+respa <- 0.1*dta
+respb <- mb*0.1
 respc <- mc*0.1*dtc
 respd <- 20*0.1*(40-tdf)
 @
@@ -16,18 +16,17 @@ respd <- 20*0.1*(40-tdf)
 
 \begin{question}
 
-O calor específico do zinco é aproximadamente igual a 0,1 cal/g°C. Determine:
+O calor específico do zinco é aproximadamente igual a $0,1$ cal/g°C. Determine:
 
-\\
 \begin{answerlist}
 
-  \item A quantidade de calor absorvida (em calorias) por uma massa de 1 g de zinco que eleva sua temperatura em $\Sexpr{dta}$°C
+  \item A quantidade de calor absorvida (em calorias) por uma massa de 1 g de zinco que eleva sua temperatura em $\Sexpr{dta}$ °C
   
-  \item A quantidade de calor cedida ao meio ambiente (em calorias) por uma massa de $\Sexpr{mb}$ g de zinco se sua temperatura se elevar de 1°C
+  \item A quantidade de calor cedida ao meio ambiente (em calorias) por uma massa de $\Sexpr{mb}$ g de zinco se sua temperatura se elevar de 1 °C
 
-  \item A quantidade de calor cedida ao meio ambiente (em calorias) por uma massa de $\Sexpr{mc}$ g de zinco se sua temperatura diminuir em $\Sexpr{dtc}$°C.
+  \item A quantidade de calor cedida ao meio ambiente (em calorias) por uma massa de $\Sexpr{mc}$ g de zinco se sua temperatura diminuir em $\Sexpr{dtc}$ °C
   
-  \item A quantidade de calor cedida ao meio ambiente (em calorias) por uma massa de 20 g de zinco se sua temperatura diminuir de 40°C para $\Sexpr{tdf}$°C
+  \item A quantidade de calor cedida ao meio ambiente (em calorias) por uma massa de 20 g de zinco se sua temperatura diminuir de 40 °C para $\Sexpr{tdf}$ °C
 
 \end{answerlist}
 
@@ -57,4 +56,4 @@ O calor específico do zinco é aproximadamente igual a 0,1 cal/g°C. Determine:
 %% \exclozetype{num|num|num|num}
 %% \exsolution{\Sexpr{respa}|\Sexpr{respb}|\Sexpr{respc}|\Sexpr{respd}}
 %% \exname{Q01CalS}
-%% \extol{0.01|0.01|0.01|0.01}
+%% \extol{0.1|0.1|0.1|0.1}

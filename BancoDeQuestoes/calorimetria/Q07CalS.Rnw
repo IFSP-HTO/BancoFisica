@@ -1,33 +1,31 @@
-<<echo=FALSE, results=HIDE>>=
-
-# Created by vinibrenobr11
+<<echo=FALSE, results=hide>>=
+# Created by vinibrenobr11 - corrigido por Marcelo C.
 
 # Calorias absorvidas e temperatura do corpo 1
-cal_1 <- sample(seq(from=10, to=500, by=1))
-c_1 <- sample(seq(from=1, to=5, by=1))
+Q1 <- sample(seq(from=100, to=200, by=10),1)
+dt1 <- sample(seq(from=1, to=10, by=1),1)
 
 # Calorias absorvidas e temperatura do corpo 2
-cal_2 <- sample(seq(from=100, to=1500, by=1))
-c_l_result <- round((cal_2 * c_1) / cal_1 / 2, 1) # massa � 2m
+Q2 <- sample(seq(from=100, to=800, by=20),1)
+resp <- round(Q2*dt1/(2*Q1), 1) # massa 2m
+
 @
 \usepackage[utf8]{inputenc}
 \begin{question}
 
-Quando um corpo de certa massa m, formado por determinada mat\'eria, absorve \Sexpr{cal_1} cal, eleva sua temperatura em \Sexpr{c_1}\circ$C$. Outro corpo, formado pelo mesmo material, tem massa 2 m. Se esse outro corpo absorver \Sexpr{cal_2} cal, em quanto elevar\'a o valor de sua temperatura?
-\\
-Arredonde sua resposta para 1 casa decimal se necess\'ario
+Quando um corpo de certa massa \textit{m}, formado por determinada matéria, absorve \Sexpr{Q1} cal, eleva sua temperatura em \Sexpr{dt1} °C. Outro corpo, formado pelo mesmo material, tem massa 2\textit{m}. Se esse outro corpo absorver \Sexpr{Q2} cal, em quanto elevará o valor de sua temperatura? \textit{Arredonde sua resposta para 1 casa decimal se necessário}
 
 \end{question}
 
 %% SOLUTION
 \begin{solution}
   
-  \Sexpr{c_l_result}\circ$C$
+  \Sexpr{resp} °C
   
 \end{solution}
 
 %% META-INFORMATION
 %% \extype{num}
-%% \exsolution{\Sexpr{c_l_result}}
+%% \exsolution{\Sexpr{resp}}
 %% \exname{Q07CalS}
 %% \extol{0.1}

@@ -244,6 +244,16 @@ exams2html(myexam, n = 1,solution=TRUE,
            edir = "./BancoDeQuestoes/termodinamica",
            template = "templates/plain.html")
 
+############### testes ##################
+## Definindo a pasta com as questoes do exame
+myexam <- dir("./BancoDeQuestoes/testes/", pattern = ".rnw", ignore.case=TRUE)
+
+## Gerando HTML com o arquivo da questao
+set.seed(12017)
+exams2html(myexam, n = 1,solution=TRUE,
+           encoding = "UTF-8",
+           edir = "./BancoDeQuestoes/testes",
+           template = "templates/plain.html")
 
 #####################trabalho e potencia######################
 ## Definindo a pasta com as questoes do exame
