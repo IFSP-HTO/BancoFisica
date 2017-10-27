@@ -39,7 +39,7 @@ explanations[1:5] <- ""
 Sabe-se que 25\% das observa\c{c}\~oes est\~ao abaixo do primeiro quartil. Segundo o gr\'afico, estas observa\c{c}\~oes est\~ao em qual intervalo?
 
 \setkeys{Gin}{width=0.7\textwidth}
-\begin{figure}[H]
+\begin{figure}[h]
 \begin{center}
 <<fig=TRUE, height=4, width=5, echo=FALSE, eps=FALSE, results=hide>>=
 boxplot(dados,type=2,horizontal=TRUE,col="lightblue",cex.axis=1.5,cex.lab=1.5,xaxt='n',outline=FALSE)

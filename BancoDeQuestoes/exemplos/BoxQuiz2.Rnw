@@ -124,7 +124,7 @@ Quais das afirma\c{c}\~oes abaixo est\~ao corretas?  \emph{(Obs: As
   afirma\c{c}\~oes est\~ao aproximadamente corretas ou claramente erradas.)}
 
 \setkeys{Gin}{width=0.7\textwidth}
-\begin{figure}[H]
+\begin{figure}[h]
 \begin{center}
 <<fig=TRUE, height=4, width=5, echo=FALSE, eps=FALSE, results=hide>>=
 par(mar = c(2.5, 2, 1, 0.5))
