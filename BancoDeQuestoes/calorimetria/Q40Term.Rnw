@@ -11,35 +11,23 @@
   
 @
   
-  \usepackage[utf8]{inputenc}
+\usepackage[utf8]{inputenc}
   
-  \begin{question}
+\begin{question}
   
-  Um recipiente indeformável, hermeticamente fechado, contém $\Sexpr{vol1}$ litros de um gás perfeito a $\Sexpr{temp1}$ ºC, suportando a pressão de $\Sexpr{press1}$ atmosferas. A temperatura do gás é aumentada até atingir $\Sexpr{temp2}$ ºC.
+  Um recipiente indeformável, hermeticamente fechado, contém $\Sexpr{vol1}$ litros de um gás perfeito a $\Sexpr{temp1}$ ºC, suportando a pressão de $\Sexpr{press1}$ atmosferas. A temperatura do gás é aumentada até atingir $\Sexpr{temp2}$ ºC. Calcule a pressão final do gás.
 
-  \\
-  \begin{answerlist}
+\end{question}
   
-  \item Calcule a pressão final do gás.
-
-
-  \end{answerlist}
-  
-  \end{question}
-  
-  %% SOLUTION
-  \begin{solution}:
+%% SOLUTION
+\begin{solution}:
     
-    \begin{answerlist}
-  \item
-  \Sexpr{resp1}atm
+  \Sexpr{resp1} atm
   
-  \end{answerlist}
-  \end{solution}
+\end{solution}
   
-  %% META-INFORMATION
-  %% \extype{cloze}
-  %% \exclozetype{num}
-  %% \exsolution{\Sexpr{resp1}}
-  %% \exname{Q40Term}
-  %% \extol{0.01|}
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp1}}
+%% \exname{Q40Term}
+%% \extol{0.01}

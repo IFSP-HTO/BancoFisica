@@ -9,34 +9,23 @@
     
 @
   
-  \usepackage[utf8]{inputenc}
+\usepackage[utf8]{inputenc}
   
-  \begin{question}
+\begin{question}
   
-   O rendimento de uma máquina térmica de Carnot é de $\Sexpr{rend}$/100 e a fonte fria é a própria atmosfera a $\Sexpr{temp2}$ °C.
-  
-  \\
-  \begin{answerlist}
-  
-  \item Determinar a temperatura da fonte quente.
+O rendimento de uma máquina térmica de Carnot é de $\Sexpr{rend}$/100 e a fonte fria é a própria atmosfera a $\Sexpr{temp2}$ °C. Determine a temperatura da fonte quente.
 
-  \end{answerlist}
+\end{question}
   
-  \end{question}
-  
-  %% SOLUTION
-  \begin{solution}:
+%% SOLUTION
+\begin{solution}:
     
-    \begin{answerlist}
-  \item
   \Sexpr{resp1}
   
-  \end{answerlist}
-  \end{solution}
+\end{solution}
   
-  %% META-INFORMATION
-  %% \extype{cloze}
-  %% \exclozetype{num}
-  %% \exsolution{\Sexpr{resp1}}
-  %% \exname{Q53Term}
-  %% \extol{0.01|}
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp1}}
+%% \exname{Q53Term}
+%% \extol{0.01}

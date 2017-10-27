@@ -11,35 +11,23 @@
   
 @
   
-  \usepackage[utf8]{inputenc}
+\usepackage[utf8]{inputenc}
   
-  \begin{question}
+\begin{question}
   
-  Uma fonte de potência constante igual a $\Sexpr{pot1}$ W é utilizada para aumentar a temperatura $\Sexpr{mass1}$ g de mercúrio a $\Sexpr{temp1}$ °C. Sendo o calor específico do mercúrio 0,033 cal/g°C e 1cal=4,186J.
+Uma fonte de potência constante igual a $\Sexpr{pot1}$ W é utilizada para aumentar a temperatura $\Sexpr{mass1}$ g de mercúrio a $\Sexpr{temp1}$ °C. Sendo o calor específico do mercúrio 0,033 cal/g°C e 1cal=4,186J, quanto tempo a fonte demora para realizar este aquecimento?
 
-  \\
-  \begin{answerlist}
+\end{question}
   
-  \item Quanto tempo a fonte demora para realizar este aquecimento?
-
-
-  \end{answerlist}
-  
-  \end{question}
-  
-  %% SOLUTION
-  \begin{solution}:
+%% SOLUTION
+\begin{solution}:
     
-    \begin{answerlist}
-  \item
   \Sexpr{resp1}s
   
-  \end{answerlist}
-  \end{solution}
+\end{solution}
   
-  %% META-INFORMATION
-  %% \extype{cloze}
-  %% \exclozetype{num}
-  %% \exsolution{\Sexpr{resp1}}
-  %% \exname{Q32Temp}
-  %% \extol{0.01|}
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp1}}
+%% \exname{Q32Temp}
+%% \extol{1|}

@@ -11,37 +11,24 @@
   
 @
   
-  \usepackage[utf8]{inputenc}
+\usepackage[utf8]{inputenc}
   
-  \begin{question}
+\begin{question}
   
-  Um gás de $\Sexpr{vol1}$ litros , a uma pressão de $\Sexpr{press1}$ atm e a uma temperatura de $\Sexpr{temp1}$ K. (Dado: R = 0,082 atm.L/mol.K)
+Um gás de $\Sexpr{vol1}$ litros , a uma pressão de $\Sexpr{press1}$ atm e a uma temperatura de $\Sexpr{temp1}$ K. (Dado: R = 0,082 atm.L/mol.K. Determine o número de mols desse gás.
 
-
+\end{question}
   
-  \\
-  \begin{answerlist}
-  
-  \item Determine o número de mols desse gás.
-
-  \end{answerlist}
-  
-  \end{question}
-  
-  %% SOLUTION
-  \begin{solution}:
+%% SOLUTION
+\begin{solution}:
     
-    \begin{answerlist}
-  \item
   \Sexpr{resp1}mols
   
-  \end{answerlist}
-  \end{solution}
+\end{solution}
   
-  %% META-INFORMATION
-  %% \extype{cloze}
-  %% \exclozetype{num}
-  %% \exsolution{\Sexpr{resp1}}
-  %% \exname{Q46Term}
-  %% \extol{0.01|}
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp1}}
+%% \exname{Q46Term}
+%% \extol{0.01}
 

@@ -11,35 +11,23 @@
   
 @
   
-  \usepackage[utf8]{inputenc}
+\usepackage[utf8]{inputenc}
   
-  \begin{question}
+\begin{question}
   
-  Certo gás contido em um recipiente de $\Sexpr{vol1}$ m³ com êmbolo exerce uma pressão de $\Sexpr{press1}$ Pa e é comprimido isotermicamente a um volume de $\Sexpr{vol2}$ m³.
-  
-  \\
-  \begin{answerlist}
-  
-  \item Qual será a pressão exercida pelo gás?
+  Certo gás contido em um recipiente de $\Sexpr{vol1}$ m³ com êmbolo exerce uma pressão de $\Sexpr{press1}$ Pa e é comprimido isotermicamente a um volume de $\Sexpr{vol2}$ m³. Qual será a pressão exercida pelo gás?
 
-
-  \end{answerlist}
+\end{question}
   
-  \end{question}
-  
-  %% SOLUTION
-  \begin{solution}:
+%% SOLUTION
+\begin{solution}:
     
-    \begin{answerlist}
-  \item
   \Sexpr{resp1}Pa
   
-  \end{answerlist}
-  \end{solution}
+\end{solution}
   
-  %% META-INFORMATION
-  %% \extype{cloze}
-  %% \exclozetype{num}
-  %% \exsolution{\Sexpr{resp1}}
-  %% \exname{Q35Temp}
-  %% \extol{0.01|}
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp1}}
+%% \exname{Q35Temp}
+%% \extol{0.01}

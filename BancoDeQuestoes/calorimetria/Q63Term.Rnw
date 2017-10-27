@@ -9,34 +9,23 @@
 
 @
   
-  \usepackage[utf8]{inputenc}
+\usepackage[utf8]{inputenc}
   
-  \begin{question}
+\begin{question}
   
-  Considere um gás ideal de volume $\Sexpr{vol1}$ cm³ e que possui energia interna de $\Sexpr{u}$.
+Considere um gás ideal de volume $\Sexpr{vol1}$ cm³ e que possui energia interna de $\Sexpr{u}$. Qual a pressão realizada no gás?
 
-  \\
-  \begin{answerlist}
+\end{question}
   
-  \item Qual a pressão realizada no gás?
-
-  \end{answerlist}
-  
-  \end{question}
-  
-  %% SOLUTION
-  \begin{solution}:
+%% SOLUTION
+\begin{solution}:
     
-    \begin{answerlist}
-  \item
   \Sexpr{resp1}Pa
   
-  \end{answerlist}
-  \end{solution}
+\end{solution}
   
-  %% META-INFORMATION
-  %% \extype{cloze}
-  %% \exclozetype{num}
-  %% \exsolution{\Sexpr{resp1}}
-  %% \exname{Q63Term}
-  %% \extol{0.01|}
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp1}}
+%% \exname{Q63Term}
+%% \extol{0.01}

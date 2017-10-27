@@ -5,7 +5,7 @@
   
   vol2 <- sample(seq(from=500,to=1500,by=1),1)
   
-  temp1 <- sample(100)
+  temp1 <- 100
   
   temp2 <- sample(seq(from=100,to=150,by=1),1)
   
@@ -13,34 +13,23 @@
   
 @
   
-  \usepackage[utf8]{inputenc}
+\usepackage[utf8]{inputenc}
   
-  \begin{question}
+\begin{question}
   
-  Em uma cozinha, uma chaleira com $\Sexpr{vol1}$ L de água ferve. Para que ela pare, são adicionados $\Sexpr{vol2}$ mL de água à $\Sexpr{temp2}$ °C. 
+  Em uma cozinha, uma chaleira com $\Sexpr{vol1}$ L de água ferve. Para que ela pare, são adicionados $\Sexpr{vol2}$ mL de água à $\Sexpr{temp2}$ °C. Qual a temperatura do equilíbrio do sistema?
 
-  \\
-  \begin{answerlist}
+\end{question}
   
-  \item Qual a temperatura do equilíbrio do sistema?
+%% SOLUTION
+\begin{solution}:
 
-  \end{answerlist}
+  \Sexpr{resp1} °C
   
-  \end{question}
+\end{solution}
   
-  %% SOLUTION
-  \begin{solution}:
-    
-    \begin{answerlist}
-  \item
-  \Sexpr{resp1}ºC
-  
-  \end{answerlist}
-  \end{solution}
-  
-  %% META-INFORMATION
-  %% \extype{cloze}
-  %% \exclozetype{num}
-  %% \exsolution{\Sexpr{resp1}}
-  %% \exname{Q31Temp}
-  %% \extol{0.01|}
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp1}}
+%% \exname{Q31Temp}
+%% \extol{0.01|}

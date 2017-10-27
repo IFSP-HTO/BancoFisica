@@ -11,36 +11,23 @@
   
 @
   
-  \usepackage[utf8]{inputenc}
+\usepackage[utf8]{inputenc}
   
-  \begin{question}
+\begin{question}
   
-  Uma fonte de potência constante é utilizada para aumentar a temperatura $\Sexpr{mass1}$ g de aço a $\Sexpr{temp1}$ °C em . Sendo o calor específico do aço 0,020 cal/g.°C e 1cal=4,186J e o processo é realizado em $\Sexpr{time1}$.
+Uma fonte de potência constante é utilizada para aumentar a temperatura $\Sexpr{mass1}$ g de aço a $\Sexpr{temp1}$ °C em . Sendo o calor específico do aço 0,020 cal/g.°C e 1cal=4,186J e o processo é realizado em $\Sexpr{time1}$. Qual o fluxo de calor em Watts?
 
-
-  \\
-  \begin{answerlist}
-  
-  \item Qual o fluxo de calor?
-
-
-  \end{answerlist}
-  
-  \end{question}
+\end{question}
   
   %% SOLUTION
-  \begin{solution}:
+\begin{solution}:
     
-    \begin{answerlist}
-  \item
   \Sexpr{resp1}W
   
-  \end{answerlist}
-  \end{solution}
+\end{solution}
   
-  %% META-INFORMATION
-  %% \extype{cloze}
-  %% \exclozetype{num}
-  %% \exsolution{\Sexpr{resp1}}
-  %% \exname{Q33Temp}
-  %% \extol{0.01|}
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp1}}
+%% \exname{Q33Temp}
+%% \extol{0.01}

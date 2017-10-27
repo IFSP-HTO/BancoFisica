@@ -11,36 +11,23 @@
   
 @
   
-  \usepackage[utf8]{inputenc}
+\usepackage[utf8]{inputenc}
   
-  \begin{question}
+\begin{question}
   
-  Um gás de volume $\Sexpr{vol1}$ m³ à temperatura de $\Sexpr{temp1}$ ºC é aquecido até a temperatura de $\Sexpr{temp2}$ ºC.
+Um gás de volume $\Sexpr{vol1}$ m³ à temperatura de $\Sexpr{temp1}$ ºC é aquecido até a temperatura de $\Sexpr{temp2}$ ºC. Qual será o volume ocupado por ele, se esta transformação acontecer sob pressão constante?
 
+\end{question}
   
-  \\
-  \begin{answerlist}
-  
-  \item  Qual será o volume ocupado por ele, se esta transformação acontecer sob pressão constante?
-
-
-  \end{answerlist}
-  
-  \end{question}
-  
-  %% SOLUTION
-  \begin{solution}:
+%% SOLUTION
+\begin{solution}:
     
-    \begin{answerlist}
-  \item
   \Sexpr{resp1}cm³
   
-  \end{answerlist}
-  \end{solution}
+\end{solution}
   
-  %% META-INFORMATION
-  %% \extype{cloze}
-  %% \exclozetype{num}
-  %% \exsolution{\Sexpr{resp1}}
-  %% \exname{Q42Term}
-  %% \extol{0.01|}
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp1}}
+%% \exname{Q42Term}
+%% \extol{0.0|}

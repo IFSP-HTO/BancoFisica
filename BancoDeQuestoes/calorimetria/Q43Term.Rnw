@@ -11,34 +11,23 @@
   
 @
   
-  \usepackage[utf8]{inputenc}
+\usepackage[utf8]{inputenc}
   
-  \begin{question}
+\begin{question}
   
-  Um gás que se encontra à temperatura de $\Sexpr{temp1}$ K é aquecido até $\Sexpr{temp2}$ K, sem mudar de volume. E a pressão exercida no final do processo de aquecimento foi de $\sexpr{press2}$ Pa
-  
-  \\
-  \begin{answerlist}
-  
-  \item Qual era a pressão inicial?
+  Um gás que se encontra à temperatura de $\Sexpr{temp1}$ K é aquecido até $\Sexpr{temp2}$ K, sem mudar de volume. Se a pressão exercida no final do processo de aquecimento foi de $\sexpr{press2}$ Pa, qual era a pressão inicial?
 
-  \end{answerlist}
+\end{question}
   
-  \end{question}
-  
-  %% SOLUTION
-  \begin{solution}:
+%% SOLUTION
+\begin{solution}:
     
-    \begin{answerlist}
-  \item
   \Sexpr{resp1}Pa
   
-  \end{answerlist}
-  \end{solution}
+\end{solution}
   
-  %% META-INFORMATION
-  %% \extype{cloze}
-  %% \exclozetype{num}
-  %% \exsolution{\Sexpr{resp1}}
-  %% \exname{Q43Term}
-  %% \extol{0.01|}
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp1}}
+%% \exname{Q43Term}
+%% \extol{0.01}

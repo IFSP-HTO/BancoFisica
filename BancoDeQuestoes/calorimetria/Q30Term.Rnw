@@ -15,39 +15,23 @@
   
 @
   
-  \usepackage[utf8]{inputenc}
+\usepackage[utf8]{inputenc}
   
-  \begin{question}
+\begin{question}
   
-  Uma barra de cobre de massa igual a $\Sexpr{mass1}$ g e a uma temperatura de $\Sexpr{temp1}$ °C é mergulhada dentro de um recipiente que contém $\Sexpr{mass2}$ g de água, inicialmente a $\Sexpr{temp2}$ °C. E sabe-se que a temperatura do equilíbrio térmico é de $\Sexpr{temp3}$ °C.
-DADOS: Calor específico do cobre = 0,03 cal/g°C
-       Calor específico da água =  1 cal/g°C
+Uma barra de cobre de massa igual a $\Sexpr{mass1}$ g e a uma temperatura de $\Sexpr{temp1}$ °C é mergulhada dentro de um recipiente que contém $\Sexpr{mass2}$ g de água, inicialmente a $\Sexpr{temp2}$ °C. E sabe-se que a temperatura do equilíbrio térmico é de $\Sexpr{temp3}$ °C. Determine a capacidade térmica do recipiente que contém a água. DADOS: Calor específico do cobre = $0,03$ cal/g°C; calor específico da água =  $1,0$ cal/g°C
 
-
-
+\end{question}
   
-  \\
-  \begin{answerlist}
-  
-  \item determine a capacidade térmica do recipiente que contém a água.
-
-  \end{answerlist}
-  
-  \end{question}
-  
-  %% SOLUTION
-  \begin{solution}:
+%% SOLUTION
+\begin{solution}:
     
-    \begin{answerlist}
-  \item
-  \Sexpr{resp1}cal/ºC
+  \Sexpr{resp1} cal/°C
   
-  \end{answerlist}
-  \end{solution}
+\end{solution}
   
-  %% META-INFORMATION
-  %% \extype{cloze}
-  %% \exclozetype{num}
-  %% \exsolution{\Sexpr{resp1}}
-  %% \exname{Q30Temp}
-  %% \extol{0.01|}
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp1}}
+%% \exname{Q30Temp}
+%% \extol{0.01|}

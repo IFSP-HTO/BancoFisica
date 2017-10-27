@@ -13,35 +13,23 @@
   
 @
   
-  \usepackage[utf8]{inputenc}
+\usepackage[utf8]{inputenc}
   
-  \begin{question}
+\begin{question}
   
-  Uma fonte calorífica fornece calor continuamente, à razão de $\Sexpr{pot1}$ cal/s, a uma determinada massa de água. Se a temperatura da água aumenta de $\Sexpr{temp1}$ ºC para $\Sexpr{temp2}$ ºC em $\Sexpr{time1}$ minutos, sendo o calor especifico sensível da água 1,0 cal/gºC.
+Uma fonte calorífica fornece calor continuamente, à razão de $\Sexpr{pot1}$ cal/s, a uma determinada massa de água. Se a temperatura da água aumenta de $\Sexpr{temp1}$ ºC para $\Sexpr{temp2}$ ºC em $\Sexpr{time1}$ minutos, sendo o calor especifico sensível da água 1,0 cal/gºC. Determine a massa de água aquecida em gramas.
 
-  \\
-  \begin{answerlist}
+\end{question}
   
-  \item Pode-se concluir que a massa de água aquecida,é:
-
-
-  \end{answerlist}
-  
-  \end{question}
-  
-  %% SOLUTION
-  \begin{solution}:
+%% SOLUTION
+\begin{solution}:
     
-    \begin{answerlist}
-  \item
   \Sexpr{resp1}g
   
-  \end{answerlist}
-  \end{solution}
+\end{solution}
   
-  %% META-INFORMATION
-  %% \extype{cloze}
-  %% \exclozetype{num}
-  %% \exsolution{\Sexpr{resp1}}
-  %% \exname{Q34Temp}
-  %% \extol{0.01|}
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp1}}
+%% \exname{Q34Temp}
+%% \extol{0.01|}

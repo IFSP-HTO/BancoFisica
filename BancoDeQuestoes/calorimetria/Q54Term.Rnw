@@ -9,34 +9,23 @@
     
 @
   
-  \usepackage[utf8]{inputenc}
+\usepackage[utf8]{inputenc}
   
-  \begin{question}
+\begin{question}
   
-   Uma máquina térmica recebe de uma fonte quente $\Sexpr{q1}$ cal e transfere para uma fonte fria $\Sexpr{q2}$ cal.
-  
-  \\
-  \begin{answerlist}
-  
-  \item Qual o rendimento desta máquina?
+Uma máquina térmica recebe de uma fonte quente $\Sexpr{q1}$ cal e transfere para uma fonte fria $\Sexpr{q2}$ cal. Qual o rendimento desta máquina?
 
-  \end{answerlist}
+\end{question}
   
-  \end{question}
-  
-  %% SOLUTION
-  \begin{solution}:
+%% SOLUTION
+\begin{solution}:
     
-    \begin{answerlist}
-  \item
   \Sexpr{resp1}
   
-  \end{answerlist}
-  \end{solution}
+\end{solution}
   
-  %% META-INFORMATION
-  %% \extype{cloze}
-  %% \exclozetype{num}
-  %% \exsolution{\Sexpr{resp1}}
-  %% \exname{Q54Term}
-  %% \extol{0.01|}
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp1}}
+%% \exname{Q54Term}
+%% \extol{0.01}

@@ -9,34 +9,23 @@
     
 @
   
-  \usepackage[utf8]{inputenc}
+\usepackage[utf8]{inputenc}
   
-  \begin{question}
+\begin{question}
   
-   Uma máquina que opera em ciclo de Carnot tem a temperatura de sua fonte quente igual a $\Sexpr{temp1}$ °C e fonte fria à $\Sexpr{temp2}$ °C.
-  
-  \\
-  \begin{answerlist}
-  
-  \item Qual é o rendimento dessa máquina?
+ Uma máquina que opera em ciclo de Carnot tem a temperatura de sua fonte quente igual a $\Sexpr{temp1}$ °C e fonte fria à $\Sexpr{temp2}$ °C. Qual é o rendimento dessa máquina?
 
-  \end{answerlist}
+\end{question}
   
-  \end{question}
-  
-  %% SOLUTION
-  \begin{solution}:
+%% SOLUTION
+\begin{solution}:
     
-    \begin{answerlist}
-  \item
   \Sexpr{resp1}
   
-  \end{answerlist}
-  \end{solution}
+\end{solution}
   
-  %% META-INFORMATION
-  %% \extype{cloze}
-  %% \exclozetype{num}
-  %% \exsolution{\Sexpr{resp1}}
-  %% \exname{Q51Term}
-  %% \extol{0.01|}
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp1}}
+%% \exname{Q51Term}
+%% \extol{0.01}

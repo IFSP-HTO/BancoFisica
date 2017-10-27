@@ -15,35 +15,23 @@
   
 @
   
-  \usepackage[utf8]{inputenc}
+\usepackage[utf8]{inputenc}
   
-  \begin{question}
+\begin{question}
   
-  Em condições tais que um gás se comporta como ideal, as variáveis de estado assumem os valores $\Sexpr{temp1}$ K, $\Sexpr{vol1}$ m³ e $\Sexpr{press1}$ x 10 4 Pa, num estado A. Sofrendo certa transformação, o sistema chega ao estado B, em que os valores são $\Sexpr{temp2}$ K, $\Sexpr{vol2}$ m³ e p.
+  Em condições tais que um gás se comporta como ideal, as variáveis de estado assumem os valores $\Sexpr{temp1}$ K, $\Sexpr{vol1}$ m³ e $\Sexpr{press1}$ x 10 4 Pa, num estado A. Sofrendo certa transformação, o sistema chega ao estado B, em que os valores são $\Sexpr{temp2}$ K, $\Sexpr{vol2}$ m³ e p. Determine o valor de p, em Pa, é:
 
-  \\
-  \begin{answerlist}
-  
-  \item O valor de p, em Pa, é:
-
-
-  \end{answerlist}
-  
-  \end{question}
+\end{question}
   
   %% SOLUTION
-  \begin{solution}:
+\begin{solution}:
     
-    \begin{answerlist}
-  \item
   \Sexpr{resp1}Pa
   
-  \end{answerlist}
-  \end{solution}
+\end{solution}
   
-  %% META-INFORMATION
-  %% \extype{cloze}
-  %% \exclozetype{num}
-  %% \exsolution{\Sexpr{resp1}}
-  %% \exname{Q37Term}
-  %% \extol{0.01|}
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp1}}
+%% \exname{Q37Term}
+%% \extol{0.01}

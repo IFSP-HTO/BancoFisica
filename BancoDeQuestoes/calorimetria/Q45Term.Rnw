@@ -11,35 +11,23 @@
   
 @
   
-  \usepackage[utf8]{inputenc}
+\usepackage[utf8]{inputenc}
   
-  \begin{question}
+\begin{question}
   
-  Um gás que está em condições normais, ou seja, a temperatura à $\Sexpr{temp1}$ K e a pressão a $\Sexpr{press1}$ atm. (Dado: R = 0,082 atm.L/mol.K)
+Um gás que está em condições normais, ou seja, a temperatura à $\Sexpr{temp1}$ K e a pressão a $\Sexpr{press1}$ atm. (Dado: R = 0,082 atm.L/mol.K) Determine o volume molar.
 
+\end{question}
   
-  \\
-  \begin{answerlist}
+%% SOLUTION
+\begin{solution}:
   
-  \item Determine o volume molar.
-
-  \end{answerlist}
-  
-  \end{question}
-  
-  %% SOLUTION
-  \begin{solution}:
-    
-    \begin{answerlist}
-  \item
   \Sexpr{resp1}litros
   
-  \end{answerlist}
-  \end{solution}
+\end{solution}
   
-  %% META-INFORMATION
-  %% \extype{cloze}
-  %% \exclozetype{num}
-  %% \exsolution{\Sexpr{resp1}}
-  %% \exname{Q45Term}
-  %% \extol{0.01|}
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp1}}
+%% \exname{Q45Term}
+%% \extol{0.01}

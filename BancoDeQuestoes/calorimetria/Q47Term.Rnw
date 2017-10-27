@@ -11,38 +11,24 @@
   
 @
   
-  \usepackage[utf8]{inputenc}
+\usepackage[utf8]{inputenc}
   
-  \begin{question}
+\begin{question}
   
-   Um gás de $\Sexpr{mols1}$ ocupa volume de $\Sexpr{vol1}$ litros e está a uma pressão de $\Sexpr{press1}$ atm. (Dado: R = 0,082 atm.L/mol.K)
+Um gás de $\Sexpr{mols1}$ ocupa volume de $\Sexpr{vol1}$ litros e está a uma pressão de $\Sexpr{press1}$ atm. Determine a temperatura que se encontra o gás. Dado: R = 0,082 atm.L/mol.K
 
-
-
+\end{question}
   
-  \\
-  \begin{answerlist}
-  
-  \item Determine a temperatura que se encontra o gás.
-
-  \end{answerlist}
-  
-  \end{question}
-  
-  %% SOLUTION
-  \begin{solution}:
+%% SOLUTION
+\begin{solution}:
     
-    \begin{answerlist}
-  \item
   \Sexpr{resp1}K
+
+\end{solution}
   
-  \end{answerlist}
-  \end{solution}
-  
-  %% META-INFORMATION
-  %% \extype{cloze}
-  %% \exclozetype{num}
-  %% \exsolution{\Sexpr{resp1}}
-  %% \exname{Q47Term}
-  %% \extol{0.01|}
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp1}}
+%% \exname{Q47Term}
+%% \extol{0.01|}
 

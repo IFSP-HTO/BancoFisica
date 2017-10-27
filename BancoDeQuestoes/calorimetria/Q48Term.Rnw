@@ -13,35 +13,24 @@
   
 @
   
-  \usepackage[utf8]{inputenc}
+\usepackage[utf8]{inputenc}
   
-  \begin{question}
+\begin{question}
   
-   Um certo gás, cuja massa vale $\Sexpr{mass1}$ g, ocupa um volume de $\Sexpr{vol1}$ litros, sob pressão $\Sexpr{press1}$ atmosferas a temperatura de $\Sexpr{temp1}$ °C. O número de Avogadro vale 6,02.10²³ e a constante universal dos gases perfeitos R= 0,082 atm.L/mol.K.
-   
-  \\
-  \begin{answerlist}
-  
-  \item Nessas condições, o número de moléculas contidas no gás é aproximadamente de:
+Um certo gás, cuja massa vale $\Sexpr{mass1}$ g, ocupa um volume de $\Sexpr{vol1}$ litros, sob pressão $\Sexpr{press1}$ atmosferas a temperatura de $\Sexpr{temp1}$ °C. O número de Avogadro vale 6,02.10²³ e a constante universal dos gases perfeitos R= 0,082 atm.L/mol.K. Nessas condições, o número de moléculas contidas no gás é aproximadamente de:
 
-  \end{answerlist}
+\end{question}
   
-  \end{question}
-  
-  %% SOLUTION
-  \begin{solution}:
+%% SOLUTION
+\begin{solution}:
     
-    \begin{answerlist}
-  \item
-  \Sexpr{resp1}moléculas
+  \Sexpr{resp1} moléculas
+
+\end{solution}
   
-  \end{answerlist}
-  \end{solution}
-  
-  %% META-INFORMATION
-  %% \extype{cloze}
-  %% \exclozetype{num}
-  %% \exsolution{\Sexpr{resp1}}
-  %% \exname{Q48Term}
-  %% \extol{0.01|}
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp1}}
+%% \exname{Q48Term}
+%% \extol{0.01}
 

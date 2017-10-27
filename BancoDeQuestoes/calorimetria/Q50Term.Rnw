@@ -12,35 +12,24 @@
   resp1  <- round((press1*(vol1-vol2)), digits = 1)
     
 @
-  
-  \usepackage[utf8]{inputenc}
-  
-  \begin{question}
-  
-   Quando são colocados $\Sexpr{mols1}$ moles de um gás em um recipiente com êmbolo que mantém a pressão igual a da atmosfera, inicialmente ocupando $\Sexpr{vol1}$ m³. Ao empurrar-se o êmbolo, o volume ocupado passa a ser $\Sexpr{vol2}$ m³. A pressão atmosférica que se encontra o gás é igual a $\Sexpr{press1}$ N/m².
-  
-  \\
-  \begin{answerlist}
-  
-  \item Qual é o trabalho realizado sob o gás?
 
-  \end{answerlist}
+\usepackage[utf8]{inputenc}
+
+\begin{question}
   
-  \end{question}
+Quando são colocados $\Sexpr{mols1}$ moles de um gás em um recipiente com êmbolo que mantém a pressão igual a da atmosfera, inicialmente ocupando $\Sexpr{vol1}$ m³. Ao empurrar-se o êmbolo, o volume ocupado passa a ser $\Sexpr{vol2}$ m³. A pressão atmosférica que se encontra o gás é igual a $\Sexpr{press1}$ N/m². Qual é o trabalho realizado sob o gás?
+
+\end{question}
   
-  %% SOLUTION
-  \begin{solution}:
+%% SOLUTION
+\begin{solution}:
     
-    \begin{answerlist}
-  \item
   \Sexpr{resp1}J
   
-  \end{answerlist}
-  \end{solution}
+\end{solution}
   
-  %% META-INFORMATION
-  %% \extype{cloze}
-  %% \exclozetype{num}
-  %% \exsolution{\Sexpr{resp1}}
-  %% \exname{Q50Term}
-  %% \extol{0.01|}
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp1}}
+%% \exname{Q50Term}
+%% \extol{0.01}

@@ -1,10 +1,9 @@
 <<echo=FALSE, results=hide>>=
 #Programado por: Jmduly
 
- resp1 <- sample(-40)
+ resp1 <- -40
 
- resp2 <- sample(233)
-
+ resp2 <- 233
 
 @
 \usepackage[utf8]{inputenc}
@@ -13,36 +12,32 @@
 
 Existe uma temperatura que tem o mesmo valor na escala Celsius e na escala Fahrenheit. 
 
+  \begin{answerlist}
 
-\\
-\begin{answerlist}
-
-  \item Qual é essa temperatura?
+    \item Qual é essa temperatura?
   
-  \item E qual o valor dessa temperatura na escala Kelvin?
+    \item E qual o valor dessa temperatura na escala Kelvin?
   
-
-\end{answerlist}
+  \end{answerlist}
 
 \end{question}
 
- 
-  %% SOLUTION
-  \begin{solution}:
+%% SOLUTION
+\begin{solution}:
     
     \begin{answerlist}
-  \item
-  \Sexpr{resp1}ºC
+      \item
+        \Sexpr{resp1} °C
   
-  \item
-  \Sexpr{resp2}K
+      \item
+        \Sexpr{resp2}K
   
   \end{answerlist}
-  \end{solution}
+\end{solution}
   
-  %% META-INFORMATION
-  %% \extype{cloze}
-  %% \exclozetype{num|num}
-  %% \exsolution{\Sexpr{resp1}|\Sexpr{resp2}}
-  %% \exname{Q22Term}
-  %% \extol{0.01|0.01}
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{resp1}|\Sexpr{resp2}}
+%% \exname{Q22Term}
+%% \extol{1|1}

@@ -11,35 +11,23 @@
   
 @
   
-  \usepackage[utf8]{inputenc}
+\usepackage[utf8]{inputenc}
   
-  \begin{question}
+\begin{question}
   
-   Qual é o volume ocupado por $\Sexpr{mol1}$ mols de gás perfeito submetido à pressão de $\Sexpr{press1}$ N/m², a uma temperatura igual a $\Sexpr{temp1}$ ºC? Dado: R= 0.082 atm.l / mol.K e 1atm=10000N/m².
+   Qual é o volume ocupado por $\Sexpr{mol1}$ mols de gás perfeito submetido à pressão de $\Sexpr{press1}$ N/m², a uma temperatura igual a $\Sexpr{temp1}$ ºC? Dado: R= 0.082 atm.l / mol.K e 1atm=10000N/m². Qual era a pressão inicial?
 
+\end{question}
   
-  \\
-  \begin{answerlist}
-  
-  \item Qual era a pressão inicial?
-
-  \end{answerlist}
-  
-  \end{question}
-  
-  %% SOLUTION
-  \begin{solution}:
+%% SOLUTION
+\begin{solution}:
     
-    \begin{answerlist}
-  \item
   \Sexpr{resp1}litros
   
-  \end{answerlist}
-  \end{solution}
+\end{solution}
   
-  %% META-INFORMATION
-  %% \extype{cloze}
-  %% \exclozetype{num}
-  %% \exsolution{\Sexpr{resp1}}
-  %% \exname{Q44Term}
-  %% \extol{0.01|}
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp1}}
+%% \exname{Q44Term}
+%% \extol{0.1}

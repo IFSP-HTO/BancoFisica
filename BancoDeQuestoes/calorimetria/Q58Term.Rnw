@@ -9,34 +9,23 @@
 
 @
   
-  \usepackage[utf8]{inputenc}
+\usepackage[utf8]{inputenc}
   
-  \begin{question}
+\begin{question}
   
-  Considere um gás perfeito na temperatura de $\Sexpr{temp1}$ K e a energia interna $\Sexpr{u}$.Dados: R=8,31 J/mol.K.
+Considere um gás perfeito na temperatura de $\Sexpr{temp1}$ K e a energia interna $\Sexpr{u}$.Dados: R=8,31 J/mol.K. Quanto(s) mols há do gás?
 
-  \\
-  \begin{answerlist}
+\end{question}
   
-  \item Quanto(s) mols há do gás?
-
-  \end{answerlist}
-  
-  \end{question}
-  
-  %% SOLUTION
-  \begin{solution}:
+%% SOLUTION
+\begin{solution}:
     
-    \begin{answerlist}
-  \item
   \Sexpr{resp1}mols
   
-  \end{answerlist}
-  \end{solution}
+\end{solution}
   
-  %% META-INFORMATION
-  %% \extype{cloze}
-  %% \exclozetype{num}
-  %% \exsolution{\Sexpr{resp1}}
-  %% \exname{Q58Term}
-  %% \extol{0.01|}
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp1}}
+%% \exname{Q58Term}
+%% \extol{0.01}

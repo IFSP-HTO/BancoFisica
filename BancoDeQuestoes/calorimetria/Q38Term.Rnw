@@ -11,37 +11,23 @@
   
 @
   
-  \usepackage[utf8]{inputenc}
+\usepackage[utf8]{inputenc}
   
-  \begin{question}
+\begin{question}
   
-  Em um recipiente fechado, certa massa de gás ideal ocupa um volume de $\Sexpr{vol1}$ litros a $\Sexpr{temp1}$ K.
+  Em um recipiente fechado, certa massa de gás ideal ocupa um volume de $\Sexpr{vol1}$ litros a $\Sexpr{temp1}$ K. Este gás é aquecido até $\Sexpr{temp2}$ K, sob pressão constante, seu volume será:
 
+\end{question}
   
-  
-  \\
-  \begin{answerlist}
-  
-  \item Este gás é aquecido até $\Sexpr{temp2}$ K, sob pressão constante, seu volume será:
-
-
-  \end{answerlist}
-  
-  \end{question}
-  
-  %% SOLUTION
-  \begin{solution}:
+%% SOLUTION
+\begin{solution}:
     
-    \begin{answerlist}
-  \item
   \Sexpr{resp1}litros
   
-  \end{answerlist}
-  \end{solution}
+\end{solution}
   
-  %% META-INFORMATION
-  %% \extype{cloze}
-  %% \exclozetype{num}
-  %% \exsolution{\Sexpr{resp1}}
-  %% \exname{Q38Term}
-  %% \extol{0.01|}
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp1}}
+%% \exname{Q38Term}
+%% \extol{0.01}

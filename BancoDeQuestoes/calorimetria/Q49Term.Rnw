@@ -11,38 +11,23 @@
   
 @
   
-  \usepackage[utf8]{inputenc}
+\usepackage[utf8]{inputenc}
   
-  \begin{question}
+\begin{question}
   
-   Um gás ideal de volume $\Sexpr{vol1}$ m³ sofre uma transformação, permanecendo sob pressão constante igual a $\Sexpr{press1}$ Pa.
+Um gás ideal de volume $\Sexpr{vol1}$ m³ sofre uma transformação, permanecendo sob pressão constante igual a $\Sexpr{press1}$ Pa. Qual é o volume do gás quando o trabalho realizado por ele for $\Sexpr{trab1}$ kJ?
 
-
-
+\end{question}
   
-  \\
-  \begin{answerlist}
-  
-  \item Qual é o volume do gás quando o trabalho realizado por ele for $\Sexpr{trab1}$ kJ?
-
-  \end{answerlist}
-  
-  \end{question}
-  
-  %% SOLUTION
-  \begin{solution}:
+\begin{solution}:
     
-    \begin{answerlist}
-  \item
   \Sexpr{resp1}m³
   
-  \end{answerlist}
-  \end{solution}
+\end{solution}
   
-  %% META-INFORMATION
-  %% \extype{cloze}
-  %% \exclozetype{num}
-  %% \exsolution{\Sexpr{resp1}}
-  %% \exname{Q49Term}
-  %% \extol{0.01|}
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp1}}
+%% \exname{Q49Term}
+%% \extol{0.01}
 

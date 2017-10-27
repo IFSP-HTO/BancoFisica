@@ -1,48 +1,32 @@
 <<echo=FALSE, results=hide>>=
-#Programado por: Jmduly
+#Programado por: Jmduly - corrigido Marcelo C.
 
-mass1 <- sample(seq(from=2,to=20, by=1))
+mass1 <- sample(seq(from=2,to=20, by=1),1)
 
-temp1 <- sample(seq(from=20, to=40, by=1))
+temp1 <- sample(seq(from=20, to=40, by=1),1)
 
-temp2 <- sample(seq(from=50, to=100, by=1))
+temp2 <- sample(seq(from=50, to=100, by=1),1)
 
-resp1 <- round(mass1*0.12*(temp2-temp1), digits = 1)
+resp1 <- round(mass1*0.12*(temp2-temp1)/1000, digits = 1)
 
 @
 \usepackage[utf8]{inputenc}
 
 \begin{question}
 
-
-João queria aquecer uma barra de ferro de $\Sexpr{mass1}$ kg de $\Sexpr{temp1}$ °C para $\Sexpr{temp2}$ °C? 
-Dado: calor específico do ferro = 0,12 cal/g°C.
- 
-
-\\
-\begin{answerlist}
-
-  \item Qual a quantidade de calor sensível necessária?
+João queria aquecer uma barra de ferro de $\Sexpr{mass1}$ kg de $\Sexpr{temp1}$ °C para $\Sexpr{temp2}$ °C? Qual a quantidade de calor sensível necessária? Dado: calor específico do ferro = $0,12$ cal/g°C. 
   
-
-\end{answerlist}
-
 \end{question}
 
- 
-  %% SOLUTION
-  \begin{solution}:
+%% SOLUTION
+\begin{solution}:
     
-    \begin{answerlist}
-  \item
-  \Sexpr{resp1}cal
+  \Sexpr{resp1} cal
   
-  \end{answerlist}
-  \end{solution}
+\end{solution}
   
-  %% META-INFORMATION
-  %% \extype{cloze}
-  %% \exclozetype{num}
-  %% \exsolution{\Sexpr{resp1}}
-  %% \exname{Q23Term}
-  %% \extol{0.01}
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp1}}
+%% \exname{Q23Term}
+%% \extol{1}

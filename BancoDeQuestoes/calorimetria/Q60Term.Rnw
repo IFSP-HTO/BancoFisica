@@ -9,34 +9,22 @@
 
 @
   
-  \usepackage[utf8]{inputenc}
+\usepackage[utf8]{inputenc}
   
-  \begin{question}
+\begin{question}
   
-  Considere $\Sexpr{vol1}$ m³ de gás ideal sob pressão de $\Sexpr{press1}$ Pa?
+Considere $\Sexpr{vol1}$ m³ de gás ideal sob pressão de $\Sexpr{press1}$ Pa? Qual a energia interna do gás?
 
-  \\
-  \begin{answerlist}
+\end{question}
   
-  \item Qual a energia interna do gás?
-
-  \end{answerlist}
-  
-  \end{question}
-  
-  %% SOLUTION
-  \begin{solution}:
+\begin{solution}:
     
-    \begin{answerlist}
-  \item
   \Sexpr{resp1}J
   
-  \end{answerlist}
-  \end{solution}
+\end{solution}
   
-  %% META-INFORMATION
-  %% \extype{cloze}
-  %% \exclozetype{num}
-  %% \exsolution{\Sexpr{resp1}}
-  %% \exname{Q60Term}
-  %% \extol{0.01|}
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp1}}
+%% \exname{Q60Term}
+%% \extol{0.01|}

@@ -9,34 +9,23 @@
     
 @
   
-  \usepackage[utf8]{inputenc}
+\usepackage[utf8]{inputenc}
   
-  \begin{question}
+\begin{question}
   
-   Uma máquina térmica que retira de uma fonte quente $\Sexpr{q1}$ cal e passa para uma fonte fria $\Sexpr{q2}$ cal.
+Uma máquina térmica que retira de uma fonte quente $\Sexpr{q1}$ cal e passa para uma fonte fria $\Sexpr{q2}$ cal. Qual é o rendimento dessa máquina?
   
-  \\
-  \begin{answerlist}
+\end{question}
   
-  \item Qual é o rendimento dessa máquina?
-
-  \end{answerlist}
-  
-  \end{question}
-  
-  %% SOLUTION
-  \begin{solution}:
+%% SOLUTION
+\begin{solution}:
     
-    \begin{answerlist}
-  \item
   \Sexpr{resp1}
   
-  \end{answerlist}
-  \end{solution}
+\end{solution}
   
-  %% META-INFORMATION
-  %% \extype{cloze}
-  %% \exclozetype{num}
-  %% \exsolution{\Sexpr{resp1}}
-  %% \exname{Q52Term}
-  %% \extol{0.01|}
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp1}}
+%% \exname{Q52Term}
+%% \extol{0.01}

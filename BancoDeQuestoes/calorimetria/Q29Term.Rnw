@@ -13,36 +13,23 @@
   
 @
   
-  \usepackage[utf8]{inputenc}
+\usepackage[utf8]{inputenc}
   
-  \begin{question}
+\begin{question}
   
-  João misturou $\Sexpr{mass1}$ kg de água (calor específico sensível = 1,0 cal/g°C) a $\Sexpr{temp1}$ °C com $\Sexpr{mass2}$ kg de água a $\Sexpr{temp2}$ °C.
+João misturou $\Sexpr{mass1}$ kg de água (calor específico sensível = $1,0$ cal/g°C) a $\Sexpr{temp1}$ °C com $\Sexpr{mass2}$ kg de água a $\Sexpr{temp2}$ °C. Qual será a temperatura final?
 
-
+\end{question}
   
-  \\
-  \begin{answerlist}
+%% SOLUTION
+\begin{solution}:
   
-  \item Qual será a temperatura final?
-
-  \end{answerlist}
+  \Sexpr{resp1} °C
   
-  \end{question}
+\end{solution}
   
-  %% SOLUTION
-  \begin{solution}:
-    
-    \begin{answerlist}
-  \item
-  \Sexpr{resp1}ºC
-  
-  \end{answerlist}
-  \end{solution}
-  
-  %% META-INFORMATION
-  %% \extype{cloze}
-  %% \exclozetype{num}
-  %% \exsolution{\Sexpr{resp1}}
-  %% \exname{Q29Temp}
-  %% \extol{0.01|}
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp1}}
+%% \exname{Q29Temp}
+%% \extol{0.1}
