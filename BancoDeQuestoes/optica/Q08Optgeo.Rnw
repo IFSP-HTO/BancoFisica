@@ -1,0 +1,31 @@
+<<echo=FALSE, results=hide>>=
+#Programado por: Marcelo C.
+
+d <- sample(seq(from=20,to=60,by=1),1)
+h1 <- sample(seq(from=0.5,to=2,by=0.1),1)
+h2 <- sample(seq(from=1,to=4,by=0.1),1)
+
+resp <- round(((0.01*(h1+h2)*d/h1))**2, digits = 2)
+
+@
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+(Cescea-SP) Entre uma fonte pontual e um anteparo, coloca-se um objeto opaco de forma quadrada e de \Sexpr{d} cm de lado. A fonte e o centro da placa estão numa mesma reta  que,  por  sua  vez,  é  perpendicular  ao  anteparo. O objeto encontra-se a \Sexpr{h1} m da fonte e a \Sexpr{h2} m do anteparo. Determine a área da sombra do objeto produzida no anteparo, em $m^2$. \textit{Caso necessário, arrendonde sua resposta para 2 casas decimais}
+
+\end{question}
+
+%% SOLUTION
+\begin{solution}:
+  
+  \Sexpr{resp} m2
+        
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp}}
+%% \exname{Q08Optgeo}
+%% \extol{0.01}

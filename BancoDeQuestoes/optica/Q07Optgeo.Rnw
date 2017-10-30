@@ -17,10 +17,9 @@ f <- "https://raw.githubusercontent.com/mcardinalian/BancoFisica/master/BancoDeQ
 
 (UFRJ) No mundo artístico, as antigas “câmaras escuras” voltaram à moda. Uma câmara escura é uma caixa fechada de paredes opacas que possui um orifício, em uma de suas faces. Na face oposta à do orifício, fica preso um filme fotográfico, onde se formam as imagens dos objetos localizados no exterior da caixa, como mostra a figura.
 
-    \includegraphics[height=4cm]{\Sexpr{f}}
+Suponha que um objeto de $H = \Sexpr{H}$ m de altura esteja a uma distância $D = \Sexpr{D}$ m do orifício, e que a distância entre as faces seja $d =\Sexpr{d}$ cm. Calcule a altura h da imagem em centímetros. \textit{Caso necessário, arrendonde sua resposta para 1 casa decimal}
 
-Suponha que um objeto de $H = \Sexpr{H}$ 3 m de altura esteja a uma distância $D = \Sexpr{D}$ 5 m do orifício, e que a distância entre as faces seja $d =\Sexpr{d}$ 6 cm. Calcule a altura h da imagem em centímetros.
-\textit{Caso necessário, arrendonde sua resposta para 1 casa decimal}
+\includegraphics[height=4cm]{\Sexpr{f}}
 
 \end{question}
 
@@ -35,4 +34,4 @@ Suponha que um objeto de $H = \Sexpr{H}$ 3 m de altura esteja a uma distância $
 %% \extype{num}
 %% \exsolution{\Sexpr{resp}}
 %% \exname{Q07Optgeo}
-%% \extol{1}
+%% \extol{0.1}
