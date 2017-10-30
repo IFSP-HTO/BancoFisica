@@ -1,0 +1,47 @@
+<<echo=FALSE, results=hide>>=
+##PROGRAMADO POR: MARCELO C.
+aleat = sample(1:5)
+
+questions <- numeric(5)
+solutions <- logical(5)
+
+
+
+
+questions[aleat[1]] <- "Um espelho"
+questions[aleat[2]] <- "Qualquer superfície clara"
+questions[aleat[3]] <- "Um fio aquecido ao rubro"
+questions[aleat[4]] <- "Uma lâmpada desligada"
+questions[aleat[5]] <- "Um gato preto"
+
+solutions[aleat[1]] <- FALSE
+solutions[aleat[2]] <- FALSE
+solutions[aleat[3]] <- TRUE
+solutions[aleat[4]] <- FALSE
+solutions[aleat[5]] <- FALSE
+
+@
+\usepackage[utf8]{inputenc}
+\begin{question}
+
+(ITA-SP) Dos seguintes objetos, qual seria visível em uma sala perfeitamente escurecida?
+
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(questions)
+@
+
+\end{question}
+
+\begin{solution}
+
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(
+  paste("\\textbf{", ifelse(solutions, "Verdadeiro", "Falso"), "}"))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q02Optgeo}

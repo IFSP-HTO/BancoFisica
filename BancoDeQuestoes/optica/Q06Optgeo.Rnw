@@ -1,0 +1,29 @@
+<<echo=FALSE, results=hide>>=
+#Programado por: Marcelo C.
+
+H <- sample(seq(from=150,to=300,by=2),1)
+h <- sample(seq(from=1.65,to=1.90,by=0.05),1)
+d <- sample(seq(from=1,to=3,by=0.1),1)
+
+resp <- round(H*d/h, digits = 0)
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+A torre de transmissão de uma rede de televisão nacional  possui  $\Sexpr{H}$ metros  de  altura.  Ela  consumiu  650  toneladas de metal e localiza-se num dos pontos mais altos da cidade de São Paulo. Se, num dia de Sol, ao lado da torre, uma  pessoa  de  $\Sexpr{h}$ metros  de  altura  projetar  uma  sombra  de $\Sexpr{d}$ metros, qual o comprimento da sombra projetada pela torre, no mesmo instante?
+\textit{Caso necessário, arrendonde sua resposta para o número inteiro mais próximo}
+\end{question}
+
+%% SOLUTION
+\begin{solution}:
+  
+  \Sexpr{resp} m
+        
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp}}
+%% \exname{Q06Optgeo}
+%% \extol{1}

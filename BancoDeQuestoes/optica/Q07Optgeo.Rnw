@@ -1,0 +1,38 @@
+<<echo=FALSE, results=hide>>=
+#Programado por: Marcelo C.
+
+H <- sample(seq(from=1.0,to=3.0,by=0.1),1)
+D <- sample(seq(from=2,to=5,by=0.1),1)
+d <- sample(seq(from=5,to=8,by=0.1),1)
+
+resp <- round(H*d/D, digits = 1)
+
+f <- "Q07Optgeo.jpg"
+
+@
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+(UFRJ) No mundo artístico, as antigas “câmaras escuras” voltaram à moda. Uma câmara escura é uma caixa fechada de paredes opacas que possui um orifício, em uma de suas faces. Na face oposta à do orifício, fica preso um filme fotográfico, onde se formam as imagens dos objetos localizados no exterior da caixa, como mostra a figura.
+
+    \includegraphics[height=4cm]{\Sexpr{f}}
+
+Suponha que um objeto de $H = \Sexpr{H}$ 3 m de altura esteja a uma distância $D = \Sexpr{D}$ 5 m do orifício, e que a distância entre as faces seja $d =\Sexpr{d}$ 6 cm. Calcule a altura h da imagem em centímetros.
+\textit{Caso necessário, arrendonde sua resposta para 1 casa decimal}
+
+\end{question}
+
+%% SOLUTION
+\begin{solution}:
+  
+  \Sexpr{resp} cm
+        
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp}}
+%% \exname{Q07Optgeo}
+%% \extol{1}

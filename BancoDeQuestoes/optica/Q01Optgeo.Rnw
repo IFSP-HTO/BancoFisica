@@ -1,0 +1,48 @@
+<<echo=FALSE, results=hide>>=
+##PROGRAMADO POR: MARCELO C.
+aleat = sample(1:5)
+
+questions <- numeric(5)
+solutions <- logical(5)
+
+
+
+
+questions[aleat[1]] <- "a Lua e estrelas."
+questions[aleat[2]] <- "somente a Lua."
+questions[aleat[3]] <- "somente estrelas."
+questions[aleat[4]] <- "uma completa escuridão."
+questions[aleat[5]] <- "somente os planetas do sistema solar.
+"
+
+solutions[aleat[1]] <- TRUE
+solutions[aleat[2]] <- FALSE
+solutions[aleat[3]] <- FALSE
+solutions[aleat[4]] <- FALSE
+solutions[aleat[5]] <- FALSE
+
+@
+\usepackage[utf8]{inputenc}
+\begin{question}
+
+Admita que o sol subitamente "morresse", ou seja, sua luz deixasse de ser emitida. 24 horas após este evento, um eventual sobrevivente, olhando para o céu, sem nuvens, veria: 
+
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(questions)
+@
+
+\end{question}
+
+\begin{solution}
+
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(
+  paste("\\textbf{", ifelse(solutions, "Verdadeiro", "Falso"), "}"))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q01Optgeo}

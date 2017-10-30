@@ -1,0 +1,44 @@
+<<echo=FALSE, results=hide>>=
+##PROGRAMADO POR: MARCELO C.
+
+aleat = sample(1:5)
+questions <- numeric(5)
+solutions <- logical(5)
+
+questions[aleat[1]] <- "os feixes se anulam."
+questions[aleat[2]] <- "os feixes continuam a se propagar sem que um afete a trajetória do outro."
+questions[aleat[3]] <- "as velocidades dos feixes são aumentadas."
+questions[aleat[4]] <- "as velocidades dos feixes são diminuídas."
+questions[aleat[5]] <- "os feixes só se anulam se forem da mesma cor."
+
+solutions[aleat[1]] <- FALSE
+solutions[aleat[2]] <- TRUE
+solutions[aleat[3]] <- FALSE
+solutions[aleat[4]] <- FALSE
+solutions[aleat[5]] <- FALSE
+
+@
+\usepackage[utf8]{inputenc}
+\begin{question}
+
+Em uma festa de casamento, dois canhões de luz operam normalmente. Em determinado momento, os dois feixes de luz se interceptam. Após o cruzamento dos feixes, é correto afirmar que:
+
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(questions)
+@
+
+\end{question}
+
+\begin{solution}
+
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(
+  paste("\\textbf{", ifelse(solutions, "Verdadeiro", "Falso"), "}"))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q05Optgeo}
