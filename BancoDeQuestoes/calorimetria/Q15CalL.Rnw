@@ -14,7 +14,7 @@ f <- "https://raw.githubusercontent.com/mcardinalian/BancoFisica/master/BancoDeQ
  
 O gráfico representa a temperatura de uma amostra de massa \Sexpr{m} gramas de determinado metal, inicialmente sólido, em função da quantidade de calor por ela absorvida. Determine o calor latente de fusão desse metal, em cal/g. \textit{Arredonde sua resposta para 1 casa decimal.}
 
-\includegraphics[height=10cm]{\Sexpr{f}}
+\includegraphics[height=10cm]{'figuras/Q15CalL.jpg'}
 
 \end{question}
 
