@@ -1,0 +1,56 @@
+<<echo=FALSE, results=hide>>=
+##Programado por:Matheus V
+
+##gera questoes
+v1 <- sample(seq(from=20,to=40,by=5),1)
+v2 <- (v1 - 15)
+
+resp <- v1*v2
+
+aleat <- sample(1:5)
+questions <- numeric(5)
+solutions <- logical(5)
+
+  questions[aleat[1]] <- resp
+  solutions[aleat[1]] <- TRUE
+  
+  questions[aleat[2]] <- resp-50
+  solutions[aleat[2]] <- FALSE
+  
+  questions[aleat[3]] <- resp-30
+  solutions[aleat[3]] <- FALSE
+  
+  questions[aleat[4]] <- resp+20
+  solutions[aleat[4]] <- FALSE
+  
+  questions[aleat[5]] <- resp+50
+  solutions[aleat[5]] <- FALSE
+@
+
+
+\begin{question}
+ (Unitau) Uma motocicleta com velocidade
+constante de \sexpr{v1} ultrapassa um trem de
+comprimento 100m e velocidade \sexpr{v2}. O
+deslocamento da motocicleta durante a
+ultrapassagem:
+
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(questions)
+@
+
+\end{question}
+
+
+\begin{solution}
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(
+  paste("\\textbf{", ifelse(solutions, "Verdadeiro", "Falso"), "}"))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q10}
