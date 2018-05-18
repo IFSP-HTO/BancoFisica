@@ -51,4 +51,4 @@ answerlist(
 %% META-INFORMATION
 %% \extype{schoice}
 %% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
-%% \exname{Q11}
+%% \exname{Q11QuizVelm}

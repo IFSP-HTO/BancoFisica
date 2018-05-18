@@ -30,8 +30,8 @@ solutions <- logical(5)
 
 \begin{question}
  (Unitau) Uma motocicleta com velocidade
-constante de \sexpr{v1} ultrapassa um trem de
-comprimento 100m e velocidade \sexpr{v2}. A duraç\~ao
+constante de \Sexpr{v1} ultrapassa um trem de
+comprimento 100m e velocidade \Sexpr{v1}. A duraç\~ao
 da ultrapassagem é:
 
 <<echo=FALSE, results=hide, results=tex>>=
@@ -52,4 +52,4 @@ answerlist(
 %% META-INFORMATION
 %% \extype{schoice}
 %% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
-%% \exname{Q9}
+%% \exname{Q9QuizVelm}

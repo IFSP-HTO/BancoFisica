@@ -39,7 +39,7 @@ via paralela no sentido sul-norte com velocidade de
 72km/H. Considere o instante t = 0, aquele que os
 trens est\~ao com as frentes na mesma posiç\~ao. O
 tempo que o segundo trem leva para ultrapassar
-totalmente o primeiro é de \sexpr{t}s. O comprimento do
+totalmente o primeiro é de \Sexpr{t}s. O comprimento do
 segundo trem \'e:
 
 
@@ -63,4 +63,4 @@ answerlist(
 %% META-INFORMATION
 %% \extype{schoice}
 %% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
-%% \exname{Q8}
+%% \exname{Q8QuizVelm}
