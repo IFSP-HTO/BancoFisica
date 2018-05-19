@@ -1,0 +1,50 @@
+<<echo=FALSE, results=hide>>=
+
+p <- sample(seq(from=9,to=15,by=1),1)
+t <- sample(seq(from=1,to=9,by=1),1)
+respa <- t/10e11
+respb <- 2e-3*t
+
+
+
+@
+\usepackage[portuguese]{babel}
+
+\begin{question}
+ 
+     (Unicamp) Pesquisas atuais no campo das
+  comunicaç\~oes indicam que as "infovias" (sistemas
+  de comunicaç\~oes entre redes de computadores
+  como a INTERNET, por exemplo) ser\~ao capazes de
+  enviar informaç\~ao atrav\'es de pulsos luminosos
+  transmitidos por fibras \'opticas com a frequ\^encia de
+  10¢¢pulsos em \sexpr{t}segundo. Na fibra \^optica a luz se
+  propaga com velocidade de 2x10©m/s.
+
+  \begin{answerlist}
+
+    \item Qual o intervalo de tempo entre dois pulsos de
+    luz consecutivos?
+  
+    \item Qual a distância (em metros) entre dois pulsos?
+
+  \end{answerlist}
+
+\end{question}
+
+\begin{solution}
+  
+  \begin{answerlist}
+  
+      \item \Sexpr{respa} s
+      \item \Sexpr{respb} m/s
+  
+  \end{answerlist}
+  
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp}}
+%% \exname{Q10Velm}
+%% \extol{0.1}
