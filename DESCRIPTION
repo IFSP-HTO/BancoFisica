@@ -1,0 +1,9 @@
+Package: BancoFisica
+Title: BancoFisica
+Version: 0.0.0.1
+Authors@R: person("Flavio", "Barros", email = "flavio.barros@ifsp.edu.br", role = c("aut", "cre"))
+Description: Repositório com questões de física criadas com o pacote exams.
+Depends: R (>= 3.4.4)
+License: MIT
+Encoding: UTF-8
+LazyData: true
