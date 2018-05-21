@@ -20,7 +20,6 @@ jobs:
             - "/usr/local/lib/R/site-library"
       - run:
           command: |
-            R -e 'devtools::check()'
       - store_artifacts:
           path: man/
           destination: man
