@@ -1,0 +1,27 @@
+<<echo=FALSE, results=hide>>=
+##MARCELO C.
+
+dt <- sample(seq(from=5,to=59,by=1),1)
+
+resp <- round(10/(dt/60),1)
+@
+
+\begin{question}
+
+Um carro percorre uma dist\^ancia de 10 km durante $\Sexpr{dt}$ min. Determine a velocidade m\'edia do carro em km/h. Arredonde sua resposta final para 1 decimal (utilize maior precis\~ao
+nos passos intermedi\'arios).
+
+\end{question}
+
+%% SOLUTION
+\begin{solution}:
+
+  \Sexpr{resp} km/h
+  
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp}}
+%% \exname{Q03Velm}
+%% \extol{0.02}

@@ -1,0 +1,44 @@
+<<echo=FALSE, results=hide>>=
+##PROGRAMADO POR: CARLOS SANTANA, em 14 de Maio de 2017.
+##FONTE: Fuvest
+
+vA <- sample(seq(from=80,to=180,by=5),1)
+vB <- sample(seq(from=80,to=180,by=5),1)
+dist <- sample(seq(from=100,to=900,by=10), 1)
+
+respa <- abs(vA-vB)
+respb <- ((dist/1000)*abs(vA-vB))
+
+@
+
+\begin{question}
+
+(Fuvest) Dois carros, A e B, movem-se no mesmo sentido, em uma estrada reta, com velocidades constantes Va=\Sexpr{vA}km/h e Vb=\Sexpr{vB }/h, respectivamente.
+\begin{answerlist}
+
+\item Qual é, em módulo, a velocidade do carro B em relação a um observador no carro A?
+
+\item Em um dado instante, o carro B está \Sexpr{dist}m à frente do carro A. Quanto tempo, em horas(decimais), decorre até que A alcance B?
+\end{answerlist}
+
+
+\end{question}
+
+%% SOLUTION
+\begin{solution}:
+
+\begin{answerlist}
+
+    \item \Sexpr{respa} km/h
+    \item \Sexpr{respb} 
+
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{respa}|\Sexpr{respb}}
+%% \exname{Q012Velm}
+%% \extol{0|0.1}
