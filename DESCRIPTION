@@ -6,7 +6,10 @@ Description: Repositório com questões de física criadas com o pacote exams.
 Depends: R (>= 3.4.4)
 Imports:
     tools (>= 3.4.4),
-    exams (>= 2.3.1)
+    exams (>= 2.3.1),
+    stringr (>= 1.3.0),
+    magrittr (>= 1.5),
+    purrr (>= 0.2.4)
 License: MIT
 Encoding: UTF-8
 LazyData: true
