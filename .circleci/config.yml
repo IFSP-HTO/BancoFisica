@@ -20,7 +20,7 @@ jobs:
             - "/usr/local/lib/R/site-library"
       - run:
           command: |
-            R -e 'source("..R/check_encoding.R")'
+            R -e 'source("R/check_encoding.R")'
       - store_artifacts:
           path: man/
           destination: man
