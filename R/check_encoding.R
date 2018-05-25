@@ -1,3 +1,8 @@
+## Pacotes necessários
+library(magrittr)
+library(stringr)
+
+## Funções de teste
 check_encoding <- function() {
   
   ## Pega todos os arquivos de questões
@@ -24,4 +29,6 @@ check_encoding <- function() {
   ## Testando o encoding
   if (length(ind_n_utf8) > 0 ) stop(erro)
 }
+
+## Rodando as funções de teste
 check_encoding()
