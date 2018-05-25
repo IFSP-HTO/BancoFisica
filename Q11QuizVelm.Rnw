@@ -1,0 +1,54 @@
+<<echo=FALSE, results=hide>>=
+##Programado por:Matheus V
+
+##gera questoes
+dist <- sample(seq(from=20,to=80,by=20),1)
+
+resp <- (dist/80)
+
+aleat <- sample(1:5)
+questions <- numeric(5)
+solutions <- logical(5)
+
+  questions[aleat[1]] <- resp+0.5
+  solutions[aleat[1]] <- FALSE
+  
+  questions[aleat[2]] <- resp+0.2
+  solutions[aleat[2]] <- FALSE
+  
+  questions[aleat[3]] <- resp-0.2
+  solutions[aleat[3]] <- FALSE
+  
+  questions[aleat[4]] <- resp
+  solutions[aleat[4]] <- TRUE
+  
+  questions[aleat[5]] <- resp-0.1
+  solutions[aleat[5]] <- FALSE
+@
+
+
+\begin{question}
+  (Unitau) Um autom\'ovel percorre uma estrada
+com funÃ§\~ao hor\'aria s=-\Sexpr{dist}+80t, onde s \'e dado em
+km e t em horas. O automÃ³vel passa pelo km zero
+ap\'os:
+
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(questions)           
+@
+
+\end{question}
+
+
+\begin{solution}
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(
+  paste("\\textbf{", ifelse(solutions, "Verdadeiro", "Falso"), "}"))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q11QuizVelm}
