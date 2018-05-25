@@ -14,7 +14,7 @@ esp <- round(lucro*probluc-preju*(1-probluc),2)
 
 #f <- "http://designyoutrust.com/wp-content/uploads/2013/12/amazon-prime-air-drone-hunt-650x359.png"
 
-f <- "https://pbs.twimg.com/media/BaeY7Z-CUAAmHkT.png"
+f <- 'figuras/Q15CalL.pdf'
 
 @
 \usepackage{graphicx}

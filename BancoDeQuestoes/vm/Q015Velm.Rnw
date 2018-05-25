@@ -1,0 +1,32 @@
+<<echo=FALSE, results=hide>>=
+##PROGRAMADO POR: CARLOS SANTANA, em 15 de Maio de 2017.
+##FONTE: Ufpe
+
+f <- "https://i.imgur.com/QXDWpmQ.png"
+v <- sample(seq(from=0.5,to=6,by=0.1),1)
+d <- sample(seq(from=1,to=4,by=0.1),1)
+a <- sample(seq(from=30,to=60,by=15),1)
+
+resp <- abs(round(d*(sin(a)*v)*10,2))
+@
+
+\begin{question}
+
+(Ufpe) Uma pessoa atravessa uma piscina de \Sexpr{d}m de largura, nadando com uma velocidade de módulo \Sexpr{v}m/s em uma direção que faz um ângulo de \Sexpr{a}° com a normal. Quantos décimos de segundos levará o nadador para alcançar a outra margem?
+
+Arredonde para duas casas decimais.
+\includegraphics[height=4cm]{f}
+\end{question}
+
+%% SOLUTION
+\begin{solution}:
+
+  \Sexpr{resp} ds
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp}}
+%% \exname{Q015Velm}
+%% \extol{0.1}

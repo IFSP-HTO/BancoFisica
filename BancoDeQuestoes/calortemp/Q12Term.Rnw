@@ -2,7 +2,7 @@
 
 # Created by vinibrenobr11 on 24/07/2017
 
-# Define o valor que o terometro em Celsius estará marcando
+# Define o valor que o terometro em Celsius estar? marcando
 celsius_temp <- sample(seq(from=0, to=50, by=1), 1)
 
 # Define o resultado final, marcado em Kelvin
