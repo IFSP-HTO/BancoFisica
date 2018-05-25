@@ -24,3 +24,4 @@ check_encoding <- function() {
   ## Testando o encoding
   if (length(ind_n_utf8) > 0 ) stop(erro)
 }
+check_encoding()
