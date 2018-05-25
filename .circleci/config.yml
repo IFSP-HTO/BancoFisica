@@ -21,6 +21,7 @@ jobs:
       - run:
           command: |
             R -e 'source("R/check_encoding.R")'
+            R -e 'check_encoding()'
       - store_artifacts:
           path: man/
           destination: man
