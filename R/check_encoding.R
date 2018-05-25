@@ -1,8 +1,10 @@
 ## Pacotes necessários
 library(magrittr)
 library(stringr)
+library(exams)
+library(purrr)
 
-## Funções de teste
+## Checa o encoding
 check_encoding <- function() {
   
   ## Pega todos os arquivos de questões
@@ -21,7 +23,7 @@ check_encoding <- function() {
   colnames(arquivos) <- c('arquivo', 'encoding')
   
   ## Encontrando as linhas com erros
-  ind_n_utf8 <- which(arquivos$encoding != 'utf-8')
+  ind_n_utf8 <- which(arquivos$encoding != 'utf-8' & arquivos$encoding != 'us-ascii')
   
   ## Erro reportado
   erro <- paste("NOT UTF-8:", arquivos$arquivo[ind_n_utf8], '\n')
@@ -30,5 +32,36 @@ check_encoding <- function() {
   if (length(ind_n_utf8) > 0 ) stop(erro)
 }
 
+## Verifica a compilação para XML
+generate_xml <- function() {
+  
+  ## Pega todos os arquivos de questões
+  arquivos <- data.frame(file = dir(pattern = '*.Rnw',recursive = T))
+  arquivos$status <- rep('', nrow(arquivos))
+  
+  ## Envelopando a função exams2moodle
+  exams2moodle <- possibly(.f = exams2moodle, otherwise = NA)
+  
+  ## Para cada arquivo descobre o encoding
+  for (i in 1:length(arquivos)) {
+    
+    ## Rodando a função em cada arquivo
+    arquivos$status[i] <- exams2moodle(arquivos$file[90], n = 1, rule="none", schoice = list(shuffle = TRUE), name = paste0("exemplos-",ano),
+                 encoding = "UTF-8",
+                 dir = tempdir(),
+                 edir = tempdir())
+  }
+  
+  ## Encontrando as linhas com erros
+  ind_xml <- which(is.na(arquivos$status))
+  
+  ## Erro reportado
+  erro <- paste("NÃO COMPILA PARA XML:", arquivos$file[ind_xml], '\n')
+  
+  ## Testando a compilação
+  if (length(ind_xml) > 0 ) stop(erro)
+}
+
 ## Rodando as funções de teste
 check_encoding()
+generate_xml()
