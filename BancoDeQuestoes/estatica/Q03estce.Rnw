@@ -20,8 +20,8 @@ respb <- m*10
 %% Supply a solution here!
 
 \begin{answerlist}
-  \item \Sexpr{respa}
-  \item \Sexpr{respb}
+  \item \Sexpr{respa} kg
+  \item \Sexpr{respb} N
 \end{answerlist}
 \end{solution}
 
@@ -29,5 +29,5 @@ respb <- m*10
 %% \extype{cloze}
 %% \exsolution{\Sexpr{respa}|\Sexpr{respb}}
 %% \exclozetype{num|num}
-%% \exname{Q0estce}
+%% \exname{Q03estce}
 %% \extol{0.1|0.1}

@@ -280,11 +280,11 @@ exams2html(myexam, n = 1,solution=TRUE,
 
 ################## estatica corpo extenso ####################
 ## Definindo a pasta com as questoes do exame
-myexam <- dir("./BancoDeQuestoes/estaticace/", pattern = ".rnw", ignore.case=TRUE)
+myexam <- dir("./BancoDeQuestoes/estatica/", pattern = ".rnw", ignore.case=TRUE)
 
 ## Gerando HTML com o arquivo da questao
 set.seed(12017)
 exams2html(myexam, n = 1,solution=TRUE,
            encoding = "UTF-8",
-           edir = "./BancoDeQuestoes/estaticace",
+           edir = "./BancoDeQuestoes/estatica",
            template = "templates/plain.html")

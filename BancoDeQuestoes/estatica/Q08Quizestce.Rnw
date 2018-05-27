@@ -1,0 +1,58 @@
+<<echo=FALSE, results=hide>>=
+##Programado por: Marcelo C.
+include_supplement("Q08Quizestce.jpg")
+
+questions <- character(5)
+solutions <- logical(5)
+explanations <- character(5)
+aleat = sample(1:5)
+
+questions[aleat[1]] <-"A porta estaria girando no sentido de ser fechada."  
+solutions[aleat[1]] <- FALSE
+explanations[aleat[1]] <- ""
+  
+  questions[aleat[2]] <- "A porta estaria girando no sentido de ser aberta."
+  solutions[aleat[2]] <- TRUE
+  explanations[aleat[2]] <- ""
+  
+  questions[aleat[3]] <- "A porta não gira em nenhum sentido."
+  solutions[aleat[3]] <- FALSE
+  explanations[aleat[3]] <- ""
+  
+  questions[aleat[4]] <- "o valor do momento aplicado à porta pelo homem é maior que o valor do momento aplicado pelo menino."
+  solutions[aleat[4]] <- FALSE
+  explanations[aleat[4]] <- ""
+  
+  questions[aleat[5]] <- "A porta estaria girando no sentido de ser fechada, pois a massa do homem é maior que a massa do menino."
+  solutions[aleat[5]] <- FALSE
+  explanations[aleat[5]] <- ""
+
+@
+
+\begin{question}
+(UFRJ) Na figura abaixo, suponha que o menino esteja empurrando a porta com uma força $F_m = 5 N$, atuando a uma distância de $2 m$ das dobradiças (eixo de rotação), e que o homem exerça uma força $F_h = 80 N$, a uma distância de $10 cm$ do eixo de rotação. Nestas condições, pode-se afirmar que:
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[scale=0.7]{{Q08Quizestce.jpg}}
+\end{figure}
+
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(questions)
+@
+
+\end{question}
+
+
+\begin{solution}
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(
+  paste("\\textbf{", ifelse(solutions, "Verdadeiro", "Falso"), "}"))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q08Quizestce}

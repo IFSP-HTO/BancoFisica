@@ -4,8 +4,8 @@ include_supplement("Q05estce.jpg")
 
 mb <- sample(seq(from=2,to=10,by=0.5),1)
 mcaixa <- sample(seq(from=10,to=40,by=0.5),1)
-respa <- (mb+mcaixa)*10-respa
 respb <- (0.5*mb+0.8*mcaixa)*10
+respa <- (mb+mcaixa)*10-respb
 @
 \usepackage{graphicx}
 \usepackage[portuguese]{babel}
@@ -20,7 +20,7 @@ respb <- (0.5*mb+0.8*mcaixa)*10
   \includegraphics[scale=0.7]{{Q05estce.jpg}}
 \end{figure}
 
-Considerando a aceleração da gravidade igual a $10 m/s^2$, determine: 
+Considerando a aceleração da gravidade igual a $10 m/s^2$ e considerando até uma casa decimal em sua resposta, determine: 
 
 \begin{answerlist}
   \item Qual o módulo da força que o apoio exerce sobre a barra em A? 

@@ -266,7 +266,7 @@ myexam <- dir("./BancoDeQuestoes/estatica", pattern = ".rnw", ignore.case=TRUE)
 ano <- 22017
 ## Cria o arquivo .xml para entrada no moodle
 set.seed(ano)
-exams2moodle(myexam, n = 2, rule="none", schoice = list(shuffle = TRUE), name = paste0("estaticace-",ano),
+exams2moodle(myexam, n = 100, rule="none", schoice = list(shuffle = TRUE), name = paste0("estaticace-",ano),
              encoding = "UTF-8",
              dir = "./Moodle",
              edir = "./BancoDeQuestoes/estatica")
