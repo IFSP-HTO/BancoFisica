@@ -1,0 +1,51 @@
+<<echo=FALSE, results=hide>>=
+#Marcelo C.
+include_supplement("Q05estce.jpg")
+
+mb <- sample(seq(from=2,to=10,by=0.5),1)
+mcaixa <- sample(seq(from=10,to=40,by=0.5),1)
+respa <- (mb+mcaixa)*10-respa
+respb <- (0.5*mb+0.8*mcaixa)*10
+@
+\usepackage{graphicx}
+\usepackage[portuguese]{babel}
+
+
+\begin{question}
+
+(UFRGS-adapt.) Uma barra homogênea de massa \Sexpr{mb} kg está apoiada nos seus extremos A e B, distanciados de 1,0 m. A 20 cm da extremidade B foi colocado um bloco de massa m igual \Sexpr{mcaixa} kg. 
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[scale=0.7]{{Q05estce.jpg}}
+\end{figure}
+
+Considerando a aceleração da gravidade igual a $10 m/s^2$, determine: 
+
+\begin{answerlist}
+  \item Qual o módulo da força que o apoio exerce sobre a barra em A? 
+
+  \item Qual o módulo da força que o apoio exerce sobre a barra em B?
+
+\end{answerlist}
+
+\end{question}
+
+
+\begin{solution}
+%% Supply a solution here!
+  \begin{answerlist}
+    \item \Sexpr{respa} N
+
+    \item \Sexpr{respb} N
+
+  \end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{\Sexpr{respa}|\Sexpr{respb}}
+%% \exclozetype{num|num}
+%% \exname{Q05estce}
+%% \extol{0.1}

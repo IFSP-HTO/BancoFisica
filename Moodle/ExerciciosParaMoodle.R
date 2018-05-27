@@ -260,6 +260,15 @@ exams2moodle(myexam, n = 100, rule="none", schoice = list(shuffle = TRUE), name 
              dir = "./Moodle",
              edir = "./BancoDeQuestoes/vm")
 
-
+############### estatica do corpo extenso ##################
+## Definindo a pasta com as questoes do exame
+myexam <- dir("./BancoDeQuestoes/estaticace", pattern = ".rnw", ignore.case=TRUE)
+ano <- 22017
+## Cria o arquivo .xml para entrada no moodle
+set.seed(ano)
+exams2moodle(myexam, n = 2, rule="none", schoice = list(shuffle = TRUE), name = paste0("estaticace-",ano),
+             encoding = "UTF-8",
+             dir = "./Moodle",
+             edir = "./BancoDeQuestoes/estaticace")
 
 
