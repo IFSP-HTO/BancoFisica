@@ -1,0 +1,52 @@
+<<echo=FALSE, results=hide>>=
+#Marcelo C.
+include_supplement("Q07estce.jpg")
+
+Fa <- sample(seq(from=1,to=200,by=1),1)
+respa <- Fa*0.2
+respb <- Fa*0.1
+respc <- Fa*0.08
+respd <- Fa*0.08
+respe <- Fa*0.08
+@
+\usepackage{graphicx}
+\usepackage[portuguese]{babel}
+
+\begin{question}
+
+Calcule o momento aplicado pela força $F$, em $N.m$, nas barras com relação ao eixo de rotação O em cada um dos ítens. Considere a força $F = \Sexpr{Fa} N$.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[scale=0.7]{{Q07estce.jpg}}
+\end{figure}
+
+\begin{answerlist}
+  \item
+  \item
+  \item
+  \item
+  \item
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+%% Supply a solution here!
+  \begin{answerlist}
+    \item \Sexpr{respa} Nm
+    \item \Sexpr{respb} Nm
+    \item \Sexpr{respc} Nm
+    \item \Sexpr{respd} Nm
+    \item \Sexpr{respe} Nm
+    
+  \end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze} 
+%% \exsolution{\Sexpr{respa}|\Sexpr{respb}|\Sexpr{respc}|\Sexpr{respd}|\Sexpr{respe}}
+%% \exclozetype{num|num|num|num|num}
+%% \exname{Q07estce}
+%% \extol{0.01|0.01|0.01|0.01|0.01}
