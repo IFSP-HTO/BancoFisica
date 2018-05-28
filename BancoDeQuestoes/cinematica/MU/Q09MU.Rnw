@@ -24,7 +24,7 @@ Um trem parte de uma cidade A em dire\c{c}\~ao a uma cidade B, distante $\Sexpr{
   \item O tempo gasto pelo trem no percurso de B at\'e C.
 
   \item A velocidade escalar m\'edia do trem no percurso de A at\'e C. 
-  
+
 \end{answerlist}
 
 \end{question}

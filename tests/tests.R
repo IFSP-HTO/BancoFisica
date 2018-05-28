@@ -42,11 +42,14 @@ generate_xml <- function() {
   ## Envelopando a função exams2moodle
   exams2moodle <- possibly(.f = exams2moodle, otherwise = NA)
   
+  ## Ano corrente
+  ano = 2018
+  
   ## Para cada arquivo descobre o encoding
-  for (i in 1:length(arquivos)) {
+  for (i in 1:nrow(arquivos)) {
     
     ## Rodando a função em cada arquivo
-    arquivos$status[i] <- exams2moodle(arquivos$file[90], n = 1, rule="none", schoice = list(shuffle = TRUE), name = paste0("exemplos-",ano),
+    arquivos$status[i] <- exams2moodle(as.character(arquivos$file[i]), n = 1, rule="none", schoice = list(shuffle = TRUE), name = paste0("exemplos-",ano),
                  encoding = "UTF-8",
                  dir = tempdir(),
                  edir = tempdir())
@@ -62,6 +65,37 @@ generate_xml <- function() {
   if (length(ind_xml) > 0 ) stop(erro)
 }
 
+## Verifica a compilação para pdf
+generate_pdf <- function() {
+  
+  ## Pega todos os arquivos de questões
+  arquivos <- data.frame(file = dir(pattern = '*.Rnw',recursive = T))
+  arquivos$status <- rep('', nrow(arquivos))
+  
+  ## Envelopando a função exams2moodle
+  exams2pdf <- possibly(.f = exams2pdf, otherwise = NA)
+  
+  ## Para cada arquivo roda a compilação para pdf
+  for (i in 1:nrow(arquivos)) {
+    
+    ## Rodando a função em cada arquivo
+    arquivos$status[i] <- exams2pdf(arquivos$file[i], n = 1, rule="none", schoice = list(shuffle = TRUE), name = paste0("exemplos-",ano),
+                                       encoding = "UTF-8",
+                                       dir = tempdir(),
+                                       edir = tempdir())
+  }
+  
+  ## Encontrando as linhas com erros
+  ind_pdf <- which(is.na(arquivos$status))
+  
+  ## Erro reportado
+  erro <- paste("NÃO COMPILA PARA PDF:", arquivos$file[ind_pdf], '\n')
+  
+  ## Testando a compilação
+  if (length(ind_pdf) > 0 ) stop(erro)
+}
+
 ## Rodando as funções de teste
 check_encoding()
 generate_xml()
+generate_pdf()

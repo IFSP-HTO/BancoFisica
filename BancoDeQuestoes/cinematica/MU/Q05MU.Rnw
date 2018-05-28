@@ -36,7 +36,7 @@ $\Sexpr{d1}$ km iniciais, devido \`as boas condi\c{c}\~oes da estrada, o motoris
 
   \begin{tabular}{l|c|c|c|}
     \hline
-    ##ANSWER1## horas & ##ANSWER2## & minutos & ##ANSWER3## & segundos \\
+    ##ANSWER1## horas & ##ANSWER2## & minutos & ##ANSWER3##  segundos \\
     \hline
   \end{tabular}
 
