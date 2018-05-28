@@ -11,8 +11,6 @@ dt <- d1+d2
 respa <- round(d1/v1,2)
 respb <- round(d2/v2,2)
 respc <- round(dt/(respa+respb+1),2)
-
-include_supplement(file = 'antena.jpg', dir = '~/Imagens/')
 @
 \begin{question}
 Um trem parte de uma cidade A em dire\c{c}\~ao a uma cidade B, distante $\Sexpr{d1}$km, com velocidade escalar constante de $\Sexpr{v1}$km/h. Ao atingir a cidade B, permanece ali por 1 hora. Parte ent\~ao para uma cidade C, distante $\Sexpr{d2}$km de B, com velocidade escalar constante de $\Sexpr{v2}$km/h. Determine:
@@ -27,7 +25,6 @@ Um trem parte de uma cidade A em dire\c{c}\~ao a uma cidade B, distante $\Sexpr{
 
   \item A velocidade escalar m\'edia do trem no percurso de A at\'e C. 
 
-\includegraphics{antena.jpg} 
 \end{answerlist}
 
 \end{question}
