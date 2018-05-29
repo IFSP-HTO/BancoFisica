@@ -5,8 +5,8 @@ include_supplement("Q06estce.jpg")
 P <- sample(seq(from=10,to=13,by=0.1),1)
 Th <- sample(seq(from=3,to=6,by=0.1),1)
 Tab <- sample(seq(from=1,to=9,by=0.1),1)
-respa <- sqrt((P/4)^2+(Th)^2)
-respb <- Tab*sqrt(2)/2
+respa <- round(sqrt((P/4)^2+(Th)^2),2)
+respb <- round(Tab*sqrt(2)/2,2)
 @
 \usepackage{graphicx}
 \usepackage[portuguese]{babel}

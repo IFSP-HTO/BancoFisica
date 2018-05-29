@@ -1,7 +1,7 @@
 <<echo=FALSE, results=hide>>=
 ## Marcelo C.
 
-m <- sample(seq(from=4,to=30,by=0.5),1)
+m <- sample(seq(from=20,to=80,by=1),1)
 resp = 18*m
 include_supplement("Q14estce.jpg")
 

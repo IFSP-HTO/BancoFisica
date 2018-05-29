@@ -1,0 +1,37 @@
+<<echo=FALSE, results=hide>>=
+## Marcelo C.
+
+Flim <- sample(seq(from=25,to=100,by=1),1)
+l <- sample(seq(from=20,to=80,by=1),1)
+P <- sample(seq(from=10,to=1.5*flim,by=1),1)
+resp = round(l*P/(2*Flim),2)
+
+include_supplement("Q15estce.jpg")
+
+@
+\usepackage[portuguese]{babel}
+\usepackage{graphicx}
+
+\begin{question}
+
+(Cesgranrio-adapt.) Um fio, cujo limite de resistência é de $\Sexpr{Flim} N$, é utilizado para manter em equilíbrio, na posição horizontal, uma haste de metal, homogênea, de comprimento $AB = \Sexpr{l} cm$ e $peso = \Sexpr{P} N$.
+A barra é fixa em A, numa parede, através de uma articulação, conforme indica a figura a seguir. Determine a menor distância $x$, em $cm$, para a qual o fio manterá a haste em equilíbrio. Caso necessário, arredonde sua resposta para 1 casa decimal.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[scale=0.7]{{Q15estce.jpg}}
+\end{figure}
+
+\end{question}
+
+\begin{solution}
+%% Supply a solution here!
+  \Sexpr{resp} cm
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp}}
+%% \exname{Q15estce}
+%% \extol{0.1}

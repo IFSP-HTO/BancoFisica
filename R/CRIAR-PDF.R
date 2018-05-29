@@ -325,7 +325,7 @@ exams2pdf(myexam, n = 1,
 
 ################## estatica do corpo extenso ####################
 ## Definindo a pasta com as questoes do exame
-assunto = "estaticace"
+assunto = "estatica"
 myexam <- dir(paste0("./BancoDeQuestoes/",assunto), pattern = ".rnw", ignore.case=TRUE)
 ## Gerando HTML com o arquivo da questao
 set.seed(12018)
