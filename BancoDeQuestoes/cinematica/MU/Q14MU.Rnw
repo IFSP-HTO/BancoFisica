@@ -22,8 +22,16 @@ outra margem?
 \end{question}
 
 \begin{solution}
-%% Supply a solution here!
-\Sexpr{resp}
+
+Seja a largura $L$, o ângulo $\theta$ e a velocidade $v$. Inicialmente obtemos a componente x da velocidade:
+
+$v_x = v \cdot cos(\theta)$
+
+tal que 
+
+$v_x = \frac{L}{\Delta t} \rightarrow \Delta t = \frac{L}{v_x} = \Sexpr{resp}$
+
+
 \end{solution}
 
 %% META-INFORMATION
