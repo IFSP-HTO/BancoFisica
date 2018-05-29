@@ -1,0 +1,80 @@
+<<echo=FALSE, results=hide>>=
+##PROGRAMADO POR: CARLOS SANTANA, em 15 de Maio de 2017.
+##FONTE: Unicamp (Adaptada)
+
+f <- "https://i.imgur.com/qkFAFUr.png"
+
+questions <- solutions <- explanations <- rep("", 8)
+type <- rep(c("num"), 8)
+
+questions[1] <- ""
+solutions[1] <- explanations[1] <- 2.4
+type[1] <- "num"
+    
+questions[2] <- ""
+solutions[2] <- explanations[2] <- 4.8
+type[2] <- "num"
+
+questions[3] <- ""
+solutions[3] <- explanations[3] <- 7.2
+type[3] <- "num"
+
+questions[4] <- ""
+solutions[4] <- explanations[4] <- 9.6
+type[4] <- "num"
+
+questions[5] <- ""
+solutions[5] <- explanations[5] <- 0.015
+type[5] <- "num"
+
+questions[6] <- ""
+solutions[6] <- explanations[6] <- 0.030
+type[6] <- "num"
+
+questions[7] <- ""
+solutions[7] <- explanations[7] <- 0.045
+type[7] <- "num"
+
+questions[8] <- ""
+solutions[8] <- explanations[8] <- 0.1
+type[8] <- "num"
+
+@
+\begin{question}
+
+(Unicamp - Adaptada) De um helicóptero parado bem em cima de um campo de futebol, fotografou-se o movimento rasteiro de uma bola com uma câmera que expõe a foto 25 vezes a cada segundo. A figura 1 mostra 5 exposições consecutivas desta câmera.
+
+Para efeito de cálculo considere o diâmetro da bola como sendo de 0,5cm e a distância entre os centros de duas bolas consecutivas igual a 2,5cm.
+
+\begin{tabular}{l|c|c|}
+    \hline
+        Número da exposição & Tempo em segundos      & Distância da bola em à bola da 1ª exposição (em metros)\\
+    \hline
+        1ª   & a 0.00 & e 0.00\\
+        2ª   & b ##ANSWER1## & f ##ANSWER5##\\
+        3ª   & c ##ANSWER2## & g ##ANSWER6## \\
+        4ª   & d ##ANSWER3## & h ##ANSWER7## \\
+        5ª   & d ##ANSWER4## & h ##ANSWER8## \\
+    \hline
+\end{tabular}
+  
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(questions)
+@ 
+\end{question}
+
+%% SOLUTION
+\begin{solution}:
+  
+  
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(paste(explanations, ".", sep = ""))
+@
+
+
+\end{solution}
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{\Sexpr{paste(solutions, collapse = "|")}}
+%% \exclozetype{\Sexpr{paste(type, collapse = "|")}}
+%% \exname{Q013Velm}
