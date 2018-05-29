@@ -11,9 +11,9 @@ respb <- respa*t
 @
 
 \begin{question}
-Considere: Seno de 30° = 0,5
+Considere: sen(30°) = 0,5
 
-(Unesp) A escada rolante que liga a plataforma de uma estação subterrânea de metrô ao nível da rua move-se com velocidade constante de \Sexpr{v}m/s.
+(Unesp) A escada rolante que liga a plataforma de uma estação subterrânea de metrô ao nível da rua move-se com velocidade constante de \Sexpr{v} m/s.
 \begin{answerlist}
 
 \item Sabendo-se que a escada tem uma inclinação de 30° em relação à horizontal, determine, com o auxilio da tabela adiante, a componente vertical de sua velocidade. 
