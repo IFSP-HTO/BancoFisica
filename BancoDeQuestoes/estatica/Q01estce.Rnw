@@ -1,0 +1,33 @@
+<<echo=FALSE, results=hide>>=
+## DATA GENERATION EXAMPLE
+
+force <- sample(seq(from=4000,to=8000,by=100),1)
+resp <- 0.012*force
+include_supplement("Q01estce.jpg")
+
+@
+\usepackage[portuguese]{babel}
+\usepackage{graphicx}
+
+\begin{question}
+
+(OBFEP-2017) Um próspero campo de produção de energia limpa está sendo explorado nos últimos anos: a energia marítima. O Brasil é um dos pioneiros nessa nova tecnologia. A 60 km de Fortaleza (CE) está sendo testada a primeira usina de ondas da América Latina, um projeto exclusivamente brasileiro. A extremidade de um braço mecânico de 24 m fica apoiada em um flutuador que sobe e desce de acordo com as ondas. Esse movimento é transmitido ao pistão de uma bomba hidráulica que fica a 2 m do eixo de rotação do braço mecânico. A bomba hidráulica movimenta um gerador de energia elétrica. Desprezando o peso do braço mecânico, quando o flutuador aplica na extremidade do braço uma força de \Sexpr{force} N, qual a intensidade de força, em kN, que o pistão da bomba hidráulica sofre aplicado pelo braço mecânico? Considere que o sistema está em equilíbrio.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[scale=0.7]{{Q01estce.jpg}}
+\end{figure}
+
+\end{question}
+
+\begin{solution}
+%% Supply a solution here!
+  \Sexpr{resp} kN
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp}}
+%% \exname{Q01estce}
+%% \extol{0.05}

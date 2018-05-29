@@ -1,0 +1,36 @@
+<<echo=FALSE, results=hide>>=
+## Marcelo C.
+
+Fa <- sample(seq(from=10,to=300,by=1),1)
+resp = round(Fa/6,2)
+
+include_supplement("Q17estpm.jpg")
+
+@
+\usepackage[portuguese]{babel}
+\usepackage{graphicx}
+
+\begin{question}
+
+ (Mackenzie) No esquema representado, o homem exerce sobre a corda uma força de $\Sexpr{Fa} N$ e o sistema ideal se encontra em equilíbrio.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[scale=0.7]{{Q17estpm.jpg}}
+\end{figure}
+
+Determine o peso da carga Q,  em kgf. Caso necessário, arredonde sua resposta para 1 casa decimal. Dados: $g = 10m/s^2$ ; $sen(\theta) = 0,6$ e $cos(\theta) = 0,8$.
+
+\end{question}
+
+\begin{solution}
+%% Supply a solution here!
+  \Sexpr{resp} kgf
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp}}
+%% \exname{Q17estpm}
+%% \extol{0.1}

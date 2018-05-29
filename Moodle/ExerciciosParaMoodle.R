@@ -7,7 +7,7 @@ library(exams)
 ############### exemplos ##################
 ## Definindo a pasta com as questoes do exame
 myexam <- dir("./BancoDeQuestoes/exemplos", pattern = ".rnw", ignore.case=TRUE)
-ano <- 22017
+ano <- 12018
 ## Cria o arquivo .xml para entrada no moodle
 set.seed(ano)
 exams2moodle(myexam, n = 100, rule="none", schoice = list(shuffle = TRUE), name = paste0("exemplos-",ano),
@@ -18,7 +18,7 @@ exams2moodle(myexam, n = 100, rule="none", schoice = list(shuffle = TRUE), name 
 ############### aceleracao ##################
 ## Definindo a pasta com as questoes do exame
 myexam <- dir("./BancoDeQuestoes/acel", pattern = ".rnw", ignore.case=TRUE)
-ano <- 22017
+ano <- 12018
 ## Cria o arquivo .xml para entrada no moodle
 set.seed(ano)
 exams2moodle(myexam, n = 100, rule="none", schoice = list(shuffle = TRUE), name = paste0("acel-",ano),
@@ -29,7 +29,7 @@ exams2moodle(myexam, n = 100, rule="none", schoice = list(shuffle = TRUE), name 
 ############### calorimetria ###############
 ## Definindo a pasta com as questoes do exame
 myexam <- dir("./BancoDeQuestoes/calorimetria", pattern = ".rnw", ignore.case=TRUE)
-ano <- 22017
+ano <- 12018
 ## Cria o arquivo .xml para entrada no moodle
 set.seed(ano)
 exams2moodle(myexam, n = 100, rule="none", schoice = list(shuffle = TRUE), name = paste0("calorimetria-",ano),
@@ -40,7 +40,7 @@ exams2moodle(myexam, n = 100, rule="none", schoice = list(shuffle = TRUE), name 
 ############### calortemp ##################
 ## Definindo a pasta com as questoes do exame
 myexam <- dir("./BancoDeQuestoes/calortemp", pattern = ".rnw", ignore.case=TRUE)
-ano <- 22017
+ano <- 12018
 ## Cria o arquivo .xml para entrada no moodle
 set.seed(ano)
 exams2moodle(myexam, n = 100, rule="none", schoice = list(shuffle = TRUE), name = paste0("calortemp-",ano),
@@ -51,7 +51,7 @@ exams2moodle(myexam, n = 100, rule="none", schoice = list(shuffle = TRUE), name 
 ############### dilatacao #################
 ## Definindo a pasta com as questoes do exame
 myexam <- dir("./BancoDeQuestoes/dilatterm", pattern = ".rnw", ignore.case=TRUE)
-ano <- 22017
+ano <- 12018
 ## Cria o arquivo .xml para entrada no moodle
 set.seed(ano)
 exams2moodle(myexam, n = 100, rule="none", schoice = list(shuffle = TRUE), name = paste0("dilatterm-",ano),
@@ -63,7 +63,7 @@ exams2moodle(myexam, n = 100, rule="none", schoice = list(shuffle = TRUE), name 
 ############### eletricidade #################
 ## Definindo a pasta com as questoes do exame
 myexam <- dir("./BancoDeQuestoes/eletricidade", pattern = ".rnw", ignore.case=TRUE)
-ano <- 22017
+ano <- 12018
 ## Cria o arquivo .xml para entrada no moodle
 set.seed(ano)
 exams2moodle(myexam, n = 100, rule="none", schoice = list(shuffle = TRUE), name = paste0("eletricidade-",ano),
@@ -74,7 +74,7 @@ exams2moodle(myexam, n = 100, rule="none", schoice = list(shuffle = TRUE), name 
 ############### eletromagnetismo #################
 ## Definindo a pasta com as questoes do exame
 myexam <- dir("./BancoDeQuestoes/eletromagnetismo", pattern = ".rnw", ignore.case=TRUE)
-ano <- 22017
+ano <- 12018
 ## Cria o arquivo .xml para entrada no moodle
 set.seed(ano)
 exams2moodle(myexam, n = 100, rule="none", schoice = list(shuffle = TRUE), name = paste0("eletromagnetismo-",ano),
@@ -85,7 +85,7 @@ exams2moodle(myexam, n = 100, rule="none", schoice = list(shuffle = TRUE), name 
 ############### eletrostatica ##################
 ## Definindo a pasta com as questoes do exame
 myexam <- dir("./BancoDeQuestoes/eletrostatica", pattern = ".rnw", ignore.case=TRUE)
-ano <- 22017
+ano <- 12018
 ## Cria o arquivo .xml para entrada no moodle
 set.seed(ano)
 exams2moodle(myexam, n = 100, rule="none", schoice = list(shuffle = TRUE), name = paste0("eletrostatica-",ano),
@@ -96,7 +96,7 @@ exams2moodle(myexam, n = 100, rule="none", schoice = list(shuffle = TRUE), name 
 ############### energia e conservacao ##################
 ## Definindo a pasta com as questoes do exame
 myexam <- dir("./BancoDeQuestoes/energiaeconservacao", pattern = ".rnw", ignore.case=TRUE)
-ano <- 22017
+ano <- 12018
 ## Cria o arquivo .xml para entrada no moodle
 set.seed(ano)
 exams2moodle(myexam, n = 100, rule="none", schoice = list(shuffle = TRUE), name = paste0("energiaeconservacao-",ano),
@@ -107,7 +107,7 @@ exams2moodle(myexam, n = 100, rule="none", schoice = list(shuffle = TRUE), name 
 ############### gravitacao ##################
 ## Definindo a pasta com as questoes do exame
 myexam <- dir("./BancoDeQuestoes/gravitacao", pattern = ".rnw", ignore.case=TRUE)
-ano <- 22017
+ano <- 12018
 ## Cria o arquivo .xml para entrada no moodle
 set.seed(ano)
 exams2moodle(myexam, n = 100, rule="none", schoice = list(shuffle = TRUE), name = paste0("gravitacao-",ano),
@@ -119,7 +119,7 @@ exams2moodle(myexam, n = 100, rule="none", schoice = list(shuffle = TRUE), name 
 ############### hidrostatica ##################
 ## Definindo a pasta com as questoes do exame
 myexam <- dir("./BancoDeQuestoes/hidrostatica", pattern = ".rnw", ignore.case=TRUE)
-ano <- 22017
+ano <- 12018
 ## Cria o arquivo .xml para entrada no moodle
 set.seed(ano)
 exams2moodle(myexam, n = 100, rule="none", schoice = list(shuffle = TRUE), name = paste0("hidrostatica-",ano),
@@ -130,7 +130,7 @@ exams2moodle(myexam, n = 100, rule="none", schoice = list(shuffle = TRUE), name 
 ############### impulso ##################
 ## Definindo a pasta com as questoes do exame
 myexam <- dir("./BancoDeQuestoes/impulso", pattern = ".rnw", ignore.case=TRUE)
-ano <- 22017
+ano <- 12018
 ## Cria o arquivo .xml para entrada no moodle
 set.seed(ano)
 exams2moodle(myexam, n = 100, rule="none", schoice = list(shuffle = TRUE), name = paste0("impulso-",ano),
@@ -141,7 +141,7 @@ exams2moodle(myexam, n = 100, rule="none", schoice = list(shuffle = TRUE), name 
 ############### lei dos gases ##################
 ## Definindo a pasta com as questoes do exame
 myexam <- dir("./BancoDeQuestoes/leidosgases", pattern = ".rnw", ignore.case=TRUE)
-ano <- 22017
+ano <- 12018
 ## Cria o arquivo .xml para entrada no moodle
 set.seed(ano)
 exams2moodle(myexam, n = 100, rule="none", schoice = list(shuffle = TRUE), name = paste0("leidosgases-",ano),
@@ -152,7 +152,7 @@ exams2moodle(myexam, n = 100, rule="none", schoice = list(shuffle = TRUE), name 
 ############### leis de newton ##################
 ## Definindo a pasta com as questoes do exame
 myexam <- dir("./BancoDeQuestoes/leisdenewton", pattern = ".rnw", ignore.case=TRUE)
-ano <- 22017
+ano <- 12018
 ## Cria o arquivo .xml para entrada no moodle
 set.seed(ano)
 exams2moodle(myexam, n = 100, rule="none", schoice = list(shuffle = TRUE), name = paste0("leisdenewton-",ano),
@@ -163,7 +163,7 @@ exams2moodle(myexam, n = 100, rule="none", schoice = list(shuffle = TRUE), name 
 ############### magnetismo ##################
 ## Definindo a pasta com as questoes do exame
 myexam <- dir("./BancoDeQuestoes/magnetismo", pattern = ".rnw", ignore.case=TRUE)
-ano <- 22017
+ano <- 12018
 ## Cria o arquivo .xml para entrada no moodle
 set.seed(ano)
 exams2moodle(myexam, n = 100, rule="none", schoice = list(shuffle = TRUE), name = paste0("magnetismo-",ano),
@@ -174,7 +174,7 @@ exams2moodle(myexam, n = 100, rule="none", schoice = list(shuffle = TRUE), name 
 ############### movimento circular ##################
 ## Definindo a pasta com as questoes do exame
 myexam <- dir("./BancoDeQuestoes/movcircular", pattern = ".rnw", ignore.case=TRUE)
-ano <- 22017
+ano <- 12018
 ## Cria o arquivo .xml para entrada no moodle
 set.seed(ano)
 exams2moodle(myexam, n = 100, rule="none", schoice = list(shuffle = TRUE), name = paste0("movcircular-",ano),
@@ -185,7 +185,7 @@ exams2moodle(myexam, n = 100, rule="none", schoice = list(shuffle = TRUE), name 
 ############### MRU ##################
 ## Definindo a pasta com as questoes do exame
 myexam <- dir("./BancoDeQuestoes/mru", pattern = ".rnw", ignore.case=TRUE)
-ano <- 22017
+ano <- 12018
 ## Cria o arquivo .xml para entrada no moodle
 set.seed(ano)
 exams2moodle(myexam, n = 100, rule="none", schoice = list(shuffle = TRUE), name = paste0("mru-",ano),
@@ -196,7 +196,7 @@ exams2moodle(myexam, n = 100, rule="none", schoice = list(shuffle = TRUE), name 
 ############### MRUV ##################
 ## Definindo a pasta com as questoes do exame
 myexam <- dir("./BancoDeQuestoes/mruv", pattern = ".rnw", ignore.case=TRUE)
-ano <- 22017
+ano <- 12018
 ## Cria o arquivo .xml para entrada no moodle
 set.seed(ano)
 exams2moodle(myexam, n = 100, rule="none", schoice = list(shuffle = TRUE), name = paste0("mruv-",ano),
@@ -208,7 +208,7 @@ exams2moodle(myexam, n = 100, rule="none", schoice = list(shuffle = TRUE), name 
 ############### ondas ##################
 ## Definindo a pasta com as questoes do exame
 myexam <- dir("./BancoDeQuestoes/ondas", pattern = ".rnw", ignore.case=TRUE)
-ano <- 22017
+ano <- 12018
 ## Cria o arquivo .xml para entrada no moodle
 set.seed(ano)
 exams2moodle(myexam, n = 100, rule="none", schoice = list(shuffle = TRUE), name = paste0("ondas-",ano),
@@ -219,7 +219,7 @@ exams2moodle(myexam, n = 100, rule="none", schoice = list(shuffle = TRUE), name 
 ############### optica ##################
 ## Definindo a pasta com as questoes do exame
 myexam <- dir("./BancoDeQuestoes/optica", pattern = ".rnw", ignore.case=TRUE)
-ano <- 22017
+ano <- 12018
 ## Cria o arquivo .xml para entrada no moodle
 set.seed(ano)
 exams2moodle(myexam, n = 100, rule="none", schoice = list(shuffle = TRUE), name = paste0("optica-",ano),
@@ -230,7 +230,7 @@ exams2moodle(myexam, n = 100, rule="none", schoice = list(shuffle = TRUE), name 
 ############### termodinamica ##################
 ## Definindo a pasta com as questoes do exame
 myexam <- dir("./BancoDeQuestoes/termodinamica", pattern = ".rnw", ignore.case=TRUE)
-ano <- 22017
+ano <- 12018
 ## Cria o arquivo .xml para entrada no moodle
 set.seed(ano)
 exams2moodle(myexam, n = 100, rule="none", schoice = list(shuffle = TRUE), name = paste0("termodinamica-",ano),
@@ -241,7 +241,7 @@ exams2moodle(myexam, n = 100, rule="none", schoice = list(shuffle = TRUE), name 
 ############### trabalho e potencia ##################
 ## Definindo a pasta com as questoes do exame
 myexam <- dir("./BancoDeQuestoes/trabalhopotencia", pattern = ".rnw", ignore.case=TRUE)
-ano <- 22017
+ano <- 12018
 ## Cria o arquivo .xml para entrada no moodle
 set.seed(ano)
 exams2moodle(myexam, n = 100, rule="none", schoice = list(shuffle = TRUE), name = paste0("trabalhopotencia-",ano),
@@ -252,7 +252,7 @@ exams2moodle(myexam, n = 100, rule="none", schoice = list(shuffle = TRUE), name 
 ############### velocidade media ##################
 ## Definindo a pasta com as questoes do exame
 myexam <- dir("./BancoDeQuestoes/vm", pattern = ".rnw", ignore.case=TRUE)
-ano <- 22017
+ano <- 12018
 ## Cria o arquivo .xml para entrada no moodle
 set.seed(ano)
 exams2moodle(myexam, n = 100, rule="none", schoice = list(shuffle = TRUE), name = paste0("vm-",ano),
@@ -260,6 +260,15 @@ exams2moodle(myexam, n = 100, rule="none", schoice = list(shuffle = TRUE), name 
              dir = "./Moodle",
              edir = "./BancoDeQuestoes/vm")
 
-
+############### estatica do corpo extenso ##################
+## Definindo a pasta com as questoes do exame
+myexam <- dir("./BancoDeQuestoes/estatica", pattern = ".rnw", ignore.case=TRUE)
+ano <- 12018
+## Cria o arquivo .xml para entrada no moodle
+set.seed(ano)
+exams2moodle(myexam, n = 100, rule="none", schoice = list(shuffle = TRUE), name = paste0("estatica-",ano),
+             encoding = "UTF-8",
+             dir = "./Moodle",
+             edir = "./BancoDeQuestoes/estatica")
 
 

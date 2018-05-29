@@ -1,0 +1,36 @@
+<<echo=FALSE, results=hide>>=
+## Marcelo C.
+
+m <- sample(seq(from=1,to=300,by=1),1)
+resp = round(m*10*sqrt(3)/2,2)
+
+include_supplement("Q16estpm.jpg")
+
+@
+\usepackage[portuguese]{babel}
+\usepackage{graphicx}
+
+\begin{question}
+
+(UNIRIO-adapt.) Uma caixa de massa $m = \Sexpr{m}$ kg está em equilíbrio estático conforme mostra a figura.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[scale=0.7]{{Q16estpm.jpg}}
+\end{figure}
+
+Considerando os fios ideais e de pesos desprezíveis, determine a tração na corda BC, em N. Dados: $g = 10m/s^2$ ; $sen30^{\circ}=0,5$ e $cos30^{\circ}=0,866$. Caso necessário, arredonde sua resposta para 1 casa decimal.
+
+\end{question}
+
+\begin{solution}
+%% Supply a solution here!
+  \Sexpr{resp} N
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp}}
+%% \exname{Q16estpm}
+%% \extol{0.1}

@@ -1,0 +1,33 @@
+<<echo=FALSE, results=hide>>=
+## Marcelo C.
+m <- sample(seq(from=60,to=90,by=1),1)
+b <- sample(seq(from=2.0,to=4.0,by=1),1)
+respa <- b*m
+respb <- m*10
+@
+
+\begin{question}
+
+(UNICAMP) Um homem de \Sexpr{m} kg, quer levantar um objeto usando uma alavanca rígida e leve. Os braços da alavanca têm 1 e \Sexpr{b} m. Considerando a aceleração da gravidade $g = 10m/s^2$, responda:
+
+\begin{answerlist}
+  \item Qual a maior massa, em quilogramas, que o homem consegue levantar usando a alavanca e seu próprio peso?
+  \item Neste caso, qual a força, em Newtons, exercida sobre a alavanca no ponto de apoio?
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+%% Supply a solution here!
+
+\begin{answerlist}
+  \item \Sexpr{respa} kg
+  \item \Sexpr{respb} N
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{\Sexpr{respa}|\Sexpr{respb}}
+%% \exclozetype{num|num}
+%% \exname{Q03estce}
+%% \extol{0.1|0.1}
