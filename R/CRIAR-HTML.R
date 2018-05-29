@@ -7,7 +7,7 @@ library(exams)
 myexam <- dir("./BancoDeQuestoes/exemplos/", pattern = ".rnw", ignore.case=TRUE)
 
 ## Gerando HTML com o arquivo da questao
-set.seed(12017)
+set.seed(12018)
 exams2html(myexam, n = 1,solution=TRUE,
            encoding = "UTF-8",
            edir = "./BancoDeQuestoes/exemplos",
@@ -18,7 +18,7 @@ exams2html(myexam, n = 1,solution=TRUE,
 myexam <- dir("./BancoDeQuestoes/acel/", pattern = ".rnw", ignore.case=TRUE)
 
 ## Gerando HTML com o arquivo da questao
-set.seed(12017)
+set.seed(12018)
 exams2html(myexam, n = 1,solution=TRUE,
            encoding = "UTF-8",
            edir = "./BancoDeQuestoes/acel",
@@ -29,7 +29,7 @@ exams2html(myexam, n = 1,solution=TRUE,
 myexam <- dir("./BancoDeQuestoes/calorimetria/", pattern = ".rnw", ignore.case=TRUE)
 
 ## Gerando HTML com o arquivo da questao
-set.seed(12017)
+set.seed(12018)
 exams2html(myexam, n = 1,solution=TRUE,
            encoding = "UTF-8",
            edir = "./BancoDeQuestoes/calorimetria",
@@ -40,7 +40,7 @@ exams2html(myexam, n = 1,solution=TRUE,
 myexam <- dir("./BancoDeQuestoes/calortemp/", pattern = ".rnw", ignore.case=TRUE)
 
 ## Gerando HTML com o arquivo da questao
-set.seed(12017)
+set.seed(12018)
 exams2html(myexam, n = 1,solution=TRUE,
            encoding = "UTF-8",
            edir = "./BancoDeQuestoes/calortemp",
@@ -51,7 +51,7 @@ exams2html(myexam, n = 1,solution=TRUE,
 myexam <- dir("./BancoDeQuestoes/dilatterm/", pattern = ".rnw", ignore.case=TRUE)
 
 ## Gerando HTML com o arquivo da questao
-set.seed(12017)
+set.seed(12018)
 exams2html(myexam, n = 1,solution=TRUE,
            encoding = "UTF-8",
            edir = "./BancoDeQuestoes/dilatterm",
@@ -62,7 +62,7 @@ exams2html(myexam, n = 1,solution=TRUE,
 myexam <- dir("./BancoDeQuestoes/eletricidade/", pattern = ".rnw", ignore.case=TRUE)
 
 ## Gerando HTML com o arquivo da questao
-set.seed(12017)
+set.seed(12018)
 exams2html(myexam, n = 1,solution=TRUE,
            encoding = "UTF-8",
            edir = "./BancoDeQuestoes/eletricidade",
@@ -73,7 +73,7 @@ exams2html(myexam, n = 1,solution=TRUE,
 myexam <- dir("./BancoDeQuestoes/eletromagnetismo/", pattern = ".rnw", ignore.case=TRUE)
 
 ## Gerando HTML com o arquivo da questao
-set.seed(12017)
+set.seed(12018)
 exams2html(myexam, n = 1,solution=TRUE,
            encoding = "UTF-8",
            edir = "./BancoDeQuestoes/eletromagnetismo",
@@ -84,7 +84,7 @@ exams2html(myexam, n = 1,solution=TRUE,
 myexam <- dir("./BancoDeQuestoes/eletrostatica/", pattern = ".rnw", ignore.case=TRUE)
 
 ## Gerando HTML com o arquivo da questao
-set.seed(12017)
+set.seed(12018)
 exams2html(myexam, n = 1,solution=TRUE,
            encoding = "UTF-8",
            edir = "./BancoDeQuestoes/eletrostatica",
@@ -95,7 +95,7 @@ exams2html(myexam, n = 1,solution=TRUE,
 myexam <- dir("./BancoDeQuestoes/energiaeconservacao/", pattern = ".rnw", ignore.case=TRUE)
 
 ## Gerando HTML com o arquivo da questao
-set.seed(12017)
+set.seed(12018)
 exams2html(myexam, n = 1,solution=TRUE,
            encoding = "UTF-8",
            edir = "./BancoDeQuestoes/energiaeconservacao",
@@ -106,7 +106,7 @@ exams2html(myexam, n = 1,solution=TRUE,
 myexam <- dir("./BancoDeQuestoes/gravitacao/", pattern = ".rnw", ignore.case=TRUE)
 
 ## Gerando HTML com o arquivo da questao
-set.seed(12017)
+set.seed(12018)
 exams2html(myexam, n = 1,solution=TRUE,
            encoding = "UTF-8",
            edir = "./BancoDeQuestoes/gravitacao",
@@ -118,7 +118,7 @@ exams2html(myexam, n = 1,solution=TRUE,
 myexam <- dir("./BancoDeQuestoes/hidrostatica/", pattern = ".rnw", ignore.case=TRUE)
 
 ## Gerando HTML com o arquivo da questao
-set.seed(12017)
+set.seed(12018)
 exams2html(myexam, n = 1,solution=TRUE,
            encoding = "UTF-8",
            edir = "./BancoDeQuestoes/hidrostatica",
@@ -130,7 +130,7 @@ exams2html(myexam, n = 1,solution=TRUE,
 myexam <- dir("./BancoDeQuestoes/impulso/", pattern = ".rnw", ignore.case=TRUE)
 
 ## Gerando HTML com o arquivo da questao
-set.seed(12017)
+set.seed(12018)
 exams2html(myexam, n = 1,solution=TRUE,
            encoding = "UTF-8",
            edir = "./BancoDeQuestoes/impulso",
@@ -142,7 +142,7 @@ exams2html(myexam, n = 1,solution=TRUE,
 myexam <- dir("./BancoDeQuestoes/leidosgases/", pattern = ".rnw", ignore.case=TRUE)
 
 ## Gerando HTML com o arquivo da questao
-set.seed(12017)
+set.seed(12018)
 exams2html(myexam, n = 1,solution=TRUE,
            encoding = "UTF-8",
            edir = "./BancoDeQuestoes/leidosgases",
@@ -153,7 +153,7 @@ exams2html(myexam, n = 1,solution=TRUE,
 myexam <- dir("./BancoDeQuestoes/leisdenewton/", pattern = ".rnw", ignore.case=TRUE)
 
 ## Gerando HTML com o arquivo da questao
-set.seed(12017)
+set.seed(12018)
 exams2html(myexam, n = 1,solution=TRUE,
            encoding = "UTF-8",
            edir = "./BancoDeQuestoes/leisdenewton",
@@ -165,7 +165,7 @@ exams2html(myexam, n = 1,solution=TRUE,
 myexam <- dir("./BancoDeQuestoes/magnetismo/", pattern = ".rnw", ignore.case=TRUE)
 
 ## Gerando HTML com o arquivo da questao
-set.seed(12017)
+set.seed(12018)
 exams2html(myexam, n = 1,solution=TRUE,
            encoding = "UTF-8",
            edir = "./BancoDeQuestoes/magnetismo",
@@ -177,7 +177,7 @@ exams2html(myexam, n = 1,solution=TRUE,
 myexam <- dir("./BancoDeQuestoes/movcircular/", pattern = ".rnw", ignore.case=TRUE)
 
 ## Gerando HTML com o arquivo da questao
-set.seed(12017)
+set.seed(12018)
 exams2html(myexam, n = 1,solution=TRUE,
            encoding = "UTF-8",
            edir = "./BancoDeQuestoes/movcircular",
@@ -189,7 +189,7 @@ exams2html(myexam, n = 1,solution=TRUE,
 myexam <- dir("./BancoDeQuestoes/mru/", pattern = ".rnw", ignore.case=TRUE)
 
 ## Gerando HTML com o arquivo da questao
-set.seed(12017)
+set.seed(12018)
 exams2html(myexam, n = 1,solution=TRUE,
            encoding = "UTF-8",
            edir = "./BancoDeQuestoes/mru",
@@ -202,7 +202,7 @@ exams2html(myexam, n = 1,solution=TRUE,
 myexam <- dir("./BancoDeQuestoes/mruv/", pattern = ".rnw", ignore.case=TRUE)
 
 ## Gerando HTML com o arquivo da questao
-set.seed(12017)
+set.seed(12018)
 exams2html(myexam, n = 1,solution=TRUE,
            encoding = "UTF-8",
            edir = "./BancoDeQuestoes/mruv",
@@ -214,7 +214,7 @@ exams2html(myexam, n = 1,solution=TRUE,
 myexam <- dir("./BancoDeQuestoes/ondas/", pattern = ".rnw", ignore.case=TRUE)
 
 ## Gerando HTML com o arquivo da questao
-set.seed(12017)
+set.seed(12018)
 exams2html(myexam, n = 1,solution=TRUE,
            encoding = "UTF-8",
            edir = "./BancoDeQuestoes/ondas",
@@ -226,7 +226,7 @@ exams2html(myexam, n = 1,solution=TRUE,
 myexam <- dir("./BancoDeQuestoes/optica/", pattern = ".rnw", ignore.case=TRUE)
 
 ## Gerando HTML com o arquivo da questao
-set.seed(12017)
+set.seed(12018)
 exams2html(myexam, n = 1,solution=TRUE,
            encoding = "UTF-8",
            edir = "./BancoDeQuestoes/optica",
@@ -238,7 +238,7 @@ exams2html(myexam, n = 1,solution=TRUE,
 myexam <- dir("./BancoDeQuestoes/termodinamica/", pattern = ".rnw", ignore.case=TRUE)
 
 ## Gerando HTML com o arquivo da questao
-set.seed(12017)
+set.seed(12018)
 exams2html(myexam, n = 1,solution=TRUE,
            encoding = "UTF-8",
            edir = "./BancoDeQuestoes/termodinamica",
@@ -249,7 +249,7 @@ exams2html(myexam, n = 1,solution=TRUE,
 myexam <- dir("./BancoDeQuestoes/testes/", pattern = ".rnw", ignore.case=TRUE)
 
 ## Gerando HTML com o arquivo da questao
-set.seed(12017)
+set.seed(12018)
 exams2html(myexam, n = 1,solution=TRUE,
            encoding = "UTF-8",
            edir = "./BancoDeQuestoes/testes",
@@ -260,7 +260,7 @@ exams2html(myexam, n = 1,solution=TRUE,
 myexam <- dir("./BancoDeQuestoes/trabalhopotencia/", pattern = ".rnw", ignore.case=TRUE)
 
 ## Gerando HTML com o arquivo da questao
-set.seed(12017)
+set.seed(12018)
 exams2html(myexam, n = 1,solution=TRUE,
            encoding = "UTF-8",
            edir = "./BancoDeQuestoes/trabalhopotencia",
@@ -272,7 +272,7 @@ exams2html(myexam, n = 1,solution=TRUE,
 myexam <- dir("./BancoDeQuestoes/cinematica/MU", pattern = ".rnw", ignore.case=TRUE)
 
 ## Gerando HTML com o arquivo da questao
-set.seed(12017)
+set.seed(12018)
 exams2html(myexam, n = 1,solution=TRUE, converter = 'pandoc',
   encoding = "UTF-8",
   edir = "./BancoDeQuestoes/cinematica/MU",
@@ -283,7 +283,7 @@ exams2html(myexam, n = 1,solution=TRUE, converter = 'pandoc',
 myexam <- dir("./BancoDeQuestoes/estatica/", pattern = ".rnw", ignore.case=TRUE)
 
 ## Gerando HTML com o arquivo da questao
-set.seed(12017)
+set.seed(12018)
 exams2html(myexam, n = 1,solution=TRUE,
            encoding = "UTF-8",
            edir = "./BancoDeQuestoes/estatica",

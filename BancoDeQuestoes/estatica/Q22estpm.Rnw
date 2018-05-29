@@ -1,0 +1,34 @@
+<<echo=FALSE, results=hide>>=
+## Marcelo C.
+
+m <- sample(seq(from=9,to=1260,by=3),1)
+resp = round(10*m/3,1)
+resp
+include_supplement("Q22estpm.jpg")
+
+@
+\usepackage[portuguese]{babel}
+\usepackage{graphicx}
+
+\begin{question}
+
+(AFA-adapt.) Um mecanismo foi montado para levantar uma caixa de massa $\Sexpr{m} kg$. Determine a menor força, em Newtons, necessária para levantar a caixa. Considere $g = 10m/s^2$ e, caso necessário, dê sua resposta com uma casa decimal. 
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[scale=0.7]{{Q22estpm.jpg}}
+\end{figure}
+
+\end{question}
+
+\begin{solution}
+%% Supply a solution here!
+  \Sexpr{resp} N
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp}}
+%% \exname{Q22estpm}
+%% \extol{1}

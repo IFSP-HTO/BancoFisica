@@ -1,0 +1,36 @@
+<<echo=FALSE, results=hide>>=
+## Marcelo C.
+
+pa <- sample(seq(from=20,to=100,by=10),1)
+fa <- sample(seq(from=100,to=500,by=10),1)
+resp = round((pa*4+8*fa)/(4.8),1)
+include_supplement("Q20estce.jpg")
+
+@
+\usepackage[portuguese]{babel}
+\usepackage{graphicx}
+
+\begin{question}
+
+(Faap-adapt.) Na estrutura representada, a barra homogênea AB pesa $\Sexpr{pa} N$ e é articulada em A. A carga suspensa pesa $\Sexpr{fa} N$.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[scale=0.7]{{Q20estce.jpg}}
+\end{figure}
+
+ Determine a tração no cabo.
+
+\end{question}
+
+\begin{solution}
+%% Supply a solution here!
+  \Sexpr{resp} N
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp}}
+%% \exname{Q20estce}
+%% \extol{0.1}
