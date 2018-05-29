@@ -23,7 +23,7 @@ pessoa está segurando tem massa $M = \Sexpr{m} kg$.
 Desprezando o peso do antebraço e da mão e adotando $g = 10 m/s^2$, determine:
 
 \begin{answerlist}
-  \item A força F, em Newtons, que o bíceps deve exercer no antebraço
+  \item A força F, em Newtons, que o bíceps deve exercer no antebraço.
   \item A força C, em Newtons, que o osso do braço exerce nos ossos do antebraço.
 
 \end{answerlist}

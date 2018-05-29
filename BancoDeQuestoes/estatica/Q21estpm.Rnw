@@ -11,6 +11,7 @@ include_supplement("Q21estpm.jpg")
 \usepackage{graphicx}
 
 \begin{question}
+
 (CESGRANRIO-RJ) Um corpo de massa $\Sexpr{m} kg$ encontra-se em equilíbrio devido à ação da força de intensidade F aplicada pelo homem da figura abaixo. Os pontos A, B e C são os pontos de contato entre os fios e a superfície. 
 
 \begin{figure}[h!]
@@ -21,26 +22,27 @@ include_supplement("Q21estpm.jpg")
 Determine: 
 
 \begin{answerlist}
-    \item a força que a superficie exerce sobre o fio em A. 
-    \item a força que a superficie exerce sobre o fio em B. 
-    \item a força que a superficie exerce sobre o fio em C.
+    \item a força, em kgf, que a superficie exerce sobre o fio em A. 
+    \item a força, em kgf, que a superficie exerce sobre o fio em B. 
+    \item a força, em kgf, que a superficie exerce sobre o fio em C.
 \end{answerlist}
-
 
 \end{question}
 
 \begin{solution}
-%% Supply a solution here!
+
   \begin{answerlist}
+
     \item \Sexpr{respa} kgf
     \item \Sexpr{respb} kgf
     \item \Sexpr{respc} kgf
+
   \end{answerlist}
 \end{solution}
 
 %% META-INFORMATION
 %% \extype{cloze}
-%% \exclozetype{num|num|num}
 %% \exsolution{\Sexpr{respa}|\Sexpr{respb}|\Sexpr{respc}}
+%% \exclozetype{num|num|num}
 %% \exname{Q21estpm}
 %% \extol{0.1|0.1|0.1}

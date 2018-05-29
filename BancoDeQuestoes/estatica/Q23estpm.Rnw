@@ -30,4 +30,4 @@ include_supplement("Q23estpm.jpg")
 %% \extype{num}
 %% \exsolution{\Sexpr{resp}}
 %% \exname{Q23estpm}
-%% \extol{1}
+%% \extol{0.1}

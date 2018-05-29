@@ -19,7 +19,7 @@ include_supplement("Q20estce.jpg")
   \includegraphics[scale=0.7]{{Q20estce.jpg}}
 \end{figure}
 
- Determine a tração no cabo.
+ Determine a tração no cabo em Newtons. Caso necessário, dê sua resposta com 1 casa decimal.
 
 \end{question}
 
