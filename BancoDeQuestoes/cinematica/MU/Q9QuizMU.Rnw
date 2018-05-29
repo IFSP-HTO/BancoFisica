@@ -2,8 +2,8 @@
 ##Programado por:Matheus V
  
 ##gera questoes
-v1<- sample(seq(from=25,to=40,by=5),1)
-v2<- sample(seq(from=5,to=20,by=5),1)
+v1 <- sample(seq(from=25,to=40,by=5),1)
+v2 <- sample(seq(from=5,to=20,by=5),1)
 
 resp <- 100/(v1-v2)
 
@@ -30,8 +30,8 @@ solutions <- logical(5)
 
 \begin{question}
  (Unitau) Uma motocicleta com velocidade
-constante de \sexpr{v1} ultrapassa um trem de
-comprimento 100m e velocidade \sexpr{v2}. A dura\c{c}\~ao
+constante de \Sexpr{v1} m/s ultrapassa um trem de
+comprimento 100m e velocidade \Sexpr{v2} m/s. A dura\c{c}\~ao
 da ultrapassagem é:
 
 <<echo=FALSE, results=hide, results=tex>>=
