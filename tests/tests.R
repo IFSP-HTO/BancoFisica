@@ -75,11 +75,14 @@ generate_pdf <- function() {
   ## Envelopando a função exams2moodle
   exams2pdf <- possibly(.f = exams2pdf, otherwise = NA)
   
+  ## Ano
+  ano <- 2018
+  
   ## Para cada arquivo roda a compilação para pdf
   for (i in 1:nrow(arquivos)) {
     
     ## Rodando a função em cada arquivo
-    arquivos$status[i] <- exams2pdf(arquivos$file[i], n = 1, rule="none", schoice = list(shuffle = TRUE), name = paste0("exemplos-",ano),
+    arquivos$status[i] <- exams2pdf(as.character(arquivos$file[i]), n = 1, rule="none", schoice = list(shuffle = TRUE), name = paste0("exemplos-",ano),
                                        encoding = "UTF-8",
                                        dir = tempdir(),
                                        edir = tempdir())
