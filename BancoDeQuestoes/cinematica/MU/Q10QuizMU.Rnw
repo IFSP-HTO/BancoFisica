@@ -30,8 +30,8 @@ solutions <- logical(5)
 
 \begin{question}
  (Unitau) Uma motocicleta com velocidade
-constante de \Sexpr{v1}m/s ultrapassa um trem de
-comprimento 100m e velocidade \Sexpr{v2}m/s. O
+constante de \Sexpr{v1} m/s ultrapassa um trem de
+comprimento 100 m e velocidade \Sexpr{v2} m/s. O
 deslocamento da motocicleta durante a
 ultrapassagem:
 

@@ -13,7 +13,7 @@ respb <- round(d2/v2,2)
 respc <- round(dt/(respa+respb+1),2)
 @
 \begin{question}
-Um trem parte de uma cidade A em dire\c{c}\~ao a uma cidade B, distante $\Sexpr{d1}$km, com velocidade escalar constante de $\Sexpr{v1}$km/h. Ao atingir a cidade B, permanece ali por 1 hora. Parte ent\~ao para uma cidade C, distante $\Sexpr{d2}$km de B, com velocidade escalar constante de $\Sexpr{v2}$km/h. Determine:
+Um trem parte de uma cidade A em dire\c{c}\~ao a uma cidade B, distante $\Sexpr{d1}$ km, com velocidade escalar constante de $\Sexpr{v1}$ km/h. Ao atingir a cidade B, permanece ali por 1 hora. Parte ent\~ao para uma cidade C, distante $\Sexpr{d2}$ km de B, com velocidade escalar constante de $\Sexpr{v2}$ km/h. Determine:
 \\
   \textit{Arredonde sua resposta final para 2 decimais (utilize maior precis\~ao
   nos passos intermedi\'arios).}
