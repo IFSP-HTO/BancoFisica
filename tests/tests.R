@@ -81,11 +81,17 @@ generate_pdf <- function() {
   ## Para cada arquivo roda a compilação para pdf
   for (i in 1:nrow(arquivos)) {
     
+    ## Descobrindo o diretório
+    diretorio <- gsub(pattern = '/[^/]*$', replacement = '', x = arquivos$file[i])
+    
     ## Rodando a função em cada arquivo
-    arquivos$status[i] <- exams2pdf(as.character(arquivos$file[i]), n = 1, rule="none", schoice = list(shuffle = TRUE), name = paste0("exemplos-",ano),
-                                       encoding = "UTF-8",
-                                       dir = tempdir(),
-                                       edir = tempdir())
+    arquivos$status[i] <- exams2pdf(as.character(arquivos$file[i]), 
+                                    n = 1, 
+                                    name = paste0("exemplos-",ano),
+                                    encoding = "UTF-8",
+                                    dir = tempdir(),
+                                    edir = diretorio,
+                                    template = "plain8")
   }
   
   ## Encontrando as linhas com erros
@@ -98,7 +104,7 @@ generate_pdf <- function() {
   if (length(ind_pdf) > 0 ) stop(erro)
 }
 
-## Rodando as funções de teste
+## Rodando as funções
 check_encoding()
 generate_xml()
 generate_pdf()
