@@ -2,7 +2,7 @@
 ##PROGRAMADO POR: CARLOS SANTANA, em 15 de Maio de 2017.
 ##FONTE: Unicamp (Adaptada)
 
-f <- "https://i.imgur.com/qkFAFUr.png"
+include_supplement("Q01estce.jpg")
 
 questions <- solutions <- explanations <- rep("", 8)
 type <- rep(c("num"), 8)
@@ -45,6 +45,11 @@ type[8] <- "num"
 (Unicamp - Adaptada) De um helicóptero parado bem em cima de um campo de futebol, fotografou-se o movimento rasteiro de uma bola com uma câmera que expõe a foto 25 vezes a cada segundo. A figura 1 mostra 5 exposições consecutivas desta câmera.
 
 Para efeito de cálculo considere o diâmetro da bola como sendo de 0,5cm e a distância entre os centros de duas bolas consecutivas igual a 2,5cm.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[scale=0.8]{{Q013MU.png}}
+\end{figure}
 
 \begin{tabular}{l|c|c|}
     \hline
