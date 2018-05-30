@@ -3,10 +3,9 @@ jobs:
   build:
     working_directory: ~/main
     docker:
-      - image: rocker/verse:latest
+      - image: flaviobarros/bancofisica-tests:latest
     steps:
       - checkout
-      
       - run:
           command: | 
             R -e 'devtools::install_deps(dependencies = TRUE)'
@@ -14,9 +13,6 @@ jobs:
           key: deps1-{{ .Branch }}-{{ checksum "DESCRIPTION" }}
           paths:
             - "/usr/local/lib/R/site-library"
-      - run:
-          command: |
-            R -e 'devtools::install_github("yihui/tinytex")'
       - run:
           command: |
             R -e 'source("tests/tests.R")'
