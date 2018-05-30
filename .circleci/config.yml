@@ -16,7 +16,7 @@ jobs:
             - "/usr/local/lib/R/site-library"
       - run:
           command: |
-            R -e 'install.packages("tinytex", dependencies = TRUE)'
+            R -e 'devtools::install_github("yihui/tinytex")'
       - run:
           command: |
             R -e 'source("tests/tests.R")'
