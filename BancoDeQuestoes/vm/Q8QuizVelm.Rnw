@@ -1,0 +1,35 @@
+<<echo=FALSE, results=hide>>=
+##Programado por:Matheus V
+
+##gera questoes
+t <- sample(seq(from=2,to=10,by=2),1)
+v1 <- sample(seq(from=60,to=80,by=2),1)
+resp<-(v1/3.6)+((v1/3.6)*t)
+@
+
+
+\begin{question}
+ (Unaerp) Um trem percorre uma via no sentido
+norte-sul, seu comprimento é 100m, e sua
+velocidade de \Sexpr{v1} km/h. Um outro trem percorre uma
+via paralela no sentido sul-norte com velocidade de
+\Sexpr{v1} km/h. Considere o instante t = 0, aquele que os
+trens est\~ao com as frentes na mesma posiç\~ao. O
+tempo que o segundo trem leva para ultrapassar
+totalmente o primeiro é de \Sexpr{t} s. O comprimento do
+segundo trem \'e:
+
+\end{question}
+
+\begin{solution}
+
+  \Sexpr{resp}
+    
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp}}
+%% \exname{Q10Velm}
+%% \extol{0.1}
+%% \extol{0.1}
