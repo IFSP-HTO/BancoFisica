@@ -264,9 +264,8 @@ assunto = "optica"
 myexam <- dir(paste0("./BancoDeQuestoes/",assunto), pattern = ".rnw", ignore.case=TRUE)
 ## Gerando HTML com o arquivo da questao
 set.seed(12018)
-exams2pdf(myexam, n = 1,
+exams2pdf(myexam, n = 1, 
           name=assunto,
-          dir=paste0("./BancoDeQuestoes/",assunto),
           encoding = "UTF-8",
           edir = paste0("./BancoDeQuestoes/",assunto),
           template = "plain8")
