@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: ~/main
     docker:
-      - image: flaviobarros/bancofisica-tests:latest
+      - image: rocker/verse
     steps:
       - checkout
       - run:
