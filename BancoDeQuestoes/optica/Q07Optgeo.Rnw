@@ -7,10 +7,7 @@ d <- sample(seq(from=5,to=8,by=0.1),1)
 
 resp <- round(H*d/D, digits = 1)
 
-# f <- "https://raw.githubusercontent.com/mcardinalian/BancoFisica/master/BancoDeQuestoes/optica/Q07Optgeo.jpg?token=AYwnUkFp32JGFdZleE2t_MIOVLVGfYhYks5aAOLMwA%3D%3D"
-# 
-# f <- "figuras/Q07Optgeo.jpg"
-
+include_supplement('Q07Optgeo.jpg')
 @
 \usepackage{graphicx}
 \usepackage[utf8]{inputenc}
@@ -21,7 +18,7 @@ resp <- round(H*d/D, digits = 1)
 
 Suponha que um objeto de $H = \Sexpr{H}$ m de altura esteja a uma distância $D = \Sexpr{D}$ m do orifício, e que a distância entre as faces seja $d =\Sexpr{d}$ cm. Calcule a altura h da imagem em centímetros. \textit{Caso necessário, arrendonde sua resposta para 1 casa decimal}
 
-\includegraphics[height=4cm]{"figuras/Q07Optgeo.png"}
+\includegraphics[height=4cm]{Q07Optgeo.jpg}
 
 \end{question}
 
