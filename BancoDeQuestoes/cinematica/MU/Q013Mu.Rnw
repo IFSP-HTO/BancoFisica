@@ -3,7 +3,7 @@
 ##FONTE: Unicamp (Adaptada)
 \usepackage{graphicx}
 
-include_supplement("Q01estce.jpg")
+include_supplement("Q013MU.png")
 
 questions <- solutions <- explanations <- rep("", 8)
 type <- rep(c("num"), 8)
