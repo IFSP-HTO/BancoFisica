@@ -3,6 +3,7 @@ library(magrittr, quietly = T)
 library(stringr, quietly = T)
 library(exams, quietly = T)
 library(purrr, quietly = T)
+library(tinytex, quietly = T)
 
 ## Checa o encoding
 check_encoding <- function() {
