@@ -3,7 +3,7 @@
 
 Flim <- sample(seq(from=25,to=100,by=1),1)
 l <- sample(seq(from=20,to=80,by=1),1)
-P <- sample(seq(from=10,to=1.5*flim,by=1),1)
+P <- sample(seq(from=10,to=1.5*Flim,by=1),1)
 resp = round(l*P/(2*Flim),2)
 
 include_supplement("Q15estce.jpg")
