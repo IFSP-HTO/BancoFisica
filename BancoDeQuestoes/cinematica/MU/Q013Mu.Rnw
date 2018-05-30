@@ -1,6 +1,7 @@
 <<echo=FALSE, results=hide>>=
 ##PROGRAMADO POR: CARLOS SANTANA, em 15 de Maio de 2017.
 ##FONTE: Unicamp (Adaptada)
+\usepackage{graphicx}
 
 include_supplement("Q01estce.jpg")
 
