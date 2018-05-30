@@ -20,6 +20,9 @@ jobs:
             - "/usr/local/lib/R/site-library"
       - run:
           command: |
+            R -e 'install.packages("tinytex", dependencies = TRUE)'
+      - run:
+          command: |
             R -e 'source("tests/tests.R")'
 
           ## store artifacts -----------------
