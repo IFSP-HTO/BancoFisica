@@ -6,12 +6,7 @@ jobs:
       - image: rocker/verse:latest
     steps:
       - checkout
-      - restore_cache:
-          keys:
-            - deps1-{{ .Branch }}-{{ checksum "DESCRIPTION" }}
-            - deps1-{{ .Branch }}
-            - deps1-
-
+      
       - run:
           command: | 
             R -e 'devtools::install_deps(dependencies = TRUE)'
