@@ -1,0 +1,47 @@
+<<echo=FALSE, results=hide>>=
+## DATA GENERATION EXAMPLE
+
+m <- sample(seq(from=1,to=15,by=0.5),1)
+respa = 75*m
+respb = 65*m
+include_supplement("Q13estce.jpg")
+
+@
+\usepackage[portuguese]{babel}
+\usepackage{graphicx}
+
+\begin{question}
+
+(UNICAMP-99-adapt.) O bíceps é um dos músculos envolvidos no processo de dobrar nossos braços. Esse músculo funciona num sistema de alavanca como é mostrado na figura abaixo. O simples ato de equilibrarmos um objeto na palma da mão, estando o braço em posição vertical e o antebraço em posição horizontal, é o resultado de um equilíbrio das seguintes forças: o peso P do objeto, a força F que o bíceps exerce sobre um dos ossos do antebraço e a força C que o osso do braço exerce sobre o cotovelo. A distância do cotovelo até a palma da mão é $a= 0,30 m$ e a distância do cotovelo ao ponto em que o bíceps está ligado a um dos ossos do antebraço é de $d = 0,04 m$. O objeto que a
+pessoa está segurando tem massa $M = \Sexpr{m} kg$.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[scale=0.7]{{Q13estce.jpg}}
+\end{figure}
+
+Desprezando o peso do antebraço e da mão e adotando $g = 10 m/s^2$, determine:
+
+\begin{answerlist}
+  \item A força F, em Newtons, que o bíceps deve exercer no antebraço.
+  \item A força C, em Newtons, que o osso do braço exerce nos ossos do antebraço.
+
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+%% Supply a solution here!
+\begin{answerlist}
+  \item \Sexpr{respa} N
+  \item \Sexpr{respb} N
+\end{answerlist}
+  
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{respa}|\Sexpr{respb}}
+%% \exname{Q13estce}
+%% \extol{0.01|0.01}

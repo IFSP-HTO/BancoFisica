@@ -1,0 +1,33 @@
+<<echo=FALSE, results=hide>>=
+## DATA GENERATION EXAMPLE
+
+L <- sample(seq(from=8,to=120,by=1),1)
+resp = L/4
+include_supplement("Q11estce.jpg")
+
+@
+\usepackage[portuguese]{babel}
+\usepackage{graphicx}
+
+\begin{question}
+
+(UFPE-adapt.) Dois blocos idênticos de comprimento $L = \Sexpr{L} cm$ são colocados sobre uma mesa, como mostra a figura a seguir. Determine o máximo valor de $x$, em $cm$, para que os blocos fiquem em equilíbrio, sem tombarem. Dê sua resposta com duas casas decimais.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[scale=0.7]{{Q11estce.jpg}}
+\end{figure}
+
+\end{question}
+
+\begin{solution}
+%% Supply a solution here!
+  \Sexpr{resp} cm
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp}}
+%% \exname{Q11estce}
+%% \extol{0.01}

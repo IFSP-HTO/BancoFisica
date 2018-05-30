@@ -1,0 +1,33 @@
+<<echo=FALSE, results=hide>>=
+## Marcelo C.
+
+m <- sample(seq(from=20,to=80,by=1),1)
+resp = 18*m
+include_supplement("Q14estce.jpg")
+
+@
+\usepackage[portuguese]{babel}
+\usepackage{graphicx}
+
+\begin{question}
+
+(ITA-adapt.) Um brinquedo que as mamães utilizam para enfeitar quartos de crianças é conhecido como mobile . Considere o mobile de luas esquematizado na figura abaixo. As luas estão presas por meio de fios de massas desprezíveis a três barras horizontais, também de massas desprezíveis. O conjunto todo está em equilíbrio e suspenso num único
+ponto A. Se a massa da lua 4 é de $\Sexpr{m} g$, determine a massa da lua 1, em gramas.
+\begin{figure}[h!]
+  \centering
+  \includegraphics[scale=0.7]{{Q14estce.jpg}}
+\end{figure}
+
+\end{question}
+
+\begin{solution}
+%% Supply a solution here!
+  \Sexpr{resp} gramas
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp}}
+%% \exname{Q14estce}
+%% \extol{0.1}
