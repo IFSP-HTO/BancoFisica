@@ -11,10 +11,6 @@ resp <- round(600/m,1)
  
 O gráfico representa a temperatura de uma amostra de massa \Sexpr{m} gramas de determinado metal, inicialmente sólido, em função da quantidade de calor por ela absorvida. Determine o calor latente de fusão desse metal, em cal/g. \textit{Arredonde sua resposta para 1 casa decimal.}
 
-\begin{figure}
-  \includegraphics[height=10cm]{http://jornal4cantos.com.br/wp-content/uploads/2016/12/termometro-4010161.jpg}
-\end{figure}
-
 \end{question}
 
 \begin{solution}
