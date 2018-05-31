@@ -45,4 +45,4 @@ BancoDeQuestoes/acel/acel1.pdf
 /*png
 
 # Ignore files generated in subfolder
-BancoDeQuestoes/*.pdf
+BancoDeQuestoes/**/*.pdf
