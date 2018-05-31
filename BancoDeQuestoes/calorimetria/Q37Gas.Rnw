@@ -1,0 +1,37 @@
+<<echo=FALSE, results=hide>>=
+  #Programado por: Jmduly
+  
+  press1 <- sample(seq(from=4,to=12,by=1),1)
+  
+  temp1  <- sample(seq(from=273,to=303,by=1),1)
+  
+  temp2  <- sample(seq(from=310,to=330,by=1),1)
+  
+  vol1   <- sample(seq(from=2,to=10,by=1),1)
+  
+  vol2   <- sample(seq(from=13,to=20,by=1),1)
+  
+  resp1  <- round((temp2*press1*10^4*vol1)/(vol2*temp1), digits = 1)
+  
+@
+  
+\usepackage[utf8]{inputenc}
+  
+\begin{question}
+  
+  Em condições tais que um gás se comporta como ideal, as variáveis de estado assumem os valores $\Sexpr{temp1}$ K, $\Sexpr{vol1}$ m³ e $\Sexpr{press1}$ x 10 4 Pa, num estado A. Sofrendo certa transformação, o sistema chega ao estado B, em que os valores são $\Sexpr{temp2}$ K, $\Sexpr{vol2}$ m³ e p. Determine o valor de p, em Pa, é:
+
+\end{question}
+  
+  %% SOLUTION
+\begin{solution}:
+    
+  \Sexpr{resp1}Pa
+  
+\end{solution}
+  
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp1}}
+%% \exname{Q37Gas}
+%% \extol{0.01}

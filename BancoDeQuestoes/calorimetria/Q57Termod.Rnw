@@ -1,0 +1,33 @@
+<<echo=FALSE, results=hide>>=
+  #Programado por: Jmduly
+  
+  temp1  <- sample(seq(from=0,to=60,by=1),1)
+  
+  temp2  <- sample(seq(from=80,to=190,by=1),1)
+  
+  u      <- sample(seq(from=3000,to=15000,by=1500),1)
+  
+  resp1  <- round(((2/3*u)/(((temp2+273)-(temp1+273))*8.31)), digits = 1)
+
+@
+  
+\usepackage[utf8]{inputenc}
+  
+\begin{question}
+
+Considere um gás perfeito na temperatura de $\Sexpr{temp1}$ °C que varia para $\Sexpr{temp2}$ ºC, e a variação da energia interna $\Sexpr{u}$.Dados: R=8,31 J/mol.K. Quanto(s) mols há do gás?
+
+\end{question}
+  
+%% SOLUTION
+\begin{solution}:
+    
+  \Sexpr{resp1}mols
+  
+\end{solution}
+  
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp1}}
+%% \exname{Q57Termod}
+%% \extol{0.01}

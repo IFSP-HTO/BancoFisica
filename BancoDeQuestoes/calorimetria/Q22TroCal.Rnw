@@ -1,0 +1,35 @@
+<<echo=FALSE, results=hide>>=
+  #Programado por: Jmduly
+  
+  mass1 <- sample(seq(from=20,to=80,by=1),1)
+  
+  mass2 <- sample(seq(from=40,to=100,by=1),1)
+  
+  temp1 <- sample(seq(from=30,to=120,by=1),1)
+  
+  temp2 <- sample(seq(from=130,to=150,by=1),1)
+  
+  resp1 <- round((mass1*temp1)+(mass2*temp2)/(mass1+mass2), digits = 1)
+  
+@
+  
+\usepackage[utf8]{inputenc}
+  
+\begin{question}
+  
+João misturou $\Sexpr{mass1}$ kg de água (calor específico sensível = $1,0$ cal/g°C) a $\Sexpr{temp1}$ °C com $\Sexpr{mass2}$ kg de água a $\Sexpr{temp2}$ °C. Qual será a temperatura final?
+
+\end{question}
+  
+%% SOLUTION
+\begin{solution}:
+  
+  \Sexpr{resp1} °C
+  
+\end{solution}
+  
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp1}}
+%% \exname{Q21TroCal}
+%% \extol{0.1}

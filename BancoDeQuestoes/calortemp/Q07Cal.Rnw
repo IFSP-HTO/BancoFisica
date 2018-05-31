@@ -1,0 +1,47 @@
+<<echo=FALSE, results=hide>>=
+##feito por Matheus Bertos;
+aleat = sample(1:5)
+
+questions <- character(5)
+solutions <- logical(5)
+
+questions[aleat[1]] <- "a operação I."
+questions[aleat[2]] <- "a operação II."
+questions[aleat[3]] <- "as operações I e II."
+questions[aleat[4]] <- "as operações I e III."
+questions[aleat[5]] <- "as operações II e III."
+
+solutions[aleat[1]] <-  FALSE
+solutions[aleat[2]] <-  FALSE
+solutions[aleat[3]] <-  TRUE
+solutions[aleat[4]] <-  FALSE
+solutions[aleat[5]] <-  FALSE
+
+@
+\usepackage[portuguese]{babel}
+
+\begin{question}
+(Enem) A refrigeração e o congelamento de alimentos são responsáveis por uma parte significativa do consumo de energia elétrica em uma residência tipica. Para diminuir as perdas térmicas de uma geladeira, podem ser tomados alguns cuidados operacionais:
+
+I. Distribuir os alimentos nas prateleiras deixando espaços vazios entre eles, para que ocorra a circulação do ar frio para baixo e do ar quente para cima.
+
+II. Manter as paredes do congelador com camada bem espessa de gelo, para que o aumento da massa de gelo aumente a troca de calor no congelador.
+
+III. Limpar o radiador ( na parte de tras) periodicamente, para que a gordura e a poeira que nele se depositam não reduzam a transferência de calor para o ambiente. 
+
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(questions)
+@
+\end{question}
+
+\begin{solution}
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(
+  paste("\\textbf{", ifelse(solutions, "Verdadeiro", "Falso"), "}"))
+@
+\end{solution}
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q07Cal}
+%% \exusepackage[utf8]{inputenc}

@@ -1,0 +1,31 @@
+<<echo=FALSE, results=hide>>=
+  #Programado por: Jmduly
+  
+  rend   <- sample(seq(from=10,to=60,by=1),1)
+  
+  temp2  <- sample(seq(from=-50,to=-10,by=1),1)
+  
+  resp1  <- round((-temp2-273)/((rend*0.01)-1), digits = 1)
+    
+@
+  
+\usepackage[utf8]{inputenc}
+  
+\begin{question}
+  
+O rendimento de uma máquina térmica de Carnot é de $\Sexpr{rend}$/100 e a fonte fria é a própria atmosfera a $\Sexpr{temp2}$ °C. Determine a temperatura da fonte quente.
+
+\end{question}
+  
+%% SOLUTION
+\begin{solution}:
+    
+  \Sexpr{resp1}
+  
+\end{solution}
+  
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp1}}
+%% \exname{Q53MaqTerm}
+%% \extol{0.01}

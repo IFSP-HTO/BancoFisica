@@ -1,0 +1,43 @@
+<<echo=FALSE, results=hide>>=
+#Programado por: Jmduly
+
+ resp1 <- -40
+
+ resp2 <- 233
+
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Existe uma temperatura que tem o mesmo valor na escala Celsius e na escala Fahrenheit. 
+
+  \begin{answerlist}
+
+    \item Qual é essa temperatura?
+  
+    \item E qual o valor dessa temperatura na escala Kelvin?
+  
+  \end{answerlist}
+
+\end{question}
+
+%% SOLUTION
+\begin{solution}:
+    
+    \begin{answerlist}
+      \item
+        \Sexpr{resp1} °C
+  
+      \item
+        \Sexpr{resp2}K
+  
+  \end{answerlist}
+\end{solution}
+  
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{resp1}|\Sexpr{resp2}}
+%% \exname{Q18Term}
+%% \extol{1|1}

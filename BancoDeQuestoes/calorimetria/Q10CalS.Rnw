@@ -1,23 +1,36 @@
 <<echo=FALSE, results=hide>>=
-#Programado por: Marcelo C.
 
-temp <- sample(seq(from=30,to=60,by=1),1)
+# Created by vinibrenobr11
 
-resp <- round(5/9*(temp - 32), digits = 1)
+temp <- sample(seq(from=20, to=160, by=20), 1)
+
+# C = Q/m.t
+# C = (600 * 60) / 600 * (temp - 20)
+resp <- 60 / (temp - 20)
+
 @
-\usepackage[utf8]{inputenc}
-
+\usepackage[portuguese]{babel}
 \begin{question}
 
-O verão de 1994 foi particularmente quente nos Estados Unidos da América. A diferença entre a máxima temperatura do verão e a mínima do inverno anterior foi de $\Sexpr{temp}$ °C. Qual o valor dessa diferença temperaturam na escala Fahrenheit?
-  
+Uma fonte fornece a 600g de uma substância um fluxo de calor constante de 600 cal/min, fazendo com que a temperatura varie com o tempo, segundo o gráfico abaixo.\\
+Determine o calor específico da substância.
+
+% \begin{figure}[h!]
+% \begin{center}
+% <<fig=TRUE, height=4, width=5, echo=FALSE, eps=FALSE, results=hide>>=
+% plot(range(0, 60), range(20, temp), type="o", col="blue", ylab="Temperatura (\U00BA C)", xlim=range(0, 60), xlab="Tempo (min)")
+% grid()
+% @
+% 
+% \end{center}
+% \end{figure}
+
 \end{question}
 
-%% SOLUTION
-\begin{solution}:
-  
-  \Sexpr{resp} °C
-        
+\begin{solution}
+
+  \Sexpr{resp} $cal/g^\circ C$
+
 \end{solution}
 
 %% META-INFORMATION

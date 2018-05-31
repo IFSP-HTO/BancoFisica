@@ -1,0 +1,33 @@
+<<echo=FALSE, results=hide>>=
+  #Programado por: Jmduly
+  
+  temp1  <- sample(seq(from=273,to=303,by=1),1)
+  
+  temp2  <- sample(seq(from=310,to=330,by=1),1)
+  
+  vol1   <- sample(seq(from=2,to=10,by=1),1)
+  
+  resp1  <- round((vol1*temp2)/temp1, digits = 1)
+  
+@
+  
+\usepackage[utf8]{inputenc}
+  
+\begin{question}
+  
+  Em um recipiente fechado, certa massa de gás ideal ocupa um volume de $\Sexpr{vol1}$ litros a $\Sexpr{temp1}$ K. Este gás é aquecido até $\Sexpr{temp2}$ K, sob pressão constante, seu volume será:
+
+\end{question}
+  
+%% SOLUTION
+\begin{solution}:
+    
+  \Sexpr{resp1}litros
+  
+\end{solution}
+  
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp1}}
+%% \exname{Q38Gas}
+%% \extol{0.01}
