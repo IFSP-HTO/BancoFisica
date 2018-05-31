@@ -1,4 +1,6 @@
-﻿BANCO DE QUESTÕES DE FÍSICA
+[![CircleCI](https://circleci.com/gh/flaviobarros/BancoFisica/tree/master.svg?style=svg&circle-token=ad42994e397d4da2260bafdb20853dd9a45efccf)](https://circleci.com/gh/flaviobarros/BancoFisica/tree/master)
+
+BANCO DE QUESTÕES DE FÍSICA
 ================
 
 Este é o repositório oficial do banco de questões de Física. Todas as questões devem ser programadas utilizando o pacote [exams](https://cran.r-project.org/web/packages/exams/index.html) do R. Nas próximas seções do documento podem ser encontradas instruções de como contribuir com o repositório.
