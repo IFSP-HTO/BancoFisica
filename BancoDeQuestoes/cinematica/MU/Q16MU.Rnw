@@ -8,9 +8,9 @@ b <- sample(seq(from=9, to=24, by=0.5))
 
 resp <- ((a*altura)/2)+((b*altura)/2)
 @
+\usepackage{graphicx}
 
 \begin{question}
-\usepackage{graphicx}
 
 (Uel) O gráfico representa o valor algébrico da força resultante ù que age sobre um corpo de massa 5,0kg, inicialmente em repouso, em função da abcissa x.
 

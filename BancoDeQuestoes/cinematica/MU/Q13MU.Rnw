@@ -40,8 +40,9 @@ solutions[8] <- explanations[8] <- 0.1
 type[8] <- "num"
 
 @
-\begin{question}
 \usepackage{graphicx}
+
+\begin{question}
 
 (Unicamp - Adaptada) De um helicóptero parado bem em cima de um campo de futebol, fotografou-se o movimento rasteiro de uma bola com uma câmera que expõe a foto 25 vezes a cada segundo. A figura 1 mostra 5 exposições consecutivas desta câmera.
 
