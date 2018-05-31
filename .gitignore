@@ -41,5 +41,5 @@ BancoDeQuestoes/estatica/estatica1.pdf
 BancoDeQuestoes/acel/acel1.pdf
 
 # Ignoring images in root folder
-*.jpg
-*.png
+.jpg
+.png
