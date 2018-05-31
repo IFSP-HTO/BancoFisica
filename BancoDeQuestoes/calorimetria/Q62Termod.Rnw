@@ -1,0 +1,31 @@
+<<echo=FALSE, results=hide>>=
+  #Programado por: Jmduly
+  
+  press1 <- sample(seq(from=5000,to=17000,by=500),1)
+  
+  u      <- sample(seq(from=300000,to=450000,by=600000),1)
+  
+  resp1  <- round((2/3*u)/(press1), digits = 1)
+
+@
+  
+\usepackage[utf8]{inputenc}
+  
+\begin{question}
+  
+Considere um gás ideal sob pressão de $\Sexpr{press1}$ Pa e que possui energia interna de $\Sexpr{u}$. Qual o volume ocupado pelo gás?
+
+\end{question}
+  
+%% SOLUTION
+\begin{solution}:
+    
+  \Sexpr{resp1}m³
+  
+\end{solution}
+  
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp1}}
+%% \exname{Q62Termod}
+%% \extol{0.01}

@@ -1,0 +1,44 @@
+<<echo=FALSE, results=hide>>=
+##PROGRAMADO POR: MARCELO C.
+aleat = sample(1:5)
+
+questions <- numeric(5)
+solutions <- logical(5)
+
+questions[aleat[1]] <- "Porque o piso de cerâmica está mais quente do que o piso de madeira, por isso a sensação de mais frio no piso cerâmico."
+questions[aleat[2]] <- "Porque o piso de cerâmica está mais gelado do que o piso de madeira, por isso a sensação de  mais frio no piso cerâmico."
+questions[aleat[3]] <- "Porque o piso de cerâmica no quarto dá um tom menos elegante."
+questions[aleat[4]] <- "Porque o piso de madeira troca menos calor com os nossos pés, causando-nos menos sensação  de frio. "
+questions[aleat[5]] <- "Porque o piso de cerâmica tem mais área de contato com o pé, por isso nos troca mais calor, causando sensação de frio."
+
+solutions[aleat[1]] <- FALSE
+solutions[aleat[2]] <- FALSE
+solutions[aleat[3]] <- FALSE
+solutions[aleat[4]] <- TRUE
+solutions[aleat[5]] <- FALSE
+
+@
+\usepackage[utf8]{inputenc}
+\begin{question}
+
+Em nossas casas, geralmente são usados piso de madeira ou de borracha em quartos e piso cerâmico na cozinha. Por que sentimos o piso cerâmico mais gelado?
+
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(questions)
+@
+
+\end{question}
+
+\begin{solution}
+
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(
+  paste("\\textbf{", ifelse(solutions, "Verdadeiro", "Falso"), "}"))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q03Cal}

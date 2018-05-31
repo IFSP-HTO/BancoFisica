@@ -1,0 +1,33 @@
+<<echo=FALSE, results=hide>>=
+  #Programado por: Jmduly
+  
+  temp1  <- sample(seq(from=273,to=303,by=1),1)
+  
+  press1 <- sample(seq(from=1,to=5,by=1),1)
+  
+  mol1   <- sample(1)
+  
+  resp1  <- round((mol1*0.082*(temp1))/(press1), digits = 1)
+  
+@
+  
+\usepackage[utf8]{inputenc}
+  
+\begin{question}
+  
+Um gás que está em condições normais, ou seja, a temperatura à $\Sexpr{temp1}$ K e a pressão a $\Sexpr{press1}$ atm. (Dado: R = 0,082 atm.L/mol.K) Determine o volume molar.
+
+\end{question}
+  
+%% SOLUTION
+\begin{solution}:
+  
+  \Sexpr{resp1}litros
+  
+\end{solution}
+  
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp1}}
+%% \exname{Q45Gas}
+%% \extol{0.01}

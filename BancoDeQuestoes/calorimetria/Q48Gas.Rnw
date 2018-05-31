@@ -1,0 +1,36 @@
+<<echo=FALSE, results=hide>>=
+  #Programado por: Jmduly
+  
+  press1 <- sample(seq(from=2,to=8,by=1),1)
+  
+  vol1   <- sample(seq(from=90,to=150,by=1),1)
+  
+  mass1  <- sample(seq(from=140,to=300,by=1),1)
+  
+  temp1  <- sample(seq(from=17,to=27,by=1),1)
+  
+  resp1  <- round((press1*vol1*6.02*10^23)/(0.082*(temp1+273)), digits = 1)
+  
+@
+  
+\usepackage[utf8]{inputenc}
+  
+\begin{question}
+  
+Um certo gás, cuja massa vale $\Sexpr{mass1}$ g, ocupa um volume de $\Sexpr{vol1}$ litros, sob pressão $\Sexpr{press1}$ atmosferas a temperatura de $\Sexpr{temp1}$ °C. O número de Avogadro vale 6,02.10²³ e a constante universal dos gases perfeitos R= 0,082 atm.L/mol.K. Nessas condições, o número de moléculas contidas no gás é aproximadamente de:
+
+\end{question}
+  
+%% SOLUTION
+\begin{solution}:
+    
+  \Sexpr{resp1} moléculas
+
+\end{solution}
+  
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp1}}
+%% \exname{Q48Gas}
+%% \extol{0.01}
+

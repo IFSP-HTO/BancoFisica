@@ -1,0 +1,33 @@
+<<echo=FALSE, results=hide>>=
+  #Programado por: Jmduly
+  
+  temp1  <- sample(seq(from=30,to=60,by=1),1)
+  
+  temp2  <- sample(seq(from=90,to=120,by=1),1)
+  
+  vol1   <- sample(seq(from=5,to=40,by=1),1)
+  
+  resp1  <- round((vol1*(temp2+273))/(temp1+273), digits = 1)
+  
+@
+  
+\usepackage[utf8]{inputenc}
+  
+\begin{question}
+  
+Um gás de volume $\Sexpr{vol1}$ m³ à temperatura de $\Sexpr{temp1}$ ºC é aquecido até a temperatura de $\Sexpr{temp2}$ ºC. Qual será o volume ocupado por ele, se esta transformação acontecer sob pressão constante?
+
+\end{question}
+  
+%% SOLUTION
+\begin{solution}:
+    
+  \Sexpr{resp1}cm³
+  
+\end{solution}
+  
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp1}}
+%% \exname{Q42Gas}
+%% \extol{0.0|}

@@ -1,0 +1,33 @@
+<<echo=FALSE, results=hide>>=
+  #Programado por: Jmduly
+  
+  vol1  <- sample(seq(from=200,to=1000,by=1),1)
+  
+  vol2  <- sample(seq(from=1100,to=1500,by=1),1)
+  
+  press1 <- sample(seq(from=150,to=300,by=1),1)
+  
+  resp1 <- round((vol2*press1)/(vol1), digits = 1)
+  
+@
+  
+\usepackage[utf8]{inputenc}
+  
+\begin{question}
+  
+  Certo gás contido em um recipiente de $\Sexpr{vol1}$ m³ com êmbolo exerce uma pressão de $\Sexpr{press1}$ Pa e é comprimido isotermicamente a um volume de $\Sexpr{vol2}$ m³. Qual será a pressão exercida pelo gás?
+
+\end{question}
+  
+%% SOLUTION
+\begin{solution}:
+    
+  \Sexpr{resp1}Pa
+  
+\end{solution}
+  
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp1}}
+%% \exname{Q35Gas}
+%% \extol{0.01}

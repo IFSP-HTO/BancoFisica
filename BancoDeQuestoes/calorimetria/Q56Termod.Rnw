@@ -1,0 +1,33 @@
+<<echo=FALSE, results=hide>>=
+  #Programado por: Jmduly
+  
+  temp1  <- sample(seq(from=20,to=100,by=1),1)
+  
+  temp2  <- sample(seq(from=110,to=200,by=1),1)
+  
+  mols1   <- sample(seq(from=2,to=6,by=0.5),1)
+  
+  resp1  <- round((3/2*mols1*8.31*((temp2+273)-(temp1+273))), digits = 1)
+  
+@
+  
+\usepackage[utf8]{inputenc}
+  
+\begin{question}
+  
+Considere $\Sexpr{mols1}$ mols de um gás perfeito na temperatura de $\Sexpr{temp1}$ °C que varia para $\Sexpr{temp2}$ ºC e R=8,31 J/mol.K. Qual a variação de energia interna do gás?
+
+\end{question}
+  
+%% SOLUTION
+\begin{solution}:
+    
+  \Sexpr{resp1}J
+  
+\end{solution}
+  
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp1}}
+%% \exname{Q56Termod}
+%% \extol{0.01|}

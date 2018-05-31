@@ -1,0 +1,33 @@
+<<echo=FALSE, results=hide>>=
+  #Programado por: Jmduly
+  
+  temp1  <- sample(seq(from=15,to=25,by=1),1)
+  
+  temp2  <- sample(seq(from=30,to=40,by=1),1)
+  
+  vol1   <- sample(seq(from=10,to=32,by=1),1)
+  
+  resp1  <- round((vol1*(temp2+273))/(temp1+273), digits = 1)
+  
+@
+
+\usepackage[utf8]{inputenc}
+  
+\begin{question}
+  
+A $\Sexpr{temp1}$ ºC, um gás ideal ocupa $\Sexpr{vol1}$ cm³.Após certo tempo, sua temperatura varia para $\Sexpr{temp2}$ ºC. Sendo a transformação isobárica, qual volume ocupará no final?
+
+\end{question}
+  
+%% SOLUTION
+\begin{solution}:
+
+  \Sexpr{resp1}cm³
+  
+\end{solution}
+  
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp1}}
+%% \exname{Q41Gas}
+%% \extol{0.01}
