@@ -43,3 +43,6 @@ BancoDeQuestoes/acel/acel1.pdf
 # Ignoring images in root folder
 /*jpg
 /*png
+
+# Ignore files generated in subfolder
+BancoDeQuestoes/*.pdf
