@@ -1,0 +1,35 @@
+<<echo=FALSE, results=hide>>=
+  #Programado por: Jmduly
+  
+  pot1  <- sample(seq(from=200,to=1000,by=1),1)
+  
+  time1 <- sample(seq(from=1,to=5,by=1),1)
+  
+  temp1 <- sample(seq(from=150,to=300,by=1),1)
+  
+  temp2 <- sample(seq(from=400,to=550,by=1),1)
+  
+  resp1 <- round((pot1*time1*60)/(temp2-temp1), digits = 1)
+  
+@
+  
+\usepackage[utf8]{inputenc}
+  
+\begin{question}
+  
+Uma fonte calorífica fornece calor continuamente, à razão de $\Sexpr{pot1}$ cal/s, a uma determinada massa de água. Se a temperatura da água aumenta de $\Sexpr{temp1}$ ºC para $\Sexpr{temp2}$ ºC em $\Sexpr{time1}$ minutos, sendo o calor especifico sensível da água 1,0 cal/gºC. Determine a massa de água aquecida em gramas.
+
+\end{question}
+  
+%% SOLUTION
+\begin{solution}:
+    
+  \Sexpr{resp1}g
+  
+\end{solution}
+  
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp1}}
+%% \exname{Q11CalS}
+%% \extol{0.01|}

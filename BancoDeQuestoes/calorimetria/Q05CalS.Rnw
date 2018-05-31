@@ -18,5 +18,5 @@
 %% META-INFORMATION
 %% \extype{num}
 %% \exsolution{\Sexpr{result}}
-%% \exname{Q05CalorTemp}
+%% \exname{Q05CalS}
 %% \extol{1}

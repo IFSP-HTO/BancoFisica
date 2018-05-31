@@ -1,0 +1,66 @@
+<<echo=FALSE, results=hide>>=
+##PROGRAMADO POR: MARCELO C.
+
+## QUESTION/ANSWER GENERATION
+questions <- character(10)
+solutions <- logical(10)
+explanations <- character(10)
+aleat = sample(1:10)
+
+  questions[aleat[1]] <- "Um balde de isopor mantém a cerveja gelada porque impede a saída do frio."
+  solutions[aleat[1]] <- FALSE
+  explanations[aleat[1]] <- "Falso!! Impede a entrada do calor."
+  questions[aleat[2]] <- "Se a temperatura de uma escova de dentes é maior que a temperatura da água da pia, mergulhando-a na água, ocorrerá uma transferência de calor da escova para a água."
+  solutions[aleat[2]] <- TRUE
+  explanations[aleat[2]] <- ""
+  questions[aleat[3]] <- "Associa-se a existência de calor a qualquer corpo, pois todo corpo possui calor. "
+  solutions[aleat[3]] <- FALSE
+  explanations[aleat[3]] <- "Falso!! Corpo não possui calor."
+  questions[aleat[4]] <- "Calor é a energia contida em um corpo."
+  solutions[aleat[4]] <- FALSE
+  explanations[aleat[4]] <- "Falso!! Corpo não contém calor"
+  questions[aleat[5]] <- "Se tivermos a sensação de frio ao tocar um objeto com a mão, isto significa que esse objeto está a uma temperatura inferior à nossa. "
+  solutions[aleat[5]] <- TRUE
+  explanations[aleat[5]] <- ""
+  questions[aleat[6]] <- "A porta da geladeira fechada impede a saída do frio."
+  solutions[aleat[6]] <- FALSE
+  explanations[aleat[6]] <- "Falso!!! Impede a entrada do calor"
+  questions[aleat[7]] <- "Calor mede a transferência de energia térmica de um corpo ao outro."
+  solutions[aleat[7]] <-TRUE
+  explanations[aleat[7]] <- ""
+  questions[aleat[8]] <- "Dois corpos estão em equilíbrio térmico quando possuem quantidades iguais de energia térmica."
+  solutions[aleat[8]] <- FALSE
+  explanations[aleat[8]] <- "Falso!! Equilibrio térmico indica mesma temperatura."
+  questions[aleat[9]] <- "O agasalho, que usamos em dias frios para nos mantermos aquecidos, é um bom condutor de calor"
+  solutions[aleat[9]] <- FALSE
+  explanations[aleat[9]] <- "Falso!!! Agasalho é um mau condutor de calor!!"
+  questions[aleat[10]] <- "A sensação de frio que nós sentimos resulta da perda de calor do nosso corpo para a atmosfera que está a uma temperatura menor."
+  solutions[aleat[10]] <- TRUE
+  explanations[aleat[10]] <- ""
+  
+@
+
+
+\begin{question}
+
+(UFSC-adaptado) Acerca dos conceitos de calor e temperatura, assinale verdadeiro (V) ou falso (F):
+
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(questions)
+@
+\end{question}
+
+\begin{solution}
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(
+  paste("\\textbf{", ifelse(solutions, "Verdadeiro", "Falso"), "}", sep = ""),
+  explanations)
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{mchoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions)}}
+%% \exname{Q02QuizCal}
+

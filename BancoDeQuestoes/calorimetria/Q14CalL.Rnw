@@ -1,0 +1,46 @@
+<<echo=FALSE, results=hide>>=
+  #Programado por: Jmduly
+  
+  vol   <- sample(seq(from=4,to=50,by=1),1)
+  
+  resp1 <- round((vol)*(540), digits = 1)
+  
+  resp2 <- round((vol*10^3)*(-80), digits = 1)
+  
+@
+  
+\usepackage[utf8]{inputenc}
+  
+\begin{question}
+  
+A água é muito comum no nosso cotidiano, e sabe-se que ela possui densidade de 1g/cm³ e calor latente de vaporização 540 cal/g e de fusão 80 cal/g. 
+  
+  \begin{answerlist}
+  
+    \item A quantidade de calor necessária para evaporar $\Sexpr{vol}$ litros de água é de:
+    \item A quantidade de calor necessária para solidificar $\Sexpr{vol}$ litros de água é de:
+  
+  \end{answerlist}
+  
+\end{question}
+  
+%% SOLUTION
+\begin{solution}:
+    
+  \begin{answerlist}
+    \item
+      \Sexpr{resp1}Kcal
+  
+    \item
+      \Sexpr{resp2}Kcal
+  
+  \end{answerlist}
+\end{solution}
+  
+  
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{resp1}|\Sexpr{resp2}}
+%% \exname{Q14CalL}
+%% \extol{1|1}

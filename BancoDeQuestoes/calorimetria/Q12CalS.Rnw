@@ -1,0 +1,32 @@
+<<echo=FALSE, results=hide>>=
+#Programado por: Jmduly - corrigido Marcelo C.
+
+mass1 <- sample(seq(from=2,to=20, by=1),1)
+
+temp1 <- sample(seq(from=20, to=40, by=1),1)
+
+temp2 <- sample(seq(from=50, to=100, by=1),1)
+
+resp1 <- round(mass1*0.12*(temp2-temp1)/1000, digits = 1)
+
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+João queria aquecer uma barra de ferro de $\Sexpr{mass1}$ kg de $\Sexpr{temp1}$ °C para $\Sexpr{temp2}$ °C? Qual a quantidade de calor sensível necessária? Dado: calor específico do ferro = $0,12$ cal/g°C. 
+  
+\end{question}
+
+%% SOLUTION
+\begin{solution}:
+    
+  \Sexpr{resp1} cal
+  
+\end{solution}
+  
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp1}}
+%% \exname{Q12CalS}
+%% \extol{1}
