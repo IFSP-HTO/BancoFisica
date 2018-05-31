@@ -1,0 +1,45 @@
+<<echo=FALSE, results=hide>>=
+#Programado por: Marcelo C.
+
+m <- sample(seq(from=55,to=70,by=1),1)
+d <- sample(seq(from=5000,to=10000,by=200),1)
+P <- sample(seq(from=250,to=300,by=10),1)
+
+resp1 <- round(P*1800/4.2)
+resp2 <- round(P/(d/1800))
+
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+(Unifesp-adapt.) Avalia-se que um atleta de \Sexpr{m} kg, numa prova de \Sexpr{d} m rasos, desenvolve uma potência média de \Sexpr{P} W.
+
+  \begin{answerlist}
+
+  \item Qual o consumo médio de calorias desse atleta, sabendo que o tempo de duração da prova foi de cerca de 0,50 h? Considere: 1 cal = 4,2 J.
+
+  \item Admita que a velocidade do atleta é constante. Qual a intensidade média da força exercida, em newtons, sobre o atleta durante a corrida?
+
+  \end{answerlist}
+
+\end{question}
+
+%% SOLUTION
+\begin{solution}:
+  \begin{answerlist}
+  
+    \item  \Sexpr{resp1} cal
+        
+    \item  \Sexpr{resp2} N
+  
+  \end{answerlist}      
+  
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{resp1}|\Sexpr{resp2}}
+%% \exname{Q02Trab}
+%% \extol{1|1}

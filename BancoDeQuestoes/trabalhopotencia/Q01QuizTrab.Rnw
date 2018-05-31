@@ -1,0 +1,50 @@
+<<echo=FALSE, results=hide>>=
+##PROGRAMADO POR: MARCELO C.
+
+## QUESTION/ANSWER GENERATION
+questions <- character(5)
+solutions <- logical(5)
+explanations <- character(5)
+aleat = sample(1:5)
+
+  questions[aleat[1]] <- "A força de resistência do ar não realiza trabalho sobre um corpo em queda."
+  solutions[aleat[1]] <- FALSE
+  explanations[aleat[1]] <- "falso. Realiza um trabalho resistente"
+  questions[aleat[2]] <- "A força gravitacional não realiza trabalho sobre um corpo em queda."
+  solutions[aleat[2]] <- FALSE
+  explanations[aleat[2]] <- "falso. Realiza um trabalho motor durante a queda."
+  questions[aleat[3]] <- "20 W (watts) corresponde a 20 joules de energia transformados de uma forma em outra em 20 segundos."
+  solutions[aleat[3]] <- FALSE
+  explanations[aleat[3]] <- "Falso. Corresponde a 20 Joules de energia transformados durante 1 segundo"
+  questions[aleat[4]] <- "Um trabalho motor indica que a força tem o mesmo sentido do deslocamento."
+  solutions[aleat[4]] <- TRUE
+  explanations[aleat[4]] <- ""
+  questions[aleat[5]] <- "A força realizada por uma pessoa para manter uma caixa em repouso não realiza trabalho"
+  solutions[aleat[5]] <- TRUE
+  explanations[aleat[5]] <- ""
+
+@
+
+\begin{question}
+
+Com respeito aos conceitos de trabalho de uma força, assinale as afirmações verdadeiras:
+
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(questions)
+@
+\end{question}
+
+\begin{solution}
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(
+  paste("\\textbf{", ifelse(solutions, "Verdadeiro", "Falso"), "}", sep = ""),
+  explanations)
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{mchoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions)}}
+%% \exname{Q01QuizTrab}
+

@@ -1,0 +1,27 @@
+<<echo=FALSE, results=hide>>=
+#Programado por: Marcelo C.
+
+pot <- sample(seq(from=7000,to=58000, by=500),1)
+resp <- round(pot*1.055/3600,1)
+
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+(UFCSPA-adapt.) Uma sala com equipamentos hospitalares deve ser mantida em determinada temperatura e, para isso, foi solicitada a instalação de um condicionador de ar com potência de $\Sexpr{pot} BTU/h$. Sabendo-se que $1 BTU$ corresponde a $1.055 J$, determine a potência, em $kW$, deste aparelho.
+
+\end{question}
+
+%% SOLUTION
+\begin{solution}:
+  
+  \Sexpr{resp} kW
+  
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp}}
+%% \exname{Q08Trabpot}
+%% \extol{0.1}
