@@ -1,0 +1,71 @@
+<<echo=FALSE, results=hide>>=
+#Programado por: Marcelo C.
+
+sen <- sample(seq(from=0.1,to=sqrt(2)/2-0.04,by=0.01),1)
+include_supplement("Q11Trab.jpg")
+
+resp1 <- round(10*(sqrt(1-sen^2)-sen),2)
+resp2 <- round(-sqrt(1-sen^2)/sen,1)
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+(UFRJ) Um plano está inclinado, em relação à horizontal, de um ângulo $\theta$ cujo seno é igual a $\Sexpr{sen}$. Um bloco de massa $m$ sobe nesse plano inclinado sob a ação de uma força horizontal $F$, de módulo exatamente igual ao módulo de seu peso, como indica a figura a seguir. Supondo que não haja atrito entre o bloco e o plano inclinado e que a aceleração da gravidade $g = 9.8 m/s^2$
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[scale=0.7]{{Q10Trab.jpg}}
+\end{figure}
+
+\begin{answerlist}
+
+  \item Supondo que não haja atrito entre o bloco e o plano inclinado, calcule o módulo da aceleração do bloco. 
+
+  \item Calcule a razão entre o trabalho da força $F$ e o trabalho do peso do bloco, ambos em um deslocamento no qual o bloco percorre uma distância $d$ ao longo da rampa.
+  
+\end{answerlist}
+
+\end{question}
+
+%% SOLUTION
+\begin{solution}:
+  \begin{answerlist}
+  
+    \item  Decompomos a força F em componentes paralelo e perpendicular ao plano inclinado. Assim, a força concorrente ao plano e que acelera a caixa é dada por:
+    
+    $$ F_x = F \cdot cos(\theta) = m \cdot g \cdot cos(\theta)$$
+    
+    Dado o valor de $sen(\theta)$, podemos determinar $cos(\theta)$ pela relação fundamental da trigonometria. Assim sendo, 
+    
+    $$ cos\theta = \sqrt{1-sen^2(\theta)}$$
+    
+    Utilizando a 2a lei de Newton ($F_R = m \cdot a$), isolamos $a$ para obter
+    
+    $$a = g[cos(\theta)-sen(\theta)]$$
+    
+    substituindo os números,
+    
+    $$a = \Sexpr{resp1} m/s^2$$
+        
+    \item  O trabalho realizado pela força F é dado por
+     
+    $$\tau_{F_X} = F_x \cdot d = m \cdot g \cdot cos(\theta) \cdot d $$
+     
+    O trabalho realizado pela força peso é
+    
+    $$\tau_{P} = - m \cdot g \cdot sen(\theta) \cdot d$$
+     
+    A razão de ambos é dada por:
+    
+    $$\frac{\tau_{F_X}}{\tau_{P}} = - \frac{cos(\theta)}{sen(\theta)} = \Sexpr{resp2} J$$
+    
+  \end{answerlist}      
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{resp1}|\Sexpr{resp2}}
+%% \exname{Q11Trab}
+%% \extol{0.1|0.1}
