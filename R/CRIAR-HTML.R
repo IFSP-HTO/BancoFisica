@@ -2,17 +2,6 @@
 library(tools)
 library(exams)
 
-############### exemplos ##################
-## Definindo a pasta com as questoes do exame
-myexam <- dir("./BancoDeQuestoes/exemplos/", pattern = ".rnw", ignore.case=TRUE)
-
-## Gerando HTML com o arquivo da questao
-set.seed(12018)
-exams2html(myexam, n = 1,solution=TRUE,
-           encoding = "UTF-8",
-           edir = "./BancoDeQuestoes/exemplos",
-           template = "templates/plain.html")
-
 ############### aceleracao media ##################
 ## Definindo a pasta com as questoes do exame
 myexam <- dir("./BancoDeQuestoes/acel/", pattern = ".rnw", ignore.case=TRUE)
@@ -119,7 +108,7 @@ myexam <- dir("./BancoDeQuestoes/hidrostatica/", pattern = ".rnw", ignore.case=T
 
 ## Gerando HTML com o arquivo da questao
 set.seed(12018)
-exams2html(myexam, n = 1,solution=TRUE,
+exams2html(myexam, n = 1,solution=TRUE, mathjax = TRUE,
            encoding = "UTF-8",
            edir = "./BancoDeQuestoes/hidrostatica",
            template = "templates/plain.html")

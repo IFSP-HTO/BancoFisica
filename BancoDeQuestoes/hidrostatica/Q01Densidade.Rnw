@@ -1,0 +1,64 @@
+<<echo=FALSE, results=hide>>=
+## IMPLEMENTADA POR Flavio Barros 
+## Carregandos funções necessárias
+nota_cient <- function(x,digits) {
+  if (x==0) return("0")
+  ord <- floor(log(abs(x),10))
+  x <- x / 10^ord
+  if (!missing(digits)) x <- format(x,digits=digits)
+  if (ord==0) return(as.character(x))
+  return(paste(x,"\\\\times 10^{",ord,"}",sep=""))
+}
+
+## Parâmetros
+peso <- round(runif(n = 1, min = 0.2, max = 1.5),2)
+vel_gotas <-  sample(x = 2:10, size = 1)
+volume <- round(runif(n = 1, min = 1e-7, max = 5e-7),8)
+densidade <- 1e3
+g <- 10
+
+## Resposta
+n_gotas <- peso/(densidade*volume*g)
+resp <- round(n_gotas/vel_gotas,1)
+@
+
+\begin{question}
+Uma balança de braços iguais t\^em em um dos pratos um peso de \Sexpr{peso} N 
+e no outro prato um recipiente de peso desprezível. Sobre o recipiente existe 
+uma torneira pingando \Sexpr{vel_gotas} gotas de água por segundo, cada gota com
+um volume de $\Sexpr{nota_cient(volume)}$ m³. Considerando a densidade da água 
+$\Sexpr{nota_cient(densidade)}$ kg/m³ e g=\Sexpr{g} m/s², determine o tempo necessário, 
+em segundos, para que os pratos da balança fiquem nivelados. (OBS: apresente a resposta com uma casa decimal.)
+
+\end{question}
+
+\begin{solution}
+%% Solution
+Seja P o peso em um dos pratos, n o n\'umero de gotas, g a gravidade, $\rho$ a densidade da \'agua, V o volume da gota,  ent\~ao, depois que o peso do recipiente for tal que o sistema entre em equil\'ibrio, temos:
+
+\begin{displaymath}
+P = n \cdot \rho \cdot V \cdot g
+\end{displaymath}
+
+Assim, isolando n temos:
+
+\begin{displaymath}
+n =  \frac{P}{ \rho \cdot V \cdot g} = \frac{\Sexpr{peso}}{\Sexpr{nota_cient(densidade)} \cdot \Sexpr{nota_cient(volume)} \cdot \Sexpr{g}} = \Sexpr{n_gotas}
+\end{displaymath}
+
+
+O tempo necess\'ario para pingar esse n\'umero de gotas \'e dado por:
+
+\begin{displaymath}
+T = \frac{n}{v_{gotas}} = \Sexpr{resp}
+\end{displaymath}
+
+
+Assim, depois de \Sexpr{resp} segundos os braços da balança estarão equilibrados.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp}}
+%% \exname{Q01Densidade}
+%% \extol{0.1}
