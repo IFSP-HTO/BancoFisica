@@ -249,16 +249,16 @@ exams2moodle(myexam, n = 100, rule="none", schoice = list(shuffle = TRUE), name 
              dir = "./Moodle",
              edir = "./BancoDeQuestoes/trabalhopotencia")
 
-############### velocidade media ##################
+################## MU ####################
 ## Definindo a pasta com as questoes do exame
-myexam <- dir("./BancoDeQuestoes/vm", pattern = ".rnw", ignore.case=TRUE)
+myexam <- dir("./BancoDeQuestoes/cinematica/MU", pattern = ".rnw", ignore.case=TRUE)
 ano <- 12018
 ## Cria o arquivo .xml para entrada no moodle
 set.seed(ano)
-exams2moodle(myexam, n = 100, rule="none", schoice = list(shuffle = TRUE), name = paste0("vm-",ano),
+exams2moodle(myexam, n = 100, rule="none", schoice = list(shuffle = TRUE), name = paste0("MU-",ano),
              encoding = "UTF-8",
              dir = "./Moodle",
-             edir = "./BancoDeQuestoes/vm")
+             edir = "./BancoDeQuestoes/cinematica/MU")
 
 ############### estatica do corpo extenso ##################
 ## Definindo a pasta com as questoes do exame
