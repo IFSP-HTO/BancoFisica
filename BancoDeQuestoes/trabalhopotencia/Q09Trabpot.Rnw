@@ -1,6 +1,5 @@
 <<echo=FALSE, results=hide>>=
 ##PROGRAMADO POR: CARLOS SANTANA, em 31 de Maio de 2017.
-##g <- plot(0:10,0:10,type = "b",xlab = "s(m)", ylab = "F(N)")
 
 questions <- character(5)
 solutions <- logical(5)
@@ -20,7 +19,6 @@ solutions[aleat[4]] <- FALSE
 questions[aleat[5]] <- "10J"
 solutions[aleat[5]] <- FALSE
 @
-\usepackage{graphicx}
 
 \begin{question}
 

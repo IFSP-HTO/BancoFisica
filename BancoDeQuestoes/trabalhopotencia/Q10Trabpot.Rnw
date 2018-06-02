@@ -18,7 +18,7 @@ resp <- ((a*altura)/2)+((b*altura)/2)
   \includegraphics[height=6cm,keepaspectratio]{Q10Trabpot.png}
 \end{figure}
 
-O trabalho realizado por F, no deslocamento de x=\Sexpr{a}m até x=\Sexpr{b}m, em joules, vale:
+Considerando 'a' como \Sexpr{a}m, o trabalho realizado por F, no deslocamento de x=\Sexpr{a}m até x=\Sexpr{b}m, em joules, vale:
 
 \end{question}
 
