@@ -1,0 +1,48 @@
+<<echo=FALSE, results=hide>>=
+##Programado por:Matheus V
+d <- sample(seq(from=1,to=3,by=1),1)
+c <- sample(seq(from=4,to=6,by=1),1)
+resp1 <-3/d
+resp2 <- resp1+c
+
+
+
+@
+\usepackage[portuguese]{babel}
+\usepackage{graphicx}
+
+\begin{question}
+ 
+      (Unesp) Um carrinho desloca-se em linha reta sobre uma superfície plana e horizontal, às custas da força F constante, indicada em escala na figura a seguir.
+      
+  \begin{figure}[h!]
+    \includegraphics[scale=0.7]{Q4Trab.png}
+  \end{figure}
+
+  \begin{answerlist}
+
+    \item  a) Qual é o trabalho realizado pela força ù, quando o carrinho se desloca do ponto P ao ponto Q, distante \Sexpr{d} metros de P?
+
+  
+    \item  b)  se tinha energia cinética de \Sexpr{c} J quando passou por P, dirigindo-se para Q, que energia cinética terá ao passar por Q? (Despreze possíveis atritos).
+    
+  \end{answerlist}
+  
+\end{question}
+
+\begin{solution}
+  
+  \begin{answerlist}
+  
+      \item \Sexpr{resp1} N
+      \item \Sexpr{resp2} J
+  
+  \end{answerlist}
+  
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp1}|\Sexpr{resp1})}}
+%% \exname{Q1Trab}
+%% \extol{0.1}

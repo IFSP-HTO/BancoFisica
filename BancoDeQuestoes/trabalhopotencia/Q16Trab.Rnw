@@ -1,0 +1,43 @@
+<<echo=FALSE, results=hide>>=
+##Programado por:Matheus V
+
+##gera questoes
+k <- sample(seq(from=50,to=100,by=10),1)
+
+t1 <- k*(64)/2
+t2 <- k*(4)/2
+resp <- t1-t2
+
+
+aleat <- sample(1:5)
+questions <- numeric(5)
+solutions <- logical(5)
+@
+
+\usepackage[portuguese]{babel}
+\usepackage{graphicx}
+
+\begin{question}
+  (Fei) Um corpo de massa 10kg é puxado por uma mola de constante elástica K= \Sexpr{k} N/m. O comprimento natural é Ø³= 2m. Qual é o trabalho realizado pela força elástica para deslocar o corpo da posição x=10m para a posição x=4m?
+  
+  \begin{figure}[h!]
+  \includegraphics[scale=1]{Q16Trab.png}
+  \end{figure}
+  
+
+
+\end{question}
+
+
+\begin{solution}
+  \begin{answerlist}
+  
+      \item \Sexpr{resp} J
+  
+  \end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp}}
+%% \exname{Q16Trab}
