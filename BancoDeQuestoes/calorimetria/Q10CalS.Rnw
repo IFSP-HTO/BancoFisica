@@ -11,7 +11,7 @@ m <- sample(seq(from=500, to=800, by=10), 1)
 resp <- P*tmax/(m*(Tmax-Tmin))
 
 @
-\usepackage[portuguese]{babel}
+\usepackage[utf8]{inputenc}
 \begin{question}
 
 Uma fonte fornece a $\Sexpr{m} g$ de uma substância um fluxo de calor constante de $\Sexpr{P} cal/min$, fazendo com que a temperatura varie com o tempo, segundo o gráfico abaixo.\\

@@ -9,7 +9,7 @@ resp <- round(2*xpasso*Fmax,1)
 
 resp
 @
-\usepackage[portuguese]{babel}
+\usepackage[utf8]{inputenc}
 \begin{question}
 
 O corpo representado está sendo deslocado por uma força de direção e sentido constante e módulo variável, conforme o diagrama abaixo. Determine o trabalho, em joules, realizado por essa força ao deslocar o corpo da posição $\Sexpr{xpasso} m$ à posição $\Sexpr{3*xpasso} m$.
