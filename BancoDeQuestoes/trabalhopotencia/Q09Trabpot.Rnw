@@ -25,9 +25,10 @@ solutions[aleat[5]] <- FALSE
 (Fei) Uma força F paralela à trajetória de seu ponto de aplicação varia com o deslocamento de acordo com a figura a seguir. Qual é o trabalho realizado pela força F no deslocamento de 1 a 5 m?
 
 \begin{center}
-\begin{figure}[h]
+\begin{figure}[h!]
 <<fig=TRUE, height=4, width=5, echo=FALSE, eps=FALSE, results=hide>>=
 plot(0:10,0:10,type = "b",xlab = "s(m)", ylab = "F(N)")
+grid()
 @
 \end{figure}
 \end{center}
