@@ -1,7 +1,5 @@
 <<echo=FALSE, results=hide>>=
-
 # Created by vinibrenobr11 - corrigido por Marcelo C.
-
 Tmax <- sample(seq(from=50, to=160, by=2), 1)
 Tmin <- sample(seq(from=10, to=24, by=2), 1)
 tmax <- sample(seq(from=30, to=60, by=5), 1)
@@ -9,12 +7,11 @@ P <- sample(seq(from=500, to=600, by=10), 1)
 m <- sample(seq(from=500, to=800, by=10), 1)
 
 resp <- P*tmax/(m*(Tmax-Tmin))
-
 @
-\usepackage[utf8]{inputenc}
+
 \begin{question}
 
-Uma fonte fornece a $\Sexpr{m} g$ de uma substância um fluxo de calor constante de $\Sexpr{P} cal/min$, fazendo com que a temperatura varie com o tempo, segundo o gráfico abaixo.\\
+Uma fonte fornece a $\Sexpr{m} g$ de uma substância um fluxo de calor constante de $\Sexpr{P} cal/min$, fazendo com que a temperatura varie com o tempo, segundo o gráfico abaixo.
 
 \begin{figure}[h!]
 \begin{center}
@@ -32,9 +29,7 @@ Determine o calor específico da substância em $cal/g^\circ C$. Dê sua respost
 \end{question}
 
 \begin{solution}
-
   \Sexpr{resp} $c = cal/g^\circ C$
-
 \end{solution}
 
 %% META-INFORMATION

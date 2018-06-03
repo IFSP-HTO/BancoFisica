@@ -1,17 +1,13 @@
 <<echo=FALSE, results=hide>>=
-
-# MarcelO C.
+## Marcelo C.
 include_supplement("Q12Trab.jpg")
 xpasso <- sample(seq(from=1, to=5, by=0.5), 1)
 x <- c(0, xpasso, 2*xpasso, 3*xpasso, 4*xpasso)
 Fmax <- sample(seq(from=6, to=400, by=2), 1)
-resp <- round(2*xpasso*Fmax,1)
-
-resp
+resp <- round(5*xpasso*Fmax/4,1)
 @
-\usepackage[utf8]{inputenc}
-\begin{question}
 
+\begin{question}
 O corpo representado está sendo deslocado por uma força de direção e sentido constante e módulo variável, conforme o diagrama abaixo. Determine o trabalho, em joules, realizado por essa força ao deslocar o corpo da posição $\Sexpr{xpasso} m$ à posição $\Sexpr{3*xpasso} m$.
 
 \begin{figure}[h!]
@@ -29,13 +25,10 @@ abline(h=c(0,Fmax/2,Fmax), v=0:4*xpasso, col="gray", lty=3)
 \end{center}
 \end{figure}
 
-
 \end{question}
 
 \begin{solution}
-
-  \Sexpr{resp} $J$
-
+  $\tau = \Sexpr{resp} J$
 \end{solution}
 
 %% META-INFORMATION
