@@ -73,7 +73,7 @@ generate_pdf <- function() {
   arquivos$status <- rep('', nrow(arquivos))
   
   ## Envelopando a função exams2moodle
-  #exams2pdf <- possibly(.f = exams2pdf, otherwise = NA)
+  exams2pdf <- possibly(.f = exams2pdf, otherwise = NA)
   
   ## Ano
   ano <- 2018

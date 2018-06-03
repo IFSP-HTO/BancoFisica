@@ -1,21 +1,24 @@
 <<echo=FALSE, results=hide>>=
 #Programado por: Marcelo C.
-
+## Parâmetros
 sen <- sample(seq(from=0.1,to=sqrt(2)/2-0.04,by=0.01),1)
-include_supplement("Q11Trab.jpg")
 
+## Respostas
 resp1 <- round(10*(sqrt(1-sen^2)-sen),2)
 resp2 <- round(-sqrt(1-sen^2)/sen,1)
+
+## Incluindo figuras
+include_supplement("Q11Trab.jpg")
 @
 \usepackage[utf8]{inputenc}
 
 \begin{question}
 
-(UFRJ) Um plano está inclinado, em relação à horizontal, de um ângulo $\theta$ cujo seno é igual a $\Sexpr{sen}$. Um bloco de massa $m$ sobe nesse plano inclinado sob a ação de uma força horizontal $F$, de módulo exatamente igual ao módulo de seu peso, como indica a figura a seguir. Supondo que não haja atrito entre o bloco e o plano inclinado e que a aceleração da gravidade $g = 9.8 m/s^2$
+(UFRJ) Um plano está inclinado, em relação à horizontal, de um ângulo $\theta$ cujo seno é igual a $\Sexpr{sen}$. Um bloco de massa $m$ sobe nesse plano inclinado sob a ação de uma força horizontal $F$, de módulo exatamente igual ao módulo de seu peso, como indica a figura a seguir. Supondo que não haja atrito entre o bloco e o plano inclinado e que a aceleração da gravidade $g = 9.8$ m/s².
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[scale=0.7]{{Q10Trab.jpg}}
+  \includegraphics[height=5cm, keepaspectratio]{{Q11Trab.jpg}}
 \end{figure}
 
 \begin{answerlist}
