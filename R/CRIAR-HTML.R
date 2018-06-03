@@ -250,7 +250,7 @@ myexam <- dir("./BancoDeQuestoes/trabalhopotencia/", pattern = ".rnw", ignore.ca
 
 ## Gerando HTML com o arquivo da questao
 set.seed(12018)
-exams2html(myexam, n = 1,solution=TRUE,
+exams2html(myexam, n = 1,solution=TRUE, mathjax = TRUE,
            encoding = "UTF-8",
            edir = "./BancoDeQuestoes/trabalhopotencia",
            template = "templates/plain.html")
