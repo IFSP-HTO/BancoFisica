@@ -1,18 +1,23 @@
 <<echo=FALSE, results=hide>>=
 ## Marcelo C.
-include_supplement("Q12Trab.jpg")
+## Parâmetros
 xpasso <- sample(seq(from=1, to=5, by=0.5), 1)
 x <- c(0, xpasso, 2*xpasso, 3*xpasso, 4*xpasso)
 Fmax <- sample(seq(from=6, to=400, by=2), 1)
+
+## Resposta
 resp <- round(5*xpasso*Fmax/4,1)
+
+## Figuras
+include_supplement("Q12Trab.jpg")
 @
 
 \begin{question}
-O corpo representado está sendo deslocado por uma força de direção e sentido constante e módulo variável, conforme o diagrama abaixo. Determine o trabalho, em joules, realizado por essa força ao deslocar o corpo da posição $\Sexpr{xpasso} m$ à posição $\Sexpr{3*xpasso} m$.
+O corpo representado está sendo deslocado por uma força de direção e sentido constante e módulo variável, conforme o diagrama abaixo. Determine o trabalho, em joules, realizado por essa força ao deslocar o corpo da posição $\Sexpr{xpasso}$ m à posição $\Sexpr{3*xpasso}$ m.
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[scale=0.7]{{Q12Trab.jpg}}
+  \includegraphics[width=5cm, keepaspectratio]{{Q12Trab.jpg}}
 \end{figure}
 
 \begin{figure}[h!]
@@ -21,6 +26,7 @@ O corpo representado está sendo deslocado por uma força de direção e sentido
 y <- c(Fmax/2, Fmax, Fmax/2, Fmax/2 , Fmax/2)
 plot(x, y, type="o", col="blue", ylab="Força (N)", ylim=range(0, Fmax), yaxp=c(0,Fmax,2), xlab="Distância (m)", xaxp=c(0,4*xpasso,4))
 abline(h=c(0,Fmax/2,Fmax), v=0:4*xpasso, col="gray", lty=3)
+grid()
 @
 \end{center}
 \end{figure}
