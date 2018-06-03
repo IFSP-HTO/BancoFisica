@@ -36,7 +36,6 @@ myexam <- dir(paste0("./BancoDeQuestoes/",assunto), pattern = ".rnw", ignore.cas
 set.seed(12018)
 exams2pdf(myexam, n = 1,
           name=assunto,
-          dir=paste0("./BancoDeQuestoes/",assunto),
           encoding = "UTF-8",
           edir = paste0("./BancoDeQuestoes/",assunto),
           template = "plain8")
@@ -305,7 +304,6 @@ myexam <- dir(paste0("./BancoDeQuestoes/",assunto), pattern = ".rnw", ignore.cas
 set.seed(12018)
 exams2pdf(myexam, n = 1,
           name=assunto,
-          dir=paste0("./BancoDeQuestoes/",assunto),
           encoding = "UTF-8",
           edir = paste0("./BancoDeQuestoes/",assunto),
           template = "plain8")
@@ -329,7 +327,6 @@ myexam <- dir(paste0("./BancoDeQuestoes/",assunto), pattern = ".rnw", ignore.cas
 set.seed(12018)
 exams2pdf(myexam, n = 1,
           name=assunto,
-          dir=paste0("./BancoDeQuestoes/",assunto),
           encoding = "UTF-8",
           edir = paste0("./BancoDeQuestoes/",assunto),
           template = "plain8")
