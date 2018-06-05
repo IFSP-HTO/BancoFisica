@@ -48,11 +48,17 @@ generate_xml <- function() {
   ## Para cada arquivo descobre o encoding
   for (i in 1:nrow(arquivos)) {
     
+    ## Descobrindo o diretório
+    diretorio <- gsub(pattern = '/[^/]*$', replacement = '', x = arquivos$file[i])
+    
     ## Rodando a função em cada arquivo
-    arquivos$status[i] <- exams2moodle(as.character(arquivos$file[i]), n = 1, rule="none", schoice = list(shuffle = TRUE), name = paste0("exemplos-",ano),
-                 encoding = "UTF-8",
-                 dir = tempdir(),
-                 edir = tempdir())
+    arquivos$status[i] <- exams2moodle(as.character(arquivos$file[i]), 
+                                       n = 1, rule="none", 
+                                       schoice = list(shuffle = TRUE), 
+                                       name = paste0("exemplos-",ano),
+                                       encoding = "UTF-8",
+                                       dir = tempdir(),
+                                       edir = diretorio)
   }
   
   ## Encontrando as linhas com erros
@@ -73,7 +79,7 @@ generate_pdf <- function() {
   arquivos$status <- rep('', nrow(arquivos))
   
   ## Envelopando a função exams2moodle
-  #exams2pdf <- possibly(.f = exams2pdf, otherwise = NA)
+  exams2pdf <- possibly(.f = exams2pdf, otherwise = NA)
   
   ## Ano
   ano <- 2018

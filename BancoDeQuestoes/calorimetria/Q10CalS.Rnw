@@ -1,40 +1,39 @@
 <<echo=FALSE, results=hide>>=
+# Created by vinibrenobr11 - corrigido por Marcelo C.
+Tmax <- sample(seq(from=50, to=160, by=2), 1)
+Tmin <- sample(seq(from=10, to=24, by=2), 1)
+tmax <- sample(seq(from=30, to=60, by=5), 1)
+P <- sample(seq(from=500, to=600, by=10), 1)
+m <- sample(seq(from=500, to=800, by=10), 1)
 
-# Created by vinibrenobr11
-
-temp <- sample(seq(from=20, to=160, by=20), 1)
-
-# C = Q/m.t
-# C = (600 * 60) / 600 * (temp - 20)
-resp <- 60 / (temp - 20)
-
+resp <- P*tmax/(m*(Tmax-Tmin))
 @
-\usepackage[portuguese]{babel}
+
 \begin{question}
 
-Uma fonte fornece a 600g de uma substância um fluxo de calor constante de 600 cal/min, fazendo com que a temperatura varie com o tempo, segundo o gráfico abaixo.\\
-Determine o calor específico da substância.
+Uma fonte fornece a $\Sexpr{m} g$ de uma substância um fluxo de calor constante de $\Sexpr{P} cal/min$, fazendo com que a temperatura varie com o tempo, segundo o gráfico abaixo.
 
-% \begin{figure}[h!]
-% \begin{center}
-% <<fig=TRUE, height=4, width=5, echo=FALSE, eps=FALSE, results=hide>>=
-% plot(range(0, 60), range(20, temp), type="o", col="blue", ylab="Temperatura (\U00BA C)", xlim=range(0, 60), xlab="Tempo (min)")
-% grid()
-% @
-% 
-% \end{center}
-% \end{figure}
+\begin{figure}[h!]
+\begin{center}
+<<fig=TRUE, height=4, width=5, echo=FALSE, eps=FALSE, results=hide>>=
+y <- c(Tmin, Tmax)
+x <- c(0, tmax)
+plot(x, y, type="o", col="blue", ylab=" Temperatura \U00BA C)", ylim=range( Tmin,Tmax), yaxp=c(Tmin,Tmax,2), xlab="Tempo (min)", xaxp=c(0,tmax,5))
+abline(h=c(Tmin,(Tmax+Tmin)/2,Tmax), v=seq(from=0, to=tmax, by=tmax/5), col="gray", lty=3)
+@
+\end{center}
+\end{figure}
+
+Determine o calor específico da substância em $cal/g^\circ C$. Dê sua resposta com duas casas decimais.
 
 \end{question}
 
 \begin{solution}
-
-  \Sexpr{resp} $cal/g^\circ C$
-
+  \Sexpr{resp} $c = cal/g^\circ C$
 \end{solution}
 
 %% META-INFORMATION
 %% \extype{num}
 %% \exsolution{\Sexpr{resp}}
 %% \exname{Q10CalS}
-%% \extol{0.1}
+%% \extol{0.01}
