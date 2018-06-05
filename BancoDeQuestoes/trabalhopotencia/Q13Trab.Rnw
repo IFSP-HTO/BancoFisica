@@ -1,0 +1,50 @@
+<<echo=FALSE, results=hide>>=
+##Programado por:Matheus V
+d <- sample(seq(from=1,to=3,by=1),1)
+c <- sample(seq(from=4,to=6,by=1),1)
+
+resp1 <-3/d
+resp2 <- resp1+c
+
+include_supplement("Q13Trab.png")
+@
+\usepackage[portuguese]{babel}
+\usepackage{graphicx}
+
+\begin{question}
+ 
+      (Unesp) Um carrinho desloca-se em linha reta sobre uma superfície plana e horizontal, às custas da força F constante, indicada em escala na figura a seguir.
+      
+\begin{figure}[h!]
+  \centering
+  \includegraphics[height=5cm, keepaspectratio]{{Q13Trab.png}}
+\end{figure}
+
+  \begin{answerlist}
+
+    \item Qual é o trabalho realizado pela força ù, quando o carrinho se desloca do ponto P ao ponto Q, distante \Sexpr{d} metros de P?
+
+  
+    \item se tinha energia cinética de \Sexpr{c} J quando passou por P, dirigindo-se para Q, que energia cinética terá ao passar por Q? (Despreze possíveis atritos).
+    
+  \end{answerlist}
+  
+\end{question}
+
+\begin{solution}
+  
+  \begin{answerlist}
+  
+      \item \Sexpr{resp1} N
+      \item \Sexpr{resp2} J
+  
+  \end{answerlist}
+  
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{resp1}|\Sexpr{resp2}}
+%% \exname{Q13Trab}
+%% \extol{0.1|0.1}

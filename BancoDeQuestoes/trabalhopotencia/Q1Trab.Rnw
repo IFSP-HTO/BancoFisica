@@ -1,0 +1,41 @@
+<<echo=FALSE, results=hide>>=
+##Programado por:Matheus V
+m <- sample(seq(from=2,to=10,by=2),1)
+v <- sample(seq(from=5,to=15,by=1),1)
+d <- sample(seq(from=20,to=30,by=2),1)
+
+resp1 <- m*(v*v)/2
+@
+\usepackage[portuguese]{babel}
+
+\begin{question}
+ 
+      (Unicamp) Sob a ação de uma força constante, um corpo de massa m= \Sexpr{m} kg adquire, a partir do repouso, a velocidade de \Sexpr{v} m/s. 
+
+  \begin{answerlist}
+
+    \item Qual é trabalho realizado por essa força? 
+
+  
+    \item Se o corpo se deslocou \Sexpr{d} m, qual o valor da força aplicada? 
+
+  \end{answerlist}
+
+\end{question}
+
+\begin{solution}
+  
+  \begin{answerlist}
+  
+      \item \Sexpr{resp1} J
+      \item \Sexpr{resp2} N
+  
+  \end{answerlist}
+  
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp1}|\Sexpr{resp2}}
+%% \exname{Q1Trab}
+%% \extol{0.1}
