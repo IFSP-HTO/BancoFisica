@@ -1,0 +1,55 @@
+<<echo=FALSE, results=hide>>=
+##PROGRAMADO POR: CARLOS SANTANA, em 31 de Maio de 2017.
+
+questions <- character(5)
+solutions <- logical(5)
+
+questions[aleat[1]] <- "100J"
+solutions[aleat[1]] <- FALSE
+
+questions[aleat[2]] <- "20J"
+solutions[aleat[2]] <- FALSE
+
+questions[aleat[3]] <- "12J"
+solutions[aleat[3]] <- TRUE
+
+questions[aleat[4]] <- "15J"
+solutions[aleat[4]] <- FALSE
+
+questions[aleat[5]] <- "10J"
+solutions[aleat[5]] <- FALSE
+@
+
+\begin{question}
+
+(Fei) Uma força F paralela à trajetória de seu ponto de aplicação varia com o deslocamento de acordo com a figura a seguir. Qual é o trabalho realizado pela força F no deslocamento de 1 a 5 m?
+
+\begin{center}
+\begin{figure}[h!]
+<<fig=TRUE, height=4, width=5, echo=FALSE, eps=FALSE, results=hide>>=
+plot(0:10,0:10,type = "b",xlab = "s(m)", ylab = "F(N)")
+grid()
+@
+\end{figure}
+\end{center}
+
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(questions)
+@
+
+\end{question}
+
+%% SOLUTION
+\begin{solution}
+
+<<echo=FALSE, results=hide, results=tex>>=
+
+answerlist(
+  paste("\\textbf{", ifelse(solutions, "Verdadeiro", "Falso"), "}", sep = ""))
+@
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{mchoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions)}}
+%% \exname{Q09Trabpot}

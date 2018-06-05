@@ -1,10 +1,10 @@
 <<echo=FALSE, results=hide>>=
 ##PROGRAMADO POR: CARLOS SANTANA, em 31 de Maio de 2017.
-include_supplement(file = 'Q16MU.png')
+include_supplement(file = 'Q10Trabpot.png')
 
-altura <- sample(seq(from=10, to=100, by=1))
-a <- sample(seq(from=2, to=8, by=0.5))
-b <- sample(seq(from=9, to=24, by=0.5))
+altura <- sample(seq(from=10, to=100, by=1),2)
+a <- sample(seq(from=2, to=8, by=0.5),2)
+b <- sample(seq(from=9, to=24, by=0.5),2)
 
 resp <- ((a*altura)/2)+((b*altura)/2)
 @
@@ -15,10 +15,10 @@ resp <- ((a*altura)/2)+((b*altura)/2)
 (Uel) O gráfico representa o valor algébrico da força resultante ù que age sobre um corpo de massa 5,0kg, inicialmente em repouso, em função da abcissa x.
 
 \begin{figure}[h!]
-  \includegraphics[height=6cm,keepaspectratio]{Q16MU.png}
+  \includegraphics[height=6cm,keepaspectratio]{Q10Trabpot.png}
 \end{figure}
 
-O trabalho realizado por F, no deslocamento de x=\Sexpr{a}m até x=\Sexpr{b}m, em joules, vale:
+Considerando 'a' como \Sexpr{a}m, o trabalho realizado por F, no deslocamento de x=\Sexpr{a}m até x=\Sexpr{b}m, em joules, vale:
 
 \end{question}
 
@@ -32,4 +32,4 @@ O trabalho realizado por F, no deslocamento de x=\Sexpr{a}m até x=\Sexpr{b}m, e
 %% META-INFORMATION
 %% \extype{num}
 %% \exsolution{\Sexpr{resp}}
-%% \exname{Q16MU}
+%% \exname{Q10Trabpot}
