@@ -39,7 +39,7 @@ answerlist(questions)
 \begin{solution}
 <<echo=FALSE, results=hide, results=tex>>=
 answerlist(
-  paste("\\textbf{", ifelse(solutions, "Verdadeiro", "Falso")))
+  paste("\\textbf{", ifelse(solutions, "Verdadeiro", "Falso"), "}"))
 @
 
 \end{solution}
