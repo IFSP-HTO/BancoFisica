@@ -1,0 +1,63 @@
+<<echo=FALSE, results=hide>>=
+##PROGRAMADO POR: CARLOS SANTANA, em 31 de Maio de 2017.
+
+baseMenor <- sample(seq(from=1, to=5, by=0.5), 1)
+razao <-  sample(seq(from=2, to=6, by=0.5), 1)
+baseMaior <- baseMenor*razao
+
+resp <- ((baseMaior+baseMenor)*4)/2
+
+questions <- character(5)
+solutions <- logical(5)
+
+questions[aleat[1]] <- resp/2
+solutions[aleat[1]] <- FALSE
+
+questions[aleat[2]] <- resp*1.5
+solutions[aleat[2]] <- FALSE
+
+questions[aleat[3]] <- resp
+solutions[aleat[3]] <- TRUE
+
+questions[aleat[4]] <- "15J"
+solutions[aleat[4]] <- FALSE
+
+questions[aleat[5]] <- resp+15
+solutions[aleat[5]] <- FALSE
+@
+
+\begin{question}
+
+(Fei) Uma força F paralela à trajetória de seu ponto de aplicação varia com o deslocamento de acordo com a figura a seguir. Qual é o trabalho realizado pela força F no deslocamento de \Sexpr{baseMenor}m a \Sexpr{baseMaior}m?
+
+Considere altura = 4m
+
+\begin{center}
+\begin{figure}[h!]
+<<fig=TRUE, height=4, width=5, echo=FALSE, eps=FALSE, results=hide>>=
+plot(0:10,0:10,type = "b",xlab = "s(m)", ylab = "F(N)")
+grid()
+@
+\end{figure}
+\end{center}
+
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(questions)
+@
+
+\end{question}
+
+%% SOLUTION
+\begin{solution}
+
+<<echo=FALSE, results=hide, results=tex>>=
+
+answerlist(
+  paste("\\textbf{", ifelse(solutions, "Verdadeiro", "Falso"), "}", sep = ""))
+@
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{mchoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions)}}
+%% \exname{Q13Trab}
