@@ -9,6 +9,7 @@ resp <- ((baseMaior+baseMenor)*4)/2
 
 questions <- character(5)
 solutions <- logical(5)
+aleat = sample(1:5)
 
 questions[aleat[1]] <- resp/2
 solutions[aleat[1]] <- FALSE
