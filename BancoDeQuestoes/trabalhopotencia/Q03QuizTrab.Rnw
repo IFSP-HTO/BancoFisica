@@ -1,0 +1,55 @@
+<<echo=FALSE, results=hide>>=
+## PROGRAMADO POR CARLOS SANTANA EM 06 DE JUNHO DE 2018
+include_supplement("Q03QuizTrab.png")
+
+questions <- character(7)
+solutions <- logical(7)
+aleat = sample(1:7)
+
+questions[aleat[1]] <- "Na situação descrita, não há conservação da energia mecânica."
+solutions[aleat[1]] <- TRUE
+
+questions[aleat[2]] <- " A energia mecânica do bloco no ponto B é igual a 6,4J."
+solutions[aleat[2]] <- TRUE
+
+questions[aleat[3]] <- "O trabalho realizado pela força de atrito sobre o bloco, durante o seu movimento, foi 1,6J"
+solutions[aleat[3]] <- TRUE
+
+questions[aleat[4]] <- "O ponto B situa-se a 80cm de altura, em relação ao ponto A."
+solutions[aleat[4]] <- FALSE
+
+questions[aleat[5]] <- "A força peso não realizou trabalho no deslocamento do bloco entre os pontos A e B, por isso não houve conservação da energia mecânica do bloco"
+solutions[aleat[5]] <- FALSE
+
+questions[aleat[6]] <- "A energia mecânica total do bloco, no ponto A, é igual a 8,0J."
+solutions[aleat[6]] <- TRUE
+
+questions[aleat[7]] <- "A energia potencial elástica do bloco, no ponto A, é totalmente transformada na energia potencial gravitacional do bloco, no ponto B."
+solutions[aleat[7]] <- FALSE
+@
+
+\begin{question}
+(Ufsc) A figura mostra um bloco, de massa m=500g, mantido encostado em uma mola comprimida de X=20cm. A constante elástica da mola é K=400N/m. A mola é solta e empurra o bloco que, partindo do repouso no ponto A, atinge o ponto B, onde pára. No percurso entre os pontos A e B, a força de atrito da superfície sobre o bloco dissipa 20 por cento da energia mecânica inicial no ponto A.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=5cm, keepaspectratio]{{Q03QuizTrab.png}}
+\end{figure}
+
+Assinale a(s) proposição(ões) CORRETA(S):
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(questions)
+@
+\end{question}
+
+\begin{solution}
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(
+  paste("\\textbf{", ifelse(solutions, "Verdadeiro", "Falso"), "}"))
+@
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{mchoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions)}}
+%% \exname{Q03QuizTrab}
