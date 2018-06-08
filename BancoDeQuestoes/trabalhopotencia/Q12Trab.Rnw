@@ -25,8 +25,8 @@ O corpo representado está sendo deslocado por uma força de direção e sentido
 <<fig=TRUE, height=4, width=5, echo=FALSE, eps=FALSE, results=hide>>=
 y <- c(Fmax/2, Fmax, Fmax/2, Fmax/2 , Fmax/2)
 plot(x, y, type="o", col="blue", ylab="Força (N)", ylim=range(0, Fmax), yaxp=c(0,Fmax,2), xlab="Distância (m)", xaxp=c(0,4*xpasso,4))
-abline(h=c(0,Fmax/2,Fmax), v=0:4*xpasso, col="gray", lty=3)
-grid()
+#abline(h=c(0,Fmax/2,Fmax), v=0:4*xpasso, col="gray", lty=3)
+abline(h=seq(0,Fmax,Fmax/4), v=seq(0,4*xpasso,xpasso), col="gray", lty=3)
 @
 \end{center}
 \end{figure}
