@@ -1,9 +1,10 @@
 <<echo=FALSE, results=hide>>=
 ##PROGRAMADO POR: CARLOS SANTANA, em 6 de Junho de 2017.
-include_supplement("Q14Trab.png")
+## Parâmetros
+coef_atrito <- sample(seq(from=0.2, to=1, by=0.1), 1)
 
-u <- sample(seq(from=0.2, to=1, by=0.1), 1)
-cont <- 2.5/u
+## Respostas
+cont <- 2.5/coef_atrito
   if(cont<=2.5){
     cont<-"A"
   }
@@ -25,11 +26,14 @@ cont <- 2.5/u
       cont<-"D"
     }
   }
+
+## Figuras
+include_supplement("Q14Trab.png")
 @
 
 \begin{question}
 
-(Mackenzie) Uma partícula desliza sobre o trilho que possui extremidades elevadas e uma parte central plana conforme a figura. As partes curvas não apresentaram atrito e o coeficiente de atrito cinético da parte plana é μ=\Sexpr{u}. Abandona-se a partícula do ponto P, cuja a altura é h=2,5m acima da parte plana.
+(Mackenzie) Uma partícula desliza sobre o trilho que possui extremidades elevadas e uma parte central plana conforme a figura. As partes curvas não apresentaram atrito e o coeficiente de atrito cinético da parte plana é $\mu$=\Sexpr{u}. Abandona-se a partícula do ponto P, cuja a altura é h=2,5m acima da parte plana.
 
 
 \begin{figure}[h!]
