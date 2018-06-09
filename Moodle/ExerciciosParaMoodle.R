@@ -10,7 +10,10 @@ myexam <- dir("./BancoDeQuestoes/acel", pattern = ".rnw", ignore.case=TRUE)
 ano <- 12018
 ## Cria o arquivo .xml para entrada no moodle
 set.seed(ano)
-exams2moodle(myexam, n = 100, rule="none", schoice = list(shuffle = TRUE), name = paste0("acel-",ano),
+exams2moodle(myexam, n = 100, rule="none", 
+             schoice = list(shuffle = TRUE), 
+             converter = "pandoc-mathjax",
+             name = paste0("acel-",ano),
              encoding = "UTF-8",
              dir = "./Moodle",
              edir = "./BancoDeQuestoes/acel")
@@ -21,8 +24,11 @@ myexam <- dir("./BancoDeQuestoes/calorimetria", pattern = ".rnw", ignore.case=TR
 ano <- 12018
 ## Cria o arquivo .xml para entrada no moodle
 set.seed(ano)
-exams2moodle(myexam, n = 100, rule="none", schoice = list(shuffle = TRUE), name = paste0("calorimetria-",ano),
+exams2moodle(myexam, n = 100, rule="none", 
+             schoice = list(shuffle = TRUE), 
+             name = paste0("calorimetria-",ano),
              encoding = "UTF-8",
+             converter = "pandoc-mathjax",
              dir = "./Moodle",
              edir = "./BancoDeQuestoes/calorimetria")
 
@@ -32,8 +38,11 @@ myexam <- dir("./BancoDeQuestoes/calortemp", pattern = ".rnw", ignore.case=TRUE)
 ano <- 12018
 ## Cria o arquivo .xml para entrada no moodle
 set.seed(ano)
-exams2moodle(myexam, n = 100, rule="none", schoice = list(shuffle = TRUE), name = paste0("calortemp-",ano),
+exams2moodle(myexam, n = 100, rule="none", 
+             schoice = list(shuffle = TRUE), 
+             name = paste0("calortemp-",ano),
              encoding = "UTF-8",
+             converter = "pandoc-mathjax",
              dir = "./Moodle",
              edir = "./BancoDeQuestoes/calortemp")
 
@@ -43,8 +52,11 @@ myexam <- dir("./BancoDeQuestoes/dilatterm", pattern = ".rnw", ignore.case=TRUE)
 ano <- 12018
 ## Cria o arquivo .xml para entrada no moodle
 set.seed(ano)
-exams2moodle(myexam, n = 100, rule="none", schoice = list(shuffle = TRUE), name = paste0("dilatterm-",ano),
+exams2moodle(myexam, n = 100, rule="none", 
+             schoice = list(shuffle = TRUE), 
+             name = paste0("dilatterm-",ano),
              encoding = "UTF-8",
+             converter = "pandoc-mathjax",
              dir = "./Moodle",
              edir = "./BancoDeQuestoes/dilatterm")
 
@@ -55,8 +67,11 @@ myexam <- dir("./BancoDeQuestoes/eletricidade", pattern = ".rnw", ignore.case=TR
 ano <- 12018
 ## Cria o arquivo .xml para entrada no moodle
 set.seed(ano)
-exams2moodle(myexam, n = 100, rule="none", schoice = list(shuffle = TRUE), name = paste0("eletricidade-",ano),
+exams2moodle(myexam, n = 100, rule="none", 
+             schoice = list(shuffle = TRUE), 
+             name = paste0("eletricidade-",ano),
              encoding = "UTF-8",
+             converter = "pandoc-mathjax",
              dir = "./Moodle",
              edir = "./BancoDeQuestoes/eletricidade")
 
@@ -66,8 +81,11 @@ myexam <- dir("./BancoDeQuestoes/eletromagnetismo", pattern = ".rnw", ignore.cas
 ano <- 12018
 ## Cria o arquivo .xml para entrada no moodle
 set.seed(ano)
-exams2moodle(myexam, n = 100, rule="none", schoice = list(shuffle = TRUE), name = paste0("eletromagnetismo-",ano),
+exams2moodle(myexam, n = 100, rule="none", 
+             schoice = list(shuffle = TRUE), 
+             name = paste0("eletromagnetismo-",ano),
              encoding = "UTF-8",
+             converter = "pandoc-mathjax",
              dir = "./Moodle",
              edir = "./BancoDeQuestoes/eletromagnetismo")
 
@@ -77,8 +95,11 @@ myexam <- dir("./BancoDeQuestoes/eletrostatica", pattern = ".rnw", ignore.case=T
 ano <- 12018
 ## Cria o arquivo .xml para entrada no moodle
 set.seed(ano)
-exams2moodle(myexam, n = 100, rule="none", schoice = list(shuffle = TRUE), name = paste0("eletrostatica-",ano),
+exams2moodle(myexam, n = 100, rule="none", 
+             schoice = list(shuffle = TRUE), 
+             name = paste0("eletrostatica-",ano),
              encoding = "UTF-8",
+             converter = "pandoc-mathjax",
              dir = "./Moodle",
              edir = "./BancoDeQuestoes/eletrostatica")
 
@@ -88,8 +109,11 @@ myexam <- dir("./BancoDeQuestoes/energiaeconservacao", pattern = ".rnw", ignore.
 ano <- 12018
 ## Cria o arquivo .xml para entrada no moodle
 set.seed(ano)
-exams2moodle(myexam, n = 100, rule="none", schoice = list(shuffle = TRUE), name = paste0("energiaeconservacao-",ano),
+exams2moodle(myexam, n = 100, rule="none", 
+             schoice = list(shuffle = TRUE), 
+             name = paste0("energiaeconservacao-",ano),
              encoding = "UTF-8",
+             converter = "pandoc-mathjax",
              dir = "./Moodle",
              edir = "./BancoDeQuestoes/energiaeconservacao")
 
@@ -99,8 +123,11 @@ myexam <- dir("./BancoDeQuestoes/gravitacao", pattern = ".rnw", ignore.case=TRUE
 ano <- 12018
 ## Cria o arquivo .xml para entrada no moodle
 set.seed(ano)
-exams2moodle(myexam, n = 100, rule="none", schoice = list(shuffle = TRUE), name = paste0("gravitacao-",ano),
+exams2moodle(myexam, n = 100, rule="none", 
+             schoice = list(shuffle = TRUE), 
+             name = paste0("gravitacao-",ano),
              encoding = "UTF-8",
+             converter = "pandoc-mathjax",
              dir = "./Moodle",
              edir = "./BancoDeQuestoes/gravitacao")
 
@@ -111,14 +138,16 @@ myexam <- dir("./BancoDeQuestoes/hidrostatica", pattern = ".rnw", ignore.case=TR
 ano <- 12018
 ## Cria o arquivo .xml para entrada no moodle
 set.seed(ano)
-exams2moodle(myexam[1:5], n = 100, converter = "pandoc-mathjax",
+exams2moodle(myexam[1:5], n = 100, 
+             converter = "pandoc-mathjax",
              rule="none", 
              schoice = list(shuffle = TRUE), 
              name = paste0("hidrostatica1-",ano),
              encoding = "UTF-8",
              dir = "./Moodle",
              edir = "./BancoDeQuestoes/hidrostatica")
-exams2moodle(myexam[6:9], n = 100, converter = "pandoc-mathjax",
+exams2moodle(myexam[6:9], n = 100, 
+             converter = "pandoc-mathjax",
              rule="none", schoice = list(shuffle = TRUE), 
              name = paste0("hidrostatica2-",ano),
              encoding = "UTF-8",
