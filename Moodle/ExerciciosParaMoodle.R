@@ -4,17 +4,6 @@
 library(tools)
 library(exams)
 
-############### exemplos ##################
-## Definindo a pasta com as questoes do exame
-myexam <- dir("./BancoDeQuestoes/exemplos", pattern = ".rnw", ignore.case=TRUE)
-ano <- 12018
-## Cria o arquivo .xml para entrada no moodle
-set.seed(ano)
-exams2moodle(myexam, n = 100, rule="none", schoice = list(shuffle = TRUE), name = paste0("exemplos-",ano),
-             encoding = "UTF-8",
-             dir = "./Moodle",
-             edir = "./BancoDeQuestoes/exemplos")
-
 ############### aceleracao ##################
 ## Definindo a pasta com as questoes do exame
 myexam <- dir("./BancoDeQuestoes/acel", pattern = ".rnw", ignore.case=TRUE)
@@ -122,7 +111,16 @@ myexam <- dir("./BancoDeQuestoes/hidrostatica", pattern = ".rnw", ignore.case=TR
 ano <- 12018
 ## Cria o arquivo .xml para entrada no moodle
 set.seed(ano)
-exams2moodle(myexam, n = 100, rule="none", schoice = list(shuffle = TRUE), name = paste0("hidrostatica-",ano),
+exams2moodle(myexam[1:5], n = 100, converter = "pandoc-mathjax",
+             rule="none", 
+             schoice = list(shuffle = TRUE), 
+             name = paste0("hidrostatica1-",ano),
+             encoding = "UTF-8",
+             dir = "./Moodle",
+             edir = "./BancoDeQuestoes/hidrostatica")
+exams2moodle(myexam[6:9], n = 100, converter = "pandoc-mathjax",
+             rule="none", schoice = list(shuffle = TRUE), 
+             name = paste0("hidrostatica2-",ano),
              encoding = "UTF-8",
              dir = "./Moodle",
              edir = "./BancoDeQuestoes/hidrostatica")
