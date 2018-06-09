@@ -25,7 +25,7 @@ volume_crianca <- round(volume_homem/beta2,1)
 
 \begin{question}
 %% Texto da questão
-Se dois corpos t\^em todas as suas dimens\~oes lineares proporcionais por um fator de escala $\beta$, então a razão entre suas superf\'icies \'e $\beta$² e entre seus volumes \'e $\beta$³. Seres vivos perdem \'agua por evapora\c{c}\~ao proporcionalmente \`as suas superf\'icies. Ent\~ao eles devem ingerir l\'iquidos regularmente para repor essas perdas de \'agua. Considere um homem e uma crian\c{c}a com todas as dimens\~oes proporcionais. Considere ainda que o homem t\^em \Sexpr{massa_homem} kg; \Sexpr{alt_homem} m de altura e bebe \Sexpr{volume_homem} litros de \'agua por dia para repor as perdas devidas apenas \`a evapora\c{c}\~ao. (OBS: arredonde as respostas para uma decimal.)
+Se dois corpos t\^em todas as suas dimens\~oes lineares proporcionais por um fator de escala $\beta$, então a razão entre suas superf\'icies \'e $\beta$² e entre seus volumes \'e $\beta$³. Seres vivos perdem \'agua por evapora\c{c}\~ao proporcionalmente \`as suas superf\'icies. Ent\~ao eles devem ingerir l\'iquidos regularmente para repor essas perdas de \'agua. Considere um homem e uma crian\c{c}a com todas as dimens\~oes proporcionais. Considere ainda que o homem t\^em \Sexpr{massa_homem} kg; \Sexpr{alt_homem} m de altura e bebe \Sexpr{volume_homem} litros de \'agua por dia para repor as perdas devidas apenas \`a evapora\c{c}\~ao. (OBS: Utilize g = 9,8 m/s e arredonde as respostas para uma decimal.)
 
 \begin{answerlist}
   \item Se a altura da crian\c{c}a é \Sexpr{alt_crianca} m, qual \'e seu peso?
