@@ -16,12 +16,13 @@ inteiro <- sample(1:9, size = 1)
 pressao <- as.numeric(paste0(inteiro,pot_dez))
 atm <- 1e5
 ## Resposta
-pSI <- signif(pressao*atm/760,3)
+pSI <- round(pressao*atm/760,3)
+pSI
 @
 
 \begin{question}
 %% Enunciado
-(Ita) Embora a tendência geral em Ciência e Tecnologia seja a de adotar exclusivamente o Sistema Internacional de Unidades (SI), em algumas áreas existem pessoas que, por questão de costume, ainda utilizam outras unidades. Na área da Tecnologia do Vácuo, por exemplo, alguns pesquisadores ainda costumam fornecer a pressão em milímetros de mercúrio. Se alguém lhe disser que a pressão no interior de um sistema é de $\Sexpr{nota_cient(pressao)}$ mmHg, como essa grandeza deveria ser expressa em unidades SI?
+(Ita) Embora a tendência geral em Ciência e Tecnologia seja a de adotar exclusivamente o Sistema Internacional de Unidades (SI), em algumas áreas existem pessoas que, por questão de costume, ainda utilizam outras unidades. Na área da Tecnologia do Vácuo, por exemplo, alguns pesquisadores ainda costumam fornecer a pressão em milímetros de mercúrio. Se alguém lhe disser que a pressão no interior de um sistema é de $\Sexpr{nota_cient(pressao)}$ mmHg, como essa grandeza deveria ser expressa em unidades SI? (OBS: apresente a resposta com 3 decimais.)
 
 \end{question}
 
@@ -33,6 +34,6 @@ A pressão será $\Sexpr{nota_cient(pSI)}$ Pa.
 
 %% META-INFORMATION
 %% \extype{num}
-%% \exsolution{0.324}
+%% \exsolution{\Sexpr{pSI}}
 %% \exname{Q07Pressao}
 %% \extol{0.01}
