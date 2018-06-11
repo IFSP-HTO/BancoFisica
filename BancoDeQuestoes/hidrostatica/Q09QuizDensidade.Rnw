@@ -24,7 +24,7 @@ include_supplement('Q09QuizDensidade.png')
 
 \begin{question}
 %% Enunciado
-(Uece) Dois líquidos não-miscíveis, X e Y, são derramados sucessivamente em um vaso cilíndrico. O líquido X, de massa específica \Sexpr{dens_x} g/cm³, é derramado primeiro, até atingir \Sexpr{frac} do volume do vaso. A seguir, o líquido Y, de massa específica \Sexpr{dens_y} é derramado até encher completamente o vaso. Se $m_x$ e $m_y$ são as massas dos líquidos X e Y, respectivamente, a razão $\frac{m_x}{m_y}$ vale:
+(Uece) Dois líquidos não-miscíveis, X e Y, são derramados sucessivamente em um vaso cilíndrico. O líquido X, de massa específica \Sexpr{dens_x} g/cm³, é derramado primeiro, até atingir \Sexpr{frac} do volume do vaso. A seguir, o líquido Y, de massa específica \Sexpr{dens_y} g/cm³ é derramado até encher completamente o vaso. Se $m_x$ e $m_y$ são as massas dos líquidos X e Y, respectivamente, a razão $\frac{m_x}{m_y}$ vale:
 
 \includegraphics[height=5cm, keepaspectratio]{Q09QuizDensidade.png}
 
