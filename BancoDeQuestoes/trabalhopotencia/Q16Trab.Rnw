@@ -1,0 +1,64 @@
+<<echo=FALSE, results=hide>>=
+##PROGRAMADO POR: CARLOS SANTANA, em 31 de Maio de 2017.
+# PARÂMETROS
+distancia1 <- sample(seq(from=8,to=18,by=1),1)
+distancia2 <- sample(seq(from=2,to=7,by=1),1)
+
+trabalhoUm <- 100*(distancia1-2)/2
+trabalhoDois <- 100*(distancia2-2)/2
+## RESPOSTA
+resp <- trabalhoUm-trabalhoDois
+
+questions <- character(5)
+solutions <- logical(5)
+aleat = sample(1:5)
+
+questions[aleat[1]] <- resp/10
+solutions[aleat[1]] <- FALSE
+
+questions[aleat[2]] <- resp*10
+solutions[aleat[2]] <- FALSE
+
+questions[aleat[3]] <- resp
+solutions[aleat[3]] <- TRUE
+
+questions[aleat[4]] <- resp+15
+solutions[aleat[4]] <- FALSE
+
+questions[aleat[5]] <- trabalhoDois-trabalhoUm
+solutions[aleat[5]] <- FALSE
+
+## FIGURAS
+include_supplement("Q16Trab.png")
+
+@
+
+\begin{question}
+
+(Fei) Um corpo de massa 10kg é puxado por uma mola de constante elástica K=100 N/m. O comprimento natural é $\ell$0= 2m. Qual é o trabalho realizado pela força elástica para deslocar o corpo da posição x=\Sexpr{distancia1}m para a posição x=\Sexpr{distancia2}m?
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=5cm, keepaspectratio]{{Q16Trab.png}}
+\end{figure}
+
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(questions)
+@
+
+\end{question}
+
+%% SOLUTION
+\begin{solution}
+
+<<echo=FALSE, results=hide, results=tex>>=
+
+answerlist(
+  paste("\\textbf{", ifelse(solutions, "Verdadeiro", "Falso"), "}", sep = ""))
+@
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{mchoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions)}}
+%% \exname{Q16Trab}

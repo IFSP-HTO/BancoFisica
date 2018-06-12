@@ -33,12 +33,12 @@ include_supplement("Q14Trab.png")
 
 \begin{question}
 
-(Mackenzie) Uma partícula desliza sobre o trilho que possui extremidades elevadas e uma parte central plana conforme a figura. As partes curvas não apresentaram atrito e o coeficiente de atrito cinético da parte plana é $\mu$=\Sexpr{u}. Abandona-se a partícula do ponto P, cuja a altura é h=2,5m acima da parte plana.
+(Mackenzie) Uma partícula desliza sobre o trilho que possui extremidades elevadas e uma parte central plana conforme a figura. As partes curvas não apresentaram atrito e o coeficiente de atrito cinético da parte plana é $\mu$=\Sexpr{coef_atrito}. Abandona-se a partícula do ponto P, cuja a altura é h=2,5m acima da parte plana.
 
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=5cm, keepaspectratio]{{Q14Trab.png}}
+  \includegraphics[width=4cm, keepaspectratio]{{Q14Trab.png}}
 \end{figure}
 
 O ponto no qual a partícula vai parar é:
