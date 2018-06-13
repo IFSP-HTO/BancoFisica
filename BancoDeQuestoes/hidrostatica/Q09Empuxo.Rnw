@@ -23,14 +23,14 @@ empuxo <- rho_agua*g*volume
 resp <- empuxo - peso
   
 ## Figura
-include_supplement('Q08Empuxo.png')
+include_supplement('Q09Empuxo.png')
 @
 
 \begin{question}
 %% Enunciado
 (Unesp) Uma pequena bola de borracha está presa por um fio leve ao fundo de um recipiente cheio com água, como mostra a figura adiante.
 
-\includegraphics[height=5cm, keepaspectratio]{Q08Empuxo.png}
+\includegraphics[height=5cm, keepaspectratio]{Q09Empuxo.png}
 
 Se o volume da bola submersa for $\Sexpr{nota_cient(volume)}$ m³ e sua massa for $\Sexpr{nota_cient(massa)}$ kg, qual será a tensão no fio? (Considere a aceleração da gravidade local igual a 10 m/s² e a massa específica da água 10³ kg/m³).
 

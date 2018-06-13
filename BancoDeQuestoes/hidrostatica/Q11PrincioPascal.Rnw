@@ -1,0 +1,33 @@
+<<echo=FALSE, results=hide>>=
+## Programada por Flavio Barro 11/06/2018
+## Parâmetros
+A1 <- round(runif(n=1, min = 20, max = 30),0) ## em cm²
+fator <- sample(4:9, 1)
+A2 <- round(A1*fator*1e-4,3) ## em m²
+Force <- sample(seq(50,100,by=5),1)
+
+## Resposta
+resp <- round((A2/(A1*1e-4))*Force,0)
+
+## Figura
+include_supplement('Q11PrincipioPascal.png')
+@
+
+\begin{question}
+%% Enunciado
+(Fei) No macaco hidráulico representado na figura a seguir, sabe-se que as áreas das secções transversais dos vasos verticais são $A_1$ = \Sexpr{A1} cm² e $A_2$ = \Sexpr{A2} m². Qual é o peso máximo que o macaco pode levantar, quando fazemos uma força de F = \Sexpr{Force} N em $A_1$?
+
+\includegraphics[height=6cm, keepaspectratio]{Q11PrincipioPascal.png}
+\end{question}
+
+\begin{solution}
+%% Solution
+A força é \Sexpr{resp} N.
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp}}
+%% \exname{Q11PrincipioPascal}
+%% \extol{0.01}
