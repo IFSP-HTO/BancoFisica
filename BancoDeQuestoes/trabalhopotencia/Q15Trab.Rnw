@@ -30,13 +30,12 @@ solutions[aleat[5]] <- FALSE
 
 \begin{question}
 
-(Fei) Uma aluno ensaiou uma mola pelo Método Estático e montou o gráfico a seguir. Qual é o trabalho da Força Elástica para o deslocamento de \Sexpr{baseMenor}m a \Sexpr{baseMaior}m?
+(Fei) Uma aluna ensaiou uma mola pelo Método Estático e montou o gráfico a seguir. Qual é o trabalho da Força Elástica para o deslocamento de \Sexpr{baseMenor}m a \Sexpr{baseMaior}m?
 
 \begin{center}
 \begin{figure}[h!]
 <<fig=TRUE, height=4, width=5, echo=FALSE, eps=FALSE, results=hide>>=
-plot(x_coord,y_coord,type = "b",xlab = "x(m)", ylab = "F(N)",xlim=range(0,baseMenor),ylim=range(0,baseMaior))
-grid()
+plot(x_coord,y_coord,type = "b",xlab = "x(m)", ylab = "F(N)",xlim=range(0,baseMenor),ylim=range(0,baseMaior+1),panel.first=grid())
 @
 \end{figure}
 \end{center}

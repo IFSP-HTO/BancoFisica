@@ -1,28 +1,29 @@
 <<echo=FALSE, results=hide>>=
 ##PROGRAMADO POR: CARLOS SANTANA, em 6 de Junho de 2017.
 ## Parâmetros
-coef_atrito <- sample(seq(from=0.2, to=1, by=0.1), 1)
+coef_atrito <- c(0.167,0.2,0.25,0.333,0.5,1)
+## sample(coef_atrito,1)
 
 ## Respostas
-cont <- 2.5/coef_atrito
-  if(cont<=2.5){
+cont <- round(2.5/sample(coef_atrito,1),1)
+  if(cont==2.5){
     cont<-"A"
   }
-  if(cont>2.5&&cont<=5){
+  if(cont==5){
     cont<-"B"
   }
-  if(cont>5&&cont<=7.5){
+  if(cont==7.5){
     cont<-"C"
   }
-  if(cont>7.5&&cont<=10){
+  if(cont==10){
     cont<-"D"
   }
 
   if(cont>10){
-    if(cont>10&&cont<=12.5){
+    if(cont==12.5){
       cont<-"C"
     }
-    if(cont>12.5&&cont<=15){
+    if(cont==15){
       cont<-"D"
     }
   }

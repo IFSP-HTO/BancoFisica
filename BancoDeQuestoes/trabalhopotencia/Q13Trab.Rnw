@@ -40,7 +40,7 @@ Considere altura = 4m
 \begin{center}
 \begin{figure}[h!]
 <<fig=TRUE, height=4, width=5, echo=FALSE, eps=FALSE, results=hide>>=
-plot(x_coord,y_coord,type = "b",xlab = "s(m)", ylab = "F(N)",xlim=range(0,baseMenor),ylim=range(0,baseMaior))
+plot(x_coord, y_coord, type = "b", xlab = "s(m)", ylab = "F(N)", xlim=range(0, baseMenor), ylim=range(0, baseMaior))
 grid()
 @
 \end{figure}
