@@ -15,7 +15,7 @@ include_supplement('Q11PrincipioPascal.png')
 
 \begin{question}
 %% Enunciado
-(Fei) No macaco hidráulico representado na figura a seguir, sabe-se que as áreas das secções transversais dos vasos verticais são $A_1$ = \Sexpr{A1} cm² e $A_2$ = \Sexpr{A2} m². Qual é o peso máximo que o macaco pode levantar, quando fazemos uma força de F = \Sexpr{Force} N em $A_1$?
+(Fei) No macaco hidráulico representado na figura a seguir, sabe-se que as áreas das secções transversais dos vasos verticais são $A_1$ = \Sexpr{A1} cm² e $A_2$ = \Sexpr{A2} m². Qual é o peso máximo que o macaco pode levantar, quando fazemos uma força de F = \Sexpr{Force} N em $A_1$? (OBS: Use duas decimais.)
 
 \includegraphics[height=6cm, keepaspectratio]{Q11PrincipioPascal.png}
 \end{question}
