@@ -2,13 +2,13 @@
 ##Programado por:Matheus V
 
 ##gera questoes
-k <- sample(seq(from=50,to=100,by=10),1)
-m <- sample(seq(from=10,to=20,by=1),1)
-p1 <- sample(seq(from=6,to=16,by=),1)
-p2 <- sample(seq(from=3,to=6,by=1),1)
+potencial <- sample(seq(from=50,to=100,by=10),1)
+massa <- sample(seq(from=10,to=20,by=1),1)
+posicao1 <- sample(seq(from=6,to=16,by=),1)
+posicao2 <- sample(seq(from=3,to=6,by=1),1)
 
-t1 <- k*((p1-2)*(p1-2))/2
-t2 <- k*((p2-2)*(p2-2))/2
+t1 <- potencial*((posicao1-2)*(posicao1-2))/2
+t2 <- potencial*((posicao2-2)*(posicao2-2))/2
 
 resp <- t1-t2
 
@@ -19,7 +19,7 @@ include_supplement("Q16Trab.png")
 \usepackage{graphicx}
 
 \begin{question}
-  (Fei) Um corpo de massa 10kg é puxado por uma mola de constante elástica K= \Sexpr{k} N/m. O comprimento natural é Lo = 2m. Qual é o trabalho realizado pela força elástica para deslocar o corpo da posição x= \Sexpr{p1} m para a posição x= \Sexpr{p2} m?
+  (Fei) Um corpo de massa \Sexpr{massa} é puxado por uma mola de constante elástica K= \Sexpr{potencial} N/m. O comprimento natural é Lo = 2m. Qual é o trabalho realizado pela força elástica para deslocar o corpo da posição x= \Sexpr{posicao1} m para a posição x= \Sexpr{posicao2} m?
   
 \begin{figure}[h!]
   \centering
@@ -37,6 +37,6 @@ include_supplement("Q16Trab.png")
 %% META-INFORMATION
 %% \extype{cloze}
 %% \exclozetype{num}
-%% \exsolution{\Sexpr{resp1}}
+%% \exsolution{\Sexpr{resp}}
 %% \exname{Q16Trab}
 %% \extol{0.1}
