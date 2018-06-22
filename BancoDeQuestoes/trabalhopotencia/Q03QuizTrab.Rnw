@@ -34,14 +34,14 @@ questions[aleat[6]] <- paste("A energia mecânica total do bloco, no ponto A, é
 solutions[aleat[6]] <- TRUE
 
 questions[aleat[7]] <- "A energia potencial elástica do bloco, no ponto A, não é transformada na energia potencial gravitacional do bloco, no ponto B."
-solutions[aleat[7]] <- TRUE
+solutions[aleat[7]] <- FALSE
 
 ## FIGURA
 include_supplement("Q03QuizTrab.png")
 @
 
 \begin{question}
-(Ufsc) A figura mostra um bloco, de massa m = \Sexpr{massa} g, mantido encostado em uma mola comprimida de x = \Sexpr{compressao} cm. A constante elástica da mola é K = \Sexpr{const_elast} N/m. A mola é solta e empurra o bloco que, partindo do repouso no ponto A, atinge o ponto B, onde pára. No percurso entre os pontos A e B, a força de atrito da superfície sobre o bloco dissipa 20 por cento da energia mecânica inicial no ponto A.
+(Ufsc) A figura mostra um bloco, de massa m = \Sexpr{massa} g, mantido encostado em uma mola comprimida de x = \Sexpr{compressao} cm. A constante elástica da mola é K = \Sexpr{const_elast} N/m. A mola é solta e empurra o bloco que, partindo do repouso no ponto A, atinge o ponto B, onde pára. No percurso entre os pontos A e B, a força de atrito da superfície sobre o bloco dissipa 20\% da energia mecânica inicial no ponto A.
 
 \begin{figure}[h!]
   \centering
