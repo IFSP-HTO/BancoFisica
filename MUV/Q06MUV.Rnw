@@ -1,0 +1,39 @@
+<<echo=FALSE, results=hide>>=
+#Programado por: Carlos Santana
+
+velocidade <- sample(seq(from=10,to=100, by=10),1)
+tempo <- sample(seq(from=1,to=10,by=1),1)
+
+x_coord <- c(0,tempo)
+y_coord <- c(0,velocidade)
+
+resp <- velocidade*tempo
+
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Um móvel tem movimento com velocidade descrita pelo gráfico a seguir. Após \Sexpr{tempo}s qual será sua distância do ponto de partida?
+
+\begin{center}
+\begin{figure}[h!]
+<<fig=TRUE, height=7, width=6, echo=FALSE, eps=FALSE, results=hide>>=
+plot(x_coord,y_coord,type = "o",xlab = "t(s)", ylab = "v(m/s)",panel.first=grid())
+@
+\end{figure}
+\end{center}
+
+\end{question}
+
+%% SOLUTION
+\begin{solution}:
+
+  \Sexpr{resp} m
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp}}
+%% \exname{Q06MUV}
