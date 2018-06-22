@@ -1,15 +1,12 @@
 <<echo=FALSE, results=hide>>=
 ##PROGRAMADO POR: CARLOS SANTANA, em 31 de Maio de 2017.
-
 baseMenor <- sample(seq(from=1, to=5, by=0.5), 1)
-razao <-  sample(seq(from=2, to=6, by=0.5), 1)
-baseMaior <- baseMenor*razao
+baseMaior <- baseMenor+2
 
 x_coord <- c(0,baseMenor)
 y_coord <- c(0,baseMaior)
-t<-xy.coords(x_coord,y_coord)
 
-resp <- ((baseMaior+baseMenor)*4)/2
+resp <- ((baseMaior+baseMenor)*(baseMaior-baseMenor))/2
 
 questions <- character(5)
 solutions <- logical(5)
@@ -24,7 +21,7 @@ solutions[aleat[2]] <- FALSE
 questions[aleat[3]] <- resp
 solutions[aleat[3]] <- TRUE
 
-questions[aleat[4]] <- "15J"
+questions[aleat[4]] <- resp+15
 solutions[aleat[4]] <- FALSE
 
 questions[aleat[5]] <- resp+15
@@ -33,15 +30,12 @@ solutions[aleat[5]] <- FALSE
 
 \begin{question}
 
-(Fei) Uma força F paralela à trajetória de seu ponto de aplicação varia com o deslocamento de acordo com a figura a seguir. Qual é o trabalho realizado pela força F no deslocamento de \Sexpr{baseMenor}m a \Sexpr{baseMaior}m?
-
-Considere altura = 4m
+(Fei) Uma aluna ensaiou uma mola pelo Método Estático e montou o gráfico a seguir. Qual é o trabalho da Força Elástica para o deslocamento de \Sexpr{baseMenor}m a \Sexpr{baseMaior}m?
 
 \begin{center}
 \begin{figure}[h!]
 <<fig=TRUE, height=4, width=5, echo=FALSE, eps=FALSE, results=hide>>=
-plot(x_coord, y_coord, type = "b", xlab = "s(m)", ylab = "F(N)", xlim=range(0, baseMenor), ylim=range(0, baseMaior))
-grid()
+plot(x_coord,y_coord,type = "b",xlab = "x(m)", ylab = "F(N)",xlim=range(0,baseMenor),ylim=range(0,baseMaior+1),panel.first=grid())
 @
 \end{figure}
 \end{center}
@@ -65,4 +59,4 @@ answerlist(
 %% META-INFORMATION
 %% \extype{mchoice}
 %% \exsolution{\Sexpr{mchoice2string(solutions)}}
-%% \exname{Q13Trab}
+%% \exname{Q15Trab}
