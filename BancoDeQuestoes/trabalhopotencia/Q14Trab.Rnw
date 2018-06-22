@@ -1,0 +1,58 @@
+<<echo=FALSE, results=hide>>=
+##PROGRAMADO POR: CARLOS SANTANA, em 6 de Junho de 2017.
+## Parâmetros
+coef_atrito <- c(0.167,0.2,0.25,0.333,0.5,1)
+## sample(coef_atrito,1)
+
+## Respostas
+cont <- round(2.5/sample(coef_atrito,1),1)
+  if(cont==2.5){
+    cont<-"A"
+  }
+  if(cont==5){
+    cont<-"B"
+  }
+  if(cont==7.5){
+    cont<-"C"
+  }
+  if(cont==10){
+    cont<-"D"
+  }
+
+  if(cont>10){
+    if(cont==12.5){
+      cont<-"C"
+    }
+    if(cont==15){
+      cont<-"D"
+    }
+  }
+
+## Figuras
+include_supplement("Q14Trab.png")
+@
+
+\begin{question}
+
+(Mackenzie) Uma partícula desliza sobre o trilho que possui extremidades elevadas e uma parte central plana conforme a figura. As partes curvas não apresentaram atrito e o coeficiente de atrito cinético da parte plana é $\mu$=\Sexpr{coef_atrito}. Abandona-se a partícula do ponto P, cuja a altura é h=2,5m acima da parte plana.
+
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=4cm, keepaspectratio]{{Q14Trab.png}}
+\end{figure}
+
+O ponto no qual a partícula vai parar é:
+\end{question}
+
+%% SOLUTION
+\begin{solution}
+
+  \Sexpr{cont}
+    
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{string}
+%% \exsolution{\Sexpr{cont}}
+%% \exname{Q14Trab}

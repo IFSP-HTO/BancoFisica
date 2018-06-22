@@ -12,7 +12,7 @@ resp <- ((a*altura)/2)+((b*altura)/2)
 
 \begin{question}
 
-(Uel) O gráfico representa o valor algébrico da força resultante ù que age sobre um corpo de massa 5,0kg, inicialmente em repouso, em função da abcissa x.
+(Uel) O gráfico representa o valor algébrico da força resultante F que age sobre um corpo de massa 5,0kg, inicialmente em repouso, em função da abcissa x.
 
 \begin{figure}[h!]
   \includegraphics[height=6cm,keepaspectratio]{Q16MU.png}
