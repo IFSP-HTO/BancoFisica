@@ -15,7 +15,7 @@ include_supplement("Q14Trab.png")
 
 \begin{question}
  
-       (Udesc) Um corpo de massa \Sexpr{massa} possui velocidade inicial em A de \Sexpr{velocidade} m/s. Sabe-se que o corpo percorre a trajetória ABC, parando em C. O trecho AB é perfeitamente liso (atrito desprezível). A partir do ponto B até C existe atrito. Determine:
+       (Udesc) Um corpo de massa \Sexpr{massa} possui velocidade inicial em A de \Sexpr{velocidade} m/s. Sabe-se que o corpo percorre a trajetória ABC, parando em C. O trecho AB é perfeitamente liso (atrito desprezível)e possui altura H de \Sexpr{altura} . A partir do ponto B até C existe atrito. Determine:
   \begin{figure}[h!]
     \centering
     \includegraphics[height=5cm, keepaspectratio]{{Q14Trab.png}}

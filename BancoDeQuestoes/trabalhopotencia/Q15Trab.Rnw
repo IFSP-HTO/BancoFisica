@@ -2,8 +2,8 @@
 ##Programado por:Matheus V
 ##Variaveis
 massa <- sample(seq(from=0.10,to=0.20,by=0.05),1)
-altura1 <- sample(seq(from=0.45,to=0.55,by=0.05),1)
-altura2 <- sample(seq(from=0.20,to=0.45,by=0.05),1)
+altura1 <- sample(seq(from=0.50,to=0.65,by=0.05),1)
+altura2 <- sample(seq(from=0.20,to=0.40,by=0.05),1)
 
 resp1 <- round(massa*10*(altura1-altura2), digits = 2)
 resp2 <- 0

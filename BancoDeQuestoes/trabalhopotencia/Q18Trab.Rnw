@@ -17,7 +17,7 @@ include_supplement("Q18Trab.png")
 
 \begin{question}
  
-        (Unicamp)O famoso cientista, Dr. Vest B. Lando, dirige calmamente o seu automóvel de massa = \Sexpr{massa} kg pela estrada cujo perfil está mostrado na figura a seguir. Na posição x=20m, quando sua velocidade vale V= \Sexpr{velocidadeKM} km/h ( \Sexpr{velocidadeMS} /s), ele percebe uma pedra ocupando toda a estrada na posição x=120m (ver figura). Se o Dr. Lando não acelerar ou acionar os freios, o automóvel (devido a atritos internos e externos) Chega na posição da pedra com metade da energia cinética que teria caso não houvesse qualquer dissipação de energia
+        (Unicamp)O famoso cientista, Dr. Vest B. Lando, dirige calmamente o seu automóvel de massa = \Sexpr{massa} kg pela estrada cujo perfil está mostrado na figura a seguir. Na posição x=20 m, quando sua velocidade vale V= \Sexpr{velocidadeKM} km/h, ele percebe uma pedra ocupando toda a estrada na posição x=120 m (ver figura). Se o Dr. Lando não acelerar ou acionar os freios, o automóvel (devido a atritos internos e externos) chega na posição da pedra com metade da energia cinética que teria caso não houvesse qualquer dissipação de energia
         
   \begin{figure}[h!]
     \centering
