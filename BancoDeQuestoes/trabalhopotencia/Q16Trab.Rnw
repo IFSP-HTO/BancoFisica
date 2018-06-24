@@ -1,66 +1,47 @@
 <<echo=FALSE, results=hide>>=
-##PROGRAMADO POR: CARLOS SANTANA, em 31 de Maio de 2017.
-# PARÂMETROS
-distancia1 <- sample(seq(from=8,to=18,by=1),1)
-distancia2 <- sample(seq(from=2,to=7,by=1),1)
+##Programado por:Matheus V
+## Parâmetros
+massa <- sample(seq(from=2,to=10,by=2),1)
+velocidade <- sample(seq(from=5,to=15,by=1),1)
+distancia <- sample(seq(from=20,to=30,by=2),1)
 
-massa <- sample(seq(from=20,to=180,by=5),1)
+## Respostas
+resp1 <- massa*(velocidade^2)/2
+resp2 <- round(resp1/distancia,digits = 2)
 
-trabalhoUm <- 100*(distancia1-2)/2
-trabalhoDois <- 100*(distancia2-2)/2
-## RESPOSTA
-resp <- trabalhoUm-trabalhoDois
-
-questions <- character(5)
-solutions <- logical(5)
-aleat = sample(1:5)
-
-questions[aleat[1]] <- round(resp/12,2)
-solutions[aleat[1]] <- FALSE
-
-questions[aleat[2]] <- round(resp*8.5,2)
-solutions[aleat[2]] <- FALSE
-
-questions[aleat[3]] <- resp
-solutions[aleat[3]] <- TRUE
-
-questions[aleat[4]] <- -resp+15
-solutions[aleat[4]] <- FALSE
-
-questions[aleat[5]] <- trabalhoDois-trabalhoUm
-solutions[aleat[5]] <- FALSE
-
-## FIGURAS
-include_supplement("Q16Trab.png")
+## Figuras
 
 @
+\usepackage[portuguese]{babel}
 
 \begin{question}
+ 
+      (Unicamp) Sob a ação de uma força constante, um corpo de massa m = \Sexpr{massa} kg adquire, a partir do repouso, a velocidade de \Sexpr{velocidade} m/s. 
 
-(Fei) Um corpo de massa \Sexpr{massa} kg é puxado por uma mola de constante elástica K = 100 N/m. O comprimento natural é $\ell_o$= 2 m. Qual é o trabalho realizado pela força elástica para deslocar o corpo da posição x = \Sexpr{distancia1} m para a posição x = \Sexpr{distancia2} m?
+  \begin{answerlist}
 
-\begin{figure}[h!]
-  \centering
-  \includegraphics[width=7cm, keepaspectratio]{{Q16Trab.png}}
-\end{figure}
+    \item Qual é trabalho realizado por essa força? 
 
-<<echo=FALSE, results=hide, results=tex>>=
-answerlist(questions)
-@
+  
+    \item Se o corpo se deslocou \Sexpr{distancia} m, qual o valor da força aplicada? 
+
+  \end{answerlist}
 
 \end{question}
 
-%% SOLUTION
 \begin{solution}
-
-<<echo=FALSE, results=hide, results=tex>>=
-
-answerlist(
-  paste("\\textbf{", ifelse(solutions, "Verdadeiro", "Falso"), "}", sep = ""))
-@
+  
+  \begin{answerlist}
+  
+      \item \Sexpr{resp1} J
+      \item \Sexpr{resp2} N
+  
+  \end{answerlist}
+  
 \end{solution}
 
 %% META-INFORMATION
-%% \extype{mchoice}
-%% \exsolution{\Sexpr{mchoice2string(solutions)}}
-%% \exname{Q16Trab}
+%% \extype{num}
+%% \exsolution{\Sexpr{resp1}|\Sexpr{resp2}}
+%% \exname{Q1Trab}
+%% \extol{0.1}

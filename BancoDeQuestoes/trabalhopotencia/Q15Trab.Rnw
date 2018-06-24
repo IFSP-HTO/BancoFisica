@@ -60,3 +60,4 @@ answerlist(
 %% \extype{mchoice}
 %% \exsolution{\Sexpr{mchoice2string(solutions)}}
 %% \exname{Q15Trab}
+>>>>>>> 00217bbcd09d1b376b64ea6dbe7be22b3e1285c3

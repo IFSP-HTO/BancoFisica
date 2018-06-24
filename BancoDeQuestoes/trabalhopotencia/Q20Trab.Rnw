@@ -1,0 +1,51 @@
+<<echo=FALSE, results=hide>>=
+##Programado por:Matheus V
+##Variaveis
+massa <- sample(seq(from=0.10,to=0.20,by=0.05),1)
+altura1 <- sample(seq(from=0.50,to=0.65,by=0.05),1)
+altura2 <- sample(seq(from=0.20,to=0.40,by=0.05),1)
+
+resp1 <- round(massa*10*(altura1-altura2), digits = 3)
+resp2 <- 0
+
+##Imagem
+include_supplement("Q20Trab.png")
+@
+\usepackage[portuguese]{babel}
+
+\begin{question}
+ 
+        (Ufrj) Uma esfera de aço de massa m= \Sexpr{massa} kg, suspensa por um fio a um suporte, é afastada de sua posição de equilíbrio e abandonada a uma altura $H_0$ = \Sexpr{altura1} cm, como mostra a figura 1. Ao completar a primeira oscilação, verifica-se que ela consegue atingir apenas uma altura $H_1$ = \Sexpr{altura2} cm, como mostra a figura 2. (OBS: apresente o resultado com duas casas decimais.)
+        
+  \begin{figure}[h!]
+    \centering
+    \includegraphics[height=5cm, keepaspectratio]{{Q20Trab.png}}
+  \end{figure}
+
+  \begin{answerlist}
+
+    \item  o trabalho realizado pelos diversos atritos que se opõem ao movimento da esfera durante essa primeira oscilação; 
+
+  
+    \item  o trabalho realizado pela tensão no fio durante essa primeira oscilação. 
+
+  \end{answerlist}
+
+\end{question}
+
+\begin{solution}
+  
+  \begin{answerlist}
+  
+      \item \Sexpr{resp1} J
+      \item \Sexpr{resp2} J
+  
+  \end{answerlist}
+  
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp1}|\Sexpr{resp2}}
+%% \exname{Q20Trab}
+%% \extol{0.01}
