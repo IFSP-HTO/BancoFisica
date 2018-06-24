@@ -268,6 +268,18 @@ exams2html(myexam, n = 1,solution=TRUE, converter = 'pandoc',
   edir = "./BancoDeQuestoes/cinematica/MU",
   template = "templates/plain.html")
 
+################## MUV ####################
+## Definindo a pasta com as questoes do exame
+myexam <- dir("./BancoDeQuestoes/cinematica/MUV", pattern = ".rnw", ignore.case=TRUE)
+
+## Gerando HTML com o arquivo da questao
+set.seed(12018)
+exams2html(myexam, n = 1,solution=TRUE, converter = 'pandoc',
+           
+           encoding = "UTF-8",
+           edir = "./BancoDeQuestoes/cinematica/MUV",
+           template = "templates/plain.html")
+
 ################## estatica corpo extenso ####################
 ## Definindo a pasta com as questoes do exame
 myexam <- dir("./BancoDeQuestoes/estatica/", pattern = ".rnw", ignore.case=TRUE)

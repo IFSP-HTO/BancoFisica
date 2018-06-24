@@ -319,6 +319,17 @@ exams2pdf(myexam, n = 1,
           edir = "./BancoDeQuestoes/cinematica/MU",
           template = "plain8")
 
+################## MUV ####################
+## Definindo a pasta com as questoes do exame
+myexam <- dir("./BancoDeQuestoes/cinematica/MUV", pattern = ".rnw", ignore.case=TRUE)
+
+## Gerando HTML com o arquivo da questao
+set.seed(12018)
+exams2pdf(myexam, n = 1,
+          encoding = "UTF-8",
+          edir = "./BancoDeQuestoes/cinematica/MUV",
+          template = "plain8")
+
 ################## estatica do corpo extenso ####################
 ## Definindo a pasta com as questoes do exame
 assunto = "estatica"
