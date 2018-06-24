@@ -1,15 +1,16 @@
 <<echo=FALSE, results=hide>>=
 #Programado por: Marcelo C.
-
+## Parâmetros
 m <- sample(seq(from=60,to=90,by=1),1)
 deg <- sample(seq(from=60,to=100,by=1),1)
 t <- sample(seq(from=60,to=120,by=1),1)
 
-include_supplement("Q07Trabpot.jpg")
-
+## Resposta
 resp1 <- round(m*deg*1.5,1)
 resp2 <- round(resp1/t,1)
 
+## Figura
+include_supplement("Q07Trabpot.jpg")
 @
 \usepackage[utf8]{inputenc}
 
@@ -22,7 +23,7 @@ A figura a seguir representa uma parte dos degraus de uma escada com suas medida
   \includegraphics[scale=0.7]{{Q07Trabpot.jpg}}
 \end{figure}
 
-Uma pessoa de $\Sexpr{m} kg$ sobe $\Sexpr{deg}$ degraus dessa escada em $\Sexpr{t} segundos$, num local onde a aceleração da gravidade é de $10 m/s^2$. Desprezando eventuais perdas por atrito, determine:
+Uma pessoa de \Sexpr{m} kg sobe \Sexpr{deg} degraus dessa escada em \Sexpr{t} s, num local onde a aceleração da gravidade é de 10 m/s². Desprezando eventuais perdas por atrito, determine:
 
 \begin{answerlist}
 

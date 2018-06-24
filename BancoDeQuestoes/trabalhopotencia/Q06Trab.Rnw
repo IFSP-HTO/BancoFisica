@@ -1,26 +1,25 @@
 <<echo=FALSE, results=hide>>=
 #Programado por: Marcelo C.
-
+## Parâmetros
 m <- sample(seq(from=2,to=40,by=1),1)
 v <- sample(seq(from=2,to=10,by=0.1),1)
 d <- sample(seq(from=2,to=20,by=0.1),1)
 
+## Resposta
 resp1 <- round(m*v^2/2,1)
-resp1
 resp2 <- round(resp1/d,1)
-resp2
 @
 \usepackage[utf8]{inputenc}
 
 \begin{question}
 
-(UNICAMP) Sob a ação de uma força constante, um corpo de massa $m = \Sexpr{m} kg$ adquire, a partir do repouso, a velocidade de $\Sexpr{v} m/s$.
+(UNICAMP) Sob a ação de uma força constante, um corpo de massa m = \Sexpr{m}$ kg adquire, a partir do repouso, a velocidade de \Sexpr{v}  m/s.
 
   \begin{answerlist}
 
   \item Qual é trabalho, em joules, realizado por essa força? Caso necessário, arredonde sua resposta para 1 casa decimal.
 
-  \item Se o corpo se deslocou $\Sexpr{d} m$, qual o valor da força aplicada, em newtons? Caso necessário, arredonde sua resposta para 1 casa decimal.
+  \item Se o corpo se deslocou \Sexpr{d} m, qual o valor da força aplicada, em newtons? Caso necessário, arredonde sua resposta para 1 casa decimal.
 
   \end{answerlist}
 

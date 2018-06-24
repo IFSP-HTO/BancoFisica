@@ -14,7 +14,7 @@ resp2 <- round(resp1*L,1)
 
 \begin{question}
 
-(PUC) Um operário leva um bloco de massa $\Sexpr{m} kg$ até uma altura $h = \Sexpr{h} m$, por meio de um plano inclinado sem atrito de comprimento $L = \Sexpr{L} m$, como mostra a figura. Sabendo que a aceleração da gravidade é $g = 10m/s^2$ e que o bloco sobe com velocidade constante, determine:
+(PUC) Um operário leva um bloco de massa $\Sexpr{m} kg$ até uma altura h = $\Sexpr{h}$ m, por meio de um plano inclinado sem atrito de comprimento L = $\Sexpr{L}$ m, como mostra a figura. Sabendo que a aceleração da gravidade é g = $10$ m/s² e que o bloco sobe com velocidade constante, determine:
 
 \begin{figure}[h!]
   \centering

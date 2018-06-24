@@ -5,7 +5,7 @@ massa <- sample(seq(from=0.10,to=0.20,by=0.05),1)
 altura1 <- sample(seq(from=0.50,to=0.65,by=0.05),1)
 altura2 <- sample(seq(from=0.20,to=0.40,by=0.05),1)
 
-resp1 <- round(massa*10*(altura1-altura2), digits = 2)
+resp1 <- round(massa*10*(altura1-altura2), digits = 3)
 resp2 <- 0
 
 ##Imagem
@@ -15,7 +15,8 @@ include_supplement("Q15Trab.png")
 
 \begin{question}
  
-        (Ufrj) Uma esfera de aço de massa m= \Sexpr{massa} kg, suspensa por um fio a um suporte, é afastada de sua posição de equilíbrio e abandonada a uma altura H0= \Sexpr{altura1} cm, como mostra a figura 1. Ao completar a primeira oscilação, verifica-se que ela consegue atingir apenas uma altura H1= \Sexpr{altura2} cm, como mostra a figura 2. 
+        (Ufrj) Uma esfera de aço de massa m= \Sexpr{massa} kg, suspensa por um fio a um suporte, é afastada de sua posição de equilíbrio e abandonada a uma altura $H_0$ = \Sexpr{altura1} cm, como mostra a figura 1. Ao completar a primeira oscilação, verifica-se que ela consegue atingir apenas uma altura $H_1$ = \Sexpr{altura2} cm, como mostra a figura 2. (OBS: apresente o resultado com duas casas decimais.)
+        
   \begin{figure}[h!]
     \centering
     \includegraphics[height=5cm, keepaspectratio]{{Q15Trab.png}}
@@ -47,4 +48,4 @@ include_supplement("Q15Trab.png")
 %% \extype{num}
 %% \exsolution{\Sexpr{resp1}|\Sexpr{resp2}}
 %% \exname{Q15Trab}
-%% \extol{0.1}
+%% \extol{0.01}
