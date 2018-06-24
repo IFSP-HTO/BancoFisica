@@ -1,76 +1,84 @@
 <<echo=FALSE, results=hide>>=
-## Criado por Flavio Barros 03/06/2018
-## Funções necessárias
-nota_cient <- function(x,digits) {
-  if (x==0) return("0")
-  ord <- floor(log(abs(x),10))
-  x <- x / 10^ord
-  if (!missing(digits)) x <- format(x,digits=digits)
-  if (ord==0) return(as.character(x))
-  return(paste(x,"\\\\times 10^{",ord,"}",sep=""))
-}
-
+## DATA GENERATION by Flavio Barros 01/06/2018
 ## Parâmetros
-options(scipen = 999)
-h = 5
+A1 = sample(seq(from = 1.5, to = 5, by = 0.5),1)
+A2 = A1 - 1
+limite = sample(seq(from = 5000, to = 15000, by = 2000),1)
+dens_agua = 1000
+v_total = (A1 + A2)*sample(1:5,1)
+v_esfera = v_total/5
 g = 10
-atm = 1e5
-rho = 1000
-## Resposta
-p <- atm + rho*g*h
-delta_p <- 0
 
-## Figuras
-include_supplement(file = 'Q06LeiStevin.png')
+## Resposta
+## item a)
+H1 = limite/(dens_agua*g)
+V1 = round(A1*H1,2)
+## item b)
+H2 = round((v_total+v_esfera)/(A1 + A2),2)
+
+## Incluindo a figura
+include_supplement('Q06LeiStevin.png')
 @
 
 \begin{question}
 %% Enunciado
-
-(Unicamp) Um mergulhador persegue um peixe a uma profundidade h = \Sexpr{h} m abaixo da superfície de um lago. O peixe foge da posição A e se esconde em uma gruta na posição B, conforme mostra a figura a seguir. A pressão atmosférica na superfície da água é igual a $\Sexpr{nota_cient(atm)}$ N/m².
-Adote g = \Sexpr{g} m/s².
+Dois reservat\'orios cil\'indricos $S_1$ e $S_2$‚ de paredes verticais e \'areas das bases de \Sexpr{A1}m² e \Sexpr{A2}m²,
+respectivamente, est\~ao ligadas, pela parte inferior, por um tubo de di\^ametro e volume desprez\'iveis. Numa das
+extremidades do tubo existe uma parede fina AB que veda o reservat\'orio grande. Ela se rompe, deixando passar água para o reservat\'orio pequeno, quando a press\~ao sobre ela supera \Sexpr{limite} Pa.
 
 \includegraphics[height=6cm,keepaspectratio]{Q06LeiStevin.png}
 
 \begin{answerlist}
-  \item Qual a pressão sobre o mergulhador?
-  \item Qual a variação de pressão sobre o peixe nas posições A e B?
+  \item Estando o reservat\'orio pequeno vazio, determine o volume m\'aximo de \'agua que se pode armazenar no
+reservat\'orio grande sem que se rompa a parede AB, sabendo que a densidade da \'agua vale \Sexpr{dens_agua} kg/m³.
+  
+  \item Remove-se a parede AB e esvaziam-se os reservat\'orios. Em seguida coloca-se no sistema um volume total de
+\Sexpr{v_total} m³ de \'agua e, no reservat\'orio $S_1$, imerge-se lentamente uma esfera de ferro de \Sexpr{v_esfera} m³ de volume at\'e que pouse no fundo. Determine a altura da \'agua no reservat\'orio $S_2$, ap\'os alcançado o equil\'ibrio.
 \end{answerlist}
 \end{question}
 
 \begin{solution}
-%% Solution
+%% Supply a solution here!
 
-a) De acordo com a lei de Stevin:
-
-\begin{displaymath}
-P = P_0 + \rho \cdot g \cdot h
-\end{displaymath}
-
-E como $P_0 = \Sexpr{nota_cient(atm)}$, $\rho = 1000$ kg/m³ e h = $\Sexpr{h}$ m:
+a) De acordo com a Lei de Stevin a press\~ao da \'agua \'e dada por:
 
 \begin{displaymath}
-P = \Sexpr{atm} \cdot \Sexpr{rho} \cdot \Sexpr{h} = \Sexpr{p}
+P = \rho_{agua} \cdot g \cdot H \rightarrow \Sexpr{limite} = \Sexpr{dens_agua} \cdot 10 \cdot H \rightarrow H = \frac{\Sexpr{limite}}{\Sexpr{dens_agua} \cdot 10} = \Sexpr{round(H1,2)}
 \end{displaymath}
 
-b) Também de acordo com a lei de Stevin:
+Assim, o volume de \'agua necess\'ario para que a parede fina se rompa \'e dado por:
 
 \begin{displaymath}
-P = P_0 + \rho \cdot g \cdot h \Rightarrow \Delta P = \rho \cdot g \cdot h
+V = \Sexpr{A1}*\Sexpr{H1} = \Sexpr{V1}
 \end{displaymath}
 
+b) Como o volume total ser\'a o volume adicionado, que chamaremos de $V_{total}$, somado ao volume da esfera, que chamaremos de $V_{esfera}$ ent\~ao:
 
-Como $h = 0$ m então $\Delta P = 0$ Pa.
+\begin{displaymath}
+S_1 + S_2 = V_{total} + V_{esfera}
+\end{displaymath}
+
+Como $S_1 = \Sexpr{A1} \cdot H_1$ e $S_2 = \Sexpr{A2} \cdot H_2$ e sabendo que no equi\'ibrio $H_1 = H_2$, ent\~ao:
+
+\begin{displaymath}
+\Sexpr{A1} \cdot H_1 + \Sexpr{A2} \cdot H_2 = V_{total} + V_{esfera} \rightarrow \Sexpr{A1} \cdot H + \Sexpr{A2} \cdot H = V_{total} + V_{esfera}
+\end{displaymath}
+
+tal que
+
+\begin{displaymath}
+\Sexpr{A1 + A2} \cdot H = V_{total} + V_{esfera} \rightarrow H = \frac{V_{total} + V_{esfera}}{\Sexpr{A1 + A2}} = \frac{\Sexpr{v_total + v_esfera}}{\Sexpr{A1 + A2}} = \Sexpr{H2}
+\end{displaymath}
 
 \begin{answerlist}
-  \item A pressão é $\Sexpr{nota_cient(p)}$ Pa.
-  \item A variação de pressão é $\Sexpr{delta_p}$ Pa.
+  \item O volume é \Sexpr{V1} m³.
+  \item A altura é \Sexpr{H2} m.
 \end{answerlist}
 \end{solution}
 
 %% META-INFORMATION
 %% \extype{cloze}
-%% \exsolution{0.324|0.767515}
+%% \exsolution{\Sexpr{V1}|\Sexpr{H2}}
 %% \exclozetype{num|num}
-%% \exname{Statistics}
+%% \exname{Q05LeiStevin}
 %% \extol{0.01}

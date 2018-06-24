@@ -1,0 +1,49 @@
+<<echo=FALSE, results=hide>>=
+## Feita por Flavio Barros
+## Pacote e funções
+library(MASS)
+
+## Parâmetros
+dens_x <- sample(seq(from=0.6, to=1, by=0.05),1)
+dens_y <- dens_x - sample(seq(from=0, to=0.3, by=0.05),1)
+frac <- fractions(sample(seq(from=0.1, to=0.49, by=0.01),1))
+  
+## Correta
+resp <- (dens_x*frac)/(dens_y*(1-frac))
+
+## Erradas
+erros <- c(dens_x/dens_y, (dens_x*frac)/dens_y, (dens_x*(1-frac))/dens_y, dens_x/(dens_y*(1-frac)))
+
+## Opções
+lista <- c(resp, erros)[sample(1:5,5)]
+solutions <- as.logical(resp == lista)
+
+## Figura
+include_supplement('Q10QuizDensidade.png')
+@
+
+\begin{question}
+%% Enunciado
+(Uece) Dois líquidos não-miscíveis, X e Y, são derramados sucessivamente em um vaso cilíndrico. O líquido X, de massa específica \Sexpr{dens_x} g/cm³, é derramado primeiro, até atingir \Sexpr{frac} do volume do vaso. A seguir, o líquido Y, de massa específica \Sexpr{dens_y} g/cm³ é derramado até encher completamente o vaso. Se $m_x$ e $m_y$ são as massas dos líquidos X e Y, respectivamente, a razão $\frac{m_x}{m_y}$ vale:
+
+\includegraphics[height=5cm, keepaspectratio]{Q10QuizDensidade.png}
+
+<<echo=False, results=tex>>=
+answerlist(fractions(lista))
+@
+
+\end{question}
+
+\begin{solution}
+%% Solution
+A resposta correta é:
+<<echo=False, results=tex>>=
+answerlist(solutions)
+@
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions)}}
+%% \exname{Q09QuizDensidade}
+%% \exshuffle{lista}
