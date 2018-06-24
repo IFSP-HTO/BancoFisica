@@ -1,0 +1,50 @@
+<<echo=FALSE, results=hide>>=
+##Programado por:Matheus V
+##Variaveis
+massa <- sample(seq(from=1,to=5,by=1),1)
+velocidade <- sample(seq(from=5,to=15,by=1),1)
+altura <- sample(seq(from=3,to=6,by=1),1)
+
+resp1 <- round(sqrt(10*altura+(velocidade^2)/2), digits = 2)
+resp2 <- round(massa*(velocidade/2) , digits = 2)
+
+##Imagem
+include_supplement("Q19Trab.png")
+@
+\usepackage[portuguese]{babel}
+
+\begin{question}
+ 
+       (Udesc) Um corpo de massa \Sexpr{massa} possui velocidade inicial em A de \Sexpr{velocidade} m/s. Sabe-se que o corpo percorre a trajetória ABC, parando em C. O trecho AB é perfeitamente liso (atrito desprezível)e possui altura H de \Sexpr{altura} m. A partir do ponto B até C existe atrito. Determine:
+  \begin{figure}[h!]
+    \centering
+    \includegraphics[height=5cm, keepaspectratio]{{Q19Trab.png}}
+  \end{figure}
+
+  \begin{answerlist}
+
+    \item a velocidade do corpo ao atingir o ponto B. 
+
+  
+    \item  o trabalho realizado pela força de atrito, no trecho BC Dado: g = 10 m/s
+
+  \end{answerlist}
+
+\end{question}
+
+\begin{solution}
+  
+  \begin{answerlist}
+  
+      \item \Sexpr{resp1} m/s
+      \item \Sexpr{resp2} J
+  
+  \end{answerlist}
+  
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp1}|\Sexpr{resp2}}
+%% \exname{Q14Trab}
+%% \extol{0.1}

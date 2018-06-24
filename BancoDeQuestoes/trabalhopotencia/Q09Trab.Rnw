@@ -14,8 +14,7 @@ resp2 <- round(Fx*d,1)
 
 \begin{question}
 
-(Vunesp) Na figura, sob a ação da força de intensidade $F = \Sexpr{Fx} N$, constante, paralela ao plano, o bloco percorre $\Sexpr{d} m$ ao longo do plano com velocidade constante. Admite-se $g = 10m/s^2$, despreza-se o atrito e são
-dados: $sen30^\circ = cos60^\circ = 0,5$ e $cos120^\circ = -0,5$. Determine:
+(Vunesp) Na figura, sob a ação da força de intensidade F = $\Sexpr{Fx}$ N, constante, paralela ao plano, o bloco percorre $\Sexpr{d}$ m ao longo do plano com velocidade constante. Admite-se g = $10$ m/s², despreza-se o atrito e são dados: $\sin (30^\circ) = \cos (60^\circ) = 0,5$ e $\cos (120^\circ) = -0,5$. Determine:
 
 \begin{figure}[h!]
   \centering

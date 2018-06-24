@@ -23,7 +23,7 @@ solutions[aleat[5]] <- TRUE
 @
 
 \begin{question}
-(Uel) Um corpo, inicialmente em repouso, é submetido a uma força resultante ù, cujo valor algébrico varia com o tempo de acordo com o gráfico a seguir.
+(Uel) Um corpo, inicialmente em repouso, é submetido a uma força resultante $\vec{F}$, cujo valor algébrico varia com o tempo de acordo com o gráfico a seguir.
 
 \begin{figure}[h!]
   \centering

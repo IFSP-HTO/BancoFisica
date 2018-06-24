@@ -1,0 +1,37 @@
+<<echo=FALSE, results=hide>>=
+## By Flavio Barros
+## Parâmetros
+A2 <- sample(seq(from=5, to=25, by=5),1)
+A1 <- 4*A2
+m1 <- sample(2:10,1)
+g <- 10
+
+## Resposta
+F1 <- m1*g
+F2 <- (F1*A2)/A1
+resp <- round(F2/g,2)
+
+## Figura
+include_supplement('Q12PrincipioPascal.png')
+@
+
+\begin{question}
+%% Enunciado
+Considere o arranjo da figura a seguir, onde um líquido está confinado na região delimitada pelos êmbolos A e B, de áreas A = \Sexpr{A1} cm² e B = \Sexpr{A2} cm², respectivamente.
+
+\includegraphics[height=6cm, keepaspectratio]{Q12PrincipioPascal.png}
+
+O sistema está em equilíbrio. Despreze os pesos dos êmbolos e os atritos. Se $m_A$ = \Sexpr{m1} kg, qual o valor de $m_B$? (OBS: considere g = 10 m/s² e apresente a resposta com duas casas decimais.)
+
+\end{question}
+
+\begin{solution}
+%% Solution
+A massa $m_B$ = \Sexpr{resp} Kg.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp}}
+%% \exname{Q12PrincipioPascal}
+%% \extol{0.01}
