@@ -20,10 +20,10 @@ resp2 <- round(resp1/distancia,digits = 2)
 
   \begin{answerlist}
 
-    \item  a) Qual é trabalho realizado por essa força? 
+    \item Qual é trabalho realizado por essa força? 
 
   
-    \item  b) Se o corpo se deslocou \Sexpr{distancia} m, qual o valor da força aplicada? 
+    \item Se o corpo se deslocou \Sexpr{distancia} m, qual o valor da força aplicada? 
 
   \end{answerlist}
 
