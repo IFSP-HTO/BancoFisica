@@ -11,7 +11,7 @@ resp <- round(m*10*h)
 
 \begin{question}
 
-(PUC-RJ-adapt. Um atleta de salto em altura, de \Sexpr{m} kg, atingiu a altura de \Sexpr{h} m, aterrissando a 3 m do seu ponto inicial. Determine o trabalho realizado pelo peso durante a sua descida. Adote g = 10 m/s².
+(PUC-RJ-adapt) Um atleta de salto em altura, de \Sexpr{m} kg, atingiu a altura de \Sexpr{h} m, aterrissando a 3 m do seu ponto inicial. Determine o trabalho realizado pelo peso durante a sua descida. Adote g = 10 m/s².
 
 \end{question}
 
