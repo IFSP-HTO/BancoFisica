@@ -5,6 +5,10 @@ baseMenor <- sample(seq(from=1, to=5, by=0.5), 1)
 razao <-  sample(seq(from=2, to=6, by=0.5), 1)
 baseMaior <- baseMenor*razao
 
+x_coord <- c(0,baseMenor)
+y_coord <- c(0,baseMaior)
+t<-xy.coords(x_coord,y_coord)
+
 resp <- ((baseMaior+baseMenor)*4)/2
 
 questions <- character(5)
@@ -36,7 +40,7 @@ Considere altura = 4m
 \begin{center}
 \begin{figure}[h!]
 <<fig=TRUE, height=4, width=5, echo=FALSE, eps=FALSE, results=hide>>=
-plot(0:10,0:10,type = "b",xlab = "s(m)", ylab = "F(N)")
+plot(x_coord, y_coord, type = "b", xlab = "s(m)", ylab = "F(N)", xlim=range(0, baseMenor), ylim=range(0, baseMaior))
 grid()
 @
 \end{figure}

@@ -1,50 +1,58 @@
 <<echo=FALSE, results=hide>>=
-##Programado por:Matheus V
-##Variaveis
-massa <- sample(seq(from=1,to=5,by=1),1)
-velocidade <- sample(seq(from=5,to=15,by=1),1)
-altura <- sample(seq(from=3,to=6,by=1),1)
+##PROGRAMADO POR: CARLOS SANTANA, em 6 de Junho de 2017.
+## Parâmetros
+coef_atrito <- c(0.167,0.2,0.25,0.333,0.5,1)
+## sample(coef_atrito,1)
 
-resp1 <- round(sqrt(10*altura+(velocidade^2)/2), digits = 2)
-resp2 <- round(massa*(velocidade/2) , digits = 2)
+## Respostas
+cont <- round(2.5/sample(coef_atrito,1),1)
+  if(cont==2.5){
+    cont<-"A"
+  }
+  if(cont==5){
+    cont<-"B"
+  }
+  if(cont==7.5){
+    cont<-"C"
+  }
+  if(cont==10){
+    cont<-"D"
+  }
 
-##Imagem
+  if(cont>10){
+    if(cont==12.5){
+      cont<-"C"
+    }
+    if(cont==15){
+      cont<-"D"
+    }
+  }
+
+## Figuras
 include_supplement("Q14Trab.png")
 @
-\usepackage[portuguese]{babel}
 
 \begin{question}
- 
-       (Udesc) Um corpo de massa \Sexpr{massa} possui velocidade inicial em A de \Sexpr{velocidade} m/s. Sabe-se que o corpo percorre a trajetória ABC, parando em C. O trecho AB é perfeitamente liso (atrito desprezível)e possui altura H de \Sexpr{altura} m. A partir do ponto B até C existe atrito. Determine:
-  \begin{figure}[h!]
-    \centering
-    \includegraphics[height=5cm, keepaspectratio]{{Q14Trab.png}}
-  \end{figure}
 
-  \begin{answerlist}
+(Mackenzie) Uma partícula desliza sobre o trilho que possui extremidades elevadas e uma parte central plana conforme a figura. As partes curvas não apresentaram atrito e o coeficiente de atrito cinético da parte plana é $\mu$=\Sexpr{coef_atrito}. Abandona-se a partícula do ponto P, cuja a altura é h=2,5m acima da parte plana.
 
-    \item a velocidade do corpo ao atingir o ponto B. 
 
-  
-    \item  o trabalho realizado pela força de atrito, no trecho BC Dado: g = 10 m/s
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=4cm, keepaspectratio]{{Q14Trab.png}}
+\end{figure}
 
-  \end{answerlist}
-
+O ponto no qual a partícula vai parar é:
 \end{question}
 
+%% SOLUTION
 \begin{solution}
-  
-  \begin{answerlist}
-  
-      \item \Sexpr{resp1} m/s
-      \item \Sexpr{resp2} J
-  
-  \end{answerlist}
-  
+
+  \Sexpr{cont}
+    
 \end{solution}
 
 %% META-INFORMATION
-%% \extype{num}
-%% \exsolution{\Sexpr{resp1}|\Sexpr{resp2}}
+%% \extype{string}
+%% \exsolution{\Sexpr{cont}}
 %% \exname{Q14Trab}
-%% \extol{0.1}
