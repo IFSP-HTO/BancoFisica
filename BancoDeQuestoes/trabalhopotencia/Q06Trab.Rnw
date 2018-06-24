@@ -13,7 +13,7 @@ resp2 <- round(resp1/d,1)
 
 \begin{question}
 
-(UNICAMP) Sob a ação de uma força constante, um corpo de massa m = \Sexpr{m}$ kg adquire, a partir do repouso, a velocidade de \Sexpr{v}  m/s.
+(UNICAMP) Sob a ação de uma força constante, um corpo de massa m = \Sexpr{m} kg adquire, a partir do repouso, a velocidade de \Sexpr{v}  m/s.
 
   \begin{answerlist}
 
