@@ -1,51 +1,63 @@
 <<echo=FALSE, results=hide>>=
-##Programado por:Matheus V
-##Variaveis
-massa <- sample(seq(from=0.10,to=0.20,by=0.05),1)
-altura1 <- sample(seq(from=0.50,to=0.65,by=0.05),1)
-altura2 <- sample(seq(from=0.20,to=0.40,by=0.05),1)
+##PROGRAMADO POR: CARLOS SANTANA, em 31 de Maio de 2017.
+baseMenor <- sample(seq(from=1, to=5, by=0.5), 1)
+baseMaior <- baseMenor+2
 
-resp1 <- round(massa*10*(altura1-altura2), digits = 3)
-resp2 <- 0
+x_coord <- c(0,baseMenor)
+y_coord <- c(0,baseMaior)
 
-##Imagem
-include_supplement("Q15Trab.png")
+resp <- ((baseMaior+baseMenor)*(baseMaior-baseMenor))/2
+
+questions <- character(5)
+solutions <- logical(5)
+aleat = sample(1:5)
+
+questions[aleat[1]] <- resp/2
+solutions[aleat[1]] <- FALSE
+
+questions[aleat[2]] <- resp*1.5
+solutions[aleat[2]] <- FALSE
+
+questions[aleat[3]] <- resp
+solutions[aleat[3]] <- TRUE
+
+questions[aleat[4]] <- resp+15
+solutions[aleat[4]] <- FALSE
+
+questions[aleat[5]] <- resp+15
+solutions[aleat[5]] <- FALSE
 @
-\usepackage[portuguese]{babel}
 
 \begin{question}
- 
-        (Ufrj) Uma esfera de aço de massa m= \Sexpr{massa} kg, suspensa por um fio a um suporte, é afastada de sua posição de equilíbrio e abandonada a uma altura $H_0$ = \Sexpr{altura1} cm, como mostra a figura 1. Ao completar a primeira oscilação, verifica-se que ela consegue atingir apenas uma altura $H_1$ = \Sexpr{altura2} cm, como mostra a figura 2. (OBS: apresente o resultado com duas casas decimais.)
-        
-  \begin{figure}[h!]
-    \centering
-    \includegraphics[height=5cm, keepaspectratio]{{Q15Trab.png}}
-  \end{figure}
 
-  \begin{answerlist}
+(Fei) Uma aluna ensaiou uma mola pelo Método Estático e montou o gráfico a seguir. Qual é o trabalho da Força Elástica para o deslocamento de \Sexpr{baseMenor}m a \Sexpr{baseMaior}m?
 
-    \item  o trabalho realizado pelos diversos atritos que se opõem ao movimento da esfera durante essa primeira oscilação; 
+\begin{center}
+\begin{figure}[h!]
+<<fig=TRUE, height=4, width=5, echo=FALSE, eps=FALSE, results=hide>>=
+plot(x_coord,y_coord,type = "b",xlab = "x(m)", ylab = "F(N)",xlim=range(0,baseMenor),ylim=range(0,baseMaior+1),panel.first=grid())
+@
+\end{figure}
+\end{center}
 
-  
-    \item  o trabalho realizado pela tensão no fio durante essa primeira oscilação. 
-
-  \end{answerlist}
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(questions)
+@
 
 \end{question}
 
+%% SOLUTION
 \begin{solution}
-  
-  \begin{answerlist}
-  
-      \item \Sexpr{resp1} J
-      \item \Sexpr{resp2} J
-  
-  \end{answerlist}
-  
+
+<<echo=FALSE, results=hide, results=tex>>=
+
+answerlist(
+  paste("\\textbf{", ifelse(solutions, "Verdadeiro", "Falso"), "}", sep = ""))
+@
 \end{solution}
 
 %% META-INFORMATION
-%% \extype{num}
-%% \exsolution{\Sexpr{resp1}|\Sexpr{resp2}}
+%% \extype{mchoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions)}}
 %% \exname{Q15Trab}
-%% \extol{0.01}
+>>>>>>> 00217bbcd09d1b376b64ea6dbe7be22b3e1285c3
