@@ -1,0 +1,33 @@
+<<echo=FALSE, results=hide>>=
+# Programado por: Carlos Santana
+
+## Parâmetros
+distancia <- sample(seq(from=40,to=200, by=5),1)
+atraso <- sample(seq(from=0.5,to=7, by=0.5),1)
+
+tempo <- round(sqrt(distancia/5),1)
+distancia_corpoA <- 5*(tempo^2)
+distancia_corpoB <- 5*((tempo-atraso)^2)
+
+resp <- distancia_corpoA - distancia_corpoB
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Um corpo A é abandonado da altura de \Sexpr{distancia} m, sob ação exclusiva da gravidade, cuja aceleração pode ser considerada 10 m/$s^2$. Do mesmo ponto, outro corpo B é abandonado \Sexpr{atraso} s mais tarde. Nesta queda de \Sexpr{distancia} m, a máxima distância entre A e B é de
+
+\end{question}
+
+%% SOLUTION
+\begin{solution}:
+
+  \Sexpr{resp} m
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp}}
+%% \exname{Q14MUV}
+%% \extol{0.1}

@@ -1,0 +1,49 @@
+<<echo=FALSE, results=hide>>=
+## Programado por Carlos Santana
+
+## Alternativas
+aleat <- sample(1:5)
+questions <- numeric(5)
+solutions <- logical(5)
+
+  questions[aleat[1]] <- "aceleração"
+  solutions[aleat[1]] <- TRUE
+  
+  questions[aleat[2]] <- "quantidade de movimento"
+  solutions[aleat[2]] <- FALSE
+  
+  questions[aleat[3]] <- "energia potencial"
+  solutions[aleat[3]] <- FALSE
+  
+  questions[aleat[4]] <- "energia cinética"
+  solutions[aleat[4]] <- FALSE
+  
+  questions[aleat[5]] <- "energia mecânica"
+  solutions[aleat[5]] <- FALSE
+@
+
+
+\begin{question}
+Duas pequenas esferas de massas 'diferentes' são abandonadas simultaneamente do alto de uma torre.
+"Desprezando a resistência do ar", podemos afirmar que, quando estiverem a um metro do solo, ambas terão a
+mesma:
+
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(questions)
+@
+
+\end{question}
+
+
+\begin{solution}
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(
+  paste("\\textbf{", ifelse(solutions, "Verdadeiro", "Falso"), "}"))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q15QuizMUV}

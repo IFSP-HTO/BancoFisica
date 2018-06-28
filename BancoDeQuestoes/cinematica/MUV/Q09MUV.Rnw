@@ -1,0 +1,31 @@
+<<echo=FALSE, results=hide>>=
+# Programado por: Carlos Santana
+
+## Parâmetros
+distancia_a <- sample(seq(from=32,to=100, by=2),1)
+velocidade <- sample(seq(from=4,to=80,by=2),1)
+distancia_b <- sample(seq(from=2,to=32, by=2),1)
+aceleracao <- round(((velocidade^2)/2)/distancia_a,1)
+
+resp <- round(sqrt(2*aceleracao*distancia_b),1)
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Um esquiador desce por uma pista de esqui com aceleração constante. Partindo de repouso do ponto P, ele chega ao ponto T, a \Sexpr{distancia_a} m de P, com velocidade de \Sexpr{velocidade} m/s. O esquiador passa por um ponto Q, a \Sexpr{distancia_b} m de P, com velocidade em m/s, de :
+
+\end{question}
+
+%% SOLUTION
+\begin{solution}:
+
+  \Sexpr{resp} m/s
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp}}
+%% \exname{Q09MUV}
+%% \extol{0.1}
