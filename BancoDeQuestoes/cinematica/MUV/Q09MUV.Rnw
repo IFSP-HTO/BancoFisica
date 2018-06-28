@@ -7,6 +7,7 @@ velocidade <- sample(seq(from=4,to=80,by=2),1)
 distancia_b <- sample(seq(from=2,to=32, by=2),1)
 aceleracao <- round(((velocidade^2)/2)/distancia_a,1)
 
+## Resposta
 resp <- round(sqrt(2*aceleracao*distancia_b),1)
 @
 \usepackage[utf8]{inputenc}

@@ -7,8 +7,8 @@ tempo <- sample(seq(from=1,to=10,by=1),1)
 x_coord <- c(0,tempo)
 y_coord <- c(0,velocidade)
 
+## Resposta
 resp <- velocidade*tempo
-
 @
 \usepackage[utf8]{inputenc}
 
