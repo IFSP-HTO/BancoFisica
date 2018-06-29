@@ -197,9 +197,9 @@ exams2moodle(myexam, n = 100, rule="none", schoice = list(shuffle = TRUE), name 
              dir = "./Moodle",
              edir = "./BancoDeQuestoes/leidosgases")
 
-############### leis de newton ##################
+############leis de newton - atrito##############
 ## Definindo a pasta com as questoes do exame
-myexam <- dir("./BancoDeQuestoes/leisdenewton", pattern = ".rnw", ignore.case=TRUE)
+myexam <- dir("./BancoDeQuestoes/leisdenewton/atrito", pattern = ".rnw", ignore.case=TRUE)
 ano <- 12018
 ## Cria o arquivo .xml para entrada no moodle
 set.seed(ano)

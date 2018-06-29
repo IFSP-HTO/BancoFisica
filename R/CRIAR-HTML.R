@@ -125,6 +125,17 @@ exams2html(myexam, n = 1,solution=TRUE,
            edir = "./BancoDeQuestoes/impulso",
            template = "templates/plain.html")
 
+################Leis de Newton - atrito################
+## Definindo a pasta com as questoes do exame
+myexam <- dir("./BancoDeQuestoes/leisdenewton/atrito", pattern = ".rnw", ignore.case=TRUE)
+
+## Gerando HTML com o arquivo da questao
+set.seed(12018)
+exams2html(myexam, n = 1,solution=TRUE,
+           encoding = "UTF-8",
+           edir = "./BancoDeQuestoes/leisdenewton/atrito",
+           template = "templates/plain.html")
+
 
 ####################lei dos gases#######################
 ## Definindo a pasta com as questoes do exame
