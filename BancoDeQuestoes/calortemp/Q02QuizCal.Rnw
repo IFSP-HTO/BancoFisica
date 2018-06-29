@@ -2,10 +2,10 @@
 ##PROGRAMADO POR: MARCELO C.
 
 ## QUESTION/ANSWER GENERATION
-questions <- character(10)
-solutions <- logical(10)
-explanations <- character(10)
-aleat = sample(1:10)
+questions <- character(15)
+solutions <- logical(15)
+explanations <- character(15)
+aleat = sample(1:15)
 
   questions[aleat[1]] <- "Um balde de isopor mantém a cerveja gelada porque impede a saída do frio."
   solutions[aleat[1]] <- FALSE
@@ -37,7 +37,22 @@ aleat = sample(1:10)
   questions[aleat[10]] <- "A sensação de frio que nós sentimos resulta da perda de calor do nosso corpo para a atmosfera que está a uma temperatura menor."
   solutions[aleat[10]] <- TRUE
   explanations[aleat[10]] <- ""
-  
+  questions[aleat[11]] <- "A variação de 1 °C corresponde a variação de 1,8 °F."
+  solutions[aleat[11]] <- TRUE
+  explanations[aleat[11]] <- ""
+  questions[aleat[12]] <- "Temperatura de uma substância é proporcional à energia cinética média das partículas que a compõe."
+  solutions[aleat[12]] <- TRUE
+  explanations[aleat[12]] <- ""
+  questions[aleat[13]] <- "Quando dois corpos estão em equilíbrio térmico, ambos possuem a mesma quantidade de calor."
+  solutions[aleat[13]] <- FALSE
+  explanations[aleat[13]] <- "Falso!! Corpo não contém calor."
+  questions[aleat[14]] <- "Calor é um sinônimo de tempertatura em um sistema."
+  solutions[aleat[14]] <- FALSE
+  explanations[aleat[14]] <- "Falso!! Calor é energia em trânsito devido a diferença de temperatura entre corpos."
+  questions[aleat[15]] <- "A temperatura é uma grandeza macroscópica."
+  solutions[aleat[15]] <- TRUE
+  explanations[aleat[15]] <- ""
+
 @
 
 
@@ -46,21 +61,21 @@ aleat = sample(1:10)
 (UFSC-adaptado) Acerca dos conceitos de calor e temperatura, assinale verdadeiro (V) ou falso (F):
 
 <<echo=FALSE, results=hide, results=tex>>=
-answerlist(questions)
+answerlist(questions[1:5])
 @
 \end{question}
 
 \begin{solution}
 <<echo=FALSE, results=hide, results=tex>>=
 answerlist(
-  paste("\\textbf{", ifelse(solutions, "Verdadeiro", "Falso"), "}", sep = ""),
-  explanations)
+  paste("\\textbf{", ifelse(solutions[1:5], "Verdadeiro", "Falso"), "}", sep = ""),
+  explanations[1:5])
 @
 
 \end{solution}
 
 %% META-INFORMATION
 %% \extype{mchoice}
-%% \exsolution{\Sexpr{mchoice2string(solutions)}}
+%% \exsolution{\Sexpr{mchoice2string(solutions[1:5])}}
 %% \exname{Q02QuizCal}
 
