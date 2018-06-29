@@ -1,0 +1,72 @@
+<<echo=FALSE, results=hide>>=
+#Programado por: Marcelo C.
+
+m <- sample(seq(from=20,to=50,by=1),1)
+uest <- sample(seq(from=0.3,to=0.6,by=0.01),1)
+udin <- sample(seq(from=0.2,to=uest-0.05,by=0.01),1)
+Fa <- sample(seq(from=50,to=200,by=2),1)
+Fat <- uest*m*10
+
+if (Fat<Fa){
+  resp1 <- "S"
+  resp2 <- udin*m*10
+  resp3 <- round((Fa-resp2)/m, 2)
+} else{
+  resp1 <- "N"  
+  resp2 <- Fat
+  resp3 <- 0
+}
+
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Um bloco de massa $\Sexpr{m}$ kg repousa sobre uma superfície horizontal. Sabe-se que o coeficiente de atrito estático vale $\Sexpr{uest}$ e que o atrito cinético vale $\Sexpr{udin}$. Se uma força horizontal $F$ de módulo $\Sexpr{Fa}$ N é aplicada, responda: (adote $g = 10 m/s^2$)  
+
+
+  \begin{answerlist}
+
+    \item O bloco entrará em movimento? Responda "S" para Sim e "N" para Não
+    .
+    \item Qual o módulo da força de atrito aplicada sobre o bloco.
+    \item Qual o módulo da aceleração do bloco.
+  
+  \end{answerlist}
+
+\end{question}
+
+%% SOLUTION
+\begin{solution}:
+    
+    \begin{answerlist}
+      \item
+        Para avaliar se a caixa anda, calculamos a força de atrito máximo que a caixa estará submetida.
+        
+        $$ F_{at} = \mu_{est}N = \mu_{est} mg = \Sexpr{Fat} N$$ 
+        
+        Sendo assim, comparando com a força aplicada F, a resposta é \Sexpr{resp1}!!!
+  
+      \item
+        Neste caso, a força de atrito é dada por:
+        
+        $$F_{at} = \Sexpr{resp2} N$$
+  
+     \item
+        Aplicando a Segunda Lei de Newton, temos:
+        
+        $$F_{R} = ma = F-F_{at}$$
+        
+        Portanto a aceleração é:
+        
+        $$a = \frac{F-F_{at}}{m} = \Sexpr{resp3} m/s^2$$
+        
+  \end{answerlist}
+\end{solution}
+  
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exclozetype{string|num|num}
+%% \exsolution{\Sexpr{resp1}|\Sexpr{resp2}|\Sexpr{resp3}}
+%% \exname{Q01Atrito}
+%% \extol{0|0.1|0.01}
