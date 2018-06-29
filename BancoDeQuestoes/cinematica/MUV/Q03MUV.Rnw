@@ -1,6 +1,9 @@
 <<echo=FALSE, results=hide>>=
 # Programado por: Carlos Santana
 
+## Figura
+include_supplement(file = "Q03MUV.png")
+
 ## Parâmetros
 distancia_a <- sample(seq(from=2,to=10, by=0.5),1)
 distancia_b <- sample(seq(from=0.5,to=2, by=0.1),1)
@@ -11,11 +14,15 @@ resp <- round(sqrt(2*10*(distancia_a+distancia_b)),1)
 \usepackage[utf8]{inputenc}
 
 \begin{question}
-Um atleta salta de um trampolim situado a \Sexpr{distancia_a} m do nível da água na piscina, subindo \Sexpr{distancia_b} m acima do mesmo
+Um atleta salta de um trampolim situado a x = \Sexpr{distancia_a} m do nível da água na piscina, y = subindo \Sexpr{distancia_b} m acima do mesmo
 e, a partir dessa posição, desce verticalmente. Desprezando a resistência do ar, DETERMINE a velocidade do
 atleta ao atingir a superfície da água.
 
 Dado: g = 10,00 m/s$^2$
+
+\begin{figure}[h!]
+  \includegraphics[height=6cm,keepaspectratio]{Q03MUV.png}
+\end{figure}
 \end{question}
 
 %% SOLUTION
