@@ -18,10 +18,7 @@ resp[5] <- Fa*0.08
 
 Calcule o momento aplicado pela força $F$, em $N.m$, nas barras com relação ao eixo de rotação O em cada um dos ítens. Considere a força $F = \Sexpr{Fa} N$.
 
-  \begin{figure}[h!]
-    \centering
-    \includegraphics[scale=0.7]{{Q07estce.jpg}}
-  \end{figure}
+  \includegraphics[height=6cm,keepaspectratio]{Q07estce.jpg}
 
   \begin{answerlist}
     \item 

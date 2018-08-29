@@ -17,10 +17,7 @@ include_supplement("Q18estpm.jpg")
 (Fatec) Certa mola, presa a um suporte, sofre alongamento de $\Sexpr{xo} cm$ quando se prende à sua extremidade um corpo de peso $\Sexpr{p1} N$, como na figura 1. A mesma mola, tendo agora em sua extremidade o peso de $\Sexpr{p2} N$, é fixa ao topo de um plano inclinado com ângulo $\theta = 37^\circ$, sem atrito, como na figura 2.
 
 
-\begin{figure}[h!]
-  \centering
-  \includegraphics[scale=0.7]{{Q18estpm.jpg}}
-\end{figure}
+\includegraphics[height=6cm,keepaspectratio]{Q18estpm.jpg}
 
 Determine o alongamento da mola, em $cm$ nesta nova situação. Caso necessário, arredonde sua resposta para 1 casa decimal. Dados: $g = 10m/s^2$ ; $sen(37^{\circ}) = 0,6$ e $cos(37^{\circ}) = 0,8$.
 

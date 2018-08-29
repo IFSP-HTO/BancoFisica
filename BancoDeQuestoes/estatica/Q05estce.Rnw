@@ -15,10 +15,7 @@ respa <- (mb+mcaixa)*10-respb
 
 (UFRGS-adapt.) Uma barra homogênea de massa \Sexpr{mb} kg está apoiada nos seus extremos A e B, distanciados de 1,0 m. A 20 cm da extremidade B foi colocado um bloco de massa m igual \Sexpr{mcaixa} kg. 
 
-\begin{figure}[h!]
-  \centering
-  \includegraphics[scale=0.7]{{Q05estce.jpg}}
-\end{figure}
+\includegraphics[height=6cm,keepaspectratio]{Q05estce.jpg}
 
 Considerando a aceleração da gravidade igual a $10 m/s^2$ e considerando até uma casa decimal em sua resposta, determine: 
 

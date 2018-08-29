@@ -14,10 +14,7 @@ include_supplement("Q20estce.jpg")
 
 (Faap-adapt.) Na estrutura representada, a barra homogênea AB pesa $\Sexpr{pa} N$ e é articulada em A. A carga suspensa pesa $\Sexpr{fa} N$.
 
-\begin{figure}[h!]
-  \centering
-  \includegraphics[scale=0.7]{{Q20estce.jpg}}
-\end{figure}
+\includegraphics[height=6cm,keepaspectratio]{Q20estce.jpg}
 
  Determine a tração no cabo em Newtons. Caso necessário, dê sua resposta com 1 casa decimal.
 

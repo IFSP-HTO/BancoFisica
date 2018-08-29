@@ -14,10 +14,7 @@ include_supplement("Q22estpm.jpg")
 
 (AFA-adapt.) Um mecanismo foi montado para levantar uma caixa de massa $\Sexpr{m} kg$. Determine a menor força, em Newtons, necessária para levantar a caixa. Considere $g = 10m/s^2$ e, caso necessário, dê sua resposta com uma casa decimal. 
 
-\begin{figure}[h!]
-  \centering
-  \includegraphics[scale=0.7]{{Q22estpm.jpg}}
-\end{figure}
+\includegraphics[height=6cm,keepaspectratio]{Q22estpm.jpg}
 
 \end{question}
 

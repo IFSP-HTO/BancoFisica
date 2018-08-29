@@ -14,10 +14,7 @@ include_supplement("Q12estce.jpg")
 
 (UNICAMP-adapt.) Uma escada homogênea de $\Sexpr{m} kg$ apóia-se sobre uma parede, no ponto P, e sobre o chão no ponto C. 
 
-\begin{figure}[h!]
-  \centering
-  \includegraphics[scale=0.7]{{Q12estce.jpg}}
-\end{figure}
+\includegraphics[height=6cm,keepaspectratio]{Q12estce.jpg}
 
 Adotando $g = 10m/s^2$, determine:
 

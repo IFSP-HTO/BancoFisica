@@ -14,11 +14,7 @@ de Arquimedes”. Observe o desenho. Quando um navio se aproximava dos muros da 
 fosse destruído nas pedras. O gancho era preso a uma grossa peça de madeira de 20 m de comprimento. A peça fazia o papel de alavanca tendo seu eixo de rotação a 12 m da
 extremidade onde o gancho era preso. A outra extremidade era puxada por um conjunto de bois muito fortes. Desprezando o peso da própria alavanca e considerando a aceleração da gravidade igual a $10m/s^2$, para esta alavanca equilibrar um barco de \Sexpr{m} kg no ar, qual o valor da força, em Newtons, que o conjunto de bois teria que fazer? 
 
-\begin{figure}[h!]
-  \centering
-  \includegraphics[scale=0.7]{{Q02estce.jpg}}
-\end{figure}
-
+\includegraphics[height=6cm,keepaspectratio]{Q02estce.jpg}
 \end{question}
 
 

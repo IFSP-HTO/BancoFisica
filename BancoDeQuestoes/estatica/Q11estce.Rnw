@@ -13,11 +13,7 @@ include_supplement("Q11estce.jpg")
 
 (UFPE-adapt.) Dois blocos idênticos de comprimento $L = \Sexpr{L} cm$ são colocados sobre uma mesa, como mostra a figura a seguir. Determine o máximo valor de $x$, em $cm$, para que os blocos fiquem em equilíbrio, sem tombarem. Dê sua resposta com duas casas decimais.
 
-\begin{figure}[h!]
-  \centering
-  \includegraphics[scale=0.7]{{Q11estce.jpg}}
-\end{figure}
-
+\includegraphics[height=6cm,keepaspectratio]{Q11estce.jpg}
 \end{question}
 
 \begin{solution}

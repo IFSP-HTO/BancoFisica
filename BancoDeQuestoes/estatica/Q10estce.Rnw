@@ -14,10 +14,7 @@ include_supplement("Q10estce.jpg")
 
 (UFPE) Uma tábua uniforme de $3 m$ de comprimento é usada como gangorra por duas crianças com massas $\Sexpr{m1} kg$ e $\Sexpr{m2} kg$. Elas sentam sobre as extremidades da tábua de modo que o sistema fica em equilíbrio quando apoiado em uma pedra distante $1,0 m$ da criança mais pesada. Qual a massa, em $kg$, da tábua?
 
-\begin{figure}[h!]
-  \centering
-  \includegraphics[scale=0.7]{{Q10estce.jpg}}
-\end{figure}
+\includegraphics[height=6cm,keepaspectratio]{Q10estce.jpg}
 
 \end{question}
 

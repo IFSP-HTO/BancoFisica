@@ -14,10 +14,7 @@ include_supplement("Q21estpm.jpg")
 
 (CESGRANRIO-RJ) Um corpo de massa $\Sexpr{m} kg$ encontra-se em equilíbrio devido à ação da força de intensidade F aplicada pelo homem da figura abaixo. Os pontos A, B e C são os pontos de contato entre os fios e a superfície. 
 
-\begin{figure}[h!]
-  \centering
-  \includegraphics[scale=0.7]{{Q21estpm.jpg}}
-\end{figure}
+\includegraphics[height=6cm,keepaspectratio]{Q21estpm.jpg}
 
 Determine: 
 
