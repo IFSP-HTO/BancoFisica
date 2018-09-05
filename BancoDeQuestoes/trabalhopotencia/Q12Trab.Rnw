@@ -1,9 +1,9 @@
 <<echo=FALSE, results=hide>>=
 ## Marcelo C.
 ## Parâmetros
-xpasso <- sample(seq(from=1, to=5, by=0.5), 1)
+xpasso <- sample(seq(from=0.5, to=5, by=0.5), 1)
 x <- c(0, xpasso, 2*xpasso, 3*xpasso, 4*xpasso)
-Fmax <- sample(seq(from=6, to=400, by=2), 1)
+Fmax <- sample(seq(from=8, to=400, by=2), 1)
 
 ## Resposta
 resp <- round(5*xpasso*Fmax/4,1)
@@ -24,9 +24,9 @@ O corpo representado está sendo deslocado por uma força de direção e sentido
 \begin{center}
 <<fig=TRUE, height=4, width=5, echo=FALSE, eps=FALSE, results=hide>>=
 y <- c(Fmax/2, Fmax, Fmax/2, Fmax/2 , Fmax/2)
-plot(x, y, type="o", col="blue", ylab="Força (N)", ylim=range(0, Fmax), yaxp=c(0,Fmax,2), xlab="Distância (m)", xaxp=c(0,4*xpasso,4))
+plot(x, y, type="o", pch=20, col="black", ylab="Força (N)", ylim=range(0, Fmax), yaxp=c(0,Fmax,4), xlab="Distância (m)", xaxp=c(0,4*xpasso,8))
 #abline(h=c(0,Fmax/2,Fmax), v=0:4*xpasso, col="gray", lty=3)
-abline(h=seq(0,Fmax,Fmax/4), v=seq(0,4*xpasso,xpasso), col="gray", lty=3)
+abline(h=seq(0,Fmax,Fmax/8), v=seq(0,4*xpasso,xpasso/2), col="gray", lty=3)
 @
 \end{center}
 \end{figure}

@@ -6,7 +6,7 @@ tmax <- sample(seq(from=30, to=60, by=5), 1)
 P <- sample(seq(from=500, to=600, by=10), 1)
 m <- sample(seq(from=500, to=800, by=10), 1)
 
-resp <- P*tmax/(m*(Tmax-Tmin))
+resp <- round(P*tmax/(m*(Tmax-Tmin)),3)
 @
 
 \begin{question}
@@ -18,13 +18,14 @@ Uma fonte fornece a $\Sexpr{m} g$ de uma substância um fluxo de calor constante
 <<fig=TRUE, height=4, width=5, echo=FALSE, eps=FALSE, results=hide>>=
 y <- c(Tmin, Tmax)
 x <- c(0, tmax)
-plot(x, y, type="o", col="blue", ylab=" Temperatura \U00BA C)", ylim=range( Tmin,Tmax), yaxp=c(Tmin,Tmax,2), xlab="Tempo (min)", xaxp=c(0,tmax,5))
-abline(h=c(Tmin,(Tmax+Tmin)/2,Tmax), v=seq(from=0, to=tmax, by=tmax/5), col="gray", lty=3)
+plot(x, y, type="o", pch=20, col="black", ylab=" Temperatura \U00BA C)", ylim=range(Tmin,Tmax), yaxp=c(Tmin,Tmax,2), xlab="Tempo (min)", xaxp=c(0,tmax,5))
+#abline(h=c(Tmin,(Tmax+Tmin)/2,Tmax), v=seq(from=0, to=tmax, by=tmax/5), col="gray", lty=3)
+abline(h=seq(from=Tmin, to=Tmax, by=(Tmax-Tmin)/4), v=seq(from=0, to=tmax, by=tmax/5), col="gray", lty=3)
 @
 \end{center}
 \end{figure}
 
-Determine o calor específico da substância em $cal/g^\circ C$. Dê sua resposta com duas casas decimais.
+Determine o calor específico da substância em $cal/g^\circ C$. Dê sua resposta com três casas decimais.
 
 \end{question}
 
@@ -36,4 +37,4 @@ Determine o calor específico da substância em $cal/g^\circ C$. Dê sua respost
 %% \extype{num}
 %% \exsolution{\Sexpr{resp}}
 %% \exname{Q10CalS}
-%% \extol{0.01}
+%% \extol{0.001}
