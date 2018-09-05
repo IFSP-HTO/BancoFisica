@@ -138,39 +138,11 @@ myexam <- dir("./BancoDeQuestoes/hidrostatica", pattern = ".rnw", ignore.case=TR
 ano <- 12018
 ## Cria o arquivo .xml para entrada no moodle
 set.seed(ano)
-exams2moodle(myexam[1:5], n = 100, 
+exams2moodle(myexam, n = 100, 
              converter = "pandoc-mathjax",
              rule="none", 
              schoice = list(shuffle = TRUE), 
              name = paste0("hidrostatica-",ano),
-             encoding = "UTF-8",
-             dir = "./Moodle",
-             edir = "./BancoDeQuestoes/hidrostatica")
-exams2moodle(myexam[6], n = 100, 
-             converter = "pandoc-mathjax",
-             rule="none", schoice = list(shuffle = TRUE), 
-             name = paste0("hidrostatica2-",ano),
-             encoding = "UTF-8",
-             dir = "./Moodle",
-             edir = "./BancoDeQuestoes/hidrostatica")
-exams2moodle(myexam[7], n = 100, 
-             converter = "pandoc-mathjax",
-             rule="none", schoice = list(shuffle = TRUE), 
-             name = paste0("hidrostatica3-",ano),
-             encoding = "UTF-8",
-             dir = "./Moodle",
-             edir = "./BancoDeQuestoes/hidrostatica")
-exams2moodle(myexam[8:9], n = 100, 
-             converter = "pandoc-mathjax",
-             rule="none", schoice = list(shuffle = TRUE), 
-             name = paste0("hidrostatica4-",ano),
-             encoding = "UTF-8",
-             dir = "./Moodle",
-             edir = "./BancoDeQuestoes/hidrostatica")
-exams2moodle(myexam[10], n = 50, 
-             converter = "pandoc-mathjax",
-             rule="none", schoice = list(shuffle = TRUE), 
-             name = paste0("hidrostatica5-",ano),
              encoding = "UTF-8",
              dir = "./Moodle",
              edir = "./BancoDeQuestoes/hidrostatica")
