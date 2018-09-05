@@ -1,0 +1,96 @@
+<<echo=FALSE, results=hide>>=
+## Feito por Flavio Barros 25/06/2018
+## Funções
+nota_cient <- function(x,digits) {
+  if (x==0) return("0")
+  ord <- floor(log(abs(x),10))
+  x <- x / 10^ord
+  if (!missing(digits)) x <- format(x,digits=digits)
+  if (ord==0) return(as.character(x))
+  return(paste(x,"\\\\times 10^{",ord,"}",sep=""))
+}
+formatEng <- function(x, fixed=NULL) {
+  s <-as.numeric(strsplit(format(x, scientific=T),"e")[[1]])
+  if (is.null(fixed)) {
+    return(paste(s[1]*10^(s[2]%%3), as.integer(s[2]-(s[2]%%3)),sep="e"))
+  } else {
+    fator <- s[2] - fixed
+    return(paste(format(s[1]*10^fator, scientific = FALSE), as.integer(s[2]-(fator)),sep="e"))
+  }
+}
+pega_int <- function(x, digits=NULL) {
+  int <- str_split(string = x, pattern = 'e', simplify = T)[1]
+  if (is.null(digits)) {
+    return(as.numeric(int))
+  } else {
+    return(round(as.numeric(int), digits = digits))
+  }
+}
+
+## Parâmetros
+ra <- sample(seq(15,30,0.5),1)
+rb <- round(ra/2,1)
+QA <- as.numeric(paste0(sample(seq(1,9,0.5), size = 1),"e-6"))
+k <- 9e9
+
+## Resposta
+QB <- -QA/2
+QB
+CA <- signif((ra*1e-2)/k,2)
+CA 
+CB <- signif((rb*1e-2)/k,2)
+CB
+QB_cond <- signif((QA + QB)/(CA/CB + 1),2)
+QB_cond
+QA_cond <- signif((CA/CB)*QB_cond,2)
+QA_cond
+PA <- round(QA_cond/CA,0)
+PA
+PB <- round(QB_cond/CB,0)
+PB
+## Figura
+include_supplement("Q01Capacitores.png")
+@
+
+\begin{question}
+%% Enunciado
+A figura representa duas esferas condutoras de centros A e B, de raios $r_A$ = \Sexpr{ra} cm e $r_B$ = \Sexpr{rb} cm, imersas no vácuo. A esfera A tem carga positiva $Q_A$ = $\Sexpr{nota_cient(QA)}$ C.
+
+\includegraphics[height=7cm, keepaspectratio]{Q01Capacitores.png}
+
+Sabendo que o potencial elétrico resultante dessas esferas é nulo no ponto M do segmento que une os centros e que AM = $2 \cdot $MB, determine:
+
+\begin{answerlist}
+  \item qual é a carga da esfera B? (Resposta em $\mu C$)
+  \item qual é a capacidade da esfera A? (Resposta em $pF$) 
+  \item qual é a capacidade da esfera B? (Resposta em $pF$)
+  \item qual é a carga elétrica da esfera A se elas forem ligadas por um fio condutor? (Resposta em $\mu C$)
+  \item qual é a carga elétrica da esfera B se elas forem ligadas por um fio condutor? (Resposta em $\mu C$)
+  \item qual é o potencial da esfera A nas condições anteriores?
+  \item qual é o potencial da esfera B nas condições anteriores?
+\end{answerlist}
+
+(Dado: constante eletrostática no vácuo k = $\Sexpr{nota_cient(k)})$.
+
+\end{question}
+
+\begin{solution}
+%% Supply a solution here!
+
+\begin{answerlist}
+  \item A carga da esfera B é $\Sexpr{pega_int(formatEng(QB,   fixed = -6))}$$\mu C$.
+  \item A capacitância da esfera A é $\Sexpr{pega_int(formatEng(CA, fixed=-12), digits=2)}$$pF$.
+  \item A capacitância da esfera B é $\Sexpr{pega_int(formatEng(CB, fixed=-12), digits=2)}$$pF$.
+  \item A carga da esfera A depois de ligá-las a um fio condutor é $\Sexpr{pega_int(formatEng(QA_cond,   fixed = -6), digits=1)}$$\mu C$.
+  \item A carga da esfera B depois de ligá-las a um fio condutor é $\Sexpr{pega_int(formatEng(QB_cond,   fixed = -6), digits=1)}$$\mu C$.
+  \item O potencial elétrico da esfera A é $\Sexpr{PA}V$ (Utilize os valores arredondados das respostas anteriores.)
+  \item O potencial elétrico da esfera B é $\Sexpr{PB}V$ (Utilize os valores arredondados das respostas anteriores.)
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{\Sexpr{QB}|\Sexpr{CA}|\Sexpr{CB}|\Sexpr{QA_cond}|\Sexpr{QB_cond}|\Sexpr{PA}|\Sexpr{PB}}
+%% \exclozetype{num|num|num|num|num|num|num}
+%% \exname{Q01Capacitores}
+%% \extol{0.01}

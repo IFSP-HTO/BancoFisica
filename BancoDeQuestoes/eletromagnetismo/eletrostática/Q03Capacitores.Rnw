@@ -1,0 +1,30 @@
+<<echo=FALSE, results=hide>>=
+## Implementada por Flavio Barros
+## Parâmetros
+C <- sample(x = 10:70, 5)
+
+## Resposta
+resp = sum(C)
+  
+## Figura
+include_supplement("Q03Capacitores.png")
+@
+
+\begin{question}
+%% Enunciado
+No esquema a seguir estão representados cinco capacitores, de capacidades $C_1$ , $C_2$ , $C_3$ , $C_4$ e $C_5$ , ligados em paralelo. Sendo $C_1$ = \Sexpr{C[1]}pF, $C_2$ = \Sexpr{C[2]}pF, $C_3$ = \Sexpr{C[3]}pF, $C_4$ = \Sexpr{C[4]}pF e $C_5$ = \Sexpr{C[5]}pF. Determine a capacitância equivalente da ligação. (OBS: responda em pF)
+
+\includegraphics[height = 5cm, keepaspectratio]{Q03Capacitores.png}
+
+\end{question}
+
+\begin{solution}
+%% Supply a solution here!
+A capacitância é $\Sexpr{resp}$pF.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp}}
+%% \exname{Q03Capacitores}
+%% \extol{0.01}
