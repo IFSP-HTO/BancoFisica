@@ -49,11 +49,22 @@ text(x[1],3*Pmax/8-Pmax/32,"A")
 \end{question}
 
 \begin{solution}
+    
+     a) O trabalho realizado pelo gás durante a transformação de A -> B é dado pela área abaixo da curva . Assim:
+     \begin{displaymath}
+      \tau = \Sexpr{trab} J
+    \end{displaymath}
+    
+    b) A variação da energia interna pode ser obtida pela 1a Lei da Termodinâmica,
+     \begin{displaymath}
+       \Delta U = Q - \tau = \Sexpr{calor} - \Sexpr{trab} = \Sexpr{dEint} J
+     \end{displaymath}
+    
     \begin{answerlist}
   
-    \item  \Sexpr{trab} J
+      \item O trabalho corresponde a \Sexpr{trab} J
         
-    \item  \Sexpr{dEint} J
+      \item A variação da energia interna corresponde a \Sexpr{dEint} J
   
   \end{answerlist} 
 \end{solution}
