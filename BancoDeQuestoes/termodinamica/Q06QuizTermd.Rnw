@@ -22,7 +22,7 @@ aleat = sample(1:23)
   questions[aleat[5]] <- "Em uma transformação adiabática, o gás não troca calor com o meio."
   solutions[aleat[5]] <- TRUE
   explanations[aleat[5]] <- ""
-  questions[aleat[6]] <- "Uma máquina térmica, operando segundo o ciclo de Carnot entre uma fonte quente e uma fonte fria, apresenta um rendimento igual a 100 por cento, isto é, todo o calor a ela fornecido é transformado em trabalho."
+  questions[aleat[6]] <- "Uma máquina térmica, operando segundo o ciclo de Carnot entre uma fonte quente e uma fonte fria, apresenta um rendimento igual a 100 \\%, isto é, todo o calor a ela fornecido é transformado em trabalho."
   solutions[aleat[6]] <- FALSE
   explanations[aleat[6]] <- ""
   questions[aleat[7]] <- "Em um ciclo completo de uma máquina térmica, a variação da energia térmica é nula."

@@ -75,14 +75,15 @@ text(1.04*x3[1],1.2*y3[1],"C")
 
   \begin{answerlist}
 
-  \item O trabalho realizado pelo gás durante a transformação AB. \textit{Caso necessário, arredonde sua resposta para uma casa decimal}
+  \item O trabalho, em joules, realizado pelo gás durante a transformação AB. \textit{Caso necessário, arredonde sua resposta para uma casa decimal}
 
-  \item O trabalho realizado pelo gás durante a transformação BC.  \textit{Caso necessário, arredonde sua resposta para uma casa decimal}
-  \item O trabalho realizado pelo gás durante a transformação CA. \textit{Caso necessário, arredonde sua resposta para uma casa decimal}
+  \item O trabalho, em joules realizado pelo gás durante a transformação BC.  \textit{Caso necessário, arredonde sua resposta para uma casa decimal}
   
-  \item O trabalho total realizado pelo gás no ciclo ABCA. \textit{Caso necessário, arredonde sua resposta para uma casa decimal}
+  \item O trabalho, em joules, realizado pelo gás durante a transformação CA. \textit{Caso necessário, arredonde sua resposta para uma casa decimal}
   
-  \item A variação da energia interna no ciclo ABCA. \textit{Caso necessário, arredonde sua resposta para uma casa decimal}
+  \item O trabalho, em joules realizado pelo gás no ciclo ABCA. \textit{Caso necessário, arredonde sua resposta para uma casa decimal}
+  
+  \item A variação da energia interna, em joules, no ciclo ABCA. \textit{Caso necessário, arredonde sua resposta para uma casa decimal}
   
   \end{answerlist}
 

@@ -77,13 +77,13 @@ text(1.04*x3[1],1.2*y3[1],"B")
 
   \begin{answerlist}
 
-  \item O trabalho realizado pelo sistema no processo AC. \textit{Caso necessário, arredonde sua resposta para uma casa decimal}
+  \item O trabalho, em joules, realizado pelo sistema no processo AC. \textit{Caso necessário, arredonde sua resposta para uma casa decimal}
 
-  \item O trabalho realizado pelo sistema no processo ABC. \textit{Caso necessário, arredonde sua resposta para uma casa decimal}
+  \item O trabalho, em joules, realizado pelo sistema no processo ABC. \textit{Caso necessário, arredonde sua resposta para uma casa decimal}
 
-  \item A variação da energia interna do sistema no processo AC. \textit{Caso necessário, arredonde sua resposta para uma casa decimal}
+  \item A variação da energia interna do sistema, em joules, no processo AC. \textit{Caso necessário, arredonde sua resposta para uma casa decimal}
   
-  \item A variação da energia interna do sistema no processo ABC. \textit{Caso necessário, arredonde sua resposta para uma casa decimal}
+  \item A variação da energia interna do sistema, em joules, no processo ABC. \textit{Caso necessário, arredonde sua resposta para uma casa decimal}
   
   \end{answerlist}
 
