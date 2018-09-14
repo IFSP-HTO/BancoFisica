@@ -1,0 +1,101 @@
+<<echo=FALSE, results=hide>>=
+## Marcelo C.
+
+## Função de notação científica - Flávio Barros
+nota_cient <- function(x,digits) {
+  if (x==0) return("0")
+  ord <- floor(log(abs(x),10))
+  x <- x / 10^ord
+  if (!missing(digits)) x <- format(x,digits=digits)
+  if (ord==0) return(as.character(x))
+  return(paste(x,"\\\\times 10^{",ord,"}",sep=""))
+}
+
+##Parametros
+#temp fonte fria
+tf <- sample(seq(from=15, to=30, by=1), 1)
+#temp fonte quente
+tq <- sample(seq(from=200, to=450, by=1), 1)
+#pressão media
+#rendimento máquina de carnot
+rcarnot <- round((1-(tf+273)/(tq+273))*100,digits=1)
+#calor fonte quente
+Qq <- sample(seq(from=5, to=9, by=0.1), 1)
+#trabalho (definido para até 75% de efic. da máquina de carnot)
+trab <- round(sample(seq(from=0.1*Qq*4.2, to=0.75*(rcarnot/100)*Qq*4.2, by=0.1), 1),digits=1)
+Qq <- Qq*10^4
+trab <- trab*10^4
+
+p <- round(sample(seq(from=trab/50, to=trab/2, by=trab/50), 1))
+
+##respostas
+#rendimento da máquina
+rmaq <- round(trab/(Qq*4.2)*100,digits=1)
+
+relcm <- round(rmaq/rcarnot*100,digits=1)
+
+if (rmaq>0.8*rcarnot){
+  resp1 <- "T"
+} else{
+  resp1 <- "F"
+}
+
+#variação do volume
+dv <- round(trab/p,digits=1)
+
+@
+
+\begin{question}
+Um inventor afirmou ter construído uma máquina térmica cujo desempenho atinge acima de 80 \% daquele de uma máquina de Carnot. Sua máquina, que trabalha entre as temperaturas de $\Sexpr{tf}$ °C e $\Sexpr{tq}$ °C, recebe, durante um certo período, $\Sexpr{nota_cient(Qq)}$ cal e fornece, simultaneamente, um trabalho útil de $\Sexpr{nota_cient(trab)}$ J. Dado: 1 cal = 4,2 J.
+
+  \begin{answerlist}
+    
+    \item A afirmação do inventor é verdadeira (V) ou falsa (F)?
+    
+    \item Qual o percentual de rendimento da máquina térmica do inventor?
+
+    \item se o trabalho util da maquina termica fosse exercido sobre um embolo móvel de uma ampola contendo um gás ideal a pressao de $\Sexpr{p}$ N/m², qual seria a variação de volume, em m³, sofrida pelo gás, caso a transformação fosse isobárica? \textit{Caso necessário, arredonde sua resposta para uma casa decimal}
+  \end{answerlist}
+\end{question}
+
+\begin{solution}
+    
+    a) O rendimento da máquina de carnot é dado por:
+    
+      \begin{displaymath}
+        \eta_{carnot} = 1 - \frac{T_f}{T_q} = 1 - \frac{\Sexpr{tf}}{\Sexpr{tq}} = \Sexpr{rcarnot} \%
+      \end{displaymath}
+      
+      O rendimento da máquina do invertor é dado por:
+      
+      \begin{displaymath}
+        \eta_{maquina} = \frac{\tau}{Q_q} = \frac{\Sexpr{trab}}{\Sexpr{Qq}} = \Sexpr{rmaq}\%
+      \end{displaymath}
+
+      Sendo assim, a afirmação é falsa, pois o rendimento equivale a $\Sexpr{relcm}$ \% da máquina de Carnot, inferior a 80\%. 
+
+    b) Vide ítem anterior
+    
+    c) Em uma transformação isobária, a variação do volume é dada por:
+    
+    \begin{displaymath}
+      \Delta V = \frac{\tau}{p} = \frac{\Sexpr{trab}}{\Sexpr{p}} = \Sexpr{dv} m^3
+    \end{displaymath}
+  
+    \begin{answerlist}
+  
+      \item A resposta é Falso (F)
+      \item O trabalho na transformação AC corresponde a \Sexpr{rmaq} \% 
+      
+      \item A variação do volume é de \Sexpr{dv} m³
+  
+    \end{answerlist}
+    
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exclozetype{string|num|num}
+%% \exsolution{F|\Sexpr{rmaq}|\Sexpr{dv}}
+%% \exname{Q09Termd}
+%% \extol{0|0.1|0.1}
