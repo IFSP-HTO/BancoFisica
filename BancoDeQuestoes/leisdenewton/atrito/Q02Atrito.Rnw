@@ -1,0 +1,87 @@
+<<echo=FALSE, results=hide>>=
+#Programado por: Marcelo C.
+
+m <- sample(seq(from=10,to=50,by=1),1)
+uest <- sample(seq(from=0.4,to=0.6,by=0.01),1)
+udin <- sample(seq(from=0.2,to=uest-0.05,by=0.01),1)
+theta <- sample(seq(from=20,to=50,by=1),1)
+Fat <- uest*m*10*cos(theta*pi/180)
+m
+uest
+udin
+theta
+Fat
+if (Fat<Fa){
+  resp1 <- "S"
+  resp2 <- round(udin*m*10*cos(theta*pi/180), 2)
+  resp3 <- round((m*10*sin(theta*pi/180)-resp2)/m, 2)
+  resp1
+  resp2
+  resp3
+} else{
+  resp1 <- "N"  
+  resp2 <- round(Fat, 2)
+  resp3 <- 0
+  resp1
+  resp2
+  resp3
+}
+##Imagem
+include_supplement("Q02Atrito.png")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Um bloco de $\Sexpr{m}$ kg é colocado sobre um plano inclinado que faz um ângulo $\theta = \Sexpr{theta}$ $^\circ$ com a horizontal. Sabe-se que o coeficiente de atrito estático e cinético entre o bloco e o plano valem, respectivamente, $\Sexpr{uest}$ e $\Sexpr{udin}$. Responda o que se pede: (adote $g = 10 m/s^2$)
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[height=5cm, keepaspectratio]{{Q02Atrito.png}}
+\end{figure}
+  
+  \begin{answerlist}
+
+    \item O bloco entrará em movimento? Responda "S" para Sim e "N" para Não
+    .
+    \item Qual o módulo da força de atrito aplicada sobre o bloco.
+    \item Qual o módulo da aceleração do bloco.
+  
+  \end{answerlist}
+
+\end{question}
+
+%% SOLUTION
+\begin{solution}:
+    
+    \begin{answerlist}
+      \item
+        Para avaliar se a caixa anda, calculamos a força de atrito máximo que a caixa estará submetida.
+        
+        $$ F_{at} = \mu_{est}N = \mu_{est} mgsen(\Sexpr{theta}^{\circ}) = \Sexpr{round(Fat,2)} N$$ 
+        
+        Sendo assim, comparando com a componente $P_x$ do peso, a resposta é \Sexpr{resp1}!!!
+  
+      \item
+        Neste caso, a força de atrito é dada por:
+        
+        $$F_{at} = \Sexpr{resp2} N$$
+  
+     \item
+        Aplicando a Segunda Lei de Newton, temos:
+        
+        $$F_{R} = ma = mgsen(\Sexpr{theta}^{\circ})-F_{at}$$
+        
+        Portanto a aceleração é:
+        
+        $$a = \frac{mgsen(\Sexpr{theta}^{\circ})-F_{at}}{m} = \Sexpr{resp3} m/s^2$$
+        
+  \end{answerlist}
+\end{solution}
+  
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exclozetype{string|num|num}
+%% \exsolution{\Sexpr{resp1}|\Sexpr{resp2}|\Sexpr{resp3}}
+%% \exname{Q01Atrito}
+%% \extol{0|0.1|0.01}

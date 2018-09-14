@@ -1,0 +1,53 @@
+<<echo=FALSE, results=hide>>=
+  #Marcelo C.
+nota_cient <- function(x,digits) {
+  if (x==0) return("0")
+  ord <- floor(log(abs(x),10))
+  x <- x / 10^ord
+  if (!missing(digits)) x <- format(x,digits=digits)
+  if (ord==0) return(as.character(x))
+  return(paste(x,"\\\\times 10^{",ord,"}",sep=""))
+}
+
+vol  <- sample(seq(from=0.5,to=5,by=0.1),1)
+p1  <- sample(seq(from=1.5,to=3,by=0.1),1)
+p2 <- sample(seq(from=p1+0.1,to=p1+1,by=0.1),1)*100000
+p1 <- p1*100000
+temp1 <- sample(seq(from=20,to=50,by=1),1)
+
+resp2 <- round(p2*(temp1+273)/p1-273, digits = 2)
+
+@
+  
+\usepackage[utf8]{inputenc}
+  
+\begin{question}
+  
+(PUC) Uma certa massa de um gás perfeito é colocada em um recipiente, ocupando um volume de $\Sexpr{vol}$ L, sob pressão de $\Sexpr{nota_cient(p1)}$ Pa e temperatura de $\Sexpr{temp1}$ ºC. Sofre, então, uma transformação isocórica e sua pressão passa a $\Sexpr{nota_cient(p2)}$ Pa. Nessas condições, determine: (\textit{Forneça as respostas com uma casa decimal.})
+
+\begin{answerlist}
+
+  \item O volume ocupado pelo gás, em L, após a transformação gasosa.
+  \item A temperatura do gás, em ºC, após a transformação gasosa.
+
+\end{answerlist}
+
+\end{question}
+  
+%% SOLUTION
+\begin{solution}:
+    
+\begin{answerlist}
+  \item O volume é $\Sexpr{vol}$ L
+  \item A temperatura do gás é $\Sexpr{resp2}$ ºC.
+\end{answerlist}
+
+  
+\end{solution}
+  
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{\Sexpr{vol}|\Sexpr{resp2}}
+%% \exclozetype{num|num}
+%% \exname{Q33TransfGasosas}
+%% \extol{0.1}
