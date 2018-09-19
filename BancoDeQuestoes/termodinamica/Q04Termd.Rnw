@@ -1,0 +1,77 @@
+<<echo=FALSE, results=hide>>=
+## Marcelo C.
+## Parâmetros
+
+xpasso <- sample(seq(from=0.5, to=5, by=0.5), 1)
+x <- c(xpasso/5, 4*xpasso/5)
+Pmax <- sample(seq(from=40, to=600, by=8), 1)
+y <- c(2*Pmax/8, 7*Pmax/8)
+
+## Pontos para inserção de seta no gráfico
+x1 <- 0.49*xpasso
+p1 <- Pmax/4+25/24*(Pmax/xpasso)*(x1-xpasso/5) 
+x2 <- 0.5*xpasso
+p2 <- Pmax/4+25/24*(Pmax/xpasso)*(x2-xpasso/5) 
+
+##Resposta
+trab <- round(3*xpasso/5*(9*Pmax/8)/20,digits=1)
+calor <- round(trab*1.8,digits=0)
+dEint <- round(calor-trab,digits=1)
+
+@
+
+\begin{question}
+Um gás perfeito está contido em um cilindro fechado com um pistão móvel. Esse sistema é levado de um estado inicial A para um estado final B, de acordo com o gráfico abaixo. Sabendo-se que durante o processo A -> B, o sistema recebe $\Sexpr{calor}$ J de calor, determine:
+
+\begin{figure}[h!]
+\begin{center}
+<<fig=TRUE, height=4, width=5, echo=FALSE, eps=FALSE, results=hide>>=
+plot(x, y, type="o", pch=20, col="black", ylab=expression(paste("Pressão (", 10^3, "Pa)")), ylim=range(0, Pmax), yaxp=c(0,Pmax,4), xlim=range(0, xpasso), xlab=expression(paste("Volume (", 10^-4, "m³)")), xaxp=c(0,xpasso,5))
+
+abline(h=seq(0,Pmax,Pmax/8), v=seq(0,xpasso,xpasso/5), col="gray", lty=3)
+
+arrows(x1, p1, x2, p2, length = 0.2)
+text(x[2],Pmax-Pmax/32,"B")
+text(x[1],3*Pmax/8-Pmax/32,"A")
+@
+\end{center}
+\end{figure}
+
+  \begin{answerlist}
+
+  \item O trabalho, em joules, realizado durante a transformação de A para B. \textit{Caso necessário, arredonde sua resposta resposta para uma casa decimal}
+
+  \item A variação da energia interna, em joules, do sistema durante a transformação de A para B. \textit{Caso necessário, arredonde sua resposta resposta para uma casa decimal}
+
+  \end{answerlist}
+
+
+\end{question}
+
+\begin{solution}
+    
+     a) O trabalho realizado pelo gás durante a transformação de A -> B é dado pela área abaixo da curva . Assim:
+     \begin{displaymath}
+      \tau = \Sexpr{trab} J
+    \end{displaymath}
+    
+    b) A variação da energia interna pode ser obtida pela 1a Lei da Termodinâmica,
+     \begin{displaymath}
+       \Delta U = Q - \tau = \Sexpr{calor} - \Sexpr{trab} = \Sexpr{dEint} J
+     \end{displaymath}
+    
+    \begin{answerlist}
+  
+      \item O trabalho corresponde a \Sexpr{trab} J
+        
+      \item A variação da energia interna corresponde a \Sexpr{dEint} J
+  
+  \end{answerlist} 
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{trab}|\Sexpr{dEint}}
+%% \exname{Q04Termd}
+%% \extol{0.1|0.2}

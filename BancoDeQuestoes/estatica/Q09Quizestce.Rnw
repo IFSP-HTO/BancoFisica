@@ -32,10 +32,7 @@ explanations[aleat[1]] <- ""
 \begin{question}
 (ENEM) Um portão está fixo em um muro por duas dobradiças A e B, conforme mostra a figura, sendo P o peso do portão.Caso um garoto se dependure no portão pela extremidade livre, e supondo que as reações máximas suportadas pelas dobradiças sejam iguais,
 
-\begin{figure}[h!]
-  \centering
-  \includegraphics[scale=0.7]{{Q09Quizestce.jpg}}
-\end{figure}
+\includegraphics[height=6cm,keepaspectratio]{Q09Quizestce.jpg}
 
 <<echo=FALSE, results=hide, results=tex>>=
 answerlist(questions)

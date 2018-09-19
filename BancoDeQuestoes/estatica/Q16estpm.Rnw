@@ -14,10 +14,7 @@ include_supplement("Q16estpm.jpg")
 
 (UNIRIO-adapt.) Uma caixa de massa $m = \Sexpr{m}$ kg está em equilíbrio estático conforme mostra a figura.
 
-\begin{figure}[h!]
-  \centering
-  \includegraphics[scale=0.7]{{Q16estpm.jpg}}
-\end{figure}
+\includegraphics[height=6cm,keepaspectratio]{Q16estpm.jpg}
 
 Considerando os fios ideais e de pesos desprezíveis, determine a tração na corda BC, em N. Dados: $g = 10m/s^2$ ; $sen30^{\circ}=0,5$ e $cos30^{\circ}=0,866$. Caso necessário, arredonde sua resposta para 1 casa decimal.
 

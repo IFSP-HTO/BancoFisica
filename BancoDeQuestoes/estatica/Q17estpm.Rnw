@@ -14,10 +14,7 @@ include_supplement("Q17estpm.jpg")
 
  (Mackenzie) No esquema representado, o homem exerce sobre a corda uma força de $\Sexpr{Fa} N$ e o sistema ideal se encontra em equilíbrio.
 
-\begin{figure}[h!]
-  \centering
-  \includegraphics[scale=0.7]{{Q17estpm.jpg}}
-\end{figure}
+\includegraphics[height=6cm,keepaspectratio]{Q17estpm.jpg}
 
 Determine o peso da carga Q,  em kgf. Caso necessário, arredonde sua resposta para 1 casa decimal. Dados: $g = 10m/s^2$ ; $sen(\theta) = 0,6$ e $cos(\theta) = 0,8$.
 

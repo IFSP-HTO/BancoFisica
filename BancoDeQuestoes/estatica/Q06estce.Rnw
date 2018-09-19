@@ -15,10 +15,7 @@ respb <- round(Tab*sqrt(2)/2,2)
 
 (UNICAMP-adapt.) Grandes construções representam desafios à engenharia e demonstram a capacidade de realização humana. Pontes com estruturas de sus-tentação sofisticadas são exemplos dessas obras que coroam a mecânica de Newton. Considere $1MN = 10^6 N$ e dê sua resposta nos ítens com 2 casas decimais.
 
-\begin{figure}[h!]
-  \centering
-  \includegraphics[scale=0.7]{{Q06estce.jpg}}
-\end{figure}
+\includegraphics[height=6cm,keepaspectratio]{Q06estce.jpg}
 
 \begin{answerlist}
   \item A ponte pênsil de São Vicente (SP) foi construída em 1914. O sistema de suspensão de uma ponte pênsil é composto por dois cabos principais. Desses cabos principais partem cabos verticais responsáveis pela sustentação da ponte. O desenho esquemático da figura 1 mostra um dos cabos principais (AOB), que está sujeito a uma força de tração T exercida pela torre no ponto B. A componente vertical da tração $T_V$ tem módulo igual a um quarto do peso da ponte, enquanto a horizontal $T_H$ tem módulo igual $\Sexpr{Th} MN$. Sabendo que o peso da ponte é $P = \Sexpr{P} MN$, calcule o módulo da força de tração $T$ em $MN$. 

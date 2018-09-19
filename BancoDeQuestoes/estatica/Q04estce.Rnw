@@ -13,11 +13,7 @@ resp <- 1.5*peso
 
 (FUVEST 2015 adapt.) O guindaste da figura acima pesa \Sexpr{peso} N sem carga e os pontos de apoio de suas rodas no solo horizontal estão em x = 0 e x = –5m. O centro de massa (CM) do guindaste sem carga está localizado na posição (x = – 3m, y = 2m). Na situação mostrada na figura, determine a maior carga P, em Newtons, que esse guindaste pode levantar.
 
-\begin{figure}[h!]
-  \centering
-  \includegraphics[scale=0.7]{{Q04estce.jpg}}
-\end{figure}
-
+\includegraphics[height=6cm,keepaspectratio]{Q04estce.jpg}
 \end{question}
 
 
