@@ -1,7 +1,7 @@
 <<echo=FALSE, results=hide>>=
   ##feito por Matheus Bertos
   ##gera valores
-  temp <- sample(seq(from=10,to=100,by=5),1)
+  temp <- sample(seq(from=-10,to=12,by=0.5),1)
   resp <- round((temp*1.8)+32)
   ##gera a resposta
 
@@ -10,11 +10,11 @@
   questions <- numeric(5)
   solutions <- logical(5)
   
-  questions[aleat[1]] <- temp
-  questions[aleat[2]] <- resp
+  questions[aleat[1]] <- resp - 2*1.8
+  questions[aleat[2]] <- resp 
   questions[aleat[3]] <- temp + 32
-  questions[aleat[4]] <- resp * 2
-  questions[aleat[5]] <- temp * 2
+  questions[aleat[4]] <- resp + 2*1.8
+  questions[aleat[5]] <- temp *2
   
   solutions[aleat[1]] <-  FALSE
   solutions[aleat[2]] <-  TRUE
@@ -27,18 +27,17 @@
 
 \begin{question}
 
-   Em um dia frio, um termômetro na escala Celsius assinala \Sexpr{temp} para o meio ambiente. Um   outro termômetro graduado em Fahrenheit está marcando:
+   Em um dia frio, um termômetro na escala Celsius assinala \Sexpr{temp} °C para o meio ambiente. Um outro termômetro graduado em Fahrenheit está marcando, em °F,
 
-
-  <<echo=FALSE, results=hide, results=tex>>=
+<<echo=FALSE, results=hide, results=tex>>=
     answerlist(questions)
-  @
+@
 \end{question}
 
 \begin{solution}
-  <<echo=FALSE, results=hide, results=tex>>=
+<<echo=FALSE, results=hide, results=tex>>=
     answerlist(paste("\\textbf{", ifelse(solutions, "Verdadeiro", "Falso"), "}"))
-  @
+@
 \end{solution}
 %% META-INFORMATION
 %% \extype{schoice}

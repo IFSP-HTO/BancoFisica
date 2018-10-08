@@ -17,10 +17,7 @@ include_supplement("Q15estce.jpg")
 (Cesgranrio-adapt.) Um fio, cujo limite de resistência é de $\Sexpr{Flim} N$, é utilizado para manter em equilíbrio, na posição horizontal, uma haste de metal, homogênea, de comprimento $AB = \Sexpr{l} cm$ e $peso = \Sexpr{P} N$.
 A barra é fixa em A, numa parede, através de uma articulação, conforme indica a figura a seguir. Determine a menor distância $x$, em $cm$, para a qual o fio manterá a haste em equilíbrio. Caso necessário, arredonde sua resposta para 1 casa decimal.
 
-\begin{figure}[h!]
-  \centering
-  \includegraphics[scale=0.7]{{Q15estce.jpg}}
-\end{figure}
+\includegraphics[height=6cm,keepaspectratio]{Q15estce.jpg}
 
 \end{question}
 

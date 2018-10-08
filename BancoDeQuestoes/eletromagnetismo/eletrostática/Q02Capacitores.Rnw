@@ -1,0 +1,86 @@
+<<echo=FALSE, results=hide>>=
+## FEITA POR Flavio Barros
+## Funções
+nota_cient <- function(x,digits) {
+  if (x==0) return("0")
+  ord <- floor(log(abs(x),10))
+  x <- x / 10^ord
+  if (!missing(digits)) x <- format(x,digits=digits)
+  if (ord==0) return(as.character(x))
+  return(paste(x,"\\\\times 10^{",ord,"}",sep=""))
+}
+formatEng <- function(x, fixed=NULL) {
+  s <-as.numeric(strsplit(format(x, scientific=T),"e")[[1]])
+  if (is.null(fixed)) {
+    return(paste(s[1]*10^(s[2]%%3), as.integer(s[2]-(s[2]%%3)),sep="e"))
+  } else {
+    fator <- s[2] - fixed
+    return(paste(format(s[1]*10^fator, scientific = FALSE), as.integer(s[2]-(fator)),sep="e"))
+  }
+}
+pega_int <- function(x, digits=NULL) {
+  int <- str_split(string = x, pattern = 'e', simplify = T)[1]
+  if (is.null(digits)) {
+    return(as.numeric(int))
+  } else {
+    return(round(as.numeric(int), digits = digits))
+  }
+}
+
+## Parâmetros
+A = sample(50:80,1)
+d = round(runif(n = 1, min = 0.1, max = 0.9),1)
+rigidez = 4e7
+epsilon0 <- 8.9e-12
+k <- 3.5
+
+## Resposta
+epsilon <- signif(k*epsilon0,2)
+epsilon
+C <- signif((epsilon * A * 1e-4)/(d * 1e-3),2)
+C
+deltaV <- rigidez * d * 1e-3
+deltaV
+Qmax <- C * deltaV
+Qmax
+E <- round((Qmax * deltaV)/2,1)
+E
+## Figura
+include_supplement("Q02Capacitores.png")
+@
+
+\begin{question}
+%% Enunciado
+Seja um capacitor de placas paralelas com a área das placas iguais a $A$ = \Sexpr{A} cm², separadas por uma distância d = \Sexpr{d} mm uma da outra, e com uma película de um dielétrico de náilon também com espessura d. Sabendo que a permissividade elétrica do vácuo é $\epsilon_0$ = $\Sexpr{nota_cient(epsilon0)}$ C²/N.m² e a constante dielétrica do náilon k = \Sexpr{k}, determine:
+
+\includegraphics[height = 7cm, keepaspectratio]{Q02Capacitores.png}
+
+(Dica: a rigidez dielétrica é a voltagem máxima que um metro de dielétrico suporta. Use essa informação para descobrir a voltagem máxima do capacitor.)
+
+\begin{answerlist}
+  \item a permissidade elétrida do dielétrico. (Responda em pico = $10^{-12}$ e utilize dois algarismos significativos.)
+  \item a capacidade desse capacitor. (Responda em $nF$, ou nano Farads.)
+  \item a carga máxima que pode ser armazenada nesse capacitor, sabendo que a rigidez dielétrica do náilon é $\Sexpr{nota_cient(rigidez)}$ V/m. (Responda em $\mu C$)
+  \item A energia potencial acumulada no capacitor nas condições do item b. (Arredonde para uma decimal.)
+
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+%% Supply a solution here!
+
+\begin{answerlist}
+  \item $\Sexpr{pega_int(formatEng(epsilon, fixed=-12))}$.
+  \item A capacitância é $\Sexpr{pega_int(formatEng(C, fixed = -9))}$nF
+  \item A carga máxima é $\Sexpr{pega_int(formatEng(Qmax, fixed=-6))}$	microcoulumbs.
+  \item A energia é $\Sexpr{E}$J.
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{0.324|0.767515|0.58908|1}
+%% \exclozetype{num|num|num|num}
+%% \exname{Q02Capacitores}
+%% \extol{0.01}

@@ -1,0 +1,80 @@
+<<echo=FALSE, results=hide>>=
+## Criado por Flavio Barros 03/06/2018
+## Funções necessárias
+nota_cient <- function(x,digits) {
+  if (x==0) return("0")
+  ord <- floor(log(abs(x),10))
+  x <- x / 10^ord
+  if (!missing(digits)) x <- format(x,digits=digits)
+  if (ord==0) return(as.character(x))
+  return(paste(x,"\\\\times 10^{",ord,"}",sep=""))
+}
+
+## Parâmetros
+h = sample(seq(from=3,to=20,by=0.1),1)
+g = 10
+atm = 1e5
+rho = 1
+## Resposta
+p <- atm + (rho*1000*g*h)
+patm <- p/atm
+delta_p <- 0
+
+## Figuras
+include_supplement(file = 'Q07LeiStevin.png')
+@
+
+\begin{question}
+%% Enunciado
+
+(Unicamp) Um mergulhador persegue um peixe a uma profundidade h = \Sexpr{h} m abaixo da superfície de um lago. O peixe foge da posição A e se esconde em uma gruta na posição B, conforme mostra a figura a seguir. A pressão atmosférica na superfície da água é igual a $\Sexpr{nota_cient(atm)}$ Pa.
+Adote g = \Sexpr{g} m/s² e a densidade do lago $\Sexpr{rho}$ g/cm³.
+
+\includegraphics[height=6cm,keepaspectratio]{Q07LeiStevin.png}
+
+\begin{answerlist}
+  \item Qual a pressão sobre o mergulhador em atm? Considere $1$ atm = $\Sexpr{nota_cient(atm)}$ Pa
+  \item Qual a variação de pressão sobre o peixe nas posições A e B?
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+%% Solution
+
+a) De acordo com a lei de Stevin:
+
+\begin{displaymath}
+P = P_0 + \rho \cdot g \cdot h
+\end{displaymath}
+
+E como $P_0 = \Sexpr{nota_cient(atm)}$, $\rho = 1000$ kg/m³ e h = $\Sexpr{h}$ m:
+
+\begin{displaymath}
+P = \Sexpr{nota_cient(atm)} + 1000 \cdot \Sexpr{g} \cdot \Sexpr{h} = \Sexpr{nota_cient(p)} Pa
+\end{displaymath}
+
+\begin{displaymath}
+P = \Sexpr{patm} atm
+\end{displaymath}
+
+b) Também de acordo com a lei de Stevin:
+
+\begin{displaymath}
+P = P_0 + \rho \cdot g \cdot h \Rightarrow \Delta P = \rho \cdot g \cdot h
+\end{displaymath}
+
+
+Como $h = 0$ m então $\Delta P = 0$ Pa.
+
+\begin{answerlist}
+  \item A pressão é $\Sexpr{nota_cient(p)}$ Pa.
+  \item A variação de pressão é $\Sexpr{delta_p}$ Pa.
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{\Sexpr{patm}|\Sexpr{delta_p}}
+%% \exclozetype{num|num}
+%% \exname{Q07LeiStevin}
+%% \extol{0.001|0.01}

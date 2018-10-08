@@ -1,0 +1,43 @@
+<<echo=FALSE, results=hide>>=
+  #Marcelo C.
+
+vol  <- sample(seq(from=7,to=12,by=0.1),1)
+m1  <- sample(seq(from=200,to=300,by=5),1)
+temp1 <- sample(seq(from=20,to=40,by=1),1)
+p2 <- sample(seq(from=2,to=5,by=0.1),1)
+p1 <- round(m1*0.082*(temp1+273)/(32*vol), digits = 1)
+m2 <- round(m1-p2*m1/p1, digits = 2)
+
+@
+  
+\usepackage[utf8]{inputenc}
+  
+\begin{question}
+  
+(PUC-adapt.) Um cilindro de $\Sexpr{vol}$ L de capacidade contém $\Sexpr{m1}$ g de gás oxigênio a $\Sexpr{temp1}$ °C. Um estudante abre a válvula do cilindro deixando escapar o gás até que a pressão seja reduzida para $\Sexpr{p2}$ atm. Supondo-se que a temperatura permaneça constante, determine: (massa molar do $O_2 = 32$ g/mol; $R = 0,082$ atm.L/mol.K)
+
+\begin{answerlist}
+
+  \item A pressão inicial no cilindro, em atm. \textit{Resposta com duas casas decimais}
+  \item A massa de gás liberada, em gramas. \textit{Resposta com duas casas decimais.}
+
+\end{answerlist}
+
+\end{question}
+  
+%% SOLUTION
+\begin{solution}:
+    
+\begin{answerlist}
+  \item A pressão inicial é $\Sexpr{p1}$ atm.
+  \item A massa de gás liberada é $\Sexpr{m2}$ g.
+\end{answerlist}
+
+\end{solution}
+  
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{\Sexpr{p1}|\Sexpr{m2}}
+%% \exclozetype{num|num}
+%% \exname{Q32Clapeyron}
+%% \extol{0.1|0.1}

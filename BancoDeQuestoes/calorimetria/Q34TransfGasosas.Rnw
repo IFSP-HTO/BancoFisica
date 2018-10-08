@@ -1,0 +1,44 @@
+<<echo=FALSE, results=hide>>=
+  #Marcelo C.
+  
+nota_cient <- function(x,digits) {
+  if (x==0) return("0")
+  ord <- floor(log(abs(x),10))
+  x <- x / 10^ord
+  if (!missing(digits)) x <- format(x,digits=digits)
+  if (ord==0) return(as.character(x))
+  return(paste(x,"\\\\times 10^{",ord,"}",sep=""))
+}
+
+vol2  <- sample(seq(from=0.5,to=2.2,by=0.1),1)
+vol1  <- sample(seq(from=vol2+0.8,to=6,by=0.1),1)
+p1 <- sample(seq(from=1.2,to=5.0,by=0.1),1)*100000
+p1
+
+resp <- round((p1*vol1)/(101000*(vol1+vol2)), digits = 2)
+resp
+include_supplement("Q34TransfGasosas.jpg")
+@
+  
+\usepackage[utf8]{inputenc}
+  
+\begin{question}
+  
+(UFRGS-adapt.) Na figura adiante estão representados dois balões de vidro, A e B, com capacidades de $\Sexpr{vol1}$ litros e de $\Sexpr{vol2}$ litros, respectivamente. Os balões estão conectados entre si por um tubo fino munido da torneira T, que se encontra fechada. O balão A contém hidrogênio à pressão de $\Sexpr{nota_cient(p1)}$ Pa. O balão B foi completamente esvaziado. Abre-se, então, a torneira T, pondo os balões em comunicação, e faz-se também com que a temperatura dos balões e do gás retorne ao seu valor inicial. Determine, em atm, o valor da pressão a que fica submetido o hidrogênio? Considere 1 atm igual a 101 kPa e forneça sua resposta com duas casas decimais.
+
+\includegraphics[height=6cm,keepaspectratio]{Q34TransfGasosas.jpg}
+
+\end{question}
+  
+%% SOLUTION
+\begin{solution}:
+    
+  \Sexpr{resp} atm
+  
+\end{solution}
+  
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp}}
+%% \exname{Q34TransfGasosas}
+%% \extol{0.01}

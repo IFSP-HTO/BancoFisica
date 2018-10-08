@@ -1,0 +1,60 @@
+<<echo=FALSE, results=hide>>=
+  #Marcelo C.
+  
+nota_cient <- function(x,digits) {
+  if (x==0) return("0")
+  ord <- floor(log(abs(x),10))
+  x <- x / 10^ord
+  if (!missing(digits)) x <- format(x,digits=digits)
+  if (ord==0) return(as.character(x))
+  return(paste(x,"\\\\times 10^{",ord,"}",sep=""))
+}
+
+massa  <- sample(seq(from=800,to=1600,by=20),1)
+
+Peso <- massa*10
+
+Normal <- sample(seq(from=Peso-6000,to=Peso-4000,by=10),1)
+
+vel  <- sample(seq(from=50,to=90,by=5),1)
+
+resp1 <- round(massa*(vel/3.6)^2/(Peso-Normal), digits = 1)
+
+resp2 <- round(sqrt(resp1*10)*3.6, digits = 1)
+
+include_supplement("Q02FCENTRIPETA.jpg")
+@
+  
+\usepackage[utf8]{inputenc}
+  
+\begin{question}
+  
+(UFCE-adaptado) Um veículo de $\Sexpr{nota_cient(massa)}$ kg percorre um trecho de estrada com velocidade escalar constante de $\Sexpr{vel}$ km/h. A intensidade da força normal que o leito da estrada exerce no veículo quando ele passa no ponto mais alto é de $\Sexpr{nota_cient(Normal)}$ N. O trecho em elevação corresponde a um setor circular de raio R, como mostra a figura. Usando-se $g = 10$ m/s², determine:
+
+\includegraphics[height=6cm,keepaspectratio]{Q02FCENTRIPETA.jpg}
+
+%% SOLUTION
+  \begin{answerlist}
+  
+    \item O valor do raio R, em metros. \textit{dê sua resposta com uma casa decimal}
+    \item Qual a maior velocidade, em km/h, que o carro pode passar no ponto mais alto sem perder contato com a pista? \textit{dê sua resposta com uma casa decimal}
+
+  \end{answerlist}
+
+\end{question}
+  
+%% SOLUTION
+\begin{solution}
+    
+  \begin{answerlist}
+    \item O raio R = $\Sexpr{resp1}$ m
+    \item A velocidade máxima corresponde a $\Sexpr{resp2}$ km/h
+  \end{answerlist}
+
+\end{solution}
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{\Sexpr{resp1}|\Sexpr{resp2}}
+%% \exclozetype{num|num}
+%% \exname{Q02_FCENTRIPETA}
+%% \extol{0.1|0.2}

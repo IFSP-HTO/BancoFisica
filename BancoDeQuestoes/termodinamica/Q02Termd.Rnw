@@ -11,7 +11,7 @@ resp <- variacao+trabalho
 \usepackage[utf8]{inputenc}
 \begin{question}
 
-(UFLA-adaptado) Numa transformação gasosa reversível, a variação de energia interna é de {\Sexpr{variacao}} J. Houve expansão e o trabalho realizado pelo gás é, em módulo, {\Sexpr{trabalho}} J. Nesse caso, determine o calor trocado com o meio e se o calor foi recebido ou cedido ao meio?
+(UFLA-adaptado) Numa transformação gasosa reversível, a variação de energia interna é de {\Sexpr{variacao}} J. Houve expansão e o trabalho realizado pelo gás é, em módulo, {\Sexpr{trabalho}} J. Nesse caso, determine o calor trocado com o meio em joules.
 
 <<echo=FALSE, results=hide, results=tex>>=
 @

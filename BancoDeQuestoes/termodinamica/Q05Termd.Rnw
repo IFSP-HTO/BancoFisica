@@ -1,0 +1,42 @@
+<<echo=FALSE, results=hide>>=
+## Marcelo C.
+
+## Funções necessárias - Flávio Barros
+nota_cient <- function(x,digits) {
+  if (x==0) return("0")
+  ord <- floor(log(abs(x),10))
+  x <- x / 10^ord
+  if (!missing(digits)) x <- format(x,digits=digits)
+  if (ord==0) return(as.character(x))
+  return(paste(x,"\\\\times 10^{",ord,"}",sep=""))
+}
+
+## Parâmetros
+
+p <- sample(seq(from=1, to=8, by=0.1), 1)*10^3
+dv <- sample(seq(from=0.01, to=0.4, by=0.01), 1)
+trab <- -p*dv
+Q <- -sample(seq(from=1.1*trab, to=2.5*trab, by=(trab)/10), 1)
+Qcal <- round(Q/4.2,digits=0)
+
+##Resposta
+resp <- round(-Qcal*4.2-trab,digits=1)
+resp
+@
+
+\begin{question}
+(EspCex-adapt.) Um gás ideal sofre uma compressão isobárica sob a pressão de $\Sexpr{nota_cient(p)}$ N/m² e o seu volume diminui $\Sexpr{nota_cient(dv)}$ m³. Durante o processo, o gás perde $\Sexpr{nota_cient(Qcal)}$ cal de calor. Determine a variação da energia interna do gás em J. Adote $1$ cal $= 4.2$ J. \textit{Caso necessário, dê sua resposta com uma casa decimal}
+
+\end{question}
+
+\begin{solution}
+
+    \Sexpr{resp} J
+  
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp}}
+%% \exname{Q06Termd}
+%% \extol{0.2}

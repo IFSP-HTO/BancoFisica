@@ -15,10 +15,7 @@ include_supplement("Q19estpm.jpg")
 
 (Fuvest-adapt.) Um corpo C de massa igual a $\Sexpr{m} kg$ está em equilíbrio estático sobre um plano inclinado, suspenso por um fio de massa desprezível preso a uma mola fixa ao solo, como mostra a figura a seguir. O comprimento natural da mola (sem carga) é $L_0 = \Sexpr{lo} m$ e ao sustentar estaticamente o corpo ela se distende, atingindo o comprimento $L = \Sexpr{l} m$. Os possíveis atritos podem ser desprezados. Determine a constante elástica da mola, em N/m. Caso necessário, arredonde sua resposta para 1 casa decimal. Dados: $g = 10m/s^2$ ; $sen(30^{\circ}) = 0,5$ e $cos(30^{\circ}) = 0,866$.
 
-\begin{figure}[h!]
-  \centering
-  \includegraphics[scale=0.7]{{Q19estpm.jpg}}
-\end{figure}
+\includegraphics[height=6cm,keepaspectratio]{Q19estpm.jpg}
 
 \end{question}
 

@@ -32,10 +32,7 @@ explanations[aleat[1]] <- ""
 \begin{question}
 (UFRJ) Na figura abaixo, suponha que o menino esteja empurrando a porta com uma força $F_m = 5 N$, atuando a uma distância de $2 m$ das dobradiças (eixo de rotação), e que o homem exerça uma força $F_h = 80 N$, a uma distância de $10 cm$ do eixo de rotação. Nestas condições, pode-se afirmar que:
 
-\begin{figure}[h!]
-  \centering
-  \includegraphics[scale=0.7]{{Q08Quizestce.jpg}}
-\end{figure}
+\includegraphics[height=6cm,keepaspectratio]{Q08Quizestce.jpg}
 
 <<echo=FALSE, results=hide, results=tex>>=
 answerlist(questions)
