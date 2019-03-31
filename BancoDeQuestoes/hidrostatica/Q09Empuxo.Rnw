@@ -14,14 +14,14 @@ nota_cient <- function(x,digits) {
 g <- 10
 rho_agua <- 1e3
 inteiro <- sample(1:9,1)
-volume <- as.numeric(paste0(inteiro,'e-4'))
 massa <- sample(seq(0.1,0.9,0.1),1)
 peso <- massa*g
-empuxo <- rho_agua*g*volume
+empuxo <- round(runif(n = 1, min = 1.1, max = 10),1)*peso
+volume <- empuxo/(rho_agua*g)
 
 ## Resposta
 resp <- empuxo - peso
-  
+
 ## Figura
 include_supplement('Q09Empuxo.png')
 @
@@ -57,4 +57,4 @@ A tensão será \Sexpr{resp} N.
 %% \extype{num}
 %% \exsolution{\Sexpr{resp}}
 %% \exname{Q08Empuxo}
-%% \extol{0.01}
+%% \extol{0.1}
