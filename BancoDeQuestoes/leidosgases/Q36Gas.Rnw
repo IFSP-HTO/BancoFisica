@@ -19,14 +19,14 @@
   
   \begin{question}
   
-  Antes de realizar uma viagem de carro, em um dia cuja temperatura era de $\Sexpr{temp1}$ ºC, um senhor calibrou os pneus utilizando $\Sexpr{press1}$ atm de pressão. Quando chegou ao destino, depois de $\Sexpr{time1}$ horas de viagem, mediu novamente a pressão dos pneus e constatou $\Sexpr{press2}$ atm de pressão. A variação de volume dos pneus foi desprezível. Qual temperatura que se encontravam os pneus?
+  Antes de realizar uma viagem de carro, em um dia cuja temperatura era de $\Sexpr{temp1}$ °C, um senhor calibrou os pneus utilizando $\Sexpr{press1}$ atm de pressão. Quando chegou ao destino, depois de $\Sexpr{time1}$ horas de viagem, mediu novamente a pressão dos pneus e constatou $\Sexpr{press2}$ atm de pressão. A variação de volume dos pneus foi desprezível. Qual temperatura que se encontravam os pneus? OBS: apresente o resultado com duas casas decimais.
 
 \end{question}
   
 %% SOLUTION
 \begin{solution}:
     
-  \Sexpr{resp2}ºC
+  \Sexpr{resp2}°C
   
 \end{solution}
   

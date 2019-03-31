@@ -1,7 +1,19 @@
 <<echo=FALSE, results=hide>>=
   #Programado por: Jmduly
+## Pacotes
+library(stringr)
 
-  changeSciNot <- function(n) {
+## Funções
+nota_cient <- function(x,digits) {
+  if (x==0) return("0")
+  ord <- floor(log(abs(x),10))
+  x <- x / 10^ord
+  if (!missing(digits)) x <- format(x,digits=digits)
+  if (ord==0) return(as.character(x))
+  return(paste(x,"\\\\times 10^{",ord,"}",sep=""))
+}
+
+changeSciNot <- function(n) {
   output <- format(n, scientific = TRUE) #Transforms the number into scientific notation even if small
   output <- sub("e", "*10^", output) #Replace e with 10^
   output <- sub("\\+0?", "", output) #Remove + symbol and leading zeros on expoent, if > 1
@@ -9,26 +21,45 @@
   output
 }
   
+formatEng <- function(x, fixed=NULL) {
+  s <-as.numeric(strsplit(format(x, scientific=T),"e")[[1]])
+  if (is.null(fixed)) {
+    return(paste(s[1]*10^(s[2]%%3), as.integer(s[2]-(s[2]%%3)),sep="e"))
+  } else {
+    fator <- s[2] - fixed
+    return(paste(format(s[1]*10^fator, scientific = FALSE), as.integer(s[2]-(fator)),sep="e"))
+  }
+}
+
+pega_int <- function(x, digits=NULL) {
+  int <- str_split(string = x, pattern = 'e', simplify = T)[1]
+  if (is.null(digits)) {
+    return(as.numeric(int))
+  } else {
+    return(round(as.numeric(int), digits = digits))
+  }
+}
+## Dados
   vol1   <- sample(seq(from=5000000,to=20000000,by=5000000),1)
   
   u      <- sample(seq(from=300000,to=45000000,by=300000),1)
   
-  resp1  <- changeSciNot(round((2/3*u)/(vol1*10^-6), digits = 1))
-
+## Resposta
+  resp1  <- pega_int(formatEng(round((2/3*u)/(vol1*10^-6), digits = 1), fixed = 6), digits = 2)
 @
   
 \usepackage[utf8]{inputenc}
   
 \begin{question}
   
-Considere um gás ideal de volume $\Sexpr{changeSciNot(vol1)}$ cm³ e que possui energia interna de $\Sexpr{u}$. Qual a pressão realizada no gás?
+Considere um gás ideal de volume $\Sexpr{nota_cient(vol1)}$ cm³ e que possui energia interna de $\Sexpr{u}$. Qual a pressão realizada no gás em MPa? OBS: apresente o resultado com duas decimais.
 
 \end{question}
   
 %% SOLUTION
 \begin{solution}:
     
-  $\Sexpr{resp1}$ Pa
+  $\Sexpr{resp1}$ MPa
   
 \end{solution}
   

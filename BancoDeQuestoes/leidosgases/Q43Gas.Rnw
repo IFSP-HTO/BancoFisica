@@ -15,7 +15,7 @@
   
 \begin{question}
   
-  Um gás que se encontra à temperatura de $\Sexpr{temp1}$ K é aquecido até $\Sexpr{temp2}$ K, sem mudar de volume. Se a pressão exercida no final do processo de aquecimento foi de $\Sexpr{press2}$ Pa, qual era a pressão inicial?
+  Um gás que se encontra à temperatura de $\Sexpr{temp1}$ K é aquecido até $\Sexpr{temp2}$ K, sem mudar de volume. Se a pressão exercida no final do processo de aquecimento foi de $\Sexpr{press2}$ Pa, qual era a pressão inicial? OBS: apresente o resultado com uma casa decimal.
 
 \end{question}
   

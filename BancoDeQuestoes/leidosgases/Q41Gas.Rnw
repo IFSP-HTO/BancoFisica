@@ -15,7 +15,7 @@
   
 \begin{question}
   
-A $\Sexpr{temp1}$ ºC, um gás ideal ocupa $\Sexpr{vol1}$ cm³.Após certo tempo, sua temperatura varia para $\Sexpr{temp2}$ ºC. Sendo a transformação isobárica, qual volume ocupará no final?
+A $\Sexpr{temp1}$ °C, um gás ideal ocupa $\Sexpr{vol1}$ cm³.Após certo tempo, sua temperatura varia para $\Sexpr{temp2}$ °C. Sendo a transformação isobárica, qual volume ocupará no final? OBS: apresente o resultado com uma decimal.
 
 \end{question}
   

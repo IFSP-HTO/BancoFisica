@@ -15,7 +15,7 @@
   
 \begin{question}
   
-Um gás de volume $\Sexpr{vol1}$ m³ à temperatura de $\Sexpr{temp1}$ ºC é aquecido até a temperatura de $\Sexpr{temp2}$ ºC. Qual será o volume ocupado por ele, se esta transformação acontecer sob pressão constante?
+Um gás de volume $\Sexpr{vol1}$ m³ à temperatura de $\Sexpr{temp1}$ °C é aquecido até a temperatura de $\Sexpr{temp2}$ °C. Qual será o volume ocupado por ele, se esta transformação acontecer sob pressão constante? OBS: apresente o resultado com uma casa decimal.
 
 \end{question}
   

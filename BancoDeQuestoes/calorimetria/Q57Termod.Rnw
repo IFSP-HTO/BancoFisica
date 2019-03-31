@@ -15,7 +15,7 @@
   
 \begin{question}
 
-Considere um gás perfeito na temperatura de $\Sexpr{temp1}$ °C que varia para $\Sexpr{temp2}$ ºC, e a variação da energia interna $\Sexpr{u}$.Dados: R=8,31 J/mol.K. Quanto(s) mols há do gás?
+Considere um gás perfeito na temperatura de $\Sexpr{temp1}$ °C que varia para $\Sexpr{temp2}$ °C, e a variação da energia interna $\Sexpr{u}$.Dados: R=8,31 J/mol.K. Quanto(s) mols há do gás?
 
 \end{question}
   

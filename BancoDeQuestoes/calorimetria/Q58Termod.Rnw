@@ -13,7 +13,7 @@
   
 \begin{question}
   
-Considere um gás perfeito na temperatura de $\Sexpr{temp1}$ K e a energia interna $\Sexpr{u}$.Dados: R=8,31 J/mol.K. Quanto(s) mols há do gás?
+Considere um gás perfeito na temperatura de $\Sexpr{temp1}$ K e a energia interna $\Sexpr{u}$ J. Dado R=8,31 J/mol.K, quanto(s) mols há do gás?
 
 \end{question}
   

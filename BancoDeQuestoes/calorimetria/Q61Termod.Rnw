@@ -1,19 +1,26 @@
 <<echo=FALSE, results=hide>>=
   #Programado por: Jmduly
-  
+nota_cient <- function(x,digits) {
+  if (x==0) return("0")
+  ord <- floor(log(abs(x),10))
+  x <- x / 10^ord
+  if (!missing(digits)) x <- format(x,digits=digits)
+  if (ord==0) return(as.character(x))
+  return(paste(x,"\\\\times 10^{",ord,"}",sep=""))
+}
   press1 <- sample(seq(from=2000,to=11000,by=500),size = 1)
   
   vol1   <- sample(seq(from=15000000,to=45000000,by=5000000),1)
   
   resp1  <- round(((3/2)*press1*(vol1*10^-6)), digits = 1)
-  
+  resp1
 @
   
 \usepackage[utf8]{inputenc}
   
 \begin{question}
   
-Considere $\Sexpr{vol1}$ cm³ de gás ideal sob pressão de $\Sexpr{press1}$ Pa? Qual a energia interna do gás?
+Considere $\Sexpr{nota_cient(vol1)}$ cm³ de gás ideal sob pressão de $\Sexpr{press1}$ Pa? Qual a energia interna do gás?
 
 \end{question}
   

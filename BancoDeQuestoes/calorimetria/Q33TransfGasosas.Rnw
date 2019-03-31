@@ -23,12 +23,12 @@ resp2 <- round(p2*(temp1+273)/p1-273, digits = 2)
   
 \begin{question}
   
-(PUC) Uma certa massa de um gás perfeito é colocada em um recipiente, ocupando um volume de $\Sexpr{vol}$ L, sob pressão de $\Sexpr{nota_cient(p1)}$ Pa e temperatura de $\Sexpr{temp1}$ ºC. Sofre, então, uma transformação isocórica e sua pressão passa a $\Sexpr{nota_cient(p2)}$ Pa. Nessas condições, determine: (\textit{Forneça as respostas com uma casa decimal.})
+(PUC) Uma certa massa de um gás perfeito é colocada em um recipiente, ocupando um volume de $\Sexpr{vol}$ L, sob pressão de $\Sexpr{nota_cient(p1)}$ Pa e temperatura de $\Sexpr{temp1}$ °C. Sofre, então, uma transformação isocórica e sua pressão passa a $\Sexpr{nota_cient(p2)}$ Pa. Nessas condições, determine: (\textit{Forneça as respostas com uma casa decimal.})
 
 \begin{answerlist}
 
   \item O volume ocupado pelo gás, em L, após a transformação gasosa.
-  \item A temperatura do gás, em ºC, após a transformação gasosa.
+  \item A temperatura do gás, em °C, após a transformação gasosa.
 
 \end{answerlist}
 
