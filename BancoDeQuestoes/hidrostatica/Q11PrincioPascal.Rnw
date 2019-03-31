@@ -30,4 +30,4 @@ A força é \Sexpr{resp} N.
 %% \extype{num}
 %% \exsolution{\Sexpr{resp}}
 %% \exname{Q11PrincipioPascal}
-%% \extol{0.01}
+%% \extol{0.1}

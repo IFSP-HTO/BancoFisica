@@ -30,7 +30,7 @@ extremidades do tubo existe uma parede fina AB que veda o reservat\'orio grande.
 
 \begin{answerlist}
   \item Estando o reservat\'orio pequeno vazio, determine o volume m\'aximo de \'agua que se pode armazenar no
-reservat\'orio grande sem que se rompa a parede AB, sabendo que a densidade da \'agua vale \Sexpr{dens_agua} kg/m³.
+reservat\'orio grande sem que se rompa a parede AB, sabendo que a densidade da \'agua vale \Sexpr{dens_agua} kg/m³ e a aceleração da gravidade é g = 10m/s². (dica: na ausência de líquido a pressão em $S_2$ é 1 atm.)
   
   \item Remove-se a parede AB e esvaziam-se os reservat\'orios. Em seguida coloca-se no sistema um volume total de
 \Sexpr{v_total} m³ de \'agua e, no reservat\'orio $S_1$, imerge-se lentamente uma esfera de ferro de \Sexpr{v_esfera} m³ de volume at\'e que pouse no fundo. Determine a altura da \'agua no reservat\'orio $S_2$, ap\'os alcançado o equil\'ibrio.

@@ -17,7 +17,7 @@ erros <- c(dens_x/dens_y, (dens_x*frac)/dens_y, (dens_x*(1-frac))/dens_y, dens_x
 ## Opções
 lista <- c(resp, erros)[sample(1:5,5)]
 solutions <- as.logical(resp == lista)
-
+solutions
 ## Figura
 include_supplement('Q10QuizDensidade.png')
 @
