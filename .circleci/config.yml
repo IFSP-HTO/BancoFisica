@@ -3,16 +3,11 @@ jobs:
   build:
     working_directory: ~/main
     docker:
-      - image: appsilon/ci-base:1.0
+      - image: flaviobarros/bancofisica-tests
     steps:
       - checkout
-      - restore_cache:
-          keys:
-            - deps1-{{ .Branch }}-{{ checksum "DESCRIPTION" }}
-            - deps1-{{ .Branch }}
-            - deps1-
       - run:
-          command: |
+          command: | 
             R -e 'devtools::install_deps(dependencies = TRUE)'
       - save_cache:
           key: deps1-{{ .Branch }}-{{ checksum "DESCRIPTION" }}
@@ -21,6 +16,11 @@ jobs:
       - run:
           command: |
             R -e 'source("tests/tests.R")'
+
+          ## store artifacts -----------------
+      - store_test_results:
+          path: /tmp/Rcheck/tests/
+          when: always
       - store_artifacts:
-          path: man/
-          destination: man
+          path: /tmp/Rcheck
+          when: always

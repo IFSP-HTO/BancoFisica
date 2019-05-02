@@ -1,0 +1,67 @@
+<<echo=FALSE, results=hide>>=
+## PROGRAMADO POR CARLOS SANTANA EM 06 DE JUNHO DE 2018
+## PARÂMETROS
+const_elast <- sample(seq(from=80,to=800,by=5),1)
+compressao <- sample(seq(from=0.1,to=0.9,by=0.1),1)
+pot_elast <- (const_elast*(compressao^2))/2
+pot_elast_pontoB <- round(pot_elast*0.8,1)
+
+diferenca_pontoB <- round(pot_elast*0.2,1)
+
+massa <- sample(seq(from=100,to=1000,by=100),1)
+altura <- round((pot_elast_pontoB/massa*10)*100,1)
+## RESPOSTAS
+questions <- character(7)
+solutions <- logical(7)
+aleat = sample(1:7)
+
+questions[aleat[1]] <- "Na situação descrita, há conservação da energia mecânica."
+solutions[aleat[1]] <- FALSE
+
+questions[aleat[2]] <- paste("A energia mecânica do bloco no ponto B é igual a aproximadamente ",pot_elast_pontoB,"J", sep=" ")
+solutions[aleat[2]] <- TRUE
+
+questions[aleat[3]] <- paste("O trabalho realizado pela força de atrito sobre o bloco, durante o seu movimento, foi", diferenca_pontoB,"J", sep=" ")
+solutions[aleat[3]] <- TRUE
+
+questions[aleat[4]] <- paste("O ponto B situa-se a aproximadamente", altura,"cm","de altura, em relação ao ponto A.", sep=" ") 
+solutions[aleat[4]] <- FALSE
+
+questions[aleat[5]] <- "A força atrito realizou trabalho no deslocamento do bloco entre os pontos A e B, por isso não houve conservação da energia mecânica do bloco"
+solutions[aleat[5]] <- TRUE
+
+questions[aleat[6]] <- paste("A energia mecânica total do bloco, no ponto A, é igual a",pot_elast,"J", sep=" ")
+solutions[aleat[6]] <- TRUE
+
+questions[aleat[7]] <- "A energia potencial elástica do bloco, no ponto A, não é transformada na energia potencial gravitacional do bloco, no ponto B."
+solutions[aleat[7]] <- FALSE
+
+## FIGURA
+include_supplement("Q03QuizTrab.png")
+@
+
+\begin{question}
+(Ufsc) A figura mostra um bloco, de massa m = \Sexpr{massa} g, mantido encostado em uma mola comprimida de x = \Sexpr{compressao} cm. A constante elástica da mola é K = \Sexpr{const_elast} N/m. A mola é solta e empurra o bloco que, partindo do repouso no ponto A, atinge o ponto B, onde pára. No percurso entre os pontos A e B, a força de atrito da superfície sobre o bloco dissipa 20\% da energia mecânica inicial no ponto A.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=6cm, keepaspectratio]{{Q03QuizTrab.png}}
+\end{figure}
+
+Assinale a(s) proposição(ões) CORRETA(S):
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(questions)
+@
+\end{question}
+
+\begin{solution}
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(
+  paste("\\textbf{", ifelse(solutions, "Verdadeiro", "Falso"), "}"))
+@
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{mchoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions)}}
+%% \exname{Q03QuizTrab}

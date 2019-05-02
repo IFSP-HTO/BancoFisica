@@ -1,0 +1,22 @@
+<<echo=FALSE, results=hide>>=
+## DATA GENERATION by Flavio Barros 01/06/2018
+volume <- sample(x = 2:100, 1)
+resp <- round(volume*1000,2)
+@
+
+\begin{question}
+%% Enunciado
+A \'agua contida em 1 litro possui massa igual a 1 kg. Qual a massa de \'agua contida em \Sexpr{volume} metros c\'ubicos?
+
+\end{question}
+
+\begin{solution}
+%% Resposta simples
+A massa ser\'a de \Sexpr{resp} kg.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp}}
+%% \exname{Q03Densidade}
+%% \extol{0.01}

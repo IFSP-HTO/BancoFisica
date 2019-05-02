@@ -1,0 +1,51 @@
+<<echo=FALSE, results=hide>>=
+#Programado por: Marcelo C.
+
+Fx <- sample(seq(from=2,to=40,by=1),1)
+d <- sample(seq(from=0.2,to=2,by=0.1),1)
+
+include_supplement("Q09Trab.jpg")
+
+resp1 <- round(Fx*d/5,1)
+resp2 <- round(Fx*d,1)
+
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+(Vunesp) Na figura, sob a ação da força de intensidade F = $\Sexpr{Fx}$ N, constante, paralela ao plano, o bloco percorre $\Sexpr{d}$ m ao longo do plano com velocidade constante. Admite-se g = $10$ m/s², despreza-se o atrito e são dados: $\sin (30^\circ) = \cos (60^\circ) = 0,5$ e $\cos (120^\circ) = -0,5$. Determine:
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[scale=0.7]{{Q09Trab.jpg}}
+\end{figure}
+
+\begin{answerlist}
+
+  \item A massa do bloco, em kg. Caso necessário, dê sua resposta com 1 casa decimal.
+
+  \item O trabalho realizado, em joules, pelo peso do bloco nesse percurso. Caso necessário, dê sua resposta com 1 casa decimal.
+  
+\end{answerlist}
+
+\end{question}
+
+%% SOLUTION
+\begin{solution}:
+  \begin{answerlist}
+  
+    \item  \Sexpr{resp1} kg
+        
+    \item  \Sexpr{resp2} J
+  
+  \end{answerlist}      
+  
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{resp1}|\Sexpr{resp2}}
+%% \exname{Q09Trab}
+%% \extol{0.1|0.1}

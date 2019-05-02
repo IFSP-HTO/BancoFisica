@@ -1,0 +1,55 @@
+<<echo=FALSE, results=hide>>=
+## Marcelo C.
+
+#Dados
+g <- 10
+rho <- 1
+massa <- sample(seq(1,9,0.1),1)
+volume <- sample(seq(massa/rho+1,massa/rho+40,0.5),1)
+k <- sample(seq(1,9.9,0.1),1)
+peso <- massa*g*10^-3
+empuxo <- rho*g*volume*10^-3
+
+fel = empuxo - peso
+## Resposta
+resp <- round(100*(empuxo - peso)/k,2)
+  
+## Figura
+include_supplement('Q13Empuxo.png')
+@
+
+\begin{question}
+%% Enunciado
+(Unesp) Um corpo de massa $\Sexpr{massa}$ g encontra-se em equilíbrio, preso por uma mola esticada de constante elástica de $\Sexpr{k}$ N/m, fixa no fundo do recipiente. O corpo está totalmente imerso na água, cuja densidade é $\Sexpr{rho}$ g/cm³. O volume do corpo é $\Sexpr{volume}$ cm³ e a aceleração da gravidade local é $\Sexpr{g}$ m/s². Determine o alongamento sofrido pela mola, em cm. \textit{Caso necessário, arredonde sua resposta para duas casas decimais}.
+
+\includegraphics[height=5cm, keepaspectratio]{Q13Empuxo.png}
+
+\end{question}
+
+\begin{solution}
+%% Solutions
+Como a mola está esticada e o corpo esta em equilibrio, a soma vetorial das forças peso (P), empuxo (E) e força elástica ($F_{el}$) é nula. Logo:
+
+$$
+E = F_{el} + P
+$$
+
+Assim, como $E = \rho_{fluido} \cdot V_{desl} \cdot g$, $P = m \cdot g$ e $F_{el} = k \cdot \Delta x$, então:
+
+$$
+k \cdot \Delta x = E - P = \rho_{fluido} \cdot V_{desl} \cdot g - m \cdot g = \Sexpr{empuxo} - \Sexpr{peso} = \Sexpr{fel}
+$$
+
+$$
+\Delta x = \frac{F_{el}}{k} * \frac{100 cm}{1 m} 
+$$
+
+A elongação da mola será \Sexpr{resp} cm .
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp}}
+%% \exname{Q13Empuxo}
+%% \extol{0.01}

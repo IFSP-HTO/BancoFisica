@@ -1,0 +1,45 @@
+<<echo=FALSE, results=hide>>=
+## Marcelo C.
+m <- sample(seq(from=8,to=800,by=8),1)
+respa = round(m/8,1)
+respb = round(m/4,1)
+respc = round(m/2,1)
+include_supplement("Q21estpm.jpg")
+
+@
+\usepackage[portuguese]{babel}
+\usepackage{graphicx}
+
+\begin{question}
+
+(CESGRANRIO-RJ) Um corpo de massa $\Sexpr{m} kg$ encontra-se em equilíbrio devido à ação da força de intensidade F aplicada pelo homem da figura abaixo. Os pontos A, B e C são os pontos de contato entre os fios e a superfície. 
+
+\includegraphics[height=6cm,keepaspectratio]{Q21estpm.jpg}
+
+Determine: 
+
+\begin{answerlist}
+    \item a força, em kgf, que a superficie exerce sobre o fio em A. 
+    \item a força, em kgf, que a superficie exerce sobre o fio em B. 
+    \item a força, em kgf, que a superficie exerce sobre o fio em C.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+  \begin{answerlist}
+
+    \item \Sexpr{respa} kgf
+    \item \Sexpr{respb} kgf
+    \item \Sexpr{respc} kgf
+
+  \end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{\Sexpr{respa}|\Sexpr{respb}|\Sexpr{respc}}
+%% \exclozetype{num|num|num}
+%% \exname{Q21estpm}
+%% \extol{0.1|0.1|0.1}

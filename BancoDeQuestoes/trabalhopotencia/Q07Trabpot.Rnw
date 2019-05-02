@@ -1,0 +1,55 @@
+<<echo=FALSE, results=hide>>=
+#Programado por: Marcelo C.
+## Parâmetros
+m <- sample(seq(from=60,to=90,by=1),1)
+deg <- sample(seq(from=60,to=100,by=1),1)
+t <- sample(seq(from=60,to=120,by=1),1)
+
+## Resposta
+resp1 <- round(m*deg*1.5,1)
+resp2 <- round(resp1/t,1)
+
+## Figura
+include_supplement("Q07Trabpot.jpg")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+A figura a seguir representa uma parte dos degraus de uma escada com suas medidas.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[scale=0.7]{{Q07Trabpot.jpg}}
+\end{figure}
+
+Uma pessoa de \Sexpr{m} kg sobe \Sexpr{deg} degraus dessa escada em \Sexpr{t} s, num local onde a aceleração da gravidade é de 10 m/s². Desprezando eventuais perdas por atrito, determine:
+
+\begin{answerlist}
+
+  \item O trabalho, em joules, realizado durante a subida. Caso necessário, arrendonde sua resposta para 1 casa decimal.
+
+  \item A potência média, em watts, durante a subida. Caso necessário, arrendonde sua resposta para 1 casa decimal.
+  
+\end{answerlist}
+
+\end{question}
+
+%% SOLUTION
+\begin{solution}:
+  \begin{answerlist}
+  
+    \item  \Sexpr{resp1} J
+        
+    \item  \Sexpr{resp2} W
+  
+  \end{answerlist}      
+  
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{resp1}|\Sexpr{resp2}}
+%% \exname{Q07Trabpot}
+%% \extol{0.1|0.1}

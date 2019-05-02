@@ -1,0 +1,44 @@
+<<echo=FALSE, results=hide>>=
+#Programado por: Marcelo C.
+
+energia <- sample(seq(from=180,to=280,by=5),1)
+v <- sample(seq(from=1.8,to=3.6,by=0.1),1)
+
+resp1 <- round(energia*7/6)
+resp2 <- round(resp1*3.6/v)
+
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+De acordo com publicação médica especializada, uma pessoa caminhando à velocidade constante de \Sexpr{v} km/h numa pista plana horizontal consome, em média, \Sexpr{energia} kcal em uma hora. Adotando 1,0 kcal = 4200 J, determine:
+
+  \begin{answerlist}
+
+  \item A potência desenvolvida pelo organismo em watts. \textit{Caso necessário, arrendonde sua resposta para o número inteiro mais próximo}
+
+  \item força motriz média exercida pelo solo, por meio do atrito, sobre os pés dessa pessoa. Dê sua resposta em newton. \textit{Caso necessário, arrendonde sua resposta para o número inteiro mais próximo}
+
+  \end{answerlist}
+
+\end{question}
+
+%% SOLUTION
+\begin{solution}:
+  \begin{answerlist}
+  
+    \item  \Sexpr{resp1} W
+        
+    \item  \Sexpr{resp2} N
+  
+  \end{answerlist}      
+  
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{resp1}|\Sexpr{resp2}}
+%% \exname{Q02Trab}
+%% \extol{1|1}

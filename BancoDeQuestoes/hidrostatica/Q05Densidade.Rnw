@@ -1,0 +1,43 @@
+<<echo=FALSE, results=hide>>=
+## Criado por Flavio Barros 04/06/2018
+## Parâmetros
+densidade <- signif(runif(n = 1, min = 0.3, max = 3),2)
+massa <- sample(1:15,1)
+volume <- round(massa/volume,1)
+
+## Solução
+solutions <- densidade < c(0.5, 0.75, 1, 1.5, 2.5)
+## Figura
+include_supplement('Q05Densidade.png')
+@
+
+\begin{question}
+%% Enunciado
+Observe a figura:
+
+\includegraphics[height=6cm, keepaspectratio]{Q05Densidade.png}
+
+O líquido contido no recipiente nessa figura tem um volume V' = \Sexpr{volume}m³, e sua massa é m'=\Sexpr{massa}kg. Uma esfera maciça, de massa m, volume V e densidade d, é abandonada no interior do líquido, na posição indicada na figura. Indique a ou as alternativas que fornecem valores para d, m ou V, em que a esfera afundará, ao ser abandonada.
+
+\begin{answerlist}
+  \item d = 0,50g/cm³ e m = 400g
+  \item m = 150g e V = 200cm³
+  \item d = 1,0g/cm³ e V = 1000cm³
+  \item d = 2,5g/cm³ e V = 1,5cm³
+  \item m = 1500g e V = 1000cm³
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+%% Supply a solution here!
+<<echo=FALSE, results=tex>>=
+answerlist(solutions)
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{mchoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions)}}
+%% \exname{Q05Densidade}
+%% \exshuffle{TRUE}

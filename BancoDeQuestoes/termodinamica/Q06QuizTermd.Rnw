@@ -1,0 +1,105 @@
+<<echo=FALSE, results=hide>>=
+##PROGRAMADO POR: MARCELO C.
+
+## QUESTION/ANSWER GENERATION
+questions <- character(23)
+solutions <- logical(23)
+explanations <- character(23)
+aleat = sample(1:23)
+
+  questions[aleat[1]] <- "O calor não pode passar espontaneamente de um corpo de maior temperatura para outro de menor temperatura."
+  solutions[aleat[1]] <- FALSE
+  explanations[aleat[1]] <- ""
+  questions[aleat[2]] <- "Para produzir trabalho, continuamente, uma máquina térmica operando em ciclos deve necessariamente receber calor de uma fonte quente e ceder parte para uma fonte fria."
+  solutions[aleat[2]] <- TRUE
+  explanations[aleat[2]] <- ""
+  questions[aleat[3]] <- "É impossível construir uma máquina, operando em ciclos, cujo único efeito seja retirar calor de uma fonte e convertê-lo a uma quantidade equivalente de trabalho."
+  solutions[aleat[3]] <- TRUE
+  explanations[aleat[3]] <- ""
+  questions[aleat[4]] <- "Em uma transformação isotérmica, o aumento de volume provoca um aumento de pressão."
+  solutions[aleat[4]] <- FALSE
+  explanations[aleat[4]] <- ""
+  questions[aleat[5]] <- "Em uma transformação adiabática, o gás não troca calor com o meio."
+  solutions[aleat[5]] <- TRUE
+  explanations[aleat[5]] <- ""
+  questions[aleat[6]] <- "Uma máquina térmica, operando segundo o ciclo de Carnot entre uma fonte quente e uma fonte fria, apresenta um rendimento igual a 100 \\%, isto é, todo o calor a ela fornecido é transformado em trabalho."
+  solutions[aleat[6]] <- FALSE
+  explanations[aleat[6]] <- ""
+  questions[aleat[7]] <- "Em um ciclo completo de uma máquina térmica, a variação da energia térmica é nula."
+  solutions[aleat[7]] <-TRUE
+  explanations[aleat[7]] <- ""
+  questions[aleat[8]] <- "Em uma transformação isocórica, o aumento da temperatura provoca um aumento na pressão."
+  solutions[aleat[8]] <- TRUE
+  explanations[aleat[8]] <- ""
+  questions[aleat[9]] <- "Em uma transformação isobárica, volume e temperatura são grandezas inversamente proporcionais"
+  solutions[aleat[9]] <- FALSE
+  explanations[aleat[9]] <- ""
+  questions[aleat[10]] <- "Em uma panela de pressão, o aumento da pressão no seu interior diminui o ponto de ebulição da água"
+  solutions[aleat[10]] <- FALSE
+  explanations[aleat[10]] <- ""
+  questions[aleat[11]] <- "Qualquer máquina térmica necessita apenas de uma fonte quente."
+  solutions[aleat[11]] <- FALSE
+  explanations[aleat[11]] <- ""
+  questions[aleat[12]] <- "Somente com uma fonte fria a 0 °C, seria possível uma certa máquina termica converter integralmente calor em trabalho."
+  solutions[aleat[12]] <- FALSE
+  explanations[aleat[12]] <- ""
+  questions[aleat[13]] <- "Por ser ideal e imaginária, a máquina proposta por Carnot contraria a segunda lei da Termodinâmica."
+  solutions[aleat[13]] <- FALSE
+  explanations[aleat[13]] <- ""
+  questions[aleat[14]] <- "O rendimento da máquina de Carnot depende apenas das temperaturas da fonte quente e da fonte fria."
+  solutions[aleat[14]] <- TRUE
+  explanations[aleat[14]] <- ""
+  questions[aleat[15]] <- "O ciclo de Carnot consiste em duas transformações adiabáticas, alternadas com duas transformações isotérmicas."
+  solutions[aleat[15]] <- TRUE
+  explanations[aleat[15]] <- ""
+  questions[aleat[16]] <- "De acordo com a segunda lei da Termodinâmica, a entropia do Universo tende a diminuir com o tempo."
+  solutions[aleat[16]] <- TRUE
+  explanations[aleat[16]] <- ""
+  questions[aleat[17]] <- "Quando um gás ideal é comprimido rapidamente, a energia interna do gás aumenta."
+  solutions[aleat[17]] <- TRUE
+  explanations[aleat[17]] <- ""
+  questions[aleat[18]] <- " No refrigerador o gás refrigerante remove calor da fonte fria, evaporando-se, e transfere calor à fonte quente, condensando-se."
+  solutions[aleat[18]] <- TRUE
+  explanations[aleat[18]] <- ""
+  questions[aleat[19]] <- "Máquinas térmicas são dispositivos usados para converter energia mecânica em energia térmica com conseqüente realização de trabalho."
+  solutions[aleat[19]] <- FALSE
+  explanations[aleat[19]] <- ""
+  questions[aleat[20]] <- "A 1a lei da termodinâmica é uma afirmação do princípio geral da conservação da energia. "
+  solutions[aleat[20]] <- TRUE
+  explanations[aleat[20]] <- ""
+  questions[aleat[21]] <- "Parcela da energia envolvida em um processo irreversível torna-se indisponível para a realização de trabalho. "
+  solutions[aleat[21]] <- TRUE
+  explanations[aleat[21]] <- ""
+  questions[aleat[22]] <- " Nenhuma máquina térmica pode apresentar um rendimento superior ao de uma máquina de Carnot operando entre as mesmas temperaturas."
+  solutions[aleat[22]] <- TRUE
+  explanations[aleat[22]] <- ""
+  questions[aleat[23]] <- "Um refrigerador com a porta aberta, após um longo período, é capaz de esfriar uma cozinha fechada."
+  solutions[aleat[23]] <- FALSE
+  explanations[aleat[23]] <- ""
+  
+@
+
+
+\begin{question}
+
+Com base nas transformações gasosas e leis da Termodinâmica, assinale verdadeiro (V) ou falso (F):
+
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(questions[1:6])
+@
+\end{question}
+
+\begin{solution}
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(
+  paste("\\textbf{", ifelse(solutions[1:6], "Verdadeiro", "Falso"), "}", sep = ""),
+  explanations[1:6])
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{mchoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions[1:6])}}
+%% \exname{Q02QuizCal}
+

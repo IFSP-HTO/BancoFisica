@@ -1,0 +1,42 @@
+<<echo=FALSE, results=hide>>=
+## DATA GENERATION EXAMPLE
+
+m <- sample(seq(from=5,to=40,by=1),1)
+respa = m*10
+respb = 3*m*10/8
+include_supplement("Q12estce.jpg")
+
+@
+\usepackage[portuguese]{babel}
+\usepackage{graphicx}
+
+\begin{question}
+
+(UNICAMP-adapt.) Uma escada homogênea de $\Sexpr{m} kg$ apóia-se sobre uma parede, no ponto P, e sobre o chão no ponto C. 
+
+\includegraphics[height=6cm,keepaspectratio]{Q12estce.jpg}
+
+Adotando $g = 10m/s^2$, determine:
+
+\begin{answerlist}
+  \item O módulo da força normal em C.
+  \item O módulo da força de atrito em C.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+%% Supply a solution here!
+\begin{answerlist}
+  \item \Sexpr{respa} N
+  \item \Sexpr{respb} N
+\end{answerlist}
+  
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{respa}|\Sexpr{respb}}
+%% \exname{Q12estce}
+%% \extol{0.01}

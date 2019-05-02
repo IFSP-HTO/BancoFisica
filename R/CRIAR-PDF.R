@@ -36,7 +36,6 @@ myexam <- dir(paste0("./BancoDeQuestoes/",assunto), pattern = ".rnw", ignore.cas
 set.seed(12018)
 exams2pdf(myexam, n = 1,
           name=assunto,
-          dir=paste0("./BancoDeQuestoes/",assunto),
           encoding = "UTF-8",
           edir = paste0("./BancoDeQuestoes/",assunto),
           template = "plain8")
@@ -49,7 +48,6 @@ myexam <- dir(paste0("./BancoDeQuestoes/",assunto), pattern = ".rnw", ignore.cas
 set.seed(12018)
 exams2pdf(myexam, n = 1,
           name=assunto,
-          dir=paste0("./BancoDeQuestoes/",assunto),
           encoding = "UTF-8",
           edir = paste0("./BancoDeQuestoes/",assunto),
           template = "plain8")
@@ -141,7 +139,6 @@ myexam <- dir(paste0("./BancoDeQuestoes/",assunto), pattern = ".rnw", ignore.cas
 set.seed(12018)
 exams2pdf(myexam, n = 1,
           name=assunto,
-          dir=paste0("./BancoDeQuestoes/",assunto),
           encoding = "UTF-8",
           edir = paste0("./BancoDeQuestoes/",assunto),
           template = "plain8")
@@ -169,24 +166,19 @@ myexam <- dir(paste0("./BancoDeQuestoes/",assunto), pattern = ".rnw", ignore.cas
 set.seed(12018)
 exams2pdf(myexam, n = 1,
           name=assunto,
-          dir=paste0("./BancoDeQuestoes/",assunto),
           encoding = "UTF-8",
           edir = paste0("./BancoDeQuestoes/",assunto),
           template = "plain8")
 
-####################leis de newton#######################
+#############leis de newton - atrito#######################
 ## Definindo a pasta com as questoes do exame
-assunto = "leisdenewton"
-myexam <- dir(paste0("./BancoDeQuestoes/",assunto), pattern = ".rnw", ignore.case=TRUE)
+myexam <- dir("./BancoDeQuestoes/leisdenewton/atrito", pattern = ".rnw", ignore.case=TRUE)
 ## Gerando HTML com o arquivo da questao
 set.seed(12018)
 exams2pdf(myexam, n = 1,
-          name=assunto,
-          dir=paste0("./BancoDeQuestoes/",assunto),
           encoding = "UTF-8",
-          edir = paste0("./BancoDeQuestoes/",assunto),
+          edir = "./BancoDeQuestoes/leisdenewton/atrito",
           template = "plain8")
-
 
 #######################magnetismo##########################
 ## Definindo a pasta com as questoes do exame
@@ -210,11 +202,9 @@ myexam <- dir(paste0("./BancoDeQuestoes/",assunto), pattern = ".rnw", ignore.cas
 set.seed(12018)
 exams2pdf(myexam, n = 1,
           name=assunto,
-          dir=paste0("./BancoDeQuestoes/",assunto),
           encoding = "UTF-8",
           edir = paste0("./BancoDeQuestoes/",assunto),
           template = "plain8")
-
 
 #############################MRU##########################
 ## Definindo a pasta com as questoes do exame
@@ -265,9 +255,8 @@ assunto = "optica"
 myexam <- dir(paste0("./BancoDeQuestoes/",assunto), pattern = ".rnw", ignore.case=TRUE)
 ## Gerando HTML com o arquivo da questao
 set.seed(12018)
-exams2pdf(myexam, n = 1,
+exams2pdf(myexam, n = 1, 
           name=assunto,
-          dir=paste0("./BancoDeQuestoes/",assunto),
           encoding = "UTF-8",
           edir = paste0("./BancoDeQuestoes/",assunto),
           template = "plain8")
@@ -307,20 +296,30 @@ myexam <- dir(paste0("./BancoDeQuestoes/",assunto), pattern = ".rnw", ignore.cas
 set.seed(12018)
 exams2pdf(myexam, n = 1,
           name=assunto,
-          dir=paste0("./BancoDeQuestoes/",assunto),
           encoding = "UTF-8",
           edir = paste0("./BancoDeQuestoes/",assunto),
           template = "plain8")
 
-################## velocidade media ####################
+################## MU ####################
 ## Definindo a pasta com as questoes do exame
-assunto = "vm"
-myexam <- dir(paste0("./BancoDeQuestoes/",assunto), pattern = ".rnw", ignore.case=TRUE)
+myexam <- dir("./BancoDeQuestoes/cinematica/MU", pattern = ".rnw", ignore.case=TRUE)
+
 ## Gerando HTML com o arquivo da questao
 set.seed(12018)
 exams2pdf(myexam, n = 1,
+          encoding = "UTF-8",
+          edir = "./BancoDeQuestoes/cinematica/MU",
+          template = "plain8")
+
+################## estatica ####################
+## Definindo a pasta com as questoes do exame
+assunto = "estatica"
+myexam <- dir(paste0("./BancoDeQuestoes/",assunto), pattern = ".rnw", ignore.case=TRUE)
+## Gerando HTML com o arquivo da questao
+set.seed(22018)
+exams2pdf(myexam, n = 1,
           name=assunto,
-          dir=paste0("./BancoDeQuestoes/",assunto),
           encoding = "UTF-8",
           edir = paste0("./BancoDeQuestoes/",assunto),
           template = "plain8")
+

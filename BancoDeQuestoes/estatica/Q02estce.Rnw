@@ -1,0 +1,31 @@
+<<echo=FALSE, results=hide>>=
+#Marcelo C.
+include_supplement("Q02estce.jpg")
+m <- sample(seq(from=200,to=2000,by=10),1)
+resp <- 15*m
+@
+\usepackage[portuguese]{babel}
+
+
+\begin{question}
+
+(OBFEP-2014) Arquimedes ajudou a sua cidade quando o império romano quis conquistá-la usando sua marinha. Um dos inventos de guerra que criou foi a “garra
+de Arquimedes”. Observe o desenho. Quando um navio se aproximava dos muros da sua cidade, um gancho agarrava a frente do navio e levantava-o. Depois, soltava-o para que
+fosse destruído nas pedras. O gancho era preso a uma grossa peça de madeira de 20 m de comprimento. A peça fazia o papel de alavanca tendo seu eixo de rotação a 12 m da
+extremidade onde o gancho era preso. A outra extremidade era puxada por um conjunto de bois muito fortes. Desprezando o peso da própria alavanca e considerando a aceleração da gravidade igual a $10m/s^2$, para esta alavanca equilibrar um barco de \Sexpr{m} kg no ar, qual o valor da força, em Newtons, que o conjunto de bois teria que fazer? 
+
+\includegraphics[height=6cm,keepaspectratio]{Q02estce.jpg}
+\end{question}
+
+
+\begin{solution}
+%% Supply a solution here!
+  \Sexpr{resp} N
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp}}
+%% \exname{Q02estce}
+%% \extol{1}

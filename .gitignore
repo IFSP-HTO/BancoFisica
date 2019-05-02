@@ -35,3 +35,15 @@ vignettes/*.pdf
 # Shiny token, see https://shiny.rstudio.com/articles/shinyapps.html
 rsconnect/
 .Rproj.user
+figuras/desktop.ini
+figuras/desktop.ini
+BancoDeQuestoes/estatica/estatica1.pdf
+BancoDeQuestoes/acel/acel1.pdf
+
+# Ignoring images in root folder
+/*jpg
+/*png
+
+# Ignore files generated in subfolder
+BancoDeQuestoes/**/*.pdf
+Moodle/hidrostatica6-12018.xml

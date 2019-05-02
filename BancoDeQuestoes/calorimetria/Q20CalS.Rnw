@@ -1,0 +1,33 @@
+<<echo=FALSE, results=hide>>=
+  #Programado por: Jmduly
+  
+  mass1 <- sample(seq(from=200,to=1000,by=1),1)
+  
+  time1 <- sample(seq(from=20,to=100,by=1),1)
+  
+  temp1 <- sample(seq(from=150,to=300,by=1),1)
+  
+  resp1 <- round((mass1*2*10^-2*temp1)*4.186/(time1), digits = 1)
+  
+@
+  
+\usepackage[utf8]{inputenc}
+  
+\begin{question}
+  
+Uma fonte de potência constante é utilizada para aumentar a temperatura $\Sexpr{mass1}$ g de aço a $\Sexpr{temp1}$ °C em . Sendo o calor específico do aço 0,020 cal/g.°C e 1cal=4,186J e o processo é realizado em $\Sexpr{time1}$. Qual o fluxo de calor em Watts?
+
+\end{question}
+  
+  %% SOLUTION
+\begin{solution}:
+    
+  \Sexpr{resp1}W
+  
+\end{solution}
+  
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp1}}
+%% \exname{Q20CalS}
+%% \extol{0.01}

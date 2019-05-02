@@ -1,0 +1,55 @@
+<<echo=FALSE, results=hide>>=
+##Programado por: Marcelo C.
+include_supplement("Q09Quizestce.jpg")
+
+questions <- character(5)
+solutions <- logical(5)
+explanations <- character(5)
+aleat = sample(1:5)
+
+questions[aleat[1]] <-"é mais provável que a dobradiça A arrebente primeiro que a B." 
+solutions[aleat[1]] <- TRUE
+explanations[aleat[1]] <- ""
+  
+  questions[aleat[2]] <- "é mais provável que a dobradiça B arrebente primeiro que a A"
+  solutions[aleat[2]] <- FALSE
+  explanations[aleat[2]] <- ""
+  
+  questions[aleat[3]] <- "seguramente as dobradiças A e B arrebentarão simultaneamente."
+  solutions[aleat[3]] <- FALSE
+  explanations[aleat[3]] <- ""
+  
+  questions[aleat[4]] <- "nenhuma delas sofrerá qualquer esforço."
+  solutions[aleat[4]] <- FALSE
+  explanations[aleat[4]] <- ""
+  
+  questions[aleat[5]] <- "o portão quebraria ao meio, ou nada sofreria"
+  solutions[aleat[5]] <- FALSE
+  explanations[aleat[5]] <- ""
+
+@
+
+\begin{question}
+(ENEM) Um portão está fixo em um muro por duas dobradiças A e B, conforme mostra a figura, sendo P o peso do portão.Caso um garoto se dependure no portão pela extremidade livre, e supondo que as reações máximas suportadas pelas dobradiças sejam iguais,
+
+\includegraphics[height=6cm,keepaspectratio]{Q09Quizestce.jpg}
+
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(questions)
+@
+
+\end{question}
+
+
+\begin{solution}
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(
+  paste("\\textbf{", ifelse(solutions, "Verdadeiro", "Falso"), "}"))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q09Quizestce}

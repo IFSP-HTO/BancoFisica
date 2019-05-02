@@ -1,0 +1,63 @@
+<<echo=FALSE, results=hide>>=
+##PROGRAMADO POR: CARLOS SANTANA, em 31 de Maio de 2017.
+baseMenor <- sample(seq(from=1, to=5, by=0.5), 1)
+baseMaior <- baseMenor+2
+
+x_coord <- c(0,baseMenor)
+y_coord <- c(0,baseMaior)
+
+resp <- ((baseMaior+baseMenor)*(baseMaior-baseMenor))/2
+
+questions <- character(5)
+solutions <- logical(5)
+aleat = sample(1:5)
+
+questions[aleat[1]] <- resp/2
+solutions[aleat[1]] <- FALSE
+
+questions[aleat[2]] <- resp*1.5
+solutions[aleat[2]] <- FALSE
+
+questions[aleat[3]] <- resp
+solutions[aleat[3]] <- TRUE
+
+questions[aleat[4]] <- resp+15
+solutions[aleat[4]] <- FALSE
+
+questions[aleat[5]] <- resp+15
+solutions[aleat[5]] <- FALSE
+@
+
+\begin{question}
+
+(Fei) Uma aluna ensaiou uma mola pelo Método Estático e montou o gráfico a seguir. Qual é o trabalho da Força Elástica para o deslocamento de \Sexpr{baseMenor}m a \Sexpr{baseMaior}m?
+
+\begin{center}
+\begin{figure}[h!]
+<<fig=TRUE, height=4, width=5, echo=FALSE, eps=FALSE, results=hide>>=
+plot(x_coord,y_coord,type = "b",xlab = "x(m)", ylab = "F(N)",xlim=range(0,baseMenor),ylim=range(0,baseMaior+1),panel.first=grid())
+@
+\end{figure}
+\end{center}
+
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(questions)
+@
+
+\end{question}
+
+%% SOLUTION
+\begin{solution}
+
+<<echo=FALSE, results=hide, results=tex>>=
+
+answerlist(
+  paste("\\textbf{", ifelse(solutions, "Verdadeiro", "Falso"), "}", sep = ""))
+@
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{mchoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions)}}
+%% \exname{Q15Trab}
+>>>>>>> 00217bbcd09d1b376b64ea6dbe7be22b3e1285c3

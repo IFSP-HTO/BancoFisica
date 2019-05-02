@@ -1,0 +1,39 @@
+<<echo=FALSE, results=hide>>=
+  #Marcelo C.
+  
+dr<- sample(seq(from=60,to=75,by=1),1)
+
+dc <- sample(seq(from=6,to=7.4,by=0.2),1)
+
+dco <- sample(seq(from=15,to=22,by=1),1)
+
+vel <- sample(seq(from=12,to=30,by=0.2),1)
+
+vc <- (vel/3.6)*dc/dr
+
+resp <- round(60*vc/(3.14*(dco/100)), digits = 1)
+
+include_supplement("Q03TRANSMISSAOMCU.jpg")
+@
+  
+\usepackage[utf8]{inputenc}
+  
+\begin{question}
+  
+(UFPR-ADAPT.) Um ciclista movimenta-se com sua bicicleta em linha reta a uma velocidade constante de $\Sexpr{vel}$ km/h. O pneu, devidamente montado na roda, possui diâmetro igual a $\Sexpr{dr}$ cm. No centro da roda traseira, presa ao eixo, há uma roda dentada de diâmetro $\Sexpr{dc}$  cm. Junto ao pedal e preso ao seu eixo há outra roda dentada de diâmetro $\Sexpr{dco}$  cm. As duas rodas dentadas estão unidas por uma corrente, conforme mostra a figura. Não há deslizamento entre a corrente e as rodas dentadas. Supondo que o ciclista imprima aos pedais um movimento circular uniforme, determine a frequência em rpm (rotações por minuto) que ele impõe aos pedais durante esse movimento. Adote $\pi=3.14$ e forneça sua resposta com \textit{uma casa decimal}
+
+\includegraphics[height=6cm,keepaspectratio]{Q03TRANSMISSAOMCU.jpg}
+
+\end{question}
+  
+%% SOLUTION
+\begin{solution}
+    
+  Frequência f = $\Sexpr{resp}$ rpm
+
+\end{solution}
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp}}
+%% \exname{Q03TRANSMISSAOMCU}
+%% \extol{0.1}

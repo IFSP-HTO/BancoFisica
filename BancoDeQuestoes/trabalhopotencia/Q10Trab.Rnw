@@ -1,0 +1,64 @@
+<<echo=FALSE, results=hide>>=
+#Programado por: Marcelo C.
+
+L <- sample(seq(from=2,to=10,by=0.1),1)
+h <- L*0.6
+m <- sample(seq(from=2,to=60,by=1),1)
+include_supplement("Q10Trab.jpg")
+
+resp1 <- round(6*m,1)
+resp2 <- round(resp1*L,1)
+
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+(PUC) Um operário leva um bloco de massa $\Sexpr{m} kg$ até uma altura h = $\Sexpr{h}$ m, por meio de um plano inclinado sem atrito de comprimento L = $\Sexpr{L}$ m, como mostra a figura. Sabendo que a aceleração da gravidade é g = $10$ m/s² e que o bloco sobe com velocidade constante, determine:
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[scale=0.7]{{Q10Trab.jpg}}
+\end{figure}
+
+\begin{answerlist}
+
+  \item A força, em N, exercída pelo operário. Caso necessário, dê sua resposta com 1 casa decimal.
+
+  \item O trabalho realizado, em joules, pelo operário. Caso necessário, dê sua resposta com 1 casa decimal.
+  
+\end{answerlist}
+
+\end{question}
+
+%% SOLUTION
+\begin{solution}:
+  \begin{answerlist}
+  
+    \item  Como o bloco sobe com velocidade constante, a força resultante sobre a caixa é nula. Seja $F$ a força que o operário realiza sobre a caixa, temos
+    
+    $$ F = m \cdot g \cdot sen\alpha $$
+    
+    $$ F = \frac{m\cdot g\cdot h}{L} $$
+    
+    Substituindo os números, 
+    
+    $$F = \Sexpr{resp1} N$$
+        
+    \item  O trabalho realizado pela força F é
+     
+    $$\tau = F \cdot L$$
+     
+    portanto,
+     
+    $$\tau = \Sexpr{resp2} J$$
+    
+  \end{answerlist}      
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{resp1}|\Sexpr{resp2}}
+%% \exname{Q10Trab}
+%% \extol{0.1|0.1}

@@ -1,27 +1,40 @@
 <<echo=FALSE, results=hide>>=
-#Programado por: Marcelo C.
+# Created by vinibrenobr11 - corrigido por Marcelo C.
+Tmax <- sample(seq(from=50, to=160, by=2), 1)
+Tmin <- sample(seq(from=10, to=24, by=2), 1)
+tmax <- sample(seq(from=30, to=60, by=5), 1)
+P <- sample(seq(from=500, to=600, by=10), 1)
+m <- sample(seq(from=500, to=800, by=10), 1)
 
-temp <- sample(seq(from=30,to=60,by=1),1)
-
-resp <- round(5/9*(temp - 32), digits = 1)
+resp <- round(P*tmax/(m*(Tmax-Tmin)),3)
 @
-\usepackage[utf8]{inputenc}
 
 \begin{question}
 
-O verão de 1994 foi particularmente quente nos Estados Unidos da América. A diferença entre a máxima temperatura do verão e a mínima do inverno anterior foi de $\Sexpr{temp}$ °C. Qual o valor dessa diferença temperaturam na escala Fahrenheit?
-  
+Uma fonte fornece a $\Sexpr{m} g$ de uma substância um fluxo de calor constante de $\Sexpr{P} cal/min$, fazendo com que a temperatura varie com o tempo, segundo o gráfico abaixo.
+
+\begin{figure}[h!]
+\begin{center}
+<<fig=TRUE, height=4, width=5, echo=FALSE, eps=FALSE, results=hide>>=
+y <- c(Tmin, Tmax)
+x <- c(0, tmax)
+plot(x, y, type="o", pch=20, col="black", ylab=" Temperatura \U00BA C)", ylim=range(Tmin,Tmax), yaxp=c(Tmin,Tmax,2), xlab="Tempo (min)", xaxp=c(0,tmax,5))
+#abline(h=c(Tmin,(Tmax+Tmin)/2,Tmax), v=seq(from=0, to=tmax, by=tmax/5), col="gray", lty=3)
+abline(h=seq(from=Tmin, to=Tmax, by=(Tmax-Tmin)/4), v=seq(from=0, to=tmax, by=tmax/5), col="gray", lty=3)
+@
+\end{center}
+\end{figure}
+
+Determine o calor específico da substância em $cal/g^\circ C$. Dê sua resposta com três casas decimais.
+
 \end{question}
 
-%% SOLUTION
-\begin{solution}:
-  
-  \Sexpr{resp} °C
-        
+\begin{solution}
+  \Sexpr{resp} $c = cal/g^\circ C$
 \end{solution}
 
 %% META-INFORMATION
 %% \extype{num}
 %% \exsolution{\Sexpr{resp}}
 %% \exname{Q10CalS}
-%% \extol{0.1}
+%% \extol{0.001}

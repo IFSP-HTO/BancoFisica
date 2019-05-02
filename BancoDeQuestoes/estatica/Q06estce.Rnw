@@ -1,0 +1,46 @@
+<<echo=FALSE, results=hide>>=
+#Marcelo C.
+include_supplement("Q06estce.jpg")
+
+P <- sample(seq(from=10,to=13,by=0.1),1)
+Th <- sample(seq(from=3,to=6,by=0.1),1)
+Tab <- sample(seq(from=1,to=9,by=0.1),1)
+respa <- round(sqrt((P/4)^2+(Th)^2),2)
+respb <- round(Tab*sqrt(2)/2,2)
+@
+\usepackage{graphicx}
+\usepackage[portuguese]{babel}
+
+\begin{question}
+
+(UNICAMP-adapt.) Grandes construções representam desafios à engenharia e demonstram a capacidade de realização humana. Pontes com estruturas de sus-tentação sofisticadas são exemplos dessas obras que coroam a mecânica de Newton. Considere $1MN = 10^6 N$ e dê sua resposta nos ítens com 2 casas decimais.
+
+\includegraphics[height=6cm,keepaspectratio]{Q06estce.jpg}
+
+\begin{answerlist}
+  \item A ponte pênsil de São Vicente (SP) foi construída em 1914. O sistema de suspensão de uma ponte pênsil é composto por dois cabos principais. Desses cabos principais partem cabos verticais responsáveis pela sustentação da ponte. O desenho esquemático da figura 1 mostra um dos cabos principais (AOB), que está sujeito a uma força de tração T exercida pela torre no ponto B. A componente vertical da tração $T_V$ tem módulo igual a um quarto do peso da ponte, enquanto a horizontal $T_H$ tem módulo igual $\Sexpr{Th} MN$. Sabendo que o peso da ponte é $P = \Sexpr{P} MN$, calcule o módulo da força de tração $T$ em $MN$. 
+
+  \item Em 2008 foi inaugurada em São Paulo a ponte Octavio Frias de Oliveira, a maior ponte estaiada em curva do mundo. A figura 2 mostra a vista lateral de uma ponte estaiada simplificada. O cabo AB tem comprimento L = 50 m e exerce, sobre a ponte, uma força $T_{AB} = \Sexpr{Tab} MN$. Calcule o módulo do torque desta força, em $MN.m$, em relação ao ponto O. Dados: $sen 45^\circ = cos 45^\circ = (\sqrt{2})/2$.
+
+\end{answerlist}
+
+\end{question}
+
+
+\begin{solution}
+%% Supply a solution here!
+  \begin{answerlist}
+    \item \Sexpr{respa} MN
+
+    \item \Sexpr{respb} MN.m
+
+  \end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze} 
+%% \exsolution{\Sexpr{respa}|\Sexpr{respb}}
+%% \exclozetype{num|num}
+%% \exname{Q06estce}
+%% \extol{0.1}

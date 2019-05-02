@@ -1,0 +1,50 @@
+<<echo=FALSE, results=hide>>=
+##PROGRAMADO POR: CARLOS SANTANA, em 05 de Junho de 2017.
+include_supplement("Q02QuizTrab.png")
+
+questions <- character(5)
+solutions <- logical(5)
+aleat = sample(1:5)
+
+questions[aleat[1]] <- "apenas no intervalo I."
+solutions[aleat[1]] <- FALSE
+
+questions[aleat[2]] <- "apenas no intervalo II."
+solutions[aleat[2]] <- FALSE
+
+questions[aleat[3]] <- "apenas no intervalo III."
+solutions[aleat[3]] <- FALSE
+
+questions[aleat[4]] <- "apenas nos intervalos I e II."
+solutions[aleat[4]] <- FALSE
+
+questions[aleat[5]] <- "nos intervalos I, II e III."
+solutions[aleat[5]] <- TRUE
+@
+
+\begin{question}
+(Uel) Um corpo, inicialmente em repouso, é submetido a uma força resultante $\vec{F}$, cujo valor algébrico varia com o tempo de acordo com o gráfico a seguir.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=5cm, keepaspectratio]{{Q02QuizTrab.png}}
+\end{figure}
+
+Considerando os intervalos de tempo I, II e III, a energia cinética do corpo AUMENTA
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(questions)
+@
+\end{question}
+
+\begin{solution}
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(
+  paste("\\textbf{", ifelse(solutions, "Verdadeiro", "Falso"), "}"))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{mchoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions)}}
+%% \exname{Q02QuizTrab}
