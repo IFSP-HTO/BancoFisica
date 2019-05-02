@@ -135,10 +135,10 @@ exams2moodle(myexam, n = 100, rule="none",
 ############### hidrostatica ##################
 ## Definindo a pasta com as questoes do exame
 myexam <- dir("./BancoDeQuestoes/hidrostatica", pattern = ".rnw", ignore.case=TRUE)
-ano <- 12018
+ano <- 12019
 ## Cria o arquivo .xml para entrada no moodle
 set.seed(ano)
-exams2moodle(myexam, n = 100, 
+exams2moodle(myexam, n = 50, 
              converter = "pandoc-mathjax",
              rule="none", 
              schoice = list(shuffle = TRUE), 
