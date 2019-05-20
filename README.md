@@ -1,6 +1,6 @@
 # BancoFísica
 
-[![CircleCI](https://circleci.com/gh/flaviobarros/BancoFisica/tree/master.svg?style=svg&circle-token=ad42994e397d4da2260bafdb20853dd9a45efccf)](https://circleci.com/gh/flaviobarros/BancoFisica/tree/master) [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)[![CircleCI](https://circleci.com/gh/IFSP-HTO/BancoFisica.svg?style=svg)](https://circleci.com/gh/IFSP-HTO/BancoFisica)
 
 ## Introdução
 
