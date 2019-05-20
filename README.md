@@ -11,7 +11,20 @@ ME414. Todas as questões devem ser programadas utilizando o pacote
 Nas próximas seções do documento podem ser encontradas instruções de
 como contribuir com o repositório.
 
-## Diretórios
+# Sumário
+
+<!--ts-->
+
+  - [Diretórios](#diretorios)
+  - [Pré-visualização](#pre-visualizacao)
+  - [Colaboração](#colaboracao)
+  - [Moodle](#moodle)
+  - [ATENÇÃO](#atencao)
+  - [License](#license)
+
+<!--te-->
+
+# Diretórios
 
 É importante observar a estrutura de diretórios para contribuição e
 utilização das questões deste repositório.
@@ -26,7 +39,7 @@ utilização das questões deste repositório.
 
   - **doc**: contém documentações em geral.
 
-## Pré-visualização
+# Pré-visualização
 
 Para pré-visualização de questões, pode-se utilizar o arquivo
 ME414-HTML.R, utilizando seu próprio local como [working
@@ -56,7 +69,7 @@ Assim, ao criar uma nova questão, você deve incluir um trecho de código
 como este para que as novas questões adicionadas possam ser facilmente
 visualizadas.
 
-## Colaboração
+# Colaboração
 
 Colaboradores do projeto podem colaborar basicamente de duas formas:
 
@@ -66,7 +79,7 @@ Colaboradores do projeto podem colaborar basicamente de duas formas:
 Especialmente o item 2 é importante em virtude de o conjunto de questões
 disponível ainda ser muito limitado.
 
-### Criando questões
+## Criando questões
 
 Há ampla documentação sobre o tema na página do pacote
 [exams](https://cran.r-project.org/web/packages/exams/index.html). Dois
@@ -78,7 +91,55 @@ artigos em especial contém exemplos e os recursos básicos do pacote:
     Assessments, and
     Beyond](https://cran.r-project.org/web/packages/exams/vignettes/exams2.pdf)
 
-### Rnw or Rmd?
+## Nome das questões
+
+O nome da questão criada deve ser dado da seguinte maneira:
+
+**Qxx\[Tipo\]Assunto.Rnw**
+
+onde:
+
+**xx**: número sequencial de implementação: 01, 02, 03, etc.
+
+**Assunto**: Nome abreviado do assunto que se trata a questão. Ex:
+Ondas, Termd (termodinâmica), CalorTemp (Calor e temperatura), Eletrost
+(eletrostática), etc. Ex: Q15Eletrost.Rnw
+
+**Tipo**: Inserir a palavra Quiz apenas se a questão for de múltipla
+escolha ou verdadeiro e falso. Ex: Q02QuizOndas.
+
+Após incluir uma nova questão na subpasta, criar um pdf com todas as
+questões dentro da subpasta. Isso facilitará verificar as questões já
+implementadas sobre o assunto e evitar duplicações.
+
+Os arquivos .docx do diretório **BancoDeQuestões** possuem questões que
+estão sendo implementadas. As questões estão separadas por assunto,
+sendo que no topo de cada assunto possui o nome que deve ser utilizado
+na questão.
+
+## Acentos
+
+O pacote exams pode apresentar alguns problemas com acentos. Há três
+soluções:
+
+1.  Inserir na questão a seguinte linha de código:
+
+<!-- end list -->
+
+``` r
+\usepackage[utf8]{inputenc}
+```
+
+2.  Utilizar acentos em Latex como `\{c}c` para ç;
+3.  Compilar a questão com:
+
+<!-- end list -->
+
+``` r
+exams2pdf("file.Rmd", encoding = "UTF-8", template = "plain8")
+```
+
+## Rnw or Rmd?
 
 Com o pacote exams é possível criar questões tanto em
 [Sweave](http://www.statistik.lmu.de/~leisch/Sweave/)(.Rnw) quanto em
@@ -98,20 +159,7 @@ como:
 2.  Preview simplificado;
 3.  Edição e visualização em tempo real;
 
-No caso do item 3 é necessário utilizar o pacote
-[editR](https://github.com/swarm-lab/editR). O pacote referido não se
-encontra disponivel (ainda) no CRAN, mas pode ser instalado da seguinte
-forma:
-
-``` r
-if (!require("devtools")) install.packages("devtools")
-devtools::install_github("trestletech/shinyAce")
-devtools::install_github("swarm-lab/editR")
-
-library(editR)
-```
-
-#### Rmakrdown
+## Rmakrdown
 
 A seguir um exemplo simples de uma questão, em rmarkdown, compilável
 pelo pacote exams:
@@ -158,11 +206,12 @@ retirado para utilizar o utilizar o template. Para retirar todos os
 comentários de uma vez basta selecionar todo o código e digitar Ctrl +
 Shift + C.
 
-O resultado da compilação é como mostrado na figura:
+# Moodle
 
-![alt text](figures/q.png)
+Os arquivos em formato XML estão na pasta Moodle e podem ser importados
+diretamente em um banco de questões do Moodle.
 
-## ATENÇÃO
+# ATENÇÃO
 
 Este banco de questões pode ser utilizado para gerar versões de uma
 mesma prova. Caso utilize o banco em uma prova, não disponibilizar as
@@ -170,6 +219,6 @@ questões e soluções para os alunos. Cada aluno deverá revisar a prova
 individualmente. Isto é necessário pois o banco de questões não é grande
 o suficiente.
 
-## License
+# License
 
 MIT ©
