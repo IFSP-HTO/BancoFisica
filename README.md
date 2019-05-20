@@ -4,7 +4,7 @@
 
 ## Introdução
 
-Este é o repositório oficial do banco de questões de Física produzido pelos professores do IFSP - Câmpus Hortolândia. Todas as questões devem ser programadas utilizando o pacote [exams](https://cran.r-project.org/web/packages/exams/index.html) do R. Nas próximas seções do documento podem ser encontradas instruções de como contribuir com o repositório.
+Este é o repositório oficial do banco de questões de Física produzido pelos professores do IFSP - Câmpus Hortolândia. Todas as questões devem ser programadas utilizando o pacote [exams](http://www.r-exams.org/) do R. Nas próximas seções do documento podem ser encontradas instruções de como contribuir com o repositório.
 
 A seguir você encontra a documentação de como utilizar questões prontas na plataforma Moodle e como contribuir para o projeto.
 
@@ -73,6 +73,14 @@ Há ampla documentação sobre o tema na página do pacote [exams](https://cran.
 
 * [Automatic Generation of Exams in R](https://cran.r-project.org/web/packages/exams/vignettes/exams.pdf)
 * [Flexible Generation of E-Learning Exams in R: Moodle Quizzes, OLAT Assessments, and Beyond](https://cran.r-project.org/web/packages/exams/vignettes/exams2.pdf)
+
+#### Pull Request
+
+Faça um fork do repositório, realize as modificações e faça um pull request. Nós analisaremos a submissão e forneceremos feedback se necessário. TOME CUIDADO PARA QUE SUAS CONTRIBUIÇÕES PASSEM  NOS TESTES. ISSO É SUA RESPONSABILIDADE
+
+#### Issues
+
+Nos issues você pode fazer perguntas, sugerir recursos ou reportar problemas.
 
 ### Nome das questões
 
