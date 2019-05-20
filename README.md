@@ -2,24 +2,15 @@
 
 [![CircleCI](https://circleci.com/gh/flaviobarros/BancoFisica/tree/master.svg?style=svg&circle-token=ad42994e397d4da2260bafdb20853dd9a45efccf)](https://circleci.com/gh/flaviobarros/BancoFisica/tree/master) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## Getting Super Powers
+## Introdução
 
-Becoming a super hero is a fairly straight forward process:
+Este é o repositório oficial do banco de questões de Física produzido pelos professores do Câmpus Hortolândia. Todas as questões devem ser programadas utilizando o pacote [exams](https://cran.r-project.org/web/packages/exams/index.html) do R. Nas próximas seções do documento podem ser encontradas instruções de como contribuir com o repositório.
 
-```
-$ give me super-powers
-```
+A seguir você encontra a documentação de como utilizar questões prontas na plataforma Moodle e como contribuir para o projeto.
 
-{% hint style="info" %}
- Super-powers are granted randomly so please submit an issue if you're not happy with yours.
-{% endhint %}
+{% page-ref page="moodle.md" %}
 
-Once you're strong enough, save the world:
+{% page-ref page="contribuicao.md" %}
 
-```
-// Ain't no code for that yet, sorry
-echo 'You got to trust me on this, I saved the world'
-```
-
-
+{% page-ref page="faq.md" %}
 
