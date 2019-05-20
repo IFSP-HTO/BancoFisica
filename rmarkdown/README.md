@@ -211,6 +211,10 @@ Shift + C.
 Os arquivos em formato XML estão na pasta Moodle e podem ser importados
 diretamente em um banco de questões do Moodle.
 
+## Salvando XML
+
+![alt text](figures/salvandoXML.gif)
+
 # ATENÇÃO
 
 Este banco de questões pode ser utilizado para gerar versões de uma
