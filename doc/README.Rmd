@@ -176,7 +176,7 @@ A seguir um exemplo simples de uma questão, em rmarkdown, compilável pelo paco
 ```
 
 Veja que o arquivo tem um comentário (#) em cada linha, que deve ser retirado para utilizar o utilizar o template. Para retirar todos os comentários de uma vez basta selecionar todo o código e digitar Ctrl + Shift + C.
-s
+
 Moodle
 ======
 
