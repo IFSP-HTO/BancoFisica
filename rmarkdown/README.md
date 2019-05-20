@@ -209,11 +209,25 @@ Shift + C.
 # Moodle
 
 Os arquivos em formato XML estão na pasta Moodle e podem ser importados
-diretamente em um banco de questões do Moodle.
+diretamente em um banco de questões do Moodle. Inicialmente você deve
+clonar o repositório e os arquivos em XML devem estar na pasta clonada.
 
-## Salvando XML
+    git clone https://github.com/IFSP-HTO/BancoFisica.git
+
+### Salvando XML
+
+Caso queira somente utilizar as questões prontas em um curso Moodle
+basta salvar e utilizar os XML pré-compilados.
 
 ![alt text](figures/salvandoXML.gif)
+
+### Subindo XML no Moodle
+
+Para subir a questão no Moodle você deve fazer o updload do arquivo em
+XML em um banco de questões do Moodle. Para testar você pode utlizar o
+[Moodle Sandbox](https://demo.moodle.net).
+
+\[alt text\]\[2\]
 
 # ATENÇÃO
 
