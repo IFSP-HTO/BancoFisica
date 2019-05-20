@@ -110,16 +110,6 @@ Todas as questões disponíveis no repositório, até o momento, foram feitas em
 2. Preview simplificado;
 3. Edição e visualização em tempo real;
 
-No caso do item 3 é necessário utilizar o pacote [editR](https://github.com/swarm-lab/editR). O pacote referido não se encontra disponivel (ainda) no CRAN, mas pode ser instalado da seguinte forma:
-
-```{r, eval=FALSE}
-if (!require("devtools")) install.packages("devtools")
-devtools::install_github("trestletech/shinyAce")
-devtools::install_github("swarm-lab/editR")
-
-library(editR)
-```
-
 #### Rmakrdown
 
 A seguir um exemplo simples de uma questão, em rmarkdown, compilável pelo pacote exams:
