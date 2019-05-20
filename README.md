@@ -15,11 +15,11 @@ como contribuir com o repositório.
 
 <!--ts-->
 
-  - [Diretórios](#diretorios)
-  - [Pré-visualização](#pre-visualizacao)
-  - [Colaboração](#colaboracao)
+  - [Diretórios](#diretórios)
+  - [Pré-visualização](#pré-visualização)
+  - [Colaboração](#colaboração)
   - [Moodle](#moodle)
-  - [ATENÇÃO](#atencao)
+  - [ATENÇÃO](#atenção)
   - [License](#license)
 
 <!--te-->
