@@ -1,7 +1,3 @@
----
-description: Documentação do Projeto BancoFísica desenvolvido no IFSP - Câmpus Hortolândia.
----
-
 # BancoFísica
 
 ## Getting Super Powers
