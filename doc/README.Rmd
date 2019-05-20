@@ -7,6 +7,9 @@ output: github_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+[![CircleCI](https://circleci.com/gh/flaviobarros/BancoFisica/tree/master.svg?style=svg&circle-token=ad42994e397d4da2260bafdb20853dd9a45efccf)](https://circleci.com/gh/flaviobarros/BancoFisica/tree/master)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 Este é o repositório oficial do banco de questões para a disciplina ME414. Todas as questões devem ser programadas utilizando o pacote [exams](https://cran.r-project.org/web/packages/exams/index.html) do R. Nas próximas seções do documento podem ser encontradas instruções de como contribuir com o repositório.
 
 ## Diretórios
@@ -61,6 +64,41 @@ Há ampla documentação sobre o tema na página do pacote [exams](https://cran.
 
 * [Automatic Generation of Exams in R](https://cran.r-project.org/web/packages/exams/vignettes/exams.pdf)
 * [Flexible Generation of E-Learning Exams in R: Moodle Quizzes, OLAT Assessments, and Beyond](https://cran.r-project.org/web/packages/exams/vignettes/exams2.pdf)
+
+### Nome das questões
+
+O nome da questão criada deve ser dado da seguinte maneira:
+
+**Qxx[Tipo]Assunto.Rnw**
+
+onde: 
+
+**xx**: número sequencial de implementação: 01, 02, 03, etc.
+
+**Assunto**: Nome abreviado do assunto que se trata a questão. Ex: Ondas, Termd (termodinâmica), CalorTemp (Calor e temperatura), Eletrost (eletrostática), etc. Ex: Q15Eletrost.Rnw
+
+**Tipo**: Inserir a palavra Quiz apenas se a questão for de múltipla escolha ou verdadeiro e falso. Ex: Q02QuizOndas.
+
+Após incluir uma nova questão na subpasta, criar um pdf com todas as questões dentro da subpasta. Isso facilitará verificar as questões já implementadas sobre o assunto e evitar duplicações.
+
+Os arquivos .docx do diretório **BancoDeQuestões** possuem questões que estão sendo implementadas. As questões estão separadas por assunto, sendo que no topo de cada assunto possui o nome que deve ser utilizado na questão.
+
+### Acentos
+
+O pacote exams pode apresentar alguns problemas com acentos. Há três soluções:
+
+1. Inserir na questão a seguinte linha de código:
+
+```r
+\usepackage[utf8]{inputenc}
+```
+
+2. Utilizar acentos em Latex como ```\{c}c``` para ç;
+3. Compilar a questão com:
+
+```r
+exams2pdf("file.Rmd", encoding = "UTF-8", template = "plain8")
+```
 
 ### Rnw or Rmd?
 
