@@ -290,5 +290,3 @@ exams2moodle(myexam, n = 100, rule="none", schoice = list(shuffle = TRUE), name 
              encoding = "UTF-8",
              dir = "./Moodle",
              edir = "./BancoDeQuestoes/estatica")
-
-
