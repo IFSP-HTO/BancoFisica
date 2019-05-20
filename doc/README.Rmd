@@ -1,6 +1,9 @@
 ---
 title: "ME414-BancoDeQuestoes"
-output: github_document
+output: 
+  github_document:
+    toc: true
+    toc_depth: 2
 ---
 
 ```{r setup, include=FALSE}
@@ -12,7 +15,21 @@ knitr::opts_chunk$set(echo = TRUE)
 
 Este é o repositório oficial do banco de questões para a disciplina ME414. Todas as questões devem ser programadas utilizando o pacote [exams](https://cran.r-project.org/web/packages/exams/index.html) do R. Nas próximas seções do documento podem ser encontradas instruções de como contribuir com o repositório.
 
-## Diretórios
+Sumário
+=================
+
+<!--ts-->
+   * [Diretórios](#diretorios)
+   * [Pré-visualização](#pre-visualizacao)
+   * [Colaboração](#colaboracao)
+   * [Moodle](#moodle)
+   * [ATENÇÃO](#atencao)
+   * [License](#license)
+   
+<!--te-->
+
+Diretórios
+==========
 
 É importante observar a estrutura de diretórios para contribuição e utilização das questões deste repositório.
 
@@ -24,7 +41,8 @@ Este é o repositório oficial do banco de questões para a disciplina ME414. To
 
 * **doc**: contém documentações em geral.
 
-## Pré-visualização
+Pré-visualização
+================
 
 Para pré-visualização de questões, pode-se utilizar o arquivo ME414-HTML.R, utilizando seu próprio local como [working directory](https://stat.ethz.ch/R-manual/R-devel/library/base/html/getwd.html) no RStudio.
 
@@ -49,7 +67,8 @@ exams2html(myexam, n = 1,solution=TRUE,
 
 Assim, ao criar uma nova questão, você deve incluir um trecho de código como este para que as novas questões adicionadas possam ser facilmente visualizadas.
 
-## Colaboração
+Colaboração
+===========
 
 Colaboradores do projeto podem colaborar basicamente de duas formas:
 
@@ -58,14 +77,16 @@ Colaboradores do projeto podem colaborar basicamente de duas formas:
 
 Especialmente o item 2 é importante em virtude de o conjunto de questões disponível ainda ser muito limitado.
 
-### Criando questões
+Criando questões
+----------------
 
 Há ampla documentação sobre o tema na página do pacote [exams](https://cran.r-project.org/web/packages/exams/index.html). Dois artigos em especial contém exemplos e os recursos básicos do pacote:
 
 * [Automatic Generation of Exams in R](https://cran.r-project.org/web/packages/exams/vignettes/exams.pdf)
 * [Flexible Generation of E-Learning Exams in R: Moodle Quizzes, OLAT Assessments, and Beyond](https://cran.r-project.org/web/packages/exams/vignettes/exams2.pdf)
 
-### Nome das questões
+Nome das questões
+-----------------
 
 O nome da questão criada deve ser dado da seguinte maneira:
 
@@ -83,7 +104,8 @@ Após incluir uma nova questão na subpasta, criar um pdf com todas as questões
 
 Os arquivos .docx do diretório **BancoDeQuestões** possuem questões que estão sendo implementadas. As questões estão separadas por assunto, sendo que no topo de cada assunto possui o nome que deve ser utilizado na questão.
 
-### Acentos
+Acentos
+-------
 
 O pacote exams pode apresentar alguns problemas com acentos. Há três soluções:
 
@@ -100,7 +122,8 @@ O pacote exams pode apresentar alguns problemas com acentos. Há três soluçõe
 exams2pdf("file.Rmd", encoding = "UTF-8", template = "plain8")
 ```
 
-### Rnw or Rmd?
+Rnw or Rmd?
+-----------
 
 Com o pacote exams é possível criar questões tanto em [Sweave](http://www.statistik.lmu.de/~leisch/Sweave/)(.Rnw) quanto em [rmarkdown](http://rmarkdown.rstudio.com/)(Rmd). O Sweave é uma forma de combinar Latex com a linguage R, de forma que codigos e figuras possam ser gerados na linguagem R e embebidos automaticamente no Latex. O rmarkdown, por outro lado, é um pacote mais recente que permite a criaçao de relatórios em [Markdown](https://pt.wikipedia.org/wiki/Markdown), mas que incluem sintaxe em R e em Latex.
 
@@ -110,7 +133,8 @@ Todas as questões disponíveis no repositório, até o momento, foram feitas em
 2. Preview simplificado;
 3. Edição e visualização em tempo real;
 
-#### Rmakrdown
+Rmakrdown
+---------
 
 A seguir um exemplo simples de uma questão, em rmarkdown, compilável pelo pacote exams:
 
@@ -156,10 +180,16 @@ Veja que o arquivo tem um comentário (#) em cada linha, que deve ser retirado p
 O resultado da compilação é como mostrado na figura:
 
 ![alt text](figures/q.png)
+Moodle
+======
 
-## ATENÇÃO
+Os arquivos em formato XML estão na pasta Moodle e podem ser importados diretamente em um banco de questões do Moodle.
+
+ATENÇÃO
+=======
 
 Este banco de questões pode ser utilizado para gerar versões de uma mesma prova. Caso utilize o banco em uma prova, não disponibilizar as questões e soluções para os alunos. Cada aluno deverá revisar a prova individualmente. Isto é necessário pois o banco de questões não é grande o suficiente.
 
-## License
+License
+=======
 MIT ©
