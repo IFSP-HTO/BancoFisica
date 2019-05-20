@@ -4,7 +4,7 @@
 
 ## Introdução
 
-Este é o repositório oficial do banco de questões de Física produzido pelos professores do Câmpus Hortolândia. Todas as questões devem ser programadas utilizando o pacote [exams](https://cran.r-project.org/web/packages/exams/index.html) do R. Nas próximas seções do documento podem ser encontradas instruções de como contribuir com o repositório.
+Este é o repositório oficial do banco de questões de Física produzido pelos professores do IFSP - Câmpus Hortolândia. Todas as questões devem ser programadas utilizando o pacote [exams](https://cran.r-project.org/web/packages/exams/index.html) do R. Nas próximas seções do documento podem ser encontradas instruções de como contribuir com o repositório.
 
 A seguir você encontra a documentação de como utilizar questões prontas na plataforma Moodle e como contribuir para o projeto.
 
@@ -48,5 +48,67 @@ Uma vez baixadas as questões você pode utilizá-las diretamente no Moodle. Mas
 
 ![](.gitbook/assets/importantobanco.gif)
 
-Por fim basta criar um questionário a partir do banco de questões.
+Por fim basta criar um questionário a partir do banco de questões:
+
+![](.gitbook/assets/criandoquestionario.gif)
+
+Os principais detalhes são: no comportamento da questão você deve selecionar o "feekback imediato" e nas opções de revisão você deve desmarcar todos os "feedbacks".
+
+Por fim o comportamento do questionário.
+
+![](.gitbook/assets/exemploquestao.gif)
+
+## Colaboração
+
+Colaboradores do projeto podem colaborar basicamente de duas formas:
+
+1. Correções de questões já criadas;
+2. Criação de novas questões;
+
+Especialmente o item 2 é importante em virtude de o conjunto de questões disponível ainda ser muito limitado.
+
+### Criando questões
+
+Há ampla documentação sobre o tema na página do pacote [exams](https://cran.r-project.org/web/packages/exams/index.html). Dois artigos em especial contém exemplos e os recursos básicos do pacote:
+
+* [Automatic Generation of Exams in R](https://cran.r-project.org/web/packages/exams/vignettes/exams.pdf)
+* [Flexible Generation of E-Learning Exams in R: Moodle Quizzes, OLAT Assessments, and Beyond](https://cran.r-project.org/web/packages/exams/vignettes/exams2.pdf)
+
+### Nome das questões
+
+O nome da questão criada deve ser dado da seguinte maneira:
+
+**Qxx\[Tipo\]Assunto.Rnw**
+
+onde:
+
+**xx**: número sequencial de implementação: 01, 02, 03, etc.
+
+**Assunto**: Nome abreviado do assunto que se trata a questão. Ex: Ondas, Termd \(termodinâmica\), CalorTemp \(Calor e temperatura\), Eletrost \(eletrostática\), etc. Ex: Q15Eletrost.Rnw
+
+**Tipo**: Inserir a palavra Quiz apenas se a questão for de múltipla escolha ou verdadeiro e falso. Ex: Q02QuizOndas.
+
+### Acentos
+
+O pacote exams pode apresentar alguns problemas com acentos. Há três soluções:
+
+1 - Inserir na questão a seguinte linha de código:
+
+```text
+\usepackage[utf8]{inputenc}
+```
+
+2 - Compilar cada questão com:
+
+```text
+exams2pdf("file.Rmd", encoding = "UTF-8", template = "plain8")
+```
+
+## ShinyExams
+
+Nós criamos um addin para o RStudio para facilitar a criação de questões. Você pode encontrar maiores informações no [repositório do pacote](https://github.com/flaviobarros/shinyExams).
+
+## License
+
+GPL-v3
 
