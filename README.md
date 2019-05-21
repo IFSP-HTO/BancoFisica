@@ -58,6 +58,10 @@ Por fim o comportamento do questionário.
 
 ![](.gitbook/assets/exemploquestao.gif)
 
+## Wiki
+
+Mais abaixo fornecemos algumas informações com relação a colaboração mas você pode checar maiores detalhes de como colaborar na nossa [wiki](https://github.com/IFSP-HTO/BancoFisica/wiki). Essa será a principal fonte de documentação do projeto para colaboradores.
+
 ## Colaboração
 
 Colaboradores do projeto podem colaborar basicamente de duas formas:
@@ -76,11 +80,11 @@ Há ampla documentação sobre o tema na página do pacote [exams](https://cran.
 
 #### Pull Request
 
-Faça um fork do repositório, realize as modificações e faça um pull request. Nós analisaremos a submissão e forneceremos feedback se necessário. TOME CUIDADO PARA QUE SUAS CONTRIBUIÇÕES PASSEM  NOS TESTES. ISSO É SUA RESPONSABILIDADE
+Faça um fork do repositório, realize as modificações e faça um pull request. Nós analisaremos a submissão e forneceremos feedback se necessário. TOME CUIDADO PARA QUE SUAS CONTRIBUIÇÕES PASSEM  NOS TESTES. ISSO É SUA RESPONSABILIDADE. 
 
 #### Issues
 
-Nos issues você pode fazer perguntas, sugerir recursos ou reportar problemas.
+Nos issues você pode fazer perguntas, sugerir recursos ou reportar problemas. Sempre que possível utilize os templates disponíveis.
 
 ### Nome das questões
 
@@ -103,7 +107,7 @@ O pacote exams pode apresentar alguns problemas com acentos. Há três soluçõe
 1 - Inserir na questão a seguinte linha de código:
 
 ```text
-\usepackage[utf8]{inputenc}
+    \usepackage[utf8]{inputenc}
 ```
 
 2 - Compilar cada questão com:
