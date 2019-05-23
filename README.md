@@ -107,7 +107,7 @@ O pacote exams pode apresentar alguns problemas com acentos. Há três soluçõe
 1 - Inserir na questão a seguinte linha de código:
 
 ```text
-    \usepackage[utf8]{inputenc}
+\usepackage[utf8]{inputenc}
 ```
 
 2 - Compilar cada questão com:
