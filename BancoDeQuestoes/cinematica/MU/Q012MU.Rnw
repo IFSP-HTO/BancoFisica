@@ -1,11 +1,12 @@
 <<echo=FALSE, results=hide>>=
 ##PROGRAMADO POR: CARLOS SANTANA, em 14 de Maio de 2017.
 ##FONTE: Fuvest
-
+## Parâmetros
 vA <- sample(seq(from=80,to=180,by=5),1)
 vB <- sample(seq(from=80,to=180,by=5),1)
 dist <- sample(seq(from=100,to=900,by=10), 1)
 
+## Resposta
 respa <- abs(vA-vB)
 respb <- ((dist/1000)*abs(vA-vB))
 
