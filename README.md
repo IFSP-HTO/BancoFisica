@@ -120,7 +120,7 @@ exams2pdf("file.Rmd", encoding = "UTF-8", template = "plain8")
 
 Nós criamos um addin para o RStudio para facilitar a criação de questões. Você pode encontrar maiores informações no [repositório do pacote](https://github.com/flaviobarros/shinyExams).
 
-## License
+## Licença
 
 GPL-v3
 
