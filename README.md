@@ -78,7 +78,8 @@ Há ampla documentação sobre o tema na página do pacote [exams](https://cran.
 * [Automatic Generation of Exams in R](https://cran.r-project.org/web/packages/exams/vignettes/exams.pdf)
 * [Flexible Generation of E-Learning Exams in R: Moodle Quizzes, OLAT Assessments, and Beyond](https://cran.r-project.org/web/packages/exams/vignettes/exams2.pdf)
 
-#### Pull Request
+#### Pull Request  
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
 Faça um fork do repositório, realize as modificações e faça um pull request. Nós analisaremos a submissão e forneceremos feedback se necessário. TOME CUIDADO PARA QUE SUAS CONTRIBUIÇÕES PASSEM  NOS TESTES. ISSO É SUA RESPONSABILIDADE. 
 
