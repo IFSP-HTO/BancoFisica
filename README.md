@@ -107,7 +107,7 @@ O pacote exams pode apresentar alguns problemas com acentos. Há três soluçõe
 1 - Inserir na questão a seguinte linha de código:
 
 ```text
-    \usepackage[utf8]{inputenc}
+\usepackage[utf8]{inputenc}
 ```
 
 2 - Compilar cada questão com:
@@ -118,9 +118,9 @@ exams2pdf("file.Rmd", encoding = "UTF-8", template = "plain8")
 
 ## ShinyExams
 
-Nós criamos um addin para o RStudio para facilitar a criação de questões. Você pode encontrar maiores informações no [repositório do pacote](https://github.com/flaviobarros/shinyExams).
+Nós criamos um [addin](https://cran.r-project.org/web/packages/addinslist/README.html) para o RStudio para facilitar a criação de questões. Você pode encontrar maiores informações no [repositório do pacote](https://github.com/flaviobarros/shinyExams).
 
-## License
+## Licença
 
 GPL-v3
 
