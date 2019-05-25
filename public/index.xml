@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DocDock Theme for Hugo on DocDock Documentation</title>
+    <link>/</link>
+    <description>Recent content in DocDock Theme for Hugo on DocDock Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-br</language>
+    <lastBuildDate>Mon, 24 Apr 2017 18:36:24 +0200</lastBuildDate>
+    
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Logo placeholder</title>
+      <link>/content-organisation/logo/</link>
+      <pubDate>Mon, 24 Apr 2017 18:36:24 +0200</pubDate>
+      
+      <guid>/content-organisation/logo/</guid>
+      <description>Create a _header.md page in content folder. Its content is what you get in the logo placeholder (top left of the screen).
+Tip : you can add a image, a combobox with links to other documentation&amp;hellip;. Tip 2 : look at extra static menu if you want to add links to other website in this sidebar </description>
+    </item>
+    
+    <item>
+      <title>Installation</title>
+      <link>/getting-start/installation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/getting-start/installation/</guid>
+      <description>&lt;div class=&#34;alert 
+alert-warning&#34;
+ 
+role=&#34;alert&#34;&gt;HUGO &lt;strong&gt;v0.32&lt;/strong&gt; minimum required to use this theme&lt;/div&gt;
+
+
+&lt;p&gt;The following steps are here to help you initialize your new website. If you don’t know Hugo at all, we strongly suggest you to train by following this &lt;a href=&#34;https://gohugo.io/overview/quickstart/&#34;&gt;great documentation for beginners&lt;/a&gt;.
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Extra menu entries</title>
+      <link>/content-organisation/extramenu/</link>
+      <pubDate>Sat, 29 Apr 2017 18:36:24 +0200</pubDate>
+      
+      <guid>/content-organisation/extramenu/</guid>
+      <description>You can define additional menu entries in the navigation menu without any link to content.
+Edit the website configuration config.toml and add a [[menu.shortcuts]] entry for each link your want to add.
+Example from the current website, note the pre param which allows you to insert HTML code and used here to separate content&amp;rsquo;s menu from this &amp;ldquo;static&amp;rdquo; menu
+[[menu.shortcuts]] pre = &amp;quot;&amp;lt;h3&amp;gt;More&amp;lt;/h3&amp;gt;&amp;quot; name = &amp;quot;&amp;lt;i class=&#39;fa fa-github&#39;&amp;gt;&amp;lt;/i&amp;gt; Github repo&amp;quot; identifier = &amp;quot;ds&amp;quot; url = &amp;quot;https://github.</description>
+    </item>
+    
+    <item>
+      <title>Configuration</title>
+      <link>/getting-start/configuration/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/getting-start/configuration/</guid>
+      <description>&lt;p&gt;When building the website, you can set a theme by using &lt;code&gt;--theme&lt;/code&gt; option. We suggest you to edit your configuration file and set the theme by default. Example with &lt;code&gt;config.toml&lt;/code&gt; format.
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Home page</title>
+      <link>/create-page/homepage/</link>
+      <pubDate>Fri, 28 Apr 2017 18:36:24 +0200</pubDate>
+      
+      <guid>/create-page/homepage/</guid>
+      <description>To tell Hugo-theme-docdock to consider a page as homepage&amp;rsquo;s content, just create a content file named _index.md in content folder.</description>
+    </item>
+    
+    <item>
+      <title>About images</title>
+      <link>/create-page/page-images/</link>
+      <pubDate>Mon, 24 Apr 2017 18:36:24 +0200</pubDate>
+      
+      <guid>/create-page/page-images/</guid>
+      <description> Images have a similar syntax to links but include a preceding exclamation point.
+![agence](https://github.com/vjeantet/vjeantet.fr/raw/master/static/images/sgthon/C.jpg)  Resizing image Add HTTP parameters width and/or height to the link image to resize the image. Values are CSS values (default is auto).
+![Hackathon](https://github.com/vjeantet/vjeantet.fr/raw/master/static/images/sgthon/C.jpg?height=80px)  Add CSS classes Add a HTTP classes parameter to the link image to add CSS classes. shadow and border are available but you could define other ones.
+![s](https://github.com/vjeantet/vjeantet.fr/raw/master/static/images/sgthon/C.jpg?classes=border,shadow)  </description>
+    </item>
+    
+    <item>
+      <title>My Slide ! fullscreen</title>
+      <link>/create-page/myslide/</link>
+      <pubDate>Mon, 24 Apr 2017 18:36:24 +0200</pubDate>
+      
+      <guid>/create-page/myslide/</guid>
+      <description> In the morning Getting up  Turn off alarm Get out of bed  Breakfast  Eat eggs Drink coffee  In the evening Dinner  Eat spaghetti Drink wine  Going to sleep  Get in bed Count sheep  </description>
+    </item>
+    
+    <item>
+      <title>Present a Slide</title>
+      <link>/create-page/page-slide/</link>
+      <pubDate>Mon, 24 Apr 2017 18:36:24 +0200</pubDate>
+      
+      <guid>/create-page/page-slide/</guid>
+      <description>A basic md content page can be rendered as a reveal.js presentation full screen.
+You can, also, embed presentation in a page as a small box, using the revealjs shortcode in your md file. Formating Use your common Markdown syntax you use in Hugo, don&amp;rsquo;t forget, you can put html tags too.
+Special syntax (in html comment) is available for adding attributes to Markdown elements. This is useful for fragments, amongst other things.</description>
+    </item>
+    
+    <item>
+      <title>Hello R Markdown</title>
+      <link>/post/2015-07-23-r-rmarkdown/</link>
+      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
+      
+      <guid>/post/2015-07-23-r-rmarkdown/</guid>
+      <description>R Markdown This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
+You can embed an R code chunk like this:
+summary(cars) ## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>
+    </item>
+    
+    <item>
+      <title>Credits</title>
+      <link>/credits/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/credits/</guid>
+      <description>github contributors .ghContributors{ display:flex; flex-flow: wrap; align-content: flex-start } .ghContributors  div{ width: 50% ; display: inline-flex; margin-bottom: 5px; } .ghContributors  div label{ padding-left: 4px ; } .ghContributors  div span{ font-size: x-small; padding-left: 4px ; }   @vjeantet 247 commits   @matcornic 49 commits   @W-Floyd 24 commits   @Pilskalns 24 commits   @gwleclerc 21 commits   @lierdakil 16 commits   @jose-oc 8 commits   @SiamKreative 6 commits   @Xipas 5 commits   @altinnadmin 4 commits   @FMuro 2 commits   @EnigmaCurry 2 commits   @aral 2 commits   @adamlamar 1 commits   @byzheng 1 commits   @zivbk1 1 commits   @damoon 1 commits   @vielmetti 1 commits   @erikjasiak 1 commits   @giuliov 1 commits   @farmergreg 1 commits   @jodumont 1 commits   @tarpdalton 1 commits   @jamestharpe 1 commits   @JohnBlood 1 commits   @kamilchm 1 commits   @lgfischer 1 commits   @ripienaar 1 commits   @rsanderscybraics 1 commits   @shazic 1 commits   @viertaxa 1 commits   @uweschaefer 1 commits   @wshayes 1 commits   @eyoder 1 commits   @ivan-danilov 1 commits   @justin-yan 1 commits   @karlmacklin 1 commits   @petzi53 1 commits   @remi31000 1 commits   @xxxtonixxx 1 commits   Other contribution  @bep supports and advices   @facette.</description>
+    </item>
+    
+    <item>
+      <title>Disable features</title>
+      <link>/content-organisation/customize-style/disable/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/content-organisation/customize-style/disable/</guid>
+      <description> You can disable feature in docdock by changing some params in config.toml
+hide Next / Prev Chevrons [params] disableNavChevron = true  hide Search box in side menu [params] disableSearch = true  hide the  icon in side bar [params] disableHomeIcon = true  </description>
+    </item>
+    
+    <item>
+      <title>Docdock-built Sites</title>
+      <link>/showcase/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/showcase/</guid>
+      <description> https://invincible.site/ by @shazic https://bitfan.io/ by @vjeantet </description>
+    </item>
+    
+    <item>
+      <title>Theme styles</title>
+      <link>/content-organisation/customize-style/themestyle/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/content-organisation/customize-style/themestyle/</guid>
+      <description> In site configuration file, you can set a subtheme name of this theme to load a specific css.
+add a param themeStyle = &amp;quot;STYLE_NAME&amp;quot; in the [params] part of config.toml file.
+Style &amp;ldquo;original&amp;rdquo; [params] themeStyle = &amp;quot;original&amp;quot;  Style &amp;ldquo;flex&amp;rdquo; (work in progress) [params] themeStyle = &amp;quot;flex&amp;quot;  </description>
+    </item>
+    
+    <item>
+      <title>Theme variants</title>
+      <link>/content-organisation/customize-style/theme-variants/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/content-organisation/customize-style/theme-variants/</guid>
+      <description> In site configuration file, you can set a variant name of this theme to load a specific css, with different color specifications.
+add a param themeVariant = &amp;quot;VARIANT_NAME&amp;quot; in the [params] part of config.toml file.
+Available variants change only colors at this moment Variant &amp;ldquo;gray&amp;rdquo; [params] themeVariant = &amp;quot;gray&amp;quot;  Variant &amp;ldquo;gold&amp;rdquo; [params] themeVariant = &amp;quot;gold&amp;quot;  Variant &amp;ldquo;green&amp;rdquo; [params] themeVariant = &amp;quot;green&amp;quot;`  </description>
+    </item>
+    
+    <item>
+      <title>alert</title>
+      <link>/shortcodes/alert/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/shortcodes/alert/</guid>
+      <description>The alert shortcode allow you to highlight information in your page. They create a colored box surrounding your text, like this:
+This is an alert ! Usage    Parameter Default Description     theme info success, info,warning,danger    Tips : setting only the theme as argument works too : {{%alert warning%}} instead of {{%alert theme=&amp;quot;warning&amp;quot;%}}
+ Basic examples {{% alert theme=&amp;quot;info&amp;quot; %}}**this** is a text{{% /alert %}} {{% alert theme=&amp;quot;success&amp;quot; %}}**Yeahhh !</description>
+    </item>
+    
+    <item>
+      <title>attachments</title>
+      <link>/shortcodes/attachments/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/shortcodes/attachments/</guid>
+      <description>The Attachments shortcode displays a list of files attached to a page. Example :     BachGavotteShort.mp3  (357 kB)   Carroll_AliceAuPaysDesMerveilles.pdf  (175 kB)   adivorciarsetoca00cape.pdf  (361 kB)   hugo.png  (17 kB)   movieselectricsheep-flock-244-32500-2.mp4  (340 kB)    Usage The shortcurt lists files found in a specific folder. Currently, it support two implementations for pages
+ If your page is a markdown file, attachements must be place in a folder named like your page and ending with .</description>
+    </item>
+    
+    <item>
+      <title>button</title>
+      <link>/shortcodes/button/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/shortcodes/button/</guid>
+      <description>Display an actionable button in your page.
+ This is a warning button   Usage    Parameter Default Description     href &amp;rdquo;&amp;rdquo; The location href to link to   align &amp;ldquo;center&amp;rdquo; horizontal align button on page   theme primary default, primary , success,info,warning,danger    The inner text you place in short code will be displayed as the button text</description>
+    </item>
+    
+    <item>
+      <title>excerpt</title>
+      <link>/shortcodes/excerpt/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/shortcodes/excerpt/</guid>
+      <description>The Excerpt shortcode is used to mark a part of a page&amp;rsquo;s content for re-use. Defining an excerpt enables other shortcodes, such as the excerpt-include shortcode, to display the marked content elsewhere.
+You can only define one excerpt per page. In other words, you can only add the Excerpt shortcode once to a page. Usage    Parameter Default Description     hidden &amp;ldquo;false&amp;rdquo; Controls whether the page content contained in the Excerpt shortcode placeholder is displayed on the page.</description>
+    </item>
+    
+    <item>
+      <title>excerpt-include</title>
+      <link>/shortcodes/excerpt-include/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/shortcodes/excerpt-include/</guid>
+      <description>The Excerpt Include shortcode is used to display &amp;lsquo;excerpted&amp;rsquo; (that is, a segment of) content from one page in another. Before you can use this shortcode, the excerpt must have been defined using the Excerpt shortcode. Note that you can have more than one Excerpt Include shortcode on a page (although you can have only one Excerpt shortcode on a page). Usage    Parameter Default Description     filename required Type the filename of the page that contains the excerpt to be displayed.</description>
+    </item>
+    
+    <item>
+      <title>expand</title>
+      <link>/shortcodes/expand/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/shortcodes/expand/</guid>
+      <description>The Expand shortcode displays an expandable/collapsible section of text on your page. Here is an example
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</description>
+    </item>
+    
+    <item>
+      <title>icon</title>
+      <link>/shortcodes/icon/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/shortcodes/icon/</guid>
+      <description>Display an icon like   
+It uses :
+ glyphicons library (bootstrap).more info here fontawesome library more info here  This icon shortcode will display an icon in your page.
+Usage    Parameter Default Description     name required name of icon (see bellow)   size none size of icon, medium, xx-small, x-small, small, large, x-large, xx-large, 11px, 2em, 20%&amp;hellip;.    Tips : setting only the name as argument works too : {{&amp;lt;icon film&amp;gt;}} instead of {{&amp;lt;icon name=&amp;quot;film&amp;quot;&amp;gt;}}</description>
+    </item>
+    
+    <item>
+      <title>mermaid</title>
+      <link>/shortcodes/mermaid/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/shortcodes/mermaid/</guid>
+      <description>Flowchart example   Show code ...   {{&amp;lt;mermaid align=&amp;quot;left&amp;quot;&amp;gt;}} graph LR; A[Hard edge] --&amp;gt;|Link text| B(Round edge) B --&amp;gt; C{Decision} C --&amp;gt;|One| D[Result one] C --&amp;gt;|Two| E[Result two] {{&amp;lt; /mermaid &amp;gt;}}    mermaid.initialize({startOnLoad:true}); graph LR; A[Hard edge] --|Link text| B(Round edge) B -- C{Decision} C --|One| D[Result one] C --|Two| E[Result two] 
+With sub-graphs and some style   Show code...   {{&amp;lt;mermaid align=&amp;quot;left&amp;quot;&amp;gt;}} graph LR; X --&amp;gt; Y linkStyle 0 stroke:#f00,stroke-width:4px; Y --&amp;gt; Z Z --&amp;gt; X linkStyle 1,2 interpolate basis stroke:#0f0,stroke-width:2px; X --&amp;gt; A1 subgraph right A2 --&amp;gt; B2 B2 --&amp;gt; C2 end subgraph left A1 --&amp;gt; B1 B1 --&amp;gt; C1 end C1 --&amp;gt; X Z --&amp;gt; A2 C2 --&amp;gt; Z style Y fill:#f9f,stroke:#333,stroke-width:4px classDef left fill:#ccf,stroke:#f66,stroke-width:2px,stroke-dasharray: 5, 5 class A1,B1,C1 left {{&amp;lt; /mermaid &amp;gt;}}    mermaid.</description>
+    </item>
+    
+    <item>
+      <title>notice</title>
+      <link>/shortcodes/notice/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/shortcodes/notice/</guid>
+      <description>The notice shortcode shows 4 types of disclaimers to help you structure your page.
+Note {{% notice note %}} A notice disclaimer {{% /notice %}}  renders as
+A notice disclaimer
+ Info {{% notice info %}} An information disclaimer {{% /notice %}}  renders as
+An information disclaimer
+ Tip {{% notice tip %}} A tip disclaimer {{% /notice %}}  renders as
+A tip disclaimer
+ Warning {{% notice warning %}} An warning disclaimer {{% /notice %}}  renders as</description>
+    </item>
+    
+    <item>
+      <title>page test</title>
+      <link>/shortcodes/children/test/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/shortcodes/children/test/</guid>
+      <description>This is a test demo child page</description>
+    </item>
+    
+    <item>
+      <title>page test 3</title>
+      <link>/shortcodes/children/children-2/test3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/shortcodes/children/children-2/test3/</guid>
+      <description>This is a test 3 demo child page</description>
+    </item>
+    
+    <item>
+      <title>panel</title>
+      <link>/shortcodes/panel/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/shortcodes/panel/</guid>
+      <description>The panel shortcode Allow you to highlight information or put it in a box. They create a colored box surrounding your text  Usage    Parameter Default Description     header none The title of the panel. If specified, this title will be displayed in its own header row.   footer none the footer of the panel. If specified, this text will be displayed in its own row   theme primary default,primary,info,success,warning,danger    Basic example By default :</description>
+    </item>
+    
+    <item>
+      <title>revealjs</title>
+      <link>/shortcodes/revealjs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/shortcodes/revealjs/</guid>
+      <description>This shortcode will format the enclosed markdow to render it with reveal.js at runtime (client-side)
+Read more on revealjs github repo.
+Usage revealjs can use the following named parameters :
+ theme transition controls progress history center  Important Even if the enclosed content is a mardown, use &amp;lt; shortcode notation instead of the % notation  Content formating and slide delimiters read more on this here
+Demo  # In the morning ___ ## Getting up - Turn off alarm - Get out of bed ___ ## Breakfast - Eat eggs - Drink coffee --- # In the evening ___ ## Dinner - Eat spaghetti - Drink wine ___ ## Going to sleep - Get in bed - Count sheep       function initSlides() { Reveal.</description>
+    </item>
+    
+  </channel>
+</rss>

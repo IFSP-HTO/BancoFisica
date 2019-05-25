@@ -1,0 +1,365 @@
+[
+{
+	"uri": "/content-organisation/logo/",
+	"title": "Logo placeholder",
+	"tags": [],
+	"description": "",
+	"content": "Create a _header.md page in content folder. Its content is what you get in the logo placeholder (top left of the screen).\nTip : you can add a image, a combobox with links to other documentation\u0026hellip;. Tip 2 : look at extra static menu if you want to add links to other website in this sidebar "
+},
+{
+	"uri": "/getting-start/",
+	"title": "Getting started",
+	"tags": [],
+	"description": "",
+	"content": " Requirements Download Hugo binary for your OS (Windows, Linux, Mac) : it’s that simple\n Installation \n  Configuration \n  "
+},
+{
+	"uri": "/getting-start/installation/",
+	"title": "Installation",
+	"tags": [],
+	"description": "",
+	"content": "HUGO v0.32 minimum required to use this theme The following steps are here to help you initialize your new website. If you don’t know Hugo at all, we strongly suggest you to train by following this great documentation for beginners. Installation We assume that all changes to Hugo content and customizations are going to be tracked by git (GitHub, Bitbucket etc.). Develop locally, build on remote system.\nBefore start real work:\n Initialize Hugo Install DocDock theme Configure DocDock and Hugo  Prepare empty Hugo site Create empty directory, which will be root of your Hugo project. Navigate there and let Hugo to create minimal required directory structure:\n$ hugo new site .  AFTER that, initialize this as git directory where to track further changes\n$ git init  Next, there are at least three ways to install DocDock (first recommended):\n As git submodule As git clone As direct copy (from ZIP)  Navigate to your themes folder in your Hugo site and use perform one of following scenarios.\n1. Install DocDock as git submodule DocDock will be added like a dependency repo to original project. When using CI tools like Netlify, Jenkins etc., submodule method is required, or you will get theme not found issues. Same applies when building site on remote server trough SSH.\nIf submodule is no-go, use 3rd option.\nOn your root of Hugo execute:\n$ git submodule add https://github.com/vjeantet/hugo-theme-docdock.git themes/docdock  Next initialize submodule for parent git repo:\n$ git submodule init $ git submodule update  Now you are ready to add content and customize looks. Do not change any file inside theme directory.\nIf you want to freeze changes to DocDock theme itself and use still submodules, fork private copy of DocDock and use that as submodule. When you are ready to update theme, just pull changes from origin to your private fork.\n2. Install DocDock simply as git clone This method results that files are checked out locally, but won\u0026rsquo;t be visible from parent git repo. Probably you will build site locally with hugo command and use result from public/ on your own.\n$ git clone https://github.com/vjeantet/hugo-theme-docdock.git themes/docdock  3. Install DocDock from ZIP All files from theme will be tracked inside parent repo, to update it, have to override files in theme.  download following zip and extract inside themes/.\nhttps://github.com/vjeantet/hugo-theme-docdock/archive/master.zip  Name of theme in next step will be hugo-theme-docdock-master, can rename as you wish.\nConfiguration Follow instructions here\n"
+},
+{
+	"uri": "/content-organisation/extramenu/",
+	"title": "Extra menu entries",
+	"tags": [],
+	"description": "",
+	"content": "You can define additional menu entries in the navigation menu without any link to content.\nEdit the website configuration config.toml and add a [[menu.shortcuts]] entry for each link your want to add.\nExample from the current website, note the pre param which allows you to insert HTML code and used here to separate content\u0026rsquo;s menu from this \u0026ldquo;static\u0026rdquo; menu\n[[menu.shortcuts]] pre = \u0026quot;\u0026lt;h3\u0026gt;More\u0026lt;/h3\u0026gt;\u0026quot; name = \u0026quot;\u0026lt;i class='fa fa-github'\u0026gt;\u0026lt;/i\u0026gt; Github repo\u0026quot; identifier = \u0026quot;ds\u0026quot; url = \u0026quot;https://github.com/vjeantet/hugo-theme-docdock\u0026quot; weight = 1 [[menu.shortcuts]] name = \u0026quot;\u0026lt;i class='fa fa-bookmark'\u0026gt;\u0026lt;/i\u0026gt; Hugo Documentation\u0026quot; identifier = \u0026quot;hugodoc\u0026quot; url = \u0026quot;https://gohugo.io/\u0026quot; weight = 2   Read more about hugo and menu here\n"
+},
+{
+	"uri": "/getting-start/configuration/",
+	"title": "Configuration",
+	"tags": [],
+	"description": "",
+	"content": "When building the website, you can set a theme by using --theme option. We suggest you to edit your configuration file and set the theme by default. Example with config.toml format. Import sample config from sample site to Hugo root:\n$ cp themes/docdock/exampleSite/config.toml .  Change following config.toml line as needed, depending on method above:\ntheme = \u0026quot;\u0026lt;hugo-theme-docdock-dir-name\u0026gt;\u0026quot;  Comment out following line, so default themes/ will be used:\n# themesdir = \u0026quot;../..\u0026quot;  Activate search If not already present, add the follow lines to the config.toml file.\n[outputs] home = [ \u0026#34;HTML\u0026#34;, \u0026#34;RSS\u0026#34;, \u0026#34;JSON\u0026#34;] LUNRJS search index file will be generated on content changes.\n(Bonus) Create empty file .gitkeep inside public/ and add following to .gitignore. This way it will keep repo smaller and won\u0026rsquo;t bring build result files and errors to remote checkout places:\n/public/* !/public/.gitkeep  Preview site $ hugo server  to browse site on http://localhost:1313\nYour website\u0026rsquo;s content Find out how to create and organize your content quickly and intuitively.\n"
+},
+{
+	"uri": "/content-organisation/customize-style/",
+	"title": "Customize website look and feel",
+	"tags": [],
+	"description": "",
+	"content": " You can change the style and behavior of the theme without touching it.\n inject your own html, css or js into the page overide existing css or js with your own files  No needs to copy the entire theme to customize some parts Bellow are solutions to avoid copying the entire theme into your own codebase.\n Add custom CSS and JS or HTML into the \u0026lt;head\u0026gt; part of each page : Create a custom header partial layouts/partials/custom-head.html\n  content/ layouts/  partials/  custom-head.html     write your own content like (an example from @nzbart):\n\u0026lt;link rel=\u0026#34;stylesheet\u0026#34; href=\u0026#34;/css/custom.css\u0026#34;\u0026gt; \u0026lt;script src=\u0026#34;/js/custom.js\u0026#34;\u0026gt;\u0026lt;/script\u0026gt; Then overrode the style your want to change in static/css/custom.css (in this case, to avoid altering the casing of titles):\nh2 { text-transform: none; } And executed some additional JavaScript from static/js/custom.js (note that jQuery is already loaded by the theme):\nfunction tweakPage() { // make some changes here } $(tweakPage) now feel free to add the JS, CSS, HTML code you want :)\nAdd custom HTML at the end of the body part of each page : Create a custom-footer.html into a layouts/partials folder next to the content folder\n  content/ layouts/  partials/  custom-footer.html     now feel free to add the JS, CSS, HTML code you want :)\nOveride existing CSS or JS Create the matching file in your static folder, hugo will use yours instead of the theme\u0026rsquo;s one. Example :\ncreate a theme.css and place it into static/css/ to fully overide docdock\u0026rsquo;s theme.css\n"
+},
+{
+	"uri": "/create-page/",
+	"title": "Create Page",
+	"tags": ["tag1", "tag2"],
+	"description": "",
+	"content": " Hugo-theme-docdock defines two types of pages. Default and Slide.\n Default is the common page like the current one you are reading. Slide is a page that use the full screen to display its markdown content as a reveals.js presentation. HomePage is a special content that will be displayed as home page content.  To tell Hugo-theme-docdock to consider a page as a slide, just add a type=\u0026quot;slide\u0026quot;in then frontmatter of your file.  read more on page as slide\nHugo-theme-docdock provides archetypes to help you create this kind of pages.\nFront Matter Each Hugo page has to define a Front Matter in yaml, toml or json.\nHugo-theme-docdock uses the following parameters on top of the existing ones :\n+++ # Type of content, set \u0026quot;slide\u0026quot; to display it fullscreen with reveal.js type=\u0026quot;page\u0026quot; # Creator's Display name creatordisplayname = \u0026quot;Valere JEANTET\u0026quot; # Creator's Email creatoremail = \u0026quot;valere.jeantet@gmail.com\u0026quot; # LastModifier's Display name lastmodifierdisplayname = \u0026quot;Valere JEANTET\u0026quot; # LastModifier's Email lastmodifieremail = \u0026quot;valere.jeantet@gmail.com\u0026quot; +++  Ordering Hugo provides a flexible way to handle order for your pages.\nThe simplest way is to use weight parameter in the front matter of your page.\n Read more on content organization\n"
+},
+{
+	"uri": "/content-organisation/",
+	"title": "Content Organisation",
+	"tags": [],
+	"description": "",
+	"content": " With Hugo, pages are the core of your site. Organize your site like any other Hugo project. Magic occurs with the nested sections implemention done in v0.22 of hugo (congrats @bep).\nWith docdock, Each content page composes the menu, they shape the structure of your website.\nTo link pages to each other, place them in a folders hierarchy\ncontent ├── level-one │ ├── level-two │ │ ├── level-three │ │ │ ├── level-four │ │ │ │ ├── _index.md │ │ │ │ ├── page-4-a.md │ │ │ │ ├── page-4-b.md │ │ │ │ └── page-4-c.md │ │ │ ├── _index.md │ │ │ ├── page-3-a.md │ │ │ ├── page-3-b.md │ │ │ └── page-3-c.md │ │ ├── _index.md │ │ ├── page-2-a.md │ │ ├── page-2-b.md │ │ └── page-2-c.md │ ├── _index.md │ ├── page-1-a.md │ ├── page-1-b.md │ └── page-1-c.md ├── _index.md └── page-top.md  _index.md is required in each folder, it\u0026rsquo;s your \u0026ldquo;folder home page\u0026rdquo; Add header to a menu entry in the page frontmatter, add a head param to insert any HTML code before the menu entry:\nexample to display a \u0026ldquo;Hello\u0026rdquo;\n+++ title = \u0026quot;Github repo\u0026quot; head =\u0026quot;\u0026lt;label\u0026gt;Hello\u0026lt;/label\u0026gt; \u0026quot; +++  Add icon to a menu entry in the page frontmatter, add a pre param to insert any HTML code before the menu label:\nexample to display a github icon\n+++ title = \u0026quot;Github repo\u0026quot; pre =\u0026quot;\u0026lt;i class='fa fa-github'\u0026gt;\u0026lt;/i\u0026gt; \u0026quot; +++   \" name = \"Github repo\" +++ -- Look at the menu \u0026ldquo;Create Page/About images\u0026rdquo; which redirects to \u0026ldquo;Shortcodes/image -- Order sibling menu/page entries in your frontmatter add weight param with a number to order.\n+++ title=\u0026quot;My page\u0026quot; weight = 4 +++  add ordersectionsby = \u0026quot;title\u0026quot; in your config.toml to order menu entries by title Hide a menu entry in your frontmatter add hidden=true param.\n+++ title=\u0026quot;My page\u0026quot; hidden = true +++  Unfolded menu entry by default One or more menuentries can be displayed unfolded by default. (like the \u0026ldquo;Getting start\u0026rdquo; menu entry in this website)\nin your frontmatter add alwaysopen=true param. example :\ntitle = \u0026quot;Getting start\u0026quot; description = \u0026quot;\u0026quot; weight = 1 alwaysopen = true  Folder structure and file name Content organization is your content folder structure.\nHomepage Find out how to customize homepage\n"
+},
+{
+	"uri": "/shortcodes/",
+	"title": "Shortcodes",
+	"tags": [],
+	"description": "",
+	"content": "A bunch of Shortcodes are available with this theme :\n alert The alert shortcode allows you to highlight information in your page.\n  attachments The Attachments shortcode displays a list of files attached to a page.\n  button Display an actionable button in your page.\n  children List the child pages of a page\n  excerpt The Excerpt shortcode is used to mark a part of a page\u0026#39;s content for re-use.\n  excerpt-include \n  expand Displays an expandable/collapsible section of text on your page\n  icon Display an icon.\n  mermaid \n  notice Disclaimers to help you structure your page\n  panel Allow you to highlight information or put it in a box.\n  revealjs present content as a reveal.js slide\n  "
+},
+{
+	"uri": "/search/",
+	"title": "About the Search Engine",
+	"tags": [],
+	"description": "",
+	"content": " Activate search If not already present, add the follow lines to the config.toml file.\n[outputs] home = [ \u0026#34;HTML\u0026#34;, \u0026#34;RSS\u0026#34;, \u0026#34;JSON\u0026#34;] Docdock theme uses the last improvement available in hugo version 20+ to generate a json index file ready to be consumed by lunr.js javascript search engine.\n hugo generate lunrjs index.json at the root of public folder if the site only has one language or within each language subfolder. When you build the site with hugo server, hugo generates it internally and of course it don\u0026rsquo;t show up in the filesystem "
+},
+{
+	"uri": "/create-page/homepage/",
+	"title": "Home page",
+	"tags": ["tag1", "tag2"],
+	"description": "",
+	"content": "To tell Hugo-theme-docdock to consider a page as homepage\u0026rsquo;s content, just create a content file named _index.md in content folder.\n"
+},
+{
+	"uri": "/create-page/page-images/",
+	"title": "About images",
+	"tags": [],
+	"description": "",
+	"content": " Images have a similar syntax to links but include a preceding exclamation point.\n![agence](https://github.com/vjeantet/vjeantet.fr/raw/master/static/images/sgthon/C.jpg)  Resizing image Add HTTP parameters width and/or height to the link image to resize the image. Values are CSS values (default is auto).\n![Hackathon](https://github.com/vjeantet/vjeantet.fr/raw/master/static/images/sgthon/C.jpg?height=80px)  Add CSS classes Add a HTTP classes parameter to the link image to add CSS classes. shadow and border are available but you could define other ones.\n![s](https://github.com/vjeantet/vjeantet.fr/raw/master/static/images/sgthon/C.jpg?classes=border,shadow)  "
+},
+{
+	"uri": "/create-page/myslide/",
+	"title": "My Slide ! fullscreen",
+	"tags": [],
+	"description": "",
+	"content": " In the morning Getting up  Turn off alarm Get out of bed  Breakfast  Eat eggs Drink coffee  In the evening Dinner  Eat spaghetti Drink wine  Going to sleep  Get in bed Count sheep  "
+},
+{
+	"uri": "/create-page/page-slide/",
+	"title": "Present a Slide",
+	"tags": [],
+	"description": "",
+	"content": " A basic md content page can be rendered as a reveal.js presentation full screen.\nYou can, also, embed presentation in a page as a small box, using the revealjs shortcode in your md file. Formating Use your common Markdown syntax you use in Hugo, don\u0026rsquo;t forget, you can put html tags too.\nSpecial syntax (in html comment) is available for adding attributes to Markdown elements. This is useful for fragments, amongst other things.\n Please read the  doc from hakimel\nOptions In the frontmatter of your page file, set type and revealOptions params\nYour content will be served as a fullscreen revealjs presentation and revealOptions will be used to ajust its behaviour.\n+++ title = \u0026quot;Test slide\u0026quot; type=\u0026quot;slide\u0026quot; theme = \u0026quot;league\u0026quot; [revealOptions] transition= 'concave' controls= true progress= true history= true center= true +++  read more about reveal options here\nSlide Delimiters When creating the content for your slideshow presentation within content markdown file you need to be able to distinguish between one slide and the next. This is achieved very simply using a convention within Markdown that indicates the start of each new slide.\nAs both horizontal and vertical slides are supported by reveal.js each has it\u0026rsquo;s own unique delimiter.\nTo denote the start of a horizontal slide simply add the following delimiter (dashes) in your Markdown:\n---  To denote the start of a vertical slide simply add the following delimiter (underscores) in your Markdown:\n___  By using a combination of horizontal and vertical slides you can customize the navigation within your slideshow presentation. Typically vertical slides are used to present information below a top-level horizontal slide.\nFor example, a very simple slideshow presentation can be created as follows\n+++ title = \u0026quot;test\u0026quot; date = \u0026quot;2017-04-24T18:36:24+02:00\u0026quot; type=\u0026quot;slide\u0026quot; theme = \u0026quot;league\u0026quot; [revealOptions] transition= 'concave' controls= true progress= true history= true center= true +++ # In the morning ___ ## Getting up - Turn off alarm - Get out of bed ___ ## Breakfast - Eat eggs - Drink coffee --- # In the evening ___ ## Dinner - Eat spaghetti - Drink wine ___ ## Going to sleep - Get in bed - Count sheep   click here to view this page rendered\n"
+},
+{
+	"uri": "/post/2015-07-23-r-rmarkdown/",
+	"title": "Hello R Markdown",
+	"tags": ["R Markdown", "plot", "regression"],
+	"description": "",
+	"content": "R Markdown This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.\nYou can embed an R code chunk like this:\nsummary(cars) ## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.:19.0 3rd Qu.: 56.00 ## Max. :25.0 Max. :120.00 fit \u0026lt;- lm(dist ~ speed, data = cars) fit ## ## Call: ## lm(formula = dist ~ speed, data = cars) ## ## Coefficients: ## (Intercept) speed ## -17.579 3.932  Including Plots You can also embed plots. See Figure 1 for example:\npar(mar = c(0, 1, 0, 1)) pie( c(280, 60, 20), c(\u0026#39;Sky\u0026#39;, \u0026#39;Sunny side of pyramid\u0026#39;, \u0026#39;Shady side of pyramid\u0026#39;), col = c(\u0026#39;#0292D8\u0026#39;, \u0026#39;#F7EA39\u0026#39;, \u0026#39;#C4B632\u0026#39;), init.angle = -50, border = NA )  Figure 1: A fancy pie chart.   "
+},
+{
+	"uri": "/categories/",
+	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/credits/",
+	"title": "Credits",
+	"tags": [],
+	"description": "contributors and packages used by hugo-theme-docdock",
+	"content": " github contributors .ghContributors{ display:flex; flex-flow: wrap; align-content: flex-start } .ghContributors  div{ width: 50% ; display: inline-flex; margin-bottom: 5px; } .ghContributors  div label{ padding-left: 4px ; } .ghContributors  div span{ font-size: x-small; padding-left: 4px ; }   @vjeantet 247 commits   @matcornic 49 commits   @W-Floyd 24 commits   @Pilskalns 24 commits   @gwleclerc 21 commits   @lierdakil 16 commits   @jose-oc 8 commits   @SiamKreative 6 commits   @Xipas 5 commits   @altinnadmin 4 commits   @FMuro 2 commits   @EnigmaCurry 2 commits   @aral 2 commits   @adamlamar 1 commits   @byzheng 1 commits   @zivbk1 1 commits   @damoon 1 commits   @vielmetti 1 commits   @erikjasiak 1 commits   @giuliov 1 commits   @farmergreg 1 commits   @jodumont 1 commits   @tarpdalton 1 commits   @jamestharpe 1 commits   @JohnBlood 1 commits   @kamilchm 1 commits   @lgfischer 1 commits   @ripienaar 1 commits   @rsanderscybraics 1 commits   @shazic 1 commits   @viertaxa 1 commits   @uweschaefer 1 commits   @wshayes 1 commits   @eyoder 1 commits   @ivan-danilov 1 commits   @justin-yan 1 commits   @karlmacklin 1 commits   @petzi53 1 commits   @remi31000 1 commits   @xxxtonixxx 1 commits   Other contribution  @bep supports and advices   @facette.io Flex style based on facette documentation theme, Thanks to @vbatoufflet  \nPackages and libraries  Bootstrap - front-end framework mermaid - generation of diagram and flowchart from text in a similar manner as markdown font awesome - the iconic font and CSS framework jQuery - The Write Less, Do More, JavaScript Library lunr - Lunr enables you to provide a great search experience without the need for external, server-side, search services\u0026hellip; JavaScript-autoComplete - An extremely lightweight and powerful vanilla JavaScript completion suggester. clipboard.js - copy text to clipboard highlight.js - Javascript syntax highlighter modernizr - A JavaScript toolkit that allows web developers to use new CSS3 and HTML5 features while maintaining a fine level of control over browsers that don\u0026rsquo;t support reveal-js - The HTML Presentation Framework  Tooling  Netlify - Continuous deployement and hosting of this documentation Hugo    "
+},
+{
+	"uri": "/content-organisation/customize-style/disable/",
+	"title": "Disable features",
+	"tags": [],
+	"description": "",
+	"content": " You can disable feature in docdock by changing some params in config.toml\nhide Next / Prev Chevrons [params] disableNavChevron = true  hide Search box in side menu [params] disableSearch = true  hide the  icon in side bar [params] disableHomeIcon = true  "
+},
+{
+	"uri": "/",
+	"title": "DocDock Theme for Hugo",
+	"tags": [],
+	"description": "",
+	"content": " Hugo docDock theme Hugo-theme-docdock   is a theme for Hugo, a fast and modern static website engine written in Go. Hugo is often used for blogs, this theme is fully designed for documentation.\nThis theme is a partial porting of the Learn theme of matcornic  . and its default style \u0026ldquo;flex\u0026rdquo; comes from facette.io\u0026rsquo;s documentation.\ndocDock works with a \u0026ldquo;page tree structure\u0026rdquo; to organize content : All contents are pages, which belong to other pages. read more about this  Main features  Automatic Search Unlimited menu levels Generate RevealJS presentation from markdown (embededed or fullscreen page) Automatic next/prev buttons to navigate through menu entries Image resizing, shadow\u0026hellip; Attachments files List child pages Excerpt ! Include segment of content from one page in another Mermaid diagram (flowchart, sequence, gantt) Icons, Buttons, Alerts, Panels, Tip/Note/Info/Warning boxes, Expand customizable look and feel, theme style, theme variants  Layout styles This theme comes with two distinctive layout styles: Flex and Original. The main documentation is built with Flex, though available also in Original style\nStyle \u0026ldquo;Flex\u0026rdquo; (default) Style \u0026ldquo;Original\u0026rdquo; Contribute to this documentation Feel free to update this content, just click the Edit this page link displayed on top right of each page, and pullrequest it Your modification will be deployed automatically when merged ! Documentation website This current documentation has been statically generated with Hugo with a simple command : hugo -t docdock \u0026ndash; source code is available here at GitHub  \nAutomated deployments Automatically published and hosted thanks to Netlify.\nRead more about Automated HUGO deployments with Netlify\n Netlify builds, deploys, and hosts frontends.  "
+},
+{
+	"uri": "/showcase/",
+	"title": "Docdock-built Sites",
+	"tags": [],
+	"description": "Hugo-built Sites with docdock theme",
+	"content": " https://invincible.site/ by @shazic https://bitfan.io/ by @vjeantet "
+},
+{
+	"uri": "/tags/plot/",
+	"title": "Plot",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/post/",
+	"title": "Posts",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/categories/r/",
+	"title": "R",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/tags/r-markdown/",
+	"title": "R Markdown",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/tags/regression/",
+	"title": "Regression",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/tags/tag1/",
+	"title": "Tag1",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/tags/tag2/",
+	"title": "Tag2",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/tags/",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/content-organisation/customize-style/themestyle/",
+	"title": "Theme styles",
+	"tags": [],
+	"description": "change theme style",
+	"content": " In site configuration file, you can set a subtheme name of this theme to load a specific css.\nadd a param themeStyle = \u0026quot;STYLE_NAME\u0026quot; in the [params] part of config.toml file.\nStyle \u0026ldquo;original\u0026rdquo; [params] themeStyle = \u0026quot;original\u0026quot;  Style \u0026ldquo;flex\u0026rdquo; (work in progress) [params] themeStyle = \u0026quot;flex\u0026quot;  "
+},
+{
+	"uri": "/content-organisation/customize-style/theme-variants/",
+	"title": "Theme variants",
+	"tags": [],
+	"description": "change theme style/colors",
+	"content": " In site configuration file, you can set a variant name of this theme to load a specific css, with different color specifications.\nadd a param themeVariant = \u0026quot;VARIANT_NAME\u0026quot; in the [params] part of config.toml file.\nAvailable variants change only colors at this moment Variant \u0026ldquo;gray\u0026rdquo; [params] themeVariant = \u0026quot;gray\u0026quot;  Variant \u0026ldquo;gold\u0026rdquo; [params] themeVariant = \u0026quot;gold\u0026quot;  Variant \u0026ldquo;green\u0026rdquo; [params] themeVariant = \u0026quot;green\u0026quot;`  "
+},
+{
+	"uri": "/shortcodes/alert/",
+	"title": "alert",
+	"tags": [],
+	"description": "The alert shortcode allows you to highlight information in your page.",
+	"content": " The alert shortcode allow you to highlight information in your page. They create a colored box surrounding your text, like this:\nThis is an alert ! Usage    Parameter Default Description     theme info success, info,warning,danger    Tips : setting only the theme as argument works too : {{%alert warning%}} instead of {{%alert theme=\u0026quot;warning\u0026quot;%}}\n Basic examples {{% alert theme=\u0026quot;info\u0026quot; %}}**this** is a text{{% /alert %}} {{% alert theme=\u0026quot;success\u0026quot; %}}**Yeahhh !** is a text{{% /alert %}} {{% alert theme=\u0026quot;warning\u0026quot; %}}**Be carefull** is a text{{% /alert %}} {{% alert theme=\u0026quot;danger\u0026quot; %}}**Beware !** is a text{{% /alert %}}  this is an info Yeahhh ! is an success Be carefull is a warning Beware ! is a danger "
+},
+{
+	"uri": "/shortcodes/attachments/",
+	"title": "attachments",
+	"tags": [],
+	"description": "The Attachments shortcode displays a list of files attached to a page.",
+	"content": " The Attachments shortcode displays a list of files attached to a page. Example :     BachGavotteShort.mp3  (357 kB)   Carroll_AliceAuPaysDesMerveilles.pdf  (175 kB)   adivorciarsetoca00cape.pdf  (361 kB)   hugo.png  (17 kB)   movieselectricsheep-flock-244-32500-2.mp4  (340 kB)    Usage The shortcurt lists files found in a specific folder. Currently, it support two implementations for pages\n If your page is a markdown file, attachements must be place in a folder named like your page and ending with .files.\n  content  _index.md page.files  attachment.pdf  page.md    If your page is a folder, attachements must be place in a nested \u0026lsquo;files\u0026rsquo; folder.\n  content  _index.md page  index.md files  attachment.pdf       That\u0026rsquo;s all !\nTip : Look at this documentation source code on github parameters    Parameter Default Description     title \u0026ldquo;Attachments\u0026rdquo; List\u0026rsquo;s title   pattern \u0026rdquo;.*\u0026rdquo; A regular expressions, used to filter the attachments by file name. The pattern parameter value must be regular expressions.\nFor example:\n To match a file suffix of \u0026lsquo;jpg\u0026rsquo;, use .*jpg (not *.jpg). To match file names ending in \u0026lsquo;jpg\u0026rsquo; or \u0026lsquo;png\u0026rsquo;, use .*(jpg|png)       Demo List of attachments ending in pdf or mp4 {{%attachments title=\u0026quot;Related files\u0026quot; pattern=\u0026quot;.*(pdf|mp4)\u0026quot;/%}}  renders as\n  Related files   Carroll_AliceAuPaysDesMerveilles.pdf  (175 kB)   adivorciarsetoca00cape.pdf  (361 kB)   movieselectricsheep-flock-244-32500-2.mp4  (340 kB)   "
+},
+{
+	"uri": "/shortcodes/button/",
+	"title": "button",
+	"tags": [],
+	"description": "Display an actionable button in your page.",
+	"content": " Display an actionable button in your page.\n This is a warning button   Usage    Parameter Default Description     href \u0026rdquo;\u0026rdquo; The location href to link to   align \u0026ldquo;center\u0026rdquo; horizontal align button on page   theme primary default, primary , success,info,warning,danger    The inner text you place in short code will be displayed as the button text\nDemo {{\u0026lt; button href=\u0026quot;https://google.com\u0026quot; \u0026gt;}} go to google {{\u0026lt; /button \u0026gt;}} {{\u0026lt; button href=\u0026quot;https://google.com\u0026quot; theme=\u0026quot;success\u0026quot; \u0026gt;}} Success {{\u0026lt; /button \u0026gt;}} {{\u0026lt; button href=\u0026quot;https://google.com\u0026quot; theme=\u0026quot;info\u0026quot; \u0026gt;}} Info {{\u0026lt; /button \u0026gt;}} {{\u0026lt; button href=\u0026quot;https://google.com\u0026quot; theme=\u0026quot;warning\u0026quot; \u0026gt;}} Warning {{\u0026lt; /button \u0026gt;}} {{\u0026lt; button href=\u0026quot;https://google.com\u0026quot; theme=\u0026quot;danger\u0026quot; \u0026gt;}} Danger ! {{\u0026lt; /button \u0026gt;}} {{\u0026lt; button href=\u0026quot;https://google.com\u0026quot; theme=\u0026quot;default\u0026quot; \u0026gt;}} Danger ! {{\u0026lt; /button \u0026gt;}}   go to google  Success  Info  Warning  Danger !  Danger !  "
+},
+{
+	"uri": "/shortcodes/children/",
+	"title": "children",
+	"tags": [],
+	"description": "List the child pages of a page",
+	"content": " Use the children shortcode to list the child pages of a page and the further descendants (children\u0026rsquo;s children). By default, the shortcode displays links to the child pages.\nUsage    Parameter Default Description     page current Specify the page name (section name) to display children for   style \u0026ldquo;li\u0026rdquo; Choose the style used to display descendants. It could be any HTML tag name, use \u0026ldquo;card\u0026rdquo; to display children pages as cards   showhidden \u0026ldquo;false\u0026rdquo; When true, child pages hidden from the menu will be displayed   description \u0026ldquo;false\u0026rdquo; Allows you to include a short text under each page in the list.when no description exists for the page, children shortcode takes the first 70 words of your content. read more info about summaries on gohugo.io   depth 1 Enter a number to specify the depth of descendants to display. For example, if the value is 2, the shortcode will display 2 levels of child pages. Tips: set 999 to get all descendants    sort none Sort Children By\nWeight - to sort on menu orderName - to sort alphabetically on menu labelIdentifier - to sort alphabetically on identifier set in frontmatterURL - URL    Demo {{% children %}}   page 1   page 2   page 3   page test   {{% children description=\u0026quot;true\u0026quot; %}}   page 1 This is a demo child page\n  page 2 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n  page 3 This is a demo child page\n  page test This is a page test\n  {{% children depth=\u0026quot;3\u0026quot; showhidden=\u0026quot;true\u0026quot; %}}   page 1    page 1-1    page 1-1-1     page 2  \n page test 3    \n page 3   \n page 4   \n page test    \n{{% children style=\u0026quot;h2\u0026quot; depth=\u0026quot;3\u0026quot; description=\u0026quot;true\u0026quot; %}}   page 1 This is a demo child page\n  page 1-1 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n  page 1-1-1 This is a demo child page\n  page 2 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n  page test 3 This is a page test\n  page 3 This is a demo child page\n  page test This is a page test\n  {{% children style=\u0026quot;div\u0026quot; depth=\u0026quot;999\u0026quot; %}}   page 1   page 1-1   page 1-1-1   page 1-1-1-1   page 1-1-1-1-1   page 2   page test 3   page 3   page test   {{% children style=\u0026quot;card\u0026quot; depth=\u0026quot;2\u0026quot; description=\u0026quot;true\u0026quot; %}}   page 1 This is a demo child page\n  page 1-1 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod\n  page 2 \n  page test 3 This is a page test\n  page 3 This is a demo child page\n  page test This is a page test\n  "
+},
+{
+	"uri": "/shortcodes/excerpt/",
+	"title": "excerpt",
+	"tags": [],
+	"description": "The Excerpt shortcode is used to mark a part of a page&#39;s content for re-use.",
+	"content": " The Excerpt shortcode is used to mark a part of a page\u0026rsquo;s content for re-use. Defining an excerpt enables other shortcodes, such as the excerpt-include shortcode, to display the marked content elsewhere.\nYou can only define one excerpt per page. In other words, you can only add the Excerpt shortcode once to a page. Usage    Parameter Default Description     hidden \u0026ldquo;false\u0026rdquo; Controls whether the page content contained in the Excerpt shortcode placeholder is displayed on the page.Note that this option affects only the page that contains the Excerpt shortcode. It does not affect any pages where the content is reused.     Demo {{%excerpt%}} Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation **ullamco** laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in _reprehenderit in voluptate_ cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. {{% /excerpt%}}  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\nSee re use example with excerpt-include shortcode "
+},
+{
+	"uri": "/shortcodes/excerpt-include/",
+	"title": "excerpt-include",
+	"tags": [],
+	"description": "",
+	"content": " The Excerpt Include shortcode is used to display \u0026lsquo;excerpted\u0026rsquo; (that is, a segment of) content from one page in another. Before you can use this shortcode, the excerpt must have been defined using the Excerpt shortcode. Note that you can have more than one Excerpt Include shortcode on a page (although you can have only one Excerpt shortcode on a page). Usage    Parameter Default Description     filename required Type the filename of the page that contains the excerpt to be displayed.Path is relative to the content folder   panel none Determines whether docDock will display a panel around the excerpted content. The panel includes the given panel\u0026rsquo;s value and the border of the panel. By default, the panel and title are not shown.    Demo The paragraph below shows an example of an Excerpt Include shortcode, containing content from an excerpt which we have defined on the Excerpt shortcode page. On the Excerpt Include shortcode below, we have set the options to show both the title of the page and the panel surrounding the content.\n{{%excerpt-include filename=\u0026quot;shortcodes/excerpt.md\u0026quot; panel=\u0026quot;From excerpt page\u0026quot; /%}}  From excerpt page Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.    Don\u0026rsquo;t create an excerpt file in the /layouts/shortcodes/ folder. In this example, shortcodes/filename.md is part of the exampleSite/content folder, and shortcodes is just a path in the /content.\n "
+},
+{
+	"uri": "/shortcodes/expand/",
+	"title": "expand",
+	"tags": [],
+	"description": "Displays an expandable/collapsible section of text on your page",
+	"content": " The Expand shortcode displays an expandable/collapsible section of text on your page. Here is an example\n    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n  Usage this shortcode takes exactly one optional parameter to define the text that appears next to the expand/collapse icon. (default is \u0026ldquo;Expand me\u0026hellip;\u0026rdquo;)\n{{%expand \u0026quot;Is this docdock theme rocks ?\u0026quot; %}}Yes !.{{% /expand%}}    Is this docdock theme rocks ?   Yes !  \nDemo {{%expand%}}Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.{{% /expand%}}      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n \n"
+},
+{
+	"uri": "/shortcodes/icon/",
+	"title": "icon",
+	"tags": [],
+	"description": "Display an icon.",
+	"content": " Display an icon like   \nIt uses :\n glyphicons library (bootstrap).more info here fontawesome library more info here  This icon shortcode will display an icon in your page.\nUsage    Parameter Default Description     name required name of icon (see bellow)   size none size of icon, medium, xx-small, x-small, small, large, x-large, xx-large, 11px, 2em, 20%\u0026hellip;.    Tips : setting only the name as argument works too : {{\u0026lt;icon film\u0026gt;}} instead of {{\u0026lt;icon name=\u0026quot;film\u0026quot;\u0026gt;}}\n Demo {{\u0026lt; icon name=\u0026quot;film\u0026quot; size=\u0026quot;large\u0026quot; \u0026gt;}}   .\nicons available    asterisk   plus   euro   eur   minus   cloud   envelope   pencil   glass   music   search   heart   star   star-empty   user   film   th-large   th   th-list   ok   remove   zoom-in   zoom-out   off   signal   cog   trash   home   file   time   road   download-alt   download   upload   inbox   play-circle   repeat   refresh   list-alt   lock   flag   headphones   volume-off   volume-down   volume-up   qrcode   barcode   tag   tags   book   bookmark   print   camera   font   bold   italic   text-height   text-width   align-left   align-center   align-right   align-justify   list   indent-left   indent-right   facetime-video   picture   map-marker   adjust   tint   edit   share   check   move   step-backward   fast-backward   backward   play   pause   stop   forward   fast-forward   step-forward   eject   chevron-left   chevron-right   plus-sign   minus-sign   remove-sign   ok-sign   question-sign   info-sign   screenshot   remove-circle   ok-circle   ban-circle   arrow-left   arrow-right   arrow-up   arrow-down   share-alt   resize-full   resize-small   exclamation-sign   gift   leaf   fire   eye-open   eye-close   warning-sign   plane   calendar   random   comment   magnet   chevron-up   chevron-down   retweet   shopping-cart   folder-close   folder-open   resize-vertical   resize-horizontal   hdd   bullhorn   bell   certificate   thumbs-up   thumbs-down   hand-right   hand-left   hand-up   hand-down   circle-arrow-right   circle-arrow-left   circle-arrow-up   circle-arrow-down   globe   wrench   tasks   filter   briefcase   fullscreen   dashboard   paperclip   heart-empty   link   phone   pushpin   usd   gbp   sort   sort-by-alphabet   sort-by-alphabet-alt   sort-by-order   sort-by-order-alt   sort-by-attributes   sort-by-attributes-alt   unchecked   expand   collapse-down   collapse-up   log-in   flash   log-out   new-window   record   save   open   saved   import   export   send   floppy-disk   floppy-saved   floppy-remove   floppy-save   floppy-open   credit-card   transfer   cutlery   header   compressed   earphone   phone-alt   tower   stats   sd-video   hd-video   subtitles   sound-stereo   sound-dolby   sound-5-1   sound-6-1   sound-7-1   copyright-mark   registration-mark   cloud-download   cloud-upload   tree-conifer   tree-deciduous   cd   save-file   open-file   level-up   copy   paste   alert   equalizer   king   queen   pawn   bishop   knight   baby-formula   tent   blackboard   bed   apple   erase   hourglass   lamp   duplicate   piggy-bank   scissors   bitcoin   btc   xbt   yen   jpy   ruble   rub   scale   ice-lolly   ice-lolly-tasted   education   option-horizontal   option-vertical   menu-hamburger   modal-window   oil   grain   sunglasses   text-size   text-color   text-background   object-align-top   object-align-bottom   object-align-horizontal   object-align-left   object-align-vertical   object-align-right   triangle-right   triangle-left   triangle-bottom   triangle-top   console   superscript   subscript   menu-left   menu-right   menu-down   menu-up  Web Application Icons    fa-address-book   fa-address-book-o   fa-address-card   fa-address-card-o   fa-adjust   fa-american-sign-language-interpreting   fa-anchor   fa-archive   fa-area-chart   fa-arrows   fa-arrows-h   fa-arrows-v   fa-asl-interpreting (alias)   fa-assistive-listening-systems   fa-asterisk   fa-at   fa-audio-description   fa-automobile (alias)   fa-balance-scale   fa-ban   fa-bank (alias)   fa-bar-chart   fa-bar-chart-o (alias)   fa-barcode   fa-bars   fa-bath   fa-bathtub (alias)   fa-battery (alias)   fa-battery-0 (alias)   fa-battery-1 (alias)   fa-battery-2 (alias)   fa-battery-3 (alias)   fa-battery-4 (alias)   fa-battery-empty   fa-battery-full   fa-battery-half   fa-battery-quarter   fa-battery-three-quarters   fa-bed   fa-beer   fa-bell   fa-bell-o   fa-bell-slash   fa-bell-slash-o   fa-bicycle   fa-binoculars   fa-birthday-cake   fa-blind   fa-bluetooth   fa-bluetooth-b   fa-bolt   fa-bomb   fa-book   fa-bookmark   fa-bookmark-o   fa-braille   fa-briefcase   fa-bug   fa-building   fa-building-o   fa-bullhorn   fa-bullseye   fa-bus   fa-cab (alias)   fa-calculator   fa-calendar   fa-calendar-check-o   fa-calendar-minus-o   fa-calendar-o   fa-calendar-plus-o   fa-calendar-times-o   fa-camera   fa-camera-retro   fa-car   fa-caret-square-o-down   fa-caret-square-o-left   fa-caret-square-o-right   fa-caret-square-o-up   fa-cart-arrow-down   fa-cart-plus   fa-cc   fa-certificate   fa-check   fa-check-circle   fa-check-circle-o   fa-check-square   fa-check-square-o   fa-child   fa-circle   fa-circle-o   fa-circle-o-notch   fa-circle-thin   fa-clock-o   fa-clone   fa-close (alias)   fa-cloud   fa-cloud-download   fa-cloud-upload   fa-code   fa-code-fork   fa-coffee   fa-cog   fa-cogs   fa-comment   fa-comment-o   fa-commenting   fa-commenting-o   fa-comments   fa-comments-o   fa-compass   fa-copyright   fa-creative-commons   fa-credit-card   fa-credit-card-alt   fa-crop   fa-crosshairs   fa-cube   fa-cubes   fa-cutlery   fa-dashboard (alias)   fa-database   fa-deaf   fa-deafness (alias)   fa-desktop   fa-diamond   fa-dot-circle-o   fa-download   fa-drivers-license (alias)   fa-drivers-license-o (alias)   fa-edit (alias)   fa-ellipsis-h   fa-ellipsis-v   fa-envelope   fa-envelope-o   fa-envelope-open   fa-envelope-open-o   fa-envelope-square   fa-eraser   fa-exchange   fa-exclamation   fa-exclamation-circle   fa-exclamation-triangle   fa-external-link   fa-external-link-square   fa-eye   fa-eye-slash   fa-eyedropper   fa-fax   fa-feed (alias)   fa-female   fa-fighter-jet   fa-file-archive-o   fa-file-audio-o   fa-file-code-o   fa-file-excel-o   fa-file-image-o   fa-file-movie-o (alias)   fa-file-pdf-o   fa-file-photo-o (alias)   fa-file-picture-o (alias)   fa-file-powerpoint-o   fa-file-sound-o (alias)   fa-file-video-o   fa-file-word-o   fa-file-zip-o (alias)   fa-film   fa-filter   fa-fire   fa-fire-extinguisher   fa-flag   fa-flag-checkered   fa-flag-o   fa-flash (alias)   fa-flask   fa-folder   fa-folder-o   fa-folder-open   fa-folder-open-o   fa-frown-o   fa-futbol-o   fa-gamepad   fa-gavel   fa-gear (alias)   fa-gears (alias)   fa-gift   fa-glass   fa-globe   fa-graduation-cap   fa-group (alias)   fa-hand-grab-o (alias)   fa-hand-lizard-o   fa-hand-paper-o   fa-hand-peace-o   fa-hand-pointer-o   fa-hand-rock-o   fa-hand-scissors-o   fa-hand-spock-o   fa-hand-stop-o (alias)   fa-handshake-o   fa-hard-of-hearing (alias)   fa-hashtag   fa-hdd-o   fa-headphones   fa-heart   fa-heart-o   fa-heartbeat   fa-history   fa-home   fa-hotel (alias)   fa-hourglass   fa-hourglass-1 (alias)   fa-hourglass-2 (alias)   fa-hourglass-3 (alias)   fa-hourglass-end   fa-hourglass-half   fa-hourglass-o   fa-hourglass-start   fa-i-cursor   fa-id-badge   fa-id-card   fa-id-card-o   fa-image (alias)   fa-inbox   fa-industry   fa-info   fa-info-circle   fa-institution (alias)   fa-key   fa-keyboard-o   fa-language   fa-laptop   fa-leaf   fa-legal (alias)   fa-lemon-o   fa-level-down   fa-level-up   fa-life-bouy (alias)   fa-life-buoy (alias)   fa-life-ring   fa-life-saver (alias)   fa-lightbulb-o   fa-line-chart   fa-location-arrow   fa-lock   fa-low-vision   fa-magic   fa-magnet   fa-mail-forward (alias)   fa-mail-reply (alias)   fa-mail-reply-all (alias)   fa-male   fa-map   fa-map-marker   fa-map-o   fa-map-pin   fa-map-signs   fa-meh-o   fa-microchip   fa-microphone   fa-microphone-slash   fa-minus   fa-minus-circle   fa-minus-square   fa-minus-square-o   fa-mobile   fa-mobile-phone (alias)   fa-money   fa-moon-o   fa-mortar-board (alias)   fa-motorcycle   fa-mouse-pointer   fa-music   fa-navicon (alias)   fa-newspaper-o   fa-object-group   fa-object-ungroup   fa-paint-brush   fa-paper-plane   fa-paper-plane-o   fa-paw   fa-pencil   fa-pencil-square   fa-pencil-square-o   fa-percent   fa-phone   fa-phone-square   fa-photo (alias)   fa-picture-o   fa-pie-chart   fa-plane   fa-plug   fa-plus   fa-plus-circle   fa-plus-square   fa-plus-square-o   fa-podcast   fa-power-off   fa-print   fa-puzzle-piece   fa-qrcode   fa-question   fa-question-circle   fa-question-circle-o   fa-quote-left   fa-quote-right   fa-random   fa-recycle   fa-refresh   fa-registered   fa-remove (alias)   fa-reorder (alias)   fa-reply   fa-reply-all   fa-retweet   fa-road   fa-rocket   fa-rss   fa-rss-square   fa-s15 (alias)   fa-search   fa-search-minus   fa-search-plus   fa-send (alias)   fa-send-o (alias)   fa-server   fa-share   fa-share-alt   fa-share-alt-square   fa-share-square   fa-share-square-o   fa-shield   fa-ship   fa-shopping-bag   fa-shopping-basket   fa-shopping-cart   fa-shower   fa-sign-in   fa-sign-language   fa-sign-out   fa-signal   fa-signing (alias)   fa-sitemap   fa-sliders   fa-smile-o   fa-snowflake-o   fa-soccer-ball-o (alias)   fa-sort   fa-sort-alpha-asc   fa-sort-alpha-desc   fa-sort-amount-asc   fa-sort-amount-desc   fa-sort-asc   fa-sort-desc   fa-sort-down (alias)   fa-sort-numeric-asc   fa-sort-numeric-desc   fa-sort-up (alias)   fa-space-shuttle   fa-spinner   fa-spoon   fa-square   fa-square-o   fa-star   fa-star-half   fa-star-half-empty (alias)   fa-star-half-full (alias)   fa-star-half-o   fa-star-o   fa-sticky-note   fa-sticky-note-o   fa-street-view   fa-suitcase   fa-sun-o   fa-support (alias)   fa-tablet   fa-tachometer   fa-tag   fa-tags   fa-tasks   fa-taxi   fa-television   fa-terminal   fa-thermometer (alias)   fa-thermometer-0 (alias)   fa-thermometer-1 (alias)   fa-thermometer-2 (alias)   fa-thermometer-3 (alias)   fa-thermometer-4 (alias)   fa-thermometer-empty   fa-thermometer-full   fa-thermometer-half   fa-thermometer-quarter   fa-thermometer-three-quarters   fa-thumb-tack   fa-thumbs-down   fa-thumbs-o-down   fa-thumbs-o-up   fa-thumbs-up   fa-ticket   fa-times   fa-times-circle   fa-times-circle-o   fa-times-rectangle (alias)   fa-times-rectangle-o (alias)   fa-tint   fa-toggle-down (alias)   fa-toggle-left (alias)   fa-toggle-off   fa-toggle-on   fa-toggle-right (alias)   fa-toggle-up (alias)   fa-trademark   fa-trash   fa-trash-o   fa-tree   fa-trophy   fa-truck   fa-tty   fa-tv (alias)   fa-umbrella   fa-universal-access   fa-university   fa-unlock   fa-unlock-alt   fa-unsorted (alias)   fa-upload   fa-user   fa-user-circle   fa-user-circle-o   fa-user-o   fa-user-plus   fa-user-secret   fa-user-times   fa-users   fa-vcard (alias)   fa-vcard-o (alias)   fa-video-camera   fa-volume-control-phone   fa-volume-down   fa-volume-off   fa-volume-up   fa-warning (alias)   fa-wheelchair   fa-wheelchair-alt   fa-wifi   fa-window-close   fa-window-close-o   fa-window-maximize   fa-window-minimize   fa-window-restore   fa-wrench  Accessibility Icons    fa-american-sign-language-interpreting   fa-asl-interpreting (alias)   fa-assistive-listening-systems   fa-audio-description   fa-blind   fa-braille   fa-cc   fa-deaf   fa-deafness (alias)   fa-hard-of-hearing (alias)   fa-low-vision   fa-question-circle-o   fa-sign-language   fa-signing (alias)   fa-tty   fa-universal-access   fa-volume-control-phone   fa-wheelchair   fa-wheelchair-alt  Hand Icons    fa-hand-grab-o (alias)   fa-hand-lizard-o   fa-hand-o-down   fa-hand-o-left   fa-hand-o-right   fa-hand-o-up   fa-hand-paper-o   fa-hand-peace-o   fa-hand-pointer-o   fa-hand-rock-o   fa-hand-scissors-o   fa-hand-spock-o   fa-hand-stop-o (alias)   fa-thumbs-down   fa-thumbs-o-down   fa-thumbs-o-up   fa-thumbs-up  Transportation Icons    fa-ambulance   fa-automobile (alias)   fa-bicycle   fa-bus   fa-cab (alias)   fa-car   fa-fighter-jet   fa-motorcycle   fa-plane   fa-rocket   fa-ship   fa-space-shuttle   fa-subway   fa-taxi   fa-train   fa-truck   fa-wheelchair   fa-wheelchair-alt  Gender Icons    fa-genderless   fa-intersex (alias)   fa-mars   fa-mars-double   fa-mars-stroke   fa-mars-stroke-h   fa-mars-stroke-v   fa-mercury   fa-neuter   fa-transgender   fa-transgender-alt   fa-venus   fa-venus-double   fa-venus-mars  File Type Icons    fa-file   fa-file-archive-o   fa-file-audio-o   fa-file-code-o   fa-file-excel-o   fa-file-image-o   fa-file-movie-o (alias)   fa-file-o   fa-file-pdf-o   fa-file-photo-o (alias)   fa-file-picture-o (alias)   fa-file-powerpoint-o   fa-file-sound-o (alias)   fa-file-text   fa-file-text-o   fa-file-video-o   fa-file-word-o   fa-file-zip-o (alias)  Spinner Icons    fa-circle-o-notch   fa-cog   fa-gear (alias)   fa-refresh   fa-spinner  Form Control Icons    fa-check-square   fa-check-square-o   fa-circle   fa-circle-o   fa-dot-circle-o   fa-minus-square   fa-minus-square-o   fa-plus-square   fa-plus-square-o   fa-square   fa-square-o  Payment Icons    fa-cc-amex   fa-cc-diners-club   fa-cc-discover   fa-cc-jcb   fa-cc-mastercard   fa-cc-paypal   fa-cc-stripe   fa-cc-visa   fa-credit-card   fa-credit-card-alt   fa-google-wallet   fa-paypal  Chart Icons    fa-area-chart   fa-bar-chart   fa-bar-chart-o (alias)   fa-line-chart   fa-pie-chart  Currency Icons    fa-bitcoin (alias)   fa-btc   fa-cny (alias)   fa-dollar (alias)   fa-eur   fa-euro (alias)   fa-gbp   fa-gg   fa-gg-circle   fa-ils   fa-inr   fa-jpy   fa-krw   fa-money   fa-rmb (alias)   fa-rouble (alias)   fa-rub   fa-ruble (alias)   fa-rupee (alias)   fa-shekel (alias)   fa-sheqel (alias)   fa-try   fa-turkish-lira (alias)   fa-usd   fa-won (alias)   fa-yen (alias)  Text Editor Icons    fa-align-center   fa-align-justify   fa-align-left   fa-align-right   fa-bold   fa-chain (alias)   fa-chain-broken   fa-clipboard   fa-columns   fa-copy (alias)   fa-cut (alias)   fa-dedent (alias)   fa-eraser   fa-file   fa-file-o   fa-file-text   fa-file-text-o   fa-files-o   fa-floppy-o   fa-font   fa-header   fa-indent   fa-italic   fa-link   fa-list   fa-list-alt   fa-list-ol   fa-list-ul   fa-outdent   fa-paperclip   fa-paragraph   fa-paste (alias)   fa-repeat   fa-rotate-left (alias)   fa-rotate-right (alias)   fa-save (alias)   fa-scissors   fa-strikethrough   fa-subscript   fa-superscript   fa-table   fa-text-height   fa-text-width   fa-th   fa-th-large   fa-th-list   fa-underline   fa-undo   fa-unlink (alias)  Directional Icons    fa-angle-double-down   fa-angle-double-left   fa-angle-double-right   fa-angle-double-up   fa-angle-down   fa-angle-left   fa-angle-right   fa-angle-up   fa-arrow-circle-down   fa-arrow-circle-left   fa-arrow-circle-o-down   fa-arrow-circle-o-left   fa-arrow-circle-o-right   fa-arrow-circle-o-up   fa-arrow-circle-right   fa-arrow-circle-up   fa-arrow-down   fa-arrow-left   fa-arrow-right   fa-arrow-up   fa-arrows   fa-arrows-alt   fa-arrows-h   fa-arrows-v   fa-caret-down   fa-caret-left   fa-caret-right   fa-caret-square-o-down   fa-caret-square-o-left   fa-caret-square-o-right   fa-caret-square-o-up   fa-caret-up   fa-chevron-circle-down   fa-chevron-circle-left   fa-chevron-circle-right   fa-chevron-circle-up   fa-chevron-down   fa-chevron-left   fa-chevron-right   fa-chevron-up   fa-exchange   fa-hand-o-down   fa-hand-o-left   fa-hand-o-right   fa-hand-o-up   fa-long-arrow-down   fa-long-arrow-left   fa-long-arrow-right   fa-long-arrow-up   fa-toggle-down (alias)   fa-toggle-left (alias)   fa-toggle-right (alias)   fa-toggle-up (alias)  Video Player Icons    fa-arrows-alt   fa-backward   fa-compress   fa-eject   fa-expand   fa-fast-backward   fa-fast-forward   fa-forward   fa-pause   fa-pause-circle   fa-pause-circle-o   fa-play   fa-play-circle   fa-play-circle-o   fa-random   fa-step-backward   fa-step-forward   fa-stop   fa-stop-circle   fa-stop-circle-o   fa-youtube-play  Brand Icons    fa-500px   fa-adn   fa-amazon   fa-android   fa-angellist   fa-apple   fa-bandcamp   fa-behance   fa-behance-square   fa-bitbucket   fa-bitbucket-square   fa-bitcoin (alias)   fa-black-tie   fa-bluetooth   fa-bluetooth-b   fa-btc   fa-buysellads   fa-cc-amex   fa-cc-diners-club   fa-cc-discover   fa-cc-jcb   fa-cc-mastercard   fa-cc-paypal   fa-cc-stripe   fa-cc-visa   fa-chrome   fa-codepen   fa-codiepie   fa-connectdevelop   fa-contao   fa-css3   fa-dashcube   fa-delicious   fa-deviantart   fa-digg   fa-dribbble   fa-dropbox   fa-drupal   fa-edge   fa-eercast   fa-empire   fa-envira   fa-etsy   fa-expeditedssl   fa-fa (alias)   fa-facebook   fa-facebook-f (alias)   fa-facebook-official   fa-facebook-square   fa-firefox   fa-first-order   fa-flickr   fa-font-awesome   fa-fonticons   fa-fort-awesome   fa-forumbee   fa-foursquare   fa-free-code-camp   fa-ge (alias)   fa-get-pocket   fa-gg   fa-gg-circle   fa-git   fa-git-square   fa-github   fa-github-alt   fa-github-square   fa-gitlab   fa-gittip (alias)   fa-glide   fa-glide-g   fa-google   fa-google-plus   fa-google-plus-circle (alias)   fa-google-plus-official   fa-google-plus-square   fa-google-wallet   fa-gratipay   fa-grav   fa-hacker-news   fa-houzz   fa-html5   fa-imdb   fa-instagram   fa-internet-explorer   fa-ioxhost   fa-joomla   fa-jsfiddle   fa-lastfm   fa-lastfm-square   fa-leanpub   fa-linkedin   fa-linkedin-square   fa-linode   fa-linux   fa-maxcdn   fa-meanpath   fa-medium   fa-meetup   fa-mixcloud   fa-modx   fa-odnoklassniki   fa-odnoklassniki-square   fa-opencart   fa-openid   fa-opera   fa-optin-monster   fa-pagelines   fa-paypal   fa-pied-piper   fa-pied-piper-alt   fa-pied-piper-pp   fa-pinterest   fa-pinterest-p   fa-pinterest-square   fa-product-hunt   fa-qq   fa-quora   fa-ra (alias)   fa-ravelry   fa-rebel   fa-reddit   fa-reddit-alien   fa-reddit-square   fa-renren   fa-resistance (alias)   fa-safari   fa-scribd   fa-sellsy   fa-share-alt   fa-share-alt-square   fa-shirtsinbulk   fa-simplybuilt   fa-skyatlas   fa-skype   fa-slack   fa-slideshare   fa-snapchat   fa-snapchat-ghost   fa-snapchat-square   fa-soundcloud   fa-spotify   fa-stack-exchange   fa-stack-overflow   fa-steam   fa-steam-square   fa-stumbleupon   fa-stumbleupon-circle   fa-superpowers   fa-telegram   fa-tencent-weibo   fa-themeisle   fa-trello   fa-tripadvisor   fa-tumblr   fa-tumblr-square   fa-twitch   fa-twitter   fa-twitter-square   fa-usb   fa-viacoin   fa-viadeo   fa-viadeo-square   fa-vimeo   fa-vimeo-square   fa-vine   fa-vk   fa-wechat (alias)   fa-weibo   fa-weixin   fa-whatsapp   fa-wikipedia-w   fa-windows   fa-wordpress   fa-wpbeginner   fa-wpexplorer   fa-wpforms   fa-xing   fa-xing-square   fa-y-combinator   fa-y-combinator-square (alias)   fa-yahoo   fa-yc (alias)   fa-yc-square (alias)   fa-yelp   fa-yoast   fa-youtube   fa-youtube-play   fa-youtube-square  "
+},
+{
+	"uri": "/shortcodes/mermaid/",
+	"title": "mermaid",
+	"tags": [],
+	"description": "",
+	"content": " Flowchart example   Show code ...   {{\u0026lt;mermaid align=\u0026quot;left\u0026quot;\u0026gt;}} graph LR; A[Hard edge] --\u0026gt;|Link text| B(Round edge) B --\u0026gt; C{Decision} C --\u0026gt;|One| D[Result one] C --\u0026gt;|Two| E[Result two] {{\u0026lt; /mermaid \u0026gt;}}    mermaid.initialize({startOnLoad:true}); graph LR; A[Hard edge] --|Link text| B(Round edge) B -- C{Decision} C --|One| D[Result one] C --|Two| E[Result two] \nWith sub-graphs and some style   Show code...   {{\u0026lt;mermaid align=\u0026quot;left\u0026quot;\u0026gt;}} graph LR; X --\u0026gt; Y linkStyle 0 stroke:#f00,stroke-width:4px; Y --\u0026gt; Z Z --\u0026gt; X linkStyle 1,2 interpolate basis stroke:#0f0,stroke-width:2px; X --\u0026gt; A1 subgraph right A2 --\u0026gt; B2 B2 --\u0026gt; C2 end subgraph left A1 --\u0026gt; B1 B1 --\u0026gt; C1 end C1 --\u0026gt; X Z --\u0026gt; A2 C2 --\u0026gt; Z style Y fill:#f9f,stroke:#333,stroke-width:4px classDef left fill:#ccf,stroke:#f66,stroke-width:2px,stroke-dasharray: 5, 5 class A1,B1,C1 left {{\u0026lt; /mermaid \u0026gt;}}    mermaid.initialize({startOnLoad:true}); graph LR; X -- Y linkStyle 0 stroke:#f00,stroke-width:4px; Y -- Z Z -- X linkStyle 1,2 interpolate basis stroke:#0f0,stroke-width:2px; X -- A1 subgraph right A2 -- B2 B2 -- C2 end subgraph left A1 -- B1 B1 -- C1 end C1 -- X Z -- A2 C2 -- Z style Y fill:#f9f,stroke:#333,stroke-width:4px classDef left fill:#ccf,stroke:#f66,stroke-width:2px,stroke-dasharray: 5, 5 class A1,B1,C1 left \nSequence example   Show code ...   {{\u0026lt;mermaid\u0026gt;}} sequenceDiagram participant Alice participant Bob Alice-\u0026gt;\u0026gt;John: Hello John, how are you? loop Healthcheck John-\u0026gt;John: Fight against hypochondria end Note right of John: Rational thoughts \u0026lt;br/\u0026gt;prevail... John--\u0026gt;Alice: Great! John-\u0026gt;Bob: How about you? Bob--\u0026gt;John: Jolly good! {{\u0026lt; /mermaid \u0026gt;}}   \nmermaid.initialize({startOnLoad:true}); sequenceDiagram participant Alice participant Bob Alice-John: Hello John, how are you? loop Healthcheck John-John: Fight against hypochondria end Note right of John: Rational thoughts prevail... John--Alice: Great! John-Bob: How about you? Bob--John: Jolly good! \nGANTT Example   Show code ...   {{\u0026lt;mermaid\u0026gt;}} gantt dateFormat YYYY-MM-DD title Adding GANTT diagram functionality to mermaid section A section Completed task :done, des1, 2014-01-06,2014-01-08 Active task :active, des2, 2014-01-09, 3d Future task : des3, after des2, 5d Future task2 : des4, after des3, 5d section Critical tasks Completed task in the critical line :crit, done, 2014-01-06,24h Implement parser and jison :crit, done, after des1, 2d Create tests for parser :crit, active, 3d Future task in critical line :crit, 5d Create tests for renderer :2d Add to mermaid :1d {{\u0026lt; /mermaid \u0026gt;}}   \nmermaid.initialize({startOnLoad:true}); gantt dateFormat YYYY-MM-DD title Adding GANTT diagram functionality to mermaid section A section Completed task :done, des1, 2014-01-06,2014-01-08 Active task :active, des2, 2014-01-09, 3d Future task : des3, after des2, 5d Future task2 : des4, after des3, 5d section Critical tasks Completed task in the critical line :crit, done, 2014-01-06,24h Implement parser and jison :crit, done, after des1, 2d Create tests for parser :crit, active, 3d Future task in critical line :crit, 5d Create tests for renderer :2d Add to mermaid :1d \n"
+},
+{
+	"uri": "/shortcodes/notice/",
+	"title": "notice",
+	"tags": [],
+	"description": "Disclaimers to help you structure your page",
+	"content": " The notice shortcode shows 4 types of disclaimers to help you structure your page.\nNote {{% notice note %}} A notice disclaimer {{% /notice %}}  renders as\nA notice disclaimer\n Info {{% notice info %}} An information disclaimer {{% /notice %}}  renders as\nAn information disclaimer\n Tip {{% notice tip %}} A tip disclaimer {{% /notice %}}  renders as\nA tip disclaimer\n Warning {{% notice warning %}} An warning disclaimer {{% /notice %}}  renders as\nAn warning disclaimer\n "
+},
+{
+	"uri": "/shortcodes/children/children-1/",
+	"title": "page 1",
+	"tags": [],
+	"description": "This is a demo child page",
+	"content": "This is a demo child page\n"
+},
+{
+	"uri": "/shortcodes/children/children-1/children-1-1/",
+	"title": "page 1-1",
+	"tags": [],
+	"description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod",
+	"content": "This is a demo child page\n"
+},
+{
+	"uri": "/shortcodes/children/children-1/children-1-1/children-1-1-1/",
+	"title": "page 1-1-1",
+	"tags": [],
+	"description": "This is a demo child page",
+	"content": "This is a demo child page\n"
+},
+{
+	"uri": "/shortcodes/children/children-1/children-1-1/children-1-1-1/children-1-1-1-1/",
+	"title": "page 1-1-1-1",
+	"tags": [],
+	"description": "This is a demo child page",
+	"content": "This is a demo child page\n"
+},
+{
+	"uri": "/shortcodes/children/children-1/children-1-1/children-1-1-1/children-1-1-1-1/children-1-1-1-1-1/",
+	"title": "page 1-1-1-1-1",
+	"tags": [],
+	"description": "This is a demo child page",
+	"content": "This is a demo child page\n"
+},
+{
+	"uri": "/shortcodes/children/children-2/",
+	"title": "page 2",
+	"tags": [],
+	"description": "",
+	"content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n"
+},
+{
+	"uri": "/shortcodes/children/children-3/",
+	"title": "page 3",
+	"tags": [],
+	"description": "This is a demo child page",
+	"content": "This is a demo child page\n"
+},
+{
+	"uri": "/shortcodes/children/children-4/",
+	"title": "page 4",
+	"tags": [],
+	"description": "This is a demo child page",
+	"content": "This is a demo child page, not displayed in the menu\n"
+},
+{
+	"uri": "/shortcodes/children/test/",
+	"title": "page test",
+	"tags": [],
+	"description": "This is a page test",
+	"content": "This is a test demo child page\n"
+},
+{
+	"uri": "/shortcodes/children/children-2/test3/",
+	"title": "page test 3",
+	"tags": [],
+	"description": "This is a page test",
+	"content": "This is a test 3 demo child page\n"
+},
+{
+	"uri": "/shortcodes/panel/",
+	"title": "panel",
+	"tags": [],
+	"description": "Allow you to highlight information or put it in a box.",
+	"content": " The panel shortcode Allow you to highlight information or put it in a box. They create a colored box surrounding your text  Usage    Parameter Default Description     header none The title of the panel. If specified, this title will be displayed in its own header row.   footer none the footer of the panel. If specified, this text will be displayed in its own row   theme primary default,primary,info,success,warning,danger    Basic example By default :\n{{% panel %}}this is a panel text{{% /panel %}}  this is a panel text  Panel with heading Easily add a heading container to your panel with header parameter. You may apply any theme.\n{{% panel theme=\u0026quot;danger\u0026quot; header=\u0026quot;panel title\u0026quot; %}}this is a panel text{{% /panel %}}  panel title this is a panel text  {{% panel theme=\u0026quot;success\u0026quot; header=\u0026quot;panel title\u0026quot; %}}this is a panel text{{% /panel %}}  panel title this is a panel text  Panel with footer Wrap a secondary text in footer.\n{{% panel footer=\u0026quot;panel footer\u0026quot; %}}Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.{{% /panel %}}  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n panel footer  Themes Success theme this is a panel text  default theme this is a panel text  primary theme this is a panel text  info theme this is a panel text  warning theme this is a panel text  danger theme this is a panel text  "
+},
+{
+	"uri": "/shortcodes/revealjs/",
+	"title": "revealjs",
+	"tags": [],
+	"description": "present content as a reveal.js slide",
+	"content": " This shortcode will format the enclosed markdow to render it with reveal.js at runtime (client-side)\nRead more on revealjs github repo.\nUsage revealjs can use the following named parameters :\n theme transition controls progress history center  Important Even if the enclosed content is a mardown, use \u0026lt; shortcode notation instead of the % notation  Content formating and slide delimiters read more on this here\nDemo  # In the morning ___ ## Getting up - Turn off alarm - Get out of bed ___ ## Breakfast - Eat eggs - Drink coffee --- # In the evening ___ ## Dinner - Eat spaghetti - Drink wine ___ ## Going to sleep - Get in bed - Count sheep       function initSlides() { Reveal.initialize({ embedded : true, controls : false, center: true ,\thistory: false , progress: \"true\" , transition: \"concave\", dependencies: [ { src: '\\/revealjs\\/lib\\/js\\/classList.js\"', condition: function() { return !document.body.classList; } }, { src: '\\/revealjs\\/plugin\\/markdown\\/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } }, { src: '\\/revealjs\\/plugin\\/markdown\\/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } }, { src: '\\/revealjs\\/plugin\\/highlight\\/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }, { src: '\\/revealjs\\/plugin\\/zoom-js\\/zoom.js', async: true, condition: function() { return !!document.body.classList; } }, { src: '\\/revealjs\\/plugin\\/notes\\/notes.js', async: true, condition: function() { return !!document.body.classList; } } ] }); }   See it fullscreen var toto = document.getElementById('slideContent').innerHTML document.getElementById('slideFrame').contentWindow.document.write(document.getElementById('slideContent').innerHTML); document.getElementById('slideContent').remove(); document.addEventListener(\"DOMContentLoaded\",function(){ setTimeout(function () { document.getElementById('slideFrame').contentWindow.initSlides() ; }, 2000); }); function slideFullScreen() { document.open(); document.write(toto); document.close(); initSlides() }  Source :   Show code ...   {{\u0026lt;revealjs theme=\u0026quot;moon\u0026quot; progress=\u0026quot;true\u0026quot;\u0026gt;}} # In the morning ___ ## Getting up - Turn off alarm - Get out of bed ___ ## Breakfast - Eat eggs - Drink coffee --- # In the evening ___ ## Dinner - Eat spaghetti - Drink wine ___ ## Going to sleep - Get in bed - Count sheep {{\u0026lt;revealjs\u0026gt;}}   \n  click here to view raw content  "
+}]
