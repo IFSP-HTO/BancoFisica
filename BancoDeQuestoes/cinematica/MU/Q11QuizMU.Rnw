@@ -25,27 +25,20 @@ solutions <- logical(5)
   questions[aleat[5]] <- resp-0.1
   solutions[aleat[5]] <- FALSE
 @
-
-
+\usepackage[utf8]{inputenc}
 \begin{question}
-  (Unitau) Um autom\'ovel percorre uma estrada
-com funç\~ao hor\'aria s=-\Sexpr{dist}+80t, onde s \'e dado em
-km e t em horas. O automóvel passa pelo km zero
-ap\'os:
+Um automóvel percorre uma estrada com função horária s=-\Sexpr{dist}+80t, onde s é dado em km e t em horas. O automóvel passa pelo km zero após:
 
 <<echo=FALSE, results=hide, results=tex>>=
 answerlist(questions)           
 @
-
 \end{question}
-
 
 \begin{solution}
 <<echo=FALSE, results=hide, results=tex>>=
 answerlist(
   paste("\\textbf{", ifelse(solutions, "Verdadeiro", "Falso"), "}"))
 @
-
 \end{solution}
 
 %% META-INFORMATION
