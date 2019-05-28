@@ -273,11 +273,10 @@ myexam <- dir("./BancoDeQuestoes/cinematica/MU", pattern = ".rnw", ignore.case=T
 
 ## Gerando HTML com o arquivo da questao
 set.seed(12018)
-exams2html(myexam, n = 1,solution=TRUE, converter = 'pandoc',
-
+exams2html(myexam, n = 1,solution=TRUE, mathjax = TRUE,
   encoding = "UTF-8",
   edir = "./BancoDeQuestoes/cinematica/MU",
-  template = "templates/plain.html")
+  template = "plain8.html")
 
 ################## estatica corpo extenso ####################
 ## Definindo a pasta com as questoes do exame
