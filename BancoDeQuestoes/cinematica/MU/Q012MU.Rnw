@@ -1,24 +1,23 @@
 <<echo=FALSE, results=hide>>=
 ##PROGRAMADO POR: CARLOS SANTANA, em 14 de Maio de 2017.
 ##FONTE: Fuvest
-
+## Parâmetros
 vA <- sample(seq(from=80,to=180,by=5),1)
 vB <- sample(seq(from=80,to=180,by=5),1)
 dist <- sample(seq(from=100,to=900,by=10), 1)
 
+## Resposta
 respa <- abs(vA-vB)
-respb <- ((dist/1000)*abs(vA-vB))
-
+respb <- round((dist/1000)/abs(vA-vB),2)
 @
-
+\usepackage[utf8]{inputenc}
 \begin{question}
-
-(Fuvest) Dois carros, A e B, movem-se no mesmo sentido, em uma estrada reta, com velocidades constantes $V_A=\Sexpr{vA}$ km/h e $V_B=\Sexpr{vB }$ km/h, respectivamente.
+Dois carros, A e B, movem-se no mesmo sentido, em uma estrada reta, com velocidades constantes $V_A=\Sexpr{vA}$ km/h e $V_B=\Sexpr{vB }$ km/h, respectivamente.
 \begin{answerlist}
 
 \item Qual é, em módulo, a velocidade do carro B em relação a um observador no carro A?
 
-\item Em um dado instante, o carro B está \Sexpr{dist} m à frente do carro A. Quanto tempo, em horas(decimais), decorre até que A alcance B?
+\item Em um dado instante, o carro B está \Sexpr{dist} m à frente do carro A. Quanto tempo, em horas(decimais), decorre até que A alcance B? OBS: utilize duas decimais na resposta.
 \end{answerlist}
 
 

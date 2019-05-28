@@ -1,12 +1,13 @@
 <<echo=FALSE, results=hide>>=
 #Marcelo C.
-
 d <- sample(seq(from=15,to=360,by=15),1)
-
-result <- round(d/150*60,2)
+v1 <- sample(seq(10,90,5),1)
+v2 <- sample(seq(10,80,5),1)
+result <- round((d/(v1+v2))*60,2)
 @
+\usepackage[utf8]{inputenc}
 \begin{question}
-(UTESC-SC) A dist\^ancia entre dois carros \'e de $\Sexpr{d}$ km. Se eles andam um ao encontro do outro com 60 km/h e 90 km/h, ao fim de quantos minutos eles dever\~ao se encontrar? \textit{Arredonde sua resposta final para 1 decimal caso necess\'ario.}
+A distância entre dois carros é de $\Sexpr{d}$ km. Se eles andam um ao encontro do outro com \Sexpr{v1} km/h e \Sexpr{v2} km/h, ao fim de quantos minutos eles deverão se encontrar? \textit{Arredonde sua resposta final para 1 decimal caso necessário.}
 
 \end{question}
 
