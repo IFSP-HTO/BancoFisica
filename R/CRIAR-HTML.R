@@ -41,7 +41,7 @@ myexam <- dir("./BancoDeQuestoes/dilatterm/", pattern = ".rnw", ignore.case=TRUE
 
 ## Gerando HTML com o arquivo da questao
 set.seed(12018)
-exams2html(myexam, n = 1,solution=TRUE,
+exams2html(myexam, n = 1, solution=TRUE, mathjax = TRUE,
            encoding = "UTF-8",
            edir = "./BancoDeQuestoes/dilatterm",
            template = "templates/plain.html")
@@ -52,7 +52,7 @@ myexam <- dir("./BancoDeQuestoes/eletricidade/", pattern = ".rnw", ignore.case=T
 
 ## Gerando HTML com o arquivo da questao
 set.seed(12018)
-exams2html(myexam, n = 1,solution=TRUE,
+exams2html(myexam, n = 1, solution=TRUE, mathjax = TRUE,
            encoding = "UTF-8",
            edir = "./BancoDeQuestoes/eletricidade",
            template = "templates/plain.html")
@@ -63,20 +63,20 @@ myexam <- dir("./BancoDeQuestoes/eletromagnetismo/", pattern = ".rnw", ignore.ca
 
 ## Gerando HTML com o arquivo da questao
 set.seed(12018)
-exams2html(myexam, n = 1,solution=TRUE,
+exams2html(myexam, n = 1, solution=TRUE, mathjax = TRUE,
            encoding = "UTF-8",
            edir = "./BancoDeQuestoes/eletromagnetismo",
            template = "templates/plain.html")
 
 ################### eletrostatica ######################
 ## Definindo a pasta com as questoes do exame
-myexam <- dir("./BancoDeQuestoes/eletrostatica/", pattern = ".rnw", ignore.case=TRUE)
+myexam <- dir("./BancoDeQuestoes/eletromagnetismo/eletrostática/", pattern = ".rnw", ignore.case=TRUE)
 
 ## Gerando HTML com o arquivo da questao
 set.seed(12018)
-exams2html(myexam, n = 1,solution=TRUE,
+exams2html(myexam, n = 1, solution=TRUE, mathjax = TRUE,
            encoding = "UTF-8",
-           edir = "./BancoDeQuestoes/eletrostatica",
+           edir = "./BancoDeQuestoes/eletromagnetismo/eletrostática/",
            template = "templates/plain.html")
 
 ##############energia e conservacao###################
@@ -244,17 +244,6 @@ exams2html(myexam, n = 1,solution=TRUE,
            edir = "./BancoDeQuestoes/termodinamica",
            template = "templates/plain.html")
 
-############### testes ##################
-## Definindo a pasta com as questoes do exame
-myexam <- dir("./BancoDeQuestoes/testes/", pattern = ".rnw", ignore.case=TRUE)
-
-## Gerando HTML com o arquivo da questao
-set.seed(12018)
-exams2html(myexam, n = 1,solution=TRUE,
-           encoding = "UTF-8",
-           edir = "./BancoDeQuestoes/testes",
-           template = "templates/plain.html")
-
 #####################trabalho e potencia######################
 ## Definindo a pasta com as questoes do exame
 myexam <- dir("./BancoDeQuestoes/trabalhopotencia/", pattern = ".rnw", ignore.case=TRUE)
@@ -265,7 +254,6 @@ exams2html(myexam, n = 1,solution=TRUE, mathjax = TRUE,
            encoding = "UTF-8",
            edir = "./BancoDeQuestoes/trabalhopotencia",
            template = "templates/plain.html")
-
 
 ################## MU ####################
 ## Definindo a pasta com as questoes do exame
