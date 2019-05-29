@@ -1,11 +1,12 @@
 <<echo=FALSE, results=hide>>=
-##Programado por:Matheus V
-
-##gera questoes
+## Parâmetros
 v1 <- sample(seq(from=20,to=40,by=5),1)
 v2 <- (v1 - 15)
+comprimento <- sample(seq(100,200,10),1)
 
-resp <- v1*v2
+## Resposta
+tempo_ultrapassagem <- comprimento/(v1 - v2)
+resp <- round(tempo_ultrapassagem*v1,1)
 
 aleat <- sample(1:5)
 questions <- numeric(5)
@@ -26,28 +27,20 @@ solutions <- logical(5)
   questions[aleat[5]] <- resp+50
   solutions[aleat[5]] <- FALSE
 @
-
-
+\usepackage[utf8]{inputenc}
 \begin{question}
- (Unitau) Uma motocicleta com velocidade
-constante de \Sexpr{v1} m/s ultrapassa um trem de
-comprimento 100 m e velocidade \Sexpr{v2} m/s. O
-deslocamento da motocicleta durante a
-ultrapassagem:
+Uma motocicleta com velocidade constante de \Sexpr{v1} m/s ultrapassa um trem de comprimento \Sexpr{comprimento} m e velocidade \Sexpr{v2} m/s. Qual foi o deslocamento da motocicleta durante a ultrapassagem?
 
 <<echo=FALSE, results=hide, results=tex>>=
 answerlist(questions)
 @
-
 \end{question}
-
 
 \begin{solution}
 <<echo=FALSE, results=hide, results=tex>>=
 answerlist(
   paste("\\textbf{", ifelse(solutions, "Verdadeiro", "Falso"), "}"))
 @
-
 \end{solution}
 
 %% META-INFORMATION
