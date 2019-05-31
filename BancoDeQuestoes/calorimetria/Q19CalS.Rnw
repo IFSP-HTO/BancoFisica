@@ -1,14 +1,24 @@
 <<echo=FALSE,results=hide>>=
-
+## Parâmetros
 P <- sample(seq(from=1, to= 1000, by=1), 1)
-resp <- round(2000*P/12)
+temp_media <- sample(seq(22,27,1),1)
+string <- sample(c("o dobro", "uma vez e meia", "metade", "um quarto"),1)
+fator <- switch (string,
+  "o dobro" = 2,
+  "uma vez e meia" = 1.5,
+  "metade" = 0.5,
+  "um quarto" = 0.25
+)
+calor_especifico <- 4
 
+## Resposta
+resp <- round(fator*1000*P/calor_especifico*(28-temp_media))
 @
 \usepackage[portuguese]{babel}
 
 \begin{question}
 
-(ENEM) Durante a primeira fase do projeto de uma usina de geração de energia elétrica, os engenheiros da equipe de avaliação de impactos ambientais procuram saber se esse projeto está de acordo com as normas ambientais. A nova planta estará localizada à beira de um rio, cuja temperatura média da água é de 25 °C, e usará a sua água somente para refrigeração. O projeto pretende que a usina opere com \Sexpr{P} MW de potência elétrica e, em razão de restrições técnicas, o dobro dessa potência será dissipada por seu sistema de arrefecimento, na forma de calor. Para atender a resolução número 430, de 13 de maio de 2011, do Conselho Nacional do Meio Ambiente, com uma ampla margem de segurança, os engenheiros determinaram que a água só poderá ser devolvida ao rio com um aumento de temperatura de, no máximo, 3 °C em relação à temperatura da água do rio captada pelo sistema de arrefecimento. Considere o calor específico da água igual a 4 kJ/(kg °C). Para atender essa determinação, o valor mínimo do fluxo de água, em kg/s, para a refrigeração da usina deve ser mais próximo de:
+Durante a primeira fase do projeto de uma usina de geração de energia elétrica, os engenheiros da equipe de avaliação de impactos ambientais procuram saber se esse projeto está de acordo com as normas ambientais. A nova planta estará localizada à beira de um rio, cuja temperatura média da água é de \Sexpr{temp_media} °C, e usará a sua água somente para refrigeração. O projeto pretende que a usina opere com \Sexpr{P} MW de potência elétrica e, em razão de restrições técnicas, \Sexpr{string} dessa potência será dissipada por seu sistema de arrefecimento, na forma de calor. Para atender a resolução número 430, de 13 de maio de 2011, do Conselho Nacional do Meio Ambiente, com uma ampla margem de segurança, os engenheiros determinaram que a água só poderá ser devolvida ao rio com um aumento de temperatura de, no máximo, \Sexpr{28-temp_media} °C em relação à temperatura da água do rio captada pelo sistema de arrefecimento. Considere o calor específico da água igual a \Sexpr{calor_especifico} kJ/(kg °C). Para atender essa determinação, qual é o valor mínimo do fluxo de água, em kg/s, necessário para a refrigeração da usina? OBS: arredonde para o inteiro mais próximo e dê a resposta em kg/s.
   
 \end{question}
 

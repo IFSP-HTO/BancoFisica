@@ -5,7 +5,7 @@
 v1 <- sample(seq(from=25,to=40,by=5),1)
 v2 <- sample(seq(from=5,to=20,by=5),1)
 
-resp <- 100/(v1-v2)
+resp <- round(100/(v1-v2),2)
 
 aleat<- sample(1:5)
 questions <- numeric(5)
@@ -26,27 +26,20 @@ solutions <- logical(5)
   questions[aleat[5]] <- resp-1
   solutions[aleat[5]] <- FALSE
 @
-
-
+\usepackage[utf8]{inputenc}
 \begin{question}
- (Unitau) Uma motocicleta com velocidade
-constante de \Sexpr{v1} m/s ultrapassa um trem de
-comprimento 100m e velocidade \Sexpr{v2} m/s. A dura\c{c}\~ao
-da ultrapassagem é:
+Uma motocicleta com velocidade constante de \Sexpr{v1} m/s ultrapassa um trem de comprimento 100m e velocidade \Sexpr{v2} m/s. Qual é o tempo de duração da ultrapassagem? (OBS: arredonde a resposta para duas decimais.)
 
 <<echo=FALSE, results=hide, results=tex>>=
 answerlist(questions)
 @
-
 \end{question}
-
 
 \begin{solution}
 <<echo=FALSE, results=hide, results=tex>>=
 answerlist(
   paste("\\textbf{", ifelse(solutions, "Verdadeiro", "Falso"), "}"))
 @
-
 \end{solution}
 
 %% META-INFORMATION

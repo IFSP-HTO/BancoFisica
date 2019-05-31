@@ -1,25 +1,28 @@
 <<echo=FALSE, results=hide>>=
-
-# Marcelo C.
-
+## Parâmetros
 tmin <- sample(seq(from=20,to=55,by=1),1)
 v2 <- sample(seq(from=80,to=100,by=1),1)
 
+## Resposta
 resp1 <- round(350/(3+tmin/60),1)
-resp2 <- 45/v2*60 #minutos
-resp3 <- round((resp2-trunc(resp2))*60,0) #segundos
-resp2 <- trunc(resp2)
+tempo <- 45000/(v2/3.6) #segundos
+resp2 <- tempo %/% 60 #minutos
+resp3 <- round(tempo %% 60,0) #segundos
 @
-
+\usepackage[utf8]{inputenc}
 \begin{question}
-
-(FUVEST-adaptada) Um \^onibus sai de S\~ao Paulo \`as 8 h e chega a Jaboticabal, que dista 350 km da capital, as 11 h$\Sexpr{tmin}$ min. No trecho de Jundia\'i a Campinas, de aproximadamente 45 km, a sua velocidade foi constante e igual a \Sexpr{v2} km/h
+Um ônibus sai de São Paulo às 8 h e chega a Jaboticabal, que dista 350 km da capital, as 11 h$\Sexpr{tmin}$ min. No trecho de Jundiaí a Campinas, de aproximadamente 45 km, a sua velocidade foi constante e igual a \Sexpr{v2} km/h
 
 \begin{answerlist}
 
-\item Qual \'e a velocidade m\'edia, em km/h no trajeto S\~ao Paulo-Jaboticabal? 
+\item Qual é a velocidade média, em km/h no trajeto São Paulo-Jaboticabal? 
+\\
+\\
+Em quanto tempo (em minutos e segundos) o ônibus cumpre o trecho Jundiaí-Campinas? Escreva separado nas caixas a seguir.
 
-\item Em quanto tempo (em minutos e segundos) o \^onibus cumpre o trecho Jundia\'i-Campinas? Escreva separado nas caixas a seguir.
+\item minutos
+
+\item segundos
 
 \end{answerlist}
 
@@ -27,15 +30,11 @@ resp2 <- trunc(resp2)
 
 %% SOLUTION
 \begin{solution}:
-
   \begin{answerlist}
-
     \item \Sexpr{resp1} km/h
     \item \Sexpr{resp2} min 
     \item \Sexpr{resp3} s
-
   \end{answerlist}
-
 \end{solution}
 
 %% META-INFORMATION

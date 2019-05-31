@@ -1,0 +1,35 @@
+<<echo=FALSE, results=hide>>=
+##PROGRAMADO POR: CARLOS SANTANA, em 27 de Maio de 2017.
+
+massa <- sample(seq(from=20, to=400, by=5))
+
+respA <- (massa*1)/2
+respB <- (massa*25)/2
+@
+
+\begin{question}
+Lembrando que um corpo de massa 2 quilogramas movendo-se com uma velocidade de 1metro por segundo tem uma energia cinética igual à 1 joule, determine a energia cinética de um corpo de massa \Sexpr{massa}kg que se move com uma velocidade igual à:
+
+\begin{answerlist}
+
+  \item 1 metro por segundo.
+
+  \item 5 metros por segundo.
+  
+\end{answerlist}
+\end{question}
+%% SOLUTION
+
+\begin{solution}
+ \begin{answerlist}
+    \item \Sexpr{respA} J
+
+    \item \Sexpr{respB} J
+  \end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{respa}|\Sexpr{respb}}
+%% \exname{Q15MU}

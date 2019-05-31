@@ -2,9 +2,12 @@
 ##Programado por:Matheus V
 
 ## Código da questão
-t <- sample(seq(from=2,to=10,by=2),1)
+t <- sample(seq(from=12,to=20,by=2),1)
+va = sample(seq(5,20,2),1)
+vb = sample(seq(5,20,2),1)
 
-resp <- 20 + 20*t
+## Resposta
+resp <- (va + vb)*t - 100
 
 aleat <- sample(1:5)
 questions <- numeric(5)
@@ -24,22 +27,10 @@ solutions <- logical(5)
   
   questions[aleat[5]] <- resp+6
   solutions[aleat[5]] <- FALSE
-
-
-
-
 @
-
+\usepackage[utf8]{inputenc}
 \begin{question}
- (Unaerp) Um trem percorre uma via no sentido
-norte-sul, seu comprimento é 100m, e sua
-velocidade de 72 km/h. Um outro trem percorre uma
-via paralela no sentido sul-norte com velocidade de
-72 km/h. Considere o instante t = 0, aquele que os
-trens est\~ao com as frentes na mesma posi\c{c}\~ao. O
-tempo que o segundo trem leva para ultrapassar
-totalmente o primeiro é de \Sexpr{t}s. O comprimento do
-segundo trem \'e:
+Um trem percorre uma via no sentido norte-sul, seu comprimento é 100 m, e sua velocidade de \Sexpr{round(va*3.6,2)} km/h. Um outro trem percorre uma via paralela no sentido sul-norte com velocidade de \Sexpr{round(vb*3.6,2)} km/h. Considere o instante t = 0, aquele que os trens estão com as frentes na mesma posição. O tempo que o segundo trem leva para ultrapassar totalmente o primeiro é de \Sexpr{t}s. O comprimento do segundo trem é:
 
 <<echo=FALSE, results=hide, results=tex>>=
 answerlist(questions)

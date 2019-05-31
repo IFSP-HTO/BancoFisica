@@ -7,7 +7,7 @@
   
   temp1 <- sample(seq(from=100,to=150,by=1),1)
   
-  resp1 <- round((mass1*3.3*10^-2*temp1)*4.186/(pot1), digits = 1)
+  resp1 <- round((mass1*(3.3*10^-2)*temp1)*4.186/(pot1), digits = 1)
   
 @
   
@@ -15,7 +15,7 @@
   
 \begin{question}
   
-Uma fonte de potência constante igual a $\Sexpr{pot1}$ W é utilizada para aumentar a temperatura $\Sexpr{mass1}$ g de mercúrio a $\Sexpr{temp1}$ °C. Sendo o calor específico do mercúrio 0,033 cal/g°C e 1cal=4,186J, quanto tempo a fonte demora para realizar este aquecimento?
+Uma fonte de potência constante igual a $\Sexpr{pot1}$ W é utilizada para aumentar a temperatura $\Sexpr{mass1}$ g de mercúrio de 0 °C a $\Sexpr{temp1}$ °C. Sendo o calor específico do mercúrio 0,033 cal/g°C e 1cal=4,186J, quanto tempo (em segundos) a fonte demora para realizar este aquecimento? OBS: arredonde para duas decimais.
 
 \end{question}
   
@@ -30,4 +30,4 @@ Uma fonte de potência constante igual a $\Sexpr{pot1}$ W é utilizada para aume
 %% \extype{num}
 %% \exsolution{\Sexpr{resp1}}
 %% \exname{Q18CalS}
-%% \extol{1|}
+%% \extol{1}

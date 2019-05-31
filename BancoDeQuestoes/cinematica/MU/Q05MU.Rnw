@@ -9,7 +9,6 @@ v1 <- sample(seq(from=90,to=120,by=1),1)
 v2 <- sample(seq(from=40,to=60,by=1),1)
 
 resp <- (d1/v1)+(d2/v2)
-resp1 <- resp
 
 questions <- solutions <- rep("", 3)
 type <- rep(c("schoice"), 3)

@@ -1,25 +1,21 @@
 <<echo=FALSE, results=hide>>=
-
-# Created by vinibrenobr11 on 05/06/2017 at 20:37
-
-lap <- 300
+## Parâmetros
+lap <- sample(seq(100,300,10),1)
 speed <- sample(seq(from=1,to=5,by=1),1)
 time_question <- sample(seq(from=10,to=40,by=1), 1)
 
-result <- (speed * 60 * time_question / lap)
+## Resposta
+result <- floor((speed*time_question*60)/lap)
 @
-
+\usepackage[utf8]{inputenc}
 \begin{question}
-
-Uma pessoa caminha numa pista de Cooper de $\Sexpr{lap}$ m de comprimento, com velocidade m\'edia de $\Sexpr{speed}$ m/s. Quantas voltas ela completar\'a em $\Sexpr{time_question}$ minutos?
+Uma pessoa caminha numa pista de Cooper de $\Sexpr{lap}$ metros de comprimento, com velocidade média de $\Sexpr{speed}$ m/s. Quantas \textbf{voltas completas} ela completará em $\Sexpr{time_question}$ minutos?
 
 \end{question}
 
 %% SOLUTION
 \begin{solution}:
-
   \Sexpr{result} voltas
-  
 \end{solution}
 
 %% META-INFORMATION
