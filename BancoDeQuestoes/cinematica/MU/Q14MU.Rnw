@@ -7,13 +7,10 @@ vel_x <- vel * cos(ang/360 * 2*pi)
 resp <- round(larg/vel_x,2)
 include_supplement(file = 'Q14MU.png')
 @
-
+\usepackage[utf8]{inputenc}
 \begin{question}
 
-Uma pessoa atravessa uma piscina de \Sexpr{larg} m de largura, nadando com uma
-velocidade de m\'odulo \Sexpr{vel} m/s em uma dire\c{c}\~ao que faz um \^angulo de 
-$\Sexpr{ang}$º com a normal. Quantos décimos de segundo levar\'a o nadador para alcan\c{c}ar a 
-outra margem?
+Uma pessoa atravessa uma piscina de \Sexpr{larg} m de largura, nadando com uma velocidade de m\'odulo \Sexpr{vel} m/s em uma direção que faz um ângulo de $\Sexpr{ang}$º com a normal. Quanto tempo levará o nadador para alcançar a outra margem? Arredonde para duas decimais.
 
 \begin{figure}[h]
 \includegraphics[height=6cm,keepaspectratio]{Q14MU.png}
@@ -36,6 +33,6 @@ $v_x = \frac{L}{\Delta t} \rightarrow \Delta t = \frac{L}{v_x} = \Sexpr{resp}$
 
 %% META-INFORMATION
 %% \extype{num}
-%% \exsolution{0.324}
-%% \exname{Mean}
+%% \exsolution{\Sexpr{resp}}
+%% \exname{Q14MU}
 %% \extol{0.01}
