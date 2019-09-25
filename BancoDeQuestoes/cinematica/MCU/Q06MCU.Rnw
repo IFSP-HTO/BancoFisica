@@ -1,0 +1,31 @@
+<<echo=FALSE, results=hide>>=
+## DATA GENERATION EXAMPLE
+R <- sample(seq(2.0, 2.5, 0.1),1)
+
+## Resposta
+v = round(sqrt(10*R)*3.6,1)
+
+##Imagem
+include_supplement("Q06MCU.gif")
+@
+\usepackage[utf8]{inputenc}
+\begin{question}
+O inglês Damien Walters, um praticante de Parkour, conseguiu completar um desafio que ficou conhecido como loop humano. Damien conseguiu completar uma volta completa no loop da figura utilizando a velocidade da própria corrida. Se o raio do loop é \Sexpr{R} m, sua massa de 60 Kg e g = 10 m/s², qual foi a velocidade mínima (em km/h) que Damien precisou alcançar para completar este feito? Arredonde para uma decimal.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[height=5cm, keepaspectratio]{{Q06MCU.gif}}
+\end{figure}
+
+\end{question}
+
+\begin{solution}
+%% Supply a solution here!
+A velocidade é \Sexpr{v} km/h.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{v}}
+%% \exname{Q06MCU}
+%% \extol{0.01}

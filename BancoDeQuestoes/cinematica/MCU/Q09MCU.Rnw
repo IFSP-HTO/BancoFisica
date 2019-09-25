@@ -1,0 +1,23 @@
+<<echo=FALSE, results=hide>>=
+## DATA GENERATION 
+R = sample(seq(90,200,10),1)
+
+## Resposta
+f = round(60*sqrt(10/(36*R)),1)
+@
+\usepackage[utf8]{inputenc}
+\begin{question}
+Deseja-se construir uma nave espacial com uma seção rotacional para simular, por efeitos centrífugos, a gravidade. A seção terá um raio de \Sexpr{R} metros. Quantas rotações por minuto (RPM) deverá ter essa seção para simular a gravidade terrestre? (considere g = 10 m/s² e arredonde a resposta para uma decimal)
+
+\end{question}
+
+\begin{solution}
+%% Supply a solution here!
+A frequência é \Sexpr{f} rpm.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{f}}
+%% \exname{Q09MCU}
+%% \extol{0.01}
