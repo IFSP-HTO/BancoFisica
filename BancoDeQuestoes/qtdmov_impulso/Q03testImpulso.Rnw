@@ -1,0 +1,52 @@
+<<echo=FALSE, results=hide>>=
+##PROGRAMADO POR: MARCELO
+##FONTE:
+##TAGS:
+
+
+## QUESTION/ANSWER GENERATION
+questions <- character(5)
+solutions <- logical(5)
+explanations <- character(5)
+aleat = sample(1:4)
+
+  questions[aleat[1]] <- "aumentar o intervalo de tempo de colisão entre o passageiro e o carro, reduzindo assim a força recebida pelo passageiro."
+  solutions[aleat[1]] <- TRUE
+  questions[aleat[2]] <- "aumentar a variação de momento linear do passageiro durante a colisão, reduzindo assim a força recebida pelo passageiro."
+  solutions[aleat[2]] <- FALSE
+  questions[aleat[3]] <- "diminuir o intervalo de tempo de colisão entre o passageiro e o carro, reduzindo assim a força recebida pelo passageiro."
+  solutions[aleat[3]] <- FALSE
+  questions[aleat[4]] <- "diminuir o impulso recebido pelo passageiro devido ao choque, reduzindo assim a força recebida pelo passageiro."
+  solutions[aleat[4]] <- FALSE
+  questions[5] <- "Nenhuma das anteriores"
+  solutions[5] <- FALSE
+questions
+explanations[1:5] <- " "
+@
+
+\begin{question}
+
+(UNICAMP) Muitos carros possuem um sistema de segurança para os passageiros chamado airbag. Este sistema consiste em uma bolsa de plástico que é rapidamente inflada quando o carro sofre uma desaceleração brusca, interpondo-se entre o passageiro e o painel do veículo. Em uma colisão, a função do airbag é
+
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(questions)
+@
+
+\end{question}
+
+
+\begin{solution}
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(
+  paste("\\textbf{", ifelse(solutions, "Verdadeiro", "Falso"), "}", sep = ""),
+  explanations)
+@
+
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q2TestQmov}
+
