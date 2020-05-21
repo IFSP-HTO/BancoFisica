@@ -1,24 +1,31 @@
 <<echo=FALSE, results=hide>>=
 #Marcelo C.
-d <- sample(seq(from=15,to=360,by=15),1)
-v1 <- sample(seq(10,90,5),1)
-v2 <- sample(seq(10,80,5),1)
-result <- round((d/(v1+v2))*60,2)
+
+v1 <- sample(seq(from=18,to=108,by=9),1)
+v2 <- sample(seq(from=18,to=108,by=9),1)
+d <- sample(seq(from=1,to=9,by=1),1)
+
+result <- round(d/(v1+v2)*3600,1)
+
+options(OutDec=",")
 @
-\usepackage[utf8]{inputenc}
 \begin{question}
-A distância entre dois carros é de $\Sexpr{d}$ km. Se eles andam um ao encontro do outro com \Sexpr{v1} km/h e \Sexpr{v2} km/h, ao fim de quantos minutos eles deverão se encontrar? \textit{Arredonde sua resposta final para 1 decimal caso necessário.}
+(UTESC-SC) A dist\^ancia entre dois carros é de $\Sexpr{d}$ km. Se eles andam um ao encontro do outro com $\Sexpr{v1}$ km/h e $\Sexpr{v2}$ km/h, ao fim de quantos segundos eles deverão se encontrar?
 
 \end{question}
 
 \begin{solution}
 
-  \Sexpr{result} minutos
+  \Sexpr{result} segundos
   
 \end{solution}
+
+<<echo=FALSE, results=hide>>=
+options(OutDec=".")
+@
 
 %% META-INFORMATION
 %% \extype{num}
 %% \exsolution{\Sexpr{result}}
 %% \exname{Q11Velrel}
-%% \extol{0.1}
+%% \extol{1}

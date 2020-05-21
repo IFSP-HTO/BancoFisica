@@ -2,14 +2,14 @@
 ## Parâmetros
 lap <- sample(seq(100,300,10),1)
 speed <- sample(seq(from=1,to=5,by=1),1)
-time_question <- sample(seq(from=10,to=40,by=1), 1)
+time <- sample(seq(from=10,to=40,by=1), 1)
 
 ## Resposta
 result <- floor((speed*time_question*60)/lap)
 @
 \usepackage[utf8]{inputenc}
 \begin{question}
-Uma pessoa caminha numa pista de Cooper de $\Sexpr{lap}$ metros de comprimento, com velocidade média de $\Sexpr{speed}$ m/s. Quantas \textbf{voltas completas} ela completará em $\Sexpr{time_question}$ minutos?
+Uma pessoa caminha numa pista de Cooper de $\Sexpr{lap}$ metros de comprimento, com velocidade média de $\Sexpr{speed}$ m/s. Quantas \textbf{voltas completas} ela completará em $\Sexpr{time}$ minutos? 
 
 \end{question}
 
@@ -21,5 +21,4 @@ Uma pessoa caminha numa pista de Cooper de $\Sexpr{lap}$ metros de comprimento, 
 %% META-INFORMATION
 %% \extype{num}
 %% \exsolution{\Sexpr{result}}
-%% \exname{Q04Velm}
-%% \extol{0.02}
+%% \exname{Q04MU}
