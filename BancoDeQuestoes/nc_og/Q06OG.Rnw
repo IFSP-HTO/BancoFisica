@@ -1,0 +1,22 @@
+<<echo=FALSE, results=hide>>=
+#Marcelo C.
+resp=17
+@
+
+\begin{question}
+
+Uma reação química demora cerca de $10^{−13}$ s para ocorrer. Qual é a ordem de grandeza do número de reações químicas sequenciais que ocorrem durante o tempo que você está dormindo? (Dê apenas o expoente como resposta, ou seja, se a ordem de grandeza é $10^x$, escreva apenas x como resposta abaixo.)
+
+\end{question}
+%% SOLUTION
+
+\begin{solution}
+
+  \Sexpr{resp}
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp}}
+%% \exname{Q06OG}
