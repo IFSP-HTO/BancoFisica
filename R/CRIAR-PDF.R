@@ -2,6 +2,18 @@
 library(tools)
 library(exams)
 
+#############Notação científica e  Ordem de Grandeza###################
+## Definindo a pasta com as questoes do exame
+assunto = "nc_og"
+myexam <- dir(paste0("./BancoDeQuestoes/",assunto), pattern = ".rnw", ignore.case=TRUE)
+## Gerando HTML com o arquivo da questao
+set.seed(22018)
+exams2pdf(myexam, n = 1,
+          name=assunto,
+          encoding = "UTF-8",
+          edir = paste0("./BancoDeQuestoes/",assunto),
+          template = "plain8")
+
 ################# exemplos ####################
 ## Definindo a pasta com as questoes do exame
 assunto = "exemplos"
