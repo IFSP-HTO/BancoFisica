@@ -5,7 +5,7 @@ speed <- sample(seq(from=1,to=5,by=1),1)
 time <- sample(seq(from=10,to=40,by=1), 1)
 
 ## Resposta
-result <- floor((speed*time_question*60)/lap)
+result <- floor((speed*time*60)/lap)
 @
 \usepackage[utf8]{inputenc}
 \begin{question}
