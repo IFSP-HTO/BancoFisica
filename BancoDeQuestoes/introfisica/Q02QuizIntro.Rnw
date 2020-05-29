@@ -2,51 +2,23 @@
 ##PROGRAMADO POR: MARCELO C.
 
 ## QUESTION/ANSWER GENERATION
-questions <- character(10)
-solutions <- logical(10)
-explanations <- character(10)
-aleat = sample(1:10)
+questions <- character(4)
+solutions <- logical(4)
+explanations <- character(4)
+aleat = sample(1:4)
 
   questions[aleat[1]] <- "O planeta Marte é habitado por seres invisíveis que são capazes de fugir e se esconder de qualquer tipo de observação."
   solutions[aleat[1]] <- FALSE
-  explanations[aleat[1]] <- "FALSO! É impossível fazer experimentos para testar sua falsidade"
-  
+  explanations[aleat[1]] <- "FALSO!"
   questions[aleat[2]] <- "Objetos mais pesados caem mais rápido do que objetos mais leves na Terra."
   solutions[aleat[2]] <- TRUE
-  explanations[aleat[2]] <- "VERDADEIRO! É possível fazer experimentos para testar sua falsidade"
-  
+  explanations[aleat[2]] <- "VERDADEIRO!"
   questions[aleat[3]] <- "Planetas distantes abrigam outras formas de vida."
   solutions[aleat[3]] <- TRUE
-  explanations[aleat[3]] <- "VERDADEIRO! É possível fazer experimentos para testar sua falsidade"
-  
+  explanations[aleat[3]] <- "VERDADEIRO!"
   questions[aleat[4]] <- "Mexer com sapos causa verrugas. "
   solutions[aleat[4]] <- TRUE
-  explanations[aleat[4]] <- "VERDADEIRO! É possível fazer experimentos para testar sua falsidade"
-  
-  questions[aleat[5]] <- "Os átomos são as menores partículas existentes de matéria."
-  solutions[aleat[5]] <- TRUE
-  explanations[aleat[5]] <- "VERDADEIRO! É possível fazer experimentos para testar sua falsidade"
-  
-  questions[aleat[6]] <- "O espaço é permeado com uma essência não detectável."
-  solutions[aleat[6]] <- FALSE
-  explanations[aleat[6]] <- "FALSO! É impossível fazer experimentos para testar sua falsidade"
-  
-  questions[aleat[7]] <- "Albert Eistein foi o maior físico do século XX."
-  solutions[aleat[7]] <- FALSE
-  explanations[aleat[7]] <- "FALSO! É impossível testar sua falsidade. Se Eintein não tivesse sido o maior dos físicos, como poderíamos sabê-lo? Essa afirmação é uma especulação."
-  
-  questions[aleat[8]] <- "A clorofila faz a grama verde."
-  solutions[aleat[8]] <- TRUE
-  explanations[aleat[8]] <- "VERDADEIRO! Esta é uma hipótese científica, pois há um teste para o erro. Por exemplo, você pode extrair clorofila da grama e observe sua cor."
- 
-  questions[aleat[9]] <- "A Terra gira em torno de um eixo porque as coisas precisam de uma alternância de luz e escuridão."
-  solutions[aleat[9]] <- FALSE
-  explanations[aleat[9]] <- "FALSO! Esta afirmação não tem meios de provar que está errada e não é uma hipótese científica. Isto é especulação."
-  
-  questions[aleat[10]] <- "As marés são causadas pela Lua."
-  solutions[aleat[10]] <- TRUE
-  explanations[aleat[10]] <- "VERDADEIRO! Esta é uma hipótese científica. Poderia ser provado errado, por exemplo, mostrando marés que não
-correspondem à posição da lua. "
+  explanations[aleat[4]] <- "VERDADEIRO!"
 @
 
 
@@ -72,5 +44,5 @@ answerlist(
 %% META-INFORMATION
 %% \extype{mchoice}
 %% \exsolution{\Sexpr{mchoice2string(solutions)}}
-%% \exname{Q02QuizIntro}
+%% \exname{Q18QuizC}
 
