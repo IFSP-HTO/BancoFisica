@@ -6,6 +6,7 @@ options(OutDec=",")
 
 V <- sample(seq(from=5,to=6.6,by=0.2),1)
 n <- sample(seq(from=4,to=6,by=1),1)
+resp1=formatC(V*n*10^12,format = "e",digits=2)
 
 resp <- toString(formatC(V*n*10^12,format = "e",digits=2))
 
@@ -30,7 +31,7 @@ if (grepl(",00", resp)) {
 %% SOLUTION
 \begin{solution}:
 
-  \Sexpr{resp}
+  \Sexpr{resp1}
   
 \end{solution}
 

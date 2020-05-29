@@ -14,6 +14,7 @@ exp[3] = "centésimos" ; m[3]=10^(-2)
 
 resp <- toString(formatC(m[aleat]*n,format = "e",digits=1))
 resp <-paste(substr(resp,1,3),"*10\\^\\(-",substr(resp,7,7),"\\)",sep="")
+resp1 = formatC(m[aleat]*n,format = "e",digits=1)
 @ 
 
 \begin{question}
@@ -27,7 +28,7 @@ Escreva \Sexpr{n} \Sexpr{exp[aleat]} de segundo em notação científica.
 %% SOLUTION
 \begin{solution}:
 
-  \Sexpr{resp} segundos
+  \Sexpr{resp1} segundos
   
 \end{solution}
 
