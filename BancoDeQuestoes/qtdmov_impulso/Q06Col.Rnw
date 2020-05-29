@@ -1,0 +1,32 @@
+<<echo=FALSE, results=hide>>=
+# Marcelo C.
+
+include_supplement("Q06Col.jpg")
+resp=10
+@
+\usepackage{graphicx}
+
+\begin{question}
+
+(PUC-adapt.) Nas grandes cidades é muito comum a colisão entre veículos nos cruzamentos de ruas e avenidas. Considere uma colisão inelástica entre dois veículos, ocorrida num cruzamento de duas avenidas largas e perpendiculares. 
+
+\begin{center}
+\includegraphics[height=3cm,keepaspectratio]{Q06Col.jpg}
+\end{center}
+
+Dado que o veiculo A possui 800 kg e velocidade de 45 km/h e o veículo B possui 450 kg e velocidade de 60 km/h, calcule o módulo da velocidade dos veículos, em $m/s$, após a colisão. 
+
+\end{question}
+
+%% SOLUTION
+\begin{solution}:
+
+  \Sexpr{resp} 
+  
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp}}
+%% \exname{Q06Col}
+%% \extol{0.1}
