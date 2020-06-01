@@ -1,0 +1,33 @@
+<<echo=FALSE, results=hide>>=
+##MARCELO CARDINALI
+
+f <- sample(seq(from=20,to=100,by=10),1)
+d <- sample(seq(from=1000,to=3600,by=40),1)
+conda <- sample(seq(from=17,to=40,by=2),1)
+
+t1 <- round(d/340,digits=1)
+t1
+t2 <- round(d/(conda*f),digits=1)
+t2
+
+resp <- t1+t2
+
+@
+\usepackage[utf8]{inputenc}
+\begin{question}
+
+(FUVEST-adaptado) (Fuvest-SP) Uma fonte emite ondas sonoras de \Sexpr{f} Hz. A uma distância de \Sexpr{d} m da fonte, está instalado um aparelho que registra a chegada das ondas através do ar e as remete de volta através de um fio metálico retilíneo. O comprimento dessas ondas no fio é \Sexpr{conda} m. Qual o tempo de ida e volta das ondas em segundos? Considere a velocidade do som no ar igual a 340 m/s e arredonde sua resposta final para uma casa decimal.
+
+\end{question}
+
+\begin{solution}
+%% SOLUTION
+\Sexpr{resp} segundos
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp}}
+%% \exname{Q03Ondas}
+%% \exusepackage[utf8]{inputenc}

@@ -46,27 +46,26 @@ aleat = sample(1:9)
 
 @
 
-
 \begin{question}
 
-Assinale a(s) alternativa(s) correta(s)
+Assinale a(s) alternativa(s) correta(s):
 
 <<echo=FALSE, results=hide, results=tex>>=
-answerlist(questions)
+answerlist(questions[1:5])
 @
 \end{question}
 
 \begin{solution}
 <<echo=FALSE, results=hide, results=tex>>=
 answerlist(
-  paste("\\textbf{", ifelse(solutions, "Verdadeiro", "Falso"), "}", sep = ""),
-  explanations)
+  paste("\\textbf{", ifelse(solutions[1:5], "Verdadeiro", "Falso"), "}", sep = ""),
+  explanations[1:5])
 @
 
 \end{solution}
 
 %% META-INFORMATION
 %% \extype{mchoice}
-%% \exsolution{\Sexpr{mchoice2string(solutions)}}
+%% \exsolution{\Sexpr{mchoice2string(solutions[1:5])}}
 %% \exname{Q01QuizVelm}
 

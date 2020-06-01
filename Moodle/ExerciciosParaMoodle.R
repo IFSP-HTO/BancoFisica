@@ -4,6 +4,21 @@
 library(tools)
 library(exams)
 
+########Notacao cientifica e ordem de grandeza##################
+## Definindo a pasta com as questoes do exame
+myexam <- dir("./BancoDeQuestoes/nc_og", pattern = ".rnw", ignore.case=TRUE)
+ano <- 12020
+## Cria o arquivo .xml para entrada no moodle
+set.seed(ano)
+exams2moodle(myexam, n = 20, rule="none", 
+             schoice = list(shuffle = TRUE), 
+             converter = "pandoc-mathjax",
+             name = paste0("nc_og-",ano),
+             encoding = "UTF-8",
+             dir = "./Moodle",
+             edir = "./BancoDeQuestoes/nc_og")
+
+
 ############### aceleracao ##################
 ## Definindo a pasta com as questoes do exame
 myexam <- dir("./BancoDeQuestoes/acel", pattern = ".rnw", ignore.case=TRUE)

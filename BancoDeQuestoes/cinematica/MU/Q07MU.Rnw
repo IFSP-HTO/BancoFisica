@@ -1,45 +1,68 @@
 <<echo=FALSE, results=hide>>=
-## Parâmetros
+
+# Marcelo C.
+
 tmin <- sample(seq(from=20,to=55,by=1),1)
 v2 <- sample(seq(from=80,to=100,by=1),1)
 
-## Resposta
 resp1 <- round(350/(3+tmin/60),1)
-tempo <- 45000/(v2/3.6) #segundos
-resp2 <- tempo %/% 60 #minutos
-resp3 <- round(tempo %% 60,0) #segundos
+resp2 <- 45/v2*60 #minutos
+resp3 <- round((resp2-trunc(resp2))*60,0) #segundos
+resp2 <- trunc(resp2)
+
+questions <- solutions <- rep("", 3)
+type <- rep(c("schoice"), 3)
+
+questions[1] <- ""
+solutions[1] <- resp1
+type[1] <- "num"
+
+questions[2] <- ""
+solutions[2] <- resp2
+type[2] <- "num"
+
+questions[3] <- ""
+solutions[3] <- resp3
+type[3] <- "num"
+
+
 @
-\usepackage[utf8]{inputenc}
+
 \begin{question}
-Um ônibus sai de São Paulo às 8 h e chega a Jaboticabal, que dista 350 km da capital, as 11 h$\Sexpr{tmin}$ min. No trecho de Jundiaí a Campinas, de aproximadamente 45 km, a sua velocidade foi constante e igual a \Sexpr{v2} km/h
 
-\begin{answerlist}
+(FUVEST-adaptada) Um \^onibus sai de S\~ao Paulo \`as 8 h e chega a Jaboticabal, que dista 350 km da capital, as 11 h$\Sexpr{tmin}$ min. No trecho de Jundia\'i a Campinas, de aproximadamente 45 km, a sua velocidade foi constante e igual a \Sexpr{v2} km/h
 
-\item Qual é a velocidade média, em km/h no trajeto São Paulo-Jaboticabal? 
-\\
-\\
-Em quanto tempo (em minutos e segundos) o ônibus cumpre o trecho Jundiaí-Campinas? Escreva separado nas caixas a seguir.
+Qual \'e a velocidade m\'edia, em km/h no trajeto S\~ao Paulo-Jaboticabal? 
 
-\item minutos
+##ANSWER1##
 
-\item segundos
+Em quanto tempo (em minutos e segundos) o \^onibus cumpre o trecho Jundia\'i-Campinas? Escreva separado nas caixas a seguir. \textbf{OBS}: \textit{Caso necessário, arredonde a quantidade de segundos para um número inteiro.}
 
-\end{answerlist}
+  \begin{tabular}{l|c|c|}
+    \hline
+    ##ANSWER2## & minutos & ##ANSWER3##  segundos \\
+    \hline
+  \end{tabular}
+
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(questions)
+@ 
 
 \end{question}
 
 %% SOLUTION
 \begin{solution}:
-  \begin{answerlist}
-    \item \Sexpr{resp1} km/h
-    \item \Sexpr{resp2} min 
-    \item \Sexpr{resp3} s
-  \end{answerlist}
+
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(paste(solutions, ".", sep = ""))
+@
+
 \end{solution}
 
 %% META-INFORMATION
 %% \extype{cloze}
-%% \exclozetype{num|num|num}
-%% \exsolution{\Sexpr{resp1}|\Sexpr{resp2}|\Sexpr{resp3}}
-%% \exname{Q07Velm}
-%% \extol{0.1|0.1|1}
+%% \exsolution{\Sexpr{paste(solutions, collapse = "|")}}
+%% \exclozetype{\Sexpr{paste(type, collapse = "|")}}
+%% \exname{Q07MU}
+%% \extol{0.1|0.1|2}
+

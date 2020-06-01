@@ -1,0 +1,33 @@
+<<echo=FALSE, results=hide>>=
+# Marcelo C.
+
+m <- sample(seq(from=10,to=50,by=5),1)
+v1 <- sample(seq(from=4,to=10,by=1),1)
+v2 <- sample(seq(from=3,to=v1-1,by=1),1)
+resp <- round(m*(v2+v1)/1000,4)
+
+options(OutDec=",")
+@
+
+\begin{question}
+
+(UNIFESP) Uma esfera de massa $\Sexpr{m}$ gramas atinge uma parede rígida com velocidade de $\Sexpr{format(v1,nsmall=1)}$ m/s e volta na mesma direção com velocidade de $\Sexpr{format(v2,nsmall=1)}$ m/s. O impulso da força exercida pela parede sobre a esfera, em N.s, é, em módulo, de
+
+\end{question}
+
+%% SOLUTION
+\begin{solution}:
+
+  \Sexpr{resp} 
+  
+\end{solution}
+
+<<echo=FALSE, results=hide>>=
+options(OutDec=".")
+@
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp}}
+%% \exname{Q05Imp}
+%% \extol{0.001}

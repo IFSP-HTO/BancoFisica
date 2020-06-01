@@ -1,0 +1,35 @@
+<<echo=FALSE, results=hide>>=
+# Marcelo C.
+
+
+m <- sample(seq(from=0.1,to=2,by=0.1),1)
+a <- sample(seq(from=0.3,to=0.9,by=0.3),1)
+t <- sample(seq(from=1.0,to=6.0,by=1),1)
+
+resp <- round(m*a*t,1)
+
+options(OutDec=",")
+@
+
+\begin{question}
+
+(VUNESP adapt.) Um objeto de massa $\Sexpr{m}$ $kg$ está se deslocando ao longo de uma trajetória retilínea com aceleração escalar constante igual a $\Sexpr{a}$ $m/s^2$. Se partiu do repouso, determine o módulo da sua quantidade de movimento, em $kg\cdot m/s$, ao fim de $\Sexpr{format(t,nsmall=1)}$ $s$.
+
+\end{question}
+
+%% SOLUTION
+\begin{solution}:
+
+  \Sexpr{resp} 
+  
+\end{solution}
+
+<<echo=FALSE, results=hide>>=
+options(OutDec=".")
+@
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp}}
+%% \exname{Q01Qmov}
+%% \extol{0.1}

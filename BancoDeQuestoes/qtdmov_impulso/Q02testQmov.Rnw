@@ -1,0 +1,52 @@
+<<echo=FALSE, results=hide>>=
+##PROGRAMADO POR: MARCELO
+##FONTE:
+##TAGS:
+
+
+## QUESTION/ANSWER GENERATION
+questions <- character(5)
+solutions <- logical(5)
+explanations <- character(5)
+aleat = sample(1:5)
+
+  questions[aleat[1]] <- "possuem a mesma inércia."
+  solutions[aleat[1]] <- FALSE
+  questions[aleat[2]] <- "estão sujeitas à mesma força resultante."
+  solutions[aleat[2]] <- FALSE
+  questions[aleat[3]] <- "têm a mesma quantidade de movimento inicial."
+  solutions[aleat[3]] <- FALSE
+  questions[aleat[4]] <- "adquirem a mesma aceleração durante a queda."
+  solutions[aleat[4]] <- TRUE
+  questions[aleat[5]] <- "são lançadas com a mesma velocidade horizontal."
+  solutions[aleat[5]] <- FALSE
+
+explanations[1:5] <- " "
+@
+
+\begin{question}
+
+(ENEM-2016) Para um salto no Grand Canyon usando motos, dois paraquedistas vão utilizar uma moto cada, sendo que uma delas possui massa três vezes maior. Foram construídas duas pistas idênticas até a beira do precipício, de forma que no momento do salto as motos deixem a pista horizontalmente e ao mesmo tempo. No instante em que saltam, os paraquedistas abandonam suas motos e elas caem praticamente sem resistência do ar. As motos atingem o solo simultaneamente porque
+
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(questions)
+@
+
+\end{question}
+
+
+\begin{solution}
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(
+  paste("\\textbf{", ifelse(solutions, "Verdadeiro", "Falso"), "}", sep = ""),
+  explanations)
+@
+
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q2TestQmov}
+

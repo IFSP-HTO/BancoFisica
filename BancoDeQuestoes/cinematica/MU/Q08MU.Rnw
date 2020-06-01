@@ -5,11 +5,12 @@ v1 <- sample(seq(from=20,to=30,by=1),1)
 v2 <- sample(seq(from=40,to=80,by=1),1)
 
 resp <- round(2*v1*v2/(v1+v2),1)
+options(OutDec=",")
 @
 
 \begin{question}
 
-Uma moto percorre a primeira metade de um percurso de 4 km com velocidade constante de $\Sexpr{v1}$ km/h e a segunda metade com $\Sexpr{v2}$ km/h. Calcule a velocidade escalar m\'edia da moto no percurso todo. Arredonde sua resposta final para 1 decimal (utilize maior precis\~ao
+Uma moto percorre a primeira metade de um percurso de 4 km com velocidade constante de $\Sexpr{v1}$ km/h e a segunda metade com $\Sexpr{v2}$ km/h. Calcule a velocidade escalar média da moto no percurso todo em km/h. Arredonde sua resposta final para 1 decimal (utilize maior precis\~ao
 nos passos intermedi\'arios).
 
 \end{question}
@@ -21,6 +22,9 @@ nos passos intermedi\'arios).
   
 \end{solution}
 
+<<echo=FALSE, results=hide>>=
+options(OutDec=".")
+@
 %% META-INFORMATION
 %% \extype{num}
 %% \exsolution{\Sexpr{resp}}

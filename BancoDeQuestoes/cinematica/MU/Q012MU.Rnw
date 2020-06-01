@@ -1,25 +1,25 @@
 <<echo=FALSE, results=hide>>=
-##PROGRAMADO POR: CARLOS SANTANA, em 14 de Maio de 2017.
-##FONTE: Fuvest
-## Parâmetros
-vA <- sample(seq(from=80,to=180,by=5),1)
-vB <- floor(0.8*vA)
-dist <- sample(seq(from=1000,to=10000,by=10), 1)
+##Carlos Santana/ Marcelo Cardinali
 
-## Resposta
-respa <- abs(vA-vB)
-respb <- round((dist/1000)/abs(vA-vB),2)
+vA <- sample(seq(from=72,to=108,by=9),1)
+vB <- sample(seq(from=36,to=vA-18,by=9),1)
+dist <- sample(seq(from=100,to=800,by=50), 1)
+
+respa <- round((vA-vB)/3.6,1)
+respb <- round(dist/respa,1)
+
+options(OutDec=",")
 @
-\usepackage[utf8]{inputenc}
+
 \begin{question}
-Dois carros, A e B, movem-se no mesmo sentido, em uma estrada reta, com velocidades constantes $V_A=\Sexpr{vA}$ km/h e $V_B=\Sexpr{vB }$ km/h, respectivamente.
+
+(Fuvest) Dois carros, A e B, movem-se no mesmo sentido, em uma estrada reta, com velocidades constantes $V_A=\Sexpr{vA}$ km/h e $V_B=\Sexpr{vB }$ km/h, respectivamente.
 \begin{answerlist}
 
-  \item Qual é, em módulo, a velocidade do carro B em relação a um observador no carro A?
-  
-  \item Em um dado instante, o carro B está \Sexpr{dist} m à frente do carro A. Quanto tempo, em horas(decimais), decorre até que A alcance B? OBS: utilize duas decimais na resposta.
-\end{answerlist}
+\item Qual é o módulo da velocidade do carro B em relação a um observador no carro A, em m/s?
 
+\item Em um dado instante, o carro B está \Sexpr{dist} m à frente do carro A. Quanto tempo, em segundos, decorre até que A alcance B? \textit{Caso necessário, arredonde o resultado para 1 casa decimal}
+\end{answerlist}
 
 \end{question}
 
@@ -29,15 +29,19 @@ Dois carros, A e B, movem-se no mesmo sentido, em uma estrada reta, com velocida
 \begin{answerlist}
 
     \item \Sexpr{respa} km/h
-    \item \Sexpr{respb} horas
+    \item \Sexpr{respb} s
 
 \end{answerlist}
 
 \end{solution}
+
+<<echo=FALSE, results=hide>>=
+options(OutDec=".")
+@
 
 %% META-INFORMATION
 %% \extype{cloze}
 %% \exclozetype{num|num}
 %% \exsolution{\Sexpr{respa}|\Sexpr{respb}}
 %% \exname{Q012Velm}
-%% \extol{0.1|0.1}
+%% \extol{0|0.2}

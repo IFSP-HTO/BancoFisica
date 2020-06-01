@@ -11,11 +11,13 @@ speed <- sample(seq(from=15, to=30, by=1), 1)
 # Define os resultado dos itens A e B
 result_a <- round((20 * elements) / speed, 2)
 result_b <- round((20 * elements + 100) / speed, 2)
+
+options(OutDec=",")
 @
 
 \begin{question}
 
-  Uma composi\c{c}\~ao ferrovi\'aria (\Sexpr{elements-1} vag\~oes e uma locomotiva) desloca-se a \Sexpr{speed}m/s. Sendo o comprimento de cada elemento da composi\c{c}\~ao 20m, qual \'e o tempo em segundos que o trem gasta para ultrapassar:
+  Uma composi\c{c}\~ao ferrovi\'aria (\Sexpr{elements-1} vag\~oes e uma locomotiva) desloca-se a \Sexpr{speed} m/s. Sendo o comprimento de cada elemento da composi\c{c}\~ao 20 m, qual \'e o tempo em segundos que o trem gasta para ultrapassar:
 
   \begin{answerlist}
 
@@ -41,6 +43,9 @@ result_b <- round((20 * elements + 100) / speed, 2)
 
 \end{solution}
 
+<<echo=FALSE, results=hide>>=
+options(OutDec=".")
+@
 %% META-INFORMATION
 %% \extype{cloze}
 %% \exclozetype{num|num}
