@@ -2,6 +2,9 @@
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)   [![CircleCI](https://circleci.com/gh/IFSP-HTO/BancoFisica.svg?style=svg)](https://circleci.com/gh/IFSP-HTO/BancoFisica) [![DOI](https://zenodo.org/badge/184617787.svg)](https://zenodo.org/badge/latestdoi/184617787)
 
+## Cite como:
+Flavio Barros, Marcelo Cardinali, Carlos E.F. de Santana, jmduly, Vinícius, Logout, & Ana Paula. (2020, November 26). IFSP-HTO/BancoFisica: First release (Version v0.0.1). Zenodo. http://doi.org/10.5281/zenodo.4292534
+
 ## Introdução
 
 Este é o repositório oficial do banco de questões de Física produzido pelos professores do IFSP - Câmpus Hortolândia. Todas as questões devem ser programadas utilizando o pacote [exams](http://www.r-exams.org/) do R. Nas próximas seções do documento podem ser encontradas instruções de como contribuir com o repositório.
