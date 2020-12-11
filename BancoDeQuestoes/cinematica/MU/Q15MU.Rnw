@@ -1,0 +1,65 @@
+<<echo=FALSE, results=hide>>=
+## Funções
+mu <- function(v,s,t) {
+  return(s + v*t)
+}
+
+## Parâmetros
+coordy <- sample(seq(0,20,5),2)
+pt1x <- 0
+pt1y <- min(coordy)
+
+pt2x <- sample(seq(4,10,2),1)
+pt2y <- max(coordy)
+
+v <- (pt2y - pt1y)/(pt2x - pt1x)
+s_zero <- pt1y
+
+## Gráfico
+x = 0:10
+y = mu(v = v, s = s_zero, t = x)
+
+## Resposta
+@
+
+\begin{question}
+
+De acordo com o gráfico a seguir encontre a função horária e a partir dela a velocidade e a posição inicial. Arredonde a resposta para duas decimais quando necessário.
+
+<<fig=TRUE, height=4, width=5, echo=FALSE, eps=FALSE, results=hide>>=
+plot(y~x, type = 'l', main = "Posição vs tempo", lwd = 3,
+     xlim = c(-1,10), 
+     ylim = c(0,20),
+     ylab = 'S(m)',
+     xlab = 't(s)')
+grid (NULL,NULL, lty = 6, col = "black")
+@
+
+
+    \begin{answerlist}
+      
+      \item Velocidade
+      
+      \item Posição inicial 
+    
+    \end{answerlist}
+\end{question}
+
+\begin{solution}
+
+  \begin{answerlist}
+    \item
+      $\Sexpr{s_zero}$m 
+
+    \item
+      $\Sexpr{v}$m/s
+  \end{answerlist}
+  
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{v}|\Sexpr{s_zero}}
+%% \exname{Q15MU}
+%% \extol{0.1|0.1}

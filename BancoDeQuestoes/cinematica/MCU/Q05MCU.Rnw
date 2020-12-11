@@ -1,0 +1,33 @@
+<<echo=FALSE, results=hide>>=
+## DATA GENERATION 
+m = sample(seq(50,90,10),1)
+R = sample(2:4, 1)
+mu = sample(1:5,1)*0.1
+
+## Solution
+omega = round(sqrt(10/mu*R),1)
+
+##Imagem
+include_supplement("Q05MCU.png")
+@
+\usepackage[utf8]{inputenc}
+\begin{question}
+
+Um brinquedo muito comum em parques de diversões consiste em uma cabine cilíndrica de raio R onde uma pessoa entra na cabine e encosta na parede. O cilindro começa então a girar até que a velocidade angular atinja um valor determinado. Atingindo esse valor o chão começa a descer e no entanto a pessoa não cai; ela continua girando, como se estivesse grudada na parede. Suponha que uma pessoa tenha massa \Sexpr{m} Kg e que o raio do brinquedo seja \Sexpr{R} metros, sendo o coeficiente de atrito estático entre a pessoa e parede igual a $\mu$ = \Sexpr{mu} qual é a velocidade angular mínima, em radianos por segundo, para que a pessoa não caia? Arredonde para uma decimal.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[height=5cm, keepaspectratio]{{Q05MCU.png}}
+\end{figure}
+
+\end{question}
+
+\begin{solution}
+A velocidade angular mínima é \Sexpr{omega}.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{omega}}
+%% \exname{Q05MCU}
+%% \extol{0.01}

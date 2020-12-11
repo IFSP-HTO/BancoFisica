@@ -13,6 +13,17 @@ exams2html(myexam, n = 1,solution=TRUE,
            edir = "./BancoDeQuestoes/acel",
            template = "plain8")
 
+############### MCU ##################
+## Definindo a pasta com as questoes do exame
+myexam <- dir("./BancoDeQuestoes/cinematica/MCU", pattern = ".rnw", ignore.case=TRUE)
+
+## Gerando HTML com o arquivo da questao
+set.seed(12018)
+exams2html(myexam, n = 1,solution=TRUE,
+           encoding = "UTF-8",
+           edir = "./BancoDeQuestoes/cinematica/MCU",
+           template = "plain8")
+
 ############### calorimetria ##################
 ## Definindo a pasta com as questoes do exame
 myexam <- dir("./BancoDeQuestoes/calorimetria/", pattern = ".rnw", ignore.case=TRUE)

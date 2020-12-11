@@ -1,0 +1,33 @@
+<<echo=FALSE, results=hide>>=
+## DATA GENERATION 
+R = sample(100:150,1)
+v = sample(30:50,1)
+m = sample(1200:1600,1)
+
+## Resposta
+forca = round(m*sqrt((v^4)/(R^2) + 100),1)
+
+##Imagem
+include_supplement("Q07MCU.png")
+@
+\usepackage[utf8]{inputenc}
+\begin{question}
+Um avião realiza um movimento circular uniforme de raio R = \Sexpr{R} m e com velocidade escalar v = \Sexpr{v} m/s. F é a força de sustentação e P é o peso do avião. Considerando a massa do avião como de \Sexpr{m} kg determine a intensidade da força F. Considere g = 10 m/s².
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[height=5cm, keepaspectratio]{{Q07MCU.png}}
+\end{figure}
+
+\end{question}
+
+\begin{solution}
+%% Supply a solution here!
+A força será de \Sexpr{forca} N.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{forca}}
+%% \exname{Q07MCU}
+%% \extol{0.01}

@@ -1,0 +1,33 @@
+<<echo=FALSE, results=hide>>=
+## DATA GENERATION EXAMPLE
+f = round(runif(n = 1, min = 70, max = 100),0)
+
+## Resposta
+vel = round(0.4 * 12 * f, 1)
+
+##Imagem
+include_supplement("Q04MCU.png")
+@
+\usepackage[utf8]{inputenc}
+\begin{question}
+Na figura abaixo está representado um carretel composto de dois discos de papelão separados por 0,40 m, ligados rigidamente a um eixo que gira com frequência de \Sexpr{f} Hz. Uma bala, disparada paralelamente ao eixo do carretel, perfura os dois discos.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[height=5cm, keepaspectratio]{{Q04MCU.png}}
+\end{figure}
+
+Devido ao movimento do carretel, essas perfurações estão defasadas 30°, como mostra a figura. A partir desses dados determine o módulo da velocidade média máxima do projétil ao atravessar os discos. Sugestão: Note que o tempo para o projétil atravessar os dois discos é o mesmo em que ocorre a defasagem de 30° entre os furos $P_1$ e $P_2$. OBS: arredonde a resposta para uma decimal.
+
+\end{question}
+
+\begin{solution}
+%% Supply a solution here!
+A velocidade é \Sexpr{vel}.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{vel}}
+%% \exname{Q04MCU}
+%% \extol{0.01}

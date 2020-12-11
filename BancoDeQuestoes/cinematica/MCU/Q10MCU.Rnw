@@ -1,0 +1,34 @@
+<<echo=FALSE, results=hide>>=
+## DATA GENERATION EXAMPLE
+R <- sample(1:5,1)*0.05
+v = 2^sample(2:5,1) * 3^sample(2:5,1)
+
+## Resposta
+vms = v/3.6
+f = 10*vms/R
+
+##Imagem
+include_supplement("Q10MCU.png")
+@
+\usepackage[utf8]{inputenc}
+\begin{question}
+Anemômetros são instrumentos usados para medir a velocidade do vento. A sua construção mais conhecida é a proposta por Robinson em 1846, que consiste em um rotor com quatro conchas hemisféricas presas por hastes, conforme figura abaixo. Em um anemômetro de Robinson ideal, a velocidade do vento é dada pela velocidade linear das conchas. Se necessário considere $\pi=3$. Arredonde para uma decimal.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[height=5cm, keepaspectratio]{{Q10MCU.png}}
+\end{figure}
+
+Se em um anemômetro a distância entre as conchas e o centro de rotação é r = \Sexpr{R} cm, em um dia cuja velocidade do vento é v = \Sexpr{v} m/s, qual seria a frequência de rotação em RMP?
+
+\end{question}
+
+\begin{solution}
+A frequência será f = \Sexpr{f} rpm.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{f}}
+%% \exname{Q10MCU}
+%% \extol{0.01}

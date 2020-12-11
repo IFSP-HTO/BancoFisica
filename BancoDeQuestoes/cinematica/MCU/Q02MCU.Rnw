@@ -1,0 +1,35 @@
+<<echo=FALSE, results=hide>>=
+## DATA GENERATION 
+mu1 = sample(6:9,1)*0.1
+raio = sample(30:40, 1)
+
+## Resposta
+omega = round(sqrt(10*mu1/raio),2)
+
+##Imagem
+include_supplement("Q02MCU.png")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Ventilador de teto é algo comum nas casas brasileiras das regiões mais quentes, como na de Márcio. Ele colocou uma borracha sobre uma das pás do ventilador de teto de seu quarto. A pá do ventilador era de madeira e ficava na horizontal. A frequência do ventilador era controlada por Márcio através de um dispositivo eletrônico. A borracha foi colocada a {raio} cm do centro do ventilador. Se os coeficientes de atrito que estão associados à borracha em contato com a madeira medem {mu1} e 0,5 , determine a maior frequência angular (ou velocidade angular) que o ventilador pode assumir em movimento circular uniforme para que a borracha não deslize pela pá.
+
+Dados: despreze a resistência do ar, desconsidere a fase de movimento acelerado e ofereça a resposta em radianos por segundo. A aceleração da gravidade = 10 m/s². Arredonde para duas decimais.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[height=5cm, keepaspectratio]{{Q02MCU.png}}
+\end{figure}
+
+\end{question}
+
+\begin{solution}
+%% Supply a solution here!
+Omega é \Sexpr{omega}.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{omega}}
+%% \exname{Q02MCU}
+%% \extol{0.01}
