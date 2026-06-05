@@ -1,0 +1,85 @@
+# =============================================================================
+# .claudeignore — BancoFísica
+# Evita consumo desnecessário de tokens no Claude Code.
+# Artefatos gerados, dependências e temporários não precisam de contexto.
+# =============================================================================
+
+# ── Saídas compiladas (geradas pelo pacote exams) ────────────────────────────
+# XMLs são artefato de BUILD, não fonte. Nunca editar diretamente.
+Moodle/XML/
+Moodle/*.zip
+
+# HTMLs e PDFs gerados pelo CRIAR-HTML.R / CRIAR-PDF.R
+docs/
+**/*.html
+**/*.pdf
+
+# ── R temporários e cache ────────────────────────────────────────────────────
+.Rhistory
+.RData
+.Rproj.user/
+**/.Rproj.user/
+**/rsconnect/
+
+# ── Figuras e plots gerados automaticamente pelo exams ──────────────────────
+**/figure/
+**/*-fig*.png
+**/*-fig*.jpg
+**/*-fig*.pdf
+
+# ── LaTeX auxiliares (gerados na compilação .Rnw) ───────────────────────────
+**/*.aux
+**/*.log
+**/*.synctex.gz
+**/*.fls
+**/*.fdb_latexmk
+**/*.out
+**/*.toc
+**/*.blg
+**/*.bbl
+**/*.dvi
+**/*.ps
+
+# ── Dependências e pacotes R ─────────────────────────────────────────────────
+# Se usar renv para gestão de dependências
+renv/library/
+renv/staging/
+renv/sandbox/
+
+# ── CI/CD — logs e artefatos de build ───────────────────────────────────────
+# A config .circleci/config.yml em si É relevante (manter no contexto)
+.circleci/cache/
+
+# ── Assets binários — imagens do gitbook/readme ──────────────────────────────
+# GIFs e imagens de documentação não ajudam o Claude a entender o código
+.gitbook/assets/
+**/*.gif
+**/*.png
+**/*.jpg
+**/*.jpeg
+**/*.svg
+
+# ── Node (se algum tool usar) ───────────────────────────────────────────────
+node_modules/
+
+# ── OS e editores ────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+**/.DS_Store
+.idea/
+.vscode/
+
+# =============================================================================
+# O QUE FICA NO CONTEXTO (não ignorado — são a fonte real do projeto):
+#
+#   BancoDeQuestoes/**/*.Rnw   ← questões fonte
+#   BancoDeQuestoes/**/*.Rmd   ← questões fonte (formato alternativo)
+#   R/helpers.R                ← lógica de compilação
+#   R/visualizador.R           ← app Shiny
+#   R/extrair_pdf.R            ← extrator de PDF
+#   templates/                 ← templates exams
+#   tests/tests.R              ← testes (justamente o que vamos consertar)
+#   .circleci/config.yml       ← CI (justamente o que vamos consertar)
+#   DESCRIPTION                ← metadados do pacote R
+#   README.md                  ← documentação
+# =============================================================================
