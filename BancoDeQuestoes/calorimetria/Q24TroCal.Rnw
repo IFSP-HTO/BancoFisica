@@ -9,7 +9,7 @@
   
   temp2 <- sample(seq(from=100,to=150,by=1),1)
   
-  resp1 <- round((vol1*10^3*temp2)+(vol2*temp1)/(mass1*10^3+mass2), digits = 1)
+  resp1 <- round((vol1*10^3*temp1 + vol2*temp2)/(vol1*10^3 + vol2), digits = 1)
   
 @
   

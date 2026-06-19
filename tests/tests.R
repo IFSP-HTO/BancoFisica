@@ -32,80 +32,95 @@ check_encoding <- function() {
   if (length(ind_n_utf8) > 0 ) stop(erro)
 }
 
+## Compila UM arquivo numa sessão R limpa via callr.
+##
+## O exams2moodle/exams2pdf altera o diretório de trabalho e acumula estado
+## ao longo de uma sessão; rodando 200+ compilações no mesmo processo isso
+## corrompe o tempdir/cwd e gera falhas intermitentes ("argumento 'path'
+## inválido"). Isolar cada compilação num subprocesso elimina esse acúmulo.
+## O set.seed deixa a execução reprodutível. Retorna TRUE/FALSE.
+compilar_isolado <- function(arquivo, diretorio, formato, ano, seed) {
+  tryCatch({
+    callr::r(
+      function(arquivo, diretorio, formato, ano, seed) {
+        ## Mesmos pacotes da sessão principal: alguns chunks .Rnw usam
+        ## funções de stringr/magrittr/purrr (ex.: str_split, %>%).
+        suppressMessages({
+          library(magrittr); library(stringr); library(exams); library(purrr)
+        })
+        set.seed(seed)
+        if (formato == "xml") {
+          exams2moodle(arquivo, n = 1, rule = "none",
+                       schoice = list(shuffle = TRUE),
+                       name = paste0("exemplos-", ano),
+                       encoding = "UTF-8", dir = tempdir(), edir = diretorio)
+        } else {
+          exams2pdf(arquivo, n = 1,
+                    name = paste0("exemplos-", ano),
+                    encoding = "UTF-8", dir = tempdir(), edir = diretorio,
+                    template = "plain8")
+        }
+        invisible(TRUE)
+      },
+      args = list(arquivo = arquivo, diretorio = diretorio,
+                  formato = formato, ano = ano, seed = seed)
+    )
+    TRUE
+  }, error = function(e) FALSE)
+}
+
 ## Verifica a compilação para XML
 generate_xml <- function() {
-  
+
   ## Pega todos os arquivos de questões
-  arquivos <- data.frame(file = dir(pattern = '*.Rnw',recursive = T))
-  arquivos$status <- rep('', nrow(arquivos))
-  
-  ## Envelopando a função exams2moodle
-  exams2moodle <- possibly(.f = exams2moodle, otherwise = NA)
-  
+  arquivos <- data.frame(file = dir(pattern = '*.Rnw', recursive = T),
+                         stringsAsFactors = FALSE)
+
   ## Ano corrente
-  ano = 2018
-  
-  ## Para cada arquivo descobre o encoding
-  for (i in 1:nrow(arquivos)) {
-    
-    ## Descobrindo o diretório
-    diretorio <- gsub(pattern = '/[^/]*$', replacement = '', x = arquivos$file[i])
-    
-    ## Rodando a função em cada arquivo
-    arquivos$status[i] <- exams2moodle(as.character(arquivos$file[i]), 
-                                       n = 1, rule="none", 
-                                       schoice = list(shuffle = TRUE), 
-                                       name = paste0("exemplos-",ano),
-                                       encoding = "UTF-8",
-                                       dir = tempdir(),
-                                       edir = diretorio)
+  ano <- 2018
+
+  ## Para cada arquivo, compila para XML numa sessão isolada
+  ok <- logical(nrow(arquivos))
+  for (i in seq_len(nrow(arquivos))) {
+    arquivo   <- normalizePath(arquivos$file[i])
+    diretorio <- dirname(arquivo)
+    ok[i] <- compilar_isolado(arquivo, diretorio, "xml", ano, seed = i)
   }
-  
+
   ## Encontrando as linhas com erros
-  ind_xml <- which(is.na(arquivos$status))
-  
+  ind_xml <- which(!ok)
+
   ## Erro reportado
   erro <- paste("NÃO COMPILA PARA XML:", arquivos$file[ind_xml], '\n')
-  
+
   ## Testando a compilação
   if (length(ind_xml) > 0 ) stop(erro)
 }
 
 ## Verifica a compilação para pdf
 generate_pdf <- function() {
-  
+
   ## Pega todos os arquivos de questões
-  arquivos <- data.frame(file = dir(pattern = '*.Rnw',recursive = T))
-  arquivos$status <- rep('', nrow(arquivos))
-  
-  ## Envelopando a função exams2moodle
-  exams2pdf <- possibly(.f = exams2pdf, otherwise = NA)
-  
+  arquivos <- data.frame(file = dir(pattern = '*.Rnw', recursive = T),
+                         stringsAsFactors = FALSE)
+
   ## Ano
   ano <- 2018
-  
-  ## Para cada arquivo roda a compilação para pdf
-  for (i in 1:nrow(arquivos)) {
-    
-    ## Descobrindo o diretório
-    diretorio <- gsub(pattern = '/[^/]*$', replacement = '', x = arquivos$file[i])
-    
-    ## Rodando a função em cada arquivo
-    arquivos$status[i] <- exams2pdf(as.character(arquivos$file[i]), 
-                                    n = 1, 
-                                    name = paste0("exemplos-",ano),
-                                    encoding = "UTF-8",
-                                    dir = tempdir(),
-                                    edir = diretorio,
-                                    template = "plain8")
+
+  ## Para cada arquivo, compila para PDF numa sessão isolada
+  ok <- logical(nrow(arquivos))
+  for (i in seq_len(nrow(arquivos))) {
+    arquivo   <- normalizePath(arquivos$file[i])
+    diretorio <- dirname(arquivo)
+    ok[i] <- compilar_isolado(arquivo, diretorio, "pdf", ano, seed = i)
   }
-  
+
   ## Encontrando as linhas com erros
-  ind_pdf <- which(is.na(arquivos$status))
-  
+  ind_pdf <- which(!ok)
+
   ## Erro reportado
   erro <- paste("NÃO COMPILA PARA PDF:", arquivos$file[ind_pdf], '\n')
-  
+
   ## Testando a compilação
   if (length(ind_pdf) > 0 ) stop(erro)
 }

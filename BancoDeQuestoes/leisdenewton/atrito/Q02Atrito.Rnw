@@ -6,6 +6,7 @@ uest <- sample(seq(from=0.4,to=0.6,by=0.01),1)
 udin <- sample(seq(from=0.2,to=uest-0.05,by=0.01),1)
 theta <- sample(seq(from=20,to=50,by=1),1)
 Fat <- uest*m*10*cos(theta*pi/180)
+Fa <- m*10*sin(theta*pi/180)
 m
 uest
 udin

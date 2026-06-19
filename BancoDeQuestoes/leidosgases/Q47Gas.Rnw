@@ -7,7 +7,7 @@
   
   mols1  <- sample(seq(from=1,to=5,by=1),1)
   
-  resp1  <- round((press1*vol1)/(0.082*temp1), digits = 1)
+  resp1  <- round((press1*vol1)/(0.082*mols1), digits = 1)
   
 @
   

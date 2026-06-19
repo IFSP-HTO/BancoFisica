@@ -6,8 +6,10 @@
   temp2  <- sample(seq(from=30,to=40,by=1),1)
   
   vol1   <- sample(seq(from=21,to=32,by=1),1)
-  
-  resp1  <- round((press1*(temp2+273)/temp1+273), digits = 1)
+
+  press1 <- sample(seq(from=1,to=5,by=1),1)
+
+  resp1  <- round(press1*(temp2+273)/(temp1+273), digits = 1)
   
 @
   
