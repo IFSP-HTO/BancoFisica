@@ -5,6 +5,9 @@ jobs:
     docker:
       - image: flaviobarros/bancofisica-tests
     steps:
+      - run:
+          name: Install git and ssh
+          command: apt-get update -qq && apt-get install -y git openssh-client
       - checkout
       - run:
           command: | 
