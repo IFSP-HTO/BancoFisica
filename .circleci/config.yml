@@ -7,29 +7,43 @@ jobs:
       - image: rocker/verse:4.4.3
     environment:
       R_KEEP_PKG_SOURCE: yes
+      NOT_CRAN: true
     steps:
       - run:
-          name: Install checkout tools
+          name: Install system tools and LaTeX
           command: |
             apt-get update -qq
-            apt-get install -y git openssh-client
+            apt-get install -y --no-install-recommends \
+              git \
+              file \
+              qpdf \
+              texlive-latex-base \
+              texlive-latex-recommended \
+              texlive-latex-extra \
+              texlive-fonts-recommended \
+              texlive-lang-portuguese \
+              latexmk
+            rm -rf /var/lib/apt/lists/*
 
-      - checkout
+      - run:
+          name: Checkout code over HTTPS
+          command: |
+            git clone --depth=1 --branch "${CIRCLE_BRANCH}" "https://github.com/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}.git" .
+            git rev-parse --short HEAD
 
       - restore_cache:
           keys:
-            - deps-v2-{{ .Branch }}-{{ checksum "DESCRIPTION" }}
-            - deps-v2-{{ .Branch }}-
-            - deps-v2-
+            - deps-v3-{{ .Branch }}-{{ checksum "DESCRIPTION" }}
+            - deps-v3-{{ .Branch }}-
+            - deps-v3-
 
       - run:
           name: Install R dependencies
           command: |
-            Rscript -e 'install.packages(c("devtools", "remotes"), repos = "https://cloud.r-project.org")'
-            Rscript -e 'devtools::install_deps(dependencies = TRUE, repos = "https://cloud.r-project.org")'
+            Rscript -e 'options(repos = c(CRAN = "https://cloud.r-project.org")); if (!requireNamespace("remotes", quietly = TRUE)) install.packages("remotes"); remotes::install_deps(dependencies = TRUE, upgrade = "never")'
 
       - save_cache:
-          key: deps-v2-{{ .Branch }}-{{ checksum "DESCRIPTION" }}
+          key: deps-v3-{{ .Branch }}-{{ checksum "DESCRIPTION" }}
           paths:
             - "/usr/local/lib/R/site-library"
 
