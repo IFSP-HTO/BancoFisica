@@ -27,16 +27,7 @@ jobs:
       - run:
           name: Install R dependencies
           command: |
-            Rscript - <<'EOF'
-            options(repos = c(CRAN = "https://cloud.r-project.org"))
-
-            missing <- setdiff("remotes", rownames(installed.packages()))
-            if (length(missing) > 0) {
-              install.packages(missing)
-            }
-
-            remotes::install_deps(dependencies = TRUE, upgrade = "never")
-            EOF
+            Rscript -e 'options(repos = c(CRAN = "https://cloud.r-project.org")); if (!requireNamespace("remotes", quietly = TRUE)) install.packages("remotes"); remotes::install_deps(dependencies = TRUE, upgrade = "never")'
 
       - save_cache:
           key: deps-v3-{{ .Branch }}-{{ checksum "DESCRIPTION" }}
