@@ -13,10 +13,14 @@ jobs:
           name: Install system tools
           command: |
             apt-get update -qq
-            apt-get install -y --no-install-recommends git openssh-client file qpdf
+            apt-get install -y --no-install-recommends git file qpdf
             rm -rf /var/lib/apt/lists/*
 
-      - checkout
+      - run:
+          name: Checkout code over HTTPS
+          command: |
+            git clone --depth=1 --branch "${CIRCLE_BRANCH}" "https://github.com/${CIRCLE_PROJECT_USERNAME}/${CIRCLE_PROJECT_REPONAME}.git" .
+            git rev-parse --short HEAD
 
       - restore_cache:
           keys:
