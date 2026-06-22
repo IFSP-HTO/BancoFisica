@@ -13,7 +13,7 @@ Imports:
     callr (>= 3.0.0),
     tth (>= 4.3),
     base64enc (>= 0.1)
-License: MIT
+License: GPL-3
 Encoding: UTF-8
 LazyData: true
 Suggests: 
