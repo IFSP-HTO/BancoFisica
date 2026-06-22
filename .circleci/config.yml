@@ -10,10 +10,19 @@ jobs:
       NOT_CRAN: true
     steps:
       - run:
-          name: Install system tools
+          name: Install system tools and LaTeX
           command: |
             apt-get update -qq
-            apt-get install -y --no-install-recommends git file qpdf
+            apt-get install -y --no-install-recommends \
+              git \
+              file \
+              qpdf \
+              texlive-latex-base \
+              texlive-latex-recommended \
+              texlive-latex-extra \
+              texlive-fonts-recommended \
+              texlive-lang-portuguese \
+              latexmk
             rm -rf /var/lib/apt/lists/*
 
       - run:
