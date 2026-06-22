@@ -127,6 +127,6 @@ generate_pdf <- function() {
 
 ## Rodando as funções
 check_encoding()
-if (file.exists("tools/question_counts.R")) system2("Rscript", "tools/question_counts.R")
+if (file.exists("tools/question_counts.R")) system2("Rscript", c("tools/question_counts.R", "--check"))
 generate_xml()
 generate_pdf()
