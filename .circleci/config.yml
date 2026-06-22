@@ -7,29 +7,39 @@ jobs:
       - image: rocker/verse:4.4.3
     environment:
       R_KEEP_PKG_SOURCE: yes
+      NOT_CRAN: true
     steps:
       - run:
-          name: Install checkout tools
+          name: Install system tools
           command: |
             apt-get update -qq
-            apt-get install -y git openssh-client
+            apt-get install -y --no-install-recommends git openssh-client file qpdf
+            rm -rf /var/lib/apt/lists/*
 
       - checkout
 
       - restore_cache:
           keys:
-            - deps-v2-{{ .Branch }}-{{ checksum "DESCRIPTION" }}
-            - deps-v2-{{ .Branch }}-
-            - deps-v2-
+            - deps-v3-{{ .Branch }}-{{ checksum "DESCRIPTION" }}
+            - deps-v3-{{ .Branch }}-
+            - deps-v3-
 
       - run:
           name: Install R dependencies
           command: |
-            Rscript -e 'install.packages(c("devtools", "remotes"), repos = "https://cloud.r-project.org")'
-            Rscript -e 'devtools::install_deps(dependencies = TRUE, repos = "https://cloud.r-project.org")'
+            Rscript - <<'EOF'
+            options(repos = c(CRAN = "https://cloud.r-project.org"))
+
+            missing <- setdiff("remotes", rownames(installed.packages()))
+            if (length(missing) > 0) {
+              install.packages(missing)
+            }
+
+            remotes::install_deps(dependencies = TRUE, upgrade = "never")
+            EOF
 
       - save_cache:
-          key: deps-v2-{{ .Branch }}-{{ checksum "DESCRIPTION" }}
+          key: deps-v3-{{ .Branch }}-{{ checksum "DESCRIPTION" }}
           paths:
             - "/usr/local/lib/R/site-library"
 
