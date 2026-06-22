@@ -1,6 +1,6 @@
 # BancoFísica
 
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)   [![CircleCI](https://circleci.com/gh/IFSP-HTO/BancoFisica.svg?style=svg)](https://circleci.com/gh/IFSP-HTO/BancoFisica) [![DOI](https://zenodo.org/badge/184617787.svg)](https://zenodo.org/badge/latestdoi/184617787)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) [![CircleCI](https://circleci.com/gh/IFSP-HTO/BancoFisica.svg?style=svg)](https://circleci.com/gh/IFSP-HTO/BancoFisica) [![R tests](https://github.com/IFSP-HTO/BancoFisica/actions/workflows/r-tests.yml/badge.svg?branch=master)](https://github.com/IFSP-HTO/BancoFisica/actions/workflows/r-tests.yml) [![DOI](https://zenodo.org/badge/184617787.svg)](https://zenodo.org/badge/latestdoi/184617787)
 
 ## Cite como:
 Flavio Barros, Marcelo Cardinali, Carlos E.F. de Santana, jmduly, Vinícius, Logout, & Ana Paula. (2020, November 26). IFSP-HTO/BancoFisica: First release (Version v0.0.1). Zenodo. http://doi.org/10.5281/zenodo.4292534
@@ -55,9 +55,9 @@ Por fim basta criar um questionário a partir do banco de questões:
 
 ![](.gitbook/assets/criandoquestionario.gif)
 
-Os principais detalhes são: no comportamento da questão você deve selecionar o "feekback imediato" e nas opções de revisão você deve desmarcar todos os "feedbacks".
+Os principais detalhes são: no comportamento da questão você deve selecionar o "feedback imediato" e nas opções de revisão você deve desmarcar todos os "feedbacks".
 
-Por fim o comportamento do questionário.
+Por fim, configure o comportamento do questionário.
 
 ![](.gitbook/assets/exemploquestao.gif)
 
@@ -76,7 +76,7 @@ Especialmente o item 2 é importante em virtude de o conjunto de questões dispo
 
 ### Criando questões
 
-Há ampla documentação sobre o tema na página do pacote [exams](https://cran.r-project.org/web/packages/exams/index.html). Dois artigos em especial contém exemplos e os recursos básicos do pacote:
+Há ampla documentação sobre o tema na página do pacote [exams](https://cran.r-project.org/web/packages/exams/index.html). Dois artigos em especial contêm exemplos e os recursos básicos do pacote:
 
 * [Automatic Generation of Exams in R](https://cran.r-project.org/web/packages/exams/vignettes/exams.pdf)
 * [Flexible Generation of E-Learning Exams in R: Moodle Quizzes, OLAT Assessments, and Beyond](https://cran.r-project.org/web/packages/exams/vignettes/exams2.pdf)
@@ -84,7 +84,7 @@ Há ampla documentação sobre o tema na página do pacote [exams](https://cran.
 #### Pull Request  
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
-Faça um fork do repositório, realize as modificações e faça um pull request. Nós analisaremos a submissão e forneceremos feedback se necessário. TOME CUIDADO PARA QUE SUAS CONTRIBUIÇÕES PASSEM  NOS TESTES. ISSO É SUA RESPONSABILIDADE. 
+Faça um fork do repositório, realize as modificações e faça um pull request. Nós analisaremos a submissão e forneceremos feedback se necessário. Tenha cuidado para que suas contribuições passem nos testes.
 
 #### Issues
 
@@ -100,9 +100,9 @@ onde:
 
 **xx**: número sequencial de implementação: 01, 02, 03, etc.
 
-**Assunto**: Nome abreviado do assunto que se trata a questão. Ex: Ondas, Termd \(termodinâmica\), CalorTemp \(Calor e temperatura\), Eletrost \(eletrostática\), etc. Ex: Q15Eletrost.Rnw
+**Assunto**: nome abreviado do assunto tratado pela questão. Ex.: Ondas, Termd \(termodinâmica\), CalorTemp \(Calor e temperatura\), Eletrost \(eletrostática\), etc. Ex.: Q15Eletrost.Rnw
 
-**Tipo**: Inserir a palavra Quiz apenas se a questão for de múltipla escolha ou verdadeiro e falso. Ex: Q02QuizOndas.
+**Tipo**: inserir a palavra Quiz apenas se a questão for de múltipla escolha ou verdadeiro ou falso. Ex.: Q02QuizOndas.
 
 ### Acentos
 
@@ -117,7 +117,7 @@ O pacote exams pode apresentar alguns problemas com acentos. Há três soluçõe
 2 - Compilar cada questão com:
 
 ```text
-exams2pdf("file.Rmd", encoding = "UTF-8", template = "plain8")
+exams2pdf("file.Rnw", encoding = "UTF-8", template = "plain8")
 ```
 
 ## ShinyExams
@@ -127,4 +127,3 @@ Nós criamos um [addin](https://cran.r-project.org/web/packages/addinslist/READM
 ## Licença
 
 GPL-v3
-
