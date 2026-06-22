@@ -8,6 +8,12 @@ jobs:
     environment:
       R_KEEP_PKG_SOURCE: yes
     steps:
+      - run:
+          name: Install checkout tools
+          command: |
+            apt-get update -qq
+            apt-get install -y git openssh-client
+
       - checkout
 
       - restore_cache:
