@@ -1,32 +1,45 @@
 version: 2.1
+
 jobs:
-  build:  
+  build:
     working_directory: ~/main
     docker:
-      - image: flaviobarros/bancofisica-tests
+      - image: rocker/verse:4.4.3
+    environment:
+      R_KEEP_PKG_SOURCE: yes
     steps:
-      - run:
-          name: Install git and ssh
-          command: apt-get update -qq && apt-get install -y git openssh-client
       - checkout
+
+      - restore_cache:
+          keys:
+            - deps-v2-{{ .Branch }}-{{ checksum "DESCRIPTION" }}
+            - deps-v2-{{ .Branch }}-
+            - deps-v2-
+
       - run:
-          command: | 
-            R -e 'devtools::install_deps(dependencies = TRUE)'
+          name: Install R dependencies
+          command: |
+            Rscript -e 'install.packages(c("devtools", "remotes"), repos = "https://cloud.r-project.org")'
+            Rscript -e 'devtools::install_deps(dependencies = TRUE, repos = "https://cloud.r-project.org")'
+
       - save_cache:
-          key: deps1-{{ .Branch }}-{{ checksum "DESCRIPTION" }}
+          key: deps-v2-{{ .Branch }}-{{ checksum "DESCRIPTION" }}
           paths:
             - "/usr/local/lib/R/site-library"
-      - run:
-          command: |
-            R -e 'source("tests/tests.R")'
 
-          ## store artifacts -----------------
+      - run:
+          name: Run BancoFisica tests
+          command: |
+            Rscript -e 'source("tests/tests.R")'
+
       - store_test_results:
           path: /tmp/Rcheck/tests/
           when: always
+
       - store_artifacts:
           path: /tmp/Rcheck
           when: always
+
 workflows:
   version: 2
   build:
