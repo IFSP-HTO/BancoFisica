@@ -1,0 +1,53 @@
+name: Update generated assets
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - "BancoDeQuestoes/**"
+      - "tools/question_counts.R"
+      - ".github/workflows/update-generated-assets.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: generated-assets
+  cancel-in-progress: true
+
+jobs:
+  update-generated-assets:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup R
+        uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: '4.4.3'
+          use-public-rspm: true
+
+      - name: Generate question count assets
+        run: |
+          Rscript tools/question_counts.R --check --out-dir public
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
