@@ -1,0 +1,55 @@
+<<echo=FALSE, results=hide>>=
+## Inspirada no ENEM 2025 Q97. Questao interdisciplinar: optica + fisiologia.
+d_claro <- sample(c(2, 3, 4), 1)
+d_escuro <- sample(c(6, 7, 8), 1)
+fator <- (d_escuro/d_claro)^2
+fmt <- function(x, d = 1) formatC(x, format = "f", digits = d, decimal.mark = ",")
+ordem <- sample(1:5)
+questions <- rep("", 5)
+solutions <- rep(FALSE, 5)
+questions[ordem[1]] <- paste0("No ambiente escuro, a pupila dilata e a area de entrada de luz fica cerca de ", fmt(fator), " vezes maior, favorecendo a reflexao na retina.")
+questions[ordem[2]] <- "No ambiente escuro, a pupila diminui e bloqueia totalmente a luz do flash."
+questions[ordem[3]] <- "O efeito ocorre porque a retina emite luz vermelha propria, independentemente da iluminacao."
+questions[ordem[4]] <- "O efeito e eliminado quando a pupila dilata, pois a area de entrada de luz diminui com o diametro."
+questions[ordem[5]] <- "O fenomeno nao envolve reflexao da luz, apenas refracao no ar."
+solutions[ordem[1]] <- TRUE
+@
+\usepackage[utf8]{inputenc}
+\begin{question}
+
+Em uma fotografia com flash, o efeito dos olhos vermelhos pode ocorrer quando a luz entra pela pupila, reflete em regioes vascularizadas do fundo do olho e retorna para a camera. Em certo ambiente claro, o diametro da pupila e $\Sexpr{d_claro}\,\mathrm{mm}$; em ambiente escuro, passa a ser $\Sexpr{d_escuro}\,\mathrm{mm}$.
+
+Qual explicacao fisica e mais adequada para o aumento desse efeito em ambiente escuro?
+
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(questions)
+@
+
+\end{question}
+
+\begin{solution}
+
+A area de uma pupila circular e proporcional ao quadrado de seu diametro:
+\[
+A \propto d^2.
+\]
+Assim, a razao entre as areas no escuro e no claro e
+\[
+\frac{A_{\text{escuro}}}{A_{\text{claro}}}
+= \left(\frac{\Sexpr{d_escuro}}{\Sexpr{d_claro}}\right)^2
+= \Sexpr{fmt(fator)}.
+\]
+Com maior area de entrada, mais luz do flash atinge o fundo do olho e mais luz pode ser refletida de volta para a camera.
+
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(paste("\\textbf{", ifelse(solutions, "Verdadeiro", "Falso"), "}", sep = ""))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q91QuizOlhosVermelhos}
+%% \exsection{Optica; Reflexao; Interdisciplinar; ENEM}
+%% \exusepackage[utf8]{inputenc}
