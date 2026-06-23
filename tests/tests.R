@@ -69,6 +69,17 @@ compilar_isolado <- function(arquivo, diretorio, formato, ano, seed) {
   }, error = function(e) FALSE)
 }
 
+## Verifica a geração do gráfico sem exigir artefatos versionados no PR.
+check_question_counts <- function() {
+  if (file.exists("tools/question_counts.R")) {
+    status <- system2(
+      "Rscript",
+      c("tools/question_counts.R", "--check", "--out-dir", "build/question-counts")
+    )
+    if (!identical(status, 0L)) stop("Question count generator failed")
+  }
+}
+
 ## Verifica a compilação para XML
 generate_xml <- function() {
 
@@ -127,5 +138,6 @@ generate_pdf <- function() {
 
 ## Rodando as funções
 check_encoding()
+check_question_counts()
 generate_xml()
 generate_pdf()
