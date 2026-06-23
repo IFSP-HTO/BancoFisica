@@ -57,3 +57,7 @@ jobs:
       - name: Run BancoFisica tests
         run: |
           Rscript -e 'source("tests/tests.R")'
+
+      - name: Audit solution blocks
+        run: |
+          Rscript tools/audit_solutions.R
