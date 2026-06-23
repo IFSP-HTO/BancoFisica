@@ -7,6 +7,7 @@ on:
     paths:
       - "BancoDeQuestoes/**"
       - "tools/question_counts.R"
+      - "README.md"
       - ".github/workflows/update-generated-assets.yml"
   workflow_dispatch:
 
