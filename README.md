@@ -1,6 +1,6 @@
 # BancoFísica
 
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) [![CircleCI](https://circleci.com/gh/IFSP-HTO/BancoFisica.svg?style=svg)](https://circleci.com/gh/IFSP-HTO/BancoFisica) [![R tests](https://github.com/IFSP-HTO/BancoFisica/actions/workflows/r-tests.yml/badge.svg?branch=master)](https://github.com/IFSP-HTO/BancoFisica/actions/workflows/r-tests.yml) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4292534.svg)](https://doi.org/10.5281/zenodo.4292534)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) [![R tests](https://github.com/IFSP-HTO/BancoFisica/actions/workflows/r-tests.yml/badge.svg?branch=master)](https://github.com/IFSP-HTO/BancoFisica/actions/workflows/r-tests.yml) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4292534.svg)](https://doi.org/10.5281/zenodo.4292534)
 
 ## Cite como:
 Flavio Barros, Marcelo Cardinali, Carlos E.F. de Santana, jmduly, Vinícius, Logout, & Ana Paula. (2020, November 26). IFSP-HTO/BancoFisica: First release (Version v0.0.1). Zenodo. http://doi.org/10.5281/zenodo.4292534
