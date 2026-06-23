@@ -1,0 +1,5786 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+
+
+<question type="category">
+<category>
+<text>$course$/nc_og-12026/Exercise 1</text>
+</category>
+</question>
+
+
+<question type="shortanswer">
+<name>
+<text> R01 Q1 : Q01NC </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Escreva 0,69 bilhões de anos em notação científica.</p>
+<p><strong>Nota</strong>: Para escrever potências no computador você precisa usar o símbolo " <span class="math inline">\(\hat{}\)</span> " (acento circunflexo). Assim, para escrever <span class="math inline">\(6,5\cdot 10^3\)</span>, você precisa digitar: 6,5*10<span class="math inline">\(\hat{}\)</span>3</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>6,9e+08 anos</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>
+6,9*10^8
+</text>
+</answer>
+</question>
+
+
+<question type="shortanswer">
+<name>
+<text> R02 Q1 : Q01NC </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Escreva 0,99 mil anos em notação científica.</p>
+<p><strong>Nota</strong>: Para escrever potências no computador você precisa usar o símbolo " <span class="math inline">\(\hat{}\)</span> " (acento circunflexo). Assim, para escrever <span class="math inline">\(6,5\cdot 10^3\)</span>, você precisa digitar: 6,5*10<span class="math inline">\(\hat{}\)</span>3</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>9,9e+02 anos</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>
+9,9*10^2
+</text>
+</answer>
+</question>
+
+
+<question type="shortanswer">
+<name>
+<text> R03 Q1 : Q01NC </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Escreva 0,33 mil anos em notação científica.</p>
+<p><strong>Nota</strong>: Para escrever potências no computador você precisa usar o símbolo " <span class="math inline">\(\hat{}\)</span> " (acento circunflexo). Assim, para escrever <span class="math inline">\(6,5\cdot 10^3\)</span>, você precisa digitar: 6,5*10<span class="math inline">\(\hat{}\)</span>3</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>3,3e+02 anos</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>
+3,3*10^2
+</text>
+</answer>
+</question>
+
+
+<question type="shortanswer">
+<name>
+<text> R04 Q1 : Q01NC </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Escreva 0,53 bilhões de anos em notação científica.</p>
+<p><strong>Nota</strong>: Para escrever potências no computador você precisa usar o símbolo " <span class="math inline">\(\hat{}\)</span> " (acento circunflexo). Assim, para escrever <span class="math inline">\(6,5\cdot 10^3\)</span>, você precisa digitar: 6,5*10<span class="math inline">\(\hat{}\)</span>3</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>5,3e+08 anos</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>
+5,3*10^8
+</text>
+</answer>
+</question>
+
+
+<question type="shortanswer">
+<name>
+<text> R05 Q1 : Q01NC </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Escreva 0,77 bilhões de anos em notação científica.</p>
+<p><strong>Nota</strong>: Para escrever potências no computador você precisa usar o símbolo " <span class="math inline">\(\hat{}\)</span> " (acento circunflexo). Assim, para escrever <span class="math inline">\(6,5\cdot 10^3\)</span>, você precisa digitar: 6,5*10<span class="math inline">\(\hat{}\)</span>3</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>7,7e+08 anos</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>
+7,7*10^8
+</text>
+</answer>
+</question>
+
+
+<question type="shortanswer">
+<name>
+<text> R06 Q1 : Q01NC </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Escreva 0,89 bilhões de anos em notação científica.</p>
+<p><strong>Nota</strong>: Para escrever potências no computador você precisa usar o símbolo " <span class="math inline">\(\hat{}\)</span> " (acento circunflexo). Assim, para escrever <span class="math inline">\(6,5\cdot 10^3\)</span>, você precisa digitar: 6,5*10<span class="math inline">\(\hat{}\)</span>3</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>8,9e+08 anos</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>
+8,9*10^8
+</text>
+</answer>
+</question>
+
+
+<question type="shortanswer">
+<name>
+<text> R07 Q1 : Q01NC </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Escreva 0,61 mil anos em notação científica.</p>
+<p><strong>Nota</strong>: Para escrever potências no computador você precisa usar o símbolo " <span class="math inline">\(\hat{}\)</span> " (acento circunflexo). Assim, para escrever <span class="math inline">\(6,5\cdot 10^3\)</span>, você precisa digitar: 6,5*10<span class="math inline">\(\hat{}\)</span>3</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>6,1e+02 anos</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>
+6,1*10^2
+</text>
+</answer>
+</question>
+
+
+<question type="shortanswer">
+<name>
+<text> R08 Q1 : Q01NC </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Escreva 0,65 milhões de anos em notação científica.</p>
+<p><strong>Nota</strong>: Para escrever potências no computador você precisa usar o símbolo " <span class="math inline">\(\hat{}\)</span> " (acento circunflexo). Assim, para escrever <span class="math inline">\(6,5\cdot 10^3\)</span>, você precisa digitar: 6,5*10<span class="math inline">\(\hat{}\)</span>3</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>6,5e+05 anos</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>
+6,5*10^5
+</text>
+</answer>
+</question>
+
+
+<question type="shortanswer">
+<name>
+<text> R09 Q1 : Q01NC </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Escreva 0,75 mil anos em notação científica.</p>
+<p><strong>Nota</strong>: Para escrever potências no computador você precisa usar o símbolo " <span class="math inline">\(\hat{}\)</span> " (acento circunflexo). Assim, para escrever <span class="math inline">\(6,5\cdot 10^3\)</span>, você precisa digitar: 6,5*10<span class="math inline">\(\hat{}\)</span>3</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>7,5e+02 anos</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>
+7,5*10^2
+</text>
+</answer>
+</question>
+
+
+<question type="shortanswer">
+<name>
+<text> R10 Q1 : Q01NC </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Escreva 0,17 bilhões de anos em notação científica.</p>
+<p><strong>Nota</strong>: Para escrever potências no computador você precisa usar o símbolo " <span class="math inline">\(\hat{}\)</span> " (acento circunflexo). Assim, para escrever <span class="math inline">\(6,5\cdot 10^3\)</span>, você precisa digitar: 6,5*10<span class="math inline">\(\hat{}\)</span>3</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>1,7e+08 anos</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>
+1,7*10^8
+</text>
+</answer>
+</question>
+
+
+<question type="shortanswer">
+<name>
+<text> R11 Q1 : Q01NC </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Escreva 0,43 mil anos em notação científica.</p>
+<p><strong>Nota</strong>: Para escrever potências no computador você precisa usar o símbolo " <span class="math inline">\(\hat{}\)</span> " (acento circunflexo). Assim, para escrever <span class="math inline">\(6,5\cdot 10^3\)</span>, você precisa digitar: 6,5*10<span class="math inline">\(\hat{}\)</span>3</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>4,3e+02 anos</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>
+4,3*10^2
+</text>
+</answer>
+</question>
+
+
+<question type="shortanswer">
+<name>
+<text> R12 Q1 : Q01NC </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Escreva 0,55 bilhões de anos em notação científica.</p>
+<p><strong>Nota</strong>: Para escrever potências no computador você precisa usar o símbolo " <span class="math inline">\(\hat{}\)</span> " (acento circunflexo). Assim, para escrever <span class="math inline">\(6,5\cdot 10^3\)</span>, você precisa digitar: 6,5*10<span class="math inline">\(\hat{}\)</span>3</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>5,5e+08 anos</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>
+5,5*10^8
+</text>
+</answer>
+</question>
+
+
+<question type="shortanswer">
+<name>
+<text> R13 Q1 : Q01NC </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Escreva 0,11 mil anos em notação científica.</p>
+<p><strong>Nota</strong>: Para escrever potências no computador você precisa usar o símbolo " <span class="math inline">\(\hat{}\)</span> " (acento circunflexo). Assim, para escrever <span class="math inline">\(6,5\cdot 10^3\)</span>, você precisa digitar: 6,5*10<span class="math inline">\(\hat{}\)</span>3</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>1,1e+02 anos</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>
+1,1*10^2
+</text>
+</answer>
+</question>
+
+
+<question type="shortanswer">
+<name>
+<text> R14 Q1 : Q01NC </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Escreva 0,57 milhões de anos em notação científica.</p>
+<p><strong>Nota</strong>: Para escrever potências no computador você precisa usar o símbolo " <span class="math inline">\(\hat{}\)</span> " (acento circunflexo). Assim, para escrever <span class="math inline">\(6,5\cdot 10^3\)</span>, você precisa digitar: 6,5*10<span class="math inline">\(\hat{}\)</span>3</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>5,7e+05 anos</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>
+5,7*10^5
+</text>
+</answer>
+</question>
+
+
+<question type="shortanswer">
+<name>
+<text> R15 Q1 : Q01NC </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Escreva 0,65 bilhões de anos em notação científica.</p>
+<p><strong>Nota</strong>: Para escrever potências no computador você precisa usar o símbolo " <span class="math inline">\(\hat{}\)</span> " (acento circunflexo). Assim, para escrever <span class="math inline">\(6,5\cdot 10^3\)</span>, você precisa digitar: 6,5*10<span class="math inline">\(\hat{}\)</span>3</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>6,5e+08 anos</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>
+6,5*10^8
+</text>
+</answer>
+</question>
+
+
+<question type="shortanswer">
+<name>
+<text> R16 Q1 : Q01NC </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Escreva 0,23 bilhões de anos em notação científica.</p>
+<p><strong>Nota</strong>: Para escrever potências no computador você precisa usar o símbolo " <span class="math inline">\(\hat{}\)</span> " (acento circunflexo). Assim, para escrever <span class="math inline">\(6,5\cdot 10^3\)</span>, você precisa digitar: 6,5*10<span class="math inline">\(\hat{}\)</span>3</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>2,3e+08 anos</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>
+2,3*10^8
+</text>
+</answer>
+</question>
+
+
+<question type="shortanswer">
+<name>
+<text> R17 Q1 : Q01NC </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Escreva 0,11 bilhões de anos em notação científica.</p>
+<p><strong>Nota</strong>: Para escrever potências no computador você precisa usar o símbolo " <span class="math inline">\(\hat{}\)</span> " (acento circunflexo). Assim, para escrever <span class="math inline">\(6,5\cdot 10^3\)</span>, você precisa digitar: 6,5*10<span class="math inline">\(\hat{}\)</span>3</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>1,1e+08 anos</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>
+1,1*10^8
+</text>
+</answer>
+</question>
+
+
+<question type="shortanswer">
+<name>
+<text> R18 Q1 : Q01NC </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Escreva 0,55 milhões de anos em notação científica.</p>
+<p><strong>Nota</strong>: Para escrever potências no computador você precisa usar o símbolo " <span class="math inline">\(\hat{}\)</span> " (acento circunflexo). Assim, para escrever <span class="math inline">\(6,5\cdot 10^3\)</span>, você precisa digitar: 6,5*10<span class="math inline">\(\hat{}\)</span>3</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>5,5e+05 anos</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>
+5,5*10^5
+</text>
+</answer>
+</question>
+
+
+<question type="shortanswer">
+<name>
+<text> R19 Q1 : Q01NC </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Escreva 0,65 milhões de anos em notação científica.</p>
+<p><strong>Nota</strong>: Para escrever potências no computador você precisa usar o símbolo " <span class="math inline">\(\hat{}\)</span> " (acento circunflexo). Assim, para escrever <span class="math inline">\(6,5\cdot 10^3\)</span>, você precisa digitar: 6,5*10<span class="math inline">\(\hat{}\)</span>3</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>6,5e+05 anos</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>
+6,5*10^5
+</text>
+</answer>
+</question>
+
+
+<question type="shortanswer">
+<name>
+<text> R20 Q1 : Q01NC </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Escreva 0,33 mil anos em notação científica.</p>
+<p><strong>Nota</strong>: Para escrever potências no computador você precisa usar o símbolo " <span class="math inline">\(\hat{}\)</span> " (acento circunflexo). Assim, para escrever <span class="math inline">\(6,5\cdot 10^3\)</span>, você precisa digitar: 6,5*10<span class="math inline">\(\hat{}\)</span>3</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>3,3e+02 anos</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>
+3,3*10^2
+</text>
+</answer>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/nc_og-12026/Exercise 2</text>
+</category>
+</question>
+
+
+<question type="shortanswer">
+<name>
+<text> R01 Q2 : Q02NC </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Escreva 97 centésimos de segundo em notação científica.</p>
+<p><strong>Nota</strong>: Para escrever potências no computador você precisa usar o símbolo " <span class="math inline">\(\hat{}\)</span> " (acento circunflexo). Assim, para escrever <span class="math inline">\(6,5\cdot 10^{-3}\)</span>, você precisa digitar: 6,5*10<span class="math inline">\(\hat{}\)</span>(-3)</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>9,7e-01 segundos</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>
+9,7*10^(-1)
+</text>
+</answer>
+</question>
+
+
+<question type="shortanswer">
+<name>
+<text> R02 Q2 : Q02NC </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Escreva 39 centésimos de segundo em notação científica.</p>
+<p><strong>Nota</strong>: Para escrever potências no computador você precisa usar o símbolo " <span class="math inline">\(\hat{}\)</span> " (acento circunflexo). Assim, para escrever <span class="math inline">\(6,5\cdot 10^{-3}\)</span>, você precisa digitar: 6,5*10<span class="math inline">\(\hat{}\)</span>(-3)</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>3,9e-01 segundos</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>
+3,9*10^(-1)
+</text>
+</answer>
+</question>
+
+
+<question type="shortanswer">
+<name>
+<text> R03 Q2 : Q02NC </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Escreva 39 centésimos de segundo em notação científica.</p>
+<p><strong>Nota</strong>: Para escrever potências no computador você precisa usar o símbolo " <span class="math inline">\(\hat{}\)</span> " (acento circunflexo). Assim, para escrever <span class="math inline">\(6,5\cdot 10^{-3}\)</span>, você precisa digitar: 6,5*10<span class="math inline">\(\hat{}\)</span>(-3)</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>3,9e-01 segundos</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>
+3,9*10^(-1)
+</text>
+</answer>
+</question>
+
+
+<question type="shortanswer">
+<name>
+<text> R04 Q2 : Q02NC </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Escreva 37 centésimos de segundo em notação científica.</p>
+<p><strong>Nota</strong>: Para escrever potências no computador você precisa usar o símbolo " <span class="math inline">\(\hat{}\)</span> " (acento circunflexo). Assim, para escrever <span class="math inline">\(6,5\cdot 10^{-3}\)</span>, você precisa digitar: 6,5*10<span class="math inline">\(\hat{}\)</span>(-3)</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>3,7e-01 segundos</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>
+3,7*10^(-1)
+</text>
+</answer>
+</question>
+
+
+<question type="shortanswer">
+<name>
+<text> R05 Q2 : Q02NC </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Escreva 21 milésimos de segundo em notação científica.</p>
+<p><strong>Nota</strong>: Para escrever potências no computador você precisa usar o símbolo " <span class="math inline">\(\hat{}\)</span> " (acento circunflexo). Assim, para escrever <span class="math inline">\(6,5\cdot 10^{-3}\)</span>, você precisa digitar: 6,5*10<span class="math inline">\(\hat{}\)</span>(-3)</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>2,1e-02 segundos</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>
+2,1*10^(-2)
+</text>
+</answer>
+</question>
+
+
+<question type="shortanswer">
+<name>
+<text> R06 Q2 : Q02NC </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Escreva 59 centésimos de segundo em notação científica.</p>
+<p><strong>Nota</strong>: Para escrever potências no computador você precisa usar o símbolo " <span class="math inline">\(\hat{}\)</span> " (acento circunflexo). Assim, para escrever <span class="math inline">\(6,5\cdot 10^{-3}\)</span>, você precisa digitar: 6,5*10<span class="math inline">\(\hat{}\)</span>(-3)</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>5,9e-01 segundos</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>
+5,9*10^(-1)
+</text>
+</answer>
+</question>
+
+
+<question type="shortanswer">
+<name>
+<text> R07 Q2 : Q02NC </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Escreva 39 centésimos de segundo em notação científica.</p>
+<p><strong>Nota</strong>: Para escrever potências no computador você precisa usar o símbolo " <span class="math inline">\(\hat{}\)</span> " (acento circunflexo). Assim, para escrever <span class="math inline">\(6,5\cdot 10^{-3}\)</span>, você precisa digitar: 6,5*10<span class="math inline">\(\hat{}\)</span>(-3)</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>3,9e-01 segundos</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>
+3,9*10^(-1)
+</text>
+</answer>
+</question>
+
+
+<question type="shortanswer">
+<name>
+<text> R08 Q2 : Q02NC </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Escreva 75 milionésimos de segundo em notação científica.</p>
+<p><strong>Nota</strong>: Para escrever potências no computador você precisa usar o símbolo " <span class="math inline">\(\hat{}\)</span> " (acento circunflexo). Assim, para escrever <span class="math inline">\(6,5\cdot 10^{-3}\)</span>, você precisa digitar: 6,5*10<span class="math inline">\(\hat{}\)</span>(-3)</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>7,5e-05 segundos</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>
+7,5*10^(-5)
+</text>
+</answer>
+</question>
+
+
+<question type="shortanswer">
+<name>
+<text> R09 Q2 : Q02NC </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Escreva 47 milionésimos de segundo em notação científica.</p>
+<p><strong>Nota</strong>: Para escrever potências no computador você precisa usar o símbolo " <span class="math inline">\(\hat{}\)</span> " (acento circunflexo). Assim, para escrever <span class="math inline">\(6,5\cdot 10^{-3}\)</span>, você precisa digitar: 6,5*10<span class="math inline">\(\hat{}\)</span>(-3)</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>4,7e-05 segundos</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>
+4,7*10^(-5)
+</text>
+</answer>
+</question>
+
+
+<question type="shortanswer">
+<name>
+<text> R10 Q2 : Q02NC </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Escreva 29 milésimos de segundo em notação científica.</p>
+<p><strong>Nota</strong>: Para escrever potências no computador você precisa usar o símbolo " <span class="math inline">\(\hat{}\)</span> " (acento circunflexo). Assim, para escrever <span class="math inline">\(6,5\cdot 10^{-3}\)</span>, você precisa digitar: 6,5*10<span class="math inline">\(\hat{}\)</span>(-3)</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>2,9e-02 segundos</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>
+2,9*10^(-2)
+</text>
+</answer>
+</question>
+
+
+<question type="shortanswer">
+<name>
+<text> R11 Q2 : Q02NC </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Escreva 45 milionésimos de segundo em notação científica.</p>
+<p><strong>Nota</strong>: Para escrever potências no computador você precisa usar o símbolo " <span class="math inline">\(\hat{}\)</span> " (acento circunflexo). Assim, para escrever <span class="math inline">\(6,5\cdot 10^{-3}\)</span>, você precisa digitar: 6,5*10<span class="math inline">\(\hat{}\)</span>(-3)</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>4,5e-05 segundos</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>
+4,5*10^(-5)
+</text>
+</answer>
+</question>
+
+
+<question type="shortanswer">
+<name>
+<text> R12 Q2 : Q02NC </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Escreva 75 centésimos de segundo em notação científica.</p>
+<p><strong>Nota</strong>: Para escrever potências no computador você precisa usar o símbolo " <span class="math inline">\(\hat{}\)</span> " (acento circunflexo). Assim, para escrever <span class="math inline">\(6,5\cdot 10^{-3}\)</span>, você precisa digitar: 6,5*10<span class="math inline">\(\hat{}\)</span>(-3)</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>7,5e-01 segundos</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>
+7,5*10^(-1)
+</text>
+</answer>
+</question>
+
+
+<question type="shortanswer">
+<name>
+<text> R13 Q2 : Q02NC </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Escreva 45 milésimos de segundo em notação científica.</p>
+<p><strong>Nota</strong>: Para escrever potências no computador você precisa usar o símbolo " <span class="math inline">\(\hat{}\)</span> " (acento circunflexo). Assim, para escrever <span class="math inline">\(6,5\cdot 10^{-3}\)</span>, você precisa digitar: 6,5*10<span class="math inline">\(\hat{}\)</span>(-3)</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>4,5e-02 segundos</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>
+4,5*10^(-2)
+</text>
+</answer>
+</question>
+
+
+<question type="shortanswer">
+<name>
+<text> R14 Q2 : Q02NC </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Escreva 17 milionésimos de segundo em notação científica.</p>
+<p><strong>Nota</strong>: Para escrever potências no computador você precisa usar o símbolo " <span class="math inline">\(\hat{}\)</span> " (acento circunflexo). Assim, para escrever <span class="math inline">\(6,5\cdot 10^{-3}\)</span>, você precisa digitar: 6,5*10<span class="math inline">\(\hat{}\)</span>(-3)</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>1,7e-05 segundos</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>
+1,7*10^(-5)
+</text>
+</answer>
+</question>
+
+
+<question type="shortanswer">
+<name>
+<text> R15 Q2 : Q02NC </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Escreva 97 milésimos de segundo em notação científica.</p>
+<p><strong>Nota</strong>: Para escrever potências no computador você precisa usar o símbolo " <span class="math inline">\(\hat{}\)</span> " (acento circunflexo). Assim, para escrever <span class="math inline">\(6,5\cdot 10^{-3}\)</span>, você precisa digitar: 6,5*10<span class="math inline">\(\hat{}\)</span>(-3)</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>9,7e-02 segundos</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>
+9,7*10^(-2)
+</text>
+</answer>
+</question>
+
+
+<question type="shortanswer">
+<name>
+<text> R16 Q2 : Q02NC </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Escreva 19 centésimos de segundo em notação científica.</p>
+<p><strong>Nota</strong>: Para escrever potências no computador você precisa usar o símbolo " <span class="math inline">\(\hat{}\)</span> " (acento circunflexo). Assim, para escrever <span class="math inline">\(6,5\cdot 10^{-3}\)</span>, você precisa digitar: 6,5*10<span class="math inline">\(\hat{}\)</span>(-3)</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>1,9e-01 segundos</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>
+1,9*10^(-1)
+</text>
+</answer>
+</question>
+
+
+<question type="shortanswer">
+<name>
+<text> R17 Q2 : Q02NC </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Escreva 57 milésimos de segundo em notação científica.</p>
+<p><strong>Nota</strong>: Para escrever potências no computador você precisa usar o símbolo " <span class="math inline">\(\hat{}\)</span> " (acento circunflexo). Assim, para escrever <span class="math inline">\(6,5\cdot 10^{-3}\)</span>, você precisa digitar: 6,5*10<span class="math inline">\(\hat{}\)</span>(-3)</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>5,7e-02 segundos</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>
+5,7*10^(-2)
+</text>
+</answer>
+</question>
+
+
+<question type="shortanswer">
+<name>
+<text> R18 Q2 : Q02NC </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Escreva 83 milionésimos de segundo em notação científica.</p>
+<p><strong>Nota</strong>: Para escrever potências no computador você precisa usar o símbolo " <span class="math inline">\(\hat{}\)</span> " (acento circunflexo). Assim, para escrever <span class="math inline">\(6,5\cdot 10^{-3}\)</span>, você precisa digitar: 6,5*10<span class="math inline">\(\hat{}\)</span>(-3)</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>8,3e-05 segundos</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>
+8,3*10^(-5)
+</text>
+</answer>
+</question>
+
+
+<question type="shortanswer">
+<name>
+<text> R19 Q2 : Q02NC </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Escreva 65 milésimos de segundo em notação científica.</p>
+<p><strong>Nota</strong>: Para escrever potências no computador você precisa usar o símbolo " <span class="math inline">\(\hat{}\)</span> " (acento circunflexo). Assim, para escrever <span class="math inline">\(6,5\cdot 10^{-3}\)</span>, você precisa digitar: 6,5*10<span class="math inline">\(\hat{}\)</span>(-3)</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>6,5e-02 segundos</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>
+6,5*10^(-2)
+</text>
+</answer>
+</question>
+
+
+<question type="shortanswer">
+<name>
+<text> R20 Q2 : Q02NC </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Escreva 39 milionésimos de segundo em notação científica.</p>
+<p><strong>Nota</strong>: Para escrever potências no computador você precisa usar o símbolo " <span class="math inline">\(\hat{}\)</span> " (acento circunflexo). Assim, para escrever <span class="math inline">\(6,5\cdot 10^{-3}\)</span>, você precisa digitar: 6,5*10<span class="math inline">\(\hat{}\)</span>(-3)</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>3,9e-05 segundos</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>
+3,9*10^(-5)
+</text>
+</answer>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/nc_og-12026/Exercise 3</text>
+</category>
+</question>
+
+
+<question type="shortanswer">
+<name>
+<text> R01 Q3 : Q03NC </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>(UFRGS) Considere que o corpo de uma determinada pessoa contém 6 litros de sangue e 6 milhões de glóbulos vermelhos por milímetro cúbico de sangue. Com base nesses dados, é correto afirmar que o número de glóbulos vermelhos no corpo dessa pessoa é: (Escreva o resultado em Notação Científica).</p>
+<p><strong>Nota</strong>: Para escrever potências no computador você precisa usar o símbolo " <span class="math inline">\(\hat{}\)</span> " (acento circunflexo). Assim, para escrever <span class="math inline">\(6,5\cdot 10^3\)</span>, você precisa digitar: 6,5*10<span class="math inline">\(\hat{}\)</span>3</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>3,60e+13</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>
+3,6*10^13
+</text>
+</answer>
+</question>
+
+
+<question type="shortanswer">
+<name>
+<text> R02 Q3 : Q03NC </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>(UFRGS) Considere que o corpo de uma determinada pessoa contém 6,4 litros de sangue e 5 milhões de glóbulos vermelhos por milímetro cúbico de sangue. Com base nesses dados, é correto afirmar que o número de glóbulos vermelhos no corpo dessa pessoa é: (Escreva o resultado em Notação Científica).</p>
+<p><strong>Nota</strong>: Para escrever potências no computador você precisa usar o símbolo " <span class="math inline">\(\hat{}\)</span> " (acento circunflexo). Assim, para escrever <span class="math inline">\(6,5\cdot 10^3\)</span>, você precisa digitar: 6,5*10<span class="math inline">\(\hat{}\)</span>3</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>3,20e+13</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>
+3,2*10^13
+</text>
+</answer>
+</question>
+
+
+<question type="shortanswer">
+<name>
+<text> R03 Q3 : Q03NC </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>(UFRGS) Considere que o corpo de uma determinada pessoa contém 5,6 litros de sangue e 5 milhões de glóbulos vermelhos por milímetro cúbico de sangue. Com base nesses dados, é correto afirmar que o número de glóbulos vermelhos no corpo dessa pessoa é: (Escreva o resultado em Notação Científica).</p>
+<p><strong>Nota</strong>: Para escrever potências no computador você precisa usar o símbolo " <span class="math inline">\(\hat{}\)</span> " (acento circunflexo). Assim, para escrever <span class="math inline">\(6,5\cdot 10^3\)</span>, você precisa digitar: 6,5*10<span class="math inline">\(\hat{}\)</span>3</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>2,80e+13</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>
+2,8*10^13
+</text>
+</answer>
+</question>
+
+
+<question type="shortanswer">
+<name>
+<text> R04 Q3 : Q03NC </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>(UFRGS) Considere que o corpo de uma determinada pessoa contém 5,6 litros de sangue e 6 milhões de glóbulos vermelhos por milímetro cúbico de sangue. Com base nesses dados, é correto afirmar que o número de glóbulos vermelhos no corpo dessa pessoa é: (Escreva o resultado em Notação Científica).</p>
+<p><strong>Nota</strong>: Para escrever potências no computador você precisa usar o símbolo " <span class="math inline">\(\hat{}\)</span> " (acento circunflexo). Assim, para escrever <span class="math inline">\(6,5\cdot 10^3\)</span>, você precisa digitar: 6,5*10<span class="math inline">\(\hat{}\)</span>3</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>3,36e+13</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>
+3,36*10^13
+</text>
+</answer>
+</question>
+
+
+<question type="shortanswer">
+<name>
+<text> R05 Q3 : Q03NC </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>(UFRGS) Considere que o corpo de uma determinada pessoa contém 5,6 litros de sangue e 5 milhões de glóbulos vermelhos por milímetro cúbico de sangue. Com base nesses dados, é correto afirmar que o número de glóbulos vermelhos no corpo dessa pessoa é: (Escreva o resultado em Notação Científica).</p>
+<p><strong>Nota</strong>: Para escrever potências no computador você precisa usar o símbolo " <span class="math inline">\(\hat{}\)</span> " (acento circunflexo). Assim, para escrever <span class="math inline">\(6,5\cdot 10^3\)</span>, você precisa digitar: 6,5*10<span class="math inline">\(\hat{}\)</span>3</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>2,80e+13</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>
+2,8*10^13
+</text>
+</answer>
+</question>
+
+
+<question type="shortanswer">
+<name>
+<text> R06 Q3 : Q03NC </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>(UFRGS) Considere que o corpo de uma determinada pessoa contém 5 litros de sangue e 5 milhões de glóbulos vermelhos por milímetro cúbico de sangue. Com base nesses dados, é correto afirmar que o número de glóbulos vermelhos no corpo dessa pessoa é: (Escreva o resultado em Notação Científica).</p>
+<p><strong>Nota</strong>: Para escrever potências no computador você precisa usar o símbolo " <span class="math inline">\(\hat{}\)</span> " (acento circunflexo). Assim, para escrever <span class="math inline">\(6,5\cdot 10^3\)</span>, você precisa digitar: 6,5*10<span class="math inline">\(\hat{}\)</span>3</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>2,50e+13</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>
+2,5*10^13
+</text>
+</answer>
+</question>
+
+
+<question type="shortanswer">
+<name>
+<text> R07 Q3 : Q03NC </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>(UFRGS) Considere que o corpo de uma determinada pessoa contém 5 litros de sangue e 4 milhões de glóbulos vermelhos por milímetro cúbico de sangue. Com base nesses dados, é correto afirmar que o número de glóbulos vermelhos no corpo dessa pessoa é: (Escreva o resultado em Notação Científica).</p>
+<p><strong>Nota</strong>: Para escrever potências no computador você precisa usar o símbolo " <span class="math inline">\(\hat{}\)</span> " (acento circunflexo). Assim, para escrever <span class="math inline">\(6,5\cdot 10^3\)</span>, você precisa digitar: 6,5*10<span class="math inline">\(\hat{}\)</span>3</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>2,00e+13</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>
+2*10^13
+</text>
+</answer>
+</question>
+
+
+<question type="shortanswer">
+<name>
+<text> R08 Q3 : Q03NC </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>(UFRGS) Considere que o corpo de uma determinada pessoa contém 5 litros de sangue e 6 milhões de glóbulos vermelhos por milímetro cúbico de sangue. Com base nesses dados, é correto afirmar que o número de glóbulos vermelhos no corpo dessa pessoa é: (Escreva o resultado em Notação Científica).</p>
+<p><strong>Nota</strong>: Para escrever potências no computador você precisa usar o símbolo " <span class="math inline">\(\hat{}\)</span> " (acento circunflexo). Assim, para escrever <span class="math inline">\(6,5\cdot 10^3\)</span>, você precisa digitar: 6,5*10<span class="math inline">\(\hat{}\)</span>3</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>3,00e+13</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>
+3*10^13
+</text>
+</answer>
+</question>
+
+
+<question type="shortanswer">
+<name>
+<text> R09 Q3 : Q03NC </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>(UFRGS) Considere que o corpo de uma determinada pessoa contém 5,4 litros de sangue e 4 milhões de glóbulos vermelhos por milímetro cúbico de sangue. Com base nesses dados, é correto afirmar que o número de glóbulos vermelhos no corpo dessa pessoa é: (Escreva o resultado em Notação Científica).</p>
+<p><strong>Nota</strong>: Para escrever potências no computador você precisa usar o símbolo " <span class="math inline">\(\hat{}\)</span> " (acento circunflexo). Assim, para escrever <span class="math inline">\(6,5\cdot 10^3\)</span>, você precisa digitar: 6,5*10<span class="math inline">\(\hat{}\)</span>3</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>2,16e+13</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>
+2,16*10^13
+</text>
+</answer>
+</question>
+
+
+<question type="shortanswer">
+<name>
+<text> R10 Q3 : Q03NC </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>(UFRGS) Considere que o corpo de uma determinada pessoa contém 6,2 litros de sangue e 5 milhões de glóbulos vermelhos por milímetro cúbico de sangue. Com base nesses dados, é correto afirmar que o número de glóbulos vermelhos no corpo dessa pessoa é: (Escreva o resultado em Notação Científica).</p>
+<p><strong>Nota</strong>: Para escrever potências no computador você precisa usar o símbolo " <span class="math inline">\(\hat{}\)</span> " (acento circunflexo). Assim, para escrever <span class="math inline">\(6,5\cdot 10^3\)</span>, você precisa digitar: 6,5*10<span class="math inline">\(\hat{}\)</span>3</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>3,10e+13</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>
+3,1*10^13
+</text>
+</answer>
+</question>
+
+
+<question type="shortanswer">
+<name>
+<text> R11 Q3 : Q03NC </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>(UFRGS) Considere que o corpo de uma determinada pessoa contém 5,6 litros de sangue e 5 milhões de glóbulos vermelhos por milímetro cúbico de sangue. Com base nesses dados, é correto afirmar que o número de glóbulos vermelhos no corpo dessa pessoa é: (Escreva o resultado em Notação Científica).</p>
+<p><strong>Nota</strong>: Para escrever potências no computador você precisa usar o símbolo " <span class="math inline">\(\hat{}\)</span> " (acento circunflexo). Assim, para escrever <span class="math inline">\(6,5\cdot 10^3\)</span>, você precisa digitar: 6,5*10<span class="math inline">\(\hat{}\)</span>3</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>2,80e+13</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>
+2,8*10^13
+</text>
+</answer>
+</question>
+
+
+<question type="shortanswer">
+<name>
+<text> R12 Q3 : Q03NC </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>(UFRGS) Considere que o corpo de uma determinada pessoa contém 6,4 litros de sangue e 5 milhões de glóbulos vermelhos por milímetro cúbico de sangue. Com base nesses dados, é correto afirmar que o número de glóbulos vermelhos no corpo dessa pessoa é: (Escreva o resultado em Notação Científica).</p>
+<p><strong>Nota</strong>: Para escrever potências no computador você precisa usar o símbolo " <span class="math inline">\(\hat{}\)</span> " (acento circunflexo). Assim, para escrever <span class="math inline">\(6,5\cdot 10^3\)</span>, você precisa digitar: 6,5*10<span class="math inline">\(\hat{}\)</span>3</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>3,20e+13</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>
+3,2*10^13
+</text>
+</answer>
+</question>
+
+
+<question type="shortanswer">
+<name>
+<text> R13 Q3 : Q03NC </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>(UFRGS) Considere que o corpo de uma determinada pessoa contém 6,6 litros de sangue e 5 milhões de glóbulos vermelhos por milímetro cúbico de sangue. Com base nesses dados, é correto afirmar que o número de glóbulos vermelhos no corpo dessa pessoa é: (Escreva o resultado em Notação Científica).</p>
+<p><strong>Nota</strong>: Para escrever potências no computador você precisa usar o símbolo " <span class="math inline">\(\hat{}\)</span> " (acento circunflexo). Assim, para escrever <span class="math inline">\(6,5\cdot 10^3\)</span>, você precisa digitar: 6,5*10<span class="math inline">\(\hat{}\)</span>3</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>3,30e+13</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>
+3,3*10^13
+</text>
+</answer>
+</question>
+
+
+<question type="shortanswer">
+<name>
+<text> R14 Q3 : Q03NC </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>(UFRGS) Considere que o corpo de uma determinada pessoa contém 5,4 litros de sangue e 5 milhões de glóbulos vermelhos por milímetro cúbico de sangue. Com base nesses dados, é correto afirmar que o número de glóbulos vermelhos no corpo dessa pessoa é: (Escreva o resultado em Notação Científica).</p>
+<p><strong>Nota</strong>: Para escrever potências no computador você precisa usar o símbolo " <span class="math inline">\(\hat{}\)</span> " (acento circunflexo). Assim, para escrever <span class="math inline">\(6,5\cdot 10^3\)</span>, você precisa digitar: 6,5*10<span class="math inline">\(\hat{}\)</span>3</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>2,70e+13</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>
+2,7*10^13
+</text>
+</answer>
+</question>
+
+
+<question type="shortanswer">
+<name>
+<text> R15 Q3 : Q03NC </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>(UFRGS) Considere que o corpo de uma determinada pessoa contém 5,4 litros de sangue e 4 milhões de glóbulos vermelhos por milímetro cúbico de sangue. Com base nesses dados, é correto afirmar que o número de glóbulos vermelhos no corpo dessa pessoa é: (Escreva o resultado em Notação Científica).</p>
+<p><strong>Nota</strong>: Para escrever potências no computador você precisa usar o símbolo " <span class="math inline">\(\hat{}\)</span> " (acento circunflexo). Assim, para escrever <span class="math inline">\(6,5\cdot 10^3\)</span>, você precisa digitar: 6,5*10<span class="math inline">\(\hat{}\)</span>3</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>2,16e+13</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>
+2,16*10^13
+</text>
+</answer>
+</question>
+
+
+<question type="shortanswer">
+<name>
+<text> R16 Q3 : Q03NC </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>(UFRGS) Considere que o corpo de uma determinada pessoa contém 6,6 litros de sangue e 6 milhões de glóbulos vermelhos por milímetro cúbico de sangue. Com base nesses dados, é correto afirmar que o número de glóbulos vermelhos no corpo dessa pessoa é: (Escreva o resultado em Notação Científica).</p>
+<p><strong>Nota</strong>: Para escrever potências no computador você precisa usar o símbolo " <span class="math inline">\(\hat{}\)</span> " (acento circunflexo). Assim, para escrever <span class="math inline">\(6,5\cdot 10^3\)</span>, você precisa digitar: 6,5*10<span class="math inline">\(\hat{}\)</span>3</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>3,96e+13</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>
+3,96*10^13
+</text>
+</answer>
+</question>
+
+
+<question type="shortanswer">
+<name>
+<text> R17 Q3 : Q03NC </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>(UFRGS) Considere que o corpo de uma determinada pessoa contém 5,2 litros de sangue e 4 milhões de glóbulos vermelhos por milímetro cúbico de sangue. Com base nesses dados, é correto afirmar que o número de glóbulos vermelhos no corpo dessa pessoa é: (Escreva o resultado em Notação Científica).</p>
+<p><strong>Nota</strong>: Para escrever potências no computador você precisa usar o símbolo " <span class="math inline">\(\hat{}\)</span> " (acento circunflexo). Assim, para escrever <span class="math inline">\(6,5\cdot 10^3\)</span>, você precisa digitar: 6,5*10<span class="math inline">\(\hat{}\)</span>3</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>2,08e+13</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>
+2,08*10^13
+</text>
+</answer>
+</question>
+
+
+<question type="shortanswer">
+<name>
+<text> R18 Q3 : Q03NC </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>(UFRGS) Considere que o corpo de uma determinada pessoa contém 5,8 litros de sangue e 4 milhões de glóbulos vermelhos por milímetro cúbico de sangue. Com base nesses dados, é correto afirmar que o número de glóbulos vermelhos no corpo dessa pessoa é: (Escreva o resultado em Notação Científica).</p>
+<p><strong>Nota</strong>: Para escrever potências no computador você precisa usar o símbolo " <span class="math inline">\(\hat{}\)</span> " (acento circunflexo). Assim, para escrever <span class="math inline">\(6,5\cdot 10^3\)</span>, você precisa digitar: 6,5*10<span class="math inline">\(\hat{}\)</span>3</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>2,32e+13</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>
+2,32*10^13
+</text>
+</answer>
+</question>
+
+
+<question type="shortanswer">
+<name>
+<text> R19 Q3 : Q03NC </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>(UFRGS) Considere que o corpo de uma determinada pessoa contém 5,6 litros de sangue e 5 milhões de glóbulos vermelhos por milímetro cúbico de sangue. Com base nesses dados, é correto afirmar que o número de glóbulos vermelhos no corpo dessa pessoa é: (Escreva o resultado em Notação Científica).</p>
+<p><strong>Nota</strong>: Para escrever potências no computador você precisa usar o símbolo " <span class="math inline">\(\hat{}\)</span> " (acento circunflexo). Assim, para escrever <span class="math inline">\(6,5\cdot 10^3\)</span>, você precisa digitar: 6,5*10<span class="math inline">\(\hat{}\)</span>3</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>2,80e+13</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>
+2,8*10^13
+</text>
+</answer>
+</question>
+
+
+<question type="shortanswer">
+<name>
+<text> R20 Q3 : Q03NC </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>(UFRGS) Considere que o corpo de uma determinada pessoa contém 6,6 litros de sangue e 4 milhões de glóbulos vermelhos por milímetro cúbico de sangue. Com base nesses dados, é correto afirmar que o número de glóbulos vermelhos no corpo dessa pessoa é: (Escreva o resultado em Notação Científica).</p>
+<p><strong>Nota</strong>: Para escrever potências no computador você precisa usar o símbolo " <span class="math inline">\(\hat{}\)</span> " (acento circunflexo). Assim, para escrever <span class="math inline">\(6,5\cdot 10^3\)</span>, você precisa digitar: 6,5*10<span class="math inline">\(\hat{}\)</span>3</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>2,64e+13</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<usecase>0</usecase>
+<answer fraction="100" format="moodle_auto_format">
+<text>
+2,64*10^13
+</text>
+</answer>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/nc_og-12026/Exercise 4</text>
+</category>
+</question>
+
+
+<question type="numerical">
+<name>
+<text> R01 Q4 : Q04OG </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Determine a ordem de grandeza da quantidade de segundos em 10 dia(s).</p>
+<p>(Dê apenas o expoente como resposta, ou seja, se a ordem de grandeza é <span class="math inline">\(10^x\)</span>, escreva apenas <span class="math inline">\(x\)</span> como resposta abaixo.)</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>6</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<answer fraction="100" format="moodle_auto_format">
+<text>6</text>
+<tolerance>0</tolerance>
+</answer>
+</question>
+
+
+<question type="numerical">
+<name>
+<text> R02 Q4 : Q04OG </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Determine a ordem de grandeza da quantidade de segundos em 20 dia(s).</p>
+<p>(Dê apenas o expoente como resposta, ou seja, se a ordem de grandeza é <span class="math inline">\(10^x\)</span>, escreva apenas <span class="math inline">\(x\)</span> como resposta abaixo.)</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>6</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<answer fraction="100" format="moodle_auto_format">
+<text>6</text>
+<tolerance>0</tolerance>
+</answer>
+</question>
+
+
+<question type="numerical">
+<name>
+<text> R03 Q4 : Q04OG </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Determine a ordem de grandeza da quantidade de segundos em 13 dia(s).</p>
+<p>(Dê apenas o expoente como resposta, ou seja, se a ordem de grandeza é <span class="math inline">\(10^x\)</span>, escreva apenas <span class="math inline">\(x\)</span> como resposta abaixo.)</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>6</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<answer fraction="100" format="moodle_auto_format">
+<text>6</text>
+<tolerance>0</tolerance>
+</answer>
+</question>
+
+
+<question type="numerical">
+<name>
+<text> R04 Q4 : Q04OG </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Determine a ordem de grandeza da quantidade de segundos em 33 dia(s).</p>
+<p>(Dê apenas o expoente como resposta, ou seja, se a ordem de grandeza é <span class="math inline">\(10^x\)</span>, escreva apenas <span class="math inline">\(x\)</span> como resposta abaixo.)</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>6</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<answer fraction="100" format="moodle_auto_format">
+<text>6</text>
+<tolerance>0</tolerance>
+</answer>
+</question>
+
+
+<question type="numerical">
+<name>
+<text> R05 Q4 : Q04OG </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Determine a ordem de grandeza da quantidade de segundos em 26 dia(s).</p>
+<p>(Dê apenas o expoente como resposta, ou seja, se a ordem de grandeza é <span class="math inline">\(10^x\)</span>, escreva apenas <span class="math inline">\(x\)</span> como resposta abaixo.)</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>6</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<answer fraction="100" format="moodle_auto_format">
+<text>6</text>
+<tolerance>0</tolerance>
+</answer>
+</question>
+
+
+<question type="numerical">
+<name>
+<text> R06 Q4 : Q04OG </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Determine a ordem de grandeza da quantidade de segundos em 57 dia(s).</p>
+<p>(Dê apenas o expoente como resposta, ou seja, se a ordem de grandeza é <span class="math inline">\(10^x\)</span>, escreva apenas <span class="math inline">\(x\)</span> como resposta abaixo.)</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>7</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<answer fraction="100" format="moodle_auto_format">
+<text>7</text>
+<tolerance>0</tolerance>
+</answer>
+</question>
+
+
+<question type="numerical">
+<name>
+<text> R07 Q4 : Q04OG </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Determine a ordem de grandeza da quantidade de segundos em 10 dia(s).</p>
+<p>(Dê apenas o expoente como resposta, ou seja, se a ordem de grandeza é <span class="math inline">\(10^x\)</span>, escreva apenas <span class="math inline">\(x\)</span> como resposta abaixo.)</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>6</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<answer fraction="100" format="moodle_auto_format">
+<text>6</text>
+<tolerance>0</tolerance>
+</answer>
+</question>
+
+
+<question type="numerical">
+<name>
+<text> R08 Q4 : Q04OG </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Determine a ordem de grandeza da quantidade de segundos em 56 dia(s).</p>
+<p>(Dê apenas o expoente como resposta, ou seja, se a ordem de grandeza é <span class="math inline">\(10^x\)</span>, escreva apenas <span class="math inline">\(x\)</span> como resposta abaixo.)</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>7</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<answer fraction="100" format="moodle_auto_format">
+<text>7</text>
+<tolerance>0</tolerance>
+</answer>
+</question>
+
+
+<question type="numerical">
+<name>
+<text> R09 Q4 : Q04OG </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Determine a ordem de grandeza da quantidade de segundos em 58 dia(s).</p>
+<p>(Dê apenas o expoente como resposta, ou seja, se a ordem de grandeza é <span class="math inline">\(10^x\)</span>, escreva apenas <span class="math inline">\(x\)</span> como resposta abaixo.)</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>7</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<answer fraction="100" format="moodle_auto_format">
+<text>7</text>
+<tolerance>0</tolerance>
+</answer>
+</question>
+
+
+<question type="numerical">
+<name>
+<text> R10 Q4 : Q04OG </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Determine a ordem de grandeza da quantidade de segundos em 68 dia(s).</p>
+<p>(Dê apenas o expoente como resposta, ou seja, se a ordem de grandeza é <span class="math inline">\(10^x\)</span>, escreva apenas <span class="math inline">\(x\)</span> como resposta abaixo.)</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>7</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<answer fraction="100" format="moodle_auto_format">
+<text>7</text>
+<tolerance>0</tolerance>
+</answer>
+</question>
+
+
+<question type="numerical">
+<name>
+<text> R11 Q4 : Q04OG </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Determine a ordem de grandeza da quantidade de segundos em 5 dia(s).</p>
+<p>(Dê apenas o expoente como resposta, ou seja, se a ordem de grandeza é <span class="math inline">\(10^x\)</span>, escreva apenas <span class="math inline">\(x\)</span> como resposta abaixo.)</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>6</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<answer fraction="100" format="moodle_auto_format">
+<text>6</text>
+<tolerance>0</tolerance>
+</answer>
+</question>
+
+
+<question type="numerical">
+<name>
+<text> R12 Q4 : Q04OG </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Determine a ordem de grandeza da quantidade de segundos em 37 dia(s).</p>
+<p>(Dê apenas o expoente como resposta, ou seja, se a ordem de grandeza é <span class="math inline">\(10^x\)</span>, escreva apenas <span class="math inline">\(x\)</span> como resposta abaixo.)</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>7</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<answer fraction="100" format="moodle_auto_format">
+<text>7</text>
+<tolerance>0</tolerance>
+</answer>
+</question>
+
+
+<question type="numerical">
+<name>
+<text> R13 Q4 : Q04OG </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Determine a ordem de grandeza da quantidade de segundos em 41 dia(s).</p>
+<p>(Dê apenas o expoente como resposta, ou seja, se a ordem de grandeza é <span class="math inline">\(10^x\)</span>, escreva apenas <span class="math inline">\(x\)</span> como resposta abaixo.)</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>7</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<answer fraction="100" format="moodle_auto_format">
+<text>7</text>
+<tolerance>0</tolerance>
+</answer>
+</question>
+
+
+<question type="numerical">
+<name>
+<text> R14 Q4 : Q04OG </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Determine a ordem de grandeza da quantidade de segundos em 16 dia(s).</p>
+<p>(Dê apenas o expoente como resposta, ou seja, se a ordem de grandeza é <span class="math inline">\(10^x\)</span>, escreva apenas <span class="math inline">\(x\)</span> como resposta abaixo.)</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>6</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<answer fraction="100" format="moodle_auto_format">
+<text>6</text>
+<tolerance>0</tolerance>
+</answer>
+</question>
+
+
+<question type="numerical">
+<name>
+<text> R15 Q4 : Q04OG </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Determine a ordem de grandeza da quantidade de segundos em 67 dia(s).</p>
+<p>(Dê apenas o expoente como resposta, ou seja, se a ordem de grandeza é <span class="math inline">\(10^x\)</span>, escreva apenas <span class="math inline">\(x\)</span> como resposta abaixo.)</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>7</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<answer fraction="100" format="moodle_auto_format">
+<text>7</text>
+<tolerance>0</tolerance>
+</answer>
+</question>
+
+
+<question type="numerical">
+<name>
+<text> R16 Q4 : Q04OG </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Determine a ordem de grandeza da quantidade de segundos em 66 dia(s).</p>
+<p>(Dê apenas o expoente como resposta, ou seja, se a ordem de grandeza é <span class="math inline">\(10^x\)</span>, escreva apenas <span class="math inline">\(x\)</span> como resposta abaixo.)</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>7</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<answer fraction="100" format="moodle_auto_format">
+<text>7</text>
+<tolerance>0</tolerance>
+</answer>
+</question>
+
+
+<question type="numerical">
+<name>
+<text> R17 Q4 : Q04OG </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Determine a ordem de grandeza da quantidade de segundos em 34 dia(s).</p>
+<p>(Dê apenas o expoente como resposta, ou seja, se a ordem de grandeza é <span class="math inline">\(10^x\)</span>, escreva apenas <span class="math inline">\(x\)</span> como resposta abaixo.)</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>6</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<answer fraction="100" format="moodle_auto_format">
+<text>6</text>
+<tolerance>0</tolerance>
+</answer>
+</question>
+
+
+<question type="numerical">
+<name>
+<text> R18 Q4 : Q04OG </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Determine a ordem de grandeza da quantidade de segundos em 34 dia(s).</p>
+<p>(Dê apenas o expoente como resposta, ou seja, se a ordem de grandeza é <span class="math inline">\(10^x\)</span>, escreva apenas <span class="math inline">\(x\)</span> como resposta abaixo.)</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>6</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<answer fraction="100" format="moodle_auto_format">
+<text>6</text>
+<tolerance>0</tolerance>
+</answer>
+</question>
+
+
+<question type="numerical">
+<name>
+<text> R19 Q4 : Q04OG </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Determine a ordem de grandeza da quantidade de segundos em 54 dia(s).</p>
+<p>(Dê apenas o expoente como resposta, ou seja, se a ordem de grandeza é <span class="math inline">\(10^x\)</span>, escreva apenas <span class="math inline">\(x\)</span> como resposta abaixo.)</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>7</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<answer fraction="100" format="moodle_auto_format">
+<text>7</text>
+<tolerance>0</tolerance>
+</answer>
+</question>
+
+
+<question type="numerical">
+<name>
+<text> R20 Q4 : Q04OG </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Determine a ordem de grandeza da quantidade de segundos em 4 dia(s).</p>
+<p>(Dê apenas o expoente como resposta, ou seja, se a ordem de grandeza é <span class="math inline">\(10^x\)</span>, escreva apenas <span class="math inline">\(x\)</span> como resposta abaixo.)</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>6</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<answer fraction="100" format="moodle_auto_format">
+<text>6</text>
+<tolerance>0</tolerance>
+</answer>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/nc_og-12026/Exercise 5</text>
+</category>
+</question>
+
+
+<question type="cloze">
+<name>
+<text> R01 Q5 : Q05OG </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>As ondas do sonar de um navio gastam 7 s para detectar um obstáculo. Sabendo que a velocidade do som na água é de aproximadamente 1400 m/s, determine:</p>
+<p>A distância, em metros, do navio ao obstáculo. Dê sua resposta em notação científica. <em>OBS</em>: Para escrever potências no computador você precisa usar o símbolo " <span class="math inline">\(\hat{}\)</span> " (acento circunflexo). Assim, para escrever <span class="math inline">\(6,5\cdot    10^3\)</span>, você precisa digitar: 6,5*10<span class="math inline">\(\hat{}\)</span>3 {1:SHORTANSWER:%100%4,9*10^3}</p>
+<p>A ordem de grandeza da distância. <em>Nota</em>: Dê apenas o expoente como resposta, ou seja, se a ordem de grandeza é <span class="math inline">\(10^x\)</span>, escreva apenas <span class="math inline">\(x\)</span> como resposta. {1:NUMERICAL:=4:0}</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<ul>
+<li> 4,90e+03 </li>
+<li> 4 </li>
+</ul>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>2</defaultgrade>
+</question>
+
+
+<question type="cloze">
+<name>
+<text> R02 Q5 : Q05OG </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>As ondas do sonar de um navio gastam 2 s para detectar um obstáculo. Sabendo que a velocidade do som na água é de aproximadamente 1400 m/s, determine:</p>
+<p>A distância, em metros, do navio ao obstáculo. Dê sua resposta em notação científica. <em>OBS</em>: Para escrever potências no computador você precisa usar o símbolo " <span class="math inline">\(\hat{}\)</span> " (acento circunflexo). Assim, para escrever <span class="math inline">\(6,5\cdot    10^3\)</span>, você precisa digitar: 6,5*10<span class="math inline">\(\hat{}\)</span>3 {1:SHORTANSWER:%100%1,4*10^3}</p>
+<p>A ordem de grandeza da distância. <em>Nota</em>: Dê apenas o expoente como resposta, ou seja, se a ordem de grandeza é <span class="math inline">\(10^x\)</span>, escreva apenas <span class="math inline">\(x\)</span> como resposta. {1:NUMERICAL:=3:0}</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<ul>
+<li> 1,40e+03 </li>
+<li> 3 </li>
+</ul>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>2</defaultgrade>
+</question>
+
+
+<question type="cloze">
+<name>
+<text> R03 Q5 : Q05OG </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>As ondas do sonar de um navio gastam 14 s para detectar um obstáculo. Sabendo que a velocidade do som na água é de aproximadamente 1400 m/s, determine:</p>
+<p>A distância, em metros, do navio ao obstáculo. Dê sua resposta em notação científica. <em>OBS</em>: Para escrever potências no computador você precisa usar o símbolo " <span class="math inline">\(\hat{}\)</span> " (acento circunflexo). Assim, para escrever <span class="math inline">\(6,5\cdot    10^3\)</span>, você precisa digitar: 6,5*10<span class="math inline">\(\hat{}\)</span>3 {1:SHORTANSWER:%100%9,8*10^3}</p>
+<p>A ordem de grandeza da distância. <em>Nota</em>: Dê apenas o expoente como resposta, ou seja, se a ordem de grandeza é <span class="math inline">\(10^x\)</span>, escreva apenas <span class="math inline">\(x\)</span> como resposta. {1:NUMERICAL:=4:0}</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<ul>
+<li> 9,80e+03 </li>
+<li> 4 </li>
+</ul>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>2</defaultgrade>
+</question>
+
+
+<question type="cloze">
+<name>
+<text> R04 Q5 : Q05OG </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>As ondas do sonar de um navio gastam 15 s para detectar um obstáculo. Sabendo que a velocidade do som na água é de aproximadamente 1400 m/s, determine:</p>
+<p>A distância, em metros, do navio ao obstáculo. Dê sua resposta em notação científica. <em>OBS</em>: Para escrever potências no computador você precisa usar o símbolo " <span class="math inline">\(\hat{}\)</span> " (acento circunflexo). Assim, para escrever <span class="math inline">\(6,5\cdot    10^3\)</span>, você precisa digitar: 6,5*10<span class="math inline">\(\hat{}\)</span>3 {1:SHORTANSWER:%100%1,05*10^4}</p>
+<p>A ordem de grandeza da distância. <em>Nota</em>: Dê apenas o expoente como resposta, ou seja, se a ordem de grandeza é <span class="math inline">\(10^x\)</span>, escreva apenas <span class="math inline">\(x\)</span> como resposta. {1:NUMERICAL:=4:0}</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<ul>
+<li> 1,05e+04 </li>
+<li> 4 </li>
+</ul>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>2</defaultgrade>
+</question>
+
+
+<question type="cloze">
+<name>
+<text> R05 Q5 : Q05OG </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>As ondas do sonar de um navio gastam 2 s para detectar um obstáculo. Sabendo que a velocidade do som na água é de aproximadamente 1400 m/s, determine:</p>
+<p>A distância, em metros, do navio ao obstáculo. Dê sua resposta em notação científica. <em>OBS</em>: Para escrever potências no computador você precisa usar o símbolo " <span class="math inline">\(\hat{}\)</span> " (acento circunflexo). Assim, para escrever <span class="math inline">\(6,5\cdot    10^3\)</span>, você precisa digitar: 6,5*10<span class="math inline">\(\hat{}\)</span>3 {1:SHORTANSWER:%100%1,4*10^3}</p>
+<p>A ordem de grandeza da distância. <em>Nota</em>: Dê apenas o expoente como resposta, ou seja, se a ordem de grandeza é <span class="math inline">\(10^x\)</span>, escreva apenas <span class="math inline">\(x\)</span> como resposta. {1:NUMERICAL:=3:0}</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<ul>
+<li> 1,40e+03 </li>
+<li> 3 </li>
+</ul>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>2</defaultgrade>
+</question>
+
+
+<question type="cloze">
+<name>
+<text> R06 Q5 : Q05OG </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>As ondas do sonar de um navio gastam 4 s para detectar um obstáculo. Sabendo que a velocidade do som na água é de aproximadamente 1400 m/s, determine:</p>
+<p>A distância, em metros, do navio ao obstáculo. Dê sua resposta em notação científica. <em>OBS</em>: Para escrever potências no computador você precisa usar o símbolo " <span class="math inline">\(\hat{}\)</span> " (acento circunflexo). Assim, para escrever <span class="math inline">\(6,5\cdot    10^3\)</span>, você precisa digitar: 6,5*10<span class="math inline">\(\hat{}\)</span>3 {1:SHORTANSWER:%100%2,8*10^3}</p>
+<p>A ordem de grandeza da distância. <em>Nota</em>: Dê apenas o expoente como resposta, ou seja, se a ordem de grandeza é <span class="math inline">\(10^x\)</span>, escreva apenas <span class="math inline">\(x\)</span> como resposta. {1:NUMERICAL:=3:0}</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<ul>
+<li> 2,80e+03 </li>
+<li> 3 </li>
+</ul>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>2</defaultgrade>
+</question>
+
+
+<question type="cloze">
+<name>
+<text> R07 Q5 : Q05OG </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>As ondas do sonar de um navio gastam 10 s para detectar um obstáculo. Sabendo que a velocidade do som na água é de aproximadamente 1400 m/s, determine:</p>
+<p>A distância, em metros, do navio ao obstáculo. Dê sua resposta em notação científica. <em>OBS</em>: Para escrever potências no computador você precisa usar o símbolo " <span class="math inline">\(\hat{}\)</span> " (acento circunflexo). Assim, para escrever <span class="math inline">\(6,5\cdot    10^3\)</span>, você precisa digitar: 6,5*10<span class="math inline">\(\hat{}\)</span>3 {1:SHORTANSWER:%100%7*10^3}</p>
+<p>A ordem de grandeza da distância. <em>Nota</em>: Dê apenas o expoente como resposta, ou seja, se a ordem de grandeza é <span class="math inline">\(10^x\)</span>, escreva apenas <span class="math inline">\(x\)</span> como resposta. {1:NUMERICAL:=4:0}</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<ul>
+<li> 7,00e+03 </li>
+<li> 4 </li>
+</ul>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>2</defaultgrade>
+</question>
+
+
+<question type="cloze">
+<name>
+<text> R08 Q5 : Q05OG </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>As ondas do sonar de um navio gastam 16 s para detectar um obstáculo. Sabendo que a velocidade do som na água é de aproximadamente 1400 m/s, determine:</p>
+<p>A distância, em metros, do navio ao obstáculo. Dê sua resposta em notação científica. <em>OBS</em>: Para escrever potências no computador você precisa usar o símbolo " <span class="math inline">\(\hat{}\)</span> " (acento circunflexo). Assim, para escrever <span class="math inline">\(6,5\cdot    10^3\)</span>, você precisa digitar: 6,5*10<span class="math inline">\(\hat{}\)</span>3 {1:SHORTANSWER:%100%1,12*10^4}</p>
+<p>A ordem de grandeza da distância. <em>Nota</em>: Dê apenas o expoente como resposta, ou seja, se a ordem de grandeza é <span class="math inline">\(10^x\)</span>, escreva apenas <span class="math inline">\(x\)</span> como resposta. {1:NUMERICAL:=4:0}</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<ul>
+<li> 1,12e+04 </li>
+<li> 4 </li>
+</ul>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>2</defaultgrade>
+</question>
+
+
+<question type="cloze">
+<name>
+<text> R09 Q5 : Q05OG </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>As ondas do sonar de um navio gastam 6 s para detectar um obstáculo. Sabendo que a velocidade do som na água é de aproximadamente 1400 m/s, determine:</p>
+<p>A distância, em metros, do navio ao obstáculo. Dê sua resposta em notação científica. <em>OBS</em>: Para escrever potências no computador você precisa usar o símbolo " <span class="math inline">\(\hat{}\)</span> " (acento circunflexo). Assim, para escrever <span class="math inline">\(6,5\cdot    10^3\)</span>, você precisa digitar: 6,5*10<span class="math inline">\(\hat{}\)</span>3 {1:SHORTANSWER:%100%4,2*10^3}</p>
+<p>A ordem de grandeza da distância. <em>Nota</em>: Dê apenas o expoente como resposta, ou seja, se a ordem de grandeza é <span class="math inline">\(10^x\)</span>, escreva apenas <span class="math inline">\(x\)</span> como resposta. {1:NUMERICAL:=4:0}</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<ul>
+<li> 4,20e+03 </li>
+<li> 4 </li>
+</ul>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>2</defaultgrade>
+</question>
+
+
+<question type="cloze">
+<name>
+<text> R10 Q5 : Q05OG </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>As ondas do sonar de um navio gastam 10 s para detectar um obstáculo. Sabendo que a velocidade do som na água é de aproximadamente 1400 m/s, determine:</p>
+<p>A distância, em metros, do navio ao obstáculo. Dê sua resposta em notação científica. <em>OBS</em>: Para escrever potências no computador você precisa usar o símbolo " <span class="math inline">\(\hat{}\)</span> " (acento circunflexo). Assim, para escrever <span class="math inline">\(6,5\cdot    10^3\)</span>, você precisa digitar: 6,5*10<span class="math inline">\(\hat{}\)</span>3 {1:SHORTANSWER:%100%7*10^3}</p>
+<p>A ordem de grandeza da distância. <em>Nota</em>: Dê apenas o expoente como resposta, ou seja, se a ordem de grandeza é <span class="math inline">\(10^x\)</span>, escreva apenas <span class="math inline">\(x\)</span> como resposta. {1:NUMERICAL:=4:0}</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<ul>
+<li> 7,00e+03 </li>
+<li> 4 </li>
+</ul>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>2</defaultgrade>
+</question>
+
+
+<question type="cloze">
+<name>
+<text> R11 Q5 : Q05OG </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>As ondas do sonar de um navio gastam 4 s para detectar um obstáculo. Sabendo que a velocidade do som na água é de aproximadamente 1400 m/s, determine:</p>
+<p>A distância, em metros, do navio ao obstáculo. Dê sua resposta em notação científica. <em>OBS</em>: Para escrever potências no computador você precisa usar o símbolo " <span class="math inline">\(\hat{}\)</span> " (acento circunflexo). Assim, para escrever <span class="math inline">\(6,5\cdot    10^3\)</span>, você precisa digitar: 6,5*10<span class="math inline">\(\hat{}\)</span>3 {1:SHORTANSWER:%100%2,8*10^3}</p>
+<p>A ordem de grandeza da distância. <em>Nota</em>: Dê apenas o expoente como resposta, ou seja, se a ordem de grandeza é <span class="math inline">\(10^x\)</span>, escreva apenas <span class="math inline">\(x\)</span> como resposta. {1:NUMERICAL:=3:0}</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<ul>
+<li> 2,80e+03 </li>
+<li> 3 </li>
+</ul>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>2</defaultgrade>
+</question>
+
+
+<question type="cloze">
+<name>
+<text> R12 Q5 : Q05OG </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>As ondas do sonar de um navio gastam 3 s para detectar um obstáculo. Sabendo que a velocidade do som na água é de aproximadamente 1400 m/s, determine:</p>
+<p>A distância, em metros, do navio ao obstáculo. Dê sua resposta em notação científica. <em>OBS</em>: Para escrever potências no computador você precisa usar o símbolo " <span class="math inline">\(\hat{}\)</span> " (acento circunflexo). Assim, para escrever <span class="math inline">\(6,5\cdot    10^3\)</span>, você precisa digitar: 6,5*10<span class="math inline">\(\hat{}\)</span>3 {1:SHORTANSWER:%100%2,1*10^3}</p>
+<p>A ordem de grandeza da distância. <em>Nota</em>: Dê apenas o expoente como resposta, ou seja, se a ordem de grandeza é <span class="math inline">\(10^x\)</span>, escreva apenas <span class="math inline">\(x\)</span> como resposta. {1:NUMERICAL:=3:0}</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<ul>
+<li> 2,10e+03 </li>
+<li> 3 </li>
+</ul>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>2</defaultgrade>
+</question>
+
+
+<question type="cloze">
+<name>
+<text> R13 Q5 : Q05OG </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>As ondas do sonar de um navio gastam 9 s para detectar um obstáculo. Sabendo que a velocidade do som na água é de aproximadamente 1400 m/s, determine:</p>
+<p>A distância, em metros, do navio ao obstáculo. Dê sua resposta em notação científica. <em>OBS</em>: Para escrever potências no computador você precisa usar o símbolo " <span class="math inline">\(\hat{}\)</span> " (acento circunflexo). Assim, para escrever <span class="math inline">\(6,5\cdot    10^3\)</span>, você precisa digitar: 6,5*10<span class="math inline">\(\hat{}\)</span>3 {1:SHORTANSWER:%100%6,3*10^3}</p>
+<p>A ordem de grandeza da distância. <em>Nota</em>: Dê apenas o expoente como resposta, ou seja, se a ordem de grandeza é <span class="math inline">\(10^x\)</span>, escreva apenas <span class="math inline">\(x\)</span> como resposta. {1:NUMERICAL:=4:0}</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<ul>
+<li> 6,30e+03 </li>
+<li> 4 </li>
+</ul>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>2</defaultgrade>
+</question>
+
+
+<question type="cloze">
+<name>
+<text> R14 Q5 : Q05OG </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>As ondas do sonar de um navio gastam 9 s para detectar um obstáculo. Sabendo que a velocidade do som na água é de aproximadamente 1400 m/s, determine:</p>
+<p>A distância, em metros, do navio ao obstáculo. Dê sua resposta em notação científica. <em>OBS</em>: Para escrever potências no computador você precisa usar o símbolo " <span class="math inline">\(\hat{}\)</span> " (acento circunflexo). Assim, para escrever <span class="math inline">\(6,5\cdot    10^3\)</span>, você precisa digitar: 6,5*10<span class="math inline">\(\hat{}\)</span>3 {1:SHORTANSWER:%100%6,3*10^3}</p>
+<p>A ordem de grandeza da distância. <em>Nota</em>: Dê apenas o expoente como resposta, ou seja, se a ordem de grandeza é <span class="math inline">\(10^x\)</span>, escreva apenas <span class="math inline">\(x\)</span> como resposta. {1:NUMERICAL:=4:0}</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<ul>
+<li> 6,30e+03 </li>
+<li> 4 </li>
+</ul>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>2</defaultgrade>
+</question>
+
+
+<question type="cloze">
+<name>
+<text> R15 Q5 : Q05OG </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>As ondas do sonar de um navio gastam 16 s para detectar um obstáculo. Sabendo que a velocidade do som na água é de aproximadamente 1400 m/s, determine:</p>
+<p>A distância, em metros, do navio ao obstáculo. Dê sua resposta em notação científica. <em>OBS</em>: Para escrever potências no computador você precisa usar o símbolo " <span class="math inline">\(\hat{}\)</span> " (acento circunflexo). Assim, para escrever <span class="math inline">\(6,5\cdot    10^3\)</span>, você precisa digitar: 6,5*10<span class="math inline">\(\hat{}\)</span>3 {1:SHORTANSWER:%100%1,12*10^4}</p>
+<p>A ordem de grandeza da distância. <em>Nota</em>: Dê apenas o expoente como resposta, ou seja, se a ordem de grandeza é <span class="math inline">\(10^x\)</span>, escreva apenas <span class="math inline">\(x\)</span> como resposta. {1:NUMERICAL:=4:0}</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<ul>
+<li> 1,12e+04 </li>
+<li> 4 </li>
+</ul>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>2</defaultgrade>
+</question>
+
+
+<question type="cloze">
+<name>
+<text> R16 Q5 : Q05OG </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>As ondas do sonar de um navio gastam 15 s para detectar um obstáculo. Sabendo que a velocidade do som na água é de aproximadamente 1400 m/s, determine:</p>
+<p>A distância, em metros, do navio ao obstáculo. Dê sua resposta em notação científica. <em>OBS</em>: Para escrever potências no computador você precisa usar o símbolo " <span class="math inline">\(\hat{}\)</span> " (acento circunflexo). Assim, para escrever <span class="math inline">\(6,5\cdot    10^3\)</span>, você precisa digitar: 6,5*10<span class="math inline">\(\hat{}\)</span>3 {1:SHORTANSWER:%100%1,05*10^4}</p>
+<p>A ordem de grandeza da distância. <em>Nota</em>: Dê apenas o expoente como resposta, ou seja, se a ordem de grandeza é <span class="math inline">\(10^x\)</span>, escreva apenas <span class="math inline">\(x\)</span> como resposta. {1:NUMERICAL:=4:0}</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<ul>
+<li> 1,05e+04 </li>
+<li> 4 </li>
+</ul>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>2</defaultgrade>
+</question>
+
+
+<question type="cloze">
+<name>
+<text> R17 Q5 : Q05OG </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>As ondas do sonar de um navio gastam 8 s para detectar um obstáculo. Sabendo que a velocidade do som na água é de aproximadamente 1400 m/s, determine:</p>
+<p>A distância, em metros, do navio ao obstáculo. Dê sua resposta em notação científica. <em>OBS</em>: Para escrever potências no computador você precisa usar o símbolo " <span class="math inline">\(\hat{}\)</span> " (acento circunflexo). Assim, para escrever <span class="math inline">\(6,5\cdot    10^3\)</span>, você precisa digitar: 6,5*10<span class="math inline">\(\hat{}\)</span>3 {1:SHORTANSWER:%100%5,6*10^3}</p>
+<p>A ordem de grandeza da distância. <em>Nota</em>: Dê apenas o expoente como resposta, ou seja, se a ordem de grandeza é <span class="math inline">\(10^x\)</span>, escreva apenas <span class="math inline">\(x\)</span> como resposta. {1:NUMERICAL:=4:0}</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<ul>
+<li> 5,60e+03 </li>
+<li> 4 </li>
+</ul>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>2</defaultgrade>
+</question>
+
+
+<question type="cloze">
+<name>
+<text> R18 Q5 : Q05OG </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>As ondas do sonar de um navio gastam 8 s para detectar um obstáculo. Sabendo que a velocidade do som na água é de aproximadamente 1400 m/s, determine:</p>
+<p>A distância, em metros, do navio ao obstáculo. Dê sua resposta em notação científica. <em>OBS</em>: Para escrever potências no computador você precisa usar o símbolo " <span class="math inline">\(\hat{}\)</span> " (acento circunflexo). Assim, para escrever <span class="math inline">\(6,5\cdot    10^3\)</span>, você precisa digitar: 6,5*10<span class="math inline">\(\hat{}\)</span>3 {1:SHORTANSWER:%100%5,6*10^3}</p>
+<p>A ordem de grandeza da distância. <em>Nota</em>: Dê apenas o expoente como resposta, ou seja, se a ordem de grandeza é <span class="math inline">\(10^x\)</span>, escreva apenas <span class="math inline">\(x\)</span> como resposta. {1:NUMERICAL:=4:0}</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<ul>
+<li> 5,60e+03 </li>
+<li> 4 </li>
+</ul>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>2</defaultgrade>
+</question>
+
+
+<question type="cloze">
+<name>
+<text> R19 Q5 : Q05OG </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>As ondas do sonar de um navio gastam 12 s para detectar um obstáculo. Sabendo que a velocidade do som na água é de aproximadamente 1400 m/s, determine:</p>
+<p>A distância, em metros, do navio ao obstáculo. Dê sua resposta em notação científica. <em>OBS</em>: Para escrever potências no computador você precisa usar o símbolo " <span class="math inline">\(\hat{}\)</span> " (acento circunflexo). Assim, para escrever <span class="math inline">\(6,5\cdot    10^3\)</span>, você precisa digitar: 6,5*10<span class="math inline">\(\hat{}\)</span>3 {1:SHORTANSWER:%100%8,4*10^3}</p>
+<p>A ordem de grandeza da distância. <em>Nota</em>: Dê apenas o expoente como resposta, ou seja, se a ordem de grandeza é <span class="math inline">\(10^x\)</span>, escreva apenas <span class="math inline">\(x\)</span> como resposta. {1:NUMERICAL:=4:0}</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<ul>
+<li> 8,40e+03 </li>
+<li> 4 </li>
+</ul>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>2</defaultgrade>
+</question>
+
+
+<question type="cloze">
+<name>
+<text> R20 Q5 : Q05OG </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>As ondas do sonar de um navio gastam 10 s para detectar um obstáculo. Sabendo que a velocidade do som na água é de aproximadamente 1400 m/s, determine:</p>
+<p>A distância, em metros, do navio ao obstáculo. Dê sua resposta em notação científica. <em>OBS</em>: Para escrever potências no computador você precisa usar o símbolo " <span class="math inline">\(\hat{}\)</span> " (acento circunflexo). Assim, para escrever <span class="math inline">\(6,5\cdot    10^3\)</span>, você precisa digitar: 6,5*10<span class="math inline">\(\hat{}\)</span>3 {1:SHORTANSWER:%100%7*10^3}</p>
+<p>A ordem de grandeza da distância. <em>Nota</em>: Dê apenas o expoente como resposta, ou seja, se a ordem de grandeza é <span class="math inline">\(10^x\)</span>, escreva apenas <span class="math inline">\(x\)</span> como resposta. {1:NUMERICAL:=4:0}</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<ul>
+<li> 7,00e+03 </li>
+<li> 4 </li>
+</ul>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>2</defaultgrade>
+</question>
+
+
+<question type="category">
+<category>
+<text>$course$/nc_og-12026/Exercise 6</text>
+</category>
+</question>
+
+
+<question type="numerical">
+<name>
+<text> R01 Q6 : Q06OG </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Uma reação química demora cerca de <span class="math inline">\(10^{-13}\)</span> s para ocorrer. Qual é a ordem de grandeza do número de reações químicas sequenciais que ocorrem durante o tempo que você está dormindo? (Dê apenas o expoente como resposta, ou seja, se a ordem de grandeza é <span class="math inline">\(10^x\)</span>, escreva apenas x como resposta abaixo.)</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>17</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<answer fraction="100" format="moodle_auto_format">
+<text>17</text>
+<tolerance>0</tolerance>
+</answer>
+</question>
+
+
+<question type="numerical">
+<name>
+<text> R02 Q6 : Q06OG </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Uma reação química demora cerca de <span class="math inline">\(10^{-13}\)</span> s para ocorrer. Qual é a ordem de grandeza do número de reações químicas sequenciais que ocorrem durante o tempo que você está dormindo? (Dê apenas o expoente como resposta, ou seja, se a ordem de grandeza é <span class="math inline">\(10^x\)</span>, escreva apenas x como resposta abaixo.)</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>17</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<answer fraction="100" format="moodle_auto_format">
+<text>17</text>
+<tolerance>0</tolerance>
+</answer>
+</question>
+
+
+<question type="numerical">
+<name>
+<text> R03 Q6 : Q06OG </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Uma reação química demora cerca de <span class="math inline">\(10^{-13}\)</span> s para ocorrer. Qual é a ordem de grandeza do número de reações químicas sequenciais que ocorrem durante o tempo que você está dormindo? (Dê apenas o expoente como resposta, ou seja, se a ordem de grandeza é <span class="math inline">\(10^x\)</span>, escreva apenas x como resposta abaixo.)</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>17</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<answer fraction="100" format="moodle_auto_format">
+<text>17</text>
+<tolerance>0</tolerance>
+</answer>
+</question>
+
+
+<question type="numerical">
+<name>
+<text> R04 Q6 : Q06OG </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Uma reação química demora cerca de <span class="math inline">\(10^{-13}\)</span> s para ocorrer. Qual é a ordem de grandeza do número de reações químicas sequenciais que ocorrem durante o tempo que você está dormindo? (Dê apenas o expoente como resposta, ou seja, se a ordem de grandeza é <span class="math inline">\(10^x\)</span>, escreva apenas x como resposta abaixo.)</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>17</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<answer fraction="100" format="moodle_auto_format">
+<text>17</text>
+<tolerance>0</tolerance>
+</answer>
+</question>
+
+
+<question type="numerical">
+<name>
+<text> R05 Q6 : Q06OG </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Uma reação química demora cerca de <span class="math inline">\(10^{-13}\)</span> s para ocorrer. Qual é a ordem de grandeza do número de reações químicas sequenciais que ocorrem durante o tempo que você está dormindo? (Dê apenas o expoente como resposta, ou seja, se a ordem de grandeza é <span class="math inline">\(10^x\)</span>, escreva apenas x como resposta abaixo.)</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>17</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<answer fraction="100" format="moodle_auto_format">
+<text>17</text>
+<tolerance>0</tolerance>
+</answer>
+</question>
+
+
+<question type="numerical">
+<name>
+<text> R06 Q6 : Q06OG </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Uma reação química demora cerca de <span class="math inline">\(10^{-13}\)</span> s para ocorrer. Qual é a ordem de grandeza do número de reações químicas sequenciais que ocorrem durante o tempo que você está dormindo? (Dê apenas o expoente como resposta, ou seja, se a ordem de grandeza é <span class="math inline">\(10^x\)</span>, escreva apenas x como resposta abaixo.)</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>17</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<answer fraction="100" format="moodle_auto_format">
+<text>17</text>
+<tolerance>0</tolerance>
+</answer>
+</question>
+
+
+<question type="numerical">
+<name>
+<text> R07 Q6 : Q06OG </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Uma reação química demora cerca de <span class="math inline">\(10^{-13}\)</span> s para ocorrer. Qual é a ordem de grandeza do número de reações químicas sequenciais que ocorrem durante o tempo que você está dormindo? (Dê apenas o expoente como resposta, ou seja, se a ordem de grandeza é <span class="math inline">\(10^x\)</span>, escreva apenas x como resposta abaixo.)</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>17</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<answer fraction="100" format="moodle_auto_format">
+<text>17</text>
+<tolerance>0</tolerance>
+</answer>
+</question>
+
+
+<question type="numerical">
+<name>
+<text> R08 Q6 : Q06OG </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Uma reação química demora cerca de <span class="math inline">\(10^{-13}\)</span> s para ocorrer. Qual é a ordem de grandeza do número de reações químicas sequenciais que ocorrem durante o tempo que você está dormindo? (Dê apenas o expoente como resposta, ou seja, se a ordem de grandeza é <span class="math inline">\(10^x\)</span>, escreva apenas x como resposta abaixo.)</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>17</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<answer fraction="100" format="moodle_auto_format">
+<text>17</text>
+<tolerance>0</tolerance>
+</answer>
+</question>
+
+
+<question type="numerical">
+<name>
+<text> R09 Q6 : Q06OG </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Uma reação química demora cerca de <span class="math inline">\(10^{-13}\)</span> s para ocorrer. Qual é a ordem de grandeza do número de reações químicas sequenciais que ocorrem durante o tempo que você está dormindo? (Dê apenas o expoente como resposta, ou seja, se a ordem de grandeza é <span class="math inline">\(10^x\)</span>, escreva apenas x como resposta abaixo.)</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>17</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<answer fraction="100" format="moodle_auto_format">
+<text>17</text>
+<tolerance>0</tolerance>
+</answer>
+</question>
+
+
+<question type="numerical">
+<name>
+<text> R10 Q6 : Q06OG </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Uma reação química demora cerca de <span class="math inline">\(10^{-13}\)</span> s para ocorrer. Qual é a ordem de grandeza do número de reações químicas sequenciais que ocorrem durante o tempo que você está dormindo? (Dê apenas o expoente como resposta, ou seja, se a ordem de grandeza é <span class="math inline">\(10^x\)</span>, escreva apenas x como resposta abaixo.)</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>17</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<answer fraction="100" format="moodle_auto_format">
+<text>17</text>
+<tolerance>0</tolerance>
+</answer>
+</question>
+
+
+<question type="numerical">
+<name>
+<text> R11 Q6 : Q06OG </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Uma reação química demora cerca de <span class="math inline">\(10^{-13}\)</span> s para ocorrer. Qual é a ordem de grandeza do número de reações químicas sequenciais que ocorrem durante o tempo que você está dormindo? (Dê apenas o expoente como resposta, ou seja, se a ordem de grandeza é <span class="math inline">\(10^x\)</span>, escreva apenas x como resposta abaixo.)</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>17</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<answer fraction="100" format="moodle_auto_format">
+<text>17</text>
+<tolerance>0</tolerance>
+</answer>
+</question>
+
+
+<question type="numerical">
+<name>
+<text> R12 Q6 : Q06OG </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Uma reação química demora cerca de <span class="math inline">\(10^{-13}\)</span> s para ocorrer. Qual é a ordem de grandeza do número de reações químicas sequenciais que ocorrem durante o tempo que você está dormindo? (Dê apenas o expoente como resposta, ou seja, se a ordem de grandeza é <span class="math inline">\(10^x\)</span>, escreva apenas x como resposta abaixo.)</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>17</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<answer fraction="100" format="moodle_auto_format">
+<text>17</text>
+<tolerance>0</tolerance>
+</answer>
+</question>
+
+
+<question type="numerical">
+<name>
+<text> R13 Q6 : Q06OG </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Uma reação química demora cerca de <span class="math inline">\(10^{-13}\)</span> s para ocorrer. Qual é a ordem de grandeza do número de reações químicas sequenciais que ocorrem durante o tempo que você está dormindo? (Dê apenas o expoente como resposta, ou seja, se a ordem de grandeza é <span class="math inline">\(10^x\)</span>, escreva apenas x como resposta abaixo.)</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>17</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<answer fraction="100" format="moodle_auto_format">
+<text>17</text>
+<tolerance>0</tolerance>
+</answer>
+</question>
+
+
+<question type="numerical">
+<name>
+<text> R14 Q6 : Q06OG </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Uma reação química demora cerca de <span class="math inline">\(10^{-13}\)</span> s para ocorrer. Qual é a ordem de grandeza do número de reações químicas sequenciais que ocorrem durante o tempo que você está dormindo? (Dê apenas o expoente como resposta, ou seja, se a ordem de grandeza é <span class="math inline">\(10^x\)</span>, escreva apenas x como resposta abaixo.)</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>17</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<answer fraction="100" format="moodle_auto_format">
+<text>17</text>
+<tolerance>0</tolerance>
+</answer>
+</question>
+
+
+<question type="numerical">
+<name>
+<text> R15 Q6 : Q06OG </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Uma reação química demora cerca de <span class="math inline">\(10^{-13}\)</span> s para ocorrer. Qual é a ordem de grandeza do número de reações químicas sequenciais que ocorrem durante o tempo que você está dormindo? (Dê apenas o expoente como resposta, ou seja, se a ordem de grandeza é <span class="math inline">\(10^x\)</span>, escreva apenas x como resposta abaixo.)</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>17</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<answer fraction="100" format="moodle_auto_format">
+<text>17</text>
+<tolerance>0</tolerance>
+</answer>
+</question>
+
+
+<question type="numerical">
+<name>
+<text> R16 Q6 : Q06OG </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Uma reação química demora cerca de <span class="math inline">\(10^{-13}\)</span> s para ocorrer. Qual é a ordem de grandeza do número de reações químicas sequenciais que ocorrem durante o tempo que você está dormindo? (Dê apenas o expoente como resposta, ou seja, se a ordem de grandeza é <span class="math inline">\(10^x\)</span>, escreva apenas x como resposta abaixo.)</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>17</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<answer fraction="100" format="moodle_auto_format">
+<text>17</text>
+<tolerance>0</tolerance>
+</answer>
+</question>
+
+
+<question type="numerical">
+<name>
+<text> R17 Q6 : Q06OG </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Uma reação química demora cerca de <span class="math inline">\(10^{-13}\)</span> s para ocorrer. Qual é a ordem de grandeza do número de reações químicas sequenciais que ocorrem durante o tempo que você está dormindo? (Dê apenas o expoente como resposta, ou seja, se a ordem de grandeza é <span class="math inline">\(10^x\)</span>, escreva apenas x como resposta abaixo.)</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>17</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<answer fraction="100" format="moodle_auto_format">
+<text>17</text>
+<tolerance>0</tolerance>
+</answer>
+</question>
+
+
+<question type="numerical">
+<name>
+<text> R18 Q6 : Q06OG </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Uma reação química demora cerca de <span class="math inline">\(10^{-13}\)</span> s para ocorrer. Qual é a ordem de grandeza do número de reações químicas sequenciais que ocorrem durante o tempo que você está dormindo? (Dê apenas o expoente como resposta, ou seja, se a ordem de grandeza é <span class="math inline">\(10^x\)</span>, escreva apenas x como resposta abaixo.)</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>17</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<answer fraction="100" format="moodle_auto_format">
+<text>17</text>
+<tolerance>0</tolerance>
+</answer>
+</question>
+
+
+<question type="numerical">
+<name>
+<text> R19 Q6 : Q06OG </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Uma reação química demora cerca de <span class="math inline">\(10^{-13}\)</span> s para ocorrer. Qual é a ordem de grandeza do número de reações químicas sequenciais que ocorrem durante o tempo que você está dormindo? (Dê apenas o expoente como resposta, ou seja, se a ordem de grandeza é <span class="math inline">\(10^x\)</span>, escreva apenas x como resposta abaixo.)</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>17</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<answer fraction="100" format="moodle_auto_format">
+<text>17</text>
+<tolerance>0</tolerance>
+</answer>
+</question>
+
+
+<question type="numerical">
+<name>
+<text> R20 Q6 : Q06OG </text>
+</name>
+<questiontext format="html">
+<text><![CDATA[
+<style type="text/css" rel="stylesheet">
+/* tables with alternating shading */
+.table_shade {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border:1px solid #FFFFFF;
+    background-color: #FFFFFF;
+}
+.table_shade th {
+    border:1px solid #FFFFFF;
+    background: #D5D5D5;
+}
+.table_shade td {
+    border:1px solid #FFFFFF;
+}
+.table_shade .odd {
+    background: #EEEEEE;
+}
+.table_shade .even {
+    background: #FBFBFB;
+}
+</style>
+<p>
+<p>Uma reação química demora cerca de <span class="math inline">\(10^{-13}\)</span> s para ocorrer. Qual é a ordem de grandeza do número de reações químicas sequenciais que ocorrem durante o tempo que você está dormindo? (Dê apenas o expoente como resposta, ou seja, se a ordem de grandeza é <span class="math inline">\(10^x\)</span>, escreva apenas x como resposta abaixo.)</p>
+</p>]]></text>
+</questiontext>
+<generalfeedback format="html">
+<text><![CDATA[<p>
+<p>17</p>
+</p>]]></text>
+</generalfeedback>
+<penalty>0</penalty>
+<defaultgrade>1</defaultgrade>
+<answer fraction="100" format="moodle_auto_format">
+<text>17</text>
+<tolerance>0</tolerance>
+</answer>
+</question>
+
+</quiz>
