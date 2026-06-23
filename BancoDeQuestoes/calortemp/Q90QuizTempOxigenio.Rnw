@@ -1,0 +1,52 @@
+<<echo=FALSE, results=hide>>=
+## Inspirada no ENEM 2025 Q107. Questao interdisciplinar: termologia + ambiente.
+T1 <- sample(c(15, 18, 20, 22), 1)
+aumento <- sample(c(8, 10, 12, 15), 1)
+T2 <- T1 + aumento
+O1 <- round(14.6 - 0.33*T1 + 0.003*T1^2, 1)
+O2 <- round(14.6 - 0.33*T2 + 0.003*T2^2, 1)
+queda <- round(O1 - O2, 1)
+fmt <- function(x, d = 1) formatC(x, format = "f", digits = d, decimal.mark = ",")
+ordem <- sample(1:5)
+questions <- rep("", 5)
+solutions <- rep(FALSE, 5)
+questions[ordem[1]] <- paste0("A solubilidade do oxigenio diminui, reduzindo em cerca de ", fmt(queda), " mg/L a quantidade de O2 dissolvido disponivel.")
+questions[ordem[2]] <- "A solubilidade do oxigenio aumenta, pois moleculas quentes sempre dissolvem mais gas."
+questions[ordem[3]] <- "A quantidade de oxigenio dissolvido nao se altera, pois solubilidade nao depende da temperatura."
+questions[ordem[4]] <- "O aumento de temperatura transforma o oxigenio dissolvido em hidrogenio."
+questions[ordem[5]] <- "A temperatura afeta apenas a cor da agua, sem consequencias para gases dissolvidos."
+solutions[ordem[1]] <- TRUE
+@
+\usepackage[utf8]{inputenc}
+\begin{question}
+
+Em um estudo de termologia ambiental, uma amostra de agua passa de $\Sexpr{T1}\,^{\circ}\mathrm{C}$ para $\Sexpr{T2}\,^{\circ}\mathrm{C}$. A solubilidade aproximada do oxigenio dissolvido era $\Sexpr{fmt(O1)}\,\mathrm{mg/L}$ e passa para $\Sexpr{fmt(O2)}\,\mathrm{mg/L}$.
+
+Qual consequencia fisica e esperada?
+
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(questions)
+@
+
+\end{question}
+
+\begin{solution}
+
+O aquecimento da agua reduz a solubilidade de gases, como o oxigenio. Neste caso, a variacao e
+\[
+\Delta C = \Sexpr{fmt(O1)} - \Sexpr{fmt(O2)} = \Sexpr{fmt(queda)}\,\mathrm{mg/L}.
+\]
+Portanto, ha menos oxigenio dissolvido disponivel na agua.
+
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(paste("\\textbf{", ifelse(solutions, "Verdadeiro", "Falso"), "}", sep = ""))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q90QuizTempOxigenio}
+%% \exsection{Calor e temperatura; Interdisciplinar; ENEM}
+%% \exusepackage[utf8]{inputenc}
