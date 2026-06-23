@@ -13,9 +13,11 @@ A seguir você encontra a documentação de como utilizar questões prontas na p
 
 ## Panorama do banco de questões
 
-O gráfico abaixo mostra o número de questões por assunto, considerando os arquivos `.Rnw` em `BancoDeQuestoes`. Os dados também estão disponíveis em [`docs/question-counts.csv`](docs/question-counts.csv).
+O gráfico abaixo mostra o número de questões por assunto, considerando os arquivos `.Rnw` em `BancoDeQuestoes`. Ele é gerado automaticamente após merges na branch `master`, a partir do estado atual do banco de questões.
 
-![Número de questões por assunto](docs/question-counts.svg)
+![Número de questões por assunto](https://ifsp-hto.github.io/BancoFisica/question-counts.svg)
+
+Os dados tabulares também são publicados automaticamente em [`question-counts.csv`](https://ifsp-hto.github.io/BancoFisica/question-counts.csv). Pull requests de questões não precisam atualizar o gráfico nem o CSV.
 
 ## Quickstart
 
