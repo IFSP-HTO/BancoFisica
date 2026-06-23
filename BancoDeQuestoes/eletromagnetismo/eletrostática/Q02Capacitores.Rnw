@@ -1,6 +1,6 @@
 <<echo=FALSE, results=hide>>=
 ## FEITA POR Flavio Barros
-## Funções
+## Funcoes
 nota_cient <- function(x,digits) {
   if (x==0) return("0")
   ord <- floor(log(abs(x),10))
@@ -27,7 +27,7 @@ pega_int <- function(x, digits=NULL) {
   }
 }
 
-## Parâmetros
+## Parametros
 A = sample(50:80,1)
 d = round(runif(n = 1, min = 0.1, max = 0.9),1)
 rigidez = 4e7
@@ -45,23 +45,28 @@ Qmax <- C * deltaV
 Qmax
 E <- round((Qmax * deltaV)/2,1)
 E
+
+epsilon_pico <- pega_int(formatEng(epsilon, fixed=-12))
+C_nF <- pega_int(formatEng(C, fixed = -9))
+Qmax_uC <- pega_int(formatEng(Qmax, fixed=-6))
+
 ## Figura
 include_supplement("Q02Capacitores.png")
 @
 
 \begin{question}
 %% Enunciado
-Seja um capacitor de placas paralelas com a área das placas iguais a $A$ = \Sexpr{A} cm², separadas por uma distância d = \Sexpr{d} mm uma da outra, e com uma película de um dielétrico de náilon também com espessura d. Sabendo que a permissividade elétrica do vácuo é $\epsilon_0$ = $\Sexpr{nota_cient(epsilon0)}$ C²/N.m² e a constante dielétrica do náilon k = \Sexpr{k}, determine:
+Seja um capacitor de placas paralelas com a area das placas iguais a $A$ = \Sexpr{A} cm², separadas por uma distancia d = \Sexpr{d} mm uma da outra, e com uma pelicula de um dieletrico de nailon tambem com espessura d. Sabendo que a permissividade eletrica do vacuo e $\epsilon_0$ = $\Sexpr{nota_cient(epsilon0)}$ C²/N.m² e a constante dieletrica do nailon k = \Sexpr{k}, determine:
 
 \includegraphics[height = 7cm, keepaspectratio]{Q02Capacitores.png}
 
-(Dica: a rigidez dielétrica é a voltagem máxima que um metro de dielétrico suporta. Use essa informação para descobrir a voltagem máxima do capacitor.)
+(Dica: a rigidez dieletrica e a voltagem maxima que um metro de dieletrico suporta. Use essa informacao para descobrir a voltagem maxima do capacitor.)
 
 \begin{answerlist}
-  \item a permissidade elétrida do dielétrico. (Responda em pico = $10^{-12}$ e utilize dois algarismos significativos.)
+  \item a permissividade eletrica do dieletrico. (Responda em pico = $10^{-12}$ e utilize dois algarismos significativos.)
   \item a capacidade desse capacitor. (Responda em $nF$, ou nano Farads.)
-  \item a carga máxima que pode ser armazenada nesse capacitor, sabendo que a rigidez dielétrica do náilon é $\Sexpr{nota_cient(rigidez)}$ V/m. (Responda em $\mu C$)
-  \item A energia potencial acumulada no capacitor nas condições do item b. (Arredonde para uma decimal.)
+  \item a carga maxima que pode ser armazenada nesse capacitor, sabendo que a rigidez dieletrica do nailon e $\Sexpr{nota_cient(rigidez)}$ V/m. (Responda em $\mu C$)
+  \item A energia potencial acumulada no capacitor nas condicoes do item c. (Arredonde para uma decimal.)
 
 \end{answerlist}
 
@@ -71,16 +76,16 @@ Seja um capacitor de placas paralelas com a área das placas iguais a $A$ = \Sex
 %% Supply a solution here!
 
 \begin{answerlist}
-  \item $\Sexpr{pega_int(formatEng(epsilon, fixed=-12))}$.
-  \item A capacitância é $\Sexpr{pega_int(formatEng(C, fixed = -9))}$nF
-  \item A carga máxima é $\Sexpr{pega_int(formatEng(Qmax, fixed=-6))}$	microcoulumbs.
-  \item A energia é $\Sexpr{E}$J.
+  \item $\Sexpr{epsilon_pico}$.
+  \item A capacitancia e $\Sexpr{C_nF}$nF.
+  \item A carga maxima e $\Sexpr{Qmax_uC}$ $\mu C$.
+  \item A energia e $\Sexpr{E}$J.
 \end{answerlist}
 \end{solution}
 
 %% META-INFORMATION
 %% \extype{cloze}
-%% \exsolution{0.324|0.767515|0.58908|1}
+%% \exsolution{\Sexpr{epsilon_pico}|\Sexpr{C_nF}|\Sexpr{Qmax_uC}|\Sexpr{E}}
 %% \exclozetype{num|num|num|num}
 %% \exname{Q02Capacitores}
-%% \extol{0.01}
+%% \extol{0.01|0.01|0.01|0.1}
