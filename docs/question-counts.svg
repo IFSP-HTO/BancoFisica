@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="770" viewBox="0 0 960 770" role="img" aria-labelledby="title desc">
+<title id="title">Questões por assunto</title>
+<desc id="desc">Número de arquivos Rnw por assunto no banco de questões.</desc>
+<rect width="100%" height="100%" fill="white"/>
+<style>text{font-family:-apple-system,BlinkMacSystemFont,&quot;Segoe UI&quot;,Arial,sans-serif;fill:#24292f}.title{font-size:24px;font-weight:700}.subtitle{font-size:13px;fill:#57606a}.axis{font-size:12px;fill:#57606a}.label{font-size:12px}.value{font-size:12px;font-weight:600}.grid{stroke:#d8dee4;stroke-dasharray:3 3}.bar{fill:#4f8cc9}</style>
+<text x="250" y="30" class="title">Questões por assunto</text>
+<text x="250" y="52" class="subtitle">Total: 215 questões em 20 assuntos</text>
+<line x1="250.0" x2="250.0" y1="60" y2="697" class="grid"/>
+<text x="250.0" y="722" text-anchor="middle" class="axis">0</text>
+<line x1="402.4" x2="402.4" y1="60" y2="697" class="grid"/>
+<text x="402.4" y="722" text-anchor="middle" class="axis">10</text>
+<line x1="554.8" x2="554.8" y1="60" y2="697" class="grid"/>
+<text x="554.8" y="722" text-anchor="middle" class="axis">20</text>
+<line x1="707.1" x2="707.1" y1="60" y2="697" class="grid"/>
+<text x="707.1" y="722" text-anchor="middle" class="axis">30</text>
+<line x1="859.5" x2="859.5" y1="60" y2="697" class="grid"/>
+<text x="859.5" y="722" text-anchor="middle" class="axis">40</text>
+<line x1="890.0" x2="890.0" y1="60" y2="697" class="grid"/>
+<text x="890.0" y="722" text-anchor="middle" class="axis">42</text>
+<text x="570.0" y="740" text-anchor="middle" class="axis">Número de questões</text>
+<text x="238" y="85.8" text-anchor="end" class="label">calorimetria</text>
+<rect x="250" y="70" width="640.0" height="22" rx="4" class="bar"/>
+<text x="898.0" y="85.8" class="value">42</text>
+<text x="238" y="115.8" text-anchor="end" class="label">trabalhopotencia</text>
+<rect x="250" y="100" width="365.7" height="22" rx="4" class="bar"/>
+<text x="623.7" y="115.8" class="value">24</text>
+<text x="238" y="145.8" text-anchor="end" class="label">estatica</text>
+<rect x="250" y="130" width="350.5" height="22" rx="4" class="bar"/>
+<text x="608.5" y="145.8" class="value">23</text>
+<text x="238" y="175.8" text-anchor="end" class="label">cinematica/MU</text>
+<rect x="250" y="160" width="304.8" height="22" rx="4" class="bar"/>
+<text x="562.8" y="175.8" class="value">20</text>
+<text x="238" y="205.8" text-anchor="end" class="label">calortemp</text>
+<rect x="250" y="190" width="289.5" height="22" rx="4" class="bar"/>
+<text x="547.5" y="205.8" class="value">19</text>
+<text x="238" y="235.8" text-anchor="end" class="label">hidrostatica</text>
+<rect x="250" y="220" width="228.6" height="22" rx="4" class="bar"/>
+<text x="486.6" y="235.8" class="value">15</text>
+<text x="238" y="265.8" text-anchor="end" class="label">leidosgases</text>
+<rect x="250" y="250" width="213.3" height="22" rx="4" class="bar"/>
+<text x="471.3" y="265.8" class="value">14</text>
+<text x="238" y="295.8" text-anchor="end" class="label">cinematica/MCU</text>
+<rect x="250" y="280" width="152.4" height="22" rx="4" class="bar"/>
+<text x="410.4" y="295.8" class="value">10</text>
+<text x="238" y="325.8" text-anchor="end" class="label">termodinamica</text>
+<rect x="250" y="310" width="137.1" height="22" rx="4" class="bar"/>
+<text x="395.1" y="325.8" class="value">9</text>
+<text x="238" y="355.8" text-anchor="end" class="label">optica</text>
+<rect x="250" y="340" width="121.9" height="22" rx="4" class="bar"/>
+<text x="379.9" y="355.8" class="value">8</text>
+<text x="238" y="385.8" text-anchor="end" class="label">nc_og</text>
+<rect x="250" y="370" width="91.4" height="22" rx="4" class="bar"/>
+<text x="349.4" y="385.8" class="value">6</text>
+<text x="238" y="415.8" text-anchor="end" class="label">qtdmov_impulso</text>
+<rect x="250" y="400" width="91.4" height="22" rx="4" class="bar"/>
+<text x="349.4" y="415.8" class="value">6</text>
+<text x="238" y="445.8" text-anchor="end" class="label">dilatterm</text>
+<rect x="250" y="430" width="45.7" height="22" rx="4" class="bar"/>
+<text x="303.7" y="445.8" class="value">3</text>
+<text x="238" y="475.8" text-anchor="end" class="label">eletromagnetismo/eletrostática</text>
+<rect x="250" y="460" width="45.7" height="22" rx="4" class="bar"/>
+<text x="303.7" y="475.8" class="value">3</text>
+<text x="238" y="505.8" text-anchor="end" class="label">movcircular</text>
+<rect x="250" y="490" width="45.7" height="22" rx="4" class="bar"/>
+<text x="303.7" y="505.8" class="value">3</text>
+<text x="238" y="535.8" text-anchor="end" class="label">ondas</text>
+<rect x="250" y="520" width="45.7" height="22" rx="4" class="bar"/>
+<text x="303.7" y="535.8" class="value">3</text>
+<text x="238" y="565.8" text-anchor="end" class="label">acel</text>
+<rect x="250" y="550" width="30.5" height="22" rx="4" class="bar"/>
+<text x="288.5" y="565.8" class="value">2</text>
+<text x="238" y="595.8" text-anchor="end" class="label">introfisica</text>
+<rect x="250" y="580" width="30.5" height="22" rx="4" class="bar"/>
+<text x="288.5" y="595.8" class="value">2</text>
+<text x="238" y="625.8" text-anchor="end" class="label">leisdenewton/atrito</text>
+<rect x="250" y="610" width="30.5" height="22" rx="4" class="bar"/>
+<text x="288.5" y="625.8" class="value">2</text>
+<text x="238" y="655.8" text-anchor="end" class="label">unidadeseconv</text>
+<rect x="250" y="640" width="15.2" height="22" rx="4" class="bar"/>
+<text x="273.2" y="655.8" class="value">1</text>
+</svg>
