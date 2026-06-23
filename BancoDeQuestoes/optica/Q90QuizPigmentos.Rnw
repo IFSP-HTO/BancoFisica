@@ -1,0 +1,48 @@
+<<echo=FALSE, results=hide>>=
+## Inspirada no ENEM 2021 Q115. Questao interdisciplinar: optica + biologia.
+cores <- data.frame(
+  refletida = c("verde", "vermelha", "azul", "amarela"),
+  absorvida = c("vermelha", "verde", "alaranjada", "azul-violeta"),
+  faixa = c("620 nm a 750 nm", "500 nm a 570 nm", "590 nm a 620 nm", "400 nm a 480 nm"),
+  stringsAsFactors = FALSE
+)
+i <- sample(1:nrow(cores), 1)
+ordem <- sample(1:5)
+questions <- rep("", 5)
+solutions <- rep(FALSE, 5)
+questions[ordem[1]] <- paste0("Absorve preferencialmente luz ", cores$absorvida[i], ", aproximadamente na faixa de ", cores$faixa[i], ".")
+questions[ordem[2]] <- paste0("Absorve preferencialmente a propria luz ", cores$refletida[i], ", pois essa e a cor observada.")
+questions[ordem[3]] <- "Absorve igualmente todas as frequencias visiveis, por isso apresenta uma cor definida."
+questions[ordem[4]] <- "Nao absorve luz visivel; apenas emite luz propria de baixa intensidade."
+questions[ordem[5]] <- "Absorve apenas radiacao infravermelha, sem interagir com a luz visivel."
+solutions[ordem[1]] <- TRUE
+@
+\usepackage[utf8]{inputenc}
+\begin{question}
+
+Um pigmento presente em uma amostra biologica e observado com coloracao \Sexpr{cores$refletida[i]} quando iluminado por luz branca. A cor percebida esta associada a luz predominantemente refletida ou transmitida pelo pigmento.
+
+Qual afirmacao descreve corretamente a absorcao de luz por esse pigmento?
+
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(questions)
+@
+
+\end{question}
+
+\begin{solution}
+
+Quando um pigmento e visto como \Sexpr{cores$refletida[i]}, isso significa que ele reflete ou transmite principalmente essa componente da luz branca. As componentes complementares tendem a ser absorvidas com maior intensidade. Portanto, a absorcao principal deve ocorrer na regiao correspondente a luz \Sexpr{cores$absorvida[i]}, aproximadamente em $\Sexpr{cores$faixa[i]}$.
+
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(paste("\\textbf{", ifelse(solutions, "Verdadeiro", "Falso"), "}", sep = ""))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q90QuizPigmentos}
+%% \exsection{Optica; Cores; Interdisciplinar; ENEM}
+%% \exusepackage[utf8]{inputenc}

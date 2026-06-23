@@ -1,0 +1,58 @@
+<<echo=FALSE, results=hide>>=
+## Inspirada no ENEM 2021 Q92. Questao interdisciplinar: eletricidade + eletroquimica.
+E_pilha <- sample(c(1.1, 1.2, 1.5, 1.6), 1)
+n <- sample(2:5, 1)
+E_total <- E_pilha * n
+fmt <- function(x, d = 1) formatC(x, format = "f", digits = d, decimal.mark = ",")
+aparelhos <- c("radio portatil", "lanterna", "controle remoto", "brinquedo eletrico", "sensor ambiental")
+correto <- sample(aparelhos, 1)
+outros <- sample(setdiff(aparelhos, correto), 4)
+baixo <- round(E_total - 0.4, 1)
+alto <- round(E_total + 0.4, 1)
+questions <- rep("", 5)
+solutions <- rep(FALSE, 5)
+ordem <- sample(1:5)
+questions[ordem[1]] <- paste0(correto, ": entre ", fmt(baixo), " V e ", fmt(alto), " V")
+questions[ordem[2]] <- paste0(outros[1], ": entre ", fmt(max(0.5, E_total - 2.4)), " V e ", fmt(max(0.9, E_total - 1.8)), " V")
+questions[ordem[3]] <- paste0(outros[2], ": entre ", fmt(max(0.5, E_total - 1.4)), " V e ", fmt(max(0.9, E_total - 0.9)), " V")
+questions[ordem[4]] <- paste0(outros[3], ": entre ", fmt(E_total + 0.9), " V e ", fmt(E_total + 1.5), " V")
+questions[ordem[5]] <- paste0(outros[4], ": entre ", fmt(E_total + 1.9), " V e ", fmt(E_total + 2.6), " V")
+solutions[ordem[1]] <- TRUE
+@
+\usepackage[utf8]{inputenc}
+\begin{question}
+
+Uma bateria e montada associando-se em serie $\Sexpr{n}$ pilhas identicas, cada uma com forca eletromotriz de $\Sexpr{fmt(E_pilha)}\,\mathrm{V}$. Considere que as perdas internas sejam despreziveis.
+
+Qual aparelho pode ser alimentado adequadamente por essa bateria?
+
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(questions)
+@
+
+\end{question}
+
+\begin{solution}
+
+Em uma associacao em serie, as forcas eletromotrizes se somam:
+\[
+E_{\text{total}} = n E_{\text{pilha}}.
+\]
+Logo,
+\[
+E_{\text{total}} = \Sexpr{n}\cdot \Sexpr{fmt(E_pilha)} = \Sexpr{fmt(E_total)}\,\mathrm{V}.
+\]
+Portanto, deve ser escolhido o aparelho cuja faixa de operacao contem aproximadamente $\Sexpr{fmt(E_total)}\,\mathrm{V}$.
+
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(paste("\\textbf{", ifelse(solutions, "Verdadeiro", "Falso"), "}", sep = ""))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q90QuizPilhasSerie}
+%% \exsection{Eletromagnetismo; Circuitos; Interdisciplinar; ENEM}
+%% \exusepackage[utf8]{inputenc}

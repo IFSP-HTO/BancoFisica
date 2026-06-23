@@ -1,0 +1,62 @@
+<<echo=FALSE, results=hide>>=
+## Inspirada no ENEM 2023 Q131. Questao interdisciplinar: Hidrostatica + Fisico-quimica.
+V <- sample(c(300, 330, 350), 1)
+m_base <- V
+m_acucar <- sample(c(28, 32, 36, 40), 1)
+m_adocante <- sample(c(0.10, 0.15, 0.20, 0.25), 1)
+rho_comum <- (m_base + m_acucar)/V
+rho_diet <- (m_base + m_adocante)/V
+fmt <- function(x, d = 3) formatC(x, format = "f", digits = d, decimal.mark = ",")
+ordem <- sample(1:5)
+questions <- rep("", 5)
+solutions <- rep(FALSE, 5)
+questions[ordem[1]] <- "O refrigerante comum tem maior densidade, pois a massa de acucar adicionada e muito maior que a massa de adocante."
+questions[ordem[2]] <- "O refrigerante diet tem maior densidade, pois qualquer adocante aumenta mais a massa da bebida que o acucar."
+questions[ordem[3]] <- "As duas bebidas tem a mesma densidade, pois ocupam o mesmo volume."
+questions[ordem[4]] <- "A densidade nao pode ser comparada, pois depende apenas do formato da lata."
+questions[ordem[5]] <- "O refrigerante comum tem menor densidade, pois o acucar reduz a massa total da mistura."
+solutions[ordem[1]] <- TRUE
+@
+\usepackage[utf8]{inputenc}
+\begin{question}
+
+Duas latas de mesmo volume, $\Sexpr{V}\,\mathrm{mL}$, contem bebidas semelhantes. Em uma delas ha $\Sexpr{m_acucar}\,\mathrm{g}$ de acucar dissolvido; na outra, ha apenas $\Sexpr{fmt(m_adocante,2)}\,\mathrm{g}$ de adocante. Despreze pequenas variacoes de volume e considere que a massa da base liquida e $\Sexpr{m_base}\,\mathrm{g}$ em ambos os casos.
+
+Qual afirmacao compara corretamente as densidades das bebidas?
+
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(questions)
+@
+
+\end{question}
+
+\begin{solution}
+
+A densidade e dada por
+\[
+\rho = \frac{m}{V}.
+\]
+Para a bebida comum,
+\[
+\rho_{\text{comum}} = \frac{\Sexpr{m_base} + \Sexpr{m_acucar}}{\Sexpr{V}}
+= \Sexpr{fmt(rho_comum)}\,\mathrm{g/mL}.
+\]
+Para a bebida diet,
+\[
+\rho_{\text{diet}} = \frac{\Sexpr{m_base} + \Sexpr{fmt(m_adocante,2)}}{\Sexpr{V}}
+= \Sexpr{fmt(rho_diet)}\,\mathrm{g/mL}.
+\]
+Como $\rho_{\text{comum}} > \rho_{\text{diet}}$, a bebida comum e mais densa.
+
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(paste("\\textbf{", ifelse(solutions, "Verdadeiro", "Falso"), "}", sep = ""))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q91QuizDensidadeRefrigerante}
+%% \exsection{Hidrostatica; Densidade; Interdisciplinar; ENEM}
+%% \exusepackage[utf8]{inputenc}
