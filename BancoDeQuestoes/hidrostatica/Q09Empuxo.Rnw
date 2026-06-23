@@ -56,5 +56,5 @@ A tensão será \Sexpr{resp} N.
 %% META-INFORMATION
 %% \extype{num}
 %% \exsolution{\Sexpr{resp}}
-%% \exname{Q08Empuxo}
+%% \exname{Q09Empuxo}
 %% \extol{0.1}
