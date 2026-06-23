@@ -1,0 +1,45 @@
+<<echo=FALSE, results=hide>>=
+## Inspirada no ENEM 2021 Q116. Questao interdisciplinar: astronomia + leitura de dados.
+corpo <- c("Mercurio", "Venus", "Terra", "Marte", "Jupiter", "Saturno", "Urano", "Netuno")
+dist <- c(0.39, 0.72, 1.00, 1.52, 5.20, 9.58, 19.2, 30.1)
+dens <- c(5.43, 5.24, 5.51, 3.93, 1.33, 0.69, 1.27, 1.64)
+alvo <- sample(seq_along(corpo), 1)
+corpo_alvo <- corpo[alvo]
+dist_alvo <- dist[alvo]
+dens_alvo <- dens[alvo]
+opcoes <- sample(seq_along(corpo), 5)
+if (!(alvo %in% opcoes)) opcoes[1] <- alvo
+opcoes <- sample(opcoes)
+questions <- corpo[opcoes]
+solutions <- opcoes == alvo
+fmt <- function(x, d = 2) formatC(x, format = "f", digits = d, decimal.mark = ",")
+@
+\usepackage[utf8]{inputenc}
+\begin{question}
+
+Um corpo do Sistema Solar tem distancia media ao Sol de aproximadamente $\Sexpr{fmt(dist_alvo)}\,\mathrm{ua}$ e densidade media de aproximadamente $\Sexpr{fmt(dens_alvo)}\,\mathrm{g/cm^3}$.
+
+Entre as alternativas a seguir, qual corpo corresponde a esses dois dados?
+
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(questions)
+@
+
+\end{question}
+
+\begin{solution}
+
+A identificacao e feita comparando simultaneamente as duas grandezas: distancia media ao Sol e densidade media. O corpo que apresenta aproximadamente $\Sexpr{fmt(dist_alvo)}\,\mathrm{ua}$ e $\Sexpr{fmt(dens_alvo)}\,\mathrm{g/cm^3}$ e \Sexpr{corpo_alvo}.
+
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(paste("\\textbf{", ifelse(solutions, "Verdadeiro", "Falso"), "}", sep = ""))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q90QuizAstronomiaDensidade}
+%% \exsection{Introducao a Fisica; Astronomia; Interdisciplinar; ENEM}
+%% \exusepackage[utf8]{inputenc}
