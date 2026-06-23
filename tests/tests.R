@@ -69,7 +69,7 @@ compilar_isolado <- function(arquivo, diretorio, formato, ano, seed) {
   }, error = function(e) FALSE)
 }
 
-## Verifica a geração do gráfico sem exigir artefatos versionados no PR.
+## Valida a geração do gráfico sem exigir artefatos versionados no PR.
 check_question_counts <- function() {
   if (file.exists("tools/question_counts.R")) {
     status <- system2(
