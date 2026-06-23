@@ -1,0 +1,53 @@
+<<echo=FALSE, results=hide>>=
+## Inspirada no ENEM 2021 Q129. Questao interdisciplinar: fisica moderna.
+m0 <- sample(c(80, 100, 120, 160, 200), 1)
+Tmeia <- sample(c(5, 8, 10, 12, 15), 1)
+k <- sample(2:5, 1)
+t <- k * Tmeia
+m_restante <- m0 / 2^k
+fmt <- function(x, d = 1) formatC(x, format = "f", digits = d, decimal.mark = ",")
+valores <- unique(c(m_restante, m0/2^(k-1), m0/2^(k+1), m0/2^(max(0,k-2)), m0))
+while (length(valores) < 5) valores <- unique(c(valores, sample(seq(5, m0, by = 5), 1)))
+valores <- valores[1:5]
+ordem <- sample(1:5)
+questions <- paste0(fmt(valores[ordem]), " g")
+solutions <- valores[ordem] == m_restante
+@
+\usepackage[utf8]{inputenc}
+\begin{question}
+
+Uma amostra segue um modelo de decaimento em que, a cada intervalo de meia-vida, sua massa se reduz pela metade. A meia-vida e $\Sexpr{Tmeia}$ dias e a massa inicial e $\Sexpr{m0}\,\mathrm{g}$. Apos $\Sexpr{t}$ dias, qual massa restara?
+
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(questions)
+@
+
+\end{question}
+
+\begin{solution}
+
+A massa restante apos um tempo $t$ e
+\[
+m(t)=m_0\left(\frac{1}{2}\right)^{t/T_{1/2}}.
+\]
+Como
+\[
+\frac{t}{T_{1/2}}=\frac{\Sexpr{t}}{\Sexpr{Tmeia}}=\Sexpr{k},
+\]
+passaram-se \Sexpr{k} meias-vidas. Logo,
+\[
+m = \frac{\Sexpr{m0}}{2^{\Sexpr{k}}}=\Sexpr{fmt(m_restante)}\,\mathrm{g}.
+\]
+
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(paste("\\textbf{", ifelse(solutions, "Verdadeiro", "Falso"), "}", sep = ""))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q90QuizMeiaVida}
+%% \exsection{Fisica moderna; Meia-vida; Interdisciplinar; ENEM}
+%% \exusepackage[utf8]{inputenc}
