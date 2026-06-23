@@ -1,0 +1,53 @@
+<<echo=FALSE, results=hide>>=
+## Inspirada no ENEM 2020 Q120. Questao interdisciplinar: Hidrostatica + ambiente.
+## Tema: densidade e miscibilidade de oleos em agua.
+fluido <- sample(c("petroleo", "oleo vegetal", "oleo lubrificante", "combustivel oleoso"), 1)
+rho_agua <- sample(c(0.998, 1.000, 1.002), 1)
+rho_fluido <- sample(seq(0.78, 0.92, by = 0.02), 1)
+contraste <- round(rho_agua - rho_fluido, 2)
+
+ordem <- sample(1:5)
+questions <- rep("", 5)
+solutions <- rep(FALSE, 5)
+questions[ordem[1]] <- paste0("O ", fluido, " tende a formar uma pelicula na superficie, pois sua densidade e menor que a da agua e suas moleculas interagem pouco com ela.")
+questions[ordem[2]] <- paste0("O ", fluido, " afunda imediatamente, pois todo liquido organico e mais denso que a agua.")
+questions[ordem[3]] <- paste0("O ", fluido, " se dissolve completamente na agua, pois substancias oleosas apresentam grande afinidade com moleculas polares.")
+questions[ordem[4]] <- paste0("O ", fluido, " evapora antes de se espalhar, pois a diferenca de densidade elimina a tensao superficial.")
+questions[ordem[5]] <- paste0("O ", fluido, " permanece uniformemente misturado em toda a coluna de agua, pois a gravidade nao atua em liquidos.")
+solutions[ordem[1]] <- TRUE
+@
+\usepackage[utf8]{inputenc}
+\begin{question}
+
+Em um acidente ambiental, certa quantidade de \Sexpr{fluido} atinge uma regiao alagada. A densidade da agua no local e $\Sexpr{rho_agua}\,\mathrm{g/cm^3}$, enquanto a densidade do fluido e $\Sexpr{rho_fluido}\,\mathrm{g/cm^3}$. Alem disso, o fluido e pouco miscivel em agua.
+
+Com base nessas informacoes, qual comportamento fisico e esperado?
+
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(questions)
+@
+
+\end{question}
+
+\begin{solution}
+
+A densidade do fluido e menor que a densidade da agua, pois
+\[
+\rho_{\text{fluido}} = \Sexpr{rho_fluido}\,\mathrm{g/cm^3}
+<
+\rho_{\text{agua}} = \Sexpr{rho_agua}\,\mathrm{g/cm^3}.
+\]
+Assim, a tendencia do fluido e flutuar. Como ele tambem e pouco miscivel em agua, nao se mistura uniformemente com ela. O comportamento esperado e a formacao de uma pelicula superficial, que pode dificultar trocas gasosas e afetar o ambiente aquatico.
+
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(paste("\\textbf{", ifelse(solutions, "Verdadeiro", "Falso"), "}", sep = ""))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q90QuizInterDensidadeOleo}
+%% \exsection{Hidrostatica; Interdisciplinar; ENEM}
+%% \exusepackage[utf8]{inputenc}
