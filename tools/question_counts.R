@@ -1,10 +1,18 @@
 #!/usr/bin/env Rscript
 
 args <- commandArgs(trailingOnly = TRUE)
-check_mode <- "--check" %in% args
 
-questions_dir <- "BancoDeQuestoes"
-out_dir <- "docs"
+get_arg <- function(flag, default) {
+  idx <- which(args == flag)
+  if (length(idx) == 1 && length(args) >= idx + 1) {
+    return(args[idx + 1])
+  }
+  default
+}
+
+questions_dir <- get_arg("--questions-dir", "BancoDeQuestoes")
+out_dir <- get_arg("--out-dir", "build/question-counts")
+check_mode <- "--check" %in% args
 csv_file <- file.path(out_dir, "question-counts.csv")
 svg_file <- file.path(out_dir, "question-counts.svg")
 
@@ -70,11 +78,10 @@ cat("QUESTION_COUNTS_BEGIN\n")
 cat("Total de questões:", length(files), "\n")
 cat("Total de assuntos:", nrow(df), "\n")
 print(df, row.names = FALSE)
+cat("Generated CSV:", csv_file, "\n")
+cat("Generated SVG:", svg_file, "\n")
 cat("QUESTION_COUNTS_END\n")
 
-if (check_mode) {
-  status <- system("git diff --exit-code -- docs/question-counts.csv docs/question-counts.svg", ignore.stdout = TRUE, ignore.stderr = TRUE)
-  if (!identical(status, 0L)) {
-    stop("Question count chart is out of date. Run: Rscript tools/question_counts.R")
-  }
+if (check_mode && (!file.exists(csv_file) || !file.exists(svg_file))) {
+  stop("Question count assets were not generated")
 }
