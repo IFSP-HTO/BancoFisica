@@ -7,7 +7,7 @@ temp1 <- sample(seq(from=20, to=40, by=1),1)
 
 temp2 <- sample(seq(from=50, to=100, by=1),1)
 
-resp1 <- round(mass1*0.12*(temp2-temp1)/1000, digits = 1)
+resp1 <- round(1000*mass1*0.12*(temp2-temp1), digits = 1)
 
 @
 \usepackage[utf8]{inputenc}

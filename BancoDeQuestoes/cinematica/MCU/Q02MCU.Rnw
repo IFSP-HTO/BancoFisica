@@ -1,0 +1,35 @@
+<<echo=FALSE, results=hide>>=
+## DATA GENERATION 
+mu_e = sample(6:9,1)*0.1
+raio_cm = sample(30:40, 1)
+raio_m = raio_cm/100
+
+## Resposta
+omega = round(sqrt(10*mu_e/raio_m),2)
+
+##Imagem
+include_supplement("Q02MCU.png")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Ventilador de teto é algo comum nas casas brasileiras das regiões mais quentes, como na de Márcio. Ele colocou uma borracha sobre uma das pás do ventilador de teto de seu quarto. A pá do ventilador era de madeira e ficava na horizontal. A frequência do ventilador era controlada por Márcio através de um dispositivo eletrônico. A borracha foi colocada a \Sexpr{raio_cm} cm do centro do ventilador. Se o coeficiente de atrito estático entre a borracha e a madeira é \Sexpr{mu_e}, determine a maior frequência angular (ou velocidade angular) que o ventilador pode assumir em movimento circular uniforme para que a borracha não deslize pela pá.
+
+Dados: despreze a resistência do ar, desconsidere a fase de movimento acelerado e ofereça a resposta em radianos por segundo. A aceleração da gravidade = 10 m/s². Arredonde para duas decimais.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[height=5cm, keepaspectratio]{{Q02MCU.png}}
+\end{figure}
+
+\end{question}
+
+\begin{solution}
+A velocidade angular máxima é \Sexpr{omega} rad/s.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{omega}}
+%% \exname{Q02MCU}
+%% \extol{0.01}
