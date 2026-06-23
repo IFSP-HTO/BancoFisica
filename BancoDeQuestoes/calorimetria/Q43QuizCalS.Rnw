@@ -1,0 +1,72 @@
+<<echo=FALSE, results=hide>>=
+## Adaptado do ENEM 2024, questao 100 (anulada na versao original)
+## Assunto: calorimetria, potencia e rendimento energetico
+
+potencia <- 700              # W
+massa <- 500                 # g
+delta_t <- 100 - 20          # graus Celsius
+cal_joule <- 4.2             # J/cal
+tempo <- 5 * 60 + 20         # s
+
+calor_util <- massa * cal_joule * delta_t
+energia_consumida <- potencia * tempo
+rendimento <- calor_util / energia_consumida
+rendimento_percentual <- rendimento * 100
+
+alternativas <- c("100\\%", "75\\%", "60\\%", "7,5\\%", "5,1\\%")
+solutions <- c(FALSE, TRUE, FALSE, FALSE, FALSE)
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+(ENEM 2024, adaptada) Um estudante comprou uma cafeteira elétrica de $\Sexpr{potencia}$ W de potência e com capacidade de 0,5 L de água (500 g). Enquanto o café estava em preparação na capacidade máxima da cafeteira, ele marcou que demorou 5 minutos e 20 segundos para a cafeteira ferver toda a água (100 °C) a partir da temperatura ambiente de 20 °C. Em seguida, para avaliar a eficiência energética da cafeteira, calculou a razão entre a energia absorvida pela água e a energia elétrica consumida pela cafeteira. É necessária 1 cal (4,2 J) para elevar em 1 °C a temperatura de 1 grama de água.
+
+Qual a eficiência energética calculada pelo estudante?
+
+<<echo=FALSE, results=tex>>=
+answerlist(alternativas)
+@
+
+\end{question}
+
+\begin{solution}
+
+A energia útil é a energia absorvida pela água no aquecimento. Usando
+\[
+Q = mc\Delta T,
+\]
+com $m = 500$ g, $c = 4,2$ J/(g °C) e $\Delta T = 100 - 20 = 80$ °C, temos
+\[
+Q = 500 \cdot 4,2 \cdot 80 = 168000\,\mathrm{J}.
+\]
+
+A energia elétrica consumida pela cafeteira é
+\[
+E = P\Delta t.
+\]
+Como o tempo é $5$ min $20$ s $= 320$ s,
+\[
+E = 700 \cdot 320 = 224000\,\mathrm{J}.
+\]
+
+Assim, a eficiência energética é
+\[
+\eta = \frac{Q}{E} = \frac{168000}{224000} = 0,75 = 75\%.
+\]
+
+Logo, a alternativa correta é:
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(solutions, paste0("\\textbf{", alternativas, "}"), alternativas))
+@
+
+Observação: na versão original do ENEM 2024, o tempo informado era de 3 minutos. Com esse valor, a energia elétrica consumida seria $700 \cdot 180 = 126000\,\mathrm{J}$, menor que a energia necessária para aquecer a água, levando a uma eficiência maior que 100\%. Por isso a questão original foi anulada; nesta versão adaptada, o tempo foi corrigido para 5 minutos e 20 segundos.
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q43QuizCalS}
+%% \exusepackage[utf8]{inputenc}
