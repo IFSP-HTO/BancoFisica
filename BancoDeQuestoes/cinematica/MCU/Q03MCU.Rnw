@@ -1,0 +1,33 @@
+<<echo=FALSE, results=hide>>=
+## DATA GENERATION
+m = sample(3:4,1)
+L = sample(6:9,1)*0.1 + 1
+vel = sample(27:32, 1)
+
+## Resposta
+forca = round((m/L)*vel^2, 0)
+
+##Imagem
+include_supplement("Q03MCU.png")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Vemos uma foto da polonesa Anita Wlodarczyk antes de conseguir seu recorde mundial. O martelo olímpico feminino é uma esfera metálica presa a um cabo de aço. A atleta gira algumas vezes antes de lançar o martelo. Imediatamente antes de lançar, a esfera descrevia uma trajetória circular de raio efetivo \Sexpr{L} m, com velocidade de \Sexpr{vel} m/s. Desprezando o efeito gravitacional durante esse instante, qual é a intensidade da tração exercida pelo cabo na esfera? Arredonde a resposta para o inteiro mais próximo.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[height=5cm, keepaspectratio]{{Q03MCU.png}}
+\end{figure}
+
+\end{question}
+
+\begin{solution}
+A força será \Sexpr{forca} N.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{forca}}
+%% \exname{Q03MCU}
+%% \extol{0.01}

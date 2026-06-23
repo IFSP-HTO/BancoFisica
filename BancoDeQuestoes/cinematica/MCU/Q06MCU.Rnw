@@ -1,0 +1,21 @@
+<<echo=FALSE, results=hide>>=
+## DATA GENERATION EXAMPLE
+R <- sample(seq(2.0, 2.5, 0.1),1)
+
+## Resposta
+v = round(sqrt(5*10*R)*3.6,1)
+@
+\usepackage[utf8]{inputenc}
+\begin{question}
+O ingles Damien Walters, um praticante de Parkour, conseguiu completar um desafio que ficou conhecido como loop humano. Damien conseguiu completar uma volta completa em um loop vertical utilizando a velocidade da propria corrida. Desprezando perdas de energia e considerando que ele parte do ponto mais baixo do loop, se o raio do loop e \Sexpr{R} m, sua massa e 60 kg e g = 10 m/s2, qual foi a velocidade minima de entrada (em km/h) que Damien precisou alcancar para completar este feito? Arredonde para uma decimal.
+\end{question}
+
+\begin{solution}
+A velocidade minima de entrada e \Sexpr{v} km/h.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{v}}
+%% \exname{Q06MCU}
+%% \extol{0.01}
