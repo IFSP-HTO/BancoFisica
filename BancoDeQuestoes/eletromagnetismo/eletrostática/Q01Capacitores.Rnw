@@ -48,6 +48,14 @@ PA <- round(QA_cond/CA,0)
 PA
 PB <- round(QB_cond/CB,0)
 PB
+
+## Respostas nas unidades pedidas no enunciado
+QB_uC <- pega_int(formatEng(QB, fixed = -6))
+CA_pF <- pega_int(formatEng(CA, fixed = -12), digits = 2)
+CB_pF <- pega_int(formatEng(CB, fixed = -12), digits = 2)
+QA_cond_uC <- pega_int(formatEng(QA_cond, fixed = -6), digits = 1)
+QB_cond_uC <- pega_int(formatEng(QB_cond, fixed = -6), digits = 1)
+
 ## Figura
 include_supplement("Q01Capacitores.png")
 @
@@ -78,11 +86,11 @@ Sabendo que o potencial elétrico resultante dessas esferas é nulo no ponto M d
 %% Supply a solution here!
 
 \begin{answerlist}
-  \item A carga da esfera B é $\Sexpr{pega_int(formatEng(QB,   fixed = -6))}$$\mu C$.
-  \item A capacitância da esfera A é $\Sexpr{pega_int(formatEng(CA, fixed=-12), digits=2)}$$pF$.
-  \item A capacitância da esfera B é $\Sexpr{pega_int(formatEng(CB, fixed=-12), digits=2)}$$pF$.
-  \item A carga da esfera A depois de ligá-las a um fio condutor é $\Sexpr{pega_int(formatEng(QA_cond,   fixed = -6), digits=1)}$$\mu C$.
-  \item A carga da esfera B depois de ligá-las a um fio condutor é $\Sexpr{pega_int(formatEng(QB_cond,   fixed = -6), digits=1)}$$\mu C$.
+  \item A carga da esfera B é $\Sexpr{QB_uC}$$\mu C$.
+  \item A capacitância da esfera A é $\Sexpr{CA_pF}$$pF$.
+  \item A capacitância da esfera B é $\Sexpr{CB_pF}$$pF$.
+  \item A carga da esfera A depois de ligá-las a um fio condutor é $\Sexpr{QA_cond_uC}$$\mu C$.
+  \item A carga da esfera B depois de ligá-las a um fio condutor é $\Sexpr{QB_cond_uC}$$\mu C$.
   \item O potencial elétrico da esfera A é $\Sexpr{PA}V$ (Utilize os valores arredondados das respostas anteriores.)
   \item O potencial elétrico da esfera B é $\Sexpr{PB}V$ (Utilize os valores arredondados das respostas anteriores.)
 \end{answerlist}
@@ -90,7 +98,7 @@ Sabendo que o potencial elétrico resultante dessas esferas é nulo no ponto M d
 
 %% META-INFORMATION
 %% \extype{cloze}
-%% \exsolution{\Sexpr{QB}|\Sexpr{CA}|\Sexpr{CB}|\Sexpr{QA_cond}|\Sexpr{QB_cond}|\Sexpr{PA}|\Sexpr{PB}}
+%% \exsolution{\Sexpr{QB_uC}|\Sexpr{CA_pF}|\Sexpr{CB_pF}|\Sexpr{QA_cond_uC}|\Sexpr{QB_cond_uC}|\Sexpr{PA}|\Sexpr{PB}}
 %% \exclozetype{num|num|num|num|num|num|num}
 %% \exname{Q01Capacitores}
-%% \extol{0.01}
+%% \extol{0.01|0.01|0.01|0.1|0.1|1|1}
