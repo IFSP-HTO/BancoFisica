@@ -12,7 +12,7 @@ resp3 <- round(1/resp1, digits = 2)
 
 \begin{question}
 
-(MACK adapt.) Um automóvel, cujos pneus têm diâmetro externo de \Sexpr{diam} cm, percorre, com velocidade cosntante, \Sexpr{dist} metros em 1 minuto. Desprezando sua deformação, determine: (Adote $\pi = 3,14$)
+(MACK adapt.) Um automóvel, cujos pneus têm diâmetro externo de \Sexpr{diam} cm, percorre, com velocidade constante, \Sexpr{dist} metros em 1 minuto. Desprezando sua deformação, determine: (Adote $\pi = 3,14$)
 
 \begin{answerlist}
   \item A frequência do movimento de rotação dos pneus, em Hz. \textit{Dê sua resposta com duas decimais}
@@ -25,7 +25,7 @@ resp3 <- round(1/resp1, digits = 2)
 %% Solution
 
 \begin{answerlist}
-  \item $\Sexpr{resp1}$ hz
+  \item $\Sexpr{resp1}$ Hz
   \item $\Sexpr{resp2}$ voltas
   \item $\Sexpr{resp3}$ s
 \end{answerlist}
