@@ -11,6 +11,12 @@ Este é o repositório oficial do banco de questões de Física produzido pelos 
 
 A seguir você encontra a documentação de como utilizar questões prontas na plataforma Moodle e como contribuir para o projeto.
 
+## Panorama do banco de questões
+
+O gráfico abaixo mostra o número de questões por assunto, considerando os arquivos `.Rnw` em `BancoDeQuestoes`. Os dados também estão disponíveis em [`docs/question-counts.csv`](docs/question-counts.csv).
+
+![Número de questões por assunto](docs/question-counts.svg)
+
 ## Quickstart
 
 ```text
