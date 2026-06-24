@@ -3,10 +3,11 @@
 ## Parâmetros
 densidade <- signif(runif(n = 1, min = 0.2, max = 3),2)
 massa <- sample(200000:2000000,1)
-volume <- round(massa*densidade,1)
+volume <- round(massa/densidade,1)
 
 ## Solução
-solutions <- c(0.5, 0.75, 1, 2.5, 1.5) > densidade
+dens_esferas <- c(0.5, 0.75, 1, 2.5, 1.5)
+solutions <- dens_esferas > densidade
 solutions
 ## Figura
 include_supplement('Q05Densidade.png')
@@ -30,7 +31,28 @@ O líquido contido no recipiente nessa figura tem um volume V' = \Sexpr{round(vo
 \end{question}
 
 \begin{solution}
-%% Supply a solution here!
+
+Para saber se a esfera afunda, comparamos sua densidade com a densidade do líquido. A esfera afunda quando
+\[
+  d_{\text{esfera}} > d_{\text{líquido}}.
+\]
+
+A densidade do líquido pode ser obtida pelos dados do enunciado. Como $\Sexpr{round(massa/1000,2)}\,\mathrm{kg}=\Sexpr{massa}\,\mathrm{g}$ e $\Sexpr{round(volume/100^3,2)}\,\mathrm{m^3}=\Sexpr{round(volume,1)}\,\mathrm{cm^3}$, temos
+\[
+  d_{\text{líquido}}=\frac{m'}{V'}=\frac{\Sexpr{massa}}{\Sexpr{round(volume,1)}}
+  \approx \Sexpr{densidade}\,\mathrm{g/cm^3}.
+\]
+
+Agora analisamos cada alternativa:
+\begin{answerlist}
+  \item $d=0{,}50\,\mathrm{g/cm^3}$. Afunda se $0{,}50>\Sexpr{densidade}$.
+  \item $d=\frac{150}{200}=0{,}75\,\mathrm{g/cm^3}$. Afunda se $0{,}75>\Sexpr{densidade}$.
+  \item $d=1{,}0\,\mathrm{g/cm^3}$. Afunda se $1{,}0>\Sexpr{densidade}$.
+  \item $d=2{,}5\,\mathrm{g/cm^3}$. Afunda se $2{,}5>\Sexpr{densidade}$.
+  \item $d=\frac{1500}{1000}=1{,}5\,\mathrm{g/cm^3}$. Afunda se $1{,}5>\Sexpr{densidade}$.
+\end{answerlist}
+
+Portanto, as alternativas corretas são:
 <<echo=FALSE, results=tex>>=
 answerlist(solutions)
 @
