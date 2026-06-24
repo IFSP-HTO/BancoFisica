@@ -7,7 +7,7 @@ nota_cient <- function(x,digits) {
   x <- x / 10^ord
   if (!missing(digits)) x <- format(x,digits=digits)
   if (ord==0) return(as.character(x))
-  return(paste(x,"\\times 10^{",ord,"}",sep=""))
+  return(paste(x,"\\\\times 10^{",ord,"}",sep=""))
 }
 formatEng <- function(x, fixed=NULL) {
   s <-as.numeric(strsplit(format(x, scientific=T),"e")[[1]])
