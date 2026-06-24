@@ -11,7 +11,6 @@ if (sum(solutions) == 0 || sum(solutions) == 5) {
   solutions <- rhos < rho_fluido
 }
 fmt <- function(x, d = 2) formatC(x, format = "f", digits = d, decimal.mark = ",")
-linhas <- paste0(objetos, " & ", fmt(rhos), " \\\", collapse = "\n")
 @
 \usepackage[utf8]{inputenc}
 
@@ -23,7 +22,11 @@ Cinco pequenos corpos são colocados, separadamente, em um líquido de densidade
 \begin{tabular}{cc}
 Corpo & Densidade ($\mathrm{g/cm^3}$) \\
 \hline
-\Sexpr{linhas}
+A & \Sexpr{fmt(rhos[1])} \\
+B & \Sexpr{fmt(rhos[2])} \\
+C & \Sexpr{fmt(rhos[3])} \\
+D & \Sexpr{fmt(rhos[4])} \\
+E & \Sexpr{fmt(rhos[5])} \\
 \end{tabular}
 \end{center}
 
