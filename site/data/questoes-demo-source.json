@@ -1,0 +1,42 @@
+{
+  "metadata": {
+    "project": "BancoFisica",
+    "description": "Dados públicos usados apenas na vitrine demonstrativa do site.",
+    "visibilityPolicy": "Somente questões com visibility=demo devem ser publicadas no site."
+  },
+  "questions": [
+    {
+      "id": "DEMO-MEC-001",
+      "title": "Velocidade média em um trajeto retilíneo",
+      "area": "Mecânica",
+      "subject": "Cinemática",
+      "level": "Ensino Médio",
+      "visibility": "demo",
+      "tags": ["velocidade média", "unidades", "moodle"],
+      "statementHtml": "<p>Um estudante percorre uma distância de \\(120\\,\\text{m}\\) em \\(30\\,\\text{s}\\), mantendo movimento retilíneo. Qual é a velocidade média nesse trecho?</p><ol type=\"A\"><li>\\(2\\,\\text{m/s}\\)</li><li>\\(4\\,\\text{m/s}\\)</li><li>\\(30\\,\\text{m/s}\\)</li><li>\\(150\\,\\text{m/s}\\)</li></ol>",
+      "solutionHtml": "<p>A velocidade média é dada por \\(v_m = \\Delta s / \\Delta t\\). Portanto, \\(v_m = 120/30 = 4\\,\\text{m/s}\\). A alternativa correta é B.</p>"
+    },
+    {
+      "id": "DEMO-TER-001",
+      "title": "Conversão de temperatura",
+      "area": "Termologia",
+      "subject": "Temperatura",
+      "level": "Ensino Médio",
+      "visibility": "demo",
+      "tags": ["temperatura", "Celsius", "Kelvin"],
+      "statementHtml": "<p>Em uma atividade de laboratório, a temperatura de uma amostra é medida como \\(27\\,^{\\circ}\\text{C}\\). Qual é o valor aproximado dessa temperatura na escala Kelvin?</p><ol type=\"A\"><li>\\(27\\,\\text{K}\\)</li><li>\\(100\\,\\text{K}\\)</li><li>\\(246\\,\\text{K}\\)</li><li>\\(300\\,\\text{K}\\)</li></ol>",
+      "solutionHtml": "<p>Para converter Celsius em Kelvin, usamos \\(T_K = T_C + 273\\). Assim, \\(T_K = 27 + 273 = 300\\,\\text{K}\\). A alternativa correta é D.</p>"
+    },
+    {
+      "id": "DEMO-ELE-001",
+      "title": "Lei de Ohm em um resistor",
+      "area": "Eletromagnetismo",
+      "subject": "Circuitos elétricos",
+      "level": "Ensino Médio",
+      "visibility": "demo",
+      "tags": ["lei de Ohm", "resistência elétrica", "corrente elétrica"],
+      "statementHtml": "<p>Um resistor de resistência \\(6\\,\\Omega\\) é submetido a uma diferença de potencial de \\(12\\,\\text{V}\\). Qual é a corrente elétrica que atravessa o resistor?</p><ol type=\"A\"><li>\\(0{,}5\\,\\text{A}\\)</li><li>\\(2\\,\\text{A}\\)</li><li>\\(6\\,\\text{A}\\)</li><li>\\(72\\,\\text{A}\\)</li></ol>",
+      "solutionHtml": "<p>Pela lei de Ohm, \\(U = R i\\). Logo, \\(i = U/R = 12/6 = 2\\,\\text{A}\\). A alternativa correta é B.</p>"
+    }
+  ]
+}
