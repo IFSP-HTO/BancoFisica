@@ -28,6 +28,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Validate public demo site data
+        run: |
+          python3 tools/generate_demo_site_data.py
+
       - name: Install system tools and LaTeX
         run: |
           sudo apt-get update -qq
