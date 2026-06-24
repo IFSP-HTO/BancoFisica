@@ -7,7 +7,7 @@ nota_cient <- function(x,digits) {
   x <- x / 10^ord
   if (!missing(digits)) x <- format(x,digits=digits)
   if (ord==0) return(as.character(x))
-  return(paste(x,"\\\\times 10^{",ord,"}",sep=""))
+  return(paste(x,"\\times 10^{",ord,"}",sep=""))
 }
 formatEng <- function(x, fixed=NULL) {
   s <-as.numeric(strsplit(format(x, scientific=T),"e")[[1]])
@@ -83,16 +83,74 @@ Sabendo que o potencial elétrico resultante dessas esferas é nulo no ponto M d
 \end{question}
 
 \begin{solution}
-%% Supply a solution here!
 
+No ponto M, o potencial elétrico resultante é nulo. Como $AM=2\,MB$, podemos escrever
+\[
+  V_M = k\frac{Q_A}{AM}+k\frac{Q_B}{MB}=0.
+\]
+Tomando $MB=x$ e $AM=2x$,
+\[
+  k\frac{Q_A}{2x}+k\frac{Q_B}{x}=0.
+\]
+Cancelando $k$ e $x$,
+\[
+  \frac{Q_A}{2}+Q_B=0
+  \quad\Rightarrow\quad
+  Q_B=-\frac{Q_A}{2}.
+\]
+Assim,
+\[
+  Q_B=-\frac{\Sexpr{nota_cient(QA)}}{2}=\Sexpr{QB_uC}\,\mu\mathrm{C}.
+\]
+
+A capacitância de uma esfera condutora isolada é
+\[
+  C=\frac{r}{k},
+\]
+com o raio em metros. Portanto,
+\[
+  C_A=\frac{\Sexpr{ra}\times 10^{-2}}{\Sexpr{nota_cient(k)}}
+  =\Sexpr{nota_cient(CA)}\,\mathrm{F}
+  =\Sexpr{CA_pF}\,\mathrm{pF},
+\]
+e
+\[
+  C_B=\frac{\Sexpr{rb}\times 10^{-2}}{\Sexpr{nota_cient(k)}}
+  =\Sexpr{nota_cient(CB)}\,\mathrm{F}
+  =\Sexpr{CB_pF}\,\mathrm{pF}.
+\]
+
+Ao ligar as esferas por um fio condutor, elas ficam no mesmo potencial elétrico:
+\[
+  \frac{Q'_A}{C_A}=\frac{Q'_B}{C_B}.
+\]
+Além disso, a carga total se conserva:
+\[
+  Q'_A+Q'_B=Q_A+Q_B.
+\]
+Usando essas duas relações, obtemos as cargas finais
+\[
+  Q'_A=\Sexpr{QA_cond_uC}\,\mu\mathrm{C}
+  \quad\text{e}\quad
+  Q'_B=\Sexpr{QB_cond_uC}\,\mu\mathrm{C}.
+\]
+
+O potencial final de cada esfera é calculado por $V=Q/C$. Como as esferas estão ligadas por um fio condutor, os potenciais devem ser iguais, a menos de diferenças de arredondamento:
+\[
+  V_A=\frac{Q'_A}{C_A}=\Sexpr{PA}\,\mathrm{V},
+  \qquad
+  V_B=\frac{Q'_B}{C_B}=\Sexpr{PB}\,\mathrm{V}.
+\]
+
+Portanto:
 \begin{answerlist}
-  \item A carga da esfera B é $\Sexpr{QB_uC}$$\mu C$.
-  \item A capacitância da esfera A é $\Sexpr{CA_pF}$$pF$.
-  \item A capacitância da esfera B é $\Sexpr{CB_pF}$$pF$.
-  \item A carga da esfera A depois de ligá-las a um fio condutor é $\Sexpr{QA_cond_uC}$$\mu C$.
-  \item A carga da esfera B depois de ligá-las a um fio condutor é $\Sexpr{QB_cond_uC}$$\mu C$.
-  \item O potencial elétrico da esfera A é $\Sexpr{PA}V$ (Utilize os valores arredondados das respostas anteriores.)
-  \item O potencial elétrico da esfera B é $\Sexpr{PB}V$ (Utilize os valores arredondados das respostas anteriores.)
+  \item A carga da esfera B é $\Sexpr{QB_uC}\,\mu\mathrm{C}$.
+  \item A capacitância da esfera A é $\Sexpr{CA_pF}\,\mathrm{pF}$.
+  \item A capacitância da esfera B é $\Sexpr{CB_pF}\,\mathrm{pF}$.
+  \item A carga da esfera A depois de ligá-las a um fio condutor é $\Sexpr{QA_cond_uC}\,\mu\mathrm{C}$.
+  \item A carga da esfera B depois de ligá-las a um fio condutor é $\Sexpr{QB_cond_uC}\,\mu\mathrm{C}$.
+  \item O potencial elétrico da esfera A é $\Sexpr{PA}\,\mathrm{V}$.
+  \item O potencial elétrico da esfera B é $\Sexpr{PB}\,\mathrm{V}$.
 \end{answerlist}
 \end{solution}
 
