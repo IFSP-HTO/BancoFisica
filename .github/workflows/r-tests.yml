@@ -61,3 +61,13 @@ jobs:
       - name: Audit solution blocks
         run: |
           Rscript tools/audit_solutions.R
+
+      - name: Generate quality report
+        run: |
+          Rscript tools/quality_report.R --out-dir build/quality-report
+
+      - name: Upload quality report
+        uses: actions/upload-artifact@v4
+        with:
+          name: banco-fisica-quality-report
+          path: build/quality-report
