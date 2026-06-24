@@ -73,13 +73,19 @@ Seja um capacitor de placas paralelas com a área das placas iguais a $A$ = \Sex
 \end{question}
 
 \begin{solution}
-%% Supply a solution here!
+A permissividade do dielétrico é $k\epsilon_0$, resultando em \Sexpr{epsilon_pico} na unidade pedida.
+
+A capacitância é calculada por $C=\epsilon A/d$, convertendo a área para m² e a distância para m. O resultado é \Sexpr{C_nF} nF.
+
+A tensão máxima vem da rigidez dielétrica multiplicada pela distância entre as placas. Com essa tensão, a carga máxima é $Q=C\Delta V$, resultando em \Sexpr{Qmax_uC} $\mu C$.
+
+Por fim, a energia armazenada é calculada por $U=Q\Delta V/2$, resultando em \Sexpr{E} J.
 
 \begin{answerlist}
   \item $\Sexpr{epsilon_pico}$.
-  \item A capacitância é $\Sexpr{C_nF}$nF.
+  \item A capacitância é $\Sexpr{C_nF}$ nF.
   \item A carga máxima é $\Sexpr{Qmax_uC}$ $\mu C$.
-  \item A energia é $\Sexpr{E}$J.
+  \item A energia é $\Sexpr{E}$ J.
 \end{answerlist}
 \end{solution}
 

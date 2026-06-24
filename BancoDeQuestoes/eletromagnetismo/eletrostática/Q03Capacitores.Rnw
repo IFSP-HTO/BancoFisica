@@ -19,8 +19,11 @@ No esquema a seguir estão representados cinco capacitores, de capacidades $C_1$
 \end{question}
 
 \begin{solution}
-%% Supply a solution here!
-A capacitância é $\Sexpr{resp}$pF.
+
+Em uma associação de capacitores em paralelo, a capacitância equivalente é a soma das capacitâncias individuais. Assim, $C_{eq}=\Sexpr{C[1]}+\Sexpr{C[2]}+\Sexpr{C[3]}+\Sexpr{C[4]}+\Sexpr{C[5]}=\Sexpr{resp}$ pF.
+
+Portanto, a capacitância equivalente da associação é \Sexpr{resp} pF.
+
 \end{solution}
 
 %% META-INFORMATION

@@ -3,7 +3,7 @@
 ## Parâmetros
 densidade <- signif(runif(n = 1, min = 0.2, max = 3),2)
 massa <- sample(200000:2000000,1)
-volume <- round(massa*densidade,1)
+volume <- round(massa/densidade,1)
 
 ## Solução
 solutions <- c(0.5, 0.75, 1, 2.5, 1.5) > densidade
@@ -30,7 +30,11 @@ O líquido contido no recipiente nessa figura tem um volume V' = \Sexpr{round(vo
 \end{question}
 
 \begin{solution}
-%% Supply a solution here!
+A densidade do líquido é obtida por massa dividida pelo volume. Pelos valores do enunciado, ela é aproximadamente \Sexpr{densidade} g/cm³.
+
+Uma esfera afunda quando sua densidade é maior que a densidade do líquido. Assim, basta comparar a densidade de cada alternativa com \Sexpr{densidade} g/cm³.
+
+As alternativas que afundam são:
 <<echo=FALSE, results=tex>>=
 answerlist(solutions)
 @
