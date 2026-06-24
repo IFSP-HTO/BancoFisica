@@ -7,24 +7,25 @@ d2 <- df-d1
 v1 <- sample(seq(from=90,to=120,by=2),1)
 v2 <- sample(seq(from=40,to=60,by=2),1)
 
-resp <- (d1/v1)+(d2/v2)
-resp1 <- resp
+t1 <- d1/v1
+t2 <- d2/v2
+resp_total <- t1 + t2
 
 questions <- solutions <- rep("", 3)
 type <- rep(c("schoice"), 3)
 
 questions[1] <- ""
-solutions[1] <- floor(resp)
+solutions[1] <- floor(resp_total)
 type[1] <- "num"
 
 questions[2] <- ""
-solutions[2] <- floor((resp - floor(resp)) * 60)
+solutions[2] <- floor((resp_total - floor(resp_total)) * 60)
 type[2] <- "num"
 
-resp <- (resp - floor(resp)) * 60
+resp_min <- (resp_total - floor(resp_total)) * 60
 
 questions[3] <- ""
-solutions[3] <- round((resp - floor(resp)) * 60)
+solutions[3] <- round((resp_min - floor(resp_min)) * 60)
 type[3] <- "num"
 
 options(OutDec=",")
@@ -47,8 +48,31 @@ answerlist(questions)
 \end{question}
 
 %% SOLUTION
-\begin{solution}:
-  
+\begin{solution}
+
+O tempo em cada trecho é obtido pela relação
+\[
+  t=\frac{\Delta s}{v}.
+\]
+
+No primeiro trecho,
+\[
+  t_1=\frac{\Sexpr{d1}}{\Sexpr{v1}}=\Sexpr{round(t1, 4)}\,\mathrm{h}.
+\]
+No segundo trecho,
+\[
+  t_2=\frac{\Sexpr{d2}}{\Sexpr{v2}}=\Sexpr{round(t2, 4)}\,\mathrm{h}.
+\]
+
+O tempo total é
+\[
+  t=t_1+t_2=\Sexpr{round(resp_total, 4)}\,\mathrm{h}.
+\]
+
+Separando a parte inteira, obtemos $\Sexpr{solutions[1]}$ hora(s). A parte decimal restante é convertida para minutos, multiplicando por 60; isso fornece $\Sexpr{solutions[2]}$ minuto(s). A parte decimal dos minutos é novamente multiplicada por 60, resultando em $\Sexpr{solutions[3]}$ segundo(s).
+
+Portanto, o tempo total de viagem é:
+
 <<echo=FALSE, results=hide, results=tex>>=
 answerlist(paste(solutions, ".", sep = ""))
 @
