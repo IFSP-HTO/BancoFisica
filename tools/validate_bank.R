@@ -71,7 +71,7 @@ strip_rnw_noise <- function(x) {
   x <- gsub("%%.*$", "", x)
   x <- gsub("<<[^>]*>>=", "", x)
   x <- gsub("^@\\s*$", "", x)
-  x <- gsub("\\\\Sexpr\\{[^}]+\\}", "", x)
+  x <- gsub("\\\\Sexpr\\{[^}]+\\}", " Sexpr ", x)
   x <- gsub("\\\\begin\\{answerlist\\}|\\\\end\\{answerlist\\}|\\\\item", "", x)
   x <- gsub("[$_{}\\\\]", " ", x)
   trimws(x)
