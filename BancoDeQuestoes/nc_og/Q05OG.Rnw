@@ -57,4 +57,4 @@ options(OutDec=".")
 %% \extype{cloze}
 %% \exclozetype{string|num}
 %% \exsolution{\Sexpr{respa}|\Sexpr{respb}}
-%% \exname{Q06OG}
+%% \exname{Q05OG}

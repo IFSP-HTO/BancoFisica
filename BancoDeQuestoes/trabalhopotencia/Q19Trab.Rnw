@@ -46,5 +46,5 @@ include_supplement("Q19Trab.png")
 %% META-INFORMATION
 %% \extype{num}
 %% \exsolution{\Sexpr{resp1}|\Sexpr{resp2}}
-%% \exname{Q14Trab}
+%% \exname{Q19Trab}
 %% \extol{0.1}

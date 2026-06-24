@@ -101,5 +101,5 @@ answerlist(
 %% META-INFORMATION
 %% \extype{mchoice}
 %% \exsolution{\Sexpr{mchoice2string(solutions[1:6])}}
-%% \exname{Q02QuizCal}
+%% \exname{Q06QuizTermd}
 

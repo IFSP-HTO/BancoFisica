@@ -84,5 +84,5 @@ Um bloco de $\Sexpr{m}$ kg é colocado sobre um plano inclinado que faz um ângu
 %% \extype{cloze}
 %% \exclozetype{string|num|num}
 %% \exsolution{\Sexpr{resp1}|\Sexpr{resp2}|\Sexpr{resp3}}
-%% \exname{Q01Atrito}
+%% \exname{Q02Atrito}
 %% \extol{0|0.1|0.01}

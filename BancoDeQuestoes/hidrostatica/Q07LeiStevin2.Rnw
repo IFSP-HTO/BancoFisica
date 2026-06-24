@@ -76,5 +76,5 @@ Como $h = 0$ m então $\Delta P = 0$ Pa.
 %% \extype{cloze}
 %% \exsolution{\Sexpr{patm}|\Sexpr{delta_p}}
 %% \exclozetype{num|num}
-%% \exname{Q07LeiStevin}
+%% \exname{Q07LeiStevin2}
 %% \extol{0.001|0.01}

@@ -41,5 +41,5 @@ resp2 <- round(P/(d/1800))
 %% \extype{cloze}
 %% \exclozetype{num|num}
 %% \exsolution{\Sexpr{resp1}|\Sexpr{resp2}}
-%% \exname{Q02Trab}
+%% \exname{Q05Trab}
 %% \extol{1|1}
