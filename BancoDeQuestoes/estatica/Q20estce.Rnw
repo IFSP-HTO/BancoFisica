@@ -21,8 +21,31 @@ include_supplement("Q20estce.jpg")
 \end{question}
 
 \begin{solution}
-%% Supply a solution here!
-  \Sexpr{resp} N
+
+Para eliminar as forças desconhecidas na articulação em A, calculamos os torques em relação ao ponto A.
+
+Pela figura, o peso da barra homogênea atua em seu centro, a 4 m de A, e a carga atua na extremidade B, a 8 m de A. A componente vertical da tração no cabo é responsável pelo torque que equilibra esses pesos. Pelo triângulo geométrico do cabo, essa componente vale
+\[
+  T_y = 0{,}6T.
+\]
+
+No equilíbrio de rotação,
+\[
+  T_y\cdot 8 = P_{\text{barra}}\cdot 4 + P_{\text{carga}}\cdot 8.
+\]
+
+Substituindo $T_y=0{,}6T$ e os valores do enunciado,
+\[
+  0{,}6T\cdot 8 = \Sexpr{pa}\cdot 4 + \Sexpr{fa}\cdot 8.
+\]
+
+Logo,
+\[
+  T = \frac{\Sexpr{pa}\cdot 4 + \Sexpr{fa}\cdot 8}{4{,}8}
+    = \Sexpr{resp}\,\mathrm{N}.
+\]
+
+Portanto, a tração no cabo é $\Sexpr{resp}\,\mathrm{N}$.
 
 \end{solution}
 
