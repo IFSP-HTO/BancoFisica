@@ -14,14 +14,41 @@ massa2
 \begin{question}
 %% Enunciado
 Um cubo de material homog\^eneo, tem \Sexpr{aresta1} cm de aresta e massa igual a \Sexpr{massa1} g. Outro cubo de mesmo
-material e igualment e homog\^eneo, tem \Sexpr{aresta2} cm de aresta. Qual \'e o valor da sua massa em gramas? (OBS: arredonde para uma decimal.)
+material e igualmente homog\^eneo, tem \Sexpr{aresta2} cm de aresta. Qual \'e o valor da sua massa em gramas? (OBS: arredonde para uma decimal.)
 
 
 \end{question}
 
 \begin{solution}
-%% Supply a solution here!
-A massa \'e \Sexpr{massa2}.
+
+Como os dois cubos são feitos do mesmo material homogêneo, eles têm a mesma densidade.
+
+Primeiro calculamos a densidade usando o cubo conhecido. O volume de um cubo é
+\[
+  V=a^3.
+\]
+Assim, para o primeiro cubo,
+\[
+  V_1=(\Sexpr{aresta1})^3=\Sexpr{aresta1^3}\,\mathrm{cm^3}.
+\]
+A densidade do material é
+\[
+  \rho=\frac{m_1}{V_1}=\frac{\Sexpr{massa1}}{\Sexpr{aresta1^3}}
+  \approx \Sexpr{round(massa1/aresta1^3,2)}\,\mathrm{g/cm^3}.
+\]
+
+O segundo cubo tem volume
+\[
+  V_2=(\Sexpr{aresta2})^3=\Sexpr{round(aresta2^3,3)}\,\mathrm{cm^3}.
+\]
+Logo, sua massa é
+\[
+  m_2=\rho V_2
+  \approx \Sexpr{round(massa1/aresta1^3,2)}\cdot \Sexpr{round(aresta2^3,3)}
+  = \Sexpr{massa2}\,\mathrm{g}.
+\]
+
+Portanto, a massa do segundo cubo é $\Sexpr{massa2}\,\mathrm{g}$.
 
 \end{solution}
 
