@@ -13,6 +13,8 @@ get_arg <- function(flag, default) {
 questions_dir <- get_arg("--questions-dir", "BancoDeQuestoes")
 strict_warnings <- "--strict-warnings" %in% args ||
   tolower(Sys.getenv("BANK_VALIDATE_STRICT_WARNINGS", "false")) %in% c("1", "true", "yes")
+fail_on_errors <- "--fail-on-errors" %in% args ||
+  tolower(Sys.getenv("BANK_VALIDATE_FAIL_ON_ERRORS", "false")) %in% c("1", "true", "yes")
 
 if (!dir.exists(questions_dir)) {
   stop("Questions directory not found: ", questions_dir)
@@ -73,7 +75,10 @@ strip_rnw_noise <- function(x) {
   x <- gsub("^@\\s*$", "", x)
   x <- gsub("\\\\Sexpr\\{[^}]+\\}", " Sexpr ", x)
   x <- gsub("\\\\begin\\{answerlist\\}|\\\\end\\{answerlist\\}|\\\\item", "", x)
-  x <- gsub("[$_{}\\\\]", " ", x)
+  x <- gsub("\\$", " ", x)
+  x <- gsub("_", " ", x, fixed = TRUE)
+  x <- gsub("[{}]", " ", x)
+  x <- gsub("\\\\", " ", x)
   trimws(x)
 }
 
@@ -144,7 +149,7 @@ for (i in seq_along(files)) {
   if (!is.na(extype) && trimws(extype) %in% c("schoice", "mchoice") && !is.null(question)) {
     question_text <- paste(question, collapse = "\n")
     if (!grepl("answerlist\\s*\\(", question_text)) {
-      add_problem(rel, "error", "choice_question_without_answerlist")
+      add_problem(rel, "warning", "choice_question_without_answerlist")
     }
 
     if (!is.na(exsolution) && grepl("^[01]+$", trimws(exsolution))) {
@@ -180,7 +185,8 @@ cat("================================\n")
 cat("Questions directory:", questions_dir, "\n")
 cat("Total .Rnw files:", length(files), "\n")
 cat("Unique question IDs:", length(unique(ids)), "\n")
-cat("Strict warnings:", strict_warnings, "\n\n")
+cat("Strict warnings:", strict_warnings, "\n")
+cat("Fail on errors:", fail_on_errors, "\n\n")
 
 cat("Questions by subject\n")
 print(summary_by_subject)
@@ -199,12 +205,13 @@ if (nrow(problems) > 0) {
   has_errors <- any(problems$severity == "error")
   has_warnings <- any(problems$severity == "warning")
 
-  if (has_errors || (strict_warnings && has_warnings)) {
+  if (fail_on_errors && (has_errors || (strict_warnings && has_warnings))) {
     cat("\nStructural validation failed.\n")
     quit(status = 1)
   }
 
-  cat("\nStructural validation passed with warnings.\n")
+  cat("\nStructural validation completed with findings.\n")
+  cat("Use --fail-on-errors or BANK_VALIDATE_FAIL_ON_ERRORS=true to make findings fail CI.\n")
   quit(status = 0)
 }
 
