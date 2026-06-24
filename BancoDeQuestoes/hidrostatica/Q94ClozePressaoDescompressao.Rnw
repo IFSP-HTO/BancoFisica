@@ -1,0 +1,62 @@
+<<echo=FALSE, results=hide>>=
+## Inspirada no ENEM 2020 Q134
+## Física central: pressão hidrostática e descompressão.
+
+rho <- 1000
+prof <- sample(seq(10, 40, by = 5), 1)
+g <- 10
+pressao <- rho * g * prof
+pressao_atm <- 1e5
+pressao_total <- pressao_atm + pressao
+taxa <- sample(c(5000, 8000, 10000), 1)
+tempo <- pressao / taxa
+fmt <- function(x, d = 1) formatC(x, format = "f", digits = d, decimal.mark = ",")
+nota <- function(x) formatC(x, format = "f", digits = 0, big.mark = ".", decimal.mark = ",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Um mergulhador está a uma profundidade de $\Sexpr{prof}\,\mathrm{m}$ em água de densidade $1000\,\mathrm{kg/m^3}$. Adote $g = \Sexpr{g}\,\mathrm{m/s^2}$ e considere a pressão atmosférica igual a $100000\,\mathrm{Pa}$.
+
+Para reduzir riscos na subida, a variação de pressão suportada pelo mergulhador não deve ultrapassar $\Sexpr{nota(taxa)}\,\mathrm{Pa/s}$.
+
+Determine:
+
+\begin{answerlist}
+  \item a pressão hidrostática nessa profundidade, em Pa;
+  \item o menor tempo de subida, em segundos, para que a variação de pressão não ultrapasse o valor indicado.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+A pressão hidrostática é
+\[
+p_h = \rho g h.
+\]
+Assim,
+\[
+p_h = 1000 \cdot \Sexpr{g} \cdot \Sexpr{prof} = \Sexpr{nota(pressao)}\,\mathrm{Pa}.
+\]
+A pressão atmosférica se soma à pressão total, mas a variação de pressão na subida é a pressão hidrostática que deixa de atuar. Se a taxa máxima de variação é $\Sexpr{nota(taxa)}\,\mathrm{Pa/s}$, então
+\[
+\Delta t = \frac{\Delta p}{\text{taxa}} = \frac{\Sexpr{nota(pressao)}}{\Sexpr{nota(taxa)}} = \Sexpr{fmt(tempo)}\,\mathrm{s}.
+\]
+
+\begin{answerlist}
+  \item $\Sexpr{nota(pressao)}\,\mathrm{Pa}$
+  \item $\Sexpr{fmt(tempo)}\,\mathrm{s}$
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{\Sexpr{pressao}|\Sexpr{round(tempo, 2)}}
+%% \exclozetype{num|num}
+%% \extol{100|0.05}
+%% \exname{Q94ClozePressaoDescompressao}
+%% \exsection{Hidrostatica; Pressao; ENEM}
+%% \exusepackage[utf8]{inputenc}

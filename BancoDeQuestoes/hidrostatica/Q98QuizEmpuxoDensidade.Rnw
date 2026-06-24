@@ -1,0 +1,70 @@
+<<echo=FALSE, results=hide>>=
+## Questão de revisão do lote ENEM Física Central: empuxo e densidade.
+## Adaptada para consolidar a ideia de que flutuação depende da densidade média.
+
+rho_liq <- sample(c(0.90, 1.00, 1.10, 1.20), 1)
+rho_obj <- sample(c(0.70, 0.80, 0.95, 1.05, 1.30), 1)
+flutua <- rho_obj < rho_liq
+fmt <- function(x, d = 2) formatC(x, format = "f", digits = d, decimal.mark = ",")
+questions <- c(
+  paste0("O corpo flutua, pois sua densidade média é menor que a do líquido."),
+  paste0("O corpo afunda, pois sua densidade média é menor que a do líquido."),
+  paste0("O corpo flutua necessariamente, pois todo sólido flutua em líquidos."),
+  paste0("O corpo afunda necessariamente, pois o empuxo é sempre menor que o peso."),
+  paste0("A flutuação não depende da densidade média do corpo.")
+)
+solutions <- c(flutua, FALSE, FALSE, FALSE, FALSE)
+if (!flutua) {
+  questions[1] <- "O corpo flutua, pois sua densidade média é menor que a do líquido."
+  questions[2] <- "O corpo afunda, pois sua densidade média é maior que a do líquido."
+  solutions <- c(FALSE, TRUE, FALSE, FALSE, FALSE)
+}
+ordem <- sample(1:5)
+questions <- questions[ordem]
+solutions <- solutions[ordem]
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Um corpo de densidade média $\Sexpr{fmt(rho_obj)}\,\mathrm{g/cm^3}$ é colocado em um líquido de densidade $\Sexpr{fmt(rho_liq)}\,\mathrm{g/cm^3}$.
+
+Qual afirmação descreve corretamente o comportamento inicial do corpo?
+
+<<echo=FALSE, results=tex>>=
+answerlist(questions)
+@
+
+\end{question}
+
+\begin{solution}
+
+A comparação relevante é entre a densidade média do corpo e a densidade do líquido. Se
+\[
+\rho_{\text{corpo}} < \rho_{\text{líquido}},
+\]
+o corpo tende a flutuar. Se
+\[
+\rho_{\text{corpo}} > \rho_{\text{líquido}},
+\]
+o corpo tende a afundar.
+
+Neste caso,
+\[
+\rho_{\text{corpo}} = \Sexpr{fmt(rho_obj)}\,\mathrm{g/cm^3}
+\quad\text{e}\quad
+\rho_{\text{líquido}} = \Sexpr{fmt(rho_liq)}\,\mathrm{g/cm^3}.
+\]
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(solutions, paste0("\\textbf{", questions, "}"), questions))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q98QuizEmpuxoDensidade}
+%% \exsection{Hidrostatica; Empuxo; Densidade; ENEM}
+%% \exusepackage[utf8]{inputenc}
