@@ -15,9 +15,24 @@ Determine o módulo da aceleração em $m/s^2$.
 \end{question}
 
 %% SOLUTION
-\begin{solution}:
+\begin{solution}
 
-  \Sexpr{resp}
+Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+\[
+  v_0 = \frac{\Sexpr{v}}{3{,}6}=\Sexpr{round(v/3.6, 2)}\,\mathrm{m/s}.
+\]
+
+Como o automóvel para, sua velocidade final é $v=0$. O módulo da aceleração média em um movimento com aceleração constante é
+\[
+  |a| = \frac{|\Delta v|}{\Delta t}.
+\]
+
+Assim,
+\[
+  |a| = \frac{\Sexpr{round(v/3.6, 2)}}{5}=\Sexpr{resp}\,\mathrm{m/s^2}.
+\]
+
+Portanto, o módulo da aceleração é $\Sexpr{resp}\,\mathrm{m/s^2}$.
   
 \end{solution}
 
@@ -26,4 +41,3 @@ Determine o módulo da aceleração em $m/s^2$.
 %% \exsolution{\Sexpr{resp}}
 %% \exname{Q01Acel.Rnw}
 %% \extol{0.1}
-

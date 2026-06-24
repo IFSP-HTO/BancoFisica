@@ -5,7 +5,7 @@
   
   q2     <- sample(seq(from=50,to=190,by=1),1)
   
-  resp1  <- round((1-(q2)/(q1)), digits = 1)
+  resp1  <- round((1-(q2)/(q1)), digits = 2)
     
 @
   
@@ -18,9 +18,26 @@ Uma máquina térmica que retira de uma fonte quente $\Sexpr{q1}$ cal e passa pa
 \end{question}
   
 %% SOLUTION
-\begin{solution}:
-    
-  \Sexpr{resp1}
+\begin{solution}
+
+O rendimento de uma máquina térmica é a razão entre o trabalho útil produzido e o calor retirado da fonte quente:
+\[
+  \eta = \frac{W}{Q_q}.
+\]
+
+Como a máquina recebe $Q_q=\Sexpr{q1}\,\mathrm{cal}$ da fonte quente e rejeita $Q_f=\Sexpr{q2}\,\mathrm{cal}$ para a fonte fria, o trabalho útil é
+\[
+  W = Q_q - Q_f = \Sexpr{q1} - \Sexpr{q2} = \Sexpr{q1-q2}\,\mathrm{cal}.
+\]
+
+Logo,
+\[
+  \eta = \frac{\Sexpr{q1-q2}}{\Sexpr{q1}}
+       = 1 - \frac{\Sexpr{q2}}{\Sexpr{q1}}
+       = \Sexpr{resp1}.
+\]
+
+Portanto, o rendimento da máquina é $\Sexpr{resp1}$, ou aproximadamente $\Sexpr{round(100*resp1, 0)}\%$.
   
 \end{solution}
   
