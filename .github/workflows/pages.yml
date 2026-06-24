@@ -6,6 +6,7 @@ on:
       - master
     paths:
       - 'site/**'
+      - 'tools/generate_demo_site_data.py'
       - '.github/workflows/pages.yml'
   workflow_dispatch:
 
@@ -28,6 +29,9 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      - name: Generate public demo question catalog
+        run: python3 tools/generate_demo_site_data.py
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
