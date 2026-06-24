@@ -35,5 +35,5 @@ A pressão será $\Sexpr{nota_cient(pSI)}$ Pa.
 %% META-INFORMATION
 %% \extype{num}
 %% \exsolution{\Sexpr{pSI}}
-%% \exname{Q07Pressao}
+%% \exname{Q08Pressao}
 %% \extol{0.01}

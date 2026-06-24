@@ -31,5 +31,5 @@ João misturou $\Sexpr{mass1}$ kg de água (calor específico sensível = $1,0$ 
 %% META-INFORMATION
 %% \extype{num}
 %% \exsolution{\Sexpr{resp1}}
-%% \exname{Q21TroCal}
+%% \exname{Q22TroCal}
 %% \extol{0.1}

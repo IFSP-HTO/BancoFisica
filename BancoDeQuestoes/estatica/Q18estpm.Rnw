@@ -32,5 +32,5 @@ Determine o alongamento da mola, em $cm$ nesta nova situação. Caso necessário
 %% META-INFORMATION
 %% \extype{num}
 %% \exsolution{\Sexpr{resp}}
-%% \exname{Q17estpm}
+%% \exname{Q18estpm}
 %% \extol{0.1}
