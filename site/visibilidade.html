@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Política de visibilidade da vitrine pública do BancoFisica."
+    />
+    <title>Política de visibilidade | BancoFisica</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav container" aria-label="Navegação principal">
+        <a class="brand" href="index.html">BancoFisica</a>
+        <div class="nav-links">
+          <a href="questoes.html">Questões demonstrativas</a>
+          <a href="visibilidade.html" aria-current="page">Visibilidade</a>
+          <a href="https://github.com/IFSP-HTO/BancoFisica">GitHub</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container section">
+      <article class="doc-page">
+        <p class="eyebrow">Segurança avaliativa</p>
+        <h1>Política de visibilidade da vitrine pública</h1>
+        <p class="lead compact">
+          O site público do BancoFisica é uma vitrine institucional e pedagógica. Ele
+          não deve expor o banco completo de questões usado em avaliações reais.
+        </p>
+
+        <section>
+          <h2>Regra central</h2>
+          <p>
+            Somente conteúdos marcados explicitamente como demonstrativos podem ser
+            publicados no site público.
+          </p>
+          <p>
+            Questões reais, questões ainda não revisadas, gabaritos completos,
+            arquivos de exportação avaliativa e variações usadas em provas ou
+            questionários reais não devem ser incluídos automaticamente na vitrine.
+          </p>
+        </section>
+
+        <section>
+          <h2>Níveis de visibilidade</h2>
+          <div class="cards three-columns">
+            <article class="card">
+              <h3><code>demo</code></h3>
+              <p>
+                Pode aparecer no site público. Use apenas para exemplos criados com
+                finalidade demonstrativa ou versões que não serão usadas em avaliação.
+              </p>
+            </article>
+            <article class="card">
+              <h3><code>private</code></h3>
+              <p>
+                Não pode aparecer no site público. Use para questões do banco
+                avaliativo, provas, listas avaliativas, simulados e uso real em Moodle.
+              </p>
+            </article>
+            <article class="card">
+              <h3><code>internal</code></h3>
+              <p>
+                Não deve aparecer no site por padrão. Use para rascunhos, testes,
+                documentação interna ou itens ainda em revisão.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section>
+          <h2>Scripts de exportação</h2>
+          <p>Qualquer script que gere dados para o site deve:</p>
+          <ul>
+            <li>exportar somente itens com <code>visibility = "demo"</code>;</li>
+            <li>rejeitar ou ignorar itens sem campo de visibilidade;</li>
+            <li>registrar que o JSON público contém apenas dados demonstrativos;</li>
+            <li>evitar incluir identificadores, gabaritos ou textos de questões avaliativas reais.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Soluções e Moodle</h2>
+          <p>
+            Soluções podem aparecer no site somente quando a questão também for
+            demonstrativa. A vitrine pode mostrar uma simulação visual de Moodle, mas
+            não deve publicar automaticamente XMLs avaliativos completos nem pacotes de
+            importação usados em avaliações reais.
+          </p>
+        </section>
+
+        <section>
+          <h2>Documento completo</h2>
+          <p>
+            A versão canônica desta política fica no repositório, em
+            <code>docs/politica-visibilidade-site.md</code>.
+          </p>
+        </section>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>
+          BancoFisica — vitrine pública com questões demonstrativas.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
