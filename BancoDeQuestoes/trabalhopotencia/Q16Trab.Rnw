@@ -43,5 +43,5 @@ resp2 <- round(resp1/distancia,digits = 2)
 %% META-INFORMATION
 %% \extype{num}
 %% \exsolution{\Sexpr{resp1}|\Sexpr{resp2}}
-%% \exname{Q1Trab}
+%% \exname{Q16Trab}
 %% \extol{0.1}

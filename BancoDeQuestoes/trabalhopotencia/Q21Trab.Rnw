@@ -32,4 +32,4 @@ Lembrando que um corpo de massa 2 quilogramas movendo-se com uma velocidade de 1
 %% \extype{cloze}
 %% \exclozetype{num|num}
 %% \exsolution{\Sexpr{respA}|\Sexpr{respB}}
-%% \exname{Q15MU}
+%% \exname{Q21Trab}
