@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Questões demonstrativas do BancoFisica com filtros por área e assunto."
+    />
+    <title>Questões demonstrativas | BancoFisica</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script>
+      window.MathJax = {
+        tex: { inlineMath: [['\\(', '\\)'], ['$', '$']] },
+        svg: { fontCache: 'global' }
+      };
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    <script defer src="js/app.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav container" aria-label="Navegação principal">
+        <a class="brand" href="index.html">BancoFisica</a>
+        <div class="nav-links">
+          <a href="questoes.html" aria-current="page">Questões demonstrativas</a>
+          <a href="https://github.com/IFSP-HTO/BancoFisica">GitHub</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container section">
+      <div class="section-heading narrow">
+        <p class="eyebrow">Catálogo público</p>
+        <h1>Questões demonstrativas</h1>
+        <p>
+          Esta página mostra apenas itens de demonstração. Ela existe para divulgar o
+          formato do BancoFisica sem expor o banco completo usado em avaliações.
+        </p>
+      </div>
+
+      <section class="filters" aria-label="Filtros do catálogo">
+        <label>
+          Busca
+          <input id="search" type="search" placeholder="Buscar por título, assunto ou tag" />
+        </label>
+        <label>
+          Área
+          <select id="area-filter">
+            <option value="">Todas</option>
+          </select>
+        </label>
+        <label>
+          Assunto
+          <select id="subject-filter">
+            <option value="">Todos</option>
+          </select>
+        </label>
+      </section>
+
+      <section class="catalog-status" aria-live="polite">
+        <p id="count"></p>
+      </section>
+
+      <section id="catalog" class="question-list" aria-label="Lista de questões"></section>
+    </main>
+
+    <template id="question-template">
+      <article class="question-card">
+        <div class="question-header">
+          <div>
+            <p class="question-id"></p>
+            <h2></h2>
+          </div>
+          <span class="badge">Demonstração</span>
+        </div>
+        <p class="question-meta"></p>
+        <div class="tags"></div>
+        <details>
+          <summary>Ver enunciado</summary>
+          <div class="question-body"></div>
+        </details>
+        <details>
+          <summary>Ver solução demonstrativa</summary>
+          <div class="solution-body"></div>
+        </details>
+      </article>
+    </template>
+
+    <footer class="footer">
+      <div class="container">
+        <p>
+          BancoFisica — vitrine pública com questões demonstrativas.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
