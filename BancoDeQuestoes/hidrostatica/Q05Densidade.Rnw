@@ -34,12 +34,12 @@ O líquido contido no recipiente nessa figura tem um volume V' = \Sexpr{round(vo
 
 Para saber se a esfera afunda, comparamos sua densidade com a densidade do líquido. A esfera afunda quando
 \[
-  d_{\text{esfera}} > d_{\text{líquido}}.
+  d_{esfera} > d_{liquido}.
 \]
 
 A densidade do líquido pode ser obtida pelos dados do enunciado. Como $\Sexpr{round(massa/1000,2)}\,\mathrm{kg}=\Sexpr{massa}\,\mathrm{g}$ e $\Sexpr{round(volume/100^3,2)}\,\mathrm{m^3}=\Sexpr{round(volume,1)}\,\mathrm{cm^3}$, temos
 \[
-  d_{\text{líquido}}=\frac{m'}{V'}=\frac{\Sexpr{massa}}{\Sexpr{round(volume,1)}}
+  d_{liquido}=\frac{m'}{V'}=\frac{\Sexpr{massa}}{\Sexpr{round(volume,1)}}
   \approx \Sexpr{densidade}\,\mathrm{g/cm^3}.
 \]
 
