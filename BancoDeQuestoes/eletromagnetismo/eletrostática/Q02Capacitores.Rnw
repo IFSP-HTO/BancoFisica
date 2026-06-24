@@ -3,11 +3,11 @@
 ## Funções
 nota_cient <- function(x,digits) {
   if (x==0) return("0")
-  ord <- floor(log(abs(x),10))
+  ord <- floor(log(abs(x,10)))
   x <- x / 10^ord
   if (!missing(digits)) x <- format(x,digits=digits)
   if (ord==0) return(as.character(x))
-  return(paste(x,"\\\\times 10^{",ord,"}",sep=""))
+  return(paste(x,"\\times 10^{",ord,"}",sep=""))
 }
 formatEng <- function(x, fixed=NULL) {
   s <-as.numeric(strsplit(format(x, scientific=T),"e")[[1]])
@@ -73,13 +73,57 @@ Seja um capacitor de placas paralelas com a área das placas iguais a $A$ = \Sex
 \end{question}
 
 \begin{solution}
-%% Supply a solution here!
 
+A permissividade elétrica do dielétrico é dada por
+\[
+  \epsilon = k\epsilon_0.
+\]
+Logo,
+\[
+  \epsilon = \Sexpr{k}\cdot \Sexpr{nota_cient(epsilon0)}
+  = \Sexpr{nota_cient(epsilon)}\,\mathrm{C^2/(N\,m^2)}.
+\]
+Em unidades de $10^{-12}$, isso corresponde a $\Sexpr{epsilon_pico}$.
+
+Para um capacitor de placas paralelas,
+\[
+  C=\frac{\epsilon A}{d}.
+\]
+Antes de substituir, convertemos as unidades: $\Sexpr{A}\,\mathrm{cm^2}=\Sexpr{A}\times 10^{-4}\,\mathrm{m^2}$ e $\Sexpr{d}\,\mathrm{mm}=\Sexpr{d}\times 10^{-3}\,\mathrm{m}$. Assim,
+\[
+  C=\frac{\Sexpr{nota_cient(epsilon)}\cdot \Sexpr{A}\times 10^{-4}}{\Sexpr{d}\times 10^{-3}}
+  = \Sexpr{nota_cient(C)}\,\mathrm{F}.
+\]
+Em nanofarads, isso corresponde a $\Sexpr{C_nF}\,\mathrm{nF}$.
+
+A tensão máxima é obtida pela rigidez dielétrica:
+\[
+  \Delta V_{\max}=E_{\max}d
+  = \Sexpr{nota_cient(rigidez)}\cdot \Sexpr{d}\times 10^{-3}
+  = \Sexpr{deltaV}\,\mathrm{V}.
+\]
+
+A carga máxima é
+\[
+  Q_{\max}=C\Delta V_{\max}
+  = \Sexpr{nota_cient(C)}\cdot \Sexpr{deltaV}
+  = \Sexpr{nota_cient(Qmax)}\,\mathrm{C},
+\]
+ou seja, $\Sexpr{Qmax_uC}\,\mu\mathrm{C}$.
+
+A energia armazenada no capacitor é
+\[
+  U=\frac{Q_{\max}\Delta V_{\max}}{2}
+  =\frac{\Sexpr{nota_cient(Qmax)}\cdot \Sexpr{deltaV}}{2}
+  =\Sexpr{E}\,\mathrm{J}.
+\]
+
+Portanto:
 \begin{answerlist}
   \item $\Sexpr{epsilon_pico}$.
-  \item A capacitância é $\Sexpr{C_nF}$nF.
-  \item A carga máxima é $\Sexpr{Qmax_uC}$ $\mu C$.
-  \item A energia é $\Sexpr{E}$J.
+  \item A capacitância é $\Sexpr{C_nF}\,\mathrm{nF}$.
+  \item A carga máxima é $\Sexpr{Qmax_uC}\,\mu\mathrm{C}$.
+  \item A energia é $\Sexpr{E}\,\mathrm{J}$.
 \end{answerlist}
 \end{solution}
 
