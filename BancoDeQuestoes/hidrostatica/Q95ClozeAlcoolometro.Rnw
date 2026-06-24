@@ -1,0 +1,56 @@
+<<echo=FALSE, results=hide>>=
+## Inspirada no ENEM 2021 Q93
+## Física central: densímetro, flutuação e correção térmica.
+
+leitura <- sample(seq(90, 98, by = 1), 1)
+T <- sample(c(12, 14, 18, 22, 24, 28), 1)
+correcao <- round((20 - T) * 0.25, 1)
+corrigida <- leitura + correcao
+fmt <- function(x, d = 1) formatC(x, format = "f", digits = d, decimal.mark = ",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Um alcoômetro foi calibrado para fornecer a leitura correta a $20\,^{\circ}\mathrm{C}$. Em uma medida feita a $\Sexpr{T}\,^{\circ}\mathrm{C}$, a leitura aparente foi $\Sexpr{leitura}\,^{\circ}\mathrm{GL}$. Para o instrumento utilizado, a correção aproximada é de $0{,}25\,^{\circ}\mathrm{GL}$ por grau Celsius de diferença em relação a $20\,^{\circ}\mathrm{C}$, somando-se a correção quando a temperatura é menor que $20\,^{\circ}\mathrm{C}$ e subtraindo-se quando é maior.
+
+Determine:
+
+\begin{answerlist}
+  \item a correção, em $^{\circ}\mathrm{GL}$, com sinal;
+  \item a leitura corrigida, em $^{\circ}\mathrm{GL}$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+A correção é proporcional à diferença entre a temperatura de calibração e a temperatura da medida:
+\[
+C = (20 - T)\cdot 0{,}25.
+\]
+Logo,
+\[
+C = (20 - \Sexpr{T})\cdot 0{,}25 = \Sexpr{fmt(correcao)}\,^{\circ}\mathrm{GL}.
+\]
+A leitura corrigida é
+\[
+L_c = L + C = \Sexpr{leitura} + \Sexpr{fmt(correcao)} = \Sexpr{fmt(corrigida)}\,^{\circ}\mathrm{GL}.
+\]
+Fisicamente, essa correção está associada ao fato de que a densidade do líquido varia com a temperatura, alterando a flutuação do densímetro.
+
+\begin{answerlist}
+  \item $\Sexpr{fmt(correcao)}\,^{\circ}\mathrm{GL}$
+  \item $\Sexpr{fmt(corrigida)}\,^{\circ}\mathrm{GL}$
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{\Sexpr{round(correcao, 2)}|\Sexpr{round(corrigida, 2)}}
+%% \exclozetype{num|num}
+%% \extol{0.05|0.05}
+%% \exname{Q95ClozeAlcoolometro}
+%% \exsection{Hidrostatica; Densimetro; ENEM}
+%% \exusepackage[utf8]{inputenc}

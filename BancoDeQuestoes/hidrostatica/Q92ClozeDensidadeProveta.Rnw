@@ -1,0 +1,56 @@
+<<echo=FALSE, results=hide>>=
+## Inspirada no ENEM 2020 Q113
+## Física central: densidade e volume deslocado em proveta.
+
+massa <- sample(seq(54, 162, by = 6), 1)
+rho <- sample(c(2.7, 3.0, 4.5, 5.4, 7.8, 8.9), 1)
+V0 <- sample(seq(30, 80, by = 5), 1)
+Vobj <- massa / rho
+Vf <- V0 + Vobj
+fmt <- function(x, d = 1) formatC(x, format = "f", digits = d, decimal.mark = ",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Um estudante deseja identificar um pequeno objeto metálico usando uma balança e uma proveta graduada. A massa medida foi $\Sexpr{massa}\,\mathrm{g}$. Ao mergulhar completamente o objeto na proveta, o nível da água passou de $\Sexpr{fmt(V0)}\,\mathrm{cm^3}$ para $\Sexpr{fmt(Vf)}\,\mathrm{cm^3}$.
+
+Determine:
+
+\begin{answerlist}
+  \item o volume do objeto, em $\mathrm{cm^3}$;
+  \item a densidade do objeto, em $\mathrm{g/cm^3}$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+O volume do objeto é igual ao volume de água deslocado:
+\[
+V = V_f - V_0 = \Sexpr{fmt(Vf)} - \Sexpr{fmt(V0)} = \Sexpr{fmt(Vobj)}\,\mathrm{cm^3}.
+\]
+A densidade é dada por
+\[
+\rho = \frac{m}{V}.
+\]
+Assim,
+\[
+\rho = \frac{\Sexpr{massa}}{\Sexpr{fmt(Vobj)}} = \Sexpr{fmt(rho)}\,\mathrm{g/cm^3}.
+\]
+
+\begin{answerlist}
+  \item $\Sexpr{fmt(Vobj)}\,\mathrm{cm^3}$
+  \item $\Sexpr{fmt(rho)}\,\mathrm{g/cm^3}$
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{\Sexpr{round(Vobj, 2)}|\Sexpr{round(rho, 2)}}
+%% \exclozetype{num|num}
+%% \extol{0.05|0.05}
+%% \exname{Q92ClozeDensidadeProveta}
+%% \exsection{Hidrostatica; Densidade; ENEM}
+%% \exusepackage[utf8]{inputenc}

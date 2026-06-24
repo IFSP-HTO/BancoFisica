@@ -1,0 +1,58 @@
+<<echo=FALSE, results=hide>>=
+## Inspirada no ENEM 2020 Q135
+## Física central: pressão e escala dimensional.
+
+f <- sample(c(2, 3, 4, 5, 6), 1)
+razao_area <- f^2
+razao_volume <- f^3
+razao_pressao <- f
+fmt <- function(x) formatC(x, format = "f", digits = 0, big.mark = ".", decimal.mark = ",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Considere dois modelos geometricamente semelhantes de uma mesma estrutura. O segundo modelo tem todas as dimensões lineares $\Sexpr{f}$ vezes maiores que as do primeiro. Suponha que o material seja o mesmo, de modo que o peso seja proporcional ao volume, e que a área de apoio seja proporcional à área da base.
+
+Determine:
+
+\begin{answerlist}
+  \item por qual fator a área de apoio aumenta;
+  \item por qual fator o peso aumenta;
+  \item por qual fator a pressão sobre o solo aumenta.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Se todas as dimensões lineares são multiplicadas por $\Sexpr{f}$, então as áreas são multiplicadas por $\Sexpr{f}^2$ e os volumes por $\Sexpr{f}^3$.
+
+Assim,
+\[
+A' = \Sexpr{f}^2 A = \Sexpr{razao_area}A,
+\]
+\[
+P' = \Sexpr{f}^3 P = \Sexpr{razao_volume}P.
+\]
+A pressão é força dividida por área. Logo,
+\[
+\frac{p'}{p}=\frac{\Sexpr{razao_volume}}{\Sexpr{razao_area}}=\Sexpr{razao_pressao}.
+\]
+
+\begin{answerlist}
+  \item $\Sexpr{razao_area}$
+  \item $\Sexpr{razao_volume}$
+  \item $\Sexpr{razao_pressao}$
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{\Sexpr{razao_area}|\Sexpr{razao_volume}|\Sexpr{razao_pressao}}
+%% \exclozetype{num|num|num}
+%% \extol{0.01|0.01|0.01}
+%% \exname{Q97ClozePressaoEscala}
+%% \exsection{Hidrostatica; Pressao; Escala; ENEM}
+%% \exusepackage[utf8]{inputenc}

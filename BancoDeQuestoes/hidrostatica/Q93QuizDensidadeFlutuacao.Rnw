@@ -1,0 +1,60 @@
+<<echo=FALSE, results=hide>>=
+## Inspirada no ENEM 2020 Q118
+## Física central: densidade e flutuação.
+
+rho_fluido <- sample(c(1.05, 1.10, 1.15, 1.20), 1)
+objetos <- c("A", "B", "C", "D", "E")
+rhos <- sample(c(0.82, 0.95, 1.00, 1.08, 1.12, 1.25, 1.35), 5)
+solutions <- rhos < rho_fluido
+if (sum(solutions) == 0 || sum(solutions) == 5) {
+  rhos <- c(0.90, 1.00, rho_fluido - 0.02, rho_fluido + 0.05, rho_fluido + 0.20)
+  solutions <- rhos < rho_fluido
+}
+fmt <- function(x, d = 2) formatC(x, format = "f", digits = d, decimal.mark = ",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Cinco pequenos corpos são colocados, separadamente, em um líquido de densidade $\Sexpr{fmt(rho_fluido)}\,\mathrm{g/cm^3}$. A tabela mostra as densidades dos corpos.
+
+\begin{center}
+\begin{tabular}{cc}
+Corpo & Densidade ($\mathrm{g/cm^3}$) \\
+\hline
+A & \Sexpr{fmt(rhos[1])} \\
+B & \Sexpr{fmt(rhos[2])} \\
+C & \Sexpr{fmt(rhos[3])} \\
+D & \Sexpr{fmt(rhos[4])} \\
+E & \Sexpr{fmt(rhos[5])} \\
+\end{tabular}
+\end{center}
+
+Quais corpos tendem a flutuar nesse líquido?
+
+<<echo=FALSE, results=tex>>=
+answerlist(objetos)
+@
+
+\end{question}
+
+\begin{solution}
+
+Um corpo flutua quando sua densidade média é menor que a densidade do líquido:
+\[
+\rho_{\text{corpo}} < \rho_{\text{líquido}}.
+\]
+Neste caso, $\rho_{\text{líquido}} = \Sexpr{fmt(rho_fluido)}\,\mathrm{g/cm^3}$. Portanto, flutuam os corpos cuja densidade é menor que esse valor.
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(solutions, paste0("\\textbf{", objetos, "}"), objetos))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{mchoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions)}}
+%% \exname{Q93QuizDensidadeFlutuacao}
+%% \exsection{Hidrostatica; Densidade; Flutuacao; ENEM}
+%% \exusepackage[utf8]{inputenc}
