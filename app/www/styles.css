@@ -1,0 +1,56 @@
+/* Estilos leves para aproximar do visual de uma questão no Moodle. */
+
+body { background: #f5f6f7; font-size: 18px; }
+
+/* Fórmulas MathJax acompanham a fonte maior do enunciado */
+.q-stem mjx-container { font-size: 1.05em !important; }
+
+.q-name {
+  font-size: 0.95rem; color: #6b7280; margin-bottom: 0.4rem;
+  text-transform: uppercase; letter-spacing: 0.03em;
+}
+.q-stem {
+  background: #fff; border: 1px solid #e2e4e7; border-radius: 6px;
+  padding: 1.2rem 1.4rem; font-size: 1.35rem; line-height: 1.6;
+}
+.q-stem img { max-width: 100%; height: auto; display: block; margin: 0.6rem 0; }
+.q-stem table { border-collapse: collapse; margin: 0.6rem 0; }
+.q-stem table td, .q-stem table th { border: 1px solid #ccc; padding: 4px 8px; }
+
+.cloze-gap {
+  background: #fff3cd; border: 1px dashed #d9a400; border-radius: 4px;
+  padding: 0 4px; font-weight: 600;
+}
+
+.answer-box {
+  background: #fff; border: 1px solid #e2e4e7; border-radius: 6px;
+  padding: 1rem 1.2rem; margin-top: 1rem; font-size: 1.15rem;
+}
+/* Campos e alternativas maiores */
+.answer-box .control-label { font-size: 1.15rem; }
+.answer-box input[type="text"],
+.answer-box .form-control { font-size: 1.15rem; height: auto; padding: 8px 12px; }
+.answer-box .radio label, .answer-box .checkbox label { font-size: 1.15rem; }
+.actions .btn { font-size: 1.1rem; }
+.actions { margin-top: 0.8rem; }
+.actions .btn { margin-right: 0.5rem; }
+
+.feedback-box, .solution-box {
+  margin-top: 1rem; padding: 1rem 1.2rem; border-radius: 6px;
+}
+.feedback-box { background: #eef6ff; border: 1px solid #b6d4fe; }
+.solution-box { background: #f0fdf4; border: 1px solid #bbf7d0; }
+.feedback-box h4, .solution-box h4 { margin-top: 0; }
+
+.badge-ok { color: #166534; font-weight: 700; }
+.badge-no { color: #b91c1c; font-weight: 700; }
+
+.opt-list, .gap-list { list-style: none; padding-left: 0; }
+.opt-list li { padding: 6px 8px; border-radius: 4px; margin-bottom: 4px; }
+.opt-correct { background: #dcfce7; }
+.opt-wrong   { background: #fee2e2; }
+.opt-fb { font-size: 0.9rem; color: #374151; margin-left: 1.2rem; }
+
+.msg-ok   { color: #166534; }
+.msg-warn { color: #92400e; }
+.msg-err  { color: #b91c1c; }
