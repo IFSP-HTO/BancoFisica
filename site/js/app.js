@@ -121,6 +121,7 @@ function renderQuestion(question) {
   const tags = fragment.querySelector('.tags');
   const body = fragment.querySelector('.question-body');
   const solution = fragment.querySelector('.solution-body');
+  const moodlePreview = fragment.querySelector('.moodle-preview');
 
   card.dataset.area = question.area;
   card.dataset.subject = question.subject;
@@ -129,6 +130,7 @@ function renderQuestion(question) {
   meta.textContent = `${question.area} · ${question.subject} · ${question.level}`;
   body.innerHTML = question.statementHtml;
   solution.innerHTML = question.solutionHtml;
+  moodlePreview.innerHTML = renderMoodlePreview(question);
 
   (question.tags || []).forEach((tag) => {
     const item = document.createElement('span');
@@ -138,6 +140,32 @@ function renderQuestion(question) {
   });
 
   return fragment;
+}
+
+function renderMoodlePreview(question) {
+  return `
+    <section class="moodle-card" aria-label="Preview estilo Moodle de ${escapeHtml(question.title)}">
+      <div class="moodle-toolbar">
+        <span class="moodle-pill">Simulação</span>
+        <span class="moodle-context">${escapeHtml(question.level)} · ${escapeHtml(question.subject)}</span>
+      </div>
+      <div class="moodle-question">
+        <div class="moodle-number" aria-hidden="true">Q</div>
+        <div class="moodle-content">
+          <p class="moodle-label">Enunciado da questão</p>
+          <div class="moodle-statement">${question.statementHtml}</div>
+        </div>
+      </div>
+      <div class="moodle-feedback">
+        <p class="moodle-label">Feedback / solução demonstrativa</p>
+        <div>${question.solutionHtml}</div>
+      </div>
+      <p class="moodle-note">
+        Esta é uma simulação visual para divulgação. Não é uma cópia exata da interface do Moodle
+        nem uma exportação XML avaliativa.
+      </p>
+    </section>
+  `;
 }
 
 function uniqueSorted(values) {
