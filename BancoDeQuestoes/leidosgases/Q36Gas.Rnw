@@ -1,17 +1,23 @@
 <<echo=FALSE, results=hide>>=
   #Programado por: Jmduly
   
-  press1 <- sample(seq(from=15,to=19,by=1),1)
+  press1 <- sample(seq(from=2.0,to=2.3,by=0.1),1)
   
-  press2 <- sample(seq(from=10,to=14,by=1),1)
+  delta_press <- sample(seq(from=0.1,to=0.3,by=0.1),1)
+  
+  press2 <- round(press1 + delta_press, digits = 1)
   
   time1  <- sample(seq(from=3,to=6,by=1),1)
   
-  temp1  <- sample(seq(from=30,to=38,by=1),1)
+  temp1  <- sample(seq(from=20,to=30,by=1),1)
   
-  resp1  <- round(((press1)*(temp1+273)/(press2)), digits = 1)
+  temp1K <- temp1 + 273
   
-  resp2  <- round(resp1-273, digits = 1)
+  respK  <- round((press2 * temp1K) / press1, digits = 2)
+  
+  respC  <- round(respK - 273, digits = 2)
+  
+  fmt <- function(x, d = 1) formatC(x, format = "f", digits = d, decimal.mark = ",")
   
 @
   
@@ -19,19 +25,30 @@
   
   \begin{question}
   
-  Antes de realizar uma viagem de carro, em um dia cuja temperatura era de $\Sexpr{temp1}$ °C, um senhor calibrou os pneus utilizando $\Sexpr{press1}$ atm de pressão. Quando chegou ao destino, depois de $\Sexpr{time1}$ horas de viagem, mediu novamente a pressão dos pneus e constatou $\Sexpr{press2}$ atm de pressão. A variação de volume dos pneus foi desprezível. Qual temperatura que se encontravam os pneus? OBS: apresente o resultado com duas casas decimais.
+  Antes de realizar uma viagem de carro, em um dia cuja temperatura era de $\Sexpr{temp1}$ °C, um senhor calibrou os pneus utilizando pressão absoluta de $\Sexpr{fmt(press1)}$ atm. Quando chegou ao destino, depois de $\Sexpr{time1}$ horas de viagem, mediu novamente a pressão dos pneus e constatou $\Sexpr{fmt(press2)}$ atm. A variação de volume dos pneus foi desprezível. Qual temperatura que se encontravam os pneus? OBS: apresente o resultado em °C com duas casas decimais.
 
 \end{question}
   
 %% SOLUTION
-\begin{solution}:
-    
-  \Sexpr{resp2}°C
+\begin{solution}
+  
+  Como o volume é considerado constante, vale
+  \[
+    \frac{P_1}{T_1}=\frac{P_2}{T_2},
+  \]
+  com as temperaturas na escala Kelvin. Assim,
+  \[
+    T_2=\frac{P_2T_1}{P_1}=\frac{\Sexpr{fmt(press2)}\cdot(\Sexpr{temp1}+273)}{\Sexpr{fmt(press1)}}=\Sexpr{fmt(respK, 2)}\,\text{K}.
+  \]
+  Convertendo para Celsius,
+  \[
+    T_2 = \Sexpr{fmt(respK, 2)} - 273 = \Sexpr{fmt(respC, 2)}\,^{\circ}\text{C}.
+  \]
   
 \end{solution}
   
 %% META-INFORMATION
 %% \extype{num}
-%% \exsolution{\Sexpr{resp1}}
+%% \exsolution{\Sexpr{respC}}
 %% \exname{Q36Gas}
-%% \extol{0.01|}
+%% \extol{0.01}
