@@ -141,7 +141,7 @@ for (i in seq_along(files)) {
     add_problem(rel, "error", "missing_exsolution")
   }
 
-  if (!is.na(extype) && trimws(extype) %in% c("schoice", "mchoice")) {
+  if (!is.na(extype) && trimws(extype) %in% c("schoice", "mchoice") && !is.null(question)) {
     question_text <- paste(question, collapse = "\n")
     if (!grepl("answerlist\\s*\\(", question_text)) {
       add_problem(rel, "error", "choice_question_without_answerlist")
