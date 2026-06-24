@@ -1,0 +1,60 @@
+<<echo=FALSE, results=hide>>=
+## Inspirada em questões ENEM de lançamento horizontal.
+## Física central: queda livre e movimento uniforme horizontal.
+
+h <- sample(c(0.80, 1.25, 1.80, 2.45, 3.20), 1)
+g <- 10
+v <- sample(seq(2, 8, by = 0.5), 1)
+tqueda <- sqrt(2 * h / g)
+alcance <- v * tqueda
+fmt <- function(x, d = 2) formatC(x, format = "f", digits = d, decimal.mark = ",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Uma esfera abandona a borda de uma mesa horizontal com velocidade horizontal de módulo $\Sexpr{fmt(v,1)}\,\mathrm{m/s}$. A altura da mesa em relação ao chão é $\Sexpr{fmt(h,2)}\,\mathrm{m}$. Despreze a resistência do ar e adote $g = \Sexpr{g}\,\mathrm{m/s^2}$.
+
+Determine:
+
+\begin{answerlist}
+  \item o tempo de queda, em segundos;
+  \item a distância horizontal percorrida até atingir o chão, em metros.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Na direção vertical, a esfera parte com velocidade vertical inicial nula. Assim,
+\[
+h = \frac{g t^2}{2}.
+\]
+Logo,
+\[
+t = \sqrt{\frac{2h}{g}} = \sqrt{\frac{2\cdot \Sexpr{fmt(h,2)}}{\Sexpr{g}}} = \Sexpr{fmt(tqueda,2)}\,\mathrm{s}.
+\]
+Na direção horizontal, o movimento é uniforme:
+\[
+x = v_x t.
+\]
+Portanto,
+\[
+x = \Sexpr{fmt(v,1)}\cdot \Sexpr{fmt(tqueda,2)} = \Sexpr{fmt(alcance,2)}\,\mathrm{m}.
+\]
+
+\begin{answerlist}
+  \item $\Sexpr{fmt(tqueda,2)}\,\mathrm{s}$
+  \item $\Sexpr{fmt(alcance,2)}\,\mathrm{m}$
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{\Sexpr{round(tqueda, 2)}|\Sexpr{round(alcance, 2)}}
+%% \exclozetype{num|num}
+%% \extol{0.03|0.03}
+%% \exname{Q90ClozeLancamentoHorizontal}
+%% \exsection{Mecanica; Cinematica; Lancamento horizontal; ENEM}
+%% \exusepackage[utf8]{inputenc}

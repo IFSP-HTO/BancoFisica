@@ -1,0 +1,72 @@
+<<echo=FALSE, results=hide>>=
+## Inspirada no ENEM 2021 Q104.
+## Física central: energia cinética e potência média.
+
+m <- sample(seq(800, 1400, by = 100), 1)
+v_kmh <- sample(c(72, 90, 108, 126), 1)
+v <- v_kmh / 3.6
+t1 <- sample(c(8, 10, 12), 1)
+t2 <- t1 + sample(c(4, 6, 8), 1)
+Ec <- 0.5 * m * v^2
+P1 <- Ec / t1
+P2 <- Ec / t2
+razao <- P1 / P2
+fmt <- function(x, d = 1) formatC(x, format = "f", digits = d, decimal.mark = ",")
+nota <- function(x) formatC(x, format = "f", digits = 0, big.mark = ".", decimal.mark = ",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Dois veículos de mesma massa, $\Sexpr{m}\,\mathrm{kg}$, partem do repouso e atingem a velocidade de $\Sexpr{v_kmh}\,\mathrm{km/h}$. O veículo A faz isso em $\Sexpr{t1}\,\mathrm{s}$, enquanto o veículo B faz isso em $\Sexpr{t2}\,\mathrm{s}$. Despreze perdas de energia.
+
+Determine:
+
+\begin{answerlist}
+  \item a energia cinética final de cada veículo, em joules;
+  \item a potência média do veículo A, em watts;
+  \item a razão entre a potência média de A e a potência média de B.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+A velocidade em unidades do SI é
+\[
+v = \frac{\Sexpr{v_kmh}}{3{,}6} = \Sexpr{fmt(v,1)}\,\mathrm{m/s}.
+\]
+A energia cinética final é
+\[
+E_c = \frac{mv^2}{2}
+= \frac{\Sexpr{m}\cdot (\Sexpr{fmt(v,1)})^2}{2}
+= \Sexpr{nota(Ec)}\,\mathrm{J}.
+\]
+A potência média é energia dividida pelo tempo:
+\[
+P_A = \frac{E_c}{t_A}
+= \frac{\Sexpr{nota(Ec)}}{\Sexpr{t1}}
+= \Sexpr{nota(P1)}\,\mathrm{W}.
+\]
+Como os dois veículos chegam à mesma energia cinética final,
+\[
+\frac{P_A}{P_B} = \frac{E_c/t_A}{E_c/t_B} = \frac{t_B}{t_A}
+= \frac{\Sexpr{t2}}{\Sexpr{t1}} = \Sexpr{fmt(razao,2)}.
+\]
+
+\begin{answerlist}
+  \item $\Sexpr{nota(Ec)}\,\mathrm{J}$
+  \item $\Sexpr{nota(P1)}\,\mathrm{W}$
+  \item $\Sexpr{fmt(razao,2)}$
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{\Sexpr{round(Ec, 0)}|\Sexpr{round(P1, 0)}|\Sexpr{round(razao, 2)}}
+%% \exclozetype{num|num|num}
+%% \extol{10|10|0.02}
+%% \exname{Q90ClozePotenciaEnergiaCinetica}
+%% \exsection{Mecanica; Energia; Potencia; ENEM}
+%% \exusepackage[utf8]{inputenc}

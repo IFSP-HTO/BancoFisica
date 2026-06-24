@@ -1,0 +1,75 @@
+<<echo=FALSE, results=hide>>=
+## Inspirada em questões ENEM sobre segurança veicular e deformação.
+## Física central: impulso, quantidade de movimento e força média.
+
+m <- sample(seq(800, 1400, by = 100), 1)
+v_kmh <- sample(c(36, 54, 72), 1)
+v <- v_kmh / 3.6
+dt1 <- sample(c(0.05, 0.08, 0.10), 1)
+dt2 <- sample(c(0.20, 0.25, 0.30), 1)
+impulso <- m * v
+F1 <- impulso / dt1
+F2 <- impulso / dt2
+red <- F1 / F2
+fmt <- function(x, d = 2) formatC(x, format = "f", digits = d, decimal.mark = ",")
+nota <- function(x) formatC(x, format = "f", digits = 0, big.mark = ".", decimal.mark = ",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Um veículo de massa $\Sexpr{m}\,\mathrm{kg}$ move-se a $\Sexpr{v_kmh}\,\mathrm{km/h}$ e é parado em uma colisão frontal. Em uma estrutura rígida, o intervalo de parada seria $\Sexpr{fmt(dt1,2)}\,\mathrm{s}$. Com uma região deformável de absorção de impacto, o intervalo de parada passa a ser $\Sexpr{fmt(dt2,2)}\,\mathrm{s}$.
+
+Determine:
+
+\begin{answerlist}
+  \item o módulo do impulso necessário para parar o veículo, em $\mathrm{N\,s}$;
+  \item a força média na parada rígida, em N;
+  \item o fator pelo qual a força média diminui com a região deformável.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+A velocidade em unidades do SI é
+\[
+v = \frac{\Sexpr{v_kmh}}{3{,}6}=\Sexpr{fmt(v,1)}\,\mathrm{m/s}.
+\]
+O impulso necessário para parar o veículo tem módulo igual à variação da quantidade de movimento:
+\[
+I = \Delta p = mv = \Sexpr{m}\cdot\Sexpr{fmt(v,1)} = \Sexpr{nota(impulso)}\,\mathrm{N\,s}.
+\]
+A força média é
+\[
+F_m = \frac{I}{\Delta t}.
+\]
+Na parada rígida,
+\[
+F_1 = \frac{\Sexpr{nota(impulso)}}{\Sexpr{fmt(dt1,2)}} = \Sexpr{nota(F1)}\,\mathrm{N}.
+\]
+Com a região deformável,
+\[
+F_2 = \frac{\Sexpr{nota(impulso)}}{\Sexpr{fmt(dt2,2)}} = \Sexpr{nota(F2)}\,\mathrm{N}.
+\]
+Como o impulso é o mesmo, aumentar o tempo de parada reduz a força média. O fator de redução é
+\[
+\frac{F_1}{F_2}=\frac{\Delta t_2}{\Delta t_1}=\frac{\Sexpr{fmt(dt2,2)}}{\Sexpr{fmt(dt1,2)}}=\Sexpr{fmt(red,2)}.
+\]
+
+\begin{answerlist}
+  \item $\Sexpr{nota(impulso)}\,\mathrm{N\,s}$
+  \item $\Sexpr{nota(F1)}\,\mathrm{N}$
+  \item $\Sexpr{fmt(red,2)}$
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{\Sexpr{round(impulso, 0)}|\Sexpr{round(F1, 0)}|\Sexpr{round(red, 2)}}
+%% \exclozetype{num|num|num}
+%% \extol{10|100|0.02}
+%% \exname{Q90ClozeImpulsoColisao}
+%% \exsection{Mecanica; Impulso; Colisao; ENEM}
+%% \exusepackage[utf8]{inputenc}
