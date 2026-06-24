@@ -80,6 +80,17 @@ check_question_counts <- function() {
   }
 }
 
+## Valida a estrutura mínima das questões antes das compilações pesadas.
+check_bank_structure <- function() {
+  if (file.exists("tools/validate_bank.R")) {
+    status <- system2(
+      "Rscript",
+      c("tools/validate_bank.R", "--questions-dir", "BancoDeQuestoes")
+    )
+    if (!identical(status, 0L)) stop("Bank structural validation failed")
+  }
+}
+
 ## Verifica a compilação para XML
 generate_xml <- function() {
 
@@ -138,6 +149,7 @@ generate_pdf <- function() {
 
 ## Rodando as funções
 check_encoding()
+check_bank_structure()
 check_question_counts()
 generate_xml()
 generate_pdf()
