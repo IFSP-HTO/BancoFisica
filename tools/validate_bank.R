@@ -151,7 +151,13 @@ for (i in seq_along(files)) {
 
   if (!is.na(extype) && trimws(extype) %in% c("schoice", "mchoice") && !is.null(question)) {
     question_text <- paste(question, collapse = "\n")
-    if (!grepl("answerlist\\s*\\(", question_text)) {
+    # Aceita as duas formas válidas de listar alternativas no enunciado: a
+    # função answerlist(...) e o ambiente estático \begin{answerlist}. Antes
+    # só a forma de função era reconhecida, gerando falso positivo para
+    # questões com answerlist estático (ex.: hidrostatica/Q05Densidade).
+    has_answerlist <- grepl("answerlist\\s*\\(", question_text) ||
+      grepl("\\\\begin\\{answerlist\\}", question_text)
+    if (!has_answerlist) {
       add_problem(rel, "warning", "choice_question_without_answerlist")
     }
 
