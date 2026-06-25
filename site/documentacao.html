@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Documentação pública do BancoFisica: visão geral, uso com R/exams e Moodle e orientações de contribuição."
+    />
+    <title>Documentação | BancoFisica</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav container" aria-label="Navegação principal">
+        <a class="brand" href="index.html">BancoFisica</a>
+        <div class="nav-links">
+          <a href="questoes.html">Questões demonstrativas</a>
+          <a href="documentacao.html" aria-current="page">Documentação</a>
+          <a href="visibilidade.html">Visibilidade</a>
+          <a href="https://github.com/IFSP-HTO/BancoFisica">GitHub</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container section">
+      <article class="doc-page">
+        <p class="eyebrow">Documentação pública</p>
+        <h1>Como entender e usar o BancoFisica</h1>
+        <p class="lead compact">
+          O BancoFisica é um repositório de questões parametrizadas de Física, criado
+          para apoiar ensino, estudo, listas, questionários e avaliações em ambientes
+          como o Moodle.
+        </p>
+
+        <section>
+          <h2>O que é o BancoFisica?</h2>
+          <p>
+            O projeto reúne questões de Física escritas de forma programável. Em vez
+            de manter apenas um enunciado fixo, cada item pode gerar variações de
+            valores, alternativas, respostas e soluções, reduzindo retrabalho e
+            melhorando a reutilização pedagógica.
+          </p>
+          <p>
+            A proposta é manter as questões em um repositório versionado, com revisão
+            por pull requests, testes automatizados e solucionários que ajudem tanto o
+            professor quanto o estudante.
+          </p>
+        </section>
+
+        <section>
+          <h2>Uso com R/exams e Moodle</h2>
+          <p>
+            O BancoFisica usa o ecossistema R/exams para transformar exercícios em
+            versões exportáveis para diferentes formatos. No fluxo com Moodle, as
+            questões podem ser convertidas para formatos compatíveis com questionários
+            online, preservando enunciado, alternativas, resposta correta e feedback.
+          </p>
+          <p>
+            A vitrine pública mostra apenas exemplos demonstrativos desse fluxo. Ela
+            ajuda a visualizar a ideia geral, mas não substitui a documentação técnica
+            do pacote R/exams nem uma instância real do Moodle.
+          </p>
+        </section>
+
+        <section>
+          <h2>Vitrine pública versus banco avaliativo</h2>
+          <p>
+            Este site é uma vitrine institucional e pedagógica. Ele publica apenas
+            questões marcadas como <code>demo</code>, criadas para divulgação ou
+            demonstração.
+          </p>
+          <p>
+            O banco completo, usado ou potencialmente usado em avaliações reais, não
+            deve ser exposto automaticamente. Questões privadas, internas, em revisão
+            ou usadas em provas e questionários reais devem permanecer fora da vitrine.
+          </p>
+          <p>
+            Para detalhes, consulte a
+            <a href="visibilidade.html">política de visibilidade</a>.
+          </p>
+        </section>
+
+        <section>
+          <h2>Como contribuir</h2>
+          <p>
+            Contribuições podem envolver novas questões, melhoria de enunciados,
+            revisão física e matemática, ampliação de solucionários, correção de bugs,
+            documentação ou melhorias no site.
+          </p>
+          <ul>
+            <li>Abra uma issue descrevendo a melhoria ou correção desejada.</li>
+            <li>Trabalhe em um pull request pequeno e revisável.</li>
+            <li>Inclua solucionário claro quando a mudança envolver questões.</li>
+            <li>Não publique questões avaliativas reais no site público.</li>
+            <li>Quando o PR resolver uma issue, use <code>Resolve #N</code> no corpo do PR.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Links úteis</h2>
+          <div class="cards three-columns">
+            <article class="card">
+              <h3>Repositório</h3>
+              <p>
+                Código-fonte, issues, pull requests, testes e histórico do projeto.
+              </p>
+              <p><a href="https://github.com/IFSP-HTO/BancoFisica">Abrir no GitHub</a></p>
+            </article>
+            <article class="card">
+              <h3>Demonstrações</h3>
+              <p>
+                Catálogo público com questões sacrificáveis, filtros e preview estilo Moodle.
+              </p>
+              <p><a href="questoes.html">Ver questões demonstrativas</a></p>
+            </article>
+            <article class="card">
+              <h3>Visibilidade</h3>
+              <p>
+                Regras para separar conteúdo público, privado e interno.
+              </p>
+              <p><a href="visibilidade.html">Ler política</a></p>
+            </article>
+          </div>
+        </section>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>
+          BancoFisica — documentação pública e vitrine demonstrativa.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
