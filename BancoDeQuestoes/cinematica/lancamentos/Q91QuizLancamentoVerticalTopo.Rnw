@@ -1,0 +1,61 @@
+<<echo=FALSE, results=hide>>=
+## Inspirada no ENEM 2023 Q100.
+## Física central: lançamento vertical no ponto mais alto.
+
+v0 <- sample(seq(10, 30, by = 5), 1)
+g <- 10
+tsubida <- v0 / g
+hmax <- v0^2 / (2 * g)
+correta <- "No ponto mais alto, a velocidade instantânea é nula e a aceleração continua apontando para baixo."
+alternativas <- c(
+  correta,
+  "No ponto mais alto, a velocidade e a aceleração são nulas.",
+  "No ponto mais alto, a velocidade é máxima e a aceleração é nula.",
+  "No ponto mais alto, a velocidade aponta para cima e a aceleração aponta para cima.",
+  "No ponto mais alto, a velocidade aponta para baixo e a aceleração é nula."
+)
+solutions <- alternativas == correta
+ordem <- sample(seq_along(alternativas))
+alternativas <- alternativas[ordem]
+solutions <- solutions[ordem]
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Uma bola é lançada verticalmente para cima com velocidade inicial $\Sexpr{v0}\,\mathrm{m/s}$. Despreze a resistência do ar e adote $g=\Sexpr{g}\,\mathrm{m/s^2}$.
+
+Qual afirmação descreve corretamente a velocidade e a aceleração da bola no ponto mais alto da trajetória?
+
+<<echo=FALSE, results=tex>>=
+answerlist(alternativas)
+@
+
+\end{question}
+
+\begin{solution}
+
+No ponto mais alto, a bola para instantaneamente antes de iniciar a descida. Portanto, sua velocidade instantânea é nula. Entretanto, a força gravitacional continua atuando e a aceleração permanece igual à aceleração da gravidade, orientada para baixo.
+
+Neste caso, o tempo de subida seria
+\[
+t = \frac{v_0}{g}=\frac{\Sexpr{v0}}{\Sexpr{g}}=\Sexpr{tsubida}\,\mathrm{s},
+\]
+e a altura máxima seria
+\[
+h = \frac{v_0^2}{2g}=\frac{\Sexpr{v0}^2}{2\cdot\Sexpr{g}}=\Sexpr{hmax}\,\mathrm{m}.
+\]
+Esses valores não mudam a conclusão conceitual sobre velocidade e aceleração no topo.
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(solutions, paste0("\\textbf{", alternativas, "}"), alternativas))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q91QuizLancamentoVerticalTopo}
+%% \exsection{Mecanica; Cinematica; Lancamento vertical; ENEM}
+%% \exusepackage[utf8]{inputenc}
