@@ -155,10 +155,30 @@ check_bank_structure <- function() {
   }
 }
 
+## Lê a lista de sementes usada nos testes XML.
+##
+## Por padrão usa 1,2,3. Pode ser sobrescrita com, por exemplo:
+## BANK_SEEDS=1,2,3,4,5 Rscript -e 'source("tests/tests.R")'
+parse_seed_list <- function(env_var = "BANK_SEEDS", default = c(1L, 2L, 3L)) {
+  raw <- Sys.getenv(env_var, unset = "")
+  if (!nzchar(raw)) return(default)
+
+  parts <- trimws(unlist(strsplit(raw, ",", fixed = TRUE)))
+  parts <- parts[nzchar(parts)]
+  seeds <- suppressWarnings(as.integer(parts))
+
+  if (length(seeds) == 0L || anyNA(seeds)) {
+    stop("Invalid ", env_var, ": use comma-separated integers, e.g. 1,2,3")
+  }
+
+  unique(seeds)
+}
+
 ## Verifica a compilação para XML
 ##
 ## Além de checar se o exams2moodle roda, valida o artefato gerado:
 ## precisa existir, conter raiz <quiz>...</quiz> e ao menos uma questão Moodle.
+## Para questões parametrizadas, testa múltiplas sementes configuráveis via BANK_SEEDS.
 generate_xml <- function() {
 
   ## Pega todos os arquivos de questões
@@ -168,18 +188,30 @@ generate_xml <- function() {
   ## Ano corrente
   ano <- 2018
 
-  ## Para cada arquivo, compila para XML numa sessão isolada
-  resultados <- vector("list", nrow(arquivos))
-  for (i in seq_len(nrow(arquivos))) {
+  xml_seeds <- parse_seed_list()
+  message("Validating Moodle XML with seeds: ", paste(xml_seeds, collapse = ", "))
+
+  ## Para cada arquivo e cada semente, compila para XML numa sessão isolada
+  plano <- expand.grid(
+    file_index = seq_len(nrow(arquivos)),
+    seed = xml_seeds,
+    KEEP.OUT.ATTRS = FALSE
+  )
+
+  resultados <- vector("list", nrow(plano))
+  for (j in seq_len(nrow(plano))) {
+    i <- plano$file_index[j]
     arquivo   <- normalizePath(arquivos$file[i])
     diretorio <- dirname(arquivo)
-    resultados[[i]] <- compilar_isolado(arquivo, diretorio, "xml", ano, seed = i)
+    resultados[[j]] <- compilar_isolado(arquivo, diretorio, "xml", ano, seed = plano$seed[j])
   }
 
-  xml_report <- do.call(rbind, lapply(seq_along(resultados), function(i) {
-    res <- resultados[[i]]
+  xml_report <- do.call(rbind, lapply(seq_along(resultados), function(j) {
+    i <- plano$file_index[j]
+    res <- resultados[[j]]
     data.frame(
       file = arquivos$file[i],
+      seed = plano$seed[j],
       ok = isTRUE(res$ok),
       message = as.character(res$message),
       xml_file = as.character(res$xml_file),
@@ -202,7 +234,9 @@ generate_xml <- function() {
 
   ## Erro reportado
   erro <- paste("NÃO COMPILA OU NÃO VALIDA PARA XML:",
-                arquivos$file[ind_xml], xml_report$message[ind_xml], '\n')
+                xml_report$file[ind_xml],
+                "seed", xml_report$seed[ind_xml],
+                xml_report$message[ind_xml], '\n')
 
   ## Testando a compilação e validação
   if (length(ind_xml) > 0 ) stop(erro)
