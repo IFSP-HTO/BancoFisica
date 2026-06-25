@@ -1,0 +1,49 @@
+<<echo=FALSE, results=hide>>=
+## Inspirada no ENEM 2025 Q118.
+## Física central: movimento uniforme e tempo de bloqueio de sensor.
+
+L <- sample(c(0.10, 0.15, 0.20, 0.25, 0.30), 1)
+d <- sample(c(0.02, 0.03, 0.04, 0.05), 1)
+v <- sample(c(0.50, 0.75, 1.00, 1.25, 1.50), 1)
+dist <- L + d
+t <- dist / v
+fmt <- function(x, d = 2) formatC(x, format = "f", digits = d, decimal.mark = ",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Um objeto de comprimento $\Sexpr{fmt(L,2)}\,\mathrm{m}$ passa por um sensor óptico formado por um feixe de espessura efetiva $\Sexpr{fmt(d,2)}\,\mathrm{m}$. O objeto move-se com velocidade constante de $\Sexpr{fmt(v,2)}\,\mathrm{m/s}$.
+
+Durante quanto tempo o feixe fica bloqueado? Considere que o bloqueio começa quando a frente do objeto alcança o feixe e termina quando a traseira do objeto sai completamente dele.
+
+\end{question}
+
+\begin{solution}
+
+Para que o bloqueio termine, a frente do objeto deve percorrer o comprimento do objeto mais a espessura efetiva do feixe:
+\[
+\Delta s = L + d.
+\]
+Assim,
+\[
+\Delta s = \Sexpr{fmt(L,2)} + \Sexpr{fmt(d,2)} = \Sexpr{fmt(dist,2)}\,\mathrm{m}.
+\]
+Como o movimento é uniforme,
+\[
+t = \frac{\Delta s}{v}
+= \frac{\Sexpr{fmt(dist,2)}}{\Sexpr{fmt(v,2)}}
+= \Sexpr{fmt(t,2)}\,\mathrm{s}.
+\]
+
+Portanto, o feixe fica bloqueado por $\Sexpr{fmt(t,2)}\,\mathrm{s}$.
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{round(t, 2)}}
+%% \extol{0.03}
+%% \exname{Q90ClozeSensorTempoBloqueio}
+%% \exsection{Mecanica; Cinematica; Movimento uniforme; ENEM}
+%% \exusepackage[utf8]{inputenc}

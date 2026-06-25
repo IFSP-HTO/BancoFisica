@@ -1,0 +1,56 @@
+<<echo=FALSE, results=hide>>=
+## Inspirada no ENEM 2021 Q112.
+## Física central: queda livre e resistência do ar.
+
+obj1 <- sample(c("uma esfera metálica", "uma pedra pequena", "uma bolinha de vidro"), 1)
+obj2 <- sample(c("uma folha de papel aberta", "uma pena", "um pedaço de papel amassado"), 1)
+pergunta_vacuo <- sample(c(TRUE, FALSE), 1)
+if (pergunta_vacuo) {
+  contexto <- "em uma câmara de vácuo, na qual a resistência do ar pode ser desprezada"
+  correta <- "Os corpos têm a mesma aceleração, igual à aceleração da gravidade local."
+} else {
+  contexto <- "no ar, em uma situação na qual a resistência do ar não pode ser desprezada"
+  correta <- "A resistência do ar pode alterar o movimento, de modo que os corpos não precisam ter a mesma aceleração durante toda a queda."
+}
+alternativas <- c(
+  correta,
+  "O corpo de maior massa sempre cai com aceleração maior que a gravidade.",
+  "A aceleração da gravidade deixa de atuar sobre corpos leves.",
+  "No vácuo, corpos de massas diferentes ficam parados se forem soltos da mesma altura.",
+  "A resistência do ar aumenta necessariamente a aceleração de todos os corpos em queda."
+)
+solutions <- alternativas == correta
+ordem <- sample(seq_along(alternativas))
+alternativas <- alternativas[ordem]
+solutions <- solutions[ordem]
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Dois corpos, \Sexpr{obj1} e \Sexpr{obj2}, são abandonados da mesma altura \Sexpr{contexto}.
+
+Qual afirmação descreve corretamente a física da queda?
+
+<<echo=FALSE, results=tex>>=
+answerlist(alternativas)
+@
+
+\end{question}
+
+\begin{solution}
+
+Quando a resistência do ar é desprezível, todos os corpos próximos à superfície da Terra caem com a mesma aceleração gravitacional, independentemente da massa. Quando a resistência do ar não é desprezível, forças dissipativas dependentes da forma, da velocidade e da área exposta podem modificar o movimento.
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(solutions, paste0("\\textbf{", alternativas, "}"), alternativas))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q90QuizQuedaResistenciaAr}
+%% \exsection{Mecanica; Queda livre; Resistencia do ar; ENEM}
+%% \exusepackage[utf8]{inputenc}
