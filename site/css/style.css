@@ -27,6 +27,30 @@ a {
   color: inherit;
 }
 
+:focus-visible {
+  outline: 3px solid #f59e0b;
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: 100;
+  transform: translate(-50%, -120%);
+  padding: 0.75rem 1rem;
+  border-radius: 0 0 14px 14px;
+  color: white;
+  background: var(--primary);
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: var(--shadow);
+}
+
+.skip-link:focus {
+  transform: translate(-50%, 0);
+}
+
 .container {
   width: min(1120px, calc(100% - 2rem));
   margin: 0 auto;
@@ -495,5 +519,53 @@ code {
     align-items: flex-start;
     flex-direction: column;
     padding: 1rem 0;
+  }
+
+  .nav-links {
+    gap: 0.35rem 0.85rem;
+  }
+
+  .hero {
+    padding: 3rem 0 2.5rem;
+  }
+
+  .section {
+    padding: 2.5rem 0;
+  }
+
+  .question-header {
+    flex-direction: column;
+  }
+
+  .actions .button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: min(1120px, calc(100% - 1rem));
+  }
+
+  .hero h1,
+  .section-heading h1,
+  .section-heading h2,
+  .doc-page h1 {
+    letter-spacing: -0.035em;
+  }
+
+  .hero-card,
+  .card,
+  .notice,
+  .question-card,
+  .filters,
+  .doc-page {
+    border-radius: 18px;
+  }
+
+  .question-card,
+  .doc-page,
+  .filters {
+    padding: 1rem;
   }
 }
