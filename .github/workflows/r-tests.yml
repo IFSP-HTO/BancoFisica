@@ -70,6 +70,10 @@ jobs:
         run: |
           Rscript tools/quality_report.R --out-dir build/quality-report
 
+      - name: Generate teaching audit
+        run: |
+          Rscript tools/audit_teaching.R --out-dir build/quality-report
+
       - name: Upload quality report
         uses: actions/upload-artifact@v4
         with:
