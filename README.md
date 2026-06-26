@@ -11,6 +11,12 @@ Este é o repositório oficial do banco de questões de Física produzido pelos 
 
 A seguir você encontra a documentação de como utilizar questões prontas na plataforma Moodle e como contribuir para o projeto.
 
+## Site público
+
+O BancoFisica possui uma vitrine pública em <https://ifsp-hto.github.io/BancoFisica/>.
+
+Esse site apresenta a proposta do projeto, documentação inicial, política de visibilidade e um catálogo de questões demonstrativas. Ele existe para divulgação e orientação pedagógica: a vitrine pública não expõe o banco avaliativo completo, nem promete acesso automático às questões usadas em provas, listas avaliativas, simulados ou questionários reais.
+
 ## Panorama do banco de questões
 
 O gráfico abaixo mostra o número de questões por assunto, considerando os arquivos `.Rnw` em `BancoDeQuestoes`. Ele é gerado automaticamente após merges na branch `master`, a partir do estado atual do banco de questões.
