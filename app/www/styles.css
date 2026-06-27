@@ -1,17 +1,25 @@
 /* Estilos leves para aproximar do visual de uma questão no Moodle. */
 
-body { background: #f5f6f7; font-size: 18px; }
+:root { --bf-font-scale: 1.2; }
+
+body {
+  background: #f5f6f7;
+  font-size: calc(17px * var(--bf-font-scale));
+}
 
 /* Fórmulas MathJax acompanham a fonte maior do enunciado */
 .q-stem mjx-container { font-size: 1.05em !important; }
 
 .q-name {
-  font-size: 0.95rem; color: #6b7280; margin-bottom: 0.4rem;
+  font-size: calc(0.85rem * var(--bf-font-scale));
+  color: #6b7280; margin-bottom: 0.4rem;
   text-transform: uppercase; letter-spacing: 0.03em;
 }
 .q-stem {
   background: #fff; border: 1px solid #e2e4e7; border-radius: 6px;
-  padding: 1.2rem 1.4rem; font-size: 1.35rem; line-height: 1.6;
+  padding: 1.2rem 1.4rem;
+  font-size: calc(1.1rem * var(--bf-font-scale));
+  line-height: 1.62;
 }
 .q-stem img { max-width: 100%; height: auto; display: block; margin: 0.6rem 0; }
 .q-stem table { border-collapse: collapse; margin: 0.6rem 0; }
@@ -24,19 +32,25 @@ body { background: #f5f6f7; font-size: 18px; }
 
 .answer-box {
   background: #fff; border: 1px solid #e2e4e7; border-radius: 6px;
-  padding: 1rem 1.2rem; margin-top: 1rem; font-size: 1.15rem;
+  padding: 1rem 1.2rem; margin-top: 1rem;
+  font-size: calc(1rem * var(--bf-font-scale));
 }
 /* Campos e alternativas maiores */
-.answer-box .control-label { font-size: 1.15rem; }
+.answer-box .control-label { font-size: calc(1rem * var(--bf-font-scale)); }
 .answer-box input[type="text"],
-.answer-box .form-control { font-size: 1.15rem; height: auto; padding: 8px 12px; }
-.answer-box .radio label, .answer-box .checkbox label { font-size: 1.15rem; }
-.actions .btn { font-size: 1.1rem; }
+.answer-box .form-control {
+  font-size: calc(1rem * var(--bf-font-scale));
+  height: auto; padding: 8px 12px;
+}
+.answer-box .radio label,
+.answer-box .checkbox label { font-size: calc(1rem * var(--bf-font-scale)); }
+.actions .btn { font-size: calc(0.95rem * var(--bf-font-scale)); }
 .actions { margin-top: 0.8rem; }
 .actions .btn { margin-right: 0.5rem; }
 
 .feedback-box, .solution-box {
   margin-top: 1rem; padding: 1rem 1.2rem; border-radius: 6px;
+  font-size: calc(1rem * var(--bf-font-scale));
 }
 .feedback-box { background: #eef6ff; border: 1px solid #b6d4fe; }
 .solution-box { background: #f0fdf4; border: 1px solid #bbf7d0; }
@@ -49,7 +63,10 @@ body { background: #f5f6f7; font-size: 18px; }
 .opt-list li { padding: 6px 8px; border-radius: 4px; margin-bottom: 4px; }
 .opt-correct { background: #dcfce7; }
 .opt-wrong   { background: #fee2e2; }
-.opt-fb { font-size: 0.9rem; color: #374151; margin-left: 1.2rem; }
+.opt-fb {
+  font-size: calc(0.85rem * var(--bf-font-scale));
+  color: #374151; margin-left: 1.2rem;
+}
 
 .msg-ok   { color: #166534; }
 .msg-warn { color: #92400e; }
