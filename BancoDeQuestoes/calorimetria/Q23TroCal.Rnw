@@ -1,17 +1,19 @@
 <<echo=FALSE, results=hide>>=
   #Programado por: Jmduly
   
-  mass1 <- sample(seq(from=20,to=80,by=1),1)
+  mass1 <- sample(seq(from=400,to=900,by=10),1)
   
   mass2 <- sample(seq(from=40,to=100,by=1),1)
   
-  temp2 <- sample(seq(from=30,to=120,by=1),1)
+  temp2 <- sample(seq(from=30,to=70,by=1),1)
   
   temp1 <- sample(seq(from=130,to=150,by=1),1)
   
-  temp3 <- sample(seq(from=25,to=70,by=1),1)
+  cap_rec <- sample(seq(from=20,to=80,by=1),1)
   
-  resp1 <- round(-(mass1*0.03*(temp3-temp1)+(mass2*1*(temp3-temp1)/(temp3-temp2))), digits = 1)
+  temp3 <- round((mass1*0.03*temp1+(mass2+cap_rec)*temp2)/(mass1*0.03+mass2+cap_rec), digits = 1)
+  
+  resp1 <- round(-(mass1*0.03*(temp3-temp1)+mass2*(temp3-temp2))/(temp3-temp2), digits = 1)
   
 @
   
@@ -25,8 +27,23 @@ Uma barra de cobre de massa igual a $\Sexpr{mass1}$ g e a uma temperatura de $\S
   
 %% SOLUTION
 \begin{solution}:
-    
-  \Sexpr{resp1} cal/°C
+
+Pelo balanço de energia, o calor perdido pela barra de cobre é igual ao calor recebido pela água e pelo recipiente:
+\[
+  m_{\mathrm{Cu}}c_{\mathrm{Cu}}(T_f-T_{\mathrm{Cu}})+
+  m_{\mathrm{agua}}c_{\mathrm{agua}}(T_f-T_{\mathrm{agua}})+
+  C_{\mathrm{rec}}(T_f-T_{\mathrm{agua}})=0.
+\]
+
+Assim,
+\[
+  C_{\mathrm{rec}} =
+  -\frac{m_{\mathrm{Cu}}c_{\mathrm{Cu}}(T_f-T_{\mathrm{Cu}})+
+  m_{\mathrm{agua}}c_{\mathrm{agua}}(T_f-T_{\mathrm{agua}})}
+  {T_f-T_{\mathrm{agua}}}.
+\]
+
+Substituindo os valores, obtemos \Sexpr{resp1} cal/°C.
   
 \end{solution}
   
@@ -34,4 +51,4 @@ Uma barra de cobre de massa igual a $\Sexpr{mass1}$ g e a uma temperatura de $\S
 %% \extype{num}
 %% \exsolution{\Sexpr{resp1}}
 %% \exname{Q23TroCal}
-%% \extol{0.01|}
+%% \extol{0.1}
