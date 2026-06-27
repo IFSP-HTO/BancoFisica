@@ -1,0 +1,93 @@
+<<echo=FALSE, results=hide>>=
+## Inspirada no ENEM 2021 Q128
+## Física central: lançamento oblíquo.
+
+g <- 10
+dx <- sample(c(90, 120, 150), 1)
+dy <- sample(c(20, 25, 30), 1)
+theta <- 53
+sen <- 0.8
+cos <- 0.6
+tan <- sen / cos
+v0 <- sqrt(g * dx^2 / (2 * cos^2 * (dx * tan - dy)))
+vx <- v0 * cos
+vy <- v0 * sen
+t <- dx / vx
+fmt <- function(x, d = 1) formatC(x, format = "f", digits = d, decimal.mark = ",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Em um exercício de lançamento de projéteis, um objeto é lançado do ponto $B$ com ângulo de $\Sexpr{theta}^\circ$ em relação à horizontal. O alvo $A$ está a uma distância horizontal de $\Sexpr{dx}\,\mathrm{m}$ e a uma altura $\Sexpr{dy}\,\mathrm{m}$ acima do ponto de lançamento. Despreze a resistência do ar, adote $g=\Sexpr{g}\,\mathrm{m/s^2}$, $\sin \Sexpr{theta}^\circ=\Sexpr{fmt(sen,1)}$ e $\cos \Sexpr{theta}^\circ=\Sexpr{fmt(cos,1)}$.
+
+\begin{figure}[h!]
+\begin{center}
+<<fig=TRUE, height=4, width=6, echo=FALSE, eps=FALSE, results=hide>>=
+op <- par(mar = c(3, 3, 1, 1))
+plot(0, 0, type = 'n', xlim = c(-5, dx + 20), ylim = c(-5, max(dy + 25, 70)), xlab = 'distancia horizontal (m)', ylab = 'altura (m)', axes = TRUE)
+abline(h = 0, col = 'gray50')
+xs <- seq(0, dx, length.out = 100)
+ys <- xs * tan - g * xs^2 / (2 * v0^2 * cos^2)
+lines(xs, ys, lwd = 2)
+points(c(0, dx), c(0, dy), pch = 19, cex = 1.2)
+text(0, -3, 'B', cex = 1.1)
+text(dx, dy + 4, 'A', cex = 1.1)
+arrows(0, 0, 22 * cos, 22 * sen, length = 0.08, lwd = 2)
+text(18, 18, paste0(theta, ' graus'), cex = 0.9)
+arrows(0, -2, dx, -2, length = 0.08, code = 3)
+text(dx/2, -4.5, paste0(dx, ' m'), cex = 0.9)
+arrows(dx + 5, 0, dx + 5, dy, length = 0.08, code = 3)
+text(dx + 10, dy/2, paste0(dy, ' m'), cex = 0.9)
+par(op)
+@
+\end{center}
+\end{figure}
+
+Determine:
+
+\begin{answerlist}
+  \item o componente horizontal da velocidade inicial, em $\mathrm{m/s}$;
+  \item o módulo da velocidade inicial necessária para atingir o alvo, em $\mathrm{m/s}$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+A equação da trajetória de um lançamento oblíquo pode ser escrita como
+\[
+y = x\tan\theta - \frac{g x^2}{2v_0^2\cos^2\theta}.
+\]
+No ponto do alvo, $x=\Sexpr{dx}\,\mathrm{m}$ e $y=\Sexpr{dy}\,\mathrm{m}$. Assim,
+\[
+\Sexpr{dy} = \Sexpr{dx}\cdot\frac{\Sexpr{fmt(sen,1)}}{\Sexpr{fmt(cos,1)}} - \frac{\Sexpr{g}\cdot \Sexpr{dx}^2}{2v_0^2\cdot(\Sexpr{fmt(cos,1)})^2}.
+\]
+Isolando $v_0$,
+\[
+v_0 = \sqrt{\frac{g x^2}{2\cos^2\theta\,(x\tan\theta-y)}}.
+\]
+Substituindo os valores,
+\[
+v_0 = \Sexpr{fmt(v0,1)}\,\mathrm{m/s}.
+\]
+O componente horizontal é
+\[
+v_x = v_0\cos\theta = \Sexpr{fmt(v0,1)}\cdot\Sexpr{fmt(cos,1)}=\Sexpr{fmt(vx,1)}\,\mathrm{m/s}.
+\]
+
+\begin{answerlist}
+  \item $\Sexpr{fmt(vx,1)}\,\mathrm{m/s}$
+  \item $\Sexpr{fmt(v0,1)}\,\mathrm{m/s}$
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{\Sexpr{round(vx, 1)}|\Sexpr{round(v0, 1)}}
+%% \exclozetype{num|num}
+%% \extol{0.1|0.1}
+%% \exname{Q92ClozeLancamentoObliquoCanhao}
+%% \exsection{Mecanica; Lancamento obliquo; ENEM}
+%% \exusepackage[utf8]{inputenc}
