@@ -54,6 +54,10 @@ ui <- fluidPage(
       "    if(window.MathJax && MathJax.typesetPromise){MathJax.typesetPromise();}",
       "  }, 120);",
       "});")),
+    tags$script(HTML(
+      "Shiny.addCustomMessageHandler('fontScale', function(x){",
+      "  document.documentElement.style.setProperty('--bf-font-scale', x);",
+      "});")),
     includeCSS("www/styles.css")
   ),
   titlePanel("BancoFisica — Pré-visualização Moodle"),
@@ -77,6 +81,9 @@ ui <- fluidPage(
       conditionalPanel("input.modo == 'upload'",
         fileInput("up_xml", "Enviar .xml", accept = ".xml"),
         numericInput("limite_u", "Máx. de questões", value = 50, min = 1)),
+      tags$hr(),
+      sliderInput("font_scale", "Tamanho da fonte:",
+                  min = 90, max = 180, value = 120, step = 5, post = "%"),
       tags$hr(),
       uiOutput("status")
     ),
@@ -156,6 +163,12 @@ server <- function(input, output, session) {
   })
 
   cur <- reactive({ req(rv$questoes); rv$questoes[[rv$idx]] })
+
+  observe({
+    escala <- input$font_scale
+    if (is.null(escala) || is.na(escala)) escala <- 120
+    session$sendCustomMessage("fontScale", escala / 100)
+  })
 
   ## Navegação
   output$nav <- renderUI({
