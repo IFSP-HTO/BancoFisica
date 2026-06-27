@@ -84,8 +84,8 @@ function render() {
     return;
   }
 
-  filtered.forEach((question) => {
-    elements.catalog.appendChild(renderQuestion(question));
+  filtered.forEach((question, index) => {
+    elements.catalog.appendChild(renderQuestion(question, index));
   });
 
   if (window.MathJax?.typesetPromise) {
@@ -112,7 +112,7 @@ function matchesFilters(question) {
   );
 }
 
-function renderQuestion(question) {
+function renderQuestion(question, index) {
   const fragment = elements.template.content.cloneNode(true);
   const card = fragment.querySelector('.question-card');
   const title = fragment.querySelector('h2');
@@ -130,7 +130,7 @@ function renderQuestion(question) {
   meta.textContent = `${question.area} · ${question.subject} · ${question.level}`;
   body.innerHTML = question.statementHtml;
   solution.innerHTML = question.solutionHtml;
-  moodlePreview.innerHTML = renderMoodlePreview(question);
+  moodlePreview.innerHTML = renderMoodlePreview(question, index);
 
   (question.tags || []).forEach((tag) => {
     const item = document.createElement('span');
@@ -142,27 +142,65 @@ function renderQuestion(question) {
   return fragment;
 }
 
-function renderMoodlePreview(question) {
+function renderMoodlePreview(question, index) {
+  const number = index + 1;
+
   return `
-    <section class="moodle-card" aria-label="Preview estilo Moodle de ${escapeHtml(question.title)}">
-      <div class="moodle-toolbar">
-        <span class="moodle-pill">Simulação</span>
-        <span class="moodle-context">${escapeHtml(question.level)} · ${escapeHtml(question.subject)}</span>
-      </div>
-      <div class="moodle-question">
-        <div class="moodle-number" aria-hidden="true">Q</div>
-        <div class="moodle-content">
-          <p class="moodle-label">Enunciado da questão</p>
-          <div class="moodle-statement">${question.statementHtml}</div>
+    <section class="moodle-card moodle-attempt" aria-label="Preview estilo Moodle de ${escapeHtml(question.title)}">
+      <div class="moodle-attempt-header">
+        <div>
+          <span class="moodle-crumb">Página inicial / BancoFisica / Questionário demonstrativo</span>
+          <h3>Pré-visualização da questão demonstrativa</h3>
         </div>
+        <span class="moodle-pill">Simulação visual</span>
       </div>
-      <div class="moodle-feedback">
-        <p class="moodle-label">Feedback / solução demonstrativa</p>
-        <div>${question.solutionHtml}</div>
+
+      <div class="moodle-attempt-layout">
+        <article class="moodle-attempt-main">
+          <header class="moodle-question-header">
+            <div>
+              <p class="moodle-question-title">Questão ${number}</p>
+              <p class="moodle-question-state">Ainda não respondida</p>
+            </div>
+            <div class="moodle-question-tools">
+              <span>Vale 1,00 ponto(s)</span>
+              <button class="moodle-flag" type="button" aria-label="Marcar questão demonstrativa">⚑ Marcar questão</button>
+            </div>
+          </header>
+
+          <div class="moodle-question-body">
+            <div class="moodle-number" aria-hidden="true">${number}</div>
+            <div class="moodle-content">
+              <p class="moodle-label">Texto da questão</p>
+              <div class="moodle-statement">${question.statementHtml}</div>
+              <div class="moodle-actions-row" aria-hidden="true">
+                <button class="moodle-check" type="button">Verificar</button>
+                <button class="moodle-next" type="button">Próxima página</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="moodle-feedback">
+            <p class="moodle-label">Feedback</p>
+            <div>${question.solutionHtml}</div>
+          </div>
+        </article>
+
+        <aside class="moodle-navigation" aria-label="Navegação simulada do questionário">
+          <h4>Navegação do questionário</h4>
+          <div class="moodle-nav-grid">
+            <span class="moodle-nav-item current">${number}</span>
+            <span class="moodle-nav-item">2</span>
+            <span class="moodle-nav-item">3</span>
+          </div>
+          <p class="moodle-nav-status">Questão atual: ${escapeHtml(question.subject)}</p>
+          <button class="moodle-finish" type="button">Terminar tentativa...</button>
+        </aside>
       </div>
+
       <p class="moodle-note">
-        Esta é uma simulação visual para divulgação. Não é uma cópia exata da interface do Moodle
-        nem uma exportação XML avaliativa.
+        Esta é uma simulação visual inspirada em uma tentativa de quiz. Não é uma cópia exata da interface do Moodle,
+        não usa tema oficial e não exporta XML avaliativo.
       </p>
     </section>
   `;
