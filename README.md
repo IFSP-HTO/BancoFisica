@@ -35,7 +35,7 @@ Depois basta entrar na pasta e você encontra o código para todas as questões 
 
 ### Moodle
 
-Os arquivos Moodle XML são artefatos gerados a partir das questões-fonte em `BancoDeQuestoes/**/*.Rnw`. O pacote estruturado mais recente é criado automaticamente pelo workflow **Moodle XML artifacts** no GitHub Actions e publicado como artifact `moodle-xml-structured`.
+Os arquivos Moodle XML são artefatos gerados a partir das questões-fonte em `BancoDeQuestoes/**/*.Rnw`. O pacote estruturado mais recente é criado automaticamente pelo workflow **Moodle XML artifacts** no GitHub Actions e publicado como artifact `moodle-xml-structured`. Em pushes para `master`, o workflow gera 1 variante por questão para manter o artefato rápido; para gerar mais variantes, execute o workflow manualmente e ajuste o campo `variants`.
 
 Para baixar:
 

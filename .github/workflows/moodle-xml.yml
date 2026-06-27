@@ -35,7 +35,7 @@ jobs:
       R_KEEP_PKG_SOURCE: yes
       NOT_CRAN: true
       XML_SEED: ${{ github.event.inputs.seed || '1' }}
-      XML_VARIANTS: ${{ github.event.inputs.variants || '100' }}
+      XML_VARIANTS: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.variants || '1' }}
 
     steps:
       - name: Checkout repository
