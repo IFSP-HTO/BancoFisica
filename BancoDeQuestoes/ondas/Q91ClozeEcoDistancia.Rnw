@@ -1,0 +1,53 @@
+<<echo=FALSE, results=hide>>=
+## Questão estilo ENEM: eco e distância.
+
+v <- 340 # m/s
+t <- sample(c(0.4, 0.6, 0.8, 1.0, 1.2), 1)
+d <- v * t / 2
+fmt <- function(x, d = 1) formatC(x, format = "f", digits = d, decimal.mark = ",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Uma pessoa emite um som curto diante de uma parede e ouve o eco depois de $\Sexpr{fmt(t,1)}\,\mathrm{s}$. Considere que a velocidade do som no ar é $\Sexpr{v}\,\mathrm{m/s}$.
+
+Determine:
+
+\begin{answerlist}
+  \item a distância total percorrida pelo som até a pessoa ouvir o eco, em metros;
+  \item a distância entre a pessoa e a parede, em metros.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+O intervalo de tempo medido corresponde ao percurso de ida e volta do som. A distância total percorrida pelo som é
+\[
+s = vt.
+\]
+Substituindo os valores,
+\[
+s=\Sexpr{v}\cdot\Sexpr{fmt(t,1)}=\Sexpr{fmt(v*t,1)}\,\mathrm{m}.
+\]
+Como essa distância corresponde à ida e à volta, a distância entre a pessoa e a parede é a metade:
+\[
+d = \frac{s}{2}=\frac{\Sexpr{fmt(v*t,1)}}{2}=\Sexpr{fmt(d,1)}\,\mathrm{m}.
+\]
+
+\begin{answerlist}
+  \item $\Sexpr{fmt(v*t,1)}\,\mathrm{m}$
+  \item $\Sexpr{fmt(d,1)}\,\mathrm{m}$
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{\Sexpr{round(v*t, 1)}|\Sexpr{round(d, 1)}}
+%% \exclozetype{num|num}
+%% \extol{0.1|0.1}
+%% \exname{Q91ClozeEcoDistancia}
+%% \exsection{Ondulatoria; Som; Eco}
+%% \exusepackage[utf8]{inputenc}
