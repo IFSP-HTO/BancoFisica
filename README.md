@@ -35,25 +35,40 @@ Depois basta entrar na pasta e você encontra o código para todas as questões 
 
 ### Moodle
 
-Caso queira simplesmente utilizar as questões prontas no Moodle, você pode baixar o arquivo [XML.zip](https://github.com/IFSP-HTO/BancoFisica/blob/master/Moodle/XML.zip) em uma pasta do seu computador e descompactar. Você vai encontrar os arquivos em XML compilados para todas as questões disponíveis no banco. Há um arquivo para cada assunto.
+Os arquivos Moodle XML são artefatos gerados a partir das questões-fonte em `BancoDeQuestoes/**/*.Rnw`. O pacote estruturado mais recente é criado automaticamente pelo workflow **Moodle XML artifacts** no GitHub Actions e publicado como artifact `moodle-xml-structured`.
+
+Para baixar:
+
+1. Acesse a aba [Actions](https://github.com/IFSP-HTO/BancoFisica/actions).
+2. Abra a execução mais recente do workflow **Moodle XML artifacts**.
+3. Baixe o artifact `moodle-xml-structured`.
+4. Descompacte o arquivo e importe no Moodle os XMLs do assunto desejado.
+
+O pacote segue a mesma organização de `BancoDeQuestoes`, gerando um XML por diretório de questões. Por exemplo:
 
 ```text
-XML
-    ├── acel-12018.xml
-    ├── calorimetria-12018.xml
-    ├── calortemp-12018.xml
-    ├── dilatterm-12018.xml
-    ├── estatica-12018.xml
-    ├── hidrostatica-12019.xml
-    ├── leidosgases-12018.xml
-    ├── leisdenewton-12018.xml
-    ├── movcircular-12018.xml
-    ├── MU-12018.xml
-    ├── ondas-12018.xml
-    ├── optica-12018.xml
-    ├── termodinamica-12018.xml
-    └── trabalhopotencia-12018.xml
+build/moodle-xml
+    ├── acel-1.xml
+    ├── calorimetria-1.xml
+    ├── cinematica
+    │   ├── mcu-1.xml
+    │   ├── mu-1.xml
+    │   └── lancamentos-1.xml
+    ├── eletromagnetismo
+    │   └── eletrostatica-1.xml
+    ├── leisdenewton
+    │   └── atrito-1.xml
+    ├── manifest.csv
+    └── XML.zip
 ```
+
+O arquivo `manifest.csv` lista o assunto, o diretório-fonte, o XML gerado e a quantidade de questões exportadas. O script usado pelo workflow também pode ser executado localmente:
+
+```text
+Rscript tools/generate_moodle_xml.R --seed 1 --n 100 --layout structured --out-dir Moodle/generated --zip --check
+```
+
+Os XMLs legados versionados em `Moodle/*.xml` continuam disponíveis no repositório por compatibilidade, mas novas correções devem ser feitas preferencialmente nos `.Rnw` e regeneradas pelo workflow.
 
 #### Baixando
 
