@@ -13,6 +13,25 @@ library(xml2)
          paste0("image/", ext))
 }
 
+.resolver_imagem_local <- function(nome, img_dir = NULL) {
+  candidatos <- character(0)
+  if (!is.null(img_dir)) {
+    candidatos <- c(candidatos, file.path(img_dir, nome))
+  }
+
+  root <- if (exists("ROOT", inherits = TRUE)) get("ROOT", inherits = TRUE) else getwd()
+  banco <- file.path(root, "BancoDeQuestoes")
+  if (dir.exists(banco)) {
+    achados <- list.files(banco, recursive = TRUE, full.names = TRUE)
+    achados <- achados[basename(achados) == nome]
+    candidatos <- c(candidatos, achados)
+  }
+
+  candidatos <- candidatos[file.exists(candidatos)]
+  if (length(candidatos) == 0) return(NA_character_)
+  candidatos[1]
+}
+
 .embutir_imagens <- function(html, qnode, img_dir = NULL) {
   ## 1) supplements embutidos no próprio XML (<file> base64 + @@PLUGINFILE@@)
   arquivos <- xml_find_all(qnode, ".//file")
@@ -35,11 +54,10 @@ library(xml2)
     if (grepl("^(data:|https?:)", val)) next
     nome <- basename(trimws(gsub("[{}]", "", val)))
     novo <- nome
-    if (!is.null(img_dir)) {
-      cam <- file.path(img_dir, nome)
-      if (file.exists(cam))
-        novo <- paste0("data:", .mime_de(nome), ";base64,",
-                       base64enc::base64encode(cam))
+    cam <- .resolver_imagem_local(nome, img_dir)
+    if (!is.na(cam)) {
+      novo <- paste0("data:", .mime_de(nome), ";base64,",
+                     base64enc::base64encode(cam))
     }
     html <- gsub(s, paste0('src="', novo, '"'), html, fixed = TRUE)
   }

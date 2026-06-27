@@ -1,0 +1,95 @@
+<<echo=FALSE, results=hide>>=
+## Inspirada no ENEM 2022 Q110
+## Física central: lançamento horizontal e lançamento vertical.
+
+g <- 10
+h <- sample(c(0.80, 1.25, 1.80, 2.45), 1)
+x <- sample(c(2.0, 2.5, 3.0, 3.5), 1)
+t <- sqrt(2 * h / g)
+v <- x / t
+H <- v^2 / (2 * g)
+fmt <- function(x, d = 2) formatC(x, format = "f", digits = d, decimal.mark = ",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Uma mangueira está inicialmente na horizontal, com a saída de água a $\Sexpr{fmt(h,2)}\,\mathrm{m}$ do solo. Nessas condições, o jato de água atinge o chão a uma distância horizontal de $\Sexpr{fmt(x,1)}\,\mathrm{m}$ da saída. Em seguida, mantendo a mesma velocidade de saída da água, a mangueira é apontada verticalmente para cima. Despreze a resistência do ar e adote $g=\Sexpr{g}\,\mathrm{m/s^2}$.
+
+\begin{figure}[h!]
+\begin{center}
+<<fig=TRUE, height=3.8, width=7, echo=FALSE, eps=FALSE, results=hide>>=
+op <- par(mfrow = c(1, 2), mar = c(3, 3, 2, 1))
+plot(0, 0, type = 'n', xlim = c(-0.2, x + 0.7), ylim = c(0, max(h + 0.5, H + 0.5)), xlab = 'distancia horizontal (m)', ylab = 'altura (m)', main = 'Mangueira horizontal')
+abline(h = 0, col = 'gray50')
+segments(0, 0, 0, h, lwd = 3)
+points(0, h, pch = 19)
+xs <- seq(0, x, length.out = 100)
+ys <- h - g * xs^2 / (2 * v^2)
+lines(xs, ys, lwd = 2)
+arrows(0, h, 0.6, h, length = 0.08, lwd = 2)
+arrows(0, -0.05, x, -0.05, length = 0.08, code = 3)
+text(x/2, 0.10, paste0(x, ' m'), cex = 0.9)
+arrows(-0.08, 0, -0.08, h, length = 0.08, code = 3)
+text(0.16, h/2, paste0(h, ' m'), cex = 0.9)
+plot(0, 0, type = 'n', xlim = c(-1, 1), ylim = c(0, H + 0.7), xlab = '', ylab = 'altura (m)', main = 'Mangueira vertical', axes = TRUE)
+abline(h = 0, col = 'gray50')
+segments(0, 0, 0, 0.35, lwd = 3)
+arrows(0, 0.35, 0, min(H, H + 0.2), length = 0.08, lwd = 2)
+arrows(0.25, 0, 0.25, H, length = 0.08, code = 3)
+text(0.45, H/2, 'H', cex = 1.2)
+points(0, H, pch = 19)
+par(op)
+@
+\end{center}
+\end{figure}
+
+Determine:
+
+\begin{answerlist}
+  \item o tempo de queda do jato na situação horizontal, em segundos;
+  \item a velocidade de saída da água, em $\mathrm{m/s}$;
+  \item a altura máxima $H$ atingida quando a mangueira é apontada verticalmente, em metros.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Na situação horizontal, o movimento vertical é uma queda livre com velocidade vertical inicial nula:
+\[
+h = \frac{gt^2}{2}.
+\]
+Logo,
+\[
+t = \sqrt{\frac{2h}{g}} = \sqrt{\frac{2\cdot\Sexpr{fmt(h,2)}}{\Sexpr{g}}}=\Sexpr{fmt(t,2)}\,\mathrm{s}.
+\]
+Na horizontal, o movimento é uniforme:
+\[
+v = \frac{x}{t}=\frac{\Sexpr{fmt(x,1)}}{\Sexpr{fmt(t,2)}}=\Sexpr{fmt(v,2)}\,\mathrm{m/s}.
+\]
+Com a mangueira apontada para cima, a altura máxima é obtida de
+\[
+v^2 = 2gH.
+\]
+Portanto,
+\[
+H = \frac{v^2}{2g}=\frac{(\Sexpr{fmt(v,2)})^2}{2\cdot\Sexpr{g}}=\Sexpr{fmt(H,2)}\,\mathrm{m}.
+\]
+
+\begin{answerlist}
+  \item $\Sexpr{fmt(t,2)}\,\mathrm{s}$
+  \item $\Sexpr{fmt(v,2)}\,\mathrm{m/s}$
+  \item $\Sexpr{fmt(H,2)}\,\mathrm{m}$
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{\Sexpr{round(t, 2)}|\Sexpr{round(v, 2)}|\Sexpr{round(H, 2)}}
+%% \exclozetype{num|num|num}
+%% \extol{0.03|0.05|0.05}
+%% \exname{Q93ClozeJatoAguaHorizontal}
+%% \exsection{Mecanica; Lancamento horizontal; ENEM}
+%% \exusepackage[utf8]{inputenc}

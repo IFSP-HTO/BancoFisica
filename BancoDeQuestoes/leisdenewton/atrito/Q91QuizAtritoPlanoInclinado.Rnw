@@ -1,0 +1,110 @@
+<<echo=FALSE, results=hide>>=
+## Inspirada no ENEM 2025 Q103
+## Física central: atrito em piso horizontal e plano inclinado.
+
+m <- sample(c(20, 30, 40, 50), 1)
+mu <- sample(c(0.20, 0.25, 0.30), 1)
+g <- 10
+theta <- sample(c(30, 37, 45), 1)
+cos_theta <- round(cos(theta * pi / 180), 2)
+f_piso <- mu * m * g
+f_rampa <- mu * m * g * cos(theta * pi / 180)
+alternativas <- paste('Gráfico', LETTERS[1:5])
+solutions <- c(TRUE, FALSE, FALSE, FALSE, FALSE)
+fmt <- function(x, d = 1) formatC(x, format = "f", digits = d, decimal.mark = ",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Uma caixa é arrastada lentamente do primeiro piso para o segundo piso de uma construção, passando por um plano inclinado. A caixa permanece em movimento durante todo o percurso. Considere que o coeficiente de atrito entre a caixa e a superfície é o mesmo no piso horizontal e no plano inclinado.
+
+No piso horizontal, a força normal é $N=mg$. No plano inclinado, a força normal é menor e vale $N=mg\cos\theta$. Portanto, a força de atrito tem comportamento diferente nos trechos horizontais e no trecho inclinado.
+
+\begin{figure}[h!]
+\begin{center}
+<<fig=TRUE, height=6.2, width=6, echo=FALSE, eps=FALSE, results=hide>>=
+op <- par(mfrow = c(3, 2), mar = c(2.2, 2.8, 2.0, 0.8))
+# esquema do percurso
+plot(0, 0, type = 'n', xlim = c(0, 10), ylim = c(0, 4.5), axes = FALSE, xlab = '', ylab = '', main = 'Percurso da caixa')
+segments(0.8, 1, 3.3, 1, lwd = 2)
+segments(3.3, 1, 6.5, 3, lwd = 2)
+segments(6.5, 3, 9.2, 3, lwd = 2)
+rect(1.5, 1.05, 2.1, 1.55, lwd = 2)
+rect(4.6, 2.0, 5.2, 2.5, lwd = 2)
+rect(7.4, 3.05, 8.0, 3.55, lwd = 2)
+text(1.9, 0.55, '1o piso', cex = 0.8)
+text(4.8, 1.45, 'plano inclinado', cex = 0.8)
+text(7.7, 2.55, '2o piso', cex = 0.8)
+text(5, 4.15, 'mesma rugosidade', cex = 0.9)
+# funcao auxiliar para graficos
+painel <- function(letra, y) {
+  plot(0, 0, type = 'n', xlim = c(0, 3), ylim = c(0, 1.3), axes = FALSE, xlab = '', ylab = '', main = paste('Grafico', letra))
+  arrows(0.2, 0.15, 2.8, 0.15, length = 0.07, lwd = 1.5)
+  arrows(0.2, 0.15, 0.2, 1.15, length = 0.07, lwd = 1.5)
+  text(2.55, 0.02, 'tempo', cex = 0.75)
+  text(0.02, 0.95, 'atrito', cex = 0.75, srt = 90)
+  lines(c(0.35, 1.2, 1.7, 2.55), y, lwd = 3)
+}
+painel('A', c(1.0, 0.55, 1.0, 1.0))
+painel('B', c(0.55, 1.0, 0.55, 0.55))
+painel('C', c(0.8, 0.8, 0.8, 0.8))
+painel('D', c(1.0, 1.0, 0.55, 0.25))
+painel('E', c(0.35, 1.0, 0.75, 0.35))
+par(op)
+@
+\end{center}
+\end{figure}
+
+Qual gráfico representa melhor a intensidade da força de atrito sobre a caixa ao longo do tempo?
+
+<<echo=FALSE, results=tex>>=
+answerlist(alternativas)
+@
+
+\end{question}
+
+\begin{solution}
+
+A força de atrito cinético tem módulo
+\[
+f = \mu N.
+\]
+Nos pisos horizontais,
+\[
+N = mg.
+\]
+Logo,
+\[
+f_{\mathrm{piso}} = \mu mg.
+\]
+Com os valores sorteados,
+\[
+f_{\mathrm{piso}} = \Sexpr{fmt(mu,2)}\cdot\Sexpr{m}\cdot\Sexpr{g}=\Sexpr{fmt(f_piso,1)}\,\mathrm{N}.
+\]
+No plano inclinado, a normal é menor:
+\[
+N = mg\cos\theta.
+\]
+Assim,
+\[
+f_{\mathrm{rampa}} = \mu mg\cos\theta.
+\]
+Como $\cos\theta<1$, a força de atrito no plano inclinado é menor que nos trechos horizontais:
+\[
+f_{\mathrm{rampa}} = \Sexpr{fmt(mu,2)}\cdot\Sexpr{m}\cdot\Sexpr{g}\cdot\Sexpr{fmt(cos_theta,2)}\approx\Sexpr{fmt(f_rampa,1)}\,\mathrm{N}.
+\]
+Portanto, o gráfico deve começar em um valor maior no primeiro piso, diminuir durante o plano inclinado e voltar ao valor maior no segundo piso.
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(solutions, paste0('\\textbf{', alternativas, '}'), alternativas))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q91QuizAtritoPlanoInclinado}
+%% \exsection{Mecanica; Atrito; Plano inclinado; ENEM}
+%% \exusepackage[utf8]{inputenc}

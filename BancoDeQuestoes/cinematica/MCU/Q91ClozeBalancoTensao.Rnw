@@ -1,0 +1,66 @@
+<<echo=FALSE, results=hide>>=
+## Inspirada no ENEM 2022 Q91
+## Física central: movimento circular, energia e tensão em duas cordas.
+
+m <- sample(c(16, 20, 24, 28, 32), 1)
+g <- 10
+T_total <- 3 * m * g
+T_corda <- T_total / 2
+T_ruptura <- 1.25 * T_corda
+fmt <- function(x, d = 1) formatC(x, format = "f", digits = d, decimal.mark = ",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Um balanço é construído com dois segmentos paralelos e iguais de uma mesma corda, sustentando uma tábua. Para dimensionar a corda, considera-se a situação em que uma criança de massa $\Sexpr{m}\,\mathrm{kg}$ passa pelo ponto mais baixo da trajetória. O balanço é solto de uma posição em que as cordas fazem ângulo de $90^\circ$ com a vertical. Despreze forças dissipativas e adote $g=\Sexpr{g}\,\mathrm{m/s^2}$.
+
+Por segurança, a tensão de ruptura de cada segmento de corda deve ser $25\%$ maior que a tensão máxima calculada em cada corda. Qual deve ser a tensão de ruptura mínima de cada segmento de corda, em newtons?
+
+\end{question}
+
+\begin{solution}
+
+Ao sair da posição horizontal e chegar ao ponto mais baixo, a criança desce uma altura igual ao comprimento $L$ das cordas. Pela conservação de energia,
+\[
+mgL = \frac{mv^2}{2}.
+\]
+Logo,
+\[
+v^2 = 2gL.
+\]
+No ponto mais baixo, a resultante radial é centrípeta. Como existem duas cordas, a soma das tensões nos dois segmentos deve satisfazer
+\[
+2T - mg = \frac{mv^2}{L}.
+\]
+Substituindo $v^2=2gL$,
+\[
+2T - mg = 2mg,
+\]
+\[
+2T = 3mg.
+\]
+Assim, a tensão em cada corda é
+\[
+T = \frac{3mg}{2}.
+\]
+Para $m=\Sexpr{m}\,\mathrm{kg}$ e $g=\Sexpr{g}\,\mathrm{m/s^2}$,
+\[
+T = \frac{3\cdot \Sexpr{m}\cdot \Sexpr{g}}{2}=\Sexpr{fmt(T_corda,1)}\,\mathrm{N}.
+\]
+Como a tensão de ruptura deve ser $25\%$ maior,
+\[
+T_{\mathrm{ruptura}} = 1{,}25T = 1{,}25\cdot\Sexpr{fmt(T_corda,1)}=\Sexpr{fmt(T_ruptura,1)}\,\mathrm{N}.
+\]
+
+Portanto, a tensão de ruptura mínima de cada segmento é $\Sexpr{fmt(T_ruptura,1)}\,\mathrm{N}$.
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{round(T_ruptura, 1)}}
+%% \extol{0.1}
+%% \exname{Q91ClozeBalancoTensao}
+%% \exsection{Mecanica; Movimento circular; Tensao; ENEM}
+%% \exusepackage[utf8]{inputenc}

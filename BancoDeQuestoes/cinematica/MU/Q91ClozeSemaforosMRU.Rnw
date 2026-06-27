@@ -1,0 +1,92 @@
+<<echo=FALSE, results=hide>>=
+## Inspirada no ENEM 2020 Q122
+## Física central: aceleração, MRU e sincronização de semáforos.
+
+a <- 2
+v_kmh <- 72
+v <- v_kmh / 3.6
+OA <- v^2 / (2 * a)
+tA <- v / a
+Delta_t <- sample(c(12, 15, 18, 20), 1)
+d <- v * Delta_t
+fmt <- function(x, d = 1) formatC(x, format = "f", digits = d, decimal.mark = ",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Um carro parte do repouso no ponto $O$ e acelera uniformemente até atingir $\Sexpr{v_kmh}\,\mathrm{km/h}$ exatamente ao passar pelo semáforo $A$. A partir desse ponto, mantém velocidade constante. Os semáforos $A$, $B$ e $C$ devem ser sincronizados de modo que, após passar por $A$, o carro leve sempre $\Sexpr{Delta_t}\,\mathrm{s}$ para chegar ao semáforo seguinte. Considere que $O$ está a $\Sexpr{fmt(OA,0)}\,\mathrm{m}$ de $A$.
+
+\begin{figure}[h!]
+\begin{center}
+<<fig=TRUE, height=3.4, width=7, echo=FALSE, eps=FALSE, results=hide>>=
+op <- par(mar = c(2.5, 1, 1, 1))
+plot(0, 0, type = 'n', xlim = c(-15, 3*d + 25), ylim = c(-1.2, 1.5), axes = FALSE, xlab = '', ylab = '')
+abline(h = 0, lwd = 2)
+pos <- c(0, OA, OA + d, OA + 2*d)
+lab <- c('O', 'A', 'B', 'C')
+points(pos, rep(0, 4), pch = 19, cex = 1.4)
+text(pos, rep(-0.25, 4), lab, cex = 1.2)
+for(i in 2:4) {
+  segments(pos[i], 0, pos[i], 0.8, lwd = 2)
+  rect(pos[i] - 4, 0.8, pos[i] + 4, 1.35, lwd = 2)
+  points(rep(pos[i], 3), c(0.92, 1.08, 1.24), pch = 1, cex = 0.8)
+}
+arrows(pos[1], -0.55, pos[2], -0.55, length = 0.08, code = 3)
+text(mean(pos[1:2]), -0.78, paste0(OA, ' m'), cex = 0.9)
+arrows(pos[2], -0.55, pos[3], -0.55, length = 0.08, code = 3)
+text(mean(pos[2:3]), -0.78, 'd', cex = 1.1)
+arrows(pos[3], -0.55, pos[4], -0.55, length = 0.08, code = 3)
+text(mean(pos[3:4]), -0.78, 'd', cex = 1.1)
+arrows(8, 0.35, 55, 0.35, length = 0.08, lwd = 2)
+text(30, 0.55, 'acelera', cex = 0.9)
+arrows(OA + 10, 0.35, OA + 90, 0.35, length = 0.08, lwd = 2)
+text(OA + 50, 0.55, 'velocidade constante', cex = 0.9)
+par(op)
+@
+\end{center}
+\end{figure}
+
+Determine:
+
+\begin{answerlist}
+  \item o tempo para o carro ir de $O$ até $A$, em segundos;
+  \item a distância $d$ entre semáforos consecutivos, em metros.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+A velocidade final, em unidades do Sistema Internacional, é
+\[
+v = \frac{\Sexpr{v_kmh}}{3{,}6}=\Sexpr{fmt(v,1)}\,\mathrm{m/s}.
+\]
+Na fase acelerada, como o carro parte do repouso,
+\[
+v = at.
+\]
+Logo,
+\[
+t_A = \frac{v}{a}=\frac{\Sexpr{fmt(v,1)}}{\Sexpr{a}}=\Sexpr{fmt(tA,1)}\,\mathrm{s}.
+\]
+Após passar por $A$, o movimento é uniforme. Se o intervalo entre semáforos deve ser $\Sexpr{Delta_t}\,\mathrm{s}$, então
+\[
+d = v\Delta t = \Sexpr{fmt(v,1)}\cdot \Sexpr{Delta_t}=\Sexpr{fmt(d,1)}\,\mathrm{m}.
+\]
+
+\begin{answerlist}
+  \item $\Sexpr{fmt(tA,1)}\,\mathrm{s}$
+  \item $\Sexpr{fmt(d,1)}\,\mathrm{m}$
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{\Sexpr{round(tA, 1)}|\Sexpr{round(d, 1)}}
+%% \exclozetype{num|num}
+%% \extol{0.05|0.1}
+%% \exname{Q91ClozeSemaforosMRU}
+%% \exsection{Mecanica; Movimento uniforme; Cinematica; ENEM}
+%% \exusepackage[utf8]{inputenc}

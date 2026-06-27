@@ -45,7 +45,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>4.4</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{80}{3{,}6}=22.22\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{22.22}{5}=4.4\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(4.4\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -93,7 +99,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>5.1</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{92}{3{,}6}=25.56\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{25.56}{5}=5.1\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(5.1\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -141,7 +153,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>4.4</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{80}{3{,}6}=22.22\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{22.22}{5}=4.4\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(4.4\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -189,7 +207,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>5.1</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{92}{3{,}6}=25.56\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{25.56}{5}=5.1\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(5.1\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -237,7 +261,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>6.7</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{120}{3{,}6}=33.33\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{33.33}{5}=6.7\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(6.7\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -285,7 +315,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>2</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{36}{3{,}6}=10\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{10}{5}=2\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(2\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -333,7 +369,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>2.2</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{40}{3{,}6}=11.11\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{11.11}{5}=2.2\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(2.2\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -381,7 +423,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>5.6</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{100}{3{,}6}=27.78\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{27.78}{5}=5.6\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(5.6\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -429,7 +477,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>4</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{72}{3{,}6}=20\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{20}{5}=4\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(4\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -477,7 +531,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>5.1</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{92}{3{,}6}=25.56\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{25.56}{5}=5.1\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(5.1\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -525,7 +585,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>4</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{72}{3{,}6}=20\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{20}{5}=4\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(4\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -573,7 +639,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>2</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{36}{3{,}6}=10\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{10}{5}=2\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(2\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -621,7 +693,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>2.7</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{48}{3{,}6}=13.33\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{13.33}{5}=2.7\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(2.7\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -669,7 +747,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>4</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{72}{3{,}6}=20\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{20}{5}=4\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(4\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -717,7 +801,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>4.9</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{88}{3{,}6}=24.44\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{24.44}{5}=4.9\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(4.9\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -765,7 +855,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>5.8</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{104}{3{,}6}=28.89\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{28.89}{5}=5.8\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(5.8\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -813,7 +909,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>2</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{36}{3{,}6}=10\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{10}{5}=2\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(2\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -861,7 +963,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>2.2</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{40}{3{,}6}=11.11\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{11.11}{5}=2.2\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(2.2\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -909,7 +1017,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>3.1</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{56}{3{,}6}=15.56\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{15.56}{5}=3.1\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(3.1\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -957,7 +1071,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>2.2</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{40}{3{,}6}=11.11\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{11.11}{5}=2.2\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(2.2\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -1005,7 +1125,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>3.6</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{64}{3{,}6}=17.78\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{17.78}{5}=3.6\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(3.6\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -1053,7 +1179,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>2.4</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{44}{3{,}6}=12.22\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{12.22}{5}=2.4\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(2.4\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -1101,7 +1233,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>3.8</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{68}{3{,}6}=18.89\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{18.89}{5}=3.8\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(3.8\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -1149,7 +1287,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>6.7</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{120}{3{,}6}=33.33\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{33.33}{5}=6.7\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(6.7\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -1197,7 +1341,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>2.2</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{40}{3{,}6}=11.11\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{11.11}{5}=2.2\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(2.2\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -1245,7 +1395,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>6.4</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{116}{3{,}6}=32.22\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{32.22}{5}=6.4\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(6.4\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -1293,7 +1449,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>3.1</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{56}{3{,}6}=15.56\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{15.56}{5}=3.1\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(3.1\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -1341,7 +1503,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>4.4</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{80}{3{,}6}=22.22\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{22.22}{5}=4.4\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(4.4\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -1389,7 +1557,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>2.7</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{48}{3{,}6}=13.33\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{13.33}{5}=2.7\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(2.7\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -1437,7 +1611,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>3.1</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{56}{3{,}6}=15.56\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{15.56}{5}=3.1\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(3.1\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -1485,7 +1665,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>3.8</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{68}{3{,}6}=18.89\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{18.89}{5}=3.8\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(3.8\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -1533,7 +1719,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>4.2</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{76}{3{,}6}=21.11\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{21.11}{5}=4.2\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(4.2\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -1581,7 +1773,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>5.3</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{96}{3{,}6}=26.67\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{26.67}{5}=5.3\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(5.3\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -1629,7 +1827,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>4.2</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{76}{3{,}6}=21.11\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{21.11}{5}=4.2\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(4.2\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -1677,7 +1881,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>4.4</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{80}{3{,}6}=22.22\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{22.22}{5}=4.4\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(4.4\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -1725,7 +1935,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>3.8</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{68}{3{,}6}=18.89\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{18.89}{5}=3.8\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(3.8\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -1773,7 +1989,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>4.7</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{84}{3{,}6}=23.33\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{23.33}{5}=4.7\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(4.7\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -1821,7 +2043,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>2.4</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{44}{3{,}6}=12.22\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{12.22}{5}=2.4\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(2.4\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -1869,7 +2097,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>2.4</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{44}{3{,}6}=12.22\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{12.22}{5}=2.4\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(2.4\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -1917,7 +2151,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>3.6</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{64}{3{,}6}=17.78\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{17.78}{5}=3.6\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(3.6\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -1965,7 +2205,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>6.7</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{120}{3{,}6}=33.33\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{33.33}{5}=6.7\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(6.7\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -2013,7 +2259,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>2.4</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{44}{3{,}6}=12.22\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{12.22}{5}=2.4\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(2.4\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -2061,7 +2313,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>6.4</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{116}{3{,}6}=32.22\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{32.22}{5}=6.4\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(6.4\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -2109,7 +2367,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>2</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{36}{3{,}6}=10\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{10}{5}=2\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(2\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -2157,7 +2421,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>2.7</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{48}{3{,}6}=13.33\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{13.33}{5}=2.7\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(2.7\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -2205,7 +2475,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>2.7</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{48}{3{,}6}=13.33\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{13.33}{5}=2.7\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(2.7\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -2253,7 +2529,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>6.2</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{112}{3{,}6}=31.11\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{31.11}{5}=6.2\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(6.2\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -2301,7 +2583,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>5.3</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{96}{3{,}6}=26.67\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{26.67}{5}=5.3\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(5.3\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -2349,7 +2637,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>2.2</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{40}{3{,}6}=11.11\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{11.11}{5}=2.2\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(2.2\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -2397,7 +2691,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>6</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{108}{3{,}6}=30\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{30}{5}=6\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(6\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -2445,7 +2745,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>4</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{72}{3{,}6}=20\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{20}{5}=4\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(4\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -2493,7 +2799,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>2.4</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{44}{3{,}6}=12.22\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{12.22}{5}=2.4\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(2.4\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -2541,7 +2853,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>2.9</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{52}{3{,}6}=14.44\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{14.44}{5}=2.9\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(2.9\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -2589,7 +2907,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>3.6</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{64}{3{,}6}=17.78\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{17.78}{5}=3.6\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(3.6\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -2637,7 +2961,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>4</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{72}{3{,}6}=20\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{20}{5}=4\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(4\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -2685,7 +3015,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>4.7</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{84}{3{,}6}=23.33\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{23.33}{5}=4.7\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(4.7\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -2733,7 +3069,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>3.8</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{68}{3{,}6}=18.89\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{18.89}{5}=3.8\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(3.8\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -2781,7 +3123,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>3.8</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{68}{3{,}6}=18.89\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{18.89}{5}=3.8\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(3.8\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -2829,7 +3177,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>5.1</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{92}{3{,}6}=25.56\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{25.56}{5}=5.1\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(5.1\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -2877,7 +3231,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>4</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{72}{3{,}6}=20\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{20}{5}=4\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(4\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -2925,7 +3285,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>4.7</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{84}{3{,}6}=23.33\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{23.33}{5}=4.7\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(4.7\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -2973,7 +3339,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>5.1</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{92}{3{,}6}=25.56\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{25.56}{5}=5.1\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(5.1\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -3021,7 +3393,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>3.3</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{60}{3{,}6}=16.67\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{16.67}{5}=3.3\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(3.3\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -3069,7 +3447,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>6.7</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{120}{3{,}6}=33.33\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{33.33}{5}=6.7\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(6.7\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -3117,7 +3501,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>3.1</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{56}{3{,}6}=15.56\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{15.56}{5}=3.1\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(3.1\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -3165,7 +3555,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>6</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{108}{3{,}6}=30\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{30}{5}=6\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(6\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -3213,7 +3609,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>3.6</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{64}{3{,}6}=17.78\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{17.78}{5}=3.6\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(3.6\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -3261,7 +3663,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>3.1</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{56}{3{,}6}=15.56\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{15.56}{5}=3.1\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(3.1\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -3309,7 +3717,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>4.9</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{88}{3{,}6}=24.44\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{24.44}{5}=4.9\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(4.9\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -3357,7 +3771,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>4.7</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{84}{3{,}6}=23.33\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{23.33}{5}=4.7\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(4.7\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -3405,7 +3825,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>3.3</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{60}{3{,}6}=16.67\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{16.67}{5}=3.3\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(3.3\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -3453,7 +3879,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>4.9</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{88}{3{,}6}=24.44\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{24.44}{5}=4.9\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(4.9\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -3501,7 +3933,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>6.7</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{120}{3{,}6}=33.33\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{33.33}{5}=6.7\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(6.7\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -3549,7 +3987,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>6.4</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{116}{3{,}6}=32.22\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{32.22}{5}=6.4\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(6.4\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -3597,7 +4041,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>4.4</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{80}{3{,}6}=22.22\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{22.22}{5}=4.4\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(4.4\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -3645,7 +4095,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>3.3</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{60}{3{,}6}=16.67\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{16.67}{5}=3.3\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(3.3\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -3693,7 +4149,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>4.2</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{76}{3{,}6}=21.11\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{21.11}{5}=4.2\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(4.2\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -3741,7 +4203,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>4.2</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{76}{3{,}6}=21.11\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{21.11}{5}=4.2\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(4.2\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -3789,7 +4257,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>2.2</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{40}{3{,}6}=11.11\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{11.11}{5}=2.2\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(2.2\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -3837,7 +4311,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>4.2</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{76}{3{,}6}=21.11\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{21.11}{5}=4.2\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(4.2\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -3885,7 +4365,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>3.3</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{60}{3{,}6}=16.67\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{16.67}{5}=3.3\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(3.3\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -3933,7 +4419,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>5.1</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{92}{3{,}6}=25.56\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{25.56}{5}=5.1\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(5.1\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -3981,7 +4473,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>2.4</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{44}{3{,}6}=12.22\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{12.22}{5}=2.4\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(2.4\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -4029,7 +4527,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>5.6</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{100}{3{,}6}=27.78\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{27.78}{5}=5.6\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(5.6\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -4077,7 +4581,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>3.1</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{56}{3{,}6}=15.56\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{15.56}{5}=3.1\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(3.1\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -4125,7 +4635,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>2.9</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{52}{3{,}6}=14.44\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{14.44}{5}=2.9\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(2.9\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -4173,7 +4689,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>2.2</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{40}{3{,}6}=11.11\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{11.11}{5}=2.2\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(2.2\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -4221,7 +4743,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>5.6</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{100}{3{,}6}=27.78\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{27.78}{5}=5.6\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(5.6\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -4269,7 +4797,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>2.4</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{44}{3{,}6}=12.22\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{12.22}{5}=2.4\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(2.4\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -4317,7 +4851,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>2.7</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{48}{3{,}6}=13.33\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{13.33}{5}=2.7\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(2.7\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -4365,7 +4905,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>2.4</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{44}{3{,}6}=12.22\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{12.22}{5}=2.4\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(2.4\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -4413,7 +4959,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>4</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{72}{3{,}6}=20\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{20}{5}=4\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(4\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -4461,7 +5013,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>4.7</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{84}{3{,}6}=23.33\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{23.33}{5}=4.7\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(4.7\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -4509,7 +5067,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>3.3</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{60}{3{,}6}=16.67\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{16.67}{5}=3.3\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(3.3\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -4557,7 +5121,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>2.2</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{40}{3{,}6}=11.11\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{11.11}{5}=2.2\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(2.2\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -4605,7 +5175,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>3.3</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{60}{3{,}6}=16.67\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{16.67}{5}=3.3\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(3.3\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -4653,7 +5229,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>6.7</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{120}{3{,}6}=33.33\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{33.33}{5}=6.7\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(6.7\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -4701,7 +5283,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>4.4</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{80}{3{,}6}=22.22\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{22.22}{5}=4.4\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(4.4\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -4749,7 +5337,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>2.4</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{44}{3{,}6}=12.22\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{12.22}{5}=2.4\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(2.4\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>
@@ -4797,7 +5391,13 @@ Determine o módulo da aceleração em <span class="math inline">\(m/s^2\)</span
 </questiontext>
 <generalfeedback format="html">
 <text><![CDATA[<p>
-<p>6.2</p>
+<p>Primeiro convertemos a velocidade inicial para o Sistema Internacional:
+<span class="math display">\[v_0 = \frac{112}{3{,}6}=31.11\,\mathrm{m/s}.\]</span></p>
+<p>Como o automóvel para, sua velocidade final é <span class="math inline">\(v=0\)</span>. O módulo da aceleração média em um movimento com aceleração constante é
+<span class="math display">\[|a| = \frac{|\Delta v|}{\Delta t}.\]</span></p>
+<p>Assim,
+<span class="math display">\[|a| = \frac{31.11}{5}=6.2\,\mathrm{m/s^2}.\]</span></p>
+<p>Portanto, o módulo da aceleração é <span class="math inline">\(6.2\,\mathrm{m/s^2}\)</span>.</p>
 </p>]]></text>
 </generalfeedback>
 <penalty>0</penalty>

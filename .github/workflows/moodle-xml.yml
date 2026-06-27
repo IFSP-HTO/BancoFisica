@@ -1,0 +1,73 @@
+name: Moodle XML artifacts
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - "BancoDeQuestoes/**"
+      - "Moodle/ExerciciosParaMoodle.R"
+      - "tools/generate_moodle_xml.R"
+      - ".github/workflows/moodle-xml.yml"
+  workflow_dispatch:
+    inputs:
+      seed:
+        description: "Seed used for deterministic variants"
+        required: false
+        default: "1"
+      variants:
+        description: "Variants per source question"
+        required: false
+        default: "100"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: moodle-xml-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    env:
+      R_KEEP_PKG_SOURCE: yes
+      NOT_CRAN: true
+      XML_SEED: ${{ github.event.inputs.seed || '1' }}
+      XML_VARIANTS: ${{ github.event.inputs.variants || '100' }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Pandoc
+        uses: r-lib/actions/setup-pandoc@v2
+
+      - name: Setup R
+        uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: '4.4.3'
+          use-public-rspm: true
+
+      - name: Install R dependencies
+        uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          cache-version: moodle-xml-1
+          dependencies: '"all"'
+
+      - name: Generate structured Moodle XML package
+        run: |
+          Rscript tools/generate_moodle_xml.R \
+            --seed "$XML_SEED" \
+            --n "$XML_VARIANTS" \
+            --layout structured \
+            --out-dir build/moodle-xml \
+            --zip \
+            --check
+
+      - name: Upload Moodle XML package
+        uses: actions/upload-artifact@v4
+        with:
+          name: moodle-xml-structured
+          path: build/moodle-xml
