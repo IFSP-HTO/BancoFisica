@@ -15,6 +15,37 @@ resp <- round(((0.01*(h1+h2)*d/h1))**2, digits = 2)
 
 (Cescea-SP) Entre uma fonte pontual e um anteparo, coloca-se um objeto opaco de forma quadrada e de \Sexpr{d} cm de lado. A fonte e o centro da placa estão numa mesma reta  que,  por  sua  vez,  é  perpendicular  ao  anteparo. O objeto encontra-se a \Sexpr{h1} m da fonte e a \Sexpr{h2} m do anteparo. Determine a área da sombra do objeto produzida no anteparo, em $m^2$. \textit{Caso necessário, arrendonde sua resposta para 2 casas decimais}
 
+\begin{figure}[h!]
+\begin{center}
+<<fig=TRUE, height=3.8, width=6.5, echo=FALSE, eps=FALSE, results=hide>>=
+op <- par(mar = c(1.8, 0.5, 2, 0.5))
+x_fonte <- 0
+x_obj <- h1
+x_ant <- h1 + h2
+obj_disp <- 0.45
+sombra_disp <- obj_disp * x_ant / x_obj
+ymax <- max(0.8, sombra_disp/2 + 0.25)
+plot(0, 0, type = 'n', xlim = c(-0.15, x_ant + 0.25), ylim = c(-ymax, ymax),
+     axes = FALSE, xlab = '', ylab = '', main = 'Fonte pontual, objeto e anteparo')
+segments(x_fonte, 0, x_ant, sombra_disp/2, lwd = 2)
+segments(x_fonte, 0, x_ant, -sombra_disp/2, lwd = 2)
+points(x_fonte, 0, pch = 19, cex = 1.2)
+segments(x_obj, -obj_disp/2, x_obj, obj_disp/2, lwd = 6)
+segments(x_ant, -ymax, x_ant, ymax, lwd = 2)
+segments(x_ant, -sombra_disp/2, x_ant, sombra_disp/2, lwd = 6)
+text(x_fonte, -0.18, 'fonte', cex = 0.85)
+text(x_obj, obj_disp/2 + 0.16, paste0('objeto: ', d, ' cm'), cex = 0.85)
+text(x_ant, ymax - 0.12, 'anteparo', cex = 0.85, pos = 2)
+text(x_ant - 0.15, sombra_disp/2 + 0.10, 'sombra', cex = 0.85, pos = 2)
+arrows(x_fonte, -ymax + 0.12, x_obj, -ymax + 0.12, length = 0.08, code = 3)
+text((x_fonte + x_obj)/2, -ymax + 0.02, paste0(h1, ' m'), cex = 0.85)
+arrows(x_obj, -ymax + 0.12, x_ant, -ymax + 0.12, length = 0.08, code = 3)
+text((x_obj + x_ant)/2, -ymax + 0.02, paste0(h2, ' m'), cex = 0.85)
+par(op)
+@
+\end{center}
+\end{figure}
+
 \end{question}
 
 %% SOLUTION
