@@ -1,0 +1,64 @@
+<<echo=FALSE, results=hide>>=
+## Questão estilo ENEM: consumo de energia elétrica.
+
+P <- sample(c(600, 800, 1000, 1200, 1500), 1) # W
+h_dia <- sample(c(1, 2, 3, 4), 1)
+dias <- sample(c(20, 25, 30), 1)
+tarifa <- sample(c(0.70, 0.80, 0.90, 1.00), 1) # R$/kWh
+E_kWh <- (P/1000) * h_dia * dias
+custo <- E_kWh * tarifa
+fmt <- function(x, d = 2) formatC(x, format = "f", digits = d, decimal.mark = ",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Um aparelho elétrico de potência $\Sexpr{P}\,\mathrm{W}$ é usado durante $\Sexpr{h_dia}\,\mathrm{h}$ por dia, ao longo de $\Sexpr{dias}$ dias. Considere que a tarifa de energia elétrica seja de R$ $\Sexpr{fmt(tarifa,2)}$ por quilowatt-hora.
+
+Determine:
+
+\begin{answerlist}
+  \item a energia consumida pelo aparelho no período, em quilowatt-hora;
+  \item o custo desse consumo, em reais.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+A energia elétrica consumida é
+\[
+E = Pt.
+\]
+Para usar a unidade quilowatt-hora, primeiro convertemos a potência para quilowatts:
+\[
+P=\Sexpr{P}\,\mathrm{W}=\Sexpr{fmt(P/1000,2)}\,\mathrm{kW}.
+\]
+O tempo total de uso é
+\[
+t=\Sexpr{h_dia}\cdot\Sexpr{dias}=\Sexpr{h_dia*dias}\,\mathrm{h}.
+\]
+Assim,
+\[
+E=\Sexpr{fmt(P/1000,2)}\cdot\Sexpr{h_dia*dias}=\Sexpr{fmt(E_kWh,2)}\,\mathrm{kWh}.
+\]
+O custo é obtido multiplicando a energia consumida pela tarifa:
+\[
+C=\Sexpr{fmt(E_kWh,2)}\cdot\Sexpr{fmt(tarifa,2)}=\Sexpr{fmt(custo,2)}\,\mathrm{reais}.
+\]
+
+\begin{answerlist}
+  \item $\Sexpr{fmt(E_kWh,2)}\,\mathrm{kWh}$
+  \item R$ $\Sexpr{fmt(custo,2)}$
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{\Sexpr{round(E_kWh, 2)}|\Sexpr{round(custo, 2)}}
+%% \exclozetype{num|num}
+%% \extol{0.02|0.05}
+%% \exname{Q91ClozeConsumoEnergiaEletrica}
+%% \exsection{Eletricidade; Consumo eletrico; Potencia eletrica}
+%% \exusepackage[utf8]{inputenc}
