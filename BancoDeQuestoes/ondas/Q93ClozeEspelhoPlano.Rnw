@@ -1,0 +1,64 @@
+<<echo=FALSE, results=hide>>=
+## Questão estilo ENEM: espelho plano.
+
+d <- sample(c(0.8, 1.0, 1.2, 1.5, 2.0), 1)
+afast <- sample(c(0.3, 0.4, 0.5, 0.8), 1)
+d2 <- d + afast
+sep1 <- 2 * d
+sep2 <- 2 * d2
+var <- sep2 - sep1
+fmt <- function(x, d = 1) formatC(x, format = "f", digits = d, decimal.mark = ",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Uma pessoa está inicialmente a $\Sexpr{fmt(d,1)}\,\mathrm{m}$ de um espelho plano. Em seguida, ela se afasta $\Sexpr{fmt(afast,1)}\,\mathrm{m}$ do espelho.
+
+Determine:
+
+\begin{answerlist}
+  \item a distância inicial entre a pessoa e sua imagem, em metros;
+  \item o aumento da distância entre a pessoa e sua imagem após o afastamento, em metros.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Em um espelho plano, a imagem se forma atrás do espelho a uma distância igual à distância do objeto ao espelho. Portanto, se a pessoa está a uma distância $d$ do espelho, a distância entre a pessoa e sua imagem é
+\[
+2d.
+\]
+Inicialmente,
+\[
+2d=2\cdot\Sexpr{fmt(d,1)}=\Sexpr{fmt(sep1,1)}\,\mathrm{m}.
+\]
+Depois do afastamento, a nova distância da pessoa ao espelho é
+\[
+d_2=\Sexpr{fmt(d,1)}+\Sexpr{fmt(afast,1)}=\Sexpr{fmt(d2,1)}\,\mathrm{m}.
+\]
+A nova distância entre pessoa e imagem é
+\[
+2d_2=2\cdot\Sexpr{fmt(d2,1)}=\Sexpr{fmt(sep2,1)}\,\mathrm{m}.
+\]
+Assim, o aumento dessa distância é
+\[
+\Sexpr{fmt(sep2,1)}-\Sexpr{fmt(sep1,1)}=\Sexpr{fmt(var,1)}\,\mathrm{m}.
+\]
+
+\begin{answerlist}
+  \item $\Sexpr{fmt(sep1,1)}\,\mathrm{m}$
+  \item $\Sexpr{fmt(var,1)}\,\mathrm{m}$
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{\Sexpr{round(sep1, 1)}|\Sexpr{round(var, 1)}}
+%% \exclozetype{num|num}
+%% \extol{0.1|0.1}
+%% \exname{Q93ClozeEspelhoPlano}
+%% \exsection{Optica; Espelho plano; Imagem}
+%% \exusepackage[utf8]{inputenc}

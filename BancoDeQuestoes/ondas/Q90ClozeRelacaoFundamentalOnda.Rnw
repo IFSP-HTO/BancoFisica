@@ -1,0 +1,58 @@
+<<echo=FALSE, results=hide>>=
+## Questão estilo ENEM: relação fundamental das ondas.
+
+f <- sample(c(200, 250, 340, 400, 500, 680), 1) # Hz
+lambda <- sample(c(0.50, 0.68, 0.75, 0.85, 1.00, 1.20), 1) # m
+v <- f * lambda
+T <- 1 / f
+fmt <- function(x, d = 2) formatC(x, format = "f", digits = d, decimal.mark = ",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Uma onda periódica se propaga em determinado meio com frequência $\Sexpr{f}\,\mathrm{Hz}$ e comprimento de onda $\Sexpr{fmt(lambda,2)}\,\mathrm{m}$.
+
+Determine:
+
+\begin{answerlist}
+  \item a velocidade de propagação da onda, em $\mathrm{m/s}$;
+  \item o período da onda, em segundos.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+A velocidade de propagação de uma onda periódica é dada pela relação fundamental:
+\[
+v = \lambda f.
+\]
+Substituindo os valores,
+\[
+v = \Sexpr{fmt(lambda,2)}\cdot\Sexpr{f}=\Sexpr{fmt(v,1)}\,\mathrm{m/s}.
+\]
+O período é o inverso da frequência:
+\[
+T = \frac{1}{f}.
+\]
+Assim,
+\[
+T=\frac{1}{\Sexpr{f}}=\Sexpr{fmt(T,4)}\,\mathrm{s}.
+\]
+
+\begin{answerlist}
+  \item $\Sexpr{fmt(v,1)}\,\mathrm{m/s}$
+  \item $\Sexpr{fmt(T,4)}\,\mathrm{s}$
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{\Sexpr{round(v, 1)}|\Sexpr{round(T, 4)}}
+%% \exclozetype{num|num}
+%% \extol{0.1|0.0005}
+%% \exname{Q90ClozeRelacaoFundamentalOnda}
+%% \exsection{Ondulatoria; Frequencia; Comprimento de onda}
+%% \exusepackage[utf8]{inputenc}
