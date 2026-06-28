@@ -15,6 +15,31 @@ fmt <- function(x, d = 2) formatC(x, format = "f", digits = d, decimal.mark = ",
 
 Uma esfera abandona a borda de uma mesa horizontal com velocidade horizontal de módulo $\Sexpr{fmt(v,1)}\,\mathrm{m/s}$. A altura da mesa em relação ao chão é $\Sexpr{fmt(h,2)}\,\mathrm{m}$. Despreze a resistência do ar e adote $g = \Sexpr{g}\,\mathrm{m/s^2}$.
 
+\begin{figure}[h!]
+\begin{center}
+<<fig=TRUE, height=3.8, width=6, echo=FALSE, eps=FALSE, results=hide>>=
+op <- par(mar = c(3, 3, 1, 1))
+xmax <- max(alcance * 1.25, 1)
+plot(0, 0, type = 'n', xlim = c(-0.15, xmax), ylim = c(-0.08, h * 1.25),
+     xlab = 'distancia horizontal (m)', ylab = 'altura (m)', axes = TRUE)
+abline(h = 0, col = 'gray50')
+segments(0, 0, 0, h, lwd = 3)
+segments(-0.06, h, 0.35, h, lwd = 3)
+points(0, h, pch = 19)
+xs <- seq(0, alcance, length.out = 100)
+ys <- h - g * xs^2 / (2 * v^2)
+lines(xs, ys, lwd = 2)
+arrows(0, h, min(0.8, xmax * 0.25), h, length = 0.08, lwd = 2)
+text(min(0.85, xmax * 0.30), h, paste0('v_x = ', fmt(v, 1), ' m/s'), pos = 4, cex = 0.85)
+arrows(-0.08, 0, -0.08, h, length = 0.08, code = 3)
+text(0.10, h/2, paste0('h = ', fmt(h, 2), ' m'), cex = 0.85)
+arrows(0, -0.03, alcance, -0.03, length = 0.08, code = 3)
+text(alcance/2, 0.06, 'alcance', cex = 0.85)
+par(op)
+@
+\end{center}
+\end{figure}
+
 Determine:
 
 \begin{answerlist}
