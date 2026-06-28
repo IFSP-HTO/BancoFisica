@@ -13,7 +13,7 @@ fmt <- function(x, d = 2) formatC(x, format = "f", digits = d, decimal.mark = ",
 
 \begin{question}
 
-Um aparelho elétrico de potência $\Sexpr{P}\,\mathrm{W}$ é usado durante $\Sexpr{h_dia}\,\mathrm{h}$ por dia, ao longo de $\Sexpr{dias}$ dias. Considere que a tarifa de energia elétrica seja de R$ $\Sexpr{fmt(tarifa,2)}$ por quilowatt-hora.
+Um aparelho elétrico de potência $\Sexpr{P}\,\mathrm{W}$ é usado durante $\Sexpr{h_dia}\,\mathrm{h}$ por dia, ao longo de $\Sexpr{dias}$ dias. Considere que a tarifa de energia elétrica seja de R\$ $\Sexpr{fmt(tarifa,2)}$ por quilowatt-hora.
 
 Determine:
 
@@ -49,7 +49,7 @@ C=\Sexpr{fmt(E_kWh,2)}\cdot\Sexpr{fmt(tarifa,2)}=\Sexpr{fmt(custo,2)}\,\mathrm{r
 
 \begin{answerlist}
   \item $\Sexpr{fmt(E_kWh,2)}\,\mathrm{kWh}$
-  \item R$ $\Sexpr{fmt(custo,2)}$
+  \item R\$ $\Sexpr{fmt(custo,2)}$
 \end{answerlist}
 
 \end{solution}
