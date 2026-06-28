@@ -1,0 +1,64 @@
+<<echo=FALSE, results=hide>>=
+## Questão estilo ENEM: efeito Joule.
+
+R <- sample(c(5, 8, 10, 12, 15), 1)
+I <- sample(c(2, 3, 4, 5), 1)
+t_min <- sample(c(2, 3, 5, 10), 1)
+t <- t_min * 60
+E <- R * I^2 * t
+P <- R * I^2
+fmt <- function(x, d = 1) formatC(x, format = "f", digits = d, decimal.mark = ",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Um fio resistivo de resistência elétrica $\Sexpr{R}\,\Omega$ é percorrido por uma corrente elétrica constante de $\Sexpr{I}\,\mathrm{A}$ durante $\Sexpr{t_min}\,\mathrm{min}$. Considere que toda a energia elétrica dissipada seja convertida em energia térmica no fio.
+
+Determine:
+
+\begin{answerlist}
+  \item a potência dissipada no fio, em watts;
+  \item a energia térmica produzida nesse intervalo de tempo, em joules.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+A potência dissipada por efeito Joule pode ser calculada por
+\[
+P = RI^2.
+\]
+Substituindo os valores,
+\[
+P=\Sexpr{R}\cdot(\Sexpr{I})^2=\Sexpr{fmt(P,1)}\,\mathrm{W}.
+\]
+O tempo deve ser convertido para segundos:
+\[
+\Sexpr{t_min}\,\mathrm{min}=\Sexpr{t}\,\mathrm{s}.
+\]
+A energia dissipada é
+\[
+E = Pt.
+\]
+Logo,
+\[
+E=\Sexpr{fmt(P,1)}\cdot\Sexpr{t}=\Sexpr{fmt(E,0)}\,\mathrm{J}.
+\]
+
+\begin{answerlist}
+  \item $\Sexpr{fmt(P,1)}\,\mathrm{W}$
+  \item $\Sexpr{fmt(E,0)}\,\mathrm{J}$
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{\Sexpr{round(P, 1)}|\Sexpr{round(E, 0)}}
+%% \exclozetype{num|num}
+%% \extol{0.1|1}
+%% \exname{Q93ClozeEfeitoJoule}
+%% \exsection{Eletricidade; Efeito Joule; Potencia eletrica}
+%% \exusepackage[utf8]{inputenc}
