@@ -31,6 +31,7 @@ jobs:
       - name: Validate public demo site data
         run: |
           python3 tools/generate_demo_site_data.py
+          python3 tools/validate_public_site.py
 
       - name: Install system tools and LaTeX
         run: |
