@@ -1,0 +1,67 @@
+<<echo=FALSE, results=hide>>=
+## Questão estilo ENEM: associação de resistores.
+
+R1 <- sample(c(4, 6, 8, 10, 12), 1)
+R2 <- sample(c(6, 8, 10, 12, 15), 1)
+U <- sample(c(12, 24, 36, 48), 1)
+Req_serie <- R1 + R2
+I_serie <- U / Req_serie
+Req_paralelo <- (R1 * R2) / (R1 + R2)
+I_total_paralelo <- U / Req_paralelo
+fmt <- function(x, d = 2) formatC(x, format = "f", digits = d, decimal.mark = ",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Dois resistores de resistências $R_1=\Sexpr{R1}\,\Omega$ e $R_2=\Sexpr{R2}\,\Omega$ são ligados a uma fonte de tensão $\Sexpr{U}\,\mathrm{V}$.
+
+Determine:
+
+\begin{answerlist}
+  \item a resistência equivalente se os resistores forem ligados em série, em ohms;
+  \item a corrente elétrica fornecida pela fonte nessa associação em série, em ampères;
+  \item a resistência equivalente se os resistores forem ligados em paralelo, em ohms.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Na associação em série, a resistência equivalente é a soma das resistências:
+\[
+R_{\mathrm{eq,s}} = R_1+R_2.
+\]
+Logo,
+\[
+R_{\mathrm{eq,s}}=\Sexpr{R1}+\Sexpr{R2}=\Sexpr{Req_serie}\,\Omega.
+\]
+A corrente fornecida pela fonte na associação em série é
+\[
+I_s=\frac{U}{R_{\mathrm{eq,s}}}=\frac{\Sexpr{U}}{\Sexpr{Req_serie}}=\Sexpr{fmt(I_serie,2)}\,\mathrm{A}.
+\]
+Na associação em paralelo entre dois resistores,
+\[
+R_{\mathrm{eq,p}}=\frac{R_1R_2}{R_1+R_2}.
+\]
+Assim,
+\[
+R_{\mathrm{eq,p}}=\frac{\Sexpr{R1}\cdot\Sexpr{R2}}{\Sexpr{R1}+\Sexpr{R2}}=\Sexpr{fmt(Req_paralelo,2)}\,\Omega.
+\]
+
+\begin{answerlist}
+  \item $\Sexpr{Req_serie}\,\Omega$
+  \item $\Sexpr{fmt(I_serie,2)}\,\mathrm{A}$
+  \item $\Sexpr{fmt(Req_paralelo,2)}\,\Omega$
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{\Sexpr{round(Req_serie, 2)}|\Sexpr{round(I_serie, 2)}|\Sexpr{round(Req_paralelo, 2)}}
+%% \exclozetype{num|num|num}
+%% \extol{0.01|0.02|0.02}
+%% \exname{Q92ClozeAssociacaoResistores}
+%% \exsection{Eletricidade; Resistores; Associacao em serie; Associacao em paralelo}
+%% \exusepackage[utf8]{inputenc}
