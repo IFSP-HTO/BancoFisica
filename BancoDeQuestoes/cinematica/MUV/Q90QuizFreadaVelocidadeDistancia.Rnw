@@ -1,0 +1,98 @@
+<<echo=FALSE, results=hide>>=
+## Questão inspirada no ENEM 2016 Q54.
+## Física central: gráfico v x distância para tempo de reação e frenagem com desaceleração constante.
+
+alternativas <- c("Gráfico A", "Gráfico B", "Gráfico C", "Gráfico D", "Gráfico E")
+solutions <- c(FALSE, FALSE, FALSE, TRUE, FALSE)
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Dois veículos que trafegam com velocidade constante em uma estrada, na mesma direção e no mesmo sentido, devem manter entre si uma distância mínima. Isso ocorre porque, desde o instante em que o motorista percebe uma situação de perigo até o veículo parar completamente, o movimento pode ser dividido em duas etapas:
+
+\begin{itemize}
+  \item uma etapa de reação, em que o motorista ainda não acionou os freios e o automóvel mantém velocidade constante;
+  \item uma etapa de frenagem, em que o automóvel desacelera com aceleração de módulo constante até parar.
+\end{itemize}
+
+Qual dos esboços representa melhor a velocidade do automóvel em função da distância percorrida desde a percepção do perigo até a parada?
+
+\begin{figure}[h!]
+\begin{center}
+<<fig=TRUE, height=7.2, width=6.5, echo=FALSE, eps=FALSE, results=hide>>=
+op <- par(mfrow = c(5, 1), mar = c(1.4, 4.4, 0.2, 0.8), oma = c(0, 0, 0, 0))
+
+draw_axes <- function(label) {
+  plot(0, 0, type = "n", xlim = c(-0.18, 1.05), ylim = c(-0.10, 1.10), axes = FALSE, xlab = "", ylab = "")
+  arrows(0, 0, 1.0, 0, length = 0.08)
+  arrows(0, 0, 0, 1.0, length = 0.08)
+  text(0.86, -0.08, "Distância", cex = 0.82)
+  text(-0.10, 0.54, "Velocidade", srt = 90, cex = 0.82)
+  text(-0.15, 0.52, label, cex = 1.2, font = 2)
+}
+
+## A: queda linear desde o início.
+draw_axes("A")
+segments(0, 0.85, 0.72, 0, lwd = 2)
+
+## B: reação seguida de queda linear.
+draw_axes("B")
+segments(0, 0.72, 0.34, 0.72, lwd = 2)
+segments(0.34, 0.72, 0.72, 0, lwd = 2)
+
+## C: curva desde o início.
+draw_axes("C")
+x <- seq(0, 0.72, length.out = 120)
+y <- 0.78 * sqrt(pmax(0, 1 - x/0.72))
+lines(x, y, lwd = 2)
+
+## D: movimento uniforme durante a reação e curva de frenagem com desaceleração constante.
+draw_axes("D")
+segments(0, 0.72, 0.34, 0.72, lwd = 2)
+x <- seq(0.34, 0.78, length.out = 120)
+y <- 0.72 * sqrt(pmax(0, 1 - (x - 0.34)/(0.78 - 0.34)))
+lines(x, y, lwd = 2)
+
+## E: velocidade aumentando e depois diminuindo.
+draw_axes("E")
+x <- seq(0, 0.78, length.out = 140)
+y <- 0.85 * sin(pi * x/0.78)
+lines(x, y, lwd = 2)
+par(op)
+@
+\end{center}
+\end{figure}
+
+<<echo=FALSE, results=tex>>=
+answerlist(alternativas)
+@
+
+\end{question}
+
+\begin{solution}
+
+Durante o tempo de reação, o motorista ainda não freou. Como a velocidade permanece constante nessa etapa, o gráfico $v \times d$ deve começar com um trecho horizontal.
+
+Na etapa de frenagem, a desaceleração tem módulo constante. Pela equação de Torricelli,
+\[
+v^2 = v_0^2 - 2a\Delta d.
+\]
+Isolando $v$,
+\[
+v = \sqrt{v_0^2 - 2a\Delta d}.
+\]
+Logo, a velocidade diminui com a distância por meio de uma curva, não por uma reta. Portanto, o gráfico correto deve ter primeiro um trecho horizontal e depois uma curva decrescente até $v=0$.
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(solutions, paste0("\\textbf{", alternativas, "}"), alternativas))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{00010}
+%% \exname{Q90QuizFreadaVelocidadeDistancia}
+%% \exsection{Mecanica; Cinematica; MUV; Graficos; ENEM}
+%% \exusepackage[utf8]{inputenc}
