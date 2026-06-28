@@ -1,0 +1,74 @@
+<<echo=FALSE, results=hide>>=
+## Questão estilo ENEM: mistura de porções de água.
+
+m1 <- sample(c(100, 150, 200, 250), 1) # g
+T1 <- sample(c(70, 80, 90), 1)
+m2 <- sample(c(200, 300, 400, 500), 1) # g
+T2 <- sample(c(10, 15, 20, 25), 1)
+c <- 1 # cal/(g C)
+Tf <- (m1*T1 + m2*T2) / (m1 + m2)
+Q_quente <- m1 * c * (T1 - Tf)
+Q_fria <- m2 * c * (Tf - T2)
+fmt <- function(x, d = 1) formatC(x, format = "f", digits = d, decimal.mark = ",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Em um recipiente termicamente isolado, misturam-se $\Sexpr{m1}\,\mathrm{g}$ de água a $\Sexpr{T1}\,^{\circ}\mathrm{C}$ com $\Sexpr{m2}\,\mathrm{g}$ de água a $\Sexpr{T2}\,^{\circ}\mathrm{C}$. Considere que não há perdas de calor para o ambiente e que o calor específico da água é o mesmo nas duas porções.
+
+Determine:
+
+\begin{answerlist}
+  \item a temperatura final de equilíbrio, em $^{\circ}\mathrm{C}$;
+  \item o módulo da quantidade de calor cedida pela água mais quente, em calorias.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Como o sistema é termicamente isolado, o calor cedido pela água quente é igual, em módulo, ao calor recebido pela água fria:
+\[
+Q_{\mathrm{quente}} + Q_{\mathrm{fria}} = 0.
+\]
+Usando $Q=mc\Delta T$,
+\[
+\Sexpr{m1}c(T_f-\Sexpr{T1}) + \Sexpr{m2}c(T_f-\Sexpr{T2}) = 0.
+\]
+Como o calor específico é o mesmo para as duas porções, ele pode ser cancelado:
+\[
+\Sexpr{m1}(T_f-\Sexpr{T1}) + \Sexpr{m2}(T_f-\Sexpr{T2}) = 0.
+\]
+Logo,
+\[
+T_f = \frac{\Sexpr{m1}\cdot\Sexpr{T1}+\Sexpr{m2}\cdot\Sexpr{T2}}{\Sexpr{m1}+\Sexpr{m2}}.
+\]
+Substituindo,
+\[
+T_f=\Sexpr{fmt(Tf,1)}\,^{\circ}\mathrm{C}.
+\]
+O módulo do calor cedido pela água quente é
+\[
+|Q_{\mathrm{quente}}|=m_1c(T_1-T_f).
+\]
+Assim,
+\[
+|Q_{\mathrm{quente}}|=\Sexpr{m1}\cdot 1\cdot (\Sexpr{T1}-\Sexpr{fmt(Tf,1)})=\Sexpr{fmt(Q_quente,1)}\,\mathrm{cal}.
+\]
+
+\begin{answerlist}
+  \item $\Sexpr{fmt(Tf,1)}\,^{\circ}\mathrm{C}$
+  \item $\Sexpr{fmt(Q_quente,1)}\,\mathrm{cal}$
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{\Sexpr{round(Tf, 1)}|\Sexpr{round(Q_quente, 1)}}
+%% \exclozetype{num|num}
+%% \extol{0.1|0.5}
+%% \exname{Q91ClozeMisturaAgua}
+%% \exsection{Termologia; Calorimetria; Troca de calor}
+%% \exusepackage[utf8]{inputenc}

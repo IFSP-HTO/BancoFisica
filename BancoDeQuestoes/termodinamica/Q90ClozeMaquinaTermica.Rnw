@@ -1,0 +1,65 @@
+<<echo=FALSE, results=hide>>=
+## Questão estilo ENEM: rendimento de máquina térmica.
+
+Qq <- sample(c(1200, 1500, 2000, 2500, 3000), 1) # J
+eta_percent <- sample(c(20, 25, 30, 35, 40), 1)
+eta <- eta_percent / 100
+W <- eta * Qq
+Qc <- Qq - W
+fmt <- function(x, d = 1) formatC(x, format = "f", digits = d, decimal.mark = ",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Uma máquina térmica opera em ciclos, recebendo $\Sexpr{Qq}\,\mathrm{J}$ de uma fonte quente a cada ciclo. O rendimento da máquina é de $\Sexpr{eta_percent}\%$.
+
+Determine:
+
+\begin{answerlist}
+  \item o trabalho realizado pela máquina em cada ciclo, em joules;
+  \item a quantidade de calor rejeitada para a fonte fria em cada ciclo, em joules.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+O rendimento de uma máquina térmica é definido por
+\[
+\eta = \frac{W}{Q_q},
+\]
+em que $W$ é o trabalho realizado e $Q_q$ é o calor recebido da fonte quente.
+
+Como o rendimento é $\Sexpr{eta_percent}\%$,
+\[
+\eta = \frac{\Sexpr{eta_percent}}{100}=\Sexpr{fmt(eta,2)}.
+\]
+Logo,
+\[
+W = \eta Q_q = \Sexpr{fmt(eta,2)}\cdot\Sexpr{Qq}=\Sexpr{fmt(W,0)}\,\mathrm{J}.
+\]
+Pela conservação de energia em um ciclo,
+\[
+Q_q = W + Q_f,
+\]
+em que $Q_f$ é o calor rejeitado para a fonte fria. Portanto,
+\[
+Q_f = Q_q - W = \Sexpr{Qq}-\Sexpr{fmt(W,0)}=\Sexpr{fmt(Qc,0)}\,\mathrm{J}.
+\]
+
+\begin{answerlist}
+  \item $\Sexpr{fmt(W,0)}\,\mathrm{J}$
+  \item $\Sexpr{fmt(Qc,0)}\,\mathrm{J}$
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{\Sexpr{round(W, 0)}|\Sexpr{round(Qc, 0)}}
+%% \exclozetype{num|num}
+%% \extol{1|1}
+%% \exname{Q90ClozeMaquinaTermica}
+%% \exsection{Termodinamica; Maquina termica; Rendimento}
+%% \exusepackage[utf8]{inputenc}

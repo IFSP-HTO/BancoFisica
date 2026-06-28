@@ -1,0 +1,65 @@
+<<echo=FALSE, results=hide>>=
+## Questão estilo ENEM: relação linear entre escalas termométricas.
+
+T_c <- sample(c(20, 25, 30, 35, 40), 1)
+alpha <- sample(c(1.5, 2.0, 2.5), 1)
+beta <- sample(c(-10, 5, 15, 20), 1)
+T_x <- alpha * T_c + beta
+alternativas <- c(
+  paste0(formatC(T_x, format = "f", digits = 1, decimal.mark = ","), " graus X"),
+  paste0(formatC(alpha * (T_c + 10) + beta, format = "f", digits = 1, decimal.mark = ","), " graus X"),
+  paste0(formatC(alpha * T_c - beta, format = "f", digits = 1, decimal.mark = ","), " graus X"),
+  paste0(formatC(T_c + beta, format = "f", digits = 1, decimal.mark = ","), " graus X"),
+  paste0(formatC(T_x + 20, format = "f", digits = 1, decimal.mark = ","), " graus X")
+)
+solutions <- c(TRUE, FALSE, FALSE, FALSE, FALSE)
+ord <- sample(seq_along(alternativas))
+alternativas <- alternativas[ord]
+solutions <- solutions[ord]
+fmt <- function(x, d = 1) formatC(x, format = "f", digits = d, decimal.mark = ",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Uma escala termométrica hipotética $X$ é construída de modo que a relação entre a temperatura $T_X$, medida nessa escala, e a temperatura $T_C$, medida em graus Celsius, seja linear:
+\[
+T_X = \Sexpr{fmt(alpha,1)}T_C + \Sexpr{fmt(beta,1)}.
+\]
+
+Nessa escala, qual é a indicação correspondente a $\Sexpr{T_c}\,^{\circ}\mathrm{C}$?
+
+<<echo=FALSE, results=tex>>=
+answerlist(alternativas)
+@
+
+\end{question}
+
+\begin{solution}
+
+A relação entre as escalas é dada por
+\[
+T_X = \Sexpr{fmt(alpha,1)}T_C + \Sexpr{fmt(beta,1)}.
+\]
+Para $T_C=\Sexpr{T_c}\,^{\circ}\mathrm{C}$,
+\[
+T_X = \Sexpr{fmt(alpha,1)}\cdot\Sexpr{T_c}+\Sexpr{fmt(beta,1)}.
+\]
+Logo,
+\[
+T_X = \Sexpr{fmt(T_x,1)}.
+\]
+Portanto, a indicação na escala hipotética é $\Sexpr{fmt(T_x,1)}\,^{\circ}X$.
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(solutions, paste0('\\textbf{', alternativas, '}'), alternativas))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q92QuizEscalasTemperatura}
+%% \exsection{Termologia; Temperatura; Escalas termometricas}
+%% \exusepackage[utf8]{inputenc}

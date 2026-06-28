@@ -1,0 +1,70 @@
+<<echo=FALSE, results=hide>>=
+## Questão estilo ENEM: aquecimento de água por potência térmica.
+
+m <- sample(c(0.5, 0.8, 1.0, 1.2, 1.5), 1) # kg
+Ti <- sample(c(20, 22, 25), 1)
+Tf <- sample(c(80, 90, 100), 1)
+P <- sample(c(500, 700, 900, 1000, 1200), 1) # W
+c <- 4200 # J/(kg C)
+Q <- m * c * (Tf - Ti)
+t <- Q / P
+t_min <- t / 60
+fmt <- function(x, d = 1) formatC(x, format = "f", digits = d, decimal.mark = ",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Um aquecedor elétrico de potência $\Sexpr{P}\,\mathrm{W}$ é usado para aquecer $\Sexpr{fmt(m,1)}\,\mathrm{kg}$ de água, inicialmente a $\Sexpr{Ti}\,^{\circ}\mathrm{C}$, até a temperatura de $\Sexpr{Tf}\,^{\circ}\mathrm{C}$. Considere que toda a energia elétrica fornecida pelo aquecedor seja transferida para a água e adote o calor específico da água igual a $4200\,\mathrm{J/(kg\,^{\circ}C)}$.
+
+Determine:
+
+\begin{answerlist}
+  \item a quantidade de calor absorvida pela água, em joules;
+  \item o tempo necessário para o aquecimento, em minutos.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+A quantidade de calor sensível trocada pela água é
+\[
+Q = mc\Delta T.
+\]
+A variação de temperatura é
+\[
+\Delta T = \Sexpr{Tf}-\Sexpr{Ti}=\Sexpr{Tf-Ti}\,^{\circ}\mathrm{C}.
+\]
+Assim,
+\[
+Q = \Sexpr{fmt(m,1)}\cdot 4200\cdot \Sexpr{Tf-Ti}=\Sexpr{fmt(Q,0)}\,\mathrm{J}.
+\]
+Como a potência é energia por unidade de tempo,
+\[
+P = \frac{Q}{t}.
+\]
+Logo,
+\[
+t = \frac{Q}{P}=\frac{\Sexpr{fmt(Q,0)}}{\Sexpr{P}}=\Sexpr{fmt(t,1)}\,\mathrm{s}.
+\]
+Convertendo para minutos,
+\[
+t = \frac{\Sexpr{fmt(t,1)}}{60}=\Sexpr{fmt(t_min,1)}\,\mathrm{min}.
+\]
+
+\begin{answerlist}
+  \item $\Sexpr{fmt(Q,0)}\,\mathrm{J}$
+  \item $\Sexpr{fmt(t_min,1)}\,\mathrm{min}$
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{\Sexpr{round(Q, 0)}|\Sexpr{round(t_min, 1)}}
+%% \exclozetype{num|num}
+%% \extol{10|0.1}
+%% \exname{Q91ClozeAquecimentoAguaPotencia}
+%% \exsection{Termologia; Calor sensivel; Potencia termica}
+%% \exusepackage[utf8]{inputenc}
