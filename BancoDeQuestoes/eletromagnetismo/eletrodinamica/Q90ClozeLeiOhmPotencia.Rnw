@@ -1,0 +1,59 @@
+<<echo=FALSE, results=hide>>=
+## Questão estilo ENEM: Lei de Ohm e potência elétrica.
+
+R <- sample(c(6, 8, 10, 12, 15, 20), 1)
+U <- sample(c(12, 24, 36, 48, 60), 1)
+I <- U / R
+P <- U * I
+fmt <- function(x, d = 1) formatC(x, format = "f", digits = d, decimal.mark = ",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Um resistor ôhmico de resistência elétrica $\Sexpr{R}\,\Omega$ é ligado a uma fonte de tensão constante de $\Sexpr{U}\,\mathrm{V}$.
+
+Determine:
+
+\begin{answerlist}
+  \item a corrente elétrica que atravessa o resistor, em ampères;
+  \item a potência elétrica dissipada pelo resistor, em watts.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Para um resistor ôhmico, vale a primeira lei de Ohm:
+\[
+U = RI.
+\]
+Logo,
+\[
+I = \frac{U}{R}=\frac{\Sexpr{U}}{\Sexpr{R}}=\Sexpr{fmt(I,2)}\,\mathrm{A}.
+\]
+A potência elétrica dissipada pode ser calculada por
+\[
+P = UI.
+\]
+Substituindo,
+\[
+P=\Sexpr{U}\cdot\Sexpr{fmt(I,2)}=\Sexpr{fmt(P,1)}\,\mathrm{W}.
+\]
+Também seria possível usar $P=U^2/R$, obtendo o mesmo resultado.
+
+\begin{answerlist}
+  \item $\Sexpr{fmt(I,2)}\,\mathrm{A}$
+  \item $\Sexpr{fmt(P,1)}\,\mathrm{W}$
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{\Sexpr{round(I, 2)}|\Sexpr{round(P, 1)}}
+%% \exclozetype{num|num}
+%% \extol{0.02|0.1}
+%% \exname{Q90ClozeLeiOhmPotencia}
+%% \exsection{Eletricidade; Eletrodinamica; Lei de Ohm; Potencia eletrica}
+%% \exusepackage[utf8]{inputenc}

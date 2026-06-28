@@ -1,0 +1,65 @@
+<<echo=FALSE, results=hide>>=
+## Questão estilo ENEM: carga e energia armazenada em capacitor.
+
+C_micro <- sample(c(2, 5, 10, 20, 50), 1) # microfarad
+U <- sample(c(6, 9, 12, 24, 36), 1) # V
+C <- C_micro * 1e-6
+Q <- C * U
+E <- 0.5 * C * U^2
+Q_micro <- Q * 1e6
+E_mJ <- E * 1e3
+fmt <- function(x, d = 2) formatC(x, format = "f", digits = d, decimal.mark = ",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Um capacitor de capacitância $\Sexpr{C_micro}\,\mu\mathrm{F}$ é ligado a uma fonte de tensão constante de $\Sexpr{U}\,\mathrm{V}$ até ficar totalmente carregado.
+
+Determine:
+
+\begin{answerlist}
+  \item a carga elétrica armazenada no capacitor, em microcoulombs;
+  \item a energia elétrica armazenada no capacitor, em milijoules.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+A carga armazenada em um capacitor é dada por
+\[
+Q = CU.
+\]
+Como $1\,\mu\mathrm{F}=10^{-6}\,\mathrm{F}$, temos
+\[
+C=\Sexpr{C_micro}\times10^{-6}\,\mathrm{F}.
+\]
+Assim,
+\[
+Q=\Sexpr{C_micro}\times10^{-6}\cdot\Sexpr{U}=\Sexpr{fmt(Q_micro,1)}\,\mu\mathrm{C}.
+\]
+A energia armazenada em um capacitor é
+\[
+E=\frac{CU^2}{2}.
+\]
+Substituindo os valores,
+\[
+E=\frac{\Sexpr{C_micro}\times10^{-6}\cdot(\Sexpr{U})^2}{2}=\Sexpr{fmt(E_mJ,2)}\,\mathrm{mJ}.
+\]
+
+\begin{answerlist}
+  \item $\Sexpr{fmt(Q_micro,1)}\,\mu\mathrm{C}$
+  \item $\Sexpr{fmt(E_mJ,2)}\,\mathrm{mJ}$
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{\Sexpr{round(Q_micro, 1)}|\Sexpr{round(E_mJ, 2)}}
+%% \exclozetype{num|num}
+%% \extol{0.1|0.02}
+%% \exname{Q90ClozeEnergiaCapacitor}
+%% \exsection{Eletricidade; Capacitores; Energia eletrica}
+%% \exusepackage[utf8]{inputenc}
