@@ -1,0 +1,55 @@
+<<echo=FALSE, results=hide>>=
+## Questão estilo ENEM: nível sonoro e razão de intensidades.
+
+DeltaL <- sample(c(10, 20, 30, 40), 1)
+razao <- 10^(DeltaL/10)
+alternativas <- c(
+  paste0(razao, " vezes"),
+  paste0(DeltaL, " vezes"),
+  paste0(10 * DeltaL, " vezes"),
+  paste0(razao/10, " vezes"),
+  paste0(razao * 10, " vezes")
+)
+solutions <- c(TRUE, FALSE, FALSE, FALSE, FALSE)
+ord <- sample(seq_along(alternativas))
+alternativas <- alternativas[ord]
+solutions <- solutions[ord]
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+O nível sonoro $\beta$ é medido em decibéis e se relaciona com a intensidade sonora $I$ por uma escala logarítmica. Quando a intensidade sonora é multiplicada por $10$, o nível sonoro aumenta em $10\,\mathrm{dB}$.
+
+Se dois sons diferem em $\Sexpr{DeltaL}\,\mathrm{dB}$, a intensidade do som de maior nível é quantas vezes maior que a intensidade do som de menor nível?
+
+<<echo=FALSE, results=tex>>=
+answerlist(alternativas)
+@
+
+\end{question}
+
+\begin{solution}
+
+A escala de decibéis é logarítmica. Para uma diferença de nível sonoro $\Delta\beta$, a razão entre as intensidades é
+\[
+\frac{I_2}{I_1}=10^{\Delta\beta/10}.
+\]
+Como $\Delta\beta=\Sexpr{DeltaL}\,\mathrm{dB}$,
+\[
+\frac{I_2}{I_1}=10^{\Sexpr{DeltaL}/10}=\Sexpr{razao}.
+\]
+Portanto, a intensidade do som de maior nível é $\Sexpr{razao}$ vezes maior.
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(solutions, paste0('\\textbf{', alternativas, '}'), alternativas))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q94QuizNivelSonoro}
+%% \exsection{Ondulatoria; Som; Nivel sonoro; Decibel}
+%% \exusepackage[utf8]{inputenc}
