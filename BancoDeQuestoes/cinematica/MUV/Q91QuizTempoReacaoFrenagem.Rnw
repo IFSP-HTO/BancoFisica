@@ -1,0 +1,67 @@
+<<echo=FALSE, results=hide>>=
+## Questão inspirada no ENEM 2017 Q97.
+## Física central: tempo de reação, MUV e distância adicional de frenagem.
+
+v0 <- 14.0
+a <- 1.00
+b <- 5.00
+dt <- 1.00
+v1 <- v0 + a * dt
+d_reacao_extra <- v0 * dt + a * dt^2 / 2
+d_freio_extra <- (v1^2 - v0^2) / (2 * b)
+d_extra <- d_reacao_extra + d_freio_extra
+fmt <- function(x, d = 1) formatC(x, format = "f", digits = d, decimal.mark = ",")
+alternativas <- c(paste0(fmt(2.9, 1), " m"), paste0(fmt(14.0, 1), " m"), paste0(fmt(14.5, 1), " m"), paste0(fmt(15.0, 1), " m"), paste0(fmt(d_extra, 1), " m"))
+solutions <- c(FALSE, FALSE, FALSE, FALSE, TRUE)
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Dois motoristas conduzem veículos em situações análogas. Ambos aceleram inicialmente com aceleração de $\Sexpr{fmt(a,2)}\,\mathrm{m/s^2}$ e, depois, freiam com desaceleração de módulo $\Sexpr{fmt(b,2)}\,\mathrm{m/s^2}$.
+
+O primeiro motorista inicia a frenagem quando o velocímetro indica $\Sexpr{fmt(v0,1)}\,\mathrm{m/s}$. O segundo demora $\Sexpr{fmt(dt,2)}\,\mathrm{s}$ a mais para iniciar a frenagem, permanecendo acelerado durante esse intervalo.
+
+Que distância o segundo motorista percorre a mais que o primeiro até a parada total dos veículos?
+
+<<echo=FALSE, results=tex>>=
+answerlist(alternativas)
+@
+
+\end{question}
+
+\begin{solution}
+
+Durante o intervalo extra, o segundo motorista ainda acelera. A distância adicional nessa etapa é
+\[
+\Delta s_1 = v_0\Delta t + \frac{a\Delta t^2}{2}.
+\]
+Logo,
+\[
+\Delta s_1 = \Sexpr{fmt(v0,1)}\cdot\Sexpr{fmt(dt,2)} + \frac{\Sexpr{fmt(a,2)}\cdot(\Sexpr{fmt(dt,2)})^2}{2} = \Sexpr{fmt(d_reacao_extra,1)}\,\mathrm{m}.
+\]
+A velocidade no início da frenagem do segundo motorista é
+\[
+v_1 = v_0 + a\Delta t = \Sexpr{fmt(v0,1)} + \Sexpr{fmt(a,2)}\cdot\Sexpr{fmt(dt,2)} = \Sexpr{fmt(v1,1)}\,\mathrm{m/s}.
+\]
+Como a distância de frenagem com desaceleração constante é $s_f=v^2/(2b)$, a diferença entre as distâncias de frenagem é
+\[
+\Delta s_2 = \frac{v_1^2-v_0^2}{2b}=\frac{(\Sexpr{fmt(v1,1)})^2-(\Sexpr{fmt(v0,1)})^2}{2\cdot\Sexpr{fmt(b,2)}}=\Sexpr{fmt(d_freio_extra,1)}\,\mathrm{m}.
+\]
+Portanto,
+\[
+\Delta s = \Delta s_1+\Delta s_2 = \Sexpr{fmt(d_reacao_extra,1)}+\Sexpr{fmt(d_freio_extra,1)}=\Sexpr{fmt(d_extra,1)}\,\mathrm{m}.
+\]
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(solutions, paste0("\\textbf{", alternativas, "}"), alternativas))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{00001}
+%% \exname{Q91QuizTempoReacaoFrenagem}
+%% \exsection{Mecanica; Cinematica; MUV; Tempo de reacao; ENEM}
+%% \exusepackage[utf8]{inputenc}

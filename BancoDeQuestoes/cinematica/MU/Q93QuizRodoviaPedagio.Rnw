@@ -1,0 +1,73 @@
+<<echo=FALSE, results=hide>>=
+## Questão inspirada no ENEM 2023 Q124.
+## Física central: movimento uniforme e comparação de tempos de viagem.
+
+d <- 480
+n_paradas <- 10
+t_parada <- 3
+v_carro <- 100
+v_caminhao <- 80
+
+t_carro_mov <- d / v_carro * 60
+t_caminhao_mov <- d / v_caminhao * 60
+t_carro_total <- t_carro_mov + n_paradas * t_parada
+t_caminhao_total <- t_caminhao_mov
+delta <- t_caminhao_total - t_carro_total
+
+alternativas <- c("30", "42", "72", "288", "360")
+solutions <- c(FALSE, TRUE, FALSE, FALSE, FALSE)
+fmt0 <- function(x) formatC(x, format = "f", digits = 0, decimal.mark = ",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Uma rodovia tem extensão de $\Sexpr{fmt0(d)}\,\mathrm{km}$. Ao longo dela há $\Sexpr{n_paradas}$ pontos de passagem. Um veículo que usa a passagem comum fica parado, em média, $\Sexpr{t_parada}\,\mathrm{min}$ em cada ponto; um veículo com passagem automática não precisa acrescentar esse tempo de parada.
+
+Considere um carro e um caminhão percorrendo toda a rodovia com velocidades constantes. O carro viaja a $\Sexpr{v_carro}\,\mathrm{km/h}$ e usa a passagem comum. O caminhão viaja a $\Sexpr{v_caminhao}\,\mathrm{km/h}$ e usa a passagem automática.
+
+Comparado ao caminhão, quantos minutos a menos o carro leva para percorrer toda a rodovia?
+
+<<echo=FALSE, results=tex>>=
+answerlist(alternativas)
+@
+
+\end{question}
+
+\begin{solution}
+
+O tempo de movimento do carro é
+\[
+t_{\mathrm{carro,mov}}=\frac{\Sexpr{fmt0(d)}}{\Sexpr{v_carro}}\,\mathrm{h}=\Sexpr{fmt0(t_carro_mov)}\,\mathrm{min}.
+\]
+Como o carro faz $\Sexpr{n_paradas}$ paradas de $\Sexpr{t_parada}\,\mathrm{min}$, o tempo adicional é
+\[
+\Sexpr{n_paradas}\cdot \Sexpr{t_parada}=\Sexpr{fmt0(n_paradas*t_parada)}\,\mathrm{min}.
+\]
+Assim,
+\[
+t_{\mathrm{carro,total}}=\Sexpr{fmt0(t_carro_mov)}+\Sexpr{fmt0(n_paradas*t_parada)}=\Sexpr{fmt0(t_carro_total)}\,\mathrm{min}.
+\]
+
+O caminhão não acrescenta o tempo das paradas, então
+\[
+t_{\mathrm{caminhao}}=\frac{\Sexpr{fmt0(d)}}{\Sexpr{v_caminhao}}\,\mathrm{h}=\Sexpr{fmt0(t_caminhao_total)}\,\mathrm{min}.
+\]
+
+A diferença é
+\[
+\Delta t = \Sexpr{fmt0(t_caminhao_total)}-\Sexpr{fmt0(t_carro_total)}=\Sexpr{fmt0(delta)}\,\mathrm{min}.
+\]
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(solutions, paste0("\\textbf{", alternativas, "}"), alternativas))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{01000}
+%% \exname{Q93QuizRodoviaPedagio}
+%% \exsection{Mecanica; Cinematica; Movimento uniforme; ENEM}
+%% \exusepackage[utf8]{inputenc}
