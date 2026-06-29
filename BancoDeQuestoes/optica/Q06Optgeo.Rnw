@@ -13,6 +13,36 @@ resp <- round(H*d/h, digits = 0)
 
 A torre de transmissão de uma rede de televisão nacional  possui  $\Sexpr{H}$ metros  de  altura.  Ela  consumiu  650  toneladas de metal e localiza-se num dos pontos mais altos da cidade de São Paulo. Se, num dia de Sol, ao lado da torre, uma  pessoa  de  $\Sexpr{h}$ metros  de  altura  projetar  uma  sombra  de $\Sexpr{d}$ metros, qual o comprimento da sombra projetada pela torre, no mesmo instante?
 \textit{Caso necessário, arrendonde sua resposta para o número inteiro mais próximo}
+
+\begin{figure}[h!]
+\begin{center}
+<<fig=TRUE, height=3.8, width=6.2, echo=FALSE, eps=FALSE, results=hide>>=
+op <- par(mar = c(0.5, 0.5, 2, 0.5))
+plot(0, 0, type = 'n', xlim = c(-0.2, 6.2), ylim = c(-0.25, 3.5),
+     axes = FALSE, xlab = '', ylab = '', main = 'Sombras e triangulos semelhantes (esquema sem escala)')
+segments(0.2, 0, 6.0, 0, lwd = 2)
+# pessoa
+segments(0.8, 0, 0.8, 1.1, lwd = 3)
+segments(0.8, 1.1, 2.0, 0, lwd = 2)
+arrows(0.55, 0, 0.55, 1.1, length = 0.08, code = 3)
+text(0.35, 0.55, paste0('h = ', h, ' m'), cex = 0.85, srt = 90)
+arrows(0.8, -0.08, 2.0, -0.08, length = 0.08, code = 3)
+text(1.4, -0.18, paste0(d, ' m'), cex = 0.85)
+text(0.8, 1.25, 'pessoa', cex = 0.85)
+# torre
+segments(3.0, 0, 3.0, 3.0, lwd = 3)
+segments(3.0, 3.0, 5.6, 0, lwd = 2)
+arrows(2.75, 0, 2.75, 3.0, length = 0.08, code = 3)
+text(2.52, 1.5, paste0('H = ', H, ' m'), cex = 0.85, srt = 90)
+arrows(3.0, -0.08, 5.6, -0.08, length = 0.08, code = 3)
+text(4.3, -0.18, 'x', cex = 1.0)
+text(3.0, 3.15, 'torre', cex = 0.85)
+text(3.4, 2.0, 'raios solares paralelos', cex = 0.8, srt = -25)
+par(op)
+@
+\end{center}
+\end{figure}
+
 \end{question}
 
 %% SOLUTION
