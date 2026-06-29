@@ -1,0 +1,62 @@
+<<echo=FALSE, results=hide>>=
+include_supplement("enem2023_q109_polias.jpg")
+M1 <- 1
+razao <- 2
+fmt <- function(x, d = 0) formatC(x, format = "f", digits = d, decimal.mark = ",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Uma academia usa dois tipos de aparelhos com polias para elevar cargas, conforme a figura.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=8cm, keepaspectratio]{{enem2023_q109_polias.jpg}}
+\end{figure}
+
+No aparelho do tipo 1, as polias fixas apenas mudam a direção da força. No aparelho do tipo 2, uma polia móvel divide a força necessária para sustentar a carga. Para que os usuários façam o exercício com a mesma força nos dois aparelhos e com velocidade constante, determine a razão $M_2/M_1$.
+
+\end{question}
+
+\begin{solution}
+
+No aparelho do tipo 1, as polias são fixas. Elas apenas mudam a direção da força aplicada. Assim, em equilíbrio ou velocidade constante,
+
+\[
+F = M_1 g.
+\]
+
+No aparelho do tipo 2, a carga fica associada a uma polia móvel. Nesse caso, dois ramos da corda sustentam a carga, cada um com tração $F$. Portanto,
+
+\[
+2F = M_2 g.
+\]
+
+Como a força exercida pelo usuário deve ser a mesma nos dois aparelhos,
+
+\[
+F=M_1g.
+\]
+
+Substituindo na equação do aparelho 2:
+
+\[
+2M_1g = M_2g.
+\]
+
+Logo,
+
+\[
+\frac{M_2}{M_1}=2.
+\]
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{2}
+%% \extol{0.01}
+%% \exname{Q90ClozePoliasAparelhos}
+%% \exsection{Mecanica; Polias; Maquinas simples; ENEM}
+%% \exusepackage[utf8]{inputenc}

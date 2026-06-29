@@ -1,0 +1,86 @@
+<<echo=FALSE, results=hide>>=
+include_supplement("enem2023_q114_caminhao_carga.jpg")
+alternativas <- c("A", "B", "C", "D", "E")
+fmt <- function(x, d = 1) formatC(x, format = "f", digits = d, decimal.mark = ",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Uma carga está presa por duas cordas sobre a carroceria de um caminhão, conforme a figura.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=8cm, keepaspectratio]{{enem2023_q114_caminhao_carga.jpg}}
+\end{figure}
+
+Considere uma carga de massa $200\,\mathrm{kg}$, coeficiente de atrito estático $\mu=0{,}2$ e $g=10\,\mathrm{m/s^2}$. O caminhão parte do repouso com aceleração de $3\,\mathrm{m/s^2}$ e, em outro momento, freia com aceleração de módulo $5\,\mathrm{m/s^2}$. As tensões iniciais nas cordas são nulas.
+
+Quais são as tensões nas cordas 1 e 2 durante a aceleração e durante a frenagem?
+
+<<echo=FALSE, results=tex>>=
+answerlist(c("aceleração: $T_1=0$ e $T_2=200\\,\\mathrm{N}$; frenagem: $T_1=600\\,\\mathrm{N}$ e $T_2=0$",
+             "aceleração: $T_1=0$ e $T_2=200\\,\\mathrm{N}$; frenagem: $T_1=1400\\,\\mathrm{N}$ e $T_2=0$",
+             "aceleração: $T_1=0$ e $T_2=600\\,\\mathrm{N}$; frenagem: $T_1=600\\,\\mathrm{N}$ e $T_2=0$",
+             "aceleração: $T_1=560\\,\\mathrm{N}$ e $T_2=0$; frenagem: $T_1=0$ e $T_2=960\\,\\mathrm{N}$",
+             "aceleração: $T_1=640\\,\\mathrm{N}$ e $T_2=0$; frenagem: $T_1=0$ e $T_2=1040\\,\\mathrm{N}$"))
+@
+
+\end{question}
+
+\begin{solution}
+
+A força de atrito estático máxima é
+
+\[
+f_{\max}=\mu mg=0{,}2\cdot 200\cdot 10=400\,\mathrm{N}.
+\]
+
+Na aceleração para a frente, a carga tende a ficar para trás em relação ao caminhão. A corda 2 é tracionada. A força necessária para acelerar a carga é
+
+\[
+ma=200\cdot3=600\,\mathrm{N}.
+\]
+
+Como o atrito já contribui com $400\,\mathrm{N}$, a tensão na corda 2 é
+
+\[
+T_2=600-400=200\,\mathrm{N}.
+\]
+
+Assim, na aceleração,
+
+\[
+T_1=0,\qquad T_2=200\,\mathrm{N}.
+\]
+
+Na frenagem, a carga tende a seguir para a frente. A corda 1 é tracionada. A força necessária para produzir desaceleração de módulo $5\,\mathrm{m/s^2}$ é
+
+\[
+ma=200\cdot5=1000\,\mathrm{N}.
+\]
+
+Como o atrito fornece $400\,\mathrm{N}$, a tensão na corda 1 é
+
+\[
+T_1=1000-400=600\,\mathrm{N}.
+\]
+
+Portanto, na frenagem,
+
+\[
+T_1=600\,\mathrm{N},\qquad T_2=0.
+\]
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(c(TRUE, FALSE, FALSE, FALSE, FALSE), paste0("\\textbf{", alternativas, "}"), alternativas))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{10000}
+%% \exname{Q91QuizCaminhaoCargaAtrito}
+%% \exsection{Mecanica; Atrito; Leis de Newton; ENEM}
+%% \exusepackage[utf8]{inputenc}

@@ -1,0 +1,88 @@
+<<echo=FALSE, results=hide>>=
+include_supplement("enem2024_q96_nadador_corrente.jpg")
+L <- 800
+H <- 400
+vn <- 50
+vc <- 30
+v_horizontal <- sqrt(vn^2 - vc^2)
+t1 <- L / v_horizontal
+t2 <- H / (vn - vc)
+t3 <- L / v_horizontal
+t4 <- H / (vn + vc)
+ttotal <- t1 + t2 + t3 + t4
+fmt <- function(x, d = 0) formatC(x, format = "f", digits = d, decimal.mark = ",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Em uma maratona aquática, um nadador percorre uma volta em um circuito retangular, no sentido anti-horário. Há corrente marítima de $\Sexpr{vc}\,\mathrm{m/min}$, paralela a um dos lados do circuito, e o nadador tem velocidade de $\Sexpr{vn}\,\mathrm{m/min}$ em relação à água.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=8cm, keepaspectratio]{{enem2024_q96_nadador_corrente.jpg}}
+\end{figure}
+
+Determine, em minutos, o tempo total para completar a volta.
+
+\end{question}
+
+\begin{solution}
+
+Nos trechos horizontais, o nadador precisa compensar a corrente vertical. Assim, a componente horizontal de sua velocidade é
+
+\[
+v_x=\sqrt{v_n^2-v_c^2}.
+\]
+
+Substituindo,
+
+\[
+v_x=\sqrt{50^2-30^2}=40\,\mathrm{m/min}.
+\]
+
+Cada trecho horizontal tem $800\,\mathrm{m}$, então cada um leva
+
+\[
+t_h=\frac{800}{40}=20\,\mathrm{min}.
+\]
+
+No trecho vertical contra a corrente, a velocidade resultante é
+
+\[
+v_{\mathrm{contra}}=50-30=20\,\mathrm{m/min}.
+\]
+
+Logo,
+
+\[
+t_{\mathrm{contra}}=\frac{400}{20}=20\,\mathrm{min}.
+\]
+
+No trecho vertical a favor da corrente,
+
+\[
+v_{\mathrm{favor}}=50+30=80\,\mathrm{m/min}.
+\]
+
+Logo,
+
+\[
+t_{\mathrm{favor}}=\frac{400}{80}=5\,\mathrm{min}.
+\]
+
+Portanto,
+
+\[
+t_{\mathrm{total}}=20+20+20+5=65\,\mathrm{min}.
+\]
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{65}
+%% \extol{0.01}
+%% \exname{Q92ClozeNadadorCorrente}
+%% \exsection{Mecanica; Vetores; Movimento relativo; ENEM}
+%% \exusepackage[utf8]{inputenc}
