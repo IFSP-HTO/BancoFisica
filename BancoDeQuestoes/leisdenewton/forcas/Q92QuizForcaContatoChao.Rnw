@@ -1,0 +1,48 @@
+<<echo=FALSE, results=hide>>=
+include_supplement("enem2024_q98_charge_forca_contato.jpg")
+alternativas <- c("A", "B", "C", "D", "E")
+fmt <- function(x, d = 1) formatC(x, format = "f", digits = d, decimal.mark = ",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+A imagem a seguir mostra uma situação em que uma personagem atinge o chão após cair de um balanço.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[height=10cm, keepaspectratio]{{enem2024_q98_charge_forca_contato.jpg}}
+\end{figure}
+
+Qual vetor representa melhor a força resultante exercida pelo chão sobre a personagem no exato momento do contato?
+
+<<echo=FALSE, results=tex>>=
+answerlist(alternativas)
+@
+
+\end{question}
+
+\begin{solution}
+
+No contato com o chão, a força exercida pelo solo pode ser decomposta em duas partes principais:
+
+\[
+\vec{F}_{\mathrm{chao}} = \vec{N}+\vec{f}.
+\]
+
+A força normal tem direção perpendicular ao chão, portanto aponta para cima. Como a personagem chega ao chão com movimento oblíquo, há também força de atrito horizontal durante o contato. O vetor resultante deve ser a soma vetorial dessas duas componentes.
+
+Na situação representada, a resultante exercida pelo chão aponta obliquamente para cima e para a direita.
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(c(TRUE, FALSE, FALSE, FALSE, FALSE), paste0("\\textbf{", alternativas, "}"), alternativas))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{10000}
+%% \exname{Q92QuizForcaContatoChao}
+%% \exsection{Mecanica; Forcas; Atrito; ENEM}
+%% \exusepackage[utf8]{inputenc}

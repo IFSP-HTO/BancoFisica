@@ -1,0 +1,42 @@
+<<echo=FALSE, results=hide>>=
+include_supplement("enem2022_q113_muleta_forcas.jpg")
+alternativas <- c("A", "B", "C", "D", "E")
+fmt <- function(x, d = 1) formatC(x, format = "f", digits = d, decimal.mark = ",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Uma muleta é pressionada contra o piso por uma força paralela ao seu eixo. Ao aumentar lentamente o ângulo entre a muleta e a vertical, chega-se a uma condição limite imediatamente antes do escorregamento.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[height=9cm, keepaspectratio]{{enem2022_q113_muleta_forcas.jpg}}
+\end{figure}
+
+Qual esquema representa corretamente as forças peso, normal e atrito estático que atuam sobre a muleta nessa condição?
+
+<<echo=FALSE, results=tex>>=
+answerlist(alternativas)
+@
+
+\end{question}
+
+\begin{solution}
+
+A força peso atua no centro de massa da muleta, verticalmente para baixo. A força normal é exercida pelo chão no ponto de contato, perpendicular ao piso, portanto vertical para cima. A força de atrito estático também atua no ponto de contato, tangencialmente ao piso, no sentido necessário para impedir o escorregamento.
+
+Além disso, a força aplicada permanece paralela à muleta. O esquema correto é aquele que posiciona peso no centro de massa, normal e atrito no ponto de contato, e a força aplicada ao longo da direção da muleta.
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(c(FALSE, FALSE, FALSE, FALSE, TRUE), paste0("\\textbf{", alternativas, "}"), alternativas))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{00001}
+%% \exname{Q92QuizMuletaForcas}
+%% \exsection{Mecanica; Atrito; Forcas; ENEM}
+%% \exusepackage[utf8]{inputenc}

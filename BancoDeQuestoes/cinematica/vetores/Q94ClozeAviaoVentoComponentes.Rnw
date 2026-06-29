@@ -1,0 +1,92 @@
+<<echo=FALSE, results=hide>>=
+include_supplement("enem2025_q128_aviao_vetores.jpg")
+dx <- 20
+dy <- 20
+dz <- 1
+tempo_h <- 0.1
+vgx <- dx / tempo_h
+vgy <- dy / tempo_h
+vgz <- dz / tempo_h
+vento_x <- 30
+vento_y <- -20
+vento_z <- -1
+aviao_x <- vgx - vento_x
+aviao_y <- vgy - vento_y
+aviao_z <- vgz - vento_z
+fmt <- function(x, d = 0) formatC(x, format = "f", digits = d, decimal.mark = ",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Um avião deve se deslocar de uma cidade até outra em $6$ minutos. O deslocamento desejado, em relação ao solo, tem componentes de $\Sexpr{dx}\,\mathrm{km}$ para leste, $\Sexpr{dy}\,\mathrm{km}$ para norte e $\Sexpr{dz}\,\mathrm{km}$ para cima. Durante todo o trajeto, sopra um vento com componentes de $\Sexpr{vento_x}\,\mathrm{km/h}$ para leste, $20\,\mathrm{km/h}$ para sul e $1\,\mathrm{km/h}$ para baixo.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=8cm, keepaspectratio]{{enem2025_q128_aviao_vetores.jpg}}
+\end{figure}
+
+Determine as componentes da velocidade do avião em relação ao ar, em $\mathrm{km/h}$:
+
+\begin{answerlist}
+  \item componente para leste;
+  \item componente para norte;
+  \item componente vertical para cima.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+O intervalo de tempo é de $6$ minutos, ou seja,
+
+\[
+\Delta t = 0{,}1\,\mathrm{h}.
+\]
+
+A velocidade desejada em relação ao solo é
+
+\[
+\vec{v}_{\mathrm{solo}} = (200,200,10)\,\mathrm{km/h}.
+\]
+
+O vento tem componentes
+
+\[
+\vec{v}_{\mathrm{vento}} = (30,-20,-1)\,\mathrm{km/h}.
+\]
+
+Como
+
+\[
+\vec{v}_{\mathrm{solo}} = \vec{v}_{\mathrm{aviao/ar}} + \vec{v}_{\mathrm{vento}},
+\]
+
+temos
+
+\[
+\vec{v}_{\mathrm{aviao/ar}} = \vec{v}_{\mathrm{solo}} - \vec{v}_{\mathrm{vento}}.
+\]
+
+Portanto,
+
+\[
+\vec{v}_{\mathrm{aviao/ar}}=(200,200,10)-(30,-20,-1)=(170,220,11)\,\mathrm{km/h}.
+\]
+
+\begin{answerlist}
+  \item $\Sexpr{fmt(aviao_x,0)}\,\mathrm{km/h}$
+  \item $\Sexpr{fmt(aviao_y,0)}\,\mathrm{km/h}$
+  \item $\Sexpr{fmt(aviao_z,0)}\,\mathrm{km/h}$
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{\Sexpr{aviao_x}|\Sexpr{aviao_y}|\Sexpr{aviao_z}}
+%% \exclozetype{num|num|num}
+%% \extol{0.1|0.1|0.1}
+%% \exname{Q94ClozeAviaoVentoComponentes}
+%% \exsection{Mecanica; Vetores; Cinematica; ENEM}
+%% \exusepackage[utf8]{inputenc}

@@ -1,0 +1,44 @@
+<<echo=FALSE, results=hide>>=
+include_supplement("enem2024_q134_roda_cm.jpg")
+alternativas <- c("A", "B", "C", "D", "E")
+fmt <- function(x, d = 1) formatC(x, format = "f", digits = d, decimal.mark = ",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Em uma máquina de balanceamento, o conjunto roda-pneu gira e a posição do centro de massa do conjunto é indicada. Pequenas peças de chumbo podem ser fixadas em pontos da roda para corrigir o desequilíbrio.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=7cm, keepaspectratio]{{enem2024_q134_roda_cm.jpg}}
+\end{figure}
+
+Em qual ponto deve ser fixada a peça de chumbo para corrigir a posição do centro de massa do conjunto roda-pneu?
+
+<<echo=FALSE, results=tex>>=
+answerlist(alternativas)
+@
+
+\end{question}
+
+\begin{solution}
+
+Para que o conjunto fique balanceado, o centro de massa deve coincidir com o centro geométrico da roda. A figura mostra o centro de massa deslocado para um lado da roda.
+
+Ao acrescentar uma peça de chumbo, deve-se colocá-la do lado oposto ao deslocamento do centro de massa, de modo que o novo centro de massa do conjunto se aproxime do centro geométrico.
+
+Na figura, o ponto oposto ao deslocamento indicado do centro de massa é o ponto 3.
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(c(FALSE, FALSE, TRUE, FALSE, FALSE), paste0("\\textbf{", alternativas, "}"), alternativas))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{00100}
+%% \exname{Q93QuizBalanceamentoRoda}
+%% \exsection{Mecanica; Centro de massa; Estatica; ENEM}
+%% \exusepackage[utf8]{inputenc}
