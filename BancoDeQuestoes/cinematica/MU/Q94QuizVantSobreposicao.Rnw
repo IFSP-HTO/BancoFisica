@@ -1,0 +1,78 @@
+<<echo=FALSE, results=hide>>=
+include_supplement("enem2019_q97_vant.png")
+
+H <- 1000
+v <- 50
+sobreposicao <- 0.20
+largura_imagem <- 2 * H
+deslocamento <- (1 - sobreposicao) * largura_imagem
+intervalo <- deslocamento / v
+
+alternativas <- c("40 segundos", "32 segundos", "28 segundos", "16 segundos", "8 segundos")
+solutions <- c(FALSE, TRUE, FALSE, FALSE, FALSE)
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Na agricultura de precisão, um veículo aéreo não tripulado (VANT) registra uma sequência de fotografias de um terreno plano. Para que as imagens possam ser combinadas, fotografias consecutivas devem apresentar uma sobreposição frontal de $20\%$.
+
+O VANT voa a uma altitude fixa de $\Sexpr{H}\,\mathrm{m}$, com velocidade constante de $\Sexpr{v}\,\mathrm{m/s}$. A abertura angular da câmera é de $90^\circ$, conforme o esquema original da questão do ENEM 2019. Considere $\tan(45^\circ)=1$.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=11cm, keepaspectratio]{{enem2019_q97_vant.png}}
+\end{figure}
+
+Qual deve ser o intervalo de tempo entre duas fotografias consecutivas?
+
+<<echo=FALSE, results=tex>>=
+answerlist(alternativas)
+@
+
+\end{question}
+
+\begin{solution}
+
+Como a abertura da câmera é de $90^\circ$, cada lado do campo de visão forma um ângulo de $45^\circ$ com a vertical. Para metade da largura fotografada,
+
+\[
+\tan(45^\circ)=\frac{L/2}{H}=1.
+\]
+
+Logo,
+
+\[
+\frac{L}{2}=H
+\quad\Rightarrow\quad
+L=2H=2\cdot\Sexpr{H}=\Sexpr{largura_imagem}\,\mathrm{m}.
+\]
+
+Como a sobreposição frontal deve ser de $20\%$, o VANT pode avançar apenas $80\%$ da largura de uma imagem entre dois registros:
+
+\[
+\Delta s=(1-0{,}20)L=0{,}80\cdot\Sexpr{largura_imagem}=\Sexpr{deslocamento}\,\mathrm{m}.
+\]
+
+No movimento uniforme,
+
+\[
+\Delta t=\frac{\Delta s}{v}
+=\frac{\Sexpr{deslocamento}}{\Sexpr{v}}
+=\Sexpr{intervalo}\,\mathrm{s}.
+\]
+
+Portanto, o intervalo correto é de $\Sexpr{intervalo}$ segundos.
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(solutions, paste0("\\textbf{", alternativas, "}"), alternativas))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{01000}
+%% \exname{Q94QuizVantSobreposicao}
+%% \exsection{Mecanica; Cinematica; Movimento uniforme; ENEM}
+%% \exusepackage[utf8]{inputenc}
