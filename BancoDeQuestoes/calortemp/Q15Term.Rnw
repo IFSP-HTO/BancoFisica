@@ -1,47 +1,60 @@
 <<echo=FALSE, results=hide>>=
-  #Programado por: Jmduly
-  
-  temp1 <- sample(seq(from=30,to=60,by=1),1)
-  
-  temp2 <- sample(seq(from=60,to=90,by=1),1)
-  
-  resp1 <- round((temp2-temp1)*1.8, digits = 1)
-  
-  resp2 <- (temp2-temp1)
-@
-  
-  \usepackage[utf8]{inputenc}
-  
-  \begin{question}
-  
-  Uma panela com água é aquecida de $\Sexpr{temp1}$°C para $\Sexpr{temp2}$°C.
-  \\
-  \begin{answerlist}
-  
-  \item A variação de temperatura sofrida pela panela com água, na escala Fahrenheit, foi de:
+# Programado por: Jmduly
 
-  \item A variação de temperatura sofrida pela panela com água, na escala kelvin, foi de:
-  
-  \end{answerlist}
-  
-  \end{question}
-  
-  %% SOLUTION
-  \begin{solution}:
-    
-    \begin{answerlist}
-  \item
-  \Sexpr{resp1}
-  
-  \item
-  \Sexpr{resp2}
-  
-  \end{answerlist}
-  \end{solution}
-  
-  %% META-INFORMATION
-  %% \extype{cloze}
-  %% \exclozetype{num|num}
-  %% \exsolution{\Sexpr{resp1}|\Sexpr{resp2}}
-  %% \exname{Q15Term}
-  %% \extol{0.01|0.01}
+temp1 <- sample(seq(from = 30, to = 60, by = 1), 1)
+temp2 <- sample(seq(from = 60, to = 90, by = 1), 1)
+
+resp1 <- round((temp2 - temp1) * 1.8, digits = 1)
+resp2 <- temp2 - temp1
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Uma panela com água é aquecida de $\Sexpr{temp1}\,^{\circ}\mathrm{C}$ para $\Sexpr{temp2}\,^{\circ}\mathrm{C}$.
+
+\begin{answerlist}
+\item A variação de temperatura sofrida pela panela com água, na escala Fahrenheit, foi de:
+\item A variação de temperatura sofrida pela panela com água, na escala Kelvin, foi de:
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Para diferenças de temperatura, vale
+
+\[
+\Delta T_{\mathrm{F}} = 1{,}8\,\Delta T_{\mathrm{C}}.
+\]
+
+Como
+
+\[
+\Delta T_{\mathrm{C}} = \Sexpr{temp2} - \Sexpr{temp1} = \Sexpr{resp2}\,^{\circ}\mathrm{C},
+\]
+
+a variação na escala Fahrenheit é
+
+\[
+\Delta T_{\mathrm{F}} = 1{,}8 \cdot \Sexpr{resp2} = \Sexpr{resp1}\,^{\circ}\mathrm{F}.
+\]
+
+Uma diferença de temperatura tem o mesmo valor numérico nas escalas Celsius e Kelvin. Portanto,
+
+\begin{answerlist}
+\item $\Sexpr{resp1}\,^{\circ}\mathrm{F}$
+\item $\Sexpr{resp2}\,\mathrm{K}$
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{resp1}|\Sexpr{resp2}}
+%% \exname{Q15Term}
+%% \exsection{Termologia; Temperatura; Escalas termometricas}
+%% \extol{0.01|0.01}
+%% \exusepackage[utf8]{inputenc}
