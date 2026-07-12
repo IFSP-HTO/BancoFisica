@@ -76,6 +76,8 @@ Os XMLs legados versionados em `Moodle/*.xml` continuam disponíveis no reposit�
 
 #### Banco de Questões
 
+Uma vez baixadas as questões você pode utilizá-las diretamente no Moodle. Mas para isso você deve importar o XML em um banco de questões. Para exemplificar o processo vamos utilizar o [Moodle Sandbox](https://demo.moodle.net/).
+
 ![](.gitbook/assets/importantobanco.gif)
 
 Por fim basta criar um questionário a partir do banco de questões:
@@ -116,3 +118,41 @@ Faça um fork do repositório, realize as modificações e faça um pull request
 #### Issues
 
 Nos issues você pode fazer perguntas, sugerir recursos ou reportar problemas. Sempre que possível utilize os templates disponíveis.
+
+### Nome das questões
+
+O nome da questão criada deve ser dado da seguinte maneira:
+
+**Qxx\[Tipo\]Assunto.Rnw**
+
+onde:
+
+**xx**: número sequencial de implementação: 01, 02, 03, etc.
+
+**Assunto**: nome abreviado do assunto tratado pela questão. Ex.: Ondas, Termd \(termodinâmica\), CalorTemp \(Calor e temperatura\), Eletrost \(eletrostática\), etc. Ex.: Q15Eletrost.Rnw
+
+**Tipo**: inserir a palavra Quiz apenas se a questão for de múltipla escolha ou verdadeiro ou falso. Ex.: Q02QuizOndas.
+
+### Acentos
+
+O pacote exams pode apresentar alguns problemas com acentos. Há três soluções:
+
+1 - Inserir na questão a seguinte linha de código:
+
+```text
+\usepackage[utf8]{inputenc}
+```
+
+2 - Compilar cada questão com:
+
+```text
+exams2pdf("file.Rnw", encoding = "UTF-8", template = "plain8")
+```
+
+## ShinyExams
+
+Nós criamos um [addin](https://cran.r-project.org/web/packages/addinslist/README.html) para o RStudio para facilitar a criação de questões. Você pode encontrar maiores informações no [repositório do pacote](https://github.com/flaviobarros/shinyExams).
+
+## Licença
+
+GPL-v3
