@@ -16,7 +16,7 @@ Anemômetros são instrumentos usados para medir a velocidade do vento. A sua co
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[height=5cm, keepaspectratio]{{Q10MCU.png}}
+  \includegraphics[height=5cm, keepaspectratio]{Q10MCU.png}
 \end{figure}
 
 Se em um anemômetro a distância entre as conchas e o centro de rotação é r = \Sexpr{R_cm} cm, em um dia cuja velocidade do vento é v = \Sexpr{v} m/s, qual seria a frequência de rotação em RPM?

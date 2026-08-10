@@ -145,6 +145,23 @@ validate_xml <- function(path) {
   if (grepl("<parsererror", text, fixed = TRUE)) {
     stop("Parser error marker in ", path)
   }
+  if (grepl("src=\"%7B[^\"]*%7D\"", text, perl = TRUE)) {
+    stop("Broken image src (percent-encoded braces %7B...%7D) in ", path)
+  }
+  img_srcs <- regmatches(
+    text,
+    gregexpr("src=\"[^\"]*\\.(png|jpe?g|gif|svg)\"", text,
+             ignore.case = TRUE, perl = TRUE)
+  )[[1]]
+  bad_imgs <- img_srcs[
+    !grepl("src=\"@@PLUGINFILE@@/", img_srcs, fixed = TRUE) &
+      !grepl("src=\"data:", img_srcs, fixed = TRUE) &
+      !grepl("src=\"https?://", img_srcs, perl = TRUE)
+  ]
+  if (length(bad_imgs) > 0) {
+    stop("Image src not resolved to @@PLUGINFILE@@ in ", path, ": ",
+         paste(utils::head(bad_imgs, 5), collapse = " | "))
+  }
   tags <- regmatches(
     text,
     gregexpr("<question[[:space:]]+type=\"[^\"]+\"", text, perl = TRUE)

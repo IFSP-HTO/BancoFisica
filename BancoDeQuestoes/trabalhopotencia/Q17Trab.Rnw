@@ -41,7 +41,7 @@ include_supplement("Q16Trab.png")
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=7cm, keepaspectratio]{{Q16Trab.png}}
+  \includegraphics[width=7cm, keepaspectratio]{Q16Trab.png}
 \end{figure}
 
 <<echo=FALSE, results=hide, results=tex>>=

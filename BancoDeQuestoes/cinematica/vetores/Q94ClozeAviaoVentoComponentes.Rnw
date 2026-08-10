@@ -23,7 +23,7 @@ Um avião deve se deslocar de uma cidade até outra em $6$ minutos. O deslocamen
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=8cm, keepaspectratio]{{enem2025_q128_aviao_vetores.jpg}}
+  \includegraphics[width=8cm, keepaspectratio]{enem2025_q128_aviao_vetores.jpg}
 \end{figure}
 
 Determine as componentes da velocidade do avião em relação ao ar, em $\mathrm{km/h}$:

@@ -39,7 +39,7 @@ include_supplement("Q14Trab.png")
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=4cm, keepaspectratio]{{Q14Trab.png}}
+  \includegraphics[width=4cm, keepaspectratio]{Q14Trab.png}
 \end{figure}
 
 O ponto no qual a partícula vai parar é:

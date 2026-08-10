@@ -20,7 +20,7 @@ Em uma maratona aquática, um nadador percorre uma volta em um circuito retangul
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=8cm, keepaspectratio]{{enem2024_q96_nadador_corrente.jpg}}
+  \includegraphics[width=8cm, keepaspectratio]{enem2024_q96_nadador_corrente.jpg}
 \end{figure}
 
 Determine, em minutos, o tempo total para completar a volta.

@@ -55,6 +55,12 @@ compilar_isolado <- function(arquivo, diretorio, formato, ano, seed) {
           length(hits)
         }
 
+        # Detecta "sem correspondência" num resultado de gregexpr/gregexpr.
+        # gregexpr retorna um int -1 COM atributos (match.length etc.), e
+        # identical(x, -1L) é FALSE nesse caso (compara atributos). A forma
+        # segura é testar length == 1 && o valor == -1.
+        no_match <- function(hits) length(hits) == 1L && !is.na(hits) && as.integer(hits) == -1L
+
         validate_moodle_xml <- function(xml_file) {
           if (!file.exists(xml_file)) {
             stop("Moodle XML file not found: ", xml_file)
@@ -71,6 +77,36 @@ compilar_isolado <- function(arquivo, diretorio, formato, ano, seed) {
           }
           if (grepl("<parsererror", xml_text, fixed = TRUE)) {
             stop("Moodle XML contains parsererror marker in ", basename(xml_file))
+          }
+
+          # Imagens com src quebrado: o padrão %7B...%7D é a codificação URL de
+          # chaves literais {arquivo}. Isso acontece quando o .Rnw usa
+          # \includegraphics{{arquivo}} (chave dupla): o pandoc mantém as chaves
+          # no caminho e o exams2moodle percent-encodea, gerando
+          # src="%7Barquivo%7D" em vez de src="@@PLUGINFILE@@/arquivo". A imagem
+          # então não é exibida no Moodle. Este teste falha se qualquer <img>
+          # referenciar %7B ou se um arquivo embutido não tiver seu pluginfile.
+          broken_src <- gregexpr("src=\"%7B[^\"]*%7D\"", xml_text, perl = TRUE)[[1]]
+          if (!no_match(broken_src)) {
+            stop("Moodle XML has broken image src (percent-encoded braces %7B...%7D) in ",
+                 basename(xml_file))
+          }
+          # Qualquer src de imagem que não aponte para @@PLUGINFILE@@ e não seja
+          # um data-URI base64 nem um URL absoluto indica arquivo não anexado.
+          img_srcs <- regmatches(
+            xml_text,
+            gregexpr("src=\"[^\"]*\\.(png|jpe?g|gif|svg)\"", xml_text,
+                     ignore.case = TRUE, perl = TRUE)
+          )[[1]]
+          bad_imgs <- img_srcs[
+            !grepl("src=\"@@PLUGINFILE@@/", img_srcs, fixed = TRUE) &
+              !grepl("src=\"data:", img_srcs, fixed = TRUE) &
+              !grepl("src=\"https?://", img_srcs, perl = TRUE)
+          ]
+          if (length(bad_imgs) > 0) {
+            stop("Moodle XML has image src not resolved to @@PLUGINFILE@@ in ",
+                 basename(xml_file), ": ",
+                 paste(utils::head(bad_imgs, 5), collapse = " | "))
           }
 
           question_tags <- regmatches(

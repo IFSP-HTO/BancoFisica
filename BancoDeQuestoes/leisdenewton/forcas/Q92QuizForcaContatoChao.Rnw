@@ -11,7 +11,7 @@ A imagem a seguir mostra uma situação em que uma personagem atinge o chão ap�
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[height=10cm, keepaspectratio]{{enem2024_q98_charge_forca_contato.jpg}}
+  \includegraphics[height=10cm, keepaspectratio]{enem2024_q98_charge_forca_contato.jpg}
 \end{figure}
 
 Qual vetor representa melhor a força resultante exercida pelo chão sobre a personagem no exato momento do contato?

@@ -18,7 +18,7 @@ resp2 <- round(Fx*d,1)
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[scale=0.7]{{Q09Trab.jpg}}
+  \includegraphics[scale=0.7]{Q09Trab.jpg}
 \end{figure}
 
 \begin{answerlist}

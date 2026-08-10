@@ -11,7 +11,7 @@ Em uma máquina de balanceamento, o conjunto roda-pneu gira e a posição do cen
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=7cm, keepaspectratio]{{enem2024_q134_roda_cm.jpg}}
+  \includegraphics[width=7cm, keepaspectratio]{enem2024_q134_roda_cm.jpg}
 \end{figure}
 
 Em qual ponto deve ser fixada a peça de chumbo para corrigir a posição do centro de massa do conjunto roda-pneu?

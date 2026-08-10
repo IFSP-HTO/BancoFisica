@@ -15,7 +15,7 @@ As máquinas cortadeiras e colheitadeiras de cana-de-açúcar podem substituir d
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[height=5cm, keepaspectratio]{{Q08MCU.png}}
+  \includegraphics[height=5cm, keepaspectratio]{Q08MCU.png}
 \end{figure}
 
 \end{question}

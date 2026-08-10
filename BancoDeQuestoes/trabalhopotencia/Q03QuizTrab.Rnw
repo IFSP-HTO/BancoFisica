@@ -45,7 +45,7 @@ include_supplement("Q03QuizTrab.png")
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=6cm, keepaspectratio]{{Q03QuizTrab.png}}
+  \includegraphics[width=6cm, keepaspectratio]{Q03QuizTrab.png}
 \end{figure}
 
 Assinale a(s) proposição(ões) CORRETA(S):

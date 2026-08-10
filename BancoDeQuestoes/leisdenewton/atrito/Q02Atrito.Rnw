@@ -38,7 +38,7 @@ Um bloco de $\Sexpr{m}$ kg é colocado sobre um plano inclinado que faz um ângu
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[height=5cm, keepaspectratio]{{Q02Atrito.png}}
+  \includegraphics[height=5cm, keepaspectratio]{Q02Atrito.png}
 \end{figure}
   
   \begin{answerlist}

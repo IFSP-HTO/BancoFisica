@@ -112,6 +112,16 @@ for (i in seq_along(files)) {
   exsolution <- extract_meta(txt, "exsolution")
   exname <- extract_meta(txt, "exname")
 
+  # As chaves duplas em \includegraphics{{arquivo.png}} são interpretadas pelo
+  # pandoc como parte literal do caminho, gerando no XML do Moodle uma referência
+  # do tipo src="%7Barquivo.png%7D" em vez de src="@@PLUGINFILE@@/arquivo.png".
+  # Isso faz a figura não ser exibida no Moodle. A sintaxe correta é chave
+  # simples: \includegraphics{arquivo.png}. Veja bancofisica#issue-figuras-12026.
+  double_brace_ig <- txt[grepl("\\\\includegraphics[^{]*\\{\\{", txt)]
+  if (length(double_brace_ig) > 0) {
+    add_problem(rel, "error", "double_brace_includegraphics")
+  }
+
   extypes[i] <- ifelse(is.na(extype), NA_character_, extype)
 
   subject <- dirname(rel)

@@ -17,7 +17,7 @@ O corpo representado está sendo deslocado por uma força de direção e sentido
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=5cm, keepaspectratio]{{Q12Trab.jpg}}
+  \includegraphics[width=5cm, keepaspectratio]{Q12Trab.jpg}
 \end{figure}
 
 \begin{figure}[h!]

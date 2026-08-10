@@ -19,7 +19,7 @@ include_supplement("Q20Trab.png")
         
   \begin{figure}[h!]
     \centering
-    \includegraphics[height=5cm, keepaspectratio]{{Q20Trab.png}}
+    \includegraphics[height=5cm, keepaspectratio]{Q20Trab.png}
   \end{figure}
 
   \begin{answerlist}

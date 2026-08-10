@@ -27,7 +27,7 @@ solutions[aleat[5]] <- TRUE
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=5cm, keepaspectratio]{{Q02QuizTrab.png}}
+  \includegraphics[width=5cm, keepaspectratio]{Q02QuizTrab.png}
 \end{figure}
 
 Considerando os intervalos de tempo I, II e III, a energia cinética do corpo AUMENTA
