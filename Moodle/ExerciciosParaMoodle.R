@@ -4,304 +4,143 @@
 library(tools)
 library(exams)
 
-########Notacao cientifica e ordem de grandeza##################
-## Definindo a pasta com as questoes do exame
-myexam <- dir("./BancoDeQuestoes/nc_og", pattern = ".rnw", ignore.case=TRUE)
-ano <- 12026
-## Cria o arquivo .xml para entrada no moodle
-set.seed(ano)
-exams2moodle(myexam, n = 20, rule="none", 
-             schoice = list(shuffle = TRUE), 
-             converter = "pandoc-mathjax",
-             name = paste0("nc_og-",ano),
-             encoding = "UTF-8",
-             dir = "./Moodle",
-             edir = "./BancoDeQuestoes/nc_og")
+## Limite de upload do Moodle institucional: ~10 MB por arquivo. Quando um
+## assunto gera um XML maior, o script divide a saida em partes .xml de ate
+## 10 MB cada (logica em tools/moodle_xml_split.R).
+source("tools/moodle_xml_split.R")
 
+## Gera o XML do Moodle para um assunto dentro do limite de upload.
+## Assuntos cuja pasta nao tem questoes (.Rnw) sao pulados.
+gerar_moodle <- function(files, n, name, seed, edir,
+                         dir = "./Moodle", encoding = "UTF-8",
+                         converter = NULL) {
+  files <- files[nzchar(files)]
+  if (length(files) == 0L) {
+    message("Sem questoes .Rnw em ", name, " - pulado.")
+    return(invisible(NULL))
+  }
+  generate_moodle_xml_limited(
+    files = files, n = n, name = name, seed = seed,
+    edir = edir, dir = dir, encoding = encoding, converter = converter
+  )
+}
+
+########Notacao cientifica e ordem de grandeza##################
+gerar_moodle(dir("./BancoDeQuestoes/nc_og", pattern = ".rnw", ignore.case = TRUE),
+             n = 20, name = "nc_og-12026", seed = 12026,
+             edir = "./BancoDeQuestoes/nc_og", converter = "pandoc-mathjax")
 
 ############### aceleracao ##################
-## Definindo a pasta com as questoes do exame
-myexam <- dir("./BancoDeQuestoes/acel", pattern = ".rnw", ignore.case=TRUE)
-ano <- 12026
-## Cria o arquivo .xml para entrada no moodle
-set.seed(ano)
-exams2moodle(myexam, n = 100, rule="none", 
-             schoice = list(shuffle = TRUE), 
-             converter = "pandoc-mathjax",
-             name = paste0("acel-",ano),
-             encoding = "UTF-8",
-             dir = "./Moodle",
-             edir = "./BancoDeQuestoes/acel")
+gerar_moodle(dir("./BancoDeQuestoes/acel", pattern = ".rnw", ignore.case = TRUE),
+             n = 100, name = "acel-12026", seed = 12026,
+             edir = "./BancoDeQuestoes/acel", converter = "pandoc-mathjax")
 
 ############### calorimetria ###############
-## Definindo a pasta com as questoes do exame
-myexam <- dir("./BancoDeQuestoes/calorimetria", pattern = ".rnw", ignore.case=TRUE)
-ano <- 12018
-## Cria o arquivo .xml para entrada no moodle
-set.seed(ano)
-exams2moodle(myexam, n = 100, rule="none", 
-             schoice = list(shuffle = TRUE), 
-             name = paste0("calorimetria-",ano),
-             encoding = "UTF-8",
-             converter = "pandoc-mathjax",
-             dir = "./Moodle",
-             edir = "./BancoDeQuestoes/calorimetria")
+gerar_moodle(dir("./BancoDeQuestoes/calorimetria", pattern = ".rnw", ignore.case = TRUE),
+             n = 100, name = "calorimetria-12018", seed = 12018,
+             edir = "./BancoDeQuestoes/calorimetria", converter = "pandoc-mathjax")
 
 ############### calortemp ##################
-## Definindo a pasta com as questoes do exame
-myexam <- dir("./BancoDeQuestoes/calortemp", pattern = ".rnw", ignore.case=TRUE)
-ano <- 12018
-## Cria o arquivo .xml para entrada no moodle
-set.seed(ano)
-exams2moodle(myexam, n = 100, rule="none", 
-             schoice = list(shuffle = TRUE), 
-             name = paste0("calortemp-",ano),
-             encoding = "UTF-8",
-             converter = "pandoc-mathjax",
-             dir = "./Moodle",
-             edir = "./BancoDeQuestoes/calortemp")
+gerar_moodle(dir("./BancoDeQuestoes/calortemp", pattern = ".rnw", ignore.case = TRUE),
+             n = 100, name = "calortemp-12018", seed = 12018,
+             edir = "./BancoDeQuestoes/calortemp", converter = "pandoc-mathjax")
 
 ############### dilatacao #################
-## Definindo a pasta com as questoes do exame
-myexam <- dir("./BancoDeQuestoes/dilatterm", pattern = ".rnw", ignore.case=TRUE)
-ano <- 12018
-## Cria o arquivo .xml para entrada no moodle
-set.seed(ano)
-exams2moodle(myexam, n = 100, rule="none", 
-             schoice = list(shuffle = TRUE), 
-             name = paste0("dilatterm-",ano),
-             encoding = "UTF-8",
-             converter = "pandoc-mathjax",
-             dir = "./Moodle",
-             edir = "./BancoDeQuestoes/dilatterm")
-
+gerar_moodle(dir("./BancoDeQuestoes/dilatterm", pattern = ".rnw", ignore.case = TRUE),
+             n = 100, name = "dilatterm-12018", seed = 12018,
+             edir = "./BancoDeQuestoes/dilatterm", converter = "pandoc-mathjax")
 
 ############### eletricidade #################
-## Definindo a pasta com as questoes do exame
-myexam <- dir("./BancoDeQuestoes/eletricidade", pattern = ".rnw", ignore.case=TRUE)
-ano <- 12018
-## Cria o arquivo .xml para entrada no moodle
-set.seed(ano)
-exams2moodle(myexam, n = 100, rule="none", 
-             schoice = list(shuffle = TRUE), 
-             name = paste0("eletricidade-",ano),
-             encoding = "UTF-8",
-             converter = "pandoc-mathjax",
-             dir = "./Moodle",
-             edir = "./BancoDeQuestoes/eletricidade")
+gerar_moodle(dir("./BancoDeQuestoes/eletricidade", pattern = ".rnw", ignore.case = TRUE),
+             n = 100, name = "eletricidade-12018", seed = 12018,
+             edir = "./BancoDeQuestoes/eletricidade", converter = "pandoc-mathjax")
 
 ############### eletromagnetismo #################
-## Definindo a pasta com as questoes do exame
-myexam <- dir("./BancoDeQuestoes/eletromagnetismo/eletrostática/", pattern = ".rnw", ignore.case=TRUE)
-ano <- 12018
-## Cria o arquivo .xml para entrada no moodle
-set.seed(ano)
-exams2moodle(myexam, n = 100, rule="none", 
-             schoice = list(shuffle = TRUE), 
-             name = paste0("eletromagnetismo-",ano),
-             encoding = "UTF-8",
-             converter = "pandoc-mathjax",
-             dir = "./Moodle",
-             edir = "./BancoDeQuestoes/eletromagnetismo/eletrostática/")
+gerar_moodle(dir("./BancoDeQuestoes/eletromagnetismo/eletrostática", pattern = ".rnw", ignore.case = TRUE),
+             n = 100, name = "eletromagnetismo-12018", seed = 12018,
+             edir = "./BancoDeQuestoes/eletromagnetismo/eletrostática/", converter = "pandoc-mathjax")
 
 ############### eletrostatica ##################
-## Definindo a pasta com as questoes do exame
-myexam <- dir("./BancoDeQuestoes/eletrostatica", pattern = ".rnw", ignore.case=TRUE)
-ano <- 12018
-## Cria o arquivo .xml para entrada no moodle
-set.seed(ano)
-exams2moodle(myexam, n = 100, rule="none", 
-             schoice = list(shuffle = TRUE), 
-             name = paste0("eletrostatica-",ano),
-             encoding = "UTF-8",
-             converter = "pandoc-mathjax",
-             dir = "./Moodle",
-             edir = "./BancoDeQuestoes/eletrostatica")
+gerar_moodle(dir("./BancoDeQuestoes/eletrostatica", pattern = ".rnw", ignore.case = TRUE),
+             n = 100, name = "eletrostatica-12018", seed = 12018,
+             edir = "./BancoDeQuestoes/eletrostatica", converter = "pandoc-mathjax")
 
 ############### energia e conservacao ##################
-## Definindo a pasta com as questoes do exame
-myexam <- dir("./BancoDeQuestoes/energiaeconservacao", pattern = ".rnw", ignore.case=TRUE)
-ano <- 12026
-## Cria o arquivo .xml para entrada no moodle
-set.seed(ano)
-exams2moodle(myexam, n = 100, rule="none", 
-             schoice = list(shuffle = TRUE), 
-             name = paste0("energiaeconservacao-",ano),
-             encoding = "UTF-8",
-             converter = "pandoc-mathjax",
-             dir = "./Moodle",
-             edir = "./BancoDeQuestoes/energiaeconservacao")
+gerar_moodle(dir("./BancoDeQuestoes/energiaeconservacao", pattern = ".rnw", ignore.case = TRUE),
+             n = 100, name = "energiaeconservacao-12026", seed = 12026,
+             edir = "./BancoDeQuestoes/energiaeconservacao", converter = "pandoc-mathjax")
 
 ############### gravitacao ##################
-## Definindo a pasta com as questoes do exame
-myexam <- dir("./BancoDeQuestoes/gravitacao", pattern = ".rnw", ignore.case=TRUE)
-ano <- 12018
-## Cria o arquivo .xml para entrada no moodle
-set.seed(ano)
-exams2moodle(myexam, n = 100, rule="none", 
-             schoice = list(shuffle = TRUE), 
-             name = paste0("gravitacao-",ano),
-             encoding = "UTF-8",
-             converter = "pandoc-mathjax",
-             dir = "./Moodle",
-             edir = "./BancoDeQuestoes/gravitacao")
-
+gerar_moodle(dir("./BancoDeQuestoes/gravitacao", pattern = ".rnw", ignore.case = TRUE),
+             n = 100, name = "gravitacao-12018", seed = 12018,
+             edir = "./BancoDeQuestoes/gravitacao", converter = "pandoc-mathjax")
 
 ############### hidrostatica ##################
-## Definindo a pasta com as questoes do exame
-myexam <- dir("./BancoDeQuestoes/hidrostatica", pattern = ".rnw", ignore.case=TRUE)
-ano <- 12019
-## Cria o arquivo .xml para entrada no moodle
-set.seed(ano)
-exams2moodle(myexam, n = 50, 
-             converter = "pandoc-mathjax",
-             rule="none", 
-             schoice = list(shuffle = TRUE), 
-             name = paste0("hidrostatica-",ano),
-             encoding = "UTF-8",
-             dir = "./Moodle",
-             edir = "./BancoDeQuestoes/hidrostatica")
+gerar_moodle(dir("./BancoDeQuestoes/hidrostatica", pattern = ".rnw", ignore.case = TRUE),
+             n = 50, name = "hidrostatica-12019", seed = 12019,
+             edir = "./BancoDeQuestoes/hidrostatica", converter = "pandoc-mathjax")
 
 ############### impulso ##################
-## Definindo a pasta com as questoes do exame
-myexam <- dir("./BancoDeQuestoes/impulso", pattern = ".rnw", ignore.case=TRUE)
-ano <- 12018
-## Cria o arquivo .xml para entrada no moodle
-set.seed(ano)
-exams2moodle(myexam, n = 100, rule="none", schoice = list(shuffle = TRUE), name = paste0("impulso-",ano),
-             encoding = "UTF-8",
-             dir = "./Moodle",
+gerar_moodle(dir("./BancoDeQuestoes/impulso", pattern = ".rnw", ignore.case = TRUE),
+             n = 100, name = "impulso-12018", seed = 12018,
              edir = "./BancoDeQuestoes/impulso")
 
 ############### lei dos gases ##################
-## Definindo a pasta com as questoes do exame
-myexam <- dir("./BancoDeQuestoes/leidosgases", pattern = ".rnw", ignore.case=TRUE)
-ano <- 12018
-## Cria o arquivo .xml para entrada no moodle
-set.seed(ano)
-exams2moodle(myexam, n = 100, rule="none", schoice = list(shuffle = TRUE), name = paste0("leidosgases-",ano),
-             encoding = "UTF-8",
-             dir = "./Moodle",
+gerar_moodle(dir("./BancoDeQuestoes/leidosgases", pattern = ".rnw", ignore.case = TRUE),
+             n = 100, name = "leidosgases-12018", seed = 12018,
              edir = "./BancoDeQuestoes/leidosgases")
 
 ############leis de newton - atrito##############
-## Definindo a pasta com as questoes do exame
-myexam <- dir("./BancoDeQuestoes/leisdenewton/atrito", pattern = ".rnw", ignore.case=TRUE)
-ano <- 12018
-## Cria o arquivo .xml para entrada no moodle
-set.seed(ano)
-exams2moodle(myexam, n = 100, rule="none", schoice = list(shuffle = TRUE), name = paste0("leisdenewton-",ano),
-             encoding = "UTF-8",
-             dir = "./Moodle",
+gerar_moodle(dir("./BancoDeQuestoes/leisdenewton/atrito", pattern = ".rnw", ignore.case = TRUE),
+             n = 100, name = "leisdenewton-12018", seed = 12018,
              edir = "./BancoDeQuestoes/leisdenewton")
 
 ############### magnetismo ##################
-## Definindo a pasta com as questoes do exame
-myexam <- dir("./BancoDeQuestoes/magnetismo", pattern = ".rnw", ignore.case=TRUE)
-ano <- 12018
-## Cria o arquivo .xml para entrada no moodle
-set.seed(ano)
-exams2moodle(myexam, n = 100, rule="none", schoice = list(shuffle = TRUE), name = paste0("magnetismo-",ano),
-             encoding = "UTF-8",
-             dir = "./Moodle",
+gerar_moodle(dir("./BancoDeQuestoes/magnetismo", pattern = ".rnw", ignore.case = TRUE),
+             n = 100, name = "magnetismo-12018", seed = 12018,
              edir = "./BancoDeQuestoes/magnetismo")
 
 ############### movimento circular ##################
-## Definindo a pasta com as questoes do exame
-myexam <- dir("./BancoDeQuestoes/movcircular", pattern = ".rnw", ignore.case=TRUE)
-ano <- 12018
-## Cria o arquivo .xml para entrada no moodle
-set.seed(ano)
-exams2moodle(myexam, n = 100, rule="none", schoice = list(shuffle = TRUE), name = paste0("movcircular-",ano),
-             encoding = "UTF-8",
-             dir = "./Moodle",
+gerar_moodle(dir("./BancoDeQuestoes/movcircular", pattern = ".rnw", ignore.case = TRUE),
+             n = 100, name = "movcircular-12018", seed = 12018,
              edir = "./BancoDeQuestoes/movcircular")
 
 ############### MRU ##################
-## Definindo a pasta com as questoes do exame
-myexam <- dir("./BancoDeQuestoes/mru", pattern = ".rnw", ignore.case=TRUE)
-ano <- 12026
-## Cria o arquivo .xml para entrada no moodle
-set.seed(ano)
-exams2moodle(myexam, n = 100, rule="none", schoice = list(shuffle = TRUE), name = paste0("mru-",ano),
-             encoding = "UTF-8",
-             dir = "./Moodle",
+gerar_moodle(dir("./BancoDeQuestoes/mru", pattern = ".rnw", ignore.case = TRUE),
+             n = 100, name = "mru-12026", seed = 12026,
              edir = "./BancoDeQuestoes/mru")
 
 ############### MRUV ##################
-## Definindo a pasta com as questoes do exame
-myexam <- dir("./BancoDeQuestoes/mruv", pattern = ".rnw", ignore.case=TRUE)
-ano <- 12026
-## Cria o arquivo .xml para entrada no moodle
-set.seed(ano)
-exams2moodle(myexam, n = 100, rule="none", schoice = list(shuffle = TRUE), name = paste0("mruv-",ano),
-             encoding = "UTF-8",
-             dir = "./Moodle",
+gerar_moodle(dir("./BancoDeQuestoes/mruv", pattern = ".rnw", ignore.case = TRUE),
+             n = 100, name = "mruv-12026", seed = 12026,
              edir = "./BancoDeQuestoes/mruv")
 
-
 ############### ondas ##################
-## Definindo a pasta com as questoes do exame
-myexam <- dir("./BancoDeQuestoes/ondas", pattern = ".rnw", ignore.case=TRUE)
-ano <- 12018
-## Cria o arquivo .xml para entrada no moodle
-set.seed(ano)
-exams2moodle(myexam, n = 100, rule="none", schoice = list(shuffle = TRUE), name = paste0("ondas-",ano),
-             encoding = "UTF-8",
-             dir = "./Moodle",
+gerar_moodle(dir("./BancoDeQuestoes/ondas", pattern = ".rnw", ignore.case = TRUE),
+             n = 100, name = "ondas-12018", seed = 12018,
              edir = "./BancoDeQuestoes/ondas")
 
 ############### optica ##################
-## Definindo a pasta com as questoes do exame
-myexam <- dir("./BancoDeQuestoes/optica", pattern = ".rnw", ignore.case=TRUE)
-ano <- 12018
-## Cria o arquivo .xml para entrada no moodle
-set.seed(ano)
-exams2moodle(myexam, n = 100, rule="none", schoice = list(shuffle = TRUE), name = paste0("optica-",ano),
-             encoding = "UTF-8",
-             dir = "./Moodle",
+gerar_moodle(dir("./BancoDeQuestoes/optica", pattern = ".rnw", ignore.case = TRUE),
+             n = 100, name = "optica-12018", seed = 12018,
              edir = "./BancoDeQuestoes/optica")
 
 ############### termodinamica ##################
-## Definindo a pasta com as questoes do exame
-myexam <- dir("./BancoDeQuestoes/termodinamica", pattern = ".rnw", ignore.case=TRUE)
-ano <- 12018
-## Cria o arquivo .xml para entrada no moodle
-set.seed(ano)
-exams2moodle(myexam, n = 100, rule="none", schoice = list(shuffle = TRUE), name = paste0("termodinamica-",ano),
-             encoding = "UTF-8",
-             dir = "./Moodle",
+gerar_moodle(dir("./BancoDeQuestoes/termodinamica", pattern = ".rnw", ignore.case = TRUE),
+             n = 100, name = "termodinamica-12018", seed = 12018,
              edir = "./BancoDeQuestoes/termodinamica")
 
 ############### trabalho e potencia ##################
-## Definindo a pasta com as questoes do exame
-myexam <- dir("./BancoDeQuestoes/trabalhopotencia", pattern = ".rnw", ignore.case=TRUE)
-ano <- 12026
-## Cria o arquivo .xml para entrada no moodle
-set.seed(ano)
-exams2moodle(myexam, n = 100, rule="none", schoice = list(shuffle = TRUE), name = paste0("trabalhopotencia-",ano),
-             encoding = "UTF-8",
-             dir = "./Moodle",
+gerar_moodle(dir("./BancoDeQuestoes/trabalhopotencia", pattern = ".rnw", ignore.case = TRUE),
+             n = 100, name = "trabalhopotencia-12026", seed = 12026,
              edir = "./BancoDeQuestoes/trabalhopotencia")
 
 ################## MU ####################
-## Definindo a pasta com as questoes do exame
-myexam <- dir("./BancoDeQuestoes/cinematica/MU", pattern = ".rnw", ignore.case=TRUE)
-ano <- 12026
-## Cria o arquivo .xml para entrada no moodle
-set.seed(ano)
-exams2moodle(myexam, n = 50, rule="none", schoice = list(shuffle = TRUE), name = paste0("MU-",ano),
-             encoding = "UTF-8",
-             dir = "./Moodle",
+gerar_moodle(dir("./BancoDeQuestoes/cinematica/MU", pattern = ".rnw", ignore.case = TRUE),
+             n = 50, name = "MU-12026", seed = 12026,
              edir = "./BancoDeQuestoes/cinematica/MU")
 
 ############### estatica do corpo extenso ##################
-## Definindo a pasta com as questoes do exame
-myexam <- dir("./BancoDeQuestoes/estatica", pattern = ".rnw", ignore.case=TRUE)
-ano <- 12018
-## Cria o arquivo .xml para entrada no moodle
-set.seed(ano)
-exams2moodle(myexam, n = 100, rule="none", schoice = list(shuffle = TRUE), name = paste0("estatica-",ano),
-             encoding = "UTF-8",
-             dir = "./Moodle",
+gerar_moodle(dir("./BancoDeQuestoes/estatica", pattern = ".rnw", ignore.case = TRUE),
+             n = 100, name = "estatica-12018", seed = 12018,
              edir = "./BancoDeQuestoes/estatica")

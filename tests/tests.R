@@ -69,6 +69,12 @@ compilar_isolado <- function(arquivo, diretorio, formato, ano, seed) {
           xml_text <- paste(readLines(xml_file, warn = FALSE, encoding = "UTF-8"), collapse = "\n")
           xml_bytes <- file.info(xml_file)$size
 
+          # Limite de upload do Moodle institucional: ~10 MB por arquivo.
+          max_upload <- 10 * 1024 * 1024
+          if (xml_bytes > max_upload) {
+            stop("Moodle XML exceeds the 10 MB upload limit in ", basename(xml_file))
+          }
+
           if (!grepl("<quiz[[:space:]>]", xml_text, perl = TRUE)) {
             stop("Moodle XML missing <quiz> root in ", basename(xml_file))
           }
@@ -178,6 +184,44 @@ check_question_counts <- function() {
     )
     if (!identical(status, 0L)) stop("Question count generator failed")
   }
+}
+
+## Exercita o particionamento de XML por limite de upload.
+##
+## Usa um assunto real com figuras (trabalhopotencia) e um limite abaixo do
+## tamanho total: o gerador deve produzir >= 2 partes, todas dentro do limite
+## (tools/moodle_xml_split.R). Roda em subprocesso (callr) para nao acumular
+## estado do exams2moodle na sessao de teste.
+check_moodle_split <- function() {
+  report <- callr::r(function() {
+    source("tools/moodle_xml_split.R")
+    suppressMessages({
+      library(exams)
+      library(magrittr)
+      library(stringr)
+      library(purrr)
+    })
+    edir <- "BancoDeQuestoes/trabalhopotencia"
+    files <- sort(list.files(edir, pattern = "\\.[Rr]nw$", ignore.case = TRUE))
+    out <- tempfile("moodle_split_")
+    dir.create(out)
+    limit <- floor(1.5 * 1024 * 1024)  # 1.5 MB force a divisao em partes
+    parts <- generate_moodle_xml_limited(
+      files = files, n = 12L, name = "split-test", seed = 12026,
+      edir = edir, dir = out, max_bytes = limit
+    )
+    sizes <- file.size(parts)
+    list(n_parts = length(parts), max = max(sizes), limit = limit)
+  })
+
+  if (!isTRUE(report$n_parts >= 2L)) {
+    stop("Moodle XML split check did not produce at least 2 parts")
+  }
+  if (!isTRUE(report$max <= report$limit)) {
+    stop("Moodle XML split check produced a part over the limit")
+  }
+  cat(sprintf("Moodle XML split check: %d part(s), max %.2f MB (limit %.2f MB)\n",
+              report$n_parts, report$max / 1024^2, report$limit / 1024^2))
 }
 
 ## Valida a estrutura mínima das questões antes das compilações pesadas.
@@ -310,5 +354,6 @@ generate_pdf <- function() {
 check_encoding()
 check_bank_structure()
 check_question_counts()
+check_moodle_split()
 generate_xml()
 generate_pdf()
