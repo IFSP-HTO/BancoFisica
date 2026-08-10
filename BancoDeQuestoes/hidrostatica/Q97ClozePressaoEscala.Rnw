@@ -14,6 +14,34 @@ fmt <- function(x) formatC(x, format = "f", digits = 0, big.mark = ".", decimal.
 
 Considere dois modelos geometricamente semelhantes de uma mesma estrutura. O segundo modelo tem todas as dimensões lineares $\Sexpr{f}$ vezes maiores que as do primeiro. Suponha que o material seja o mesmo, de modo que o peso seja proporcional ao volume, e que a área de apoio seja proporcional à área da base.
 
+\begin{figure}[h!]
+\begin{center}
+<<fig=TRUE, height=3.8, width=6.2, echo=FALSE, eps=FALSE, results=hide>>=
+op <- par(mar = c(1, 1, 1, 1))
+plot(0, 0, type = 'n', xlim = c(0, 13), ylim = c(0, 8), axes = FALSE, xlab = '', ylab = '')
+rect(1.2, 1.2, 3.2, 3.2, lwd = 2)
+segments(1.2, 3.2, 2.0, 4.0, lwd = 2)
+segments(3.2, 3.2, 4.0, 4.0, lwd = 2)
+segments(2.0, 4.0, 4.0, 4.0, lwd = 2)
+segments(3.2, 1.2, 4.0, 2.0, lwd = 2)
+segments(4.0, 2.0, 4.0, 4.0, lwd = 2)
+rect(6.2, 1.0, 10.2, 5.0, lwd = 2)
+segments(6.2, 5.0, 7.8, 6.6, lwd = 2)
+segments(10.2, 5.0, 11.8, 6.6, lwd = 2)
+segments(7.8, 6.6, 11.8, 6.6, lwd = 2)
+segments(10.2, 1.0, 11.8, 2.6, lwd = 2)
+segments(11.8, 2.6, 11.8, 6.6, lwd = 2)
+text(2.6, 0.65, 'modelo 1', cex = 0.9)
+text(9.0, 0.45, paste0('modelo 2: dimensoes lineares x', f), cex = 0.9)
+arrows(1.2, 0.8, 3.2, 0.8, code = 3, length = 0.06)
+text(2.2, 0.25, 'L', cex = 0.9)
+arrows(6.2, 0.65, 10.2, 0.65, code = 3, length = 0.06)
+text(8.2, 0.15, paste0(f, 'L'), cex = 0.9)
+par(op)
+@
+\end{center}
+\end{figure}
+
 Determine:
 
 \begin{answerlist}
