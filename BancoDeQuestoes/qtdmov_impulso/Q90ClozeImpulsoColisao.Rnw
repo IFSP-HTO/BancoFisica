@@ -20,6 +20,24 @@ nota <- function(x) formatC(x, format = "f", digits = 0, big.mark = ".", decimal
 
 Um veículo de massa $\Sexpr{m}\,\mathrm{kg}$ move-se a $\Sexpr{v_kmh}\,\mathrm{km/h}$ e é parado em uma colisão frontal. Em uma estrutura rígida, o intervalo de parada seria $\Sexpr{fmt(dt1,2)}\,\mathrm{s}$. Com uma região deformável de absorção de impacto, o intervalo de parada passa a ser $\Sexpr{fmt(dt2,2)}\,\mathrm{s}$.
 
+\begin{figure}[h!]
+\begin{center}
+<<fig=TRUE, height=4.0, width=6.4, echo=FALSE, eps=FALSE, results=hide>>=
+op <- par(mar = c(3.2, 3.4, 1, 1))
+tmax <- max(dt1, dt2) * 1.12
+fmax <- max(F1, F2) * 1.12
+plot(0, 0, type = 'n', xlim = c(0, tmax), ylim = c(0, fmax),
+     xlab = 'tempo de colisao (s)', ylab = 'forca media (N)', axes = TRUE)
+rect(0, 0, dt1, F1, border = 'black', lwd = 2)
+rect(0, 0, dt2, F2, border = 'black', lwd = 2, lty = 2)
+text(dt1, F1 * 1.04, 'estrutura rigida', pos = 4, cex = 0.8)
+text(dt2, F2 * 0.92, 'regiao deformavel', pos = 4, cex = 0.8)
+legend('topright', legend = c('rigida', 'deformavel'), lty = c(1, 2), bty = 'n', cex = 0.8)
+par(op)
+@
+\end{center}
+\end{figure}
+
 Determine:
 
 \begin{answerlist}
