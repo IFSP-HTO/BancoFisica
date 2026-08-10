@@ -16,7 +16,7 @@ Um avião realiza uma curva horizontal, mantendo altitude constante, com raio R 
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[height=5cm, keepaspectratio]{{Q07MCU.png}}
+  \includegraphics[height=5cm, keepaspectratio]{Q07MCU.png}
 \end{figure}
 
 \end{question}

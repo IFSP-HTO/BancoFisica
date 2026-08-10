@@ -19,7 +19,7 @@ Dados: despreze a resistência do ar, desconsidere a fase de movimento acelerado
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[height=5cm, keepaspectratio]{{Q02MCU.png}}
+  \includegraphics[height=5cm, keepaspectratio]{Q02MCU.png}
 \end{figure}
 
 \end{question}

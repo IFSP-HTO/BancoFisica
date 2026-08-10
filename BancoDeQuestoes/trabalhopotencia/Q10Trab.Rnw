@@ -18,7 +18,7 @@ resp2 <- round(resp1*L,1)
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[scale=0.7]{{Q10Trab.jpg}}
+  \includegraphics[scale=0.7]{Q10Trab.jpg}
 \end{figure}
 
 \begin{answerlist}

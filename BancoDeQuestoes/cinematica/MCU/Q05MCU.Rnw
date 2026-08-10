@@ -17,7 +17,7 @@ Um brinquedo muito comum em parques de diversões consiste em uma cabine cilínd
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[height=5cm, keepaspectratio]{{Q05MCU.png}}
+  \includegraphics[height=5cm, keepaspectratio]{Q05MCU.png}
 \end{figure}
 
 \end{question}

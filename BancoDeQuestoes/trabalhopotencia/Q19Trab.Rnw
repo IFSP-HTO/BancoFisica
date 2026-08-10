@@ -18,7 +18,7 @@ include_supplement("Q19Trab.png")
        (Udesc) Um corpo de massa \Sexpr{massa} possui velocidade inicial em A de \Sexpr{velocidade} m/s. Sabe-se que o corpo percorre a trajetória ABC, parando em C. O trecho AB é perfeitamente liso (atrito desprezível)e possui altura H de \Sexpr{altura} m. A partir do ponto B até C existe atrito. Determine:
   \begin{figure}[h!]
     \centering
-    \includegraphics[height=5cm, keepaspectratio]{{Q19Trab.png}}
+    \includegraphics[height=5cm, keepaspectratio]{Q19Trab.png}
   \end{figure}
 
   \begin{answerlist}

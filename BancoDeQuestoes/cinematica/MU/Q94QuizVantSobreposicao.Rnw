@@ -21,7 +21,7 @@ O VANT voa a uma altitude fixa de $\Sexpr{H}\,\mathrm{m}$, com velocidade consta
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=11cm, keepaspectratio]{{enem2019_q97_vant.jpg}}
+  \includegraphics[width=11cm, keepaspectratio]{enem2019_q97_vant.jpg}
 \end{figure}
 
 Qual deve ser o intervalo de tempo entre duas fotografias consecutivas?

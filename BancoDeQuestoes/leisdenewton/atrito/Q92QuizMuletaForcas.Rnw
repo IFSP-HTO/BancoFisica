@@ -11,7 +11,7 @@ Uma muleta é pressionada contra o piso por uma força paralela ao seu eixo. Ao 
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[height=9cm, keepaspectratio]{{enem2022_q113_muleta_forcas.jpg}}
+  \includegraphics[height=9cm, keepaspectratio]{enem2022_q113_muleta_forcas.jpg}
 \end{figure}
 
 Qual esquema representa corretamente as forças peso, normal e atrito estático que atuam sobre a muleta nessa condição?

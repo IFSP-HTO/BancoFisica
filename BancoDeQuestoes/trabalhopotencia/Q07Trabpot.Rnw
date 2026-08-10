@@ -20,7 +20,7 @@ A figura a seguir representa uma parte dos degraus de uma escada com suas medida
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[scale=0.7]{{Q07Trabpot.jpg}}
+  \includegraphics[scale=0.7]{Q07Trabpot.jpg}
 \end{figure}
 
 Uma pessoa de \Sexpr{m} kg sobe \Sexpr{deg} degraus dessa escada em \Sexpr{t} s, num local onde a aceleração da gravidade é de 10 m/s². Desprezando eventuais perdas por atrito, determine:

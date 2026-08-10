@@ -12,7 +12,7 @@ Uma academia usa dois tipos de aparelhos com polias para elevar cargas, conforme
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=8cm, keepaspectratio]{{enem2023_q109_polias.jpg}}
+  \includegraphics[width=8cm, keepaspectratio]{enem2023_q109_polias.jpg}
 \end{figure}
 
 No aparelho do tipo 1, as polias fixas apenas mudam a direção da força. No aparelho do tipo 2, uma polia móvel divide a força necessária para sustentar a carga. Para que os usuários façam o exercício com a mesma força nos dois aparelhos e com velocidade constante, determine a razão $M_2/M_1$.

@@ -11,7 +11,7 @@ Uma carga está presa por duas cordas sobre a carroceria de um caminhão, confor
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=8cm, keepaspectratio]{{enem2023_q114_caminhao_carga.jpg}}
+  \includegraphics[width=8cm, keepaspectratio]{enem2023_q114_caminhao_carga.jpg}
 \end{figure}
 
 Considere uma carga de massa $200\,\mathrm{kg}$, coeficiente de atrito estático $\mu=0{,}2$ e $g=10\,\mathrm{m/s^2}$. O caminhão parte do repouso com aceleração de $3\,\mathrm{m/s^2}$ e, em outro momento, freia com aceleração de módulo $5\,\mathrm{m/s^2}$. As tensões iniciais nas cordas são nulas.

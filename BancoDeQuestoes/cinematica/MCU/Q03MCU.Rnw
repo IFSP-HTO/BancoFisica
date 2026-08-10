@@ -17,7 +17,7 @@ Vemos uma foto da polonesa Anita Wlodarczyk antes de conseguir seu recorde mundi
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[height=5cm, keepaspectratio]{{Q03MCU.png}}
+  \includegraphics[height=5cm, keepaspectratio]{Q03MCU.png}
 \end{figure}
 
 \end{question}
