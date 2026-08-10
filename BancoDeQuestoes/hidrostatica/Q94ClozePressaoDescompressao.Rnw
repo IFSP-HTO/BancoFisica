@@ -21,6 +21,30 @@ Um mergulhador está a uma profundidade de $\Sexpr{prof}\,\mathrm{m}$ em água d
 
 Para reduzir riscos na subida, a variação de pressão suportada pelo mergulhador não deve ultrapassar $\Sexpr{nota(taxa)}\,\mathrm{Pa/s}$.
 
+\begin{figure}[h!]
+\begin{center}
+<<fig=TRUE, height=4.2, width=5.2, echo=FALSE, eps=FALSE, results=hide>>=
+op <- par(mar = c(1, 1, 1, 1))
+plot(0, 0, type = 'n', xlim = c(0, 8), ylim = c(0, 9), axes = FALSE, xlab = '', ylab = '')
+segments(0.6, 7.6, 7.4, 7.6, lwd = 2)
+text(6.8, 8.0, 'superficie', cex = 0.85)
+segments(1.0, 1.0, 1.0, 7.6, lty = 3)
+arrows(1.45, 1.2, 1.45, 7.5, code = 3, length = 0.08)
+text(1.75, 4.4, paste0('h = ', prof, ' m'), pos = 4, cex = 0.9)
+points(4.4, 1.6, pch = 21, bg = 'white', cex = 1.6, lwd = 2)
+segments(4.4, 1.1, 4.4, 0.6, lwd = 2)
+segments(4.4, 1.1, 3.9, 0.7, lwd = 2)
+segments(4.4, 1.1, 4.9, 0.7, lwd = 2)
+segments(4.4, 1.35, 3.8, 1.0, lwd = 2)
+segments(4.4, 1.35, 5.0, 1.0, lwd = 2)
+arrows(5.6, 2.0, 5.6, 6.6, length = 0.10, lwd = 2)
+text(5.9, 4.4, 'subida', pos = 4, cex = 0.9)
+text(4.4, 2.15, 'mergulhador', cex = 0.85)
+par(op)
+@
+\end{center}
+\end{figure}
+
 Determine:
 
 \begin{answerlist}
