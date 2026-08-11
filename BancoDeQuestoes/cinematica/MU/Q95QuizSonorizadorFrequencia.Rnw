@@ -1,0 +1,66 @@
+<<echo=FALSE, results=hide>>=
+## Inspirada no ENEM 2018 Q117.
+## Física central: movimento uniforme e frequência de passagem por faixas igualmente espaçadas.
+
+v_kmh <- 108
+v <- v_kmh / 3.6
+d_cm <- 8
+d <- d_cm / 100
+f <- v / d
+
+alternativas <- c("8,6 Hz", "13,5 Hz", "375 Hz", "1 350 Hz", "4 860 Hz")
+solutions <- c(FALSE, FALSE, TRUE, FALSE, FALSE)
+ordem <- sample(seq_along(alternativas))
+alternativas <- alternativas[ordem]
+solutions <- solutions[ordem]
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Um sonorizador é formado por faixas transversais igualmente espaçadas sobre a superfície de uma rodovia. Ao passar sobre essas faixas, a suspensão de um veículo sofre vibrações periódicas, produzindo um ruído característico.
+
+Considere um veículo que se desloca com velocidade constante de $108\,\mathrm{km/h}$ sobre um sonorizador cujas faixas consecutivas estão separadas por $8\,\mathrm{cm}$.
+
+A frequência das vibrações percebidas durante a passagem pelo sonorizador é mais próxima de
+
+<<echo=FALSE, results=tex>>=
+answerlist(alternativas)
+@
+
+\end{question}
+
+\begin{solution}
+
+A frequência corresponde ao número de faixas atravessadas por unidade de tempo. Como o movimento do veículo é uniforme, podemos relacionar velocidade, espaçamento e frequência por
+\[
+f = \frac{v}{d}.
+\]
+
+Primeiro, convertemos a velocidade para o SI:
+\[
+v = \frac{108}{3{,}6} = 30\,\mathrm{m/s}.
+\]
+O espaçamento entre as faixas é
+\[
+d = 8\,\mathrm{cm} = 0{,}08\,\mathrm{m}.
+\]
+Logo,
+\[
+f = \frac{30}{0{,}08} = 375\,\mathrm{s^{-1}} = 375\,\mathrm{Hz}.
+\]
+
+Portanto, a frequência das vibrações é $375\,\mathrm{Hz}$.
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(solutions, paste0("\\textbf{", alternativas, "}"), alternativas))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q95QuizSonorizadorFrequencia}
+%% \exsection{Mecanica; Cinematica; Movimento uniforme; Frequencia; ENEM}
+%% \exusepackage[utf8]{inputenc}
