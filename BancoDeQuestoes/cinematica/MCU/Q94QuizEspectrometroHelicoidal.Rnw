@@ -1,0 +1,69 @@
+<<echo=FALSE, results=hide>>=
+include_supplement("enem2019_q126_espectrometro.jpg")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Um espectrômetro de massa de tempo de voo é utilizado para medir a massa de íons. Nele, um íon de carga elétrica $q$ é lançado em uma região de campo magnético constante $B$, descrevendo uma trajetória helicoidal, conforme a figura. Essa trajetória é formada pela composição de um movimento circular uniforme no plano perpendicular ao campo e uma translação ao longo do eixo do campo.
+
+A velocidade angular do movimento helicoidal do íon é independente de sua velocidade inicial. O dispositivo mede o tempo $t$ de voo correspondente a $N$ voltas do íon. Com base nos valores de $q$, $B$, $N$ e $t$, pode-se determinar a massa do íon.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=10cm, keepaspectratio]{enem2019_q126_espectrometro.jpg}
+\end{figure}
+
+A massa do íon medida por esse dispositivo será
+
+\begin{answerlist}
+  \item $\frac{qBt}{2\pi N}$.
+  \item $\frac{qBt}{\pi N}$.
+  \item $\frac{2qBt}{\pi N}$.
+  \item $\frac{qBt}{N}$.
+  \item $\frac{2qBt}{N}$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+A componente da velocidade perpendicular ao campo magnético produz o movimento circular. A força magnética fornece a força centrípeta:
+\[
+qv_{\perp}B=\frac{mv_{\perp}^2}{r}.
+\]
+
+Como a velocidade angular é
+\[
+\omega=\frac{v_{\perp}}{r},
+\]
+segue que
+\[
+\omega=\frac{qB}{m}.
+\]
+
+O período do movimento circular é
+\[
+T=\frac{2\pi}{\omega}=\frac{2\pi m}{qB}.
+\]
+
+Se o íon completa $N$ voltas durante o tempo total $t$,
+\[
+t=NT=N\frac{2\pi m}{qB}.
+\]
+
+Isolando a massa,
+\[
+m=\frac{qBt}{2\pi N}.
+\]
+
+Portanto, a alternativa correta é \textbf{A}.
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{10000}
+%% \exname{Q94QuizEspectrometroHelicoidal}
+%% \exsection{Mecanica; Cinematica; MCU; Eletromagnetismo; ENEM}
+%% \exusepackage[utf8]{inputenc}
