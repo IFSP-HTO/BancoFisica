@@ -1,0 +1,61 @@
+<<echo=FALSE, results=hide>>=
+## Inspirada no ENEM 2018 Q133.
+## Física central: rolamento, raio da roda, velocidade indicada no velocímetro e estabilidade do veículo.
+
+alternativas <- c(
+  "Elevar a posição do centro de massa do veículo, tornando-o mais instável, e aumentar a velocidade real do automóvel em relação à indicada no velocímetro.",
+  "Abaixar a posição do centro de massa do veículo, tornando-o mais instável, e diminuir a velocidade real do automóvel em relação à indicada no velocímetro.",
+  "Elevar a posição do centro de massa do veículo, tornando-o mais estável, e aumentar a velocidade real do automóvel em relação à indicada no velocímetro.",
+  "Abaixar a posição do centro de massa do veículo, tornando-o mais estável, e diminuir a velocidade real do automóvel em relação à indicada no velocímetro.",
+  "Elevar a posição do centro de massa do veículo, tornando-o mais estável, e diminuir a velocidade real do automóvel em relação à indicada no velocímetro."
+)
+solutions <- c(TRUE, FALSE, FALSE, FALSE, FALSE)
+ordem <- sample(seq_along(alternativas))
+alternativas <- alternativas[ordem]
+solutions <- solutions[ordem]
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Um automóvel foi projetado para utilizar rodas de determinado diâmetro. Por razões estéticas, o proprietário substitui o conjunto roda e pneu por outro de diâmetro maior, sem recalibrar o velocímetro.
+
+Duas consequências dessa alteração são
+
+<<echo=FALSE, results=tex>>=
+answerlist(alternativas)
+@
+
+\end{question}
+
+\begin{solution}
+
+O aumento do diâmetro externo das rodas eleva ligeiramente o veículo e, consequentemente, a posição de seu centro de massa. Um centro de massa mais alto reduz a estabilidade contra tombamento, de modo que o veículo se torna mais instável.
+
+Além disso, no rolamento sem deslizamento, a velocidade linear do veículo é
+\[
+v = \omega R,
+\]
+em que $\omega$ é a velocidade angular da roda e $R$ é seu raio. O velocímetro permanece calibrado para o raio original $R_0$. Assim, para uma mesma velocidade angular medida pelo sistema,
+\[
+v_{\mathrm{indicada}} = \omega R_0.
+\]
+Com a roda nova, de raio $R>R_0$, a velocidade real passa a ser
+\[
+v_{\mathrm{real}} = \omega R > \omega R_0 = v_{\mathrm{indicada}}.
+\]
+
+Portanto, a troca eleva o centro de massa, diminui a estabilidade e faz a velocidade real ser maior que a indicada no velocímetro.
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(solutions, paste0("\\textbf{", alternativas, "}"), alternativas))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q92QuizRodaVelocimetro}
+%% \exsection{Mecanica; Cinematica; MCU; Rolamento; ENEM}
+%% \exusepackage[utf8]{inputenc}
