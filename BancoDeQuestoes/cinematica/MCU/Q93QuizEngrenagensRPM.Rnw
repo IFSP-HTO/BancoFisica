@@ -1,0 +1,81 @@
+<<echo=FALSE, results=hide>>=
+include_supplement("enem2016_q80_engrenagens.jpg")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+A invenção e o acoplamento entre engrenagens revolucionaram a ciência e propiciaram o desenvolvimento de diversas tecnologias, como os relógios. Em um pequeno cronômetro, um motor é ligado ao eixo da engrenagem A e movimenta o sistema mostrado na figura. O ponteiro está ligado ao eixo da engrenagem D.
+
+A frequência de rotação do motor é de $18\,\mathrm{RPM}$, e o número de dentes das engrenagens é:
+
+\begin{center}
+\begin{tabular}{c|c}
+\textbf{Engrenagem} & \textbf{Dentes} \\
+\hline
+A & 24 \\
+B & 72 \\
+C & 36 \\
+D & 108
+\end{tabular}
+\end{center}
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=11cm, keepaspectratio]{enem2016_q80_engrenagens.jpg}
+\end{figure}
+
+A frequência de giro do ponteiro, em RPM, é
+
+\begin{answerlist}
+  \item $1$.
+  \item $2$.
+  \item $4$.
+  \item $81$.
+  \item $162$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Em duas engrenagens acopladas, a velocidade tangencial no ponto de contato tem o mesmo módulo. Assim, as frequências de rotação são inversamente proporcionais ao número de dentes:
+\[
+f_1 z_1 = f_2 z_2.
+\]
+
+A engrenagem A, ligada ao motor, gira a $18\,\mathrm{RPM}$. Como A possui 24 dentes e B possui 72 dentes,
+\[
+18\cdot 24=f_B\cdot 72,
+\]
+de modo que
+\[
+f_B=6\,\mathrm{RPM}.
+\]
+
+As engrenagens B e C estão presas ao mesmo eixo, portanto giram com a mesma frequência:
+\[
+f_C=f_B=6\,\mathrm{RPM}.
+\]
+
+A engrenagem C, com 36 dentes, aciona a engrenagem D, com 108 dentes. Logo,
+\[
+6\cdot 36=f_D\cdot 108,
+\]
+e
+\[
+f_D=2\,\mathrm{RPM}.
+\]
+
+Como o ponteiro está ligado ao eixo da engrenagem D, sua frequência de giro é $2\,\mathrm{RPM}$.
+
+Portanto, a alternativa correta é \textbf{B}.
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{01000}
+%% \exname{Q93QuizEngrenagensRPM}
+%% \exsection{Mecanica; Cinematica; MCU; Engrenagens; ENEM}
+%% \exusepackage[utf8]{inputenc}
