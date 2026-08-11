@@ -17,11 +17,11 @@ A velocidade angular do movimento helicoidal do íon é independente de sua velo
 A massa do íon medida por esse dispositivo será
 
 \begin{answerlist}
-  \item $\dfrac{qBt}{2\pi N}$.
-  \item $\dfrac{qBt}{\pi N}$.
-  \item $\dfrac{2qBt}{\pi N}$.
-  \item $\dfrac{qBt}{N}$.
-  \item $\dfrac{2qBt}{N}$.
+  \item $\frac{qBt}{2\pi N}$.
+  \item $\frac{qBt}{\pi N}$.
+  \item $\frac{2qBt}{\pi N}$.
+  \item $\frac{qBt}{N}$.
+  \item $\frac{2qBt}{N}$.
 \end{answerlist}
 
 \end{question}
