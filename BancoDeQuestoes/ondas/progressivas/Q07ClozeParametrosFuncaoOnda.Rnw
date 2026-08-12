@@ -1,0 +1,72 @@
+<<echo=FALSE, results=hide>>=
+lambda <- sample(c(0.5,1,2),1)
+f <- sample(c(1,2,4,5),1)
+A <- sample(c(1,2,3),1)/100
+k <- 2*pi/lambda
+omega <- 2*pi*f
+v <- lambda*f
+fmt <- function(x,d=2) formatC(x,format="f",digits=d,decimal.mark=",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Uma onda progressiva é descrita, em unidades do SI, por
+\[
+y(x,t)=\Sexpr{fmt(A,2)}\,\sen(\Sexpr{fmt(k,2)}x-\Sexpr{fmt(omega,2)}t).
+\]
+
+Determine:
+\begin{answerlist}
+  \item o comprimento de onda $\lambda$, em metros;
+  \item a frequência $f$, em hertz;
+  \item a velocidade de propagação $v$, em $\mathrm{m/s}$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Comparando com a forma
+\[
+y(x,t)=y_m\sen(kx-\omega t),
+\]
+identificamos $k=\Sexpr{fmt(k,2)}\,\mathrm{rad/m}$ e $\omega=\Sexpr{fmt(omega,2)}\,\mathrm{rad/s}$.
+
+Como
+\[
+k=\frac{2\pi}{\lambda},
+\]
+temos
+\[
+\lambda=\frac{2\pi}{k}=\Sexpr{fmt(lambda,2)}\,\mathrm{m}.
+\]
+
+Além disso,
+\[
+\omega=2\pi f
+\quad\Rightarrow\quad
+f=\frac{\omega}{2\pi}=\Sexpr{fmt(f,2)}\,\mathrm{Hz}.
+\]
+
+A velocidade da onda é
+\[
+v=\lambda f=\Sexpr{fmt(v,2)}\,\mathrm{m/s}.
+\]
+
+\begin{answerlist}
+  \item $\Sexpr{fmt(lambda,2)}\,\mathrm{m}$;
+  \item $\Sexpr{fmt(f,2)}\,\mathrm{Hz}$;
+  \item $\Sexpr{fmt(v,2)}\,\mathrm{m/s}$.
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{\Sexpr{round(lambda,2)}|\Sexpr{round(f,2)}|\Sexpr{round(v,2)}}
+%% \exclozetype{num|num|num}
+%% \extol{0.03|0.03|0.03}
+%% \exname{Q07ClozeParametrosFuncaoOnda}
+%% \exsection{Ondulatoria; Ondas progressivas; Funcao de onda}
+%% \exusepackage[utf8]{inputenc}
