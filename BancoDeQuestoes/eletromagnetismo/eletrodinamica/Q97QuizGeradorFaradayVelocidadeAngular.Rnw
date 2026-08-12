@@ -1,0 +1,52 @@
+<<echo=FALSE, results=hide>>=
+## Inspirada no ENEM 2020 Q130.
+## Física central: lei de Faraday e rapidez de variação do fluxo magnético.
+
+alternativas <- c(
+  "intervalo de tempo em que as bobinas permanecem imersas no campo, obtido por diminuição da velocidade de rotação.",
+  "fluxo magnético máximo através das bobinas, obtido apenas por aumento da área interna.",
+  "intensidade do campo magnético, necessariamente aumentada durante a operação.",
+  "rapidez com que o fluxo magnético varia através das bobinas, por meio do aumento da velocidade angular.",
+  "resistência interna das bobinas, aumentada pela maior espessura dos terminais."
+)
+solutions <- c(FALSE, FALSE, FALSE, TRUE, FALSE)
+ordem <- sample(seq_along(alternativas))
+alternativas <- alternativas[ordem]
+solutions <- solutions[ordem]
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Em uma usina, as pás de um gerador colocam em rotação um conjunto de bobinas em relação a um campo magnético. Durante a operação, observa-se um aumento inesperado do módulo da diferença de potencial induzida nos terminais das bobinas.
+
+Esse aumento pode ser explicado pelo aumento da
+
+<<echo=FALSE, results=tex>>=
+answerlist(alternativas)
+@
+
+\end{question}
+
+\begin{solution}
+
+Pela lei de Faraday, o módulo da força eletromotriz induzida é proporcional à rapidez de variação do fluxo magnético:
+\[
+|\mathcal{E}|=\left|\frac{d\Phi_B}{dt}\right|.
+\]
+Em um gerador rotativo, o fluxo magnético varia periodicamente. Aumentar a velocidade angular faz com que essa variação ocorra mais rapidamente, aumentando o módulo da força eletromotriz induzida e, portanto, da diferença de potencial nos terminais.
+
+Logo, o aumento observado pode resultar do aumento da rapidez de variação do fluxo magnético por meio de uma maior velocidade angular.
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(solutions, paste0("\\textbf{", alternativas, "}"), alternativas))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q97QuizGeradorFaradayVelocidadeAngular}
+%% \exsection{Eletromagnetismo; Inducao eletromagnetica; Lei de Faraday; Geradores; ENEM}
+%% \exusepackage[utf8]{inputenc}
