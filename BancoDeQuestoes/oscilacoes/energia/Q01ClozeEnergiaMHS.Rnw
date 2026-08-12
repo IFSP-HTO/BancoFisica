@@ -1,0 +1,64 @@
+<<echo=FALSE, results=hide>>=
+k <- sample(c(100, 150, 200, 250), 1)
+Acm <- sample(c(8, 10, 12, 16), 1)
+frac <- sample(c(0.5, 0.6, 0.8), 1)
+A <- Acm / 100
+x <- frac * A
+E <- 0.5 * k * A^2
+U <- 0.5 * k * x^2
+K <- E - U
+fmt <- function(x, d = 2) formatC(x, format = "f", digits = d, decimal.mark = ",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Um bloco ligado a uma mola ideal executa movimento harmônico simples, sem atrito, com constante elástica $k=\Sexpr{k}\,\mathrm{N/m}$ e amplitude $A=\Sexpr{Acm}\,\mathrm{cm}$. Em certo instante, ele está a uma distância $x=\Sexpr{fmt(100*x,1)}\,\mathrm{cm}$ da posição de equilíbrio.
+
+Determine:
+\begin{answerlist}
+  \item a energia mecânica total do oscilador, em joules;
+  \item a energia potencial elástica nesse instante, em joules;
+  \item a energia cinética nesse instante, em joules.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Sem atrito, a energia mecânica permanece constante e pode ser calculada no extremo da oscilação:
+\[
+E=\frac12 kA^2.
+\]
+Com $A=\Sexpr{fmt(A,3)}\,\mathrm{m}$,
+\[
+E=\frac12\cdot\Sexpr{k}\cdot(\Sexpr{fmt(A,3)})^2
+\approx\Sexpr{fmt(E,3)}\,\mathrm{J}.
+\]
+Na posição dada,
+\[
+U=\frac12kx^2
+=\frac12\cdot\Sexpr{k}\cdot(\Sexpr{fmt(x,3)})^2
+\approx\Sexpr{fmt(U,3)}\,\mathrm{J}.
+\]
+Como $E=K+U$,
+\[
+K=E-U\approx\Sexpr{fmt(K,3)}\,\mathrm{J}.
+\]
+
+\begin{answerlist}
+  \item $\Sexpr{fmt(E,3)}\,\mathrm{J}$;
+  \item $\Sexpr{fmt(U,3)}\,\mathrm{J}$;
+  \item $\Sexpr{fmt(K,3)}\,\mathrm{J}$.
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{\Sexpr{round(E,3)}|\Sexpr{round(U,3)}|\Sexpr{round(K,3)}}
+%% \exclozetype{num|num|num}
+%% \extol{0.01|0.01|0.01}
+%% \exname{Q01ClozeEnergiaMHS}
+%% \exsection{Mecanica; Oscilacoes; Energia}
+%% \exusepackage[utf8]{inputenc}
