@@ -8,7 +8,7 @@ alternativas <- c(
   paste0("f_B/f_A = ",formatC(n1/n2,format="f",digits=2,decimal.mark=",")),
   "f_B/f_A = 1,00",
   paste0("f_B/f_A = ",formatC((n1+n2),format="f",digits=2,decimal.mark=",")),
-  paste0("f_B/f_A = ",formatC((n2-n1),format="f",digits=2,decimal.mark=","))
+  paste0("f_B/f_A = ",formatC(razao^2,format="f",digits=2,decimal.mark=","))
 )
 solutions <- c(TRUE,FALSE,FALSE,FALSE,FALSE)
 ord <- sample(seq_along(alternativas)); alternativas <- alternativas[ord]; solutions <- solutions[ord]
