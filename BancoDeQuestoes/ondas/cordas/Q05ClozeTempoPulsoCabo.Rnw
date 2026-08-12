@@ -1,0 +1,60 @@
+<<echo=FALSE, results=hide>>=
+L <- sample(c(20,30,40,50),1)
+m <- sample(c(1.0,1.5,2.0,2.5),1)
+FT <- sample(c(400,625,900,1225),1)
+mu <- m/L
+v <- sqrt(FT/mu)
+t <- L/v
+fmt <- function(x,d=2) formatC(x,format="f",digits=d,decimal.mark=",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Um pulso transversal é produzido em uma extremidade de um cabo homogêneo de comprimento $\Sexpr{L}\,\mathrm{m}$ e massa $\Sexpr{fmt(m,1)}\,\mathrm{kg}$. O cabo está submetido a uma tração de $\Sexpr{FT}\,\mathrm{N}$.
+
+Determine:
+\begin{answerlist}
+  \item a velocidade de propagação do pulso, em $\mathrm{m/s}$;
+  \item o tempo necessário para o pulso atingir a outra extremidade, em segundos.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+A massa específica linear do cabo é
+\[
+\mu=\frac{m}{L}
+=\frac{\Sexpr{fmt(m,1)}}{\Sexpr{L}}
+=\Sexpr{fmt(mu,3)}\,\mathrm{kg/m}.
+\]
+
+A velocidade do pulso é
+\[
+v=\sqrt{\frac{F_T}{\mu}}
+\approx\Sexpr{fmt(v,2)}\,\mathrm{m/s}.
+\]
+
+O tempo de percurso é
+\[
+t=\frac{L}{v}
+=\frac{\Sexpr{L}}{\Sexpr{fmt(v,2)}}
+\approx\Sexpr{fmt(t,2)}\,\mathrm{s}.
+\]
+
+\begin{answerlist}
+  \item $\Sexpr{fmt(v,2)}\,\mathrm{m/s}$;
+  \item $\Sexpr{fmt(t,2)}\,\mathrm{s}$.
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{\Sexpr{round(v,2)}|\Sexpr{round(t,2)}}
+%% \exclozetype{num|num}
+%% \extol{0.1|0.03}
+%% \exname{Q05ClozeTempoPulsoCabo}
+%% \exsection{Ondulatoria; Ondas em cordas; Aplicacoes}
+%% \exusepackage[utf8]{inputenc}
