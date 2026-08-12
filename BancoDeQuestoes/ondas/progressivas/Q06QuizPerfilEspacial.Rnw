@@ -1,0 +1,59 @@
+<<echo=FALSE, results=hide>>=
+lambda <- sample(c(1,2,4),1)
+A <- sample(c(2,3,4),1)
+x <- seq(0,2*lambda,length.out=500)
+y <- A*sin(2*pi*x/lambda)
+alternativas <- c(
+  "um instantâneo da forma da onda ao longo do meio em um mesmo instante",
+  "a trajetória seguida por um único elemento do meio durante a propagação",
+  "o deslocamento de um único elemento do meio em função do tempo",
+  "a velocidade de propagação da onda em função da posição",
+  "a energia transportada pela onda em função do tempo"
+)
+solutions <- c(TRUE,FALSE,FALSE,FALSE,FALSE)
+ord <- sample(seq_along(alternativas))
+alternativas <- alternativas[ord]
+solutions <- solutions[ord]
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+O gráfico abaixo mostra $y$ em função de $x$ para uma onda progressiva em um instante fixo.
+
+<<fig=TRUE, height=4, width=6, echo=FALSE, eps=FALSE, results=hide>>=
+par(mar=c(4.2,4.2,0.8,0.8))
+plot(x,y,type="l",lwd=2,xlab="posição x",ylab="deslocamento y",
+     xaxt="n",yaxt="n",ylim=c(-1.2*A,1.2*A))
+axis(1,at=seq(0,2*lambda,by=lambda/2))
+axis(2,at=c(-A,0,A))
+abline(h=0,lty=2)
+grid(nx=NA,ny=NULL,lty=3)
+@
+
+Esse gráfico representa
+
+<<echo=FALSE, results=tex>>=
+answerlist(alternativas)
+@
+
+\end{question}
+
+\begin{solution}
+
+Como o eixo horizontal é a posição $x$ e o instante é mantido fixo, o gráfico mostra a forma da onda distribuída ao longo do meio naquele instante. Ele é um perfil espacial, ou um instantâneo da onda.
+
+Para acompanhar um único elemento do meio, seria necessário manter $x$ fixo e representar o deslocamento em função do tempo $t$.
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(solutions,paste0('\\textbf{',alternativas,'}'),alternativas))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q06QuizPerfilEspacial}
+%% \exsection{Ondulatoria; Ondas progressivas; Graficos}
+%% \exusepackage[utf8]{inputenc}
