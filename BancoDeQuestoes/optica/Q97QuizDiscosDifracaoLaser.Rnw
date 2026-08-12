@@ -1,0 +1,43 @@
+<<echo=FALSE, results=hide>>=
+## Inspirada no ENEM 2023 Q112.
+## Física central: difração e comprimento de onda em leitura óptica.
+alternativas <- c("violeta.", "azul.", "verde.", "vermelho.", "infravermelho.")
+solutions <- c(TRUE, FALSE, FALSE, FALSE, FALSE)
+ordem <- sample(seq_along(alternativas))
+alternativas <- alternativas[ordem]
+solutions <- solutions[ordem]
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Em discos ópticos, informações são armazenadas em cavidades microscópicas e lidas por um laser. A difração limita a capacidade de distinguir detalhes muito pequenos, e esse efeito se torna menos limitante quando se utiliza luz de menor comprimento de onda.
+
+Entre as regiões espectrais listadas, qual permite otimizar o armazenamento de dados em cavidades menores?
+
+<<echo=FALSE, results=tex>>=
+answerlist(alternativas)
+@
+
+\end{question}
+
+\begin{solution}
+
+A difração torna-se importante quando as dimensões do obstáculo ou abertura são comparáveis ao comprimento de onda. Para resolver detalhes menores, é vantajoso usar uma radiação com menor comprimento de onda.
+
+No espectro visível, a luz violeta apresenta comprimento de onda menor que azul, verde e vermelho. O infravermelho possui comprimento de onda ainda maior.
+
+Portanto, entre as opções apresentadas, a região mais adequada é a \textbf{violeta}.
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(solutions, paste0("\\textbf{", alternativas, "}"), alternativas))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q97QuizDiscosDifracaoLaser}
+%% \exsection{Optica; Difracao; Comprimento de onda; Laser; ENEM}
+%% \exusepackage[utf8]{inputenc}
