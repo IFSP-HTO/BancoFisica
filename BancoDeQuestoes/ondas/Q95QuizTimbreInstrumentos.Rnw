@@ -1,0 +1,49 @@
+<<echo=FALSE, results=hide>>=
+## Inspirada no ENEM 2015 Q86.
+## Física central: timbre e forma de onda.
+alternativas <- c(
+  "intensidade sonora.",
+  "potência sonora.",
+  "velocidade de propagação.",
+  "timbre.",
+  "altura."
+)
+solutions <- c(FALSE, FALSE, FALSE, TRUE, FALSE)
+ordem <- sample(seq_along(alternativas))
+alternativas <- alternativas[ordem]
+solutions <- solutions[ordem]
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Uma flauta e um piano emitem a mesma nota musical, com a mesma frequência fundamental. Mesmo assim, uma pessoa consegue distinguir qual instrumento está produzindo o som.
+
+A característica sonora que permite essa diferenciação é o
+
+<<echo=FALSE, results=tex>>=
+answerlist(alternativas)
+@
+
+\end{question}
+
+\begin{solution}
+
+A altura de um som está associada principalmente à sua frequência fundamental. Como os dois instrumentos emitem a mesma nota, essa grandeza pode ser a mesma.
+
+Entretanto, cada instrumento produz uma combinação própria de harmônicos e, por isso, uma forma de onda característica. Essa propriedade perceptiva é chamada de \textbf{timbre}.
+
+É o timbre que permite distinguir sons de instrumentos diferentes mesmo quando eles executam a mesma nota.
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(solutions, paste0("\\textbf{", alternativas, "}"), alternativas))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q95QuizTimbreInstrumentos}
+%% \exsection{Ondas; Acustica; Timbre; Harmônicos; ENEM}
+%% \exusepackage[utf8]{inputenc}
