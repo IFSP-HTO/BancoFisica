@@ -1,0 +1,57 @@
+<<echo=FALSE, results=hide>>=
+fator <- sample(c(4, 9, 16), 1)
+raiz <- sqrt(fator)
+
+alternativas <- c(
+  paste0("$T_2=", raiz, "T_1$"),
+  paste0("$T_2=", fator, "T_1$"),
+  paste0("$T_2=T_1/", raiz, "$"),
+  paste0("$T_2=T_1/", fator, "$"),
+  "$T_2=T_1$"
+)
+solutions <- c(TRUE, FALSE, FALSE, FALSE, FALSE)
+ord <- sample(seq_along(alternativas))
+alternativas <- alternativas[ord]
+solutions <- solutions[ord]
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Um oscilador massa--mola possui período $T_1$. Sem alterar a mola, a massa oscilante é substituída por outra de massa $\Sexpr{fator}$ vezes maior.
+
+Qual passa a ser o novo período $T_2$?
+
+<<echo=FALSE, results=tex>>=
+answerlist(alternativas)
+@
+
+\end{question}
+
+\begin{solution}
+
+Para o sistema massa--mola,
+\[
+T=2\pi\sqrt{\frac{m}{k}}.
+\]
+Como $k$ não muda, o período é proporcional a $\sqrt{m}$. Se a massa é multiplicada por $\Sexpr{fator}$,
+\[
+\frac{T_2}{T_1}=\sqrt{\Sexpr{fator}}=\Sexpr{raiz}.
+\]
+Portanto,
+\[
+T_2=\Sexpr{raiz}T_1.
+\]
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(solutions, paste0('\\textbf{', alternativas, '}'), alternativas))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q12QuizComparacaoMassa}
+%% \exsection{Mecanica; Oscilacoes; MHS; Massa-mola}
+%% \exusepackage[utf8]{inputenc}
