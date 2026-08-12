@@ -1,0 +1,54 @@
+<<echo=FALSE, results=hide>>=
+caso <- sample(c("fase","oposicao"),1)
+if(caso=="fase") {
+  phi <- 0
+  correta <- "interferência construtiva, pois cristas coincidem com cristas e vales com vales"
+} else {
+  phi <- pi
+  correta <- "interferência destrutiva, pois cristas coincidem com vales"
+}
+alternativas <- c(
+  correta,
+  "interferência construtiva porque as amplitudes sempre se somam em módulo",
+  "interferência destrutiva porque ondas de mesma frequência sempre se cancelam",
+  "não ocorre interferência porque as ondas continuam se propagando",
+  "a frequência da onda resultante é necessariamente o dobro da frequência original"
+)
+solutions <- c(TRUE,FALSE,FALSE,FALSE,FALSE)
+ord <- sample(seq_along(alternativas))
+alternativas <- alternativas[ord]
+solutions <- solutions[ord]
+phi_txt <- ifelse(caso=="fase","0","\\pi")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Duas ondas senoidais de mesma frequência e mesma amplitude se propagam na mesma região. Em determinado ponto, a diferença de fase entre elas é $\Sexpr{phi_txt}$ rad.
+
+Qual descrição é correta para a interferência nesse ponto?
+
+<<echo=FALSE, results=tex>>=
+answerlist(alternativas)
+@
+
+\end{question}
+
+\begin{solution}
+
+A interferência depende da diferença de fase. Para diferença de fase igual a zero, as ondas chegam em fase e a interferência é construtiva. Para diferença de fase igual a $\pi$, chegam em oposição de fase e a interferência é destrutiva.
+
+Nesta situação, a alternativa correta é:
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(solutions,paste0('\\textbf{',alternativas,'}'),alternativas))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q02QuizFaseInterferencia}
+%% \exsection{Ondulatoria; Interferencia; Diferenca de fase}
+%% \exusepackage[utf8]{inputenc}
