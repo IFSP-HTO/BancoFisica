@@ -1,0 +1,62 @@
+<<echo=FALSE, results=hide>>=
+n1 <- sample(1:2,1)
+n2 <- sample((n1+1):4,1)
+razao <- n2/n1
+correta <- paste0("f_B/f_A = ",formatC(razao,format="f",digits=2,decimal.mark=","))
+alternativas <- c(
+  correta,
+  paste0("f_B/f_A = ",formatC(n1/n2,format="f",digits=2,decimal.mark=",")),
+  "f_B/f_A = 1,00",
+  paste0("f_B/f_A = ",formatC((n1+n2),format="f",digits=2,decimal.mark=",")),
+  paste0("f_B/f_A = ",formatC((n2-n1),format="f",digits=2,decimal.mark=","))
+)
+solutions <- c(TRUE,FALSE,FALSE,FALSE,FALSE)
+ord <- sample(seq_along(alternativas)); alternativas <- alternativas[ord]; solutions <- solutions[ord]
+x <- seq(0,1,length.out=500)
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Os padrões A e B correspondem a dois modos normais da mesma corda, mantida com o mesmo comprimento e a mesma tração.
+
+<<fig=TRUE, height=4.8, width=6, echo=FALSE, eps=FALSE, results=hide>>=
+par(mfrow=c(2,1),mar=c(2.4,2.0,1.5,0.8))
+plot(x,sin(n1*pi*x),type="l",lwd=2,axes=FALSE,xlab="",ylab="",ylim=c(-1.15,1.15),main="Modo A")
+abline(h=0,lty=3); points(seq(0,1,length.out=n1+1),rep(0,n1+1),pch=19)
+plot(x,sin(n2*pi*x),type="l",lwd=2,axes=FALSE,xlab="",ylab="",ylim=c(-1.15,1.15),main="Modo B")
+abline(h=0,lty=3); points(seq(0,1,length.out=n2+1),rep(0,n2+1),pch=19)
+@
+
+Qual é a razão entre as frequências $f_B/f_A$?
+
+<<echo=FALSE, results=tex>>=
+answerlist(alternativas)
+@
+
+\end{question}
+
+\begin{solution}
+
+O número de ventres identifica o número do harmônico. O modo A possui $n_A=\Sexpr{n1}$ e o modo B possui $n_B=\Sexpr{n2}$. Na mesma corda,
+\[
+f_n=nf_1.
+\]
+Logo,
+\[
+\frac{f_B}{f_A}=\frac{n_B}{n_A}=\frac{\Sexpr{n2}}{\Sexpr{n1}}
+=\Sexpr{formatC(razao,format='f',digits=2,decimal.mark=',')}.
+\]
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(solutions,paste0('\\textbf{',alternativas,'}'),alternativas))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q06QuizRazaoModosNormais}
+%% \exsection{Ondulatoria; Ondas estacionarias; Modos normais; Graficos}
+%% \exusepackage[utf8]{inputenc}
