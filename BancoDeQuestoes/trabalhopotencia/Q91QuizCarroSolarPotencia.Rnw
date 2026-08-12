@@ -1,0 +1,65 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Um carro solar utiliza um painel fotovoltaico de área $9{,}0\,\mathrm{m^2}$. Em certa região, a insolação é de $1000\,\mathrm{W/m^2}$ e o painel converte $30\%$ da energia solar incidente em energia elétrica. Considere que essa potência elétrica é integralmente convertida em potência mecânica pelo motor.
+
+O carro tem massa de $200\,\mathrm{kg}$ e parte do repouso. Desprezando as forças de resistência, o tempo necessário para atingir a velocidade de $108\,\mathrm{km/h}$ é mais próximo de
+
+\begin{answerlist}
+  \item $1{,}0\,\mathrm{s}$.
+  \item $4{,}0\,\mathrm{s}$.
+  \item $10\,\mathrm{s}$.
+  \item $33\,\mathrm{s}$.
+  \item $300\,\mathrm{s}$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+A potência solar que incide sobre o painel é
+\[
+P_{\text{solar}} = I A
+=1000\cdot 9{,}0
+=9000\,\mathrm{W}.
+\]
+
+Como o rendimento do painel é de $30\%$, a potência útil disponível para o movimento é
+\[
+P_{\text{útil}}=0{,}30\cdot 9000=2700\,\mathrm{W}.
+\]
+
+A velocidade final deve ser convertida para unidades do SI:
+\[
+108\,\mathrm{km/h}=30\,\mathrm{m/s}.
+\]
+
+Partindo do repouso, a variação da energia cinética é
+\[
+\Delta E_c=\frac{mv^2}{2}
+=\frac{200\cdot 30^2}{2}
+=9{,}0\times 10^4\,\mathrm{J}.
+\]
+
+Como a potência é a razão entre a energia transferida e o intervalo de tempo,
+\[
+P=\frac{\Delta E}{\Delta t},
+\]
+logo
+\[
+\Delta t=\frac{9{,}0\times 10^4}{2700}
+\approx 33{,}3\,\mathrm{s}.
+\]
+
+Portanto, o valor mais próximo é $33\,\mathrm{s}$, alternativa \textbf{D}.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: questão inspirada no ENEM 2015 Q49.
+%% \extype{schoice}
+%% \exsolution{00010}
+%% \exname{Q91QuizCarroSolarPotencia}
+%% \exsection{Mecanica; Trabalho e potencia; Energia cinetica; Rendimento; ENEM}
+%% \exusepackage[utf8]{inputenc}
