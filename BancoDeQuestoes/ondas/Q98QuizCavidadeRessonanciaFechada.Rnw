@@ -1,0 +1,56 @@
+<<echo=FALSE, results=hide>>=
+## Inspirada no ENEM 2020 Q109.
+## Física central: ressonâncias consecutivas em tubo sonoro fechado.
+alternativas <- c("137 Hz.", "138 Hz.", "141 Hz.", "144 Hz.", "159 Hz.")
+solutions <- c(FALSE, FALSE, TRUE, FALSE, FALSE)
+ordem <- sample(seq_along(alternativas))
+alternativas <- alternativas[ordem]
+solutions <- solutions[ordem]
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Uma cavidade vertical no solo deve ter profundidade de $30\,\mathrm{m}$. Para verificar essa medida, utiliza-se um oscilador de áudio e trata-se a cavidade como um tubo sonoro fechado em uma das extremidades. A menor frequência de ressonância observada pelo aparelho em certa faixa de operação é $135\,\mathrm{Hz}$. Considere a velocidade do som na cavidade igual a $360\,\mathrm{m/s}$.
+
+Se a profundidade estiver correta, qual será a próxima frequência de ressonância observada?
+
+<<echo=FALSE, results=tex>>=
+answerlist(alternativas)
+@
+
+\end{question}
+
+\begin{solution}
+
+Para um tubo fechado em uma extremidade, as frequências de ressonância correspondem aos harmônicos ímpares:
+\[
+f_n=(2n-1)\frac{v}{4L}.
+\]
+A frequência fundamental associada a $L=30\,\mathrm{m}$ é
+\[
+f_1=\frac{360}{4\cdot 30}=3\,\mathrm{Hz}.
+\]
+Como
+\[
+135=45\cdot 3,
+\]
+a ressonância medida corresponde ao múltiplo ímpar $45$ da fundamental. A ressonância consecutiva corresponde ao próximo múltiplo ímpar, $47$:
+\[
+f=47\cdot 3=141\,\mathrm{Hz}.
+\]
+
+Portanto, a próxima frequência de ressonância é $141\,\mathrm{Hz}$.
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(solutions, paste0("\\textbf{", alternativas, "}"), alternativas))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q98QuizCavidadeRessonanciaFechada}
+%% \exsection{Ondas; Acustica; Ressonancia; Tubo fechado; ENEM}
+%% \exusepackage[utf8]{inputenc}
