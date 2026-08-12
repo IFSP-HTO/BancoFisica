@@ -18,7 +18,7 @@ Uma onda senoidal de frequência $\Sexpr{f}\,\mathrm{Hz}$ e amplitude $\Sexpr{A_
 
 Determine a potência média transportada pela onda, em watts. Use
 \[
-P_{\mathrm{méd}}=\frac12\mu v\omega^2 y_m^2.
+P_{\mathrm{med}}=\frac12\mu v\omega^2 y_m^2.
 \]
 
 \end{question}
@@ -47,7 +47,7 @@ A frequência angular vale
 
 Portanto,
 \[
-P_{\mathrm{méd}}
+P_{\mathrm{med}}
 =\frac12\mu v\omega^2 y_m^2
 \approx\Sexpr{fmt(P,3)}\,\mathrm{W}.
 \]
