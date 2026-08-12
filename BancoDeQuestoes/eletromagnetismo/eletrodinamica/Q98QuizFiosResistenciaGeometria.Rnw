@@ -1,0 +1,79 @@
+<<echo=FALSE, results=hide>>=
+## Inspirada no ENEM 2021 Q117.
+## Física central: resistência elétrica, resistividade e geometria do fio.
+
+alternativas <- c(
+  "$R_1 < R_2 < R_3 < R_4$.",
+  "$R_2 < R_1 < R_3 < R_4$.",
+  "$R_2 < R_3 < R_1 < R_4$.",
+  "$R_4 < R_1 < R_3 < R_2$.",
+  "$R_4 < R_3 < R_2 < R_1$."
+)
+solutions <- c(FALSE, FALSE, TRUE, FALSE, FALSE)
+ordem <- sample(seq_along(alternativas))
+alternativas <- alternativas[ordem]
+solutions <- solutions[ordem]
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Quatro fios muito finos são feitos do mesmo material, de modo que sua resistividade pode ser considerada constante. Suas áreas de seção reta e comprimentos, expressos nas mesmas unidades, são:
+
+\begin{center}
+\begin{tabular}{c c c c}
+\hline
+Fio & Área & Comprimento & Resistência \\
+\hline
+1 & 9 & 312 & $R_1$ \\
+2 & 4 & 47 & $R_2$ \\
+3 & 2 & 54 & $R_3$ \\
+4 & 1 & 106 & $R_4$ \\
+\hline
+\end{tabular}
+\end{center}
+
+As resistências elétricas dos fios, em ordem crescente, são
+
+<<echo=FALSE, results=tex>>=
+answerlist(alternativas)
+@
+
+\end{question}
+
+\begin{solution}
+
+Para fios do mesmo material,
+\[
+R=\rho\frac{L}{A}.
+\]
+Como $\rho$ é a mesma para todos, basta comparar a razão $L/A$:
+\[
+\frac{L_1}{A_1}=\frac{312}{9}\approx34{,}7,
+\]
+\[
+\frac{L_2}{A_2}=\frac{47}{4}=11{,}75,
+\]
+\[
+\frac{L_3}{A_3}=\frac{54}{2}=27,
+\]
+\[
+\frac{L_4}{A_4}=\frac{106}{1}=106.
+\]
+Portanto,
+\[
+R_2<R_3<R_1<R_4.
+\]
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(solutions, paste0("\\textbf{", alternativas, "}"), alternativas))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q98QuizFiosResistenciaGeometria}
+%% \exsection{Eletromagnetismo; Eletrodinamica; Resistividade; Resistencia eletrica; ENEM}
+%% \exusepackage[utf8]{inputenc}
