@@ -1,0 +1,54 @@
+<<echo=FALSE, results=hide>>=
+## Inspirada no ENEM 2018 Q92.
+## Física central: indução eletromagnética em bobina de etiqueta RFID.
+
+alternativas <- c(
+  "o campo elétrico da onda de rádio agita elétrons da bobina.",
+  "o campo elétrico da onda de rádio cria uma tensão contínua na bobina.",
+  "o campo magnético variável da onda de rádio induz corrente na bobina.",
+  "o campo magnético da onda de rádio aquece diretamente os fios da bobina.",
+  "o campo magnético da onda de rádio diminui a ressonância elétrica da bobina."
+)
+solutions <- c(FALSE, FALSE, TRUE, FALSE, FALSE)
+ordem <- sample(seq_along(alternativas))
+alternativas <- alternativas[ordem]
+solutions <- solutions[ordem]
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Uma etiqueta RFID passiva contém um microprocessador e uma pequena bobina metálica. Ela não utiliza pilha própria: ao ser aproximada do leitor, recebe uma onda eletromagnética de radiofrequência e passa a transmitir informações.
+
+A etiqueta consegue obter energia elétrica do leitor porque
+
+<<echo=FALSE, results=tex>>=
+answerlist(alternativas)
+@
+
+\end{question}
+
+\begin{solution}
+
+A onda de radiofrequência produz um campo magnético que varia no tempo. Esse campo atravessa a área da bobina e faz variar o fluxo magnético através dela.
+
+Pela lei de Faraday,
+\[
+\mathcal{E}=-\frac{d\Phi_B}{dt},
+\]
+uma variação do fluxo magnético induz uma força eletromotriz e, consequentemente, uma corrente elétrica no circuito da etiqueta.
+
+É essa corrente induzida que fornece energia para o funcionamento da etiqueta passiva.
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(solutions, paste0("\\textbf{", alternativas, "}"), alternativas))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q95QuizRFIDInducao}
+%% \exsection{Eletromagnetismo; Inducao eletromagnetica; Lei de Faraday; RFID; ENEM}
+%% \exusepackage[utf8]{inputenc}

@@ -1,0 +1,50 @@
+<<echo=FALSE, results=hide>>=
+## Inspirada no ENEM 2020 Q112.
+## Física central: blindagem eletrostática em condutor metálico.
+
+alternativas <- c(
+  "isolamento elétrico proporcionado pelos pneus.",
+  "efeito de para-raios produzido pela antena.",
+  "blindagem proporcionada pela carcaça metálica.",
+  "escoamento da água da chuva pela lataria.",
+  "aterramento realizado pelo fio terra da bateria."
+)
+solutions <- c(FALSE, FALSE, TRUE, FALSE, FALSE)
+ordem <- sample(seq_along(alternativas))
+alternativas <- alternativas[ordem]
+solutions <- solutions[ordem]
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Durante uma tempestade com raios, o interior de um automóvel fechado, com carroceria metálica, constitui um abrigo relativamente seguro para seus ocupantes.
+
+O principal motivo físico dessa proteção é o(a)
+
+<<echo=FALSE, results=tex>>=
+answerlist(alternativas)
+@
+
+\end{question}
+
+\begin{solution}
+
+A carroceria metálica funciona aproximadamente como uma blindagem eletrostática. Em equilíbrio eletrostático, as cargas livres de um condutor se redistribuem sobre sua superfície externa de modo que o campo elétrico no interior da região condutora protegida seja muito pequeno.
+
+Assim, se uma descarga elétrica atingir a carroceria, a corrente tende a se distribuir pela parte externa do veículo, protegendo o interior.
+
+Os pneus não são a causa principal da proteção: a grande diferença de potencial de um raio pode ionizar o ar e superar facilmente o isolamento oferecido pela borracha.
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(solutions, paste0("\\textbf{", alternativas, "}"), alternativas))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q91QuizBlindagemAutomovelRaios}
+%% \exsection{Eletromagnetismo; Eletrostatica; Blindagem eletrostatica; Condutores; ENEM}
+%% \exusepackage[utf8]{inputenc}
