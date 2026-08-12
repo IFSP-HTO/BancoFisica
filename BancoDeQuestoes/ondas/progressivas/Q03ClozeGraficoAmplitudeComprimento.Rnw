@@ -1,0 +1,57 @@
+<<echo=FALSE, results=hide>>=
+A <- sample(c(2,3,4,5),1)
+lambda <- sample(c(1,2,4),1)
+x <- seq(0,2*lambda,length.out=500)
+y <- A*sin(2*pi*x/lambda)
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+O gráfico representa um instantâneo de uma onda senoidal em determinado instante.
+
+<<fig=TRUE, height=4, width=6, echo=FALSE, eps=FALSE, results=hide>>=
+par(mar=c(4.2,4.2,0.8,0.8))
+plot(x,y,type="l",lwd=2,xlab="x (m)",ylab="y (cm)",
+     xaxt="n",yaxt="n",ylim=c(-1.2*A,1.2*A))
+axis(1,at=seq(0,2*lambda,by=lambda/2))
+axis(2,at=c(-A,0,A))
+abline(h=0,lty=2)
+grid(nx=NA,ny=NULL,lty=3)
+@
+
+Determine:
+\begin{answerlist}
+  \item a amplitude da onda, em centímetros;
+  \item o comprimento de onda, em metros.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+A amplitude é o valor absoluto do maior deslocamento em relação ao equilíbrio. Pelo eixo vertical,
+\[
+y_m=\Sexpr{A}\,\mathrm{cm}.
+\]
+
+O comprimento de onda é a distância entre dois pontos equivalentes consecutivos da forma de onda, por exemplo dois picos. Pelo gráfico,
+\[
+\lambda=\Sexpr{lambda}\,\mathrm{m}.
+\]
+
+\begin{answerlist}
+  \item $\Sexpr{A}\,\mathrm{cm}$;
+  \item $\Sexpr{lambda}\,\mathrm{m}$.
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{\Sexpr{A}|\Sexpr{lambda}}
+%% \exclozetype{num|num}
+%% \extol{0.1|0.1}
+%% \exname{Q03ClozeGraficoAmplitudeComprimento}
+%% \exsection{Ondulatoria; Ondas progressivas; Graficos}
+%% \exusepackage[utf8]{inputenc}
