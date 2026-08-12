@@ -8,16 +8,23 @@ Lh <- sample(c(4, 5, 6), 1)     ## comprimento ponteiro das horas (m)
 ## Tm = 60 min, Th = 12*60 min => Th/Tm = 12
 raz <- round((Lm / Lh) * 12, 1)
 
+distratores <- sort(c(6, 10, 12, 14, 16, 20, 24))   ## (18 fora; é a resposta típica)
+## Constrói 4 distratores distintos da resposta, com reposição segura.
+pool <- c(setdiff(distratores, raz), distratores + 1, raz - 10, raz - 4, raz - 2)
+pool <- unique(round(pool, 1))
+pool <- pool[pool != raz]
+d1 <- sample(pool, 1)
+pool <- pool[pool != d1]
+d2 <- sample(pool, 1)
+pool <- pool[pool != d2]
+d3 <- sample(pool, 1)
+pool <- pool[pool != d3]
+d4 <- sample(pool, 1)
+
+opts <- c(raz, d1, d2, d3, d4)
 aleat <- sample(1:5)
 questions <- numeric(5)
 solutions <- logical(5)
-distratores <- c(6, 10, 12, 14, 16, 18, 20, 24)
-opts <- sort(unique(c(raz, sample(distratores, 4))))
-if (length(opts) < 5) opts <- c(opts, sample(distratores, 5 - length(opts)))
-opts <- sort(opts[1:5])
-sol_index <- which(opts == raz)
-if (sol_index < 1) opts[1] <- raz; sol_index <- 1
-aleat <- sample(1:5)
 for (i in 1:5) { questions[aleat[i]] <- opts[i]; solutions[aleat[i]] <- (opts[i] == raz) }
 @
 \usepackage[utf8]{inputenc}
