@@ -1,0 +1,51 @@
+<<echo=FALSE, results=hide>>=
+## Inspirada no ENEM 2016 Q56.
+## Física central: eco, intensidade e efeito Doppler.
+alternativas <- c(
+  "intensidade diminuída, tempo de retorno aumentado e frequência percebida diminuída.",
+  "intensidade aumentada, tempo de retorno diminuído e frequência percebida diminuída.",
+  "intensidade diminuída, tempo de retorno diminuído e frequência percebida aumentada.",
+  "intensidade diminuída, tempo de retorno aumentado e frequência percebida aumentada.",
+  "intensidade aumentada, tempo de retorno aumentado e frequência percebida aumentada."
+)
+solutions <- c(TRUE, FALSE, FALSE, FALSE, FALSE)
+ordem <- sample(seq_along(alternativas))
+alternativas <- alternativas[ordem]
+solutions <- solutions[ordem]
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Um morcego em repouso emite pulsos ultrassônicos para localizar uma mariposa que se afasta dele em movimento retilíneo. O morcego analisa o eco recebido para inferir a distância e o movimento da presa.
+
+À medida que a mariposa se afasta, quais alterações são esperadas no eco recebido pelo morcego?
+
+<<echo=FALSE, results=tex>>=
+answerlist(alternativas)
+@
+
+\end{question}
+
+\begin{solution}
+
+Como a mariposa se afasta, a distância percorrida pelo pulso na ida e na volta aumenta. Portanto, o \textbf{tempo de retorno do eco aumenta}.
+
+A energia da onda se distribui por uma região cada vez maior e parte dela é perdida no percurso e na reflexão, de modo que a \textbf{intensidade do eco tende a diminuir}.
+
+Além disso, no efeito Doppler, um alvo que se afasta produz um eco associado a uma frequência menor que aquela que seria observada se não houvesse movimento relativo. Assim, a \textbf{frequência percebida diminui}.
+
+Logo, a combinação correta é: intensidade diminuída, tempo de retorno aumentado e frequência percebida diminuída.
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(solutions, paste0("\\textbf{", alternativas, "}"), alternativas))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q96QuizMorcegoDopplerEco}
+%% \exsection{Ondas; Acustica; Eco; Efeito Doppler; ENEM}
+%% \exusepackage[utf8]{inputenc}
