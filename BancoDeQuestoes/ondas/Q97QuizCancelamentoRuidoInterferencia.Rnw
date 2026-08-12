@@ -1,0 +1,49 @@
+<<echo=FALSE, results=hide>>=
+## Inspirada no ENEM 2020 Q94.
+## Física central: interferência destrutiva em cancelamento ativo de ruído.
+alternativas <- c(
+  "absorção.",
+  "interferência.",
+  "polarização.",
+  "reflexão.",
+  "difração."
+)
+solutions <- c(FALSE, TRUE, FALSE, FALSE, FALSE)
+ordem <- sample(seq_along(alternativas))
+alternativas <- alternativas[ordem]
+solutions <- solutions[ordem]
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Fones de ouvido com cancelamento ativo de ruído captam sons externos aproximadamente periódicos, como o ruído de motores, e produzem um segundo sinal sonoro ajustado para reduzir o som percebido pelo usuário.
+
+O funcionamento dessa tecnologia baseia-se principalmente no fenômeno de
+
+<<echo=FALSE, results=tex>>=
+answerlist(alternativas)
+@
+
+\end{question}
+
+\begin{solution}
+
+O fone produz uma onda sonora com frequência semelhante à do ruído externo, mas com fase ajustada para que as variações de pressão de uma onda se oponham às da outra.
+
+Pelo princípio da superposição, a soma das duas ondas pode apresentar amplitude resultante muito menor. Esse caso é chamado de \textbf{interferência destrutiva}.
+
+Portanto, o fenômeno ondulatório utilizado no cancelamento ativo de ruído é a interferência.
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(solutions, paste0("\\textbf{", alternativas, "}"), alternativas))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q97QuizCancelamentoRuidoInterferencia}
+%% \exsection{Ondas; Acustica; Interferencia; Cancelamento de ruido; ENEM}
+%% \exusepackage[utf8]{inputenc}

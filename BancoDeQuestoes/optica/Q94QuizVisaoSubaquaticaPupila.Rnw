@@ -1,0 +1,49 @@
+<<echo=FALSE, results=hide>>=
+## Inspirada no ENEM 2019 Q91.
+## Física central: refração e raios paraxiais no olho.
+alternativas <- c(
+  "intensidade luminosa incidente na retina.",
+  "difração dos feixes luminosos que atravessam a pupila.",
+  "intensidade dos feixes luminosos por polarização.",
+  "desvio dos feixes luminosos refratados no interior do olho.",
+  "reflexões dos feixes luminosos no interior do olho."
+)
+solutions <- c(FALSE, FALSE, FALSE, TRUE, FALSE)
+ordem <- sample(seq_along(alternativas))
+alternativas <- alternativas[ordem]
+solutions <- solutions[ordem]
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Algumas pessoas treinadas conseguem melhorar a visão debaixo d'água contraindo bastante a pupila. Com a pupila menor, os raios luminosos que entram no olho ficam mais próximos do eixo óptico.
+
+Fisicamente, essa adaptação melhora a acuidade visual principalmente por diminuir o
+
+<<echo=FALSE, results=tex>>=
+answerlist(alternativas)
+@
+
+\end{question}
+
+\begin{solution}
+
+Uma pupila menor seleciona preferencialmente raios próximos do eixo óptico, chamados raios paraxiais. Esses raios sofrem menores desvios e menores aberrações ao atravessar as superfícies refratoras do olho.
+
+Assim, os raios tendem a convergir de maneira mais organizada sobre a retina, melhorando a nitidez da imagem.
+
+Portanto, a melhora está associada à diminuição do \textbf{desvio dos feixes luminosos refratados no interior do olho}.
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(solutions, paste0("\\textbf{", alternativas, "}"), alternativas))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q94QuizVisaoSubaquaticaPupila}
+%% \exsection{Optica; Refracao; Olho humano; Raios paraxiais; ENEM}
+%% \exusepackage[utf8]{inputenc}
