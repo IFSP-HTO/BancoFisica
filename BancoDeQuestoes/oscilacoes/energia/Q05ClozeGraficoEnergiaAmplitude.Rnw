@@ -16,7 +16,7 @@ O gráfico mostra a energia potencial elástica $U(x)$ de um oscilador e a energ
 <<fig=TRUE, height=4.5, width=6, echo=FALSE, eps=FALSE, results=hide>>=
 par(mar=c(4.2,4.2,0.8,0.8))
 plot(100*x, U, type="l", lwd=2,
-     xlab="x (cm)", ylab="Energia (J)",
+     xlab="x (cm)", ylab="Energia (J)", xaxt="n",
      ylim=c(0,1.15*max(E, max(U[x>=-A & x<=A]))))
 abline(h=E, lty=2, lwd=2)
 points(c(-Acm,Acm), c(E,E), pch=19)
