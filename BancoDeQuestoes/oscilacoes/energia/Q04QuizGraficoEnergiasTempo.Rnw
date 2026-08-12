@@ -1,0 +1,62 @@
+<<echo=FALSE, results=hide>>=
+T <- sample(c(2, 4, 6), 1)
+t <- seq(0, T, length.out = 400)
+omega <- 2*pi/T
+K <- sin(omega*t)^2
+U <- cos(omega*t)^2
+alternativas <- c(
+  "$T/2$",
+  "$T$",
+  "$2T$",
+  "$T/4$",
+  "$4T$"
+)
+solutions <- c(TRUE, FALSE, FALSE, FALSE, FALSE)
+ord <- sample(seq_along(alternativas))
+alternativas <- alternativas[ord]
+solutions <- solutions[ord]
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+O gráfico representa, em unidades relativas, a energia cinética $K$ e a energia potencial $U$ de um oscilador harmônico simples durante um período $T$ do movimento.
+
+<<fig=TRUE, height=4.3, width=6, echo=FALSE, eps=FALSE, results=hide>>=
+par(mar = c(4.2, 4.2, 0.8, 0.8))
+plot(t, U, type = "l", lwd = 2,
+     xlab = "t (s)", ylab = "Energia relativa",
+     ylim = c(0,1.05))
+lines(t, K, lwd = 2, lty = 2)
+legend("topright", legend = c("U", "K"), lty = c(1,2), lwd = 2, bty = "n")
+grid(nx = NULL, ny = NULL, lty = 3)
+@
+
+Se o período da posição do oscilador é $T$, qual é o intervalo entre dois máximos consecutivos da energia cinética?
+
+<<echo=FALSE, results=tex>>=
+answerlist(alternativas)
+@
+
+\end{question}
+
+\begin{solution}
+
+No MHS, se $x=A\cos(\omega t+\phi)$, então as energias variam como quadrados de seno ou cosseno. Por isso, $K$ e $U$ repetem seus valores duas vezes em cada período do movimento. Assim, o intervalo entre máximos consecutivos de $K$ é
+\[
+\frac{T}{2}.
+\]
+O gráfico mostra exatamente essa repetição em meia oscilação.
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(solutions, paste0('\\textbf{', alternativas, '}'), alternativas))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q04QuizGraficoEnergiasTempo}
+%% \exsection{Mecanica; Oscilacoes; Energia; Graficos}
+%% \exusepackage[utf8]{inputenc}
