@@ -101,7 +101,7 @@ Regras técnicas:
 - não usar fotografias só para contextualização;
 - não recortar figuras do material de referência como padrão desta expansão.
 
-Antes de escalar os lotes visuais de #96, #97 e especialmente #99, validar pelo CI ao menos um novo gráfico e um novo esquema produzidos para a expansão.
+O primeiro lote (#96) inclui seis itens com elementos gráficos/procedurais e funciona como teste do padrão antes dos lotes visuais posteriores.
 
 ## Auditoria inicial de `BancoDeQuestoes/ondas`
 
@@ -120,18 +120,38 @@ No início da #95 havia 8 arquivos `.Rnw` diretamente no diretório.
 
 Após a movimentação dos dois itens de Óptica, o núcleo efetivo de Ondas/Acústica passa a ter 6 arquivos na raiz de `ondas`. A reorganização dos seis itens restantes em subdiretórios será feita apenas quando trouxer benefício claro e sem misturar refatoração ampla aos lotes de conteúdo.
 
-## Questões de referência para os primeiros lotes
+## Questões de referência para os lotes seguintes
 
-A primeira entrega da expansão já inclui quatro questões em `BancoDeQuestoes/oscilacoes/mhs/`, que passam a ser as referências preferenciais:
+Após a implementação da #96, as próprias questões novas passam a servir como referências principais:
 
-- **numérica/cloze parametrizada:** `Q01ClozePeriodoFrequenciaMHS.Rnw`;
-- **múltipla escolha conceitual:** `Q02QuizExtremoMHS.Rnw`;
-- **gráfico procedural em R:** `Q03ClozeGraficoMHS.Rnw`;
-- **esquema procedural em R:** `Q04QuizComparacaoMassaMola.Rnw`.
+- **cloze parametrizada sem figura:** `oscilacoes/mhs/Q09ClozePeriodoMassaMola.Rnw`;
+- **múltipla escolha conceitual:** `oscilacoes/mhs/Q08QuizPosicoesEspeciaisMHS.Rnw`;
+- **gráfico procedural:** `oscilacoes/mhs/Q03ClozeGraficoMHS.Rnw`;
+- **interpretação gráfica física:** `oscilacoes/mhs/Q06QuizSinaisVelocidadeAceleracao.Rnw`;
+- **esquema procedural:** `oscilacoes/mhs/Q11QuizComparacaoConstanteElastica.Rnw`;
+- **asset suplementar legado:** `optica/Q07Optgeo.Rnw` continua como referência do mecanismo `include_supplement()` + `\includegraphics` quando um arquivo externo for realmente necessário.
 
-Os itens existentes `ondas/Q90ClozeRelacaoFundamentalOnda.Rnw` e `ondas/Q94QuizNivelSonoro.Rnw` continuam sendo boas referências complementares. Para assets estáticos externos, `optica/Q07Optgeo.Rnw` demonstra o mecanismo histórico de `include_supplement()` + `\includegraphics`.
+## Etapa 1 — inventário implementado (#96)
 
-Essas quatro questões novas contam para a meta da #96. O gráfico e o esquema devem ser confirmados em PDF e Moodle XML pelo CI deste primeiro PR antes da expansão dos lotes visuais.
+A etapa inicial contém 15 questões em `BancoDeQuestoes/oscilacoes/mhs/`:
+
+1. período, frequência e frequência angular;
+2. velocidade e aceleração em posição extrema;
+3. leitura de amplitude e período em `x(t)`;
+4. comparação de períodos para massas diferentes;
+5. velocidade máxima e aceleração máxima;
+6. sinais de velocidade e aceleração a partir de `x(t)`;
+7. relação `a=-omega^2 x` por gráfico `a(x)`;
+8. propriedades na posição de equilíbrio e nos extremos;
+9. cálculo de `omega` e `T` em massa--mola;
+10. determinação de `omega` e `k` a partir do período;
+11. comparação de períodos ao alterar `k`;
+12. comparação de períodos ao alterar `m`;
+13. mola vertical: equilíbrio estático e período;
+14. obtenção experimental de período e constante elástica;
+15. gráfico `F(x)`: lei de Hooke, `k` e período.
+
+Seis itens têm elementos gráficos/procedurais: Q03, Q04, Q06, Q07, Q11 e Q15. A etapa privilegia dificuldade fácil/média e evita cálculo diferencial como pré-requisito.
 
 ## Fluxo de implementação
 
