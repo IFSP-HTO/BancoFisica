@@ -57,7 +57,7 @@ P_{\mathrm{méd}}
 %% META-INFORMATION
 %% \extype{num}
 %% \exsolution{\Sexpr{round(P,3)}}
-%% \extol{0.02}
+%% \extol{0.002}
 %% \exname{Q11PotenciaMediaCorda}
 %% \exsection{Ondulatoria; Ondas progressivas; Energia e potencia}
 %% \exusepackage[utf8]{inputenc}
