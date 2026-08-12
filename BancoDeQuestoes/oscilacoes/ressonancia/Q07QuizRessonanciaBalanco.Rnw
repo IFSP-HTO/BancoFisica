@@ -1,0 +1,43 @@
+<<echo=FALSE, results=hide>>=
+alternativas <- c(
+  "aplicar impulsos periódicos com frequência próxima da frequência natural do balanço",
+  "empurrar o balanço em instantes aleatórios, com frequências muito diferentes entre si",
+  "aumentar continuamente o amortecimento do sistema",
+  "aplicar uma força constante, sem variação periódica",
+  "reduzir a frequência dos impulsos até valores próximos de zero"
+)
+solutions <- c(TRUE,FALSE,FALSE,FALSE,FALSE)
+ord <- sample(seq_along(alternativas))
+alternativas <- alternativas[ord]
+solutions <- solutions[ord]
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Uma criança está em um balanço e outra pessoa deseja aumentar gradualmente a amplitude das oscilações usando pequenos empurrões. Qual procedimento favorece a transferência mais eficiente de energia para o balanço?
+
+<<echo=FALSE, results=tex>>=
+answerlist(alternativas)
+@
+
+\end{question}
+
+\begin{solution}
+
+A amplitude cresce de forma mais eficiente quando a força externa periódica atua com frequência próxima da frequência natural do sistema. Nessa condição ocorre ressonância, e sucessivos empurrões podem transferir energia de maneira coerente para a oscilação.
+
+Uma força constante ou impulsos aplicados em instantes aleatórios não mantêm essa condição de fase e frequência.
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(solutions,paste0('\\textbf{',alternativas,'}'),alternativas))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q07QuizRessonanciaBalanco}
+%% \exsection{Mecanica; Oscilacoes; Ressonancia; Aplicacoes}
+%% \exusepackage[utf8]{inputenc}
