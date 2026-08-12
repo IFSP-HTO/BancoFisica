@@ -1,0 +1,43 @@
+<<echo=FALSE, results=hide>>=
+alternativas <- c(
+  "A perturbação transporta energia, enquanto os elementos do meio apenas oscilam em torno de suas posições de equilíbrio.",
+  "A onda transporta necessariamente os elementos do meio junto com a perturbação.",
+  "O avanço da onda só é possível se houver transporte líquido de matéria.",
+  "A energia permanece localizada onde a onda foi produzida.",
+  "O movimento oscilatório local impede qualquer transferência de energia ao longo do meio."
+)
+solutions <- c(TRUE, FALSE, FALSE, FALSE, FALSE)
+ord <- sample(seq_along(alternativas))
+alternativas <- alternativas[ord]
+solutions <- solutions[ord]
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Uma pequena boia permanece próxima da mesma posição horizontal enquanto sobe e desce com a passagem de ondas periódicas na superfície da água. Ao mesmo tempo, a perturbação se propaga ao longo da superfície.
+
+Qual conclusão descreve corretamente essa situação?
+
+<<echo=FALSE, results=tex>>=
+answerlist(alternativas)
+@
+
+\end{question}
+
+\begin{solution}
+
+A propagação da onda não exige que as partículas do meio sejam transportadas juntamente com a forma de onda. Os elementos do meio executam movimentos locais em torno da posição de equilíbrio, enquanto a perturbação transfere energia de uma região para outra.
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(solutions, paste0('\\textbf{', alternativas, '}'), alternativas))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q02QuizTransporteEnergia}
+%% \exsection{Ondulatoria; Ondas progressivas; Transporte de energia}
+%% \exusepackage[utf8]{inputenc}
