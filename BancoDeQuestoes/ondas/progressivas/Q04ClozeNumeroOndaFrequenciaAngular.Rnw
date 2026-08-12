@@ -1,0 +1,52 @@
+<<echo=FALSE, results=hide>>=
+lambda <- sample(c(0.5,1,2,4),1)
+f <- sample(c(1,2,3,4,5),1)
+k <- 2*pi/lambda
+omega <- 2*pi*f
+fmt <- function(x,d=2) formatC(x,format="f",digits=d,decimal.mark=",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Uma onda senoidal tem comprimento de onda $\Sexpr{fmt(lambda,2)}\,\mathrm{m}$ e frequência $\Sexpr{f}\,\mathrm{Hz}$.
+
+Determine:
+\begin{answerlist}
+  \item o número de onda $k$, em $\mathrm{rad/m}$;
+  \item a frequência angular $\omega$, em $\mathrm{rad/s}$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+O número de onda é
+\[
+k=\frac{2\pi}{\lambda}
+=\frac{2\pi}{\Sexpr{fmt(lambda,2)}}
+\approx\Sexpr{fmt(k,2)}\,\mathrm{rad/m}.
+\]
+
+A frequência angular é
+\[
+\omega=2\pi f
+=2\pi\cdot\Sexpr{f}
+\approx\Sexpr{fmt(omega,2)}\,\mathrm{rad/s}.
+\]
+
+\begin{answerlist}
+  \item $\Sexpr{fmt(k,2)}\,\mathrm{rad/m}$;
+  \item $\Sexpr{fmt(omega,2)}\,\mathrm{rad/s}$.
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{\Sexpr{round(k,2)}|\Sexpr{round(omega,2)}}
+%% \exclozetype{num|num}
+%% \extol{0.03|0.03}
+%% \exname{Q04ClozeNumeroOndaFrequenciaAngular}
+%% \exsection{Ondulatoria; Ondas progressivas; Funcao de onda}
+%% \exusepackage[utf8]{inputenc}
