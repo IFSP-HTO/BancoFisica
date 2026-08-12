@@ -1,0 +1,56 @@
+<<echo=FALSE, results=hide>>=
+T <- sample(c(0.40, 0.50, 0.80, 1.00, 1.25, 2.00), 1)
+f <- 1 / T
+omega <- 2 * pi * f
+fmt <- function(x, d = 2) formatC(x, format = "f", digits = d, decimal.mark = ",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Um oscilador executa movimento harmônico simples e completa uma oscilação a cada $\Sexpr{fmt(T,2)}\,\mathrm{s}$.
+
+Determine:
+
+\begin{answerlist}
+  \item a frequência de oscilação, em hertz;
+  \item a frequência angular, em radianos por segundo.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+O período $T$ é o tempo de uma oscilação completa. A frequência é o inverso do período:
+\[
+f=\frac{1}{T}.
+\]
+Logo,
+\[
+f=\frac{1}{\Sexpr{fmt(T,2)}}=\Sexpr{fmt(f,2)}\,\mathrm{Hz}.
+\]
+
+A frequência angular está relacionada à frequência por
+\[
+\omega=2\pi f.
+\]
+Assim,
+\[
+\omega=2\pi\left(\Sexpr{fmt(f,2)}\right)\approx\Sexpr{fmt(omega,2)}\,\mathrm{rad/s}.
+\]
+
+\begin{answerlist}
+  \item $\Sexpr{fmt(f,2)}\,\mathrm{Hz}$;
+  \item $\Sexpr{fmt(omega,2)}\,\mathrm{rad/s}$.
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{\Sexpr{round(f, 2)}|\Sexpr{round(omega, 2)}}
+%% \exclozetype{num|num}
+%% \extol{0.01|0.02}
+%% \exname{Q01ClozePeriodoFrequenciaMHS}
+%% \exsection{Mecanica; Oscilacoes; MHS; Periodo e frequencia}
+%% \exusepackage[utf8]{inputenc}
