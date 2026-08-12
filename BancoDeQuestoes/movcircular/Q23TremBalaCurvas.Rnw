@@ -1,0 +1,47 @@
+<<echo=FALSE, results=hide>>=
+## ENEM 2009 (Q21): trem-bala
+
+a_g  <- 0.1                    ## aceleração lateral confortável (em g)
+g    <- 10                     ## m/s²
+t_km <- 403                    ## distância (km)
+t_min<- 85                     ## 1h25min
+
+v_ms <- t_km * 1000 / (t_min * 60)   ## velocidade (m/s)
+a    <- a_g * g                       ## aceleração centrípeta (m/s²)
+R    <- round(v_ms^2 / a, 0)          ## raio mínimo (m)
+
+aleat <- sample(1:5)
+opts  <- c(80, 430, 800, 1600, 6400)
+questions <- numeric(5); solutions <- logical(5)
+respmap <- opts[which.min(abs(opts - R))]
+## escolhe a opção mais próxima do valor calculado como correta
+solutions <- opts == respmap
+aleat <- sample(1:5)
+questions <- opts[order(aleat)]
+solutions <- solutions[order(aleat)]
+@
+
+\begin{question}
+
+(ENEM 2009) A viagem ligará os 403 quilômetros entre a Central do Brasil, no Rio, e a Estação da Luz, no centro da capital paulista, em uma hora e 25 minutos. Devido à alta velocidade, um dos problemas a ser enfrentado na escolha do trajeto é o dimensionamento das curvas. Considerando-se que uma aceleração lateral confortável para os passageiros e segura para o trem seja de $\Sexpr{a_g} g$ ($g = \Sexpr{g}$ m/s²) e que a velocidade do trem se mantenha constante em todo o percurso, seria correto prever que as curvas existentes no trajeto deveriam ter raio de curvatura mínimo de, aproximadamente:
+
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(questions)
+@
+\end{question}
+
+\begin{solution}
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(
+  paste("\\textbf{", ifelse(solutions, "Verdadeiro", "Falso"), "}"))
+@
+
+A velocidade é $v = \dfrac{403 \cdot 1000}{85 \cdot 60} = \Sexpr{round(v_ms,1)}$ m/s. A aceleração lateral máxima é $a = \Sexpr{a_g}\cdot\Sexpr{g} = \Sexpr{a}$ m/s². Como $a = v^2/R$:
+
+$$R = \frac{v^2}{a} = \frac{\Sexpr{round(v_ms,1)}^2}{\Sexpr{a}} = \Sexpr{R} \text{ m} \approx \Sexpr{respmap} \text{ m}.$$
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q23TremBalaCurvas}

@@ -1,0 +1,38 @@
+<<echo=FALSE, results=hide>>=
+## Exercício Q6 (slides): rodas de bicicleta
+
+r <- sample(c(20, 25, 30, 35, 40), 1)     ## raio de cada roda (cm)
+N <- sample(seq(100, 400, by = 25), 1)    ## voltas
+t <- sample(c(30, 45, 60, 75), 1)         ## tempo (s)
+
+dth <- round(2 * pi * N, 1)                ## deslocamento angular (rad)
+om  <- round(2 * pi * N / t, 2)            ## velocidade angular (rad/s)
+v   <- round((r/100) * om, 2)              ## velocidade linear (m/s)
+@
+
+\begin{question}
+
+As rodas de uma bicicleta têm $\Sexpr{r}$ cm de raio e, enquanto a bicicleta se desloca, elas giram, sem deslizar, $\Sexpr{N}$ vezes em $\Sexpr{t}$ s. Determine:
+
+\begin{answerlist}
+  \item O deslocamento angular das rodas nesse tempo, em rad. \textit{Dê sua resposta com uma casa decimal.}
+  \item A velocidade angular das rodas, em rad/s. \textit{Dê sua resposta com duas casas decimais.}
+  \item A velocidade linear da bicicleta em relação ao solo, em m/s. \textit{Dê sua resposta com duas casas decimais.}
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+
+\begin{answerlist}
+  \item $\Delta\theta = 2\pi N = \Sexpr{dth}$ rad
+  \item $\omega = \dfrac{\Delta\theta}{t} = \Sexpr{om}$ rad/s
+  \item $v = \omega r = \Sexpr{v}$ m/s
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{\Sexpr{dth}|\Sexpr{om}|\Sexpr{v}}
+%% \exclozetype{num|num|num}
+%% \exname{Q13RodasBicicleta}
+%% \extol{0.1|0.01|0.01}

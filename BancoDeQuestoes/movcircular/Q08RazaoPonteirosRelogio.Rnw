@@ -1,0 +1,45 @@
+<<echo=FALSE, results=hide>>=
+## Exercício 5 (slides): razão das velocidades lineares dos ponteiros
+
+Lm <- sample(c(6, 7.5, 9), 1)   ## comprimento ponteiro dos minutos (m)
+Lh <- sample(c(4, 5, 6), 1)     ## comprimento ponteiro das horas (m)
+
+## vA/vB = (Lm * 2*pi/Tm) / (Lh * 2*pi/Th) = (Lm/Lh) * (Th/Tm)
+## Tm = 60 min, Th = 12*60 min => Th/Tm = 12
+raz <- round((Lm / Lh) * 12, 1)
+
+aleat <- sample(1:5)
+questions <- numeric(5)
+solutions <- logical(5)
+distratores <- c(6, 10, 12, 14, 16, 18, 20, 24)
+opts <- sort(unique(c(raz, sample(distratores, 4))))
+if (length(opts) < 5) opts <- c(opts, sample(distratores, 5 - length(opts)))
+opts <- sort(opts[1:5])
+sol_index <- which(opts == raz)
+if (sol_index < 1) opts[1] <- raz; sol_index <- 1
+aleat <- sample(1:5)
+for (i in 1:5) { questions[aleat[i]] <- opts[i]; solutions[aleat[i]] <- (opts[i] == raz) }
+@
+\usepackage[utf8]{inputenc}
+\begin{question}
+
+Um relógio de uma estação ferroviária tem ponteiros de minutos e de horas que medem, respectivamente, $\Sexpr{Lm}$ m e $\Sexpr{Lh}$ m de comprimento. Qual a razão $\dfrac{v_A}{v_B}$ entre as velocidades lineares dos pontos extremos dos ponteiros de minutos ($v_A$) e de horas ($v_B$)?
+
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(questions)
+@
+\end{question}
+
+\begin{solution}
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(
+  paste("\\textbf{", ifelse(solutions, "Verdadeiro", "Falso"), "}"))
+@
+
+A razão é $\dfrac{v_A}{v_B} = \dfrac{L_A}{L_B}\cdot \dfrac{T_B}{T_A} = \dfrac{\Sexpr{Lm}}{\Sexpr{Lh}} \cdot 12 = \Sexpr{raz}$.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q08RazaoPonteirosRelogio}

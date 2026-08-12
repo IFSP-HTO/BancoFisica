@@ -1,0 +1,41 @@
+<<echo=FALSE, results=hide>>=
+## UNICAMP (Q16): Globo da Morte
+
+m  <- sample(c(120, 150, 180), 1)    ## massa do conjunto moto+piloto (kg)
+R  <- sample(c(4, 5, 6), 1)          ## raio do globo (m)
+vt <- sample(c(8, 10, 12), 1)        ## velocidade no topo (m/s)
+vb <- sample(c(18, 20, 22), 1)       ## velocidade na base (m/s)
+g  <- 10
+
+## Topo: P + N = m*vt^2/R -> N = m*vt^2/R - mg
+Nt <- round(m * vt^2 / R - m * g, 0)
+## Base: N - P = m*vb^2/R -> N = m*vb^2/R + mg
+Nb <- round(m * vb^2 / R + m * g, 0)
+@
+\usepackage[utf8]{inputenc}
+\begin{question}
+
+(UNICAMP adaptado) Uma atração muito popular nos circos é o "Globo da Morte", que consiste numa gaiola de forma esférica no interior da qual se movimenta uma pessoa pilotando uma motocicleta, com massa total do conjunto de $\Sexpr{m}$ kg. Considere um globo de raio $R = \Sexpr{R}$ m e $g = \Sexpr{g}$ m/s², conforme a figura.
+
+\fbox{\includegraphics[height=4.5cm,keepaspectratio]{Q19GloboMorte.jpg}}
+
+\begin{answerlist}
+  \item Se ele passar pelo ponto mais alto do globo com velocidade de $\Sexpr{vt}$ m/s, qual é o valor da força que o globo faz sobre a moto, em newtons?
+  \item Devido ao ganho de velocidade na descida, ele passa pelo ponto mais baixo com velocidade de $\Sexpr{vb}$ m/s. Calcule, para esse ponto, o valor da força que o globo faz sobre a moto, em newtons.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+
+\begin{answerlist}
+  \item No topo: $N + P = \dfrac{m v_t^2}{R} \Rightarrow N = m\dfrac{v_t^2}{R} - mg = \Sexpr{m}\cdot\dfrac{\Sexpr{vt}^2}{\Sexpr{R}} - \Sexpr{m}\cdot\Sexpr{g} = \Sexpr{Nt}$ N.
+  \item Na base: $N - P = \dfrac{m v_b^2}{R} \Rightarrow N = m\dfrac{v_b^2}{R} + mg = \Sexpr{m}\cdot\dfrac{\Sexpr{vb}^2}{\Sexpr{R}} + \Sexpr{m}\cdot\Sexpr{g} = \Sexpr{Nb}$ N.
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{\Sexpr{Nt}|\Sexpr{Nb}}
+%% \exclozetype{num|num}
+%% \exname{Q19GloboMorte}
+%% \extol{1|1}

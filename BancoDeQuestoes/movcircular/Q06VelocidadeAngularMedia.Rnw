@@ -1,0 +1,36 @@
+<<echo=FALSE, results=hide>>=
+## Exercício 2 (slides): velocidade angular média
+
+r  <- sample(c(40, 50, 60, 80), 1)           ## raio (m)
+v  <- sample(c(18, 36, 54, 72, 90), 1)       ## velocidade escalar (km/h)
+t  <- sample(c(5, 10, 15, 20), 1)            ## tempo (s)
+
+v_ms <- v / 3.6
+omega  <- v_ms / r                            ## velocidade angular média (rad/s)
+angulo <- omega * t                           ## ângulo descrito (rad)
+@
+
+\begin{question}
+
+Uma circunferência de raio $\Sexpr{r}$ m é percorrida durante $\Sexpr{t}$ s por um móvel com velocidade escalar de $\Sexpr{v}$ km/h. Determine:
+
+\begin{answerlist}
+  \item A velocidade angular média do móvel, em rad/s. \textit{Dê sua resposta com três casas decimais.}
+  \item O ângulo descrito pelo móvel nos $\Sexpr{t}$ s, em rad. \textit{Dê sua resposta com três casas decimais.}
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+
+\begin{answerlist}
+  \item $\omega = \Sexpr{omega}$ rad/s
+  \item $\Delta\theta = \Sexpr{angulo}$ rad
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{\Sexpr{omega}|\Sexpr{angulo}}
+%% \exclozetype{num|num}
+%% \exname{Q06VelocidadeAngularMedia}
+%% \extol{0.001|0.001}

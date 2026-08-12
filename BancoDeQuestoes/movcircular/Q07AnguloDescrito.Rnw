@@ -1,0 +1,27 @@
+<<echo=FALSE, results=hide>>=
+## Exercício 3 (slides): ângulo descrito a partir de omega
+
+omega <- sample(c(1.5, 2, 2.5, 3, 3.5), 1)   ## velocidade angular (rad/s)
+r     <- 2.0                                   ## raio (m)
+t     <- sample(c(10, 15, 20), 1)              ## tempo (s)
+
+resp <- omega * t                              ## ângulo (rad)
+@
+
+\begin{question}
+
+A velocidade angular média de um móvel numa trajetória circular de raio $\Sexpr{r}$ m é $\Sexpr{omega}$ rad/s. Determine o ângulo descrito pelo móvel nos $\Sexpr{t}$ segundos iniciais do movimento, em rad. \textit{Dê sua resposta com uma casa decimal.}
+
+\end{question}
+
+\begin{solution}
+
+$\Delta\theta = \omega \cdot t = \Sexpr{omega} \cdot \Sexpr{t} = \Sexpr{resp}$ rad.
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp}}
+%% \exname{Q07AnguloDescrito}
+%% \extol{0.1}

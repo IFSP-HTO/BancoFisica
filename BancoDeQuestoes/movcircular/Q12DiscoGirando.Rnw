@@ -1,0 +1,42 @@
+<<echo=FALSE, results=hide>>=
+## Exercício Q5 (slides): disco girando com velocidade angular omega
+
+r <- sample(c(10, 15, 20, 25), 1)         ## raio (cm)
+k <- sample(2:6, 1)                        ## omega = k*pi rad/s
+t <- sample(c(10, 15, 20), 1)              ## tempo (s)
+
+omega <- k * pi
+dth   <- round(omega * t, 1)                      ## deslocamento angular (rad)
+voltas<- round(dth / (2*pi), 1)                   ## número de voltas
+ds    <- round((r/100) * dth, 1)                  ## deslocamento linear (m)
+v     <- round((r/100) * omega, 2)                ## velocidade linear (m/s)
+@
+
+\begin{question}
+
+Um disco circular de $\Sexpr{r}$ cm de raio gira em torno de seu eixo com uma velocidade angular de $\Sexpr{k}\pi$ rad/s. Determine:
+
+\begin{answerlist}
+  \item O deslocamento angular do disco em $\Sexpr{t}$ s, em rad. \textit{Dê sua resposta com uma casa decimal.}
+  \item Quantas voltas ele completa nesse tempo.
+  \item O deslocamento linear, nesses $\Sexpr{t}$ s, de um ponto situado na periferia do disco, em metros. \textit{Dê sua resposta com uma casa decimal.}
+  \item A velocidade linear nesse ponto, em m/s. \textit{Dê sua resposta com duas casas decimais.}
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+
+\begin{answerlist}
+  \item $\Delta\theta = \omega t = \Sexpr{omega} \cdot \Sexpr{t} = \Sexpr{dth}$ rad
+  \item $n = \dfrac{\Delta\theta}{2\pi} = \Sexpr{voltas}$ voltas
+  \item $\Delta s = r \Delta\theta = \Sexpr{ds}$ m
+  \item $v = \omega r = \Sexpr{v}$ m/s
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{\Sexpr{dth}|\Sexpr{voltas}|\Sexpr{ds}|\Sexpr{v}}
+%% \exclozetype{num|num|num|num}
+%% \exname{Q12DiscoGirando}
+%% \extol{0.1|0.1|0.1|0.01}

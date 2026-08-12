@@ -1,0 +1,41 @@
+<<echo=FALSE, results=hide>>=
+## Exercício Q14 (slides): mecanismo com engrenagens A, B e C
+
+Ra <- sample(c(8, 10, 12), 1)      ## raio de A (cm)
+Rb <- sample(c(12, 15, 18), 1)     ## raio de B (cm)
+Rc <- sample(c(4, 5, 6), 1)        ## raio de C (cm)
+fA <- sample(c(60, 75, 90), 1)     ## frequência do motor (rpm)
+
+## A engrena com B: Ra*fA = Rb*fB -> fB; B e C no mesmo eixo -> fC = fB
+fB <- round(fA * Ra / Rb, 2)
+fC <- fB
+## velocidade linear do ponto P na periferia de C, em cm/s
+vP <- round(2 * pi * Rc * (fC / 60), 2)
+@
+\usepackage[utf8]{inputenc}
+\begin{question}
+
+No mecanismo esquematizado, o motor aciona a engrenagem A com uma frequência de $\Sexpr{fA}$ rpm. As engrenagens B e C possuem o mesmo eixo. Sendo $R_A = \Sexpr{Ra}$ cm, $R_B = \Sexpr{Rb}$ cm e $R_C = \Sexpr{Rc}$ cm, determine:
+
+\fbox{\includegraphics[height=4.5cm,keepaspectratio]{Q18MecanismoEngrenagens.jpg}}
+
+\begin{answerlist}
+  \item A frequência de rotação, em rpm, das engrenagens B e C.
+  \item A velocidade linear (em cm/s) do ponto P pertencente à periferia da engrenagem C. \textit{Dê sua resposta com duas casas decimais. Adote $\pi = 3{,}14$.}
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+
+\begin{answerlist}
+  \item A engrena com B (mesma velocidade linear): $f_B = f_A \dfrac{R_A}{R_B} = \Sexpr{fA} \cdot \dfrac{\Sexpr{Ra}}{\Sexpr{Rb}} = \Sexpr{fB}$ rpm. Como B e C giram no mesmo eixo, $f_C = f_B = \Sexpr{fC}$ rpm.
+  \item $v_P = 2\pi R_C f_C = 2\pi \cdot \Sexpr{Rc} \cdot \dfrac{\Sexpr{fC}}{60} = \Sexpr{vP}$ cm/s.
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{\Sexpr{fB}|\Sexpr{vP}}
+%% \exclozetype{num|num}
+%% \exname{Q18MecanismoEngrenagens}
+%% \extol{0.01|0.01}

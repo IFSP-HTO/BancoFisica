@@ -1,0 +1,33 @@
+<<echo=FALSE, results=hide>>=
+## Exercício Q27 (slides): esfera oca com projétil
+
+d <- sample(c(0.4, 0.5, 0.6), 1)   ## diâmetro da esfera (m)
+v <- sample(c(400, 500, 600), 1)   ## velocidade do projétil (m/s)
+
+## O projétil atravessa o diâmetro em t = d/v. Para sair pelo mesmo
+## orifício, a esfera deve girar meia volta nesse intervalo: f*(t) = 1/2
+## => f = (1/2) / (d/v) = v/(2d)
+f <- round(v / (2 * d), 1)
+@
+\usepackage[utf8]{inputenc}
+\begin{question}
+
+Uma esfera oca feita de papel tem diâmetro igual a $\Sexpr{d}$ m e gira com determinada frequência $f$, conforme a figura. Um projétil é disparado numa direção que passa pelo equador da esfera, com velocidade $v = \Sexpr{v}$ m/s. Observa-se que, devido à frequência de rotação da esfera, a bala sai pelo mesmo orifício feito pelo projétil quando penetra na esfera. Determine a frequência $f$ da esfera, em hertz. \textit{Dê sua resposta com uma casa decimal.}
+
+\fbox{\includegraphics[height=4.5cm,keepaspectratio]{Q27EsferaProjetil.jpg}}
+
+\end{question}
+
+\begin{solution}
+
+O projétil percorre o diâmetro $d$ em um tempo $t = \dfrac{d}{v} = \dfrac{\Sexpr{d}}{\Sexpr{v}} = \Sexpr{round(d/v,6)}$ s. Para que saia pelo mesmo orifício, a esfera deve girar meia volta nesse intervalo:
+
+$$f \cdot t = \frac{1}{2} \Rightarrow f = \frac{1}{2t} = \frac{v}{2d} = \frac{\Sexpr{v}}{2\cdot\Sexpr{d}} = \Sexpr{f} \text{ Hz}.$$
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{f}}
+%% \exname{Q27EsferaProjetil}
+%% \extol{0.1}

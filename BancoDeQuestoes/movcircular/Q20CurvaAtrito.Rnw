@@ -1,0 +1,36 @@
+<<echo=FALSE, results=hide>>=
+## Exercício Q17 (slides): carro em curva horizontal com atrito
+
+m  <- sample(c(800, 900, 1000), 1)   ## massa (kg)
+R  <- sample(c(40, 50, 60), 1)       ## raio (m)
+mu <- sample(c(0.6, 0.7, 0.8), 1)    ## coeficiente de atrito
+g  <- 10
+
+## v_max = sqrt(mu*g*R)
+v_ms <- round(sqrt(mu * g * R), 2)
+v_kmh<- round(v_ms * 3.6, 1)
+@
+\usepackage[utf8]{inputenc}
+\begin{question}
+
+A figura mostra um carro de $\Sexpr{m}$ kg fazendo uma curva horizontal plana, de raio $R = \Sexpr{R}$ m, em uma estrada asfaltada. Sabe-se que o coeficiente de atrito entre os pneus e o asfalto é $\mu = \Sexpr{mu}$ e $g = \Sexpr{g}$ m/s².
+
+\fbox{\includegraphics[height=4.5cm,keepaspectratio]{Q20CurvaAtrito.jpg}}
+
+Calcule a velocidade máxima que esse carro pode ter sem derrapar. \textit{Dê sua resposta em m/s, com duas casas decimais.}
+
+\end{question}
+
+\begin{solution}
+
+A força de atrito exerce o papel de resultante centrípeta: $f_{at} = \mu m g = \dfrac{m v^2}{R}$. Logo:
+
+$$v_{\max} = \sqrt{\mu g R} = \sqrt{\Sexpr{mu} \cdot \Sexpr{g} \cdot \Sexpr{R}} = \Sexpr{v_ms} \text{ m/s} \approx \Sexpr{v_kmh} \text{ km/h}.$$
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{v_ms}}
+%% \exname{Q20CurvaAtrito}
+%% \extol{0.01}

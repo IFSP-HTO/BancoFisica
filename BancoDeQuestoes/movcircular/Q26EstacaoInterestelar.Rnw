@@ -1,0 +1,31 @@
+<<echo=FALSE, results=hide>>=
+## Exercício Q26 (slides): estação Interestelar (Endurance)
+
+R <- sample(c(30, 40, 50), 1)   ## raio da extremidade (m)
+g <- 10                          ## gravidade artificial desejada (m/s²)
+
+## a = omega^2 * R = g -> omega = sqrt(g/R); f = omega/(2*pi)
+omega <- round(sqrt(g / R), 3)
+f     <- round(omega / (2 * pi), 4)
+@
+
+\begin{question}
+
+(Adaptado de "Interestelar") Existe uma estação espacial que usa o efeito da rotação para simular o efeito da gravidade. Considerando-se que a estação tenha, na extremidade dos seus módulos, um raio de $\Sexpr{R}$ metros, quantas revoluções por segundo seriam necessárias para que a aceleração da gravidade artificial seja igual a $\Sexpr{g}$ m/s²? \textit{Dê sua resposta com quatro casas decimais.}
+
+\end{question}
+
+\begin{solution}
+
+Para simular a gravidade, a aceleração centrípeta na extremidade deve ser $a = \omega^2 R = g$:
+
+$$\omega = \sqrt{\frac{g}{R}} = \sqrt{\frac{\Sexpr{g}}{\Sexpr{R}}} = \Sexpr{omega} \text{ rad/s}.$$
+
+A frequência é $f = \dfrac{\omega}{2\pi} = \Sexpr{f}$ revoluções por segundo.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{f}}
+%% \exname{Q26EstacaoInterestelar}
+%% \extol{0.0001}
