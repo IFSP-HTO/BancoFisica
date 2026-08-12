@@ -1,0 +1,50 @@
+<<echo=FALSE, results=hide>>=
+## Inspirada no ENEM 2023 Q108.
+## Física central: indução eletromagnética em fogão por indução.
+
+alternativas <- c(
+  "radiação eletromagnética absorvida diretamente pelo fundo da panela.",
+  "condução elétrica entre a mesa do fogão e a panela.",
+  "campo elétrico variável produzido pela rede elétrica.",
+  "campo magnético variável que atravessa o fundo metálico da panela.",
+  "ressonância eletromagnética entre a panela e a superfície do fogão."
+)
+solutions <- c(FALSE, FALSE, FALSE, TRUE, FALSE)
+ordem <- sample(seq_along(alternativas))
+alternativas <- alternativas[ordem]
+solutions <- solutions[ordem]
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Um fogão por indução aquece uma panela metálica por meio de correntes elétricas induzidas em seu fundo. Essas correntes dissipam energia por efeito Joule, aquecendo diretamente a panela.
+
+A corrente elétrica mencionada é induzida principalmente por um
+
+<<echo=FALSE, results=tex>>=
+answerlist(alternativas)
+@
+
+\end{question}
+
+\begin{solution}
+
+A bobina do fogão é percorrida por corrente alternada e produz um campo magnético variável. Esse campo atravessa o fundo condutor da panela e faz variar o fluxo magnético através do material.
+
+Pela lei de Faraday, a variação do fluxo magnético induz forças eletromotrizes e correntes elétricas no metal da panela. Essas correntes dissipam energia pelo efeito Joule.
+
+Portanto, a corrente é induzida por um campo magnético variável.
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(solutions, paste0("\\textbf{", alternativas, "}"), alternativas))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q100QuizFogaoInducao}
+%% \exsection{Eletromagnetismo; Inducao eletromagnetica; Lei de Faraday; Efeito Joule; ENEM}
+%% \exusepackage[utf8]{inputenc}
