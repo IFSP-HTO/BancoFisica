@@ -1,0 +1,79 @@
+<<echo=FALSE, results=hide>>=
+alternativas <- c("$1/4$", "$1/2$", "$1$", "$2$", "$4$")
+solutions <- c(FALSE, FALSE, FALSE, TRUE, FALSE)
+ord <- sample(seq_along(alternativas))
+alternativas <- alternativas[ord]
+solutions <- solutions[ord]
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+O esquema mostra dois osciladores horizontais ideais. As molas têm a mesma constante elástica $k$, e as massas estão indicadas nos blocos.
+
+<<fig=TRUE, height=4.5, width=7, echo=FALSE, eps=FALSE, results=hide>>=
+par(mar = c(0.5, 0.5, 0.5, 0.5))
+plot(0, 0, type = "n", xlim = c(0, 10), ylim = c(0, 8),
+     axes = FALSE, xlab = "", ylab = "", asp = 1)
+
+draw_system <- function(y, mass_label, system_label) {
+  # parede
+  segments(0.8, y - 1.0, 0.8, y + 1.0, lwd = 3)
+  yy <- seq(y - 0.9, y + 0.8, by = 0.3)
+  segments(0.45, yy, 0.8, yy + 0.2, lwd = 1)
+
+  # mola
+  segments(0.8, y, 1.4, y, lwd = 2)
+  xs <- seq(1.4, 4.8, length.out = 21)
+  offsets <- rep(c(0, 0.28, -0.28, 0), length.out = length(xs))
+  lines(xs, y + offsets, lwd = 2)
+  segments(4.8, y, 5.2, y, lwd = 2)
+
+  # bloco e rótulos
+  rect(5.2, y - 0.75, 7.0, y + 0.75, lwd = 2)
+  text(6.1, y, labels = mass_label, cex = 1.2)
+  text(3.1, y + 0.62, labels = expression(k), cex = 1.1)
+  text(7.6, y, labels = system_label, adj = 0, cex = 1.0)
+}
+
+draw_system(6, expression(m), "Sistema 1")
+draw_system(2, expression(4*m), "Sistema 2")
+@
+
+Se os períodos dos sistemas 1 e 2 são, respectivamente, $T_1$ e $T_2$, qual é a razão $T_2/T_1$?
+
+<<echo=FALSE, results=tex>>=
+answerlist(alternativas)
+@
+
+\end{question}
+
+\begin{solution}
+
+Para um oscilador massa--mola ideal,
+\[
+T=2\pi\sqrt{\frac{m}{k}}.
+\]
+
+Como a constante elástica é a mesma nos dois sistemas,
+\[
+\frac{T_2}{T_1}
+=\sqrt{\frac{4m/k}{m/k}}
+=\sqrt{4}
+=2.
+\]
+
+Portanto, o sistema com massa $4m$ tem período duas vezes maior que o sistema com massa $m$.
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(solutions, paste0("\\textbf{", alternativas, "}"), alternativas))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q04QuizComparacaoMassaMola}
+%% \exsection{Mecanica; Oscilacoes; MHS; Sistema massa mola}
+%% \exusepackage[utf8]{inputenc}

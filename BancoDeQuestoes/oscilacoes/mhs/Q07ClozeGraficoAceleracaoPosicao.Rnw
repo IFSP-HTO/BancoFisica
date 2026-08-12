@@ -1,0 +1,65 @@
+<<echo=FALSE, results=hide>>=
+omega <- sample(c(2, 3, 4, 5), 1)
+T <- 2 * pi / omega
+x <- seq(-0.10, 0.10, length.out = 300)
+a <- -(omega^2) * x
+fmt <- function(x, d = 2) formatC(x, format = "f", digits = d, decimal.mark = ",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+O gráfico representa a aceleração $a$ de um oscilador harmônico simples em função de sua posição $x$.
+
+<<fig=TRUE, height=4, width=6, echo=FALSE, eps=FALSE, results=hide>>=
+par(mar = c(4.2, 4.2, 0.8, 0.8))
+plot(x, a, type = "l", lwd = 2,
+     xlab = "x (m)", ylab = expression(a~(m/s^2)),
+     xlim = c(-0.10, 0.10))
+abline(h = 0, v = 0, lty = 2)
+grid(nx = NULL, ny = NULL, lty = 3)
+@
+
+A partir da inclinação do gráfico e da relação característica do MHS, determine:
+
+\begin{answerlist}
+  \item a frequência angular $\omega$, em $\mathrm{rad/s}$;
+  \item o período $T$, em segundos.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+No MHS,
+\[
+a=-\omega^2x.
+\]
+Portanto, o coeficiente angular do gráfico $a\times x$ é $-\omega^2$. Pela reta representada, seu módulo é $\Sexpr{omega^2}\,\mathrm{s^{-2}}$, de modo que
+\[
+\omega=\sqrt{\Sexpr{omega^2}}=\Sexpr{omega}\,\mathrm{rad/s}.
+\]
+O período se relaciona com a frequência angular por
+\[
+T=\frac{2\pi}{\omega}.
+\]
+Assim,
+\[
+T=\frac{2\pi}{\Sexpr{omega}}\approx\Sexpr{fmt(T,2)}\,\mathrm{s}.
+\]
+
+\begin{answerlist}
+  \item $\Sexpr{omega}\,\mathrm{rad/s}$;
+  \item $\Sexpr{fmt(T,2)}\,\mathrm{s}$.
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{\Sexpr{omega}|\Sexpr{round(T,2)}}
+%% \exclozetype{num|num}
+%% \extol{0.1|0.03}
+%% \exname{Q07ClozeGraficoAceleracaoPosicao}
+%% \exsection{Mecanica; Oscilacoes; MHS; Graficos}
+%% \exusepackage[utf8]{inputenc}

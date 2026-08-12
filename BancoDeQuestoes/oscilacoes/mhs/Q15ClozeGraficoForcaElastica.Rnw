@@ -1,0 +1,68 @@
+<<echo=FALSE, results=hide>>=
+k <- sample(c(50, 100, 150, 200), 1)
+m <- sample(c(0.20, 0.40, 0.50, 0.80), 1)
+x <- seq(-0.10, 0.10, length.out = 300)
+F <- -k*x
+T <- 2*pi*sqrt(m/k)
+fmt <- function(x, d = 2) formatC(x, format = "f", digits = d, decimal.mark = ",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+O gráfico mostra a força horizontal resultante $F$ exercida sobre um bloco em função de seu deslocamento $x$ em relação à posição de equilíbrio. O bloco tem massa $\Sexpr{fmt(m,2)}\,\mathrm{kg}$ e o atrito é desprezível.
+
+<<fig=TRUE, height=4, width=6, echo=FALSE, eps=FALSE, results=hide>>=
+par(mar = c(4.2, 4.2, 0.8, 0.8))
+plot(x, F, type = "l", lwd = 2,
+     xlab = "x (m)", ylab = "F (N)",
+     xlim = c(-0.10, 0.10))
+abline(h = 0, v = 0, lty = 2)
+grid(nx = NULL, ny = NULL, lty = 3)
+@
+
+Determine:
+
+\begin{answerlist}
+  \item a constante elástica equivalente $k$, em $\mathrm{N/m}$;
+  \item o período do movimento harmônico simples, em segundos.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+A força restauradora de um oscilador harmônico simples obedece à lei de Hooke,
+\[
+F=-kx.
+\]
+Assim, o coeficiente angular do gráfico $F\times x$ é $-k$. Pelo gráfico, o módulo dessa inclinação é
+\[
+k=\Sexpr{k}\,\mathrm{N/m}.
+\]
+
+Com a massa conhecida, o período é
+\[
+T=2\pi\sqrt{\frac{m}{k}}.
+\]
+Logo,
+\[
+T=2\pi\sqrt{\frac{\Sexpr{fmt(m,2)}}{\Sexpr{k}}}
+\approx\Sexpr{fmt(T,2)}\,\mathrm{s}.
+\]
+
+\begin{answerlist}
+  \item $\Sexpr{k}\,\mathrm{N/m}$;
+  \item $\Sexpr{fmt(T,2)}\,\mathrm{s}$.
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{\Sexpr{k}|\Sexpr{round(T,2)}}
+%% \exclozetype{num|num}
+%% \extol{1|0.03}
+%% \exname{Q15ClozeGraficoForcaElastica}
+%% \exsection{Mecanica; Oscilacoes; MHS; Massa-mola; Graficos}
+%% \exusepackage[utf8]{inputenc}

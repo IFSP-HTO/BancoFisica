@@ -1,0 +1,67 @@
+<<echo=FALSE, results=hide>>=
+A <- sample(c(2, 3, 4, 5), 1)
+T <- sample(c(2, 4, 6, 8), 1)
+t <- seq(0, T, length.out = 400)
+x <- A * cos(2 * pi * t / T)
+tp <- T / 8
+xp <- A * cos(2 * pi * tp / T)
+
+alternativas <- c(
+  "a velocidade é negativa e a aceleração é negativa",
+  "a velocidade é positiva e a aceleração é negativa",
+  "a velocidade é negativa e a aceleração é positiva",
+  "a velocidade e a aceleração são nulas",
+  "a velocidade é positiva e a aceleração é positiva"
+)
+solutions <- c(TRUE, FALSE, FALSE, FALSE, FALSE)
+ord <- sample(seq_along(alternativas))
+alternativas <- alternativas[ord]
+solutions <- solutions[ord]
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+O gráfico mostra a posição de um oscilador harmônico simples. O ponto $P$ corresponde a um instante em que o oscilador ainda está em $x>0$, mas caminha em direção à posição de equilíbrio.
+
+<<fig=TRUE, height=4, width=6, echo=FALSE, eps=FALSE, results=hide>>=
+par(mar = c(4.2, 4.2, 0.8, 0.8))
+plot(t, x, type = "l", lwd = 2,
+     xlab = "t (s)", ylab = "x (cm)",
+     xlim = c(0, T), ylim = c(-1.2*A, 1.2*A))
+abline(h = 0, lty = 2)
+points(tp, xp, pch = 19, cex = 1.2)
+text(tp, xp, labels = "P", pos = 3)
+grid(nx = NA, ny = NULL, lty = 3)
+@
+
+No instante representado pelo ponto $P$,
+
+<<echo=FALSE, results=tex>>=
+answerlist(alternativas)
+@
+
+\end{question}
+
+\begin{solution}
+
+Como o gráfico está decrescendo no ponto $P$, a inclinação $dx/dt$ é negativa; portanto, a velocidade é negativa.
+
+Além disso, no MHS,
+\[
+a=-\omega^2x.
+\]
+Como nesse instante $x>0$, a aceleração aponta para o lado negativo, isto é, também é negativa. Isso expressa o caráter restaurador da aceleração: ela sempre aponta para a posição de equilíbrio.
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(solutions, paste0('\\textbf{', alternativas, '}'), alternativas))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q06QuizSinaisVelocidadeAceleracao}
+%% \exsection{Mecanica; Oscilacoes; MHS; Graficos}
+%% \exusepackage[utf8]{inputenc}

@@ -1,0 +1,61 @@
+<<echo=FALSE, results=hide>>=
+A <- sample(c(2, 3, 4, 5), 1)
+T <- sample(c(2, 4, 6, 8), 1)
+t <- seq(0, 2 * T, length.out = 500)
+x <- A * cos(2 * pi * t / T)
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+O gráfico representa a posição $x$ de um oscilador harmônico simples em função do tempo.
+
+<<fig=TRUE, height=4, width=6, echo=FALSE, eps=FALSE, results=hide>>=
+par(mar = c(4.2, 4.2, 0.8, 0.8))
+plot(t, x,
+     type = "l", lwd = 2,
+     xlab = "t (s)", ylab = "x (cm)",
+     xaxt = "n", yaxt = "n",
+     xlim = c(0, 2 * T), ylim = c(-1.2 * A, 1.2 * A))
+axis(1, at = seq(0, 2 * T, by = T / 2))
+axis(2, at = c(-A, 0, A))
+abline(h = 0, lty = 2)
+grid(nx = NA, ny = NULL, lty = 3)
+@
+
+A partir do gráfico, determine:
+
+\begin{answerlist}
+  \item a amplitude do movimento, em centímetros;
+  \item o período do movimento, em segundos.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+A amplitude é o maior valor absoluto do deslocamento em relação à posição de equilíbrio. Pelo eixo vertical, os extremos são $+\Sexpr{A}\,\mathrm{cm}$ e $-\Sexpr{A}\,\mathrm{cm}$; portanto,
+\[
+A=\Sexpr{A}\,\mathrm{cm}.
+\]
+
+O período é o intervalo de tempo entre dois estados idênticos do movimento. No gráfico, dois máximos consecutivos estão separados por $\Sexpr{T}\,\mathrm{s}$. Assim,
+\[
+T=\Sexpr{T}\,\mathrm{s}.
+\]
+
+\begin{answerlist}
+  \item $\Sexpr{A}\,\mathrm{cm}$;
+  \item $\Sexpr{T}\,\mathrm{s}$.
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{\Sexpr{A}|\Sexpr{T}}
+%% \exclozetype{num|num}
+%% \extol{0.1|0.1}
+%% \exname{Q03ClozeGraficoMHS}
+%% \exsection{Mecanica; Oscilacoes; MHS; Graficos}
+%% \exusepackage[utf8]{inputenc}

@@ -1,0 +1,82 @@
+<<echo=FALSE, results=hide>>=
+k <- sample(c(20, 30, 40, 50), 1)
+m <- sample(c(0.20, 0.30, 0.40, 0.50), 1)
+
+alternativas <- c(
+  "$T_2=T_1/2$",
+  "$T_2=2T_1$",
+  "$T_2=4T_1$",
+  "$T_2=T_1/4$",
+  "$T_2=T_1$"
+)
+solutions <- c(TRUE, FALSE, FALSE, FALSE, FALSE)
+ord <- sample(seq_along(alternativas))
+alternativas <- alternativas[ord]
+solutions <- solutions[ord]
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Dois sistemas massa--mola têm a mesma massa $m$, mas constantes elásticas diferentes. No sistema 1, a mola tem constante $k$; no sistema 2, a constante é $4k$.
+
+<<fig=TRUE, height=3.4, width=6, echo=FALSE, eps=FALSE, results=hide>>=
+par(mar = c(0.5,0.5,0.5,0.5))
+plot.new()
+plot.window(xlim=c(0,10), ylim=c(0,6))
+# paredes
+segments(1,4.6,1,5.8,lwd=4)
+segments(1,1.2,1,2.4,lwd=4)
+# molas como zigue-zague
+spring <- function(x0,x1,y,n=8,amp=0.18){
+  xs <- seq(x0,x1,length.out=2*n+1)
+  ys <- rep(c(y,y+amp,y-amp), length.out=length(xs))
+  ys[1] <- y; ys[length(ys)] <- y
+  lines(xs,ys,lwd=1.8)
+}
+spring(1,6.7,5.2)
+spring(1,6.7,1.8)
+rect(6.7,4.55,8.0,5.85,lwd=2)
+rect(6.7,1.15,8.0,2.45,lwd=2)
+text(7.35,5.2,"m")
+text(7.35,1.8,"m")
+text(3.8,5.65,"k")
+text(3.8,2.25,"4k")
+text(9,5.2,"sistema 1")
+text(9,1.8,"sistema 2")
+@
+
+Se $T_1$ e $T_2$ são os períodos dos dois sistemas, qual relação é correta?
+
+<<echo=FALSE, results=tex>>=
+answerlist(alternativas)
+@
+
+\end{question}
+
+\begin{solution}
+
+Para um oscilador massa--mola,
+\[
+T=2\pi\sqrt{\frac{m}{k}}.
+\]
+Mantendo a massa e substituindo $k$ por $4k$,
+\[
+T_2=2\pi\sqrt{\frac{m}{4k}}
+=\frac{1}{2}\,2\pi\sqrt{\frac{m}{k}}
+=\frac{T_1}{2}.
+\]
+Uma mola quatro vezes mais rígida produz, portanto, um período duas vezes menor.
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(solutions, paste0('\\textbf{', alternativas, '}'), alternativas))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q11QuizComparacaoConstanteElastica}
+%% \exsection{Mecanica; Oscilacoes; MHS; Massa-mola}
+%% \exusepackage[utf8]{inputenc}

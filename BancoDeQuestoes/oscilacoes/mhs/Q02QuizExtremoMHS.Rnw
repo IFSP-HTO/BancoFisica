@@ -1,0 +1,54 @@
+<<echo=FALSE, results=hide>>=
+alternativas <- c(
+  "$v=0$ e a aceleração tem módulo máximo, apontando para a posição de equilíbrio.",
+  "$v=0$ e a aceleração é nula.",
+  "O módulo da velocidade é máximo e a aceleração é nula.",
+  "O módulo da velocidade é máximo e a aceleração aponta para longe da posição de equilíbrio.",
+  "$v=0$ e a aceleração tem módulo máximo, apontando para longe da posição de equilíbrio."
+)
+solutions <- c(TRUE, FALSE, FALSE, FALSE, FALSE)
+ord <- sample(seq_along(alternativas))
+alternativas <- alternativas[ord]
+solutions <- solutions[ord]
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Um bloco preso a uma mola ideal executa movimento harmônico simples ao longo de um eixo horizontal. Em certo instante, o bloco está no extremo direito da trajetória, em $x=+A$.
+
+Qual alternativa descreve corretamente a velocidade e a aceleração do bloco nesse instante?
+
+<<echo=FALSE, results=tex>>=
+answerlist(alternativas)
+@
+
+\end{question}
+
+\begin{solution}
+
+Nos extremos do movimento, o bloco muda o sentido de sua velocidade. Por isso, nesse instante,
+\[
+v=0.
+\]
+
+No movimento harmônico simples,
+\[
+a=-\omega^2x.
+\]
+Como o bloco está em $x=+A$, a aceleração é negativa, isto é, aponta de volta para a posição de equilíbrio. Além disso, como $|x|$ é máximo no extremo, o módulo da aceleração também é máximo.
+
+Portanto, a alternativa correta afirma que a velocidade é nula e a aceleração tem módulo máximo, dirigida para a posição de equilíbrio.
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(solutions, paste0("\\textbf{", alternativas, "}"), alternativas))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q02QuizExtremoMHS}
+%% \exsection{Mecanica; Oscilacoes; MHS; Posicao velocidade aceleracao}
+%% \exusepackage[utf8]{inputenc}

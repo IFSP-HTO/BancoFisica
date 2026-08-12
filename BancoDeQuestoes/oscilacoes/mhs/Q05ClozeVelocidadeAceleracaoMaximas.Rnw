@@ -1,0 +1,64 @@
+<<echo=FALSE, results=hide>>=
+Acm <- sample(c(2, 3, 4, 5, 6), 1)
+f <- sample(c(0.5, 1.0, 1.5, 2.0), 1)
+A <- Acm / 100
+omega <- 2 * pi * f
+vmax <- omega * A
+amax <- omega^2 * A
+fmt <- function(x, d = 2) formatC(x, format = "f", digits = d, decimal.mark = ",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Um oscilador executa movimento harmônico simples com amplitude $\Sexpr{Acm}\,\mathrm{cm}$ e frequência $\Sexpr{fmt(f,1)}\,\mathrm{Hz}$.
+
+Determine:
+
+\begin{answerlist}
+  \item a velocidade máxima do oscilador, em $\mathrm{m/s}$;
+  \item a aceleração máxima, em $\mathrm{m/s^2}$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Primeiro convertemos a amplitude para metros:
+\[
+A=\frac{\Sexpr{Acm}}{100}=\Sexpr{fmt(A,2)}\,\mathrm{m}.
+\]
+A frequência angular é
+\[
+\omega=2\pi f=2\pi\cdot\Sexpr{fmt(f,1)}\,\mathrm{rad/s}.
+\]
+No MHS,
+\[
+v_{\max}=\omega A
+\quad\text{e}\quad
+a_{\max}=\omega^2A.
+\]
+Logo,
+\[
+v_{\max}\approx\Sexpr{fmt(vmax,2)}\,\mathrm{m/s}
+\]
+e
+\[
+a_{\max}\approx\Sexpr{fmt(amax,2)}\,\mathrm{m/s^2}.
+\]
+
+\begin{answerlist}
+  \item $\Sexpr{fmt(vmax,2)}\,\mathrm{m/s}$;
+  \item $\Sexpr{fmt(amax,2)}\,\mathrm{m/s^2}$.
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{\Sexpr{round(vmax,2)}|\Sexpr{round(amax,2)}}
+%% \exclozetype{num|num}
+%% \extol{0.02|0.05}
+%% \exname{Q05ClozeVelocidadeAceleracaoMaximas}
+%% \exsection{Mecanica; Oscilacoes; MHS}
+%% \exusepackage[utf8]{inputenc}
