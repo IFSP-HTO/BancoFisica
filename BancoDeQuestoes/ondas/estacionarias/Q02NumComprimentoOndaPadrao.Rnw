@@ -1,0 +1,46 @@
+<<echo=FALSE, results=hide>>=
+n <- sample(1:4,1)
+L <- sample(c(0.6,0.8,1.0,1.2),1)
+lambda <- 2*L/n
+x <- seq(0,L,length.out=500)
+y <- sin(n*pi*x/L)
+fmt <- function(z) formatC(z,format="f",digits=2,decimal.mark=",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Uma corda de comprimento $L=\Sexpr{fmt(L)}\,\mathrm{m}$, fixa nas duas extremidades, apresenta o padrão estacionário mostrado.
+
+<<fig=TRUE, height=3.8, width=6, echo=FALSE, eps=FALSE, results=hide>>=
+par(mar=c(3.8,2.0,0.8,0.8))
+plot(x,y,type="l",lwd=2,xlab="posição na corda (m)",ylab="",yaxt="n",ylim=c(-1.2,1.2))
+abline(h=0,lty=3)
+points(seq(0,L,length.out=n+1),rep(0,n+1),pch=19)
+@
+
+Determine o comprimento de onda associado a esse modo, em metros.
+
+\end{question}
+
+\begin{solution}
+
+Em uma corda fixa nas duas extremidades, um modo com $n$ ventres satisfaz
+\[
+L=n\frac{\lambda}{2}.
+\]
+No gráfico há $\Sexpr{n}$ ventre(s). Logo,
+\[
+\lambda=\frac{2L}{n}=\frac{2\cdot\Sexpr{fmt(L)}}{\Sexpr{n}}
+=\Sexpr{fmt(lambda)}\,\mathrm{m}.
+\]
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{round(lambda,2)}}
+%% \extol{0.02}
+%% \exname{Q02NumComprimentoOndaPadrao}
+%% \exsection{Ondulatoria; Ondas estacionarias; Comprimento de onda; Graficos}
+%% \exusepackage[utf8]{inputenc}
