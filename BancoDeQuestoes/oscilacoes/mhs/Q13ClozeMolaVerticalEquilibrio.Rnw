@@ -1,0 +1,61 @@
+<<echo=FALSE, results=hide>>=
+g <- 9.8
+m <- sample(c(0.20, 0.30, 0.40, 0.50), 1)
+dcm <- sample(c(2, 3, 4, 5, 6), 1)
+d <- dcm/100
+k <- m*g/d
+T <- 2*pi*sqrt(m/k)
+fmt <- function(x, d = 2) formatC(x, format = "f", digits = d, decimal.mark = ",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Uma massa de $\Sexpr{fmt(m,2)}\,\mathrm{kg}$ é pendurada em uma mola vertical ideal. Na nova posição de equilíbrio, a mola fica alongada $\Sexpr{dcm}\,\mathrm{cm}$ em relação ao comprimento natural. Considere $g=\Sexpr{g}\,\mathrm{m/s^2}$.
+
+Se a massa for deslocada ligeiramente para baixo e solta, determine:
+
+\begin{answerlist}
+  \item a constante elástica da mola, em $\mathrm{N/m}$;
+  \item o período das pequenas oscilações em torno da posição de equilíbrio, em segundos.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Na posição de equilíbrio, a força elástica equilibra o peso:
+\[
+k\Delta x=mg.
+\]
+Como $\Delta x=\Sexpr{dcm}\,\mathrm{cm}=\Sexpr{fmt(d,2)}\,\mathrm{m}$,
+\[
+k=\frac{mg}{\Delta x}
+=\frac{\Sexpr{fmt(m,2)}\cdot\Sexpr{g}}{\Sexpr{fmt(d,2)}}
+\approx\Sexpr{fmt(k,2)}\,\mathrm{N/m}.
+\]
+
+O período do sistema massa--mola é
+\[
+T=2\pi\sqrt{\frac{m}{k}}.
+\]
+Logo,
+\[
+T\approx\Sexpr{fmt(T,2)}\,\mathrm{s}.
+\]
+
+\begin{answerlist}
+  \item $\Sexpr{fmt(k,2)}\,\mathrm{N/m}$;
+  \item $\Sexpr{fmt(T,2)}\,\mathrm{s}$.
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{\Sexpr{round(k,2)}|\Sexpr{round(T,2)}}
+%% \exclozetype{num|num}
+%% \extol{0.10|0.03}
+%% \exname{Q13ClozeMolaVerticalEquilibrio}
+%% \exsection{Mecanica; Oscilacoes; MHS; Massa-mola}
+%% \exusepackage[utf8]{inputenc}
