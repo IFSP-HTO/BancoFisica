@@ -1,0 +1,50 @@
+<<echo=FALSE, results=hide>>=
+## Inspirada no ENEM 2019 Q134.
+## Física central: indução eletromagnética e aterramento.
+
+alternativas <- c(
+  "fazer o aterramento dos arames da cerca.",
+  "acrescentar um fusível de segurança na cerca.",
+  "realizar o aterramento da rede de alta tensão.",
+  "instalar um fusível de segurança na rede de alta tensão.",
+  "utilizar fios encapados com isolante na rede de alta tensão."
+)
+solutions <- c(TRUE, FALSE, FALSE, FALSE, FALSE)
+ordem <- sample(seq_along(alternativas))
+alternativas <- alternativas[ordem]
+solutions <- solutions[ordem]
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Linhas de transmissão de alta tensão transportam corrente alternada e produzem campos magnéticos variáveis. Quando uma cerca metálica extensa passa próxima a essas linhas, pode surgir uma diferença de potencial em seus arames por indução eletromagnética, oferecendo risco de choque a pessoas e animais.
+
+Uma medida adequada para reduzir esse risco é
+
+<<echo=FALSE, results=tex>>=
+answerlist(alternativas)
+@
+
+\end{question}
+
+\begin{solution}
+
+O campo magnético variável produzido pela rede pode induzir uma força eletromotriz na cerca. Se a cerca permanecer eletricamente isolada do solo, cargas podem se acumular e estabelecer uma diferença de potencial perigosa.
+
+Ao aterrar os arames da cerca, fornece-se um caminho de baixa resistência para o escoamento das cargas e das correntes induzidas para a Terra, reduzindo a diferença de potencial entre a cerca e o solo.
+
+Fusíveis não evitam o surgimento da tensão induzida, pois são dispositivos de proteção contra correntes excessivas em circuitos fechados.
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(solutions, paste0("\\textbf{", alternativas, "}"), alternativas))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q96QuizCercaAltaTensaoAterramento}
+%% \exsection{Eletromagnetismo; Inducao eletromagnetica; Aterramento; ENEM}
+%% \exusepackage[utf8]{inputenc}
