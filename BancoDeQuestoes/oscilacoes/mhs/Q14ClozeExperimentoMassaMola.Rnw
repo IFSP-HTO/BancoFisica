@@ -1,0 +1,60 @@
+<<echo=FALSE, results=hide>>=
+N <- sample(c(10, 12, 15, 20), 1)
+T <- sample(c(0.40, 0.50, 0.80, 1.00), 1)
+ttotal <- N*T
+m <- sample(c(0.10, 0.20, 0.25, 0.40), 1)
+k <- 4*pi^2*m/T^2
+fmt <- function(x, d = 2) formatC(x, format = "f", digits = d, decimal.mark = ",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Em uma atividade experimental, um bloco de massa $\Sexpr{fmt(m,2)}\,\mathrm{kg}$ preso a uma mola realiza $\Sexpr{N}$ oscilações completas em $\Sexpr{fmt(ttotal,2)}\,\mathrm{s}$. Despreze atritos.
+
+Determine:
+
+\begin{answerlist}
+  \item o período da oscilação, em segundos;
+  \item a constante elástica da mola, em $\mathrm{N/m}$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+O período é o tempo gasto por uma oscilação completa. Assim,
+\[
+T=\frac{\Delta t}{N}
+=\frac{\Sexpr{fmt(ttotal,2)}}{\Sexpr{N}}
+=\Sexpr{fmt(T,2)}\,\mathrm{s}.
+\]
+Para um sistema massa--mola,
+\[
+T=2\pi\sqrt{\frac{m}{k}}.
+\]
+Isolando $k$,
+\[
+k=\frac{4\pi^2m}{T^2}.
+\]
+Portanto,
+\[
+k=\frac{4\pi^2\cdot\Sexpr{fmt(m,2)}}{(\Sexpr{fmt(T,2)})^2}
+\approx\Sexpr{fmt(k,2)}\,\mathrm{N/m}.
+\]
+
+\begin{answerlist}
+  \item $\Sexpr{fmt(T,2)}\,\mathrm{s}$;
+  \item $\Sexpr{fmt(k,2)}\,\mathrm{N/m}$.
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{\Sexpr{round(T,2)}|\Sexpr{round(k,2)}}
+%% \exclozetype{num|num}
+%% \extol{0.02|0.10}
+%% \exname{Q14ClozeExperimentoMassaMola}
+%% \exsection{Mecanica; Oscilacoes; MHS; Massa-mola; Experimental}
+%% \exusepackage[utf8]{inputenc}
