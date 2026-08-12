@@ -1,0 +1,52 @@
+<<echo=FALSE, results=hide>>=
+alternativas <- c(
+  "Se apenas a amplitude dobrar, a potência média quadruplica; se apenas a frequência dobrar, a potência média também quadruplica.",
+  "Se apenas a amplitude dobrar, a potência média dobra; se apenas a frequência dobrar, a potência média quadruplica.",
+  "A potência média é proporcional à amplitude e inversamente proporcional à frequência.",
+  "A potência média independe da amplitude e da frequência, pois depende apenas do meio.",
+  "Se apenas a amplitude dobrar, a potência média quadruplica; se apenas a frequência dobrar, a potência média dobra."
+)
+solutions <- c(TRUE,FALSE,FALSE,FALSE,FALSE)
+ord <- sample(seq_along(alternativas))
+alternativas <- alternativas[ord]
+solutions <- solutions[ord]
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Para uma onda senoidal em uma mesma corda, a potência média transportada pode ser escrita como
+\[
+P_{\mathrm{méd}}=\frac12\mu v\omega^2 y_m^2.
+\]
+
+Mantendo as propriedades da corda inalteradas, qual afirmação é correta?
+
+<<echo=FALSE, results=tex>>=
+answerlist(alternativas)
+@
+
+\end{question}
+
+\begin{solution}
+
+Na mesma corda, $\mu$ e $v$ permanecem constantes. Assim,
+\[
+P_{\mathrm{méd}}\propto \omega^2 y_m^2.
+\]
+Como $\omega=2\pi f$, também vale $P_{\mathrm{méd}}\propto f^2 y_m^2$.
+
+Portanto, dobrar somente a amplitude multiplica a potência por $2^2=4$, e dobrar somente a frequência também multiplica a potência por $4$.
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(solutions,paste0('\\textbf{',alternativas,'}'),alternativas))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q09QuizPotenciaAmplitudeFrequencia}
+%% \exsection{Ondulatoria; Ondas progressivas; Energia e potencia}
+%% \exusepackage[utf8]{inputenc}
