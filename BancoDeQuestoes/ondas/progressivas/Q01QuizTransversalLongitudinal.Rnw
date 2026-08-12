@@ -1,0 +1,58 @@
+<<echo=FALSE, results=hide>>=
+alternativas <- c(
+  "A é transversal e B é longitudinal.",
+  "A é longitudinal e B é transversal.",
+  "A e B são transversais.",
+  "A e B são longitudinais.",
+  "Não é possível classificar sem conhecer a frequência."
+)
+solutions <- c(TRUE, FALSE, FALSE, FALSE, FALSE)
+ord <- sample(seq_along(alternativas))
+alternativas <- alternativas[ord]
+solutions <- solutions[ord]
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Os esquemas representam o movimento local de elementos de dois meios enquanto uma onda progressiva se propaga para a direita. Em cada esquema, a seta horizontal indica a direção de propagação da onda e a seta dupla indica a direção de oscilação dos elementos do meio.
+
+<<fig=TRUE, height=3.5, width=7, echo=FALSE, eps=FALSE, results=hide>>=
+par(mfrow=c(1,2), mar=c(1.5,1.5,2.0,1.0))
+plot.new(); plot.window(xlim=c(0,1), ylim=c(0,1)); title("A")
+segments(0.15,0.45,0.80,0.45,lwd=2); arrows(0.62,0.45,0.88,0.45,length=0.10)
+arrows(0.40,0.20,0.40,0.75,length=0.09,code=3,lwd=2)
+text(0.68,0.58,"propagação",cex=0.9); text(0.42,0.83,"oscilação",cex=0.9)
+plot.new(); plot.window(xlim=c(0,1), ylim=c(0,1)); title("B")
+segments(0.15,0.45,0.80,0.45,lwd=2); arrows(0.62,0.45,0.88,0.45,length=0.10)
+arrows(0.27,0.30,0.58,0.30,length=0.09,code=3,lwd=2)
+text(0.68,0.58,"propagação",cex=0.9); text(0.43,0.19,"oscilação",cex=0.9)
+par(mfrow=c(1,1))
+@
+
+Qual alternativa classifica corretamente as duas ondas?
+
+<<echo=FALSE, results=tex>>=
+answerlist(alternativas)
+@
+
+\end{question}
+
+\begin{solution}
+
+Uma onda é transversal quando a oscilação dos elementos do meio é perpendicular à direção de propagação. É o que ocorre no esquema A.
+
+Uma onda é longitudinal quando a oscilação dos elementos do meio é paralela à direção de propagação. É o que ocorre no esquema B.
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(solutions, paste0('\\textbf{', alternativas, '}'), alternativas))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q01QuizTransversalLongitudinal}
+%% \exsection{Ondulatoria; Ondas progressivas; Classificacao}
+%% \exusepackage[utf8]{inputenc}
