@@ -1,0 +1,60 @@
+<<echo=FALSE, results=hide>>=
+## Questão estilo ENEM: refração e lei de Snell.
+
+n1 <- 1.0
+n2 <- sample(c(1.25, 1.33, 1.50), 1)
+sen1 <- sample(c(0.50, 0.60, 0.75), 1)
+sen2 <- n1 * sen1 / n2
+theta2 <- asin(sen2) * 180 / pi
+fmt <- function(x, d = 2) formatC(x, format = "f", digits = d, decimal.mark = ",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Um raio de luz passa do ar, cujo índice de refração pode ser considerado $n_1=\Sexpr{fmt(n1,2)}$, para um meio transparente de índice de refração $n_2=\Sexpr{fmt(n2,2)}$. No ar, o seno do ângulo de incidência em relação à normal é $\sin\theta_1=\Sexpr{fmt(sen1,2)}$.
+
+Determine:
+
+\begin{answerlist}
+  \item o valor de $\sin\theta_2$ no segundo meio;
+  \item o ângulo de refração $\theta_2$, em graus.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Pela lei de Snell-Descartes,
+\[
+n_1\sin\theta_1 = n_2\sin\theta_2.
+\]
+Logo,
+\[
+\sin\theta_2 = \frac{n_1\sin\theta_1}{n_2}.
+\]
+Substituindo os valores,
+\[
+\sin\theta_2 = \frac{\Sexpr{fmt(n1,2)}\cdot\Sexpr{fmt(sen1,2)}}{\Sexpr{fmt(n2,2)}}=\Sexpr{fmt(sen2,3)}.
+\]
+Assim,
+\[
+\theta_2 = \arcsin(\Sexpr{fmt(sen2,3)})\approx\Sexpr{fmt(theta2,1)}^\circ.
+\]
+Como o raio passa para um meio de maior índice de refração, ele se aproxima da normal, portanto $\theta_2<\theta_1$.
+
+\begin{answerlist}
+  \item $\Sexpr{fmt(sen2,3)}$
+  \item $\Sexpr{fmt(theta2,1)}^\circ$
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{\Sexpr{round(sen2, 3)}|\Sexpr{round(theta2, 1)}}
+%% \exclozetype{num|num}
+%% \extol{0.005|0.2}
+%% \exname{Q92ClozeRefracaoSnell}
+%% \exsection{Optica; Refracao; Lei de Snell}
+%% \exusepackage[utf8]{inputenc}
