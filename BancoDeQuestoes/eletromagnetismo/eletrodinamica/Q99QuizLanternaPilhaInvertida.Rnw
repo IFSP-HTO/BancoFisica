@@ -1,0 +1,63 @@
+<<echo=FALSE, results=hide>>=
+## Inspirada no ENEM 2022 Q114.
+## Física central: geradores reais em série, resistência interna e potência nominal.
+
+alternativas <- c("0,25 A", "0,33 A", "0,75 A", "1,00 A", "1,33 A")
+solutions <- c(TRUE, FALSE, FALSE, FALSE, FALSE)
+ordem <- sample(seq_along(alternativas))
+alternativas <- alternativas[ordem]
+solutions <- solutions[ordem]
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Uma lanterna utiliza três pilhas idênticas, cada uma com força eletromotriz de $1{,}5\,\mathrm{V}$ e resistência interna de $0{,}5\,\Omega$, ligadas em série. A lâmpada tem especificações nominais de $4{,}5\,\mathrm{W}$ e $4{,}5\,\mathrm{V}$.
+
+Ao trocar as pilhas, uma pessoa inverte acidentalmente uma delas, mantendo os contatos elétricos. Considerando a resistência da lâmpada igual ao valor obtido a partir de suas especificações nominais, a corrente que passa pelo circuito é
+
+<<echo=FALSE, results=tex>>=
+answerlist(alternativas)
+@
+
+\end{question}
+
+\begin{solution}
+
+A resistência elétrica da lâmpada, a partir dos valores nominais, é
+\[
+R_L=\frac{U^2}{P}=\frac{(4{,}5)^2}{4{,}5}=4{,}5\,\Omega.
+\]
+
+Com uma das três pilhas invertida, sua força eletromotriz se opõe às outras duas. Assim, a força eletromotriz resultante é
+\[
+\mathcal{E}_{\text{eq}}=1{,}5+1{,}5-1{,}5=1{,}5\,\mathrm{V}.
+\]
+
+As resistências internas continuam somadas em série:
+\[
+r_{\text{eq}}=3(0{,}5)=1{,}5\,\Omega.
+\]
+
+A resistência total do circuito é
+\[
+R_{\text{total}}=R_L+r_{\text{eq}}=4{,}5+1{,}5=6{,}0\,\Omega.
+\]
+
+Logo,
+\[
+I=\frac{\mathcal{E}_{\text{eq}}}{R_{\text{total}}}=\frac{1{,}5}{6{,}0}=0{,}25\,\mathrm{A}.
+\]
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(solutions, paste0("\\textbf{", alternativas, "}"), alternativas))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q99QuizLanternaPilhaInvertida}
+%% \exsection{Eletromagnetismo; Eletrodinamica; Geradores; Resistencia interna; Circuitos; ENEM}
+%% \exusepackage[utf8]{inputenc}
