@@ -122,13 +122,16 @@ Após a movimentação dos dois itens de Óptica, o núcleo efetivo de Ondas/Ac�
 
 ## Questões de referência para os primeiros lotes
 
-Até que as primeiras questões da #96 sejam mescladas, adotar como referências internas:
+A primeira entrega da expansão já inclui quatro questões em `BancoDeQuestoes/oscilacoes/mhs/`, que passam a ser as referências preferenciais:
 
-- **numérica/cloze parametrizada:** `ondas/Q90ClozeRelacaoFundamentalOnda.Rnw`;
-- **múltipla escolha com solução explicativa:** `ondas/Q94QuizNivelSonoro.Rnw`;
-- **asset suplementar:** `optica/Q07Optgeo.Rnw` demonstra o mecanismo histórico de `include_supplement()` + `\includegraphics`.
+- **numérica/cloze parametrizada:** `Q01ClozePeriodoFrequenciaMHS.Rnw`;
+- **múltipla escolha conceitual:** `Q02QuizExtremoMHS.Rnw`;
+- **gráfico procedural em R:** `Q03ClozeGraficoMHS.Rnw`;
+- **esquema procedural em R:** `Q04QuizComparacaoMassaMola.Rnw`.
 
-A #96 deverá substituir a terceira referência por uma questão gráfica nova da própria expansão, validada em PDF/XML.
+Os itens existentes `ondas/Q90ClozeRelacaoFundamentalOnda.Rnw` e `ondas/Q94QuizNivelSonoro.Rnw` continuam sendo boas referências complementares. Para assets estáticos externos, `optica/Q07Optgeo.Rnw` demonstra o mecanismo histórico de `include_supplement()` + `\includegraphics`.
+
+Essas quatro questões novas contam para a meta da #96. O gráfico e o esquema devem ser confirmados em PDF e Moodle XML pelo CI deste primeiro PR antes da expansão dos lotes visuais.
 
 ## Fluxo de implementação
 
