@@ -1,0 +1,49 @@
+<<echo=FALSE, results=hide>>=
+## Inspirada no ENEM 2019 Q94.
+## Física central: modelos históricos da luz.
+alternativas <- c(
+  "necessidade de um meio material para a propagação da luz.",
+  "modelo ondulatório e a possibilidade de interferência entre feixes.",
+  "modelo corpuscular, no qual a luz é tratada como um feixe de partículas.",
+  "ideia de que a velocidade da luz é infinita.",
+  "ideia de que a luz é produzida pelos olhos do observador."
+)
+solutions <- c(FALSE, FALSE, TRUE, FALSE, FALSE)
+ordem <- sample(seq_along(alternativas))
+alternativas <- alternativas[ordem]
+solutions <- solutions[ordem]
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Em uma discussão histórica sobre a natureza da luz, argumenta-se que feixes luminosos vindos de direções diferentes podem se cruzar sem se destruir ou impedir mutuamente. Esse comportamento seria difícil de explicar supondo que a luz consistisse simplesmente em pequenos projéteis materiais viajando pelo espaço.
+
+A concepção contestada por esse argumento é o
+
+<<echo=FALSE, results=tex>>=
+answerlist(alternativas)
+@
+
+\end{question}
+
+\begin{solution}
+
+O argumento compara a luz com objetos materiais, como projéteis, e destaca que feixes luminosos podem atravessar a mesma região do espaço sem colisões que impeçam sua propagação.
+
+A concepção criticada é, portanto, o \textbf{modelo corpuscular} clássico, associado historicamente a Newton, no qual a luz era descrita como um fluxo de partículas.
+
+A possibilidade de superposição dos feixes é compatível com a descrição ondulatória da luz.
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(solutions, paste0("\\textbf{", alternativas, "}"), alternativas))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q95QuizHuygensModeloLuz}
+%% \exsection{Optica; Natureza da luz; Modelo corpuscular; Modelo ondulatorio; ENEM}
+%% \exusepackage[utf8]{inputenc}
