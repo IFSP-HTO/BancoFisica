@@ -1,0 +1,54 @@
+<<echo=FALSE, results=hide>>=
+fator <- sample(c(4,9),1)
+raiz <- sqrt(fator)
+alternativas <- c(
+  paste0("a velocidade é dividida por ",raiz,"."),
+  paste0("a velocidade é multiplicada por ",raiz,"."),
+  paste0("a velocidade é dividida por ",fator,"."),
+  "a velocidade não se altera.",
+  paste0("a velocidade é multiplicada por ",fator,".")
+)
+solutions <- c(TRUE,FALSE,FALSE,FALSE,FALSE)
+ord <- sample(seq_along(alternativas))
+alternativas <- alternativas[ord]
+solutions <- solutions[ord]
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Duas cordas são submetidas à mesma tração. A segunda possui massa específica linear $\Sexpr{fator}$ vezes maior que a primeira.
+
+Comparada à velocidade na primeira corda, a velocidade da onda na segunda
+
+<<echo=FALSE, results=tex>>=
+answerlist(alternativas)
+@
+
+\end{question}
+
+\begin{solution}
+
+Como
+\[
+v=\sqrt{\frac{F_T}{\mu}},
+\]
+para a mesma tração a velocidade é inversamente proporcional à raiz quadrada da massa específica linear. Portanto,
+\[
+\frac{v_2}{v_1}=\sqrt{\frac{\mu_1}{\mu_2}}
+=\frac{1}{\sqrt{\Sexpr{fator}}}
+=\frac{1}{\Sexpr{raiz}}.
+\]
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(solutions,paste0('\\textbf{',alternativas,'}'),alternativas))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q03QuizEfeitoDensidadeLinear}
+%% \exsection{Ondulatoria; Ondas em cordas; Velocidade}
+%% \exusepackage[utf8]{inputenc}
