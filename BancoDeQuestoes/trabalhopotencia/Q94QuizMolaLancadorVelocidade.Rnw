@@ -1,0 +1,52 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Um projetista deseja construir um brinquedo que lance um pequeno cubo ao longo de um trilho horizontal. Para variar a velocidade de lançamento, utiliza uma mola comprimida, e o atrito no trilho pode ser desprezado.
+
+Para que a velocidade de lançamento do cubo seja aumentada quatro vezes, o projetista deve
+
+\begin{answerlist}
+  \item manter a mesma mola e aumentar duas vezes a sua deformação.
+  \item manter a mesma mola e aumentar quatro vezes a sua deformação.
+  \item manter a mesma mola e aumentar dezesseis vezes a sua deformação.
+  \item trocar a mola por outra de constante elástica duas vezes maior e manter a deformação.
+  \item trocar a mola por outra de constante elástica quatro vezes maior e manter a deformação.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Desprezando o atrito, a energia potencial elástica inicialmente armazenada na mola transforma-se em energia cinética do cubo:
+
+\[
+\frac{kx^2}{2}=\frac{mv^2}{2}.
+\]
+
+Isolando a velocidade,
+
+\[
+v=x\sqrt{\frac{k}{m}}.
+\]
+
+Para o mesmo cubo e a mesma mola, $m$ e $k$ permanecem constantes. Portanto,
+
+\[
+v\propto x.
+\]
+
+Assim, para quadruplicar a velocidade de lançamento, é necessário quadruplicar a deformação da mola.
+
+Outra forma de verificar é observar que quadruplicar $v$ multiplica a energia cinética por $4^2=16$. Como a energia elástica é proporcional a $x^2$, multiplicar $x$ por 4 também multiplica a energia armazenada por 16.
+
+Portanto, a alternativa correta é \textbf{B}.
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{01000}
+%% \exname{Q94QuizMolaLancadorVelocidade}
+%% \exsection{Mecanica; Trabalho e potencia; Energia potencial elastica; Conservacao de energia; ENEM}
+%% \exusepackage[utf8]{inputenc}
