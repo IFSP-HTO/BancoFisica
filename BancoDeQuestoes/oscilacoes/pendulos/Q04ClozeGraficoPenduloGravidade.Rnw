@@ -1,0 +1,65 @@
+<<echo=FALSE, results=hide>>=
+g <- sample(c(9.8, 10.0), 1)
+slope <- 4*pi^2/g
+L <- seq(0.2, 1.2, by=0.2)
+T2 <- slope*L
+fmt <- function(x, d=2) formatC(x, format="f", digits=d, decimal.mark=",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Em um experimento com pêndulos simples de pequenas amplitudes, foram medidos os períodos para vários comprimentos. O gráfico apresenta $T^2$ em função de $L$.
+
+<<fig=TRUE, height=4.5, width=6, echo=FALSE, eps=FALSE, results=hide>>=
+par(mar=c(4.2,4.2,0.8,0.8))
+plot(L, T2, pch=19, xlab="L (m)", ylab=expression(T^2~(s^2)),
+     xlim=c(0,1.25), ylim=c(0,1.05*max(T2)))
+abline(a=0, b=slope, lwd=2)
+grid(nx=NULL, ny=NULL, lty=3)
+@
+
+Para um pêndulo simples,
+\[
+T^2=\frac{4\pi^2}{g}L.
+\]
+Determine:
+\begin{answerlist}
+  \item o coeficiente angular da reta, em $\mathrm{s^2/m}$;
+  \item o valor experimental de $g$, em $\mathrm{m/s^2}$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+O coeficiente angular do gráfico $T^2\times L$ é
+\[
+a=\frac{\Delta T^2}{\Delta L}=\frac{4\pi^2}{g}.
+\]
+Pela reta representada,
+\[
+a\approx\Sexpr{fmt(slope,2)}\,\mathrm{s^2/m}.
+\]
+Logo,
+\[
+g=\frac{4\pi^2}{a}
+\approx\frac{4\pi^2}{\Sexpr{fmt(slope,2)}}
+\approx\Sexpr{fmt(g,2)}\,\mathrm{m/s^2}.
+\]
+
+\begin{answerlist}
+  \item $\Sexpr{fmt(slope,2)}\,\mathrm{s^2/m}$;
+  \item $\Sexpr{fmt(g,2)}\,\mathrm{m/s^2}$.
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{\Sexpr{round(slope,2)}|\Sexpr{round(g,2)}}
+%% \exclozetype{num|num}
+%% \extol{0.08|0.2}
+%% \exname{Q04ClozeGraficoPenduloGravidade}
+%% \exsection{Mecanica; Oscilacoes; Pendulos; Experimento; Graficos}
+%% \exusepackage[utf8]{inputenc}
