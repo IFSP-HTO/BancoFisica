@@ -1,0 +1,47 @@
+<<echo=FALSE, results=hide>>=
+alternativas <- c(
+  "Na posição de equilíbrio, a velocidade tem módulo máximo e a aceleração é nula.",
+  "Na posição de equilíbrio, a velocidade é nula e a aceleração tem módulo máximo.",
+  "Nos extremos da oscilação, a velocidade e a aceleração são simultaneamente nulas.",
+  "Nos extremos da oscilação, a velocidade tem módulo máximo e a aceleração é nula.",
+  "A aceleração tem sempre o mesmo sentido da velocidade."
+)
+solutions <- c(TRUE, FALSE, FALSE, FALSE, FALSE)
+ord <- sample(seq_along(alternativas))
+alternativas <- alternativas[ord]
+solutions <- solutions[ord]
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Um corpo executa movimento harmônico simples em torno de uma posição de equilíbrio. Qual afirmação descreve corretamente o movimento?
+
+<<echo=FALSE, results=tex>>=
+answerlist(alternativas)
+@
+
+\end{question}
+
+\begin{solution}
+
+Na posição de equilíbrio, $x=0$. Como
+\[
+a=-\omega^2x,
+\]
+a aceleração é nula nesse ponto. Ao mesmo tempo, toda a energia mecânica do oscilador está na forma cinética, de modo que o módulo da velocidade é máximo.
+
+Nos extremos, ocorre o contrário: a velocidade é nula e o módulo da aceleração é máximo, sempre apontando para a posição de equilíbrio.
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(solutions, paste0('\\textbf{', alternativas, '}'), alternativas))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q08QuizPosicoesEspeciaisMHS}
+%% \exsection{Mecanica; Oscilacoes; MHS}
+%% \exusepackage[utf8]{inputenc}
