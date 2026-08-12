@@ -17,7 +17,7 @@ solutions <- solutions[ord]
 
 Para uma onda senoidal em uma mesma corda, a potência média transportada pode ser escrita como
 \[
-P_{\mathrm{méd}}=\frac12\mu v\omega^2 y_m^2.
+P_{\mathrm{med}}=\frac12\mu v\omega^2 y_m^2.
 \]
 
 Mantendo as propriedades da corda inalteradas, qual afirmação é correta?
@@ -32,9 +32,9 @@ answerlist(alternativas)
 
 Na mesma corda, $\mu$ e $v$ permanecem constantes. Assim,
 \[
-P_{\mathrm{méd}}\propto \omega^2 y_m^2.
+P_{\mathrm{med}}\propto \omega^2 y_m^2.
 \]
-Como $\omega=2\pi f$, também vale $P_{\mathrm{méd}}\propto f^2 y_m^2$.
+Como $\omega=2\pi f$, também vale $P_{\mathrm{med}}\propto f^2 y_m^2$.
 
 Portanto, dobrar somente a amplitude multiplica a potência por $2^2=4$, e dobrar somente a frequência também multiplica a potência por $4$.
 
