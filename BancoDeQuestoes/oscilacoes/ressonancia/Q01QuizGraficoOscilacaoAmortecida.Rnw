@@ -1,0 +1,54 @@
+<<echo=FALSE, results=hide>>=
+gamma <- sample(c(0.12, 0.18, 0.25), 1)
+f <- sample(c(0.8, 1.0, 1.2), 1)
+t <- seq(0, 10, length.out=800)
+x <- exp(-gamma*t)*cos(2*pi*f*t)
+alternativas <- c(
+  "A amplitude diminui com o tempo porque parte da energia mecânica é dissipada.",
+  "A amplitude cresce continuamente porque a energia mecânica aumenta.",
+  "A frequência tende a zero e o sistema passa a mover-se com velocidade constante.",
+  "A energia mecânica permanece constante, embora a amplitude diminua.",
+  "O gráfico representa um MHS ideal sem qualquer dissipação."
+)
+solutions <- c(TRUE, FALSE, FALSE, FALSE, FALSE)
+ord <- sample(seq_along(alternativas))
+alternativas <- alternativas[ord]
+solutions <- solutions[ord]
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+O gráfico mostra a posição de um sistema oscilante real em função do tempo.
+
+<<fig=TRUE, height=4.3, width=6, echo=FALSE, eps=FALSE, results=hide>>=
+par(mar=c(4.2,4.2,0.8,0.8))
+plot(t,x,type="l",lwd=2,xlab="t (s)",ylab="x (unid.)",ylim=c(-1.05,1.05))
+abline(h=0,lty=3)
+grid(nx=NULL, ny=NULL, lty=3)
+@
+
+Qual afirmação interpreta corretamente o comportamento observado?
+
+<<echo=FALSE, results=tex>>=
+answerlist(alternativas)
+@
+
+\end{question}
+
+\begin{solution}
+
+A diminuição progressiva da amplitude caracteriza uma oscilação amortecida. Forças dissipativas, como resistência do ar ou atrito interno, retiram energia mecânica do sistema e a transformam principalmente em energia térmica. Por isso, a amplitude das oscilações diminui com o tempo.
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(solutions, paste0('\\textbf{', alternativas, '}'), alternativas))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q01QuizGraficoOscilacaoAmortecida}
+%% \exsection{Mecanica; Oscilacoes; Amortecimento; Graficos}
+%% \exusepackage[utf8]{inputenc}

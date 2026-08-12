@@ -1,0 +1,45 @@
+<<echo=FALSE, results=hide>>=
+fn <- sample(c(2, 3, 4, 5), 1)
+ff <- fn + 1
+alternativas <- c(
+  paste0(ff, " Hz, a frequência da força externa"),
+  paste0(fn, " Hz, a frequência natural do sistema"),
+  paste0(fn + ff, " Hz, a soma das frequências"),
+  paste0(abs(fn - ff), " Hz, a diferença entre as frequências"),
+  "0 Hz, pois o sistema deixa de oscilar"
+)
+solutions <- c(TRUE, FALSE, FALSE, FALSE, FALSE)
+ord <- sample(seq_along(alternativas))
+alternativas <- alternativas[ord]
+solutions <- solutions[ord]
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Um sistema oscilante tem frequência natural $\Sexpr{fn}\,\mathrm{Hz}$. Depois que o regime transitório desaparece, ele é mantido em oscilação por uma força externa periódica de frequência $\Sexpr{ff}\,\mathrm{Hz}$. Qual frequência caracteriza a oscilação forçada em regime permanente?
+
+<<echo=FALSE, results=tex>>=
+answerlist(alternativas)
+@
+
+\end{question}
+
+\begin{solution}
+
+Em uma oscilação forçada em regime permanente, o sistema acompanha a frequência da força externa. A frequência natural é importante para determinar a amplitude da resposta e a ocorrência de ressonância, mas a frequência da oscilação mantida pela força é a frequência de excitação.
+
+Portanto, a oscilação ocorre a $\Sexpr{ff}\,\mathrm{Hz}$.
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(solutions, paste0('\\textbf{', alternativas, '}'), alternativas))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q03QuizFrequenciaForcada}
+%% \exsection{Mecanica; Oscilacoes; Oscilacoes forcadas}
+%% \exusepackage[utf8]{inputenc}

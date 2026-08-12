@@ -1,0 +1,45 @@
+<<echo=FALSE, results=hide>>=
+alternativas <- c(
+  "Os períodos são iguais, pois no modelo ideal o período não depende da massa.",
+  "O pêndulo mais pesado tem período maior, pois possui maior peso.",
+  "O pêndulo mais leve tem período maior, pois sofre menor força gravitacional.",
+  "O período é proporcional à massa do corpo suspenso.",
+  "O período é inversamente proporcional à massa do corpo suspenso."
+)
+solutions <- c(TRUE, FALSE, FALSE, FALSE, FALSE)
+ord <- sample(seq_along(alternativas))
+alternativas <- alternativas[ord]
+solutions <- solutions[ord]
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Dois pêndulos simples possuem fios de mesmo comprimento e oscilam no mesmo local, com pequenas amplitudes. Os corpos suspensos têm massas diferentes. Qual afirmação descreve corretamente seus períodos?
+
+<<echo=FALSE, results=tex>>=
+answerlist(alternativas)
+@
+
+\end{question}
+
+\begin{solution}
+
+Para pequenas oscilações,
+\[
+T=2\pi\sqrt{\frac{L}{g}}.
+\]
+A massa não aparece nessa expressão. Assim, mantendo o comprimento e o local, os dois pêndulos têm o mesmo período, independentemente das massas dos corpos suspensos.
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(solutions, paste0('\\textbf{', alternativas, '}'), alternativas))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q03QuizMassaPenduloSimples}
+%% \exsection{Mecanica; Oscilacoes; Pendulos; Pendulo simples}
+%% \exusepackage[utf8]{inputenc}

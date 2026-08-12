@@ -1,0 +1,65 @@
+<<echo=FALSE, results=hide>>=
+k <- sample(c(80, 100, 120, 150), 1)
+A <- sample(c(0.08, 0.10, 0.12), 1)
+x <- seq(-A, A, length.out = 400)
+E <- rep(0.5 * k * A^2, length(x))
+U <- 0.5 * k * x^2
+K <- E - U
+alternativas <- c(
+  "Na posição de equilíbrio, a energia cinética é máxima e a potencial é mínima.",
+  "Na posição de equilíbrio, as energias cinética e potencial são ambas nulas.",
+  "Nos extremos, a energia cinética é máxima e a energia potencial é nula.",
+  "A energia mecânica total varia de forma parabólica com a posição.",
+  "A energia potencial é máxima na posição de equilíbrio."
+)
+solutions <- c(TRUE, FALSE, FALSE, FALSE, FALSE)
+ord <- sample(seq_along(alternativas))
+alternativas <- alternativas[ord]
+solutions <- solutions[ord]
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+O gráfico mostra as energias potencial elástica $U$, cinética $K$ e mecânica total $E$ de um oscilador massa--mola ideal em função da posição $x$.
+
+<<fig=TRUE, height=4.5, width=6, echo=FALSE, eps=FALSE, results=hide>>=
+par(mar = c(4.2, 4.2, 0.8, 0.8))
+plot(x, U, type = "l", lwd = 2,
+     xlab = "x (m)", ylab = "Energia (J)",
+     ylim = c(0, 1.05 * max(E)))
+lines(x, K, lwd = 2, lty = 2)
+lines(x, E, lwd = 2, lty = 3)
+abline(v = 0, lty = 3)
+legend("top", legend = c("U", "K", "E"), lty = c(1,2,3), lwd = 2, horiz = TRUE, bty = "n")
+grid(nx = NA, ny = NULL, lty = 3)
+@
+
+Qual afirmação é compatível com o gráfico e com a conservação da energia?
+
+<<echo=FALSE, results=tex>>=
+answerlist(alternativas)
+@
+
+\end{question}
+
+\begin{solution}
+
+No equilíbrio, $x=0$, então
+\[
+U=\frac12kx^2=0.
+\]
+Como a energia total é constante, toda a energia é cinética nesse ponto, logo $K$ é máxima. Nos extremos $x=\pm A$, ocorre o contrário: $K=0$ e $U=E$.
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(solutions, paste0('\\textbf{', alternativas, '}'), alternativas))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q03QuizGraficoEnergiasPosicao}
+%% \exsection{Mecanica; Oscilacoes; Energia; Graficos}
+%% \exusepackage[utf8]{inputenc}

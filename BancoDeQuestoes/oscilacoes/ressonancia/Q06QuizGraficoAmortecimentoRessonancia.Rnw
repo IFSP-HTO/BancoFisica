@@ -1,0 +1,57 @@
+<<echo=FALSE, results=hide>>=
+f0 <- sample(c(2,3,4),1)
+f <- seq(0.2,1.8*f0,length.out=500)
+r <- f/f0
+A1 <- 1/(1 + ((r-1)/0.10)^2)
+A2 <- 0.55/(1 + ((r-1)/0.28)^2)
+alternativas <- c(
+  "A curva 1 corresponde ao menor amortecimento, pois tem pico mais alto e estreito.",
+  "A curva 2 corresponde ao menor amortecimento, pois tem pico mais baixo e largo.",
+  "As duas curvas representam exatamente o mesmo amortecimento.",
+  "O amortecimento não influencia a altura nem a largura da curva de ressonância.",
+  "Quanto maior o amortecimento, maior e mais estreito é o pico de ressonância."
+)
+solutions <- c(TRUE,FALSE,FALSE,FALSE,FALSE)
+ord <- sample(seq_along(alternativas))
+alternativas <- alternativas[ord]
+solutions <- solutions[ord]
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+As curvas mostram a resposta de dois osciladores com a mesma frequência natural, mas com diferentes graus de amortecimento.
+
+<<fig=TRUE, height=4.3, width=6, echo=FALSE, eps=FALSE, results=hide>>=
+par(mar=c(4.2,4.2,0.8,0.8))
+plot(f,A1,type="l",lwd=2,xlab="frequência de excitação (Hz)",ylab="amplitude relativa",ylim=c(0,1.05))
+lines(f,A2,lwd=2,lty=2)
+abline(v=f0,lty=3)
+legend("topright",legend=c("curva 1","curva 2"),lty=c(1,2),lwd=2,bty="n")
+grid(nx=NULL,ny=NULL,lty=3)
+@
+
+Qual afirmação interpreta corretamente o efeito do amortecimento?
+
+<<echo=FALSE, results=tex>>=
+answerlist(alternativas)
+@
+
+\end{question}
+
+\begin{solution}
+
+Um amortecimento menor permite uma resposta ressonante mais intensa e concentrada em uma faixa estreita de frequências. Por isso, a curva com pico mais alto e estreito representa o sistema menos amortecido. Um amortecimento maior reduz a amplitude máxima e alarga a região de resposta.
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(solutions,paste0('\\textbf{',alternativas,'}'),alternativas))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q06QuizGraficoAmortecimentoRessonancia}
+%% \exsection{Mecanica; Oscilacoes; Ressonancia; Amortecimento; Graficos}
+%% \exusepackage[utf8]{inputenc}

@@ -1,0 +1,51 @@
+<<echo=FALSE, results=hide>>=
+alternativas <- c(
+  "cai para um quarto do valor inicial",
+  "cai para a metade do valor inicial",
+  "permanece igual ao valor inicial",
+  "dobra em relação ao valor inicial",
+  "cai para um oitavo do valor inicial"
+)
+solutions <- c(TRUE, FALSE, FALSE, FALSE, FALSE)
+ord <- sample(seq_along(alternativas))
+alternativas <- alternativas[ord]
+solutions <- solutions[ord]
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Em um oscilador massa--mola fracamente amortecido, a energia mecânica associada à oscilação é proporcional ao quadrado da amplitude. Depois de algum tempo, a amplitude cai para a metade do valor inicial. Nesse instante, a energia mecânica associada à oscilação
+
+<<echo=FALSE, results=tex>>=
+answerlist(alternativas)
+@
+
+\end{question}
+
+\begin{solution}
+
+Para o oscilador massa--mola,
+\[
+E=\frac12kA^2.
+\]
+Se a nova amplitude é $A/2$,
+\[
+E'=\frac12k\left(\frac{A}{2}\right)^2
+=\frac14\left(\frac12kA^2\right)
+=\frac{E}{4}.
+\]
+Logo, a energia cai para um quarto do valor inicial.
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(solutions, paste0('\\textbf{', alternativas, '}'), alternativas))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q02QuizAmplitudeEnergiaAmortecimento}
+%% \exsection{Mecanica; Oscilacoes; Amortecimento; Energia}
+%% \exusepackage[utf8]{inputenc}

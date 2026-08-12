@@ -1,0 +1,63 @@
+<<echo=FALSE, results=hide>>=
+k <- sample(c(100, 150, 200), 1)
+Acm <- sample(c(8, 10, 12), 1)
+A <- Acm/100
+E <- 0.5*k*A^2
+x <- seq(-1.25*A, 1.25*A, length.out=400)
+U <- 0.5*k*x^2
+fmt <- function(x, d=2) formatC(x, format="f", digits=d, decimal.mark=",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+O gráfico mostra a energia potencial elástica $U(x)$ de um oscilador e a energia mecânica total constante $E$. Os pontos em que as duas curvas se encontram são os extremos do movimento.
+
+<<fig=TRUE, height=4.5, width=6, echo=FALSE, eps=FALSE, results=hide>>=
+par(mar=c(4.2,4.2,0.8,0.8))
+plot(100*x, U, type="l", lwd=2,
+     xlab="x (cm)", ylab="Energia (J)", xaxt="n",
+     ylim=c(0,1.15*max(E, max(U[x>=-A & x<=A]))))
+abline(h=E, lty=2, lwd=2)
+points(c(-Acm,Acm), c(E,E), pch=19)
+axis(1, at=c(-Acm,0,Acm))
+legend("topleft", legend=c("U(x)","E"), lty=c(1,2), lwd=2, bty="n")
+grid(nx=NA, ny=NULL, lty=3)
+@
+
+A partir do gráfico, determine:
+\begin{answerlist}
+  \item a amplitude do movimento, em centímetros;
+  \item a energia mecânica total, em joules.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Nos extremos da oscilação, a velocidade é nula e toda a energia é potencial. Portanto, os pontos em que $U=E$ correspondem a $x=\pm A$. Pelo gráfico,
+\[
+A=\Sexpr{Acm}\,\mathrm{cm}.
+\]
+A linha horizontal representa a energia total:
+\[
+E=\frac12kA^2
+=\frac12\cdot\Sexpr{k}\cdot(\Sexpr{fmt(A,3)})^2
+\approx\Sexpr{fmt(E,3)}\,\mathrm{J}.
+\]
+
+\begin{answerlist}
+  \item $\Sexpr{Acm}\,\mathrm{cm}$;
+  \item $\Sexpr{fmt(E,3)}\,\mathrm{J}$.
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{\Sexpr{Acm}|\Sexpr{round(E,3)}}
+%% \exclozetype{num|num}
+%% \extol{0.1|0.01}
+%% \exname{Q05ClozeGraficoEnergiaAmplitude}
+%% \exsection{Mecanica; Oscilacoes; Energia; Graficos}
+%% \exusepackage[utf8]{inputenc}
