@@ -1,0 +1,64 @@
+<<echo=FALSE, results=hide>>=
+A <- sample(c(2,3,4),1)
+l1 <- sample(c(1,2),1)
+l2 <- 2*l1
+x <- seq(0,4*l1,length.out=600)
+y1 <- A*sin(2*pi*x/l1)
+y2 <- A*sin(2*pi*x/l2)
+alternativas <- c(
+  "A onda 1 tem menor comprimento de onda e maior número de onda que a onda 2.",
+  "A onda 1 tem maior comprimento de onda e menor número de onda que a onda 2.",
+  "As duas ondas têm o mesmo comprimento de onda porque possuem a mesma amplitude.",
+  "A onda 2 tem menor comprimento de onda e maior número de onda que a onda 1.",
+  "O número de onda depende apenas da amplitude e é igual para as duas ondas."
+)
+solutions <- c(TRUE,FALSE,FALSE,FALSE,FALSE)
+ord <- sample(seq_along(alternativas))
+alternativas <- alternativas[ord]
+solutions <- solutions[ord]
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Os dois perfis abaixo foram registrados no mesmo intervalo espacial. As amplitudes são iguais.
+
+<<fig=TRUE, height=4, width=6, echo=FALSE, eps=FALSE, results=hide>>=
+par(mar=c(4.2,4.2,0.8,0.8))
+plot(x,y1,type="l",lwd=2,lty=1,xlab="x",ylab="y",ylim=c(-1.2*A,1.2*A))
+lines(x,y2,lwd=2,lty=2)
+abline(h=0,lty=3)
+legend("topright",legend=c("onda 1","onda 2"),lty=c(1,2),lwd=2,bty="n")
+grid(nx=NULL,ny=NULL,lty=3)
+@
+
+Qual afirmação é correta?
+
+<<echo=FALSE, results=tex>>=
+answerlist(alternativas)
+@
+
+\end{question}
+
+\begin{solution}
+
+No mesmo intervalo espacial, a onda 1 realiza mais ciclos; portanto, seu comprimento de onda é menor. Como
+\[
+k=\frac{2\pi}{\lambda},
+\]
+um menor comprimento de onda corresponde a um maior número de onda.
+
+Assim, a onda 1 tem menor $\lambda$ e maior $k$ que a onda 2.
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(solutions,paste0('\\textbf{',alternativas,'}'),alternativas))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q08QuizComparacaoComprimentos}
+%% \exsection{Ondulatoria; Ondas progressivas; Graficos}
+%% \exusepackage[utf8]{inputenc}
