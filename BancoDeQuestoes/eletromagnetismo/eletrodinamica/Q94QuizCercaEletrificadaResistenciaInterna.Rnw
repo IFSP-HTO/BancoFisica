@@ -1,0 +1,62 @@
+<<echo=FALSE, results=hide>>=
+## Inspirada no ENEM 2017 Q95.
+## Física central: Lei de Ohm e resistência interna de uma fonte.
+
+alternativas <- c(
+  "praticamente nula.",
+  "aproximadamente igual.",
+  "milhares de vezes maior.",
+  "da ordem de 10 vezes maior.",
+  "da ordem de 10 vezes menor."
+)
+solutions <- c(FALSE, FALSE, TRUE, FALSE, FALSE)
+ordem <- sample(seq_along(alternativas))
+alternativas <- alternativas[ordem]
+solutions <- solutions[ordem]
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Uma cerca eletrificada opera com diferença de potencial de aproximadamente $10\,000\,\mathrm{V}$. Para que o contato não seja letal, a corrente elétrica através de uma pessoa deve ser, no máximo, $0{,}01\,\mathrm{A}$. Considere que a resistência elétrica do corpo humano, entre mãos e pés, seja da ordem de $1\,000\,\Omega$.
+
+Para limitar a corrente ao valor indicado, a resistência interna do gerador deve ser, em relação à resistência do corpo humano,
+
+<<echo=FALSE, results=tex>>=
+answerlist(alternativas)
+@
+
+\end{question}
+
+\begin{solution}
+
+Pela Lei de Ohm, a resistência total necessária para limitar a corrente é
+\[
+R_{\text{total}}=\frac{U}{I}=\frac{10\,000}{0{,}01}=1{,}0\times10^6\,\Omega.
+\]
+Como a resistência do corpo é aproximadamente $10^3\,\Omega$, a resistência interna do gerador deve satisfazer
+\[
+r+R_{\text{corpo}}\approx 10^6\,\Omega,
+\]
+portanto
+\[
+r\approx 10^6-10^3\approx 9{,}99\times10^5\,\Omega.
+\]
+A razão entre as resistências é, aproximadamente,
+\[
+\frac{r}{R_{\text{corpo}}}\approx\frac{9{,}99\times10^5}{10^3}\approx 10^3.
+\]
+Logo, a resistência interna deve ser da ordem de milhares de vezes maior que a resistência do corpo.
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(solutions, paste0("\\textbf{", alternativas, "}"), alternativas))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q94QuizCercaEletrificadaResistenciaInterna}
+%% \exsection{Eletromagnetismo; Eletrodinamica; Lei de Ohm; Resistencia interna; ENEM}
+%% \exusepackage[utf8]{inputenc}
