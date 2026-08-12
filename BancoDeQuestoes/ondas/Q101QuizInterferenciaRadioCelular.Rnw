@@ -1,0 +1,47 @@
+<<echo=FALSE, results=hide>>=
+## Inspirada no ENEM 2023 Q128.
+## Física central: interferência entre sinais de mesma frequência.
+alternativas <- c(
+  "forem ambas audíveis.",
+  "tiverem a mesma potência.",
+  "tiverem a mesma frequência.",
+  "tiverem a mesma intensidade.",
+  "propagarem-se com velocidades diferentes."
+)
+solutions <- c(FALSE, FALSE, TRUE, FALSE, FALSE)
+ordem <- sample(seq_along(alternativas))
+alternativas <- alternativas[ordem]
+solutions <- solutions[ordem]
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Durante um voo, aparelhos eletrônicos podem ser desligados para reduzir o risco de interferência em sistemas de comunicação por rádio. Considere um sinal eletromagnético emitido por um celular e outro sinal recebido pelo rádio da aeronave.
+
+A interferência entre esses sinais pode ocorrer de forma relevante quando eles
+
+<<echo=FALSE, results=tex>>=
+answerlist(alternativas)
+@
+
+\end{question}
+
+\begin{solution}
+
+Para que dois sinais eletromagnéticos interfiram de maneira persistente no mesmo canal de comunicação, eles precisam apresentar componentes espectrais coincidentes ou suficientemente próximas.
+
+Entre as alternativas apresentadas, a condição essencial é que tenham a \textbf{mesma frequência}. Potência e intensidade influenciam o quanto um sinal pode perturbar o outro, mas não definem por si só a sobreposição de canais.
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(solutions, paste0("\\textbf{", alternativas, "}"), alternativas))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q101QuizInterferenciaRadioCelular}
+%% \exsection{Ondas; Ondas eletromagneticas; Interferencia; Radiofrequencia; ENEM}
+%% \exusepackage[utf8]{inputenc}
