@@ -1,0 +1,62 @@
+<<echo=FALSE, results=hide>>=
+A <- sample(c(2,3,4),1)
+lambda <- sample(c(1,2,4),1)
+x <- seq(0,lambda,length.out=400)
+y <- A*sin(2*pi*x/lambda)
+xA <- lambda/4
+yA <- A
+xB <- lambda/2
+yB <- 0
+alternativas <- c(
+  "No ponto B, tanto a energia cinética quanto a energia potencial elástica do pequeno elemento são maiores do que no ponto A.",
+  "No ponto A, a energia cinética é máxima porque o deslocamento é máximo.",
+  "No ponto A, a energia potencial elástica é máxima porque a corda está no ponto mais alto.",
+  "Os pontos A e B possuem necessariamente a mesma energia instantânea porque pertencem à mesma onda.",
+  "No ponto B, as energias cinética e potencial são nulas porque o deslocamento é zero."
+)
+solutions <- c(TRUE,FALSE,FALSE,FALSE,FALSE)
+ord <- sample(seq_along(alternativas))
+alternativas <- alternativas[ord]
+solutions <- solutions[ord]
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+A figura mostra um instantâneo de uma onda senoidal progressiva em uma corda. O ponto A está em um máximo de deslocamento e o ponto B cruza a posição de equilíbrio.
+
+<<fig=TRUE, height=4, width=6, echo=FALSE, eps=FALSE, results=hide>>=
+par(mar=c(4.2,4.2,0.8,0.8))
+plot(x,y,type="l",lwd=2,xlab="x",ylab="y",ylim=c(-1.2*A,1.2*A))
+abline(h=0,lty=2)
+points(c(xA,xB),c(yA,yB),pch=19)
+text(xA,yA,"A",pos=3); text(xB,yB,"B",pos=3)
+grid(nx=NULL,ny=NULL,lty=3)
+@
+
+Para pequenos elementos da corda nesses pontos, qual afirmação é correta naquele instante?
+
+<<echo=FALSE, results=tex>>=
+answerlist(alternativas)
+@
+
+\end{question}
+
+\begin{solution}
+
+Em uma onda senoidal progressiva na corda, um elemento situado momentaneamente em deslocamento máximo tem velocidade transversal nula; por isso sua energia cinética instantânea é nula. Nesse ponto, a inclinação local da corda também é nula, de modo que a deformação adicional do elemento é mínima.
+
+Ao cruzar $y=0$, como no ponto B, a velocidade transversal tem módulo máximo e a inclinação local da corda também é máxima. Assim, tanto a contribuição cinética quanto a potencial elástica são maiores em B do que em A.
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(solutions,paste0('\\textbf{',alternativas,'}'),alternativas))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q10QuizEnergiaPerfilOnda}
+%% \exsection{Ondulatoria; Ondas progressivas; Energia e potencia; Graficos}
+%% \exusepackage[utf8]{inputenc}
