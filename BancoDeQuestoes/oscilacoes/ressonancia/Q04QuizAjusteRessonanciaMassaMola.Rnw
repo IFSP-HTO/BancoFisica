@@ -1,0 +1,47 @@
+<<echo=FALSE, results=hide>>=
+fn <- sample(c(120, 140, 160), 1)
+ff <- fn - sample(c(20, 40), 1)
+alternativas <- c(
+  "diminuir a constante elástica ou aumentar a massa",
+  "aumentar a constante elástica ou diminuir a massa",
+  "aumentar simultaneamente a constante elástica e a massa na mesma proporção",
+  "diminuir simultaneamente a constante elástica e a massa na mesma proporção",
+  "não é possível alterar a frequência natural mudando a massa ou a constante elástica"
+)
+solutions <- c(TRUE, FALSE, FALSE, FALSE, FALSE)
+ord <- sample(seq_along(alternativas))
+alternativas <- alternativas[ord]
+solutions <- solutions[ord]
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Um sistema massa--mola tem frequência natural $\Sexpr{fn}\,\mathrm{Hz}$ e recebe uma excitação periódica de frequência $\Sexpr{ff}\,\mathrm{Hz}$. Para aproximar a frequência natural da frequência de excitação e obter ressonância, uma possibilidade é
+
+<<echo=FALSE, results=tex>>=
+answerlist(alternativas)
+@
+
+\end{question}
+
+\begin{solution}
+
+Para um sistema massa--mola,
+\[
+f=\frac{1}{2\pi}\sqrt{\frac{k}{m}}.
+\]
+Como a frequência natural precisa ser reduzida de $\Sexpr{fn}\,\mathrm{Hz}$ para perto de $\Sexpr{ff}\,\mathrm{Hz}$, podemos reduzir $k$ ou aumentar $m$. Ambas as mudanças diminuem $\sqrt{k/m}$.
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(solutions, paste0('\\textbf{', alternativas, '}'), alternativas))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q04QuizAjusteRessonanciaMassaMola}
+%% \exsection{Mecanica; Oscilacoes; Ressonancia; Massa-mola}
+%% \exusepackage[utf8]{inputenc}
