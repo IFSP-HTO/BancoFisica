@@ -1,0 +1,59 @@
+<<echo=FALSE, results=hide>>=
+m <- sample(c(0.10, 0.20, 0.25, 0.40, 0.50), 1)
+T <- sample(c(0.50, 0.80, 1.00, 1.20, 1.50), 1)
+omega <- 2*pi/T
+k <- m*omega^2
+fmt <- function(x, d = 2) formatC(x, format = "f", digits = d, decimal.mark = ",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Em um experimento, um bloco de massa $\Sexpr{fmt(m,2)}\,\mathrm{kg}$ preso a uma mola ideal completa uma oscilação em $\Sexpr{fmt(T,2)}\,\mathrm{s}$.
+
+Determine:
+
+\begin{answerlist}
+  \item a frequência angular do movimento, em $\mathrm{rad/s}$;
+  \item a constante elástica da mola, em $\mathrm{N/m}$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+A frequência angular é
+\[
+\omega=\frac{2\pi}{T}=
+\frac{2\pi}{\Sexpr{fmt(T,2)}}
+\approx\Sexpr{fmt(omega,2)}\,\mathrm{rad/s}.
+\]
+Para o oscilador massa--mola,
+\[
+\omega^2=\frac{k}{m},
+\]
+logo
+\[
+k=m\omega^2.
+\]
+Substituindo os valores,
+\[
+k=\Sexpr{fmt(m,2)}\cdot\left(\Sexpr{fmt(omega,2)}\right)^2
+\approx\Sexpr{fmt(k,2)}\,\mathrm{N/m}.
+\]
+
+\begin{answerlist}
+  \item $\Sexpr{fmt(omega,2)}\,\mathrm{rad/s}$;
+  \item $\Sexpr{fmt(k,2)}\,\mathrm{N/m}$.
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{\Sexpr{round(omega,2)}|\Sexpr{round(k,2)}}
+%% \exclozetype{num|num}
+%% \extol{0.03|0.10}
+%% \exname{Q10ClozeConstanteElasticaPeriodo}
+%% \exsection{Mecanica; Oscilacoes; MHS; Massa-mola}
+%% \exusepackage[utf8]{inputenc}
