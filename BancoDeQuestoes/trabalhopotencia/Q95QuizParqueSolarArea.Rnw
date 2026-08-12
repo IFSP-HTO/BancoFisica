@@ -1,0 +1,68 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Um parque solar é composto por duas usinas e possui potência instalada total de $150\,\mathrm{MW}$. Considere que a irradiância solar média sobre os painéis seja de $1\,500\,\mathrm{W/m^2}$ e que a eficiência de conversão dos painéis seja de $20\%$.
+
+Nessas condições, a área total dos painéis solares que compõem o parque é mais próxima de
+
+\begin{answerlist}
+  \item $1\,000\,000\,\mathrm{m^2}$.
+  \item $500\,000\,\mathrm{m^2}$.
+  \item $250\,000\,\mathrm{m^2}$.
+  \item $100\,000\,\mathrm{m^2}$.
+  \item $50\,000\,\mathrm{m^2}$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+A irradiância informa a potência solar que incide por unidade de área. Para uma área $A$, a potência solar incidente é
+
+\[
+P_{\mathrm{inc}}=IA.
+\]
+
+Como apenas $20\%$ dessa potência é convertida em potência elétrica,
+
+\[
+P_{\mathrm{el}}=\eta IA.
+\]
+
+A potência instalada é
+
+\[
+150\,\mathrm{MW}=150\times10^6\,\mathrm{W}.
+\]
+
+Logo,
+
+\[
+150\times10^6
+=0{,}20\cdot 1\,500\cdot A.
+\]
+
+Como
+
+\[
+0{,}20\cdot1\,500=300\,\mathrm{W/m^2},
+\]
+
+temos
+
+\[
+A=\frac{150\times10^6}{300}
+=5{,}0\times10^5\,\mathrm{m^2}.
+\]
+
+Portanto, a área total é aproximadamente $500\,000\,\mathrm{m^2}$, alternativa \textbf{B}.
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{01000}
+%% \exname{Q95QuizParqueSolarArea}
+%% \exsection{Trabalho e potencia; Potencia; Rendimento; Energia solar; ENEM}
+%% \exusepackage[utf8]{inputenc}
