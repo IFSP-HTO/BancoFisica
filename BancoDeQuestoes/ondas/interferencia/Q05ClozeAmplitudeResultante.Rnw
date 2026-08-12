@@ -1,0 +1,53 @@
+<<echo=FALSE, results=hide>>=
+A <- sample(c(2,3,4),1)
+phi_case <- sample(c(0,1,2),1)
+phi <- c(0,pi/2,pi)[phi_case+1]
+phi_txt <- c("0","\\pi/2","\\pi")[phi_case+1]
+Ar <- 2*A*abs(cos(phi/2))
+x <- seq(0,2*pi,length.out=400)
+y1 <- A*sin(x)
+y2 <- A*sin(x+phi)
+yr <- y1+y2
+fmt <- function(z) formatC(z,format="f",digits=2,decimal.mark=",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Duas ondas senoidais de mesma amplitude $A=\Sexpr{A}\,\mathrm{cm}$ e mesma frequência se superpõem. A diferença de fase entre elas é $\phi=\Sexpr{phi_txt}$ rad. O gráfico mostra um instantâneo das duas ondas e da soma.
+
+<<fig=TRUE, height=4.3, width=6, echo=FALSE, eps=FALSE, results=hide>>=
+par(mar=c(4.2,4.2,0.8,0.8))
+plot(x,y1,type="l",lwd=2,xlab="posição (unid. arbitrárias)",ylab="deslocamento (cm)",ylim=range(c(y1,y2,yr)))
+lines(x,y2,lwd=2,lty=2)
+lines(x,yr,lwd=2,lty=3)
+abline(h=0,lty=3)
+legend("topright",legend=c("onda 1","onda 2","resultante"),lty=c(1,2,3),lwd=2,bty="n")
+@
+
+Determine a amplitude da onda resultante, em centímetros.
+
+\end{question}
+
+\begin{solution}
+
+Para duas ondas de mesma amplitude e diferença de fase $\phi$, a amplitude resultante é
+\[
+A_R=2A\left|\cos\frac{\phi}{2}\right|.
+\]
+Assim,
+\[
+A_R=2\cdot\Sexpr{A}\left|\cos\left(\frac{\Sexpr{phi_txt}}{2}\right)\right|
+\approx\Sexpr{fmt(Ar)}\,\mathrm{cm}.
+\]
+O gráfico é compatível com esse valor: a soma pode ter amplitude máxima $2A$, intermediária ou nula, dependendo da fase relativa.
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{round(Ar,2)}}
+%% \extol{0.03}
+%% \exname{Q05ClozeAmplitudeResultante}
+%% \exsection{Ondulatoria; Interferencia; Diferenca de fase; Graficos}
+%% \exusepackage[utf8]{inputenc}
