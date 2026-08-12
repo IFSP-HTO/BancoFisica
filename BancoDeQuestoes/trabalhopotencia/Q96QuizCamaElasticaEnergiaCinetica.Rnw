@@ -1,0 +1,112 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Uma criança pula verticalmente sobre uma cama elástica. Despreze o atrito com o ar e os movimentos de rotação do corpo durante o salto. Considere $h=0$ como a posição de equilíbrio da lona, e $h_{\min}$ e $h_{\max}$ como as alturas mínima e máxima atingidas pela criança.
+
+Qual dos gráficos representa corretamente a energia cinética $E_c$ da criança em função da posição vertical $h$?
+
+<<echo=FALSE, fig=TRUE, width=5.5, height=8.5>>=
+par(mfrow=c(5,1), mar=c(1.6,2.3,0.4,0.7), oma=c(0,0,0,0), xpd=NA)
+
+desenha_eixos <- function(letra) {
+  plot(NA, xlim=c(-1.25,2.2), ylim=c(-0.08,1.12), axes=FALSE, xlab="", ylab="", bty="n")
+  arrows(-1.12,0,2.10,0, length=0.07)
+  arrows(0,-0.01,0,1.05, length=0.07)
+  segments(-1,0,-1,-0.035)
+  segments(2,0,2,-0.035)
+  text(-1,-0.075, expression(h[min]), cex=0.82)
+  text(0,-0.075,"0",cex=0.82)
+  text(2,-0.075, expression(h[max]), cex=0.82)
+  text(2.12,0.03,"h",cex=0.9)
+  text(0.09,1.02, expression(E[c]), cex=0.9)
+  text(-1.20,0.92,letra,font=2,cex=0.95)
+}
+
+# A: mínimo em h=0 e crescimento para os extremos
+desenha_eixos("A")
+lines(c(-1,0,2), c(0.55,0,0.90), lwd=2)
+
+# B: duas retas, com máximo em h=0
+desenha_eixos("B")
+lines(c(-1,0,2), c(0,1,0), lwd=2)
+
+# C: comportamento físico correto: trecho parabólico enquanto há contato
+# com a lona e trecho linear durante o voo livre.
+desenha_eixos("C")
+x1 <- seq(-1,0,length.out=100)
+y1 <- 1-x1^2
+x2 <- seq(0,2,length.out=100)
+y2 <- 1-x2/2
+lines(x1,y1,lwd=2)
+lines(x2,y2,lwd=2)
+
+# D: trecho linear no contato e curvo no voo
+desenha_eixos("D")
+lines(c(-1,0),c(0,1),lwd=2)
+x2 <- seq(0,2,length.out=100)
+y2 <- sqrt(pmax(0,1-(x2/2)^3))
+lines(x2,y2,lwd=2)
+
+# E: forma em U, incompatível com os pontos de retorno
+desenha_eixos("E")
+x <- seq(-1,2,length.out=150)
+y <- 0.18*(x-0.15)^2
+lines(x,y,lwd=2)
+@
+
+\begin{answerlist}
+  \item Gráfico A.
+  \item Gráfico B.
+  \item Gráfico C.
+  \item Gráfico D.
+  \item Gráfico E.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Nos pontos de altura mínima e máxima, a criança muda o sentido do movimento. Portanto, nesses dois pontos sua velocidade instantânea é nula e, consequentemente,
+
+\[
+E_c=0.
+\]
+
+Para $h>0$, a criança já perdeu contato com a lona e está em voo livre. A energia mecânica se conserva e a única energia potencial relevante é a gravitacional:
+
+\[
+E_c+mg h=E_{\mathrm{mec}}.
+\]
+
+Assim,
+
+\[
+E_c=E_{\mathrm{mec}}-mgh,
+\]
+
+ou seja, nesse trecho $E_c$ diminui \textbf{linearmente} com $h$ até se anular em $h_{\max}$.
+
+Para $h<0$, a lona está deformada e armazena energia potencial elástica. Além da energia potencial gravitacional, há um termo proporcional ao quadrado da deformação da lona. Por isso, a dependência de $E_c$ com $h$ nesse trecho é curva, e não uma reta.
+
+O único gráfico que apresenta simultaneamente:
+
+\begin{itemize}
+  \item $E_c=0$ em $h_{\min}$;
+  \item crescimento curvo de $E_c$ enquanto a criança mantém contato com a lona;
+  \item trecho linear decrescente para $h>0$;
+  \item $E_c=0$ em $h_{\max}$;
+\end{itemize}
+
+é o \textbf{gráfico C}.
+
+Portanto, a alternativa correta é \textbf{C}.
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{00100}
+%% \exname{Q96QuizCamaElasticaEnergiaCinetica}
+%% \exsection{Mecanica; Trabalho e potencia; Energia cinetica; Energia potencial elastica; Conservacao de energia; ENEM}
+%% \exusepackage[utf8]{inputenc}
