@@ -1,0 +1,47 @@
+<<echo=FALSE, results=hide>>=
+## Inspirada no ENEM 2015 Q75.
+## Física central: refração atmosférica e miragens.
+alternativas <- c(
+  "ressonância.",
+  "refração.",
+  "difração.",
+  "reflexão.",
+  "difusão."
+)
+solutions <- c(FALSE, TRUE, FALSE, FALSE, FALSE)
+ordem <- sample(seq_along(alternativas))
+alternativas <- alternativas[ordem]
+solutions <- solutions[ordem]
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Em certas condições atmosféricas, camadas de ar próximas à superfície podem apresentar temperaturas e índices de refração diferentes. A luz proveniente de objetos distantes sofre desvios sucessivos ao atravessar essas camadas, podendo produzir miragens como a chamada Fata Morgana.
+
+O fenômeno óptico responsável por esses desvios da luz é a
+
+<<echo=FALSE, results=tex>>=
+answerlist(alternativas)
+@
+
+\end{question}
+
+\begin{solution}
+
+Quando a luz atravessa regiões do ar com índices de refração diferentes, sua velocidade de propagação muda e a trajetória do raio luminoso pode se curvar gradualmente.
+
+Esse desvio da luz ao passar entre meios ou regiões com índices de refração diferentes caracteriza a \textbf{refração}. Em uma atmosfera estratificada, a refração sucessiva pode deslocar aparentemente a posição de objetos e formar miragens.
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(solutions, paste0("\\textbf{", alternativas, "}"), alternativas))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q93QuizFataMorganaRefracao}
+%% \exsection{Optica; Refracao; Miragens; ENEM}
+%% \exusepackage[utf8]{inputenc}
