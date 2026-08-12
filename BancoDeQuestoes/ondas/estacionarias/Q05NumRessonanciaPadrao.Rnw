@@ -1,0 +1,47 @@
+<<echo=FALSE, results=hide>>=
+n <- sample(1:4,1)
+L <- sample(c(0.6,0.8,1.0,1.2),1)
+v <- sample(c(60,80,100,120),1)
+f <- n*v/(2*L)
+x <- seq(0,L,length.out=500)
+y <- sin(n*pi*x/L)
+fmt <- function(z) formatC(z,format="f",digits=1,decimal.mark=",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Uma corda de comprimento $L=\Sexpr{L}\,\mathrm{m}$ está fixa nas duas extremidades. A velocidade de propagação das ondas na corda é $v=\Sexpr{v}\,\mathrm{m/s}$. Quando a corda é excitada em uma de suas frequências de ressonância, observa-se o padrão abaixo.
+
+<<fig=TRUE, height=3.8, width=6, echo=FALSE, eps=FALSE, results=hide>>=
+par(mar=c(3.8,2.0,0.8,0.8))
+plot(x,y,type="l",lwd=2,xlab="posição na corda (m)",ylab="",yaxt="n",ylim=c(-1.2,1.2))
+abline(h=0,lty=3)
+points(seq(0,L,length.out=n+1),rep(0,n+1),pch=19)
+@
+
+Determine a frequência de ressonância correspondente ao padrão mostrado, em hertz.
+
+\end{question}
+
+\begin{solution}
+
+O padrão possui $\Sexpr{n}$ ventre(s), portanto corresponde ao harmônico $n=\Sexpr{n}$. Para uma corda fixa nas duas extremidades,
+\[
+f_n=n\frac{v}{2L}.
+\]
+Logo,
+\[
+f_n=\Sexpr{n}\frac{\Sexpr{v}}{2\cdot\Sexpr{L}}
+=\Sexpr{fmt(f)}\,\mathrm{Hz}.
+\]
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{round(f,1)}}
+%% \extol{0.1}
+%% \exname{Q05NumRessonanciaPadrao}
+%% \exsection{Ondulatoria; Ondas estacionarias; Ressonancia; Graficos}
+%% \exusepackage[utf8]{inputenc}
