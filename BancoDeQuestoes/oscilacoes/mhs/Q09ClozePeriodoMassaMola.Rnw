@@ -1,0 +1,56 @@
+<<echo=FALSE, results=hide>>=
+m <- sample(c(0.10, 0.20, 0.25, 0.40, 0.50), 1)
+k <- sample(c(10, 20, 25, 40, 50, 80, 100), 1)
+omega <- sqrt(k/m)
+T <- 2*pi*sqrt(m/k)
+fmt <- function(x, d = 2) formatC(x, format = "f", digits = d, decimal.mark = ",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Um bloco de massa $\Sexpr{fmt(m,2)}\,\mathrm{kg}$ está preso a uma mola ideal de constante elástica $\Sexpr{k}\,\mathrm{N/m}$ e oscila horizontalmente sem atrito.
+
+Determine:
+
+\begin{answerlist}
+  \item a frequência angular do movimento, em $\mathrm{rad/s}$;
+  \item o período da oscilação, em segundos.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Para um sistema massa--mola ideal,
+\[
+\omega=\sqrt{\frac{k}{m}}
+\quad\text{e}\quad
+T=2\pi\sqrt{\frac{m}{k}}.
+\]
+Substituindo os dados,
+\[
+\omega=\sqrt{\frac{\Sexpr{k}}{\Sexpr{fmt(m,2)}}}
+\approx\Sexpr{fmt(omega,2)}\,\mathrm{rad/s},
+\]
+e
+\[
+T=2\pi\sqrt{\frac{\Sexpr{fmt(m,2)}}{\Sexpr{k}}}
+\approx\Sexpr{fmt(T,2)}\,\mathrm{s}.
+\]
+
+\begin{answerlist}
+  \item $\Sexpr{fmt(omega,2)}\,\mathrm{rad/s}$;
+  \item $\Sexpr{fmt(T,2)}\,\mathrm{s}$.
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{\Sexpr{round(omega,2)}|\Sexpr{round(T,2)}}
+%% \exclozetype{num|num}
+%% \extol{0.03|0.03}
+%% \exname{Q09ClozePeriodoMassaMola}
+%% \exsection{Mecanica; Oscilacoes; MHS; Massa-mola}
+%% \exusepackage[utf8]{inputenc}
