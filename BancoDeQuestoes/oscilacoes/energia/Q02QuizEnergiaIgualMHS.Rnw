@@ -1,0 +1,59 @@
+<<echo=FALSE, results=hide>>=
+alternativas <- c(
+  "$|x|=A/\\sqrt{2}$",
+  "$|x|=A/2$",
+  "$|x|=A$",
+  "$|x|=\\sqrt{2}A$",
+  "$x=0$"
+)
+solutions <- c(TRUE, FALSE, FALSE, FALSE, FALSE)
+ord <- sample(seq_along(alternativas))
+alternativas <- alternativas[ord]
+solutions <- solutions[ord]
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Um oscilador massa--mola ideal executa MHS com amplitude $A$. Em quais posições, medidas a partir do equilíbrio, as energias cinética e potencial elástica são iguais?
+
+<<echo=FALSE, results=tex>>=
+answerlist(alternativas)
+@
+
+\end{question}
+
+\begin{solution}
+
+A energia total é
+\[
+E=\frac12kA^2,
+\]
+e a energia potencial em uma posição $x$ é
+\[
+U=\frac12kx^2.
+\]
+Se $K=U$, então cada uma corresponde à metade da energia total, isto é, $U=E/2$. Assim,
+\[
+\frac12kx^2=\frac14kA^2
+\quad\Rightarrow\quad
+x^2=\frac{A^2}{2}.
+\]
+Portanto,
+\[
+|x|=\frac{A}{\sqrt{2}}.
+\]
+Há duas posições simétricas, uma de cada lado do equilíbrio.
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(solutions, paste0('\\textbf{', alternativas, '}'), alternativas))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q02QuizEnergiaIgualMHS}
+%% \exsection{Mecanica; Oscilacoes; Energia}
+%% \exusepackage[utf8]{inputenc}
