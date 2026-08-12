@@ -1,0 +1,57 @@
+<<echo=FALSE, results=hide>>=
+m_g <- sample(c(20,30,40,50),1)
+L <- sample(c(2,4,5),1)
+FT <- sample(c(40,80,100,125),1)
+m <- m_g/1000
+mu <- m/L
+v <- sqrt(FT/mu)
+fmt <- function(x,d=2) formatC(x,format="f",digits=d,decimal.mark=",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Uma corda homogênea de massa $\Sexpr{m_g}\,\mathrm{g}$ e comprimento $\Sexpr{L}\,\mathrm{m}$ é mantida sob tração de $\Sexpr{FT}\,\mathrm{N}$.
+
+Determine:
+\begin{answerlist}
+  \item a massa específica linear $\mu$, em $\mathrm{kg/m}$;
+  \item a velocidade de uma onda transversal nessa corda, em $\mathrm{m/s}$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+A massa específica linear é
+\[
+\mu=\frac{m}{L}
+=\frac{\Sexpr{fmt(m,3)}}{\Sexpr{L}}
+=\Sexpr{fmt(mu,4)}\,\mathrm{kg/m}.
+\]
+
+Para uma corda esticada,
+\[
+v=\sqrt{\frac{F_T}{\mu}}.
+\]
+Assim,
+\[
+v=\sqrt{\frac{\Sexpr{FT}}{\Sexpr{fmt(mu,4)}}}
+\approx\Sexpr{fmt(v,2)}\,\mathrm{m/s}.
+\]
+
+\begin{answerlist}
+  \item $\Sexpr{fmt(mu,4)}\,\mathrm{kg/m}$;
+  \item $\Sexpr{fmt(v,2)}\,\mathrm{m/s}$.
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{\Sexpr{round(mu,4)}|\Sexpr{round(v,2)}}
+%% \exclozetype{num|num}
+%% \extol{0.0002|0.1}
+%% \exname{Q01ClozeDensidadeLinearVelocidade}
+%% \exsection{Ondulatoria; Ondas em cordas; Velocidade}
+%% \exusepackage[utf8]{inputenc}

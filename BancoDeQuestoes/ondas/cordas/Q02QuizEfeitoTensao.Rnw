@@ -1,0 +1,52 @@
+<<echo=FALSE, results=hide>>=
+fator <- sample(c(4,9),1)
+raiz <- sqrt(fator)
+alternativas <- c(
+  paste0("a velocidade é multiplicada por ",raiz,"."),
+  paste0("a velocidade é multiplicada por ",fator,"."),
+  paste0("a velocidade é dividida por ",raiz,"."),
+  "a velocidade não se altera.",
+  paste0("a velocidade é dividida por ",fator,".")
+)
+solutions <- c(TRUE,FALSE,FALSE,FALSE,FALSE)
+ord <- sample(seq_along(alternativas))
+alternativas <- alternativas[ord]
+solutions <- solutions[ord]
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Uma onda transversal se propaga em uma corda homogênea. Mantendo a mesma corda, a tração é multiplicada por $\Sexpr{fator}$.
+
+O que acontece com a velocidade de propagação?
+
+<<echo=FALSE, results=tex>>=
+answerlist(alternativas)
+@
+
+\end{question}
+
+\begin{solution}
+
+A velocidade em uma corda esticada é
+\[
+v=\sqrt{\frac{F_T}{\mu}}.
+\]
+Como $\mu$ permanece constante, multiplicar a tração por $\Sexpr{fator}$ multiplica a velocidade por
+\[
+\sqrt{\Sexpr{fator}}=\Sexpr{raiz}.
+\]
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(solutions,paste0('\\textbf{',alternativas,'}'),alternativas))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q02QuizEfeitoTensao}
+%% \exsection{Ondulatoria; Ondas em cordas; Velocidade}
+%% \exusepackage[utf8]{inputenc}

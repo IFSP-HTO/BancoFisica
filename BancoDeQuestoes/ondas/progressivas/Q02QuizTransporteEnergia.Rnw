@@ -1,0 +1,45 @@
+<<echo=FALSE, results=hide>>=
+alternativas <- c(
+  "A onda na água é mecânica porque depende de um meio material; uma onda eletromagnética pode se propagar no vácuo. Em ambos os casos, a onda pode transportar energia sem transportar o meio como um todo.",
+  "A onda na água é eletromagnética porque transporta energia, enquanto ondas mecânicas transportam apenas matéria.",
+  "Ondas mecânicas e eletromagnéticas exigem sempre um meio material para se propagar.",
+  "Uma onda eletromagnética transporta matéria junto com a energia, ao contrário de uma onda mecânica.",
+  "Como a boia não acompanha horizontalmente a perturbação, a onda na água não transporta energia."
+)
+solutions <- c(TRUE, FALSE, FALSE, FALSE, FALSE)
+ord <- sample(seq_along(alternativas))
+alternativas <- alternativas[ord]
+solutions <- solutions[ord]
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Uma pequena boia permanece próxima da mesma posição horizontal enquanto sobe e desce com a passagem de ondas periódicas na superfície da água. Em outra situação, um sinal de rádio atravessa o espaço entre um satélite e a Terra.
+
+Qual alternativa descreve corretamente os dois fenômenos?
+
+<<echo=FALSE, results=tex>>=
+answerlist(alternativas)
+@
+
+\end{question}
+
+\begin{solution}
+
+A onda na água é uma onda mecânica: sua propagação depende das propriedades de um meio material. O sinal de rádio é uma onda eletromagnética e pode se propagar no vácuo.
+
+Nos dois casos há transporte de energia. Isso não significa transporte macroscópico do meio junto com a onda: os elementos do meio material executam movimentos locais enquanto a perturbação avança.
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(solutions, paste0('\\textbf{', alternativas, '}'), alternativas))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q02QuizTransporteEnergia}
+%% \exsection{Ondulatoria; Ondas progressivas; Classificacao e energia}
+%% \exusepackage[utf8]{inputenc}

@@ -1,0 +1,48 @@
+<<echo=FALSE, results=hide>>=
+mu_g <- sample(c(10,20,25),1)
+mu <- mu_g/1000
+FT <- seq(0,100,length.out=200)
+v2 <- FT/mu
+slope <- 1/mu
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Em um experimento com uma mesma corda, mede-se a velocidade de propagação $v$ para diferentes valores da tração $F_T$. O gráfico de $v^2$ em função de $F_T$ é mostrado abaixo.
+
+<<fig=TRUE, height=4.2, width=6, echo=FALSE, eps=FALSE, results=hide>>=
+par(mar=c(4.2,4.5,0.8,0.8))
+plot(FT,v2,type="l",lwd=2,
+     xlab="tração F_T (N)",ylab="v^2 (m^2/s^2)",
+     xlim=c(0,100),ylim=c(0,max(v2)))
+points(c(20,80),c(20/mu,80/mu),pch=19)
+grid(nx=NULL,ny=NULL,lty=3)
+@
+
+Usando $v^2=F_T/\mu$, determine a massa específica linear da corda, em $\mathrm{g/m}$.
+
+\end{question}
+
+\begin{solution}
+
+O coeficiente angular do gráfico é
+\[
+\frac{\Delta v^2}{\Delta F_T}=\frac{1}{\mu}.
+\]
+Pela reta, o coeficiente angular é $\Sexpr{round(slope,1)}$ em unidades do SI. Assim,
+\[
+\mu=\frac{1}{\Sexpr{round(slope,1)}}
+=\Sexpr{mu}\,\mathrm{kg/m}
+=\Sexpr{mu_g}\,\mathrm{g/m}.
+\]
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{mu_g}}
+%% \extol{0.2}
+%% \exname{Q06GraficoVelocidadeTensao}
+%% \exsection{Ondulatoria; Ondas em cordas; Graficos}
+%% \exusepackage[utf8]{inputenc}

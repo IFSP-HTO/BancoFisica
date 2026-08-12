@@ -1,0 +1,57 @@
+<<echo=FALSE, results=hide>>=
+mu_g <- sample(c(5,8,10,20),1)
+mu <- mu_g/1000
+FT <- sample(c(40,80,100,125),1)
+lambda <- sample(c(0.5,1,2),1)
+v <- sqrt(FT/mu)
+f <- v/lambda
+fmt <- function(x,d=2) formatC(x,format="f",digits=d,decimal.mark=",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Uma corda de massa específica linear $\Sexpr{mu_g}\,\mathrm{g/m}$ está submetida a uma tração de $\Sexpr{FT}\,\mathrm{N}$. Nela se propaga uma onda de comprimento de onda $\Sexpr{fmt(lambda,2)}\,\mathrm{m}$.
+
+Determine:
+\begin{answerlist}
+  \item a velocidade de propagação da onda, em $\mathrm{m/s}$;
+  \item a frequência da onda, em hertz.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Primeiro convertemos a massa específica linear:
+\[
+\mu=\Sexpr{fmt(mu,3)}\,\mathrm{kg/m}.
+\]
+A velocidade é determinada pelas propriedades da corda:
+\[
+v=\sqrt{\frac{F_T}{\mu}}
+=\sqrt{\frac{\Sexpr{FT}}{\Sexpr{fmt(mu,3)}}}
+\approx\Sexpr{fmt(v,2)}\,\mathrm{m/s}.
+\]
+
+Usando a relação $v=\lambda f$,
+\[
+f=\frac{v}{\lambda}
+\approx\Sexpr{fmt(f,2)}\,\mathrm{Hz}.
+\]
+
+\begin{answerlist}
+  \item $\Sexpr{fmt(v,2)}\,\mathrm{m/s}$;
+  \item $\Sexpr{fmt(f,2)}\,\mathrm{Hz}$.
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{\Sexpr{round(v,2)}|\Sexpr{round(f,2)}}
+%% \exclozetype{num|num}
+%% \extol{0.1|0.1}
+%% \exname{Q04ClozeVelocidadeFrequenciaCorda}
+%% \exsection{Ondulatoria; Ondas em cordas; Velocidade}
+%% \exusepackage[utf8]{inputenc}
