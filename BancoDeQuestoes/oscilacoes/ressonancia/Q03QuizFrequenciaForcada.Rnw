@@ -1,6 +1,6 @@
 <<echo=FALSE, results=hide>>=
 fn <- sample(c(2, 3, 4, 5), 1)
-ff <- sample(setdiff(c(1,2,3,4,5,6), fn), 1)
+ff <- fn + 1
 alternativas <- c(
   paste0(ff, " Hz, a frequência da força externa"),
   paste0(fn, " Hz, a frequência natural do sistema"),
