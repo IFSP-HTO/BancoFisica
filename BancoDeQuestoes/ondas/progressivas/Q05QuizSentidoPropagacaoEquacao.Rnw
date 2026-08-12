@@ -20,7 +20,7 @@ solutions <- solutions[ord]
 
 Uma onda transversal é descrita por
 \[
-y(x,t)=0{,}03\,\sen(4x\Sexpr{sinal}10t),
+y(x,t)=0{,}03\,\sin(4x\Sexpr{sinal}10t),
 \]
 com as grandezas expressas no SI.
 
@@ -34,7 +34,7 @@ answerlist(alternativas)
 
 \begin{solution}
 
-Uma onda escrita na forma $y(x,t)=y_m\sen(kx-\omega t)$ se propaga no sentido positivo de $x$. Quando o sinal entre os termos é positivo, $kx+\omega t$, a propagação ocorre no sentido negativo de $x$.
+Uma onda escrita na forma $y(x,t)=y_m\sin(kx-\omega t)$ se propaga no sentido positivo de $x$. Quando o sinal entre os termos é positivo, $kx+\omega t$, a propagação ocorre no sentido negativo de $x$.
 
 Nesta questão, o sinal é $\Sexpr{sinal}$; portanto, a onda se propaga no \Sexpr{correta}.
 
