@@ -1,0 +1,48 @@
+<<echo=FALSE, results=hide>>=
+v <- sample(c(5,10,20,25),1)
+den <- v^2
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Para determinada perturbação $y(x,t)$, as derivadas espaciais e temporais satisfazem
+\[
+\frac{\partial^2 y}{\partial x^2}
+=\frac{1}{\Sexpr{den}}\,
+\frac{\partial^2 y}{\partial t^2}.
+\]
+
+Sabendo que a equação de onda pode ser escrita como
+\[
+\frac{\partial^2 y}{\partial x^2}
+=\frac{1}{v^2}\,
+\frac{\partial^2 y}{\partial t^2},
+\]
+determine a velocidade de propagação $v$, em $\mathrm{m/s}$.
+
+\end{question}
+
+\begin{solution}
+
+Comparando os coeficientes das duas equações,
+\[
+\frac{1}{v^2}=\frac{1}{\Sexpr{den}}.
+\]
+Logo,
+\[
+v^2=\Sexpr{den}
+\quad\Rightarrow\quad
+v=\Sexpr{v}\,\mathrm{m/s}.
+\]
+Tomamos a raiz positiva porque $v$ representa o módulo da velocidade de propagação.
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{v}}
+%% \extol{0.1}
+%% \exname{Q12EquacaoOndaVelocidade}
+%% \exsection{Ondulatoria; Ondas progressivas; Equacao de onda}
+%% \exusepackage[utf8]{inputenc}
