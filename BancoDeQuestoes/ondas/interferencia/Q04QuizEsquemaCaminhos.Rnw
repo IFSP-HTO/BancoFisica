@@ -1,0 +1,64 @@
+<<echo=FALSE, results=hide>>=
+lambda <- sample(c(1,2),1)
+q <- sample(c(1,1.5,2,2.5),1)
+L1 <- sample(c(6,8,10),1)
+L2 <- L1 + q*lambda
+dL <- L2-L1
+correta <- ifelse(abs(q-round(q))<1e-9,"construtiva","destrutiva")
+alternativas <- c(
+  correta,
+  ifelse(correta=="construtiva","destrutiva","construtiva"),
+  "não há interferência, pois os caminhos são diferentes",
+  "a frequência no ponto P é nula",
+  "o comprimento de onda muda ao longo de um dos caminhos"
+)
+solutions <- c(TRUE,FALSE,FALSE,FALSE,FALSE)
+ord <- sample(seq_along(alternativas)); alternativas <- alternativas[ord]; solutions <- solutions[ord]
+fmt <- function(x) formatC(x,format="f",digits=1,decimal.mark=",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Duas fontes $S_1$ e $S_2$ emitem ondas em fase com comprimento de onda $\lambda=\Sexpr{lambda}\,\mathrm{m}$. O esquema indica os comprimentos dos caminhos até o ponto $P$.
+
+<<fig=TRUE, height=4.0, width=6, echo=FALSE, eps=FALSE, results=hide>>=
+par(mar=c(0.5,0.5,0.5,0.5))
+plot(c(0,10),c(0,6),type="n",axes=FALSE,xlab="",ylab="",asp=1)
+points(c(1,1,9),c(1.5,4.5,3),pch=19,cex=1.3)
+segments(1,1.5,9,3,lwd=2)
+segments(1,4.5,9,3,lwd=2,lty=2)
+text(0.5,1.5,"S1"); text(0.5,4.5,"S2"); text(9.5,3,"P")
+text(5,1.75,paste0("L1 = ",fmt(L1)," m"))
+text(5,4.25,paste0("L2 = ",fmt(L2)," m"))
+@
+
+Qual tipo de interferência ocorre em $P$?
+
+<<echo=FALSE, results=tex>>=
+answerlist(alternativas)
+@
+
+\end{question}
+
+\begin{solution}
+
+A diferença de caminho é
+\[
+\Delta L=|L_2-L_1|=\Sexpr{fmt(dL)}\,\mathrm{m}
+=\Sexpr{fmt(q)}\lambda.
+\]
+Como as fontes estão em fase, múltiplos inteiros de $\lambda$ produzem interferência construtiva e múltiplos semi-inteiros, como $(m+1/2)\lambda$, produzem interferência destrutiva. Logo, a interferência é \textbf{\Sexpr{correta}}.
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(solutions,paste0('\\textbf{',alternativas,'}'),alternativas))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q04QuizEsquemaCaminhos}
+%% \exsection{Ondulatoria; Interferencia; Diferenca de caminho; Graficos}
+%% \exusepackage[utf8]{inputenc}
