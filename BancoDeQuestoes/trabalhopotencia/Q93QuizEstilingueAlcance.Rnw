@@ -1,0 +1,78 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Dois estilingues ideais possuem constantes elásticas diferentes. O estilingue de borracha mais ``dura'' tem constante elástica $k_d$, enquanto o de borracha mais ``mole'' tem constante $k_m$, com
+\[
+k_d=2k_m.
+\]
+
+Os dois são tracionados pela mesma força máxima e lançam projéteis idênticos sob o mesmo ângulo, a partir da mesma altura. Despreze a resistência do ar e considere que toda a energia potencial elástica armazenada é convertida em energia cinética do projétil.
+
+A razão entre os alcances horizontais $D_d$ e $D_m$, obtidos com os estilingues de borracha dura e mole, respectivamente, é
+
+\begin{answerlist}
+  \item $\dfrac{1}{4}$.
+  \item $\dfrac{1}{2}$.
+  \item $1$.
+  \item $2$.
+  \item $4$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Pela Lei de Hooke,
+\[
+F=kx,
+\]
+de modo que, para uma mesma força aplicada,
+\[
+x=\frac{F}{k}.
+\]
+
+A energia potencial elástica armazenada é
+\[
+E_{el}=\frac{kx^2}{2}.
+\]
+Substituindo $x=F/k$,
+\[
+E_{el}=\frac{k}{2}\left(\frac{F}{k}\right)^2
+=\frac{F^2}{2k}.
+\]
+
+Portanto, para a mesma força aplicada, a energia armazenada é inversamente proporcional à constante elástica. Como $k_d=2k_m$,
+\[
+\frac{E_d}{E_m}=\frac{k_m}{k_d}=\frac{1}{2}.
+\]
+
+Toda essa energia é convertida em energia cinética:
+\[
+\frac{mv^2}{2}=E_{el}.
+\]
+Logo,
+\[
+\frac{v_d^2}{v_m^2}=\frac{E_d}{E_m}=\frac{1}{2}.
+\]
+
+Para lançamentos realizados sob o mesmo ângulo e nas mesmas condições, o alcance horizontal é
+\[
+D=\frac{v_0^2\sin(2\theta)}{g}.
+\]
+Assim, o alcance é proporcional a $v_0^2$ e
+\[
+\frac{D_d}{D_m}=\frac{v_d^2}{v_m^2}=\frac{1}{2}.
+\]
+
+Portanto, a alternativa correta é \textbf{B}.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: questão inspirada no ENEM 2015 Q70.
+%% \extype{schoice}
+%% \exsolution{01000}
+%% \exname{Q93QuizEstilingueAlcance}
+%% \exsection{Mecanica; Trabalho e potencia; Energia potencial elastica; Lancamentos; ENEM}
+%% \exusepackage[utf8]{inputenc}
