@@ -13,7 +13,7 @@ fmt <- function(x,d=2) formatC(x,format="f",digits=d,decimal.mark=",")
 
 Uma onda progressiva é descrita, em unidades do SI, por
 \[
-y(x,t)=\Sexpr{fmt(A,2)}\,\sen(\Sexpr{fmt(k,2)}x-\Sexpr{fmt(omega,2)}t).
+y(x,t)=\Sexpr{fmt(A,2)}\,\sin(\Sexpr{fmt(k,2)}x-\Sexpr{fmt(omega,2)}t).
 \]
 
 Determine:
@@ -29,7 +29,7 @@ Determine:
 
 Comparando com a forma
 \[
-y(x,t)=y_m\sen(kx-\omega t),
+y(x,t)=y_m\sin(kx-\omega t),
 \]
 identificamos $k=\Sexpr{fmt(k,2)}\,\mathrm{rad/m}$ e $\omega=\Sexpr{fmt(omega,2)}\,\mathrm{rad/s}$.
 
