@@ -26,6 +26,8 @@ for (i in seq_along(opts)) {
   questions[aleat[i]] <- opts[i]
   solutions[aleat[i]] <- opts[i] == resp
 }
+
+include_supplement("Q14EngrenagensENEM.jpg")
 @
 \usepackage[utf8]{inputenc}
 \begin{question}

@@ -10,6 +10,8 @@ ped  <- 1                            ## pedaladas por segundo
 ## mesma v na catraca -> f_cat = f_coroa * dcor/dcat; catraca fixa na roda -> f_roda = f_cat
 f_roda <- ped * dcor / dcat
 v      <- round(2 * pi * (droda/200) * f_roda, 2)   ## velocidade da bicicleta (m/s)
+
+include_supplement("Q17BicicletaPedalada.jpg")
 @
 \usepackage[utf8]{inputenc}
 \begin{question}

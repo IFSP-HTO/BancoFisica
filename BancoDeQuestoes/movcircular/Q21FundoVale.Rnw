@@ -9,6 +9,8 @@ g <- 10
 v_ms <- v / 3.6
 ## no fundo do vale: N - P = m*v^2/R -> N = m*g + m*v^2/R
 resp <- round(m * g + m * v_ms^2 / R, 0)
+
+include_supplement("Q21FundoVale.jpg")
 @
 \usepackage[utf8]{inputenc}
 \begin{question}

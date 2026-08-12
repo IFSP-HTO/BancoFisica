@@ -11,6 +11,8 @@ g  <- 10
 Nt <- round(m * vt^2 / R - m * g, 0)
 ## Base: N - P = m*vb^2/R -> N = m*vb^2/R + mg
 Nb <- round(m * vb^2 / R + m * g, 0)
+
+include_supplement("Q19GloboMorte.jpg")
 @
 \usepackage[utf8]{inputenc}
 \begin{question}

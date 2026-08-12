@@ -5,6 +5,8 @@ R <- sample(c(8, 10, 12), 1)     ## raio (m)
 v <- sample(c(5, 6, 7), 1)       ## velocidade linear (m/s)
 
 a <- round(v^2 / R, 1)           ## aceleração centrípeta (m/s²)
+
+include_supplement("Q25RodaGigante.jpg")
 @
 \usepackage[utf8]{inputenc}
 \begin{question}

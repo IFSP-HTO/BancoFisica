@@ -11,6 +11,8 @@ fB <- round(fA * Ra / Rb, 2)
 fC <- fB
 ## velocidade linear do ponto P na periferia de C, em cm/s
 vP <- round(2 * pi * Rc * (fC / 60), 2)
+
+include_supplement("Q18MecanismoEngrenagens.jpg")
 @
 \usepackage[utf8]{inputenc}
 \begin{question}

@@ -8,6 +8,8 @@ T <- sample(c(1, 1.5, 2, 2.5), 1)      ## período da polia maior (s)
 ## mesma velocidade linear: v = 2*pi*a*(1/T) = 2*pi*b*f_nenor
 f_a <- 1 / T
 f_b <- round(a * f_a / b, 2)           ## frequência da polia menor (Hz)
+
+include_supplement("Q16PoliasCorreia.jpg")
 @
 \usepackage[utf8]{inputenc}
 \begin{question}

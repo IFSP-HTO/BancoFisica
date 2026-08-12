@@ -12,6 +12,8 @@ th_rad <- th * pi / 180
 R <- round(L/2 + d * sin(th_rad), 2)
 ## forças verticais se cancelam: T*cos(theta) = M*g -> T = M*g/cos(theta)
 T <- round(M * g / cos(th_rad), 0)
+
+include_supplement("Q28BrinquedoParque.jpg")
 @
 \usepackage[utf8]{inputenc}
 \begin{question}

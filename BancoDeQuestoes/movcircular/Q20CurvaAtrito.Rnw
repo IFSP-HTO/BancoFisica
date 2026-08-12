@@ -9,6 +9,8 @@ g  <- 10
 ## v_max = sqrt(mu*g*R)
 v_ms <- round(sqrt(mu * g * R), 2)
 v_kmh<- round(v_ms * 3.6, 1)
+
+include_supplement("Q20CurvaAtrito.jpg")
 @
 \usepackage[utf8]{inputenc}
 \begin{question}

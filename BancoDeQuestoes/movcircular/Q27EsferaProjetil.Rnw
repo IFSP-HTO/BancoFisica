@@ -8,6 +8,8 @@ v <- sample(c(400, 500, 600), 1)   ## velocidade do projétil (m/s)
 ## orifício, a esfera deve girar meia volta nesse intervalo: f*(t) = 1/2
 ## => f = (1/2) / (d/v) = v/(2d)
 f <- round(v / (2 * d), 1)
+
+include_supplement("Q27EsferaProjetil.jpg")
 @
 \usepackage[utf8]{inputenc}
 \begin{question}
