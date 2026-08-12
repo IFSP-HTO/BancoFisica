@@ -1,0 +1,49 @@
+<<echo=FALSE, results=hide>>=
+alternativas <- c(
+  "O período dobra.",
+  "O período quadruplica.",
+  "O período fica reduzido à metade.",
+  "O período não se altera.",
+  "O período aumenta oito vezes."
+)
+solutions <- c(TRUE, FALSE, FALSE, FALSE, FALSE)
+ord <- sample(seq_along(alternativas))
+alternativas <- alternativas[ord]
+solutions <- solutions[ord]
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Dois pêndulos simples oscilam no mesmo local e com pequenas amplitudes. O segundo tem comprimento quatro vezes maior que o primeiro. Como se compara o período do segundo pêndulo com o do primeiro?
+
+<<echo=FALSE, results=tex>>=
+answerlist(alternativas)
+@
+
+\end{question}
+
+\begin{solution}
+
+Para um pêndulo simples,
+\[
+T=2\pi\sqrt{\frac{L}{g}}.
+\]
+Mantendo $g$ constante, $T\propto\sqrt{L}$. Se $L_2=4L_1$,
+\[
+\frac{T_2}{T_1}=\sqrt{\frac{L_2}{L_1}}=\sqrt{4}=2.
+\]
+Portanto, o período dobra.
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(solutions, paste0('\\textbf{', alternativas, '}'), alternativas))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q02QuizComprimentoPeriodoPendulo}
+%% \exsection{Mecanica; Oscilacoes; Pendulos; Pendulo simples}
+%% \exusepackage[utf8]{inputenc}
