@@ -1,0 +1,52 @@
+<<echo=FALSE, results=hide>>=
+L <- sample(c(0.40, 0.90, 1.60, 2.50), 1)
+g <- 10
+T <- 2*pi*sqrt(L/g)
+f <- 1/T
+fmt <- function(x, d=2) formatC(x, format="f", digits=d, decimal.mark=",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Um pequeno corpo preso a um fio de comprimento $L=\Sexpr{fmt(L,2)}\,\mathrm{m}$ executa oscilações de pequena amplitude, podendo ser tratado como um pêndulo simples. Considere $g=10\,\mathrm{m/s^2}$.
+
+Determine:
+\begin{answerlist}
+  \item o período de oscilação, em segundos;
+  \item a frequência de oscilação, em hertz.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Para pequenas oscilações, o período do pêndulo simples é
+\[
+T=2\pi\sqrt{\frac{L}{g}}.
+\]
+Logo,
+\[
+T=2\pi\sqrt{\frac{\Sexpr{fmt(L,2)}}{10}}
+\approx\Sexpr{fmt(T,2)}\,\mathrm{s}.
+\]
+A frequência vale
+\[
+f=\frac1T\approx\Sexpr{fmt(f,2)}\,\mathrm{Hz}.
+\]
+
+\begin{answerlist}
+  \item $\Sexpr{fmt(T,2)}\,\mathrm{s}$;
+  \item $\Sexpr{fmt(f,2)}\,\mathrm{Hz}$.
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{\Sexpr{round(T,2)}|\Sexpr{round(f,2)}}
+%% \exclozetype{num|num}
+%% \extol{0.03|0.03}
+%% \exname{Q01ClozePeriodoPenduloSimples}
+%% \exsection{Mecanica; Oscilacoes; Pendulos; Pendulo simples}
+%% \exusepackage[utf8]{inputenc}
