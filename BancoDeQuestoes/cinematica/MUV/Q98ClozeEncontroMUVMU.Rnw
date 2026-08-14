@@ -1,13 +1,13 @@
 <<echo=FALSE, results=hide>>=
 ## Um móvel A parte do repouso acelerado; B está à frente e move-se mais lentamente.
-a <- sample(c(2,4), 1)
-vB <- sample(c(4,6,8), 1)
-t <- sample(c(6,8,10), 1)
-d0 <- 0.5*a*t^2 - vB*t
-while (d0 <= 20) {
-  t <- sample(c(8,10,12), 1)
-  d0 <- 0.5*a*t^2 - vB*t
-}
+casos <- expand.grid(a=c(2,4), vB=c(4,6,8), t=c(8,10,12))
+casos$d0 <- 0.5*casos$a*casos$t^2 - casos$vB*casos$t
+casos <- casos[casos$d0 > 20, ]
+caso <- casos[sample(seq_len(nrow(casos)), 1), ]
+a <- caso$a
+vB <- caso$vB
+t <- caso$t
+d0 <- caso$d0
 x_encontro <- 0.5*a*t^2
 @
 \usepackage[utf8]{inputenc}
