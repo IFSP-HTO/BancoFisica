@@ -1,0 +1,25 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Sobre o princípio da incerteza de Heisenberg, assinale a alternativa correta.
+
+\begin{answerlist}
+  \item Ele afirma apenas que os instrumentos de medida atuais são pouco precisos.
+  \item É possível conhecer simultaneamente posição e quantidade de movimento com precisão arbitrária, desde que o experimento seja repetido muitas vezes.
+  \item Quanto mais precisamente se determina a posição de uma partícula, maior é a incerteza associada à sua quantidade de movimento, e vice-versa.
+  \item O princípio se aplica somente a corpos macroscópicos.
+  \item O princípio demonstra que uma partícula não possui energia.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+O princípio da incerteza estabelece um limite intrínseco à determinação simultânea de pares de grandezas conjugadas, como posição e quantidade de movimento. Não se trata apenas de defeito ou limitação tecnológica do instrumento de medida.
+
+Alternativa correta: \textbf{C}.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{00100}
+%% \exname{Q99QuizPrincipioIncerteza}
+%% \exsection{Fisica moderna; Mecanica quantica; Principio da incerteza; Conceitual}

@@ -1,0 +1,33 @@
+<<echo=FALSE, results=hide>>=
+v6 <- sample(c(2,3,4,5,6,8),1)
+v <- v6*1e6
+h <- 6.6e-34
+me <- 9.1e-31
+lambda_nm <- h/(me*v)*1e9
+fmt <- function(x,d=3) formatC(x,format="f",digits=d,decimal.mark=",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Um elétron de massa $9,1\times10^{-31}\,\mathrm{kg}$ move-se com velocidade $\Sexpr{v6}\times10^6\,\mathrm{m/s}$. Use $h=6,6\times10^{-34}\,\mathrm{J\,s}$.
+
+Determine o comprimento de onda de De Broglie associado ao elétron, em nanômetros.
+\end{question}
+
+\begin{solution}
+Pela hipótese de De Broglie,
+\[
+\lambda=\frac{h}{p}=\frac{h}{mv}.
+\]
+Logo,
+\[
+\lambda=\frac{6,6\times10^{-34}}{(9,1\times10^{-31})(\Sexpr{v6}\times10^6)}=\Sexpr{fmt(lambda_nm,3)}\,\mathrm{nm}.
+\]
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{round(lambda_nm,3)}}
+%% \extol{0.003}
+%% \exname{Q97NumDeBroglieEletron}
+%% \exsection{Fisica moderna; De Broglie; Ondas de materia}

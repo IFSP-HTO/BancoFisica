@@ -1,0 +1,49 @@
+<<echo=FALSE, results=hide>>=
+phi <- sample(c(2.0,2.5,3.0,3.5,4.0), 1)
+K <- sample(c(0.5,1.0,1.5,2.0,2.5), 1)
+E <- phi + K
+h_ev <- 4.14e-15
+f14 <- E/h_ev/1e14
+Vstop <- K
+fmt <- function(x,d=2) formatC(x,format="f",digits=d,decimal.mark=",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Fótons de frequência $\Sexpr{fmt(f14,2)}\times10^{14}\,\mathrm{Hz}$ incidem sobre um metal cuja função trabalho é $\Sexpr{fmt(phi,1)}\,\mathrm{eV}$. Use $h=4,14\times10^{-15}\,\mathrm{eV\,s}$.
+
+Determine:
+\begin{answerlist}
+  \item a energia dos fótons, em eV;
+  \item a energia cinética máxima dos fotoelétrons, em eV;
+  \item o módulo do potencial de corte necessário para deter os elétrons mais energéticos, em volts.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+A energia do fóton é
+\[
+E=hf=\Sexpr{fmt(E,2)}\,\mathrm{eV}.
+\]
+Pela equação de Einstein para o efeito fotoelétrico,
+\[
+K_{\max}=E-\phi=\Sexpr{fmt(K,2)}\,\mathrm{eV}.
+\]
+Como $K_{\max}=eV_{\rm corte}$, quando $K$ é expresso em eV o valor numérico do potencial de corte em volts é o mesmo:
+\[
+V_{\rm corte}=\Sexpr{fmt(Vstop,2)}\,\mathrm{V}.
+\]
+\begin{answerlist}
+  \item $\Sexpr{fmt(E,2)}\,\mathrm{eV}$
+  \item $\Sexpr{fmt(K,2)}\,\mathrm{eV}$
+  \item $\Sexpr{fmt(Vstop,2)}\,\mathrm{V}$
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exclozetype{num|num|num}
+%% \exsolution{\Sexpr{round(E,2)}|\Sexpr{round(K,2)}|\Sexpr{round(Vstop,2)}}
+%% \extol{0.04|0.04|0.04}
+%% \exname{Q93ClozeFotoeletricoEnergiaPotencial}
+%% \exsection{Fisica moderna; Efeito fotoeletrico; Energia do foton; Potencial de corte}

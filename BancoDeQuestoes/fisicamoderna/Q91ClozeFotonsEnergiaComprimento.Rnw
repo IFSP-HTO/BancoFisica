@@ -1,0 +1,43 @@
+<<echo=FALSE, results=hide>>=
+lambda_nm <- sample(c(250, 300, 350, 400, 500, 600, 700), 1)
+c0 <- 3.0e8
+h <- 6.6e-34
+eV <- 1.6e-19
+f14 <- c0/(lambda_nm*1e-9)/1e14
+E_eV <- h*c0/(lambda_nm*1e-9)/eV
+fmt <- function(x,d=2) formatC(x,format="f",digits=d,decimal.mark=",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Uma radiação eletromagnética monocromática tem comprimento de onda $\Sexpr{lambda_nm}\,\mathrm{nm}$. Adote $c=3,0\times10^8\,\mathrm{m/s}$, $h=6,6\times10^{-34}\,\mathrm{J\,s}$ e $1\,\mathrm{eV}=1,6\times10^{-19}\,\mathrm{J}$.
+
+Determine:
+\begin{answerlist}
+  \item a frequência da radiação, em unidades de $10^{14}\,\mathrm{Hz}$;
+  \item a energia de cada fóton, em elétrons-volt.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+Da relação $c=\lambda f$,
+\[
+f=\frac{c}{\lambda}=\Sexpr{fmt(f14,2)}\times10^{14}\,\mathrm{Hz}.
+\]
+A energia de um fóton é
+\[
+E=hf=\Sexpr{fmt(E_eV,2)}\,\mathrm{eV}.
+\]
+\begin{answerlist}
+  \item $\Sexpr{fmt(f14,2)}$
+  \item $\Sexpr{fmt(E_eV,2)}\,\mathrm{eV}$
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{round(f14,2)}|\Sexpr{round(E_eV,2)}}
+%% \extol{0.03|0.03}
+%% \exname{Q91ClozeFotonsEnergiaComprimento}
+%% \exsection{Fisica moderna; Fotons; Quantizacao da energia}

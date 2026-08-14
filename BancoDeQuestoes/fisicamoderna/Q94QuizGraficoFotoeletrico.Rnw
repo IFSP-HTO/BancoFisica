@@ -1,0 +1,31 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Para um mesmo metal, mede-se a energia cinética máxima $K_{\max}$ dos fotoelétrons enquanto se varia a frequência $f$ da luz incidente. Para frequências acima da frequência de corte, o gráfico $K_{\max}\times f$ é uma reta.
+
+Qual interpretação física está correta?
+
+\begin{answerlist}
+  \item A inclinação da reta é a função trabalho e o intercepto no eixo $f$ é a constante de Planck.
+  \item A inclinação da reta é a constante de Planck e o intercepto no eixo $f$ fornece a frequência de corte.
+  \item A inclinação depende apenas da intensidade da luz incidente.
+  \item O intercepto no eixo $K_{\max}$ é positivo e igual à função trabalho.
+  \item A reta deve passar pela origem para qualquer metal.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+A equação do efeito fotoelétrico é
+\[
+K_{\max}=hf-\phi.
+\]
+Logo, no gráfico $K_{\max}\times f$, o coeficiente angular é $h$. A condição $K_{\max}=0$ ocorre em $f=f_0=\phi/h$, portanto o intercepto com o eixo das frequências fornece a frequência de corte. O intercepto vertical da extensão da reta é $-\phi$.
+
+Alternativa correta: \textbf{B}.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{01000}
+%% \exname{Q94QuizGraficoFotoeletrico}
+%% \exsection{Fisica moderna; Efeito fotoeletrico; Graficos; Constante de Planck}
