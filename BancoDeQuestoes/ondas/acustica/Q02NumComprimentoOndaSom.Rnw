@@ -26,6 +26,7 @@ Portanto,
 \[
 \lambda=\frac{v}{f}=\frac{340}{\Sexpr{f}}=\Sexpr{fmt(lambda)}\,\mathrm{m}.
 \]
+Esse valor corresponde à distância entre duas regiões consecutivas da onda que estão na mesma fase, por exemplo, entre duas compressões sucessivas do ar.
 
 \end{solution}
 

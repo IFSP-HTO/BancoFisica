@@ -5,29 +5,43 @@ f <- sample(seq(from=20,to=100,by=10),1)
 d <- sample(seq(from=1000,to=3600,by=40),1)
 conda <- sample(seq(from=17,to=40,by=2),1)
 
-t1 <- round(d/340,digits=1)
-t1
-t2 <- round(d/(conda*f),digits=1)
-t2
-
-resp <- t1+t2
-
+v_fio <- conda*f
+t_ar <- d/340
+t_fio <- d/v_fio
+resp <- round(t_ar+t_fio,digits=1)
 @
 \usepackage[utf8]{inputenc}
 \begin{question}
 
-(FUVEST-adaptado) (Fuvest-SP) Uma fonte emite ondas sonoras de \Sexpr{f} Hz. A uma distância de \Sexpr{d} m da fonte, está instalado um aparelho que registra a chegada das ondas através do ar e as remete de volta através de um fio metálico retilíneo. O comprimento dessas ondas no fio é \Sexpr{conda} m. Qual o tempo de ida e volta das ondas em segundos? Considere a velocidade do som no ar igual a 340 m/s e arredonde sua resposta final para uma casa decimal.
+(FUVEST-adaptado) Uma fonte emite ondas sonoras de \Sexpr{f} Hz. A uma distância de \Sexpr{d} m da fonte, está instalado um aparelho que registra a chegada das ondas através do ar e as remete de volta através de um fio metálico retilíneo. O comprimento dessas ondas no fio é \Sexpr{conda} m. Qual o tempo de ida e volta das ondas em segundos? Considere a velocidade do som no ar igual a 340 m/s e arredonde sua resposta final para uma casa decimal.
 
 \end{question}
 
 \begin{solution}
-%% SOLUTION
-\Sexpr{resp} segundos
+
+Na ida pelo ar, a onda percorre a distância $d$ com velocidade $340\,\mathrm{m/s}$, portanto
+\[
+t_{\mathrm{ar}}=\frac{d}{340}=\frac{\Sexpr{d}}{340}\,\mathrm{s}.
+\]
+No fio, a velocidade da onda é obtida de $v=\lambda f$:
+\[
+v_{\mathrm{fio}}=\Sexpr{conda}\cdot\Sexpr{f}=\Sexpr{v_fio}\,\mathrm{m/s}.
+\]
+O tempo de retorno é então
+\[
+t_{\mathrm{fio}}=\frac{d}{v_{\mathrm{fio}}}.
+\]
+Somando os dois trechos e arredondando apenas o resultado final para uma casa decimal,
+\[
+t=t_{\mathrm{ar}}+t_{\mathrm{fio}}=\Sexpr{resp}\,\mathrm{s}.
+\]
 
 \end{solution}
 
 %% META-INFORMATION
 %% \extype{num}
 %% \exsolution{\Sexpr{resp}}
+%% \extol{0.1}
 %% \exname{Q03Ondas}
+%% \exsection{Ondulatoria; Propagacao de ondas; Som}
 %% \exusepackage[utf8]{inputenc}

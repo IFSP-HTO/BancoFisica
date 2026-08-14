@@ -5,34 +5,33 @@
 questions <- character(7)
 solutions <- logical(7)
 explanations <- character(7)
-aleat = sample(1:7)
+aleat <- sample(1:7)
 
-  questions[aleat[1]] <- "São exemplos de ondas eletromagnéticas muito frequentes no cotidiano: ondas de rádio, sonoras, micro-ondas e raios X."
-  solutions[aleat[1]] <- FALSE
-  explanations[aleat[1]] <- "Falso! Onda sonora é mecânica"
-  questions[aleat[2]] <- "A difração ocorre apenas com ondas sonoras."
-  solutions[aleat[2]] <- FALSE
-  explanations[aleat[2]] <- "Falso. Ocorre com todas as ondas!"
-  questions[aleat[3]] <- "Em uma onda periódica, o comprimento de onda é a menor distância entre os pontos de máximo e mínimo."
-  solutions[aleat[3]] <- FALSE
-  explanations[aleat[3]] <- "Falso. Maior distância entre picos ou entre vales."
-  questions[aleat[4]] <- "Uma onda mecânica precisa de um meio para se propagar"
-  solutions[aleat[4]] <- TRUE
-  explanations[aleat[4]] <- ""
-  questions[aleat[5]] <- "Refração corresponde a mudança de meio de propagação de onda. A frequência da onda não se altera."
-  solutions[aleat[5]] <- TRUE
-  explanations[aleat[5]] <- ""
-  questions[aleat[6]] <- "Na difração, as ondas se espalham ao passar por um orifício/obstáculo"
-  solutions[aleat[6]] <- TRUE
-  explanations[aleat[6]] <- ""
-  questions[aleat[7]] <- "A interferência ocorre apenas com ondas eletromagnéticas."
-  solutions[aleat[7]] <- FALSE
-  explanations[aleat[7]] <- ""
+questions[aleat[1]] <- "São exemplos de ondas eletromagnéticas muito frequentes no cotidiano: ondas de rádio, ondas sonoras, micro-ondas e raios X."
+solutions[aleat[1]] <- FALSE
+explanations[aleat[1]] <- "Falso. Ondas sonoras são mecânicas; ondas de rádio, micro-ondas e raios X são eletromagnéticas."
+questions[aleat[2]] <- "A difração ocorre apenas com ondas sonoras."
+solutions[aleat[2]] <- FALSE
+explanations[aleat[2]] <- "Falso. A difração é um fenômeno ondulatório e pode ocorrer com ondas mecânicas e eletromagnéticas."
+questions[aleat[3]] <- "Em uma onda periódica, o comprimento de onda é a menor distância entre um ponto de máximo e um ponto de mínimo."
+solutions[aleat[3]] <- FALSE
+explanations[aleat[3]] <- "Falso. O comprimento de onda é a menor distância entre dois pontos consecutivos que estão na mesma fase, por exemplo entre duas cristas sucessivas."
+questions[aleat[4]] <- "Uma onda mecânica precisa de um meio para se propagar."
+solutions[aleat[4]] <- TRUE
+explanations[aleat[4]] <- "Verdadeiro. Ondas mecânicas dependem das propriedades de um meio material para transmitir a perturbação."
+questions[aleat[5]] <- "Na refração de uma onda ao passar de um meio homogêneo para outro, a frequência não se altera."
+solutions[aleat[5]] <- TRUE
+explanations[aleat[5]] <- "Verdadeiro. A frequência é determinada pela fonte; na mudança de meio, a velocidade e o comprimento de onda podem mudar."
+questions[aleat[6]] <- "Na difração, as ondas podem se espalhar ao atravessar uma abertura ou contornar um obstáculo."
+solutions[aleat[6]] <- TRUE
+explanations[aleat[6]] <- "Verdadeiro. O efeito é mais perceptível quando as dimensões da abertura ou do obstáculo são comparáveis ao comprimento de onda."
+questions[aleat[7]] <- "A interferência ocorre apenas com ondas eletromagnéticas."
+solutions[aleat[7]] <- FALSE
+explanations[aleat[7]] <- "Falso. A interferência resulta da superposição de ondas e ocorre tanto com ondas mecânicas quanto com ondas eletromagnéticas."
 @
+\usepackage[utf8]{inputenc}
 
 \begin{question}
-%% Enter the question here, you can access R variables with \Sexpr{},
-%% e.g., \Sexpr{solutions[1]} will return the solution of the first statement.
 Com respeito aos conceitos básicos da ondulatória, assinale as afirmativas verdadeiras:
 
 <<echo=FALSE, results=hide, results=tex>>=
@@ -42,7 +41,6 @@ answerlist(questions)
 \end{question}
 
 \begin{solution}
-%% Supply a solution here!
 <<echo=FALSE, results=hide, results=tex>>=
 answerlist(
   paste("\\textbf{", ifelse(solutions, "Verdadeiro", "Falso"), "}", sep = ""),
@@ -54,3 +52,5 @@ answerlist(
 %% \extype{mchoice}
 %% \exsolution{\Sexpr{mchoice2string(solutions)}}
 %% \exname{Q02QuizOndas}
+%% \exsection{Ondulatoria; Conceitos; Fenomenos ondulatorios}
+%% \exusepackage[utf8]{inputenc}

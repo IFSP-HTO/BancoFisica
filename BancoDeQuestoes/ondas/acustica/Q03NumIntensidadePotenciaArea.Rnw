@@ -26,6 +26,7 @@ Logo,
 \[
 I=\frac{\Sexpr{fmt(P,2)}}{\Sexpr{A}}=\Sexpr{fmt(I,3)}\,\mathrm{W/m^2}.
 \]
+A unidade $\mathrm{W/m^2}$ expressa justamente quanta potência atravessa, em média, cada metro quadrado da superfície considerada.
 
 \end{solution}
 

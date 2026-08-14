@@ -5,39 +5,40 @@
 questions <- character(10)
 solutions <- logical(10)
 explanations <- character(10)
-aleat = sample(1:10)
+aleat <- sample(1:10)
 
-  questions[aleat[1]] <- "A propagação de ondas envolve necessariamente o transporte de matéria e energia."
-  solutions[aleat[1]] <- FALSE
-  explanations[aleat[1]] <- "falso. Não transporta matéria"
-  questions[aleat[2]] <- "A propagação de ondas envolve necessariamente o transporte de energia."
-  solutions[aleat[2]] <- TRUE
-  explanations[aleat[2]] <- ""
-  questions[aleat[3]] <- "As ondas classificadas como longitudinais possuem vibração paralela à propagação. Um exemplo desse tipo de onda é o som."
-  solutions[aleat[3]] <- TRUE
-  explanations[aleat[3]] <- ""
-  questions[aleat[4]] <- "A vibração de uma corda no violão é uma onda longitudinal"
-  solutions[aleat[4]] <- FALSE
-  explanations[aleat[4]] <- "Onda transversal"
-  questions[aleat[5]] <- "O som é uma onda mecânica, longitudinal e tridimensional."
-  solutions[aleat[5]] <- TRUE
-  explanations[aleat[5]] <- ""
-  questions[aleat[6]] <- "Todas as ondas eletromagnéticas são transversais."
-  solutions[aleat[6]] <- TRUE
-  explanations[aleat[6]] <- ""
-  questions[aleat[7]] <- "A frequência representa o número de ondas geradas dentro de um intervalo de tempo específico. A unidade Hz (Hertz) significa ondas geradas por segundo."
-  solutions[aleat[7]] <- TRUE
-  explanations[aleat[7]] <- ""
-  questions[aleat[8]] <- "O ultra-som é uma onda eletromagnética."
-  solutions[aleat[8]] <- FALSE
-  explanations[aleat[8]] <- "Falso. Ultra-som é uma onda mecânica"
-  questions[aleat[9]] <- "O raio-x é uma onda mecânica"
-  solutions[aleat[9]] <- FALSE
-  explanations[aleat[9]] <- "Falso. Raio-x é uma onda eletromagnética."
-  questions[aleat[10]] <- "Se uma nave espacial explode no espaço, é impossível ouvir som, já que o mesmo não se propaga no vácuo."
-  solutions[aleat[10]] <- TRUE
-  explanations[aleat[10]] <- ""
+questions[aleat[1]] <- "A propagação de ondas envolve necessariamente o transporte de matéria e energia."
+solutions[aleat[1]] <- FALSE
+explanations[aleat[1]] <- "Falso. A onda transporta energia, mas não produz transporte líquido de matéria do meio."
+questions[aleat[2]] <- "A propagação de ondas envolve necessariamente o transporte de energia."
+solutions[aleat[2]] <- TRUE
+explanations[aleat[2]] <- "Verdadeiro. A perturbação pode transferir energia de uma região para outra."
+questions[aleat[3]] <- "As ondas classificadas como longitudinais possuem vibração paralela à propagação. Um exemplo desse tipo de onda é o som."
+solutions[aleat[3]] <- TRUE
+explanations[aleat[3]] <- "Verdadeiro. No ar, as partículas oscilam aproximadamente na mesma direção em que a onda sonora se propaga."
+questions[aleat[4]] <- "A vibração de uma corda no violão é uma onda longitudinal."
+solutions[aleat[4]] <- FALSE
+explanations[aleat[4]] <- "Falso. Na idealização usual da corda, o deslocamento é perpendicular à direção de propagação, caracterizando uma onda transversal."
+questions[aleat[5]] <- "O som é uma onda mecânica, longitudinal e tridimensional."
+solutions[aleat[5]] <- TRUE
+explanations[aleat[5]] <- "Verdadeiro para o som no ar: ele necessita de meio material, é longitudinal e pode se propagar em todas as direções do espaço."
+questions[aleat[6]] <- "Todas as ondas eletromagnéticas são transversais."
+solutions[aleat[6]] <- TRUE
+explanations[aleat[6]] <- "Verdadeiro no tratamento de ondas eletromagnéticas propagando-se livremente: os campos oscilam transversalmente à direção de propagação."
+questions[aleat[7]] <- "A frequência representa o número de oscilações completas em um intervalo de tempo. A unidade Hz (hertz) corresponde a oscilações por segundo."
+solutions[aleat[7]] <- TRUE
+explanations[aleat[7]] <- "Verdadeiro. Um hertz equivale a um ciclo por segundo."
+questions[aleat[8]] <- "O ultrassom é uma onda eletromagnética."
+solutions[aleat[8]] <- FALSE
+explanations[aleat[8]] <- "Falso. Ultrassom é uma onda sonora de alta frequência e, portanto, uma onda mecânica."
+questions[aleat[9]] <- "O raio X é uma onda mecânica."
+solutions[aleat[9]] <- FALSE
+explanations[aleat[9]] <- "Falso. Raios X são ondas eletromagnéticas."
+questions[aleat[10]] <- "Se uma nave espacial explode no espaço, é impossível ouvir diretamente o som da explosão através do vácuo."
+solutions[aleat[10]] <- TRUE
+explanations[aleat[10]] <- "Verdadeiro. Ondas sonoras precisam de um meio material para se propagar e não atravessam o vácuo."
 @
+\usepackage[utf8]{inputenc}
 
 \begin{question}
 
@@ -61,4 +62,5 @@ answerlist(
 %% \extype{mchoice}
 %% \exsolution{\Sexpr{mchoice2string(solutions)}}
 %% \exname{Q01QuizOndas}
-
+%% \exsection{Ondulatoria; Conceitos; Ondas; Som}
+%% \exusepackage[utf8]{inputenc}
