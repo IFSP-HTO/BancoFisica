@@ -1,0 +1,38 @@
+<<echo=FALSE, results=hide>>=
+casos <- data.frame(P=c(0.12,0.20,0.30,0.48), A=c(3,4,5,6))
+i <- sample(seq_len(nrow(casos)),1)
+P <- casos$P[i]
+A <- casos$A[i]
+I <- P/A
+fmt <- function(z,d=3) formatC(z,format="f",digits=d,decimal.mark=",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Uma onda sonora transfere potência média de $P=\Sexpr{fmt(P,2)}\,\mathrm{W}$ através de uma superfície de área $A=\Sexpr{A}\,\mathrm{m^2}$, perpendicular à direção média de propagação.
+
+Determine a intensidade sonora média nessa superfície, em $\mathrm{W/m^2}$.
+
+\end{question}
+
+\begin{solution}
+
+A intensidade é a potência média transmitida por unidade de área:
+\[
+I=\frac{P}{A}.
+\]
+Logo,
+\[
+I=\frac{\Sexpr{fmt(P,2)}}{\Sexpr{A}}=\Sexpr{fmt(I,3)}\,\mathrm{W/m^2}.
+\]
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{round(I,4)}}
+%% \extol{0.0005}
+%% \exname{Q03NumIntensidadePotenciaArea}
+%% \exsection{Ondulatoria; Acustica; Intensidade sonora; Potencia}
+%% \exusepackage[utf8]{inputenc}
