@@ -1,0 +1,69 @@
+<<echo=FALSE, results=hide>>=
+## Inspirada na ênfase de Gaspar em forças dissipativas no capítulo 16.
+cenarios <- data.frame(
+  m=c(2,3,4,5),
+  h=c(5,4,3,2),
+  v=c(8,6,5,4)
+)
+i <- sample(seq_len(nrow(cenarios)),1)
+m <- cenarios$m[i]
+h <- cenarios$h[i]
+v <- cenarios$v[i]
+g <- 10
+Ei <- m*g*h
+Ef <- 0.5*m*v^2
+Ediss <- Ei-Ef
+Wat <- -Ediss
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Um bloco de massa $\Sexpr{m}\,\mathrm{kg}$ parte do repouso do alto de uma rampa, a $\Sexpr{h}\,\mathrm{m}$ acima do nível de referência. Ao chegar à base, sua velocidade é $\Sexpr{v}\,\mathrm{m/s}$. Adote $g=10\,\mathrm{m/s^2}$. Considere que a única força dissipativa relevante é o atrito.
+
+Determine:
+\begin{answerlist}
+  \item a energia potencial gravitacional inicial, em joules;
+  \item a energia cinética na base da rampa, em joules;
+  \item a energia mecânica dissipada durante a descida, em joules;
+  \item o trabalho realizado pela força de atrito, em joules.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Inicialmente,
+\[
+E_i=mgh=\Sexpr{m}\cdot10\cdot\Sexpr{h}=\Sexpr{Ei}\,\mathrm{J}.
+\]
+Na base,
+\[
+E_f=E_c=\frac{mv^2}{2}=\frac{\Sexpr{m}\cdot\Sexpr{v}^2}{2}=\Sexpr{Ef}\,\mathrm{J}.
+\]
+A diferença entre a energia mecânica inicial e a final foi dissipada:
+\[
+E_{diss}=E_i-E_f=\Sexpr{Ediss}\,\mathrm{J}.
+\]
+Como o atrito retira energia mecânica do bloco, seu trabalho é negativo:
+\[
+W_{at}=-E_{diss}=\Sexpr{Wat}\,\mathrm{J}.
+\]
+
+\begin{answerlist}
+  \item $\Sexpr{Ei}\,\mathrm{J}$
+  \item $\Sexpr{Ef}\,\mathrm{J}$
+  \item $\Sexpr{Ediss}\,\mathrm{J}$
+  \item $\Sexpr{Wat}\,\mathrm{J}$
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte de inspiração: Alberto Gaspar, Compreendendo a Física, v. 1, cap. 16, seção sobre trabalho de forças dissipativas. Enunciado e dados próprios.
+%% \extype{cloze}
+%% \exclozetype{num|num|num|num}
+%% \exsolution{\Sexpr{Ei}|\Sexpr{Ef}|\Sexpr{Ediss}|\Sexpr{Wat}}
+%% \extol{0.1|0.1|0.1|0.1}
+%% \exname{Q104ClozeEnergiaDissipadaAtrito}
+%% \exsection{Mecanica; Energia; Conservacao de energia; Atrito; Energia dissipada}

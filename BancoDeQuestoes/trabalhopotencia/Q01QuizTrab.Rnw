@@ -7,21 +7,25 @@ solutions <- logical(5)
 explanations <- character(5)
 aleat = sample(1:5)
 
-  questions[aleat[1]] <- "A força de resistência do ar não realiza trabalho sobre um corpo em queda."
-  solutions[aleat[1]] <- FALSE
-  explanations[aleat[1]] <- "falso. Realiza um trabalho resistente"
-  questions[aleat[2]] <- "A força gravitacional não realiza trabalho sobre um corpo em queda."
-  solutions[aleat[2]] <- FALSE
-  explanations[aleat[2]] <- "falso. Realiza um trabalho motor durante a queda."
-  questions[aleat[3]] <- "20 W (watts) corresponde a 20 joules de energia transformados de uma forma em outra em 20 segundos."
-  solutions[aleat[3]] <- FALSE
-  explanations[aleat[3]] <- "Falso. Corresponde a 20 Joules de energia transformados durante 1 segundo"
-  questions[aleat[4]] <- "Um trabalho motor indica que a força tem o mesmo sentido do deslocamento."
-  solutions[aleat[4]] <- TRUE
-  explanations[aleat[4]] <- ""
-  questions[aleat[5]] <- "A força realizada por uma pessoa para manter uma caixa em repouso não realiza trabalho"
-  solutions[aleat[5]] <- TRUE
-  explanations[aleat[5]] <- ""
+questions[aleat[1]] <- "A força de resistência do ar não realiza trabalho sobre um corpo em queda."
+solutions[aleat[1]] <- FALSE
+explanations[aleat[1]] <- "Falso. A resistência do ar realiza trabalho resistente, pois sua componente na direção do movimento tem sentido oposto ao deslocamento."
+
+questions[aleat[2]] <- "A força gravitacional não realiza trabalho sobre um corpo em queda."
+solutions[aleat[2]] <- FALSE
+explanations[aleat[2]] <- "Falso. Durante a queda, a força gravitacional realiza trabalho motor."
+
+questions[aleat[3]] <- "20 W (watts) corresponde a 20 joules de energia transformados de uma forma em outra em 20 segundos."
+solutions[aleat[3]] <- FALSE
+explanations[aleat[3]] <- "Falso. Uma potência de 20 W corresponde a 20 J de energia transformados a cada segundo."
+
+questions[aleat[4]] <- "Um trabalho motor indica que a força possui uma componente no mesmo sentido do deslocamento."
+solutions[aleat[4]] <- TRUE
+explanations[aleat[4]] <- "Verdadeiro. Para o trabalho ser positivo, o ângulo entre a força e o deslocamento deve ser menor que 90 graus."
+
+questions[aleat[5]] <- "A força exercida por uma pessoa para manter uma caixa em repouso não realiza trabalho sobre a caixa."
+solutions[aleat[5]] <- TRUE
+explanations[aleat[5]] <- "Verdadeiro. Sem deslocamento, o trabalho mecânico dessa força sobre a caixa é nulo."
 
 @
 
@@ -47,4 +51,3 @@ answerlist(
 %% \extype{mchoice}
 %% \exsolution{\Sexpr{mchoice2string(solutions)}}
 %% \exname{Q01QuizTrab}
-

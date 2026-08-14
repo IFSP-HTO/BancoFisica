@@ -1,0 +1,67 @@
+<<echo=FALSE, results=hide>>=
+## Conservação de energia: mola -> energia cinética -> energia potencial gravitacional.
+cenarios <- data.frame(
+  m=c(0.5,0.8,0.4,0.5),
+  k=c(200,500,160,200),
+  x=c(0.30,0.20,0.25,0.20)
+)
+i <- sample(seq_len(nrow(cenarios)),1)
+m <- cenarios$m[i]
+k <- cenarios$k[i]
+x <- cenarios$x[i]
+x_cm <- round(100*x)
+g <- 10
+E <- 0.5*k*x^2
+v <- sqrt(2*E/m)
+h <- E/(m*g)
+fmt <- function(z,d=2) formatC(z,format="f",digits=d,decimal.mark=",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Um bloco de massa $\Sexpr{fmt(m,2)}\,\mathrm{kg}$ é colocado diante de uma mola de constante elástica $k=\Sexpr{k}\,\mathrm{N/m}$, comprimida em $\Sexpr{x_cm}\,\mathrm{cm}$. Ao ser liberado, o bloco se move sobre uma superfície horizontal sem atrito. Depois de perder contato com a mola, sobe uma rampa também sem atrito até parar momentaneamente. Adote $g=10\,\mathrm{m/s^2}$.
+
+Determine:
+\begin{answerlist}
+  \item a energia potencial elástica inicialmente armazenada na mola, em joules;
+  \item a velocidade do bloco quando a mola retorna ao comprimento natural, em m/s;
+  \item a altura máxima atingida pelo bloco na rampa, em metros.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+A energia inicialmente armazenada é
+\[
+E_{pel}=\frac{kx^2}{2}=\Sexpr{fmt(E,2)}\,\mathrm{J}.
+\]
+Sem atrito, a energia mecânica se conserva. Quando a mola volta ao comprimento natural, essa energia está na forma cinética:
+\[
+\frac{mv^2}{2}=E_{pel}
+\quad\Rightarrow\quad
+v=\Sexpr{fmt(v,2)}\,\mathrm{m/s}.
+\]
+No ponto mais alto, a velocidade é nula e a energia está na forma potencial gravitacional:
+\[
+mgh=E_{pel}
+\quad\Rightarrow\quad
+h=\Sexpr{fmt(h,2)}\,\mathrm{m}.
+\]
+
+\begin{answerlist}
+  \item $\Sexpr{fmt(E,2)}\,\mathrm{J}$
+  \item $\Sexpr{fmt(v,2)}\,\mathrm{m/s}$
+  \item $\Sexpr{fmt(h,2)}\,\mathrm{m}$
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exclozetype{num|num|num}
+%% \exsolution{\Sexpr{round(E,2)}|\Sexpr{round(v,2)}|\Sexpr{round(h,2)}}
+%% \extol{0.02|0.02|0.02}
+%% \exname{Q103ClozeMolaRampaEnergia}
+%% \exsection{Mecanica; Energia; Energia potencial elastica; Energia cinetica; Energia potencial gravitacional; Conservacao de energia}

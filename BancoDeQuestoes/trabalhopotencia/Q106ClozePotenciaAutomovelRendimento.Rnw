@@ -1,0 +1,59 @@
+<<echo=FALSE, results=hide>>=
+## Inspirada em exercício de potência e rendimento de automóvel do capítulo 14 de Gaspar.
+cenarios <- data.frame(
+  R=c(500,600,800,400),
+  v=c(30,20,25,30),
+  eta=c(20,30,40,25)
+)
+i <- sample(seq_len(nrow(cenarios)),1)
+R <- cenarios$R[i]
+v <- cenarios$v[i]
+eta_pct <- cenarios$eta[i]
+eta <- eta_pct/100
+Pu_W <- R*v
+Pt_W <- Pu_W/eta
+Pu_kW <- Pu_W/1000
+Pt_kW <- Pt_W/1000
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Um automóvel se desloca em uma estrada horizontal com velocidade constante de $\Sexpr{v}\,\mathrm{m/s}$. A resultante das forças de resistência ao movimento tem módulo $\Sexpr{R}\,\mathrm{N}$. O rendimento do conjunto motor-transmissão é $\Sexpr{eta_pct}\%$.
+
+Determine:
+\begin{answerlist}
+  \item a potência mecânica útil desenvolvida pelo motor, em kW;
+  \item a potência total consumida pelo conjunto, em kW.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Como a velocidade é constante, a força motriz equilibra as forças de resistência. A potência útil é
+\[
+P_u=Fv=\Sexpr{R}\cdot\Sexpr{v}=\Sexpr{Pu_W}\,\mathrm{W}=\Sexpr{Pu_kW}\,\mathrm{kW}.
+\]
+Pelo rendimento,
+\[
+\eta=\frac{P_u}{P_t}
+\quad\Rightarrow\quad
+P_t=\frac{P_u}{\eta}=\Sexpr{Pt_kW}\,\mathrm{kW}.
+\]
+
+\begin{answerlist}
+  \item $\Sexpr{Pu_kW}\,\mathrm{kW}$
+  \item $\Sexpr{Pt_kW}\,\mathrm{kW}$
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte de inspiração: Alberto Gaspar, Compreendendo a Física, v. 1, cap. 14, exercício sobre potência e rendimento de automóvel. Enunciado e dados adaptados.
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{Pu_kW}|\Sexpr{Pt_kW}}
+%% \extol{0.1|0.1}
+%% \exname{Q106ClozePotenciaAutomovelRendimento}
+%% \exsection{Mecanica; Trabalho e potencia; Potencia; Rendimento; Automovel}

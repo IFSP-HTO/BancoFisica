@@ -1,0 +1,51 @@
+<<echo=FALSE, results=hide>>=
+## Treino direto de energia potencial gravitacional e elástica.
+m <- sample(2:6,1)
+h <- sample(2:5,1)
+k <- sample(c(100,200,300,400,500),1)
+x_cm <- sample(c(10,20,30),1)
+x <- x_cm/100
+g <- 10
+Epg <- m*g*h
+Epel <- 0.5*k*x^2
+fmt <- function(z,d=1) formatC(z,format="f",digits=d,decimal.mark=",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Considere $g=10\,\mathrm{m/s^2}$.
+
+\begin{answerlist}
+  \item Uma mochila de massa $\Sexpr{m}\,\mathrm{kg}$ está sobre uma prateleira a $\Sexpr{h}\,\mathrm{m}$ do chão. Tomando o chão como nível de referência, determine sua energia potencial gravitacional, em joules.
+  \item Uma mola de constante elástica $k=\Sexpr{k}\,\mathrm{N/m}$ é comprimida em $\Sexpr{x_cm}\,\mathrm{cm}$. Determine a energia potencial elástica armazenada, em joules.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Para a mochila,
+\[
+E_{pg}=mgh=\Sexpr{m}\cdot10\cdot\Sexpr{h}=\Sexpr{Epg}\,\mathrm{J}.
+\]
+Para a mola, primeiro convertemos $\Sexpr{x_cm}\,\mathrm{cm}=\Sexpr{fmt(x,2)}\,\mathrm{m}$ e calculamos
+\[
+E_{pel}=\frac{kx^2}{2}=\frac{\Sexpr{k}(\Sexpr{fmt(x,2)})^2}{2}
+=\Sexpr{fmt(Epel,1)}\,\mathrm{J}.
+\]
+
+\begin{answerlist}
+  \item $\Sexpr{Epg}\,\mathrm{J}$
+  \item $\Sexpr{fmt(Epel,1)}\,\mathrm{J}$
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{Epg}|\Sexpr{round(Epel,1)}}
+%% \extol{0.1|0.1}
+%% \exname{Q102ClozeEnergiasPotenciais}
+%% \exsection{Mecanica; Energia; Energia potencial gravitacional; Energia potencial elastica}

@@ -1,0 +1,44 @@
+<<echo=FALSE, results=hide>>=
+## Trabalho como área sob o gráfico F x d.
+F0 <- sample(seq(10, 40, by=5), 1)
+a <- sample(2:5, 1)
+b <- a + sample(2:5, 1)
+Wret <- F0*a
+Wtri <- 0.5*F0*(b-a)
+W <- Wret + Wtri
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+O gráfico representa o módulo de uma força que atua na mesma direção e no mesmo sentido do deslocamento de um objeto. Entre $0$ e $\Sexpr{a}\,\mathrm{m}$, a força permanece constante e igual a $\Sexpr{F0}\,\mathrm{N}$. Em seguida, diminui uniformemente até atingir zero em $\Sexpr{b}\,\mathrm{m}$.
+
+<<echo=FALSE, fig=TRUE, width=5.5, height=3.6>>=
+plot(NA, xlim=c(0,b+1), ylim=c(0,F0*1.25), xlab="d (m)", ylab="F (N)", axes=FALSE)
+axis(1, at=c(0,a,b))
+axis(2, at=c(0,F0), las=1)
+box()
+lines(c(0,a,b), c(F0,F0,0), lwd=2)
+abline(v=a, lty=2)
+@
+
+Determine o trabalho realizado pela força no deslocamento de $0$ a $\Sexpr{b}\,\mathrm{m}$, em joules.
+
+\end{question}
+
+\begin{solution}
+
+O trabalho é numericamente igual à área sob o gráfico $F\times d$. Há um retângulo e um triângulo:
+\[
+W=\Sexpr{F0}\cdot\Sexpr{a}+\frac{\Sexpr{F0}(\Sexpr{b}-\Sexpr{a})}{2}
+=\Sexpr{W}\,\mathrm{J}.
+\]
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{W}}
+%% \extol{0.1}
+%% \exname{Q98ClozeGraficoTrabalho}
+%% \exsection{Mecanica; Trabalho e potencia; Grafico de forca; Trabalho de uma forca}
