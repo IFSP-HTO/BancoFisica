@@ -1,0 +1,37 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Duas pessoas de mesma massa sobem a mesma escada, partindo e chegando em repouso. A pessoa A leva 20 s para chegar ao topo, enquanto a pessoa B leva 12 s. Despreze perdas de energia.
+
+Assinale a alternativa correta.
+
+\begin{answerlist}
+  \item A pessoa A realiza maior trabalho e desenvolve maior potência.
+  \item A pessoa B realiza maior trabalho e desenvolve maior potência.
+  \item As duas realizam o mesmo trabalho, mas a pessoa B desenvolve maior potência média.
+  \item As duas realizam o mesmo trabalho e desenvolvem a mesma potência média.
+  \item A pessoa B realiza menor trabalho, pois leva menos tempo para subir.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Como as duas pessoas têm a mesma massa e vencem a mesma altura, a variação da energia potencial gravitacional é a mesma. Portanto, o trabalho necessário para elevá-las é o mesmo.
+
+A potência média é
+\[
+P=\frac{W}{\Delta t}.
+\]
+Para o mesmo trabalho, quem realiza a tarefa em menor tempo desenvolve maior potência média. Logo, a pessoa B desenvolve maior potência.
+
+Alternativa correta: \textbf{C}.
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{00100}
+%% \exname{Q100QuizMesmoTrabalhoPotencias}
+%% \exsection{Mecanica; Trabalho e potencia; Potencia; Conceitual}
