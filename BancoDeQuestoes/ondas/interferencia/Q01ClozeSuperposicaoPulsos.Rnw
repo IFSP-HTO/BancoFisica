@@ -1,0 +1,46 @@
+<<echo=FALSE, results=hide>>=
+A1 <- sample(c(2,3,4),1)
+A2 <- sample(c(1,2),1)
+while(A2 >= A1) A2 <- sample(c(1,2),1)
+res <- A1 - A2
+x <- seq(-2,2,length.out=400)
+tri <- function(x,a) ifelse(abs(x)<=1,a*(1-abs(x)),0)
+y1 <- tri(x,A1)
+y2 <- tri(x,-A2)
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Dois pulsos percorrem a mesma corda e, em certo instante, estão totalmente sobrepostos. O gráfico mostra separadamente os deslocamentos que cada pulso produziria nesse instante.
+
+<<fig=TRUE, height=4.2, width=6, echo=FALSE, eps=FALSE, results=hide>>=
+par(mar=c(4.2,4.2,0.8,0.8))
+plot(x,y1,type="l",lwd=2,xlab="x (m)",ylab="deslocamento (cm)",ylim=c(-3,5))
+lines(x,y2,lwd=2,lty=2)
+abline(h=0,lty=3)
+legend("topright",legend=c("pulso 1","pulso 2"),lty=c(1,2),lwd=2,bty="n")
+grid(nx=NULL,ny=NULL,lty=3)
+@
+
+No centro da sobreposição, determine o deslocamento resultante da corda, em centímetros.
+
+\end{question}
+
+\begin{solution}
+
+Pelo princípio da superposição, o deslocamento resultante em cada ponto é a soma algébrica dos deslocamentos produzidos pelos dois pulsos. No centro,
+\[
+y_R=\Sexpr{A1}+(-\Sexpr{A2})=\Sexpr{res}\,\mathrm{cm}.
+\]
+Como os pulsos têm sinais opostos, ocorre interferência parcialmente destrutiva nesse ponto.
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{res}}
+%% \extol{0.05}
+%% \exname{Q01ClozeSuperposicaoPulsos}
+%% \exsection{Ondulatoria; Interferencia; Superposicao}
+%% \exusepackage[utf8]{inputenc}

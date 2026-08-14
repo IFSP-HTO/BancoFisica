@@ -1,0 +1,48 @@
+<<echo=FALSE, results=hide>>=
+n <- sample(1:4,1)
+L <- 1
+x <- seq(0,L,length.out=500)
+y <- sin(n*pi*x/L)
+nos <- n+1
+antinos <- n
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+O gráfico representa um instantâneo de um modo normal em uma corda fixa nas duas extremidades. Os pontos que permanecem sempre em repouso são os nós; entre dois nós consecutivos há um antinó.
+
+<<fig=TRUE, height=3.8, width=6, echo=FALSE, eps=FALSE, results=hide>>=
+par(mar=c(3.8,2.0,0.8,0.8))
+plot(x,y,type="l",lwd=2,xlab="posição ao longo da corda",ylab="",yaxt="n",ylim=c(-1.2,1.2))
+abline(h=0,lty=3)
+points(seq(0,L,length.out=n+1),rep(0,n+1),pch=19)
+@
+
+Determine:
+\begin{answerlist}
+  \item o número total de nós, incluindo as extremidades;
+  \item o número de antinós.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+O padrão possui $\Sexpr{n}$ ventres (lóbulos). Cada ventre contém um antinó, portanto há $\Sexpr{antinos}$ antinó(s). As extremidades são nós e cada par de ventres vizinhos compartilha um nó, resultando em $\Sexpr{nos}$ nós no total.
+
+\begin{answerlist}
+  \item $\Sexpr{nos}$ nós;
+  \item $\Sexpr{antinos}$ antinó(s).
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{\Sexpr{nos}|\Sexpr{antinos}}
+%% \exclozetype{num|num}
+%% \extol{0.01|0.01}
+%% \exname{Q01ClozeNosAntinos}
+%% \exsection{Ondulatoria; Ondas estacionarias; Nos e antinos; Graficos}
+%% \exusepackage[utf8]{inputenc}

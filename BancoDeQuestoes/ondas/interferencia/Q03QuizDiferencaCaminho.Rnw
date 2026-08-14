@@ -1,0 +1,59 @@
+<<echo=FALSE, results=hide>>=
+mult <- sample(c(0,0.5,1,1.5,2),1)
+if(mult %% 1 == 0) {
+  correta <- "construtiva"
+} else {
+  correta <- "destrutiva"
+}
+alt <- c(
+  correta,
+  ifelse(correta=="construtiva","destrutiva","construtiva"),
+  "sem interferência",
+  "com frequência dobrada",
+  "com comprimento de onda nulo"
+)
+solutions <- c(TRUE,FALSE,FALSE,FALSE,FALSE)
+ord <- sample(seq_along(alt)); alt <- alt[ord]; solutions <- solutions[ord]
+mult_txt <- formatC(mult,format="f",digits=1,decimal.mark=",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Duas fontes coerentes emitem ondas em fase, com mesmo comprimento de onda $\lambda$. Em um ponto de observação, a diferença entre os caminhos percorridos é
+\[
+\Delta L=\Sexpr{mult_txt}\,\lambda.
+\]
+
+Nesse ponto, a interferência é predominantemente:
+
+<<echo=FALSE, results=tex>>=
+answerlist(alt)
+@
+
+\end{question}
+
+\begin{solution}
+
+Para fontes inicialmente em fase, ocorre interferência construtiva quando
+\[
+\Delta L=m\lambda,
+\]
+com $m$ inteiro, e destrutiva quando
+\[
+\Delta L=\left(m+\frac12\right)\lambda.
+\]
+Como nesta questão $\Delta L=\Sexpr{mult_txt}\lambda$, a interferência é \textbf{\Sexpr{correta}}.
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(solutions,paste0('\\textbf{',alt,'}'),alt))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q03QuizDiferencaCaminho}
+%% \exsection{Ondulatoria; Interferencia; Diferenca de caminho}
+%% \exusepackage[utf8]{inputenc}

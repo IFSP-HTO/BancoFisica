@@ -1,0 +1,58 @@
+<<echo=FALSE, results=hide>>=
+alt <- c(
+  "O terceiro harmônico tem frequência três vezes maior e comprimento de onda três vezes menor que o fundamental.",
+  "O terceiro harmônico tem frequência três vezes menor e comprimento de onda três vezes maior que o fundamental.",
+  "Os três modos têm a mesma frequência porque pertencem à mesma corda.",
+  "O segundo harmônico tem a menor frequência dos três modos.",
+  "O comprimento de onda aumenta com o número do harmônico."
+)
+solutions <- c(TRUE,FALSE,FALSE,FALSE,FALSE)
+ord <- sample(seq_along(alt)); alt <- alt[ord]; solutions <- solutions[ord]
+x <- seq(0,1,length.out=500)
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Os três gráficos mostram os primeiros modos normais de uma mesma corda fixa nas duas extremidades.
+
+<<fig=TRUE, height=5.0, width=6, echo=FALSE, eps=FALSE, results=hide>>=
+par(mfrow=c(3,1),mar=c(2.2,2.0,1.4,0.8))
+for(n in 1:3){
+  plot(x,sin(n*pi*x),type="l",lwd=2,axes=FALSE,xlab="",ylab="",ylim=c(-1.15,1.15),main=paste(n,"º harmônico"))
+  abline(h=0,lty=3)
+  points(seq(0,1,length.out=n+1),rep(0,n+1),pch=19)
+}
+@
+
+Qual afirmação descreve corretamente a comparação entre esses modos?
+
+<<echo=FALSE, results=tex>>=
+answerlist(alt)
+@
+
+\end{question}
+
+\begin{solution}
+
+Para uma corda fixa nas duas extremidades,
+\[
+\lambda_n=\frac{2L}{n},\qquad f_n=nf_1.
+\]
+Portanto, no terceiro harmônico,
+\[
+\lambda_3=\frac{\lambda_1}{3},\qquad f_3=3f_1.
+\]
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(solutions,paste0('\\textbf{',alt,'}'),alt))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q04QuizComparacaoHarmonicos}
+%% \exsection{Ondulatoria; Ondas estacionarias; Harmonicos; Graficos}
+%% \exusepackage[utf8]{inputenc}
