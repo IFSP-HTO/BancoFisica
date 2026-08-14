@@ -1,0 +1,62 @@
+<<echo=FALSE, results=hide>>=
+## Potência humana ao subir uma escada; alinhada ao trabalho experimental da turma.
+m <- sample(seq(50, 90, by=5), 1)
+ndeg <- sample(c(20,24,28,30,32,36,40), 1)
+hdeg <- sample(c(0.15,0.16,0.17,0.18), 1)
+t_normal <- sample(seq(20, 36, by=2), 1)
+t_rapida <- sample(seq(12, t_normal-4, by=2), 1)
+g <- 10
+h <- ndeg*hdeg
+W <- m*g*h
+Pnormal <- W/t_normal
+Prapida <- W/t_rapida
+fmt <- function(x, d=1) formatC(x, format="f", digits=d, decimal.mark=",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Uma estudante de massa $\Sexpr{m}\,\mathrm{kg}$ sobe uma escada com $\Sexpr{ndeg}$ degraus, cada um com $\Sexpr{fmt(hdeg,2)}\,\mathrm{m}$ de altura. Em uma primeira tentativa, ela leva $\Sexpr{t_normal}\,\mathrm{s}$ para chegar ao topo. Em uma segunda tentativa, percorre a mesma escada em $\Sexpr{t_rapida}\,\mathrm{s}$. Adote $g=10\,\mathrm{m/s^2}$ e despreze variações de energia cinética entre o início e o final de cada subida.
+
+Determine:
+\begin{answerlist}
+  \item o trabalho realizado para elevar a estudante até o topo, em joules;
+  \item a potência mecânica média na primeira subida, em watts;
+  \item a potência mecânica média na segunda subida, em watts.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+A altura vertical vencida é
+\[
+h=\Sexpr{ndeg}\cdot\Sexpr{fmt(hdeg,2)}=\Sexpr{fmt(h,2)}\,\mathrm{m}.
+\]
+O trabalho necessário para elevar o corpo é
+\[
+W=mgh=\Sexpr{m}\cdot10\cdot\Sexpr{fmt(h,2)}=\Sexpr{fmt(W,1)}\,\mathrm{J}.
+\]
+Como o trabalho é o mesmo nas duas subidas, a diferença de potência vem apenas do tempo:
+\[
+P_1=\frac{W}{t_1}=\Sexpr{fmt(Pnormal,1)}\,\mathrm{W},
+\qquad
+P_2=\frac{W}{t_2}=\Sexpr{fmt(Prapida,1)}\,\mathrm{W}.
+\]
+A subida mais rápida exige maior potência média.
+
+\begin{answerlist}
+  \item $\Sexpr{fmt(W,1)}\,\mathrm{J}$
+  \item $\Sexpr{fmt(Pnormal,1)}\,\mathrm{W}$
+  \item $\Sexpr{fmt(Prapida,1)}\,\mathrm{W}$
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exclozetype{num|num|num}
+%% \exsolution{\Sexpr{round(W,1)}|\Sexpr{round(Pnormal,1)}|\Sexpr{round(Prapida,1)}}
+%% \extol{0.1|0.2|0.2}
+%% \exname{Q99ClozePotenciaEscada}
+%% \exsection{Mecanica; Trabalho e potencia; Potencia; Energia potencial gravitacional}
