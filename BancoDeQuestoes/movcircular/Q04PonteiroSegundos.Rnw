@@ -1,9 +1,9 @@
 <<echo=FALSE, results=hide>>=
 ## Exercício 1 (slides MCU): período do ponteiro dos segundos
 
-resp1 <- 60        ## período, em s
-resp2 <- 1/60      ## frequência, em Hz
-resp3 <- 1/60*60   ## frequência, em rpm
+resp1 <- 60                  ## período, em s
+resp2 <- round(1/60, 4)      ## frequência, em Hz
+resp3 <- 1                   ## frequência, em rpm
 @
 
 \begin{question}
@@ -12,7 +12,7 @@ resp3 <- 1/60*60   ## frequência, em rpm
 
 \begin{answerlist}
   \item O período do ponteiro dos segundos, em segundos.
-  \item A frequência do ponteiro dos segundos, em hertz. \textit{Dê sua resposta na forma de fração (ex.: 1/60) ou com 4 casas decimais.}
+  \item A frequência do ponteiro dos segundos, em hertz. \textit{Dê sua resposta com quatro casas decimais.}
   \item A frequência do ponteiro dos segundos, em rotações por minuto (rpm).
 \end{answerlist}
 \end{question}
@@ -20,9 +20,9 @@ resp3 <- 1/60*60   ## frequência, em rpm
 \begin{solution}
 
 \begin{answerlist}
-  \item T = $\Sexpr{resp1}$ s
-  \item f = $\Sexpr{resp2}$ Hz
-  \item f = $\Sexpr{resp3}$ rpm
+  \item $T = \Sexpr{resp1}$ s
+  \item $f = \dfrac{1}{60} \approx \Sexpr{resp2}$ Hz
+  \item $f = \Sexpr{resp3}$ rpm
 \end{answerlist}
 \end{solution}
 
