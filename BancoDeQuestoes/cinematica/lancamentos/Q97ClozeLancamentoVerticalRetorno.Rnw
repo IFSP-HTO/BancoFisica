@@ -1,0 +1,41 @@
+<<echo=FALSE, results=hide>>=
+g <- 10
+v0 <- sample(c(20,30,40,50), 1)
+T <- 2*v0/g
+vret <- v0
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Uma pequena esfera é lançada verticalmente para cima do solo com velocidade inicial de $\Sexpr{v0}\,\mathrm{m/s}$ e retorna ao mesmo ponto de lançamento. Despreze a resistência do ar e adote $g=10\,\mathrm{m/s^2}$.
+
+Determine:
+\begin{answerlist}
+  \item o tempo total entre o lançamento e o retorno ao solo, em segundos;
+  \item o módulo da velocidade imediatamente antes de retornar ao ponto de lançamento, em $\mathrm{m/s}$.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+O tempo de subida é $t_s=v_0/g$. Como o corpo retorna à mesma altura e não há resistência do ar, o tempo de descida é igual:
+\[
+T=2\frac{v_0}{g}=2\frac{\Sexpr{v0}}{10}=\Sexpr{T}\,\mathrm{s}.
+\]
+Na mesma altura de lançamento, o módulo da velocidade é igual ao inicial:
+\[
+|v|=\Sexpr{vret}\,\mathrm{m/s},
+\]
+mas o sentido é para baixo.
+\begin{answerlist}
+  \item $\Sexpr{T}\,\mathrm{s}$
+  \item $\Sexpr{vret}\,\mathrm{m/s}$
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{T}|\Sexpr{vret}}
+%% \extol{0.01|0.01}
+%% \exname{Q97ClozeLancamentoVerticalRetorno}
+%% \exsection{Mecanica; Cinematica; Lancamento vertical; Queda livre}

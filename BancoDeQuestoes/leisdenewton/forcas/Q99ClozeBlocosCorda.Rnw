@@ -1,0 +1,43 @@
+<<echo=FALSE, results=hide>>=
+mA <- sample(c(2,3,4,5), 1)
+mB <- sample(c(3,4,5,6), 1)
+a <- sample(c(2,3,4), 1)
+F <- (mA+mB)*a
+T <- mB*a
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Dois blocos A e B, de massas $\Sexpr{mA}\,\mathrm{kg}$ e $\Sexpr{mB}\,\mathrm{kg}$, são ligados por um fio ideal e estão sobre uma superfície horizontal sem atrito. Uma força horizontal de $\Sexpr{F}\,\mathrm{N}$ é aplicada ao bloco A, puxando o conjunto.
+
+Determine:
+\begin{answerlist}
+  \item a aceleração do sistema, em $\mathrm{m/s^2}$;
+  \item a tensão no fio, em newtons.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+Para o conjunto,
+\[
+a=\frac{F}{m_A+m_B}
+=\Sexpr{a}\,\mathrm{m/s^2}.
+\]
+Aplicando a segunda lei ao bloco B, a única força horizontal é a tensão:
+\[
+T=m_Ba=\Sexpr{mB}\cdot\Sexpr{a}
+=\Sexpr{T}\,\mathrm{N}.
+\]
+\begin{answerlist}
+  \item $\Sexpr{a}\,\mathrm{m/s^2}$
+  \item $\Sexpr{T}\,\mathrm{N}$
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{a}|\Sexpr{T}}
+%% \extol{0.01|0.01}
+%% \exname{Q99ClozeBlocosCorda}
+%% \exsection{Mecanica; Leis de Newton; Tensao; Sistema de blocos}

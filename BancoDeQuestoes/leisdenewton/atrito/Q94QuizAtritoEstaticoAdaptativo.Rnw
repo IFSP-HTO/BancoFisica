@@ -1,0 +1,40 @@
+<<echo=FALSE, results=hide>>=
+m <- sample(c(5,10,15,20), 1)
+mu <- sample(c(0.4,0.5,0.6), 1)
+g <- 10
+fmax <- mu*m*g
+F <- round(0.5*fmax)
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Uma caixa de massa $\Sexpr{m}\,\mathrm{kg}$ está em repouso sobre um piso horizontal. O coeficiente de atrito estático é $\Sexpr{mu}$ e uma pessoa aplica horizontalmente uma força de $\Sexpr{F}\,\mathrm{N}$. Adote $g=10\,\mathrm{m/s^2}$. Sabe-se que essa força não é suficiente para colocar a caixa em movimento.
+
+Qual é o módulo da força de atrito estático que atua na caixa?
+
+\begin{answerlist}
+  \item $0\,\mathrm{N}$
+  \item $\Sexpr{F}\,\mathrm{N}$
+  \item $\Sexpr{fmax}\,\mathrm{N}$
+  \item $\Sexpr{m*10}\,\mathrm{N}$
+  \item $\Sexpr{F+fmax}\,\mathrm{N}$
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+O atrito estático não assume automaticamente seu valor máximo. Enquanto não há deslizamento, ele se ajusta ao valor necessário para impedir o movimento, até o limite
+\[
+f_{e,\max}=\mu_e N.
+\]
+Como a caixa permanece em repouso, a resultante horizontal deve ser nula. Portanto,
+\[
+f_e=F=\Sexpr{F}\,\mathrm{N}.
+\]
+Alternativa correta: \textbf{B}.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{01000}
+%% \exname{Q94QuizAtritoEstaticoAdaptativo}
+%% \exsection{Mecanica; Leis de Newton; Atrito estatico; Conceitual}

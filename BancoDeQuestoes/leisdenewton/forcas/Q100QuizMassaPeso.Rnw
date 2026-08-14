@@ -1,0 +1,27 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Um astronauta transporta um equipamento da Terra para a Lua. Considere que não houve perda de material durante a viagem.
+
+Qual afirmação é correta?
+
+\begin{answerlist}
+  \item A massa e o peso do equipamento permanecem iguais.
+  \item A massa diminui e o peso permanece igual.
+  \item A massa permanece igual e o peso diminui na Lua.
+  \item A massa aumenta e o peso diminui na Lua.
+  \item Massa e peso são a mesma grandeza expressa em unidades diferentes.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+A massa é uma propriedade do corpo e permanece a mesma. O peso é a força gravitacional exercida sobre o corpo e depende do campo gravitacional local. Como a gravidade lunar é menor que a terrestre, o peso diminui.
+
+Alternativa correta: \textbf{C}.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{00100}
+%% \exname{Q100QuizMassaPeso}
+%% \exsection{Mecanica; Leis de Newton; Peso; Massa; Conceitual}

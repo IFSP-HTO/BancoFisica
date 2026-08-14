@@ -1,0 +1,50 @@
+<<echo=FALSE, results=hide>>=
+v0_kmh <- sample(c(54,72,90,108), 1)
+v0 <- v0_kmh/3.6
+a <- -sample(c(3,5,6), 1)
+t <- -v0/a
+ds <- -(v0^2)/(2*a)
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Um carro trafega a $\Sexpr{v0_kmh}\,\mathrm{km/h}$ quando o motorista aciona os freios. A partir desse instante, o carro passa a ter aceleração constante de $\Sexpr{a}\,\mathrm{m/s^2}$ até parar.
+
+Determine:
+\begin{answerlist}
+  \item o tempo de frenagem, em segundos;
+  \item a distância percorrida durante a frenagem, em metros.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+Primeiro convertemos a velocidade:
+\[
+v_0=\frac{\Sexpr{v0_kmh}}{3,6}=\Sexpr{v0}\,\mathrm{m/s}.
+\]
+Da função da velocidade,
+\[
+0=v_0+at \quad\Rightarrow\quad
+t=-\frac{v_0}{a}=\Sexpr{round(t,2)}\,\mathrm{s}.
+\]
+Para a distância, podemos usar Torricelli:
+\[
+0=v_0^2+2a\Delta s,
+\]
+portanto
+\[
+\Delta s=-\frac{v_0^2}{2a}=\Sexpr{round(ds,2)}\,\mathrm{m}.
+\]
+\begin{answerlist}
+  \item $\Sexpr{round(t,2)}\,\mathrm{s}$
+  \item $\Sexpr{round(ds,2)}\,\mathrm{m}$
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{round(t,2)}|\Sexpr{round(ds,2)}}
+%% \extol{0.05|0.1}
+%% \exname{Q95ClozeFrenagemTempoDistancia}
+%% \exsection{Mecanica; Cinematica; MUV; Frenagem}

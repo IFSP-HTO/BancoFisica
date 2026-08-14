@@ -1,0 +1,44 @@
+<<echo=FALSE, results=hide>>=
+g <- 10
+t <- sample(c(2,3,4,5), 1)
+h <- 0.5*g*t^2
+v <- g*t
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Uma pedra é abandonada do repouso do alto de uma ponte de $\Sexpr{h}\,\mathrm{m}$ de altura. Despreze a resistência do ar e adote $g=10\,\mathrm{m/s^2}$.
+
+Determine:
+\begin{answerlist}
+  \item o tempo de queda, em segundos;
+  \item o módulo da velocidade imediatamente antes de atingir a água, em $\mathrm{m/s}$.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+Na queda livre a partir do repouso,
+\[
+h=\frac{gt^2}{2}.
+\]
+Logo,
+\[
+\Sexpr{h}=5t^2 \quad\Rightarrow\quad t=\Sexpr{t}\,\mathrm{s}.
+\]
+A velocidade é
+\[
+v=gt=10\cdot\Sexpr{t}=\Sexpr{v}\,\mathrm{m/s}.
+\]
+\begin{answerlist}
+  \item $\Sexpr{t}\,\mathrm{s}$
+  \item $\Sexpr{v}\,\mathrm{m/s}$
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{t}|\Sexpr{v}}
+%% \extol{0.01|0.01}
+%% \exname{Q94ClozeQuedaLivrePonte}
+%% \exsection{Mecanica; Cinematica; Queda livre}

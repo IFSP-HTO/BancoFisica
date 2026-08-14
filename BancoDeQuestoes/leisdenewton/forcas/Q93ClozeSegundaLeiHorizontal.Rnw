@@ -1,0 +1,30 @@
+<<echo=FALSE, results=hide>>=
+m <- sample(c(2,4,5,8,10,12), 1)
+a <- sample(c(1,2,3,4,5), 1)
+F <- m*a
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Um bloco de massa $\Sexpr{m}\,\mathrm{kg}$ encontra-se sobre uma superfície horizontal sem atrito. Uma força horizontal resultante de módulo $\Sexpr{F}\,\mathrm{N}$ atua sobre ele.
+
+Determine o módulo da aceleração do bloco, em $\mathrm{m/s^2}$.
+\end{question}
+
+\begin{solution}
+Pela segunda lei de Newton,
+\[
+F_R=ma.
+\]
+Assim,
+\[
+a=\frac{\Sexpr{F}}{\Sexpr{m}}=\Sexpr{a}\,\mathrm{m/s^2}.
+\]
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{a}}
+%% \extol{0.01}
+%% \exname{Q93ClozeSegundaLeiHorizontal}
+%% \exsection{Mecanica; Leis de Newton; Segunda lei}

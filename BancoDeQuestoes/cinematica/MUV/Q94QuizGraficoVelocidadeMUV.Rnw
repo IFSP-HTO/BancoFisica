@@ -1,0 +1,27 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+O gráfico da velocidade em função do tempo de um móvel é uma reta crescente que não passa pela origem. Durante todo o intervalo representado, a inclinação da reta permanece constante.
+
+Qual afirmação descreve corretamente esse movimento?
+
+\begin{answerlist}
+  \item O móvel possui velocidade constante e aceleração nula.
+  \item O móvel possui aceleração constante e positiva, com velocidade inicial diferente de zero.
+  \item O móvel possui aceleração variável e positiva.
+  \item O móvel permanece em repouso no início e depois passa a ter velocidade constante.
+  \item O móvel possui aceleração constante e negativa.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+Em um gráfico $v\times t$, a inclinação da reta representa a aceleração. Uma reta com inclinação constante e positiva representa aceleração constante e positiva. Como a reta não passa pela origem, a velocidade em $t=0$ é diferente de zero.
+
+Alternativa correta: \textbf{B}.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{01000}
+%% \exname{Q94QuizGraficoVelocidadeMUV}
+%% \exsection{Mecanica; Cinematica; MUV; Graficos; Conceitual}

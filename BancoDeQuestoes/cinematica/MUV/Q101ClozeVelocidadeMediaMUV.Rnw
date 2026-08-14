@@ -1,0 +1,48 @@
+<<echo=FALSE, results=hide>>=
+v0 <- sample(c(2,4,6,8,10), 1)
+a <- sample(c(1,2,3,4), 1)
+t <- sample(c(4,6,8,10), 1)
+v <- v0 + a*t
+vm <- (v0+v)/2
+ds <- vm*t
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Um móvel apresenta velocidade inicial de $\Sexpr{v0}\,\mathrm{m/s}$ e aceleração constante de $\Sexpr{a}\,\mathrm{m/s^2}$ durante $\Sexpr{t}\,\mathrm{s}$.
+
+Determine:
+\begin{answerlist}
+  \item a velocidade final, em $\mathrm{m/s}$;
+  \item a velocidade média no intervalo, em $\mathrm{m/s}$;
+  \item o deslocamento no intervalo, em metros.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+A velocidade final é
+\[
+v=v_0+at=\Sexpr{v}\,\mathrm{m/s}.
+\]
+Em MUV, a velocidade média no intervalo é a média aritmética entre as velocidades inicial e final:
+\[
+v_m=\frac{v_0+v}{2}=\Sexpr{vm}\,\mathrm{m/s}.
+\]
+Então,
+\[
+\Delta s=v_m t=\Sexpr{ds}\,\mathrm{m}.
+\]
+\begin{answerlist}
+  \item $\Sexpr{v}\,\mathrm{m/s}$
+  \item $\Sexpr{vm}\,\mathrm{m/s}$
+  \item $\Sexpr{ds}\,\mathrm{m}$
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exclozetype{num|num|num}
+%% \exsolution{\Sexpr{v}|\Sexpr{vm}|\Sexpr{ds}}
+%% \extol{0.01|0.01|0.01}
+%% \exname{Q101ClozeVelocidadeMediaMUV}
+%% \exsection{Mecanica; Cinematica; MUV; Velocidade media}

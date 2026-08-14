@@ -1,0 +1,27 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Uma bola é lançada verticalmente para cima. Desprezando a resistência do ar, analise o instante em que a bola atinge o ponto mais alto de sua trajetória.
+
+Qual alternativa está correta?
+
+\begin{answerlist}
+  \item A velocidade e a aceleração são nulas.
+  \item A velocidade é nula e a aceleração aponta para baixo.
+  \item A velocidade aponta para cima e a aceleração é nula.
+  \item A velocidade aponta para baixo e a aceleração aponta para cima.
+  \item A velocidade e a aceleração apontam para cima.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+No ponto mais alto, a velocidade vertical é instantaneamente zero. Entretanto, a gravidade continua atuando: a aceleração tem módulo $g$ e aponta para baixo durante toda a trajetória.
+
+Alternativa correta: \textbf{B}.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{01000}
+%% \exname{Q98QuizTopoLancamentoVertical}
+%% \exsection{Mecanica; Cinematica; Lancamento vertical; Queda livre; Conceitual}
