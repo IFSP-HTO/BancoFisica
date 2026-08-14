@@ -1,0 +1,60 @@
+<<echo=FALSE, results=hide>>=
+## Inspirada na abordagem de potência e rendimento do capítulo 14 de Gaspar.
+cenarios <- data.frame(
+  Pu=c(1500,1200,900,1000,1600),
+  eta=c(80,60,75,50,80)
+)
+i <- sample(seq_len(nrow(cenarios)),1)
+Pu <- cenarios$Pu[i]
+eta_pct <- cenarios$eta[i]
+eta <- eta_pct/100
+Ptotal <- Pu/eta
+Pdiss <- Ptotal-Pu
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Uma instalação hidráulica fornece potência mecânica útil de $\Sexpr{Pu}\,\mathrm{kW}$ para um gerador. O conjunto possui rendimento de $\Sexpr{eta_pct}\%$.
+
+Determine:
+\begin{answerlist}
+  \item a potência total recebida pelo sistema, em kW;
+  \item a potência dissipada, em kW.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+O rendimento é definido por
+\[
+\eta=\frac{P_{\mathrm{útil}}}{P_{\mathrm{total}}}.
+\]
+Logo,
+\[
+P_{\mathrm{total}}=\frac{P_{\mathrm{útil}}}{\eta}
+=\frac{\Sexpr{Pu}}{\Sexpr{eta}}
+=\Sexpr{Ptotal}\,\mathrm{kW}.
+\]
+A potência dissipada é a diferença:
+\[
+P_{\mathrm{diss}}=P_{\mathrm{total}}-P_{\mathrm{útil}}
+=\Sexpr{Pdiss}\,\mathrm{kW}.
+\]
+
+\begin{answerlist}
+  \item $\Sexpr{Ptotal}\,\mathrm{kW}$
+  \item $\Sexpr{Pdiss}\,\mathrm{kW}$
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte de inspiração: Alberto Gaspar, Compreendendo a Física, v. 1, cap. 14, exercício sobre potência e rendimento de uma roda-d'água. Enunciado e dados adaptados.
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{Ptotal}|\Sexpr{Pdiss}}
+%% \extol{0.1|0.1}
+%% \exname{Q101ClozeRendimentoRodaAgua}
+%% \exsection{Mecanica; Trabalho e potencia; Potencia; Rendimento}
