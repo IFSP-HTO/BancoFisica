@@ -12,6 +12,7 @@ solutions <- c(TRUE, FALSE, FALSE, FALSE, FALSE)
 ordem <- sample(seq_along(alternativas))
 alternativas <- alternativas[ordem]
 solutions <- solutions[ordem]
+solution_key <- paste0(as.integer(solutions), collapse = "")
 @
 \usepackage[utf8]{inputenc}
 
@@ -54,7 +55,7 @@ answerlist(ifelse(solutions, paste0("\\textbf{", alternativas, "}"), alternativa
 
 %% META-INFORMATION
 %% \extype{schoice}
-%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exsolution{\Sexpr{solution_key}}
 %% \exname{Q100QuizBluetoothIntensidade}
 %% \exsection{Ondas; Ondas eletromagneticas; Intensidade; Bluetooth; ENEM}
 %% \exusepackage[utf8]{inputenc}
