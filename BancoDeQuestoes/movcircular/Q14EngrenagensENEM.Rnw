@@ -1,0 +1,66 @@
+<<echo=FALSE, results=hide>>=
+## ENEM 2016 (Q9): sistema de engrenagens do cronômetro
+## Motor 18 rpm na engrenagem A; engrenagens B e C no mesmo eixo.
+## Dentes: A = 24, B = 72, C = 36, D = 108. Ponteiro acoplado a D.
+
+teeth <- c(A = 24, B = 72, C = 36, D = 108)
+fA    <- 18
+
+## A engrena com B: nA*fA = nB*fB -> fB
+fB <- fA * teeth["A"] / teeth["B"]
+## B e C no mesmo eixo -> fC = fB
+fC <- fB
+## C engrena com D: nC*fC = nD*fD -> fD
+fD <- fC * teeth["C"] / teeth["D"]
+
+resp <- fD   ## frequência do ponteiro, em rpm
+
+aleat <- sample(1:5)
+questions <- c(1, 2, 4, 81, 162)
+solutions <- logical(5)
+aleat <- sample(1:5)
+questions <- numeric(5)
+opts <- sort(unique(c(resp, 1, 4, 81, 162)))
+if (length(opts) < 5) opts <- c(opts, 6)
+for (i in seq_along(opts)) {
+  questions[aleat[i]] <- opts[i]
+  solutions[aleat[i]] <- opts[i] == resp
+}
+
+include_supplement("Q14EngrenagensENEM.jpg")
+@
+\usepackage[utf8]{inputenc}
+\begin{question}
+
+(ENEM 2016) A invenção e o acoplamento entre engrenagens revolucionaram a ciência na época e propiciaram a invenção de várias tecnologias, como os relógios. Ao construir um pequeno cronômetro, um relojoeiro usa o sistema de engrenagens mostrado na figura. Um motor é ligado ao eixo e movimenta as engrenagens fazendo o ponteiro girar. A frequência do motor é de $\Sexpr{fA}$ RPM, e o número de dentes das engrenagens está apresentado no quadro (A: $\Sexpr{teeth["A"]}$, B: $\Sexpr{teeth["B"]}$, C: $\Sexpr{teeth["C"]}$, D: $\Sexpr{teeth["D"]}$). As engrenagens B e C giram no mesmo eixo.
+
+\fbox{\includegraphics[height=5cm,keepaspectratio]{Q14EngrenagensENEM.jpg}}
+
+A frequência de giro do ponteiro, em RPM, é:
+
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(questions)
+@
+\end{question}
+
+\begin{solution}
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(
+  paste("\\textbf{", ifelse(solutions, "Verdadeiro", "Falso"), "}"))
+@
+
+Engrenagens acopladas por contato têm a mesma velocidade linear na borda, logo $n_i f_i = n_j f_j$.
+
+A engrena com B: $f_B = f_A \dfrac{n_A}{n_B} = \Sexpr{fA} \cdot \dfrac{\Sexpr{teeth["A"]}}{\Sexpr{teeth["B"]}} = \Sexpr{fB}$ RPM.
+
+Como B e C estão no mesmo eixo, $f_C = f_B = \Sexpr{fC}$ RPM.
+
+C engrena com D: $f_D = f_C \dfrac{n_C}{n_D} = \Sexpr{fC} \cdot \dfrac{\Sexpr{teeth["C"]}}{\Sexpr{teeth["D"]}} = \Sexpr{fD}$ RPM.
+
+Portanto a frequência do ponteiro é $\Sexpr{resp}$ RPM.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q14EngrenagensENEM}

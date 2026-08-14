@@ -1,0 +1,40 @@
+<<echo=FALSE, results=hide>>=
+## Exercício Q18 (slides): fundo de vale
+
+m <- sample(c(700, 800, 900), 1)      ## massa (kg)
+v <- sample(c(54, 72, 90), 1)         ## velocidade (km/h)
+R <- sample(c(15, 20, 25), 1)         ## raio de curvatura (m)
+g <- 10
+
+v_ms <- v / 3.6
+## no fundo do vale: N - P = m*v^2/R -> N = m*g + m*v^2/R
+resp <- round(m * g + m * v_ms^2 / R, 0)
+
+include_supplement("Q21FundoVale.jpg")
+@
+\usepackage[utf8]{inputenc}
+\begin{question}
+
+Em uma estrada, um automóvel de $\Sexpr{m}$ kg, com velocidade constante de $\Sexpr{v}$ km/h, se aproxima de um fundo de vale, conforme o esquema a seguir. Sabendo que o raio de curvatura nesse fundo de vale é $\Sexpr{R}$ m e $g = \Sexpr{g}$ m/s², calcule a força de reação da estrada sobre o carro nesse ponto, em newtons.
+
+\fbox{\includegraphics[height=4.5cm,keepaspectratio]{Q21FundoVale.jpg}}
+
+\end{question}
+
+\begin{solution}
+
+No ponto mais baixo do vale, a resultante centrípeta aponta para cima:
+
+$$N - P = \frac{m v^2}{R} \Rightarrow N = m g + \frac{m v^2}{R}.$$
+
+Com $v = \Sexpr{v}$ km/h $= \Sexpr{v_ms}$ m/s:
+
+$$N = \Sexpr{m}\cdot\Sexpr{g} + \frac{\Sexpr{m}\cdot\Sexpr{v_ms}^2}{\Sexpr{R}} = \Sexpr{resp} \text{ N}.$$
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp}}
+%% \exname{Q21FundoVale}
+%% \extol{1}

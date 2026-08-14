@@ -1,0 +1,29 @@
+<<echo=FALSE, results=hide>>=
+## Exercício 6 (slides): velocidade a partir das rotações do pneu
+
+diam  <- sample(seq(0.4, 0.8, by = 0.05), 1)   ## diâmetro (m)
+rpm   <- sample(seq(300, 900, by = 30), 1)      ## rotações por minuto
+
+rot_s <- rpm / 60                                ## rotações por segundo (Hz)
+resp  <- round(pi * diam * rot_s, 2)             ## v = 2*pi*r*f = pi*d*f (m/s)
+@
+
+\begin{question}
+
+A velocidade de um automóvel pode ser medida através de um dispositivo que registra o número de rotações efetuadas por uma de suas rodas, desde que se conheça seu diâmetro. Considere um pneu cujo diâmetro é de $\Sexpr{diam}$ m. Se o pneu executa $\Sexpr{rpm}$ rotações em cada minuto, determine a velocidade do automóvel, em m/s. \textit{Adote $\pi = 3{,}14$ e dê sua resposta com duas casas decimais.}
+
+\end{question}
+
+\begin{solution}
+
+A velocidade linear da borda do pneu é $v = 2\pi r f = \pi d f$, com $d = \Sexpr{diam}$ m e $f = \dfrac{\Sexpr{rpm}}{60} = \Sexpr{round(rot_s,2)}$ Hz:
+
+$$v = 3{,}14 \cdot \Sexpr{diam} \cdot \Sexpr{round(rot_s,2)} = \Sexpr{resp} \text{ m/s}.$$
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp}}
+%% \exname{Q09VelocidadePneu}
+%% \extol{0.01}

@@ -1,0 +1,40 @@
+<<echo=FALSE, results=hide>>=
+## Exercício Q3 (slides): carro em pista circular
+
+R <- sample(c(30, 40, 50, 60, 80), 1)   ## raio da pista (m)
+n <- sample(2:6, 1)                      ## voltas por minuto
+
+freq_hz <- n / 60                        ## frequência (Hz)
+per  <- 60 / n                           ## período (s)
+circ <- round(2 * pi * R, 1)             ## distância por volta (m)
+vel  <- round(2 * pi * R * freq_hz, 2)   ## velocidade linear (m/s)
+@
+
+\begin{question}
+
+Um carro encontra-se em movimento circular uniforme de uma pista circular de raio $\Sexpr{R}$ m. O carro faz $\Sexpr{n}$ voltas na pista por minuto. Determine:
+
+\begin{answerlist}
+  \item O período do movimento do carro, em segundos.
+  \item A frequência do movimento, em hertz. \textit{Dê sua resposta com três casas decimais.}
+  \item A distância que o carro percorre em cada volta, em metros. \textit{Dê sua resposta com uma casa decimal.}
+  \item O valor da velocidade linear (escalar) do carro, em m/s. \textit{Dê sua resposta com duas casas decimais.}
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+
+\begin{answerlist}
+  \item $T = \dfrac{60}{n} = \Sexpr{per}$ s
+  \item $f = \dfrac{n}{60} = \Sexpr{freq_hz}$ Hz
+  \item $C = 2\pi R = \Sexpr{circ}$ m
+  \item $v = \dfrac{2\pi R}{T} = \Sexpr{vel}$ m/s
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{\Sexpr{per}|\Sexpr{freq_hz}|\Sexpr{circ}|\Sexpr{vel}}
+%% \exclozetype{num|num|num|num}
+%% \exname{Q10CarroPistaCircular}
+%% \extol{0.1|0.001|0.1|0.01}

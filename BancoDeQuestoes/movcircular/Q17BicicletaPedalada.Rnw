@@ -1,0 +1,42 @@
+<<echo=FALSE, results=hide>>=
+## Exercício Q13 (slides): bicicleta com coroa, catraca e roda
+
+dcor <- sample(c(25, 30, 35), 1)     ## diâmetro da coroa (cm)
+dcat <- sample(c(8, 10, 12), 1)      ## diâmetro da catraca (cm)
+droda<- sample(c(60, 70, 80), 1)     ## diâmetro da roda (cm)
+ped  <- 1                            ## pedaladas por segundo
+
+## coroa: 1 Hz. v na corrente = v_coroa = 2*pi*(dcor/2)/100 * f_coroa
+## mesma v na catraca -> f_cat = f_coroa * dcor/dcat; catraca fixa na roda -> f_roda = f_cat
+f_roda <- ped * dcor / dcat
+v      <- round(2 * pi * (droda/200) * f_roda, 2)   ## velocidade da bicicleta (m/s)
+
+include_supplement("Q17BicicletaPedalada.jpg")
+@
+\usepackage[utf8]{inputenc}
+\begin{question}
+
+Considere a bicicleta com os seguintes parâmetros: diâmetro da coroa (roda dentada do pedal) $\Sexpr{dcor}$ cm, diâmetro da catraca (roda dentada da roda traseira) $\Sexpr{dcat}$ cm e diâmetro da roda $\Sexpr{droda}$ cm, conforme a figura. Se você executa uma pedalada por segundo, determine:
+
+\fbox{\includegraphics[height=4.5cm,keepaspectratio]{Q17BicicletaPedalada.jpg}}
+
+\begin{answerlist}
+  \item A frequência da roda da bicicleta, em hertz.
+  \item A velocidade da bicicleta (velocidade linear da roda na extremidade), em m/s. \textit{Dê sua resposta com duas casas decimais. Adote $\pi = 3{,}14$.}
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+
+\begin{answerlist}
+  \item Coroa e catraca estão ligadas pela corrente (mesma velocidade linear). Como a coroa gira a $\Sexpr{ped}$ Hz, a frequência da catraca (e da roda, fixa à catraca) é $f = \dfrac{d_{coroa}}{d_{catraca}} = \dfrac{\Sexpr{dcor}}{\Sexpr{dcat}} = \Sexpr{f_roda}$ Hz.
+  \item $v = 2\pi r f = 2\pi \cdot \dfrac{\Sexpr{droda}/100}{2} \cdot \Sexpr{f_roda} = \Sexpr{v}$ m/s.
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{\Sexpr{f_roda}|\Sexpr{v}}
+%% \exclozetype{num|num}
+%% \exname{Q17BicicletaPedalada}
+%% \extol{0.1|0.01}

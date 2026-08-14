@@ -1,0 +1,46 @@
+<<echo=FALSE, results=hide>>=
+## Exercício Q25 (slides): roda gigante
+
+R <- sample(c(8, 10, 12), 1)     ## raio (m)
+v <- sample(c(5, 6, 7), 1)       ## velocidade linear (m/s)
+
+a <- round(v^2 / R, 1)           ## aceleração centrípeta (m/s²)
+
+include_supplement("Q25RodaGigante.jpg")
+@
+\usepackage[utf8]{inputenc}
+\begin{question}
+
+Uma roda gigante com raio igual a $\Sexpr{R}$ m está girando em torno de um eixo horizontal passando pelo seu centro. A velocidade linear constante de um passageiro em sua periferia é igual a $\Sexpr{v}$ m/s.
+
+\fbox{\includegraphics[height=4.5cm,keepaspectratio]{Q25RodaGigante.jpg}}
+
+No ponto mais baixo do movimento circular, o módulo da aceleração do passageiro, em m/s², é de:
+
+<<echo=FALSE, results=hide, results=tex>>=
+aleat <- sample(1:4)
+opts <- sort(unique(round(c(a, 0.1, 1.0, a*10, a/2), 1)))
+if (length(opts) < 4) opts <- c(opts, 2*a)
+opts <- opts[1:4]
+questions <- numeric(4); solutions <- logical(4)
+aleat <- sample(1:4)
+for (i in 1:4) { questions[aleat[i]] <- opts[i]; solutions[aleat[i]] <- opts[i] == a }
+answerlist(questions)
+@
+\end{question}
+
+\begin{solution}
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(
+  paste("\\textbf{", ifelse(solutions, "Verdadeiro", "Falso"), "}"))
+@
+
+O movimento é circular uniforme, logo a aceleração é centrípeta, apontando para o centro (no ponto mais baixo, para cima):
+
+$$a = \frac{v^2}{R} = \frac{\Sexpr{v}^2}{\Sexpr{R}} = \Sexpr{a} \text{ m/s}^2.$$
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q25RodaGigante}

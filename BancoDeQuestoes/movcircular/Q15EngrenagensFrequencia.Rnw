@@ -1,0 +1,30 @@
+<<echo=FALSE, results=hide>>=
+## Exercício Q11 (slides): engrenagens 1 e 2 com diâmetros dados
+
+d1 <- sample(c(20, 24, 30, 40), 1)      ## diâmetro engrenagem 1 (cm)
+d2 <- sample(c(8, 10, 12), 1)           ## diâmetro engrenagem 2 (cm)
+f2 <- sample(c(120, 240, 360, 480), 1)  ## frequência da engrenagem 2 (rpm)
+
+## mesmo v linear na borda: d1*f1 = d2*f2 -> f1 = d2*f2/d1
+resp <- round(d2 * f2 / d1, 2)
+@
+
+\begin{question}
+
+Duas engrenagens engrenadas, de diâmetros $\Sexpr{d1}$ cm e $\Sexpr{d2}$ cm, não deslizam entre si. Se a engrenagem de diâmetro $\Sexpr{d2}$ cm gira a $\Sexpr{f2}$ rpm, calcule a frequência de rotação da engrenagem de diâmetro $\Sexpr{d1}$ cm, em rpm. \textit{Dê sua resposta com duas casas decimais.}
+
+\end{question}
+
+\begin{solution}
+
+Engrenagens em contato têm a mesma velocidade linear na borda, logo $d_1 f_1 = d_2 f_2$:
+
+$$f_1 = \frac{d_2 f_2}{d_1} = \frac{\Sexpr{d2} \cdot \Sexpr{f2}}{\Sexpr{d1}} = \Sexpr{resp} \text{ rpm}.$$
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp}}
+%% \exname{Q15EngrenagensFrequencia}
+%% \extol{0.01}

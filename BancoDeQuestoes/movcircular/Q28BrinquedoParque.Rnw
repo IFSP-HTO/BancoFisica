@@ -1,0 +1,44 @@
+<<echo=FALSE, results=hide>>=
+## Exercício Q28 (slides): brinquedo de parque (cabines girantes)
+
+L <- sample(c(6, 8, 10), 1)     ## comprimento da barra (m)
+d <- sample(c(8, 10, 12), 1)    ## comprimento do cabo (m)
+th <- 30                        ## ângulo com a vertical (graus)
+M <- 1000                       ## massa cabine+passageiro (kg)
+g <- 10
+
+th_rad <- th * pi / 180
+## raio R = L/2 + d*sin(theta)
+R <- round(L/2 + d * sin(th_rad), 2)
+## forças verticais se cancelam: T*cos(theta) = M*g -> T = M*g/cos(theta)
+T <- round(M * g / cos(th_rad), 0)
+
+include_supplement("Q28BrinquedoParque.jpg")
+@
+\usepackage[utf8]{inputenc}
+\begin{question}
+
+Um brinquedo de parque de diversões consiste de um eixo vertical girante, duas cabines e um suporte para os cabos. O suporte é uma forte barra horizontal de aço, de $L = \Sexpr{L}$ m de comprimento. Cada cabo mede $d = \Sexpr{d}$ m. Quando as pessoas entram nas cabines, o eixo se põe a girar e as cabines se inclinam formando um ângulo $\theta = \Sexpr{th}^\circ$ com a vertical, conforme a figura. O movimento das cabines é circular uniforme, ambos de raio $R$. Considere a massa total da cabine e passageiro como $M = \Sexpr{M}$ kg e $g = \Sexpr{g}$ m/s².
+
+\fbox{\includegraphics[height=4.5cm,keepaspectratio]{Q28BrinquedoParque.jpg}}
+
+\begin{answerlist}
+  \item Calcule o raio $R$ de rotação da trajetória da cabine, em metros. \textit{Dê sua resposta com duas casas decimais.}
+  \item Sabendo que as forças verticais sobre a cabine se cancelam, calcule a tensão no cabo que sustenta a cabine, em newtons.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+
+\begin{answerlist}
+  \item O raio é a metade da barra somada à projeção horizontal do cabo: $R = \dfrac{L}{2} + d\sin\theta = \dfrac{\Sexpr{L}}{2} + \Sexpr{d}\sin\Sexpr{th}^\circ = \Sexpr{R}$ m.
+  \item As forças verticais se cancelam: $T\cos\theta = Mg \Rightarrow T = \dfrac{Mg}{\cos\theta} = \dfrac{\Sexpr{M}\cdot\Sexpr{g}}{\cos\Sexpr{th}^\circ} = \Sexpr{T}$ N.
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{\Sexpr{R}|\Sexpr{T}}
+%% \exclozetype{num|num}
+%% \exname{Q28BrinquedoParque}
+%% \extol{0.01|1}

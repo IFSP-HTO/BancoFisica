@@ -1,0 +1,30 @@
+<<echo=FALSE, results=hide>>=
+## Exercício Q24 (slides): pessoas A e B na superfície da Terra
+
+## v = omega*r. Mesmo periodo T para todos (rotação da Terra).
+rA <- 6371   ## raio do equador (km) - simplificação
+rB <- sample(c(4000, 4500, 5000), 1)  ## raio do paralelo de B (km)
+
+## razão vA/vB = rA/rB
+raz <- round(rA / rB, 2)
+@
+
+\begin{question}
+
+Considere duas pessoas, A e B, situadas sobre a superfície da Terra, estando A no equador e B em um paralelo no hemisfério norte. Sabe-se que essas pessoas giram, juntamente com a Terra, em seu movimento de rotação (o período de rotação é o mesmo para ambas). Se o raio da trajetória de A é $\Sexpr{rA}$ km e o de B é $\Sexpr{rB}$ km, qual é a razão $\dfrac{v_A}{v_B}$ entre as velocidades lineares de A e B? \textit{Dê sua resposta com duas casas decimais.}
+
+\end{question}
+
+\begin{solution}
+
+Como as pessoas têm o mesmo período de rotação $T$, a velocidade linear é $v = \omega r = \dfrac{2\pi}{T} r$. Assim:
+
+$$\frac{v_A}{v_B} = \frac{r_A}{r_B} = \frac{\Sexpr{rA}}{\Sexpr{rB}} = \Sexpr{raz}.$$
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{raz}}
+%% \exname{Q24PessoasTerra}
+%% \extol{0.01}

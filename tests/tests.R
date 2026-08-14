@@ -69,6 +69,12 @@ compilar_isolado <- function(arquivo, diretorio, formato, ano, seed) {
           xml_text <- paste(readLines(xml_file, warn = FALSE, encoding = "UTF-8"), collapse = "\n")
           xml_bytes <- file.info(xml_file)$size
 
+          # Limite de upload do Moodle institucional: ~10 MB por arquivo.
+          max_upload <- 10 * 1024 * 1024
+          if (xml_bytes > max_upload) {
+            stop("Moodle XML exceeds the 10 MB upload limit in ", basename(xml_file))
+          }
+
           if (!grepl("<quiz[[:space:]>]", xml_text, perl = TRUE)) {
             stop("Moodle XML missing <quiz> root in ", basename(xml_file))
           }
@@ -178,6 +184,105 @@ check_question_counts <- function() {
     )
     if (!identical(status, 0L)) stop("Question count generator failed")
   }
+}
+
+## Exercita o particionamento de XML por limite de upload.
+##
+## Usa um assunto real com figuras (trabalhopotencia) e um limite abaixo do
+## tamanho total: o gerador deve produzir >= 2 partes, todas dentro do limite
+## (tools/moodle_xml_split.R). Também verifica a limpeza de artefatos antigos
+## do mesmo `name` (quando uma rodada deixa de gerar partes, os arquivos
+## antigos nao podem sobrar). Roda em subprocesso (callr) para nao acumular
+## estado do exams2moodle na sessao de teste.
+check_moodle_split <- function() {
+  report <- callr::r(function() {
+    source("tools/moodle_xml_split.R")
+    suppressMessages({
+      library(exams)
+      library(magrittr)
+      library(stringr)
+      library(purrr)
+    })
+    edir <- "BancoDeQuestoes/trabalhopotencia"
+    files <- sort(list.files(edir, pattern = "\\.[Rr]nw$", ignore.case = TRUE))
+    out <- tempfile("moodle_split_")
+    dir.create(out)
+    limit <- floor(1.5 * 1024 * 1024)  # 1.5 MB force a divisao em partes
+    parts <- generate_moodle_xml_limited(
+      files = files, n = 12L, name = "split-test", seed = 12026,
+      edir = edir, dir = out, max_bytes = limit
+    )
+    sizes <- file.size(parts)
+
+    ## Limpeza de artefatos: roda de novo com limite folgado (-> arquivo unico)
+    ## e confere que as partes antigas desaparecem e so resta name.xml.
+    single <- generate_moodle_xml_limited(
+      files = files, n = 12L, name = "split-test", seed = 12026,
+      edir = edir, dir = out, max_bytes = 10 * 1024 * 1024
+    )
+    stale_parts <- list.files(out, pattern = "^split-test-part[0-9]+\\.xml$")
+    files_now <- sort(list.files(out, pattern = "\\.xml$"))
+
+    list(
+      n_parts = length(parts),
+      max = max(sizes),
+      limit = limit,
+      single_stale_parts = length(stale_parts),
+      files_now = files_now
+    )
+  })
+
+  if (!isTRUE(report$n_parts >= 2L)) {
+    stop("Moodle XML split check did not produce at least 2 parts")
+  }
+  if (!isTRUE(report$max <= report$limit)) {
+    stop("Moodle XML split check produced a part over the limit")
+  }
+  if (!isTRUE(report$single_stale_parts == 0L)) {
+    stop("Moodle XML split check left stale part files after regeneration")
+  }
+  cat(sprintf("Moodle XML split check: %d part(s), max %.2f MB (limit %.2f MB)\n",
+              report$n_parts, report$max / 1024^2, report$limit / 1024^2))
+}
+
+## Garantia central: nenhum XML acima do limite pode ser devolvido. Uma questao
+## cuja unica variante (n=1) ainda estoure `max_bytes` nao tem como ser
+## repartida; o helper deve remover o arquivo e falhar explicitamente, sem
+## deixar artefato no disco.
+check_moodle_split_oversize <- function() {
+  report <- callr::r(function() {
+    source("tools/moodle_xml_split.R")
+    suppressMessages({
+      library(exams)
+      library(magrittr)
+      library(stringr)
+      library(purrr)
+    })
+    edir <- "BancoDeQuestoes/trabalhopotencia"
+    files <- sort(list.files(edir, pattern = "\\.[Rr]nw$", ignore.case = TRUE))
+    out <- tempfile("moodle_oversize_")
+    dir.create(out)
+    ## Limite minúsculo: mesmo uma unica variante (n=1) de qualquer questao real
+    ## ultrapassa 500 bytes, forçando o caminho de erro.
+    err <- tryCatch({
+      generate_moodle_xml_limited(
+        files = files[1], n = 1L, name = "oversize", seed = 12026,
+        edir = edir, dir = out, max_bytes = 500L
+      )
+      "NO ERROR"
+    }, error = function(e) conditionMessage(e))
+    leftover <- list.files(out, pattern = "\\.xml$")
+    list(err = err, leftover = leftover)
+  })
+
+  if (isTRUE(report$err == "NO ERROR")) {
+    stop("Moodle XML oversize check did not fail when a single variant exceeds the limit")
+  }
+  if (length(report$leftover) > 0L) {
+    stop("Moodle XML oversize check left a file on disk: ",
+         paste(report$leftover, collapse = ", "))
+  }
+  cat("Moodle XML oversize check: fails explicitly as expected, no leftover file\n")
 }
 
 ## Valida a estrutura mínima das questões antes das compilações pesadas.
@@ -310,5 +415,7 @@ generate_pdf <- function() {
 check_encoding()
 check_bank_structure()
 check_question_counts()
+check_moodle_split()
+check_moodle_split_oversize()
 generate_xml()
 generate_pdf()

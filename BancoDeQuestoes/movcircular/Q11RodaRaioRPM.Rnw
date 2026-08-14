@@ -1,0 +1,37 @@
+<<echo=FALSE, results=hide>>=
+## Exercício Q4 (slides): roda de raio r girando a N rpm
+
+r  <- sample(c(10, 15, 20, 25, 30), 1)      ## raio (cm)
+N  <- sample(seq(60, 240, by = 30), 1)      ## giros por minuto
+
+freq_hz <- N / 60                            ## frequência (Hz)
+per <- round(60 / N, 2)                      ## período (s)
+v  <- round(2 * pi * (r/100) * freq_hz, 2)   ## velocidade linear (m/s)
+@
+
+\begin{question}
+
+Uma roda de raio $\Sexpr{r}$ cm completa $\Sexpr{N}$ giros por minuto. Determine:
+
+\begin{answerlist}
+  \item A frequência da roda no SI (hertz).
+  \item O período da roda no SI (segundos). \textit{Dê sua resposta com duas casas decimais.}
+  \item A velocidade escalar de um ponto situado na extremidade da roda, em m/s. \textit{Dê sua resposta com duas casas decimais. Adote $\pi = 3{,}14$.}
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+
+\begin{answerlist}
+  \item $f = \dfrac{N}{60} = \Sexpr{freq_hz}$ Hz
+  \item $T = \dfrac{1}{f} = \Sexpr{per}$ s
+  \item $v = 2\pi r f = \Sexpr{v}$ m/s
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{\Sexpr{freq_hz}|\Sexpr{per}|\Sexpr{v}}
+%% \exclozetype{num|num|num}
+%% \exname{Q11RodaRaioRPM}
+%% \extol{0.1|0.01|0.01}

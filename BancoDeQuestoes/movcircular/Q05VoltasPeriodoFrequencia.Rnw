@@ -1,0 +1,34 @@
+<<echo=FALSE, results=hide>>=
+## Exercício 4 (slides): N voltas em t segundos
+
+voltas <- sample(5:40, 1)
+tempo  <- sample(c(4, 5, 8, 10, 12, 15, 20), 1) * 60
+
+resp1 <- tempo / voltas            ## período (s)
+resp2 <- voltas / tempo            ## frequência (Hz)
+@
+
+\begin{question}
+
+Um corpo em movimento circular uniforme completa \Sexpr{voltas} voltas em $\Sexpr{tempo/60}$ minutos. Determine:
+
+\begin{answerlist}
+  \item O período do movimento, em segundos. \textit{Dê sua resposta com duas casas decimais.}
+  \item A frequência do movimento, em hertz. \textit{Dê sua resposta com quatro casas decimais.}
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+
+\begin{answerlist}
+  \item T = $\Sexpr{resp1}$ s
+  \item f = $\Sexpr{resp2}$ Hz
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{\Sexpr{resp1}|\Sexpr{resp2}}
+%% \exclozetype{num|num}
+%% \exname{Q05VoltasPeriodoFrequencia}
+%% \extol{0.1|0.0001}
