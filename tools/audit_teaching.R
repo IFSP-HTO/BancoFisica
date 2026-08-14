@@ -134,7 +134,11 @@ for (file in files) {
             paste0("question_chars=", question_chars))
   }
 
-  if (objective_question && !has_any_fixed(question, c("\\begin{answerlist}"))) {
+  # Questões objetivas do banco usam tanto o ambiente LaTeX answerlist quanto
+  # chamadas R/Sweave a answerlist(...). A auditoria deve aceitar os dois
+  # padrões para não marcar falsos positivos em itens gerados dinamicamente.
+  has_answerlist <- has_any_fixed(question, c("\\begin{answerlist}", "answerlist("))
+  if (objective_question && !has_answerlist) {
     add_row(rel, subject, exname, "medium", "choice_question_without_answerlist", 50L,
             "objective question without answerlist marker")
   }
