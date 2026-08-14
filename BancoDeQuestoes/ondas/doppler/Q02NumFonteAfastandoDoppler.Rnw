@@ -1,0 +1,41 @@
+<<echo=FALSE, results=hide>>=
+casos <- data.frame(f=c(480,500,600,720), vF=c(20,25,40,60))
+i <- sample(seq_len(nrow(casos)),1)
+f <- casos$f[i]
+vF <- casos$vF[i]
+v <- 340
+fdet <- f*v/(v+vF)
+fmt <- function(z) formatC(z,format="f",digits=1,decimal.mark=",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Uma fonte sonora emite frequência $f=\Sexpr{f}\,\mathrm{Hz}$ e se afasta em linha reta de um detector parado com velocidade $v_F=\Sexpr{vF}\,\mathrm{m/s}$. Considere a velocidade do som no ar igual a $v=340\,\mathrm{m/s}$.
+
+Determine a frequência detectada, em hertz.
+
+\end{question}
+
+\begin{solution}
+
+Para detector parado e fonte se afastando,
+\[
+f'=f\frac{v}{v+v_F}.
+\]
+Assim,
+\[
+f'=\Sexpr{f}\frac{340}{340+\Sexpr{vF}}
+=\Sexpr{fmt(fdet)}\,\mathrm{Hz}.
+\]
+A frequência detectada é menor que a emitida, como esperado para afastamento.
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{round(fdet,1)}}
+%% \extol{0.2}
+%% \exname{Q02NumFonteAfastandoDoppler}
+%% \exsection{Ondulatoria; Acustica; Efeito Doppler; Fonte em movimento}
+%% \exusepackage[utf8]{inputenc}
