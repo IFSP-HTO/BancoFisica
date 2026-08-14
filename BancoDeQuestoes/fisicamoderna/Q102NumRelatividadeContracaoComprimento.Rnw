@@ -1,0 +1,32 @@
+<<echo=FALSE, results=hide>>=
+beta <- sample(c(0.60,0.80),1)
+gamma <- 1/sqrt(1-beta^2)
+L0 <- sample(c(10,12,15,20,24,30),1)
+L <- L0/gamma
+fmt <- function(x,d=2) formatC(x,format="f",digits=d,decimal.mark=",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Uma nave possui comprimento próprio $L_0=\Sexpr{L0}\,\mathrm{m}$, medido por observadores em repouso em relação a ela. A nave passa pela Terra com velocidade $v=\Sexpr{fmt(beta,2)}c$.
+
+Qual comprimento da nave é medido por observadores terrestres, em metros?
+\end{question}
+
+\begin{solution}
+Para a direção do movimento, ocorre contração relativística:
+\[
+L=\frac{L_0}{\gamma}=L_0\sqrt{1-\frac{v^2}{c^2}}.
+\]
+Como $\gamma=\Sexpr{fmt(gamma,3)}$,
+\[
+L=\frac{\Sexpr{L0}}{\Sexpr{fmt(gamma,3)}}=\Sexpr{fmt(L,2)}\,\mathrm{m}.
+\]
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{round(L,2)}}
+%% \extol{0.03}
+%% \exname{Q102NumRelatividadeContracaoComprimento}
+%% \exsection{Fisica moderna; Relatividade restrita; Contracao do comprimento}

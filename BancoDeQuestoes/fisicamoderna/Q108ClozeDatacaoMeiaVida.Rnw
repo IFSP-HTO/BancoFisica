@@ -1,0 +1,41 @@
+<<echo=FALSE, results=hide>>=
+T <- sample(c(5,8,10,12,15,20),1)
+n <- sample(2:6,1)
+A0 <- sample(c(800,1000,1200,1600,2000,2400),1)
+A <- A0/2^n
+t <- n*T
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Um radioisótopo possui meia-vida de $\Sexpr{T}$ anos. Uma amostra de referência apresentaria atividade $\Sexpr{A0}$ unidades, enquanto uma amostra antiga apresenta atividade $\Sexpr{A}$ unidades, nas mesmas condições.
+
+Determine:
+\begin{answerlist}
+  \item quantas meias-vidas transcorreram;
+  \item a idade da amostra, em anos.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+A razão entre as atividades é
+\[
+\frac{A}{A_0}=\frac{\Sexpr{A}}{\Sexpr{A0}}=\left(\frac12\right)^{\Sexpr{n}}.
+\]
+Portanto transcorreram $\Sexpr{n}$ meias-vidas. Assim,
+\[
+t=\Sexpr{n}\cdot\Sexpr{T}=\Sexpr{t}\,\mathrm{anos}.
+\]
+\begin{answerlist}
+  \item $\Sexpr{n}$
+  \item $\Sexpr{t}\,\mathrm{anos}$
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{n}|\Sexpr{t}}
+%% \extol{0.01|0.01}
+%% \exname{Q108ClozeDatacaoMeiaVida}
+%% \exsection{Fisica moderna; Radioatividade; Meia-vida; Datacao}

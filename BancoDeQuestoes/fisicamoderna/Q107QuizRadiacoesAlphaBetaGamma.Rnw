@@ -1,0 +1,25 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Uma fonte radioativa pode emitir radiações alfa ($\alpha$), beta ($\beta$) e gama ($\gamma$). Sobre essas emissões, assinale a alternativa correta.
+
+\begin{answerlist}
+  \item A radiação gama é formada por núcleos de hélio.
+  \item A radiação alfa é uma onda eletromagnética sem carga elétrica.
+  \item Em geral, a radiação gama apresenta grande poder de penetração e não possui carga elétrica.
+  \item A radiação beta é sempre eletricamente neutra.
+  \item Alfa, beta e gama possuem necessariamente a mesma massa e a mesma carga.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+A emissão gama é radiação eletromagnética de alta energia, portanto não possui carga elétrica nem massa de repouso e apresenta elevado poder de penetração. Partículas alfa são núcleos de hélio e emissões beta envolvem elétrons ou pósitrons.
+
+Alternativa correta: \textbf{C}.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{00100}
+%% \exname{Q107QuizRadiacoesAlphaBetaGamma}
+%% \exsection{Fisica moderna; Radioatividade; Radiacoes alfa beta gama; Conceitual}

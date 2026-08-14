@@ -1,0 +1,41 @@
+<<echo=FALSE, results=hide>>=
+beta <- sample(c(0.60,0.80),1)
+gamma <- 1/sqrt(1-beta^2)
+tau <- sample(c(3,4,5,6,8,10),1)
+t <- gamma*tau
+fmt <- function(x,d=2) formatC(x,format="f",digits=d,decimal.mark=",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Uma nave move-se com velocidade $v=\Sexpr{fmt(beta,2)}c$ em relação à Terra. Um relógio a bordo mede um intervalo de tempo próprio de $\Sexpr{tau}\,\mathrm{s}$.
+
+Determine:
+\begin{answerlist}
+  \item o fator relativístico $\gamma=1/\sqrt{1-v^2/c^2}$;
+  \item o intervalo de tempo medido no referencial da Terra, em segundos.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+O fator relativístico é
+\[
+\gamma=\frac{1}{\sqrt{1-\Sexpr{fmt(beta,2)}^2}}=\Sexpr{fmt(gamma,3)}.
+\]
+A dilatação do tempo fornece
+\[
+\Delta t=\gamma\,\Delta\tau=\Sexpr{fmt(gamma,3)}\cdot\Sexpr{tau}=\Sexpr{fmt(t,2)}\,\mathrm{s}.
+\]
+\begin{answerlist}
+  \item $\Sexpr{fmt(gamma,3)}$
+  \item $\Sexpr{fmt(t,2)}\,\mathrm{s}$
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{round(gamma,3)}|\Sexpr{round(t,2)}}
+%% \extol{0.005|0.03}
+%% \exname{Q101ClozeRelatividadeDilatacaoTempo}
+%% \exsection{Fisica moderna; Relatividade restrita; Dilatacao do tempo}

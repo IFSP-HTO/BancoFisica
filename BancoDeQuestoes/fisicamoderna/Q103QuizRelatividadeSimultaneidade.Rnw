@@ -1,0 +1,27 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Dois clarões ocorrem nas extremidades de uma plataforma. Um observador em repouso no ponto médio da plataforma recebe os dois sinais luminosos simultaneamente. Um segundo observador, em um trem que se move em relação à plataforma, pode concluir que os clarões não foram simultâneos.
+
+De acordo com a relatividade restrita, essa situação significa que
+
+\begin{answerlist}
+  \item um dos observadores necessariamente está cometendo um erro de medida.
+  \item a simultaneidade de eventos separados espacialmente pode depender do referencial.
+  \item a velocidade da luz é diferente para os dois observadores.
+  \item o observador do trem não pode usar relógios para medir tempo.
+  \item eventos simultâneos em um referencial são simultâneos em todos os referenciais inerciais.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+Na relatividade restrita, a simultaneidade de eventos espacialmente separados não é absoluta. Observadores em movimento relativo podem discordar sobre a ordem temporal ou a simultaneidade desses eventos sem que nenhum deles esteja errado.
+
+Alternativa correta: \textbf{B}.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{01000}
+%% \exname{Q103QuizRelatividadeSimultaneidade}
+%% \exsection{Fisica moderna; Relatividade restrita; Simultaneidade; Conceitual}

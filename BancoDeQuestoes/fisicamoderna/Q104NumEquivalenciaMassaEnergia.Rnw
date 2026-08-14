@@ -1,0 +1,31 @@
+<<echo=FALSE, results=hide>>=
+dm_microg <- sample(c(1,2,3,5,8,10),1)
+dm <- dm_microg*1e-9
+c0 <- 3e8
+E_MJ <- dm*c0^2/1e6
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Em um processo nuclear, a massa total dos produtos é $\Sexpr{dm_microg}\,\mu\mathrm{g}$ menor que a massa total inicial. Considere $c=3,0\times10^8\,\mathrm{m/s}$ e suponha que essa diferença de massa seja convertida em energia.
+
+Qual energia é liberada, em megajoules?
+\end{question}
+
+\begin{solution}
+Pela equivalência massa-energia,
+\[
+E=\Delta m\,c^2.
+\]
+Como $\Sexpr{dm_microg}\,\mu\mathrm{g}=\Sexpr{dm_microg}\times10^{-9}\,\mathrm{kg}$,
+\[
+E=(\Sexpr{dm_microg}\times10^{-9})(3,0\times10^8)^2=\Sexpr{round(E_MJ,1)}\,\mathrm{MJ}.
+\]
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{round(E_MJ,1)}}
+%% \extol{0.2}
+%% \exname{Q104NumEquivalenciaMassaEnergia}
+%% \exsection{Fisica moderna; Relatividade; Equivalencia massa-energia; Fisica nuclear}

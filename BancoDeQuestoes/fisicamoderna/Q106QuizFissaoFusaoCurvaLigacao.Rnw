@@ -1,0 +1,27 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+O gráfico de energia de ligação por núcleon cresce rapidamente para núcleos leves, atinge valores máximos na região de núcleos de massa intermediária e depois diminui lentamente para núcleos muito pesados.
+
+Qual afirmação explica corretamente a liberação de energia em processos nucleares?
+
+\begin{answerlist}
+  \item Tanto a fusão de núcleos leves quanto a fissão de núcleos muito pesados podem levar a produtos com maior energia de ligação por núcleon.
+  \item Fusão e fissão liberam energia porque diminuem sempre o número total de prótons.
+  \item Apenas a fissão pode liberar energia; a fusão sempre consome energia.
+  \item A energia liberada decorre da criação de massa adicional sem correspondente energético.
+  \item A energia de ligação por núcleon é a mesma para todos os núcleos.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+Sistemas nucleares tendem a configurações mais fortemente ligadas. Núcleos leves podem liberar energia ao se fundirem em núcleos com maior energia de ligação por núcleon; núcleos muito pesados podem liberar energia ao se dividirem em fragmentos também mais fortemente ligados.
+
+Alternativa correta: \textbf{A}.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{10000}
+%% \exname{Q106QuizFissaoFusaoCurvaLigacao}
+%% \exsection{Fisica moderna; Fisica nuclear; Fissao; Fusao; Energia de ligacao}
