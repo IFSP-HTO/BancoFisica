@@ -1,0 +1,50 @@
+<<echo=FALSE, results=hide>>=
+f1 <- sample(c(100,120,150,170),1)
+correta <- 3*f1
+alternativas <- c(
+  paste0("$",correta,"\\,\\mathrm{Hz}$"),
+  paste0("$",2*f1,"\\,\\mathrm{Hz}$"),
+  paste0("$",4*f1,"\\,\\mathrm{Hz}$"),
+  paste0("$",6*f1,"\\,\\mathrm{Hz}$"),
+  paste0("$",8*f1,"\\,\\mathrm{Hz}$")
+)
+solutions <- c(TRUE,FALSE,FALSE,FALSE,FALSE)
+ord <- sample(seq_along(alternativas)); alternativas <- alternativas[ord]; solutions <- solutions[ord]
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Um instrumento de sopro é idealizado como um tubo fechado em uma extremidade e aberto na outra. Sua frequência fundamental é $f_1=\Sexpr{f1}\,\mathrm{Hz}$.
+
+Desprezando correções de extremidade, qual das frequências abaixo também é uma frequência de ressonância desse tubo?
+
+<<echo=FALSE, results=tex>>=
+answerlist(alternativas)
+@
+
+\end{question}
+
+\begin{solution}
+
+Em um tubo fechado em uma extremidade e aberto na outra, aparecem apenas os múltiplos ímpares da frequência fundamental:
+\[
+f_1,\ 3f_1,\ 5f_1,\ldots
+\]
+Entre as alternativas, a única frequência permitida é
+\[
+3f_1=3\cdot\Sexpr{f1}=\Sexpr{correta}\,\mathrm{Hz}.
+\]
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(solutions,paste0('\\textbf{',alternativas,'}'),alternativas))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q03QuizHarmonicosInstrumentoFechado}
+%% \exsection{Ondulatoria; Acustica; Tubos sonoros; Instrumentos musicais; Harmonicos}
+%% \exusepackage[utf8]{inputenc}
