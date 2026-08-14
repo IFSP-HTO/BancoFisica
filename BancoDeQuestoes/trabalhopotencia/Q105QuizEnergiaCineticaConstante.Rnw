@@ -1,0 +1,36 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Um automóvel se desloca em uma estrada horizontal com velocidade constante. O motor exerce uma força no sentido do movimento, enquanto as forças de resistência exercem uma força resultante de mesmo módulo e sentido oposto.
+
+Sobre o trabalho e a energia cinética do automóvel, assinale a alternativa correta.
+
+\begin{answerlist}
+  \item Como a energia cinética é constante, nenhuma força realiza trabalho sobre o automóvel.
+  \item O trabalho da força do motor é positivo, o das forças de resistência é negativo e o trabalho da força resultante é nulo.
+  \item O trabalho da força do motor é nulo porque a velocidade é constante.
+  \item O trabalho das forças de resistência é positivo porque o automóvel continua em movimento.
+  \item A energia cinética aumenta continuamente, pois o motor realiza trabalho positivo.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Velocidade constante implica energia cinética constante. Pelo teorema da energia cinética,
+\[
+W_{\mathrm{resultante}}=\Delta E_c=0.
+\]
+Isso não significa que cada força realize trabalho nulo. A força do motor tem componente no sentido do deslocamento e realiza trabalho positivo; as forças de resistência realizam trabalho negativo. Os dois trabalhos se compensam.
+
+Alternativa correta: \textbf{B}.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte de inspiração: Alberto Gaspar, Compreendendo a Física, v. 1, cap. 15, discussão sobre energia cinética constante e trabalho da resultante.
+%% \extype{schoice}
+%% \exsolution{01000}
+%% \exname{Q105QuizEnergiaCineticaConstante}
+%% \exsection{Mecanica; Trabalho e potencia; Energia cinetica; Teorema da energia cinetica; Conceitual}
