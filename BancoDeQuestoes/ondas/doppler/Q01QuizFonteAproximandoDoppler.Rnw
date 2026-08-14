@@ -1,0 +1,41 @@
+<<echo=FALSE, results=hide>>=
+alternativas <- c(
+  "A frequência detectada aumenta e o comprimento de onda à frente da fonte diminui.",
+  "A frequência detectada diminui e o comprimento de onda à frente da fonte aumenta.",
+  "A frequência detectada não muda, mas o comprimento de onda à frente da fonte diminui.",
+  "A frequência detectada aumenta porque a velocidade do som no ar aumenta.",
+  "A frequência detectada diminui porque a velocidade do som no ar diminui."
+)
+solutions <- c(TRUE,FALSE,FALSE,FALSE,FALSE)
+ord <- sample(seq_along(alternativas)); alternativas <- alternativas[ord]; solutions <- solutions[ord]
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Uma ambulância com a sirene ligada aproxima-se em linha reta de um observador parado. Considere o ar em repouso e despreze o vento.
+
+Qual afirmação descreve corretamente o efeito Doppler nessa situação?
+
+<<echo=FALSE, results=tex>>=
+answerlist(alternativas)
+@
+
+\end{question}
+
+\begin{solution}
+
+A fonte em movimento emite frentes de onda cada vez mais próximas umas das outras na região à sua frente. Por isso, o comprimento de onda nessa região diminui. Como a velocidade do som no ar é determinada pelo meio e permanece praticamente constante, o observador intercepta frentes de onda com maior frequência e detecta um som de frequência maior que a emitida.
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(solutions,paste0('\\textbf{',alternativas,'}'),alternativas))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q01QuizFonteAproximandoDoppler}
+%% \exsection{Ondulatoria; Acustica; Efeito Doppler; Fonte em movimento}
+%% \exusepackage[utf8]{inputenc}
