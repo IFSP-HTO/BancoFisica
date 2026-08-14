@@ -4,8 +4,9 @@
 diam  <- sample(seq(0.4, 0.8, by = 0.05), 1)   ## diâmetro (m)
 rpm   <- sample(seq(300, 900, by = 30), 1)      ## rotações por minuto
 
+pi_aprox <- 3.14
 rot_s <- rpm / 60                                ## rotações por segundo (Hz)
-resp  <- round(pi * diam * rot_s, 2)             ## v = 2*pi*r*f = pi*d*f (m/s)
+resp  <- round(pi_aprox * diam * rot_s, 2)       ## v = pi*d*f (m/s)
 @
 
 \begin{question}
@@ -18,7 +19,7 @@ A velocidade de um automóvel pode ser medida através de um dispositivo que reg
 
 A velocidade linear da borda do pneu é $v = 2\pi r f = \pi d f$, com $d = \Sexpr{diam}$ m e $f = \dfrac{\Sexpr{rpm}}{60} = \Sexpr{round(rot_s,2)}$ Hz:
 
-$$v = 3{,}14 \cdot \Sexpr{diam} \cdot \Sexpr{round(rot_s,2)} = \Sexpr{resp} \text{ m/s}.$$
+$$v = 3{,}14 \cdot \Sexpr{diam} \cdot \frac{\Sexpr{rpm}}{60} = \Sexpr{resp} \text{ m/s}.$$
 
 \end{solution}
 

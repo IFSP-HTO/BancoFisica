@@ -5,7 +5,7 @@ a <- sample(c(4, 5, 6, 8), 1)          ## raio polia maior (m)
 b <- sample(c(1.5, 2, 2.5), 1)         ## raio polia menor (m)
 T <- sample(c(1, 1.5, 2, 2.5), 1)      ## período da polia maior (s)
 
-## mesma velocidade linear: v = 2*pi*a*(1/T) = 2*pi*b*f_nenor
+## mesma velocidade linear: v = 2*pi*a*(1/T) = 2*pi*b*f_menor
 f_a <- 1 / T
 f_b <- round(a * f_a / b, 2)           ## frequência da polia menor (Hz)
 
@@ -38,9 +38,9 @@ answerlist(
 
 A correia transmite a mesma velocidade linear às duas polias: $v = \omega_a a = \omega_b b$.
 
-A polia maior tem frequência $f_a = \dfrac{1}{T} = \dfrac{1}{\Sexpr{T}} = \Sexpr{round(f_a,2)}$ Hz. Assim:
+A polia maior tem frequência $f_a = \dfrac{1}{T}$. Portanto,
 
-$$f_b = \frac{a}{b} f_a = \frac{\Sexpr{a}}{\Sexpr{b}} \cdot \Sexpr{round(f_a,2)} = \Sexpr{f_b} \text{ Hz}.$$
+$$f_b = \frac{a}{b}f_a = \frac{a}{bT} = \frac{\Sexpr{a}}{\Sexpr{b}\cdot\Sexpr{T}} = \Sexpr{f_b}\text{ Hz}.$$
 
 \end{solution}
 

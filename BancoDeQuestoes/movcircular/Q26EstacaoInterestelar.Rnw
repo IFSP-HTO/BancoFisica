@@ -5,8 +5,9 @@ R <- sample(c(30, 40, 50), 1)   ## raio da extremidade (m)
 g <- 10                          ## gravidade artificial desejada (m/s²)
 
 ## a = omega^2 * R = g -> omega = sqrt(g/R); f = omega/(2*pi)
-omega <- round(sqrt(g / R), 3)
-f     <- round(omega / (2 * pi), 4)
+omega_exato <- sqrt(g / R)
+omega <- round(omega_exato, 3)
+f     <- round(omega_exato / (2 * pi), 4)
 @
 
 \begin{question}
@@ -19,9 +20,11 @@ f     <- round(omega / (2 * pi), 4)
 
 Para simular a gravidade, a aceleração centrípeta na extremidade deve ser $a = \omega^2 R = g$:
 
-$$\omega = \sqrt{\frac{g}{R}} = \sqrt{\frac{\Sexpr{g}}{\Sexpr{R}}} = \Sexpr{omega} \text{ rad/s}.$$
+$$\omega = \sqrt{\frac{g}{R}} = \sqrt{\frac{\Sexpr{g}}{\Sexpr{R}}} \approx \Sexpr{omega} \text{ rad/s}.$$
 
-A frequência é $f = \dfrac{\omega}{2\pi} = \Sexpr{f}$ revoluções por segundo.
+Usando o valor não arredondado de $\omega$ no cálculo final, a frequência é
+
+$$f = \frac{\omega}{2\pi} = \Sexpr{f}\text{ revoluções por segundo}.$$
 \end{solution}
 
 %% META-INFORMATION
