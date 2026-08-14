@@ -1,0 +1,41 @@
+<<echo=FALSE, results=hide>>=
+BE_D <- sample(c(1.0,1.1,1.2),1)
+BE_T <- sample(c(2.4,2.5,2.6,2.7,2.8),1)
+E_in <- 4*BE_D
+E_out <- 3*BE_T
+Q <- E_out-E_in
+fmt <- function(x,d=1) formatC(x,format="f",digits=d,decimal.mark=",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Considere uma reação simplificada de fusão
+\[
+{}^2\mathrm{H}+{}^2\mathrm{H}\longrightarrow{}^3\mathrm{H}+n.
+\]
+A energia de ligação por núcleon do deutério é $\Sexpr{fmt(BE_D,1)}\,\mathrm{MeV}$ e a do trítio é $\Sexpr{fmt(BE_T,1)}\,\mathrm{MeV}$. Despreze outras contribuições e considere o nêutron livre sem energia de ligação.
+
+Determine a energia liberada na reação, em MeV.
+\end{question}
+
+\begin{solution}
+Há dois núcleos de deutério, cada um com dois núcleons. A energia total de ligação inicial é
+\[
+E_{L,i}=4(\Sexpr{fmt(BE_D,1)})=\Sexpr{fmt(E_in,1)}\,\mathrm{MeV}.
+\]
+O trítio tem três núcleons:
+\[
+E_{L,f}=3(\Sexpr{fmt(BE_T,1)})=\Sexpr{fmt(E_out,1)}\,\mathrm{MeV}.
+\]
+O aumento da energia de ligação aparece como energia liberada:
+\[
+Q=E_{L,f}-E_{L,i}=\Sexpr{fmt(Q,1)}\,\mathrm{MeV}.
+\]
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{round(Q,1)}}
+%% \extol{0.05}
+%% \exname{Q105NumFusaoEnergiaLigacao}
+%% \exsection{Fisica moderna; Fisica nuclear; Fusao; Energia de ligacao}

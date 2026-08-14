@@ -1,0 +1,52 @@
+<<echo=FALSE, results=hide>>=
+pares <- list(c(2,1),c(3,2),c(4,2),c(4,3),c(5,2),c(5,3))
+parn <- pares[[sample(seq_along(pares),1)]]
+ni <- parn[1]; nf <- parn[2]
+Ei <- -13.6/ni^2
+Ef <- -13.6/nf^2
+dE <- abs(Ef-Ei)
+lambda_nm <- 1240/dE
+fmt <- function(x,d=2) formatC(x,format="f",digits=d,decimal.mark=",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+No modelo de Bohr para o átomo de hidrogênio, a energia do nível $n$ é
+\[
+E_n=-\frac{13,6}{n^2}\,\mathrm{eV}.
+\]
+Um elétron passa espontaneamente de $n=\Sexpr{ni}$ para $n=\Sexpr{nf}$. Use $hc\simeq1240\,\mathrm{eV\,nm}$.
+
+Determine:
+\begin{answerlist}
+  \item a energia do fóton emitido, em eV;
+  \item o comprimento de onda do fóton, em nm.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+As energias inicial e final são
+\[
+E_i=\Sexpr{fmt(Ei,3)}\,\mathrm{eV},\qquad E_f=\Sexpr{fmt(Ef,3)}\,\mathrm{eV}.
+\]
+A energia liberada é
+\[
+E_\gamma=|E_f-E_i|=\Sexpr{fmt(dE,3)}\,\mathrm{eV}.
+\]
+Então,
+\[
+\lambda=\frac{hc}{E_\gamma}=\Sexpr{fmt(lambda_nm,1)}\,\mathrm{nm}.
+\]
+\begin{answerlist}
+  \item $\Sexpr{fmt(dE,3)}\,\mathrm{eV}$
+  \item $\Sexpr{fmt(lambda_nm,1)}\,\mathrm{nm}$
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{round(dE,3)}|\Sexpr{round(lambda_nm,1)}}
+%% \extol{0.01|0.5}
+%% \exname{Q95ClozeBohrTransicao}
+%% \exsection{Fisica moderna; Atomo de Bohr; Espectros; Fotons}

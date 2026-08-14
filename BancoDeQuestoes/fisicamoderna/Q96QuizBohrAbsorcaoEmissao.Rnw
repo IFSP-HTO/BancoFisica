@@ -1,0 +1,33 @@
+<<echo=FALSE, results=hide>>=
+ni <- sample(c(1,2,3),1)
+nf <- sample((ni+1):5,1)
+dE <- 13.6*(1/ni^2-1/nf^2)
+fmt <- function(x,d=2) formatC(x,format="f",digits=d,decimal.mark=",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+No átomo de hidrogênio, um elétron inicialmente no nível $n=\Sexpr{ni}$ passa para o nível $n=\Sexpr{nf}$, cuja energia é maior. A diferença entre os níveis é $\Sexpr{fmt(dE,2)}\,\mathrm{eV}$.
+
+Qual descrição é compatível com o modelo de Bohr?
+
+\begin{answerlist}
+  \item O átomo deve emitir um fóton com energia $\Sexpr{fmt(dE,2)}\,\mathrm{eV}$.
+  \item O átomo deve absorver exatamente a energia necessária para a transição entre esses níveis.
+  \item O elétron pode adquirir qualquer energia intermediária entre os dois níveis.
+  \item A transição não envolve troca de energia porque o elétron permanece no mesmo átomo.
+  \item A energia absorvida depende apenas da intensidade da luz, não da energia dos fótons.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+Como o elétron passa para um nível de maior energia, o átomo precisa \emph{absorver} energia. No modelo de Bohr, os níveis são discretos: a energia absorvida deve corresponder à diferença entre os níveis, aqui $\Sexpr{fmt(dE,2)}\,\mathrm{eV}$.
+
+Alternativa correta: \textbf{B}.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{01000}
+%% \exname{Q96QuizBohrAbsorcaoEmissao}
+%% \exsection{Fisica moderna; Atomo de Bohr; Quantizacao; Absorcao e emissao}

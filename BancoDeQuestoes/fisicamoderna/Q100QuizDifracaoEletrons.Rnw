@@ -1,0 +1,27 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Em um experimento, um feixe de elétrons incide sobre um cristal e produz máximos e mínimos de intensidade semelhantes aos observados na difração de raios X.
+
+Esse resultado constitui evidência experimental de que
+
+\begin{answerlist}
+  \item elétrons são ondas eletromagnéticas e deixam de possuir massa.
+  \item partículas materiais podem apresentar comportamento ondulatório.
+  \item somente a luz apresenta dualidade onda-partícula.
+  \item a quantidade de movimento do elétron é necessariamente nula no cristal.
+  \item a difração só pode ocorrer quando não há transferência de energia.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+A difração é um fenômeno característico de ondas. Sua observação com elétrons, como nos experimentos de Davisson e Germer, fornece evidência do caráter ondulatório da matéria previsto por De Broglie.
+
+Alternativa correta: \textbf{B}.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{01000}
+%% \exname{Q100QuizDifracaoEletrons}
+%% \exsection{Fisica moderna; De Broglie; Difracao de eletrons; Dualidade onda-particula}

@@ -1,0 +1,37 @@
+<<echo=FALSE, results=hide>>=
+m_macro <- sample(c(0.10,0.20,0.40,1.0),1)
+v_macro <- sample(c(5,10,20,30),1)
+v_e6 <- sample(c(2,4,6,8),1)
+h <- 6.6e-34
+me <- 9.1e-31
+lam_macro <- h/(m_macro*v_macro)
+lam_e <- h/(me*v_e6*1e6)
+razao <- lam_e/lam_macro
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Considere um elétron movendo-se a $\Sexpr{v_e6}\times10^6\,\mathrm{m/s}$ e um objeto macroscópico de massa $\Sexpr{m_macro}\,\mathrm{kg}$ movendo-se a $\Sexpr{v_macro}\,\mathrm{m/s}$. Pela relação de De Broglie, $\lambda=h/(mv)$, o comprimento de onda do elétron é cerca de $\Sexpr{formatC(razao,format="e",digits=1)}$ vezes o do objeto.
+
+Qual conclusão é a mais adequada?
+
+\begin{answerlist}
+  \item Apenas o objeto macroscópico possui caráter ondulatório.
+  \item A relação de De Broglie só se aplica a fótons.
+  \item Ambos podem ser associados a comprimentos de onda, mas o do objeto macroscópico é tão pequeno que seus efeitos ondulatórios são praticamente imperceptíveis.
+  \item O comprimento de onda aumenta quando a massa ou a velocidade aumentam.
+  \item O elétron não pode sofrer difração por ser uma partícula com massa.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+A relação $\lambda=h/(mv)$ associa um comprimento de onda a partículas materiais. Para objetos macroscópicos, o momento é enorme em comparação ao de partículas microscópicas, tornando $\lambda$ extremamente pequeno. Isso explica por que o caráter ondulatório é observável para elétrons, mas não em situações cotidianas com objetos macroscópicos.
+
+Alternativa correta: \textbf{C}.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{00100}
+%% \exname{Q98QuizDeBroglieMacroMicro}
+%% \exsection{Fisica moderna; De Broglie; Dualidade onda-particula; Conceitual}

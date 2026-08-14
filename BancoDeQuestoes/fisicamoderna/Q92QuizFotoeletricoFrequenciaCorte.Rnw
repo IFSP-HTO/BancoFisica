@@ -1,0 +1,33 @@
+<<echo=FALSE, results=hide>>=
+phi <- sample(c(2.0,2.5,3.0,3.5,4.0), 1)
+h_ev <- 4.14e-15
+f0_14 <- phi/h_ev/1e14
+f_inc_14 <- round(f0_14*sample(c(0.55,0.65,0.75,0.85),1),1)
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Uma superfície metálica possui função trabalho de $\Sexpr{phi}\,\mathrm{eV}$. Sua frequência de corte é aproximadamente $\Sexpr{round(f0_14,1)}\times10^{14}\,\mathrm{Hz}$. Sobre ela incide luz de frequência $\Sexpr{f_inc_14}\times10^{14}\,\mathrm{Hz}$, portanto abaixo da frequência de corte.
+
+O que ocorre se apenas a intensidade dessa luz for aumentada, mantendo sua frequência?
+
+\begin{answerlist}
+  \item A energia de cada fóton aumenta até ocorrer emissão.
+  \item Elétrons passam a ser emitidos porque chegam mais fótons por segundo.
+  \item Não ocorre emissão fotoelétrica, pois a energia individual dos fótons continua insuficiente.
+  \item A função trabalho do metal diminui quando a intensidade aumenta.
+  \item A frequência de corte passa a ser igual à frequência da luz incidente.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+No efeito fotoelétrico, a energia de cada fóton é $E=hf$. Aumentar a intensidade sem alterar $f$ aumenta o número de fótons incidentes por unidade de tempo, mas não aumenta a energia de cada fóton. Como $f<f_0$, cada fóton tem energia menor que a função trabalho, e não há emissão fotoelétrica.
+
+Alternativa correta: \textbf{C}.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{00100}
+%% \exname{Q92QuizFotoeletricoFrequenciaCorte}
+%% \exsection{Fisica moderna; Efeito fotoeletrico; Frequencia de corte; Conceitual}
