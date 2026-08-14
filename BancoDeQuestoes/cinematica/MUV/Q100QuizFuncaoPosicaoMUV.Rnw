@@ -1,0 +1,42 @@
+<<echo=FALSE, results=hide>>=
+s0 <- sample(c(-10,-5,0,5,10,20), 1)
+v0 <- sample(c(2,4,6,8), 1)
+a <- sample(c(2,4,6), 1)
+coef2 <- a/2
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+A posição de um móvel em uma trajetória retilínea é descrita, no SI, por
+\[
+s(t)=\Sexpr{s0}+\Sexpr{v0}t+\Sexpr{coef2}t^2.
+\]
+
+Qual é a aceleração constante desse móvel?
+
+\begin{answerlist}
+  \item $\Sexpr{coef2}\,\mathrm{m/s^2}$
+  \item $\Sexpr{a}\,\mathrm{m/s^2}$
+  \item $\Sexpr{2*a}\,\mathrm{m/s^2}$
+  \item $-\Sexpr{a}\,\mathrm{m/s^2}$
+  \item $0\,\mathrm{m/s^2}$
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+A função horária do MUV tem a forma
+\[
+s=s_0+v_0t+\frac{at^2}{2}.
+\]
+Assim, o coeficiente de $t^2$ é $a/2$. Como ele vale $\Sexpr{coef2}$,
+\[
+\frac{a}{2}=\Sexpr{coef2}\quad\Rightarrow\quad a=\Sexpr{a}\,\mathrm{m/s^2}.
+\]
+Alternativa correta: \textbf{B}.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{01000}
+%% \exname{Q100QuizFuncaoPosicaoMUV}
+%% \exsection{Mecanica; Cinematica; MUV; Funcao horaria}

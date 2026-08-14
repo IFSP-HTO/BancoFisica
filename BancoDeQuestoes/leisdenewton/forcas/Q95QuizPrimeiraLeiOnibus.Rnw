@@ -1,0 +1,27 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Um passageiro está em pé dentro de um ônibus que se move em linha reta. Quando o motorista freia bruscamente, o passageiro tende a inclinar-se para a frente em relação ao ônibus.
+
+A melhor explicação para esse comportamento é:
+
+\begin{answerlist}
+  \item uma força para a frente passa a agir sobre o passageiro no instante da frenagem.
+  \item o passageiro tende a manter seu estado de movimento enquanto o ônibus reduz sua velocidade.
+  \item a massa do passageiro aumenta durante a frenagem.
+  \item a força peso do passageiro passa a apontar para a frente.
+  \item a força normal deixa de atuar no passageiro.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+Pela primeira lei de Newton, um corpo tende a manter seu estado de movimento na ausência de uma força resultante que produza a mesma desaceleração do ônibus. Enquanto o ônibus reduz rapidamente sua velocidade, o corpo do passageiro tende a conservar a velocidade que possuía imediatamente antes da frenagem.
+
+Alternativa correta: \textbf{B}.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{01000}
+%% \exname{Q95QuizPrimeiraLeiOnibus}
+%% \exsection{Mecanica; Leis de Newton; Primeira lei; Inercia}

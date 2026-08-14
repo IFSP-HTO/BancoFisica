@@ -1,0 +1,56 @@
+<<echo=FALSE, results=hide>>=
+casos <- data.frame(theta=c(30,37,53), seno=c(0.5,0.6,0.8), cosseno=c(0.866,0.8,0.6))
+i <- sample(seq_len(nrow(casos)), 1)
+theta <- casos$theta[i]
+sn <- casos$seno[i]
+cs <- casos$cosseno[i]
+m <- sample(c(2,4,5,8,10), 1)
+g <- 10
+Ppar <- m*g*sn
+N <- m*g*cs
+a <- g*sn
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Um bloco de massa $\Sexpr{m}\,\mathrm{kg}$ é abandonado em um plano inclinado sem atrito que forma um ângulo de $\Sexpr{theta}^{\circ}$ com a horizontal. Adote $g=10\,\mathrm{m/s^2}$, $\sin\Sexpr{theta}^{\circ}=\Sexpr{sn}$ e $\cos\Sexpr{theta}^{\circ}=\Sexpr{cs}$.
+
+Determine:
+\begin{answerlist}
+  \item o módulo da componente do peso paralela ao plano, em newtons;
+  \item o módulo da força normal, em newtons;
+  \item o módulo da aceleração do bloco ao longo do plano, em $\mathrm{m/s^2}$.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+As únicas forças reais sobre o bloco são o peso e a normal. Decompomos o peso apenas como recurso matemático.
+
+Ao longo do plano:
+\[
+P_{\parallel}=mg\sin\theta=\Sexpr{Ppar}\,\mathrm{N}.
+\]
+Perpendicularmente ao plano:
+\[
+N=mg\cos\theta=\Sexpr{round(N,2)}\,\mathrm{N}.
+\]
+Pela segunda lei na direção do plano:
+\[
+ma=mg\sin\theta
+\quad\Rightarrow\quad
+a=g\sin\theta=\Sexpr{a}\,\mathrm{m/s^2}.
+\]
+\begin{answerlist}
+  \item $\Sexpr{Ppar}\,\mathrm{N}$
+  \item $\Sexpr{round(N,2)}\,\mathrm{N}$
+  \item $\Sexpr{a}\,\mathrm{m/s^2}$
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exclozetype{num|num|num}
+%% \exsolution{\Sexpr{Ppar}|\Sexpr{round(N,2)}|\Sexpr{a}}
+%% \extol{0.05|0.1|0.05}
+%% \exname{Q101ClozePlanoInclinadoSemAtrito}
+%% \exsection{Mecanica; Leis de Newton; Plano inclinado; Segunda lei}

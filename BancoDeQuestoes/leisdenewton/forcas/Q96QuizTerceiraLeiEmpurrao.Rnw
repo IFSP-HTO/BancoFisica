@@ -1,0 +1,27 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Uma pessoa empurra uma caixa horizontalmente. A caixa exerce sobre a pessoa uma força de mesma intensidade e sentido oposto à força que a pessoa exerce sobre a caixa.
+
+Sobre esse par de forças, assinale a alternativa correta.
+
+\begin{answerlist}
+  \item As duas forças se anulam porque atuam no mesmo corpo.
+  \item A força da pessoa é sempre maior, pois ela produz o movimento da caixa.
+  \item As forças têm mesma intensidade e sentidos opostos, mas atuam em corpos diferentes.
+  \item As forças só têm mesma intensidade se a caixa estiver em repouso.
+  \item A força da caixa sobre a pessoa é uma força de atrito e não pertence ao mesmo par de interação.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+As forças de ação e reação associadas à mesma interação têm mesma intensidade, mesma direção e sentidos opostos, mas atuam em corpos diferentes. Por isso não se cancelam em um diagrama de forças de um único corpo.
+
+Alternativa correta: \textbf{C}.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{00100}
+%% \exname{Q96QuizTerceiraLeiEmpurrao}
+%% \exsection{Mecanica; Leis de Newton; Terceira lei}

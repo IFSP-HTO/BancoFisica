@@ -1,0 +1,44 @@
+<<echo=FALSE, results=hide>>=
+casos <- data.frame(theta=c(37,53), seno=c(0.6,0.8), cosseno=c(0.8,0.6))
+i <- sample(seq_len(nrow(casos)),1)
+theta <- casos$theta[i]
+sn <- casos$seno[i]
+cs <- casos$cosseno[i]
+mu <- sample(c(0.1,0.2,0.25,0.3),1)
+g <- 10
+a <- g*(sn-mu*cs)
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Um bloco desliza para baixo em um plano inclinado que faz $\Sexpr{theta}^{\circ}$ com a horizontal. O coeficiente de atrito cinético é $\Sexpr{mu}$. Adote $g=10\,\mathrm{m/s^2}$, $\sin\Sexpr{theta}^{\circ}=\Sexpr{sn}$ e $\cos\Sexpr{theta}^{\circ}=\Sexpr{cs}$.
+
+Determine o módulo da aceleração do bloco, em $\mathrm{m/s^2}$.
+\end{question}
+
+\begin{solution}
+Na direção do plano, a componente do peso aponta para baixo e o atrito cinético aponta para cima:
+\[
+ma=mg\sin\theta-f_{at}.
+\]
+Como
+\[
+f_{at}=\mu N=\mu mg\cos\theta,
+\]
+temos
+\[
+a=g(\sin\theta-\mu\cos\theta).
+\]
+Substituindo os valores:
+\[
+a=10(\Sexpr{sn}-\Sexpr{mu}\cdot\Sexpr{cs})
+=\Sexpr{round(a,2)}\,\mathrm{m/s^2}.
+\]
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{round(a,2)}}
+%% \extol{0.05}
+%% \exname{Q96ClozePlanoInclinadoComAtrito}
+%% \exsection{Mecanica; Leis de Newton; Atrito; Plano inclinado}

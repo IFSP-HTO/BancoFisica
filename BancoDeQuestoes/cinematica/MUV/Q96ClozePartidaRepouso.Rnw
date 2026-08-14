@@ -1,0 +1,42 @@
+<<echo=FALSE, results=hide>>=
+a <- sample(c(1.5,2,2.5,3,4), 1)
+t <- sample(c(4,6,8,10), 1)
+v <- a*t
+ds <- 0.5*a*t^2
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Um veículo parte do repouso em uma pista retilínea e mantém aceleração constante de $\Sexpr{a}\,\mathrm{m/s^2}$ durante $\Sexpr{t}\,\mathrm{s}$.
+
+Determine:
+\begin{answerlist}
+  \item a velocidade ao final desse intervalo, em $\mathrm{m/s}$;
+  \item a distância percorrida, em $\mathrm{m}$.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+Como $v_0=0$,
+\[
+v=at=\Sexpr{a}\cdot\Sexpr{t}=\Sexpr{v}\,\mathrm{m/s}.
+\]
+O deslocamento é
+\[
+\Delta s=\frac{at^2}{2}
+=\frac{\Sexpr{a}\cdot\Sexpr{t}^2}{2}
+=\Sexpr{ds}\,\mathrm{m}.
+\]
+\begin{answerlist}
+  \item $\Sexpr{v}\,\mathrm{m/s}$
+  \item $\Sexpr{ds}\,\mathrm{m}$
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{v}|\Sexpr{ds}}
+%% \extol{0.01|0.01}
+%% \exname{Q96ClozePartidaRepouso}
+%% \exsection{Mecanica; Cinematica; MUV}

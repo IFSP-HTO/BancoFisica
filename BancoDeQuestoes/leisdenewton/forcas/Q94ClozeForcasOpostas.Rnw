@@ -1,0 +1,41 @@
+<<echo=FALSE, results=hide>>=
+m <- sample(c(2,4,5,8,10), 1)
+F2 <- sample(c(10,15,20,25,30), 1)
+a <- sample(c(1,2,3,4), 1)
+FR <- m*a
+F1 <- F2 + FR
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Duas forças horizontais e opostas atuam sobre um bloco de massa $\Sexpr{m}\,\mathrm{kg}$. A força para a direita tem módulo $\Sexpr{F1}\,\mathrm{N}$ e a força para a esquerda tem módulo $\Sexpr{F2}\,\mathrm{N}$.
+
+Determine:
+\begin{answerlist}
+  \item o módulo da força resultante, em newtons;
+  \item o módulo da aceleração do bloco, em $\mathrm{m/s^2}$.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+Como as forças têm sentidos opostos,
+\[
+F_R=\Sexpr{F1}-\Sexpr{F2}=\Sexpr{FR}\,\mathrm{N}.
+\]
+Pela segunda lei de Newton,
+\[
+a=\frac{F_R}{m}=\frac{\Sexpr{FR}}{\Sexpr{m}}=\Sexpr{a}\,\mathrm{m/s^2}.
+\]
+\begin{answerlist}
+  \item $\Sexpr{FR}\,\mathrm{N}$
+  \item $\Sexpr{a}\,\mathrm{m/s^2}$
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{FR}|\Sexpr{a}}
+%% \extol{0.01|0.01}
+%% \exname{Q94ClozeForcasOpostas}
+%% \exsection{Mecanica; Leis de Newton; Forca resultante; Segunda lei}

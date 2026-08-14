@@ -1,0 +1,42 @@
+<<echo=FALSE, results=hide>>=
+g <- 10
+t <- sample(c(1.5,2,2.5,3,3.5,4), 1)
+h <- 0.5*g*t^2
+v <- g*t
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Um objeto é abandonado do repouso e cai durante $\Sexpr{t}\,\mathrm{s}$, sem resistência do ar. Adote $g=10\,\mathrm{m/s^2}$.
+
+Determine:
+\begin{answerlist}
+  \item a distância vertical percorrida, em metros;
+  \item o módulo da velocidade ao final do intervalo, em $\mathrm{m/s}$.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+Para queda livre a partir do repouso,
+\[
+\Delta y=\frac{gt^2}{2}
+=\frac{10\cdot\Sexpr{t}^2}{2}
+=\Sexpr{h}\,\mathrm{m}.
+\]
+O módulo da velocidade é
+\[
+v=gt=10\cdot\Sexpr{t}=\Sexpr{v}\,\mathrm{m/s}.
+\]
+\begin{answerlist}
+  \item $\Sexpr{h}\,\mathrm{m}$
+  \item $\Sexpr{v}\,\mathrm{m/s}$
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{h}|\Sexpr{v}}
+%% \extol{0.01|0.01}
+%% \exname{Q95ClozeQuedaLivreTempo}
+%% \exsection{Mecanica; Cinematica; Queda livre}

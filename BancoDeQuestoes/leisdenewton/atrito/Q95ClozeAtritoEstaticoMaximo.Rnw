@@ -1,0 +1,33 @@
+<<echo=FALSE, results=hide>>=
+m <- sample(c(5,10,15,20,25), 1)
+mu <- sample(c(0.2,0.3,0.4,0.5,0.6), 1)
+g <- 10
+fmax <- mu*m*g
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Um bloco de massa $\Sexpr{m}\,\mathrm{kg}$ está em repouso sobre um piso horizontal. O coeficiente de atrito estático entre as superfícies é $\Sexpr{mu}$. Adote $g=10\,\mathrm{m/s^2}$.
+
+Determine o maior módulo de uma força horizontal que pode ser aplicada ao bloco sem que ele comece a deslizar, em newtons.
+\end{question}
+
+\begin{solution}
+O valor máximo do atrito estático é
+\[
+f_{e,\max}=\mu_e N.
+\]
+Como $N=mg$,
+\[
+f_{e,\max}=\Sexpr{mu}\cdot\Sexpr{m}\cdot10
+=\Sexpr{fmax}\,\mathrm{N}.
+\]
+Esse é o maior valor da força aplicada que ainda pode ser equilibrado pelo atrito estático.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{fmax}}
+%% \extol{0.01}
+%% \exname{Q95ClozeAtritoEstaticoMaximo}
+%% \exsection{Mecanica; Leis de Newton; Atrito estatico}

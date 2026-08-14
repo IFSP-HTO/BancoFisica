@@ -1,0 +1,45 @@
+<<echo=FALSE, results=hide>>=
+v0 <- sample(c(4,6,8,10), 1)
+v1 <- sample(c(14,16,18,20,22), 1)
+t <- sample(c(4,5,6,8), 1)
+a <- (v1-v0)/t
+ds <- 0.5*(v0+v1)*t
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+A velocidade de um móvel varia uniformemente de $\Sexpr{v0}\,\mathrm{m/s}$ para $\Sexpr{v1}\,\mathrm{m/s}$ durante $\Sexpr{t}\,\mathrm{s}$.
+
+Interpretando o gráfico $v\times t$, determine:
+\begin{answerlist}
+  \item a aceleração do móvel, em $\mathrm{m/s^2}$;
+  \item o deslocamento realizado no intervalo, em metros.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+A inclinação do gráfico $v\times t$ fornece a aceleração:
+\[
+a=\frac{\Delta v}{\Delta t}
+=\frac{\Sexpr{v1}-\Sexpr{v0}}{\Sexpr{t}}
+=\Sexpr{round(a,2)}\,\mathrm{m/s^2}.
+\]
+O deslocamento corresponde à área sob o gráfico. Como a velocidade varia linearmente, essa área é a de um trapézio:
+\[
+\Delta s=\frac{v_0+v_1}{2}t
+=\frac{\Sexpr{v0}+\Sexpr{v1}}{2}\cdot\Sexpr{t}
+=\Sexpr{ds}\,\mathrm{m}.
+\]
+\begin{answerlist}
+  \item $\Sexpr{round(a,2)}\,\mathrm{m/s^2}$
+  \item $\Sexpr{ds}\,\mathrm{m}$
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{round(a,2)}|\Sexpr{ds}}
+%% \extol{0.05|0.05}
+%% \exname{Q99ClozeAreaGraficoVelocidade}
+%% \exsection{Mecanica; Cinematica; MUV; Graficos}

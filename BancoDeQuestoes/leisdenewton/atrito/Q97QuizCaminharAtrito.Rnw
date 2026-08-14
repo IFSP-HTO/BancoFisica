@@ -1,0 +1,27 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Ao caminhar sem escorregar sobre um piso horizontal, uma pessoa empurra o chão para trás com o pé.
+
+Qual força externa é diretamente responsável por acelerar a pessoa para a frente?
+
+\begin{answerlist}
+  \item A força peso, exercida pela Terra.
+  \item A força normal, exercida verticalmente pelo piso.
+  \item A força de atrito estático exercida pelo piso sobre o pé, para a frente.
+  \item Uma força de atrito cinético exercida para trás.
+  \item Nenhuma força: a pessoa avança apenas por inércia.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+O pé empurra o chão para trás. Pela interação entre as superfícies, o piso exerce sobre o pé uma força de atrito estático para a frente. Essa força externa pode acelerar a pessoa. O exemplo mostra por que o atrito não deve ser entendido simplesmente como uma força que sempre ``atrapalha'' o movimento.
+
+Alternativa correta: \textbf{C}.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{00100}
+%% \exname{Q97QuizCaminharAtrito}
+%% \exsection{Mecanica; Leis de Newton; Atrito estatico; Cotidiano; Conceitual}

@@ -1,0 +1,48 @@
+<<echo=FALSE, results=hide>>=
+g <- 10
+v0 <- sample(c(20,30,40,50), 1)
+ts <- v0/g
+hmax <- v0^2/(2*g)
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Uma bola é lançada verticalmente para cima, a partir do solo, com velocidade inicial de $\Sexpr{v0}\,\mathrm{m/s}$. Despreze a resistência do ar e adote $g=10\,\mathrm{m/s^2}$.
+
+Determine:
+\begin{answerlist}
+  \item o tempo necessário para atingir o ponto mais alto, em segundos;
+  \item a altura máxima atingida em relação ao ponto de lançamento, em metros.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+No ponto mais alto, a velocidade vertical é momentaneamente nula:
+\[
+0=v_0-gt.
+\]
+Assim,
+\[
+t_s=\frac{\Sexpr{v0}}{10}=\Sexpr{ts}\,\mathrm{s}.
+\]
+Pela equação de Torricelli,
+\[
+0=v_0^2-2gh_{\max},
+\]
+portanto
+\[
+h_{\max}=\frac{\Sexpr{v0}^2}{20}=\Sexpr{hmax}\,\mathrm{m}.
+\]
+\begin{answerlist}
+  \item $\Sexpr{ts}\,\mathrm{s}$
+  \item $\Sexpr{hmax}\,\mathrm{m}$
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{ts}|\Sexpr{hmax}}
+%% \extol{0.01|0.01}
+%% \exname{Q96ClozeLancamentoVerticalSubida}
+%% \exsection{Mecanica; Cinematica; Lancamento vertical; Queda livre}

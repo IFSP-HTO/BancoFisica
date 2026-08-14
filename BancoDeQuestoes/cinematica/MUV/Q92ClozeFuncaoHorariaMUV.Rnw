@@ -1,0 +1,51 @@
+<<echo=FALSE, results=hide>>=
+## Questão autoral inspirada na sequência didática de MUV do Gaspar, vol. 1, cap. 6.
+v0 <- sample(c(4,6,8,10,12), 1)
+a <- sample(c(2,3,4), 1)
+t <- sample(c(3,4,5,6), 1)
+v <- v0 + a*t
+ds <- v0*t + 0.5*a*t^2
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Um automóvel passa por um ponto de uma pista retilínea com velocidade de $\Sexpr{v0}\,\mathrm{m/s}$ e, a partir desse instante, mantém aceleração constante de $\Sexpr{a}\,\mathrm{m/s^2}$ no mesmo sentido do movimento. Considere $t=0$ nesse ponto.
+
+Determine, após $\Sexpr{t}\,\mathrm{s}$:
+\begin{answerlist}
+  \item a velocidade do automóvel, em $\mathrm{m/s}$;
+  \item o deslocamento realizado, em $\mathrm{m}$.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+Para um movimento com aceleração constante,
+\[
+v=v_0+at
+\]
+e
+\[
+\Delta s=v_0t+\frac{at^2}{2}.
+\]
+Logo,
+\[
+v=\Sexpr{v0}+\Sexpr{a}\cdot\Sexpr{t}=\Sexpr{v}\,\mathrm{m/s},
+\]
+e
+\[
+\Delta s=\Sexpr{v0}\cdot\Sexpr{t}+\frac{\Sexpr{a}\cdot\Sexpr{t}^2}{2}
+=\Sexpr{ds}\,\mathrm{m}.
+\]
+\begin{answerlist}
+  \item $\Sexpr{v}\,\mathrm{m/s}$
+  \item $\Sexpr{ds}\,\mathrm{m}$
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{v}|\Sexpr{ds}}
+%% \extol{0.01|0.01}
+%% \exname{Q92ClozeFuncaoHorariaMUV}
+%% \exsection{Mecanica; Cinematica; MUV; Funcao horaria}

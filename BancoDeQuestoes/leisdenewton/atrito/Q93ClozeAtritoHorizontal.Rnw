@@ -1,0 +1,49 @@
+<<echo=FALSE, results=hide>>=
+m <- sample(c(5,10,15,20), 1)
+mu <- sample(c(0.1,0.2,0.3,0.4), 1)
+g <- 10
+fat <- mu*m*g
+a <- sample(c(1,2,3), 1)
+F <- fat + m*a
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Um bloco de massa $\Sexpr{m}\,\mathrm{kg}$ é puxado horizontalmente por uma força de $\Sexpr{F}\,\mathrm{N}$ sobre um piso. O coeficiente de atrito cinético entre o bloco e o piso é $\Sexpr{mu}$. Adote $g=10\,\mathrm{m/s^2}$.
+
+Determine:
+\begin{answerlist}
+  \item o módulo da força de atrito cinético, em newtons;
+  \item o módulo da aceleração do bloco, em $\mathrm{m/s^2}$.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+Como a força aplicada é horizontal, $N=mg$. Logo,
+\[
+f_{at}=\mu N=\mu mg
+=\Sexpr{mu}\cdot\Sexpr{m}\cdot10
+=\Sexpr{fat}\,\mathrm{N}.
+\]
+A força resultante horizontal é
+\[
+F_R=F-f_{at},
+\]
+portanto
+\[
+a=\frac{F-f_{at}}{m}
+=\Sexpr{a}\,\mathrm{m/s^2}.
+\]
+\begin{answerlist}
+  \item $\Sexpr{fat}\,\mathrm{N}$
+  \item $\Sexpr{a}\,\mathrm{m/s^2}$
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{fat}|\Sexpr{a}}
+%% \extol{0.01|0.01}
+%% \exname{Q93ClozeAtritoHorizontal}
+%% \exsection{Mecanica; Leis de Newton; Atrito cinetico; Segunda lei}

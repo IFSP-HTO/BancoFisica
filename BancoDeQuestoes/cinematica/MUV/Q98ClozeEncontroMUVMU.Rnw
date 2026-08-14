@@ -1,0 +1,57 @@
+<<echo=FALSE, results=hide>>=
+## Um móvel A parte do repouso acelerado; B está à frente e move-se mais lentamente.
+casos <- expand.grid(a=c(2,4), vB=c(4,6,8), t=c(8,10,12))
+casos$d0 <- 0.5*casos$a*casos$t^2 - casos$vB*casos$t
+casos <- casos[casos$d0 > 20, ]
+caso <- casos[sample(seq_len(nrow(casos)), 1), ]
+a <- caso$a
+vB <- caso$vB
+t <- caso$t
+d0 <- caso$d0
+x_encontro <- 0.5*a*t^2
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+No instante $t=0$, o veículo A parte do repouso da posição $x=0$ com aceleração constante de $\Sexpr{a}\,\mathrm{m/s^2}$. Nesse mesmo instante, o veículo B está $\Sexpr{d0}\,\mathrm{m}$ à frente de A e segue no mesmo sentido com velocidade constante de $\Sexpr{vB}\,\mathrm{m/s}$.
+
+Determine:
+\begin{answerlist}
+  \item o instante em que A alcança B, em segundos;
+  \item a posição do encontro medida a partir da posição inicial de A, em metros.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+As posições são
+\[
+x_A=\frac{at^2}{2}
+\quad\text{e}\quad
+x_B=\Sexpr{d0}+\Sexpr{vB}t.
+\]
+No encontro, $x_A=x_B$:
+\[
+\frac{\Sexpr{a}}{2}t^2=\Sexpr{d0}+\Sexpr{vB}t.
+\]
+A raiz positiva fornece
+\[
+t=\Sexpr{t}\,\mathrm{s}.
+\]
+Substituindo em $x_A$,
+\[
+x=\frac{\Sexpr{a}\cdot\Sexpr{t}^2}{2}
+=\Sexpr{x_encontro}\,\mathrm{m}.
+\]
+\begin{answerlist}
+  \item $\Sexpr{t}\,\mathrm{s}$
+  \item $\Sexpr{x_encontro}\,\mathrm{m}$
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{t}|\Sexpr{x_encontro}}
+%% \extol{0.01|0.01}
+%% \exname{Q98ClozeEncontroMUVMU}
+%% \exsection{Mecanica; Cinematica; MUV; MU; Encontro}

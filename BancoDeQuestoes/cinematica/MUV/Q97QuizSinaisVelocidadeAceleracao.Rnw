@@ -1,0 +1,27 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Em uma trajetória retilínea orientada para a direita, um móvel apresenta velocidade negativa e aceleração positiva em certo instante.
+
+O que pode ser concluído nesse instante?
+
+\begin{answerlist}
+  \item O móvel desloca-se para a direita e aumenta o módulo da velocidade.
+  \item O móvel desloca-se para a esquerda e aumenta o módulo da velocidade.
+  \item O móvel desloca-se para a esquerda e diminui o módulo da velocidade.
+  \item O móvel está necessariamente em repouso.
+  \item A aceleração deve ser nula, pois os sinais são diferentes.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+Velocidade negativa significa movimento no sentido negativo da trajetória, isto é, para a esquerda. Como a aceleração é positiva, ela tem sentido oposto ao da velocidade. Portanto, o módulo da velocidade diminui naquele instante.
+
+Alternativa correta: \textbf{C}.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{00100}
+%% \exname{Q97QuizSinaisVelocidadeAceleracao}
+%% \exsection{Mecanica; Cinematica; MUV; Conceitual}

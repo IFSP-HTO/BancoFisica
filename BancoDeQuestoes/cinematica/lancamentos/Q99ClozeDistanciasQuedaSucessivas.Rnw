@@ -1,0 +1,34 @@
+<<echo=FALSE, results=hide>>=
+g <- 10
+n <- sample(c(2,3,4), 1)
+s_n <- 0.5*g*n^2
+s_prev <- 0.5*g*(n-1)^2
+delta <- s_n-s_prev
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Um objeto é abandonado do repouso em queda livre. Despreze a resistência do ar e adote $g=10\,\mathrm{m/s^2}$.
+
+Determine a distância percorrida \textbf{apenas durante o $\Sexpr{n}$º segundo de queda}, em metros.
+\end{question}
+
+\begin{solution}
+A posição medida a partir do ponto de soltura após um tempo $t$ é
+\[
+s(t)=\frac{gt^2}{2}.
+\]
+A distância percorrida apenas no $\Sexpr{n}$º segundo é a diferença entre a posição em $t=\Sexpr{n}\,\mathrm{s}$ e em $t=\Sexpr{n-1}\,\mathrm{s}$:
+\[
+\Delta s=s(\Sexpr{n})-s(\Sexpr{n-1})
+=\Sexpr{s_n}-\Sexpr{s_prev}
+=\Sexpr{delta}\,\mathrm{m}.
+\]
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{delta}}
+%% \extol{0.01}
+%% \exname{Q99ClozeDistanciasQuedaSucessivas}
+%% \exsection{Mecanica; Cinematica; Queda livre; MUV}
