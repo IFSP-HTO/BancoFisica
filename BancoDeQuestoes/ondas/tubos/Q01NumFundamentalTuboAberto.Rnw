@@ -1,0 +1,51 @@
+<<echo=FALSE, results=hide>>=
+casos <- data.frame(L=c(0.50,0.68,0.85,1.00), f=c(340,250,200,170))
+i <- sample(seq_len(nrow(casos)),1)
+L <- casos$L[i]
+f1 <- casos$f[i]
+v <- 340
+fmt <- function(z) formatC(z,format="f",digits=2,decimal.mark=",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Um tubo cilíndrico de comprimento $L=\Sexpr{fmt(L)}\,\mathrm{m}$ é aberto nas duas extremidades. Considere a velocidade do som no ar igual a $340\,\mathrm{m/s}$.
+
+O esquema mostra o padrão de deslocamento do ar no modo fundamental; as extremidades abertas correspondem a antinós de deslocamento.
+
+<<fig=TRUE, height=3.0, width=6.0, echo=FALSE, eps=FALSE, results=hide>>=
+x <- seq(0,1,length.out=400)
+y <- cos(pi*x)
+par(mar=c(2.5,1.0,0.6,0.6))
+plot(x,y,type="l",lwd=2,axes=FALSE,xlab="",ylab="",ylim=c(-1.25,1.25))
+abline(h=0,lty=3)
+segments(0,-1.1,0,1.1,lwd=3); segments(1,-1.1,1,1.1,lwd=3)
+text(0,-1.23,"aberta",cex=0.85); text(1,-1.23,"aberta",cex=0.85)
+text(0.5,1.12,"modo fundamental",cex=0.9)
+@
+
+Determine a frequência fundamental do tubo, em hertz.
+
+\end{question}
+
+\begin{solution}
+
+Para um tubo aberto nas duas extremidades, no modo fundamental vale $L=\lambda/2$. Assim,
+\[
+f_1=\frac{v}{\lambda}=\frac{v}{2L}.
+\]
+Logo,
+\[
+f_1=\frac{340}{2\cdot\Sexpr{fmt(L)}}=\Sexpr{f1}\,\mathrm{Hz}.
+\]
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{f1}}
+%% \extol{0.5}
+%% \exname{Q01NumFundamentalTuboAberto}
+%% \exsection{Ondulatoria; Acustica; Tubos sonoros; Tubo aberto; Graficos}
+%% \exusepackage[utf8]{inputenc}

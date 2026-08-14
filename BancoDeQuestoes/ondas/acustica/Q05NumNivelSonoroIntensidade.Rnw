@@ -1,0 +1,43 @@
+<<echo=FALSE, results=hide>>=
+n <- sample(3:7,1)
+I <- 10^(-12+n)
+beta <- 10*n
+expo <- -12+n
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Em um ponto de uma sala, a intensidade sonora é
+\[
+I=10^{\Sexpr{expo}}\,\mathrm{W/m^2}.
+\]
+Considere a intensidade de referência $I_0=10^{-12}\,\mathrm{W/m^2}$ e
+\[
+\beta=10\log_{10}\left(\frac{I}{I_0}\right).
+\]
+
+Determine o nível sonoro $\beta$, em decibéis.
+
+\end{question}
+
+\begin{solution}
+
+A razão entre as intensidades é
+\[
+\frac{I}{I_0}=\frac{10^{\Sexpr{expo}}}{10^{-12}}=10^{\Sexpr{n}}.
+\]
+Assim,
+\[
+\beta=10\log_{10}(10^{\Sexpr{n}})=10\cdot\Sexpr{n}=\Sexpr{beta}\,\mathrm{dB}.
+\]
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{beta}}
+%% \extol{0.1}
+%% \exname{Q05NumNivelSonoroIntensidade}
+%% \exsection{Ondulatoria; Acustica; Nivel sonoro; Decibel}
+%% \exusepackage[utf8]{inputenc}

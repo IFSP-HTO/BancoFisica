@@ -1,0 +1,38 @@
+<<echo=FALSE, results=hide>>=
+casos <- data.frame(f=c(170,340,680,850), lambda=c(2.0,1.0,0.5,0.4))
+i <- sample(seq_len(nrow(casos)),1)
+f <- casos$f[i]
+lambda <- casos$lambda[i]
+v <- 340
+fmt <- function(z) formatC(z,format="f",digits=2,decimal.mark=",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+No ar, uma onda sonora de frequência $f=\Sexpr{f}\,\mathrm{Hz}$ propaga-se com velocidade $v=340\,\mathrm{m/s}$.
+
+Determine o comprimento de onda, em metros.
+
+\end{question}
+
+\begin{solution}
+
+A relação fundamental das ondas é
+\[
+v=\lambda f.
+\]
+Portanto,
+\[
+\lambda=\frac{v}{f}=\frac{340}{\Sexpr{f}}=\Sexpr{fmt(lambda)}\,\mathrm{m}.
+\]
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{lambda}}
+%% \extol{0.01}
+%% \exname{Q02NumComprimentoOndaSom}
+%% \exsection{Ondulatoria; Acustica; Som; Comprimento de onda}
+%% \exusepackage[utf8]{inputenc}

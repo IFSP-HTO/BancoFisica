@@ -1,0 +1,52 @@
+<<echo=FALSE, results=hide>>=
+casos <- data.frame(L=c(0.25,0.50,0.85,1.00), f=c(340,170,100,85))
+i <- sample(seq_len(nrow(casos)),1)
+L <- casos$L[i]
+f1 <- casos$f[i]
+v <- 340
+fmt <- function(z) formatC(z,format="f",digits=2,decimal.mark=",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Um tubo de comprimento $L=\Sexpr{fmt(L)}\,\mathrm{m}$ é fechado em uma extremidade e aberto na outra. A velocidade do som no ar é $340\,\mathrm{m/s}$.
+
+O esquema representa o modo fundamental em termos do deslocamento do ar: há um nó na extremidade fechada e um antinó na extremidade aberta.
+
+<<fig=TRUE, height=3.0, width=6.0, echo=FALSE, eps=FALSE, results=hide>>=
+x <- seq(0,1,length.out=400)
+y <- sin(pi*x/2)
+par(mar=c(2.5,1.0,0.6,0.6))
+plot(x,y,type="l",lwd=2,axes=FALSE,xlab="",ylab="",ylim=c(-0.2,1.25))
+abline(h=0,lty=3)
+segments(0,-0.08,0,1.12,lwd=5)
+segments(1,-0.08,1,1.12,lwd=2,lty=2)
+text(0,-0.16,"fechada",cex=0.85); text(1,-0.16,"aberta",cex=0.85)
+text(0.53,1.12,"modo fundamental",cex=0.9)
+@
+
+Determine a frequência fundamental do tubo, em hertz.
+
+\end{question}
+
+\begin{solution}
+
+Para um tubo fechado em uma extremidade e aberto na outra, no modo fundamental o comprimento do tubo corresponde a um quarto de comprimento de onda:
+\[
+L=\frac{\lambda}{4}.
+\]
+Assim,
+\[
+f_1=\frac{v}{4L}=\frac{340}{4\cdot\Sexpr{fmt(L)}}=\Sexpr{f1}\,\mathrm{Hz}.
+\]
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{f1}}
+%% \extol{0.5}
+%% \exname{Q02NumFundamentalTuboFechado}
+%% \exsection{Ondulatoria; Acustica; Tubos sonoros; Tubo fechado; Graficos}
+%% \exusepackage[utf8]{inputenc}

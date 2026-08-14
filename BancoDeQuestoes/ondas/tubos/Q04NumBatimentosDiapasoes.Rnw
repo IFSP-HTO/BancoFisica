@@ -1,0 +1,37 @@
+<<echo=FALSE, results=hide>>=
+f1 <- sample(c(256,384,440,512),1)
+delta <- sample(c(2,3,4,5,6,8),1)
+sinal <- sample(c(-1,1),1)
+f2 <- f1 + sinal*delta
+fbat <- abs(f1-f2)
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Dois diapasões são tocados simultaneamente. Um deles emite som de frequência $f_1=\Sexpr{f1}\,\mathrm{Hz}$ e o outro, de frequência $f_2=\Sexpr{f2}\,\mathrm{Hz}$.
+
+Determine a frequência dos batimentos produzidos, em hertz.
+
+\end{question}
+
+\begin{solution}
+
+Quando duas frequências próximas são superpostas, a frequência de batimento é
+\[
+f_{\mathrm{bat}}=|f_1-f_2|.
+\]
+Portanto,
+\[
+f_{\mathrm{bat}}=|\Sexpr{f1}-\Sexpr{f2}|=\Sexpr{fbat}\,\mathrm{Hz}.
+\]
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{fbat}}
+%% \extol{0.1}
+%% \exname{Q04NumBatimentosDiapasoes}
+%% \exsection{Ondulatoria; Acustica; Batimentos; Instrumentos musicais}
+%% \exusepackage[utf8]{inputenc}
