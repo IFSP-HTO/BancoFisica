@@ -1,0 +1,41 @@
+<<echo=FALSE, results=hide>>=
+casos <- data.frame(f=c(480,495,480), vD=c(20,30,20), vF=c(20,10,40))
+i <- sample(seq_len(nrow(casos)),1)
+f <- casos$f[i]
+vD <- casos$vD[i]
+vF <- casos$vF[i]
+v <- 340
+fdet <- f*(v+vD)/(v-vF)
+fmt <- function(z) formatC(z,format="f",digits=1,decimal.mark=",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Uma fonte sonora e um detector movem-se em linha reta um em direção ao outro. A fonte emite frequência $f=\Sexpr{f}\,\mathrm{Hz}$ e tem velocidade $v_F=\Sexpr{vF}\,\mathrm{m/s}$ em direção ao detector. O detector tem velocidade $v_D=\Sexpr{vD}\,\mathrm{m/s}$ em direção à fonte. Considere a velocidade do som no ar igual a $v=340\,\mathrm{m/s}$.
+
+Determine a frequência detectada, em hertz.
+
+\end{question}
+
+\begin{solution}
+
+Como fonte e detector se aproximam, a frequência detectada deve aumentar. Para esse caso,
+\[
+f'=f\frac{v+v_D}{v-v_F}.
+\]
+Logo,
+\[
+f'=\Sexpr{f}\frac{340+\Sexpr{vD}}{340-\Sexpr{vF}}
+=\Sexpr{fmt(fdet)}\,\mathrm{Hz}.
+\]
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{round(fdet,1)}}
+%% \extol{0.2}
+%% \exname{Q04NumFonteDetectorAproximando}
+%% \exsection{Ondulatoria; Acustica; Efeito Doppler; Fonte e detector em movimento}
+%% \exusepackage[utf8]{inputenc}
