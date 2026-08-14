@@ -1,0 +1,25 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Um transformador ideal é projetado para operar com corrente alternada. Se o primário for ligado diretamente a uma pilha de tensão constante e o circuito permanecer nessa condição, o que se espera no secundário após o breve transiente de ligação?
+
+\begin{answerlist}
+  \item Uma tensão alternada de mesma frequência da pilha.
+  \item Uma tensão constante amplificada pela razão de espiras.
+  \item Nenhuma força eletromotriz sustentada, pois o fluxo magnético deixa de variar no tempo.
+  \item Uma corrente crescente indefinidamente, independentemente da resistência dos enrolamentos.
+  \item Uma tensão secundária determinada apenas pelo material do núcleo.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+Transformadores dependem de fluxo magnético variável. Após o transiente da ligação em corrente contínua, a corrente e o fluxo tornam-se aproximadamente constantes; assim, não há força eletromotriz induzida sustentada no secundário.
+
+Alternativa correta: \textbf{C}.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{00100}
+%% \exname{Q06QuizTransformadorCorrenteContinua}
+%% \exsection{Eletromagnetismo; Inducao; Transformador; Corrente continua}

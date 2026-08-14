@@ -1,0 +1,33 @@
+<<echo=FALSE, results=hide>>=
+B_mT <- sample(c(20,30,40,50,60),1)
+I <- sample(c(2,3,4,5,6),1)
+L_cm <- sample(c(10,20,25,30,40,50),1)
+theta <- sample(c(30,60,90),1)
+F_mN <- B_mT*1e-3*I*(L_cm/100)*sin(theta*pi/180)*1e3
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Um trecho retilíneo de fio de comprimento $\Sexpr{L_cm}\,\mathrm{cm}$ é percorrido por corrente de $\Sexpr{I}\,\mathrm{A}$ e está imerso em um campo magnético uniforme de módulo $\Sexpr{B_mT}\,\mathrm{mT}$. O ângulo entre o fio e o campo é $\Sexpr{theta}^\circ$.
+
+Determine o módulo da força magnética sobre o trecho do fio, em $\mathrm{mN}$.
+\end{question}
+
+\begin{solution}
+A força magnética sobre um fio percorrido por corrente é
+\[
+F=BIL\sin\theta.
+\]
+Substituindo os valores no SI,
+\[
+F=\Sexpr{round(F_mN,2)}\,\mathrm{mN}.
+\]
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{round(F_mN,2)}}
+%% \extol{0.03}
+%% \exname{Q09ClozeForcaFioCampo}
+%% \exsection{Eletromagnetismo; Magnetismo; Forca em fio; Corrente eletrica}

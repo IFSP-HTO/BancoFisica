@@ -1,0 +1,25 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Sobre as linhas de campo elétrico em uma região do espaço, assinale a afirmação correta.
+
+\begin{answerlist}
+  \item Podem se cruzar, pois em um mesmo ponto podem existir vários campos resultantes.
+  \item Em eletrostática, saem de cargas positivas e chegam a cargas negativas, e a direção tangente à linha indica a direção do campo.
+  \item Formam sempre circunferências fechadas em torno das cargas.
+  \item Quanto mais espaçadas estiverem as linhas, maior é necessariamente o módulo do campo.
+  \item Apontam no sentido da força elétrica sobre uma carga de prova negativa.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+As linhas de campo são uma representação do vetor campo elétrico. Em eletrostática, elas se orientam de cargas positivas para cargas negativas (ou para o infinito) e não se cruzam. A tangente à linha dá a direção do campo.
+
+Alternativa correta: \textbf{B}.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{01000}
+%% \exname{Q96QuizLinhasCampo}
+%% \exsection{Eletromagnetismo; Eletrostatica; Linhas de campo}

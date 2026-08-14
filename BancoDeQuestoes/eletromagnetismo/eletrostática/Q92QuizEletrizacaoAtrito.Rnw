@@ -1,0 +1,27 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Dois corpos inicialmente neutros, feitos de materiais diferentes, são atritados entre si. Após o atrito, verifica-se que um deles ficou negativamente carregado.
+
+A explicação fisicamente adequada é que
+
+\begin{answerlist}
+  \item prótons passaram do corpo negativo para o corpo positivo.
+  \item elétrons foram transferidos entre os corpos, conservando-se a carga elétrica total do sistema.
+  \item nêutrons foram criados em um dos corpos e destruídos no outro.
+  \item ambos os corpos ganharam elétrons, mas em quantidades diferentes.
+  \item a carga elétrica total do sistema aumentou durante o atrito.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+Na eletrização por atrito ocorre transferência de elétrons entre os materiais. Um corpo fica com excesso de elétrons e o outro com falta deles. A carga total de um sistema isolado é conservada.
+
+Alternativa correta: \textbf{B}.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{01000}
+%% \exname{Q92QuizEletrizacaoAtrito}
+%% \exsection{Eletromagnetismo; Eletrostatica; Eletrizacao; Conservacao da carga}

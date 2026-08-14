@@ -1,0 +1,33 @@
+<<echo=FALSE, results=hide>>=
+mu0 <- 4*pi*1e-7
+I <- sample(c(2,3,4,5,6),1)
+R_cm <- sample(c(5,10,15,20),1)
+N <- sample(c(1,2,3,4),1)
+B_uT <- N*mu0*I/(2*(R_cm/100))*1e6
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Uma bobina circular plana possui $\Sexpr{N}$ espira(s), raio $\Sexpr{R_cm}\,\mathrm{cm}$ e é percorrida por corrente de $\Sexpr{I}\,\mathrm{A}$. Considere $\mu_0=4\pi\times10^{-7}\,\mathrm{T\,m/A}$ e que todas as espiras têm o mesmo raio.
+
+Qual é o módulo do campo magnético no centro da bobina, em $\mu\mathrm{T}$?
+\end{question}
+
+\begin{solution}
+No centro de $N$ espiras circulares,
+\[
+B=N\frac{\mu_0 I}{2R}.
+\]
+Substituindo os dados,
+\[
+B=\Sexpr{round(B_uT,2)}\,\mu\mathrm{T}.
+\]
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{round(B_uT,2)}}
+%% \extol{0.03}
+%% \exname{Q04ClozeCampoEspira}
+%% \exsection{Eletromagnetismo; Magnetismo; Campo de corrente; Espira}

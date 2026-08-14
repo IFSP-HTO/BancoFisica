@@ -1,0 +1,27 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Uma carga elétrica \textbf{positiva} move-se horizontalmente para a direita em uma região na qual o campo magnético uniforme aponta verticalmente para cima.
+
+Pela regra da mão direita, a força magnética sobre a carga aponta
+
+\begin{answerlist}
+  \item para a direita.
+  \item para a esquerda.
+  \item para cima.
+  \item para fora do plano da página, em direção ao observador.
+  \item para dentro do plano da página, afastando-se do observador.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+Para carga positiva, a direção da força é dada por $\vec F=q\,\vec v\times\vec B$. Com $\vec v$ para a direita e $\vec B$ para cima, o produto vetorial aponta para fora do plano da página.
+
+Alternativa correta: \textbf{D}.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{00010}
+%% \exname{Q07QuizDirecaoForcaMagnetica}
+%% \exsection{Eletromagnetismo; Magnetismo; Forca magnetica; Regra da mao direita}

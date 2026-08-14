@@ -1,0 +1,33 @@
+<<echo=FALSE, results=hide>>=
+N <- sample(c(50,100,150,200,250),1)
+phi_i_mWb <- sample(c(1,2,3,4,5),1)
+phi_f_mWb <- sample(c(6,7,8,9,10),1)
+dt <- sample(c(0.1,0.2,0.25,0.5),1)
+emf <- N*abs(phi_f_mWb-phi_i_mWb)*1e-3/dt
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Uma bobina com $\Sexpr{N}$ espiras sofre uma variação uniforme do fluxo magnético por espira, de $\Sexpr{phi_i_mWb}\,\mathrm{mWb}$ para $\Sexpr{phi_f_mWb}\,\mathrm{mWb}$ em $\Sexpr{dt}\,\mathrm{s}$.
+
+Determine o módulo da força eletromotriz média induzida, em volts.
+\end{question}
+
+\begin{solution}
+Pela lei de Faraday,
+\[
+|\mathcal{E}|=N\frac{|\Delta\Phi|}{\Delta t}.
+\]
+Logo,
+\[
+|\mathcal{E}|=\Sexpr{round(emf,2)}\,\mathrm{V}.
+\]
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{round(emf,2)}}
+%% \extol{0.03}
+%% \exname{Q03ClozeFaradayVariacaoFluxo}
+%% \exsection{Eletromagnetismo; Inducao; Lei de Faraday; Fem induzida}

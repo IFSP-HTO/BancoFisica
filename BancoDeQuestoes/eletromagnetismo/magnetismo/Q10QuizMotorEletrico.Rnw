@@ -1,0 +1,27 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Em um motor elétrico simples, uma espira percorrida por corrente é colocada em uma região de campo magnético.
+
+O princípio físico diretamente responsável pelo torque que coloca a espira em rotação é
+
+\begin{answerlist}
+  \item a força magnética exercida sobre trechos do condutor percorridos por corrente.
+  \item a atração gravitacional entre a espira e o ímã.
+  \item o efeito Joule, que aquece a espira e a faz girar.
+  \item a lei de Coulomb entre os polos norte e sul.
+  \item a redução da resistência elétrica quando a espira começa a se mover.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+Correntes elétricas em um campo magnético sofrem forças. Em lados opostos da espira essas forças formam um binário, produzindo torque e rotação.
+
+Alternativa correta: \textbf{A}.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{10000}
+%% \exname{Q10QuizMotorEletrico}
+%% \exsection{Eletromagnetismo; Magnetismo; Motor eletrico; Forca magnetica}

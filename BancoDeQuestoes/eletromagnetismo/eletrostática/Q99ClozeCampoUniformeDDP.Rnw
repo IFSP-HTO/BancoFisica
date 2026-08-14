@@ -1,0 +1,43 @@
+<<echo=FALSE, results=hide>>=
+E <- sample(c(100,150,200,250,300,400),1)
+d_cm <- sample(c(10,20,25,30,40,50),1)
+d <- d_cm/100
+DV <- E*d
+q_u <- sample(c(2,3,4,5),1)
+W_uJ <- q_u*1e-6*DV*1e6
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Entre duas placas paralelas há um campo elétrico uniforme de módulo $\Sexpr{E}\,\mathrm{N/C}$. As placas estão separadas por $\Sexpr{d_cm}\,\mathrm{cm}$. Despreze efeitos de borda.
+
+Determine:
+\begin{answerlist}
+  \item o módulo da diferença de potencial entre as placas, em volts;
+  \item o módulo do trabalho da força elétrica ao deslocar uma carga positiva de $\Sexpr{q_u}\,\mu\mathrm{C}$ de uma placa à outra no sentido do campo, em microjoules.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+Em campo uniforme,
+\[
+|\Delta V|=Ed=\Sexpr{round(DV,2)}\,\mathrm{V}.
+\]
+No deslocamento no sentido do campo, o trabalho da força elétrica sobre uma carga positiva é
+\[
+W=qEd=\Sexpr{round(W_uJ,2)}\,\mu\mathrm{J}.
+\]
+\begin{answerlist}
+  \item $\Sexpr{round(DV,2)}\,\mathrm{V}$
+  \item $\Sexpr{round(W_uJ,2)}\,\mu\mathrm{J}$
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{round(DV,2)}|\Sexpr{round(W_uJ,2)}}
+%% \extol{0.02|0.02}
+%% \exname{Q99ClozeCampoUniformeDDP}
+%% \exsection{Eletromagnetismo; Eletrostatica; Campo uniforme; Diferenca de potencial}

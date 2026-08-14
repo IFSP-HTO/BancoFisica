@@ -1,0 +1,43 @@
+<<echo=FALSE, results=hide>>=
+q_u <- sample(c(2,3,4,5,6,8),1)
+VA <- sample(c(100,150,200,250,300),1)
+DV <- sample(c(40,60,80,100,120),1)
+VB <- VA-DV
+W_mJ <- q_u*1e-6*(VA-VB)*1e3
+DU_mJ <- -W_mJ
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Uma carga positiva de $\Sexpr{q_u}\,\mu\mathrm{C}$ desloca-se de um ponto $A$, de potencial $\Sexpr{VA}\,\mathrm{V}$, para um ponto $B$, de potencial $\Sexpr{VB}\,\mathrm{V}$, sob ação exclusiva da força elétrica.
+
+Determine:
+\begin{answerlist}
+  \item o trabalho realizado pela força elétrica, em milijoules;
+  \item a variação da energia potencial elétrica, $U_B-U_A$, em milijoules.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+O trabalho da força elétrica é
+\[
+W_{\mathrm e}=q(V_A-V_B)=\Sexpr{round(W_mJ,3)}\,\mathrm{mJ}.
+\]
+Como a força elétrica é conservativa,
+\[
+\Delta U=-W_{\mathrm e}=\Sexpr{round(DU_mJ,3)}\,\mathrm{mJ}.
+\]
+\begin{answerlist}
+  \item $\Sexpr{round(W_mJ,3)}\,\mathrm{mJ}$
+  \item $\Sexpr{round(DU_mJ,3)}\,\mathrm{mJ}$
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{round(W_mJ,3)}|\Sexpr{round(DU_mJ,3)}}
+%% \extol{0.002|0.002}
+%% \exname{Q98ClozeTrabalhoDDP}
+%% \exsection{Eletromagnetismo; Eletrostatica; Diferenca de potencial; Trabalho eletrico}
