@@ -1,0 +1,27 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Em um gerador eletromagnético, uma bobina gira em uma região de campo magnético. A rotação faz variar periodicamente o fluxo magnético através da bobina.
+
+A conversão de energia realizada pelo gerador é explicada principalmente pela
+
+\begin{answerlist}
+  \item indução eletromagnética: a variação do fluxo produz uma força eletromotriz induzida.
+  \item eletrização por atrito entre a bobina e o campo magnético.
+  \item criação de carga elétrica pela rotação da bobina.
+  \item transformação direta de energia térmica em carga elétrica.
+  \item lei de Coulomb entre elétrons de espiras diferentes.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+A variação do fluxo magnético através da bobina gera uma força eletromotriz induzida, conforme a lei de Faraday. É esse princípio que fundamenta geradores e dínamos.
+
+Alternativa correta: \textbf{A}.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{10000}
+%% \exname{Q04QuizGeradorEletromagnetico}
+%% \exsection{Eletromagnetismo; Inducao; Geradores; Lei de Faraday}

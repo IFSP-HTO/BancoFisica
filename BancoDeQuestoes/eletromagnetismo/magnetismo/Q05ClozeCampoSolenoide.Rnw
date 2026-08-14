@@ -1,0 +1,43 @@
+<<echo=FALSE, results=hide>>=
+mu0 <- 4*pi*1e-7
+N <- sample(c(400,500,600,800,1000),1)
+L_cm <- sample(c(20,25,40,50),1)
+I <- sample(c(0.5,1,1.5,2),1)
+n <- N/(L_cm/100)
+B_mT <- mu0*n*I*1e3
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Um solenoide longo possui $\Sexpr{N}$ espiras distribuídas uniformemente ao longo de $\Sexpr{L_cm}\,\mathrm{cm}$ e é percorrido por corrente de $\Sexpr{I}\,\mathrm{A}$. Considere $\mu_0=4\pi\times10^{-7}\,\mathrm{T\,m/A}$.
+
+Determine:
+\begin{answerlist}
+  \item o número de espiras por metro;
+  \item o módulo aproximado do campo magnético em seu interior, em $\mathrm{mT}$.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+A densidade de espiras é
+\[
+n=\frac{N}{L}=\Sexpr{round(n,0)}\,\mathrm{m^{-1}}.
+\]
+Para um solenoide longo,
+\[
+B=\mu_0nI=\Sexpr{round(B_mT,3)}\,\mathrm{mT}.
+\]
+\begin{answerlist}
+  \item $\Sexpr{round(n,0)}\,\mathrm{m^{-1}}$
+  \item $\Sexpr{round(B_mT,3)}\,\mathrm{mT}$
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{round(n,0)}|\Sexpr{round(B_mT,3)}}
+%% \extol{1|0.005}
+%% \exname{Q05ClozeCampoSolenoide}
+%% \exsection{Eletromagnetismo; Magnetismo; Solenoide; Campo magnetico}

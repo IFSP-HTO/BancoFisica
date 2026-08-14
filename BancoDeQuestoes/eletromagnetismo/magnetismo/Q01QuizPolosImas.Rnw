@@ -1,0 +1,25 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Dois ímãs de barra são aproximados lentamente. Sobre polos magnéticos e interação entre ímãs, assinale a alternativa correta.
+
+\begin{answerlist}
+  \item Polos magnéticos de mesmo nome se atraem e polos de nomes diferentes se repelem.
+  \item Um polo norte pode ser isolado cortando-se um ímã exatamente ao meio.
+  \item Polos de mesmo nome se repelem e polos de nomes diferentes se atraem; ao cortar um ímã, formam-se novos dipolos.
+  \item A interação magnética ocorre apenas quando os ímãs estão em contato.
+  \item Todo material metálico é necessariamente um ímã permanente.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+Ímãs apresentam polos norte e sul. Polos iguais se repelem e polos diferentes se atraem. Ao dividir um ímã, cada parte continua apresentando dois polos.
+
+Alternativa correta: \textbf{C}.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{00100}
+%% \exname{Q01QuizPolosImas}
+%% \exsection{Eletromagnetismo; Magnetismo; Imas; Polos magneticos}

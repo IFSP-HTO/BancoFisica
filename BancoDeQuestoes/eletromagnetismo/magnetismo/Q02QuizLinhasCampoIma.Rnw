@@ -1,0 +1,25 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Na região externa a um ímã de barra, qual descrição representa corretamente as linhas de campo magnético?
+
+\begin{answerlist}
+  \item Saem do polo norte e entram no polo sul, formando linhas fechadas quando se considera também o interior do ímã.
+  \item Saem simultaneamente dos polos norte e sul e terminam no infinito.
+  \item Entram no polo norte e saem do polo sul tanto fora quanto dentro do ímã.
+  \item Podem começar ou terminar em qualquer ponto do espaço onde o campo seja fraco.
+  \item Sempre são retas paralelas, independentemente da geometria do ímã.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+As linhas de campo magnético são fechadas. Externamente ao ímã, orientam-se do polo norte para o sul; internamente, completam o percurso do sul para o norte.
+
+Alternativa correta: \textbf{A}.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{10000}
+%% \exname{Q02QuizLinhasCampoIma}
+%% \exsection{Eletromagnetismo; Magnetismo; Campo magnetico; Linhas de campo}

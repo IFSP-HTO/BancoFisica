@@ -1,0 +1,48 @@
+<<echo=FALSE, results=hide>>=
+Vp <- sample(c(110,120,220,240),1)
+Np <- sample(c(200,400,500,600,800),1)
+ratio <- sample(c(0.25,0.5,2,4),1)
+Ns <- round(Np*ratio)
+Vs <- Vp*Ns/Np
+Ip <- sample(c(0.5,1,1.5,2),1)
+Is <- Vp*Ip/Vs
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Um transformador ideal possui $\Sexpr{Np}$ espiras no primário e $\Sexpr{Ns}$ espiras no secundário. O primário é ligado a uma tensão alternada de $\Sexpr{Vp}\,\mathrm{V}$ e conduz uma corrente eficaz de $\Sexpr{Ip}\,\mathrm{A}$.
+
+Determine:
+\begin{answerlist}
+  \item a tensão eficaz no secundário, em volts;
+  \item a corrente eficaz no secundário, em ampères, admitindo conservação de potência.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+Em um transformador ideal,
+\[
+\frac{V_s}{V_p}=\frac{N_s}{N_p},
+\]
+portanto
+\[
+V_s=\Sexpr{round(Vs,2)}\,\mathrm{V}.
+\]
+Como $V_pI_p=V_sI_s$,
+\[
+I_s=\Sexpr{round(Is,3)}\,\mathrm{A}.
+\]
+\begin{answerlist}
+  \item $\Sexpr{round(Vs,2)}\,\mathrm{V}$
+  \item $\Sexpr{round(Is,3)}\,\mathrm{A}$
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{round(Vs,2)}|\Sexpr{round(Is,3)}}
+%% \extol{0.03|0.005}
+%% \exname{Q05ClozeTransformadorIdeal}
+%% \exsection{Eletromagnetismo; Inducao; Transformador; Corrente alternada}

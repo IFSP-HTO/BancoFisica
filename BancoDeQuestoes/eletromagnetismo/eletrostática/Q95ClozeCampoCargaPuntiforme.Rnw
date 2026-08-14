@@ -1,0 +1,44 @@
+<<echo=FALSE, results=hide>>=
+k <- 9e9
+q_u <- sample(c(2,3,4,5,6,8),1)
+r_cm <- sample(c(20,25,30,40,50),1)
+q <- q_u*1e-6
+r <- r_cm/100
+E <- k*q/r^2
+F_uN <- E*2e-9*1e6
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Uma carga puntiforme positiva de $\Sexpr{q_u}\,\mu\mathrm{C}$ está isolada no vácuo. Considere um ponto a $\Sexpr{r_cm}\,\mathrm{cm}$ dessa carga e use $k=9,0\times10^9\,\mathrm{N\,m^2/C^2}$.
+
+Determine:
+\begin{answerlist}
+  \item o módulo do campo elétrico nesse ponto, em $\mathrm{N/C}$;
+  \item o módulo da força elétrica, em $\mu\mathrm{N}$, sobre uma carga de prova positiva de $2,0\,\mathrm{nC}$ colocada nesse ponto.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+O campo de uma carga puntiforme é
+\[
+E=k\frac{|Q|}{r^2}=\Sexpr{round(E,0)}\,\mathrm{N/C}.
+\]
+Sobre a carga de prova,
+\[
+F=qE=\Sexpr{round(F_uN,2)}\,\mu\mathrm{N}.
+\]
+\begin{answerlist}
+  \item $\Sexpr{round(E,0)}\,\mathrm{N/C}$
+  \item $\Sexpr{round(F_uN,2)}\,\mu\mathrm{N}$
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{round(E,0)}|\Sexpr{round(F_uN,2)}}
+%% \extol{1|0.02}
+%% \exname{Q95ClozeCampoCargaPuntiforme}
+%% \exsection{Eletromagnetismo; Eletrostatica; Campo eletrico}

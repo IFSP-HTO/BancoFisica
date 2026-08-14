@@ -1,0 +1,27 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+O polo norte de um ímã aproxima-se do centro de uma espira condutora fechada. Durante a aproximação, surge uma corrente induzida na espira.
+
+Segundo a lei de Lenz, o campo magnético criado pela corrente induzida deve
+
+\begin{answerlist}
+  \item favorecer o aumento do fluxo produzido pelo ímã.
+  \item se opor à variação do fluxo magnético que o produziu.
+  \item ser sempre nulo, pois a espira é eletricamente neutra.
+  \item ter necessariamente o mesmo sentido do campo do ímã em qualquer situação.
+  \item existir apenas depois que o ímã parar de se mover.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+A lei de Lenz afirma que a corrente induzida produz efeitos que se opõem à variação do fluxo magnético responsável por sua origem.
+
+Alternativa correta: \textbf{B}.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{01000}
+%% \exname{Q02QuizLeiLenzIma}
+%% \exsection{Eletromagnetismo; Inducao; Lei de Lenz}

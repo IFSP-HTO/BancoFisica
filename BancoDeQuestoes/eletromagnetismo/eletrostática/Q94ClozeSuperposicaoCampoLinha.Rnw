@@ -1,0 +1,42 @@
+<<echo=FALSE, results=hide>>=
+k <- 9e9
+qL_u <- sample(c(2,3,4,5),1)
+qR_u <- sample(c(6,7,8,9),1)
+d_cm <- sample(c(40,50,60,80),1)
+r <- (d_cm/100)/2
+EL <- k*qL_u*1e-6/r^2
+ER <- k*qR_u*1e-6/r^2
+Eres <- ER-EL
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Duas cargas positivas, $Q_L=\Sexpr{qL_u}\,\mu\mathrm{C}$ e $Q_R=\Sexpr{qR_u}\,\mu\mathrm{C}$, estão separadas por $\Sexpr{d_cm}\,\mathrm{cm}$. O ponto $P$ está exatamente no meio do segmento que une as cargas. Considere $k=9,0\times10^9\,\mathrm{N\,m^2/C^2}$.
+
+Determine:
+\begin{answerlist}
+  \item o módulo do campo elétrico resultante em $P$, em $\mathrm{N/C}$;
+  \item o sentido do campo resultante: use $1$ para ``da esquerda para a direita'' e $-1$ para ``da direita para a esquerda''.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+No ponto médio, os campos produzidos pelas duas cargas positivas têm sentidos opostos. Como $Q_R>Q_L$, o campo devido à carga da direita é mais intenso e aponta para a esquerda. Assim,
+\[
+E_R-E_L=\Sexpr{round(Eres,0)}\,\mathrm{N/C},
+\]
+e o sentido resultante é da direita para a esquerda, representado por $-1$.
+\begin{answerlist}
+  \item $\Sexpr{round(Eres,0)}\,\mathrm{N/C}$
+  \item $-1$
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{round(Eres,0)}|-1}
+%% \extol{1|0}
+%% \exname{Q94ClozeSuperposicaoCampoLinha}
+%% \exsection{Eletromagnetismo; Eletrostatica; Campo eletrico; Superposicao}

@@ -1,0 +1,42 @@
+<<echo=FALSE, results=hide>>=
+mu0 <- 4*pi*1e-7
+I <- sample(c(2,3,4,5,6,8,10),1)
+r_cm <- sample(c(2,4,5,8,10,20),1)
+B_uT <- mu0*I/(2*pi*(r_cm/100))*1e6
+B2_uT <- B_uT/2
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Um fio retilíneo muito longo é percorrido por uma corrente contínua de $\Sexpr{I}\,\mathrm{A}$. Considere $\mu_0=4\pi\times10^{-7}\,\mathrm{T\,m/A}$.
+
+Determine:
+\begin{answerlist}
+  \item o módulo do campo magnético a $\Sexpr{r_cm}\,\mathrm{cm}$ do fio, em $\mu\mathrm{T}$;
+  \item o módulo do campo, em $\mu\mathrm{T}$, a uma distância duas vezes maior.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+Para um fio retilíneo longo,
+\[
+B=\frac{\mu_0 I}{2\pi r}=\Sexpr{round(B_uT,2)}\,\mu\mathrm{T}.
+\]
+Como $B$ é inversamente proporcional a $r$, ao duplicar a distância o campo cai à metade:
+\[
+B'=\Sexpr{round(B2_uT,2)}\,\mu\mathrm{T}.
+\]
+\begin{answerlist}
+  \item $\Sexpr{round(B_uT,2)}\,\mu\mathrm{T}$
+  \item $\Sexpr{round(B2_uT,2)}\,\mu\mathrm{T}$
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{round(B_uT,2)}|\Sexpr{round(B2_uT,2)}}
+%% \extol{0.02|0.02}
+%% \exname{Q03ClozeCampoFioRetilineo}
+%% \exsection{Eletromagnetismo; Magnetismo; Campo de corrente; Fio retilineo}

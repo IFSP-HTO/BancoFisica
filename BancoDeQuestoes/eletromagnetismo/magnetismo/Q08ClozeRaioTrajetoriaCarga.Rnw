@@ -1,0 +1,36 @@
+<<echo=FALSE, results=hide>>=
+m_27 <- sample(c(1.0,1.5,2.0,2.5,3.0),1)
+q_19 <- sample(c(1,2,3),1)
+v6 <- sample(c(1,2,3,4),1)
+B <- sample(c(0.2,0.4,0.5,0.8),1)
+m <- m_27*1e-27
+q <- q_19*1.6e-19
+v <- v6*1e6
+r_cm <- m*v/(q*B)*100
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Uma partícula de massa $\Sexpr{m_27}\times10^{-27}\,\mathrm{kg}$ e carga positiva de módulo $\Sexpr{q_19}\,e$, com $e=1,6\times10^{-19}\,\mathrm{C}$, entra perpendicularmente em um campo magnético uniforme de módulo $\Sexpr{B}\,\mathrm{T}$ com velocidade $\Sexpr{v6}\times10^6\,\mathrm{m/s}$.
+
+Determine o raio da trajetória circular, em centímetros.
+\end{question}
+
+\begin{solution}
+Como a velocidade é perpendicular ao campo, a força magnética atua como força centrípeta:
+\[
+qvB=\frac{mv^2}{r}.
+\]
+Assim,
+\[
+r=\frac{mv}{qB}=\Sexpr{round(r_cm,2)}\,\mathrm{cm}.
+\]
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{round(r_cm,2)}}
+%% \extol{0.03}
+%% \exname{Q08ClozeRaioTrajetoriaCarga}
+%% \exsection{Eletromagnetismo; Magnetismo; Trajetoria de carga; Movimento circular}

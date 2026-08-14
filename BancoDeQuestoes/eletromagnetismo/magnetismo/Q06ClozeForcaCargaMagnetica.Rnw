@@ -1,0 +1,33 @@
+<<echo=FALSE, results=hide>>=
+q_u <- sample(c(2,3,4,5,6),1)
+v <- sample(c(2e4,3e4,4e4,5e4),1)
+B_mT <- sample(c(20,30,40,50),1)
+theta <- sample(c(30,60,90),1)
+F_uN <- q_u*1e-6*v*B_mT*1e-3*sin(theta*pi/180)*1e6
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Uma partícula com carga positiva de $\Sexpr{q_u}\,\mu\mathrm{C}$ move-se com velocidade de módulo $\Sexpr{v}\,\mathrm{m/s}$ em uma região de campo magnético uniforme de módulo $\Sexpr{B_mT}\,\mathrm{mT}$. O ângulo entre $\vec v$ e $\vec B$ é $\Sexpr{theta}^\circ$.
+
+Determine o módulo da força magnética sobre a partícula, em $\mu\mathrm{N}$.
+\end{question}
+
+\begin{solution}
+A força magnética tem módulo
+\[
+F=qvB\sin\theta.
+\]
+Logo,
+\[
+F=\Sexpr{round(F_uN,2)}\,\mu\mathrm{N}.
+\]
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{round(F_uN,2)}}
+%% \extol{0.03}
+%% \exname{Q06ClozeForcaCargaMagnetica}
+%% \exsection{Eletromagnetismo; Magnetismo; Forca magnetica; Carga em movimento}

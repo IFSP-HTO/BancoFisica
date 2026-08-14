@@ -1,0 +1,32 @@
+<<echo=FALSE, results=hide>>=
+B <- sample(c(0.20,0.30,0.40,0.50,0.60),1)
+A_cm2 <- sample(c(50,80,100,120,150,200),1)
+theta <- sample(c(0,30,60),1)
+phi_mWb <- B*(A_cm2*1e-4)*cos(theta*pi/180)*1e3
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Uma espira plana de área $\Sexpr{A_cm2}\,\mathrm{cm^2}$ está em uma região de campo magnético uniforme de módulo $\Sexpr{B}\,\mathrm{T}$. O ângulo entre o campo magnético e a \textbf{normal} ao plano da espira é $\Sexpr{theta}^\circ$.
+
+Determine o fluxo magnético através da espira, em $\mathrm{mWb}$.
+\end{question}
+
+\begin{solution}
+O fluxo magnético é
+\[
+\Phi=BA\cos\theta.
+\]
+Como $A=\Sexpr{A_cm2}\times10^{-4}\,\mathrm{m^2}$,
+\[
+\Phi=\Sexpr{round(phi_mWb,3)}\,\mathrm{mWb}.
+\]
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{round(phi_mWb,3)}}
+%% \extol{0.005}
+%% \exname{Q01ClozeFluxoMagnetico}
+%% \exsection{Eletromagnetismo; Inducao; Fluxo magnetico}
