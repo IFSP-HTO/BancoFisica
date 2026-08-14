@@ -1,0 +1,56 @@
+<<echo=FALSE, results=hide>>=
+## Questão de treino alinhada ao conteúdo de trabalho de uma força constante.
+F <- sample(seq(20, 50, by=2), 1)
+d <- sample(seq(2, 8, by=1), 1)
+fat <- sample(seq(2, 10, by=1), 1)
+cos_theta <- 0.5
+WF <- F*d*cos_theta
+Wat <- -fat*d
+Wres <- WF + Wat
+fmt <- function(x, d=1) formatC(x, format="f", digits=d, decimal.mark=",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Uma caixa é puxada por uma corda ao longo de um piso horizontal. Durante um deslocamento de $\Sexpr{d}\,\mathrm{m}$, a pessoa exerce uma força constante de módulo $\Sexpr{F}\,\mathrm{N}$, formando $60^\circ$ com a horizontal. A força de atrito tem módulo $\Sexpr{fat}\,\mathrm{N}$ e sentido oposto ao movimento. Considere $\cos 60^\circ=0{,}5$.
+
+Determine:
+\begin{answerlist}
+  \item o trabalho realizado pela força exercida pela pessoa, em joules;
+  \item o trabalho realizado pela força de atrito, em joules;
+  \item o trabalho da força resultante sobre a caixa, sabendo que peso e normal realizam trabalho nulo.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Para a força exercida pela pessoa,
+\[
+W_F=Fd\cos\theta=\Sexpr{F}\cdot\Sexpr{d}\cdot0{,}5=\Sexpr{fmt(WF)}\,\mathrm{J}.
+\]
+Como o atrito tem sentido oposto ao deslocamento,
+\[
+W_{at}=-f_{at}d=-\Sexpr{fat}\cdot\Sexpr{d}=\Sexpr{fmt(Wat)}\,\mathrm{J}.
+\]
+Peso e normal são perpendiculares ao deslocamento e realizam trabalho nulo. Logo,
+\[
+W_{res}=W_F+W_{at}=\Sexpr{fmt(Wres)}\,\mathrm{J}.
+\]
+
+\begin{answerlist}
+  \item $\Sexpr{fmt(WF)}\,\mathrm{J}$
+  \item $\Sexpr{fmt(Wat)}\,\mathrm{J}$
+  \item $\Sexpr{fmt(Wres)}\,\mathrm{J}$
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exclozetype{num|num|num}
+%% \exsolution{\Sexpr{round(WF,1)}|\Sexpr{round(Wat,1)}|\Sexpr{round(Wres,1)}}
+%% \extol{0.1|0.1|0.1}
+%% \exname{Q97ClozeTrabalhoForcas}
+%% \exsection{Mecanica; Trabalho e potencia; Trabalho de uma forca; Atrito}
