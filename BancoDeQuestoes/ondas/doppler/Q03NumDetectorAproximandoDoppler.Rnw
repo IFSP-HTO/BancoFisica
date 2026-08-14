@@ -1,0 +1,37 @@
+<<echo=FALSE, results=hide>>=
+v <- 340
+f <- 340
+vD <- sample(c(10,20,30,40),1)
+fdet <- f*(v+vD)/v
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Uma fonte sonora permanece parada e emite um tom de frequência $340\,\mathrm{Hz}$. Um detector move-se diretamente em direção à fonte com velocidade $v_D=\Sexpr{vD}\,\mathrm{m/s}$. Considere a velocidade do som no ar igual a $340\,\mathrm{m/s}$.
+
+Determine a frequência detectada, em hertz.
+
+\end{question}
+
+\begin{solution}
+
+Para uma fonte parada e um detector que se move em direção à fonte,
+\[
+f'=f\frac{v+v_D}{v}.
+\]
+Logo,
+\[
+f'=340\frac{340+\Sexpr{vD}}{340}=\Sexpr{fdet}\,\mathrm{Hz}.
+\]
+O movimento do detector em direção às frentes de onda aumenta a taxa com que elas são interceptadas.
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{fdet}}
+%% \extol{0.1}
+%% \exname{Q03NumDetectorAproximandoDoppler}
+%% \exsection{Ondulatoria; Acustica; Efeito Doppler; Detector em movimento}
+%% \exusepackage[utf8]{inputenc}
