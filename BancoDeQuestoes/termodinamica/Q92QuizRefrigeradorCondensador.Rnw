@@ -1,0 +1,33 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Os manuais de refrigeradores recomendam que o equipamento não seja instalado próximo a fogões, aquecedores ou sob incidência direta do Sol. Nessas condições, o consumo de energia elétrica aumenta.
+
+A principal razão física para esse aumento é que
+
+\begin{answerlist}
+  \item o fluxo de calor por condução no condensador é completamente interrompido.
+  \item a temperatura do fluido refrigerante no condensador diminui mais rapidamente.
+  \item o calor externo é transferido diretamente para os alimentos sem passar pelas paredes.
+  \item a liquefação do fluido refrigerante no condensador exige maior trabalho do compressor.
+  \item as correntes de convecção deixam de existir nas proximidades do condensador.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+O condensador precisa rejeitar calor para o ambiente externo. Quando a temperatura ao redor do refrigerador é elevada, a diferença de temperatura entre o condensador e o ambiente diminui, tornando mais difícil a rejeição de calor.
+
+Para manter o ciclo de refrigeração, o compressor precisa realizar mais trabalho sobre o fluido refrigerante, elevando o consumo de energia elétrica. Por isso, a alternativa correta é a que associa a situação a maior trabalho do compressor durante o processo que permite a condensação do fluido.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: questão inspirada no ENEM 2020 Q133.
+%% \extype{schoice}
+%% \exsolution{00010}
+%% \exname{Q92QuizRefrigeradorCondensador}
+%% \exsection{Termodinamica; Refrigerador; Condensador; Trabalho; ENEM}
+%% \exusepackage[utf8]{inputenc}
