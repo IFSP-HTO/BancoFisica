@@ -1,0 +1,42 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Um aquário contém $50\,\mathrm{L}$ de água e utiliza um aquecedor de $50\,\mathrm{W}$ apenas para compensar a taxa praticamente constante de resfriamento para o ambiente. Considere a densidade da água igual a $1\,\mathrm{kg/L}$ e o calor específico igual a $4{,}0\,\mathrm{kJ/(kg\,K)}$.
+
+Se o aquecedor for desligado durante $1\,\mathrm{h}$, a redução de temperatura da água será mais próxima de
+
+\begin{answerlist}
+  \item $4{,}0\,^\circ\mathrm{C}$.
+  \item $3{,}6\,^\circ\mathrm{C}$.
+  \item $0{,}9\,^\circ\mathrm{C}$.
+  \item $0{,}6\,^\circ\mathrm{C}$.
+  \item $0{,}3\,^\circ\mathrm{C}$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+O aquecedor de $50\,\mathrm{W}$ compensava uma perda térmica de mesma potência. Em uma hora, a energia perdida é
+\[
+Q=P\Delta t=50\cdot3600=1{,}8\times10^5\,\mathrm{J}=180\,\mathrm{kJ}.
+\]
+A massa de água é $m=50\,\mathrm{kg}$. Usando
+\[
+Q=mc\Delta T,
+\]
+temos
+\[
+\Delta T=\frac{180}{50\cdot4{,}0}=0{,}9\,^\circ\mathrm{C}.
+\]
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: questão inspirada no ENEM 2020 Q101.
+%% \extype{schoice}
+%% \exsolution{00100}
+%% \exname{Q93QuizAquarioResfriamento}
+%% \exsection{Calorimetria; Potencia termica; Calor sensivel; ENEM}
+%% \exusepackage[utf8]{inputenc}
