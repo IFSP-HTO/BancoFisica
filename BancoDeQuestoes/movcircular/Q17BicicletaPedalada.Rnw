@@ -10,15 +10,38 @@ pi_aprox <- 3.14
 ## coroa: 1 Hz. mesma velocidade linear na corrente e na catraca
 f_roda <- ped * dcor / dcat
 v      <- round(2 * pi_aprox * (droda/200) * f_roda, 2)   ## velocidade da bicicleta (m/s)
-
-include_supplement("Q17BicicletaPedalada.jpg")
 @
 \usepackage[utf8]{inputenc}
 \begin{question}
 
 Considere a bicicleta com os seguintes parâmetros: diâmetro da coroa (roda dentada do pedal) $\Sexpr{dcor}$ cm, diâmetro da catraca (roda dentada da roda traseira) $\Sexpr{dcat}$ cm e diâmetro da roda $\Sexpr{droda}$ cm, conforme a figura. Se os pedais executam uma volta completa por segundo, determine:
 
-\fbox{\includegraphics[height=4.5cm,keepaspectratio]{Q17BicicletaPedalada.jpg}}
+<<fig=TRUE, height=4, width=7.5, echo=FALSE, eps=FALSE, results=hide>>=
+par(mar=c(0.3,0.3,0.3,0.3))
+plot.new(); plot.window(xlim=c(-0.6,6.6), ylim=c(-0.6,3.5), asp=1)
+# rodas
+symbols(c(1.0,5.3),c(1.0,1.0),circles=c(0.95,0.95),inches=FALSE,add=TRUE,lwd=2)
+# quadro
+segments(1.0,1.0,2.8,1.15,lwd=2)
+segments(2.8,1.15,4.15,2.5,lwd=2)
+segments(4.15,2.5,1.9,2.5,lwd=2)
+segments(1.9,2.5,2.8,1.15,lwd=2)
+segments(4.15,2.5,5.3,1.0,lwd=2)
+segments(1.9,2.5,1.55,3.05,lwd=2)
+segments(4.15,2.5,4.55,3.05,lwd=2)
+segments(4.35,3.05,4.85,3.05,lwd=2)
+# coroa, catraca e pedais
+symbols(2.8,1.15,circles=0.36,inches=FALSE,add=TRUE,lwd=2)
+symbols(5.3,1.0,circles=0.18,inches=FALSE,add=TRUE,lwd=2)
+segments(2.8,1.15,2.35,0.75,lwd=1.5)
+segments(2.8,1.15,3.25,1.55,lwd=1.5)
+# corrente (duas linhas)
+segments(2.85,1.48,5.25,1.18,lwd=1.5)
+segments(2.75,0.82,5.25,0.82,lwd=1.5)
+text(2.25,0.45,"coroa",cex=0.85)
+text(5.25,0.45,"catraca",cex=0.85)
+text(5.9,1.0,"roda",cex=0.85,pos=4)
+@
 
 \begin{answerlist}
   \item A frequência da roda da bicicleta, em hertz.
