@@ -1,0 +1,72 @@
+<<echo=FALSE, results=hide>>=
+Afig <- 1
+theta <- sample(c(pi/6, pi/4, pi/3, 2*pi/3, 3*pi/4), 1)
+xp <- cos(theta)
+yp <- sin(theta)
+ang <- seq(0, 2*pi, length.out = 500)
+scale_a <- 0.7
+ax_end <- xp - scale_a * cos(theta)
+ay_end <- yp - scale_a * sin(theta)
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Uma partícula de referência executa MCU em uma circunferência de raio $A$, com velocidade angular $\omega$. Sua projeção sobre o eixo $x$ executa MHS. O vetor desenhado aponta para o centro da circunferência e representa a aceleração centrípeta da partícula de referência.
+
+<<fig=TRUE, height=5, width=6, echo=FALSE, eps=FALSE, results=hide>>=
+par(mar = c(3.8, 1.0, 0.8, 0.8))
+plot(cos(ang), sin(ang), type = "l", lwd = 2, asp = 1,
+     axes = FALSE, xlab = "", ylab = "",
+     xlim = c(-1.4, 1.4), ylim = c(-1.2, 1.4))
+abline(h = 0, v = 0, lty = 3)
+segments(0, 0, xp, yp, lwd = 2)
+segments(xp, yp, xp, 0, lty = 2)
+points(xp, yp, pch = 19, cex = 1.2)
+points(xp, 0, pch = 19, cex = 1.2)
+arrows(xp, yp, ax_end, ay_end, length = 0.10, lwd = 2)
+text(ax_end, ay_end, labels = "a_c", pos = 2)
+axis(1, at = c(-1, 0, 1), labels = c("-A", "0", "A"))
+mtext("eixo x", side = 1, line = 2.2)
+@
+
+Qual relação descreve a componente $a_x$ dessa aceleração, isto é, a aceleração da projeção que executa MHS?
+
+\begin{answerlist}
+  \item $a_x=-\omega^2 x$.
+  \item $a_x=+\omega^2 x$.
+  \item $a_x=-\omega x$.
+  \item $a_x=-\omega^2 A$ em todos os pontos da oscilação.
+  \item $a_x=0$ em todos os pontos, pois a rapidez no MCU é constante.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+No MCU, a aceleração centrípeta possui módulo
+\[
+a_c=\omega^2A
+\]
+e aponta no sentido oposto ao vetor posição. Se a posição angular é $\theta$, sua componente horizontal é
+\[
+a_x=-\omega^2A\cos\theta.
+\]
+Como a projeção possui coordenada
+\[
+x=A\cos\theta,
+\]
+obtemos
+\[
+\boxed{a_x=-\omega^2x}.
+\]
+Assim, a aceleração da projeção é restauradora: tem sentido oposto ao deslocamento em relação ao equilíbrio.
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{10000}
+%% \exname{Q07QuizAceleracaoProjecaoMCUMHS}
+%% \exsection{Mecanica; Oscilacoes; MHS e MCU; Aceleracao}
+%% \exusepackage[utf8]{inputenc}

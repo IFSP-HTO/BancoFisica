@@ -1,0 +1,40 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Uma pequena lua descreve, com boa aproximação, uma órbita circular uniforme em torno de um planeta. Um observador muito distante vê essa órbita praticamente de perfil e registra apenas a coordenada da lua ao longo de uma reta que passa pelo centro aparente do planeta.
+
+Qual modelo descreve essa coordenada projetada ao longo do tempo?
+
+\begin{answerlist}
+  \item Um movimento harmônico simples com o mesmo período do movimento orbital.
+  \item Um movimento uniforme retilíneo, pois a rapidez orbital é constante.
+  \item Um movimento uniformemente acelerado, pois há aceleração centrípeta constante em módulo.
+  \item Um movimento harmônico simples com período igual à metade do período orbital.
+  \item Um movimento sem periodicidade, pois a projeção elimina a informação angular.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Se a posição angular da lua na órbita circular é
+\[
+\theta(t)=\omega t+\phi,
+\]
+a coordenada observada ao longo de um diâmetro é a projeção
+\[
+x(t)=R\cos(\omega t+\phi).
+\]
+Essa é exatamente a forma de um movimento harmônico simples. Quando a lua completa uma volta, a fase aumenta em $2\pi$ e a projeção completa um ciclo; portanto, o período projetado é o mesmo período orbital.
+
+Esse é o princípio físico usado no exemplo histórico dos satélites de Júpiter discutido no material de referência.
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{10000}
+%% \exname{Q04QuizSateliteProjecaoMHS}
+%% \exsection{Mecanica; Oscilacoes; MHS e MCU; Interpretacao fisica}
+%% \exusepackage[utf8]{inputenc}

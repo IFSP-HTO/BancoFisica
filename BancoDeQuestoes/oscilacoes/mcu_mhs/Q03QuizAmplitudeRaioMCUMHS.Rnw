@@ -1,0 +1,63 @@
+<<echo=FALSE, results=hide>>=
+R <- sample(c(2, 3, 4, 5), 1)
+theta <- sample(c(pi/6, pi/4, pi/3, 2*pi/3), 1)
+x <- R * cos(theta)
+y <- R * sin(theta)
+ang <- seq(0, 2*pi, length.out = 500)
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Uma partícula descreve MCU em uma circunferência de raio $R=\Sexpr{R}\,\mathrm{cm}$. Sua projeção ortogonal sobre um diâmetro horizontal executa um movimento harmônico simples.
+
+<<fig=TRUE, height=5, width=6, echo=FALSE, eps=FALSE, results=hide>>=
+par(mar = c(3.8, 1.0, 0.8, 0.8))
+plot(R*cos(ang), R*sin(ang), type = "l", lwd = 2, asp = 1,
+     axes = FALSE, xlab = "", ylab = "",
+     xlim = c(-1.3*R, 1.3*R), ylim = c(-1.15*R, 1.25*R))
+abline(h = 0, v = 0, lty = 3)
+segments(0, 0, x, y, lwd = 2)
+segments(x, y, x, 0, lty = 2)
+points(x, y, pch = 19, cex = 1.2)
+points(x, 0, pch = 19, cex = 1.2)
+axis(1, at = c(-R, 0, R), labels = c("-R", "0", "R"))
+mtext("diâmetro de projeção", side = 1, line = 2.2)
+@
+
+Qual é a amplitude $A$ do MHS projetado?
+
+\begin{answerlist}
+  \item $A=R$.
+  \item $A=2R$.
+  \item $A=R/2$.
+  \item $A=\pi R$.
+  \item A amplitude depende da velocidade angular do MCU e não pode ser determinada apenas por $R$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+A projeção horizontal é
+\[
+x=R\cos\theta.
+\]
+Os valores extremos ocorrem quando $\cos\theta=\pm1$, de modo que
+\[
+x_{\max}=+R,\qquad x_{\min}=-R.
+\]
+Logo, o maior afastamento da posição de equilíbrio é
+\[
+A=R=\Sexpr{R}\,\mathrm{cm}.
+\]
+A velocidade angular determina a rapidez com que o ciclo é percorrido, mas não altera a amplitude geométrica da projeção.
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{10000}
+%% \exname{Q03QuizAmplitudeRaioMCUMHS}
+%% \exsection{Mecanica; Oscilacoes; MHS e MCU; Amplitude}
+%% \exusepackage[utf8]{inputenc}
