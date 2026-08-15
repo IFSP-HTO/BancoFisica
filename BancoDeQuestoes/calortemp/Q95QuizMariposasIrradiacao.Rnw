@@ -1,0 +1,33 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Em noites quentes, mariposas podem se aproximar de lâmpadas acesas. Além da luz visível, a lâmpada aquecida transfere energia térmica para os insetos mesmo sem contato direto e sem depender do movimento do ar entre a fonte e o animal.
+
+O mecanismo de transferência de calor que pode ocorrer independentemente da presença de um meio material é a
+
+\begin{answerlist}
+  \item condução.
+  \item convecção.
+  \item irradiação.
+  \item evaporação.
+  \item condensação.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Condução e convecção dependem da presença de matéria para transportar energia térmica. A irradiação, por outro lado, ocorre por ondas eletromagnéticas e pode se propagar inclusive no vácuo.
+
+Assim, o mecanismo independente de um meio material é a \textbf{irradiação}.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: questão inspirada no ENEM 2025 Q91.
+%% \extype{schoice}
+%% \exsolution{00100}
+%% \exname{Q95QuizMariposasIrradiacao}
+%% \exsection{Calor e temperatura; Irradiacao termica; Transferencia de calor; ENEM}
+%% \exusepackage[utf8]{inputenc}
