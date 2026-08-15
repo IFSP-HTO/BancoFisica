@@ -1,19 +1,3 @@
-<<echo=FALSE, results=hide>>=
-## Inspirada no ENEM 2023 Q113.
-## Física central: intensidade de onda esférica.
-alternativas <- c(
-  "$2{,}0\times10^{-6}\,\mathrm{W/m^2}$.",
-  "$2{,}0\times10^{-5}\,\mathrm{W/m^2}$.",
-  "$2{,}4\times10^{-5}\,\mathrm{W/m^2}$.",
-  "$2{,}4\times10^{-3}\,\mathrm{W/m^2}$.",
-  "$2{,}4\times10^{-1}\,\mathrm{W/m^2}$."
-)
-solutions <- c(TRUE, FALSE, FALSE, FALSE, FALSE)
-ordem <- sample(seq_along(alternativas))
-alternativas <- alternativas[ordem]
-solutions <- solutions[ordem]
-solution_key <- paste0(as.integer(solutions), collapse = "")
-@
 \usepackage[utf8]{inputenc}
 
 \begin{question}
@@ -22,9 +6,13 @@ Uma antena bluetooth transmite uma potência de $2{,}4\,\mathrm{mW}$ e deve perm
 
 Qual é a intensidade mínima aproximada que o receptor deve ser capaz de detectar a $10\,\mathrm{m}$?
 
-<<echo=FALSE, results=tex>>=
-answerlist(alternativas)
-@
+\begin{answerlist}
+  \item $2{,}0\times10^{-6}\,\mathrm{W/m^2}$.
+  \item $2{,}0\times10^{-5}\,\mathrm{W/m^2}$.
+  \item $2{,}4\times10^{-5}\,\mathrm{W/m^2}$.
+  \item $2{,}4\times10^{-3}\,\mathrm{W/m^2}$.
+  \item $2{,}4\times10^{-1}\,\mathrm{W/m^2}$.
+\end{answerlist}
 
 \end{question}
 
@@ -47,15 +35,14 @@ Logo,
 I\approx\frac{2{,}4\times10^{-3}}{1200}=2{,}0\times10^{-6}\,\mathrm{W/m^2}.
 \]
 
-<<echo=FALSE, results=tex>>=
-answerlist(ifelse(solutions, paste0("\\textbf{", alternativas, "}"), alternativas))
-@
+A alternativa correta é a \textbf{A}.
 
 \end{solution}
 
 %% META-INFORMATION
+%% Fonte: questão inspirada no ENEM 2023 Q113.
 %% \extype{schoice}
-%% \exsolution{\Sexpr{solution_key}}
+%% \exsolution{10000}
 %% \exname{Q100QuizBluetoothIntensidade}
 %% \exsection{Ondas; Ondas eletromagneticas; Intensidade; Bluetooth; ENEM}
 %% \exusepackage[utf8]{inputenc}
