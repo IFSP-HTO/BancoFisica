@@ -1,0 +1,41 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Uma ambulância com a sirene ligada aproxima-se de um operador de radar. O radar emite ondas de rádio de frequência $f_0$, que são refletidas pela dianteira da ambulância e retornam ao detector com frequência $f_r$.
+
+Durante a aproximação, como o operador percebe o som da sirene e qual relação entre $f_r$ e $f_0$ é esperada?
+
+\begin{answerlist}
+  \item som mais grave e $f_r<f_0$.
+  \item som mais agudo e $f_r<f_0$.
+  \item som mais agudo e $f_r=f_0$.
+  \item som mais agudo e $f_r>f_0$.
+  \item som mais grave e $f_r>f_0$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+No efeito Doppler sonoro, uma fonte que se aproxima de um observador produz frentes de onda mais próximas entre si. A frequência percebida aumenta, e o som é percebido como \textbf{mais agudo}.
+
+No radar, a ambulância também se aproxima da fonte/detector. A onda refletida retorna com frequência maior que a emitida, devido ao efeito Doppler associado ao movimento do alvo.
+
+Portanto,
+\[
+f_r>f_0,
+\]
+e o som da sirene é percebido como mais agudo.
+
+A alternativa correta é a \textbf{D}.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: questão inspirada no ENEM 2024 Q130.
+%% \extype{schoice}
+%% \exsolution{00010}
+%% \exname{Q102QuizAmbulanciaRadarDoppler}
+%% \exsection{Ondas; Acustica; Efeito Doppler; Radar; Ondas eletromagneticas; ENEM}
+%% \exusepackage[utf8]{inputenc}

@@ -1,0 +1,35 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Durante um voo, aparelhos eletrônicos podem ser desligados para reduzir o risco de interferência em sistemas de comunicação por rádio. Considere um sinal eletromagnético emitido por um celular e outro sinal recebido pelo rádio da aeronave.
+
+A interferência entre esses sinais pode ocorrer de forma relevante quando eles
+
+\begin{answerlist}
+  \item forem ambas audíveis.
+  \item tiverem a mesma potência.
+  \item tiverem a mesma frequência.
+  \item tiverem a mesma intensidade.
+  \item propagarem-se com velocidades diferentes.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Para que dois sinais eletromagnéticos interfiram de maneira persistente no mesmo canal de comunicação, eles precisam apresentar componentes espectrais coincidentes ou suficientemente próximas.
+
+Entre as alternativas apresentadas, a condição essencial é que tenham a \textbf{mesma frequência}. Potência e intensidade influenciam o quanto um sinal pode perturbar o outro, mas não definem por si só a sobreposição de canais.
+
+A alternativa correta é a \textbf{C}.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: questão inspirada no ENEM 2023 Q128.
+%% \extype{schoice}
+%% \exsolution{00100}
+%% \exname{Q101QuizInterferenciaRadioCelular}
+%% \exsection{Ondas; Ondas eletromagneticas; Interferencia; Radiofrequencia; ENEM}
+%% \exusepackage[utf8]{inputenc}

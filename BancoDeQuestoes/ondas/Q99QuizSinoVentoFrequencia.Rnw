@@ -1,0 +1,46 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Duas barras metálicas de um sino dos ventos são feitas do mesmo material e têm a mesma espessura, mas comprimentos diferentes. A barra 1 é mais curta que a barra 2. Considere $f_1$ e $v_1$, respectivamente, a frequência fundamental e a velocidade de propagação do som no material da barra 1, e $f_2$ e $v_2$ as grandezas correspondentes à barra 2.
+
+Qual relação entre essas grandezas é esperada?
+
+\begin{answerlist}
+  \item $f_1=f_2$ e $v_1=v_2$.
+  \item $f_1=f_2$ e $v_1>v_2$.
+  \item $f_1=f_2$ e $v_1<v_2$.
+  \item $f_1>f_2$ e $v_1=v_2$.
+  \item $f_1>f_2$ e $v_1>v_2$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Como as duas barras são feitas do mesmo material, a velocidade de propagação das ondas mecânicas no material é a mesma:
+\[
+v_1=v_2.
+\]
+
+A frequência fundamental de um corpo vibrante diminui quando aumenta seu comprimento característico. Assim, a barra mais curta produz uma frequência fundamental maior:
+\[
+f_1>f_2.
+\]
+
+Portanto,
+\[
+f_1>f_2 \quad \text{e} \quad v_1=v_2.
+\]
+
+A alternativa correta é a \textbf{D}.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: questão inspirada no ENEM 2021 Q134.
+%% \extype{schoice}
+%% \exsolution{00010}
+%% \exname{Q99QuizSinoVentoFrequencia}
+%% \exsection{Ondas; Acustica; Frequencia fundamental; Velocidade de propagacao; ENEM}
+%% \exusepackage[utf8]{inputenc}

@@ -1,0 +1,35 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Uma solução simples de iluminação diurna utiliza uma garrafa PET transparente cheia de água, instalada atravessando o telhado de uma casa. A luz solar entra pela parte externa da garrafa e se espalha para o interior do ambiente após atravessar as interfaces entre ar, plástico e água.
+
+O fenômeno óptico essencial para explicar a mudança de direção dos raios luminosos nessas interfaces é a
+
+\begin{answerlist}
+  \item difração.
+  \item absorção.
+  \item polarização.
+  \item reflexão.
+  \item refração.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Quando a luz passa de um meio para outro com índice de refração diferente, sua velocidade de propagação muda. Em geral, isso provoca também uma mudança na direção do raio luminoso.
+
+Esse fenômeno é a \textbf{refração}. Na garrafa, as sucessivas refrações ajudam a redistribuir a luz solar para o interior do ambiente.
+
+A alternativa correta é a \textbf{E}.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: questão inspirada no ENEM 2022 Q125.
+%% \extype{schoice}
+%% \exsolution{00001}
+%% \exname{Q96QuizLuzEngarrafadaRefracao}
+%% \exsection{Optica; Refracao; Iluminacao; ENEM}
+%% \exusepackage[utf8]{inputenc}

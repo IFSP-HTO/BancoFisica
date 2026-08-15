@@ -1,0 +1,48 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Uma antena bluetooth transmite uma potência de $2{,}4\,\mathrm{mW}$ e deve permitir comunicação a até $10\,\mathrm{m}$ de distância. Considere a antena como uma fonte puntiforme que distribui uniformemente sua potência sobre superfícies esféricas e use $\pi\approx3$.
+
+Qual é a intensidade mínima aproximada que o receptor deve ser capaz de detectar a $10\,\mathrm{m}$?
+
+\begin{answerlist}
+  \item $2{,}0\times10^{-6}\,\mathrm{W/m^2}$.
+  \item $2{,}0\times10^{-5}\,\mathrm{W/m^2}$.
+  \item $2{,}4\times10^{-5}\,\mathrm{W/m^2}$.
+  \item $2{,}4\times10^{-3}\,\mathrm{W/m^2}$.
+  \item $2{,}4\times10^{-1}\,\mathrm{W/m^2}$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+A intensidade é a potência dividida pela área sobre a qual a energia se distribui:
+\[
+I=\frac{P}{4\pi r^2}.
+\]
+Convertendo a potência,
+\[
+P=2{,}4\,\mathrm{mW}=2{,}4\times10^{-3}\,\mathrm{W}.
+\]
+Para $r=10\,\mathrm{m}$ e $\pi\approx3$,
+\[
+4\pi r^2\approx4\cdot3\cdot100=1200\,\mathrm{m^2}.
+\]
+Logo,
+\[
+I\approx\frac{2{,}4\times10^{-3}}{1200}=2{,}0\times10^{-6}\,\mathrm{W/m^2}.
+\]
+
+A alternativa correta é a \textbf{A}.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: questão inspirada no ENEM 2023 Q113.
+%% \extype{schoice}
+%% \exsolution{10000}
+%% \exname{Q100QuizBluetoothIntensidade}
+%% \exsection{Ondas; Ondas eletromagneticas; Intensidade; Bluetooth; ENEM}
+%% \exusepackage[utf8]{inputenc}

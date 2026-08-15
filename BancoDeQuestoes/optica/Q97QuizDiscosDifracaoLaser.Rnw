@@ -1,0 +1,35 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Em discos ópticos, informações são armazenadas em cavidades microscópicas e lidas por um laser. A difração limita a capacidade de distinguir detalhes muito pequenos, e esse efeito se torna menos limitante quando se utiliza luz de menor comprimento de onda.
+
+Entre as regiões espectrais listadas, qual permite otimizar o armazenamento de dados em cavidades menores?
+
+\begin{answerlist}
+  \item violeta.
+  \item azul.
+  \item verde.
+  \item vermelho.
+  \item infravermelho.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+A difração torna-se importante quando as dimensões do obstáculo ou abertura são comparáveis ao comprimento de onda. Para resolver detalhes menores, é vantajoso usar uma radiação com menor comprimento de onda.
+
+No espectro visível, a luz violeta apresenta comprimento de onda menor que azul, verde e vermelho. O infravermelho possui comprimento de onda ainda maior.
+
+Portanto, entre as opções apresentadas, a região mais adequada é a \textbf{violeta}, alternativa \textbf{A}.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: questão inspirada no ENEM 2023 Q112.
+%% \extype{schoice}
+%% \exsolution{10000}
+%% \exname{Q97QuizDiscosDifracaoLaser}
+%% \exsection{Optica; Difracao; Comprimento de onda; Laser; ENEM}
+%% \exusepackage[utf8]{inputenc}
