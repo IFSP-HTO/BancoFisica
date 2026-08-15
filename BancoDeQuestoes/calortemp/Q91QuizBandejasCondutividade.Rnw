@@ -1,0 +1,33 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Duas bandejas de mesma massa, uma de plástico e outra de alumínio, permanecem por várias horas sobre a mesma mesa, em equilíbrio térmico com o ambiente. Ao tocá-las, a bandeja de alumínio parece mais fria. Em seguida, coloca-se um cubo de gelo idêntico sobre cada bandeja.
+
+O gelo derrete
+
+\begin{answerlist}
+  \item mais rapidamente sobre o alumínio, pois ele possui maior condutividade térmica que o plástico.
+  \item mais rapidamente sobre o plástico, pois sua temperatura inicial é maior.
+  \item mais rapidamente sobre o plástico, pois ele possui maior capacidade térmica.
+  \item mais rapidamente sobre o alumínio, apenas porque seu calor específico é menor.
+  \item com a mesma rapidez, pois as bandejas estão inicialmente à mesma temperatura.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+As duas bandejas estão inicialmente à mesma temperatura, pois permaneceram em equilíbrio térmico com o ambiente. A sensação de frio ao tocar o alumínio decorre de sua maior condutividade térmica.
+
+Pelo mesmo motivo, o alumínio transfere energia térmica do ambiente e da própria bandeja para o gelo com maior taxa. Portanto, o gelo derrete mais rapidamente sobre a bandeja de alumínio.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: questão inspirada no ENEM 2016 Q74.
+%% \extype{schoice}
+%% \exsolution{10000}
+%% \exname{Q91QuizBandejasCondutividade}
+%% \exsection{Calor e temperatura; Conducao termica; Condutividade; ENEM}
+%% \exusepackage[utf8]{inputenc}

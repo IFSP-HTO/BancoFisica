@@ -1,0 +1,54 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Para comparar a resposta térmica de uma área concretada com a de uma área alagada, considere volumes iguais de concreto e água recebendo a mesma quantidade de energia solar. Use os dados:
+
+\begin{center}
+\begin{tabular}{c|cc}
+Material & Densidade ($\mathrm{kg/m^3}$) & Calor específico ($\mathrm{kJ/(kg\,^{\circ}C)}$) \\
+\hline
+Água & $1000$ & $4{,}2$ \\
+Concreto & $2500$ & $0{,}8$
+\end{tabular}
+\end{center}
+
+Desprezando evaporação, a razão entre a variação de temperatura do concreto e a da água é mais próxima de
+
+\begin{answerlist}
+  \item $1{,}0$.
+  \item $2{,}1$.
+  \item $2{,}5$.
+  \item $5{,}3$.
+  \item $13{,}1$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Para cada material,
+\[
+Q=mc\Delta T=\rho Vc\Delta T.
+\]
+Como $Q$ e $V$ são iguais nas duas situações,
+\[
+\frac{\Delta T_{\rm concreto}}{\Delta T_{\rm agua}}
+=\frac{\rho_{\rm agua}c_{\rm agua}}{\rho_{\rm concreto}c_{\rm concreto}}.
+\]
+Substituindo,
+\[
+\frac{\Delta T_{\rm concreto}}{\Delta T_{\rm agua}}
+=\frac{1000\cdot4{,}2}{2500\cdot0{,}8}
+=\frac{4200}{2000}=2{,}1.
+\]
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: questão inspirada no ENEM 2022 Q94.
+%% \extype{schoice}
+%% \exsolution{01000}
+%% \exname{Q94QuizAmplitudeTermicaConcretoAgua}
+%% \exsection{Calorimetria; Calor especifico; Amplitude termica; ENEM}
+%% \exusepackage[utf8]{inputenc}

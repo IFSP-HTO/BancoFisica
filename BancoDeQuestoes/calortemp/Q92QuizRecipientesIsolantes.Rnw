@@ -1,0 +1,46 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Dois recipientes térmicos, A e B, possuem faces de mesma espessura. O recipiente A mede $40\,\mathrm{cm}\times40\,\mathrm{cm}\times40\,\mathrm{cm}$ e o recipiente B mede $60\,\mathrm{cm}\times40\,\mathrm{cm}\times40\,\mathrm{cm}$. Em cada um é colocado um bloco idêntico de gelo a $0\,^\circ\mathrm{C}$. Após o mesmo intervalo de tempo, a massa de gelo fundida em B é o dobro da fundida em A.
+
+Sabendo que a taxa de transferência de calor é proporcional à condutividade térmica $k$ e à área das faces, a razão $k_A/k_B$ é mais próxima de
+
+\begin{answerlist}
+  \item $0{,}50$.
+  \item $0{,}67$.
+  \item $0{,}75$.
+  \item $1{,}33$.
+  \item $2{,}00$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+A área interna do recipiente A é
+\[
+A_A=6(0{,}4)^2=0{,}96\,\mathrm{m^2}.
+\]
+Para B,
+\[
+A_B=2(0{,}6\cdot0{,}4+0{,}6\cdot0{,}4+0{,}4\cdot0{,}4)=1{,}28\,\mathrm{m^2}.
+\]
+Como a massa fundida é proporcional ao calor recebido e B recebe o dobro de calor no mesmo tempo,
+\[
+k_B A_B=2k_A A_A.
+\]
+Assim,
+\[
+\frac{k_A}{k_B}=\frac{A_B}{2A_A}=\frac{1{,}28}{1{,}92}\approx0{,}67.
+\]
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: questão inspirada no ENEM 2019 Q112.
+%% \extype{schoice}
+%% \exsolution{01000}
+%% \exname{Q92QuizRecipientesIsolantes}
+%% \exsection{Calor e temperatura; Conducao termica; Isolamento; ENEM}
+%% \exusepackage[utf8]{inputenc}

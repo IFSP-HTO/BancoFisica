@@ -1,0 +1,33 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Um sistema de armazenamento de energia utiliza o ar atmosférico. Após a retirada de água e gás carbônico, o ar é resfriado até cerca de $-198\,^\circ\mathrm{C}$, permitindo a liquefação do nitrogênio. Posteriormente, o nitrogênio líquido é exposto à temperatura ambiente, entra em ebulição e se expande, acionando turbinas que recuperam parte da energia na forma elétrica.
+
+No processo descrito, a etapa associada ao armazenamento do excedente de energia elétrica é a
+
+\begin{answerlist}
+  \item expansão do nitrogênio durante a ebulição.
+  \item absorção de calor pelo nitrogênio durante a ebulição.
+  \item realização de trabalho sobre o nitrogênio durante a liquefação.
+  \item retirada de água e gás carbônico do ar antes do resfriamento.
+  \item liberação de calor pelo nitrogênio durante a liquefação.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+A energia elétrica excedente é utilizada na etapa de preparação e liquefação do nitrogênio. Nessa etapa há realização de trabalho sobre o gás e retirada de energia térmica para levá-lo ao estado líquido.
+
+Quando o nitrogênio líquido volta a aquecer, entra em ebulição e se expande, a energia previamente armazenada é parcialmente recuperada ao acionar as turbinas. Portanto, a alternativa correta é a realização de trabalho sobre o nitrogênio durante a liquefação.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: questão inspirada no ENEM 2015 Q57.
+%% \extype{schoice}
+%% \exsolution{00100}
+%% \exname{Q91QuizNitrogenioLiquefacao}
+%% \exsection{Termodinamica; Mudanca de estado; Trabalho; Armazenamento de energia; ENEM}
+%% \exusepackage[utf8]{inputenc}

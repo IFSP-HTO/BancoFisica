@@ -1,0 +1,39 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Duas bicicletas utilizam pneus de características semelhantes, mas o pneu da bicicleta A é mais estreito que o da bicicleta B. Sob esforços semelhantes, o pneu A deforma muito menos, indicando que sua pressão de calibração $p_A$ é maior. Considere ainda que as massas de ar comprimido $m_A$ e $m_B$ sejam diretamente proporcionais aos volumes internos dos pneus.
+
+Comparando as duas bicicletas, é esperado que
+
+\begin{answerlist}
+  \item $p_A<p_B$ e $m_A<m_B$.
+  \item $p_A>p_B$ e $m_A<m_B$.
+  \item $p_A>p_B$ e $m_A=m_B$.
+  \item $p_A<p_B$ e $m_A=m_B$.
+  \item $p_A>p_B$ e $m_A>m_B$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+A menor deformação do pneu A sob esforços semelhantes está associada a uma pressão interna maior, portanto
+\[
+p_A>p_B.
+\]
+Como o pneu A é mais estreito, seu volume interno é menor. Pela hipótese do enunciado, a massa de ar é diretamente proporcional ao volume, então
+\[
+m_A<m_B.
+\]
+Logo, a relação correta é $p_A>p_B$ e $m_A<m_B$.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: questão inspirada no ENEM 2019 Q109.
+%% \extype{schoice}
+%% \exsolution{01000}
+%% \exname{Q92QuizPneusPressaoMassa}
+%% \exsection{Lei dos gases; Pressao; Volume; Pneus; ENEM}
+%% \exusepackage[utf8]{inputenc}

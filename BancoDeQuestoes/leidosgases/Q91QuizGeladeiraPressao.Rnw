@@ -1,0 +1,33 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Uma pessoa abre uma geladeira, fecha a porta e, logo em seguida, tenta abri-la novamente. Nesse segundo momento, é necessário exercer uma força maior do que a habitual para abrir a porta.
+
+A dificuldade extra ocorre principalmente porque
+
+\begin{answerlist}
+  \item o volume de ar no interior da geladeira diminui.
+  \item o motor passa a funcionar instantaneamente com potência máxima.
+  \item a força magnética da borracha de vedação aumenta.
+  \item a pressão no interior da geladeira fica menor que a pressão externa.
+  \item a temperatura interna torna-se maior que antes da abertura.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Ao abrir a geladeira, parte do ar frio é substituída por ar mais quente do ambiente. Depois que a porta é fechada, esse ar esfria. Como o volume interno varia muito pouco, a redução da temperatura provoca uma redução da pressão do ar no interior.
+
+Assim, por alguns instantes, a pressão atmosférica externa é maior que a pressão interna e exerce uma força resultante que dificulta a abertura da porta.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: questão inspirada no ENEM 2015 Q63.
+%% \extype{schoice}
+%% \exsolution{00010}
+%% \exname{Q91QuizGeladeiraPressao}
+%% \exsection{Lei dos gases; Pressao; Temperatura; Geladeira; ENEM}
+%% \exusepackage[utf8]{inputenc}

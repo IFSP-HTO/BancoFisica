@@ -1,0 +1,44 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Uma usina elétrica dissipa $2{,}0\,\mathrm{MW}$ de potência térmica em seu sistema de arrefecimento. A água de um rio é utilizada para retirar esse calor e pode retornar ao rio com aumento máximo de temperatura de $3\,^\circ\mathrm{C}$. Considere o calor específico da água igual a $4{,}0\,\mathrm{kJ/(kg\,^{\circ}C)}$.
+
+O fluxo mínimo de água necessário, em $\mathrm{kg/s}$, é mais próximo de
+
+\begin{answerlist}
+  \item $42$.
+  \item $84$.
+  \item $167$.
+  \item $250$.
+  \item $500$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+A potência térmica transferida para a água é
+\[
+P=\frac{Q}{\Delta t}=\frac{mc\Delta T}{\Delta t}.
+\]
+Definindo a vazão mássica por $\dot m=m/\Delta t$,
+\[
+P=\dot m\,c\Delta T.
+\]
+Logo,
+\[
+\dot m=\frac{2{,}0\times10^6}{4{,}0\times10^3\cdot3}
+\approx 1{,}67\times10^2\,\mathrm{kg/s}.
+\]
+Portanto, o valor mínimo é aproximadamente $167\,\mathrm{kg/s}$.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: questão inspirada no ENEM 2016 Q76.
+%% \extype{schoice}
+%% \exsolution{00100}
+%% \exname{Q92QuizUsinaFluxoAgua}
+%% \exsection{Calorimetria; Potencia termica; Calor sensivel; Vazao; ENEM}
+%% \exusepackage[utf8]{inputenc}

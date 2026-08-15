@@ -1,0 +1,51 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Três panelas têm a mesma área de fundo e a mesma espessura total. A primeira é de alumínio, com condutividade térmica $20\,\mathrm{W/(m\,K)}$; a segunda é de ferro, com $8\,\mathrm{W/(m\,K)}$; e a terceira tem metade da espessura em cobre, com $40\,\mathrm{W/(m\,K)}$, e metade em aço, com $5\,\mathrm{W/(m\,K)}$.
+
+Para duas camadas em série, a resistência térmica é proporcional a
+\[
+\frac{d_1}{k_1}+\frac{d_2}{k_2}.
+\]
+Considerando que maior taxa de condução significa maior economia de gás, a ordem da panela mais econômica para a menos econômica é
+
+\begin{answerlist}
+  \item cobre-aço, alumínio e ferro.
+  \item alumínio, cobre-aço e ferro.
+  \item cobre-aço, ferro e alumínio.
+  \item alumínio, ferro e cobre-aço.
+  \item ferro, alumínio e cobre-aço.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Para alumínio e ferro, a taxa de condução é proporcional diretamente a $k$, logo o alumínio conduz mais que o ferro.
+
+Para o fundo cobre-aço, com espessura total $d$,
+\[
+R\propto \frac{d/2}{40}+\frac{d/2}{5}
+=d\left(\frac{1}{80}+\frac{1}{10}\right)
+=\frac{9d}{80}.
+\]
+Isso corresponde a uma condutividade efetiva
+\[
+k_{\rm ef}=\frac{80}{9}\approx8{,}9\,\mathrm{W/(m\,K)}.
+\]
+Portanto,
+\[
+20>8{,}9>8,
+\]
+e a ordem da maior para a menor taxa de condução é alumínio, cobre-aço e ferro.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: questão inspirada no ENEM 2021 Q126.
+%% \extype{schoice}
+%% \exsolution{01000}
+%% \exname{Q94QuizPanelasCondutividade}
+%% \exsection{Calor e temperatura; Conducao termica; Condutividade; ENEM}
+%% \exusepackage[utf8]{inputenc}

@@ -1,0 +1,33 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Em um sólido cristalino, a energia potencial de interação entre átomos apresenta um mínimo na distância de equilíbrio $R_0$. Para temperaturas acima de zero kelvin, os átomos oscilam em torno dessa posição. Como o potencial interatômico real é assimétrico, o aumento da energia térmica amplia as oscilações e desloca a distância média entre os átomos para valores maiores que $R_0$.
+
+O fenômeno macroscópico associado a esse aumento da distância média interatômica é a
+
+\begin{answerlist}
+  \item ionização.
+  \item dilatação térmica.
+  \item dissociação molecular.
+  \item quebra de ligações covalentes.
+  \item formação de ligações metálicas.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Ao aumentar a temperatura, cresce a amplitude das vibrações dos átomos. Devido à assimetria do potencial de interação, a posição média de separação desloca-se para distâncias maiores.
+
+Em escala macroscópica, o aumento das distâncias médias entre as partículas produz aumento das dimensões do corpo. Esse fenômeno é a \textbf{dilatação térmica}.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: questão inspirada no ENEM 2018 Q122; o gráfico original foi substituído por descrição equivalente do potencial interatômico.
+%% \extype{schoice}
+%% \exsolution{01000}
+%% \exname{Q91QuizDilatacaoInteratomica}
+%% \exsection{Dilatacao termica; Solidos; Energia potencial; ENEM}
+%% \exusepackage[utf8]{inputenc}

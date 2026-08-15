@@ -1,0 +1,33 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Em uma grande cidade, superfícies urbanas aquecidas pela energia recebida do Sol formam uma ilha de calor. O ar em contato com essas superfícies aquece, torna-se menos denso e sobe, interferindo na circulação da brisa marítima.
+
+Os mecanismos dominantes de transferência de energia térmica entre o Sol e a superfície urbana e entre a superfície urbana e o ar são, respectivamente,
+
+\begin{answerlist}
+  \item irradiação e convecção.
+  \item irradiação e irradiação.
+  \item condução e irradiação.
+  \item convecção e irradiação.
+  \item convecção e convecção.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+A energia do Sol chega à Terra por ondas eletromagnéticas, portanto o mecanismo é a \textbf{irradiação}.
+
+Já o ar aquecido junto às superfícies urbanas se movimenta por diferença de densidade, caracterizando \textbf{convecção}. Assim, a sequência correta é irradiação e convecção.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: questão inspirada no ENEM 2021 Q111; a figura original foi dispensada por não ser necessária na adaptação textual.
+%% \extype{schoice}
+%% \exsolution{10000}
+%% \exname{Q93QuizIlhaCalorTransferencia}
+%% \exsection{Calor e temperatura; Irradiacao; Conveccao; Ilha de calor; ENEM}
+%% \exusepackage[utf8]{inputenc}
