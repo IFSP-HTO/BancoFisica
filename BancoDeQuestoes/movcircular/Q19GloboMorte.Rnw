@@ -11,15 +11,37 @@ g  <- 10
 Nt <- round(m * vt^2 / R - m * g, 0)
 ## Base: N - P = m*vb^2/R -> N = m*vb^2/R + mg
 Nb <- round(m * vb^2 / R + m * g, 0)
-
-include_supplement("Q19GloboMorte.jpg")
 @
 \usepackage[utf8]{inputenc}
 \begin{question}
 
 (UNICAMP adaptado) Uma atração muito popular nos circos é o "Globo da Morte", que consiste numa gaiola de forma esférica no interior da qual se movimenta uma pessoa pilotando uma motocicleta, com massa total do conjunto de $\Sexpr{m}$ kg. Considere um globo de raio $R = \Sexpr{R}$ m e $g = \Sexpr{g}$ m/s², conforme a figura.
 
-\fbox{\includegraphics[height=4.5cm,keepaspectratio]{Q19GloboMorte.jpg}}
+<<fig=TRUE, height=4.8, width=5.5, echo=FALSE, eps=FALSE, results=hide>>=
+par(mar=c(0.3,0.3,0.3,0.3))
+plot.new(); plot.window(xlim=c(-1.5,1.5), ylim=c(-1.5,1.5), asp=1)
+symbols(0,0,circles=1.12,inches=FALSE,add=TRUE,lwd=2)
+points(0,0,pch=19,cex=0.7)
+text(0.09,0.08,"O",cex=0.85,pos=4)
+# raio ao topo
+segments(0,0,0,1.12,lty=2,lwd=1.4)
+text(0.12,0.57,"R",font=2,pos=4)
+# motos esquemáticas no topo e na base
+bike <- function(x,y,flip=FALSE) {
+  yy <- if (flip) y-0.08 else y+0.08
+  rect(x-0.30,yy-0.08,x+0.30,yy+0.08,lwd=2)
+  points(c(x-0.22,x+0.22),c(yy-0.12,yy-0.12),pch=1,cex=1.0,lwd=1.5)
+}
+bike(0,1.03,TRUE)
+bike(0,-1.03,FALSE)
+# velocidades tangenciais
+arrows(0.38,1.16,0.98,1.16,length=0.08,lwd=1.5)
+text(0.68,1.32,"v_t",cex=0.85)
+arrows(-0.38,-1.16,-0.98,-1.16,length=0.08,lwd=1.5)
+text(-0.68,-1.32,"v_b",cex=0.85)
+text(-1.38,0.90,"topo",cex=0.85,pos=4)
+text(-1.38,-0.92,"base",cex=0.85,pos=4)
+@
 
 \begin{answerlist}
   \item Se ele passar pelo ponto mais alto do globo com velocidade de $\Sexpr{vt}$ m/s, qual é o valor da força que o globo faz sobre a moto, em newtons?
