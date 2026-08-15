@@ -1,13 +1,3 @@
-<<echo=FALSE, results=hide>>=
-## Inspirada no ENEM 2022 Q125.
-## Física central: refração da luz em garrafa com água.
-alternativas <- c("difração.", "absorção.", "polarização.", "reflexão.", "refração.")
-solutions <- c(FALSE, FALSE, FALSE, FALSE, TRUE)
-ordem <- sample(seq_along(alternativas))
-alternativas <- alternativas[ordem]
-solutions <- solutions[ordem]
-solution_key <- paste0(as.integer(solutions), collapse = "")
-@
 \usepackage[utf8]{inputenc}
 
 \begin{question}
@@ -16,9 +6,13 @@ Uma solução simples de iluminação diurna utiliza uma garrafa PET transparent
 
 O fenômeno óptico essencial para explicar a mudança de direção dos raios luminosos nessas interfaces é a
 
-<<echo=FALSE, results=tex>>=
-answerlist(alternativas)
-@
+\begin{answerlist}
+  \item difração.
+  \item absorção.
+  \item polarização.
+  \item reflexão.
+  \item refração.
+\end{answerlist}
 
 \end{question}
 
@@ -28,15 +22,14 @@ Quando a luz passa de um meio para outro com índice de refração diferente, su
 
 Esse fenômeno é a \textbf{refração}. Na garrafa, as sucessivas refrações ajudam a redistribuir a luz solar para o interior do ambiente.
 
-<<echo=FALSE, results=tex>>=
-answerlist(ifelse(solutions, paste0("\\textbf{", alternativas, "}"), alternativas))
-@
+A alternativa correta é a \textbf{E}.
 
 \end{solution}
 
 %% META-INFORMATION
+%% Fonte: questão inspirada no ENEM 2022 Q125.
 %% \extype{schoice}
-%% \exsolution{\Sexpr{solution_key}}
+%% \exsolution{00001}
 %% \exname{Q96QuizLuzEngarrafadaRefracao}
 %% \exsection{Optica; Refracao; Iluminacao; ENEM}
 %% \exusepackage[utf8]{inputenc}
