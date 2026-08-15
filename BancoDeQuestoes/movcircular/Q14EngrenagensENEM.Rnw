@@ -26,33 +26,15 @@ for (i in seq_along(opts)) {
   questions[aleat[i]] <- opts[i]
   solutions[aleat[i]] <- opts[i] == resp
 }
+
+include_supplement("Q14EngrenagensENEM.jpg")
 @
 \usepackage[utf8]{inputenc}
 \begin{question}
 
 (ENEM 2016) A invenção e o acoplamento entre engrenagens revolucionaram a ciência na época e propiciaram a invenção de várias tecnologias, como os relógios. Ao construir um pequeno cronômetro, um relojoeiro usa o sistema de engrenagens mostrado na figura. Um motor é ligado ao eixo e movimenta as engrenagens fazendo o ponteiro girar. A frequência do motor é de $\Sexpr{fA}$ RPM, e o número de dentes das engrenagens está apresentado no quadro (A: $\Sexpr{teeth["A"]}$, B: $\Sexpr{teeth["B"]}$, C: $\Sexpr{teeth["C"]}$, D: $\Sexpr{teeth["D"]}$). As engrenagens B e C giram no mesmo eixo.
 
-<<fig=TRUE, height=3.8, width=7.2, echo=FALSE, eps=FALSE, results=hide>>=
-par(mar=c(0.3,0.3,0.3,0.3))
-plot.new(); plot.window(xlim=c(-1.1,4.4), ylim=c(-1.35,1.35), asp=1)
-gear <- function(x,y,r,label,n=16) {
-  symbols(x,y,circles=r,inches=FALSE,add=TRUE,lwd=2)
-  ang <- seq(0,2*pi,length.out=n+1)[-(n+1)]
-  for (aa in ang) segments(x+(r-0.08)*cos(aa), y+(r-0.08)*sin(aa),
-                           x+(r+0.06)*cos(aa), y+(r+0.06)*sin(aa), lwd=1)
-  text(x,y,label,font=2,cex=1.1)
-}
-gear(0,0,0.48,"A")
-gear(1.25,0,0.76,"B")
-gear(1.25,0,0.40,"C",12)
-gear(2.55,0,0.82,"D")
-points(1.25,0,pch=19,cex=0.7)
-text(1.25,-1.05,"B e C: mesmo eixo",cex=0.85)
-arrows(-0.95,0,-0.55,0,length=0.08,lwd=1.5)
-text(-0.98,0.28,"motor",cex=0.85,pos=4)
-arrows(3.43,0,3.95,0,length=0.08,lwd=1.5)
-text(3.25,0.30,"ponteiro",cex=0.85,pos=4)
-@
+\fbox{\includegraphics[height=5cm,keepaspectratio]{Q14EngrenagensENEM.jpg}}
 
 A frequência de giro do ponteiro, em RPM, é:
 
