@@ -1,0 +1,33 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Uma panela de pressão reduz o tempo de cozimento porque a maior pressão interna eleva a temperatura de ebulição da água. Quando a válvula já está liberando vapor regularmente, muitos usuários reduzem a intensidade da chama.
+
+Essa redução é adequada principalmente porque evita
+
+\begin{answerlist}
+  \item o aumento contínuo da pressão interna e uma explosão inevitável.
+  \item a dilatação da panela e a desconexão imediata da tampa.
+  \item a perda da qualidade nutritiva causada apenas pela pressão.
+  \item a deformação obrigatória da borracha de vedação.
+  \item o consumo desnecessário de gás depois que o regime de pressão foi atingido.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Quando a válvula reguladora começa a liberar vapor de modo contínuo, a panela já atingiu aproximadamente sua pressão de operação. A energia adicional fornecida por uma chama muito intensa passa principalmente a aumentar a taxa de vaporização e a saída de vapor, sem produzir ganho proporcional na temperatura de cozimento.
+
+Reduzir a chama mantém o regime de funcionamento e evita gasto desnecessário de combustível.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: questão inspirada no ENEM 2020 Q92.
+%% \extype{schoice}
+%% \exsolution{00001}
+%% \exname{Q93QuizPanelaPressao}
+%% \exsection{Lei dos gases; Pressao; Ebulicao; Panela de pressao; ENEM}
+%% \exusepackage[utf8]{inputenc}
