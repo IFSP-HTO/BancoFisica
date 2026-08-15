@@ -1,0 +1,32 @@
+<<echo=FALSE, results=hide>>=
+a <- sample(c(2,3,4),1)
+b <- sample(c(2,3,4),1)
+c <- sample(c(2,3),1)
+factor <- a*b/c^2
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Dois corpos se atraem gravitacionalmente com força de módulo $F$. Em uma nova situação, a massa do primeiro corpo é multiplicada por \Sexpr{a}, a massa do segundo por \Sexpr{b}, e a distância entre seus centros por \Sexpr{c}.
+
+Determine o fator $F'/F$ entre a nova força gravitacional e a força original.
+\end{question}
+
+\begin{solution}
+Como
+\[
+F=G\frac{M_1M_2}{r^2},
+\]
+a nova força satisfaz
+\[
+\frac{F'}{F}=\frac{(\Sexpr{a})(\Sexpr{b})}{(\Sexpr{c})^2}=\Sexpr{round(factor,3)}.
+\]
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{round(factor,3)}}
+%% \extol{0.005}
+%% \exname{Q12NumEscalonamentoForcaGravitacional}
+%% \exsection{Gravitacao; Lei da gravitacao universal; Proporcionalidade}

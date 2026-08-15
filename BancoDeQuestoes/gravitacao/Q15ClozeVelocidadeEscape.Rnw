@@ -1,0 +1,43 @@
+<<echo=FALSE, results=hide>>=
+GM <- 4e14
+R <- sample(c(6.0,6.4,7.0,8.0),1)*1e6
+vesc <- sqrt(2*GM/R)
+vcirc <- sqrt(GM/R)
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Para um planeta esférico, considere $GM=4{,}0\times10^{14}\,\mathrm{m^3/s^2}$ e raio $R=\Sexpr{R/1e6}\times10^6\,\mathrm{m}$. Despreze atmosfera e rotação.
+
+Determine:
+\begin{answerlist}
+  \item a velocidade de uma órbita circular rente à superfície, em $\mathrm{km/s}$;
+  \item a velocidade de escape a partir da superfície, em $\mathrm{km/s}$.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+A velocidade orbital circular é
+\[
+v_c=\sqrt{\frac{GM}{R}}=\Sexpr{round(vcirc/1000,3)}\,\mathrm{km/s}.
+\]
+A velocidade mínima de escape é
+\[
+v_e=\sqrt{\frac{2GM}{R}}=\Sexpr{round(vesc/1000,3)}\,\mathrm{km/s}.
+\]
+Portanto, $v_e=\sqrt{2}\,v_c$.
+
+\begin{answerlist}
+  \item $\Sexpr{round(vcirc/1000,3)}\,\mathrm{km/s}$
+  \item $\Sexpr{round(vesc/1000,3)}\,\mathrm{km/s}$
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{round(vcirc/1000,3)}|\Sexpr{round(vesc/1000,3)}}
+%% \extol{0.01|0.01}
+%% \exname{Q15ClozeVelocidadeEscape}
+%% \exsection{Gravitacao; Velocidade de escape; Velocidade orbital; Energia}

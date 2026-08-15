@@ -1,0 +1,34 @@
+<<echo=FALSE, results=hide>>=
+G <- 6.67e-11
+M <- 6e24
+r <- sample(c(7.0,8.0,9.0,10.0,12.0),1)*1e6
+v <- sqrt(G*M/r)
+vkm <- v/1000
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Um satélite descreve uma órbita circular de raio $\Sexpr{r/1e6}\times10^6\,\mathrm{m}$ em torno de um planeta de massa $6{,}0\times10^{24}\,\mathrm{kg}$. Considere $G=6{,}67\times10^{-11}\,\mathrm{N\,m^2/kg^2}$.
+
+Determine a velocidade orbital do satélite, em $\mathrm{km/s}$.
+\end{question}
+
+\begin{solution}
+A força gravitacional fornece a força centrípeta:
+\[
+G\frac{Mm}{r^2}=m\frac{v^2}{r}.
+\]
+Assim,
+\[
+v=\sqrt{\frac{GM}{r}}=\Sexpr{round(vkm,3)}\,\mathrm{km/s}.
+\]
+A massa do satélite cancela, portanto a velocidade orbital circular, para um mesmo raio e planeta, não depende da massa do satélite.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{round(vkm,3)}}
+%% \extol{0.01}
+%% \exname{Q07NumVelocidadeOrbital}
+%% \exsection{Gravitacao; Satelites; Velocidade orbital; Movimento circular}

@@ -1,0 +1,31 @@
+<<echo=FALSE, results=hide>>=
+g0 <- 10
+frac <- sample(c(0.25,0.5,1,1.5,2),1)
+g <- g0/(1+frac)^2
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Na superfície de um planeta esférico, a aceleração gravitacional vale $10\,\mathrm{m/s^2}$ e o raio do planeta é $R$. Uma nave está a uma altitude $h=\Sexpr{frac}R$.
+
+Desprezando a rotação do planeta, determine a aceleração gravitacional nessa altitude, em $\mathrm{m/s^2}$.
+\end{question}
+
+\begin{solution}
+A distância ao centro é
+\[
+r=R+h=(1+\Sexpr{frac})R.
+\]
+Como $g\propto 1/r^2$,
+\[
+g(h)=g_0\left(\frac{R}{R+h}\right)^2=\frac{10}{(1+\Sexpr{frac})^2}=\Sexpr{round(g,3)}\,\mathrm{m/s^2}.
+\]
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{round(g,3)}}
+%% \extol{0.01}
+%% \exname{Q05NumCampoGravitacionalAltura}
+%% \exsection{Gravitacao; Campo gravitacional; Aceleracao da gravidade; Altitude}

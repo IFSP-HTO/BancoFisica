@@ -1,0 +1,44 @@
+<<echo=FALSE, results=hide>>=
+G <- 6.67e-11
+M <- 6e24
+r <- sample(c(7.0,8.0,9.0,10.0,12.0),1)*1e6
+v <- sqrt(G*M/r)
+T <- 2*pi*r/v
+Tmin <- T/60
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Um satélite descreve uma órbita circular de raio $\Sexpr{r/1e6}\times10^6\,\mathrm{m}$ em torno de um planeta de massa $6{,}0\times10^{24}\,\mathrm{kg}$. Considere $G=6{,}67\times10^{-11}\,\mathrm{N\,m^2/kg^2}$.
+
+Determine:
+\begin{answerlist}
+  \item a velocidade orbital, em $\mathrm{km/s}$;
+  \item o período da órbita, em minutos.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+Para órbita circular,
+\[
+v=\sqrt{\frac{GM}{r}}=\Sexpr{round(v/1000,3)}\,\mathrm{km/s}.
+\]
+O período é o comprimento da circunferência dividido pela velocidade:
+\[
+T=\frac{2\pi r}{v}=\Sexpr{round(Tmin,2)}\,\mathrm{min}.
+\]
+
+\begin{answerlist}
+  \item $\Sexpr{round(v/1000,3)}\,\mathrm{km/s}$
+  \item $\Sexpr{round(Tmin,2)}\,\mathrm{min}$
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{round(v/1000,3)}|\Sexpr{round(Tmin,2)}}
+%% \extol{0.01|0.05}
+%% \exname{Q08ClozePeriodoOrbitalCircular}
+%% \exsection{Gravitacao; Satelites; Periodo orbital; Velocidade orbital}

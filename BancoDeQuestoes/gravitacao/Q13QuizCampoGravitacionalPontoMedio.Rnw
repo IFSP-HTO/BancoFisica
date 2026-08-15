@@ -1,0 +1,25 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Duas estrelas de mesma massa estão isoladas e separadas por uma distância fixa. No ponto exatamente médio entre seus centros, o campo gravitacional resultante é
+
+\begin{answerlist}
+  \item nulo, pois os campos produzidos pelas duas estrelas têm mesmo módulo e sentidos opostos.
+  \item dirigido para uma das estrelas, escolhida ao acaso.
+  \item máximo, pois os módulos dos dois campos se somam.
+  \item perpendicular à reta que une as estrelas.
+  \item indefinido, porque campos gravitacionais não obedecem ao princípio da superposição.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+No ponto médio, as distâncias às duas estrelas são iguais. Como as massas também são iguais, os campos possuem o mesmo módulo. Cada campo aponta para a estrela que o produz, portanto os vetores têm sentidos opostos e se cancelam.
+
+Alternativa correta: \textbf{A}.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{10000}
+%% \exname{Q13QuizCampoGravitacionalPontoMedio}
+%% \exsection{Gravitacao; Campo gravitacional; Superposicao; Vetores}

@@ -1,0 +1,25 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Uma pessoa se afasta da superfície terrestre até uma altitude comparável ao raio da Terra. Desprezando outros astros, durante esse deslocamento
+
+\begin{answerlist}
+  \item sua massa e seu peso diminuem na mesma proporção.
+  \item sua massa permanece constante e seu peso diminui porque o campo gravitacional terrestre enfraquece com a distância.
+  \item sua massa aumenta e seu peso permanece constante.
+  \item sua massa permanece constante e seu peso aumenta porque a distância ao centro da Terra aumenta.
+  \item massa e peso permanecem constantes, pois são propriedades do corpo.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+A massa é uma propriedade inercial do corpo e não depende da posição. O peso é a força gravitacional $P=mg$; como $g$ diminui com a distância ao centro da Terra, o peso também diminui.
+
+Alternativa correta: \textbf{B}.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{01000}
+%% \exname{Q11QuizMassaPesoAltitude}
+%% \exsection{Gravitacao; Massa; Peso; Campo gravitacional}

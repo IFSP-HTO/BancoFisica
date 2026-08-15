@@ -1,0 +1,25 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Para permanecer sempre sobre a mesma região da superfície terrestre, um satélite geoestacionário deve
+
+\begin{answerlist}
+  \item ter qualquer período orbital, desde que sua altitude seja suficientemente grande.
+  \item orbitar em um plano que contenha os polos terrestres.
+  \item ter período igual ao de rotação da Terra, órbita no plano equatorial e sentido de movimento igual ao da rotação terrestre.
+  \item permanecer parado no espaço enquanto a Terra gira abaixo dele.
+  \item ter velocidade orbital nula em relação ao centro da Terra.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+Um satélite geoestacionário precisa acompanhar a rotação terrestre: seu período deve ser igual ao período de rotação da Terra, a órbita deve estar no plano equatorial e o movimento deve ocorrer no mesmo sentido da rotação.
+
+Alternativa correta: \textbf{C}.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{00100}
+%% \exname{Q09QuizSateliteGeoestacionario}
+%% \exsection{Gravitacao; Satelites; Geoestacionario; Orbitas}

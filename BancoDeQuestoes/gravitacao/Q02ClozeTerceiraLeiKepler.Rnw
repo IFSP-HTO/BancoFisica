@@ -1,0 +1,45 @@
+<<echo=FALSE, results=hide>>=
+ratio <- sample(c(2,3,4),1)
+T1 <- sample(c(1,2,3),1)
+T2 <- T1*ratio^(3/2)
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Dois planetas A e B orbitam a mesma estrela. O raio orbital médio de B é \Sexpr{ratio} vezes o raio orbital médio de A. O período de A é \Sexpr{T1} ano(s).
+
+Usando a terceira lei de Kepler, determine:
+\begin{answerlist}
+  \item a razão $T_B/T_A$;
+  \item o período orbital de B, em anos.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+Para corpos que orbitam a mesma massa central,
+\[
+\frac{T_B^2}{T_A^2}=\frac{r_B^3}{r_A^3}.
+\]
+Como $r_B/r_A=\Sexpr{ratio}$,
+\[
+\frac{T_B}{T_A}=\left(\Sexpr{ratio}\right)^{3/2}=\Sexpr{round(ratio^(3/2),3)}.
+\]
+Logo,
+\[
+T_B=\Sexpr{T1}\cdot\Sexpr{round(ratio^(3/2),3)}=\Sexpr{round(T2,3)}\ \mathrm{anos}.
+\]
+
+\begin{answerlist}
+  \item $\Sexpr{round(ratio^(3/2),3)}$
+  \item $\Sexpr{round(T2,3)}\,\mathrm{anos}$
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{round(ratio^(3/2),3)}|\Sexpr{round(T2,3)}}
+%% \extol{0.005|0.01}
+%% \exname{Q02ClozeTerceiraLeiKepler}
+%% \exsection{Gravitacao; Leis de Kepler; Terceira lei}
