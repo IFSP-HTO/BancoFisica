@@ -1,0 +1,33 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Motores a combustão utilizam um fluido arrefecedor que circula pelo motor, absorve energia térmica e depois a transfere para o ambiente no radiador. Para que o fluido consiga absorver grande quantidade de calor sem sofrer uma elevação excessiva de temperatura, uma propriedade desejável é
+
+\begin{answerlist}
+  \item alto calor específico.
+  \item alto calor latente de fusão.
+  \item baixa condutividade térmica.
+  \item baixa temperatura de ebulição.
+  \item alto coeficiente de dilatação térmica.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Para uma massa $m$ de fluido, o calor sensível absorvido é
+\[
+Q=mc\Delta T.
+\]
+Para uma mesma quantidade de calor $Q$, quanto maior o calor específico $c$, menor é a variação de temperatura $\Delta T$. Assim, um fluido com alto calor específico pode retirar grande quantidade de energia térmica do motor sem aquecer excessivamente.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: questão inspirada no ENEM 2015 Q79.
+%% \extype{schoice}
+%% \exsolution{10000}
+%% \exname{Q91QuizFluidoArrefecedorCalorEspecifico}
+%% \exsection{Calorimetria; Calor especifico; Refrigeracao; ENEM}
+%% \exusepackage[utf8]{inputenc}
