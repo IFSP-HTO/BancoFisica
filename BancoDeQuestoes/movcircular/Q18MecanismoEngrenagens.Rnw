@@ -13,15 +13,38 @@ fB <- round(fB_exato, 2)
 fC_exato <- fB_exato
 ## velocidade linear do ponto P na periferia de C, em cm/s
 vP <- round(2 * pi_aprox * Rc * (fC_exato / 60), 2)
-
-include_supplement("Q18MecanismoEngrenagens.jpg")
 @
 \usepackage[utf8]{inputenc}
 \begin{question}
 
 No mecanismo esquematizado, o motor aciona a engrenagem A com uma frequência de $\Sexpr{fA}$ rpm. As engrenagens B e C possuem o mesmo eixo. Sendo $R_A = \Sexpr{Ra}$ cm, $R_B = \Sexpr{Rb}$ cm e $R_C = \Sexpr{Rc}$ cm, determine:
 
-\fbox{\includegraphics[height=4.5cm,keepaspectratio]{Q18MecanismoEngrenagens.jpg}}
+<<fig=TRUE, height=4, width=7, echo=FALSE, eps=FALSE, results=hide>>=
+par(mar=c(0.3,0.3,0.3,0.3))
+plot.new(); plot.window(xlim=c(-1.4,4.6), ylim=c(-1.5,1.5), asp=1)
+gear <- function(x,y,r,label,n=16) {
+  symbols(x,y,circles=r,inches=FALSE,add=TRUE,lwd=2)
+  ang <- seq(0,2*pi,length.out=n+1)[-(n+1)]
+  for (aa in ang) segments(x+(r-0.07)*cos(aa), y+(r-0.07)*sin(aa),
+                           x+(r+0.05)*cos(aa), y+(r+0.05)*sin(aa), lwd=1)
+  text(x,y,label,font=2)
+}
+ra <- 0.62
+rb <- 0.88
+rc <- max(0.32, min(0.55, Rc/Rb*0.45))
+gear(0,0,ra,"A",14)
+gear(1.55,0,rb,"B",18)
+gear(1.55,0,rc,"C",12)
+points(1.55,0,pch=19,cex=0.7)
+# ponto P na periferia de C
+points(1.55+rc,0,pch=19,cex=1.0)
+text(1.55+rc+0.12,0.14,"P",font=2)
+arrows(-1.15,0,-0.72,0,length=0.08,lwd=1.5)
+text(-1.2,0.30,"motor",cex=0.85,pos=4)
+text(1.55,-1.18,"B e C: mesmo eixo",cex=0.85)
+segments(1.55,0,1.55+rc,0,lwd=1.4)
+text(1.55+rc/2,0.18,"$R_C$",cex=0.85)
+@
 
 \begin{answerlist}
   \item A frequência de rotação, em rpm, das engrenagens B e C. \textit{Dê sua resposta com duas casas decimais.}
