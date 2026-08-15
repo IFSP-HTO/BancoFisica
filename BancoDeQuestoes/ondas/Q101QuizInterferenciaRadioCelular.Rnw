@@ -1,19 +1,3 @@
-<<echo=FALSE, results=hide>>=
-## Inspirada no ENEM 2023 Q128.
-## Física central: interferência entre sinais de mesma frequência.
-alternativas <- c(
-  "forem ambas audíveis.",
-  "tiverem a mesma potência.",
-  "tiverem a mesma frequência.",
-  "tiverem a mesma intensidade.",
-  "propagarem-se com velocidades diferentes."
-)
-solutions <- c(FALSE, FALSE, TRUE, FALSE, FALSE)
-ordem <- sample(seq_along(alternativas))
-alternativas <- alternativas[ordem]
-solutions <- solutions[ordem]
-solution_key <- paste0(as.integer(solutions), collapse = "")
-@
 \usepackage[utf8]{inputenc}
 
 \begin{question}
@@ -22,9 +6,13 @@ Durante um voo, aparelhos eletrônicos podem ser desligados para reduzir o risco
 
 A interferência entre esses sinais pode ocorrer de forma relevante quando eles
 
-<<echo=FALSE, results=tex>>=
-answerlist(alternativas)
-@
+\begin{answerlist}
+  \item forem ambas audíveis.
+  \item tiverem a mesma potência.
+  \item tiverem a mesma frequência.
+  \item tiverem a mesma intensidade.
+  \item propagarem-se com velocidades diferentes.
+\end{answerlist}
 
 \end{question}
 
@@ -34,15 +22,14 @@ Para que dois sinais eletromagnéticos interfiram de maneira persistente no mesm
 
 Entre as alternativas apresentadas, a condição essencial é que tenham a \textbf{mesma frequência}. Potência e intensidade influenciam o quanto um sinal pode perturbar o outro, mas não definem por si só a sobreposição de canais.
 
-<<echo=FALSE, results=tex>>=
-answerlist(ifelse(solutions, paste0("\\textbf{", alternativas, "}"), alternativas))
-@
+A alternativa correta é a \textbf{C}.
 
 \end{solution}
 
 %% META-INFORMATION
+%% Fonte: questão inspirada no ENEM 2023 Q128.
 %% \extype{schoice}
-%% \exsolution{\Sexpr{solution_key}}
+%% \exsolution{00100}
 %% \exname{Q101QuizInterferenciaRadioCelular}
 %% \exsection{Ondas; Ondas eletromagneticas; Interferencia; Radiofrequencia; ENEM}
 %% \exusepackage[utf8]{inputenc}
