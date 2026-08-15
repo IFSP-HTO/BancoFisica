@@ -1,0 +1,25 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Sobre as leis de Kepler para o movimento planetário, assinale a alternativa correta.
+
+\begin{answerlist}
+  \item Os planetas descrevem órbitas perfeitamente circulares com o Sol no centro geométrico.
+  \item A linha que liga o planeta ao Sol varre áreas iguais em intervalos de tempo iguais.
+  \item O quadrado do raio orbital médio é proporcional ao cubo do período de revolução.
+  \item A velocidade orbital de um planeta é constante em qualquer ponto de uma órbita elíptica.
+  \item A terceira lei de Kepler só se aplica à Terra e aos planetas internos.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+A segunda lei de Kepler afirma que a linha que une o planeta ao Sol varre áreas iguais em tempos iguais. Isso implica, por exemplo, que o planeta se move mais rapidamente quando está mais próximo do Sol.
+
+Alternativa correta: \textbf{B}.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{01000}
+%% \exname{Q01QuizLeisKepler}
+%% \exsection{Gravitacao; Leis de Kepler; Movimento planetario}

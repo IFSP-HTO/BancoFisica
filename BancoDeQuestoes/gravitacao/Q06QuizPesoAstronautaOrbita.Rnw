@@ -1,0 +1,25 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Astronautas em uma estação espacial em órbita parecem flutuar dentro da cabine. A interpretação fisicamente correta é que
+
+\begin{answerlist}
+  \item a gravidade terrestre é nula na altitude da estação.
+  \item a massa dos astronautas diminui praticamente a zero durante a órbita.
+  \item estação e astronautas estão em queda livre conjunta sob ação da gravidade.
+  \item a força gravitacional é anulada por uma força centrífuga de interação exercida pela Terra.
+  \item o vácuo impede a ação da força gravitacional sobre os astronautas.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+A gravidade continua atuando em órbita e fornece a aceleração centrípeta necessária ao movimento orbital. Como estação e astronautas aceleram juntos em queda livre, a força normal de apoio praticamente desaparece e surge a sensação de ausência de peso.
+
+Alternativa correta: \textbf{C}.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{00100}
+%% \exname{Q06QuizPesoAstronautaOrbita}
+%% \exsection{Gravitacao; Satelites; Queda livre; Peso aparente}

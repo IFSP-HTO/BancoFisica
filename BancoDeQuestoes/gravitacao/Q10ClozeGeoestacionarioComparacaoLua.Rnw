@@ -1,0 +1,47 @@
+<<echo=FALSE, results=hide>>=
+rLua <- 3.84e8
+TLua <- 27.3
+Ts <- 1
+rs <- rLua*(Ts/TLua)^(2/3)
+h <- rs-6.4e6
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+A Lua orbita a Terra com raio orbital médio $3{,}84\times10^8\,\mathrm{m}$ e período de $27{,}3$ dias. Admita órbitas circulares e use a terceira lei de Kepler para estimar o raio orbital de um satélite com período de $1$ dia.
+
+Adotando o raio terrestre $R_T=6{,}4\times10^6\,\mathrm{m}$, determine:
+\begin{answerlist}
+  \item o raio orbital do satélite, em $10^7\,\mathrm{m}$;
+  \item a altitude aproximada do satélite acima da superfície, em $10^7\,\mathrm{m}$.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+Para corpos orbitando a mesma massa central,
+\[
+\frac{T_s^2}{T_L^2}=\frac{r_s^3}{r_L^3}.
+\]
+Logo,
+\[
+r_s=r_L\left(\frac{T_s}{T_L}\right)^{2/3}=\Sexpr{round(rs/1e7,3)}\times10^7\,\mathrm{m}.
+\]
+A altitude é
+\[
+h=r_s-R_T=\Sexpr{round(h/1e7,3)}\times10^7\,\mathrm{m}.
+\]
+
+\begin{answerlist}
+  \item $\Sexpr{round(rs/1e7,3)}$
+  \item $\Sexpr{round(h/1e7,3)}$
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{round(rs/1e7,3)}|\Sexpr{round(h/1e7,3)}}
+%% \extol{0.01|0.01}
+%% \exname{Q10ClozeGeoestacionarioComparacaoLua}
+%% \exsection{Gravitacao; Satelites; Terceira lei de Kepler; Geoestacionario}

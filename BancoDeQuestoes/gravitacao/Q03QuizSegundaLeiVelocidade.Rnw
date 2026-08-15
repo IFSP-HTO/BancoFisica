@@ -1,0 +1,25 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Um planeta percorre uma órbita elíptica em torno de uma estrela. Comparando o movimento próximo do periastro, onde a distância à estrela é menor, com o movimento próximo do apoastro, onde a distância é maior, conclui-se que o planeta
+
+\begin{answerlist}
+  \item tem maior velocidade no periastro, de acordo com a segunda lei de Kepler.
+  \item tem menor velocidade no periastro, pois a força gravitacional é maior.
+  \item mantém velocidade constante durante toda a órbita.
+  \item para momentaneamente no apoastro antes de retornar.
+  \item possui a mesma energia cinética em todos os pontos da órbita.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+A segunda lei de Kepler estabelece áreas iguais em tempos iguais. Para varrer a mesma área quando está mais próximo da estrela, o planeta deve percorrer um arco maior no mesmo intervalo de tempo; portanto, sua velocidade é maior no periastro.
+
+Alternativa correta: \textbf{A}.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{10000}
+%% \exname{Q03QuizSegundaLeiVelocidade}
+%% \exsection{Gravitacao; Leis de Kepler; Segunda lei; Velocidade orbital}

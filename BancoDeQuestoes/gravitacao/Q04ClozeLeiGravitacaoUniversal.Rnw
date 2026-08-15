@@ -1,0 +1,44 @@
+<<echo=FALSE, results=hide>>=
+G <- 6.67e-11
+M <- sample(c(2,3,4,5,6),1)*1e24
+m <- sample(c(2,4,5,6,8),1)*1e3
+r <- sample(c(2,3,4,5),1)*1e7
+F <- G*M*m/r^2
+F2 <- F/4
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Uma pequena sonda de massa $\Sexpr{m/1e3}\times10^3\,\mathrm{kg}$ encontra-se a uma distância de $\Sexpr{r/1e7}\times10^7\,\mathrm{m}$ do centro de um planeta de massa $\Sexpr{M/1e24}\times10^{24}\,\mathrm{kg}$. Considere $G=6{,}67\times10^{-11}\,\mathrm{N\,m^2/kg^2}$.
+
+Determine:
+\begin{answerlist}
+  \item o módulo da força gravitacional entre o planeta e a sonda, em newtons;
+  \item o novo módulo da força se a distância ao centro do planeta for duplicada.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+Pela lei da gravitação universal,
+\[
+F=G\frac{Mm}{r^2}=\Sexpr{formatC(F,format="e",digits=3)}\,\mathrm{N}.
+\]
+Ao duplicar a distância, a força fica dividida por $2^2=4$:
+\[
+F'=\frac{F}{4}=\Sexpr{formatC(F2,format="e",digits=3)}\,\mathrm{N}.
+\]
+
+\begin{answerlist}
+  \item $\Sexpr{formatC(F,format="e",digits=3)}\,\mathrm{N}$
+  \item $\Sexpr{formatC(F2,format="e",digits=3)}\,\mathrm{N}$
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{signif(F,5)}|\Sexpr{signif(F2,5)}}
+%% \extol{\Sexpr{max(0.02,0.01*F)}|\Sexpr{max(0.02,0.01*F2)}}
+%% \exname{Q04ClozeLeiGravitacaoUniversal}
+%% \exsection{Gravitacao; Lei da gravitacao universal; Forca gravitacional}
