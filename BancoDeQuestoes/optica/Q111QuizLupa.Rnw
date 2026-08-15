@@ -1,0 +1,25 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Uma lupa é constituída por uma lente convergente. Para observar uma letra ampliada, a pessoa deve posicionar a letra
+
+\begin{answerlist}
+  \item além do dobro da distância focal, produzindo imagem real e menor.
+  \item exatamente a duas distâncias focais, produzindo imagem real de mesmo tamanho.
+  \item entre uma e duas distâncias focais, produzindo imagem real e ampliada.
+  \item exatamente no foco, produzindo uma imagem real sobre a própria lente.
+  \item entre a lente e o foco, produzindo imagem virtual, direita e ampliada.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+Na lupa, o objeto é colocado a uma distância menor que a distância focal. A lente convergente então produz uma imagem virtual, direita e ampliada, que é observada diretamente pelo olho.
+
+Alternativa correta: \textbf{E}.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{00001}
+%% \exname{Q111QuizLupa}
+%% \exsection{Optica; Instrumentos opticos; Lupa; Lente convergente}

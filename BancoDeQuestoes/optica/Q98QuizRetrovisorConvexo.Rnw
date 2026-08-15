@@ -1,0 +1,25 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Espelhos retrovisores externos de automóveis frequentemente são convexos. A principal vantagem desse tipo de espelho é que ele
+
+\begin{answerlist}
+  \item produz imagens reais e ampliadas dos veículos que se aproximam.
+  \item aumenta o campo de visão, formando imagens virtuais, direitas e menores.
+  \item elimina completamente os pontos cegos, independentemente da posição do motorista.
+  \item forma imagens do mesmo tamanho que um espelho plano, mas mais luminosas.
+  \item concentra os raios refletidos em um foco real atrás do espelho.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+O espelho convexo fornece um campo de visão maior do que o espelho plano. Para objetos reais colocados diante dele, a imagem é sempre virtual, direita e menor que o objeto.
+
+Alternativa correta: \textbf{B}.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{01000}
+%% \exname{Q98QuizRetrovisorConvexo}
+%% \exsection{Optica; Espelhos esfericos; Espelho convexo; Retrovisor}

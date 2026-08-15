@@ -1,0 +1,25 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Um objeto real é colocado diante de uma lente delgada divergente. Desprezando aberrações, a imagem formada por uma única lente divergente é
+
+\begin{answerlist}
+  \item sempre real, invertida e maior.
+  \item sempre real, invertida e menor.
+  \item sempre virtual, direita e menor.
+  \item virtual apenas quando o objeto está entre a lente e o foco.
+  \item real ou virtual, dependendo apenas da altura do objeto.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+Para um objeto real, uma lente divergente faz os raios emergirem de modo divergente. Seus prolongamentos se encontram no mesmo lado do objeto, produzindo uma imagem virtual, direita e menor.
+
+Alternativa correta: \textbf{C}.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{00100}
+%% \exname{Q107QuizLenteDivergente}
+%% \exsection{Optica; Lentes esfericas; Lente divergente; Imagem virtual}

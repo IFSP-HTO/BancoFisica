@@ -1,0 +1,32 @@
+<<echo=FALSE, results=hide>>=
+n1 <- sample(c(1.30,1.40,1.50,1.60),1)
+n2 <- 1.00
+theta <- asin(n2/n1)*180/pi
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Um raio de luz propaga-se em um meio transparente de índice de refração $n_1=\Sexpr{format(n1,nsmall=2)}$ e atinge a interface com o ar, cujo índice é $n_2=1{,}00$.
+
+Determine o ângulo limite para a ocorrência de reflexão total, em graus.
+\end{question}
+
+\begin{solution}
+No ângulo limite, o raio refratado emerge rasante à interface, isto é, com ângulo de refração igual a $90^\circ$. Pela lei de Snell,
+\[
+n_1\sin\theta_L=n_2.
+\]
+Assim,
+\[
+\theta_L=\arcsin\left(\frac{n_2}{n_1}\right)=\Sexpr{round(theta,2)}^\circ.
+\]
+A reflexão total pode ocorrer para incidências maiores que esse valor, desde que a luz passe do meio mais refringente para o menos refringente.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{round(theta,2)}}
+%% \extol{0.1}
+%% \exname{Q102NumAnguloLimite}
+%% \exsection{Optica; Refracao; Reflexao total; Angulo limite}

@@ -1,0 +1,50 @@
+<<echo=FALSE, results=hide>>=
+f <- sample(c(10,15,20),1)
+ratio <- sample(c(1.5,2,3,4),1)
+p <- f*ratio
+q <- f*p/(p-f)
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Um objeto real é colocado a $\Sexpr{p}\,\mathrm{cm}$ do vértice de um espelho esférico côncavo de distância focal $\Sexpr{f}\,\mathrm{cm}$.
+
+Determine:
+\begin{answerlist}
+  \item a distância da imagem ao espelho, em centímetros;
+  \item o módulo do aumento linear $|A|$.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+Pela equação dos pontos conjugados,
+\[
+\frac{1}{f}=\frac{1}{p}+\frac{1}{q}.
+\]
+Logo,
+\[
+q=\frac{fp}{p-f}=\Sexpr{round(q,3)}\,\mathrm{cm}.
+\]
+O aumento linear é
+\[
+A=-\frac{q}{p},
+\]
+e, portanto,
+\[
+|A|=\Sexpr{round(abs(q/p),3)}.
+\]
+Como $q>0$, a imagem é real; o sinal negativo de $A$ indica que ela é invertida.
+\begin{answerlist}
+  \item $\Sexpr{round(q,3)}\,\mathrm{cm}$
+  \item $\Sexpr{round(abs(q/p),3)}$
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{round(q,3)}|\Sexpr{round(abs(q/p),3)}}
+%% \extol{0.02|0.01}
+%% \exname{Q100ClozeEspelhoEsfericoEquacao}
+%% \exsection{Optica; Espelhos esfericos; Equacao de Gauss; Aumento linear}

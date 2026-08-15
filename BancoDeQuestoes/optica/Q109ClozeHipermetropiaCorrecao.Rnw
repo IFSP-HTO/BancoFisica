@@ -1,0 +1,48 @@
+<<echo=FALSE, results=hide>>=
+D_cm <- sample(c(40,50,80,100),1)
+p_cm <- 25
+p <- p_cm/100
+q <- -D_cm/100
+P <- 1/p + 1/q
+f <- 1/P
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Uma pessoa hipermétrope tem ponto próximo a $\Sexpr{D_cm}\,\mathrm{cm}$ dos olhos. Ela deseja ler confortavelmente um texto a $25\,\mathrm{cm}$. Considere a lente corretiva muito próxima do olho e faça com que ela forme uma imagem virtual do texto no ponto próximo da pessoa.
+
+Determine:
+\begin{answerlist}
+  \item a vergência necessária da lente, em dioptrias;
+  \item a distância focal da lente, em centímetros.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+O objeto está a $p=0{,}25\,\mathrm{m}$ e a imagem desejada é virtual, portanto $q=-\Sexpr{round(D_cm/100,2)}\,\mathrm{m}$. Pela equação das lentes,
+\[
+\frac{1}{f}=\frac{1}{p}+\frac{1}{q}.
+\]
+Assim, a vergência é
+\[
+P=\frac{1}{f}=\Sexpr{round(P,2)}\,\mathrm{D},
+\]
+e
+\[
+f=\Sexpr{round(100*f,2)}\,\mathrm{cm}.
+\]
+A vergência positiva indica uma lente convergente.
+\begin{answerlist}
+  \item $\Sexpr{round(P,2)}\,\mathrm{D}$
+  \item $\Sexpr{round(100*f,2)}\,\mathrm{cm}$
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{round(P,2)}|\Sexpr{round(100*f,2)}}
+%% \extol{0.03|0.2}
+%% \exname{Q109ClozeHipermetropiaCorrecao}
+%% \exsection{Optica; Instrumentos opticos; Visao; Hipermetropia; Lentes corretivas}

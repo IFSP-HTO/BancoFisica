@@ -1,0 +1,25 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Em uma câmera fotográfica simples, a lente convergente deve formar sobre o sensor uma imagem do objeto fotografado. Para que o sensor registre a imagem, ela deve ser
+
+\begin{answerlist}
+  \item virtual e direita, formada do mesmo lado do objeto.
+  \item virtual e invertida, formada atrás do objeto.
+  \item real e invertida, formada no plano do sensor.
+  \item real e direita, necessariamente maior que o objeto.
+  \item virtual e maior, independentemente da posição do objeto.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+O sensor funciona como um anteparo: para que a luz efetivamente converja sobre ele, a imagem precisa ser real. Uma lente convergente, com o objeto situado além do foco, forma uma imagem real e invertida no lado oposto da lente.
+
+Alternativa correta: \textbf{C}.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{00100}
+%% \exname{Q110QuizCameraFotografica}
+%% \exsection{Optica; Instrumentos opticos; Camera fotografica; Imagem real}

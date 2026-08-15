@@ -1,0 +1,49 @@
+<<echo=FALSE, results=hide>>=
+f <- sample(c(10,12,15,20),1)
+ratio <- sample(c(2,3,4),1)
+p <- f*ratio
+ho <- sample(c(2,3,4,5,6),1)
+q <- f*p/(p-f)
+A <- -q/p
+hi <- A*ho
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Uma vela de altura $\Sexpr{ho}\,\mathrm{cm}$ é colocada a $\Sexpr{p}\,\mathrm{cm}$ de um espelho côncavo cuja distância focal é $\Sexpr{f}\,\mathrm{cm}$.
+
+Determine:
+\begin{answerlist}
+  \item a distância da imagem ao espelho, em centímetros;
+  \item a altura da imagem, em centímetros, usando sinal positivo para imagem direita e negativo para imagem invertida.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+Da equação dos espelhos,
+\[
+q=\frac{fp}{p-f}=\Sexpr{round(q,3)}\,\mathrm{cm}.
+\]
+O aumento é
+\[
+A=-\frac{q}{p},
+\]
+e a altura da imagem vale
+\[
+h_i=A h_o=\Sexpr{round(hi,3)}\,\mathrm{cm}.
+\]
+O sinal negativo indica imagem invertida.
+\begin{answerlist}
+  \item $\Sexpr{round(q,3)}\,\mathrm{cm}$
+  \item $\Sexpr{round(hi,3)}\,\mathrm{cm}$
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{round(q,3)}|\Sexpr{round(hi,3)}}
+%% \extol{0.02|0.02}
+%% \exname{Q101ClozeAumentoEspelhoConcavo}
+%% \exsection{Optica; Espelhos esfericos; Aumento linear; Imagem invertida}
