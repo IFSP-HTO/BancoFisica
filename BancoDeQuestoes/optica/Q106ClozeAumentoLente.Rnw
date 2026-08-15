@@ -1,0 +1,49 @@
+<<echo=FALSE, results=hide>>=
+f <- sample(c(10,15,20),1)
+ratio <- sample(c(2,3,4),1)
+p <- f*ratio
+ho <- sample(c(2,3,4,5),1)
+q <- f*p/(p-f)
+A <- -q/p
+hi <- A*ho
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Um objeto de altura $\Sexpr{ho}\,\mathrm{cm}$ é colocado a $\Sexpr{p}\,\mathrm{cm}$ de uma lente convergente de distância focal $\Sexpr{f}\,\mathrm{cm}$.
+
+Determine:
+\begin{answerlist}
+  \item a distância da imagem à lente, em centímetros;
+  \item a altura da imagem, em centímetros, usando sinal negativo para imagem invertida.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+A equação da lente fornece
+\[
+q=\frac{fp}{p-f}=\Sexpr{round(q,3)}\,\mathrm{cm}.
+\]
+O aumento linear vale
+\[
+A=-\frac{q}{p},
+\]
+e então
+\[
+h_i=A h_o=\Sexpr{round(hi,3)}\,\mathrm{cm}.
+\]
+O sinal negativo de $h_i$ indica que a imagem é invertida em relação ao objeto.
+\begin{answerlist}
+  \item $\Sexpr{round(q,3)}\,\mathrm{cm}$
+  \item $\Sexpr{round(hi,3)}\,\mathrm{cm}$
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{round(q,3)}|\Sexpr{round(hi,3)}}
+%% \extol{0.02|0.02}
+%% \exname{Q106ClozeAumentoLente}
+%% \exsection{Optica; Lentes esfericas; Aumento linear; Formacao de imagens}

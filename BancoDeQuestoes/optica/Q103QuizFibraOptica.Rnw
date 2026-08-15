@@ -1,0 +1,25 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Em uma fibra óptica, o núcleo possui índice de refração maior que o revestimento. A luz pode percorrer longas distâncias no interior do núcleo porque, em condições adequadas, ocorre repetidamente
+
+\begin{answerlist}
+  \item difração nas paredes da fibra.
+  \item interferência destrutiva no revestimento.
+  \item reflexão total interna na interface entre núcleo e revestimento.
+  \item polarização completa da luz em cada curva da fibra.
+  \item absorção seguida de reemissão pelo material do núcleo.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+Quando a luz se propaga do núcleo, de maior índice de refração, para o revestimento, de menor índice, incidências acima do ângulo limite produzem reflexão total interna. A sucessão dessas reflexões mantém a luz confinada no núcleo.
+
+Alternativa correta: \textbf{C}.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{00100}
+%% \exname{Q103QuizFibraOptica}
+%% \exsection{Optica; Fibras opticas; Reflexao total; Aplicacoes}

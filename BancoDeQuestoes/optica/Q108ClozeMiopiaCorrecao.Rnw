@@ -1,0 +1,41 @@
+<<echo=FALSE, results=hide>>=
+d_cm <- sample(c(40,50,80,100),1)
+f_cm <- -d_cm
+P <- 1/(f_cm/100)
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Uma pessoa míope enxerga nitidamente, sem óculos, objetos situados no máximo a $\Sexpr{d_cm}\,\mathrm{cm}$ de seus olhos. Para enxergar um objeto muito distante, seus óculos devem formar uma imagem virtual no ponto remoto do olho.
+
+Determine:
+\begin{answerlist}
+  \item a distância focal aproximada da lente corretiva, em centímetros;
+  \item a vergência da lente, em dioptrias.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+Para um objeto no infinito, a imagem formada pela lente ocorre aproximadamente no foco. Como a imagem deve ser virtual e situada a $\Sexpr{d_cm}\,\mathrm{cm}$ diante do olho,
+\[
+f\approx-\Sexpr{d_cm}\,\mathrm{cm}.
+\]
+Em metros, $f=\Sexpr{round(f_cm/100,2)}\,\mathrm{m}$. A vergência é
+\[
+P=\frac{1}{f}=\Sexpr{round(P,2)}\,\mathrm{D}.
+\]
+O sinal negativo confirma que a lente corretiva é divergente.
+\begin{answerlist}
+  \item $\Sexpr{f_cm}\,\mathrm{cm}$
+  \item $\Sexpr{round(P,2)}\,\mathrm{D}$
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{f_cm}|\Sexpr{round(P,2)}}
+%% \extol{0.2|0.03}
+%% \exname{Q108ClozeMiopiaCorrecao}
+%% \exsection{Optica; Instrumentos opticos; Visao; Miopia; Lentes corretivas}

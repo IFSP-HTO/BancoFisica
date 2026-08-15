@@ -1,0 +1,25 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Em uma aula de óptica, um estudante tenta distinguir experimentalmente uma imagem real de uma imagem virtual. Um procedimento adequado é
+
+\begin{answerlist}
+  \item verificar se a imagem apresenta alguma cor, pois imagens virtuais são sempre incolores.
+  \item colocar um anteparo na posição da imagem e verificar se os raios luminosos formam a imagem sobre ele.
+  \item medir a distância do objeto ao sistema óptico, pois imagens reais sempre estão mais próximas que o objeto.
+  \item observar se a imagem é direita, pois toda imagem direita é real.
+  \item observar se a imagem é ampliada, pois imagens virtuais nunca podem ser ampliadas.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+Uma imagem real corresponde à convergência efetiva de raios luminosos e pode ser projetada sobre um anteparo colocado no local apropriado. Uma imagem virtual resulta da interseção dos prolongamentos dos raios e não pode ser projetada diretamente em um anteparo.
+
+Alternativa correta: \textbf{B}.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{01000}
+%% \exname{Q112QuizImagemRealAnteparo}
+%% \exsection{Optica; Formacao de imagens; Imagem real; Imagem virtual; Anteparo}

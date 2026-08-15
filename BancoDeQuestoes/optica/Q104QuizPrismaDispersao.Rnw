@@ -1,0 +1,25 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Um feixe de luz branca atravessa um prisma de vidro e emerge separado em várias cores. Esse efeito ocorre principalmente porque
+
+\begin{answerlist}
+  \item todas as cores possuem a mesma velocidade no vidro, mas diferentes amplitudes.
+  \item o índice de refração do vidro depende do comprimento de onda da luz.
+  \item a frequência de cada cor muda ao atravessar a interface ar--vidro.
+  \item o prisma absorve a luz branca e cria novas frequências na saída.
+  \item a reflexão total ocorre igualmente para todas as cores no interior do prisma.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+A frequência da luz não muda na passagem entre meios. Entretanto, o índice de refração do vidro varia com o comprimento de onda, de modo que cada componente da luz branca sofre um desvio diferente. Esse fenômeno é a dispersão.
+
+Alternativa correta: \textbf{B}.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{01000}
+%% \exname{Q104QuizPrismaDispersao}
+%% \exsection{Optica; Prismas; Dispersao; Luz branca}

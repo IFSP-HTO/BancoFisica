@@ -1,0 +1,50 @@
+<<echo=FALSE, results=hide>>=
+f <- sample(c(10,12,15,20),1)
+ratio <- sample(c(1.5,2,3,4),1)
+p <- f*ratio
+q <- f*p/(p-f)
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Uma lente delgada convergente de distância focal $\Sexpr{f}\,\mathrm{cm}$ recebe luz proveniente de um objeto real colocado a $\Sexpr{p}\,\mathrm{cm}$ da lente.
+
+Determine:
+\begin{answerlist}
+  \item a distância da imagem à lente, em centímetros;
+  \item o módulo do aumento linear da imagem.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+Para uma lente delgada,
+\[
+\frac{1}{f}=\frac{1}{p}+\frac{1}{q}.
+\]
+Logo,
+\[
+q=\frac{fp}{p-f}=\Sexpr{round(q,3)}\,\mathrm{cm}.
+\]
+O aumento linear é
+\[
+A=-\frac{q}{p},
+\]
+portanto
+\[
+|A|=\Sexpr{round(abs(q/p),3)}.
+\]
+Como $p>f$, a imagem formada é real e invertida.
+\begin{answerlist}
+  \item $\Sexpr{round(q,3)}\,\mathrm{cm}$
+  \item $\Sexpr{round(abs(q/p),3)}$
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{round(q,3)}|\Sexpr{round(abs(q/p),3)}}
+%% \extol{0.02|0.01}
+%% \exname{Q105ClozeLenteConvergente}
+%% \exsection{Optica; Lentes esfericas; Lente convergente; Equacao de Gauss}

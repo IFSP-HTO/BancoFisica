@@ -1,0 +1,25 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Uma pessoa utiliza um espelho esférico côncavo para observar detalhes do rosto. Para que a imagem seja virtual, direita e ampliada, o rosto deve estar
+
+\begin{answerlist}
+  \item além do centro de curvatura.
+  \item exatamente no centro de curvatura.
+  \item entre o centro de curvatura e o foco.
+  \item exatamente no foco.
+  \item entre o foco e o vértice do espelho.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+Em um espelho côncavo, quando o objeto é colocado entre o foco e o vértice, os raios refletidos divergem e seus prolongamentos formam uma imagem atrás do espelho. Essa imagem é virtual, direita e ampliada.
+
+Alternativa correta: \textbf{E}.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{00001}
+%% \exname{Q99QuizImagemEspelhoConcavo}
+%% \exsection{Optica; Espelhos esfericos; Espelho concavo; Formacao de imagens}
