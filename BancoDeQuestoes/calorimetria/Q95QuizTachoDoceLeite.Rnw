@@ -1,0 +1,33 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Na produção de doce de leite, um tacho pode ser aquecido por vapor de água que circula em uma camisa externa. O vapor entra a $120\,^\circ\mathrm{C}$ e, ao transferir energia térmica para o alimento, sai como água líquida a $100\,^\circ\mathrm{C}$.
+
+Nesse processo, a energia transferida pelo vapor ao tacho resulta principalmente da
+
+\begin{answerlist}
+  \item diminuição apenas de sua energia cinética macroscópica.
+  \item redução de sua pressão sem mudança de estado físico.
+  \item vaporização da água líquida na camisa externa.
+  \item redução de temperatura do vapor seguida de sua condensação.
+  \item fusão do vapor ao atingir a temperatura de $100\,^\circ\mathrm{C}$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+O vapor entra superaquecido a $120\,^\circ\mathrm{C}$. Primeiro, ele perde calor sensível até atingir a temperatura de condensação. Em seguida, ao passar do estado gasoso para o líquido a $100\,^\circ\mathrm{C}$, libera também calor latente de condensação.
+
+Portanto, a transferência de energia ocorre pela redução de temperatura do vapor seguida de sua condensação.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: questão inspirada no ENEM 2023 Q122.
+%% \extype{schoice}
+%% \exsolution{00010}
+%% \exname{Q95QuizTachoDoceLeite}
+%% \exsection{Calorimetria; Calor sensivel; Calor latente; Condensacao; ENEM}
+%% \exusepackage[utf8]{inputenc}
