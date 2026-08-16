@@ -1,0 +1,59 @@
+<<echo=FALSE, results=hide>>=
+include_supplement("obfep2012_A_q4_projetil.png")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+
+(OBFEP 2012 - 2ª Fase, Nível A, Questão 4) Lança-se um projétil do ponto A com velocidade $V_0>0$ formando um ângulo de $45^\circ$ ($\sin 45^\circ=\cos 45^\circ$) com a horizontal. Qual é o intervalo de velocidades para que o projétil passe através da abertura BC mostrada na figura?
+
+\begin{center}
+\includegraphics[width=5.0cm,keepaspectratio]{obfep2012_A_q4_projetil.png}
+\end{center}
+
+Assinale a alternativa que apresenta corretamente esse intervalo.
+
+\begin{answerlist}
+  \item $\displaystyle \sqrt{\frac{g}{1-h_1}}>V_0>\sqrt{\frac{g}{1-(h_1+h_2)}}$
+  \item $\displaystyle \sqrt{\frac{g}{1-(h_1+h_2)}}>V_0>\sqrt{\frac{g}{1-h_1}}$
+  \item $\displaystyle \frac{g}{1-(h_1+h_2)}>V_0>\frac{g}{1-h_1}$
+  \item $\displaystyle \sqrt{\frac{g}{1+h_1+h_2}}>V_0>\sqrt{\frac{g}{1+h_1}}$
+  \item $\displaystyle V_0>\sqrt{\frac{g}{1-(h_1+h_2)}}$
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Escolhendo o ponto A como origem, o movimento do projétil é descrito por
+\[
+x=V_0\cos\theta\,t,\qquad
+y=V_0\sin\theta\,t-\frac{1}{2}gt^2.
+\]
+Eliminando $t$,
+\[
+y=x\tan\theta-\frac{gx^2}{2V_0^2\cos^2\theta}.
+\]
+Para $\theta=45^\circ$ e $x=1\,\mathrm{m}$,
+\[
+y=1-\frac{g}{V_0^2}.
+\]
+Para atravessar a abertura BC, a altura do projétil em $x=1\,\mathrm{m}$ deve satisfazer
+\[
+h_1<y<h_1+h_2.
+\]
+Substituindo a expressão de $y$ e isolando $V_0$,
+\[
+\sqrt{\frac{g}{1-(h_1+h_2)}}>V_0>\sqrt{\frac{g}{1-h_1}}.
+\]
+Portanto, a alternativa correta é a segunda.
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{01000}
+%% \exname{Q100QuizOBFEP2012ProjetilAbertura}
+%% \exsection{Mecanica; Cinematica; Lancamento obliquo; OBFEP}
+%% \exusepackage[utf8]{inputenc}
