@@ -1,0 +1,72 @@
+<<echo=FALSE, results=hide>>=
+g <- 10
+h1 <- sample(c(0.20, 0.25, 0.30, 0.35, 0.40), 1)
+h2 <- sample(c(0.15, 0.20, 0.25), 1)
+vmin <- sqrt(g/(1 - h1))
+vmax <- sqrt(g/(1 - (h1 + h2)))
+fmt <- function(x, d = 2) formatC(x, format = "f", digits = d, decimal.mark = ",")
+include_supplement("obfep2012_A_q4_projetil.png")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+
+(OBFEP 2012 - 2ª Fase, Nível A, Questão 4, adaptada para resposta numérica) Lança-se um projétil do ponto A com velocidade $V_0>0$ formando um ângulo de $45^\circ$ ($\sin 45^\circ=\cos 45^\circ$) com a horizontal. A abertura BC mostrada na figura tem sua borda inferior a $h_1=\Sexpr{fmt(h1)}\,\mathrm{m}$ e altura $h_2=\Sexpr{fmt(h2)}\,\mathrm{m}$. Adote $g=\Sexpr{g}\,\mathrm{m/s^2}$.
+
+\begin{center}
+\includegraphics[width=5.0cm,keepaspectratio]{obfep2012_A_q4_projetil.png}
+\end{center}
+
+Determine os valores que delimitam o intervalo de velocidades para que o projétil passe através da abertura BC. Arredonde para duas casas decimais.
+
+\begin{answerlist}
+  \item limite inferior da velocidade $V_{\min}$, em $\mathrm{m/s}$;
+  \item limite superior da velocidade $V_{\max}$, em $\mathrm{m/s}$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Escolhendo o ponto A como origem,
+\[
+x=V_0\cos\theta\,t,\qquad y=V_0\sin\theta\,t-\frac{1}{2}gt^2.
+\]
+Eliminando $t$,
+\[
+y=x\tan\theta-\frac{gx^2}{2V_0^2\cos^2\theta}.
+\]
+Para $\theta=45^\circ$ e $x=1\,\mathrm{m}$,
+\[
+y=1-\frac{g}{V_0^2}.
+\]
+Para atravessar a abertura,
+\[
+h_1<y<h_1+h_2.
+\]
+Logo,
+\[
+\sqrt{\frac{g}{1-h_1}}<V_0<\sqrt{\frac{g}{1-(h_1+h_2)}}.
+\]
+Com os valores desta versão,
+\[
+V_{\min}=\Sexpr{fmt(vmin)}\,\mathrm{m/s},\qquad
+V_{\max}=\Sexpr{fmt(vmax)}\,\mathrm{m/s}.
+\]
+
+\begin{answerlist}
+  \item $\Sexpr{fmt(vmin)}\,\mathrm{m/s}$
+  \item $\Sexpr{fmt(vmax)}\,\mathrm{m/s}$
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{\Sexpr{round(vmin, 2)}|\Sexpr{round(vmax, 2)}}
+%% \exclozetype{num|num}
+%% \extol{0.02|0.02}
+%% \exname{Q100ClozeOBFEP2012ProjetilAbertura}
+%% \exsection{Mecanica; Cinematica; Lancamento obliquo; OBFEP}
+%% \exusepackage[utf8]{inputenc}
