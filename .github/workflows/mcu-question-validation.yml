@@ -1,0 +1,93 @@
+name: MCU single-question validation
+
+on:
+  pull_request:
+    branches: [master]
+    paths:
+      - 'BancoDeQuestoes/**'
+      - '.github/mcu-validation-target'
+      - '.github/workflows/mcu-question-validation.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: mcu-question-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    env:
+      R_KEEP_PKG_SOURCE: yes
+      NOT_CRAN: true
+    steps:
+      - name: Checkout PR head
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+
+      - name: Install system tools and LaTeX
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends \
+            file qpdf texlive-latex-base texlive-latex-recommended \
+            texlive-latex-extra texlive-fonts-recommended texlive-lang-portuguese latexmk
+          sudo rm -rf /var/lib/apt/lists/*
+
+      - name: Setup R
+        uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: '4.4.3'
+          use-public-rspm: true
+
+      - name: Install R dependencies
+        uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          cache-version: 1
+          dependencies: '"all"'
+
+      - name: Validate selected MCU question
+        shell: bash
+        run: |
+          set -euo pipefail
+          TARGET="$(cat .github/mcu-validation-target)"
+          test -f "$TARGET"
+          EDIR="$(dirname "$TARGET")"
+          FILE="$(basename "$TARGET")"
+          echo "Validating $TARGET"
+
+          for SEED in 1 2 3; do
+            OUT="$RUNNER_TEMP/xml-$SEED"
+            mkdir -p "$OUT"
+            TARGET_FILE="$FILE" TARGET_EDIR="$EDIR" TARGET_OUT="$OUT" TARGET_SEED="$SEED" Rscript - <<'RS'
+          suppressMessages({library(exams); library(magrittr); library(stringr); library(purrr)})
+          file <- Sys.getenv("TARGET_FILE")
+          edir <- Sys.getenv("TARGET_EDIR")
+          out <- Sys.getenv("TARGET_OUT")
+          seed <- as.integer(Sys.getenv("TARGET_SEED"))
+          set.seed(seed)
+          exams2moodle(file, n=1, rule="none", schoice=list(shuffle=TRUE),
+                       name=paste0("mcu-single-", seed), encoding="UTF-8",
+                       dir=out, edir=edir)
+          xml <- list.files(out, pattern="\\.xml$", full.names=TRUE)
+          if (length(xml) != 1L) stop("Expected exactly one Moodle XML")
+          txt <- paste(readLines(xml, warn=FALSE, encoding="UTF-8"), collapse="\n")
+          if (!grepl("@@PLUGINFILE@@", txt, fixed=TRUE)) stop("Image was not embedded as @@PLUGINFILE@@")
+          if (grepl("%7B", txt, fixed=TRUE)) stop("Broken percent-encoded image path in Moodle XML")
+          RS
+          done
+
+          OUTPDF="$RUNNER_TEMP/pdf"
+          mkdir -p "$OUTPDF"
+          TARGET_FILE="$FILE" TARGET_EDIR="$EDIR" TARGET_OUT="$OUTPDF" Rscript - <<'RS'
+          suppressMessages({library(exams); library(magrittr); library(stringr); library(purrr)})
+          file <- Sys.getenv("TARGET_FILE")
+          edir <- Sys.getenv("TARGET_EDIR")
+          out <- Sys.getenv("TARGET_OUT")
+          set.seed(1)
+          exams2pdf(file, n=1, name="mcu-single", encoding="UTF-8",
+                    dir=out, edir=edir, template="plain8")
+          pdf <- list.files(out, pattern="\\.pdf$", full.names=TRUE)
+          if (length(pdf) < 1L) stop("PDF was not generated")
+          RS
