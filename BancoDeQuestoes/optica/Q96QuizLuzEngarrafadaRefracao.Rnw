@@ -1,10 +1,18 @@
+<<echo=FALSE, results=hide>>=
+include_supplement("enem2022_q125_luz_engarrafada.jpg")
+@
 \usepackage[utf8]{inputenc}
 
 \begin{question}
 
-Uma solução simples de iluminação diurna utiliza uma garrafa PET transparente cheia de água, instalada atravessando o telhado de uma casa. A luz solar entra pela parte externa da garrafa e se espalha para o interior do ambiente após atravessar as interfaces entre ar, plástico e água.
+Em uma solução de iluminação diurna, uma garrafa PET transparente contendo água e cloro atravessa o telhado de uma casa, conforme as fotografias.
 
-O fenômeno óptico essencial para explicar a mudança de direção dos raios luminosos nessas interfaces é a
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=10cm, keepaspectratio]{enem2022_q125_luz_engarrafada.jpg}
+\end{figure}
+
+O diâmetro da abertura no telhado é muito maior que o comprimento de onda da luz. O fenômeno óptico essencial para explicar o funcionamento da ``luz engarrafada'' é a
 
 \begin{answerlist}
   \item difração.
@@ -27,7 +35,7 @@ A alternativa correta é a \textbf{E}.
 \end{solution}
 
 %% META-INFORMATION
-%% Fonte: questão inspirada no ENEM 2022 Q125.
+%% Fonte: questão adaptada do ENEM 2022 Q125; fotografias originais preservadas.
 %% \extype{schoice}
 %% \exsolution{00001}
 %% \exname{Q96QuizLuzEngarrafadaRefracao}

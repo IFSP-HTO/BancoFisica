@@ -1,10 +1,18 @@
+<<echo=FALSE, results=hide>>=
+include_supplement("enem2021_q111_ilha_calor.jpg")
+@
 \usepackage[utf8]{inputenc}
 
 \begin{question}
 
-Em uma grande cidade, superfícies urbanas aquecidas pela energia recebida do Sol formam uma ilha de calor. O ar em contato com essas superfícies aquece, torna-se menos denso e sobe, interferindo na circulação da brisa marítima.
+Em uma cidade litorânea, a incidência solar sobre a superfície urbana favorece a formação de uma ilha de calor e interfere na circulação da brisa marítima, conforme o esquema.
 
-Os mecanismos dominantes de transferência de energia térmica entre o Sol e a superfície urbana e entre a superfície urbana e o ar são, respectivamente,
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=9cm, keepaspectratio]{enem2021_q111_ilha_calor.jpg}
+\end{figure}
+
+Os mecanismos dominantes de transferência de energia térmica entre o Sol e a superfície urbana e entre a superfície urbana aquecida e o ar são, respectivamente,
 
 \begin{answerlist}
   \item irradiação e convecção.
@@ -20,12 +28,12 @@ Os mecanismos dominantes de transferência de energia térmica entre o Sol e a s
 
 A energia do Sol chega à Terra por ondas eletromagnéticas, portanto o mecanismo é a \textbf{irradiação}.
 
-Já o ar aquecido junto às superfícies urbanas se movimenta por diferença de densidade, caracterizando \textbf{convecção}. Assim, a sequência correta é irradiação e convecção.
+Já o ar aquecido junto às superfícies urbanas torna-se menos denso e se movimenta, caracterizando \textbf{convecção}. Assim, a sequência correta é irradiação e convecção.
 
 \end{solution}
 
 %% META-INFORMATION
-%% Fonte: questão inspirada no ENEM 2021 Q111; a figura original foi dispensada por não ser necessária na adaptação textual.
+%% Fonte: questão adaptada do ENEM 2021 Q111; figura original preservada.
 %% \extype{schoice}
 %% \exsolution{10000}
 %% \exname{Q93QuizIlhaCalorTransferencia}

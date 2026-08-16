@@ -1,8 +1,18 @@
+<<echo=FALSE, results=hide>>=
+include_supplement("enem2021_q134_sino_ventos.jpg")
+@
 \usepackage[utf8]{inputenc}
 
 \begin{question}
 
-Duas barras metálicas de um sino dos ventos são feitas do mesmo material e têm a mesma espessura, mas comprimentos diferentes. A barra 1 é mais curta que a barra 2. Considere $f_1$ e $v_1$, respectivamente, a frequência fundamental e a velocidade de propagação do som no material da barra 1, e $f_2$ e $v_2$ as grandezas correspondentes à barra 2.
+O sino dos ventos é composto por várias barras metálicas de mesmo material e espessura, mas de comprimentos diferentes, conforme a figura.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=8cm, keepaspectratio]{enem2021_q134_sino_ventos.jpg}
+\end{figure}
+
+Considere $f_1$ e $v_1$, respectivamente, a frequência fundamental e a velocidade de propagação do som no material da barra de menor comprimento, e $f_2$ e $v_2$ as grandezas correspondentes à barra de maior comprimento.
 
 Qual relação entre essas grandezas é esperada?
 
@@ -38,7 +48,7 @@ A alternativa correta é a \textbf{D}.
 \end{solution}
 
 %% META-INFORMATION
-%% Fonte: questão inspirada no ENEM 2021 Q134.
+%% Fonte: questão adaptada do ENEM 2021 Q134; figura original preservada.
 %% \extype{schoice}
 %% \exsolution{00010}
 %% \exname{Q99QuizSinoVentoFrequencia}

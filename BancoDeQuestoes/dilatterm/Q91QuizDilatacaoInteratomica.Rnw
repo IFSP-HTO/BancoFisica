@@ -1,10 +1,18 @@
+<<echo=FALSE, results=hide>>=
+include_supplement("enem2018_q122_potencial.jpg")
+@
 \usepackage[utf8]{inputenc}
 
 \begin{question}
 
-Em um sólido cristalino, a energia potencial de interação entre átomos apresenta um mínimo na distância de equilíbrio $R_0$. Para temperaturas acima de zero kelvin, os átomos oscilam em torno dessa posição. Como o potencial interatômico real é assimétrico, o aumento da energia térmica amplia as oscilações e desloca a distância média entre os átomos para valores maiores que $R_0$.
+Alguns materiais sólidos são compostos por átomos que interagem entre si por meio de ligações. A energia potencial de ligação varia com a distância interatômica, conforme a figura. Em $T=0\,\mathrm{K}$, a distância de equilíbrio $R_0$ corresponde ao mínimo da energia potencial. Em temperaturas crescentes, a energia térmica aumenta a amplitude das oscilações dos átomos e modifica a distância média entre eles.
 
-O fenômeno macroscópico associado a esse aumento da distância média interatômica é a
+\begin{figure}[h!]
+  \centering
+  \includegraphics[width=9cm, keepaspectratio]{enem2018_q122_potencial.jpg}
+\end{figure}
+
+O deslocamento observado na distância média entre os átomos revela o fenômeno da
 
 \begin{answerlist}
   \item ionização.
@@ -18,14 +26,14 @@ O fenômeno macroscópico associado a esse aumento da distância média interat�
 
 \begin{solution}
 
-Ao aumentar a temperatura, cresce a amplitude das vibrações dos átomos. Devido à assimetria do potencial de interação, a posição média de separação desloca-se para distâncias maiores.
+Ao aumentar a temperatura, cresce a amplitude das vibrações dos átomos. Como o potencial interatômico é assimétrico em torno da posição de equilíbrio, a distância média entre os átomos desloca-se para valores maiores que $R_0$.
 
-Em escala macroscópica, o aumento das distâncias médias entre as partículas produz aumento das dimensões do corpo. Esse fenômeno é a \textbf{dilatação térmica}.
+Em escala macroscópica, esse aumento das distâncias médias entre as partículas produz aumento das dimensões do corpo. Esse fenômeno é a \textbf{dilatação térmica}.
 
 \end{solution}
 
 %% META-INFORMATION
-%% Fonte: questão inspirada no ENEM 2018 Q122; o gráfico original foi substituído por descrição equivalente do potencial interatômico.
+%% Fonte: questão adaptada do ENEM 2018 Q122; figura original preservada.
 %% \extype{schoice}
 %% \exsolution{01000}
 %% \exname{Q91QuizDilatacaoInteratomica}
