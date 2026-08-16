@@ -1,0 +1,52 @@
+<<echo=FALSE, results=hide>>=
+nmin <- 1.5
+fmt <- function(x, d = 1) formatC(x, format = "f", digits = d, decimal.mark = ",")
+include_supplement("obfep2012_B_q5_haste_optica.png")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+
+(OBFEP 2012 - 2ª Fase, Nível B, Questão 5, adaptada para resposta numérica) Uma haste de material com índice de refração $n$ é dobrada na forma mostrada na figura. Raios de luz incidem perpendicularmente na face superior. Considerando $2R=3r$, determine o menor valor de $n$ para que toda a luz incidente percorra a haste e saia pela face inferior.
+
+\begin{center}
+\includegraphics[width=6.0cm,keepaspectratio]{obfep2012_B_q5_haste_optica.png}
+\end{center}
+
+Informe o valor de $n_{\min}$ com uma casa decimal.
+
+\end{question}
+
+\begin{solution}
+
+Para que a luz percorra a curva e saia pela face inferior, deve ocorrer reflexão interna total na superfície externa da haste. A condição é
+\[
+\sin\theta\geq \frac{1}{n}.
+\]
+Pela geometria da figura,
+\[
+\sin\theta=\frac{r}{R}.
+\]
+Como $2R=3r$,
+\[
+\frac{r}{R}=\frac{2}{3}.
+\]
+Portanto,
+\[
+\frac{2}{3}\geq \frac{1}{n}\quad\Rightarrow\quad n\geq\frac{3}{2}.
+\]
+Assim,
+\[
+n_{\min}=\Sexpr{fmt(nmin)}.
+\]
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{nmin}}
+%% \extol{0.01}
+%% \exname{Q100NumOBFEP2012HasteCurva}
+%% \exsection{Optica; Refracao; Reflexao interna total; OBFEP}
+%% \exusepackage[utf8]{inputenc}
