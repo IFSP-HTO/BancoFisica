@@ -1,0 +1,52 @@
+<<echo=FALSE, results=hide>>=
+include_supplement("obfep2012_B_q5_haste_optica.png")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+
+(OBFEP 2012 - 2ª Fase, Nível B, Questão 5) Uma haste de material com índice de refração $n$ é dobrada na forma mostrada na figura. Raios de luz incidem perpendicularmente na face superior. Considerando $2R=3r$, para que valores do índice de refração do material toda luz incidente sai pela face inferior?
+
+\begin{center}
+\includegraphics[width=6.0cm,keepaspectratio]{obfep2012_B_q5_haste_optica.png}
+\end{center}
+
+\begin{answerlist}
+  \item $n\leq 1,2$
+  \item $n\geq 1,2$
+  \item $n\leq 1,5$
+  \item $n\geq 1,5$
+  \item $n\geq 2,0$
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Para que a luz percorra a curva e saia pela face inferior, deve ocorrer reflexão interna total na superfície externa da haste. A condição é
+\[
+\sin\theta\geq \frac{1}{n}.
+\]
+Pela geometria da figura,
+\[
+\sin\theta=\frac{r}{R}.
+\]
+Como $2R=3r$,
+\[
+\frac{r}{R}=\frac{2}{3}.
+\]
+Portanto,
+\[
+\frac{2}{3}\geq \frac{1}{n}\quad\Rightarrow\quad n\geq \frac{3}{2}=1,5.
+\]
+A alternativa correta é a quarta.
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{00010}
+%% \exname{Q100QuizOBFEP2012HasteCurva}
+%% \exsection{Optica; Refracao; Reflexao interna total; OBFEP}
+%% \exusepackage[utf8]{inputenc}
