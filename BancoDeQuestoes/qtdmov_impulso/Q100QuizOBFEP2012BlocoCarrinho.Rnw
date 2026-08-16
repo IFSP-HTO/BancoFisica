@@ -1,0 +1,64 @@
+<<echo=FALSE, results=hide>>=
+include_supplement("obfep2012_B_q7_rampa_carrinho.png")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+
+(OBFEP 2012 - 2ª Fase, Nível B, Questão 7) Um bloco de massa $m$ é abandonado em repouso do topo de uma rampa, com coeficiente de atrito cinético de $0,5$, e cai sobre um carrinho de massa $M=9m$ inicialmente em repouso. Se o carrinho pode se mover livremente, determine a velocidade final do carrinho e a fração de energia inicial perdida. Suponha que a velocidade com que o bloco abandona a rampa seja a mesma com que ele colide com o carrinho (despreze a pequena diferença de altura entre o final da rampa e a base do carrinho).
+
+\begin{center}
+\includegraphics[width=5.0cm,keepaspectratio]{obfep2012_B_q7_rampa_carrinho.png}
+\end{center}
+
+\begin{answerlist}
+  \item $\displaystyle V=\frac{\sqrt{2gH}}{10}$ e perda de $90\%$
+  \item $\displaystyle V=\frac{\sqrt{gH}}{20}$ e perda de $95\%$
+  \item $\displaystyle V=\frac{\sqrt{2gH}}{20}$ e perda de $97,5\%$
+  \item $\displaystyle V=\frac{\sqrt{gH}}{10}$ e perda de $97,5\%$
+  \item $\displaystyle V=\frac{\sqrt{2gH}}{20}$ e perda de $2,5\%$
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Na descida pela rampa, pelo teorema trabalho--energia,
+\[
+\frac{mv^2}{2}-mgH=-\mu mg\cos\theta\,d,
+\]
+com $d\sin\theta=H$. Para $\mu=0,5$ e $\theta=45^\circ$,
+\[
+v^2=gH.
+\]
+A componente horizontal da velocidade do bloco ao atingir o carrinho é
+\[
+v_x=v\cos45^\circ=\sqrt{\frac{gH}{2}}.
+\]
+Conservando a quantidade de movimento horizontal na colisão,
+\[
+mv_x=(m+M)V.
+\]
+Como $M=9m$,
+\[
+V=\frac{\sqrt{gH/2}}{10}=\frac{\sqrt{2gH}}{20}.
+\]
+A energia mecânica inicial é $E_i=mgH$. A energia cinética final do conjunto é
+\[
+E_f=\frac{(m+M)V^2}{2}=\frac{1}{40}E_i.
+\]
+Logo, a fração perdida é
+\[
+1-\frac{1}{40}=\frac{39}{40}=0,975,
+\]
+ou $97,5\%$. A alternativa correta é a terceira.
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{00100}
+%% \exname{Q100QuizOBFEP2012BlocoCarrinho}
+%% \exsection{Mecanica; Quantidade de movimento; Colisoes; Trabalho e energia; OBFEP}
+%% \exusepackage[utf8]{inputenc}
