@@ -73,8 +73,15 @@ jobs:
           xml <- list.files(out, pattern="\\.xml$", full.names=TRUE)
           if (length(xml) != 1L) stop("Expected exactly one Moodle XML")
           txt <- paste(readLines(xml, warn=FALSE, encoding="UTF-8"), collapse="\n")
-          if (!grepl("@@PLUGINFILE@@", txt, fixed=TRUE)) stop("Image was not embedded as @@PLUGINFILE@@")
           if (grepl("%7B", txt, fixed=TRUE)) stop("Broken percent-encoded image path in Moodle XML")
+          tags <- regmatches(txt, gregexpr('<img[^>]+src="[^"]+"', txt, perl=TRUE))[[1]]
+          if (!length(tags) || identical(tags, character(0))) stop("No image tag found in Moodle XML")
+          srcs <- sub('.*src="([^"]+)".*', '\\1', tags)
+          ok <- startsWith(srcs, "@@PLUGINFILE@@") |
+                startsWith(srcs, "data:image") |
+                startsWith(srcs, "http://") |
+                startsWith(srcs, "https://")
+          if (!all(ok)) stop(paste("Invalid Moodle image src:", paste(srcs[!ok], collapse=", ")))
           RS
           done
 
