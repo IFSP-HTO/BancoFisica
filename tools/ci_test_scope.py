@@ -39,6 +39,10 @@ def is_global_change(path: str) -> bool:
         return True
     if any(path.startswith(prefix) for prefix in GLOBAL_PREFIXES):
         return True
+    # R tooling can alter validation/reporting behavior even without touching a question.
+    # Fall back to the full suite so changes to those helpers are exercised in CI.
+    if path.startswith("tools/") and path.lower().endswith(".r"):
+        return True
     if not path.startswith("BancoDeQuestoes/") and path.lower().endswith(GLOBAL_SUFFIXES):
         return True
     return False
