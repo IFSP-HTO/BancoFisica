@@ -13,6 +13,7 @@ on:
 
 permissions:
   contents: read
+  actions: read
 
 concurrency:
   group: r-tests-${{ github.ref }}
@@ -153,3 +154,23 @@ jobs:
         with:
           name: banco-fisica-quality-report
           path: build/quality-report
+
+      - name: Profile CI timings
+        if: always()
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          BANK_PROFILE_MODE: ${{ steps.scope.outputs.mode }}
+          BANK_PROFILE_QUESTION_COUNT: ${{ steps.scope.outputs.question_count }}
+          BANK_PROFILE_REASON: ${{ steps.scope.outputs.reason }}
+        run: |
+          python3 tools/ci_profile.py \
+            --out build/ci-profile.json \
+            --summary "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload CI profile
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: banco-fisica-ci-profile
+          path: build/ci-profile.json
+          if-no-files-found: ignore
