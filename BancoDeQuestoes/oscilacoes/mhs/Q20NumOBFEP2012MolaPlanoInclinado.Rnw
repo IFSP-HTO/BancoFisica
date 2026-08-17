@@ -1,0 +1,55 @@
+<<echo=FALSE, results=hide>>=
+configs <- data.frame(
+  m = c(0.20, 0.25, 0.40, 0.50, 0.80),
+  k = c(5, 8, 10, 12, 20)
+)
+i <- sample(seq_len(nrow(configs)), 1)
+m <- configs$m[i]
+k <- configs$k[i]
+f <- (1/pi) * sqrt(k/m)
+fmt <- function(x, d = 2) formatC(x, format = "f", digits = d, decimal.mark = ",")
+include_supplement("obfep2012_B_q4_mola_plano.png")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+
+(OBFEP 2012 - 2ª Fase, Nível B, Questão 4, adaptada para resposta numérica) O corpo de massa $m=\Sexpr{fmt(m)}\,\mathrm{kg}$ é deslocado de uma distância $x_0$ para baixo no plano inclinado, a partir de sua posição de equilíbrio, e então é solto em repouso. A mola tem constante elástica $k=\Sexpr{fmt(k)}\,\mathrm{N/m}$. Considere a mola, os cabos e a roldana como ideais.
+
+\begin{center}
+\includegraphics[width=5.0cm,keepaspectratio]{obfep2012_B_q4_mola_plano.png}
+\end{center}
+
+Calcule a frequência de vibração do corpo, em hertz. Arredonde para duas casas decimais.
+
+\end{question}
+
+\begin{solution}
+
+Quando o corpo se desloca de $x$ em relação à posição de equilíbrio, a geometria do cabo faz a mola variar seu comprimento em $2x$. Como a roldana móvel é tracionada por dois trechos do cabo, a variação da força transmitida ao corpo é
+\[
+T=4kx.
+\]
+Em torno da posição de equilíbrio, o termo constante associado a $mg\sin\theta$ é cancelado pela tração de equilíbrio. Assim,
+\[
+m\ddot{x}=-4kx.
+\]
+Logo,
+\[
+\omega^2=\frac{4k}{m},\qquad \omega=2\sqrt{\frac{k}{m}}.
+\]
+Como $f=\omega/(2\pi)$,
+\[
+f=\frac{1}{\pi}\sqrt{\frac{k}{m}}=\Sexpr{fmt(f)}\,\mathrm{Hz}.
+\]
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{round(f, 2)}}
+%% \extol{0.02}
+%% \exname{Q20NumOBFEP2012MolaPlanoInclinado}
+%% \exsection{Mecanica; Oscilacoes; MHS; Sistema massa-mola; OBFEP}
+%% \exusepackage[utf8]{inputenc}

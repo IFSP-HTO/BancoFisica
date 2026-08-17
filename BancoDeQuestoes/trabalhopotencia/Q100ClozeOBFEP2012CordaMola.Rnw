@@ -1,0 +1,87 @@
+<<echo=FALSE, results=hide>>=
+g <- 10
+configs <- data.frame(
+  m  = c(1.0, 2.0, 0.5, 1.5),
+  L1 = c(0.5, 0.4, 0.6, 0.4),
+  L2 = c(0.3, 0.2, 0.2, 0.4),
+  s  = c(0.5, 0.5, 0.4, 0.5),
+  k  = c(180, 200, 150, 300)
+)
+i <- sample(seq_len(nrow(configs)), 1)
+m <- configs$m[i]
+L1 <- configs$L1[i]
+L2 <- configs$L2[i]
+s <- configs$s[i]
+k <- configs$k[i]
+Tresp <- (k*s^2 - m*g*(3*L1 + 5*L2))/(L1 + L2)
+kzero <- m*g*(3*L1 + 5*L2)/s^2
+fmt <- function(x, d = 2) formatC(x, format = "f", digits = d, decimal.mark = ",")
+include_supplement("obfep2012_B_q6_corda_mola.png")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+
+(OBFEP 2012 - 2ª Fase, Nível B, Questão 6, adaptada para resposta numérica) Uma corda leve de comprimento total $L_1+L_2$ está apoiada num pino liso como mostra a figura. Uma partícula de massa $m$, presa à corda, é lançada em repouso do ponto A. A mola está comprimida de $s$.
+
+Nesta versão, considere $m=\Sexpr{fmt(m)}\,\mathrm{kg}$, $L_1=\Sexpr{fmt(L1)}\,\mathrm{m}$, $L_2=\Sexpr{fmt(L2)}\,\mathrm{m}$, $s=\Sexpr{fmt(s)}\,\mathrm{m}$ e $g=\Sexpr{g}\,\mathrm{m/s^2}$.
+
+\begin{center}
+\includegraphics[width=6.0cm,keepaspectratio]{obfep2012_B_q6_corda_mola.png}
+\end{center}
+
+Determine:
+
+\begin{answerlist}
+  \item a tensão no cabo quando a partícula estiver no ponto B, considerando $k=\Sexpr{fmt(k,0)}\,\mathrm{N/m}$, em newtons;
+  \item o valor da constante elástica $k$ para que, ao chegar ao ponto B, a tensão na corda seja nula, em $\mathrm{N/m}$.
+\end{answerlist}
+
+Arredonde as respostas para duas casas decimais.
+
+\end{question}
+
+\begin{solution}
+
+Entre A e B, pela conservação da energia mecânica,
+\[
+\frac{ks^2}{2}-mgL_2=\frac{mv^2}{2}+mg(L_1+L_2).
+\]
+Logo,
+\[
+mv^2=ks^2-2mgL_1-4mgL_2.
+\]
+No ponto B,
+\[
+T+mg=\frac{mv^2}{L_1+L_2}.
+\]
+Substituindo a expressão para $mv^2$,
+\[
+T=\frac{ks^2-mg(3L_1+5L_2)}{L_1+L_2}.
+\]
+Com os dados desta versão,
+\[
+T=\Sexpr{fmt(Tresp)}\,\mathrm{N}.
+\]
+
+Para que a tensão seja nula em B, fazemos $T=0$:
+\[
+k=\frac{mg(3L_1+5L_2)}{s^2}=\Sexpr{fmt(kzero)}\,\mathrm{N/m}.
+\]
+
+\begin{answerlist}
+  \item $\Sexpr{fmt(Tresp)}\,\mathrm{N}$
+  \item $\Sexpr{fmt(kzero)}\,\mathrm{N/m}$
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{\Sexpr{round(Tresp, 2)}|\Sexpr{round(kzero, 2)}}
+%% \exclozetype{num|num}
+%% \extol{0.02|0.02}
+%% \exname{Q100ClozeOBFEP2012CordaMola}
+%% \exsection{Mecanica; Trabalho e energia; Movimento circular; Mola; OBFEP}
+%% \exusepackage[utf8]{inputenc}
