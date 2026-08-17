@@ -4,30 +4,57 @@ library(stringr, quietly = T)
 library(exams, quietly = T)
 library(purrr, quietly = T)
 
-## Checa o encoding
-check_encoding <- function() {
-  
-  ## Pega todos os arquivos de questões
-  arquivos <- as.data.frame(dir(pattern = '*.Rnw',recursive = T))
-  
-  ## Para cada arquivo descobre o encoding
-  for (i in 1:nrow(arquivos)) {
-    comando <- paste('file -ib', arquivos[i,1])
-    string <- system(comando, intern = T)
-    encoding = str_split(string = string, pattern = ';', simplify = T)[2] %>% 
-      str_split(pattern = '=', simplify = T)
-    arquivos[i,2] <- encoding[2]
+## Define quais questões entram nas compilações pesadas.
+##
+## Sem BANK_TEST_MANIFEST preserva o comportamento histórico: testa todos os
+## .Rnw do repositório. No CI incremental, o manifesto contém somente as
+## questões afetadas pelo diff (ou todas, quando o modo é full).
+get_bank_test_files <- function() {
+  manifest <- Sys.getenv("BANK_TEST_MANIFEST", unset = "")
+  if (!nzchar(manifest)) {
+    return(dir(pattern = '*.Rnw', recursive = T))
   }
-  
-  ## Atribuindo nomes corretos nas colunas
-  colnames(arquivos) <- c('arquivo', 'encoding')
-  
+
+  if (!file.exists(manifest)) {
+    stop("BANK_TEST_MANIFEST not found: ", manifest)
+  }
+
+  files <- trimws(readLines(manifest, warn = FALSE, encoding = "UTF-8"))
+  files <- unique(files[nzchar(files)])
+  missing <- files[!file.exists(files)]
+  if (length(missing) > 0L) {
+    stop("Question(s) listed in BANK_TEST_MANIFEST do not exist: ",
+         paste(missing, collapse = ", "))
+  }
+  files
+}
+
+## Checa o encoding
+check_encoding <- function(files = get_bank_test_files()) {
+  if (length(files) == 0L) {
+    message("No affected questions: skipping encoding checks")
+    return(invisible(NULL))
+  }
+
+  arquivos <- data.frame(file = files, stringsAsFactors = FALSE)
+
+  ## Para cada arquivo descobre o encoding
+  encodings <- character(nrow(arquivos))
+  for (i in seq_len(nrow(arquivos))) {
+    comando <- paste('file -ib', shQuote(arquivos$file[i]))
+    string <- system(comando, intern = T)
+    encoding <- str_split(string = string, pattern = ';', simplify = T)[2] %>%
+      str_split(pattern = '=', simplify = T)
+    encodings[i] <- encoding[2]
+  }
+  arquivos$encoding <- encodings
+
   ## Encontrando as linhas com erros
   ind_n_utf8 <- which(arquivos$encoding != 'utf-8' & arquivos$encoding != 'us-ascii')
-  
+
   ## Erro reportado
-  erro <- paste("NOT UTF-8:", arquivos$arquivo[ind_n_utf8], '\n')
-  
+  erro <- paste("NOT UTF-8:", arquivos$file[ind_n_utf8], '\n')
+
   ## Testando o encoding
   if (length(ind_n_utf8) > 0 ) stop(erro)
 }
@@ -320,11 +347,13 @@ parse_seed_list <- function(env_var = "BANK_SEEDS", default = c(1L, 2L, 3L)) {
 ## Além de checar se o exams2moodle roda, valida o artefato gerado:
 ## precisa existir, conter raiz <quiz>...</quiz> e ao menos uma questão Moodle.
 ## Para questões parametrizadas, testa múltiplas sementes configuráveis via BANK_SEEDS.
-generate_xml <- function() {
+generate_xml <- function(files = get_bank_test_files()) {
+  if (length(files) == 0L) {
+    message("No affected questions: skipping Moodle XML compilation")
+    return(invisible(NULL))
+  }
 
-  ## Pega todos os arquivos de questões
-  arquivos <- data.frame(file = dir(pattern = '*.Rnw', recursive = T),
-                         stringsAsFactors = FALSE)
+  arquivos <- data.frame(file = files, stringsAsFactors = FALSE)
 
   ## Ano corrente
   ano <- 2018
@@ -384,11 +413,13 @@ generate_xml <- function() {
 }
 
 ## Verifica a compilação para pdf
-generate_pdf <- function() {
+generate_pdf <- function(files = get_bank_test_files()) {
+  if (length(files) == 0L) {
+    message("No affected questions: skipping PDF compilation")
+    return(invisible(NULL))
+  }
 
-  ## Pega todos os arquivos de questões
-  arquivos <- data.frame(file = dir(pattern = '*.Rnw', recursive = T),
-                         stringsAsFactors = FALSE)
+  arquivos <- data.frame(file = files, stringsAsFactors = FALSE)
 
   ## Ano
   ano <- 2018
@@ -412,10 +443,24 @@ generate_pdf <- function() {
 }
 
 ## Rodando as funções
-check_encoding()
+bank_test_mode <- Sys.getenv("BANK_TEST_MODE", unset = "full")
+question_files <- get_bank_test_files()
+message("BancoFisica CI mode: ", bank_test_mode,
+        " (", length(question_files), " question(s) selected)")
+
 check_bank_structure()
 check_question_counts()
-check_moodle_split()
-check_moodle_split_oversize()
-generate_xml()
-generate_pdf()
+
+## Estes testes exercitam infraestrutura compartilhada e fazem compilações
+## adicionais. No CI incremental só são necessários quando o detector escolhe
+## modo full; continuam rodando normalmente em execuções locais sem variáveis.
+if (identical(bank_test_mode, "full")) {
+  check_moodle_split()
+  check_moodle_split_oversize()
+} else {
+  message("Incremental CI: skipping shared Moodle split regression checks")
+}
+
+check_encoding(question_files)
+generate_xml(question_files)
+generate_pdf(question_files)
