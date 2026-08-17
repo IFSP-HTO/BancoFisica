@@ -1,5 +1,5 @@
 <<echo=FALSE, results=hide>>=
-## Exercício Q13 (slides): bicicleta com coroa, catraca e roda
+## Exercício Q17: bicicleta com coroa, catraca e roda
 
 ## Valores da fonte, mantidos para ficarem coerentes com a figura original.
 dcor <- 30                         ## diâmetro da coroa (cm)
