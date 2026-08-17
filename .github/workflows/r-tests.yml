@@ -7,6 +7,8 @@ on:
   pull_request:
     branches:
       - master
+  schedule:
+    - cron: '17 5 * * 1'
   workflow_dispatch:
 
 permissions:
@@ -28,6 +30,65 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Detect affected questions
+        id: scope
+        shell: bash
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          PR_BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          PR_HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          PUSH_BEFORE: ${{ github.event.before }}
+          CURRENT_SHA: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+          mkdir -p build
+
+          if [[ "$EVENT_NAME" == "schedule" || "$EVENT_NAME" == "workflow_dispatch" ]]; then
+            python3 tools/ci_test_scope.py \
+              --full \
+              --manifest build/ci-test-files.txt \
+              --github-output "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          if [[ "$EVENT_NAME" == "pull_request" ]]; then
+            git diff --name-only "$PR_BASE_SHA...$PR_HEAD_SHA" > build/ci-changed-files.txt
+          else
+            if [[ -z "$PUSH_BEFORE" || "$PUSH_BEFORE" =~ ^0+$ ]]; then
+              PUSH_BEFORE="$(git rev-parse HEAD^ 2>/dev/null || true)"
+            fi
+            if [[ -n "$PUSH_BEFORE" ]]; then
+              git diff --name-only "$PUSH_BEFORE" "$CURRENT_SHA" > build/ci-changed-files.txt
+            else
+              git ls-files > build/ci-changed-files.txt
+            fi
+          fi
+
+          echo "Changed files:"
+          cat build/ci-changed-files.txt
+          python3 tools/ci_test_scope.py \
+            --changed-files build/ci-changed-files.txt \
+            --manifest build/ci-test-files.txt \
+            --github-output "$GITHUB_OUTPUT"
+
+      - name: Report CI scope
+        shell: bash
+        run: |
+          echo "### BancoFisica test scope" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Mode: **${{ steps.scope.outputs.mode }}**" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Questions selected: **${{ steps.scope.outputs.question_count }}**" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Reason: ${{ steps.scope.outputs.reason }}" >> "$GITHUB_STEP_SUMMARY"
+          if [[ -s build/ci-test-files.txt ]]; then
+            echo "" >> "$GITHUB_STEP_SUMMARY"
+            echo '<details><summary>Selected questions</summary>' >> "$GITHUB_STEP_SUMMARY"
+            echo "" >> "$GITHUB_STEP_SUMMARY"
+            sed 's/^/- `/' build/ci-test-files.txt | sed 's/$/`/' >> "$GITHUB_STEP_SUMMARY"
+            echo "" >> "$GITHUB_STEP_SUMMARY"
+            echo '</details>' >> "$GITHUB_STEP_SUMMARY"
+          fi
 
       - name: Validate public demo site data
         run: |
@@ -35,6 +96,7 @@ jobs:
           python3 tools/validate_public_site.py
 
       - name: Install system tools and LaTeX
+        if: steps.scope.outputs.mode != 'none'
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y --no-install-recommends \
@@ -49,34 +111,44 @@ jobs:
           sudo rm -rf /var/lib/apt/lists/*
 
       - name: Setup R
+        if: steps.scope.outputs.mode != 'none'
         uses: r-lib/actions/setup-r@v2
         with:
           r-version: '4.4.3'
           use-public-rspm: true
 
       - name: Install R dependencies
+        if: steps.scope.outputs.mode != 'none'
         uses: r-lib/actions/setup-r-dependencies@v2
         with:
           cache-version: 1
           dependencies: '"all"'
 
       - name: Run BancoFisica tests
+        if: steps.scope.outputs.mode != 'none'
+        env:
+          BANK_TEST_MODE: ${{ steps.scope.outputs.mode }}
+          BANK_TEST_MANIFEST: build/ci-test-files.txt
         run: |
           Rscript -e 'source("tests/tests.R")'
 
       - name: Audit solution blocks
+        if: steps.scope.outputs.mode != 'none'
         run: |
           Rscript tools/audit_solutions.R
 
       - name: Generate quality report
+        if: steps.scope.outputs.mode != 'none'
         run: |
           Rscript tools/quality_report.R --out-dir build/quality-report
 
       - name: Generate teaching audit
+        if: steps.scope.outputs.mode != 'none'
         run: |
           Rscript tools/audit_teaching.R --out-dir build/quality-report
 
       - name: Upload quality report
+        if: steps.scope.outputs.mode != 'none'
         uses: actions/upload-artifact@v4
         with:
           name: banco-fisica-quality-report
