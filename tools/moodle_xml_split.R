@@ -27,12 +27,68 @@ clean_moodle_outputs <- function(dir, name) {
   invisible(TRUE)
 }
 
+## exams2moodle numera Exercise/Q/R localmente em cada chamada. Quando o banco
+## e repartido em varias chamadas, essa numeracao reinicia e categorias de
+## questoes-base diferentes colidem no Moodle (por exemplo, duas "Exercise 1").
+## Este pos-processamento torna a divisao transparente: question_offset mapeia
+## Exercise/Q locais para a posicao global do .Rnw no conjunto completo; em uma
+## questao isolada repartida por variantes, replica_offset mantem R001, R002, ...
+## continuos entre as partes.
+rewrite_moodle_indices <- function(xml_file, question_offset = 0L,
+                                   replica_offset = 0L) {
+  question_offset <- as.integer(question_offset)
+  replica_offset <- as.integer(replica_offset)
+  if (question_offset == 0L && replica_offset == 0L) return(invisible(xml_file))
+
+  lines <- readLines(xml_file, warn = FALSE, encoding = "UTF-8")
+
+  for (k in seq_along(lines)) {
+    line <- lines[k]
+
+    ## Categoria do Moodle: $course$/<name>/Exercise N
+    m_cat <- regexec(
+      "(<text>\\$course\\$/[^<]*/Exercise )([0-9]+)(</text>)",
+      line, perl = TRUE
+    )
+    hit_cat <- regmatches(line, m_cat)[[1]]
+    if (length(hit_cat) > 0L) {
+      global_q <- as.integer(hit_cat[3]) + question_offset
+      replacement <- paste0(hit_cat[2], global_q, hit_cat[4])
+      line <- sub(hit_cat[1], replacement, line, fixed = TRUE)
+    }
+
+    ## Nome da variante: <text> R001 Q1 : ... </text>
+    m_name <- regexec(
+      "(<text>[[:space:]]*)R([0-9]+)[[:space:]]+Q([0-9]+)([[:space:]]*:)",
+      line, perl = TRUE
+    )
+    hit_name <- regmatches(line, m_name)[[1]]
+    if (length(hit_name) > 0L) {
+      local_r <- as.integer(hit_name[3])
+      global_q <- as.integer(hit_name[4]) + question_offset
+      global_r <- local_r + replica_offset
+      r_width <- nchar(hit_name[3])
+      r_text <- sprintf(paste0("%0", r_width, "d"), global_r)
+      replacement <- paste0(hit_name[2], "R", r_text, " Q", global_q, hit_name[5])
+      line <- sub(hit_name[1], replacement, line, fixed = TRUE)
+    }
+
+    lines[k] <- line
+  }
+
+  writeLines(lines, xml_file, useBytes = TRUE)
+  invisible(xml_file)
+}
+
 ## Gera o XML do Moodle para um conjunto de questoes, dividindo a saida em
 ## varias partes sempre que um unico arquivo excederia `max_bytes`.
 ##
 ## O comportamento para assuntos pequenos e identico ao exams2moodle puro
 ## (arquivo unico `name.xml`). Assuntos grandes sao repartidos em
 ## `name-part01.xml`, `name-part02.xml`, ... com cada parte dentro do limite.
+## A divisao e transparente para a identidade Moodle: Exercise/Q mantem a
+## numeracao global das questoes-base, mesmo quando cada parte e gerada por uma
+## chamada independente a exams2moodle.
 ##
 ## Estrategia de particao: o tamanho do XML escala linearmente com o numero de
 ## variantes (medido com n=1 x2 x4 => ratio ~ n). Sonda-se o peso de cada
@@ -61,7 +117,8 @@ generate_moodle_xml_limited <- function(files, n = 1L, name, seed, edir, dir,
   ## obsoletos quando um assunto muda entre uma parte unica e varias partes.
   clean_moodle_outputs(dir, name)
 
-  run_exams <- function(sub_files, out_name, vn, seed_part) {
+  run_exams <- function(sub_files, out_name, vn, seed_part,
+                        question_offset = 0L, replica_offset = 0L) {
     set.seed(seed_part)
     args <- list(
       file = sub_files, n = vn, rule = rule, schoice = schoice,
@@ -71,7 +128,11 @@ generate_moodle_xml_limited <- function(files, n = 1L, name, seed, edir, dir,
     ## nao declaravam converter); caso contrario, passa explicitamente.
     if (!is.null(converter)) args$converter <- converter
     do.call(exams2moodle, args)
-    file.path(dir, paste0(out_name, ".xml"))
+    fp <- file.path(dir, paste0(out_name, ".xml"))
+    rewrite_moodle_indices(
+      fp, question_offset = question_offset, replica_offset = replica_offset
+    )
+    fp
   }
 
   ## Peso de cada questao com n=1 (probe barato). O tamanho de um grupo com
@@ -120,15 +181,22 @@ generate_moodle_xml_limited <- function(files, n = 1L, name, seed, edir, dir,
     final_path
   }
 
-  ## Reparte as variantes de uma questao isolada que estoura o limite. Partes
-  ## com sementes distintas (seed + part_index) para nao repetir variantes.
-  split_single_variants <- function(single_file, w) {
+  ## Reparte as variantes de uma questao isolada que estoura o limite. Todas as
+  ## partes preservam o mesmo Exercise/Q global; R continua entre as partes para
+  ## evitar nomes de variantes duplicados. Sementes distintas evitam repeticao
+  ## dos valores sorteados.
+  split_single_variants <- function(single_file, w, question_index) {
     v_per_part <- max(1L, floor(target / w))
     remaining <- n
     while (remaining > 0L) {
       vn <- min(v_per_part, remaining)
+      replica_offset <- n - remaining
       repeat {
-        fp <- run_exams(single_file, tmp_name, vn, seed + part_index + 1L)
+        fp <- run_exams(
+          single_file, tmp_name, vn, seed + part_index + 1L,
+          question_offset = question_index - 1L,
+          replica_offset = replica_offset
+        )
         if (file.size(fp) <= max_bytes || vn <= 1L) break
         unlink(fp)
         vn <- max(1L, vn %/% 2L)
@@ -165,16 +233,19 @@ generate_moodle_xml_limited <- function(files, n = 1L, name, seed, edir, dir,
 
     ## Caso extremo: uma unica questao (com n variantes) ja estoura o limite.
     if (is.na(g)) {
-      split_single_variants(files[i], weight[i])
+      split_single_variants(files[i], weight[i], i)
       i <- i + 1L
       next
     }
 
     ## Gera o grupo final em sonda; garante o limite removendo a ultima questao
     ## caso a estimativa linear seja ligeiramente baixa; so aceita/numeera a
-    ## parte quando couber.
+    ## parte quando couber. O offset i-1 preserva a identidade global.
     repeat {
-      fp <- run_exams(files[i:g], tmp_name, n, seed)
+      fp <- run_exams(
+        files[i:g], tmp_name, n, seed,
+        question_offset = i - 1L
+      )
       if (file.size(fp) <= max_bytes) break
       unlink(fp)
       g <- g - 1L
@@ -184,7 +255,7 @@ generate_moodle_xml_limited <- function(files, n = 1L, name, seed, edir, dir,
     if (g < i) {
       ## Grupo encolheu para uma questao que continua estourando: reparte as
       ## variantes da questao isolada (mesmo tratamento do caso extremo).
-      split_single_variants(files[i], weight[i])
+      split_single_variants(files[i], weight[i], i)
       i <- i + 1L
     } else {
       parts <- c(parts, accept_part(fp))
