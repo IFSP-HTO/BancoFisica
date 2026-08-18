@@ -1,0 +1,91 @@
+name: Build CI image
+
+on:
+  push:
+    paths:
+      - 'docker/ci/Dockerfile'
+      - 'DESCRIPTION'
+      - '.github/workflows/ci-image.yml'
+  pull_request:
+    branches:
+      - master
+    paths:
+      - 'docker/ci/Dockerfile'
+      - 'DESCRIPTION'
+      - '.github/workflows/ci-image.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: write
+
+concurrency:
+  group: ci-image-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ifsp-hto/bancofisica-ci
+  STABLE_TAG: r-4.4.3
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Log in to GHCR
+        if: github.event_name != 'pull_request'
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Compute image tags
+        id: meta
+        shell: bash
+        run: |
+          set -euo pipefail
+          image="${REGISTRY}/${IMAGE_NAME}"
+          fingerprint="$(sha256sum docker/ci/Dockerfile DESCRIPTION | sha256sum | awk '{print $1}')"
+          env_tag="env-${fingerprint}"
+          echo "env_tag=${env_tag}" >> "$GITHUB_OUTPUT"
+          {
+            echo 'tags<<EOF'
+            echo "${image}:${env_tag}"
+            if [[ "${GITHUB_REF}" == "refs/heads/master" ]]; then
+              echo "${image}:${STABLE_TAG}"
+            fi
+            echo 'EOF'
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Build and optionally publish CI image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: docker/ci/Dockerfile
+          push: ${{ github.event_name != 'pull_request' }}
+          tags: ${{ steps.meta.outputs.tags }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+          provenance: false
+
+      - name: Summarize image
+        shell: bash
+        run: |
+          echo '### BancoFisica CI image' >> "$GITHUB_STEP_SUMMARY"
+          echo "- Environment image: \`${REGISTRY}/${IMAGE_NAME}:${{ steps.meta.outputs.env_tag }}\`" >> "$GITHUB_STEP_SUMMARY"
+          if [[ "${GITHUB_REF}" == "refs/heads/master" ]]; then
+            echo "- Stable alias: \`${REGISTRY}/${IMAGE_NAME}:${STABLE_TAG}\`" >> "$GITHUB_STEP_SUMMARY"
+          fi
+          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+            echo '- Mode: build validation only (not published)' >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo '- Mode: built and published to GHCR' >> "$GITHUB_STEP_SUMMARY"
+          fi
