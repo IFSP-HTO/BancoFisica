@@ -23,6 +23,7 @@ RUN apt-get update -qq \
         libpng-dev \
         libssl-dev \
         libtiff-dev \
+        libuv1-dev \
         libxml2-dev \
         libzstd-dev \
         latexmk \
