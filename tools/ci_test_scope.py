@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import os
 from pathlib import Path, PurePosixPath
 
 GLOBAL_PREFIXES = (
@@ -68,6 +69,83 @@ def topic_questions(repo_root: Path, topic: str) -> list[str]:
     )
 
 
+def read_question_text(path: Path) -> str:
+    # Rnw files are expected to be UTF-8, but legacy questions occasionally contain
+    # bytes from older encodings. Replacement keeps dependency discovery conservative
+    # without making scope detection itself fail.
+    return path.read_text(encoding="utf-8", errors="replace").replace("\\", "/")
+
+
+def asset_reference_tokens(repo_root: Path, question_path: Path, asset_path: str) -> set[str]:
+    """Return literal forms by which a question may reference an asset.
+
+    Questions in the bank usually reference supplements by basename, while some use
+    paths relative to the question directory or BancoDeQuestoes. Matching all of these
+    forms intentionally permits false positives (extra tests) but avoids false negatives.
+    """
+    asset = PurePosixPath(asset_path)
+    tokens = {asset.name, asset.as_posix()}
+
+    bank_prefix = "BancoDeQuestoes/"
+    if asset_path.startswith(bank_prefix):
+        tokens.add(asset_path[len(bank_prefix) :])
+
+    question_dir = question_path.parent
+    asset_fs_path = repo_root / Path(*asset.parts)
+    try:
+        relative = os.path.relpath(asset_fs_path, start=question_dir).replace("\\", "/")
+        tokens.add(relative)
+        if relative.startswith("./"):
+            tokens.add(relative[2:])
+    except ValueError:
+        # Different drives are only relevant on Windows; basename/full-path matching
+        # still gives us safe dependency discovery there.
+        pass
+
+    return {token for token in tokens if token}
+
+
+def load_question_texts(repo_root: Path) -> dict[str, str]:
+    """Read every question once so multi-asset PRs do not rescan the bank repeatedly."""
+    return {
+        question: read_question_text(repo_root / question)
+        for question in all_questions(repo_root)
+    }
+
+
+def questions_referencing_asset(
+    repo_root: Path, asset_path: str, question_texts: dict[str, str]
+) -> list[str]:
+    """Find questions that literally reference one changed support file."""
+    matches: list[str] = []
+    for question, text in question_texts.items():
+        question_path = repo_root / question
+        if any(token in text for token in asset_reference_tokens(repo_root, question_path, asset_path)):
+            matches.append(question)
+    return sorted(matches)
+
+
+def support_asset_scope(
+    repo_root: Path, asset_path: str, question_texts: dict[str, str]
+) -> tuple[list[str], bool]:
+    """Resolve an asset to dependent questions.
+
+    Returns (questions, exact). If the changed file still exists but no literal
+    dependency can be established, exact=False tells the caller to use the legacy
+    conservative fallback. Deleted files with no remaining references are exact: no
+    current question depends on them anymore.
+    """
+    matches = questions_referencing_asset(repo_root, asset_path, question_texts)
+    if matches:
+        return matches, True
+
+    asset = repo_root / Path(*PurePosixPath(asset_path).parts)
+    if not asset.exists():
+        return [], True
+
+    return [], False
+
+
 def choose_scope(repo_root: Path, changed_paths: list[str], force_full: bool = False):
     changed = [normalize_changed_path(path) for path in changed_paths]
     changed = [path for path in changed if path]
@@ -79,6 +157,10 @@ def choose_scope(repo_root: Path, changed_paths: list[str], force_full: bool = F
 
     affected: set[str] = set()
     bank_changed = False
+    fallback_topics: set[str] = set()
+    unresolved_shared_asset = False
+    resolved_assets = 0
+    question_texts: dict[str, str] | None = None
 
     for path in changed:
         if not path.startswith("BancoDeQuestoes/"):
@@ -90,11 +172,6 @@ def choose_scope(repo_root: Path, changed_paths: list[str], force_full: bool = F
         if len(parts) < 2:
             continue
 
-        topic = parts[1]
-        if topic == "figuras":
-            questions = all_questions(repo_root)
-            return "full", questions, "shared BancoDeQuestoes/figuras asset changed"
-
         if pure.suffix.lower() == ".rnw":
             candidate = repo_root / Path(*parts)
             # Deleted questions do not need compilation; structural validation still runs.
@@ -102,12 +179,44 @@ def choose_scope(repo_root: Path, changed_paths: list[str], force_full: bool = F
                 affected.add(pure.as_posix())
             continue
 
-        # Supporting assets/data inside a topic can be shared by several questions.
-        # Recompile the topic instead of trying to infer fragile file references.
+        if question_texts is None:
+            question_texts = load_question_texts(repo_root)
+        referenced, exact = support_asset_scope(repo_root, pure.as_posix(), question_texts)
+        if referenced:
+            affected.update(referenced)
+            resolved_assets += 1
+            continue
+
+        if exact:
+            # Usually a deleted/renamed support file that has no remaining references.
+            # Any edited question pointing at its replacement is already selected above.
+            resolved_assets += 1
+            continue
+
+        topic = parts[1]
+        if topic == "figuras":
+            unresolved_shared_asset = True
+        else:
+            fallback_topics.add(topic)
+
+    if unresolved_shared_asset:
+        questions = all_questions(repo_root)
+        return "full", questions, "unresolved shared BancoDeQuestoes/figuras dependency changed"
+
+    for topic in sorted(fallback_topics):
         affected.update(topic_questions(repo_root, topic))
 
     if affected:
-        return "incremental", sorted(affected), "BancoDeQuestoes changes mapped to affected questions"
+        if fallback_topics:
+            reason = (
+                "BancoDeQuestoes changes mapped by dependency references; "
+                "unresolved assets widened to topic scope"
+            )
+        elif resolved_assets:
+            reason = "BancoDeQuestoes changes mapped to directly dependent questions"
+        else:
+            reason = "BancoDeQuestoes changes mapped to affected questions"
+        return "incremental", sorted(affected), reason
 
     if bank_changed:
         return "incremental", [], "BancoDeQuestoes changed but no existing question requires compilation"

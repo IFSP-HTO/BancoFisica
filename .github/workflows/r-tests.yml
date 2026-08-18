@@ -36,6 +36,9 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Test CI scope selector
+        run: python3 tools/test_ci_test_scope.py
+
       - name: Detect affected questions
         id: scope
         shell: bash
