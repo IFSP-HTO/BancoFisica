@@ -26,6 +26,10 @@ GLOBAL_SUFFIXES = (".sty", ".cls", ".tex")
 
 def normalize_changed_path(raw: str) -> str:
     path = raw.strip().replace("\\", "/")
+    # Remove only an explicit relative-path prefix.  str.lstrip("./") is not
+    # appropriate here: it treats its argument as a *set of characters* and
+    # therefore turns ".github/..." into "github/...", preventing workflow
+    # changes from matching GLOBAL_EXACT.
     while path.startswith("./"):
         path = path[2:]
     return path
