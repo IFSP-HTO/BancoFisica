@@ -23,7 +23,10 @@ GLOBAL_SUFFIXES = (".sty", ".cls", ".tex")
 
 
 def normalize_changed_path(raw: str) -> str:
-    return raw.strip().replace("\\", "/").lstrip("./")
+    path = raw.strip().replace("\\", "/")
+    while path.startswith("./"):
+        path = path[2:]
+    return path
 
 
 def all_questions(repo_root: Path) -> list[str]:
