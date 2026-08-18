@@ -40,57 +40,9 @@ RUN apt-get update -qq \
 
 COPY DESCRIPTION /tmp/BancoFisica-DESCRIPTION
 
-RUN Rscript - <<'RSCRIPT'
-options(
-  repos = c(CRAN = "https://cloud.r-project.org"),
-  timeout = 600,
-  Ncpus = 2L
-)
+RUN Rscript -e 'options(repos = c(CRAN = "https://cloud.r-project.org"), timeout = 600, Ncpus = 2L); d <- read.dcf("/tmp/BancoFisica-DESCRIPTION"); fields <- intersect(c("Imports", "Suggests"), colnames(d)); deps <- unique(unlist(strsplit(paste(d[1, fields], collapse = ","), ","))); deps <- trimws(gsub("\\s*\\([^)]*\\)", "", deps)); deps <- deps[nzchar(deps) & deps != "tools"]; message("BancoFisica direct R dependencies: ", paste(deps, collapse = ", ")); install.packages(deps, dependencies = c("Depends", "Imports", "LinkingTo"), Ncpus = 2L); missing <- deps[!vapply(deps, requireNamespace, logical(1), quietly = TRUE)]; if (length(missing)) { message("Retrying missing R packages serially: ", paste(missing, collapse = ", ")); for (pkg in missing) install.packages(pkg, dependencies = c("Depends", "Imports", "LinkingTo"), Ncpus = 1L) }; missing <- deps[!vapply(deps, requireNamespace, logical(1), quietly = TRUE)]; if (length(missing)) stop("Missing R packages after retry: ", paste(missing, collapse = ", "))'
 
-d <- read.dcf("/tmp/BancoFisica-DESCRIPTION")
-fields <- intersect(c("Imports", "Suggests"), colnames(d))
-deps <- unique(unlist(strsplit(paste(d[1, fields], collapse = ","), ",")))
-deps <- trimws(gsub("\\s*\\([^)]*\\)", "", deps))
-deps <- deps[nzchar(deps) & deps != "tools"]
-
-message("BancoFisica direct R dependencies: ", paste(deps, collapse = ", "))
-
-install_once <- function(pkgs) {
-  if (!length(pkgs)) return(invisible(NULL))
-  install.packages(
-    pkgs,
-    dependencies = c("Depends", "Imports", "LinkingTo"),
-    Ncpus = 2L
-  )
-}
-
-install_once(deps)
-missing <- deps[!vapply(deps, requireNamespace, logical(1), quietly = TRUE)]
-
-if (length(missing)) {
-  message("Retrying missing R packages serially: ", paste(missing, collapse = ", "))
-  for (pkg in missing) {
-    install.packages(
-      pkg,
-      dependencies = c("Depends", "Imports", "LinkingTo"),
-      Ncpus = 1L
-    )
-  }
-}
-
-missing <- deps[!vapply(deps, requireNamespace, logical(1), quietly = TRUE)]
-if (length(missing)) {
-  stop("Missing R packages after retry: ", paste(missing, collapse = ", "))
-}
-RSCRIPT
-
-RUN Rscript - <<'RSCRIPT'
-stopifnot(getRversion() == package_version("4.4.3"))
-pkgs <- c("exams", "stringr", "magrittr", "purrr", "callr", "tth", "base64enc", "testthat", "shiny", "xml2")
-missing <- pkgs[!vapply(pkgs, requireNamespace, logical(1), quietly = TRUE)]
-if (length(missing)) stop("CI image validation missing R packages: ", paste(missing, collapse = ", "))
-message("Validated R packages: ", paste(pkgs, collapse = ", "))
-RSCRIPT
+RUN Rscript -e 'stopifnot(getRversion() == package_version("4.4.3")); pkgs <- c("exams", "stringr", "magrittr", "purrr", "callr", "tth", "base64enc", "testthat", "shiny", "xml2"); missing <- pkgs[!vapply(pkgs, requireNamespace, logical(1), quietly = TRUE)]; if (length(missing)) stop("CI image validation missing R packages: ", paste(missing, collapse = ", ")); message("Validated R packages: ", paste(pkgs, collapse = ", "))'
 
 RUN latexmk -v >/dev/null \
     && qpdf --version >/dev/null \
