@@ -53,9 +53,12 @@ jobs:
         run: |
           set -euo pipefail
           image="${REGISTRY}/${IMAGE_NAME}"
+          fingerprint="$(sha256sum docker/ci/Dockerfile DESCRIPTION | sha256sum | awk '{print $1}')"
+          env_tag="env-${fingerprint}"
+          echo "env_tag=${env_tag}" >> "$GITHUB_OUTPUT"
           {
             echo 'tags<<EOF'
-            echo "${image}:sha-${GITHUB_SHA}"
+            echo "${image}:${env_tag}"
             if [[ "${GITHUB_REF}" == "refs/heads/master" ]]; then
               echo "${image}:${STABLE_TAG}"
             fi
@@ -77,9 +80,9 @@ jobs:
         shell: bash
         run: |
           echo '### BancoFisica CI image' >> "$GITHUB_STEP_SUMMARY"
-          echo "- Immutable image: \`${REGISTRY}/${IMAGE_NAME}:sha-${GITHUB_SHA}\`" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Environment image: \`${REGISTRY}/${IMAGE_NAME}:${{ steps.meta.outputs.env_tag }}\`" >> "$GITHUB_STEP_SUMMARY"
           if [[ "${GITHUB_REF}" == "refs/heads/master" ]]; then
-            echo "- Stable image: \`${REGISTRY}/${IMAGE_NAME}:${STABLE_TAG}\`" >> "$GITHUB_STEP_SUMMARY"
+            echo "- Stable alias: \`${REGISTRY}/${IMAGE_NAME}:${STABLE_TAG}\`" >> "$GITHUB_STEP_SUMMARY"
           fi
           if [[ "${{ github.event_name }}" == "pull_request" ]]; then
             echo '- Mode: build validation only (not published)' >> "$GITHUB_STEP_SUMMARY"
