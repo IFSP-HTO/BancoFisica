@@ -71,6 +71,8 @@ Assim, um PR pequeno deixa de pagar o custo fixo de `apt install`, configuraçã
 
 Mudanças no próprio Dockerfile, no `DESCRIPTION` ou nos workflows de ambiente são tratadas como alterações globais pelo detector de escopo e, portanto, exercitam a suíte completa.
 
+Os pacotes de sistema do apt são escolhidos para cobrir os pré-requisitos de compilação das dependências R. Em particular, `libuv1-dev` é necessário para o pacote CRAN `fs` (usado via `sass`/`bslib`/`shiny`): sem ele, a configuração de `fs` falha com `uv.h: No such file or directory`.
+
 ## Diagnóstico
 
 O passo `Verify prebuilt CI environment` falha cedo caso a imagem não contenha a versão esperada do R, os pacotes R essenciais ou as ferramentas LaTeX/Pandoc esperadas.
