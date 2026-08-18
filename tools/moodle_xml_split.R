@@ -80,6 +80,51 @@ rewrite_moodle_indices <- function(xml_file, question_offset = 0L,
   invisible(xml_file)
 }
 
+## Verifica a propriedade que o particionamento deve preservar: juntar todas
+## as partes tem de produzir exatamente as mesmas identidades logicas de uma
+## geracao unica. Categorias repetidas sao permitidas somente quando uma mesma
+## questao-base teve suas variantes repartidas; pares (Q,R) nunca podem repetir.
+validate_moodle_split_identity <- function(parts, total, n) {
+  xml_lines <- unlist(lapply(parts, readLines, warn = FALSE, encoding = "UTF-8"),
+                      use.names = FALSE)
+
+  category_hits <- unlist(regmatches(
+    xml_lines,
+    gregexpr("\\$course\\$/[^<]*/Exercise [0-9]+", xml_lines, perl = TRUE)
+  ), use.names = FALSE)
+  exercises <- as.integer(sub(".*Exercise ", "", category_hits))
+
+  name_hits <- unlist(regmatches(
+    xml_lines,
+    gregexpr("R[0-9]+[[:space:]]+Q[0-9]+[[:space:]]*:", xml_lines, perl = TRUE)
+  ), use.names = FALSE)
+  replicas <- as.integer(sub("^R([0-9]+).*$", "\\1", name_hits))
+  questions <- as.integer(sub("^.*Q([0-9]+)[[:space:]]*:.*$", "\\1", name_hits))
+
+  expected_questions <- seq_len(as.integer(total))
+  if (!identical(sort(unique(exercises)), expected_questions)) {
+    stop("Moodle split identity error: Exercise numbering is not globally continuous (expected 1..",
+         total, ")")
+  }
+  if (!identical(sort(unique(questions)), expected_questions)) {
+    stop("Moodle split identity error: Q numbering is not globally continuous (expected 1..",
+         total, ")")
+  }
+
+  expected_variants <- as.integer(total) * as.integer(n)
+  if (length(name_hits) != expected_variants) {
+    stop("Moodle split identity error: expected ", expected_variants,
+         " variants across parts, found ", length(name_hits))
+  }
+
+  keys <- paste(questions, replicas, sep = ":")
+  if (anyDuplicated(keys)) {
+    stop("Moodle split identity error: duplicate (Q,R) variant identity across XML parts")
+  }
+
+  invisible(TRUE)
+}
+
 ## Gera o XML do Moodle para um conjunto de questoes, dividindo a saida em
 ## varias partes sempre que um unico arquivo excederia `max_bytes`.
 ##
@@ -263,5 +308,8 @@ generate_moodle_xml_limited <- function(files, n = 1L, name, seed, edir, dir,
     }
   }
 
+  ## Falha antes de devolver arquivos importaveis se a divisao tiver alterado
+  ## a identidade logica das questoes/replicas no Moodle.
+  validate_moodle_split_identity(parts, total = total, n = n)
   parts
 }
