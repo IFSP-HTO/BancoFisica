@@ -1,6 +1,6 @@
 # Ambiente pré-construído do CI
 
-O workflow `R tests` usa a imagem `ghcr.io/ifsp-hto/bancofisica-ci:r-4.4.3` para evitar reinstalar R, pacotes R e a toolchain LaTeX em toda execução.
+O workflow `R tests` usa uma imagem pré-construída do GHCR para evitar reinstalar R, pacotes R e a toolchain LaTeX em toda execução.
 
 ## Conteúdo da imagem
 
@@ -19,7 +19,7 @@ O próprio build valida a versão do R, a disponibilidade dos pacotes R principa
 
 ## Quando a imagem é reconstruída
 
-`.github/workflows/ci-image.yml` reconstrói e publica a imagem quando muda um dos insumos do ambiente:
+`.github/workflows/ci-image.yml` é acionado quando muda um dos insumos do ambiente:
 
 - `docker/ci/Dockerfile`;
 - `DESCRIPTION`;
@@ -29,23 +29,38 @@ Também é possível executar o workflow manualmente com `workflow_dispatch`.
 
 Mudanças em questões `.Rnw`, figuras, documentação ou scripts que não alteram o ambiente não reconstroem a imagem.
 
-## Tags
+## Imagem endereçada pelo conteúdo
 
-A publicação cria duas tags no GHCR:
+O ambiente é identificado por um fingerprint SHA-256 calculado a partir de `docker/ci/Dockerfile` e `DESCRIPTION`. A tag usada pelos testes tem a forma:
 
-- `r-4.4.3`: tag estável consumida pelo workflow de testes;
-- `sha-<commit>`: tag imutável associada ao commit que construiu o ambiente, útil para rastreabilidade e diagnóstico.
+```text
+ghcr.io/ifsp-hto/bancofisica-ci:env-<fingerprint>
+```
+
+Isso garante que duas execuções com o mesmo ambiente lógico reutilizem a mesma imagem, independentemente da branch ou do commit. Se o Dockerfile ou as dependências R mudarem, o fingerprint muda automaticamente e a imagem anterior não pode ser usada por engano.
+
+Em `master`, a mesma imagem também recebe o alias legível `r-4.4.3`. O workflow de testes, porém, usa a tag `env-<fingerprint>` para preservar a reprodutibilidade.
+
+## Publicação e bootstrap
+
+Em pushes que alteram os insumos da imagem, o workflow publica a tag `env-<fingerprint>` no GHCR. Em pull requests, o Dockerfile é construído para validação sem publicar uma nova imagem a partir do contexto do PR.
+
+O `R tests` tenta baixar a imagem exata pelo fingerprint. Se ela ainda não estiver publicada — por exemplo, durante o primeiro bootstrap ou em uma contribuição sem permissão de publicação — o workflow constrói esse ambiente localmente uma única vez para validar a mudança. Esse fallback só é necessário quando a imagem correspondente ao conteúdo ainda não existe.
+
+## Atualização da versão do R
 
 Ao atualizar a versão do R, altere em conjunto:
 
 1. a imagem base em `docker/ci/Dockerfile`;
 2. a validação da versão dentro do Dockerfile;
-3. `IMAGE_TAG` em `.github/workflows/ci-image.yml`;
-4. `BANK_CI_IMAGE` em `.github/workflows/r-tests.yml`.
+3. `STABLE_TAG` em `.github/workflows/ci-image.yml`;
+4. a validação de versão em `.github/workflows/r-tests.yml`.
+
+O fingerprint será alterado automaticamente pela mudança no Dockerfile.
 
 ## Execução dos testes
 
-O runner continua responsável por checkout, cálculo do escopo incremental e validações Python leves. Quando há questões a processar, o workflow baixa a imagem pré-construída e executa dentro dela:
+O runner continua responsável por checkout, cálculo do escopo incremental e validações Python leves. Quando há questões a processar, o workflow prepara a imagem pré-construída e executa dentro dela:
 
 - testes do BancoFisica;
 - auditoria dos blocos de solução;
@@ -54,9 +69,11 @@ O runner continua responsável por checkout, cálculo do escopo incremental e va
 
 Assim, um PR pequeno deixa de pagar o custo fixo de `apt install`, configuração do R e instalação/restauração das dependências R antes de começar o trabalho útil.
 
+Mudanças no próprio Dockerfile, no `DESCRIPTION` ou nos workflows de ambiente são tratadas como alterações globais pelo detector de escopo e, portanto, exercitam a suíte completa.
+
 ## Diagnóstico
 
-O passo `Verify prebuilt CI environment` falha cedo caso a imagem publicada não contenha a versão esperada do R, os pacotes R essenciais ou as ferramentas LaTeX/Pandoc esperadas.
+O passo `Verify prebuilt CI environment` falha cedo caso a imagem não contenha a versão esperada do R, os pacotes R essenciais ou as ferramentas LaTeX/Pandoc esperadas.
 
 Para testar uma imagem localmente:
 
