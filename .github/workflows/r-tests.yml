@@ -19,14 +19,15 @@ concurrency:
   group: r-tests-${{ github.ref }}
   cancel-in-progress: true
 
+env:
+  BANK_CI_IMAGE: ghcr.io/ifsp-hto/bancofisica-ci:r-4.4.3
+  R_KEEP_PKG_SOURCE: yes
+  NOT_CRAN: true
+  BANK_VALIDATE_FAIL_ON_ERRORS: true
+
 jobs:
   test:
     runs-on: ubuntu-latest
-
-    env:
-      R_KEEP_PKG_SOURCE: yes
-      NOT_CRAN: true
-      BANK_VALIDATE_FAIL_ON_ERRORS: true
 
     steps:
       - name: Checkout repository
@@ -96,34 +97,32 @@ jobs:
           python3 tools/generate_demo_site_data.py
           python3 tools/validate_public_site.py
 
-      - name: Install system tools and LaTeX
+      - name: Pull prebuilt CI image
+        if: steps.scope.outputs.mode != 'none'
+        shell: bash
+        run: |
+          set -euo pipefail
+          for attempt in 1 2 3 4 5 6; do
+            if docker pull "$BANK_CI_IMAGE"; then
+              exit 0
+            fi
+            if [[ "$attempt" -eq 6 ]]; then
+              echo "Failed to pull $BANK_CI_IMAGE after $attempt attempts" >&2
+              exit 1
+            fi
+            sleep 10
+          done
+
+      - name: Verify prebuilt CI environment
         if: steps.scope.outputs.mode != 'none'
         run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y --no-install-recommends \
-            file \
-            qpdf \
-            texlive-latex-base \
-            texlive-latex-recommended \
-            texlive-latex-extra \
-            texlive-fonts-recommended \
-            texlive-lang-portuguese \
-            latexmk
-          sudo rm -rf /var/lib/apt/lists/*
-
-      - name: Setup R
-        if: steps.scope.outputs.mode != 'none'
-        uses: r-lib/actions/setup-r@v2
-        with:
-          r-version: '4.4.3'
-          use-public-rspm: true
-
-      - name: Install R dependencies
-        if: steps.scope.outputs.mode != 'none'
-        uses: r-lib/actions/setup-r-dependencies@v2
-        with:
-          cache-version: 1
-          dependencies: '"all"'
+          docker run --rm "$BANK_CI_IMAGE" bash -lc '
+            set -euo pipefail
+            Rscript -e '\''stopifnot(getRversion() == package_version("4.4.3")); pkgs <- c("exams", "stringr", "magrittr", "purrr", "callr", "tth", "base64enc", "testthat", "shiny", "xml2"); stopifnot(all(vapply(pkgs, requireNamespace, logical(1), quietly = TRUE)))'\''
+            latexmk -v >/dev/null
+            qpdf --version >/dev/null
+            pandoc --version >/dev/null
+          '
 
       - name: Run BancoFisica tests
         if: steps.scope.outputs.mode != 'none'
@@ -131,22 +130,49 @@ jobs:
           BANK_TEST_MODE: ${{ steps.scope.outputs.mode }}
           BANK_TEST_MANIFEST: build/ci-test-files.txt
         run: |
-          Rscript -e 'source("tests/tests.R")'
+          docker run --rm \
+            -e R_KEEP_PKG_SOURCE \
+            -e NOT_CRAN \
+            -e BANK_VALIDATE_FAIL_ON_ERRORS \
+            -e BANK_TEST_MODE \
+            -e BANK_TEST_MANIFEST \
+            -v "$GITHUB_WORKSPACE:/workspace" \
+            -w /workspace \
+            "$BANK_CI_IMAGE" \
+            Rscript -e 'source("tests/tests.R")'
 
       - name: Audit solution blocks
         if: steps.scope.outputs.mode != 'none'
         run: |
-          Rscript tools/audit_solutions.R
+          docker run --rm \
+            -e R_KEEP_PKG_SOURCE \
+            -e NOT_CRAN \
+            -v "$GITHUB_WORKSPACE:/workspace" \
+            -w /workspace \
+            "$BANK_CI_IMAGE" \
+            Rscript tools/audit_solutions.R
 
       - name: Generate quality report
         if: steps.scope.outputs.mode != 'none'
         run: |
-          Rscript tools/quality_report.R --out-dir build/quality-report
+          docker run --rm \
+            -e R_KEEP_PKG_SOURCE \
+            -e NOT_CRAN \
+            -v "$GITHUB_WORKSPACE:/workspace" \
+            -w /workspace \
+            "$BANK_CI_IMAGE" \
+            Rscript tools/quality_report.R --out-dir build/quality-report
 
       - name: Generate teaching audit
         if: steps.scope.outputs.mode != 'none'
         run: |
-          Rscript tools/audit_teaching.R --out-dir build/quality-report
+          docker run --rm \
+            -e R_KEEP_PKG_SOURCE \
+            -e NOT_CRAN \
+            -v "$GITHUB_WORKSPACE:/workspace" \
+            -w /workspace \
+            "$BANK_CI_IMAGE" \
+            Rscript tools/audit_teaching.R --out-dir build/quality-report
 
       - name: Upload quality report
         if: steps.scope.outputs.mode != 'none'
