@@ -11,26 +11,6 @@ a <- round(v^2 / R, 1)           ## aceleração centrípeta (m/s²)
 
 Uma roda gigante com raio igual a $\Sexpr{R}$ m está girando em torno de um eixo horizontal passando pelo seu centro. A velocidade linear constante de um passageiro em sua periferia é igual a $\Sexpr{v}$ m/s.
 
-<<fig=TRUE, height=4.8, width=5.5, echo=FALSE, eps=FALSE, results=hide>>=
-par(mar=c(0.3,0.3,0.3,0.3))
-plot.new(); plot.window(xlim=c(-1.45,1.45), ylim=c(-1.55,1.45), asp=1)
-symbols(0,0,circles=1.05,inches=FALSE,add=TRUE,lwd=2)
-ang <- seq(0,2*pi,length.out=9)[-9]
-for (aa in ang) segments(0,0,1.05*cos(aa),1.05*sin(aa),lwd=1.2)
-points(0,0,pch=19,cex=0.8)
-# cabines simples
-for (aa in ang) {
-  xx <- 1.05*cos(aa); yy <- 1.05*sin(aa)
-  rect(xx-0.10,yy-0.08,xx+0.10,yy+0.08,lwd=1)
-}
-# passageiro no ponto mais baixo e aceleração para o centro
-arrows(0,-1.02,0,-0.30,length=0.09,lwd=2)
-text(0.12,-0.63,"a_c",font=2,pos=4)
-segments(0,0,0,-1.05,lty=2,lwd=1.2)
-text(0.13,-0.53,"R",font=2,pos=4)
-text(0.13,0.08,"centro",cex=0.8,pos=4)
-@
-
 No ponto mais baixo do movimento circular, o módulo da aceleração do passageiro, em m/s², é de:
 
 <<echo=FALSE, results=hide, results=tex>>=

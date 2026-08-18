@@ -1,40 +1,25 @@
 <<echo=FALSE, results=hide>>=
 ## Exercício Q17 (slides): carro em curva horizontal com atrito
 
-m  <- sample(c(800, 900, 1000), 1)   ## massa (kg)
-R  <- sample(c(40, 50, 60), 1)       ## raio (m)
-mu <- sample(c(0.6, 0.7, 0.8), 1)    ## coeficiente de atrito
+m  <- 800   ## massa no slide (kg)
+R  <- 50    ## raio no slide (m)
+mu <- 0.8   ## coeficiente de atrito no slide
 g  <- 10
 
 ## v_max = sqrt(mu*g*R)
 v_ms <- round(sqrt(mu * g * R), 2)
 v_kmh<- round(v_ms * 3.6, 1)
+
+include_supplement("Q20CurvaAtrito.jpeg")
 @
 \usepackage[utf8]{inputenc}
 \begin{question}
 
 A figura mostra um carro de $\Sexpr{m}$ kg fazendo uma curva horizontal plana, de raio $R = \Sexpr{R}$ m, em uma estrada asfaltada. Sabe-se que o coeficiente de atrito entre os pneus e o asfalto é $\mu = \Sexpr{mu}$ e $g = \Sexpr{g}$ m/s².
 
-<<fig=TRUE, height=4.5, width=5.8, echo=FALSE, eps=FALSE, results=hide>>=
-par(mar=c(0.3,0.3,0.3,0.3))
-plot.new(); plot.window(xlim=c(-2.7,2.7), ylim=c(-2.5,2.5), asp=1)
-# curva vista de cima: duas bordas e linha central
-symbols(0,0,circles=2.1,inches=FALSE,add=TRUE,lwd=2)
-symbols(0,0,circles=1.55,inches=FALSE,add=TRUE,lwd=2)
-symbols(0,0,circles=1.82,inches=FALSE,add=TRUE,lty=2,lwd=1)
-# carro no quadrante superior direito
-th <- pi/4
-xc <- 1.82*cos(th); yc <- 1.82*sin(th)
-rect(xc-0.23,yc-0.13,xc+0.23,yc+0.13,lwd=2)
-points(0,0,pch=19,cex=0.7)
-segments(0,0,xc,yc,lty=2,lwd=1.4)
-text(xc/2+0.08,yc/2+0.02,"R",font=2)
-text(xc+0.15,yc+0.35,"carro",cex=0.85)
-# velocidade tangencial aproximada
-arrows(xc+0.05,yc+0.02,xc-0.45,yc+0.52,length=0.08,lwd=1.5)
-text(xc-0.28,yc+0.62,"v",font=2)
-text(-0.25,-0.18,"centro",cex=0.8)
-@
+\begin{center}
+\includegraphics[height=4.5cm,keepaspectratio]{Q20CurvaAtrito.jpeg}
+\end{center}
 
 Calcule a velocidade máxima que esse carro pode ter sem derrapar. \textit{Dê sua resposta em m/s, com duas casas decimais.}
 

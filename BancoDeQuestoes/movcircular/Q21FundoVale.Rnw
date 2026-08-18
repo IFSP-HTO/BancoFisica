@@ -1,38 +1,25 @@
 <<echo=FALSE, results=hide>>=
 ## Exercício Q18 (slides): fundo de vale
 
-m <- sample(c(700, 800, 900), 1)      ## massa (kg)
-v <- sample(c(54, 72, 90), 1)         ## velocidade (km/h)
-R <- sample(c(15, 20, 25), 1)         ## raio de curvatura (m)
+m <- 800      ## massa no slide (kg)
+v <- 72       ## velocidade no slide (km/h)
+R <- 20       ## raio de curvatura no slide (m)
 g <- 10
 
 v_ms <- v / 3.6
 ## no fundo do vale: N - P = m*v^2/R -> N = m*g + m*v^2/R
 resp <- round(m * g + m * v_ms^2 / R, 0)
+
+include_supplement("Q21FundoVale.jpeg")
 @
 \usepackage[utf8]{inputenc}
 \begin{question}
 
 Em uma estrada, um automóvel de $\Sexpr{m}$ kg, com velocidade constante de $\Sexpr{v}$ km/h, se aproxima de um fundo de vale, conforme o esquema a seguir. Sabendo que o raio de curvatura nesse fundo de vale é $\Sexpr{R}$ m e $g = \Sexpr{g}$ m/s², calcule a força de reação da estrada sobre o carro nesse ponto, em newtons.
 
-<<fig=TRUE, height=4.2, width=7, echo=FALSE, eps=FALSE, results=hide>>=
-par(mar=c(0.3,0.3,0.3,0.3))
-plot.new(); plot.window(xlim=c(-3.4,3.4), ylim=c(-0.3,3.0), asp=1)
-x <- seq(-3.4,3.4,length.out=300)
-y <- 0.20*x^2
-lines(x,y,lwd=3)
-# carro no fundo do vale
-rect(-0.42,0.08,0.42,0.36,lwd=2)
-points(c(-0.28,0.28),c(0.04,0.04),pch=1,cex=1.0,lwd=1.5)
-# centro de curvatura e raio
-points(0,2.15,pch=19,cex=0.7)
-segments(0,0.36,0,2.15,lty=2,lwd=1.5)
-text(0.15,1.25,"R",font=2,pos=4)
-text(0.12,2.25,"centro de curvatura",cex=0.8,pos=4)
-# velocidade horizontal no fundo
-arrows(0.55,0.22,1.55,0.22,length=0.08,lwd=1.5)
-text(1.05,0.42,"v",font=2)
-@
+\begin{center}
+\includegraphics[height=4.2cm,keepaspectratio]{Q21FundoVale.jpeg}
+\end{center}
 
 \end{question}
 
