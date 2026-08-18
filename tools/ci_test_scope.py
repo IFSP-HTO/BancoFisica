@@ -12,7 +12,9 @@ GLOBAL_PREFIXES = (
     "templates/",
 )
 GLOBAL_EXACT = {
+    ".github/workflows/ci-image.yml",
     ".github/workflows/r-tests.yml",
+    "docker/ci/Dockerfile",
     "DESCRIPTION",
     "NAMESPACE",
     "renv.lock",
