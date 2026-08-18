@@ -1,42 +1,24 @@
 <<echo=FALSE, results=hide>>=
 ## Exercício Q27 (slides): esfera oca com projétil
 
-d <- sample(c(0.4, 0.5, 0.6), 1)   ## diâmetro da esfera (m)
-v <- sample(c(400, 500, 600), 1)   ## velocidade do projétil (m/s)
+d <- 0.5   ## diâmetro da esfera no slide (m)
+v <- 500   ## velocidade do projétil no slide (m/s)
 
 ## O projétil atravessa o diâmetro em t = d/v. Para que o mesmo orifício
 ## esteja no ponto diametralmente oposto na primeira oportunidade, a esfera
 ## deve girar meia volta nesse intervalo: f*t = 1/2 -> f_min = v/(2d).
 f <- round(v / (2 * d), 1)
+
+include_supplement("Q27EsferaProjetil.jpeg")
 @
 \usepackage[utf8]{inputenc}
 \begin{question}
 
 Uma esfera oca feita de papel tem diâmetro igual a $\Sexpr{d}$ m e gira com determinada frequência $f$, conforme a figura. Um projétil é disparado numa direção que passa pelo equador da esfera, com velocidade $v = \Sexpr{v}$ m/s. Observa-se que, devido à rotação da esfera, a bala sai pelo mesmo orifício feito pelo projétil quando penetra na esfera. Determine a \textbf{menor frequência possível} de rotação da esfera, em hertz. \textit{Dê sua resposta com uma casa decimal.}
 
-<<fig=TRUE, height=4.4, width=6.6, echo=FALSE, eps=FALSE, results=hide>>=
-par(mar=c(0.3,0.3,0.3,0.3))
-plot.new(); plot.window(xlim=c(-2.2,2.2), ylim=c(-1.45,1.45), asp=1)
-symbols(0,0,circles=1.05,inches=FALSE,add=TRUE,lwd=2)
-points(0,0,pch=19,cex=0.65)
-# trajetória do projétil pelo equador
-arrows(-2.0,0,1.85,0,length=0.09,lwd=1.7)
-text(-1.55,0.20,"projétil",cex=0.85)
-text(-0.85,-0.18,"v",font=2)
-# orifícios diametralmente opostos
-points(c(-1.05,1.05),c(0,0),pch=21,bg="white",cex=1.2,lwd=1.6)
-text(-1.08,-0.30,"entrada",cex=0.78)
-text(1.08,-0.30,"saída",cex=0.78)
-# diâmetro
-segments(-1.05,-0.82,1.05,-0.82,lwd=1.2)
-arrows(-1.05,-0.82,1.05,-0.82,code=3,length=0.07,lwd=1.1)
-text(0,-1.00,"d",font=2)
-# indicação de rotação
-th <- seq(pi/5,4*pi/5,length.out=50)
-lines(1.25*cos(th),1.25*sin(th),lwd=1.4)
-arrows(1.25*cos(th[45]),1.25*sin(th[45]),1.25*cos(th[50]),1.25*sin(th[50]),length=0.08,lwd=1.4)
-text(0,1.34,"rotação da esfera",cex=0.82)
-@
+\begin{center}
+\includegraphics[height=4.4cm,keepaspectratio]{Q27EsferaProjetil.jpeg}
+\end{center}
 
 \end{question}
 

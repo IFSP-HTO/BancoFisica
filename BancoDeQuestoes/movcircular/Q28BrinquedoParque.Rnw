@@ -1,8 +1,8 @@
 <<echo=FALSE, results=hide>>=
 ## Exercício Q28 (slides): brinquedo de parque (cabines girantes)
 
-L <- sample(c(6, 8, 10), 1)     ## comprimento da barra (m)
-d <- sample(c(8, 10, 12), 1)    ## comprimento do cabo (m)
+L <- 8     ## comprimento da barra no slide (m)
+d <- 10    ## comprimento do cabo no slide (m)
 th <- 30                        ## ângulo com a vertical (graus)
 M <- 1000                       ## massa cabine+passageiro (kg)
 g <- 10
@@ -13,14 +13,16 @@ R <- round(L/2 + d * sin(th_rad), 2)
 ## forças verticais se cancelam: T*cos(theta) = M*g -> T = M*g/cos(theta)
 T <- round(M * g / cos(th_rad), 0)
 
-include_supplement("Q28BrinquedoParque.jpg")
+include_supplement("Q28BrinquedoParque.jpeg")
 @
 \usepackage[utf8]{inputenc}
 \begin{question}
 
 Um brinquedo de parque de diversões consiste de um eixo vertical girante, duas cabines e um suporte para os cabos. O suporte é uma forte barra horizontal de aço, de $L = \Sexpr{L}$ m de comprimento. Cada cabo mede $d = \Sexpr{d}$ m. Quando as pessoas entram nas cabines, o eixo se põe a girar e as cabines se inclinam formando um ângulo $\theta = \Sexpr{th}^\circ$ com a vertical, conforme a figura. O movimento das cabines é circular uniforme, ambos de raio $R$. Considere a massa total da cabine e passageiro como $M = \Sexpr{M}$ kg e $g = \Sexpr{g}$ m/s².
 
-\fbox{\includegraphics[height=4.5cm,keepaspectratio]{Q28BrinquedoParque.jpg}}
+\begin{center}
+\includegraphics[height=4.5cm,keepaspectratio]{Q28BrinquedoParque.jpeg}
+\end{center}
 
 \begin{answerlist}
   \item Calcule o raio $R$ de rotação da trajetória da cabine, em metros. \textit{Dê sua resposta com duas casas decimais.}

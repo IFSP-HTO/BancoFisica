@@ -1,17 +1,23 @@
 <<echo=FALSE, results=hide>>=
 ## Exercício Q20 (OBFEP 2017): aerogerador
 
-m <- sample(c(80, 90, 100), 1)     ## massa do técnico (kg)
-a <- sample(c(3, 4, 5), 1)         ## aceleração centrípeta (m/s²)
+m <- 90     ## massa do técnico no slide (kg)
+a <- 4      ## aceleração centrípeta no slide (m/s²)
 g <- 10
 
 ## Força máxima no cabo na parte de baixo: T - P = Fcp -> T = m*g + m*a
 resp <- round(m * g + m * a, 0)
+
+include_supplement("Q22Aerogerador.jpeg")
 @
 
 \begin{question}
 
 (OBFEP 2017 adaptado) Um técnico, que tinha $\Sexpr{m}$ kg, acabou indo parar na extremidade de uma das pás da hélice de um aerogerador, descrevendo um MCU com aceleração centrípeta igual a $\Sexpr{a}$ m/s². Considere que a aceleração da gravidade mede $\Sexpr{g}$ m/s². Qual a intensidade da força máxima que o cabo que o segurava suportou, em newtons?
+
+\begin{center}
+\includegraphics[height=4.5cm,keepaspectratio]{Q22Aerogerador.jpeg}
+\end{center}
 
 \end{question}
 

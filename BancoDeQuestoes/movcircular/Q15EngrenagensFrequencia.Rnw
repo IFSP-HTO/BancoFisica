@@ -1,17 +1,23 @@
 <<echo=FALSE, results=hide>>=
 ## Exercício Q11 (slides): engrenagens 1 e 2 com diâmetros dados
 
-d1 <- sample(c(20, 24, 30, 40), 1)      ## diâmetro engrenagem 1 (cm)
-d2 <- sample(c(8, 10, 12), 1)           ## diâmetro engrenagem 2 (cm)
-f2 <- sample(c(120, 240, 360, 480), 1)  ## frequência da engrenagem 2 (rpm)
+d1 <- 30      ## diâmetro da engrenagem 1 no slide (cm)
+d2 <- 10      ## diâmetro da engrenagem 2 no slide (cm)
+f2 <- 360     ## frequência da engrenagem 2 no slide (rpm)
 
 ## mesmo v linear na borda: d1*f1 = d2*f2 -> f1 = d2*f2/d1
 resp <- round(d2 * f2 / d1, 2)
+
+include_supplement("Q15EngrenagensFrequencia.jpeg")
 @
 
 \begin{question}
 
 Duas engrenagens engrenadas, de diâmetros $\Sexpr{d1}$ cm e $\Sexpr{d2}$ cm, não deslizam entre si. Se a engrenagem de diâmetro $\Sexpr{d2}$ cm gira a $\Sexpr{f2}$ rpm, calcule a frequência de rotação da engrenagem de diâmetro $\Sexpr{d1}$ cm, em rpm. \textit{Dê sua resposta com duas casas decimais.}
+
+\begin{center}
+\includegraphics[height=4cm,keepaspectratio]{Q15EngrenagensFrequencia.jpeg}
+\end{center}
 
 \end{question}
 

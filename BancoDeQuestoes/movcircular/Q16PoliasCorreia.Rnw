@@ -1,9 +1,9 @@
 <<echo=FALSE, results=hide>>=
 ## Exercício Q12 (slides): polias acopladas por correia
 
-a <- sample(c(4, 5, 6, 8), 1)          ## raio polia maior (m)
-b <- sample(c(1.5, 2, 2.5), 1)         ## raio polia menor (m)
-T <- sample(c(1, 1.5, 2, 2.5), 1)      ## período da polia maior (s)
+a <- 6          ## raio da polia maior no slide (m)
+b <- 2          ## raio da polia menor no slide (m)
+T <- 1.5        ## período da polia maior no slide (s)
 
 ## mesma velocidade linear: v = 2*pi*a*(1/T) = 2*pi*b*f_menor
 f_a <- 1 / T

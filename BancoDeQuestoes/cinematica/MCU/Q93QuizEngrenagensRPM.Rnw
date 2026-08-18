@@ -1,5 +1,5 @@
 <<echo=FALSE, results=hide>>=
-include_supplement("enem2016_q80_engrenagens.jpg")
+include_supplement("Q93EngrenagensSistema.jpeg")
 @
 \usepackage[utf8]{inputenc}
 
@@ -22,7 +22,7 @@ D & 108
 
 \begin{figure}[h!]
   \centering
-  \includegraphics[width=11cm, keepaspectratio]{enem2016_q80_engrenagens.jpg}
+  \includegraphics[width=11cm, keepaspectratio]{Q93EngrenagensSistema.jpeg}
 \end{figure}
 
 A frequência de giro do ponteiro, em RPM, é

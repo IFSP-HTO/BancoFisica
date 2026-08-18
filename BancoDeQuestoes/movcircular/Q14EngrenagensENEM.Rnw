@@ -27,14 +27,19 @@ for (i in seq_along(opts)) {
   solutions[aleat[i]] <- opts[i] == resp
 }
 
-include_supplement("Q14EngrenagensENEM.jpg")
+include_supplement("Q14EngrenagensTabela.jpeg")
+include_supplement("Q14EngrenagensSistema.jpeg")
 @
 \usepackage[utf8]{inputenc}
 \begin{question}
 
 (ENEM 2016) A invenção e o acoplamento entre engrenagens revolucionaram a ciência na época e propiciaram a invenção de várias tecnologias, como os relógios. Ao construir um pequeno cronômetro, um relojoeiro usa o sistema de engrenagens mostrado na figura. Um motor é ligado ao eixo e movimenta as engrenagens fazendo o ponteiro girar. A frequência do motor é de $\Sexpr{fA}$ RPM, e o número de dentes das engrenagens está apresentado no quadro (A: $\Sexpr{teeth["A"]}$, B: $\Sexpr{teeth["B"]}$, C: $\Sexpr{teeth["C"]}$, D: $\Sexpr{teeth["D"]}$). As engrenagens B e C giram no mesmo eixo.
 
-\fbox{\includegraphics[height=5cm,keepaspectratio]{Q14EngrenagensENEM.jpg}}
+\begin{center}
+\includegraphics[height=3cm,keepaspectratio]{Q14EngrenagensTabela.jpeg}
+\hspace{0.4cm}
+\includegraphics[height=5cm,keepaspectratio]{Q14EngrenagensSistema.jpeg}
+\end{center}
 
 A frequência de giro do ponteiro, em RPM, é:
 
