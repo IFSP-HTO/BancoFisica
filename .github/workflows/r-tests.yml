@@ -14,6 +14,7 @@ on:
 permissions:
   contents: read
   actions: read
+  packages: read
 
 concurrency:
   group: r-tests-${{ github.ref }}
@@ -96,6 +97,14 @@ jobs:
         run: |
           python3 tools/generate_demo_site_data.py
           python3 tools/validate_public_site.py
+
+      - name: Log in to GHCR
+        if: steps.scope.outputs.mode != 'none'
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ github.token }}
 
       - name: Pull prebuilt CI image
         if: steps.scope.outputs.mode != 'none'
