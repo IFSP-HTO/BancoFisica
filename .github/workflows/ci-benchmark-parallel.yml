@@ -1,6 +1,10 @@
 name: CI parallel benchmark
 
 on:
+  pull_request:
+    paths:
+      - tests/run_tests_parallel.R
+      - .github/workflows/ci-benchmark-parallel.yml
   workflow_dispatch:
 
 permissions:
