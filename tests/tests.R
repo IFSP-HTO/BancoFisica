@@ -215,12 +215,15 @@ check_question_counts <- function() {
 
 ## Exercita o particionamento de XML por limite de upload.
 ##
-## Usa um assunto real com figuras (trabalhopotencia) e um limite abaixo do
-## tamanho total: o gerador deve produzir >= 2 partes, todas dentro do limite
-## (tools/moodle_xml_split.R). Também verifica a limpeza de artefatos antigos
-## do mesmo `name` (quando uma rodada deixa de gerar partes, os arquivos
-## antigos nao podem sobrar). Roda em subprocesso (callr) para nao acumular
-## estado do exams2moodle na sessao de teste.
+## Usa um assunto real com figuras (trabalhopotencia, que tambem tem questoes
+## com \exsection) e um limite abaixo do tamanho total: o gerador deve produzir
+## >= 2 partes, todas dentro do limite (tools/moodle_xml_split.R). Também
+## verifica a limpeza de artefatos antigos do mesmo `name` (quando uma rodada
+## deixa de gerar partes, os arquivos antigos nao podem sobrar) e que a
+## identidade logica das questoes e preservada entre as partes (Q cobrindo
+## 1..N, N*n variantes no total e nenhum par (Q,R) repetido). Roda em
+## subprocesso (callr) para nao acumular estado do exams2moodle na sessao de
+## teste.
 check_moodle_split <- function() {
   report <- callr::r(function() {
     source("tools/moodle_xml_split.R")
@@ -241,6 +244,16 @@ check_moodle_split <- function() {
     )
     sizes <- file.size(parts)
 
+    ## Identidade global entre as partes, lida direto do XML gerado (sem
+    ## depender apenas do validator interno do gerador).
+    parts_lines <- unlist(lapply(parts, readLines, warn = FALSE, encoding = "UTF-8"))
+    name_hits <- unlist(regmatches(
+      parts_lines,
+      gregexpr("R[0-9]+[[:space:]]+Q[0-9]+[[:space:]]*:", parts_lines, perl = TRUE)
+    ))
+    q_vals <- as.integer(sub("^.*Q([0-9]+)[[:space:]]*:.*$", "\\1", name_hits))
+    r_vals <- as.integer(sub("^R([0-9]+).*$", "\\1", name_hits))
+
     ## Limpeza de artefatos: roda de novo com limite folgado (-> arquivo unico)
     ## e confere que as partes antigas desaparecem e so resta name.xml.
     single <- generate_moodle_xml_limited(
@@ -254,6 +267,10 @@ check_moodle_split <- function() {
       n_parts = length(parts),
       max = max(sizes),
       limit = limit,
+      q_ok = identical(sort(unique(q_vals)), seq_along(files)),
+      n_variants = length(name_hits),
+      expected_variants = length(files) * 12L,
+      dup_keys = anyDuplicated(paste(q_vals, r_vals, sep = ":")),
       single_stale_parts = length(stale_parts),
       files_now = files_now
     )
@@ -264,6 +281,16 @@ check_moodle_split <- function() {
   }
   if (!isTRUE(report$max <= report$limit)) {
     stop("Moodle XML split check produced a part over the limit")
+  }
+  if (!isTRUE(report$q_ok)) {
+    stop("Moodle XML split check: Q numbering is not globally continuous across parts")
+  }
+  if (!isTRUE(report$n_variants == report$expected_variants)) {
+    stop("Moodle XML split check: expected ", report$expected_variants,
+         " variants across parts, found ", report$n_variants)
+  }
+  if (!isTRUE(report$dup_keys == 0L)) {
+    stop("Moodle XML split check: duplicate (Q,R) variant identity across parts")
   }
   if (!isTRUE(report$single_stale_parts == 0L)) {
     stop("Moodle XML split check left stale part files after regeneration")
