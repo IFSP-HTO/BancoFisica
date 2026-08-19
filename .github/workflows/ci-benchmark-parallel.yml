@@ -1,0 +1,91 @@
+name: CI parallel benchmark
+
+on:
+  pull_request:
+    paths:
+      - tests/run_tests_parallel.R
+      - .github/workflows/ci-benchmark-parallel.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: read
+
+env:
+  BANK_CI_IMAGE_REPO: ghcr.io/ifsp-hto/bancofisica-ci
+  R_KEEP_PKG_SOURCE: yes
+  NOT_CRAN: true
+  BANK_VALIDATE_FAIL_ON_ERRORS: true
+
+jobs:
+  benchmark:
+    name: BANK_JOBS=${{ matrix.jobs }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix:
+        jobs: [1, 2, 4]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Select full test manifest
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build
+          python3 tools/ci_test_scope.py \
+            --full \
+            --manifest build/ci-test-files.txt
+          echo "Selected $(wc -l < build/ci-test-files.txt) question(s)"
+
+      - name: Select prebuilt CI image
+        shell: bash
+        run: |
+          set -euo pipefail
+          fingerprint="$(sha256sum docker/ci/Dockerfile DESCRIPTION | sha256sum | awk '{print $1}')"
+          echo "BANK_CI_IMAGE=${BANK_CI_IMAGE_REPO}:env-${fingerprint}" >> "$GITHUB_ENV"
+
+      - name: Log in to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ github.token }}
+
+      - name: Pull benchmark image
+        run: docker pull "$BANK_CI_IMAGE"
+
+      - name: Run full test benchmark
+        shell: bash
+        env:
+          BANK_JOBS: ${{ matrix.jobs }}
+        run: |
+          set -euo pipefail
+          started="$(date +%s)"
+
+          docker run --rm --init \
+            -e R_KEEP_PKG_SOURCE \
+            -e NOT_CRAN \
+            -e BANK_VALIDATE_FAIL_ON_ERRORS \
+            -e BANK_TEST_MODE=full \
+            -e BANK_TEST_MANIFEST=/workspace/build/ci-test-files.txt \
+            -e BANK_JOBS \
+            -v "$GITHUB_WORKSPACE:/workspace" \
+            -w /workspace \
+            "$BANK_CI_IMAGE" \
+            Rscript tests/run_tests_parallel.R
+
+          finished="$(date +%s)"
+          elapsed=$((finished - started))
+          minutes=$((elapsed / 60))
+          seconds=$((elapsed % 60))
+
+          echo "### Parallel compilation benchmark" >> "$GITHUB_STEP_SUMMARY"
+          echo "- **BANK_JOBS:** $BANK_JOBS" >> "$GITHUB_STEP_SUMMARY"
+          echo "- **Elapsed:** ${minutes}m ${seconds}s" >> "$GITHUB_STEP_SUMMARY"
+          echo "- **Scope:** full bank" >> "$GITHUB_STEP_SUMMARY"
