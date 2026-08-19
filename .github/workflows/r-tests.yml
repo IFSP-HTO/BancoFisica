@@ -23,7 +23,7 @@ concurrency:
 env:
   BANK_CI_IMAGE_REPO: ghcr.io/ifsp-hto/bancofisica-ci
   # Benchmark #159: 4 workers reduced the full compilation from ~28m36s to ~9m46s.
-  # Override with BANK_JOBS=1 locally when serial reproduction/debug is needed.
+  # Use BANK_JOBS=1 with tests/run_tests_parallel.R for serial reproduction/debug.
   BANK_JOBS: 4
   R_KEEP_PKG_SOURCE: yes
   NOT_CRAN: true
