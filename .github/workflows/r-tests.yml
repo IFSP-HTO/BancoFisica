@@ -22,6 +22,7 @@ concurrency:
 
 env:
   BANK_CI_IMAGE_REPO: ghcr.io/ifsp-hto/bancofisica-ci
+  BANK_JOBS: 4
   R_KEEP_PKG_SOURCE: yes
   NOT_CRAN: true
   BANK_VALIDATE_FAIL_ON_ERRORS: true
@@ -163,10 +164,11 @@ jobs:
             -e BANK_VALIDATE_FAIL_ON_ERRORS \
             -e BANK_TEST_MODE \
             -e BANK_TEST_MANIFEST \
+            -e BANK_JOBS \
             -v "$GITHUB_WORKSPACE:/workspace" \
             -w /workspace \
             "$BANK_CI_IMAGE" \
-            Rscript -e 'source("tests/tests.R")'
+            Rscript tests/run_tests_parallel.R
 
       - name: Audit solution blocks
         if: steps.scope.outputs.mode != 'none'
