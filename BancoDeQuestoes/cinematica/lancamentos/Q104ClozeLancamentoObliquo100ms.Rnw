@@ -20,10 +20,11 @@ img_parts <- c(
   "lancamento_obliquo_100ms.b64.05",
   "lancamento_obliquo_100ms.b64.06"
 )
+invisible(lapply(img_parts, include_supplement))
 img_b64 <- paste(vapply(img_parts, function(f) paste(readLines(f, warn = FALSE), collapse = ""), character(1)), collapse = "")
 img_file <- "lancamento_obliquo_100ms.jpg"
 writeBin(base64enc::base64decode(img_b64), img_file)
-include_supplement(img_file)
+file.remove(img_parts)
 @
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
