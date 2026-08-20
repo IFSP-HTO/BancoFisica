@@ -1,0 +1,44 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Em voos intercontinentais, a tripulação fica exposta a radiação ionizante proveniente de raios cósmicos. Considere que a fase de cruzeiro corresponde a 80\% do tempo anual de trabalho, limitado a 1 000 horas, e que nessa fase a dose média recebida é $2\,\mu\mathrm{Sv/h}$.
+
+Uma radiografia torácica corresponde a uma dose aproximada de $0{,}2\,\mathrm{mSv}$. A dose anual recebida na fase de cruzeiro equivale aproximadamente a quantas radiografias torácicas?
+
+\begin{answerlist}
+  \item 8.
+  \item 10.
+  \item 80.
+  \item 100.
+  \item 1 000.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+O tempo anual na fase de cruzeiro é
+\[
+t=0{,}80\times 1\,000=800\,\mathrm{h}.
+\]
+A dose acumulada é
+\[
+D=2\,\mu\mathrm{Sv/h}\times 800\,\mathrm{h}=1\,600\,\mu\mathrm{Sv}=1{,}6\,\mathrm{mSv}.
+\]
+Como cada radiografia torácica corresponde a $0{,}2\,\mathrm{mSv}$,
+\[
+N=\frac{1{,}6}{0{,}2}=8.
+\]
+
+A alternativa correta é a \textbf{A}.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: ENEM 2023 Q117 (adaptada).
+%% \extype{schoice}
+%% \exsolution{10000}
+%% \exname{Q113QuizRaiosCosmicosDose}
+%% \exsection{Fisica moderna; Radiacao ionizante; Dose de radiacao; Raios cosmicos; ENEM}
+%% \exusepackage[utf8]{inputenc}

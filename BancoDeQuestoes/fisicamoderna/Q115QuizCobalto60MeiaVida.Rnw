@@ -1,0 +1,43 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+O radioisótopo cobalto-60 é utilizado em aplicações médicas e possui meia-vida de aproximadamente $5{,}3\,\mathrm{anos}$. Uma amostra inicialmente contém $2{,}00\,\mathrm{mg}$ desse isótopo e fica armazenada durante $26{,}5\,\mathrm{anos}$.
+
+A massa de cobalto-60 restante ao final desse período é mais próxima de
+
+\begin{answerlist}
+  \item $2{,}00\,\mathrm{mg}$.
+  \item $1{,}00\,\mathrm{mg}$.
+  \item $0{,}40\,\mathrm{mg}$.
+  \item $0{,}13\,\mathrm{mg}$.
+  \item $0{,}06\,\mathrm{mg}$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+O número de meias-vidas transcorridas é
+\[
+n=\frac{26{,}5}{5{,}3}=5.
+\]
+Após $n$ meias-vidas, a massa restante é
+\[
+m=m_0\left(\frac{1}{2}\right)^n.
+\]
+Assim,
+\[
+m=2{,}00\left(\frac{1}{2}\right)^5=\frac{2{,}00}{32}=0{,}0625\,\mathrm{mg}.
+\]
+O valor mais próximo é $0{,}06\,\mathrm{mg}$. A alternativa correta é a \textbf{E}.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: ENEM 2025 Q110 (adaptada).
+%% \extype{schoice}
+%% \exsolution{00001}
+%% \exname{Q115QuizCobalto60MeiaVida}
+%% \exsection{Fisica moderna; Radioatividade; Meia-vida; Cobalto-60; ENEM}
+%% \exusepackage[utf8]{inputenc}
