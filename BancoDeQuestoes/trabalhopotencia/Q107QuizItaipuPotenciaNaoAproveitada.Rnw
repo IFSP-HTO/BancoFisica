@@ -1,0 +1,47 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Uma usina hidrelétrica possui 20 unidades geradoras e potência total instalada de $14\,000\,\mathrm{MW}$. Em cada unidade, a água atravessa uma queda de $118{,}4\,\mathrm{m}$ com vazão de $690\,\mathrm{m^3/s}$. Considere $g=10\,\mathrm{m/s^2}$ e densidade da água $1\,000\,\mathrm{kg/m^3}$.
+
+A potência teórica disponível em cada unidade é calculada pela energia potencial gravitacional da água por unidade de tempo. A potência não aproveitada por unidade é aproximadamente
+
+\begin{answerlist}
+  \item $0\,\mathrm{MW}$.
+  \item $1{,}18\,\mathrm{MW}$.
+  \item $116{,}96\,\mathrm{MW}$.
+  \item $816{,}96\,\mathrm{MW}$.
+  \item $13\,183{,}04\,\mathrm{MW}$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+A vazão mássica em cada unidade é
+\[
+\dot m=\rho Q=1\,000\times 690=690\,000\,\mathrm{kg/s}.
+\]
+A potência gravitacional teórica é
+\[
+P_t=\dot mgh=690\,000\times 10\times 118{,}4=816{,}96\,\mathrm{MW}.
+\]
+A potência instalada por unidade é
+\[
+P_i=\frac{14\,000}{20}=700\,\mathrm{MW}.
+\]
+Logo, a potência não aproveitada é
+\[
+P_t-P_i=816{,}96-700=116{,}96\,\mathrm{MW}.
+\]
+A alternativa correta é a \textbf{C}.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: ENEM 2016 Q59 no caderno 2 (adaptada; numeração varia entre cadernos).
+%% \extype{schoice}
+%% \exsolution{00100}
+%% \exname{Q107QuizItaipuPotenciaNaoAproveitada}
+%% \exsection{Mecanica; Trabalho e potencia; Energia potencial gravitacional; Hidreletrica; ENEM}
+%% \exusepackage[utf8]{inputenc}
