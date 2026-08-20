@@ -1,0 +1,103 @@
+<<echo=FALSE, results=hide>>=
+g <- 10
+v0 <- 100
+costheta <- 0.80
+sentheta <- 0.60
+vx <- v0 * costheta
+vy0 <- v0 * sentheta
+ts <- vy0 / g
+T <- 2 * ts
+A <- vx * T
+H <- vy0^2 / (2 * g)
+vtop <- vx
+vsolo <- v0
+img_parts <- c(
+  "lancamento_obliquo_100ms.b64.01",
+  "lancamento_obliquo_100ms.b64.02a",
+  "lancamento_obliquo_100ms.b64.02b",
+  "lancamento_obliquo_100ms.b64.03",
+  "lancamento_obliquo_100ms.b64.04",
+  "lancamento_obliquo_100ms.b64.05",
+  "lancamento_obliquo_100ms.b64.06"
+)
+img_b64 <- paste(vapply(img_parts, function(f) paste(readLines(f, warn = FALSE), collapse = ""), character(1)), collapse = "")
+img_file <- "lancamento_obliquo_100ms.jpg"
+writeBin(base64enc::base64decode(img_b64), img_file)
+include_supplement(img_file)
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+
+Um corpo é lançado de um ponto O do solo com velocidade inicial $\vec{v}_0$, que forma com a horizontal um ângulo $\theta$, como indica a figura, tal que $\cos\theta=0{,}80$ e $\sen\theta=0{,}60$. Sendo $v_0=100\,\mathrm{m/s}$ e $g=10\,\mathrm{m/s^2}$, despreze a resistência do ar e determine:
+
+\begin{center}
+\includegraphics[width=8.0cm,keepaspectratio]{lancamento_obliquo_100ms.jpg}
+\end{center}
+
+\begin{answerlist}
+  \item o instante em que o corpo atinge o ponto mais alto da trajetória, em $\mathrm{s}$;
+  \item o instante em que o corpo está de volta ao solo, em $\mathrm{s}$;
+  \item o alcance horizontal $A$, em $\mathrm{m}$;
+  \item a altura máxima $H$, em $\mathrm{m}$;
+  \item a velocidade escalar do corpo no ponto de altura máxima, em $\mathrm{m/s}$;
+  \item a velocidade escalar do corpo no instante em que toca o solo, em $\mathrm{m/s}$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+As componentes da velocidade inicial são
+\[
+v_{0x}=v_0\cos\theta=100\cdot0{,}80=80\,\mathrm{m/s},
+\]
+\[
+v_{0y}=v_0\sen\theta=100\cdot0{,}60=60\,\mathrm{m/s}.
+\]
+O tempo de subida é
+\[
+t_s=\frac{v_{0y}}{g}=\frac{60}{10}=6\,\mathrm{s}.
+\]
+Como o corpo retorna ao mesmo nível,
+\[
+T=2t_s=12\,\mathrm{s}.
+\]
+O alcance é
+\[
+A=v_{0x}T=80\cdot12=960\,\mathrm{m}.
+\]
+A altura máxima é
+\[
+H=\frac{v_{0y}^2}{2g}=\frac{60^2}{20}=180\,\mathrm{m}.
+\]
+No ponto mais alto, $v_y=0$, de modo que a velocidade escalar é
+\[
+v=v_x=80\,\mathrm{m/s}.
+\]
+Ao retornar ao mesmo nível de lançamento, e desprezando a resistência do ar, o módulo da velocidade é igual ao inicial:
+\[
+v=100\,\mathrm{m/s}.
+\]
+
+\begin{answerlist}
+  \item $6\,\mathrm{s}$
+  \item $12\,\mathrm{s}$
+  \item $960\,\mathrm{m}$
+  \item $180\,\mathrm{m}$
+  \item $80\,\mathrm{m/s}$
+  \item $100\,\mathrm{m/s}$
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{6|12|960|180|80|100}
+%% \exclozetype{num|num|num|num|num|num}
+%% \extol{0.05|0.05|0.5|0.5|0.05|0.05}
+%% \exname{Q104ClozeLancamentoObliquo100ms}
+%% \exsection{Mecanica; Cinematica; Lancamento obliquo}
+%% \exusepackage[utf8]{inputenc}
+%% Figura extraida diretamente do PDF-fonte fornecido, sem redesenho.

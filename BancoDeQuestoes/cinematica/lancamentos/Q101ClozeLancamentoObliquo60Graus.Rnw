@@ -1,0 +1,69 @@
+<<echo=FALSE, results=hide>>=
+g <- 10
+v0 <- 10
+sen60 <- 0.86
+cos60 <- 0.50
+vx <- v0 * cos60
+vy0 <- v0 * sen60
+ts <- vy0 / g
+H <- vy0^2 / (2 * g)
+A <- vx * (2 * ts)
+fmt <- function(x, d = 2) formatC(x, format = "f", digits = d, decimal.mark = ",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Um corpo é lançado obliquamente a partir do solo, no vácuo, sob ângulo de $60^\circ$ com a horizontal e com velocidade de $10\,\mathrm{m/s}$. Adotando $g=10\,\mathrm{m/s^2}$, $\sen 60^\circ=\sen 120^\circ=0{,}86$ e $\cos 60^\circ=0{,}50$, determine:
+
+\begin{answerlist}
+  \item a velocidade escalar mínima assumida pelo corpo, em $\mathrm{m/s}$;
+  \item o instante em que o corpo atinge o ponto mais alto da trajetória, em $\mathrm{s}$;
+  \item a altura máxima atingida pelo corpo, em $\mathrm{m}$;
+  \item o alcance do lançamento, em $\mathrm{m}$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+A componente horizontal da velocidade permanece constante:
+\[
+v_x=v_0\cos60^\circ=10\cdot0{,}50=5\,\mathrm{m/s}.
+\]
+No ponto mais alto, $v_y=0$, portanto a velocidade escalar mínima é $v_x=5\,\mathrm{m/s}$.
+
+A componente vertical inicial é
+\[
+v_{0y}=v_0\sen60^\circ=10\cdot0{,}86=8{,}6\,\mathrm{m/s}.
+\]
+Logo, o tempo de subida é
+\[
+t_s=\frac{v_{0y}}{g}=\frac{8{,}6}{10}=0{,}86\,\mathrm{s}.
+\]
+A altura máxima é
+\[
+H=\frac{v_{0y}^2}{2g}=\frac{8{,}6^2}{20}\approx3{,}7\,\mathrm{m}.
+\]
+Como o projétil retorna ao mesmo nível, o tempo total é $T=2t_s=1{,}72\,\mathrm{s}$ e
+\[
+A=v_xT=5\cdot1{,}72=8{,}6\,\mathrm{m}.
+\]
+
+\begin{answerlist}
+  \item $5\,\mathrm{m/s}$
+  \item $0{,}86\,\mathrm{s}$
+  \item $3{,}7\,\mathrm{m}$
+  \item $8{,}6\,\mathrm{m}$
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{5|0.86|3.7|8.6}
+%% \exclozetype{num|num|num|num}
+%% \extol{0.05|0.02|0.05|0.05}
+%% \exname{Q101ClozeLancamentoObliquo60Graus}
+%% \exsection{Mecanica; Cinematica; Lancamento obliquo}
+%% \exusepackage[utf8]{inputenc}
