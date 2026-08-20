@@ -1,0 +1,49 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Um tijolo de massa $2{,}5\,\mathrm{kg}$ cai em queda livre de uma altura de $5\,\mathrm{m}$ e atinge um capacete. Considere $g=10\,\mathrm{m/s^2}$, despreze a resistência do ar e suponha que o impacto dure $0{,}5\,\mathrm{s}$, levando o tijolo ao repouso.
+
+A força impulsiva média associada ao impacto equivale aproximadamente ao peso de quantos tijolos iguais?
+
+\begin{answerlist}
+  \item 2.
+  \item 5.
+  \item 10.
+  \item 20.
+  \item 50.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Antes do impacto, a velocidade do tijolo é obtida por
+\[
+v^2=2gh=2\times 10\times 5=100,
+\]
+portanto $v=10\,\mathrm{m/s}$.
+
+O módulo da variação da quantidade de movimento é
+\[
+|\Delta p|=mv=2{,}5\times 10=25\,\mathrm{kg\,m/s}.
+\]
+A força impulsiva média vale
+\[
+F_{\mathrm{m}}=\frac{|\Delta p|}{\Delta t}=\frac{25}{0{,}5}=50\,\mathrm{N}.
+\]
+O peso de um tijolo é
+\[
+P=mg=2{,}5\times 10=25\,\mathrm{N}.
+\]
+Assim, $50/25=2$. A alternativa correta é a \textbf{A}.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: ENEM 2019 Q118 (adaptada).
+%% \extype{schoice}
+%% \exsolution{10000}
+%% \exname{Q91QuizTijoloCapaceteImpulso}
+%% \exsection{Mecanica; Quantidade de movimento; Impulso; Colisoes; ENEM}
+%% \exusepackage[utf8]{inputenc}
