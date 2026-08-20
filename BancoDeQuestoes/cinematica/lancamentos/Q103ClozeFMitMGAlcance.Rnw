@@ -5,12 +5,15 @@ sen60 <- 0.87
 cos60 <- 0.5
 T <- 2 * v0 * sen60 / g
 A <- v0 * cos60 * T
-b64_file <- "fmit_mg_lancamento_bola.b64"
-include_supplement(b64_file)
-img_b64 <- paste(readLines(b64_file, warn = FALSE), collapse = "")
+img_parts <- c(
+  "fmit_mg_lancamento_bola_moodle_v2.b64.01",
+  "fmit_mg_lancamento_bola_moodle.b64.02"
+)
+invisible(lapply(img_parts, include_supplement))
+img_b64 <- paste(vapply(img_parts, function(f) paste(readLines(f, warn = FALSE), collapse = ""), character(1)), collapse = "")
 img_file <- "fmit_mg_lancamento_bola.jpg"
 writeBin(base64enc::base64decode(img_b64), img_file)
-file.remove(b64_file)
+file.remove(img_parts)
 @
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
