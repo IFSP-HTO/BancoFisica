@@ -1,0 +1,31 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Uma bomba atômica de urânio utiliza uma reação nuclear em cadeia. Esse processo recebe esse nome porque, na fissão do núcleo de $^{235}\mathrm{U}$,
+
+\begin{answerlist}
+  \item o calor liberado provoca diretamente novas fissões em outros núcleos.
+  \item a energia liberada transforma $^{238}\mathrm{U}$ em $^{235}\mathrm{U}$.
+  \item são liberados nêutrons capazes de provocar a fissão de outros núcleos de $^{235}\mathrm{U}$.
+  \item ocorre fusão entre núcleos de urânio, com emissão de neutrinos que iniciam novas reações.
+  \item formam-se núcleos mais pesados que passam a sofrer sucessivas fusões.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Na fissão de um núcleo de $^{235}\mathrm{U}$, além da energia liberada, são emitidos nêutrons. Esses nêutrons podem atingir outros núcleos físseis e provocar novas fissões, que liberam novos nêutrons.
+
+Essa multiplicação sucessiva caracteriza uma \textbf{reação em cadeia}. Portanto, a alternativa correta é a \textbf{C}.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: ENEM 2015 Q73 (adaptada).
+%% \extype{schoice}
+%% \exsolution{00100}
+%% \exname{Q109QuizReacaoCadeiaUranio}
+%% \exsection{Fisica moderna; Fisica nuclear; Fissao nuclear; Reacao em cadeia; ENEM}
+%% \exusepackage[utf8]{inputenc}
