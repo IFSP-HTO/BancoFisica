@@ -1,0 +1,69 @@
+<<echo=FALSE, results=hide>>=
+g <- 10
+v0 <- 8.0
+sen60 <- 0.87
+cos60 <- 0.5
+T <- 2 * v0 * sen60 / g
+A <- v0 * cos60 * T
+img_parts <- c(
+  "fmit_mg_lancamento_bola_moodle_v2.b64.01",
+  "fmit_mg_lancamento_bola_moodle.b64.02"
+)
+invisible(lapply(img_parts, include_supplement))
+img_b64 <- paste(vapply(img_parts, function(f) paste(readLines(f, warn = FALSE), collapse = ""), character(1)), collapse = "")
+img_file <- "fmit_mg_lancamento_bola.jpg"
+writeBin(base64enc::base64decode(img_b64), img_file)
+file.remove(img_parts)
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+
+(FMIt-MG) Uma bola está parada sobre o gramado de um campo horizontal, na posição A. Um jogador chuta a bola para cima, imprimindo-lhe velocidade $\vec{v}_0$ de módulo $8{,}0\,\mathrm{m/s}$, fazendo com a horizontal um ângulo de $60^\circ$, como mostra a figura. A bola sobe e desce, atingindo o solo novamente, na posição B. Desprezando-se a resistência do ar, qual será a distância entre as posições A e B? (Use $g=10\,\mathrm{m/s^2}$, $\mathrm{sen}\,60^\circ=0{,}87$ e $\cos60^\circ=0{,}5$.)
+
+\begin{center}
+\includegraphics[width=8.0cm,keepaspectratio]{fmit_mg_lancamento_bola.jpg}
+\end{center}
+
+Determine a distância entre A e B, em metros.
+
+\begin{answerlist}
+  \item distância $AB$, em $\mathrm{m}$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+As componentes da velocidade inicial são
+\[
+v_{0x}=v_0\cos60^\circ=8{,}0\cdot0{,}5=4{,}0\,\mathrm{m/s},
+\]
+\[
+v_{0y}=v_0\,\mathrm{sen}\,60^\circ=8{,}0\cdot0{,}87=6{,}96\,\mathrm{m/s}.
+\]
+Como a bola retorna ao mesmo nível, o tempo total de voo é
+\[
+T=\frac{2v_{0y}}{g}=\frac{2\cdot6{,}96}{10}=1{,}392\,\mathrm{s}.
+\]
+Assim, o alcance horizontal é
+\[
+A=v_{0x}T=4{,}0\cdot1{,}392=5{,}568\,\mathrm{m}\approx5{,}6\,\mathrm{m}.
+\]
+
+\begin{answerlist}
+  \item $5{,}6\,\mathrm{m}$
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{5.6}
+%% \exclozetype{num}
+%% \extol{0.05}
+%% \exname{Q103ClozeFMitMGAlcance}
+%% \exsection{Mecanica; Cinematica; Lancamento obliquo; Vestibular}
+%% \exusepackage[utf8]{inputenc}
+%% Figura extraida diretamente do PDF-fonte fornecido, sem redesenho.

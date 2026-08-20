@@ -1,0 +1,75 @@
+<<echo=FALSE, results=hide>>=
+g <- 10
+H <- 20
+vtop <- 5
+vy0 <- sqrt(2 * g * H)
+ts <- vy0 / g
+T <- 2 * ts
+v0 <- sqrt(vtop^2 + vy0^2)
+costheta <- vtop / v0
+A <- vtop * T
+fmt <- function(x, d = 2) formatC(x, format = "f", digits = d, decimal.mark = ",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+No lançamento oblíquo de um projétil, a altura máxima é $20\,\mathrm{m}$. No ponto mais alto da trajetória, a velocidade escalar do projétil é $5\,\mathrm{m/s}$. Desprezando a resistência do ar e adotando $g=10\,\mathrm{m/s^2}$, determine:
+
+\begin{answerlist}
+  \item o tempo total do movimento e o tempo de subida, em $\mathrm{s}$;
+  \item a velocidade escalar de lançamento, em $\mathrm{m/s}$;
+  \item o ângulo de tiro expresso pelo valor de $\cos\theta$;
+  \item o alcance do lançamento, em $\mathrm{m}$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+No ponto mais alto, a componente vertical da velocidade é nula. Assim, a velocidade de $5\,\mathrm{m/s}$ corresponde à componente horizontal constante:
+\[
+v_x=5\,\mathrm{m/s}.
+\]
+Da altura máxima,
+\[
+0=v_{0y}^2-2gH \quad\Rightarrow\quad v_{0y}=\sqrt{2gH}=\sqrt{2\cdot10\cdot20}=20\,\mathrm{m/s}.
+\]
+O tempo de subida é
+\[
+t_s=\frac{v_{0y}}{g}=2\,\mathrm{s},
+\]
+e, como o projétil retorna ao mesmo nível,
+\[
+T=2t_s=4\,\mathrm{s}.
+\]
+A velocidade de lançamento é
+\[
+v_0=\sqrt{v_x^2+v_{0y}^2}=\sqrt{5^2+20^2}=\sqrt{425}\approx20{,}6\,\mathrm{m/s}.
+\]
+Como $v_x=v_0\cos\theta$,
+\[
+\cos\theta=\frac{5}{20{,}6}\approx0{,}24.
+\]
+Finalmente,
+\[
+A=v_xT=5\cdot4=20\,\mathrm{m}.
+\]
+
+\begin{answerlist}
+  \item $4\,\mathrm{s}$ e $2\,\mathrm{s}$
+  \item $20{,}6\,\mathrm{m/s}$
+  \item $\cos\theta\approx0{,}24$
+  \item $20\,\mathrm{m}$
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{4|2|20.6|0.24|20}
+%% \exclozetype{num|num|num|num|num}
+%% \extol{0.02|0.02|0.1|0.02|0.05}
+%% \exname{Q102ClozeLancamentoObliquoAlturaConhecida}
+%% \exsection{Mecanica; Cinematica; Lancamento obliquo}
+%% \exusepackage[utf8]{inputenc}
