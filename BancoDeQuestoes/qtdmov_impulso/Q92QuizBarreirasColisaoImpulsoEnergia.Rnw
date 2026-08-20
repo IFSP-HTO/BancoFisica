@@ -1,0 +1,44 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Duas barreiras de segurança são comparadas em colisões de mesma duração. Na primeira, feita com pneus, um veículo retorna após o impacto com velocidade de módulo menor que a inicial. Na segunda, formada por blocos deformáveis, o veículo para ao final da colisão.
+
+Comparando os módulos da força média exercida sobre o veículo e a energia mecânica dissipada, é correto afirmar que
+
+\begin{answerlist}
+  \item a força média é maior na barreira de pneus, e a energia dissipada é maior na barreira deformável.
+  \item a força média e a energia dissipada são maiores na barreira de pneus.
+  \item a força média é maior na barreira deformável, e a energia dissipada é maior na barreira de pneus.
+  \item a força média e a energia dissipada são maiores na barreira deformável.
+  \item as duas barreiras produzem a mesma força média e dissipam a mesma energia.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Como o intervalo de tempo de colisão é o mesmo, o módulo da força média é proporcional ao módulo do impulso:
+\[
+F_{\mathrm{m}}=\frac{|\Delta p|}{\Delta t}.
+\]
+
+Na barreira de pneus, o veículo inverte o sentido do movimento. Se a velocidade inicial é $v_i$ e a velocidade de retorno tem módulo $v_f$, então
+\[
+|\Delta p|=m(v_i+v_f),
+\]
+que é maior que $mv_i$, o impulso necessário para apenas parar o veículo. Logo, a força média é maior na barreira de pneus.
+
+Quanto à energia, a barreira deformável deixa o veículo em repouso e, portanto, dissipa toda a energia cinética inicial. Na barreira de pneus, sobra energia cinética associada ao movimento de retorno. Assim, a energia dissipada é maior na barreira deformável.
+
+A alternativa correta é a \textbf{A}.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: ENEM 2022 Q132 (adaptada).
+%% \extype{schoice}
+%% \exsolution{10000}
+%% \exname{Q92QuizBarreirasColisaoImpulsoEnergia}
+%% \exsection{Mecanica; Quantidade de movimento; Impulso; Colisoes; Energia cinetica; ENEM}
+%% \exusepackage[utf8]{inputenc}
