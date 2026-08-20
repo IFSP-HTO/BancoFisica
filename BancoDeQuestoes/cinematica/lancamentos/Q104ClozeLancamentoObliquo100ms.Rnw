@@ -31,7 +31,7 @@ file.remove(img_parts)
 
 \begin{question}
 
-Um corpo é lançado de um ponto O do solo com velocidade inicial $\vec{v}_0$, que forma com a horizontal um ângulo $\theta$, como indica a figura, tal que $\cos\theta=0{,}80$ e $\sen\theta=0{,}60$. Sendo $v_0=100\,\mathrm{m/s}$ e $g=10\,\mathrm{m/s^2}$, despreze a resistência do ar e determine:
+Um corpo é lançado de um ponto O do solo com velocidade inicial $\vec{v}_0$, que forma com a horizontal um ângulo $\theta$, como indica a figura, tal que $\cos\theta=0{,}80$ e $\mathrm{sen}\,\theta=0{,}60$. Sendo $v_0=100\,\mathrm{m/s}$ e $g=10\,\mathrm{m/s^2}$, despreze a resistência do ar e determine:
 
 \begin{center}
 \includegraphics[width=8.0cm,keepaspectratio]{lancamento_obliquo_100ms.jpg}
@@ -55,7 +55,7 @@ As componentes da velocidade inicial são
 v_{0x}=v_0\cos\theta=100\cdot0{,}80=80\,\mathrm{m/s},
 \]
 \[
-v_{0y}=v_0\sen\theta=100\cdot0{,}60=60\,\mathrm{m/s}.
+v_{0y}=v_0\,\mathrm{sen}\,\theta=100\cdot0{,}60=60\,\mathrm{m/s}.
 \]
 O tempo de subida é
 \[
