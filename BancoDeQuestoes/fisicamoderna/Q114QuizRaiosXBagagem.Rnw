@@ -1,0 +1,35 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Em aeroportos, computadores portáteis devem ser retirados de malas ou mochilas para passar separadamente pelo equipamento de inspeção por raios X.
+
+A justificativa física para esse procedimento é que
+
+\begin{answerlist}
+  \item os raios X não interagem com metais, impedindo qualquer formação de imagem.
+  \item os raios X desmagnetizam discos rígidos ao sofrer refração em componentes metálicos.
+  \item os raios X aquecem intensamente os metais ao serem refletidos pelo computador.
+  \item componentes densos do computador atenuam fortemente os raios X e podem ocultar objetos posicionados à frente ou atrás deles.
+  \item os raios X ionizam os metais das bagagens somente após sofrerem difração no computador.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+A formação da imagem por raios X depende da intensidade de radiação que atravessa os materiais. Componentes densos e espessos do computador absorvem ou atenuam uma parcela significativa dos raios X.
+
+Se o notebook permanecer dentro da bagagem, essa forte atenuação pode dificultar a visualização de outros objetos sobrepostos na direção do feixe. Por isso, ele é inspecionado separadamente.
+
+A alternativa correta é a \textbf{D}.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: ENEM 2024 Q120 (adaptada).
+%% \extype{schoice}
+%% \exsolution{00010}
+%% \exname{Q114QuizRaiosXBagagem}
+%% \exsection{Fisica moderna; Raios X; Radiacao eletromagnetica; Atenuacao; ENEM}
+%% \exusepackage[utf8]{inputenc}
