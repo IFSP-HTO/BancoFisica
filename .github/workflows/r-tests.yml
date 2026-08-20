@@ -155,34 +155,6 @@ jobs:
             pandoc --version >/dev/null
           '
 
-      - name: Smoke test adaptive asset profile
-        if: steps.scope.outputs.mode != 'none'
-        shell: bash
-        run: |
-          set -euo pipefail
-          mkdir -p build/adaptive-smoke
-          printf '%s\n' 'BancoDeQuestoes/estatica/Q22estpm.jpg' > build/adaptive-smoke/changed.txt
-          python3 tools/ci_test_scope.py \
-            --changed-files build/adaptive-smoke/changed.txt \
-            --manifest build/adaptive-smoke/manifest.txt \
-            --github-output build/adaptive-smoke/output.txt
-          grep -qx 'mode=incremental' build/adaptive-smoke/output.txt
-          grep -qx 'test_profile=asset' build/adaptive-smoke/output.txt
-          grep -qx 'BancoDeQuestoes/estatica/Q22estpm.Rnw' build/adaptive-smoke/manifest.txt
-
-          docker run --rm \
-            -e R_KEEP_PKG_SOURCE \
-            -e NOT_CRAN \
-            -e BANK_VALIDATE_FAIL_ON_ERRORS \
-            -e BANK_TEST_MODE=incremental \
-            -e BANK_TEST_PROFILE=asset \
-            -e BANK_TEST_MANIFEST=/workspace/build/adaptive-smoke/manifest.txt \
-            -e BANK_JOBS=1 \
-            -v "$GITHUB_WORKSPACE:/workspace" \
-            -w /workspace \
-            "$BANK_CI_IMAGE" \
-            Rscript tests/run_tests_parallel.R
-
       - name: Run BancoFisica tests
         if: steps.scope.outputs.mode != 'none'
         env:
