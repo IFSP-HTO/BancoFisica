@@ -1,0 +1,115 @@
+name: CI adaptive profile benchmark
+
+on:
+  pull_request:
+    paths:
+      - tools/ci_test_scope.py
+      - tools/test_ci_test_scope.py
+      - tests/run_tests_parallel.R
+      - .github/workflows/r-tests.yml
+      - .github/workflows/ci-benchmark-adaptive.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: read
+
+env:
+  BANK_CI_IMAGE_REPO: ghcr.io/ifsp-hto/bancofisica-ci
+  R_KEEP_PKG_SOURCE: yes
+  NOT_CRAN: true
+  BANK_VALIDATE_FAIL_ON_ERRORS: true
+
+jobs:
+  benchmark:
+    name: profile=${{ matrix.profile }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        profile: [full, asset]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Validate selector and real asset mapping
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 tools/test_ci_test_scope.py
+          mkdir -p build/adaptive-benchmark
+          printf '%s\n' 'BancoDeQuestoes/estatica/Q22estpm.jpg' > build/adaptive-benchmark/changed.txt
+          python3 tools/ci_test_scope.py \
+            --changed-files build/adaptive-benchmark/changed.txt \
+            --manifest build/adaptive-benchmark/asset-manifest.txt \
+            --github-output build/adaptive-benchmark/asset-output.txt
+          grep -qx 'mode=incremental' build/adaptive-benchmark/asset-output.txt
+          grep -qx 'test_profile=asset' build/adaptive-benchmark/asset-output.txt
+          grep -qx 'BancoDeQuestoes/estatica/Q22estpm.Rnw' build/adaptive-benchmark/asset-manifest.txt
+
+      - name: Select benchmark manifest
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 tools/ci_test_scope.py \
+            --full \
+            --manifest build/adaptive-benchmark/full-manifest.txt
+          head -n 20 build/adaptive-benchmark/full-manifest.txt > build/adaptive-benchmark/benchmark-manifest.txt
+          test "$(wc -l < build/adaptive-benchmark/benchmark-manifest.txt)" -eq 20
+
+      - name: Select prebuilt CI image
+        shell: bash
+        run: |
+          set -euo pipefail
+          fingerprint="$(sha256sum docker/ci/Dockerfile DESCRIPTION | sha256sum | awk '{print $1}')"
+          echo "BANK_CI_IMAGE=${BANK_CI_IMAGE_REPO}:env-${fingerprint}" >> "$GITHUB_ENV"
+
+      - name: Log in to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ github.token }}
+
+      - name: Pull CI image
+        run: docker pull "$BANK_CI_IMAGE"
+
+      - name: Run adaptive profile benchmark
+        shell: bash
+        env:
+          BANK_TEST_PROFILE: ${{ matrix.profile }}
+        run: |
+          set -euo pipefail
+          started="$(date +%s)"
+
+          docker run --rm --init \
+            -e R_KEEP_PKG_SOURCE \
+            -e NOT_CRAN \
+            -e BANK_VALIDATE_FAIL_ON_ERRORS \
+            -e BANK_TEST_MODE=incremental \
+            -e BANK_TEST_PROFILE \
+            -e BANK_TEST_MANIFEST=/workspace/build/adaptive-benchmark/benchmark-manifest.txt \
+            -e BANK_JOBS=4 \
+            -v "$GITHUB_WORKSPACE:/workspace" \
+            -w /workspace \
+            "$BANK_CI_IMAGE" \
+            Rscript tests/run_tests_parallel.R
+
+          finished="$(date +%s)"
+          elapsed=$((finished - started))
+          minutes=$((elapsed / 60))
+          seconds=$((elapsed % 60))
+
+          echo "### Adaptive test profile benchmark" >> "$GITHUB_STEP_SUMMARY"
+          echo "- **Profile:** $BANK_TEST_PROFILE" >> "$GITHUB_STEP_SUMMARY"
+          echo "- **Questions:** 20" >> "$GITHUB_STEP_SUMMARY"
+          echo "- **BANK_JOBS:** 4" >> "$GITHUB_STEP_SUMMARY"
+          echo "- **Elapsed:** ${minutes}m ${seconds}s" >> "$GITHUB_STEP_SUMMARY"
+          if [[ "$BANK_TEST_PROFILE" == "full" ]]; then
+            echo "- **Expected compile tasks:** 80 (60 XML + 20 PDF)" >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "- **Expected compile tasks:** 40 (20 XML + 20 PDF)" >> "$GITHUB_STEP_SUMMARY"
+          fi

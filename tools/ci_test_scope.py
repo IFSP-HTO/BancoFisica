@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import os
+import re
 from pathlib import Path, PurePosixPath
 
 GLOBAL_PREFIXES = (
@@ -24,13 +25,26 @@ GLOBAL_EXACT = {
 }
 GLOBAL_SUFFIXES = (".sty", ".cls", ".tex")
 
+# Static support files for which changing the file itself cannot alter the
+# question's random parameter generation. A reduced XML seed profile is only
+# allowed when every BancoDeQuestoes change is one of these assets and each
+# dependency can be mapped exactly to current question consumers.
+STATIC_ASSET_SUFFIXES = {
+    ".png",
+    ".jpg",
+    ".jpeg",
+    ".gif",
+    ".svg",
+    ".webp",
+    ".pdf",
+}
+
 
 def normalize_changed_path(raw: str) -> str:
     path = raw.strip().replace("\\", "/")
-    # Remove only an explicit relative-path prefix.  str.lstrip("./") is not
-    # appropriate here: it treats its argument as a *set of characters* and
-    # therefore turns ".github/..." into "github/...", preventing workflow
-    # changes from matching GLOBAL_EXACT.
+    # Remove only an explicit relative-path prefix. str.lstrip("./") is not
+    # appropriate here: it treats its argument as a set of characters and
+    # therefore turns ".github/..." into "github/...".
     while path.startswith("./"):
         path = path[2:]
     return path
@@ -72,7 +86,8 @@ def topic_questions(repo_root: Path, topic: str) -> list[str]:
 def read_question_text(path: Path) -> str:
     # Rnw files are expected to be UTF-8, but legacy questions occasionally contain
     # bytes from older encodings. Replacement keeps dependency discovery conservative
-    # without making scope detection itself fail.
+    # without making scope detection itself fail. Backslashes are normalized because
+    # path matching elsewhere in this module is POSIX-style.
     return path.read_text(encoding="utf-8", errors="replace").replace("\\", "/")
 
 
@@ -103,6 +118,38 @@ def asset_reference_tokens(repo_root: Path, question_path: Path, asset_path: str
         pass
 
     return {token for token in tokens if token}
+
+
+def has_direct_static_asset_reference(
+    repo_root: Path, question: str, asset_path: str, text: str
+) -> bool:
+    """Require strong evidence that an asset is included independently of a seed.
+
+    General dependency discovery intentionally accepts broad literal matches so CI can
+    over-select safely. The reduced `asset` profile is stricter: the current Rnw must
+    contain both a literal include_supplement("...") call and a literal
+    \includegraphics{...} reference to the same changed file (possibly using different
+    equivalent path forms). Dynamic/conditional constructions therefore fall back to
+    the historical full multi-seed profile.
+    """
+    question_path = repo_root / question
+    tokens = asset_reference_tokens(repo_root, question_path, asset_path)
+
+    has_supplement = False
+    has_graphics = False
+    for token in tokens:
+        escaped = re.escape(token)
+        supplement = re.compile(
+            rf"include_supplement\s*\(\s*([\"']){escaped}\1"
+        )
+        # read_question_text() normalizes the LaTeX backslash to '/'.
+        graphics = re.compile(
+            rf"/includegraphics\s*(?:\[[^\]]*\]\s*)?\{{\s*{escaped}\s*\}}"
+        )
+        has_supplement = has_supplement or bool(supplement.search(text))
+        has_graphics = has_graphics or bool(graphics.search(text))
+
+    return has_supplement and has_graphics
 
 
 def load_question_texts(repo_root: Path) -> dict[str, str]:
@@ -224,6 +271,55 @@ def choose_scope(repo_root: Path, changed_paths: list[str], force_full: bool = F
     return "none", [], "no question or shared compilation dependency changed"
 
 
+def choose_test_profile(repo_root: Path, changed_paths: list[str], mode: str) -> str:
+    """Choose compilation intensity independently from question scope.
+
+    `asset` is deliberately narrow: it is allowed only for an incremental run
+    consisting exclusively of static BancoDeQuestoes assets whose consumers can
+    be resolved exactly and whose Rnw contains direct static supplement/graphics
+    references. Any question source, dynamic support file, unresolved dependency
+    or global change keeps the historical full seed profile.
+    """
+    if mode == "none":
+        return "none"
+    if mode != "incremental":
+        return "full"
+
+    changed = [normalize_changed_path(path) for path in changed_paths]
+    bank_changes = [path for path in changed if path.startswith("BancoDeQuestoes/")]
+    if not bank_changes:
+        return "full"
+
+    question_texts: dict[str, str] | None = None
+    for path in bank_changes:
+        pure = PurePosixPath(path)
+        suffix = pure.suffix.lower()
+        if suffix == ".rnw" or suffix not in STATIC_ASSET_SUFFIXES:
+            return "full"
+
+        if question_texts is None:
+            question_texts = load_question_texts(repo_root)
+        referenced, exact = support_asset_scope(repo_root, pure.as_posix(), question_texts)
+        # A reduced profile is useful only when there is at least one exact
+        # consumer. Unmapped/deleted-unused assets stay conservative (or select
+        # no questions anyway).
+        if not exact or not referenced:
+            return "full"
+
+        # Broad literal matching is sufficient for safe over-selection, but not
+        # for reducing seed coverage. Require a direct, static inclusion pattern
+        # in every selected consumer before using the reduced profile.
+        if any(
+            not has_direct_static_asset_reference(
+                repo_root, question, pure.as_posix(), question_texts[question]
+            )
+            for question in referenced
+        ):
+            return "full"
+
+    return "asset"
+
+
 def read_changed_files(path: Path) -> list[str]:
     if not path.exists():
         raise FileNotFoundError(f"changed-files list not found: {path}")
@@ -236,11 +332,12 @@ def write_manifest(path: Path, questions: list[str]) -> None:
     path.write_text(text, encoding="utf-8")
 
 
-def append_github_output(path: Path, mode: str, count: int, reason: str) -> None:
+def append_github_output(path: Path, mode: str, count: int, reason: str, test_profile: str) -> None:
     with path.open("a", encoding="utf-8") as handle:
         handle.write(f"mode={mode}\n")
         handle.write(f"question_count={count}\n")
         handle.write(f"reason={reason}\n")
+        handle.write(f"test_profile={test_profile}\n")
 
 
 def main() -> int:
@@ -258,12 +355,16 @@ def main() -> int:
 
     changed_paths = [] if args.full else read_changed_files(Path(args.changed_files))
     mode, questions, reason = choose_scope(repo_root, changed_paths, force_full=args.full)
+    test_profile = choose_test_profile(repo_root, changed_paths, mode)
 
     write_manifest(Path(args.manifest), questions)
     if args.github_output:
-        append_github_output(Path(args.github_output), mode, len(questions), reason)
+        append_github_output(
+            Path(args.github_output), mode, len(questions), reason, test_profile
+        )
 
     print(f"CI test scope: {mode} ({len(questions)} question(s))")
+    print(f"Test profile: {test_profile}")
     print(f"Reason: {reason}")
     for question in questions:
         print(question)

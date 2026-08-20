@@ -88,6 +88,7 @@ jobs:
         run: |
           echo "### BancoFisica test scope" >> "$GITHUB_STEP_SUMMARY"
           echo "- Mode: **${{ steps.scope.outputs.mode }}**" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Test profile: **${{ steps.scope.outputs.test_profile }}**" >> "$GITHUB_STEP_SUMMARY"
           echo "- Questions selected: **${{ steps.scope.outputs.question_count }}**" >> "$GITHUB_STEP_SUMMARY"
           echo "- Reason: ${{ steps.scope.outputs.reason }}" >> "$GITHUB_STEP_SUMMARY"
           if [[ -s build/ci-test-files.txt ]]; then
@@ -158,6 +159,7 @@ jobs:
         if: steps.scope.outputs.mode != 'none'
         env:
           BANK_TEST_MODE: ${{ steps.scope.outputs.mode }}
+          BANK_TEST_PROFILE: ${{ steps.scope.outputs.test_profile }}
           BANK_TEST_MANIFEST: build/ci-test-files.txt
         run: |
           docker run --rm \
@@ -165,6 +167,7 @@ jobs:
             -e NOT_CRAN \
             -e BANK_VALIDATE_FAIL_ON_ERRORS \
             -e BANK_TEST_MODE \
+            -e BANK_TEST_PROFILE \
             -e BANK_TEST_MANIFEST \
             -e BANK_JOBS \
             -v "$GITHUB_WORKSPACE:/workspace" \

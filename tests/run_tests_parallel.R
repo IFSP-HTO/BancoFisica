@@ -30,6 +30,14 @@ parse_jobs <- function(env_var = "BANK_JOBS", default = 1L) {
   jobs
 }
 
+parse_test_profile <- function(env_var = "BANK_TEST_PROFILE", default = "full") {
+  profile <- trimws(tolower(Sys.getenv(env_var, unset = default)))
+  if (!profile %in% c("full", "asset")) {
+    stop("Invalid ", env_var, ": use 'full' or 'asset'")
+  }
+  profile
+}
+
 run_compile_tasks <- function(tasks, jobs) {
   if (length(tasks) == 0L) {
     return(list())
@@ -59,21 +67,28 @@ run_compile_tasks <- function(tasks, jobs) {
   })
 }
 
-generate_xml_parallel <- function(files = get_bank_test_files(), jobs = parse_jobs()) {
+generate_xml_parallel <- function(
+    files = get_bank_test_files(), jobs = parse_jobs(), profile = parse_test_profile()) {
   if (length(files) == 0L) {
     message("No affected questions: skipping Moodle XML compilation")
     return(invisible(NULL))
   }
 
-  ## BANK_JOBS=1 delegates to the canonical implementation byte-for-byte.
-  if (jobs <= 1L) {
+  ## Full + serial delegates to the historical implementation unchanged.
+  if (jobs <= 1L && identical(profile, "full")) {
     return(generate_xml(files))
   }
 
   arquivos <- data.frame(file = files, stringsAsFactors = FALSE)
   ano <- 2018
   xml_seeds <- parse_seed_list()
-  message("Validating Moodle XML with seeds: ", paste(xml_seeds, collapse = ", "))
+  if (identical(profile, "asset")) {
+    xml_seeds <- xml_seeds[1L]
+  }
+  message(
+    "Validating Moodle XML with profile=", profile,
+    " and seeds: ", paste(xml_seeds, collapse = ", ")
+  )
 
   plano <- expand.grid(
     file_index = seq_len(nrow(arquivos)),
@@ -176,10 +191,11 @@ load_test_definitions()
 bank_test_mode <- Sys.getenv("BANK_TEST_MODE", unset = "full")
 question_files <- get_bank_test_files()
 bank_jobs <- parse_jobs()
+bank_test_profile <- parse_test_profile()
 message(
   "BancoFisica CI mode: ", bank_test_mode,
   " (", length(question_files), " question(s) selected; ",
-  "BANK_JOBS=", bank_jobs, ")"
+  "BANK_JOBS=", bank_jobs, "; profile=", bank_test_profile, ")"
 )
 
 check_bank_structure()
@@ -195,5 +211,7 @@ if (identical(bank_test_mode, "full")) {
 }
 
 check_encoding(question_files)
-generate_xml_parallel(question_files, jobs = bank_jobs)
+generate_xml_parallel(
+  question_files, jobs = bank_jobs, profile = bank_test_profile
+)
 generate_pdf_parallel(question_files, jobs = bank_jobs)
