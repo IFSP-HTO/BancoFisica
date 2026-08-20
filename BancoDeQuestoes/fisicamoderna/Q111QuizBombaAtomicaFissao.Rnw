@@ -1,0 +1,31 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Uma bomba atômica baseada em urânio libera grande quantidade de energia e produz material radioativo após sua detonação. O processo nuclear responsável pela liberação inicial de energia nesse tipo de artefato é a
+
+\begin{answerlist}
+  \item fissão de núcleos de urânio provocada por nêutrons.
+  \item fusão de núcleos de hidrogênio provocada por prótons.
+  \item desintegração de plutônio provocada por elétrons.
+  \item associação de núcleos de chumbo provocada por pósitrons.
+  \item emissão beta de núcleos de carbono.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Em uma bomba de fissão baseada em urânio, nêutrons são absorvidos por núcleos físseis, como o $^{235}\mathrm{U}$. O núcleo instável se divide em fragmentos menores, liberando energia e novos nêutrons, que podem manter a reação em cadeia.
+
+Portanto, o processo é a \textbf{fissão nuclear do urânio provocada por nêutrons}. A alternativa correta é a \textbf{A}.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: ENEM 2020 Q99 (adaptada).
+%% \extype{schoice}
+%% \exsolution{10000}
+%% \exname{Q111QuizBombaAtomicaFissao}
+%% \exsection{Fisica moderna; Fisica nuclear; Fissao nuclear; ENEM}
+%% \exusepackage[utf8]{inputenc}
