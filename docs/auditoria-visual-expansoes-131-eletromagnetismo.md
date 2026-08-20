@@ -30,7 +30,7 @@ A auditoria, portanto, só recomenda uma figura original quando ela é diretamen
 | `Q96QuizLinhasCampo.Rnw` | **usar original** | Gaspar v.3, p. 39, exemplos de linhas de força para carga positiva, negativa e pares de cargas | O próprio objeto conceitual cobrado é visual. A página mostra exatamente as propriedades discutidas (origem/sentido das linhas, não cruzamento e configuração para pares) sem depender de parâmetros numéricos. |
 | `Q97ClozePotencialCargaPuntiforme.Rnw` | sem figura necessária | — | Cálculo escalar de potencial e energia potencial. |
 | `Q98ClozeTrabalhoDDP.Rnw` | sem figura necessária | — | A questão é inteiramente definida pelos potenciais inicial/final e pela carga. |
-| `Q99ClozeCampoUniformeDDP.Rnw` | **usar original** | Gaspar v.3, p. 43, esquema de duas placas paralelas e campo elétrico uniforme | O esquema é genérico, sem valores fixos, e representa exatamente a geometria do item: placas paralelas, separação e campo aproximadamente uniforme entre elas. |
+| `Q99ClozeCampoUniformeDDP.Rnw` | **usar original** | Gaspar v.3, p. 72, esquema do capacitor de placas paralelas | O esquema é genérico, sem valores fixos, e representa exatamente a geometria do item: duas placas condutoras paralelas, separação `d` e diferença de potencial entre elas. |
 
 ### Magnetismo
 
@@ -45,7 +45,7 @@ A auditoria, portanto, só recomenda uma figura original quando ela é diretamen
 | `Q07QuizDirecaoForcaMagnetica.Rnw` | sem figura necessária | Gaspar v.3, pp. 155–157 contêm regra da mão direita e exemplos resolvidos | O item foi construído para testar justamente a aplicação da regra a uma orientação verbal específica. Inserir um exemplo resolvido ou a mão com os vetores tornaria a resposta excessivamente guiada; o texto atual define sem ambiguidade `v` e `B`. |
 | `Q08ClozeRaioTrajetoriaCarga.Rnw` | **usar original** | Gaspar v.3, p. 158, trajetória circular de carga positiva em campo uniforme | A figura mostra exatamente a força magnética atuando como centrípeta e não fixa os valores de `m`, `q`, `v` ou `B` usados pela questão. |
 | `Q09ClozeForcaFioCampo.Rnw` | **usar original** | Gaspar v.3, p. 160, condutor retilíneo de comprimento `l` em campo `B` formando ângulo `theta` | O esquema é genérico e coincide com a expressão `F=Bi l sen(theta)` usada no item; não conflita com os parâmetros sorteados. |
-| `Q10QuizMotorEletrico.Rnw` | **usar original** | Gaspar v.3, pp. 164–165, espira entre polos, forças opostas, comutador e rotação | É a representação direta do princípio perguntado: forças magnéticas em lados opostos da espira formam um binário e produzem torque. |
+| `Q10QuizMotorEletrico.Rnw` | **usar original** | Gaspar v.3, p. 163, espira percorrida por corrente em campo magnético — “efeito motor” | É a representação direta do princípio perguntado: forças magnéticas em lados opostos da espira formam um binário e produzem torque. |
 
 ### Indução e transformadores
 

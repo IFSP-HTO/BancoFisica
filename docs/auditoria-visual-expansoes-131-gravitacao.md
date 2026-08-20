@@ -12,9 +12,9 @@ A triagem visual antiga associou seis itens a páginas do Gaspar, mas a inspeç�
 
 | Classificação | Quantidade |
 |---|---:|
-| **usar original** | **3** |
+| **usar original** | **2** |
 | adaptar para original | 0 |
-| sem figura necessária | 12 |
+| sem figura necessária | 13 |
 | manter procedural | 0 |
 | **Total** | **15** |
 
@@ -30,7 +30,7 @@ A triagem visual antiga associou seis itens a páginas do Gaspar, mas a inspeç�
 | `Q06QuizPesoAstronautaOrbita.Rnw` | sem figura necessária | Gaspar v.1, p. 251 contém fotografia de estação/satélite | A fotografia é apenas ilustrativa e não explica por si só a queda livre conjunta de astronauta e estação. Não há uma figura original diretamente equivalente à situação conceitual do item. |
 | `Q07NumVelocidadeOrbital.Rnw` | sem figura necessária | Gaspar v.1, p. 250 desenvolve a dedução de `v=sqrt(GM/r)` | A questão é quantitativa e já fornece todos os dados. A fonte apresenta a dedução principalmente em texto/equações, não um diagrama indispensável. |
 | `Q08ClozePeriodoOrbitalCircular.Rnw` | sem figura necessária | — | Cálculo de velocidade e período de uma órbita circular completamente definido por `M` e `r`. |
-| `Q09QuizSateliteGeoestacionario.Rnw` | **usar original** | Gaspar v.1, p. 161, gravura da órbita de satélite geoestacionário | A gravura mostra diretamente um satélite acompanhando a rotação terrestre em órbita circular e é compatível com o conceito cobrado, sem parâmetros numéricos que conflitem com o item. |
+| `Q09QuizSateliteGeoestacionario.Rnw` | sem figura necessária | Gaspar v.1, p. 161 mostra uma órbita circular de satélite como exemplo de MCU | A figura é apenas um exemplo geral de satélite em órbita circular e não representa as condições específicas de uma órbita geoestacionária (plano equatorial, período igual ao da rotação e mesmo sentido). Inserí-la seria decorativo e poderia sugerir uma correspondência mais forte do que a fonte oferece. |
 | `Q10ClozeGeoestacionarioComparacaoLua.Rnw` | sem figura necessária | Gaspar v.1, p. 167 apresenta um exemplo com altitude geoestacionária de cerca de 36 000 km | Inserir esse esquema revelaria aproximadamente o resultado que a questão pede ao aluno estimar pela terceira lei de Kepler; por isso não deve ser usado como estímulo. |
 | `Q11QuizMassaPesoAltitude.Rnw` | sem figura necessária | — | Distinção conceitual entre massa e peso com a altitude; não depende de diagrama. |
 | `Q12NumEscalonamentoForcaGravitacional.Rnw` | sem figura necessária | — | Escalonamento algébrico da lei da gravitação; figura seria decorativa. |
@@ -40,6 +40,6 @@ A triagem visual antiga associou seis itens a páginas do Gaspar, mas a inspeç�
 
 ## Correções em relação à triagem antiga
 
-As referências preliminares a páginas 253, 256 e 285 como fontes de figuras para satélites/astronautas não se sustentam na inspeção do volume: essas páginas pertencem a atividades posteriores ou a outros capítulos. Os candidatos realmente úteis neste lote são p. 243, p. 249 e p. 161.
+As referências preliminares a páginas 253, 256 e 285 como fontes de figuras para satélites/astronautas não se sustentam na inspeção do volume: essas páginas pertencem a atividades posteriores ou a outros capítulos. A p. 161 também foi retirada após a revisão visual do recorte: ela mostra apenas um satélite em órbita circular, não uma representação específica da condição geoestacionária.
 
-Assim, dos 15 itens, apenas **3** devem avançar para a revisão visual com figura original.
+Assim, dos 15 itens, apenas **2** devem avançar para a revisão visual com figura original.
