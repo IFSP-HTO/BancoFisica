@@ -1,0 +1,39 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Fragmentos de um foguete em órbita reentram na atmosfera sobre uma região do planeta. Considere que, em um instante, o foguete se move no mesmo sentido de rotação da Terra e que, algum tempo depois, seus fragmentos podem atingir uma região situada a leste da posição inicial.
+
+Para que isso ocorra, a velocidade angular do foguete em relação ao eixo de rotação terrestre deve ser
+
+\begin{answerlist}
+  \item igual à da Terra e no mesmo sentido.
+  \item maior que a da Terra e no mesmo sentido.
+  \item menor que a da Terra e no sentido oposto.
+  \item igual à da Terra e no sentido oposto.
+  \item maior que a da Terra e no sentido oposto.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Se o foguete se desloca no mesmo sentido de rotação da Terra e precisa avançar angularmente em relação à superfície, sua velocidade angular deve superar a velocidade angular terrestre.
+
+Assim,
+\[
+\omega_{\text{foguete}}>\omega_{\text{Terra}}
+\]
+e os dois movimentos têm o mesmo sentido de rotação.
+
+A alternativa correta é a \textbf{B}.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: ENEM 2019 Q122 (adaptada).
+%% \extype{schoice}
+%% \exsolution{01000}
+%% \exname{Q95QuizFogueteVelocidadeAngularTerra}
+%% \exsection{Mecanica; Cinematica; Movimento circular; Velocidade angular; Movimento relativo; ENEM}
+%% \exusepackage[utf8]{inputenc}
