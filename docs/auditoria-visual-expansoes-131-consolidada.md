@@ -17,11 +17,11 @@ Por isso, não se deve inserir uma figura do livro apenas por semelhança temát
 | MUV, queda livre e Leis de Newton | 31 | 6 | 1 | 24 | 0 |
 | Física Moderna | 18 | 3 | 0 | 15 | 0 |
 | Eletromagnetismo | 24 | 15 | 0 | 9 | 0 |
-| Gravitação/Astronomia | 15 | 3 | 0 | 12 | 0 |
+| Gravitação/Astronomia | 15 | 2 | 0 | 13 | 0 |
 | Óptica geométrica | 15 | 8 | 0 | 7 | 0 |
-| **Total** | **103** | **35** | **1** | **67** | **0** |
+| **Total** | **103** | **34** | **1** | **68** | **0** |
 
-Portanto, o passivo acionável deste conjunto é de **36 questões**: 35 em que uma figura original pode ser incorporada sem mudança estrutural e 1 em que a questão deve ser adaptada antes de receber a figura original. As outras 67 devem permanecer sem figura.
+Portanto, o passivo acionável deste conjunto é de **35 questões**: 34 em que uma figura original pode ser incorporada sem mudança estrutural e 1 em que a questão deve ser adaptada antes de receber a figura original. As outras 68 devem permanecer sem figura.
 
 ## Casos `usar original`
 
@@ -43,7 +43,7 @@ Portanto, o passivo acionável deste conjunto é de **36 questões**: 35 em que 
 ### Eletromagnetismo — 15
 
 - `eletrostatica/Q96QuizLinhasCampo.Rnw` — Gaspar v.3, p. 39, linhas de campo elétrico;
-- `eletrostatica/Q99ClozeCampoUniformeDDP.Rnw` — Gaspar v.3, p. 43, placas paralelas/campo uniforme;
+- `eletrostatica/Q99ClozeCampoUniformeDDP.Rnw` — Gaspar v.3, p. 72, capacitor de placas paralelas;
 - `magnetismo/Q01QuizPolosImas.Rnw` — Gaspar v.3, p. 152, corte de ímã e novos dipolos;
 - `magnetismo/Q02QuizLinhasCampoIma.Rnw` — Gaspar v.3, p. 153, linhas de campo de ímã de barra;
 - `magnetismo/Q03ClozeCampoFioRetilineo.Rnw` — Gaspar v.3, p. 169, campo ao redor de fio retilíneo;
@@ -52,17 +52,18 @@ Portanto, o passivo acionável deste conjunto é de **36 questões**: 35 em que 
 - `magnetismo/Q06ClozeForcaCargaMagnetica.Rnw` — Gaspar v.3, pp. 155–156, geometria `v`, `B` e `F`;
 - `magnetismo/Q08ClozeRaioTrajetoriaCarga.Rnw` — Gaspar v.3, p. 158, trajetória circular de carga;
 - `magnetismo/Q09ClozeForcaFioCampo.Rnw` — Gaspar v.3, p. 160, força magnética em fio;
-- `magnetismo/Q10QuizMotorEletrico.Rnw` — Gaspar v.3, pp. 164–165, motor elétrico;
+- `magnetismo/Q10QuizMotorEletrico.Rnw` — Gaspar v.3, p. 163, espira em campo magnético — efeito motor;
 - `inducao/Q02QuizLeiLenzIma.Rnw` — Gaspar v.3, p. 185, ímã aproximando-se da espira;
 - `inducao/Q04QuizGeradorEletromagnetico.Rnw` — Gaspar v.3, pp. 189–191, gerador;
 - `inducao/Q05ClozeTransformadorIdeal.Rnw` — Gaspar v.3, p. 193, transformador ideal;
 - `inducao/Q06QuizTransformadorCorrenteContinua.Rnw` — Gaspar v.3, pp. 192–193, indução apenas durante variação de corrente/fluxo.
 
-### Gravitação/Astronomia — 3
+### Gravitação/Astronomia — 2
 
 - `gravitacao/Q03QuizSegundaLeiVelocidade.Rnw` — Gaspar v.1, p. 243, áreas iguais em órbita elíptica;
-- `gravitacao/Q05NumCampoGravitacionalAltura.Rnw` — Gaspar v.1, p. 249, distância ao centro `R+h`;
-- `gravitacao/Q09QuizSateliteGeoestacionario.Rnw` — Gaspar v.1, p. 161, satélite geoestacionário.
+- `gravitacao/Q05NumCampoGravitacionalAltura.Rnw` — Gaspar v.1, p. 249, distância ao centro `R+h`.
+
+`Q09QuizSateliteGeoestacionario.Rnw` foi retirado da lista acionável após a inspeção visual do recorte da p. 161: a fonte mostra apenas um satélite em órbita circular como exemplo de MCU, não as condições específicas de uma órbita geoestacionária.
 
 ### Óptica — 8
 
@@ -85,6 +86,6 @@ Vários itens têm figuras relacionadas no livro, mas elas não devem ser incorp
 
 ## Próxima etapa
 
-Antes de alterar qualquer `.Rnw`, os **36 casos acionáveis** devem passar por revisão visual usando recortes exatos das páginas/fontes indicadas. Depois da aprovação, as figuras devem ser obtidas pelo pipeline determinístico descrito em `docs/PDF_SOURCE_WORKFLOW.md` / `tools/pdf_assets.py`, registrando a procedência e validando PDF + Moodle XML.
+Antes de alterar qualquer `.Rnw`, os **35 casos acionáveis** devem passar por revisão visual usando recortes exatos das páginas/fontes indicadas. Depois da aprovação, as figuras devem ser obtidas pelo pipeline determinístico descrito em `docs/PDF_SOURCE_WORKFLOW.md` / `tools/pdf_assets.py`, registrando a procedência e validando PDF + Moodle XML.
 
 A auditoria de Oscilações/Ondas permanece separada em #140, pois nesse lote já existem figuras procedurais a serem comparadas diretamente com as figuras originais da fonte.
