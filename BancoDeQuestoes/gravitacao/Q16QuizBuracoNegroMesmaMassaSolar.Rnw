@@ -1,0 +1,35 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Considere que o Sol fosse instantaneamente substituído por um buraco negro com exatamente a mesma massa solar. O horizonte de eventos desse buraco negro teria raio muito menor que o raio atual do Sol.
+
+Desprezando efeitos relativísticos adicionais e considerando as posições e velocidades instantâneas dos planetas no momento da substituição, o que aconteceria às suas órbitas?
+
+\begin{answerlist}
+  \item Elas se tornariam espirais, aproximando-se progressivamente do buraco negro.
+  \item Elas passariam a oscilar aleatoriamente em torno das órbitas originais.
+  \item Os planetas cairiam radialmente em direção ao buraco negro.
+  \item As órbitas passariam imediatamente a precessionar com rapidez muito maior.
+  \item Elas permaneceriam essencialmente inalteradas.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Para pontos externos a uma distribuição esfericamente simétrica de massa, o campo gravitacional depende da massa total e da distância ao centro. A substituição mantém a mesma massa central.
+
+Assim, nas posições dos planetas, a força gravitacional continuaria com o mesmo módulo e direção que antes. Como suas posições e velocidades instantâneas também não mudam no instante da substituição, as condições que determinam suas órbitas permanecem as mesmas.
+
+Portanto, as órbitas permaneceriam essencialmente inalteradas. A alternativa correta é a \textbf{E}.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: ENEM 2022 Q118 (adaptada).
+%% \extype{schoice}
+%% \exsolution{00001}
+%% \exname{Q16QuizBuracoNegroMesmaMassaSolar}
+%% \exsection{Gravitacao; Lei da gravitacao universal; Orbitas planetarias; Buraco negro; ENEM}
+%% \exusepackage[utf8]{inputenc}
