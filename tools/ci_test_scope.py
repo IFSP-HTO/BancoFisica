@@ -24,13 +24,26 @@ GLOBAL_EXACT = {
 }
 GLOBAL_SUFFIXES = (".sty", ".cls", ".tex")
 
+# Static support files for which changing the file itself cannot alter the
+# question's random parameter generation. A reduced XML seed profile is only
+# allowed when every BancoDeQuestoes change is one of these assets and each
+# dependency can be mapped exactly to current question consumers.
+STATIC_ASSET_SUFFIXES = {
+    ".png",
+    ".jpg",
+    ".jpeg",
+    ".gif",
+    ".svg",
+    ".webp",
+    ".pdf",
+}
+
 
 def normalize_changed_path(raw: str) -> str:
     path = raw.strip().replace("\\", "/")
     # Remove only an explicit relative-path prefix.  str.lstrip("./") is not
     # appropriate here: it treats its argument as a *set of characters* and
-    # therefore turns ".github/..." into "github/...", preventing workflow
-    # changes from matching GLOBAL_EXACT.
+    # therefore turns ".github/..." into "github/...").
     while path.startswith("./"):
         path = path[2:]
     return path
@@ -224,6 +237,43 @@ def choose_scope(repo_root: Path, changed_paths: list[str], force_full: bool = F
     return "none", [], "no question or shared compilation dependency changed"
 
 
+def choose_test_profile(repo_root: Path, changed_paths: list[str], mode: str) -> str:
+    """Choose compilation intensity independently from question scope.
+
+    `asset` is deliberately narrow: it is allowed only for an incremental run
+    consisting exclusively of static BancoDeQuestoes assets whose consumers can
+    be resolved exactly. Any question source, dynamic support file, unresolved
+    dependency or global change keeps the historical full seed profile.
+    """
+    if mode == "none":
+        return "none"
+    if mode != "incremental":
+        return "full"
+
+    changed = [normalize_changed_path(path) for path in changed_paths]
+    bank_changes = [path for path in changed if path.startswith("BancoDeQuestoes/")]
+    if not bank_changes:
+        return "full"
+
+    question_texts: dict[str, str] | None = None
+    for path in bank_changes:
+        pure = PurePosixPath(path)
+        suffix = pure.suffix.lower()
+        if suffix == ".rnw" or suffix not in STATIC_ASSET_SUFFIXES:
+            return "full"
+
+        if question_texts is None:
+            question_texts = load_question_texts(repo_root)
+        referenced, exact = support_asset_scope(repo_root, pure.as_posix(), question_texts)
+        # A reduced profile is useful only when there is at least one exact
+        # consumer. Unmapped/deleted-unused assets stay conservative (or select
+        # no questions anyway).
+        if not exact or not referenced:
+            return "full"
+
+    return "asset"
+
+
 def read_changed_files(path: Path) -> list[str]:
     if not path.exists():
         raise FileNotFoundError(f"changed-files list not found: {path}")
@@ -236,11 +286,12 @@ def write_manifest(path: Path, questions: list[str]) -> None:
     path.write_text(text, encoding="utf-8")
 
 
-def append_github_output(path: Path, mode: str, count: int, reason: str) -> None:
+def append_github_output(path: Path, mode: str, count: int, reason: str, test_profile: str) -> None:
     with path.open("a", encoding="utf-8") as handle:
         handle.write(f"mode={mode}\n")
         handle.write(f"question_count={count}\n")
         handle.write(f"reason={reason}\n")
+        handle.write(f"test_profile={test_profile}\n")
 
 
 def main() -> int:
@@ -258,12 +309,16 @@ def main() -> int:
 
     changed_paths = [] if args.full else read_changed_files(Path(args.changed_files))
     mode, questions, reason = choose_scope(repo_root, changed_paths, force_full=args.full)
+    test_profile = choose_test_profile(repo_root, changed_paths, mode)
 
     write_manifest(Path(args.manifest), questions)
     if args.github_output:
-        append_github_output(Path(args.github_output), mode, len(questions), reason)
+        append_github_output(
+            Path(args.github_output), mode, len(questions), reason, test_profile
+        )
 
     print(f"CI test scope: {mode} ({len(questions)} question(s))")
+    print(f"Test profile: {test_profile}")
     print(f"Reason: {reason}")
     for question in questions:
         print(question)
