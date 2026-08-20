@@ -1,0 +1,35 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Ao beber um suco com um canudo, a pressão no interior da boca é reduzida e a pressão atmosférica sobre a superfície do líquido contribui para fazê-lo subir pelo canudo.
+
+Considere agora dois canudos iguais usados simultaneamente: um deles está mergulhado no suco e o outro permanece fora do líquido, aberto para o ar. Nessa situação, torna-se muito difícil fazer o suco subir pelo canudo porque
+
+\begin{answerlist}
+  \item a força necessária para aspirar simultaneamente ar e suco dobra de valor.
+  \item a menor densidade do ar faz com que o volume aspirado pelo canudo externo seja desprezível.
+  \item a velocidade do suco precisa ser igual à velocidade do ar nos dois canudos.
+  \item o peso da coluna de suco impede que qualquer diferença de pressão seja estabelecida.
+  \item a entrada livre de ar pelo segundo canudo mantém a pressão na boca praticamente igual à pressão atmosférica que atua sobre o suco.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Para o líquido subir pelo canudo, é necessário que a pressão no interior da boca seja menor que a pressão atmosférica sobre a superfície do suco.
+
+Quando o segundo canudo está aberto para o ar, a sucção faz o ar atmosférico entrar facilmente na boca. Isso dificulta a redução da pressão interna, que permanece aproximadamente igual à pressão atmosférica externa. Sem uma diferença de pressão significativa, o suco não sobe de modo eficiente.
+
+A alternativa correta é a \textbf{E}.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: ENEM 2018 Q103 (adaptada).
+%% \extype{schoice}
+%% \exsolution{00001}
+%% \exname{Q98QuizCanudosPressaoAtmosferica}
+%% \exsection{Hidrostatica; Pressao atmosferica; Diferenca de pressao; ENEM}
+%% \exusepackage[utf8]{inputenc}
