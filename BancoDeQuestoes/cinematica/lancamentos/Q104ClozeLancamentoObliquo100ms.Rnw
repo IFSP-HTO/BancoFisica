@@ -12,13 +12,9 @@ H <- vy0^2 / (2 * g)
 vtop <- vx
 vsolo <- v0
 img_parts <- c(
-  "lancamento_obliquo_100ms.b64.01",
-  "lancamento_obliquo_100ms.b64.02a",
-  "lancamento_obliquo_100ms.b64.02b",
-  "lancamento_obliquo_100ms.b64.03",
-  "lancamento_obliquo_100ms.b64.04",
-  "lancamento_obliquo_100ms.b64.05",
-  "lancamento_obliquo_100ms.b64.06"
+  "lancamento_obliquo_100ms_moodle.b64.01",
+  "lancamento_obliquo_100ms_moodle.b64.02",
+  "lancamento_obliquo_100ms_moodle.b64.03"
 )
 invisible(lapply(img_parts, include_supplement))
 img_b64 <- paste(vapply(img_parts, function(f) paste(readLines(f, warn = FALSE), collapse = ""), character(1)), collapse = "")
