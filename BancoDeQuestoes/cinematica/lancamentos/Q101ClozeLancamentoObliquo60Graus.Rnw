@@ -14,7 +14,7 @@ fmt <- function(x, d = 2) formatC(x, format = "f", digits = d, decimal.mark = ",
 
 \begin{question}
 
-Um corpo é lançado obliquamente a partir do solo, no vácuo, sob ângulo de $60^\circ$ com a horizontal e com velocidade de $10\,\mathrm{m/s}$. Adotando $g=10\,\mathrm{m/s^2}$, $\sen 60^\circ=\sen 120^\circ=0{,}86$ e $\cos 60^\circ=0{,}50$, determine:
+Um corpo é lançado obliquamente a partir do solo, no vácuo, sob ângulo de $60^\circ$ com a horizontal e com velocidade de $10\,\mathrm{m/s}$. Adotando $g=10\,\mathrm{m/s^2}$, $\mathrm{sen}\,60^\circ=\mathrm{sen}\,120^\circ=0{,}86$ e $\cos 60^\circ=0{,}50$, determine:
 
 \begin{answerlist}
   \item a velocidade escalar mínima assumida pelo corpo, em $\mathrm{m/s}$;
@@ -35,7 +35,7 @@ No ponto mais alto, $v_y=0$, portanto a velocidade escalar mínima é $v_x=5\,\m
 
 A componente vertical inicial é
 \[
-v_{0y}=v_0\sen60^\circ=10\cdot0{,}86=8{,}6\,\mathrm{m/s}.
+v_{0y}=v_0\,\mathrm{sen}\,60^\circ=10\cdot0{,}86=8{,}6\,\mathrm{m/s}.
 \]
 Logo, o tempo de subida é
 \[
