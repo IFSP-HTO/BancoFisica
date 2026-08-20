@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import os
+import re
 from pathlib import Path, PurePosixPath
 
 GLOBAL_PREFIXES = (
@@ -41,9 +42,9 @@ STATIC_ASSET_SUFFIXES = {
 
 def normalize_changed_path(raw: str) -> str:
     path = raw.strip().replace("\\", "/")
-    # Remove only an explicit relative-path prefix.  str.lstrip("./") is not
-    # appropriate here: it treats its argument as a *set of characters* and
-    # therefore turns ".github/..." into "github/...").
+    # Remove only an explicit relative-path prefix. str.lstrip("./") is not
+    # appropriate here: it treats its argument as a set of characters and
+    # therefore turns ".github/..." into "github/...".
     while path.startswith("./"):
         path = path[2:]
     return path
@@ -85,7 +86,8 @@ def topic_questions(repo_root: Path, topic: str) -> list[str]:
 def read_question_text(path: Path) -> str:
     # Rnw files are expected to be UTF-8, but legacy questions occasionally contain
     # bytes from older encodings. Replacement keeps dependency discovery conservative
-    # without making scope detection itself fail.
+    # without making scope detection itself fail. Backslashes are normalized because
+    # path matching elsewhere in this module is POSIX-style.
     return path.read_text(encoding="utf-8", errors="replace").replace("\\", "/")
 
 
@@ -116,6 +118,38 @@ def asset_reference_tokens(repo_root: Path, question_path: Path, asset_path: str
         pass
 
     return {token for token in tokens if token}
+
+
+def has_direct_static_asset_reference(
+    repo_root: Path, question: str, asset_path: str, text: str
+) -> bool:
+    """Require strong evidence that an asset is included independently of a seed.
+
+    General dependency discovery intentionally accepts broad literal matches so CI can
+    over-select safely. The reduced `asset` profile is stricter: the current Rnw must
+    contain both a literal include_supplement("...") call and a literal
+    \includegraphics{...} reference to the same changed file (possibly using different
+    equivalent path forms). Dynamic/conditional constructions therefore fall back to
+    the historical full multi-seed profile.
+    """
+    question_path = repo_root / question
+    tokens = asset_reference_tokens(repo_root, question_path, asset_path)
+
+    has_supplement = False
+    has_graphics = False
+    for token in tokens:
+        escaped = re.escape(token)
+        supplement = re.compile(
+            rf"include_supplement\s*\(\s*([\"']){escaped}\1"
+        )
+        # read_question_text() normalizes the LaTeX backslash to '/'.
+        graphics = re.compile(
+            rf"/includegraphics\s*(?:\[[^\]]*\]\s*)?\{{\s*{escaped}\s*\}}"
+        )
+        has_supplement = has_supplement or bool(supplement.search(text))
+        has_graphics = has_graphics or bool(graphics.search(text))
+
+    return has_supplement and has_graphics
 
 
 def load_question_texts(repo_root: Path) -> dict[str, str]:
@@ -242,8 +276,9 @@ def choose_test_profile(repo_root: Path, changed_paths: list[str], mode: str) ->
 
     `asset` is deliberately narrow: it is allowed only for an incremental run
     consisting exclusively of static BancoDeQuestoes assets whose consumers can
-    be resolved exactly. Any question source, dynamic support file, unresolved
-    dependency or global change keeps the historical full seed profile.
+    be resolved exactly and whose Rnw contains direct static supplement/graphics
+    references. Any question source, dynamic support file, unresolved dependency
+    or global change keeps the historical full seed profile.
     """
     if mode == "none":
         return "none"
@@ -269,6 +304,17 @@ def choose_test_profile(repo_root: Path, changed_paths: list[str], mode: str) ->
         # consumer. Unmapped/deleted-unused assets stay conservative (or select
         # no questions anyway).
         if not exact or not referenced:
+            return "full"
+
+        # Broad literal matching is sufficient for safe over-selection, but not
+        # for reducing seed coverage. Require a direct, static inclusion pattern
+        # in every selected consumer before using the reduced profile.
+        if any(
+            not has_direct_static_asset_reference(
+                repo_root, question, pure.as_posix(), question_texts[question]
+            )
+            for question in referenced
+        ):
             return "full"
 
     return "asset"
