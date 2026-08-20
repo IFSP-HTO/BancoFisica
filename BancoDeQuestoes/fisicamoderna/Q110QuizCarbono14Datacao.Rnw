@@ -1,0 +1,48 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+A técnica do carbono-14 permite estimar a idade de materiais orgânicos pela atividade beta do isótopo $^{14}\mathrm{C}$. Em um organismo vivo, a atividade é de aproximadamente 15 emissões beta por minuto e por grama. Após a morte, a quantidade de $^{14}\mathrm{C}$ se reduz à metade a cada 5 730 anos.
+
+Um fragmento fóssil de massa $30\,\mathrm{g}$ apresenta 6 750 emissões beta por hora. A idade aproximada desse fóssil é
+
+\begin{answerlist}
+  \item 450 anos.
+  \item 1 433 anos.
+  \item 11 460 anos.
+  \item 17 190 anos.
+  \item 27 000 anos.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Para um organismo vivo de $30\,\mathrm{g}$, a atividade esperada seria
+\[
+A_0=15\,\frac{\text{emissões}}{\text{min}\,\text{g}}\times 30\,\mathrm{g}=450\,\text{emissões/min}.
+\]
+Em uma hora,
+\[
+A_0=450\times 60=27\,000\,\text{emissões/h}.
+\]
+A atividade medida é
+\[
+6\,750=\frac{27\,000}{4}=\frac{A_0}{2^2}.
+\]
+Logo, transcorreram duas meias-vidas:
+\[
+t=2\times 5\,730=11\,460\,\text{anos}.
+\]
+
+A alternativa correta é a \textbf{C}.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: ENEM 2017 Q123 (adaptada).
+%% \extype{schoice}
+%% \exsolution{00100}
+%% \exname{Q110QuizCarbono14Datacao}
+%% \exsection{Fisica moderna; Radioatividade; Meia-vida; Carbono-14; Datacao; ENEM}
+%% \exusepackage[utf8]{inputenc}
