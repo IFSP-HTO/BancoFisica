@@ -1,0 +1,35 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+A geração de energia elétrica em usinas nucleares envolve riscos e produz resíduos radioativos, mas também apresenta características que a diferenciam de usinas termelétricas convencionais.
+
+Uma característica da geração nuclear é
+
+\begin{answerlist}
+  \item formar apenas resíduos facilmente recicláveis.
+  \item exigir aumento do desmatamento para obtenção do combustível.
+  \item contribuir diretamente para a formação de chuva ácida.
+  \item emitir continuamente gases tóxicos oriundos da combustão.
+  \item produzir calor sem a queima de combustíveis fósseis.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Em uma usina nuclear, a energia térmica utilizada para produzir vapor provém de reações nucleares, tipicamente de fissão. Portanto, não é necessário queimar carvão, petróleo ou gás natural para produzir esse calor.
+
+Isso não elimina os problemas associados à geração nuclear, como os resíduos radioativos, mas distingue seu processo de uma termelétrica baseada em combustíveis fósseis.
+
+A alternativa correta é a \textbf{E}.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: ENEM 2023 Q93 (adaptada).
+%% \extype{schoice}
+%% \exsolution{00001}
+%% \exname{Q112QuizEnergiaNuclearCombustiveisFosseis}
+%% \exsection{Fisica moderna; Energia nuclear; Fissao nuclear; Geracao de energia; ENEM}
+%% \exusepackage[utf8]{inputenc}
