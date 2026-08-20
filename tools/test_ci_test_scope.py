@@ -32,11 +32,18 @@ def main() -> int:
         write(root / "BancoDeQuestoes/cinematica/MCU/Q2.Rnw", "sem figura")
         write(
             root / "BancoDeQuestoes/dinamica/Q3.Rnw",
+            'include_supplement("../figuras/shared.png")\n'
             "\\includegraphics{../figuras/shared.png}",
+        )
+        write(
+            root / "BancoDeQuestoes/dinamica/Q4.Rnw",
+            'asset <- "dynamic.png"\ninclude_supplement(asset)\n'
+            "\\includegraphics{dynamic.png}",
         )
         write(root / "BancoDeQuestoes/cinematica/MCU/img1.jpeg")
         write(root / "BancoDeQuestoes/cinematica/MCU/unmapped.dat")
         write(root / "BancoDeQuestoes/figuras/shared.png")
+        write(root / "BancoDeQuestoes/dinamica/dynamic.png")
 
         assert_case(
             root,
@@ -59,6 +66,15 @@ def main() -> int:
             ["BancoDeQuestoes/dinamica/Q3.Rnw"],
             "asset",
         )
+        # The dependency is discoverable, but dynamic supplement registration is
+        # not strong enough evidence to reduce random-seed coverage.
+        assert_case(
+            root,
+            ["BancoDeQuestoes/dinamica/dynamic.png"],
+            "incremental",
+            ["BancoDeQuestoes/dinamica/Q4.Rnw"],
+            "full",
+        )
         assert_case(
             root,
             ["BancoDeQuestoes/cinematica/MCU/unmapped.dat"],
@@ -73,7 +89,7 @@ def main() -> int:
 
         mode, questions, _ = choose_scope(root, ["tests/tests.R"])
         assert mode == "full"
-        assert len(questions) == 3
+        assert len(questions) == 4
         assert choose_test_profile(root, ["tests/tests.R"], mode) == "full"
 
         # Asset + question source in the same change must keep the complete seed profile.
@@ -108,7 +124,7 @@ def main() -> int:
         write(root / "BancoDeQuestoes/figuras/unknown.png")
         mode, questions, _ = choose_scope(root, ["BancoDeQuestoes/figuras/unknown.png"])
         assert mode == "full"
-        assert len(questions) == 3
+        assert len(questions) == 4
         assert choose_test_profile(
             root, ["BancoDeQuestoes/figuras/unknown.png"], mode
         ) == "full"
