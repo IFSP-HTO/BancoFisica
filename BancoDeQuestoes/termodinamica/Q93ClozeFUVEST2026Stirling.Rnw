@@ -4,7 +4,7 @@ Peletrica <- 15 # kW
 t <- 3600 # s
 Psolar <- Peletrica / eta # kW
 Esolar <- Psolar * 1000 * t # J
-include_supplement("../figuras/Q93ClozeFUVEST2026Stirling.png")
+include_supplement("Q93ClozeFUVEST2026Stirling.png", dir = "../figuras")
 @
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
