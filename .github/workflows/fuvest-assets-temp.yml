@@ -16,7 +16,7 @@ permissions:
   contents: write
 
 jobs:
-  extract-f05:
+  extract-f01:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -40,32 +40,41 @@ jobs:
             -o /tmp/fuvest2026-fase2-dia2-prova.pdf
           file /tmp/fuvest2026-fase2-dia2-prova.pdf
 
-      - name: Extract original F05 figure from PDF
+      - name: Extract original F01 graph
         run: |
           python tools/pdf_assets.py crop /tmp/fuvest2026-fase2-dia2-prova.pdf \
-            --page 14 \
-            --bbox-percent 10 19.5 91 37.2 \
+            --page 10 \
+            --bbox-percent 21.5 20.5 57 38 \
             --dpi 300 \
-            --output BancoDeQuestoes/figuras/Q101ClozeFUVEST2026Fusivel.png \
+            --output BancoDeQuestoes/figuras/Q100ClozeFUVEST2026PipocaArrastoGrafico.png \
             --provenance --force
 
-      - name: Upload F05 crop for visual inspection
+      - name: Extract original F01 experimental photo
+        run: |
+          python tools/pdf_assets.py crop /tmp/fuvest2026-fase2-dia2-prova.pdf \
+            --page 10 \
+            --bbox-percent 72.5 11.5 95.5 36.5 \
+            --dpi 300 \
+            --output BancoDeQuestoes/figuras/Q100ClozeFUVEST2026PipocaArrastoMontagem.png \
+            --provenance --force
+
+      - name: Upload F01 assets for visual inspection
         uses: actions/upload-artifact@v4
         with:
-          name: fuvest-f05-crop
+          name: fuvest-f01-assets
           path: |
-            BancoDeQuestoes/figuras/Q101ClozeFUVEST2026Fusivel.png
-            BancoDeQuestoes/figuras/Q101ClozeFUVEST2026Fusivel.png.source.json
+            BancoDeQuestoes/figuras/Q100ClozeFUVEST2026PipocaArrastoGrafico.png*
+            BancoDeQuestoes/figuras/Q100ClozeFUVEST2026PipocaArrastoMontagem.png*
 
-      - name: Commit extracted asset
+      - name: Commit extracted assets
         if: github.event_name == 'push'
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add BancoDeQuestoes/figuras/Q101ClozeFUVEST2026Fusivel.png*
+          git add BancoDeQuestoes/figuras/Q100ClozeFUVEST2026PipocaArrasto*.png*
           if git diff --cached --quiet; then
             echo 'No changes to commit.'
           else
-            git commit -m 'assets: ajusta figura original FUVEST 2026 F05'
+            git commit -m 'assets: extrai figuras originais FUVEST 2026 F01'
             git push origin HEAD:fuvest-2026-fidelidade
           fi
