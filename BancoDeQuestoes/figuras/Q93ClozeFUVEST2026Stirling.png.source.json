@@ -1,0 +1,14 @@
+{
+  "source_pdf": "fuvest2026-fase2-dia2-prova.pdf",
+  "source_sha256": "77500abdde9cef9922669412e375665a1a271707f6d53299596feb6ff5917f05",
+  "mode": "crop",
+  "page": 12,
+  "bbox_pdf_points": [
+    196.456,
+    159.965,
+    404.818,
+    336.768
+  ],
+  "dpi": 300,
+  "output": "BancoDeQuestoes/figuras/Q93ClozeFUVEST2026Stirling.png"
+}
