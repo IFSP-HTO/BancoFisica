@@ -1,0 +1,35 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+(FUVEST 2026 - 1ª Fase, Questão 61) No efeito fotoelétrico, elétrons são ejetados de um material quando a energia dos fótons incidentes supera a função trabalho do material. Para um mesmo material, em qual situação a energia cinética dos elétrons ejetados aumenta?
+
+\begin{answerlist}
+  \item Aumentando a intensidade da luz incidente, sem alterar sua frequência.
+  \item Usando uma superfície iluminada de maior área.
+  \item Aumentando a frequência da luz incidente.
+  \item Usando um material de maior função trabalho.
+  \item Diminuindo a energia dos fótons incidentes.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+No efeito fotoelétrico,
+\[
+K_{\max}=hf-\phi,
+\]
+em que $\phi$ é a função trabalho. Para um mesmo material, aumentar a frequência $f$ aumenta a energia $hf$ de cada fóton e, portanto, a energia cinética máxima dos elétrons emitidos. A intensidade altera principalmente o número de fótons incidentes por unidade de tempo.
+
+A alternativa correta é a \textbf{C}.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: FUVEST 2026, 1ª Fase, V1, Questão 61.
+%% \extype{schoice}
+%% \exsolution{00100}
+%% \exname{Q112QuizFUVEST2026Fotoeletrico}
+%% \exsection{Fisica moderna; Efeito fotoeletrico; Fotons; FUVEST}
+%% \exusepackage[utf8]{inputenc}
