@@ -1,5 +1,5 @@
 <<echo=FALSE, results=hide>>=
-include_supplement("../figuras/enem2021_q111_ilha_calor.png")
+include_supplement("../figuras/enem2021_q111_ilha_calor.jpg")
 @
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
@@ -9,7 +9,7 @@ include_supplement("../figuras/enem2021_q111_ilha_calor.png")
 Na cidade de São Paulo, ilhas de calor podem alterar a circulação da brisa marítima. Ao atingir a região urbana aquecida, a brisa encontra um fluxo vertical de ar que transporta para maiores altitudes a energia térmica absorvida pelas superfícies da cidade. A figura representa os três subsistemas envolvidos nesse fenômeno.
 
 \begin{center}
-\includegraphics[width=11cm,keepaspectratio]{../figuras/enem2021_q111_ilha_calor.png}
+\includegraphics[width=11cm,keepaspectratio]{../figuras/enem2021_q111_ilha_calor.jpg}
 \end{center}
 
 No processo descrito, há dois mecanismos dominantes de transferência de calor: entre o Sol e a ilha de calor e entre a ilha de calor e a brisa marítima. Esses mecanismos são, respectivamente,
