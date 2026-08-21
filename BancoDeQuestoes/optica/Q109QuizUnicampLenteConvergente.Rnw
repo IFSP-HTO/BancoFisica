@@ -1,0 +1,32 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+(Comvest / Vestibular Unicamp 2026) Uma lente delgada produz de um objeto uma imagem direita e maior que ele. Qual configuração é compatível com essa observação?
+
+\begin{answerlist}
+  \item Lente convergente, com o objeto a uma distância menor que a focal.
+  \item Lente divergente, com o objeto a uma distância menor que a focal.
+  \item Lente convergente, com o objeto a uma distância maior que a focal.
+  \item Lente divergente, com o objeto a uma distância maior que a focal.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Uma lente divergente, para objeto real, forma imagem virtual, direita e reduzida. Logo, ela não pode produzir a imagem ampliada descrita.
+
+Uma lente convergente forma imagem virtual, direita e ampliada quando o objeto está entre a lente e o foco, isto é, quando a distância do objeto à lente é menor que a distância focal.
+
+Portanto, a alternativa correta é \textbf{A}.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Comvest / Vestibular Unicamp 2026 (Q12, adaptada).
+%% \extype{schoice}
+%% \exsolution{1000}
+%% \exname{Q109QuizUnicampLenteConvergente}
+%% \exsection{Optica; Lentes; Lente convergente; Formacao de imagens; Unicamp}
+%% \exusepackage[utf8]{inputenc}

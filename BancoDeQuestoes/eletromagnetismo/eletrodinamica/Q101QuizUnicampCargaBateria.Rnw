@@ -1,0 +1,37 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+(Comvest / Vestibular Unicamp 2026) Uma bateria fornece corrente constante de $4000\,\mathrm{mA}$ durante $1\,\mathrm{h}$. Qual carga elétrica atravessa o circuito nesse intervalo?
+
+\begin{answerlist}
+  \item $4\,\mathrm{C}$.
+  \item $4000\,\mathrm{C}$.
+  \item $14400\,\mathrm{C}$.
+  \item $1{,}44\times10^7\,\mathrm{C}$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Usamos
+\[
+Q=I\Delta t.
+\]
+Como $4000\,\mathrm{mA}=4\,\mathrm{A}$ e $1\,\mathrm{h}=3600\,\mathrm{s}$,
+\[
+Q=4\cdot3600=14400\,\mathrm{C}.
+\]
+
+Portanto, a alternativa correta é \textbf{C}.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Comvest / Vestibular Unicamp 2026 (Q9, adaptada).
+%% \extype{schoice}
+%% \exsolution{0010}
+%% \exname{Q101QuizUnicampCargaBateria}
+%% \exsection{Eletromagnetismo; Eletrodinamica; Corrente eletrica; Carga eletrica; Unicamp}
+%% \exusepackage[utf8]{inputenc}

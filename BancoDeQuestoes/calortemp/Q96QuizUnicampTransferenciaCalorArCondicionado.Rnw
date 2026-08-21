@@ -1,0 +1,39 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+(Comvest / Vestibular Unicamp 2026) Sobre os mecanismos de transferência de calor, considere:
+
+I. A condução pode ocorrer no vácuo.  
+II. A taxa de condução numa barra independe da diferença de temperatura entre suas extremidades.  
+III. Na convecção, energia é transportada pelo deslocamento de massa do fluido.  
+IV. A radiação térmica pode propagar-se no vácuo.
+
+Quais afirmações são corretas?
+
+\begin{answerlist}
+  \item I e II.
+  \item I e IV.
+  \item II e III.
+  \item III e IV.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+A condução necessita de matéria, portanto I é falsa. Sua taxa depende, entre outros fatores, da diferença de temperatura, logo II também é falsa.
+
+Na convecção há movimento macroscópico do fluido transportando energia, então III é verdadeira. A radiação eletromagnética não necessita de meio material e pode ocorrer no vácuo, tornando IV verdadeira.
+
+Portanto, a alternativa correta é \textbf{D}.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Comvest / Vestibular Unicamp 2026 (Q8, adaptada).
+%% \extype{schoice}
+%% \exsolution{0001}
+%% \exname{Q96QuizUnicampTransferenciaCalorArCondicionado}
+%% \exsection{Termologia; Transferencia de calor; Conducao; Conveccao; Radiacao; Unicamp}
+%% \exusepackage[utf8]{inputenc}
