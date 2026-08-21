@@ -47,7 +47,15 @@ jobs:
             --bbox-percent 60 64 99 83 \
             --dpi 300 \
             --output BancoDeQuestoes/figuras/Q101ClozeFUVEST2026HomemAranha.png \
-            --provenance
+            --provenance --force
+
+      - name: Upload F04 crop for visual inspection
+        uses: actions/upload-artifact@v4
+        with:
+          name: fuvest-f04-crop
+          path: |
+            BancoDeQuestoes/figuras/Q101ClozeFUVEST2026HomemAranha.png
+            BancoDeQuestoes/figuras/Q101ClozeFUVEST2026HomemAranha.png.source.json
 
       - name: Commit extracted asset
         if: github.event_name == 'push'
