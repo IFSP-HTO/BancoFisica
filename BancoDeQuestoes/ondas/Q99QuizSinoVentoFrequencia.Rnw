@@ -1,15 +1,25 @@
+<<echo=FALSE, results=hide>>=
+include_supplement("../figuras/enem2021_q134_sino_ventos.png")
+@
 \usepackage[utf8]{inputenc}
+\usepackage{graphicx}
 
 \begin{question}
 
-Duas barras metálicas de um sino dos ventos são feitas do mesmo material e têm a mesma espessura, mas comprimentos diferentes. A barra 1 é mais curta que a barra 2. Considere $f_1$ e $v_1$, respectivamente, a frequência fundamental e a velocidade de propagação do som no material da barra 1, e $f_2$ e $v_2$ as grandezas correspondentes à barra 2.
+O sino dos ventos é composto por várias barras metálicas, de mesmo material e espessura, mas de comprimentos diferentes, conforme a figura.
 
-Qual relação entre essas grandezas é esperada?
+\begin{center}
+\includegraphics[width=8.5cm,keepaspectratio]{../figuras/enem2021_q134_sino_ventos.png}
+\end{center}
+
+Considere $f_1$ e $v_1$, respectivamente, a frequência fundamental e a velocidade de propagação do som emitido pela barra de menor comprimento, e $f_2$ e $v_2$ as mesmas grandezas para a barra de maior comprimento.
+
+As relações entre as frequências fundamentais e entre as velocidades de propagação são, respectivamente,
 
 \begin{answerlist}
-  \item $f_1=f_2$ e $v_1=v_2$.
-  \item $f_1=f_2$ e $v_1>v_2$.
-  \item $f_1=f_2$ e $v_1<v_2$.
+  \item $f_1<f_2$ e $v_1<v_2$.
+  \item $f_1<f_2$ e $v_1=v_2$.
+  \item $f_1<f_2$ e $v_1>v_2$.
   \item $f_1>f_2$ e $v_1=v_2$.
   \item $f_1>f_2$ e $v_1>v_2$.
 \end{answerlist}
@@ -23,22 +33,17 @@ Como as duas barras são feitas do mesmo material, a velocidade de propagação 
 v_1=v_2.
 \]
 
-A frequência fundamental de um corpo vibrante diminui quando aumenta seu comprimento característico. Assim, a barra mais curta produz uma frequência fundamental maior:
+A frequência fundamental diminui quando aumenta o comprimento característico do corpo vibrante. Assim, a barra mais curta tem frequência fundamental maior:
 \[
 f_1>f_2.
 \]
 
-Portanto,
-\[
-f_1>f_2 \quad \text{e} \quad v_1=v_2.
-\]
-
-A alternativa correta é a \textbf{D}.
+Portanto, a alternativa correta é a \textbf{D}.
 
 \end{solution}
 
 %% META-INFORMATION
-%% Fonte: questão inspirada no ENEM 2021 Q134.
+%% Fonte: ENEM 2021 Q134 (adaptada), com figura original recortada diretamente do PDF oficial.
 %% \extype{schoice}
 %% \exsolution{00010}
 %% \exname{Q99QuizSinoVentoFrequencia}
