@@ -21,6 +21,7 @@ GLOBAL_EXACT = {
     "NAMESPACE",
     "renv.lock",
     "tools/ci_test_scope.py",
+    "tools/ci_compile_cache.py",
     "tools/moodle_xml_split.R",
 }
 GLOBAL_SUFFIXES = (".sty", ".cls", ".tex")
