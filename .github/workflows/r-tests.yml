@@ -25,6 +25,7 @@ env:
   # Benchmark #159: 4 workers reduced the full compilation from ~28m36s to ~9m46s.
   # Use BANK_JOBS=1 with tests/run_tests_parallel.R for serial reproduction/debug.
   BANK_JOBS: 4
+  BANK_CACHE_DIR: .cache/bancofisica-ci
   R_KEEP_PKG_SOURCE: yes
   NOT_CRAN: true
   BANK_VALIDATE_FAIL_ON_ERRORS: true
@@ -39,8 +40,10 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Test CI scope selector
-        run: python3 tools/test_ci_test_scope.py
+      - name: Test CI scope and cache fingerprints
+        run: |
+          python3 tools/test_ci_test_scope.py
+          python3 tools/test_ci_compile_cache.py
 
       - name: Detect affected questions
         id: scope
@@ -100,6 +103,27 @@ jobs:
             echo '</details>' >> "$GITHUB_STEP_SUMMARY"
           fi
 
+      - name: Configure compile cache
+        if: steps.scope.outputs.mode != 'none'
+        shell: bash
+        run: |
+          if [[ "${{ github.event_name }}" == "schedule" || "${{ github.event_name }}" == "workflow_dispatch" ]]; then
+            echo "BANK_COMPILE_CACHE=0" >> "$GITHUB_ENV"
+            echo "Scheduled/manual full run: compile cache disabled for reference validation."
+          else
+            echo "BANK_COMPILE_CACHE=1" >> "$GITHUB_ENV"
+            echo "Content-addressed compile cache enabled."
+          fi
+
+      - name: Restore compile cache
+        if: steps.scope.outputs.mode != 'none' && github.event_name != 'schedule' && github.event_name != 'workflow_dispatch'
+        uses: actions/cache/restore@v4
+        with:
+          path: .cache/bancofisica-ci
+          key: bancofisica-compile-v1-${{ runner.os }}-${{ github.run_id }}
+          restore-keys: |
+            bancofisica-compile-v1-${{ runner.os }}-
+
       - name: Validate public demo site data
         run: |
           python3 tools/generate_demo_site_data.py
@@ -144,6 +168,11 @@ jobs:
             docker build -f docker/ci/Dockerfile -t "$BANK_CI_IMAGE" .
           fi
 
+          image_id="$(docker image inspect "$BANK_CI_IMAGE" --format '{{.Id}}')"
+          test -n "$image_id"
+          echo "BANK_CACHE_ENV_FINGERPRINT=${image_id}" >> "$GITHUB_ENV"
+          echo "Exact cache environment: ${image_id}"
+
       - name: Verify prebuilt CI environment
         if: steps.scope.outputs.mode != 'none'
         run: |
@@ -170,10 +199,41 @@ jobs:
             -e BANK_TEST_PROFILE \
             -e BANK_TEST_MANIFEST \
             -e BANK_JOBS \
+            -e BANK_COMPILE_CACHE \
+            -e BANK_CACHE_DIR \
+            -e BANK_CACHE_ENV_FINGERPRINT \
             -v "$GITHUB_WORKSPACE:/workspace" \
             -w /workspace \
             "$BANK_CI_IMAGE" \
             Rscript tests/run_tests_parallel.R
+
+      - name: Report compile cache
+        if: always() && steps.scope.outputs.mode != 'none'
+        shell: bash
+        run: |
+          if [[ -f build/compile-cache/summary.csv ]]; then
+            python3 - <<'PY'
+          import csv, os
+          with open('build/compile-cache/summary.csv', encoding='utf-8') as f:
+              row = next(csv.DictReader(f))
+          summary = os.environ['GITHUB_STEP_SUMMARY']
+          with open(summary, 'a', encoding='utf-8') as out:
+              out.write('\n### Compile cache\n')
+              out.write(f"- Enabled: **{row['enabled']}**\n")
+              out.write(f"- Hits: **{row['hits']}**\n")
+              out.write(f"- Misses: **{row['misses']}**\n")
+              out.write(f"- Compilations executed: **{row['executed']}**\n")
+              out.write(f"- New successful entries: **{row['writes']}**\n")
+              out.write(f"- Reason: {row['reason']}\n")
+          PY
+          fi
+
+      - name: Save compile cache
+        if: success() && steps.scope.outputs.mode != 'none' && github.event_name != 'schedule' && github.event_name != 'workflow_dispatch'
+        uses: actions/cache/save@v4
+        with:
+          path: .cache/bancofisica-ci
+          key: bancofisica-compile-v1-${{ runner.os }}-${{ github.run_id }}
 
       - name: Audit solution blocks
         if: steps.scope.outputs.mode != 'none'
