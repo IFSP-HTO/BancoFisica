@@ -44,7 +44,7 @@ jobs:
         run: |
           python tools/pdf_assets.py crop /tmp/fuvest2026-fase2-dia2-prova.pdf \
             --page 12 \
-            --bbox-percent 33 19 68 40 \
+            --bbox-percent 33 19 68 39 \
             --dpi 300 \
             --output BancoDeQuestoes/figuras/Q93ClozeFUVEST2026Stirling.png \
             --provenance --force
@@ -66,6 +66,6 @@ jobs:
           if git diff --cached --quiet; then
             echo 'No changes to commit.'
           else
-            git commit -m 'assets: extrai figura original FUVEST 2026 F03'
+            git commit -m 'assets: ajusta figura original FUVEST 2026 F03'
             git push origin HEAD:fuvest-2026-fidelidade
           fi
