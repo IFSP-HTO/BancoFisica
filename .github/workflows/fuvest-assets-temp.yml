@@ -6,6 +6,11 @@ on:
       - fuvest-2026-fidelidade
     paths:
       - .github/workflows/fuvest-assets-temp.yml
+  pull_request:
+    branches:
+      - master
+    paths:
+      - .github/workflows/fuvest-assets-temp.yml
 
 permissions:
   contents: write
@@ -16,6 +21,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          ref: fuvest-2026-fidelidade
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -43,13 +50,14 @@ jobs:
             --provenance
 
       - name: Commit extracted asset
+        if: github.event_name == 'push'
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add BancoDeQuestoes/figuras/Q101ClozeFUVEST2026HomemAranha.png* 
+          git add BancoDeQuestoes/figuras/Q101ClozeFUVEST2026HomemAranha.png*
           if git diff --cached --quiet; then
             echo 'No changes to commit.'
           else
             git commit -m 'assets: extrai figura original FUVEST 2026 F04'
-            git push
+            git push origin HEAD:fuvest-2026-fidelidade
           fi
