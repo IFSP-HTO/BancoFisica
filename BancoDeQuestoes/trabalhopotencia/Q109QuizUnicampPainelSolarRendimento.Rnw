@@ -1,0 +1,44 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+(Comvest / Vestibular Unicamp 2025) Um painel solar de área $2{,}5\,\mathrm{m^2}$ recebe radiação com intensidade $924\,\mathrm{W/m^2}$ e fornece potência elétrica de $462\,\mathrm{W}$. Qual é seu rendimento energético?
+
+\begin{answerlist}
+  \item $5\%$.
+  \item $20\%$.
+  \item $50\%$.
+  \item $80\%$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+A potência solar incidente é
+\[
+P_{\mathrm{inc}}=IA
+=924\cdot2{,}5
+=2310\,\mathrm{W}.
+\]
+O rendimento é a razão entre a potência útil e a potência recebida:
+\[
+\eta=\frac{P_{\mathrm{el}}}{P_{\mathrm{inc}}}
+=\frac{462}{2310}=0{,}20.
+\]
+Logo,
+\[
+\eta=20\%.
+\]
+
+Portanto, a alternativa correta é \textbf{B}.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Comvest / Vestibular Unicamp 2025 (Q14, adaptada).
+%% \extype{schoice}
+%% \exsolution{0100}
+%% \exname{Q109QuizUnicampPainelSolarRendimento}
+%% \exsection{Mecanica; Trabalho e potencia; Potencia; Rendimento; Energia solar; Unicamp}
+%% \exusepackage[utf8]{inputenc}
