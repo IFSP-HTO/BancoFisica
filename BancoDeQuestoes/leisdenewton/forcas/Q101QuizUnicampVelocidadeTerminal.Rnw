@@ -1,0 +1,37 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+(Comvest / Vestibular Unicamp 2024) Um objeto de massa $200\,\mathrm{g}$ cai no ar e, após certo tempo, passa a mover-se com velocidade terminal constante. Adote $g=10\,\mathrm{m/s^2}$. Qual é o módulo da força de resistência do ar nessa situação?
+
+\begin{answerlist}
+  \item $0{,}20\,\mathrm{N}$.
+  \item $2{,}0\,\mathrm{N}$.
+  \item $200\,\mathrm{N}$.
+  \item $2000\,\mathrm{N}$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Na velocidade terminal, a velocidade é constante e, portanto, a aceleração é nula. A força resultante também deve ser nula. Assim, a resistência do ar equilibra o peso:
+\[
+F_{\mathrm{ar}}=P=mg.
+\]
+Como $m=200\,\mathrm{g}=0{,}200\,\mathrm{kg}$,
+\[
+F_{\mathrm{ar}}=0{,}200\cdot10=2{,}0\,\mathrm{N}.
+\]
+
+Portanto, a alternativa correta é \textbf{B}.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Comvest / Vestibular Unicamp 2024 (Q38, adaptada).
+%% \extype{schoice}
+%% \exsolution{0100}
+%% \exname{Q101QuizUnicampVelocidadeTerminal}
+%% \exsection{Mecanica; Leis de Newton; Forcas; Resistencia do ar; Velocidade terminal; Unicamp}
+%% \exusepackage[utf8]{inputenc}

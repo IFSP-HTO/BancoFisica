@@ -1,0 +1,40 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+(Comvest / Vestibular Unicamp 2024) Em uma região da alta atmosfera, o ar pode ser tratado como gás ideal, com pressão $p=2{,}0\,\mathrm{Pa}$ e temperatura $T=180\,\mathrm{K}$. Adote $R\simeq8\,\mathrm{J/(mol\,K)}$. Qual é o volume ocupado por $1\,\mathrm{mol}$ de ar?
+
+\begin{answerlist}
+  \item $1{,}38\times10^{-3}\,\mathrm{m^3}$.
+  \item $9{,}00\times10^{1}\,\mathrm{m^3}$.
+  \item $7{,}20\times10^{2}\,\mathrm{m^3}$.
+  \item $2{,}88\times10^{3}\,\mathrm{m^3}$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Pela equação de estado do gás ideal,
+\[
+pV=nRT.
+\]
+Para $n=1\,\mathrm{mol}$,
+\[
+V=\frac{nRT}{p}
+=\frac{1\cdot8\cdot180}{2{,}0}
+=720\,\mathrm{m^3}
+=7{,}20\times10^2\,\mathrm{m^3}.
+\]
+
+Portanto, a alternativa correta é \textbf{C}.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Comvest / Vestibular Unicamp 2024 (Q36, adaptada).
+%% \extype{schoice}
+%% \exsolution{0010}
+%% \exname{Q94QuizUnicampAltaAtmosfera}
+%% \exsection{Lei dos gases; Gas ideal; Equacao de estado; Unicamp}
+%% \exusepackage[utf8]{inputenc}
