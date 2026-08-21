@@ -1,0 +1,41 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+(Comvest / Vestibular Unicamp 2026) Uma bateria armazena $15\,\mathrm{Wh}$. Se toda essa energia fosse usada para elevar uma massa de $45\,\mathrm{kg}$, qual altura seria atingida? Adote $g=10\,\mathrm{m/s^2}$.
+
+\begin{answerlist}
+  \item $0{,}03\,\mathrm{m}$.
+  \item $3\,\mathrm{m}$.
+  \item $120\,\mathrm{m}$.
+  \item $1200\,\mathrm{m}$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Como $1\,\mathrm{Wh}=3600\,\mathrm{J}$,
+\[
+E=15\cdot3600=54000\,\mathrm{J}.
+\]
+Igualando essa energia ao aumento da energia potencial gravitacional,
+\[
+E=mgh,
+\]
+temos
+\[
+h=\frac{54000}{45\cdot10}=120\,\mathrm{m}.
+\]
+
+Portanto, a alternativa correta é \textbf{C}.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Comvest / Vestibular Unicamp 2026 (Q11, adaptada).
+%% \extype{schoice}
+%% \exsolution{0010}
+%% \exname{Q110QuizUnicampEnergiaBateria}
+%% \exsection{Mecanica; Trabalho e potencia; Energia; Energia potencial gravitacional; Unicamp}
+%% \exusepackage[utf8]{inputenc}
