@@ -1,0 +1,43 @@
+<<echo=FALSE, results=hide>>=
+eta <- 0.30
+Peletrica <- 15 # kW
+t <- 3600 # s
+Psolar <- Peletrica/eta # kW
+Esolar <- Psolar*1000*t # J
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+(FUVEST 2026 - 2ª Fase, F03, adaptada) Um motor de Stirling acoplado a um coletor solar parabólico é usado para gerar energia elétrica. O conjunto apresenta taxa de conversão de energia solar em energia elétrica de aproximadamente $30\%$ e fornece potência elétrica de $15\,\mathrm{kW}$.
+
+Estime a energia solar média transferida ao coletor durante $1\,\mathrm{h}$, em joules.
+
+##ANSWER1##
+
+\end{question}
+
+\begin{solution}
+
+A potência elétrica corresponde a $30\%$ da potência solar incidente:
+\[
+15\,\mathrm{kW}=0{,}30\,P_{\mathrm{solar}},
+\]
+logo
+\[
+P_{\mathrm{solar}}=50\,\mathrm{kW}=5{,}0\times10^4\,\mathrm{W}.
+\]
+Em $1\,\mathrm{h}=3600\,\mathrm{s}$,
+\[
+E=P\Delta t=(5{,}0\times10^4)(3600)=1{,}8\times10^8\,\mathrm{J}.
+\]
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{Esolar}}
+%% \extol{1000}
+%% \exname{Q93ClozeFUVEST2026Stirling}
+%% \exsection{Termodinamica; Maquina termica; Rendimento; Potencia; FUVEST}
+%% \exusepackage[utf8]{inputenc}
