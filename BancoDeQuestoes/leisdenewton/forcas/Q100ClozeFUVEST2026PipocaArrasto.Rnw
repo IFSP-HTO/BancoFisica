@@ -1,0 +1,72 @@
+<<echo=FALSE, results=hide>>=
+g <- 10
+v0 <- 3
+h_sem_arrasto <- v0^2/(2*g)
+m <- 0.2 # g
+b <- 0.4 # g/m
+vterminal <- sqrt(m*g/b)
+h_exp <- 0.42
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+(FUVEST 2026 - 2ª Fase, F01, adaptada) Em um experimento, a posição vertical de uma pipoca foi medida ao longo do tempo após ela ser lançada para cima. Do gráfico experimental, lê-se um deslocamento vertical máximo de aproximadamente $0{,}42\,\mathrm{m}$.
+
+Considere também que a velocidade inicial vertical da pipoca seja $3\,\mathrm{m/s}$ e que a força de arrasto do ar possa ser modelada por
+\[
+F_{arr}=-bv^2,
+\]
+com $b\simeq0{,}4\,\mathrm{g/m}$ para velocidades acima de $2\,\mathrm{m/s}$. A massa de uma pipoca típica é $0{,}2\,\mathrm{g}$. Adote $g=10\,\mathrm{m/s^2}$.
+
+Determine:
+
+\begin{answerlist}
+  \item o deslocamento vertical máximo experimental, em metros;
+  \item o deslocamento vertical máximo que a pipoca atingiria na ausência de forças dissipativas, em metros;
+  \item a velocidade terminal de queda prevista pelo modelo, em $\mathrm{m/s}$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Do gráfico experimental,
+\[
+h_{exp}\approx 0{,}42\,\mathrm{m}.
+\]
+
+Sem forças dissipativas, conserva-se a energia mecânica:
+\[
+\frac12mv_0^2=mgh,
+\]
+logo
+\[
+h=\frac{v_0^2}{2g}=\frac{3^2}{2\cdot10}=0{,}45\,\mathrm{m}.
+\]
+
+Na velocidade terminal, o peso e a força de arrasto têm o mesmo módulo:
+\[
+mg=bv_t^2.
+\]
+Portanto,
+\[
+v_t=\sqrt{\frac{mg}{b}}=\sqrt{\frac{0{,}2\cdot10}{0{,}4}}=\sqrt5\approx\Sexpr{round(vterminal,2)}\,\mathrm{m/s}.
+\]
+
+\begin{answerlist}
+  \item $0{,}42\,\mathrm{m}$
+  \item $0{,}45\,\mathrm{m}$
+  \item $\Sexpr{round(vterminal,2)}\,\mathrm{m/s}$
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{\Sexpr{h_exp}|\Sexpr{h_sem_arrasto}|\Sexpr{vterminal}}
+%% \exclozetype{num|num|num}
+%% \extol{0.01|0.01|0.02}
+%% \exname{Q100ClozeFUVEST2026PipocaArrasto}
+%% \exsection{Leis de Newton; Forca de arrasto; Velocidade terminal; Energia mecanica; FUVEST}
+%% \exusepackage[utf8]{inputenc}
