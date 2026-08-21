@@ -47,8 +47,7 @@ def main() -> int:
         assert fp(root) == base, "identical inputs must produce identical fingerprints"
 
         write(root / "BancoDeQuestoes/topico/Q1.Rnw", "question-v2")
-        changed_rnw = fp(root)
-        assert changed_rnw != base, ".Rnw change must invalidate"
+        assert fp(root) != base, ".Rnw change must invalidate"
         write(root / "BancoDeQuestoes/topico/Q1.Rnw", "question-v1")
         assert fp(root) == base
 
@@ -70,6 +69,21 @@ def main() -> int:
         write(root / "tests/tests.R", "validator-v2")
         assert fp(root) != base, "validator change must invalidate"
         write(root / "tests/tests.R", "validator-v1")
+        assert fp(root) == base
+
+        write(root / "tests/run_tests_parallel.R", "runner-v2")
+        assert fp(root) != base, "runner/tool change must invalidate"
+        write(root / "tests/run_tests_parallel.R", "runner-v1")
+        assert fp(root) == base
+
+        write(root / "tools/ci_compile_cache.py", "fingerprinter-v2")
+        assert fp(root) != base, "fingerprint implementation change must invalidate"
+        write(root / "tools/ci_compile_cache.py", "fingerprinter-v1")
+        assert fp(root) == base
+
+        write(root / "docker/ci/Dockerfile", "FROM other-example\n")
+        assert fp(root) != base, "toolchain definition change must invalidate"
+        write(root / "docker/ci/Dockerfile", "FROM example\n")
         assert fp(root) == base
 
         assert fp(root, env="env-B") != base, "environment change must invalidate"
