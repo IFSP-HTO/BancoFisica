@@ -1,0 +1,39 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+(FUVEST 2026 - 1ª Fase, Questão 77, adaptada) Em um exame de audiometria, a melhor resposta auditiva de um paciente ocorre na frequência de $1000\,\mathrm{Hz}$. Considere a velocidade do som no ar igual a $340\,\mathrm{m/s}$.
+
+Qual é o comprimento de onda correspondente?
+
+\begin{answerlist}
+  \item $1{,}36\,\mathrm{cm}$
+  \item $4{,}25\,\mathrm{cm}$
+  \item $23{,}5\,\mathrm{cm}$
+  \item $34\,\mathrm{cm}$
+  \item $80\,\mathrm{cm}$
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Pela relação fundamental das ondas,
+\[
+v=\lambda f.
+\]
+Assim,
+\[
+\lambda=\frac{v}{f}=\frac{340}{1000}=0{,}34\,\mathrm{m}=34\,\mathrm{cm}.
+\]
+A alternativa correta é a \textbf{D}.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: FUVEST 2026, 1ª Fase, V1, Questão 77 (adaptada).
+%% \extype{schoice}
+%% \exsolution{00010}
+%% \exname{Q104QuizFUVEST2026AudiometriaComprimentoOnda}
+%% \exsection{Ondas; Acustica; Comprimento de onda; Equacao fundamental; FUVEST}
+%% \exusepackage[utf8]{inputenc}
