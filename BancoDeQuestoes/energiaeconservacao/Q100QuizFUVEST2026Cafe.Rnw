@@ -1,0 +1,43 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+(FUVEST 2026 - 1ª Fase, Questão 72, adaptada) Na preparação de café filtrado, um jato de água cai do bico do bule até a lâmina de água já presente no filtro. A altura dessa lâmina, medida a partir da base do filtro, é $H=8\,\mathrm{cm}$. Para uma melhor mistura, deseja-se que o jato atinja a água com velocidade de pelo menos $2\,\mathrm{m/s}$. Despreze a velocidade inicial do jato e a resistência do ar e adote $g=10\,\mathrm{m/s^2}$.
+
+Qual deve ser, no mínimo, a altura $D$ do bico do bule em relação à base do filtro?
+
+\begin{answerlist}
+  \item $4\,\mathrm{cm}$
+  \item $8{,}2\,\mathrm{cm}$
+  \item $10\,\mathrm{cm}$
+  \item $18\,\mathrm{cm}$
+  \item $28\,\mathrm{cm}$
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+A queda efetiva é $D-H$. Pela conservação da energia mecânica,
+\[
+mg(D-H)=\frac12mv^2.
+\]
+Assim,
+\[
+D-H=\frac{v^2}{2g}=\frac{4}{20}=0{,}20\,\mathrm{m}=20\,\mathrm{cm}.
+\]
+Como $H=8\,\mathrm{cm}$,
+\[
+D=20+8=28\,\mathrm{cm}.
+\]
+A alternativa correta é a \textbf{E}.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: FUVEST 2026, 1ª Fase, V1, Questão 72 (adaptada).
+%% \extype{schoice}
+%% \exsolution{00001}
+%% \exname{Q100QuizFUVEST2026Cafe}
+%% \exsection{Energia mecanica; Conservacao da energia; Queda livre; FUVEST}
+%% \exusepackage[utf8]{inputenc}
