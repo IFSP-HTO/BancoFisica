@@ -38,32 +38,28 @@ Como $I_r=P/(A\lambda)$,
 \[
 \frac{P}{A}=I_r\lambda=(1{,}2)(800)=960\,\mathrm{W/m^2}.
 \]
-
 Em uma hora, a energia incidente é
 \[
 E=960\times3600=3{,}456\times10^6\,\mathrm{J}.
 \]
-A energia absorvida é
+A energia absorvida é $Q=(5/6)E=2{,}88\times10^6\,\mathrm{J}$ e a massa da camada é $m=\rho Ah=200\,\mathrm{kg}$. Logo,
 \[
-Q=\frac56E=2{,}88\times10^6\,\mathrm{J}.
+\Delta T=\frac{Q}{mc}=3{,}6\,^{\circ}\mathrm{C}.
 \]
-A massa da camada considerada é
-\[
-m=\rho Ah=(1000)(1)(0{,}20)=200\,\mathrm{kg}.
-\]
-Logo,
-\[
-\Delta T=\frac{Q}{mc}=\frac{2{,}88\times10^6}{(200)(4000)}=3{,}6\,^{\circ}\mathrm{C}.
-\]
-
 A energia de cada fóton é
 \[
-E_f=\frac{hc}{\lambda}=\frac{2\times10^{-16}}{800}=2{,}5\times10^{-19}\,\mathrm{J}.
+E_f=\frac{hc}{\lambda}=2{,}5\times10^{-19}\,\mathrm{J},
 \]
-Em $1\,\mathrm{s}$ chegam $960\,\mathrm{J}$ à área de $1\,\mathrm{m^2}$, portanto
+e, em $1\,\mathrm{s}$, chegam $960\,\mathrm{J}$ à área considerada. Portanto,
 \[
 N=\frac{960}{2{,}5\times10^{-19}}=3{,}84\times10^{21}.
 \]
+
+\begin{answerlist}
+  \item $960\,\mathrm{W/m^2}$
+  \item $3{,}6\,^{\circ}\mathrm{C}$
+  \item $3{,}84\times10^{21}$ fótons
+\end{answerlist}
 
 \end{solution}
 
