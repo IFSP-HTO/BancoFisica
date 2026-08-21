@@ -7,7 +7,7 @@ perda_eV <- 0.01 * Ec0_eV
 perda_J <- perda_eV * 1.6e-19
 d <- 0.10
 Enecessario <- perda_J / (qalpha * d)
-include_supplement("../figuras/Q110ClozeFUVEST2026ParticulaAlfa.png")
+include_supplement("Q110ClozeFUVEST2026ParticulaAlfa.png", dir = "../figuras")
 @
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
