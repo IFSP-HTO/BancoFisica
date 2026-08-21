@@ -111,7 +111,7 @@ jobs:
         uses: actions/cache/save@v4
         with:
           path: .cache/bancofisica-ci
-          key: bancofisica-cache-benchmark-v1-${{ github.run_id }}
+          key: bancofisica-cache-benchmark-v1-${{ github.run_id }}-${{ github.run_attempt }}
 
   warm:
     name: warm-cache
@@ -135,7 +135,7 @@ jobs:
         uses: actions/cache/restore@v4
         with:
           path: .cache/bancofisica-ci
-          key: bancofisica-cache-benchmark-v1-${{ github.run_id }}
+          key: bancofisica-cache-benchmark-v1-${{ github.run_id }}-${{ github.run_attempt }}
           fail-on-cache-miss: true
 
       - name: Select prebuilt CI image
