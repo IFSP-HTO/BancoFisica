@@ -1,43 +1,59 @@
 <<echo=FALSE, results=hide>>=
-R <- 5/2.5
+R <- 2
 Upar <- 10
 Req <- 15/6
+include_supplement("../../figuras/Q101ClozeFUVEST2026Fusivel.png")
 @
 \usepackage[utf8]{inputenc}
+\usepackage{graphicx}
 
 \begin{question}
 
-(FUVEST 2026 - 2ª Fase, F05, adaptada) Um circuito contém um resistor, uma lâmpada e um fusível. Da curva característica do resistor, observa-se que uma ddp de $5{,}0\,\mathrm{V}$ produz corrente de $2{,}5\,\mathrm{A}$. O fusível suporta corrente máxima de $6{,}0\,\mathrm{A}$ e, nessa corrente, apresenta ddp de $5{,}0\,\mathrm{V}$. Na condição-limite de funcionamento, a ddp total do circuito é $15\,\mathrm{V}$ e resistor e lâmpada estão associados em paralelo.
+(FUVEST 2026 - 2ª Fase, F05) Resistores e fusíveis desempenham papéis fundamentais em circuitos eletrônicos. Enquanto os resistores controlam a passagem da corrente elétrica ou são utilizados para conversão de energia elétrica em térmica, os fusíveis cortam a corrente quando ela ultrapassa certo limite, evitando assim danos e acidentes.
 
-Determine:
+Um estudante montou o circuito eletrônico formado por um resistor, uma lâmpada e um fusível, com resistência $R$, $L$ e $R_F$, respectivamente, e curvas características mostradas a seguir.
 
-\begin{answerlist}
-  \item a resistência elétrica do resistor, em $\Omega$;
-  \item a ddp sobre os elementos associados em paralelo, em volts;
-  \item a resistência equivalente do circuito para corrente total de $6{,}0\,\mathrm{A}$, em $\Omega$.
-\end{answerlist}
+\begin{center}
+\includegraphics[width=0.96\textwidth,keepaspectratio]{Q101ClozeFUVEST2026Fusivel.png}
+\end{center}
+
+\textbf{a)} Determine o valor da resistência elétrica (em $\Omega$) do resistor $R$.
+
+##ANSWER1##
+
+\textbf{b)} Sabendo que o fusível suporta uma corrente máxima de $I=6\,\mathrm{A}$ para que não queime, calcule o valor da ddp mínima sobre os componentes associados em paralelo.
+
+##ANSWER2##
+
+\textbf{c)} Obtenha a resistência equivalente do circuito para uma corrente $I=6\,\mathrm{A}$.
+
+##ANSWER3##
+
+\textbf{Note e adote:}
+
+Considere que a lâmpada se comporta como elemento ômico para correntes de até $1{,}25\,\mathrm{A}$.
 
 \end{question}
 
 \begin{solution}
 
-Para o resistor,
+\textbf{a)} Pela curva característica do resistor $R$, por exemplo no ponto $I=2{,}5\,\mathrm{A}$ e $V=5\,\mathrm{V}$,
 \[
-R=\frac{U}{I}=\frac{5{,}0}{2{,}5}=2{,}0\,\Omega.
+R=\frac{V}{I}=\frac{5}{2{,}5}=2\,\Omega.
 \]
 
-Na condição-limite, o fusível fica com $5{,}0\,\mathrm{V}$ dos $15\,\mathrm{V}$ totais. Assim, nos elementos em paralelo:
+\textbf{b)} Para $I=6\,\mathrm{A}$, a curva do fusível indica uma ddp de $5\,\mathrm{V}$. Como a fonte fornece $15\,\mathrm{V}$, a ddp sobre a associação em paralelo é
 \[
-U_{\parallel}=15-5=10\,\mathrm{V}.
+V_{\parallel}=15-5=10\,\mathrm{V}.
 \]
 
-A resistência equivalente do circuito nessa condição vale
+\textbf{c)} Para uma corrente total de $6\,\mathrm{A}$ e tensão total de $15\,\mathrm{V}$,
 \[
-R_{eq}=\frac{U_{total}}{I_{total}}=\frac{15}{6}=2{,}5\,\Omega.
+R_{eq}=\frac{15}{6}=2{,}5\,\Omega.
 \]
 
 \begin{answerlist}
-  \item $2{,}0\,\Omega$
+  \item $2\,\Omega$
   \item $10\,\mathrm{V}$
   \item $2{,}5\,\Omega$
 \end{answerlist}
@@ -45,6 +61,9 @@ R_{eq}=\frac{U_{total}}{I_{total}}=\frac{15}{6}=2{,}5\,\Omega.
 \end{solution}
 
 %% META-INFORMATION
+%% Fonte: FUVEST 2026, 2ª Fase, 2º dia, questão F05.
+%% PDF oficial SHA-256: 77500abdde9cef9922669412e375665a1a271707f6d53299596feb6ff5917f05.
+%% Figura extraída diretamente do PDF oficial conforme AGENTS.md e docs/PDF_SOURCE_WORKFLOW.md.
 %% \extype{cloze}
 %% \exsolution{\Sexpr{R}|\Sexpr{Upar}|\Sexpr{Req}}
 %% \exclozetype{num|num|num}
