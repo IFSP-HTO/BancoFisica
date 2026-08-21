@@ -1,0 +1,38 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+(Comvest / Vestibular Unicamp 2025) Em um detector do experimento DUNE, luz de comprimento de onda $\lambda_1=128\,\mathrm{nm}$ é convertida em luz de comprimento de onda $\lambda_2=350\,\mathrm{nm}$. Considerando a propagação no mesmo meio, qual relação entre frequências e velocidades é correta?
+
+\begin{answerlist}
+  \item $f_2>f_1$ e $v_2=v_1$.
+  \item $f_2<f_1$ e $v_2=v_1$.
+  \item $f_2=f_1$ e $v_2>v_1$.
+  \item $f_2=f_1$ e $v_2<v_1$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+No mesmo meio, a velocidade de propagação é a mesma para as duas radiações no modelo adotado pela questão. Pela relação
+\[
+v=\lambda f,
+\]
+tem-se
+\[
+f=\frac{v}{\lambda}.
+\]
+Como $\lambda_2>\lambda_1$, segue que $f_2<f_1$, enquanto $v_2=v_1$.
+
+Portanto, a alternativa correta é \textbf{B}.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Comvest / Vestibular Unicamp 2025 (Q11, adaptada).
+%% \extype{schoice}
+%% \exsolution{0100}
+%% \exname{Q103QuizUnicampDUNE}
+%% \exsection{Ondas; Ondas eletromagneticas; Frequencia; Comprimento de onda; Unicamp}
+%% \exusepackage[utf8]{inputenc}
