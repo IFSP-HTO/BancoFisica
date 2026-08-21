@@ -1,0 +1,77 @@
+<<echo=FALSE, results=hide>>=
+Ir <- 1.2 # W/(m2 nm)
+lambda <- 800 # nm
+A <- 1 # m2
+t <- 3600 # s
+frac_abs <- 5/6
+rho <- 1000 # kg/m3
+hagua <- 0.20 # m
+c <- 4000 # J/(kg C)
+hc <- 2e-16 # J nm
+Parea <- Ir*lambda
+Etotal <- Parea*A*t
+Q <- frac_abs*Etotal
+m <- rho*A*hagua
+dT <- Q/(m*c)
+Efoton <- hc/lambda
+N <- Parea*A/Efoton
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+(FUVEST 2026 - 2ª Fase, F06, adaptada) No nível do mar, a irradiância espectral da luz solar na região visível pode ser aproximada por $1{,}2\,\mathrm{W/(m^2\,nm)}$. Considere luz vermelha de comprimento de onda $800\,\mathrm{nm}$ incidindo sobre $1\,\mathrm{m^2}$ da superfície do mar durante $1\,\mathrm{h}$. Admita que $5/6$ da energia seja absorvida pela água, em uma camada de $20\,\mathrm{cm}$ de profundidade. Use $\rho=1000\,\mathrm{kg/m^3}$, $c=4{,}0\times10^3\,\mathrm{J/(kg\,^{\circ}C)}$ e $hc=2\times10^{-16}\,\mathrm{J\,nm}$.
+
+Determine:
+
+\begin{answerlist}
+  \item a potência por unidade de área correspondente à luz de $800\,\mathrm{nm}$, em $\mathrm{W/m^2}$;
+  \item a variação de temperatura da camada de água, em $^{\circ}\mathrm{C}$;
+  \item o número de fótons de $800\,\mathrm{nm}$ que atingem a área de $1\,\mathrm{m^2}$ em $1\,\mathrm{s}$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Como $I_r=P/(A\lambda)$,
+\[
+\frac{P}{A}=I_r\lambda=(1{,}2)(800)=960\,\mathrm{W/m^2}.
+\]
+
+Em uma hora, a energia incidente é
+\[
+E=960\times3600=3{,}456\times10^6\,\mathrm{J}.
+\]
+A energia absorvida é
+\[
+Q=\frac56E=2{,}88\times10^6\,\mathrm{J}.
+\]
+A massa da camada considerada é
+\[
+m=\rho Ah=(1000)(1)(0{,}20)=200\,\mathrm{kg}.
+\]
+Logo,
+\[
+\Delta T=\frac{Q}{mc}=\frac{2{,}88\times10^6}{(200)(4000)}=3{,}6\,^{\circ}\mathrm{C}.
+\]
+
+A energia de cada fóton é
+\[
+E_f=\frac{hc}{\lambda}=\frac{2\times10^{-16}}{800}=2{,}5\times10^{-19}\,\mathrm{J}.
+\]
+Em $1\,\mathrm{s}$ chegam $960\,\mathrm{J}$ à área de $1\,\mathrm{m^2}$, portanto
+\[
+N=\frac{960}{2{,}5\times10^{-19}}=3{,}84\times10^{21}.
+\]
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{\Sexpr{Parea}|\Sexpr{dT}|\Sexpr{N}}
+%% \exclozetype{num|num|num}
+%% \extol{0.1|0.01|1e19}
+%% \exname{Q111ClozeFUVEST2026IrradianciaFotons}
+%% \exsection{Fisica moderna; Fotons; Irradiancia; Calorimetria; FUVEST}
+%% \exusepackage[utf8]{inputenc}
