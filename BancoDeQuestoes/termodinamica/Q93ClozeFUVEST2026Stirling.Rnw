@@ -1,0 +1,72 @@
+<<echo=FALSE, results=hide>>=
+eta <- 0.30
+Peletrica <- 15 # kW
+t <- 3600 # s
+Psolar <- Peletrica / eta # kW
+Esolar <- Psolar * 1000 * t # J
+include_supplement("Q93ClozeFUVEST2026Stirling.png", dir = "../figuras")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+
+(FUVEST 2026 - 2ª Fase, F03) Proposto por Robert Stirling em 1816, o motor de Stirling, aplicado em conjunto com coletores solares de disco parabólico, tem sido utilizado na geração de energia elétrica a partir da energia solar. Dessa forma, ele oferece não apenas uma solução eficiente e sustentável à demanda energética, mas também reduzindo perdas na transmissão e impactos ambientais em relação a grandes usinas convencionais. O funcionamento desse motor compreende quatro etapas: aquecimento isovolumétrico, expansão isotérmica, resfriamento isovolumétrico e compressão isotérmica de um gás (assumido como ideal), conforme a figura a seguir.
+
+\begin{center}
+\includegraphics[width=0.55\textwidth,keepaspectratio]{Q93ClozeFUVEST2026Stirling.png}
+\end{center}
+
+Considerando os processos termodinâmicos mostrados na figura (A-B, B-C, C-D, D-A), responda:
+
+\textbf{a)} Qual dos processos descreve a compressão isotérmica do ciclo de Stirling? Justifique a sua resposta.
+
+##ANSWER1##
+
+\textbf{b)} Em qual(is) dos processos, o sistema recebeu calor da fonte quente? Justifique a sua resposta.
+
+##ANSWER2##
+
+\textbf{c)} Coletores solares parabólicos apresentam taxa de conversão de energia solar em energia elétrica de, aproximadamente, $30\%$, com geração de potência elétrica em torno de $15\,\mathrm{kW}$. Nessas condições, estime o valor da energia solar média (em joules) transferida ao coletor durante 1 hora.
+
+##ANSWER3##
+
+\end{question}
+
+\begin{solution}
+
+\textbf{a)} O processo D-A. Nesse trecho o volume diminui enquanto a pressão aumenta, e a curva corresponde a uma transformação isotérmica do gás ideal.
+
+\textbf{b)} Nos processos A-B e B-C. Em A-B ocorre aquecimento isovolumétrico, portanto a energia interna aumenta e o gás recebe calor. Em B-C ocorre expansão isotérmica: a energia interna do gás ideal não varia e o trabalho realizado pelo gás é positivo, de modo que o sistema recebe calor.
+
+\textbf{c)} A potência elétrica corresponde a $30\%$ da potência solar incidente:
+\[
+15\,\mathrm{kW}=0{,}30\,P_{\mathrm{solar}},
+\]
+logo
+\[
+P_{\mathrm{solar}}=50\,\mathrm{kW}=5{,}0\times10^4\,\mathrm{W}.
+\]
+Em $1\,\mathrm{h}=3600\,\mathrm{s}$,
+\[
+E=P\Delta t=(5{,}0\times10^4)(3600)=1{,}8\times10^8\,\mathrm{J}.
+\]
+
+\begin{answerlist}
+  \item D-A
+  \item A-B e B-C
+  \item $1{,}8\times10^8\,\mathrm{J}$
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: FUVEST 2026, 2ª Fase, 2º dia, questão F03.
+%% PDF oficial SHA-256: 77500abdde9cef9922669412e375665a1a271707f6d53299596feb6ff5917f05.
+%% Figura extraída diretamente do PDF oficial conforme AGENTS.md e docs/PDF_SOURCE_WORKFLOW.md.
+%% \extype{cloze}
+%% \exsolution{D-A|A-B e B-C|\Sexpr{Esolar}}
+%% \exclozetype{string|string|num}
+%% \exname{Q93ClozeFUVEST2026Stirling}
+%% \exsection{Termodinamica; Maquina termica; Transformacoes gasosas; Rendimento; Potencia; FUVEST}
+%% \exusepackage[utf8]{inputenc}

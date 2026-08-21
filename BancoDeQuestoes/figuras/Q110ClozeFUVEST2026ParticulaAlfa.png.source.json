@@ -1,0 +1,14 @@
+{
+  "source_pdf": "fuvest2026-fase2-dia2-prova.pdf",
+  "source_sha256": "77500abdde9cef9922669412e375665a1a271707f6d53299596feb6ff5917f05",
+  "mode": "crop",
+  "page": 10,
+  "bbox_pdf_points": [
+    238.128,
+    627.23,
+    381.005,
+    698.794
+  ],
+  "dpi": 300,
+  "output": "BancoDeQuestoes/figuras/Q110ClozeFUVEST2026ParticulaAlfa.png"
+}

@@ -1,49 +1,67 @@
 <<echo=FALSE, results=hide>>=
-qalpha <- 2*1.6e-19
+qalpha <- 2 * 1.6e-19
 Ecampo <- 2e5
-F <- qalpha*Ecampo
+F <- qalpha * Ecampo
 Ec0_eV <- 5.30e6
-perda_eV <- 0.01*Ec0_eV
-perda_J <- perda_eV*1.6e-19
+perda_eV <- 0.01 * Ec0_eV
+perda_J <- perda_eV * 1.6e-19
 d <- 0.10
-Enecessario <- perda_J/(qalpha*d)
+Enecessario <- perda_J / (qalpha * d)
+include_supplement("Q110ClozeFUVEST2026ParticulaAlfa.png", dir = "../figuras")
 @
 \usepackage[utf8]{inputenc}
+\usepackage{graphicx}
 
 \begin{question}
 
-(FUVEST 2026 - 2ª Fase, F02, adaptada) Uma partícula $\alpha$ é formada por dois prótons e dois nêutrons e tem energia cinética inicial de $5{,}30\,\mathrm{MeV}$. Considere a carga do próton $q_p=1{,}6\times10^{-19}\,\mathrm{C}$ e $1\,\mathrm{eV}=1{,}6\times10^{-19}\,\mathrm{J}$.
+(FUVEST 2026 - 2ª Fase, F02) Um dos decaimentos radioativos mais relevantes é o decaimento alfa ($\alpha$), em que um núcleo pesado, como Polônio 210 ou Urânio 235, decai emitindo uma partícula $\alpha$, que é essencialmente um núcleo de Hélio formado por 2 prótons e 2 nêutrons. Como são partículas eletricamente carregadas, as partículas $\alpha$ podem ser aceleradas/desaceleradas por campos elétricos e/ou magnéticos. Por conta disso, embora sejam emitidas com energias da ordem de MeV, as partículas $\alpha$ perdem (transferem) grande parte dessa energia ao interagir com moléculas e átomos, seja no ar ou em tecidos biológicos.
 
-A partícula atravessa inicialmente um tecido no qual perde energia à taxa de $100\,\mathrm{keV}/\mu\mathrm{m}$. Depois, considere-a em um campo elétrico uniforme oposto ao seu movimento.
+Nos itens a seguir, considere uma partícula $\alpha$ que foi emitida com energia cinética inicial de $5{,}30\,\mathrm{MeV}$.
 
-Determine:
+\textbf{a)} Se a partícula $\alpha$ perde energia a uma taxa de $100\,\mathrm{keV}/\mu\mathrm{m}$ ao penetrar um tecido biológico como a pele, ela conseguiria atravessar a epiderme, que tem espessura de $0{,}1\,\mathrm{mm}$? Justifique a sua resposta.
 
-\begin{answerlist}
-  \item a energia, em MeV, que seria perdida ao atravessar uma epiderme de $0{,}1\,\mathrm{mm}$;
-  \item a magnitude da força elétrica, em newtons, quando $E=2\times10^5\,\mathrm{V/m}$;
-  \item a magnitude do campo elétrico, em $\mathrm{V/m}$, necessária para que ela perca $1\%$ da energia cinética inicial após percorrer $10\,\mathrm{cm}$.
-\end{answerlist}
+##ANSWER1##
+
+Considere uma situação em que a partícula $\alpha$ está se movendo sob a ação de um campo elétrico uniforme na mesma direção e em sentido oposto à sua velocidade, conforme mostra a figura:
+
+\begin{center}
+\includegraphics[width=0.48\textwidth,keepaspectratio]{Q110ClozeFUVEST2026ParticulaAlfa.png}
+\end{center}
+
+\textbf{b)} Se o campo elétrico tem módulo de $2\times10^5\,\mathrm{V/m}$, determine a magnitude da força elétrica que atua sobre a partícula $\alpha$.
+
+##ANSWER2##
+
+\textbf{c)} Qual a magnitude do campo elétrico necessária para que a partícula $\alpha$ perca $1\%$ de sua energia cinética inicial após percorrer $10\,\mathrm{cm}$ sob a ação desse campo?
+
+##ANSWER3##
+
+\textbf{Note e adote:}
+
+Carga do próton: $q_P=+1{,}6\times10^{-19}\,\mathrm{C}$
+
+$1\,\mathrm{eV}=1{,}6\times10^{-19}\,\mathrm{J}$
 
 \end{question}
 
 \begin{solution}
 
-Como $0{,}1\,\mathrm{mm}=100\,\mu\mathrm{m}$, a perda seria
+\textbf{a)} Não. A espessura da epiderme é $0{,}1\,\mathrm{mm}=100\,\mu\mathrm{m}$. Se a partícula perdesse $100\,\mathrm{keV}$ a cada micrômetro, a energia necessária para atravessar toda essa espessura seria
 \[
-\Delta E=100\,\frac{\mathrm{keV}}{\mu\mathrm{m}}\times100\,\mu\mathrm{m}=10\,\mathrm{MeV},
+100\,\frac{\mathrm{keV}}{\mu\mathrm{m}}\times100\,\mu\mathrm{m}=10\,\mathrm{MeV},
 \]
-valor maior que a energia inicial; portanto a partícula não atravessaria a epiderme.
+maior que sua energia cinética inicial de $5{,}30\,\mathrm{MeV}$. Portanto, ela é detida antes de atravessar a epiderme.
 
-A carga da partícula alfa é
+\textbf{b)} A carga da partícula alfa é
 \[
-q_\alpha=2q_p=3{,}2\times10^{-19}\,\mathrm{C}.
+q_\alpha=2q_P=3{,}2\times10^{-19}\,\mathrm{C}.
 \]
 Assim,
 \[
 F=q_\alpha E=(3{,}2\times10^{-19})(2\times10^5)=6{,}4\times10^{-14}\,\mathrm{N}.
 \]
 
-Um por cento de $5{,}30\,\mathrm{MeV}$ corresponde a $53\,\mathrm{keV}=8{,}48\times10^{-15}\,\mathrm{J}$. Pelo trabalho da força elétrica,
+\textbf{c)} Um por cento de $5{,}30\,\mathrm{MeV}$ corresponde a $53\,\mathrm{keV}=8{,}48\times10^{-15}\,\mathrm{J}$. Pelo trabalho da força elétrica,
 \[
 q_\alpha E d=\Delta E,
 \]
@@ -53,7 +71,7 @@ E=\frac{8{,}48\times10^{-15}}{(3{,}2\times10^{-19})(0{,}10)}=2{,}65\times10^5\,\
 \]
 
 \begin{answerlist}
-  \item $10\,\mathrm{MeV}$
+  \item Não
   \item $6{,}4\times10^{-14}\,\mathrm{N}$
   \item $2{,}65\times10^5\,\mathrm{V/m}$
 \end{answerlist}
@@ -61,10 +79,12 @@ E=\frac{8{,}48\times10^{-15}}{(3{,}2\times10^{-19})(0{,}10)}=2{,}65\times10^5\,\
 \end{solution}
 
 %% META-INFORMATION
+%% Fonte: FUVEST 2026, 2ª Fase, 2º dia, questão F02.
+%% PDF oficial SHA-256: 77500abdde9cef9922669412e375665a1a271707f6d53299596feb6ff5917f05.
+%% Figura extraída diretamente do PDF oficial conforme AGENTS.md e docs/PDF_SOURCE_WORKFLOW.md.
 %% \extype{cloze}
-%% \exsolution{10|\Sexpr{F}|\Sexpr{Enecessario}}
-%% \exclozetype{num|num|num}
-%% \extol{0.01|1e-15|1000}
+%% \exsolution{Não|\Sexpr{F}|\Sexpr{Enecessario}}
+%% \exclozetype{string|num|num}
 %% \exname{Q110ClozeFUVEST2026ParticulaAlfa}
 %% \exsection{Fisica moderna; Radioatividade; Particula alfa; Campo eletrico; FUVEST}
 %% \exusepackage[utf8]{inputenc}

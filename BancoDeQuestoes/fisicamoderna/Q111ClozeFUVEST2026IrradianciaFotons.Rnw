@@ -8,55 +8,82 @@ rho <- 1000 # kg/m3
 hagua <- 0.20 # m
 c <- 4000 # J/(kg C)
 hc <- 2e-16 # J nm
-Parea <- Ir*lambda
-Etotal <- Parea*A*t
-Q <- frac_abs*Etotal
-m <- rho*A*hagua
-dT <- Q/(m*c)
-Efoton <- hc/lambda
-N <- Parea*A/Efoton
+Parea <- Ir * lambda
+Etotal <- Parea * A * t
+Q <- frac_abs * Etotal
+m <- rho * A * hagua
+dT <- Q / (m * c)
+Efoton <- hc / lambda
+N <- Parea * A / Efoton
 @
 \usepackage[utf8]{inputenc}
 
 \begin{question}
 
-(FUVEST 2026 - 2ª Fase, F06, adaptada) No nível do mar, a irradiância espectral da luz solar na região visível pode ser aproximada por $1{,}2\,\mathrm{W/(m^2\,nm)}$. Considere luz vermelha de comprimento de onda $800\,\mathrm{nm}$ incidindo sobre $1\,\mathrm{m^2}$ da superfície do mar durante $1\,\mathrm{h}$. Admita que $5/6$ da energia seja absorvida pela água, em uma camada de $20\,\mathrm{cm}$ de profundidade. Use $\rho=1000\,\mathrm{kg/m^3}$, $c=4{,}0\times10^3\,\mathrm{J/(kg\,^{\circ}C)}$ e $hc=2\times10^{-16}\,\mathrm{J\,nm}$.
+(FUVEST 2026 - 2ª Fase, F06) A Terra recebe energia do Sol principalmente na forma de luz visível, que abrange comprimentos de onda na faixa de $400\,\mathrm{nm}$ (cor violeta) até $800\,\mathrm{nm}$ (cor vermelha), os quais são percebidos como as cores do arco-íris.
 
-Determine:
+Sabendo que, na região da luz visível, a irradiância espectral da luz do Sol, no nível do mar, é aproximadamente constante, com o valor de $1{,}2\,\mathrm{W/(m^2\,nm)}$, e que cerca de $5/6$ dessa luz solar é absorvida pela água do mar, responda:
 
-\begin{answerlist}
-  \item a potência por unidade de área correspondente à luz de $800\,\mathrm{nm}$, em $\mathrm{W/m^2}$;
-  \item a variação de temperatura da camada de água, em $^{\circ}\mathrm{C}$;
-  \item o número de fótons de $800\,\mathrm{nm}$ que atingem a área de $1\,\mathrm{m^2}$ em $1\,\mathrm{s}$.
-\end{answerlist}
+\textbf{a)} Qual a cor da luz solar do espectro visível que terá maior potência por área no nível do mar? Justifique a sua resposta.
+
+##ANSWER1##
+
+\textbf{b)} Qual a variação de temperatura que a luz vermelha de $800\,\mathrm{nm}$ provoca quando incide durante $1\,\mathrm{h}$ na área de $1\,\mathrm{m^2}$ em uma faixa de $20\,\mathrm{cm}$ de profundidade de água do mar?
+
+##ANSWER2##
+
+Considerando o caráter corpuscular da luz, sabe-se que cada fóton tem energia relacionada à constante de Planck ($h$), à velocidade da luz ($c$) e ao comprimento de onda da luz ($\lambda$), ou seja, $E=hc/\lambda$. Com base nessas informações, responda:
+
+\textbf{c)} Quantos fótons da luz vermelha de $800\,\mathrm{nm}$ atingirão essa área de $1\,\mathrm{m^2}$ da água do mar em $1\,\mathrm{s}$?
+
+##ANSWER3##
+
+\textbf{Note e adote:}
+
+Irradiância espectral da luz é uma grandeza física definida pela potência da luz por área, dividida pelo comprimento de onda da luz ($\lambda$), ou seja, $I_r=P/(A\cdot\lambda)$.
+
+Considere que o produto da constante de Planck pela velocidade da luz ($hc$) é igual a $2\times10^{-16}\,\mathrm{J\cdot nm}$, a densidade da água do mar é $1000\,\mathrm{kg/m^3}$ e o calor específico da água do mar é $4\,\mathrm{J/g\,^{\circ}C}$.
+
+Assuma também que toda a energia absorvida pela água do mar é convertida em calor.
 
 \end{question}
 
 \begin{solution}
 
-Como $I_r=P/(A\lambda)$,
+\textbf{a)} Luz vermelha. Como $I_r=P/(A\lambda)$ é aproximadamente constante, $P/A=I_r\lambda$. Portanto, a potência por área é maior para o maior comprimento de onda, que no espectro visível considerado é o vermelho ($800\,\mathrm{nm}$).
+
+\textbf{b)} Para $\lambda=800\,\mathrm{nm}$,
 \[
 \frac{P}{A}=I_r\lambda=(1{,}2)(800)=960\,\mathrm{W/m^2}.
 \]
-Em uma hora, a energia incidente é
+Em uma hora e numa área de $1\,\mathrm{m^2}$, a energia incidente é
 \[
 E=960\times3600=3{,}456\times10^6\,\mathrm{J}.
 \]
-A energia absorvida é $Q=(5/6)E=2{,}88\times10^6\,\mathrm{J}$ e a massa da camada é $m=\rho Ah=200\,\mathrm{kg}$. Logo,
+A energia absorvida é
+\[
+Q=\frac56E=2{,}88\times10^6\,\mathrm{J}.
+\]
+A massa da camada de água é
+\[
+m=\rho Ah=(1000)(1)(0{,}20)=200\,\mathrm{kg}.
+\]
+Como $c=4\,\mathrm{J/g\,^{\circ}C}=4000\,\mathrm{J/kg\,^{\circ}C}$,
 \[
 \Delta T=\frac{Q}{mc}=3{,}6\,^{\circ}\mathrm{C}.
 \]
-A energia de cada fóton é
+
+\textbf{c)} A energia de um fóton vermelho é
 \[
-E_f=\frac{hc}{\lambda}=2{,}5\times10^{-19}\,\mathrm{J},
+E_f=\frac{hc}{\lambda}=\frac{2\times10^{-16}}{800}=2{,}5\times10^{-19}\,\mathrm{J}.
 \]
-e, em $1\,\mathrm{s}$, chegam $960\,\mathrm{J}$ à área considerada. Portanto,
+Em $1\,\mathrm{s}$, a energia que atinge $1\,\mathrm{m^2}$ é $960\,\mathrm{J}$. Logo,
 \[
 N=\frac{960}{2{,}5\times10^{-19}}=3{,}84\times10^{21}.
 \]
 
 \begin{answerlist}
-  \item $960\,\mathrm{W/m^2}$
+  \item vermelha
   \item $3{,}6\,^{\circ}\mathrm{C}$
   \item $3{,}84\times10^{21}$ fótons
 \end{answerlist}
@@ -64,10 +91,10 @@ N=\frac{960}{2{,}5\times10^{-19}}=3{,}84\times10^{21}.
 \end{solution}
 
 %% META-INFORMATION
+%% Fonte: FUVEST 2026, 2ª Fase, 2º dia, questão F06.
 %% \extype{cloze}
-%% \exsolution{\Sexpr{Parea}|\Sexpr{dT}|\Sexpr{N}}
-%% \exclozetype{num|num|num}
-%% \extol{0.1|0.01|1e19}
+%% \exsolution{vermelha|\Sexpr{dT}|\Sexpr{N}}
+%% \exclozetype{string|num|num}
 %% \exname{Q111ClozeFUVEST2026IrradianciaFotons}
 %% \exsection{Fisica moderna; Fotons; Irradiancia; Calorimetria; FUVEST}
 %% \exusepackage[utf8]{inputenc}
