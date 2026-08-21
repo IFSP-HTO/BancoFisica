@@ -1,0 +1,47 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+(FUVEST 2026 - 1ª Fase, Questão 76, adaptada) Em um exame de audiometria, um paciente necessita de nível de intensidade sonora de $50\,\mathrm{dB}$ em $8000\,\mathrm{Hz}$ e de $20\,\mathrm{dB}$ em $500\,\mathrm{Hz}$ para perceber os sons.
+
+Sabendo que
+\[
+\alpha=10\log_{10}\left(\frac{I}{I_0}\right),
+\]
+qual é a razão entre as intensidades $I_{8000}/I_{500}$?
+
+\begin{answerlist}
+  \item $10^2$
+  \item $10^3$
+  \item $10^4$
+  \item $10^5$
+  \item $10^6$
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+A diferença entre os níveis sonoros é
+\[
+\Delta\alpha=50-20=30\,\mathrm{dB}.
+\]
+Logo,
+\[
+30=10\log_{10}\left(\frac{I_{8000}}{I_{500}}\right),
+\]
+e portanto
+\[
+\frac{I_{8000}}{I_{500}}=10^3.
+\]
+A alternativa correta é a \textbf{B}.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: FUVEST 2026, 1ª Fase, V1, Questão 76 (adaptada).
+%% \extype{schoice}
+%% \exsolution{01000}
+%% \exname{Q103QuizFUVEST2026AudiometriaIntensidade}
+%% \exsection{Ondas; Acustica; Nivel sonoro; Intensidade sonora; FUVEST}
+%% \exusepackage[utf8]{inputenc}
