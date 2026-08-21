@@ -1,10 +1,18 @@
+<<echo=FALSE, results=hide>>=
+include_supplement("../figuras/enem2021_q111_ilha_calor.png")
+@
 \usepackage[utf8]{inputenc}
+\usepackage{graphicx}
 
 \begin{question}
 
-Em uma grande cidade, superfícies urbanas aquecidas pela energia recebida do Sol formam uma ilha de calor. O ar em contato com essas superfícies aquece, torna-se menos denso e sobe, interferindo na circulação da brisa marítima.
+Na cidade de São Paulo, ilhas de calor podem alterar a circulação da brisa marítima. Ao atingir a região urbana aquecida, a brisa encontra um fluxo vertical de ar que transporta para maiores altitudes a energia térmica absorvida pelas superfícies da cidade. A figura representa os três subsistemas envolvidos nesse fenômeno.
 
-Os mecanismos dominantes de transferência de energia térmica entre o Sol e a superfície urbana e entre a superfície urbana e o ar são, respectivamente,
+\begin{center}
+\includegraphics[width=11cm,keepaspectratio]{../figuras/enem2021_q111_ilha_calor.png}
+\end{center}
+
+No processo descrito, há dois mecanismos dominantes de transferência de calor: entre o Sol e a ilha de calor e entre a ilha de calor e a brisa marítima. Esses mecanismos são, respectivamente,
 
 \begin{answerlist}
   \item irradiação e convecção.
@@ -18,14 +26,16 @@ Os mecanismos dominantes de transferência de energia térmica entre o Sol e a s
 
 \begin{solution}
 
-A energia do Sol chega à Terra por ondas eletromagnéticas, portanto o mecanismo é a \textbf{irradiação}.
+A energia do Sol chega à superfície terrestre por ondas eletromagnéticas, portanto o primeiro mecanismo é a \textbf{irradiação}.
 
-Já o ar aquecido junto às superfícies urbanas se movimenta por diferença de densidade, caracterizando \textbf{convecção}. Assim, a sequência correta é irradiação e convecção.
+O ar aquecido junto às superfícies urbanas torna-se menos denso e se desloca verticalmente, estabelecendo transporte de energia associado ao movimento do fluido. Esse mecanismo é a \textbf{convecção}.
+
+Logo, a alternativa correta é a \textbf{A}.
 
 \end{solution}
 
 %% META-INFORMATION
-%% Fonte: questão inspirada no ENEM 2021 Q111; a figura original foi dispensada por não ser necessária na adaptação textual.
+%% Fonte: ENEM 2021 Q111 (adaptada), com esquema original recortado diretamente do PDF oficial.
 %% \extype{schoice}
 %% \exsolution{10000}
 %% \exname{Q93QuizIlhaCalorTransferencia}
