@@ -1,0 +1,39 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+(Comvest / Vestibular Unicamp 2024) Uma cápsula de massa $3000\,\mathrm{kg}$ reduz sua velocidade de $7000\,\mathrm{m/s}$ para $5000\,\mathrm{m/s}$. Qual é o trabalho realizado pela força resultante durante essa desaceleração?
+
+\begin{answerlist}
+  \item $-1{,}11\times10^{11}\,\mathrm{J}$.
+  \item $-3{,}60\times10^{10}\,\mathrm{J}$.
+  \item $-6{,}00\times10^{6}\,\mathrm{J}$.
+  \item $-3{,}00\times10^{6}\,\mathrm{J}$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Pelo teorema da energia cinética,
+\[
+W_{\mathrm{res}}=\Delta E_c
+=\frac{m}{2}\left(v_f^2-v_i^2\right).
+\]
+Assim,
+\[
+W_{\mathrm{res}}=\frac{3000}{2}\left(5000^2-7000^2\right)
+=-3{,}60\times10^{10}\,\mathrm{J}.
+\]
+
+O sinal negativo indica que a energia cinética da cápsula diminuiu. Portanto, a alternativa correta é \textbf{B}.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Comvest / Vestibular Unicamp 2024 (Q35, adaptada).
+%% \extype{schoice}
+%% \exsolution{0100}
+%% \exname{Q108QuizUnicampCapsulaTrabalho}
+%% \exsection{Mecanica; Trabalho e potencia; Energia cinetica; Teorema da energia cinetica; Unicamp}
+%% \exusepackage[utf8]{inputenc}
