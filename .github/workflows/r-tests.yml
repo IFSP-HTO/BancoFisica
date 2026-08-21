@@ -120,7 +120,7 @@ jobs:
         uses: actions/cache/restore@v4
         with:
           path: .cache/bancofisica-ci
-          key: bancofisica-compile-v1-${{ runner.os }}-${{ github.run_id }}
+          key: bancofisica-compile-v1-${{ runner.os }}-${{ github.run_id }}-${{ github.run_attempt }}
           restore-keys: |
             bancofisica-compile-v1-${{ runner.os }}-
 
@@ -233,7 +233,7 @@ jobs:
         uses: actions/cache/save@v4
         with:
           path: .cache/bancofisica-ci
-          key: bancofisica-compile-v1-${{ runner.os }}-${{ github.run_id }}
+          key: bancofisica-compile-v1-${{ runner.os }}-${{ github.run_id }}-${{ github.run_attempt }}
 
       - name: Audit solution blocks
         if: steps.scope.outputs.mode != 'none'
