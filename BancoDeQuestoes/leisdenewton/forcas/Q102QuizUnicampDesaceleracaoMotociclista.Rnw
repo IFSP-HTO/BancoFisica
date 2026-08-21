@@ -1,0 +1,41 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+(Comvest / Vestibular Unicamp 2026) Uma motocicleta e seu condutor têm massa total de $180\,\mathrm{kg}$. A velocidade diminui uniformemente de $36\,\mathrm{km/h}$ até zero em $20\,\mathrm{s}$. Qual é o módulo da força resultante nesse intervalo?
+
+\begin{answerlist}
+  \item $36\,\mathrm{N}$.
+  \item $90\,\mathrm{N}$.
+  \item $324\,\mathrm{N}$.
+  \item $1800\,\mathrm{N}$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Primeiro, convertemos a velocidade inicial:
+\[
+36\,\mathrm{km/h}=10\,\mathrm{m/s}.
+\]
+O módulo da aceleração é
+\[
+|a|=\frac{|0-10|}{20}=0{,}5\,\mathrm{m/s^2}.
+\]
+Pela segunda lei de Newton,
+\[
+F_{\mathrm{res}}=m|a|=180\cdot0{,}5=90\,\mathrm{N}.
+\]
+
+Portanto, a alternativa correta é \textbf{B}.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Comvest / Vestibular Unicamp 2026 (Q14, adaptada).
+%% \extype{schoice}
+%% \exsolution{0100}
+%% \exname{Q102QuizUnicampDesaceleracaoMotociclista}
+%% \exsection{Mecanica; Leis de Newton; Forca resultante; MUV; Unicamp}
+%% \exusepackage[utf8]{inputenc}
