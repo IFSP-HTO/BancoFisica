@@ -1,5 +1,5 @@
 <<echo=FALSE, results=hide>>=
-include_supplement("../figuras/enem2022_q125_luz_engarrafada.png")
+include_supplement("../figuras/enem2022_q125_luz_engarrafada.jpeg")
 @
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
@@ -9,7 +9,7 @@ include_supplement("../figuras/enem2022_q125_luz_engarrafada.png")
 Uma solução de iluminação diurna utiliza garrafas plásticas PET com água e cloro, fixadas ao telhado de uma casa em um orifício de diâmetro igual ao da garrafa e muito maior que o comprimento de onda da luz. As imagens mostram a chamada ``luz engarrafada'' instalada e seu efeito no interior do ambiente.
 
 \begin{center}
-\includegraphics[width=10.5cm,keepaspectratio]{../figuras/enem2022_q125_luz_engarrafada.png}
+\includegraphics[width=10.5cm,keepaspectratio]{../figuras/enem2022_q125_luz_engarrafada.jpeg}
 \end{center}
 
 Que fenômeno óptico explica o funcionamento da ``luz engarrafada''?
@@ -33,7 +33,7 @@ Esse fenômeno é a \textbf{refração}, que contribui para redistribuir a luz p
 \end{solution}
 
 %% META-INFORMATION
-%% Fonte: ENEM 2022 Q125 (adaptada), com fotografias originais recortadas diretamente do PDF oficial.
+%% Fonte: ENEM 2022 Q125 (adaptada), com o raster fotográfico original extraído diretamente do PDF oficial.
 %% \extype{schoice}
 %% \exsolution{00001}
 %% \exname{Q96QuizLuzEngarrafadaRefracao}
