@@ -1,0 +1,64 @@
+<<echo=FALSE, results=hide>>=
+qalpha <- 2*1.6e-19
+Ecampo <- 2e5
+F <- qalpha*Ecampo
+Ec0_eV <- 5.30e6
+perda_eV <- 0.01*Ec0_eV
+perda_J <- perda_eV*1.6e-19
+d <- 0.10
+Enecessario <- perda_J/(qalpha*d)
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+(FUVEST 2026 - 2ª Fase, F02, adaptada) Uma partícula $\alpha$ é formada por dois prótons e dois nêutrons e tem energia cinética inicial de $5{,}30\,\mathrm{MeV}$. Considere a carga do próton $q_p=1{,}6\times10^{-19}\,\mathrm{C}$ e $1\,\mathrm{eV}=1{,}6\times10^{-19}\,\mathrm{J}$.
+
+A partícula atravessa inicialmente um tecido no qual perde energia à taxa de $100\,\mathrm{keV}/\mu\mathrm{m}$. Depois, considere-a em um campo elétrico uniforme oposto ao seu movimento.
+
+Determine:
+
+\begin{answerlist}
+  \item a energia, em MeV, que seria perdida ao atravessar uma epiderme de $0{,}1\,\mathrm{mm}$;
+  \item a magnitude da força elétrica, em newtons, quando $E=2\times10^5\,\mathrm{V/m}$;
+  \item a magnitude do campo elétrico, em $\mathrm{V/m}$, necessária para que ela perca $1\%$ da energia cinética inicial após percorrer $10\,\mathrm{cm}$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Como $0{,}1\,\mathrm{mm}=100\,\mu\mathrm{m}$, a perda seria
+\[
+\Delta E=100\,\frac{\mathrm{keV}}{\mu\mathrm{m}}\times100\,\mu\mathrm{m}=10\,\mathrm{MeV},
+\]
+valor maior que a energia inicial; portanto a partícula não atravessaria a epiderme.
+
+A carga da partícula alfa é
+\[
+q_\alpha=2q_p=3{,}2\times10^{-19}\,\mathrm{C}.
+\]
+Assim,
+\[
+F=q_\alpha E=(3{,}2\times10^{-19})(2\times10^5)=6{,}4\times10^{-14}\,\mathrm{N}.
+\]
+
+Um por cento de $5{,}30\,\mathrm{MeV}$ corresponde a $53\,\mathrm{keV}=8{,}48\times10^{-15}\,\mathrm{J}$. Pelo trabalho da força elétrica,
+\[
+q_\alpha E d=\Delta E,
+\]
+portanto
+\[
+E=\frac{8{,}48\times10^{-15}}{(3{,}2\times10^{-19})(0{,}10)}=2{,}65\times10^5\,\mathrm{V/m}.
+\]
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{10|\Sexpr{F}|\Sexpr{Enecessario}}
+%% \exclozetype{num|num|num}
+%% \extol{0.01|1e-15|1000}
+%% \exname{Q110ClozeFUVEST2026ParticulaAlfa}
+%% \exsection{Fisica moderna; Radioatividade; Particula alfa; Campo eletrico; FUVEST}
+%% \exusepackage[utf8]{inputenc}
