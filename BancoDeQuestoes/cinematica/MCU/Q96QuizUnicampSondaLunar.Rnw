@@ -1,0 +1,38 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+(Comvest / Vestibular Unicamp 2025) Uma sonda descreve uma órbita circular de raio $1{,}848\times10^6\,\mathrm{m}$ ao redor da Lua, completando uma volta em $2{,}0\,\mathrm{h}$. Adote $\pi\simeq3$. Qual é sua velocidade orbital?
+
+\begin{answerlist}
+  \item $256{,}6\,\mathrm{m/s}$.
+  \item $1540\,\mathrm{m/s}$.
+  \item $3696\,\mathrm{km/s}$.
+  \item $5544\,\mathrm{km/s}$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Em movimento circular uniforme,
+\[
+v=\frac{2\pi r}{T}.
+\]
+Como $T=2{,}0\,\mathrm{h}=7200\,\mathrm{s}$,
+\[
+v=\frac{2\cdot3\cdot1{,}848\times10^6}{7200}
+=1540\,\mathrm{m/s}.
+\]
+
+Portanto, a alternativa correta é \textbf{B}.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Comvest / Vestibular Unicamp 2025 (Q9, adaptada).
+%% \extype{schoice}
+%% \exsolution{0100}
+%% \exname{Q96QuizUnicampSondaLunar}
+%% \exsection{Mecanica; Cinematica; MCU; Movimento orbital; Unicamp}
+%% \exusepackage[utf8]{inputenc}
