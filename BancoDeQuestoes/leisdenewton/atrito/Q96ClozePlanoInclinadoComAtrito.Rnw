@@ -1,17 +1,21 @@
 <<echo=FALSE, results=hide>>=
-casos <- data.frame(theta=c(37,53), seno=c(0.6,0.8), cosseno=c(0.8,0.6))
-i <- sample(seq_len(nrow(casos)),1)
-theta <- casos$theta[i]
-sn <- casos$seno[i]
-cs <- casos$cosseno[i]
+theta <- 37
+sn <- 0.6
+cs <- 0.8
 mu <- sample(c(0.1,0.2,0.25,0.3),1)
 g <- 10
 a <- g*(sn-mu*cs)
+include_supplement("Q96PlanoInclinadoAtrito_Gaspar_p152.png")
 @
 \usepackage[utf8]{inputenc}
+\usepackage{graphicx}
 
 \begin{question}
-Um bloco desliza para baixo em um plano inclinado que faz $\Sexpr{theta}^{\circ}$ com a horizontal. O coeficiente de atrito cinético é $\Sexpr{mu}$. Adote $g=10\,\mathrm{m/s^2}$, $\sin\Sexpr{theta}^{\circ}=\Sexpr{sn}$ e $\cos\Sexpr{theta}^{\circ}=\Sexpr{cs}$.
+Um bloco desliza para baixo em um plano inclinado que faz $37^{\circ}$ com a horizontal. O coeficiente de atrito cinético é $\Sexpr{mu}$. Adote $g=10\,\mathrm{m/s^2}$, $\sin 37^{\circ}=0{,}6$ e $\cos 37^{\circ}=0{,}8$.
+
+\begin{center}
+\includegraphics[width=0.55\linewidth,keepaspectratio]{Q96PlanoInclinadoAtrito_Gaspar_p152.png}
+\end{center}
 
 Determine o módulo da aceleração do bloco, em $\mathrm{m/s^2}$.
 \end{question}
@@ -31,12 +35,13 @@ a=g(\sin\theta-\mu\cos\theta).
 \]
 Substituindo os valores:
 \[
-a=10(\Sexpr{sn}-\Sexpr{mu}\cdot\Sexpr{cs})
+a=10(0{,}6-\Sexpr{mu}\cdot0{,}8)
 =\Sexpr{round(a,2)}\,\mathrm{m/s^2}.
 \]
 \end{solution}
 
 %% META-INFORMATION
+%% Fonte visual: Alberto Gaspar, Compreendendo a Fisica, v. 1, p. 152 (figura original recortada). A geometria foi fixada em 37 graus para permanecer coerente com a figura-fonte; o coeficiente de atrito continua parametrizado.
 %% \extype{num}
 %% \exsolution{\Sexpr{round(a,2)}}
 %% \extol{0.05}
