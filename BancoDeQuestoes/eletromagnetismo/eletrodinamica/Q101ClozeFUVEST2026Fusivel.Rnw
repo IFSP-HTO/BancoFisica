@@ -1,0 +1,54 @@
+<<echo=FALSE, results=hide>>=
+R <- 5/2.5
+Upar <- 10
+Req <- 15/6
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+(FUVEST 2026 - 2ª Fase, F05, adaptada) Um circuito contém um resistor, uma lâmpada e um fusível. Da curva característica do resistor, observa-se que uma ddp de $5{,}0\,\mathrm{V}$ produz corrente de $2{,}5\,\mathrm{A}$. O fusível suporta corrente máxima de $6{,}0\,\mathrm{A}$ e, nessa corrente, apresenta ddp de $5{,}0\,\mathrm{V}$. Na condição-limite de funcionamento, a ddp total do circuito é $15\,\mathrm{V}$ e resistor e lâmpada estão associados em paralelo.
+
+Determine:
+
+\begin{answerlist}
+  \item a resistência elétrica do resistor, em $\Omega$;
+  \item a ddp sobre os elementos associados em paralelo, em volts;
+  \item a resistência equivalente do circuito para corrente total de $6{,}0\,\mathrm{A}$, em $\Omega$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Para o resistor,
+\[
+R=\frac{U}{I}=\frac{5{,}0}{2{,}5}=2{,}0\,\Omega.
+\]
+
+Na condição-limite, o fusível fica com $5{,}0\,\mathrm{V}$ dos $15\,\mathrm{V}$ totais. Assim, nos elementos em paralelo:
+\[
+U_{\parallel}=15-5=10\,\mathrm{V}.
+\]
+
+A resistência equivalente do circuito nessa condição vale
+\[
+R_{eq}=\frac{U_{total}}{I_{total}}=\frac{15}{6}=2{,}5\,\Omega.
+\]
+
+\begin{answerlist}
+  \item $2{,}0\,\Omega$
+  \item $10\,\mathrm{V}$
+  \item $2{,}5\,\Omega$
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{\Sexpr{R}|\Sexpr{Upar}|\Sexpr{Req}}
+%% \exclozetype{num|num|num}
+%% \extol{0.01|0.01|0.01}
+%% \exname{Q101ClozeFUVEST2026Fusivel}
+%% \exsection{Eletrodinamica; Lei de Ohm; Circuitos; Fusivel; FUVEST}
+%% \exusepackage[utf8]{inputenc}

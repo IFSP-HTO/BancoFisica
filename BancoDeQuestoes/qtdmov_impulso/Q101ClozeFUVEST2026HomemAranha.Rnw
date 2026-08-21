@@ -1,0 +1,85 @@
+<<echo=FALSE, results=hide>>=
+## FUVEST 2026 - 2a fase - F04 (adaptada para R/exams).
+## Fonte: Vestibular FUVEST 2026, 2a fase, 2o dia, Física F04.
+
+H <- 21       # altura inicial em m
+d <- 1        # altura do ponto mais baixo em m
+g <- 10       # m/s^2
+m <- 60       # massas iguais, em kg
+
+vantes <- sqrt(2 * g * (H - d))
+razao <- m / (m + m)
+vdepois <- razao * vantes
+hrel <- vdepois^2 / (2 * g)
+hsolo <- d + hrel
+
+fmt <- function(x, d = 1) formatC(x, format = "f", digits = d, decimal.mark = ",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+(FUVEST 2026 -- adaptada) Um super-herói parte do repouso, preso a uma teia, de uma altura de $\Sexpr{H}\,\mathrm{m}$ em relação ao chão. No ponto mais baixo da trajetória, a $\Sexpr{d}\,\mathrm{m}$ do chão, ele encontra uma pessoa inicialmente em repouso e passa a se mover junto com ela. Considere que os dois têm a mesma massa, $\Sexpr{m}\,\mathrm{kg}$, que a colisão seja perfeitamente inelástica e que, antes e depois da colisão, as perdas de energia mecânica durante o movimento pendular sejam desprezíveis.
+
+Adote $g=\Sexpr{g}\,\mathrm{m/s^2}$ e determine:
+
+\begin{answerlist}
+  \item a velocidade do super-herói imediatamente antes de encontrar a pessoa, em $\mathrm{m/s}$;
+  \item a razão $v_{\mathrm{depois}}/v_{\mathrm{antes}}$ entre as velocidades imediatamente depois e antes da colisão;
+  \item a altura máxima, em metros, atingida pelos dois juntos em relação ao chão após a colisão.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Antes da colisão, conserva-se a energia mecânica. Entre a posição inicial e o ponto mais baixo,
+\[
+mg(H-d)=\frac{1}{2}mv_{\mathrm{antes}}^2.
+\]
+Logo,
+\[
+v_{\mathrm{antes}}=\sqrt{2g(H-d)}
+=\sqrt{2\cdot\Sexpr{g}\cdot(\Sexpr{H}-\Sexpr{d})}
+=\Sexpr{fmt(vantes,0)}\,\mathrm{m/s}.
+\]
+
+Durante a colisão perfeitamente inelástica, conserva-se a quantidade de movimento. Como as massas são iguais,
+\[
+m v_{\mathrm{antes}}=(m+m)v_{\mathrm{depois}},
+\]
+e, portanto,
+\[
+\frac{v_{\mathrm{depois}}}{v_{\mathrm{antes}}}=\frac{1}{2}=\Sexpr{fmt(razao,1)}.
+\]
+
+Após a colisão, volta a valer a conservação da energia mecânica. A velocidade logo após a colisão é
+\[
+v_{\mathrm{depois}}=\Sexpr{fmt(vdepois,0)}\,\mathrm{m/s}.
+\]
+A elevação em relação ao ponto mais baixo é
+\[
+h=\frac{v_{\mathrm{depois}}^2}{2g}
+=\Sexpr{fmt(hrel,0)}\,\mathrm{m}.
+\]
+Como o ponto mais baixo está a $\Sexpr{d}\,\mathrm{m}$ do chão,
+\[
+h_{\mathrm{max}}=h+d=\Sexpr{fmt(hsolo,0)}\,\mathrm{m}.
+\]
+
+\begin{answerlist}
+  \item $\Sexpr{fmt(vantes,0)}\,\mathrm{m/s}$
+  \item $\Sexpr{fmt(razao,1)}$
+  \item $\Sexpr{fmt(hsolo,0)}\,\mathrm{m}$
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{\Sexpr{round(vantes,2)}|\Sexpr{round(razao,2)}|\Sexpr{round(hsolo,2)}}
+%% \exclozetype{num|num|num}
+%% \extol{0.1|0.01|0.1}
+%% \exname{Q101ClozeFUVEST2026HomemAranha}
+%% \exsection{Quantidade de movimento; Colisao perfeitamente inelastica; Energia mecanica}
+%% \exusepackage[utf8]{inputenc}
