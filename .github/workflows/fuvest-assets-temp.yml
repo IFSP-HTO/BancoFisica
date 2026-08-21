@@ -16,7 +16,7 @@ permissions:
   contents: write
 
 jobs:
-  extract-f03:
+  extract-f05:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -40,32 +40,32 @@ jobs:
             -o /tmp/fuvest2026-fase2-dia2-prova.pdf
           file /tmp/fuvest2026-fase2-dia2-prova.pdf
 
-      - name: Extract original F03 figure from PDF
+      - name: Extract original F05 figure from PDF
         run: |
           python tools/pdf_assets.py crop /tmp/fuvest2026-fase2-dia2-prova.pdf \
-            --page 12 \
-            --bbox-percent 33 19 68 39 \
+            --page 14 \
+            --bbox-percent 10 19.5 91 38.5 \
             --dpi 300 \
-            --output BancoDeQuestoes/figuras/Q93ClozeFUVEST2026Stirling.png \
+            --output BancoDeQuestoes/figuras/Q101ClozeFUVEST2026Fusivel.png \
             --provenance --force
 
-      - name: Upload F03 crop for visual inspection
+      - name: Upload F05 crop for visual inspection
         uses: actions/upload-artifact@v4
         with:
-          name: fuvest-f03-crop
+          name: fuvest-f05-crop
           path: |
-            BancoDeQuestoes/figuras/Q93ClozeFUVEST2026Stirling.png
-            BancoDeQuestoes/figuras/Q93ClozeFUVEST2026Stirling.png.source.json
+            BancoDeQuestoes/figuras/Q101ClozeFUVEST2026Fusivel.png
+            BancoDeQuestoes/figuras/Q101ClozeFUVEST2026Fusivel.png.source.json
 
       - name: Commit extracted asset
         if: github.event_name == 'push'
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add BancoDeQuestoes/figuras/Q93ClozeFUVEST2026Stirling.png*
+          git add BancoDeQuestoes/figuras/Q101ClozeFUVEST2026Fusivel.png*
           if git diff --cached --quiet; then
             echo 'No changes to commit.'
           else
-            git commit -m 'assets: ajusta figura original FUVEST 2026 F03'
+            git commit -m 'assets: extrai figura original FUVEST 2026 F05'
             git push origin HEAD:fuvest-2026-fidelidade
           fi
