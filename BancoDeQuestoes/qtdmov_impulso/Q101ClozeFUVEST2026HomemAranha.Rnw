@@ -11,7 +11,7 @@ hrel <- vdepois^2 / (2 * g)
 hsolo <- d + hrel
 
 fmt <- function(x, d = 1) formatC(x, format = "f", digits = d, decimal.mark = ",")
-include_supplement("../figuras/Q101ClozeFUVEST2026HomemAranha.png")
+include_supplement("Q101ClozeFUVEST2026HomemAranha.png", dir = "../figuras")
 @
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
