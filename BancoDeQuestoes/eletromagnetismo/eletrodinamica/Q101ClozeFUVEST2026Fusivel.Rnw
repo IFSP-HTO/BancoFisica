@@ -2,7 +2,7 @@
 R <- 2
 Upar <- 10
 Req <- 15/6
-include_supplement("../../figuras/Q101ClozeFUVEST2026Fusivel.png")
+include_supplement("Q101ClozeFUVEST2026Fusivel.png", dir = "../../figuras")
 @
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
