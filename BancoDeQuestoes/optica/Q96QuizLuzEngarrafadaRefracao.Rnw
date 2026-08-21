@@ -1,10 +1,18 @@
+<<echo=FALSE, results=hide>>=
+include_supplement("../figuras/enem2022_q125_luz_engarrafada.png")
+@
 \usepackage[utf8]{inputenc}
+\usepackage{graphicx}
 
 \begin{question}
 
-Uma solução simples de iluminação diurna utiliza uma garrafa PET transparente cheia de água, instalada atravessando o telhado de uma casa. A luz solar entra pela parte externa da garrafa e se espalha para o interior do ambiente após atravessar as interfaces entre ar, plástico e água.
+Uma solução de iluminação diurna utiliza garrafas plásticas PET com água e cloro, fixadas ao telhado de uma casa em um orifício de diâmetro igual ao da garrafa e muito maior que o comprimento de onda da luz. As imagens mostram a chamada ``luz engarrafada'' instalada e seu efeito no interior do ambiente.
 
-O fenômeno óptico essencial para explicar a mudança de direção dos raios luminosos nessas interfaces é a
+\begin{center}
+\includegraphics[width=10.5cm,keepaspectratio]{../figuras/enem2022_q125_luz_engarrafada.png}
+\end{center}
+
+Que fenômeno óptico explica o funcionamento da ``luz engarrafada''?
 
 \begin{answerlist}
   \item difração.
@@ -18,16 +26,14 @@ O fenômeno óptico essencial para explicar a mudança de direção dos raios lu
 
 \begin{solution}
 
-Quando a luz passa de um meio para outro com índice de refração diferente, sua velocidade de propagação muda. Em geral, isso provoca também uma mudança na direção do raio luminoso.
+A luz solar atravessa interfaces entre meios com índices de refração diferentes, como ar, plástico e água. Nessas interfaces, sua velocidade de propagação muda e os raios luminosos podem mudar de direção.
 
-Esse fenômeno é a \textbf{refração}. Na garrafa, as sucessivas refrações ajudam a redistribuir a luz solar para o interior do ambiente.
-
-A alternativa correta é a \textbf{E}.
+Esse fenômeno é a \textbf{refração}, que contribui para redistribuir a luz para o interior do ambiente. A alternativa correta é a \textbf{E}.
 
 \end{solution}
 
 %% META-INFORMATION
-%% Fonte: questão inspirada no ENEM 2022 Q125.
+%% Fonte: ENEM 2022 Q125 (adaptada), com fotografias originais recortadas diretamente do PDF oficial.
 %% \extype{schoice}
 %% \exsolution{00001}
 %% \exname{Q96QuizLuzEngarrafadaRefracao}
