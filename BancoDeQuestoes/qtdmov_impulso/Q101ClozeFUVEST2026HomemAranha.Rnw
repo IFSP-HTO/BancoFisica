@@ -97,6 +97,7 @@ h_{\max}=1+5=6\,\mathrm{m}.
 
 %% META-INFORMATION
 %% Fonte: FUVEST 2026, 2ª Fase, 2º dia, questão F04.
+%% PDF oficial SHA-256: 77500abdde9cef9922669412e375665a1a271707f6d53299596feb6ff5917f05.
 %% Figura extraída diretamente do PDF oficial conforme AGENTS.md e docs/PDF_SOURCE_WORKFLOW.md.
 %% \extype{cloze}
 %% \exsolution{\Sexpr{round(vantes,2)}|\Sexpr{round(razao,2)}|\Sexpr{round(hsolo,2)}}
