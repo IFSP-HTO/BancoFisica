@@ -1,5 +1,5 @@
 <<echo=FALSE, results=hide>>=
-include_supplement("../figuras/enem2021_q134_sino_ventos.png")
+include_supplement("../figuras/enem2021_q134_sino_ventos.jpg")
 @
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
@@ -9,7 +9,7 @@ include_supplement("../figuras/enem2021_q134_sino_ventos.png")
 O sino dos ventos é composto por várias barras metálicas, de mesmo material e espessura, mas de comprimentos diferentes, conforme a figura.
 
 \begin{center}
-\includegraphics[width=8.5cm,keepaspectratio]{../figuras/enem2021_q134_sino_ventos.png}
+\includegraphics[width=8.5cm,keepaspectratio]{../figuras/enem2021_q134_sino_ventos.jpg}
 \end{center}
 
 Considere $f_1$ e $v_1$, respectivamente, a frequência fundamental e a velocidade de propagação do som emitido pela barra de menor comprimento, e $f_2$ e $v_2$ as mesmas grandezas para a barra de maior comprimento.
