@@ -1,0 +1,46 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+(FUVEST 2026 - 1ª Fase, Questão 71, adaptada) Considere um ovo de $50\,\mathrm{g}$, com massas iguais de clara e gema. Os calores específicos são $3{,}8\,\mathrm{J/(g\,K)}$ para a clara e $3{,}1\,\mathrm{J/(g\,K)}$ para a gema. Em quatro métodos de cozimento, as variações de temperatura da clara e da gema são, respectivamente:
+
+\begin{itemize}
+  \item método 1: $80\,^{\circ}\mathrm{C}$ e $80\,^{\circ}\mathrm{C}$;
+  \item método 2: $77\,^{\circ}\mathrm{C}$ e $62\,^{\circ}\mathrm{C}$;
+  \item método 3: $45\,^{\circ}\mathrm{C}$ e $45\,^{\circ}\mathrm{C}$;
+  \item método 4: $65\,^{\circ}\mathrm{C}$ e $47\,^{\circ}\mathrm{C}$.
+\end{itemize}
+
+Se $Q_n$ é a quantidade total de calor recebida no método $n$, qual é a ordem crescente correta?
+
+\begin{answerlist}
+  \item $Q_4<Q_1<Q_3<Q_2$
+  \item $Q_3<Q_4<Q_2<Q_1$
+  \item $Q_1<Q_3<Q_2<Q_4$
+  \item $Q_3<Q_2<Q_4<Q_1$
+  \item $Q_4<Q_3<Q_1<Q_2$
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Cada parte do ovo tem massa de $25\,\mathrm{g}$. Para cada método,
+\[
+Q=mc_{clara}\Delta T_{clara}+mc_{gema}\Delta T_{gema}.
+\]
+Os valores são, aproximadamente, $Q_1=13800\,\mathrm{J}$, $Q_2=12120\,\mathrm{J}$, $Q_3=7762{,}5\,\mathrm{J}$ e $Q_4=9817{,}5\,\mathrm{J}$. Portanto,
+\[
+Q_3<Q_4<Q_2<Q_1.
+\]
+A alternativa correta é a \textbf{B}.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: FUVEST 2026, 1ª Fase, V1, Questão 71 (adaptada).
+%% \extype{schoice}
+%% \exsolution{01000}
+%% \exname{Q100QuizFUVEST2026Ovo}
+%% \exsection{Calorimetria; Calor sensivel; Calor especifico; FUVEST}
+%% \exusepackage[utf8]{inputenc}
