@@ -1,13 +1,6 @@
 name: CI adaptive profile benchmark
 
 on:
-  pull_request:
-    paths:
-      - tools/ci_test_scope.py
-      - tools/test_ci_test_scope.py
-      - tests/run_tests_parallel.R
-      - .github/workflows/r-tests.yml
-      - .github/workflows/ci-benchmark-adaptive.yml
   workflow_dispatch:
 
 permissions:
