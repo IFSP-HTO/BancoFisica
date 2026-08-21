@@ -1,0 +1,39 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+(FUVEST 2026 - 1ª Fase, Questão 60, adaptada) Considere um buraco negro com a mesma massa do Sol. Seu raio de Schwarzschild é da ordem de $3\times10^3\,\mathrm{m}$, enquanto o raio solar é da ordem de $10^9\,\mathrm{m}$. Suponha ambos esféricos e com distribuição uniforme de massa.
+
+A ordem de grandeza da razão entre a densidade volumétrica do buraco negro e a densidade volumétrica do Sol é mais próxima de:
+
+\begin{answerlist}
+  \item $10^{-2}$
+  \item $10^{4}$
+  \item $10^{10}$
+  \item $10^{16}$
+  \item $10^{22}$
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Como as massas são iguais, a razão entre as densidades é a razão inversa entre os volumes:
+\[
+\frac{\rho_{BN}}{\rho_{Sol}}=\left(\frac{R_{Sol}}{R_{BN}}\right)^3.
+\]
+Logo,
+\[
+\frac{\rho_{BN}}{\rho_{Sol}}\sim\left(\frac{10^9}{3\times10^3}\right)^3\approx 4\times10^{16}.
+\]
+Portanto, a ordem de grandeza é $10^{16}$.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: FUVEST 2026, 1ª Fase, V1, Questão 60 (adaptada).
+%% \extype{schoice}
+%% \exsolution{00010}
+%% \exname{Q100QuizFUVEST2026Schwarzschild}
+%% \exsection{Gravitacao; Buracos negros; Densidade; Ordem de grandeza; FUVEST}
+%% \exusepackage[utf8]{inputenc}
