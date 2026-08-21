@@ -1,0 +1,198 @@
+name: CI content cache benchmark
+
+on:
+  pull_request:
+    paths:
+      - tools/ci_compile_cache.py
+      - tools/test_ci_compile_cache.py
+      - tests/run_tests_parallel.R
+      - .github/workflows/r-tests.yml
+      - .github/workflows/ci-benchmark-cache.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: read
+
+env:
+  BANK_CI_IMAGE_REPO: ghcr.io/ifsp-hto/bancofisica-ci
+  BANK_CACHE_DIR: .cache/bancofisica-ci
+  R_KEEP_PKG_SOURCE: yes
+  NOT_CRAN: true
+  BANK_VALIDATE_FAIL_ON_ERRORS: true
+
+jobs:
+  cold:
+    name: cold-cache
+    runs-on: ubuntu-latest
+    outputs:
+      elapsed: ${{ steps.run.outputs.elapsed }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Validate cache fingerprints
+        run: python3 tools/test_ci_compile_cache.py
+
+      - name: Select 20-question benchmark manifest
+        run: |
+          mkdir -p build/cache-benchmark
+          python3 tools/ci_test_scope.py --full --manifest build/cache-benchmark/full.txt
+          head -n 20 build/cache-benchmark/full.txt > build/cache-benchmark/manifest.txt
+          test "$(wc -l < build/cache-benchmark/manifest.txt)" -eq 20
+
+      - name: Select and pull prebuilt CI image
+        shell: bash
+        run: |
+          set -euo pipefail
+          fingerprint="$(sha256sum docker/ci/Dockerfile DESCRIPTION | sha256sum | awk '{print $1}')"
+          image="${BANK_CI_IMAGE_REPO}:env-${fingerprint}"
+          echo "BANK_CI_IMAGE=${image}" >> "$GITHUB_ENV"
+
+      - name: Log in to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ github.token }}
+
+      - name: Pull image and fingerprint exact environment
+        shell: bash
+        run: |
+          set -euo pipefail
+          docker pull "$BANK_CI_IMAGE"
+          image_id="$(docker image inspect "$BANK_CI_IMAGE" --format '{{.Id}}')"
+          test -n "$image_id"
+          echo "BANK_CACHE_ENV_FINGERPRINT=${image_id}" >> "$GITHUB_ENV"
+
+      - name: Run cold-cache benchmark
+        id: run
+        shell: bash
+        env:
+          BANK_COMPILE_CACHE: 1
+        run: |
+          set -euo pipefail
+          rm -rf "$BANK_CACHE_DIR"
+          started="$(date +%s)"
+          docker run --rm --init \
+            -e R_KEEP_PKG_SOURCE \
+            -e NOT_CRAN \
+            -e BANK_VALIDATE_FAIL_ON_ERRORS \
+            -e BANK_TEST_MODE=incremental \
+            -e BANK_TEST_PROFILE=full \
+            -e BANK_TEST_MANIFEST=/workspace/build/cache-benchmark/manifest.txt \
+            -e BANK_JOBS=4 \
+            -e BANK_COMPILE_CACHE \
+            -e BANK_CACHE_DIR \
+            -e BANK_CACHE_ENV_FINGERPRINT \
+            -v "$GITHUB_WORKSPACE:/workspace" \
+            -w /workspace \
+            "$BANK_CI_IMAGE" \
+            Rscript tests/run_tests_parallel.R
+          elapsed=$(( $(date +%s) - started ))
+          echo "elapsed=${elapsed}" >> "$GITHUB_OUTPUT"
+          cp build/compile-cache/summary.csv build/cache-benchmark/cold.csv
+          python3 - <<'PY'
+          import csv
+          with open('build/cache-benchmark/cold.csv', encoding='utf-8') as f:
+              row = next(csv.DictReader(f))
+          assert int(row['hits']) == 0, row
+          assert int(row['misses']) == 80, row
+          assert int(row['executed']) == 80, row
+          assert int(row['writes']) == 80, row
+          PY
+          echo "### Content cache benchmark" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Cold run: **${elapsed}s** (80 misses / 80 executions)" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Save benchmark cache
+        uses: actions/cache/save@v4
+        with:
+          path: .cache/bancofisica-ci
+          key: bancofisica-cache-benchmark-v1-${{ github.run_id }}
+
+  warm:
+    name: warm-cache
+    runs-on: ubuntu-latest
+    needs: cold
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Select 20-question benchmark manifest
+        run: |
+          mkdir -p build/cache-benchmark
+          python3 tools/ci_test_scope.py --full --manifest build/cache-benchmark/full.txt
+          head -n 20 build/cache-benchmark/full.txt > build/cache-benchmark/manifest.txt
+          test "$(wc -l < build/cache-benchmark/manifest.txt)" -eq 20
+
+      - name: Restore benchmark cache
+        uses: actions/cache/restore@v4
+        with:
+          path: .cache/bancofisica-ci
+          key: bancofisica-cache-benchmark-v1-${{ github.run_id }}
+          fail-on-cache-miss: true
+
+      - name: Select prebuilt CI image
+        shell: bash
+        run: |
+          set -euo pipefail
+          fingerprint="$(sha256sum docker/ci/Dockerfile DESCRIPTION | sha256sum | awk '{print $1}')"
+          echo "BANK_CI_IMAGE=${BANK_CI_IMAGE_REPO}:env-${fingerprint}" >> "$GITHUB_ENV"
+
+      - name: Log in to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ github.token }}
+
+      - name: Pull image and fingerprint exact environment
+        shell: bash
+        run: |
+          set -euo pipefail
+          docker pull "$BANK_CI_IMAGE"
+          image_id="$(docker image inspect "$BANK_CI_IMAGE" --format '{{.Id}}')"
+          test -n "$image_id"
+          echo "BANK_CACHE_ENV_FINGERPRINT=${image_id}" >> "$GITHUB_ENV"
+
+      - name: Run warm-cache benchmark
+        shell: bash
+        env:
+          BANK_COMPILE_CACHE: 1
+        run: |
+          set -euo pipefail
+          started="$(date +%s)"
+          docker run --rm --init \
+            -e R_KEEP_PKG_SOURCE \
+            -e NOT_CRAN \
+            -e BANK_VALIDATE_FAIL_ON_ERRORS \
+            -e BANK_TEST_MODE=incremental \
+            -e BANK_TEST_PROFILE=full \
+            -e BANK_TEST_MANIFEST=/workspace/build/cache-benchmark/manifest.txt \
+            -e BANK_JOBS=4 \
+            -e BANK_COMPILE_CACHE \
+            -e BANK_CACHE_DIR \
+            -e BANK_CACHE_ENV_FINGERPRINT \
+            -v "$GITHUB_WORKSPACE:/workspace" \
+            -w /workspace \
+            "$BANK_CI_IMAGE" \
+            Rscript tests/run_tests_parallel.R
+          elapsed=$(( $(date +%s) - started ))
+          cp build/compile-cache/summary.csv build/cache-benchmark/warm.csv
+          python3 - <<'PY'
+          import csv
+          with open('build/cache-benchmark/warm.csv', encoding='utf-8') as f:
+              row = next(csv.DictReader(f))
+          assert int(row['hits']) == 80, row
+          assert int(row['misses']) == 0, row
+          assert int(row['executed']) == 0, row
+          PY
+          echo "### Content cache benchmark" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Cold run: **${{ needs.cold.outputs.elapsed }}s**" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Warm run: **${elapsed}s** (80 hits / 0 compilations)" >> "$GITHUB_STEP_SUMMARY"
