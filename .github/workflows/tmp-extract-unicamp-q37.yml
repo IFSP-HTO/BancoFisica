@@ -21,29 +21,36 @@ jobs:
           curl -L --fail --retry 3 \
             'https://www.curso-objetivo.br/vestibular/resolucao-comentada/unicamp/2024_1fase/unicamp2024_1fase_prova_RZ.pdf' \
             -o /tmp/unicamp2024.pdf
-      - name: Inspect Q37 graph geometry
+      - name: Inspect graph ticks and drawings
         run: |
           mkdir -p tmp-q37
           python - <<'PY'
           import fitz
-          doc = fitz.open('/tmp/unicamp2024.pdf')
-          p = doc[7]
-          out=[f'PAGE 8 size={p.rect.width}x{p.rect.height}']
-          out.append('WORDS x<300 y>700:')
-          for w in p.get_text('words'):
-              if w[0] < 300 and w[1] > 700:
-                  out.append(repr(w))
-          out.append('DRAWINGS intersect x<300 y>700:')
-          for d in p.get_drawings():
-              r=d['rect']
-              if r.x0 < 300 and r.y1 > 700:
-                  out.append(f"rect={tuple(round(v,2) for v in r)} items={len(d.get('items',[]))} width={d.get('width')} color={d.get('color')} fill={d.get('fill')}")
-          open('tmp-q37/geometry.txt','w',encoding='utf-8').write('\n'.join(out)+'\n')
+          doc=fitz.open('/tmp/unicamp2024.pdf')
+          out=[]
+          for pi in [7,8]:
+              p=doc[pi]
+              out.append(f'PAGE {pi+1} size={p.rect.width}x{p.rect.height}')
+              for needle in ['4000','4 000','4500','4 500','4800','4 800','5000','5 000','5500','5 500','Temperatura','GHz','10','5','1']:
+                  rr=p.search_for(needle)
+                  if rr:
+                      out.append(f'{needle}: '+', '.join(str(tuple(round(v,2) for v in r)) for r in rr))
+              out.append('NUMERIC WORDS:')
+              for w in p.get_text('words'):
+                  t=str(w[4]).replace('.','').replace(',','')
+                  if any(k in t for k in ['4000','4500','4800','5000','5500','GHz']):
+                      out.append(repr(w))
+              out.append('DRAWINGS x<320 y=250..500:')
+              for d in p.get_drawings():
+                  r=d['rect']
+                  if r.x0<320 and r.y1>250 and r.y0<500:
+                      out.append(f"rect={tuple(round(v,2) for v in r)} items={len(d.get('items',[]))} width={d.get('width')} color={d.get('color')} fill={d.get('fill')}")
+          open('tmp-q37/ticks.txt','w',encoding='utf-8').write('\n'.join(out)+'\n')
           PY
-      - name: Commit geometry report
+      - name: Commit report
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add tmp-q37/geometry.txt
-          git commit -m 'tmp: inspect Unicamp Q37 graph geometry' || exit 0
+          git add tmp-q37/ticks.txt
+          git commit -m 'tmp: locate Q37 graph ticks' || exit 0
           git push
