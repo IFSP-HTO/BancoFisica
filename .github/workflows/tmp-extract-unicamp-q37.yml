@@ -21,30 +21,29 @@ jobs:
           curl -L --fail --retry 3 \
             'https://www.curso-objetivo.br/vestibular/resolucao-comentada/unicamp/2024_1fase/unicamp2024_1fase_prova_RZ.pdf' \
             -o /tmp/unicamp2024.pdf
-      - name: Locate Q37 graph in PDF
+      - name: Inspect Q37 graph geometry
         run: |
           mkdir -p tmp-q37
           python - <<'PY'
           import fitz
           doc = fitz.open('/tmp/unicamp2024.pdf')
-          out=[]
-          for i,p in enumerate(doc):
-              text=p.get_text('text')
-              if 'Frequência Limite' in text or 'Frequencia Limite' in text or 'temperatura extremamente elevada' in text.lower():
-                  out.append(f'PAGE {i+1} size={p.rect.width}x{p.rect.height}')
-                  for needle in ['Frequência Limite','Frequencia Limite','Temperatura (K)','4 800','4800','QUESTÃO 18','QUESTÃO 37']:
-                      rects=p.search_for(needle)
-                      out.append(f'{needle}: '+', '.join(str(tuple(round(v,2) for v in r)) for r in rects))
-                  words=p.get_text('words')
-                  for w in words:
-                      if any(k.lower() in str(w[4]).lower() for k in ['Frequência','Limite','Temperatura','4000','4500','5000','5500','4800']):
-                          out.append('WORD '+repr(w))
-          open('tmp-q37/coords.txt','w',encoding='utf-8').write('\n'.join(out)+'\n')
+          p = doc[7]
+          out=[f'PAGE 8 size={p.rect.width}x{p.rect.height}']
+          out.append('WORDS x<300 y>700:')
+          for w in p.get_text('words'):
+              if w[0] < 300 and w[1] > 700:
+                  out.append(repr(w))
+          out.append('DRAWINGS intersect x<300 y>700:')
+          for d in p.get_drawings():
+              r=d['rect']
+              if r.x0 < 300 and r.y1 > 700:
+                  out.append(f"rect={tuple(round(v,2) for v in r)} items={len(d.get('items',[]))} width={d.get('width')} color={d.get('color')} fill={d.get('fill')}")
+          open('tmp-q37/geometry.txt','w',encoding='utf-8').write('\n'.join(out)+'\n')
           PY
-      - name: Commit coordinate report
+      - name: Commit geometry report
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add tmp-q37/coords.txt
-          git commit -m 'tmp: locate Unicamp Q37 graph' || exit 0
+          git add tmp-q37/geometry.txt
+          git commit -m 'tmp: inspect Unicamp Q37 graph geometry' || exit 0
           git push
