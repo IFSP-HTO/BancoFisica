@@ -415,11 +415,17 @@ generate_pdf_parallel <- function(
 
   ind_pdf <- which(!ok)
   if (length(ind_pdf) > 0L) {
-    erro <- paste(
-      "NÃO COMPILA PARA PDF:",
-      arquivos$file[ind_pdf], "\n"
+    detalhes <- vapply(ind_pdf, function(i) {
+      msg <- as.character(resultados[[i]]$message)
+      if (length(msg) == 0L || is.na(msg) || !nzchar(trimws(msg))) {
+        msg <- "erro sem mensagem detalhada retornada pelo subprocesso"
+      }
+      paste0(arquivos$file[i], "\n  causa: ", msg)
+    }, character(1))
+    stop(
+      "NÃO COMPILA PARA PDF:\n",
+      paste(detalhes, collapse = "\n")
     )
-    stop(erro)
   }
 }
 
