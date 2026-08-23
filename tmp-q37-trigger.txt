@@ -1,1 +1,1 @@
-trigger ticks
+probe head
