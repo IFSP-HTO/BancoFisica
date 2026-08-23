@@ -4,11 +4,17 @@ mB <- sample(c(3,4,5,6), 1)
 a <- sample(c(2,3,4), 1)
 F <- (mA+mB)*a
 T <- mB*a
+include_supplement("Q99BlocosCorda_Gaspar_p137.png")
 @
 \usepackage[utf8]{inputenc}
+\usepackage{graphicx}
 
 \begin{question}
 Dois blocos A e B, de massas $\Sexpr{mA}\,\mathrm{kg}$ e $\Sexpr{mB}\,\mathrm{kg}$, são ligados por um fio ideal e estão sobre uma superfície horizontal sem atrito. Uma força horizontal de $\Sexpr{F}\,\mathrm{N}$ é aplicada ao bloco A, puxando o conjunto.
+
+\begin{center}
+\includegraphics[width=0.60\linewidth,keepaspectratio]{Q99BlocosCorda_Gaspar_p137.png}
+\end{center}
 
 Determine:
 \begin{answerlist}
@@ -35,6 +41,7 @@ T=m_Ba=\Sexpr{mB}\cdot\Sexpr{a}
 \end{solution}
 
 %% META-INFORMATION
+%% Fonte visual: Alberto Gaspar, Compreendendo a Fisica, v. 1, p. 137 (figura original recortada).
 %% \extype{cloze}
 %% \exclozetype{num|num}
 %% \exsolution{\Sexpr{a}|\Sexpr{T}}

@@ -1,7 +1,15 @@
+<<echo=FALSE, results=hide>>=
+include_supplement("Q94GraficoVelocidadeMUV_Gaspar_p79.png")
+@
 \usepackage[utf8]{inputenc}
+\usepackage{graphicx}
 
 \begin{question}
 O gráfico da velocidade em função do tempo de um móvel é uma reta crescente que não passa pela origem. Durante todo o intervalo representado, a inclinação da reta permanece constante.
+
+\begin{center}
+\includegraphics[width=0.68\linewidth,keepaspectratio]{Q94GraficoVelocidadeMUV_Gaspar_p79.png}
+\end{center}
 
 Qual afirmação descreve corretamente esse movimento?
 
@@ -21,6 +29,7 @@ Alternativa correta: \textbf{B}.
 \end{solution}
 
 %% META-INFORMATION
+%% Fonte visual: Alberto Gaspar, Compreendendo a Fisica, v. 1, p. 79 (figura original recortada).
 %% \extype{schoice}
 %% \exsolution{01000}
 %% \exname{Q94QuizGraficoVelocidadeMUV}

@@ -4,13 +4,21 @@ v1 <- sample(c(14,16,18,20,22), 1)
 t <- sample(c(4,5,6,8), 1)
 a <- (v1-v0)/t
 ds <- 0.5*(v0+v1)*t
+include_supplement("Q99AreaGraficoVelocidade_Gaspar_p79.png")
 @
 \usepackage[utf8]{inputenc}
+\usepackage{graphicx}
 
 \begin{question}
 A velocidade de um móvel varia uniformemente de $\Sexpr{v0}\,\mathrm{m/s}$ para $\Sexpr{v1}\,\mathrm{m/s}$ durante $\Sexpr{t}\,\mathrm{s}$.
 
-Interpretando o gráfico $v\times t$, determine:
+O esquema abaixo representa a interpretação geométrica da área sob um gráfico $v\times t$ para esse tipo de movimento.
+
+\begin{center}
+\includegraphics[width=0.56\linewidth,keepaspectratio]{Q99AreaGraficoVelocidade_Gaspar_p79.png}
+\end{center}
+
+Determine:
 \begin{answerlist}
   \item a aceleração do móvel, em $\mathrm{m/s^2}$;
   \item o deslocamento realizado no intervalo, em metros.
@@ -37,6 +45,7 @@ O deslocamento corresponde à área sob o gráfico. Como a velocidade varia line
 \end{solution}
 
 %% META-INFORMATION
+%% Fonte visual: Alberto Gaspar, Compreendendo a Fisica, v. 1, p. 79 (figura original recortada integralmente).
 %% \extype{cloze}
 %% \exclozetype{num|num}
 %% \exsolution{\Sexpr{round(a,2)}|\Sexpr{ds}}

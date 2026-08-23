@@ -1,7 +1,15 @@
+<<echo=FALSE, results=hide>>=
+include_supplement("Q97CaminharAtrito_Gaspar_p154.jpg")
+@
 \usepackage[utf8]{inputenc}
+\usepackage{graphicx}
 
 \begin{question}
 Ao caminhar sem escorregar sobre um piso horizontal, uma pessoa empurra o chão para trás com o pé.
+
+\begin{center}
+\includegraphics[width=0.43\linewidth,keepaspectratio]{Q97CaminharAtrito_Gaspar_p154.jpg}
+\end{center}
 
 Qual força externa é diretamente responsável por acelerar a pessoa para a frente?
 
@@ -21,6 +29,7 @@ Alternativa correta: \textbf{C}.
 \end{solution}
 
 %% META-INFORMATION
+%% Fonte visual: Alberto Gaspar, Compreendendo a Fisica, v. 1, p. 154 (figura original recortada).
 %% \extype{schoice}
 %% \exsolution{00100}
 %% \exname{Q97QuizCaminharAtrito}

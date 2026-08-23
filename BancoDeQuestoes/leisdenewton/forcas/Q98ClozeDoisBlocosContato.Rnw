@@ -4,11 +4,17 @@ mB <- sample(c(4,5,6,8), 1)
 a <- sample(c(2,3,4), 1)
 F <- (mA+mB)*a
 Fcont <- mB*a
+include_supplement("Q98DoisBlocosContato_Gaspar_p141.png")
 @
 \usepackage[utf8]{inputenc}
+\usepackage{graphicx}
 
 \begin{question}
 Dois blocos A e B, de massas $\Sexpr{mA}\,\mathrm{kg}$ e $\Sexpr{mB}\,\mathrm{kg}$, estão em contato sobre uma superfície horizontal sem atrito. Uma força horizontal de módulo $\Sexpr{F}\,\mathrm{N}$ é aplicada ao bloco A, empurrando o conjunto.
+
+\begin{center}
+\includegraphics[width=0.62\linewidth,keepaspectratio]{Q98DoisBlocosContato_Gaspar_p141.png}
+\end{center}
 
 Determine:
 \begin{answerlist}
@@ -36,6 +42,7 @@ F_{AB}=m_Ba=\Sexpr{mB}\cdot\Sexpr{a}
 \end{solution}
 
 %% META-INFORMATION
+%% Fonte visual: Alberto Gaspar, Compreendendo a Fisica, v. 1, p. 141 (figura original recortada).
 %% \extype{cloze}
 %% \exclozetype{num|num}
 %% \exsolution{\Sexpr{a}|\Sexpr{Fcont}}
