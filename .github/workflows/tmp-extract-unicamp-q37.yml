@@ -21,16 +21,30 @@ jobs:
           curl -L --fail --retry 3 \
             'https://www.curso-objetivo.br/vestibular/resolucao-comentada/unicamp/2024_1fase/unicamp2024_1fase_prova_RZ.pdf' \
             -o /tmp/unicamp2024.pdf
-      - name: Render pages around Q37
+      - name: Locate Q37 graph in PDF
         run: |
           mkdir -p tmp-q37
-          for p in 5 6 7 8 9 10; do
-            python tools/pdf_assets.py page /tmp/unicamp2024.pdf --page "$p" --output "tmp-q37/page-${p}.png" --dpi 150 --force || true
-          done
-      - name: Commit inspection renders
+          python - <<'PY'
+          import fitz
+          doc = fitz.open('/tmp/unicamp2024.pdf')
+          out=[]
+          for i,p in enumerate(doc):
+              text=p.get_text('text')
+              if 'Frequência Limite' in text or 'Frequencia Limite' in text or 'temperatura extremamente elevada' in text.lower():
+                  out.append(f'PAGE {i+1} size={p.rect.width}x{p.rect.height}')
+                  for needle in ['Frequência Limite','Frequencia Limite','Temperatura (K)','4 800','4800','QUESTÃO 18','QUESTÃO 37']:
+                      rects=p.search_for(needle)
+                      out.append(f'{needle}: '+', '.join(str(tuple(round(v,2) for v in r)) for r in rects))
+                  words=p.get_text('words')
+                  for w in words:
+                      if any(k.lower() in str(w[4]).lower() for k in ['Frequência','Limite','Temperatura','4000','4500','5000','5500','4800']):
+                          out.append('WORD '+repr(w))
+          open('tmp-q37/coords.txt','w',encoding='utf-8').write('\n'.join(out)+'\n')
+          PY
+      - name: Commit coordinate report
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add tmp-q37
-          git commit -m 'tmp: render Unicamp Q37 source pages' || exit 0
+          git add tmp-q37/coords.txt
+          git commit -m 'tmp: locate Unicamp Q37 graph' || exit 0
           git push
