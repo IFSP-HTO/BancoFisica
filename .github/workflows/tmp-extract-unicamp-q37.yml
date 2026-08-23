@@ -21,35 +21,17 @@ jobs:
           curl -L --fail --retry 3 \
             'https://www.curso-objetivo.br/vestibular/resolucao-comentada/unicamp/2024_1fase/unicamp2024_1fase_prova_RZ.pdf' \
             -o /tmp/unicamp2024.pdf
-      - name: Locate Q37 by answer choices and inspect images
+      - name: Extract original Q37 graph raster
         run: |
-          mkdir -p tmp-q37
-          python - <<'PY'
-          import fitz
-          doc=fitz.open('/tmp/unicamp2024.pdf')
-          out=[]
-          for i,p in enumerate(doc):
-              hits=[]
-              for needle in ['0,06 m','16,7 m','0,05 m','20 m']:
-                  rr=p.search_for(needle)
-                  if rr:
-                      hits.append((needle,[tuple(round(v,2) for v in r) for r in rr]))
-              if hits:
-                  out.append(f'PAGE {i+1} size={p.rect.width}x{p.rect.height}')
-                  out.extend(f'{n}: {r}' for n,r in hits)
-                  out.append('IMAGE INFO:')
-                  for info in p.get_image_info(xrefs=True):
-                      out.append(repr({k:info.get(k) for k in ['xref','width','height','bbox','cs-name']}))
-                  out.append('DRAWINGS:')
-                  for d in p.get_drawings():
-                      r=d['rect']
-                      out.append(f"rect={tuple(round(v,2) for v in r)} items={len(d.get('items',[]))} width={d.get('width')} color={d.get('color')} fill={d.get('fill')}")
-          open('tmp-q37/answer-anchor.txt','w',encoding='utf-8').write('\n'.join(out)+'\n')
-          PY
-      - name: Commit report
+          mkdir -p BancoDeQuestoes/figuras
+          python tools/pdf_assets.py extract /tmp/unicamp2024.pdf \
+            --xref 59 \
+            --output BancoDeQuestoes/figuras/Unicamp2024_Q37_FrequenciaLimite \
+            --force
+      - name: Commit extracted asset
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add tmp-q37/answer-anchor.txt
-          git commit -m 'tmp: locate Q37 with answer anchors' || exit 0
+          git add BancoDeQuestoes/figuras/Unicamp2024_Q37_FrequenciaLimite.*
+          git commit -m 'feat: add original Unicamp 2024 Q37 graph' || exit 0
           git push
