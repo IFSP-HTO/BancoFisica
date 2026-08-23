@@ -1,1 +1,1 @@
-probe head
+trigger region
