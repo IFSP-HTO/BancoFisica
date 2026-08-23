@@ -21,29 +21,35 @@ jobs:
           curl -L --fail --retry 3 \
             'https://www.curso-objetivo.br/vestibular/resolucao-comentada/unicamp/2024_1fase/unicamp2024_1fase_prova_RZ.pdf' \
             -o /tmp/unicamp2024.pdf
-      - name: Inspect exact graph region
+      - name: Locate Q37 by answer choices and inspect images
         run: |
           mkdir -p tmp-q37
           python - <<'PY'
           import fitz
           doc=fitz.open('/tmp/unicamp2024.pdf')
-          p=doc[7]
           out=[]
-          out.append('WORDS x=20..300 y=250..450')
-          for w in p.get_text('words'):
-              if 20 <= w[0] <= 300 and 250 <= w[1] <= 450:
-                  out.append(repr(w))
-          out.append('DRAWINGS x=20..300 y=250..450')
-          for d in p.get_drawings():
-              r=d['rect']
-              if r.x1>=20 and r.x0<=300 and r.y1>=250 and r.y0<=450:
-                  out.append(f"rect={tuple(round(v,2) for v in r)} items={len(d.get('items',[]))} width={d.get('width')} color={d.get('color')} fill={d.get('fill')}")
-          open('tmp-q37/region.txt','w',encoding='utf-8').write('\n'.join(out)+'\n')
+          for i,p in enumerate(doc):
+              hits=[]
+              for needle in ['0,06 m','16,7 m','0,05 m','20 m']:
+                  rr=p.search_for(needle)
+                  if rr:
+                      hits.append((needle,[tuple(round(v,2) for v in r) for r in rr]))
+              if hits:
+                  out.append(f'PAGE {i+1} size={p.rect.width}x{p.rect.height}')
+                  out.extend(f'{n}: {r}' for n,r in hits)
+                  out.append('IMAGE INFO:')
+                  for info in p.get_image_info(xrefs=True):
+                      out.append(repr({k:info.get(k) for k in ['xref','width','height','bbox','cs-name']}))
+                  out.append('DRAWINGS:')
+                  for d in p.get_drawings():
+                      r=d['rect']
+                      out.append(f"rect={tuple(round(v,2) for v in r)} items={len(d.get('items',[]))} width={d.get('width')} color={d.get('color')} fill={d.get('fill')}")
+          open('tmp-q37/answer-anchor.txt','w',encoding='utf-8').write('\n'.join(out)+'\n')
           PY
       - name: Commit report
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add tmp-q37/region.txt
-          git commit -m 'tmp: inspect exact Q37 graph region' || exit 0
+          git add tmp-q37/answer-anchor.txt
+          git commit -m 'tmp: locate Q37 with answer anchors' || exit 0
           git push
