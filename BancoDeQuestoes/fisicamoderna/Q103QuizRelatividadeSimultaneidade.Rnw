@@ -1,7 +1,15 @@
+<<echo=FALSE, results=hide>>=
+include_supplement("Q103RelatividadeSimultaneidade_Gaspar_p233.jpg")
+@
 \usepackage[utf8]{inputenc}
+\usepackage{graphicx}
 
 \begin{question}
 Dois clarões ocorrem nas extremidades de uma plataforma. Um observador em repouso no ponto médio da plataforma recebe os dois sinais luminosos simultaneamente. Um segundo observador, em um trem que se move em relação à plataforma, pode concluir que os clarões não foram simultâneos.
+
+\begin{center}
+\includegraphics[width=0.60\linewidth,keepaspectratio]{Q103RelatividadeSimultaneidade_Gaspar_p233.jpg}
+\end{center}
 
 De acordo com a relatividade restrita, essa situação significa que
 
@@ -21,6 +29,7 @@ Alternativa correta: \textbf{B}.
 \end{solution}
 
 %% META-INFORMATION
+%% Fonte visual: Alberto Gaspar, Compreendendo a Fisica, v. 3, p. 233 (sequencia original recortada; texto corrido removido).
 %% \extype{schoice}
 %% \exsolution{01000}
 %% \exname{Q103QuizRelatividadeSimultaneidade}
