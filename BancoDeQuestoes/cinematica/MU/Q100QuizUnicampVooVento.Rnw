@@ -1,0 +1,56 @@
+<<echo=FALSE, results=hide>>=
+include_supplement("Unicamp2025_Q8_RotaVento.png", dir = "../../figuras")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+
+(Comvest / Vestibular Unicamp 2025) Mudanças climáticas têm influenciado correntes de ar na alta atmosfera. Em particular, na região do Atlântico Norte, onde ventos fortes geralmente sopram de oeste para leste, os tempos de voos têm sofrido alterações. Em uma viagem de Baltimore (EUA) a Londres (Reino Unido), o tempo total de voo é igual a oito horas quando não há vento em toda a trajetória.
+
+Considere agora uma viagem subdividida em três trechos (A, B e C), conforme a figura a seguir. No trecho B, na direção de oeste para leste, há vento com velocidade constante de módulo $|\vec{v}_{\mathrm{vento,solo}}|=250\,\mathrm{km/h}$, em relação ao solo.
+
+\begin{center}
+\includegraphics[width=0.82\textwidth,keepaspectratio]{Unicamp2025_Q8_RotaVento.png}
+\end{center}
+
+Sendo, nos três trechos, o módulo da velocidade média do avião em relação ao vento $|\vec{v}_{\mathrm{avi\tilde{a}o,vento}}|=750\,\mathrm{km/h}$, podemos afirmar que
+
+\begin{answerlist}
+  \item o módulo da velocidade média do avião em relação ao solo no trecho B é $500\,\mathrm{km/h}$, e o tempo de viagem no mesmo trecho é $4{,}0\,\mathrm{h}$.
+  \item o módulo da velocidade média do avião em relação ao solo no trecho B é $500\,\mathrm{km/h}$, e o tempo de viagem no mesmo trecho é $2{,}0\,\mathrm{h}$.
+  \item o módulo da velocidade média do avião em relação ao solo no trecho B é $1000\,\mathrm{km/h}$, e o tempo de viagem no mesmo trecho é $4{,}0\,\mathrm{h}$.
+  \item o módulo da velocidade média do avião em relação ao solo no trecho B é $1000\,\mathrm{km/h}$, e o tempo de viagem no mesmo trecho é $2{,}0\,\mathrm{h}$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+No trecho B, a velocidade do avião em relação ao vento e a velocidade do vento em relação ao solo têm a mesma direção e o mesmo sentido. Portanto,
+\[
+|\vec{v}_{\mathrm{avi\tilde{a}o,solo}}|
+=|\vec{v}_{\mathrm{avi\tilde{a}o,vento}}|+|\vec{v}_{\mathrm{vento,solo}}|
+=750+250
+=1000\,\mathrm{km/h}.
+\]
+
+Pela figura, o trecho B tem comprimento $\Delta s=2000\,\mathrm{km}$. Assim,
+\[
+\Delta t=\frac{\Delta s}{v}
+=\frac{2000\,\mathrm{km}}{1000\,\mathrm{km/h}}
+=2{,}0\,\mathrm{h}.
+\]
+
+Portanto, a alternativa correta é \textbf{D}.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Comvest / Vestibular Unicamp 2025, 1ª fase, questão 8.
+%% Figura recortada diretamente do PDF oficial da prova comentada F1_2025.pdf (página 12), preservando a composição original de texto e vetores.
+%% \extype{schoice}
+%% \exsolution{0001}
+%% \exname{Q100QuizUnicampVooVento}
+%% \exsection{Cinematica; Movimento uniforme; Velocidade relativa; Adicao de velocidades; UNICAMP}
+%% \exusepackage[utf8]{inputenc}
