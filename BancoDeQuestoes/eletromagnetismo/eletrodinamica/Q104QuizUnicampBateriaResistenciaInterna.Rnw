@@ -1,0 +1,58 @@
+<<echo=FALSE, results=hide>>=
+include_supplement("Unicamp2026_Q10_CircuitoBateria.png", dir = "../../figuras")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+
+(Comvest / Vestibular Unicamp 2026) De forma simplificada, o comportamento de uma bateria pode ser modelado por uma fonte ideal de diferença de potencial elétrico $U_b$ em série com um resistor de resistência interna $R_b$. O dispositivo alimentado pela bateria pode, muitas vezes, ser representado por um resistor de resistência $R$.
+
+Na situação exemplificada na figura, $U_b=3{,}6\,\mathrm{V}$, $R_b=1{,}2\,\Omega$ e $R=6{,}0\,\Omega$.
+
+\begin{center}
+\includegraphics[width=0.58\textwidth,keepaspectratio]{Unicamp2026_Q10_CircuitoBateria.png}
+\end{center}
+
+A diferença de potencial registrada pelo voltímetro é
+
+\begin{answerlist}
+  \item $0{,}6\,\mathrm{V}$.
+  \item $3{,}0\,\mathrm{V}$.
+  \item $3{,}6\,\mathrm{V}$.
+  \item $4{,}3\,\mathrm{V}$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Os resistores $R_b$ e $R$ estão em série, portanto
+\[
+R_{\mathrm{eq}}=R_b+R=1{,}2+6{,}0=7{,}2\,\Omega.
+\]
+
+A corrente no circuito é
+\[
+i=\frac{U_b}{R_{\mathrm{eq}}}
+=\frac{3{,}6}{7{,}2}
+=0{,}5\,\mathrm{A}.
+\]
+
+O voltímetro mede a diferença de potencial nos terminais do resistor externo $R$:
+\[
+U=Ri=6{,}0\times0{,}5=3{,}0\,\mathrm{V}.
+\]
+
+Portanto, a alternativa correta é \textbf{B}.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Comvest / Vestibular Unicamp 2026, 1ª fase, questão 10 da prova comentada.
+%% Figura recortada diretamente do PDF oficial F1_2026_Prova-Q.pdf (página 16), preservando circuito, voltímetro e rótulos originais.
+%% \extype{schoice}
+%% \exsolution{0100}
+%% \exname{Q104QuizUnicampBateriaResistenciaInterna}
+%% \exsection{Eletrodinamica; Circuitos eletricos; Lei de Ohm; Resistencia interna; UNICAMP}
+%% \exusepackage[utf8]{inputenc}
