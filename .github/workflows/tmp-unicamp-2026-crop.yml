@@ -1,0 +1,50 @@
+name: tmp Unicamp 2026 crop
+
+on:
+  push:
+    branches: [scratch/unicamp-2026-visual-inspect]
+    paths:
+      - 'tmp-unicamp-2026-crop-trigger.txt'
+
+permissions:
+  contents: write
+
+jobs:
+  crop:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install pymupdf requests
+      - name: Crop official visuals
+        run: |
+          python - <<'PY'
+          import fitz, requests, pathlib
+          url='https://www.comvest.unicamp.br/wp-content/uploads/2026/06/F1_2026_Prova-Q.pdf'
+          out=pathlib.Path('tmp-unicamp-2026/crops'); out.mkdir(parents=True, exist_ok=True)
+          pdf=pathlib.Path('tmp-unicamp-2026/F1_2026_Prova-Q.pdf')
+          if not pdf.exists():
+              r=requests.get(url,timeout=60); r.raise_for_status(); pdf.write_bytes(r.content)
+          doc=fitz.open(pdf)
+          specs={
+            'Unicamp2026_Q10_CircuitoBateria.png': (15,(55,325,245,472)),
+            'Unicamp2026_Q13_GraficoA.png': (17,(28,525,290,705)),
+            'Unicamp2026_Q13_GraficoB.png': (17,(305,45,570,220)),
+            'Unicamp2026_Q13_GraficoC.png': (17,(305,216,570,391)),
+            'Unicamp2026_Q13_GraficoD.png': (17,(305,387,570,548)),
+          }
+          scale=300/72
+          for name,(pno,bbox) in specs.items():
+              p=doc[pno]
+              pix=p.get_pixmap(matrix=fitz.Matrix(scale,scale), clip=fitz.Rect(*bbox), alpha=False)
+              pix.save(out/name)
+          PY
+      - name: Commit crops
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add tmp-unicamp-2026/crops/*.png
+          git commit -m 'tmp: crop Unicamp 2026 Q10 and Q13 visuals' || exit 0
+          git push
