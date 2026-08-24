@@ -1,0 +1,53 @@
+<<echo=FALSE, results=hide>>=
+include_supplement("Unicamp2024_Q39_CorrenteDdp.png", dir = "../../figuras")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+
+(Comvest / Vestibular Unicamp 2024) Em um estudo do comportamento elétrico de neurônios, aplica-se uma diferença de potencial elétrico (ddp, da ordem de $10^{-3}\,\mathrm{V}$) e mede-se a corrente elétrica (da ordem de $10^{-12}\,\mathrm{A}$) que passa pelo sistema. Os resultados do experimento são apresentados no gráfico a seguir.
+
+\begin{center}
+\includegraphics[width=0.46\textwidth,keepaspectratio]{Unicamp2024_Q39_CorrenteDdp.png}
+\end{center}
+
+A partir do gráfico, conclui-se que a resistência elétrica do sistema é igual a
+
+\begin{answerlist}
+  \item $14\,\Omega$.
+  \item $70\,\mathrm{m}\Omega$.
+  \item $70\,\mathrm{M}\Omega$.
+  \item $14\,\mathrm{G}\Omega$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Para um comportamento ôhmico,
+\[
+U=Ri.
+\]
+No gráfico, a corrente é representada em função da ddp, de modo que a inclinação da reta corresponde a $i/U=1/R$.
+
+Tomando, por exemplo, o ponto $U=140\,\mathrm{mV}$ e $i=10\,\mathrm{pA}$,
+\[
+R=\frac{U}{i}
+ =\frac{140\times10^{-3}}{10\times10^{-12}}
+ =14\times10^{9}\,\Omega
+ =14\,\mathrm{G}\Omega.
+\]
+
+Portanto, a alternativa correta é \textbf{D}.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Comvest / Vestibular Unicamp 2024, 1ª fase, questão 39.
+%% Figura original extraída diretamente do PDF da prova (caderno R/Z, questão 20), página 9, xref 64, raster 810 x 606 px, sem redesenho ou reamostragem.
+%% \extype{schoice}
+%% \exsolution{0001}
+%% \exname{Q102QuizUnicampSinapsesResistencia}
+%% \exsection{Eletromagnetismo; Eletrodinamica; Lei de Ohm; Resistencia eletrica; Graficos; UNICAMP}
+%% \exusepackage[utf8]{inputenc}
