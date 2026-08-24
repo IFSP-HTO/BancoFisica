@@ -1,0 +1,57 @@
+name: tmp Unicamp 2026 inspect
+
+on:
+  push:
+    branches: [scratch/unicamp-2026-visual-inspect]
+    paths:
+      - 'tmp-unicamp-2026-trigger.txt'
+
+permissions:
+  contents: write
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install pymupdf requests
+      - name: Inspect official Comvest PDF
+        run: |
+          python - <<'PY'
+          import fitz, requests, pathlib
+          url='https://www.comvest.unicamp.br/wp-content/uploads/2026/06/F1_2026_Prova-Q.pdf'
+          out=pathlib.Path('tmp-unicamp-2026')
+          out.mkdir(exist_ok=True)
+          pdf=out/'F1_2026_Prova-Q.pdf'
+          r=requests.get(url, timeout=60)
+          r.raise_for_status(); pdf.write_bytes(r.content)
+          doc=fitz.open(pdf)
+          lines=[]
+          for pno,p in enumerate(doc):
+              text=p.get_text('text')
+              if 'QUESTÃO 10' in text or 'QUESTÃO 13' in text or 'QUESTAO 10' in text or 'QUESTAO 13' in text:
+                  lines.append(f'PAGE {pno+1} size={p.rect.width}x{p.rect.height}')
+                  lines.append('BLOCKS:')
+                  for b in p.get_text('blocks'):
+                      lines.append(repr(b))
+                  lines.append('DRAWINGS:')
+                  for d in p.get_drawings():
+                      lines.append(f"rect={d.get('rect')} width={d.get('width')} color={d.get('color')} fill={d.get('fill')} items={len(d.get('items',[]))}")
+                  lines.append('IMAGES:')
+                  for im in p.get_image_info(xrefs=True):
+                      lines.append(repr(im))
+                  pix=p.get_pixmap(matrix=fitz.Matrix(2,2), alpha=False)
+                  pix.save(out/f'page-{pno+1}.png')
+                  lines.append('---')
+          (out/'report.txt').write_text('\n'.join(lines), encoding='utf-8')
+          PY
+      - name: Commit inspection outputs
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add tmp-unicamp-2026/report.txt tmp-unicamp-2026/page-*.png
+          git commit -m 'tmp: inspect Unicamp 2026 Q10 and Q13 visuals' || exit 0
+          git push
