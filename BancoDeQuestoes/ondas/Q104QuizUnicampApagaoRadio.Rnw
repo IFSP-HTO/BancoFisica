@@ -1,0 +1,60 @@
+<<echo=FALSE, results=hide>>=
+include_supplement("Unicamp2024_Q37_FrequenciaLimite.png", dir = "../figuras")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+
+Durante a reentrada de uma cápsula espacial na atmosfera terrestre, a elevada temperatura externa pode ionizar o ar ao redor da nave. A região ionizada dificulta a comunicação por ondas eletromagnéticas de rádio abaixo de uma frequência limite $f_0$.
+
+O gráfico a seguir relaciona essa frequência limite à temperatura do ar externo.
+
+\begin{center}
+\includegraphics[width=0.48\textwidth,keepaspectratio]{Unicamp2024_Q37_FrequenciaLimite.png}
+\end{center}
+
+Se a temperatura do ar for $T_{ar}=4800\,\mathrm{K}$, qual é o comprimento de onda $\lambda_0$ correspondente à frequência limite $f_0$?
+
+Considere a velocidade da luz no vácuo $c=3{,}0\times10^8\,\mathrm{m/s}$.
+
+\begin{answerlist}
+  \item $0{,}06\,\mathrm{m}$.
+  \item $16{,}7\,\mathrm{m}$.
+  \item $0{,}05\,\mathrm{m}$.
+  \item $20\,\mathrm{m}$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Pela leitura do gráfico, para $T_{ar}=4800\,\mathrm{K}$ a frequência limite é
+\[
+f_0=5{,}0\,\mathrm{GHz}=5{,}0\times10^9\,\mathrm{Hz}.
+\]
+
+Para uma onda eletromagnética no vácuo,
+\[
+c=\lambda_0 f_0.
+\]
+Logo,
+\[
+\lambda_0=\frac{c}{f_0}
+=\frac{3{,}0\times10^8}{5{,}0\times10^9}
+=6{,}0\times10^{-2}\,\mathrm{m}
+=0{,}06\,\mathrm{m}.
+\]
+
+Portanto, a alternativa correta é \textbf{A}.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Comvest / Vestibular Unicamp 2024, 1ª fase, questão 37.
+%% Figura original extraída diretamente do PDF da prova, xref 59, sem redesenho ou reamostragem.
+%% \extype{schoice}
+%% \exsolution{1000}
+%% \exname{Q104QuizUnicampApagaoRadio}
+%% \exsection{Ondas; Ondulatoria; Ondas eletromagneticas; Relacao fundamental; Graficos; UNICAMP}
+%% \exusepackage[utf8]{inputenc}
