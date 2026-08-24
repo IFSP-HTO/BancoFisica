@@ -1,0 +1,78 @@
+<<echo=FALSE, results=hide>>=
+include_supplement("Unicamp2026_Q13_GraficoA.png", dir = "../../figuras")
+include_supplement("Unicamp2026_Q13_GraficoB.png", dir = "../../figuras")
+include_supplement("Unicamp2026_Q13_GraficoC.png", dir = "../../figuras")
+include_supplement("Unicamp2026_Q13_GraficoD.png", dir = "../../figuras")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+
+(Comvest / Vestibular Unicamp 2026) Grandes cidades têm implantado faixas exclusivas para motocicletas, como a faixa azul na cidade de São Paulo. Um motociclista entra, em $t=0$, em um percurso retilíneo com velocidade constante $v_0=36\,\mathrm{km/h}$ e mantém essa velocidade até $t=30\,\mathrm{s}$ (trecho I). Em seguida, desacelera uniformemente até parar completamente em $t=50\,\mathrm{s}$ (trecho II). Após permanecer parado por $30\,\mathrm{s}$, retoma o movimento com aceleração constante $a=0{,}8\,\mathrm{m/s^2}$ de $t=80\,\mathrm{s}$ até $t=95\,\mathrm{s}$ (trecho III). Depois, segue com velocidade constante até $t=120\,\mathrm{s}$ (trecho IV).
+
+Qual gráfico representa corretamente a posição $s(t)$ do motociclista em função do tempo?
+
+\begin{center}
+\begin{tabular}{cc}
+\includegraphics[width=0.42\textwidth,keepaspectratio]{Unicamp2026_Q13_GraficoA.png} &
+\includegraphics[width=0.42\textwidth,keepaspectratio]{Unicamp2026_Q13_GraficoB.png} \\
+\includegraphics[width=0.42\textwidth,keepaspectratio]{Unicamp2026_Q13_GraficoC.png} &
+\includegraphics[width=0.42\textwidth,keepaspectratio]{Unicamp2026_Q13_GraficoD.png}
+\end{tabular}
+\end{center}
+
+\begin{answerlist}
+  \item Gráfico A.
+  \item Gráfico B.
+  \item Gráfico C.
+  \item Gráfico D.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+A velocidade inicial é
+\[
+v_0=36\,\mathrm{km/h}=10\,\mathrm{m/s}.
+\]
+
+No trecho I, a velocidade é constante, portanto $s(t)$ cresce linearmente. Em $30\,\mathrm{s}$,
+\[
+\Delta s_1=10\times30=300\,\mathrm{m}.
+\]
+
+No trecho II, a velocidade diminui uniformemente de $10\,\mathrm{m/s}$ a zero em $20\,\mathrm{s}$. Assim, $s(t)$ continua crescendo, mas com concavidade para baixo. O deslocamento é
+\[
+\Delta s_2=\frac{10+0}{2}\times20=100\,\mathrm{m},
+\]
+logo $s(50\,\mathrm{s})=400\,\mathrm{m}$. Entre $50$ e $80\,\mathrm{s}$, o motociclista está parado e o gráfico é horizontal.
+
+No trecho III, ele parte do repouso com aceleração positiva constante, de modo que $s(t)$ cresce com concavidade para cima. Em $15\,\mathrm{s}$,
+\[
+\Delta s_3=\frac{1}{2}(0{,}8)(15)^2=90\,\mathrm{m},
+\]
+portanto $s(95\,\mathrm{s})=490\,\mathrm{m}$. A velocidade nesse instante é
+\[
+v=0{,}8\times15=12\,\mathrm{m/s}.
+\]
+
+No trecho IV, essa velocidade permanece constante, então o gráfico volta a ser uma reta crescente. Até $120\,\mathrm{s}$,
+\[
+\Delta s_4=12\times25=300\,\mathrm{m},
+\]
+resultando em $s(120\,\mathrm{s})=790\,\mathrm{m}$.
+
+Essas características correspondem ao \textbf{gráfico A}.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Comvest / Vestibular Unicamp 2026, 1ª fase, questão 13 da prova comentada.
+%% As quatro alternativas gráficas foram recortadas diretamente do PDF oficial F1_2026_Prova-Q.pdf (página 18), preservando os gráficos originais.
+%% \extype{schoice}
+%% \exsolution{1000}
+%% \exname{Q103QuizUnicampFaixaAzulGrafico}
+%% \exsection{Cinematica; Movimento uniforme; Movimento uniformemente variado; Graficos; UNICAMP}
+%% \exusepackage[utf8]{inputenc}
