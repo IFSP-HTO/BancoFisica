@@ -1,0 +1,71 @@
+name: tmp inspect Unicamp 2024 Q39
+
+on:
+  push:
+    branches:
+      - unicamp/2024-q39-visual
+
+permissions:
+  contents: write
+
+jobs:
+  inspect:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install dependencies
+        run: python -m pip install pymupdf
+      - name: Download original exam PDF
+        run: |
+          curl -L --fail --retry 3 \
+            'https://www.curso-objetivo.br/vestibular/resolucao-comentada/unicamp/2024_1fase/unicamp2024_1fase_prova_RZ.pdf' \
+            -o /tmp/unicamp2024.pdf
+      - name: Locate Q39 and inspect visual assets
+        run: |
+          rm -rf tmp-unicamp-q39
+          mkdir -p tmp-unicamp-q39
+          python - <<'PY'
+          import fitz
+          from pathlib import Path
+
+          pdf = '/tmp/unicamp2024.pdf'
+          out = Path('tmp-unicamp-q39')
+          doc = fitz.open(pdf)
+          report = []
+          candidates = []
+          needles = ('sinapse', 'neurotransmiss', 'corrente elétrica', 'corrente eletrica')
+          for pno, page in enumerate(doc, start=1):
+              text = page.get_text('text')
+              low = text.lower()
+              score = sum(n in low for n in needles)
+              if score >= 2 or ('neur' in low and 'ddp' in low):
+                  candidates.append(pno)
+                  report.append(f'PAGE {pno} size={page.rect.width}x{page.rect.height}')
+                  report.append(text)
+                  report.append('IMAGES:')
+                  for info in page.get_image_info(xrefs=True):
+                      report.append(repr(info))
+                  report.append('---')
+                  page.get_pixmap(dpi=150, alpha=False).save(out / f'page-{pno:02d}.png')
+                  for idx, img in enumerate(page.get_images(full=True)):
+                      xref = img[0]
+                      try:
+                          data = doc.extract_image(xref)
+                      except Exception as exc:
+                          report.append(f'cannot extract xref {xref}: {exc}')
+                          continue
+                      ext = data.get('ext', 'bin')
+                      (out / f'page-{pno:02d}-xref-{xref}.{ext}').write_bytes(data['image'])
+          report.insert(0, 'CANDIDATE PAGES: ' + ', '.join(map(str, candidates)))
+          (out / 'diagnostics.txt').write_text('\n'.join(report), encoding='utf-8')
+          if not candidates:
+              raise SystemExit('No Q39 candidate page found')
+          PY
+      - name: Commit diagnostics
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add tmp-unicamp-q39
+          git commit -m 'tmp: locate Unicamp 2024 Q39 visual' || exit 0
+          git push
