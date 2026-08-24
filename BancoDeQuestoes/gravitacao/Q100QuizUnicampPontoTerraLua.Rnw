@@ -1,0 +1,67 @@
+<<echo=FALSE, results=hide>>=
+include_supplement("Unicamp2025_Q10_FiguraA_TerraLua.png", dir = "../figuras")
+include_supplement("Unicamp2025_Q10_FiguraB_Aceleracao.png", dir = "../figuras")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+
+(Comvest / Vestibular Unicamp 2025) Nos últimos anos, diversos países retomaram o interesse pela exploração da Lua, com o lançamento de diferentes missões destinadas a esse satélite.
+
+Ao longo da linha que une o centro da Terra ao da Lua (ver figura A), há um ponto $P$ para o qual as forças gravitacionais da Terra, $\vec{F}_{\mathrm{Terra}}$, e da Lua, $\vec{F}_{\mathrm{Lua}}$, exercidas sobre uma sonda, têm módulos iguais e sentidos opostos. Isso significa que, no ponto $P$, essas duas forças se cancelam.
+
+\begin{center}
+\includegraphics[width=0.72\textwidth,keepaspectratio]{Unicamp2025_Q10_FiguraA_TerraLua.png}
+\end{center}
+
+O gráfico da figura B representa a componente da aceleração resultante $a$ das forças $\vec{F}_{\mathrm{Terra}}$ e $\vec{F}_{\mathrm{Lua}}$ ao longo da referida linha, sendo $r$ a distância ao centro da Terra e $d\simeq 380000\,\mathrm{km}$ a distância Terra--Lua. Valores positivos de $a$ indicam que o vetor aceleração aponta para a Lua, enquanto valores negativos de $a$ indicam que esse vetor aponta para a Terra.
+
+\begin{center}
+\includegraphics[width=0.70\textwidth,keepaspectratio]{Unicamp2025_Q10_FiguraB_Aceleracao.png}
+\end{center}
+
+O ponto $P$ fica aproximadamente a que distância do centro da Lua?
+
+\begin{answerlist}
+  \item $38000\,\mathrm{km}$.
+  \item $114000\,\mathrm{km}$.
+  \item $266000\,\mathrm{km}$.
+  \item $342000\,\mathrm{km}$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+No ponto $P$, as forças gravitacionais da Terra e da Lua se cancelam. Portanto, a força resultante e a aceleração resultante são nulas.
+
+Pela leitura da figura B, a aceleração é nula aproximadamente em
+\[
+\frac{r}{d}=0{,}9.
+\]
+Logo, a distância de $P$ ao centro da Terra é
+\[
+r=0{,}9d.
+\]
+A distância de $P$ ao centro da Lua vale, então,
+\[
+x=d-r=d-0{,}9d=0{,}1d.
+\]
+Usando $d\simeq380000\,\mathrm{km}$,
+\[
+x=0{,}1\times380000=38000\,\mathrm{km}.
+\]
+
+Portanto, a alternativa correta é \textbf{A}.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Comvest / Vestibular Unicamp 2025, 1ª fase, questão 10.
+%% Figuras A e B recortadas diretamente do PDF oficial da prova comentada F1_2025.pdf, páginas 13 e 14 do PDF, preservando texto e vetores originais.
+%% \extype{schoice}
+%% \exsolution{1000}
+%% \exname{Q100QuizUnicampPontoTerraLua}
+%% \exsection{Gravitacao; Forca gravitacional; Aceleracao; Graficos; UNICAMP}
+%% \exusepackage[utf8]{inputenc}
