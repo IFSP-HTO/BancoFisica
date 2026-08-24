@@ -1,0 +1,54 @@
+<<echo=FALSE, results=hide>>=
+include_supplement("Unicamp2024_Q40_ElasticidadeNeuronio.png", dir = "../../figuras")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+
+(Comvest / Vestibular Unicamp 2024) Em um experimento sobre propriedades elásticas de neurônios, uma diminuta ponta aplica uma força $\vec{F}$ na superfície do neurônio e produz uma deformação $\Delta L$, de forma análoga a uma mola, conforme o esquema.
+
+\begin{center}
+\includegraphics[width=0.48\textwidth,keepaspectratio]{Unicamp2024_Q40_ElasticidadeNeuronio.png}
+\end{center}
+
+Dois neurônios, 1 e 2, são submetidos a forças de mesma intensidade ($F_1=F_2$). As deformações observadas são $\Delta L_1=20\,\mathrm{nm}$ e $\Delta L_2=30\,\mathrm{nm}$. Sabendo que a constante elástica do neurônio 1 é $k_1=9{,}0\times10^{-6}\,\mathrm{N/m}$, o valor de $k_2$ é
+
+\begin{answerlist}
+  \item $4{,}0\times10^{-6}\,\mathrm{N/m}$.
+  \item $6{,}0\times10^{-6}\,\mathrm{N/m}$.
+  \item $13{,}5\times10^{-6}\,\mathrm{N/m}$.
+  \item $20{,}25\times10^{-6}\,\mathrm{N/m}$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Pela lei de Hooke, em módulo,
+\[
+F=k\Delta L.
+\]
+Como as forças aplicadas aos dois neurônios têm a mesma intensidade,
+\[
+k_1\Delta L_1=k_2\Delta L_2.
+\]
+Assim,
+\[
+k_2=k_1\frac{\Delta L_1}{\Delta L_2}
+=9{,}0\times10^{-6}\frac{20}{30}
+=6{,}0\times10^{-6}\,\mathrm{N/m}.
+\]
+
+Portanto, a alternativa correta é \textbf{B}.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Comvest / Vestibular Unicamp 2024, 1ª fase, questão 40.
+%% Figura original extraída diretamente do PDF da prova (caderno R/Z, questão 21), página 9, xref 66, raster 793 x 415 px, sem redesenho ou reamostragem.
+%% \extype{schoice}
+%% \exsolution{0100}
+%% \exname{Q103QuizUnicampElasticidadeNeuronio}
+%% \exsection{Mecanica; Dinamica; Leis de Newton; Forca elastica; Lei de Hooke; UNICAMP}
+%% \exusepackage[utf8]{inputenc}
