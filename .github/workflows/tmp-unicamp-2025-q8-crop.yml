@@ -1,0 +1,38 @@
+name: tmp crop Unicamp 2025 Q8 visual
+
+on:
+  push:
+    branches:
+      - scratch/unicamp-2025-q8-inspect
+
+permissions:
+  contents: write
+
+jobs:
+  crop:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install dependencies
+        run: python -m pip install pymupdf
+      - name: Download official Comvest commented exam
+        run: |
+          curl -L --fail --retry 3 \
+            'https://www.comvest.unicamp.br/wp-content/uploads/2025/06/F1_2025.pdf' \
+            -o /tmp/F1_2025.pdf
+      - name: Crop original Q8 diagram
+        run: |
+          python tools/pdf_assets.py crop /tmp/F1_2025.pdf \
+            --page 12 \
+            --bbox 306 196 568 293 \
+            --output tmp-unicamp-2025-q8/Unicamp2025_Q8_RotaVento.png \
+            --dpi 300 \
+            --force
+      - name: Commit crop
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add tmp-unicamp-2025-q8/Unicamp2025_Q8_RotaVento.png
+          git commit -m 'tmp: crop official Comvest 2025 Q8 diagram' || exit 0
+          git push
