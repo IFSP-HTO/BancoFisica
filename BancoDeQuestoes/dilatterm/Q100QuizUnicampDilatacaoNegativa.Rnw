@@ -1,0 +1,65 @@
+<<echo=FALSE, results=hide>>=
+include_supplement("Unicamp2025_Q12_DilatacaoNegativa.png", dir = "../figuras")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+
+(Comvest / Vestibular Unicamp 2025) Pesquisas recentes demonstraram que alguns compostos, como o $\mathrm{ZnW_2O_8}$, apresentam coeficiente de dilatação térmica linear $\alpha$ negativo, diferentemente da maioria dos materiais, que se expandem com o aquecimento. O gráfico a seguir ilustra a variação, em função da temperatura, do comprimento $L$ de uma barra dessa classe de materiais.
+
+\begin{center}
+\includegraphics[width=0.70\textwidth,keepaspectratio]{Unicamp2025_Q12_DilatacaoNegativa.png}
+\end{center}
+
+Considerando que o coeficiente de dilatação $\alpha$ seja aproximadamente constante no intervalo de temperatura entre $0\,^{\circ}\mathrm{C}$ e $50\,^{\circ}\mathrm{C}$, pode-se dizer que o valor de $\alpha$ nesse intervalo é igual a
+
+\begin{answerlist}
+  \item $-1{,}0\times10^{-7}\,^{\circ}\mathrm{C}^{-1}$.
+  \item $-5{,}0\times10^{-6}\,^{\circ}\mathrm{C}^{-1}$.
+  \item $-2{,}5\times10^{-4}\,^{\circ}\mathrm{C}^{-1}$.
+  \item $-4{,}0\times10^{-2}\,^{\circ}\mathrm{C}^{-1}$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Para a dilatação térmica linear,
+\[
+L=L_0(1+\alpha\Delta T),
+\]
+de modo que
+\[
+\alpha=\frac{L-L_0}{L_0\Delta T}.
+\]
+
+Pelo gráfico, entre $0\,^{\circ}\mathrm{C}$ e $50\,^{\circ}\mathrm{C}$,
+\[
+L_0\simeq2{,}0000\,\mathrm{mm},
+\qquad
+L\simeq1{,}9995\,\mathrm{mm},
+\qquad
+\Delta T=50\,^{\circ}\mathrm{C}.
+\]
+Assim,
+\[
+\alpha
+=\frac{1{,}9995-2{,}0000}{2{,}0000\times50}
+=-5{,}0\times10^{-6}\,^{\circ}\mathrm{C}^{-1}.
+\]
+
+O sinal negativo expressa justamente a contração do material quando sua temperatura aumenta.
+
+Portanto, a alternativa correta é \textbf{B}.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Comvest / Vestibular Unicamp 2025, 1ª fase, questão 12.
+%% Gráfico recortado diretamente do PDF oficial da prova comentada F1_2025.pdf (página 15 do PDF), preservando eixos, pontos, reta e rótulos originais.
+%% \extype{schoice}
+%% \exsolution{0100}
+%% \exname{Q100QuizUnicampDilatacaoNegativa}
+%% \exsection{Dilatacao termica; Dilatacao linear; Graficos; UNICAMP}
+%% \exusepackage[utf8]{inputenc}
