@@ -1,0 +1,63 @@
+name: tmp inspect Unicamp 2025 Q8
+
+on:
+  push:
+    branches:
+      - scratch/unicamp-2025-q8-inspect
+
+permissions:
+  contents: write
+
+jobs:
+  inspect:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install dependencies
+        run: python -m pip install pymupdf
+      - name: Download official Comvest commented exam
+        run: |
+          curl -L --fail --retry 3 \
+            'https://www.comvest.unicamp.br/wp-content/uploads/2025/06/F1_2025.pdf' \
+            -o /tmp/F1_2025.pdf
+      - name: Inspect Q8 page
+        run: |
+          rm -rf tmp-unicamp-2025-q8
+          mkdir -p tmp-unicamp-2025-q8
+          python - <<'PY'
+          import fitz
+          from pathlib import Path
+
+          pdf = '/tmp/F1_2025.pdf'
+          out = Path('tmp-unicamp-2025-q8')
+          doc = fitz.open(pdf)
+          page = doc[11]  # PDF page 12; printed page 11 in the commented exam
+          report = []
+          report.append(f'PAGE size={page.rect.width}x{page.rect.height}')
+          report.append('TEXT BLOCKS:')
+          for block in page.get_text('blocks'):
+              report.append(repr(block))
+          report.append('WORDS AROUND Q8:')
+          for w in page.get_text('words'):
+              x0,y0,x1,y1,text,*rest = w
+              if x0 > 250 and 40 < y0 < 760:
+                  report.append(repr(w))
+          report.append('IMAGES:')
+          for info in page.get_image_info(xrefs=True):
+              report.append(repr(info))
+          (out / 'report.txt').write_text('\n'.join(report), encoding='utf-8')
+          page.get_pixmap(dpi=180, alpha=False).save(out / 'page12.png')
+          for img in page.get_images(full=True):
+              xref = img[0]
+              data = doc.extract_image(xref)
+              ext = data.get('ext','bin')
+              (out / f'xref-{xref}.{ext}').write_bytes(data['image'])
+          PY
+      - name: Commit diagnostics
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add tmp-unicamp-2025-q8
+          git commit -m 'tmp: inspect official Comvest 2025 Q8 visual' || exit 0
+          git push
