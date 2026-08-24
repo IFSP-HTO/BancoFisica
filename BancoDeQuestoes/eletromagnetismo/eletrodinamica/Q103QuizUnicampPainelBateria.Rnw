@@ -1,0 +1,63 @@
+<<echo=FALSE, results=hide>>=
+include_supplement("Unicamp2025_Q13_PainelBateria.png", dir = "../../figuras")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+
+(Comvest / Vestibular Unicamp 2025) A energia solar desempenha papel substancial nas soluções energéticas de desenvolvimento sustentável, fazendo uso de uma fonte renovável e de tecnologia pouco agressiva ao ambiente.
+
+Operando em condições ótimas, um painel solar gera energia elétrica com potência $P=462\,\mathrm{W}$ e diferença de potencial $U_{\mathrm{painel}}=42\,\mathrm{V}$ em seus terminais. Para armazenar a energia gerada numa bateria de diferença de potencial $U_{\mathrm{bat}}=12\,\mathrm{V}$, usa-se um controlador de carga, conforme a figura.
+
+\begin{center}
+\includegraphics[width=0.82\textwidth,keepaspectratio]{Unicamp2025_Q13_PainelBateria.png}
+\end{center}
+
+Se, numa situação ideal, toda a energia gerada pelo painel é armazenada na bateria, quais são os valores das correntes elétricas $i_{\mathrm{painel}}$ e $i_{\mathrm{bat}}$ nos terminais do painel e da bateria, respectivamente?
+
+\begin{answerlist}
+  \item $i_{\mathrm{painel}}=11\,\mathrm{A}$ e $i_{\mathrm{bat}}=38{,}5\,\mathrm{A}$.
+  \item $i_{\mathrm{painel}}=11\,\mathrm{A}$ e $i_{\mathrm{bat}}=3{,}1\,\mathrm{A}$.
+  \item $i_{\mathrm{painel}}=134{,}75\,\mathrm{A}$ e $i_{\mathrm{bat}}=38{,}5\,\mathrm{A}$.
+  \item $i_{\mathrm{painel}}=134{,}75\,\mathrm{A}$ e $i_{\mathrm{bat}}=3{,}1\,\mathrm{A}$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+A potência elétrica é dada por
+\[
+P=Ui.
+\]
+Para o painel,
+\[
+i_{\mathrm{painel}}=\frac{P}{U_{\mathrm{painel}}}
+=\frac{462}{42}
+=11\,\mathrm{A}.
+\]
+
+Na situação ideal descrita, toda a potência gerada pelo painel é transferida para a bateria, de modo que
+\[
+P_{\mathrm{bat}}=P_{\mathrm{painel}}=462\,\mathrm{W}.
+\]
+Logo,
+\[
+i_{\mathrm{bat}}=\frac{P_{\mathrm{bat}}}{U_{\mathrm{bat}}}
+=\frac{462}{12}
+=38{,}5\,\mathrm{A}.
+\]
+
+Portanto, a alternativa correta é \textbf{A}.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Comvest / Vestibular Unicamp 2025, 1ª fase, questão 13.
+%% Esquema recortado diretamente do PDF oficial da prova comentada F1_2025.pdf (página 16 do PDF), preservando painel, controlador, bateria, setas, correntes, tensões e rótulos originais.
+%% \extype{schoice}
+%% \exsolution{1000}
+%% \exname{Q103QuizUnicampPainelBateria}
+%% \exsection{Eletromagnetismo; Eletrodinamica; Potencia eletrica; Corrente eletrica; Energia solar; UNICAMP}
+%% \exusepackage[utf8]{inputenc}
