@@ -1,67 +1,54 @@
 <<echo=FALSE, results=hide>>=
-A <- sample(c(2, 3, 4, 5), 1)
-T <- sample(c(2, 4, 6, 8), 1)
-t <- seq(0, T, length.out = 400)
-x <- A * cos(2 * pi * t / T)
-tp <- T / 8
-xp <- A * cos(2 * pi * tp / T)
-
-alternativas <- c(
-  "a velocidade é negativa e a aceleração é negativa",
-  "a velocidade é positiva e a aceleração é negativa",
-  "a velocidade é negativa e a aceleração é positiva",
-  "a velocidade e a aceleração são nulas",
-  "a velocidade é positiva e a aceleração é positiva"
-)
-solutions <- c(TRUE, FALSE, FALSE, FALSE, FALSE)
-ord <- sample(seq_along(alternativas))
-alternativas <- alternativas[ord]
-solutions <- solutions[ord]
+include_supplement("Halliday_Fig15_1_2.jpeg", dir = "../../figuras")
 @
 \usepackage[utf8]{inputenc}
+\usepackage{graphicx}
 
 \begin{question}
 
-O gráfico mostra a posição de um oscilador harmônico simples. O ponto $P$ corresponde a um instante em que o oscilador ainda está em $x>0$, mas caminha em direção à posição de equilíbrio.
+A figura mostra diferentes representações de uma partícula em movimento harmônico simples. Considere o trecho em que a partícula parte do extremo positivo $+x_m$ e se desloca em direção à posição de equilíbrio $x=0$.
 
-<<fig=TRUE, height=4, width=6, echo=FALSE, eps=FALSE, results=hide>>=
-par(mar = c(4.2, 4.2, 0.8, 0.8))
-plot(t, x, type = "l", lwd = 2,
-     xlab = "t (s)", ylab = "x (cm)",
-     xlim = c(0, T), ylim = c(-1.2*A, 1.2*A))
-abline(h = 0, lty = 2)
-points(tp, xp, pch = 19, cex = 1.2)
-text(tp, xp, labels = "P", pos = 3)
-grid(nx = NA, ny = NULL, lty = 3)
-@
+\begin{center}
+\includegraphics[width=12.5cm,keepaspectratio]{Halliday_Fig15_1_2.jpeg}
+\end{center}
 
-No instante representado pelo ponto $P$,
+Nesse trecho,
 
-<<echo=FALSE, results=tex>>=
-answerlist(alternativas)
-@
+\begin{answerlist}
+  \item a velocidade é negativa e a aceleração é negativa.
+  \item a velocidade é positiva e a aceleração é negativa.
+  \item a velocidade é negativa e a aceleração é positiva.
+  \item a velocidade e a aceleração são nulas.
+  \item a velocidade é positiva e a aceleração é positiva.
+\end{answerlist}
 
 \end{question}
 
 \begin{solution}
 
-Como o gráfico está decrescendo no ponto $P$, a inclinação $dx/dt$ é negativa; portanto, a velocidade é negativa.
+Ao sair do extremo positivo e caminhar para a posição de equilíbrio, a coordenada $x$ diminui com o tempo. Portanto,
+\[
+v=\frac{dx}{dt}<0.
+\]
 
-Além disso, no MHS,
+No movimento harmônico simples,
 \[
 a=-\omega^2x.
 \]
-Como nesse instante $x>0$, a aceleração aponta para o lado negativo, isto é, também é negativa. Isso expressa o caráter restaurador da aceleração: ela sempre aponta para a posição de equilíbrio.
+Como, nesse trecho, $x>0$, segue que
+\[
+a<0.
+\]
 
-<<echo=FALSE, results=tex>>=
-answerlist(ifelse(solutions, paste0('\\textbf{', alternativas, '}'), alternativas))
-@
+Logo, a velocidade e a aceleração são ambas negativas.
 
 \end{solution}
 
 %% META-INFORMATION
+%% Fonte visual: Halliday, Resnick e Walker, Fundamentos de Fisica, cap. 15, Fig. 15.1.2.
+%% Figura extraida diretamente do objeto raster incorporado em Oscilações e Ondas.pdf (xref 62), sem redesenho ou reencodificacao.
 %% \extype{schoice}
-%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exsolution{10000}
 %% \exname{Q06QuizSinaisVelocidadeAceleracao}
 %% \exsection{Mecanica; Oscilacoes; MHS; Graficos}
 %% \exusepackage[utf8]{inputenc}
