@@ -1,15 +1,4 @@
 <<echo=FALSE, results=hide>>=
-alternativas <- c(
-  "a velocidade é negativa e a aceleração é negativa",
-  "a velocidade é positiva e a aceleração é negativa",
-  "a velocidade é negativa e a aceleração é positiva",
-  "a velocidade e a aceleração são nulas",
-  "a velocidade é positiva e a aceleração é positiva"
-)
-solutions <- c(TRUE, FALSE, FALSE, FALSE, FALSE)
-ord <- sample(seq_along(alternativas))
-alternativas <- alternativas[ord]
-solutions <- solutions[ord]
 include_supplement("Halliday_Fig15_1_6.jpeg", dir = "../../figuras")
 @
 \usepackage[utf8]{inputenc}
@@ -25,9 +14,13 @@ A figura apresenta, para o mesmo oscilador harmônico simples, os gráficos de d
 
 Considere o intervalo inicial logo após $t=0$, antes da primeira passagem pela posição de equilíbrio. Nesse intervalo, o oscilador ainda está em $x>0$ e se desloca em direção a $x=0$. Nesse trecho,
 
-<<echo=FALSE, results=tex>>=
-answerlist(alternativas)
-@
+\begin{answerlist}
+  \item a velocidade é negativa e a aceleração é negativa.
+  \item a velocidade é positiva e a aceleração é negativa.
+  \item a velocidade é negativa e a aceleração é positiva.
+  \item a velocidade e a aceleração são nulas.
+  \item a velocidade é positiva e a aceleração é positiva.
+\end{answerlist}
 
 \end{question}
 
@@ -49,17 +42,13 @@ a<0.
 
 Isso também pode ser verificado diretamente nos gráficos de $v(t)$ e $a(t)$ da figura. Logo, a velocidade e a aceleração são ambas negativas.
 
-<<echo=FALSE, results=tex>>=
-answerlist(ifelse(solutions, paste0('\\textbf{', alternativas, '}'), alternativas))
-@
-
 \end{solution}
 
 %% META-INFORMATION
 %% Fonte visual: Halliday, Resnick e Walker, Fundamentos de Fisica, cap. 15, Fig. 15.1.6.
 %% Figura extraida diretamente do objeto raster incorporado em Oscilações e Ondas.pdf (xref 111), sem redesenho ou reencodificacao.
 %% \extype{schoice}
-%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exsolution{10000}
 %% \exname{Q06QuizSinaisVelocidadeAceleracao}
 %% \exsection{Mecanica; Oscilacoes; MHS; Graficos}
 %% \exusepackage[utf8]{inputenc}
