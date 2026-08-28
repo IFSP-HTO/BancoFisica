@@ -1,61 +1,57 @@
 <<echo=FALSE, results=hide>>=
-A <- sample(c(2, 3, 4, 5), 1)
-T <- sample(c(2, 4, 6, 8), 1)
-t <- seq(0, 2 * T, length.out = 500)
-x <- A * cos(2 * pi * t / T)
+include_supplement("Halliday_Fig15_1_2.jpeg", dir = "../../figuras")
 @
 \usepackage[utf8]{inputenc}
+\usepackage{graphicx}
 
 \begin{question}
 
-O gráfico representa a posição $x$ de um oscilador harmônico simples em função do tempo.
+A figura mostra diferentes representações de uma partícula em movimento harmônico simples. Observe especialmente os painéis (c) e (d), nos quais $x_m$ representa a amplitude e $T$ o período do movimento.
 
-<<fig=TRUE, height=4, width=6, echo=FALSE, eps=FALSE, results=hide>>=
-par(mar = c(4.2, 4.2, 0.8, 0.8))
-plot(t, x,
-     type = "l", lwd = 2,
-     xlab = "t (s)", ylab = "x (cm)",
-     xaxt = "n", yaxt = "n",
-     xlim = c(0, 2 * T), ylim = c(-1.2 * A, 1.2 * A))
-axis(1, at = seq(0, 2 * T, by = T / 2))
-axis(2, at = c(-A, 0, A))
-abline(h = 0, lty = 2)
-grid(nx = NA, ny = NULL, lty = 3)
-@
+\begin{center}
+\includegraphics[width=12.5cm,keepaspectratio]{Halliday_Fig15_1_2.jpeg}
+\end{center}
 
-A partir do gráfico, determine:
+Com base na figura, determine:
 
 \begin{answerlist}
-  \item a amplitude do movimento, em centímetros;
-  \item o período do movimento, em segundos.
+  \item a razão entre a distância total percorrida ao ir de $+x_m$ até $-x_m$ e a amplitude $x_m$;
+  \item a fração do período $T$ necessária para o oscilador ir de $+x_m$ até $-x_m$.
 \end{answerlist}
 
 \end{question}
 
 \begin{solution}
 
-A amplitude é o maior valor absoluto do deslocamento em relação à posição de equilíbrio. Pelo eixo vertical, os extremos são $+\Sexpr{A}\,\mathrm{cm}$ e $-\Sexpr{A}\,\mathrm{cm}$; portanto,
+A amplitude é a distância entre a posição de equilíbrio e um dos extremos. Portanto, a distância entre os dois extremos é
 \[
-A=\Sexpr{A}\,\mathrm{cm}.
+(+x_m)-(-x_m)=2x_m,
+\]
+logo a razão pedida é
+\[
+\frac{2x_m}{x_m}=2.
 \]
 
-O período é o intervalo de tempo entre dois estados idênticos do movimento. No gráfico, dois máximos consecutivos estão separados por $\Sexpr{T}\,\mathrm{s}$. Assim,
+O movimento de um extremo ao extremo oposto corresponde a meia oscilação. Assim, o intervalo de tempo é
 \[
-T=\Sexpr{T}\,\mathrm{s}.
+\frac{T}{2},
 \]
+e a fração do período pedida é $0{,}5$.
 
 \begin{answerlist}
-  \item $\Sexpr{A}\,\mathrm{cm}$;
-  \item $\Sexpr{T}\,\mathrm{s}$.
+  \item $2$;
+  \item $0{,}5$.
 \end{answerlist}
 
 \end{solution}
 
 %% META-INFORMATION
+%% Fonte visual: Halliday, Resnick e Walker, Fundamentos de Fisica, cap. 15, Fig. 15.1.2.
+%% Figura extraida diretamente do objeto raster incorporado em Oscilações e Ondas.pdf (xref 62), sem redesenho ou reencodificacao.
 %% \extype{cloze}
-%% \exsolution{\Sexpr{A}|\Sexpr{T}}
+%% \exsolution{2|0.5}
 %% \exclozetype{num|num}
-%% \extol{0.1|0.1}
+%% \extol{0.01|0.01}
 %% \exname{Q03ClozeGraficoMHS}
 %% \exsection{Mecanica; Oscilacoes; MHS; Graficos}
 %% \exusepackage[utf8]{inputenc}
