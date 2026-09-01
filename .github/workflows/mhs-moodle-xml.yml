@@ -10,6 +10,7 @@ on:
       - ".github/workflows/mhs-moodle-xml.yml"
       - "tools/generate_moodle_xml.R"
       - "tools/moodle_xml_split.R"
+      - "tools/rewrite_moodle_categories_by_question.py"
   workflow_dispatch:
     inputs:
       seed:
@@ -79,13 +80,30 @@ jobs:
             --zip \
             --check
 
-      - name: Verify Halliday-only manifest
+      - name: Separate Moodle categories by source question
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 tools/rewrite_moodle_categories_by_question.py \
+            --prefix "MHS Halliday" \
+            --expected-variants "$XML_VARIANTS" \
+            build/mhs-moodle/*.xml
+          rm -f build/mhs-moodle/XML.zip
+          (
+            cd build/mhs-moodle
+            zip -q XML.zip ./*.xml manifest.csv
+          )
+
+      - name: Verify Halliday-only manifest and categories
         shell: bash
         run: |
           set -euo pipefail
           grep -q '"mhs"' build/mhs-moodle/manifest.csv
           grep -q ',15,' build/mhs-moodle/manifest.csv
           ! grep -R -q 'Q20NumOBFEP2012MolaPlanoInclinado' build/mhs-moodle/*.xml
+          for q in $(seq -w 1 15); do
+            test "$(grep -R -h -c "\$course\$/MHS Halliday/Questão ${q}</text>" build/mhs-moodle/*.xml | awk '{s+=$1} END {print s+0}')" -eq 1
+          done
           ls -lh build/mhs-moodle
 
       - name: Upload MHS Moodle package
