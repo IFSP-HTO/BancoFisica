@@ -1,0 +1,95 @@
+name: MHS Moodle XML
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - "BancoDeQuestoes/oscilacoes/mhs/**"
+      - "BancoDeQuestoes/figuras/Halliday_Fig15_1_2.jpeg"
+      - ".github/workflows/mhs-moodle-xml.yml"
+      - "tools/generate_moodle_xml.R"
+      - "tools/moodle_xml_split.R"
+  workflow_dispatch:
+    inputs:
+      seed:
+        description: "Seed used for deterministic variants"
+        required: false
+        default: "12026"
+      variants:
+        description: "Variants per Halliday MHS question"
+        required: false
+        default: "100"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: mhs-moodle-xml-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    env:
+      R_KEEP_PKG_SOURCE: yes
+      NOT_CRAN: true
+      XML_SEED: ${{ github.event.inputs.seed || '12026' }}
+      XML_VARIANTS: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.variants || '100' }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Pandoc
+        uses: r-lib/actions/setup-pandoc@v2
+
+      - name: Setup R
+        uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: '4.4.3'
+          use-public-rspm: true
+
+      - name: Install R dependencies
+        uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          cache-version: mhs-moodle-xml-1
+          dependencies: '"all"'
+
+      - name: Prepare Halliday-only MHS source set
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf build/mhs-input build/mhs-moodle
+          mkdir -p build/mhs-input
+          cp -a BancoDeQuestoes/oscilacoes/mhs build/mhs-input/mhs
+          rm -f build/mhs-input/mhs/Q20NumOBFEP2012MolaPlanoInclinado.Rnw
+          ln -s ../BancoDeQuestoes/figuras build/figuras
+          test "$(find build/mhs-input/mhs -maxdepth 1 -type f -iname '*.rnw' | wc -l)" -eq 15
+
+      - name: Generate Halliday MHS Moodle XML
+        run: |
+          Rscript tools/generate_moodle_xml.R \
+            --questions-dir build/mhs-input \
+            --seed "$XML_SEED" \
+            --n "$XML_VARIANTS" \
+            --layout flat \
+            --out-dir build/mhs-moodle \
+            --zip \
+            --check
+
+      - name: Verify Halliday-only manifest
+        shell: bash
+        run: |
+          set -euo pipefail
+          grep -q '"mhs"' build/mhs-moodle/manifest.csv
+          grep -q ',15,' build/mhs-moodle/manifest.csv
+          ! grep -R -q 'Q20NumOBFEP2012MolaPlanoInclinado' build/mhs-moodle/*.xml
+          ls -lh build/mhs-moodle
+
+      - name: Upload MHS Moodle package
+        uses: actions/upload-artifact@v4
+        with:
+          name: mhs-halliday-moodle-xml
+          path: build/mhs-moodle
