@@ -1,0 +1,87 @@
+<<echo=FALSE, results=hide>>=
+Afig <- 1
+theta <- sample(c(pi/4, 3*pi/4, 5*pi/4, 7*pi/4), 1)
+xp <- cos(theta)
+yp <- sin(theta)
+ang <- seq(0, 2*pi, length.out = 500)
+scale_v <- 0.58
+vx_end <- xp - scale_v * sin(theta)
+vy_end <- yp + scale_v * cos(theta)
+
+sgn <- function(z) ifelse(z > 0, "positivo", "negativo")
+sx <- sgn(cos(theta))
+sv <- sgn(-sin(theta))
+sa <- sgn(-cos(theta))
+
+padroes <- data.frame(
+  x = c("positivo", "negativo", "negativo", "positivo", "positivo"),
+  v = c("negativo", "negativo", "positivo", "positivo", "positivo"),
+  a = c("negativo", "positivo", "positivo", "negativo", "positivo"),
+  stringsAsFactors = FALSE
+)
+alternativas <- paste0("$x$ ", padroes$x, ", $v_x$ ", padroes$v,
+                       " e $a_x$ ", padroes$a, ".")
+correta <- paste0("$x$ ", sx, ", $v_x$ ", sv, " e $a_x$ ", sa, ".")
+solutions <- alternativas == correta
+ord <- sample(seq_along(alternativas))
+alternativas <- alternativas[ord]
+solutions <- solutions[ord]
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+A partícula de referência do esquema executa MCU em sentido anti-horário. Sua projeção sobre o eixo $x$ executa MHS. O vetor tangente indica o sentido instantâneo da velocidade no movimento circular.
+
+<<fig=TRUE, height=5, width=6, echo=FALSE, eps=FALSE, results=hide>>=
+par(mar = c(3.8, 1.0, 0.8, 0.8))
+plot(cos(ang), sin(ang), type = "l", lwd = 2, asp = 1,
+     axes = FALSE, xlab = "", ylab = "",
+     xlim = c(-1.45, 1.45), ylim = c(-1.45, 1.45))
+abline(h = 0, v = 0, lty = 3)
+segments(0, 0, xp, yp, lwd = 2)
+segments(xp, yp, xp, 0, lty = 2)
+points(xp, yp, pch = 19, cex = 1.2)
+points(xp, 0, pch = 19, cex = 1.2)
+arrows(xp, yp, vx_end, vy_end, length = 0.10, lwd = 2)
+text(vx_end, vy_end, labels = "v", pos = 3)
+axis(1, at = c(-1, 0, 1), labels = c("-A", "0", "A"))
+mtext("eixo x", side = 1, line = 2.2)
+@
+
+No instante representado, quais são os sinais da posição $x$, da velocidade $v_x$ e da aceleração $a_x$ da projeção?
+
+<<echo=FALSE, results=tex>>=
+answerlist(alternativas)
+@
+
+\end{question}
+
+\begin{solution}
+
+A posição da projeção é
+\[
+x=A\cos\theta.
+\]
+Como o MCU é anti-horário, a componente horizontal da velocidade tangencial é
+\[
+v_x=-\omega A\sin\theta.
+\]
+A aceleração projetada é
+\[
+a_x=-\omega^2x=-\omega^2A\cos\theta.
+\]
+Logo, o sinal de $a_x$ é sempre oposto ao de $x$, enquanto o sinal de $v_x$ depende do sentido em que a projeção está atravessando o eixo.
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(solutions, paste0('\\textbf{', alternativas, '}'), alternativas))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q08QuizSinaisProjecoesMCUMHS}
+%% \exsection{Mecanica; Oscilacoes; MHS e MCU; Sinais}
+%% \exusepackage[utf8]{inputenc}
