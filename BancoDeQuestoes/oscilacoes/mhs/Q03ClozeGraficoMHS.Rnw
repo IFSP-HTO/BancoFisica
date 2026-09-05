@@ -6,10 +6,10 @@ include_supplement("Halliday_Fig15_1_2.jpeg", dir = "../../figuras")
 
 \begin{question}
 
-A figura mostra diferentes representações de uma partícula em movimento harmônico simples. Observe especialmente os painéis (c) e (d), nos quais $x_m$ representa a amplitude e $T$ o período do movimento.
+A figura mostra o painel (c) da Fig. 15.1.2 de Halliday, Resnick e Walker para uma partícula em movimento harmônico simples. Nela, $x_m$ representa a amplitude e $T$ o período do movimento.
 
 \begin{center}
-\includegraphics[width=12.5cm,keepaspectratio]{Halliday_Fig15_1_2.jpeg}
+\includegraphics[width=7.2cm,trim=101bp 1bp 326bp 413bp,clip,keepaspectratio]{Halliday_Fig15_1_2.jpeg}
 \end{center}
 
 Com base na figura, determine:
@@ -46,8 +46,8 @@ e a fração do período pedida é $0{,}5$.
 \end{solution}
 
 %% META-INFORMATION
-%% Fonte visual: Halliday, Resnick e Walker, Fundamentos de Fisica, cap. 15, Fig. 15.1.2.
-%% Figura extraida diretamente do objeto raster incorporado em Oscilações e Ondas.pdf (xref 62), sem redesenho ou reencodificacao.
+%% Fonte visual: Halliday, Resnick e Walker, Fundamentos de Fisica, cap. 15, Fig. 15.1.2, painel (c).
+%% O asset original permanece preservado em BancoDeQuestoes/figuras; o recorte visual e feito na inclusao com trim/clip para remover elementos externos ao painel usado na questao.
 %% \extype{cloze}
 %% \exsolution{2|0.5}
 %% \exclozetype{num|num}
