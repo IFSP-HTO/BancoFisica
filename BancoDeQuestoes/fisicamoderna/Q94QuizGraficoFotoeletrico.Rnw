@@ -1,5 +1,5 @@
 <<echo=FALSE, results=hide>>=
-include_supplement("Q94QuizGraficoFotoeletrico_Gaspar_v3_p213.png", dir = "../figuras")
+include_supplement("Q94QuizGraficoFotoeletrico_Gaspar_v3_p213.jpg", dir = "../figuras")
 @
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
@@ -8,7 +8,7 @@ include_supplement("Q94QuizGraficoFotoeletrico_Gaspar_v3_p213.png", dir = "../fi
 Para um mesmo metal, mede-se a energia cinética máxima $K_{\max}$ dos fotoelétrons enquanto se varia a frequência $f$ da luz incidente. Para frequências acima da frequência de corte, o gráfico $K_{\max}\times f$ é uma reta.
 
 \begin{center}
-\includegraphics[width=0.62\linewidth,keepaspectratio]{Q94QuizGraficoFotoeletrico_Gaspar_v3_p213.png}
+\includegraphics[width=0.62\linewidth,keepaspectratio]{Q94QuizGraficoFotoeletrico_Gaspar_v3_p213.jpg}
 \end{center}
 
 Qual interpretação física está correta?
