@@ -1,15 +1,15 @@
 <<echo=FALSE, results=hide>>=
-include_supplement("Halliday_Fig15_1_6.jpeg", dir = "../../figuras")
+include_supplement("Halliday_Fig15_1_2.jpeg", dir = "../../figuras")
 @
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 
 \begin{question}
 
-A figura mostra os gráficos de posição, velocidade e aceleração de uma partícula em movimento harmônico simples, conforme a Fig. 15.1.6 de Halliday, Resnick e Walker. Considere o primeiro trecho após $t=0$, no qual a partícula parte do extremo positivo $+x_m$ e se desloca em direção à posição de equilíbrio $x=0$.
+A figura mostra o painel (b) da Fig. 15.1.2 de Halliday, Resnick e Walker. As setas indicam a velocidade instantânea da partícula em diferentes posições durante o movimento harmônico simples. Considere o primeiro trecho após $t=0$, no qual a partícula parte do extremo positivo $+x_m$ e se desloca em direção à posição de equilíbrio $x=0$.
 
 \begin{center}
-\includegraphics[width=8.0cm,trim=0bp 0bp 72bp 0bp,clip,keepaspectratio]{Halliday_Fig15_1_6.jpeg}
+\includegraphics[width=9.5cm,trim=379bp 376bp 7bp 60bp,clip,keepaspectratio]{Halliday_Fig15_1_2.jpeg}
 \end{center}
 
 Nesse trecho,
@@ -45,8 +45,8 @@ Logo, a velocidade e a aceleração são ambas negativas.
 \end{solution}
 
 %% META-INFORMATION
-%% Fonte visual: Halliday, Resnick e Walker, Fundamentos de Fisica, cap. 15, Fig. 15.1.6.
-%% O asset original permanece preservado em BancoDeQuestoes/figuras; o recorte visual e feito na inclusao com trim/clip para remover apenas as caixas laterais de comentario e manter os tres graficos originais.
+%% Fonte visual: Halliday, Resnick e Walker, Fundamentos de Fisica, cap. 15, Fig. 15.1.2, painel (b).
+%% O asset original permanece preservado em BancoDeQuestoes/figuras; o recorte visual e feito na inclusao com trim/clip para manter apenas o painel usado na questao e eliminar as caixas cinzas externas.
 %% \extype{schoice}
 %% \exsolution{10000}
 %% \exname{Q06QuizSinaisVelocidadeAceleracao}
