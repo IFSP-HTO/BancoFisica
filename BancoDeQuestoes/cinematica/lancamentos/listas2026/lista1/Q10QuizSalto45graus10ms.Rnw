@@ -29,5 +29,5 @@ Para \(\theta=45^\circ\), \(A=v_0^2\sin90^\circ/g=100/10=10\,\mathrm{m}\).
 %% Fonte: Professor Panosso, exercício 2 (PDF fornecido).
 %% \extype{schoice}
 %% \exsolution{00001}
-%% \exname{Q10}
+%% \exname{LO26L1Q10Salto45graus10ms}
 %% \exusepackage[utf8]{inputenc}
