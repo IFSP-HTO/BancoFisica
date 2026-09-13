@@ -1,0 +1,33 @@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+Um corpo é lançado com velocidade inicial de \(50\,\mathrm{m/s}\), formando \(60^\circ\) com a horizontal. Desprezando a resistência do ar e usando \(\cos60^\circ=0{,}50\), qual é a velocidade escalar no ponto mais alto da trajetória?
+
+\begin{answerlist}
+  \item \(5\,\mathrm{m/s}\)
+  \item \(10\,\mathrm{m/s}\)
+  \item \(25\,\mathrm{m/s}\)
+  \item \(40\,\mathrm{m/s}\)
+  \item \(50\,\mathrm{m/s}\)
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+No ponto mais alto \(v_y=0\), enquanto \(v_x=v_0\cos60^\circ=50(0{,}50)=25\,\mathrm{m/s}\).
+
+\begin{answerlist}
+  \item \(5\,\mathrm{m/s}\)
+  \item \(10\,\mathrm{m/s}\)
+  \item \(25\,\mathrm{m/s}\)
+  \item \(40\,\mathrm{m/s}\)
+  \item \(50\,\mathrm{m/s}\)
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: UEL-PR, reproduzida na lista do Colégio Equipe (PDF fornecido).
+%% \extype{schoice}
+%% \exsolution{00100}
+%% \exname{Q07}
+%% \exusepackage[utf8]{inputenc}

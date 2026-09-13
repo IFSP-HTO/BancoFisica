@@ -1,0 +1,29 @@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+Numa cobrança de falta, a bola é lançada a \(30^\circ\) com o gramado e atinge altura máxima de \(5{,}0\,\mathrm{m}\). Despreze a resistência do ar e adote \(g=10\,\mathrm{m/s^2}\), \(\sin30^\circ=0{,}50\) e \(\cos30^\circ\approx0{,}866\).
+
+\begin{answerlist}
+  \item módulo da velocidade inicial, em \(\mathrm{m/s}\);
+  \item alcance horizontal, em \(\mathrm{m}\).
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+Da altura máxima, \(v_{0y}=\sqrt{2gH}=10\,\mathrm{m/s}\). Como \(v_{0y}=v_0\sin30^\circ\), \(v_0=20\,\mathrm{m/s}\). O tempo total é \(2\,\mathrm{s}\), \(v_{0x}=20(0{,}866)\approx17{,}32\,\mathrm{m/s}\), resultando em \(A\approx34{,}64\,\mathrm{m}\).
+
+\begin{answerlist}
+  \item módulo da velocidade inicial, em \(\mathrm{m/s}\);
+  \item alcance horizontal, em \(\mathrm{m}\).
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Professor Panosso, exercício 6 (PDF fornecido).
+%% \extype{cloze}
+%% \exsolution{20|34.64}
+%% \exclozetype{num|num}
+%% \extol{0.05|0.1}
+%% \exname{Q12}
+%% \exusepackage[utf8]{inputenc}

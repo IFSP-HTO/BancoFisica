@@ -1,0 +1,33 @@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+Do topo de uma plataforma de \(100\,\mathrm{m}\), solta-se um corpo \(C_1\). No mesmo instante, de um ponto a \(80\,\mathrm{m}\) do solo, lança-se \(C_2\) com velocidade \(20\,\mathrm{m/s}\), a \(30^\circ\) acima da horizontal. Os corpos estavam inicialmente na mesma vertical. Despreze o ar e adote \(g=10\,\mathrm{m/s^2}\). Assinale as afirmações corretas.
+
+\begin{answerlist}
+  \item A altura máxima de \(C_2\), em relação ao solo, é \(85\,\mathrm{m}\).
+  \item Os corpos atingem a mesma altura \(1{,}5\,\mathrm{s}\) após o lançamento.
+  \item \(C_2\) demora mais de \(6\,\mathrm{s}\) para atingir o solo.
+  \item Os corpos atingem o solo no mesmo instante.
+  \item A distância entre os corpos \(2\,\mathrm{s}\) após o lançamento é \(20\sqrt3\,\mathrm{m}\).
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+Para \(C_2\), \(v_{0y}=10\,\mathrm{m/s}\), logo ele sobe \(5\,\mathrm{m}\) e atinge \(85\,\mathrm{m}\): a primeira é verdadeira. Igualando \(100-5t^2\) e \(80+10t-5t^2\), obtém-se \(t=2\,\mathrm{s}\), não \(1{,}5\). O tempo de \(C_2\) até o solo é \(1+\sqrt{17}\approx5{,}12\,\mathrm{s}\), e \(C_1\) chega em \(\sqrt{20}\approx4{,}47\,\mathrm{s}\). Em \(t=2\,\mathrm{s}\), ambos estão à mesma altura e a separação é apenas horizontal: \(v_x t=20\cos30^\circ\cdot2=20\sqrt3\,\mathrm{m}\). No padrão somatório, \(01+16=17\).
+
+\begin{answerlist}
+  \item A altura máxima de \(C_2\), em relação ao solo, é \(85\,\mathrm{m}\).
+  \item Os corpos atingem a mesma altura \(1{,}5\,\mathrm{s}\) após o lançamento.
+  \item \(C_2\) demora mais de \(6\,\mathrm{s}\) para atingir o solo.
+  \item Os corpos atingem o solo no mesmo instante.
+  \item A distância entre os corpos \(2\,\mathrm{s}\) após o lançamento é \(20\sqrt3\,\mathrm{m}\).
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: UEM-PR 2012, reproduzida em "Balística - Avançada" (PDF fornecido).
+%% \extype{mchoice}
+%% \exsolution{10001}
+%% \exname{Q01}
+%% \exusepackage[utf8]{inputenc}

@@ -1,0 +1,29 @@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+Um projétil é lançado do solo com velocidade \(10\,\mathrm{m/s}\), formando um ângulo \(\alpha\) tal que \(\sin\alpha=0{,}8\) e \(\cos\alpha=0{,}6\). Adote \(g=10\,\mathrm{m/s^2}\).
+
+\begin{answerlist}
+  \item altura máxima, em \(\mathrm{m}\);
+  \item alcance horizontal, em \(\mathrm{m}\).
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+As componentes iniciais são \(v_{0x}=6\,\mathrm{m/s}\) e \(v_{0y}=8\,\mathrm{m/s}\). Portanto \(H=8^2/(2\cdot10)=3{,}2\,\mathrm{m}\), \(T=2(8)/10=1{,}6\,\mathrm{s}\) e \(A=6(1{,}6)=9{,}6\,\mathrm{m}\).
+
+\begin{answerlist}
+  \item altura máxima, em \(\mathrm{m}\);
+  \item alcance horizontal, em \(\mathrm{m}\).
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Professor Panosso, exercício 3 (PDF fornecido).
+%% \extype{cloze}
+%% \exsolution{3.2|9.6}
+%% \exclozetype{num|num}
+%% \extol{0.05|0.05}
+%% \exname{LO26L1Q11Projetil10msTrig}
+%% \exusepackage[utf8]{inputenc}

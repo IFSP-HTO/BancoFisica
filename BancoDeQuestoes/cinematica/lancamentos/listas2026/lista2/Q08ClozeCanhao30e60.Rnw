@@ -1,0 +1,37 @@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+Um canhão dispara projéteis sempre com velocidade de saída \(300\,\mathrm{m/s}\). Adote \(g=10\,\mathrm{m/s^2}\) e despreze a resistência do ar. Compare disparos feitos a \(30^\circ\) e \(60^\circ\) com a horizontal.
+
+\begin{answerlist}
+  \item tempo de voo a \(30^\circ\), em \(\mathrm{s}\);
+  \item altura máxima a \(30^\circ\), em \(\mathrm{m}\);
+  \item alcance a \(30^\circ\), em \(\mathrm{m}\);
+  \item tempo de voo a \(60^\circ\), em \(\mathrm{s}\);
+  \item altura máxima a \(60^\circ\), em \(\mathrm{m}\);
+  \item alcance a \(60^\circ\), em \(\mathrm{m}\).
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+A \(30^\circ\): \(v_{0y}=150\), \(v_{0x}=150\sqrt3\), então \(T=30\,\mathrm{s}\), \(H=1125\,\mathrm{m}\) e \(A=4500\sqrt3\approx7794{,}23\,\mathrm{m}\). A \(60^\circ\): \(v_{0y}=150\sqrt3\), \(v_{0x}=150\), então \(T=30\sqrt3\approx51{,}96\,\mathrm{s}\), \(H=3375\,\mathrm{m}\) e o alcance é novamente \(4500\sqrt3\,\mathrm{m}\).
+
+\begin{answerlist}
+  \item tempo de voo a \(30^\circ\), em \(\mathrm{s}\);
+  \item altura máxima a \(30^\circ\), em \(\mathrm{m}\);
+  \item alcance a \(30^\circ\), em \(\mathrm{m}\);
+  \item tempo de voo a \(60^\circ\), em \(\mathrm{s}\);
+  \item altura máxima a \(60^\circ\), em \(\mathrm{m}\);
+  \item alcance a \(60^\circ\), em \(\mathrm{m}\).
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Professor Panosso, exercício 11 (PDF fornecido).
+%% \extype{cloze}
+%% \exsolution{30|1125|7794.23|51.96|3375|7794.23}
+%% \exclozetype{num|num|num|num|num|num}
+%% \extol{0.05|0.5|1|0.1|0.5|1}
+%% \exname{LO26L2Q08Canhao30e60}
+%% \exusepackage[utf8]{inputenc}

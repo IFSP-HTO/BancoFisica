@@ -1,0 +1,33 @@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+Num teste de balística, um projétil é lançado do solo sob um ângulo \(\alpha\), com \(\sin\alpha=0{,}6\) e \(\cos\alpha=0{,}8\), retornando ao solo em \(6{,}0\,\mathrm{s}\). Despreze o ar e adote \(g=10\,\mathrm{m/s^2}\). O módulo da velocidade inicial e o alcance são, respectivamente:
+
+\begin{answerlist}
+  \item \(50\,\mathrm{m/s}\) e \(240\,\mathrm{m}\)
+  \item \(50\,\mathrm{m/s}\) e \(120\,\mathrm{m}\)
+  \item \(40\,\mathrm{m/s}\) e \(240\,\mathrm{m}\)
+  \item \(40\,\mathrm{m/s}\) e \(120\,\mathrm{m}\)
+  \item \(30\,\mathrm{m/s}\) e \(240\,\mathrm{m}\)
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+Como \(T=2v_{0y}/g\), \(v_{0y}=30\,\mathrm{m/s}\). Assim \(v_0=30/0{,}6=50\,\mathrm{m/s}\), \(v_{0x}=40\,\mathrm{m/s}\) e \(A=40(6)=240\,\mathrm{m}\).
+
+\begin{answerlist}
+  \item \(50\,\mathrm{m/s}\) e \(240\,\mathrm{m}\)
+  \item \(50\,\mathrm{m/s}\) e \(120\,\mathrm{m}\)
+  \item \(40\,\mathrm{m/s}\) e \(240\,\mathrm{m}\)
+  \item \(40\,\mathrm{m/s}\) e \(120\,\mathrm{m}\)
+  \item \(30\,\mathrm{m/s}\) e \(240\,\mathrm{m}\)
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Professor Panosso, exercício 24 (PDF fornecido).
+%% \extype{schoice}
+%% \exsolution{10000}
+%% \exname{Q15}
+%% \exusepackage[utf8]{inputenc}

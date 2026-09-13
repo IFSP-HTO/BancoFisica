@@ -1,0 +1,35 @@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+Um corpo é lançado obliquamente no vácuo com velocidade inicial \(V_0=100\,\mathrm{m/s}\), em uma direção para a qual \(\sin\theta=0{,}8\) e \(\cos\theta=0{,}6\). Adote \(g=10\,\mathrm{m/s^2}\) e despreze a resistência do ar.
+
+\begin{answerlist}
+  \item componente horizontal inicial \(v_{0x}\), em \(\mathrm{m/s}\);
+  \item componente vertical inicial \(v_{0y}\), em \(\mathrm{m/s}\);
+  \item tempo para atingir a altura máxima, em \(\mathrm{s}\);
+  \item altura máxima, em \(\mathrm{m}\);
+  \item alcance horizontal, em \(\mathrm{m}\).
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+As componentes são \(v_{0x}=100(0{,}6)=60\,\mathrm{m/s}\) e \(v_{0y}=100(0{,}8)=80\,\mathrm{m/s}\). Assim, \(t_s=v_{0y}/g=8\,\mathrm{s}\), \(H=v_{0y}^2/(2g)=320\,\mathrm{m}\), \(T=16\,\mathrm{s}\) e \(A=v_{0x}T=960\,\mathrm{m}\).
+
+\begin{answerlist}
+  \item componente horizontal inicial \(v_{0x}\), em \(\mathrm{m/s}\);
+  \item componente vertical inicial \(v_{0y}\), em \(\mathrm{m/s}\);
+  \item tempo para atingir a altura máxima, em \(\mathrm{s}\);
+  \item altura máxima, em \(\mathrm{m}\);
+  \item alcance horizontal, em \(\mathrm{m}\).
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Lista do Colégio Equipe de Juiz de Fora, exercício 5 (PDF fornecido).
+%% \extype{cloze}
+%% \exsolution{60|80|8|320|960}
+%% \exclozetype{num|num|num|num|num}
+%% \extol{0.05|0.05|0.05|0.05|0.05}
+%% \exname{Q03}
+%% \exusepackage[utf8]{inputenc}

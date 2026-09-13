@@ -1,0 +1,27 @@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+Uma flecha é disparada e, desprezando a resistência do ar, atinge altura máxima de \(80\,\mathrm{m}\) e alcance horizontal de \(240\,\mathrm{m}\), retornando ao mesmo nível do lançamento. Adote \(g=10\,\mathrm{m/s^2}\). Determine a velocidade inicial.
+
+\begin{answerlist}
+  \item velocidade inicial, em \(\mathrm{m/s}\).
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+Da altura, \(v_{0y}=\sqrt{2gH}=\sqrt{1600}=40\,\mathrm{m/s}\). O tempo total é \(T=2v_{0y}/g=8\,\mathrm{s}\). Então \(v_{0x}=240/8=30\,\mathrm{m/s}\). Logo \(v_0=\sqrt{30^2+40^2}=50\,\mathrm{m/s}\).
+
+\begin{answerlist}
+  \item velocidade inicial, em \(\mathrm{m/s}\).
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Professor Panosso, exercício 21 (PDF fornecido).
+%% \extype{cloze}
+%% \exsolution{50}
+%% \exclozetype{num}
+%% \extol{0.05}
+%% \exname{Q13}
+%% \exusepackage[utf8]{inputenc}
