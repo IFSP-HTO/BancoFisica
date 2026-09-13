@@ -23,5 +23,5 @@ Primeiro, \(108\,\mathrm{km/h}=30\,\mathrm{m/s}\). Então \(A=v_0^2\sin(120^\cir
 %% \exsolution{77.94}
 %% \exclozetype{num}
 %% \extol{0.15}
-%% \exname{Q07}
+%% \exname{LO26L2Q07Futebol108kmh60graus}
 %% \exusepackage[utf8]{inputenc}
