@@ -25,5 +25,5 @@ Para \(45^\circ\), a posição horizontal do ápice é \(x_H=v_0^2/(2g)\). Assim
 %% \exsolution{15|2.22}
 %% \exclozetype{num|num}
 %% \extol{0.05|0.05}
-%% \exname{Q03}
+%% \exname{LO26RQ03UFU2010Ronaldinho}
 %% \exusepackage[utf8]{inputenc}
