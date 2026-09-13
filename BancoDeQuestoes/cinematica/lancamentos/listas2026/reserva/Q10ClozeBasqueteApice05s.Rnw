@@ -25,5 +25,5 @@ No ápice, \(v_y=0\), então \(v_{0y}=gt_s=10(0{,}5)=5\,\mathrm{m/s}\). Como \(v
 %% \exsolution{10|4.35}
 %% \exclozetype{num|num}
 %% \extol{0.05|0.05}
-%% \exname{Q10}
+%% \exname{LO26RQ10BasqueteApice05s}
 %% \exusepackage[utf8]{inputenc}
