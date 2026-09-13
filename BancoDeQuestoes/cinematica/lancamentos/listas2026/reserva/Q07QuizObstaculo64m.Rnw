@@ -29,5 +29,5 @@ As componentes são \(v_x=32\) e \(v_{0y}=24\,\mathrm{m/s}\). Para chegar a \(x=
 %% Fonte: Professor Panosso, exercício 22 (PDF fornecido).
 %% \extype{schoice}
 %% \exsolution{01000}
-%% \exname{Q07}
+%% \exname{LO26RQ07Obstaculo64m}
 %% \exusepackage[utf8]{inputenc}
