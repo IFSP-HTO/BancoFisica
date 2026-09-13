@@ -33,5 +33,5 @@ A \(30^\circ\): \(v_{0y}=150\), \(v_{0x}=150\sqrt3\), então \(T=30\,\mathrm{s}\
 %% \exsolution{30|1125|7794.23|51.96|3375|7794.23}
 %% \exclozetype{num|num|num|num|num|num}
 %% \extol{0.05|0.5|1|0.1|0.5|1}
-%% \exname{Q08}
+%% \exname{LO26L2Q08Canhao30e60}
 %% \exusepackage[utf8]{inputenc}
