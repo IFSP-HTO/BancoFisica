@@ -80,10 +80,12 @@ jobs:
             --check 2>&1 | tee build/moodle-xml-generation.log
 
       - name: Upload Moodle XML package
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: moodle-xml-structured
           path: build/moodle-xml
+          if-no-files-found: ignore
 
       - name: Upload Moodle XML generation log
         if: always()
