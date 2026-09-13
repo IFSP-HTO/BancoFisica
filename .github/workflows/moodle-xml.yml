@@ -8,6 +8,16 @@ on:
       - "BancoDeQuestoes/**"
       - "Moodle/ExerciciosParaMoodle.R"
       - "tools/generate_moodle_xml.R"
+      - "tools/moodle_question_categories.R"
+      - ".github/workflows/moodle-xml.yml"
+  pull_request:
+    branches:
+      - master
+    paths:
+      - "BancoDeQuestoes/ondas/**"
+      - "tools/generate_moodle_xml.R"
+      - "tools/moodle_question_categories.R"
+      - "tools/moodle_xml_split.R"
       - ".github/workflows/moodle-xml.yml"
   workflow_dispatch:
     inputs:
