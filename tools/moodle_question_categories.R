@@ -10,7 +10,13 @@
 ##
 ## sem alterar os metadados \exsection nos arquivos .Rnw. Este pos-processador
 ## remove somente os blocos de categoria do XML exportado e insere um novo
-## bloco sempre que muda o Q presente no nome da variante (Rxxx Qn : ...).
+## bloco sempre que muda o Q presente no nome da variante.
+##
+## O exams2moodle usa dois formatos de nome:
+##   * n = 1:  "Q01 : Nome"
+##   * n > 1:  "R001 Q1 : Nome"
+## Ambos sao aceitos aqui para que a organizacao por Q seja independente do
+## numero de replicas solicitado na exportacao.
 
 moodle_question_category_label <- function(q, width = 2L) {
   width <- max(1L, as.integer(width))
@@ -35,6 +41,42 @@ moodle_category_block <- function(category_path) {
     "</question>",
     ""
   )
+}
+
+## Extrai a identidade logica da variante a partir do <name> exportado pelo
+## exams2moodle. Para n=1 nao existe R no nome; nesse caso r = NA_integer_.
+parse_moodle_variant_identity <- function(text) {
+  m_replica <- regmatches(
+    text,
+    regexec(
+      "<text>[[:space:]]*R([0-9]+)[[:space:]]+Q0*([0-9]+)[[:space:]]*:",
+      text, perl = TRUE
+    )
+  )[[1]]
+
+  if (length(m_replica) > 0L) {
+    return(list(
+      r = as.integer(m_replica[2]),
+      q = as.integer(m_replica[3])
+    ))
+  }
+
+  m_single <- regmatches(
+    text,
+    regexec(
+      "<text>[[:space:]]*Q0*([0-9]+)[[:space:]]*:",
+      text, perl = TRUE
+    )
+  )[[1]]
+
+  if (length(m_single) > 0L) {
+    return(list(
+      r = NA_integer_,
+      q = as.integer(m_single[2])
+    ))
+  }
+
+  NULL
 }
 
 ## Remove os blocos <question type="category"> existentes. Como esses blocos
@@ -93,15 +135,10 @@ rewrite_moodle_question_categories <- function(xml_file, category_root,
       }
 
       block <- lines[i:j]
-      block_text <- paste(block, collapse = "\n")
-      m_name <- regmatches(
-        block_text,
-        regexec("<text>[[:space:]]*R([0-9]+)[[:space:]]+Q([0-9]+)[[:space:]]*:",
-                block_text, perl = TRUE)
-      )[[1]]
+      identity <- parse_moodle_variant_identity(paste(block, collapse = "\n"))
 
-      if (length(m_name) > 0L) {
-        q <- as.integer(m_name[3])
+      if (!is.null(identity)) {
+        q <- identity$q
         if (is.na(last_q) || q != last_q) {
           out <- c(
             out,
@@ -127,9 +164,9 @@ rewrite_moodle_question_categories <- function(xml_file, category_root,
 }
 
 ## Valida a propriedade de organizacao esperada apos a reescrita: toda
-## variante Rxxx Qn deve estar imediatamente sob a categoria logica
-## <category_root>/Qnn correspondente. Tambem confere cobertura de Q e total de
-## variantes quando esses valores sao fornecidos.
+## variante ("Qnn" para n=1 ou "Rxxx Qn" para n>1) deve estar sob a categoria
+## <category_root>/Qnn correspondente. Tambem confere cobertura de Q, total de
+## variantes e ausencia de identidades duplicadas.
 validate_moodle_question_categories <- function(xml_files, category_root,
                                                 total_questions = NULL,
                                                 variants = NULL,
@@ -142,6 +179,8 @@ validate_moodle_question_categories <- function(xml_files, category_root,
   current_category <- NA_character_
   questions <- integer()
   replicas <- integer()
+  occurrence <- 0L
+  keys <- character()
 
   for (line in lines) {
     m_cat <- regmatches(
@@ -153,31 +192,33 @@ validate_moodle_question_categories <- function(xml_files, category_root,
       next
     }
 
-    m_name <- regmatches(
-      line,
-      regexec("<text>[[:space:]]*R([0-9]+)[[:space:]]+Q([0-9]+)[[:space:]]*:",
-              line, perl = TRUE)
-    )[[1]]
-    if (length(m_name) == 0L) next
+    identity <- parse_moodle_variant_identity(line)
+    if (is.null(identity)) next
 
-    r <- as.integer(m_name[2])
-    q <- as.integer(m_name[3])
+    occurrence <- occurrence + 1L
+    q <- identity$q
+    r <- identity$r
     expected <- moodle_question_category_path(category_root, q, width = width)
 
     if (is.na(current_category) || !identical(current_category, expected)) {
-      stop("Moodle question category error: R", r, " Q", q,
+      id_text <- if (is.na(r)) paste0("Q", q) else paste0("R", r, " Q", q)
+      stop("Moodle question category error: ", id_text,
            " is under '", current_category, "', expected '", expected, "'")
     }
 
     questions <- c(questions, q)
     replicas <- c(replicas, r)
+    ## Com n=1 o exams2moodle nao fornece R; a identidade Q e suficiente.
+    ## Com replicas, usa o par (Q,R), preservando a checagem historica.
+    keys <- c(keys, if (is.na(r)) paste0(q, ":single") else paste(q, r, sep = ":"))
   }
 
   if (!is.null(total_questions)) {
     expected_q <- seq_len(as.integer(total_questions))
-    if (!identical(sort(unique(questions)), expected_q)) {
+    observed_q <- sort(unique(questions))
+    if (!identical(observed_q, expected_q)) {
       stop("Moodle question category error: Q coverage is not 1..",
-           total_questions)
+           total_questions, " (observed: ", paste(observed_q, collapse = ", "), ")")
     }
   }
 
@@ -189,9 +230,8 @@ validate_moodle_question_categories <- function(xml_files, category_root,
     }
   }
 
-  keys <- paste(questions, replicas, sep = ":")
   if (anyDuplicated(keys)) {
-    stop("Moodle question category error: duplicate (Q,R) identity")
+    stop("Moodle question category error: duplicate variant identity")
   }
 
   invisible(TRUE)
