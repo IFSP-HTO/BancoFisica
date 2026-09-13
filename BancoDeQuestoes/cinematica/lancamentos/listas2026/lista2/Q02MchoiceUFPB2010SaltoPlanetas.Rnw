@@ -29,5 +29,5 @@ Para o alcance máximo \(A_{\max}=v_0^2/g\). Assim: com \(14\,\mathrm{m/s}\), \(
 %% Fonte: UFPB 2010, reproduzida em "Balística - Avançada" (PDF fornecido).
 %% \extype{mchoice}
 %% \exsolution{10111}
-%% \exname{Q02}
+%% \exname{LO26L2Q02UFPB2010SaltoPlanetas}
 %% \exusepackage[utf8]{inputenc}
