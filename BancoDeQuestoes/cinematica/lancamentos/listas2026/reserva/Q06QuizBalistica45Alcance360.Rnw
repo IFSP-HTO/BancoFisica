@@ -29,5 +29,5 @@ Para \(45^\circ\), \(A=v_0^2/g\). Logo \(360=v_0^2/10\), \(v_0^2=3600\) e \(v_0=
 %% Fonte: Professor Panosso, exercício 20 (PDF fornecido).
 %% \extype{schoice}
 %% \exsolution{00100}
-%% \exname{Q06}
+%% \exname{LO26RQ06Balistica45Alcance360}
 %% \exusepackage[utf8]{inputenc}
