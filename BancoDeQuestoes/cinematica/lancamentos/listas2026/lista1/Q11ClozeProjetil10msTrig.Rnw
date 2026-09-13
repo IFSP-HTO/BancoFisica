@@ -25,5 +25,5 @@ As componentes iniciais são \(v_{0x}=6\,\mathrm{m/s}\) e \(v_{0y}=8\,\mathrm{m/
 %% \exsolution{3.2|9.6}
 %% \exclozetype{num|num}
 %% \extol{0.05|0.05}
-%% \exname{Q11}
+%% \exname{LO26L1Q11Projetil10msTrig}
 %% \exusepackage[utf8]{inputenc}
