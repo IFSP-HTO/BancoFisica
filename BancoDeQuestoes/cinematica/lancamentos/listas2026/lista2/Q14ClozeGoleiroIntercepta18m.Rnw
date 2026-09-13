@@ -1,0 +1,27 @@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+Uma bola é chutada do solo com velocidade inicial \(15{,}0\,\mathrm{m/s}\), formando um ângulo \(\alpha\) tal que \(\sin\alpha=0{,}6\) e \(\cos\alpha=0{,}8\). Um goleiro a \(18{,}0\,\mathrm{m}\) do ponto do chute intercepta a bola no ar. Adote \(g=10\,\mathrm{m/s^2}\).
+
+\begin{answerlist}
+  \item altura da bola no instante da interceptação, em \(\mathrm{m}\).
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+Temos \(v_x=12\,\mathrm{m/s}\) e \(v_{0y}=9\,\mathrm{m/s}\). Para \(x=18\,\mathrm{m}\), \(t=18/12=1{,}5\,\mathrm{s}\). Logo \(y=9(1{,}5)-5(1{,}5)^2=13{,}5-11{,}25=2{,}25\,\mathrm{m}\).
+
+\begin{answerlist}
+  \item altura da bola no instante da interceptação, em \(\mathrm{m}\).
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Professor Panosso, exercício 23 (PDF fornecido).
+%% \extype{cloze}
+%% \exsolution{2.25}
+%% \exclozetype{num}
+%% \extol{0.05}
+%% \exname{Q14}
+%% \exusepackage[utf8]{inputenc}

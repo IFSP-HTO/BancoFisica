@@ -1,0 +1,33 @@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+O recorde considerado para o salto em distância é \(19{,}6\,\mathrm{m}\). Adote \(g=10\,\mathrm{m/s^2}\) na Terra e, quando necessário, considere que a distância máxima para uma dada velocidade ocorre a \(45^\circ\). Identifique as afirmativas corretas.
+
+\begin{answerlist}
+  \item Com ângulo de \(45^\circ\), uma velocidade inicial de \(14\,\mathrm{m/s}\) produz alcance de \(19{,}6\,\mathrm{m}\).
+  \item Com \(v_0=14\,\mathrm{m/s}\) e ângulo de \(60^\circ\), o atleta quebra o recorde de \(19{,}6\,\mathrm{m}\).
+  \item Com velocidade inicial de \(13\,\mathrm{m/s}\), o alcance máximo possível é \(16{,}9\,\mathrm{m}\).
+  \item Na Lua, com gravidade igual a \(1/6\) da terrestre e \(v_0=15\,\mathrm{m/s}\), o alcance máximo é \(135\,\mathrm{m}\).
+  \item Em um planeta com gravidade \(2{,}5\) vezes a terrestre e \(v_0=15\,\mathrm{m/s}\), o alcance máximo é \(9\,\mathrm{m}\).
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+Para o alcance máximo \(A_{\max}=v_0^2/g\). Assim: com \(14\,\mathrm{m/s}\), \(A_{\max}=19{,}6\,\mathrm{m}\); a \(60^\circ\), o alcance é menor que o máximo; com \(13\,\mathrm{m/s}\), \(A_{\max}=16{,}9\,\mathrm{m}\); na Lua \(A_{\max}=225/(10/6)=135\,\mathrm{m}\); e no planeta de gravidade \(25\,\mathrm{m/s^2}\), \(A_{\max}=225/25=9\,\mathrm{m}\).
+
+\begin{answerlist}
+  \item Com ângulo de \(45^\circ\), uma velocidade inicial de \(14\,\mathrm{m/s}\) produz alcance de \(19{,}6\,\mathrm{m}\).
+  \item Com \(v_0=14\,\mathrm{m/s}\) e ângulo de \(60^\circ\), o atleta quebra o recorde de \(19{,}6\,\mathrm{m}\).
+  \item Com velocidade inicial de \(13\,\mathrm{m/s}\), o alcance máximo possível é \(16{,}9\,\mathrm{m}\).
+  \item Na Lua, com gravidade igual a \(1/6\) da terrestre e \(v_0=15\,\mathrm{m/s}\), o alcance máximo é \(135\,\mathrm{m}\).
+  \item Em um planeta com gravidade \(2{,}5\) vezes a terrestre e \(v_0=15\,\mathrm{m/s}\), o alcance máximo é \(9\,\mathrm{m}\).
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: UFPB 2010, reproduzida em "Balística - Avançada" (PDF fornecido).
+%% \extype{mchoice}
+%% \exsolution{10111}
+%% \exname{Q02}
+%% \exusepackage[utf8]{inputenc}

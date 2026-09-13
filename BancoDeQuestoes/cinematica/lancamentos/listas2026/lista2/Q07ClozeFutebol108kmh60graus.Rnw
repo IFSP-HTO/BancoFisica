@@ -1,0 +1,27 @@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+Uma bola é chutada com velocidade \(108\,\mathrm{km/h}\), formando \(60^\circ\) com a horizontal. Despreze a resistência do ar e adote \(g=10\,\mathrm{m/s^2}\). Determine o alcance, considerando que a bola retorna ao nível de lançamento.
+
+\begin{answerlist}
+  \item alcance, em \(\mathrm{m}\).
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+Primeiro, \(108\,\mathrm{km/h}=30\,\mathrm{m/s}\). Então \(A=v_0^2\sin(120^\circ)/g=900(0{,}866)/10\approx77{,}94\,\mathrm{m}\), equivalente a \(45\sqrt3\,\mathrm{m}\).
+
+\begin{answerlist}
+  \item alcance, em \(\mathrm{m}\).
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Professor Panosso, exercício 10 (PDF fornecido).
+%% \extype{cloze}
+%% \exsolution{77.94}
+%% \exclozetype{num}
+%% \extol{0.15}
+%% \exname{Q07}
+%% \exusepackage[utf8]{inputenc}

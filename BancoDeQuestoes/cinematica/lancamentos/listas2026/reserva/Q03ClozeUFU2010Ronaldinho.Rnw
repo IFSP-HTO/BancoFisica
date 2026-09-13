@@ -1,0 +1,29 @@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+Numa cobrança de falta, a bola é lançada do solo a \(45^\circ\). Ela atinge a altura máxima quando está a \(11{,}25\,\mathrm{m}\) horizontalmente do ponto do chute. O gol está a \(20\,\mathrm{m}\) do ponto de lançamento e o travessão tem \(2{,}44\,\mathrm{m}\). Adote \(g=10\,\mathrm{m/s^2}\).
+
+\begin{answerlist}
+  \item velocidade inicial, em \(\mathrm{m/s}\);
+  \item altura da bola ao cruzar o plano da linha do gol, em \(\mathrm{m}\).
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+Para \(45^\circ\), a posição horizontal do ápice é \(x_H=v_0^2/(2g)\). Assim \(11{,}25=v_0^2/20\), dando \(v_0=15\,\mathrm{m/s}\). Em \(x=20\,\mathrm{m}\), \(t=20/(15/\sqrt2)=20\sqrt2/15\). Substituindo em \(y=v_0\sin45^\circ\,t-\frac12gt^2\), obtém-se \(y\approx2{,}22\,\mathrm{m}\), abaixo do travessão de \(2{,}44\,\mathrm{m}\).
+
+\begin{answerlist}
+  \item velocidade inicial, em \(\mathrm{m/s}\);
+  \item altura da bola ao cruzar o plano da linha do gol, em \(\mathrm{m}\).
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: UFU-MG 2010, reproduzida em "Balística - Avançada" (PDF fornecido).
+%% \extype{cloze}
+%% \exsolution{15|2.22}
+%% \exclozetype{num|num}
+%% \extol{0.05|0.05}
+%% \exname{Q03}
+%% \exusepackage[utf8]{inputenc}

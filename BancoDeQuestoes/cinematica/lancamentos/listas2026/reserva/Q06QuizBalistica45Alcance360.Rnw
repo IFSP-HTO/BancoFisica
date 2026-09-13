@@ -1,0 +1,33 @@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+Num teste de balística, um projétil é lançado do solo a \(45^\circ\) e retorna ao solo \(360\,\mathrm{m}\) adiante. Adote \(g=10\,\mathrm{m/s^2}\). Qual é a velocidade de lançamento?
+
+\begin{answerlist}
+  \item \(10\,\mathrm{m/s}\)
+  \item \(36\,\mathrm{m/s}\)
+  \item \(60\,\mathrm{m/s}\)
+  \item \(126\,\mathrm{m/s}\)
+  \item \(252\,\mathrm{m/s}\)
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+Para \(45^\circ\), \(A=v_0^2/g\). Logo \(360=v_0^2/10\), \(v_0^2=3600\) e \(v_0=60\,\mathrm{m/s}\).
+
+\begin{answerlist}
+  \item \(10\,\mathrm{m/s}\)
+  \item \(36\,\mathrm{m/s}\)
+  \item \(60\,\mathrm{m/s}\)
+  \item \(126\,\mathrm{m/s}\)
+  \item \(252\,\mathrm{m/s}\)
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Professor Panosso, exercício 20 (PDF fornecido).
+%% \extype{schoice}
+%% \exsolution{00100}
+%% \exname{Q06}
+%% \exusepackage[utf8]{inputenc}

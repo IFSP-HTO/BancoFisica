@@ -1,0 +1,33 @@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+Um jogador de futebol chuta uma bola com velocidade inicial que faz \(30^\circ\) com a horizontal. Desprezando a resistência do ar, qual valor melhor representa o módulo da velocidade inicial para que a bola atinja uma altura máxima de \(5\,\mathrm{m}\) em relação ao ponto de lançamento? Adote \(g=10\,\mathrm{m/s^2}\).
+
+\begin{answerlist}
+  \item \(10{,}5\,\mathrm{m/s}\)
+  \item \(15{,}2\,\mathrm{m/s}\)
+  \item \(32{,}0\,\mathrm{m/s}\)
+  \item \(12{,}5\,\mathrm{m/s}\)
+  \item \(20{,}0\,\mathrm{m/s}\)
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+Na altura máxima, \(v_y=0\). Como \(H=v_{0y}^2/(2g)\), temos \(5=v_{0y}^2/20\), logo \(v_{0y}=10\,\mathrm{m/s}\). Como \(v_{0y}=v_0\sin30^\circ=v_0/2\), resulta \(v_0=20\,\mathrm{m/s}\).
+
+\begin{answerlist}
+  \item \(10{,}5\,\mathrm{m/s}\)
+  \item \(15{,}2\,\mathrm{m/s}\)
+  \item \(32{,}0\,\mathrm{m/s}\)
+  \item \(12{,}5\,\mathrm{m/s}\)
+  \item \(20{,}0\,\mathrm{m/s}\)
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: UFT-TO 2010, reproduzida em "Balística - Avançada" (PDF fornecido).
+%% \extype{schoice}
+%% \exsolution{00001}
+%% \exname{Q02}
+%% \exusepackage[utf8]{inputenc}
