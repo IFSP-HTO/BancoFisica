@@ -8,6 +8,16 @@ on:
       - "BancoDeQuestoes/**"
       - "Moodle/ExerciciosParaMoodle.R"
       - "tools/generate_moodle_xml.R"
+      - "tools/moodle_question_categories.R"
+      - ".github/workflows/moodle-xml.yml"
+  pull_request:
+    branches:
+      - master
+    paths:
+      - "BancoDeQuestoes/ondas/**"
+      - "tools/generate_moodle_xml.R"
+      - "tools/moodle_question_categories.R"
+      - "tools/moodle_xml_split.R"
       - ".github/workflows/moodle-xml.yml"
   workflow_dispatch:
     inputs:
@@ -57,17 +67,30 @@ jobs:
           dependencies: '"all"'
 
       - name: Generate structured Moodle XML package
+        shell: bash
         run: |
+          set -o pipefail
+          mkdir -p build
           Rscript tools/generate_moodle_xml.R \
             --seed "$XML_SEED" \
             --n "$XML_VARIANTS" \
             --layout structured \
             --out-dir build/moodle-xml \
             --zip \
-            --check
+            --check 2>&1 | tee build/moodle-xml-generation.log
 
       - name: Upload Moodle XML package
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: moodle-xml-structured
           path: build/moodle-xml
+          if-no-files-found: ignore
+
+      - name: Upload Moodle XML generation log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: moodle-xml-generation-log
+          path: build/moodle-xml-generation.log
+          if-no-files-found: ignore

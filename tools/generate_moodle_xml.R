@@ -55,6 +55,8 @@ suppressMessages({
 
 ## Limite de 10 MB e particionamento compartilhados (tools/moodle_xml_split.R).
 source("tools/moodle_xml_split.R")
+## Organizacao opcional das variantes em subcategorias Q01, Q02, ...
+source("tools/moodle_question_categories.R")
 
 slug_segment <- function(x) {
   x <- iconv(x, from = "", to = "ASCII//TRANSLIT", sub = "")
@@ -103,9 +105,12 @@ output_for_subject <- function(subject, out_root, layout, seed) {
   list(dir = dir, name = name, file = file.path(dir, paste0(name, ".xml")))
 }
 
-generate_subject <- function(source_dir, output_dir, output_name, n_variants, seed, max_bytes) {
+generate_subject <- function(source_dir, output_dir, output_name, n_variants,
+                             seed, max_bytes, question_categories = FALSE,
+                             category_root = NULL) {
   callr::r(
-    function(source_dir, output_dir, output_name, n_variants, seed, max_bytes, repo_root) {
+    function(source_dir, output_dir, output_name, n_variants, seed, max_bytes,
+             repo_root, question_categories, category_root) {
       suppressMessages({
         library(exams)
         library(magrittr)
@@ -114,10 +119,12 @@ generate_subject <- function(source_dir, output_dir, output_name, n_variants, se
       })
       ## Particionamento em ate 10 MB compartilhado com o script legado.
       source(file.path(repo_root, "tools", "moodle_xml_split.R"))
+      source(file.path(repo_root, "tools", "moodle_question_categories.R"))
       files <- sort(list.files(source_dir, pattern = "\\.[Rr]nw$", ignore.case = TRUE))
       if (length(files) == 0) stop("No .Rnw files in ", source_dir)
       if (!dir.exists(output_dir)) dir.create(output_dir, recursive = TRUE)
-      generate_moodle_xml_limited(
+
+      xml_files <- generate_moodle_xml_limited(
         files,
         n = n_variants,
         name = output_name,
@@ -128,6 +135,29 @@ generate_subject <- function(source_dir, output_dir, output_name, n_variants, se
         converter = "pandoc-mathjax",
         max_bytes = max_bytes
       )
+
+      ## Para Ondas, cada XML tematico mantem uma categoria por questao-base:
+      ## assunto/Q01, assunto/Q02, ... Todas as replicas Rxxx de uma mesma Q
+      ## permanecem juntas. Os \exsection dos .Rnw continuam intactos e servem
+      ## como metadados pedagogicos no banco-fonte.
+      if (isTRUE(question_categories)) {
+        width <- max(2L, nchar(length(files)))
+        invisible(lapply(
+          xml_files,
+          rewrite_moodle_question_categories,
+          category_root = category_root,
+          width = width
+        ))
+        validate_moodle_question_categories(
+          xml_files,
+          category_root = category_root,
+          total_questions = length(files),
+          variants = n_variants,
+          width = width
+        )
+      }
+
+      xml_files
     },
     args = list(
       source_dir = source_dir,
@@ -136,7 +166,9 @@ generate_subject <- function(source_dir, output_dir, output_name, n_variants, se
       n_variants = n_variants,
       seed = seed,
       max_bytes = max_bytes,
-      repo_root = repo_root
+      repo_root = repo_root,
+      question_categories = question_categories,
+      category_root = category_root
     )
   )
 }
@@ -206,7 +238,17 @@ for (i in seq_along(dirs)) {
   out <- output_for_subject(subject, out_dir, layout, seed)
   source_files <- list.files(source_dir, pattern = "\\.[Rr]nw$", ignore.case = TRUE)
 
-  xml_files <- generate_subject(source_dir, out$dir, out$name, n_variants, seed, max_bytes)
+  ## Os XMLs de Ondas (pasta raiz e subassuntos) usam categorias por Q. Assim,
+  ## progressivas, cordas, interferencia etc. continuam em XMLs separados, e
+  ## dentro de cada um o Moodle recebe Q01, Q02, ... como subcategorias.
+  ondas_subject <- identical(subject, "ondas") || startsWith(subject, "ondas/")
+  category_root <- if (ondas_subject) basename(slug_path(subject)) else NULL
+
+  xml_files <- generate_subject(
+    source_dir, out$dir, out$name, n_variants, seed, max_bytes,
+    question_categories = ondas_subject,
+    category_root = category_root
+  )
   n_questions <- sum(vapply(xml_files, function(f) validate_xml(f, max_bytes), integer(1)))
 
   cat(sprintf("[%d/%d] %s -> %d XML part(s)\n",
