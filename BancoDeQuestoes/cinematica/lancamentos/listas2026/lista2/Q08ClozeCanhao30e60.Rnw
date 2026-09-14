@@ -1,37 +1,22 @@
+<<echo=FALSE, results=hide>>=
+g<-10; v0<-sample(c(50,100,150,200,250,300),1); s30<-0.5; c30<-sqrt(3)/2; s60<-sqrt(3)/2; c60<-0.5
+T30<-2*v0*s30/g; H30<-(v0*s30)^2/(2*g); A30<-v0*c30*T30
+T60<-2*v0*s60/g; H60<-(v0*s60)^2/(2*g); A60<-v0*c60*T60
+fmt<-function(x,d=2) formatC(x,format="f",digits=d,decimal.mark=",")
+@
 \usepackage[utf8]{inputenc}
-\usepackage{graphicx}
 
 \begin{question}
-Um canhão dispara projéteis sempre com velocidade de saída \(300\,\mathrm{m/s}\). Adote \(g=10\,\mathrm{m/s^2}\) e despreze a resistência do ar. Compare disparos feitos a \(30^\circ\) e \(60^\circ\) com a horizontal.
-
-\begin{answerlist}
-  \item tempo de voo a \(30^\circ\), em \(\mathrm{s}\);
-  \item altura máxima a \(30^\circ\), em \(\mathrm{m}\);
-  \item alcance a \(30^\circ\), em \(\mathrm{m}\);
-  \item tempo de voo a \(60^\circ\), em \(\mathrm{s}\);
-  \item altura máxima a \(60^\circ\), em \(\mathrm{m}\);
-  \item alcance a \(60^\circ\), em \(\mathrm{m}\).
-\end{answerlist}
+Um canhão dispara projéteis sempre com velocidade de saída $\Sexpr{fmt(v0,0)}\,\mathrm{m/s}$. Adote $g=10\,\mathrm{m/s^2}$ e despreze a resistência do ar. Compare disparos feitos a $30^\circ$ e $60^\circ$ com a horizontal. Determine:
+\begin{answerlist}\item tempo de voo a $30^\circ$;\item altura máxima a $30^\circ$;\item alcance a $30^\circ$;\item tempo de voo a $60^\circ$;\item altura máxima a $60^\circ$;\item alcance a $60^\circ$.\end{answerlist}
 \end{question}
-
-\begin{solution}
-A \(30^\circ\): \(v_{0y}=150\), \(v_{0x}=150\sqrt3\), então \(T=30\,\mathrm{s}\), \(H=1125\,\mathrm{m}\) e \(A=4500\sqrt3\approx7794{,}23\,\mathrm{m}\). A \(60^\circ\): \(v_{0y}=150\sqrt3\), \(v_{0x}=150\), então \(T=30\sqrt3\approx51{,}96\,\mathrm{s}\), \(H=3375\,\mathrm{m}\) e o alcance é novamente \(4500\sqrt3\,\mathrm{m}\).
-
-\begin{answerlist}
-  \item tempo de voo a \(30^\circ\), em \(\mathrm{s}\);
-  \item altura máxima a \(30^\circ\), em \(\mathrm{m}\);
-  \item alcance a \(30^\circ\), em \(\mathrm{m}\);
-  \item tempo de voo a \(60^\circ\), em \(\mathrm{s}\);
-  \item altura máxima a \(60^\circ\), em \(\mathrm{m}\);
-  \item alcance a \(60^\circ\), em \(\mathrm{m}\).
-\end{answerlist}
-\end{solution}
+\begin{solution}Os alcances são iguais para ângulos complementares. Numericamente: $T_{30}=\Sexpr{fmt(T30)}$, $H_{30}=\Sexpr{fmt(H30)}$, $A_{30}=\Sexpr{fmt(A30)}$, $T_{60}=\Sexpr{fmt(T60)}$, $H_{60}=\Sexpr{fmt(H60)}$, $A_{60}=\Sexpr{fmt(A60)}$.\begin{answerlist}\item $\Sexpr{fmt(T30)}$\item $\Sexpr{fmt(H30)}$\item $\Sexpr{fmt(A30)}$\item $\Sexpr{fmt(T60)}$\item $\Sexpr{fmt(H60)}$\item $\Sexpr{fmt(A60)}$\end{answerlist}\end{solution}
 
 %% META-INFORMATION
-%% Fonte: Professor Panosso, exercício 11 (PDF fornecido).
+%% Fonte: Professor Panosso, exercício 11, parametrizado.
 %% \extype{cloze}
-%% \exsolution{30|1125|7794.23|51.96|3375|7794.23}
+%% \exsolution{\Sexpr{T30}|\Sexpr{H30}|\Sexpr{A30}|\Sexpr{T60}|\Sexpr{H60}|\Sexpr{A60}}
 %% \exclozetype{num|num|num|num|num|num}
-%% \extol{0.05|0.5|1|0.1|0.5|1}
-%% \exname{LO26L2Q08Canhao30e60}
-%% \exusepackage[utf8]{inputenc}
+%% \extol{0.05|0.2|0.5|0.05|0.2|0.5}
+%% \exname{LO26L2Q08}
+%% \exsection{Mecanica; Cinematica; Lancamento obliquo; Listas 2026}

@@ -1,33 +1,47 @@
+<<echo=FALSE, results=hide>>=
+g <- 10
+theta <- 30
+sen <- 0.5
+cos <- 0.866
+configs <- data.frame(v0=c(20,24,30,20,24), H2=c(80,72,60,90,84), teq=c(2.0,2.0,1.6,2.5,1.5))
+i <- sample(seq_len(nrow(configs)),1)
+v0<-configs$v0[i]; H2<-configs$H2[i]; teq<-configs$teq[i]
+vy<-v0*sen; vx<-v0*cos
+H1<-H2+vy*teq
+Hmax<-H2+vy^2/(2*g)
+tclaim<-teq+0.5
+t2<-(vy+sqrt(vy^2+2*g*H2))/g
+t1<-sqrt(2*H1/g)
+threshold<-t2+0.5
+dist<-vx*teq
+fmt<-function(x,d=2) formatC(x,format="f",digits=d,decimal.mark=",")
+@
 \usepackage[utf8]{inputenc}
-\usepackage{graphicx}
 
 \begin{question}
-Do topo de uma plataforma de \(100\,\mathrm{m}\), solta-se um corpo \(C_1\). No mesmo instante, de um ponto a \(80\,\mathrm{m}\) do solo, lança-se \(C_2\) com velocidade \(20\,\mathrm{m/s}\), a \(30^\circ\) acima da horizontal. Os corpos estavam inicialmente na mesma vertical. Despreze o ar e adote \(g=10\,\mathrm{m/s^2}\). Assinale as afirmações corretas.
-
+Do topo de uma plataforma de $\Sexpr{fmt(H1,1)}\,\mathrm{m}$, solta-se um corpo $C_1$. No mesmo instante, de um ponto a $\Sexpr{H2}\,\mathrm{m}$ do solo, lança-se $C_2$ com velocidade $\Sexpr{v0}\,\mathrm{m/s}$, a $30^\circ$ acima da horizontal. Os corpos estavam inicialmente na mesma vertical. Despreze o ar e adote $g=10\,\mathrm{m/s^2}$, $\sin30^\circ=0{,}5$ e $\cos30^\circ\approx0{,}866$. Assinale as afirmações corretas.
 \begin{answerlist}
-  \item A altura máxima de \(C_2\), em relação ao solo, é \(85\,\mathrm{m}\).
-  \item Os corpos atingem a mesma altura \(1{,}5\,\mathrm{s}\) após o lançamento.
-  \item \(C_2\) demora mais de \(6\,\mathrm{s}\) para atingir o solo.
-  \item Os corpos atingem o solo no mesmo instante.
-  \item A distância entre os corpos \(2\,\mathrm{s}\) após o lançamento é \(20\sqrt3\,\mathrm{m}\).
+  \item A altura máxima de $C_2$, em relação ao solo, é $\Sexpr{fmt(Hmax)}\,\mathrm{m}$.
+  \item Os corpos atingem a mesma altura $\Sexpr{fmt(tclaim)}\,\mathrm{s}$ após o lançamento.
+  \item $C_2$ demora mais de $\Sexpr{fmt(threshold)}\,\mathrm{s}$ para atingir o solo.
+  \item Os dois corpos atingem o solo no mesmo instante.
+  \item A distância entre os corpos $\Sexpr{fmt(teq)}\,\mathrm{s}$ após o lançamento é $\Sexpr{fmt(dist)}\,\mathrm{m}$.
 \end{answerlist}
 \end{question}
-
 \begin{solution}
-Para \(C_2\), \(v_{0y}=10\,\mathrm{m/s}\), logo ele sobe \(5\,\mathrm{m}\) e atinge \(85\,\mathrm{m}\): a primeira é verdadeira. Igualando \(100-5t^2\) e \(80+10t-5t^2\), obtém-se \(t=2\,\mathrm{s}\), não \(1{,}5\). O tempo de \(C_2\) até o solo é \(1+\sqrt{17}\approx5{,}12\,\mathrm{s}\), e \(C_1\) chega em \(\sqrt{20}\approx4{,}47\,\mathrm{s}\). Em \(t=2\,\mathrm{s}\), ambos estão à mesma altura e a separação é apenas horizontal: \(v_x t=20\cos30^\circ\cdot2=20\sqrt3\,\mathrm{m}\). No padrão somatório, \(01+16=17\).
-
+Para $C_2$, $v_{0y}=\Sexpr{fmt(vy)}\,\mathrm{m/s}$ e $H_{max}=H_2+v_{0y}^2/(2g)=\Sexpr{fmt(Hmax)}\,\mathrm{m}$, logo a primeira é verdadeira. Igualando as alturas, os termos $-gt^2/2$ cancelam e resulta $t=(H_1-H_2)/v_{0y}=\Sexpr{fmt(teq)}\,\mathrm{s}$, portanto a segunda é falsa. O tempo de $C_2$ até o solo é $\Sexpr{fmt(t2)}\,\mathrm{s}$, menor que $\Sexpr{fmt(threshold)}\,\mathrm{s}$; $C_1$ chega em $\Sexpr{fmt(t1)}\,\mathrm{s}$, diferente. Em $t=\Sexpr{fmt(teq)}\,\mathrm{s}$ as alturas são iguais, de modo que a separação é horizontal: $d=v_x t=\Sexpr{fmt(dist)}\,\mathrm{m}$.
 \begin{answerlist}
-  \item A altura máxima de \(C_2\), em relação ao solo, é \(85\,\mathrm{m}\).
-  \item Os corpos atingem a mesma altura \(1{,}5\,\mathrm{s}\) após o lançamento.
-  \item \(C_2\) demora mais de \(6\,\mathrm{s}\) para atingir o solo.
-  \item Os corpos atingem o solo no mesmo instante.
-  \item A distância entre os corpos \(2\,\mathrm{s}\) após o lançamento é \(20\sqrt3\,\mathrm{m}\).
+  \item correta
+  \item incorreta
+  \item incorreta
+  \item incorreta
+  \item correta
 \end{answerlist}
 \end{solution}
 
 %% META-INFORMATION
-%% Fonte: UEM-PR 2012, reproduzida em "Balística - Avançada" (PDF fornecido).
+%% Fonte: UEM-PR 2012, reproduzida em "Balística - Avançada"; estrutura original preservada e valores parametrizados.
 %% \extype{mchoice}
 %% \exsolution{10001}
-%% \exname{Q01}
-%% \exusepackage[utf8]{inputenc}
+%% \exname{LO26RQ01}
+%% \exsection{Mecanica; Cinematica; Lancamento obliquo; Reserva prova 2026}

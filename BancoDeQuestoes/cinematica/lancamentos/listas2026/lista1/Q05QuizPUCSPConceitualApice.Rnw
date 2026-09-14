@@ -1,0 +1,44 @@
+<<echo=FALSE, results=hide>>=
+include_supplement("eq_q7_futebol.jpg", dir="../../../../figuras")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+Em uma partida de futebol, o goleiro chuta uma bola com velocidade inicial \(\vec V_0\), formando um ângulo \(\alpha\) com a horizontal. Despreze a resistência do ar. Considere as afirmações:
+I - no ponto mais alto a velocidade vetorial da bola é nula;
+II - \(\vec V_0\) pode ser decomposta em componentes horizontal e vertical;
+III - no ponto mais alto a aceleração da gravidade é nula;
+IV - no ponto mais alto a componente vertical da velocidade é nula.
+Quais estão corretas?
+
+\begin{center}
+\includegraphics[width=7cm,keepaspectratio]{eq_q7_futebol.jpg}
+\end{center}
+\begin{answerlist}
+  \item I, II e III
+  \item I, III e IV
+  \item II e IV
+  \item III e IV
+  \item I e II
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+A componente horizontal permanece diferente de zero no ápice, portanto I é falsa. A decomposição de \(\vec V_0\) é válida, então II é verdadeira. A aceleração continua sendo \(\vec g\), logo III é falsa. No ápice \(v_y=0\), então IV é verdadeira.
+
+\begin{answerlist}
+  \item I, II e III
+  \item I, III e IV
+  \item II e IV
+  \item III e IV
+  \item I e II
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: PUC-SP, reproduzida na lista do Colégio Equipe (PDF fornecido).
+%% \extype{schoice}
+%% \exsolution{00100}
+%% \exname{LO26L1Q05}
+%% \exusepackage[utf8]{inputenc}

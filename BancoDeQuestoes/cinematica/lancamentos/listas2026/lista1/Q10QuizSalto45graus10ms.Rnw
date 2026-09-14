@@ -1,33 +1,18 @@
+<<echo=FALSE, results=hide>>=
+g<-10; v0<-sample(c(10,20,30,40),1); A<-v0^2/g
+opts<-c(A,0.5*A,0.8*A,1.2*A,1.5*A); fmt<-function(x,d=1) formatC(x,format="f",digits=d,decimal.mark=",")
+@
 \usepackage[utf8]{inputenc}
-\usepackage{graphicx}
 
 \begin{question}
-Um atleta realiza um salto com velocidade inicial de \(10\,\mathrm{m/s}\), formando \(45^\circ\) com a horizontal. Considerando lançamento e queda no mesmo nível, desprezando o ar e adotando \(g=10\,\mathrm{m/s^2}\), qual é o alcance?
-
-\begin{answerlist}
-  \item \(2\,\mathrm{m}\)
-  \item \(4\,\mathrm{m}\)
-  \item \(6\,\mathrm{m}\)
-  \item \(8\,\mathrm{m}\)
-  \item \(10\,\mathrm{m}\)
-\end{answerlist}
+Um atleta realiza um salto com velocidade inicial de $\Sexpr{fmt(v0,0)}\,\mathrm{m/s}$, formando $45^\circ$ com a horizontal. Considerando lançamento e queda no mesmo nível, desprezando o ar e adotando $g=10\,\mathrm{m/s^2}$, qual é o alcance?
+\begin{answerlist}\item $\Sexpr{fmt(opts[1])}\,\mathrm{m}$\item $\Sexpr{fmt(opts[2])}\,\mathrm{m}$\item $\Sexpr{fmt(opts[3])}\,\mathrm{m}$\item $\Sexpr{fmt(opts[4])}\,\mathrm{m}$\item $\Sexpr{fmt(opts[5])}\,\mathrm{m}$\end{answerlist}
 \end{question}
-
-\begin{solution}
-Para \(\theta=45^\circ\), \(A=v_0^2\sin90^\circ/g=100/10=10\,\mathrm{m}\).
-
-\begin{answerlist}
-  \item \(2\,\mathrm{m}\)
-  \item \(4\,\mathrm{m}\)
-  \item \(6\,\mathrm{m}\)
-  \item \(8\,\mathrm{m}\)
-  \item \(10\,\mathrm{m}\)
-\end{answerlist}
-\end{solution}
+\begin{solution}Para $45^\circ$, $A=v_0^2/g=\Sexpr{fmt(A)}\,\mathrm{m}$.\begin{answerlist}\item correta\item incorreta\item incorreta\item incorreta\item incorreta\end{answerlist}\end{solution}
 
 %% META-INFORMATION
-%% Fonte: Professor Panosso, exercício 2 (PDF fornecido).
+%% Fonte: Professor Panosso, exercício 2, parametrizado.
 %% \extype{schoice}
-%% \exsolution{00001}
-%% \exname{LO26L1Q10Salto45graus10ms}
-%% \exusepackage[utf8]{inputenc}
+%% \exsolution{10000}
+%% \exname{LO26L1Q10}
+%% \exsection{Mecanica; Cinematica; Lancamento obliquo; Listas 2026}

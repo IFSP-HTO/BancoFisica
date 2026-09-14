@@ -1,0 +1,44 @@
+<<echo=FALSE, results=hide>>=
+dx <- sample(c(1.1,1.2,1.3,1.4,1.5),1)
+vxm <- dx/1.1
+fmt <- function(x,d=2) formatC(x,format="f",digits=d,decimal.mark=",")
+include_supplement("pan_q17_grafico.jpg", dir="../../../../figuras")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+O gráfico mostra a posição vertical do centro de gravidade de uma atleta durante um salto. A distância horizontal percorrida durante o salto é $\Sexpr{fmt(dx)}\,\mathrm{m}$. A partir do gráfico e adotando $g=10\,\mathrm{m/s^2}$, estime:
+
+\begin{center}
+\includegraphics[width=7cm,keepaspectratio]{pan_q17_grafico.jpg}
+\end{center}
+\begin{answerlist}
+  \item altura máxima, em $\mathrm{m}$;
+  \item velocidade média horizontal, em $\mathrm{m/s}$;
+  \item velocidade vertical inicial, em $\mathrm{m/s}$.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+Pela leitura do gráfico, a altura máxima é aproximadamente $1{,}52\,\mathrm{m}$ e o tempo total é cerca de $1{,}1\,\mathrm{s}$. Assim,
+\[
+\bar v_x=\frac{\Sexpr{fmt(dx)}}{1{,}1}\approx\Sexpr{fmt(vxm)}\,\mathrm{m/s}.
+\]
+O ápice ocorre em aproximadamente $0{,}55\,\mathrm{s}$, logo $v_{0y}\approx gt_s=5{,}5\,\mathrm{m/s}$.
+\begin{answerlist}
+  \item $1{,}52$
+  \item $\Sexpr{fmt(vxm)}$
+  \item $5{,}5$
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Professor Panosso, exercício 17 (PDF fornecido).
+%% O gráfico original é preservado sem alteração; apenas a distância horizontal textual é parametrizada.
+%% \extype{cloze}
+%% \exsolution{1.52|\Sexpr{vxm}|5.5}
+%% \exclozetype{num|num|num}
+%% \extol{0.08|0.1|0.2}
+%% \exname{LO26L2Q10}
+%% \exsection{Mecanica; Cinematica; Lancamento obliquo; Listas 2026}
