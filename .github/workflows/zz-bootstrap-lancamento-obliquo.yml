@@ -1,0 +1,114 @@
+name: Bootstrap lancamento obliquo parametrizado
+
+on:
+  push:
+    branches:
+      - expansao-lancamento-obliquo-parametrizado-2026
+    paths:
+      - '._bootstrap/**'
+      - '.github/workflows/zz-bootstrap-lancamento-obliquo.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  materialize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Instalar utilitarios
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y poppler-utils python3-pil
+      - name: Restaurar arquivos textuais auditados
+        run: |
+          cat ._bootstrap/part* | base64 -d > /tmp/final.tar.gz
+          echo '4f9184d5d1b20f282651aee0c7fca12d6da3ef8f8a4450a670e76ac96c865013  /tmp/final.tar.gz' | sha256sum -c -
+          tar -xzf /tmp/final.tar.gz -C .
+      - name: Baixar fontes publicas e reconstruir recortes
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/lo-src/adv /tmp/lo-src/pan /tmp/lo-src/eq BancoDeQuestoes/figuras
+          curl -L --fail --retry 3 -o /tmp/lo-src/adv.pdf 'https://loucosaber.wordpress.com/wp-content/uploads/2015/08/2013_lancamento_obliquo_avancado.pdf'
+          curl -L --fail --retry 3 -o /tmp/lo-src/pan.pdf 'https://www.professorpanosso.com.br/documentos/lan%C3%A7amento%20obliquo%20panosso11.pdf'
+          curl -L --fail --retry 3 -o /tmp/lo-src/eq.pdf 'https://www.colegioequipejf.com.br/site/uploads/arquivos_conteudo_aluno/1543/1588555775LYiIC6pw.pdf'
+          pdftoppm -r 150 -png /tmp/lo-src/adv.pdf /tmp/lo-src/adv/page >/dev/null 2>&1
+          pdftoppm -r 150 -png /tmp/lo-src/pan.pdf /tmp/lo-src/pan/page >/dev/null 2>&1
+          pdftoppm -r 150 -png /tmp/lo-src/eq.pdf /tmp/lo-src/eq/page >/dev/null 2>&1
+          python3 - <<'PY'
+          from pathlib import Path
+          from PIL import Image
+
+          out = Path('BancoDeQuestoes/figuras')
+          src = Path('/tmp/lo-src')
+          params = {
+            'LO26_MACK2012_altura_alcance_base.png': ('adv',5,(140,983,483,1251),(365,285)),
+            'LO26_Panosso16_pescaria_base.png': ('pan',2,(65,1088,492,1196),(455,115)),
+            'LO26_Panosso18_receptor_base.png': ('pan',2,(699,600,1222,787),(560,200)),
+            'LO26_Panosso19_altura_alcance_base.png': ('pan',2,(692,1087,1111,1238),(445,160)),
+            'LO26_Panosso25_jogador_base.png': ('pan',3,(52,867,609,1058),(595,205)),
+            'LO26_Panosso26_goleiro_base.png': ('pan',3,(690,136,1166,275),(510,148)),
+            'LO26_UFOP2010_edificio_base.png': ('adv',4,(130,894,517,1168),(410,290)),
+            'LO26_UFTM2011_volei_fig1_base.png': ('adv',2,(559,144,1059,524),(540,410)),
+            'LO26_UFTM2011_volei_fig2_base.png': ('adv',2,(602,585,1087,872),(525,310)),
+            'adv_q11_protasio.jpg': ('adv',5,(608,572,985,902),(400,350)),
+            'adv_q12_campo.jpg': ('adv',6,(127,764,497,899),(395,145)),
+            'adv_q3_trajetoria.jpg': ('adv',3,(99,155,548,525),(480,395)),
+            'eq_q11_vetor.jpg': ('eq',3,(51,74,362,300),(330,240)),
+            'eq_q12_moto.jpg': ('eq',3,(74,928,574,1094),(530,175)),
+            'eq_q7_futebol.jpg': ('eq',2,(74,525,526,792),(480,285)),
+            'eq_q8_duas_trajetorias.jpg': ('eq',2,(615,84,1017,230),(430,155)),
+            'eq_q9_tabela.jpg': ('eq',2,(624,647,989,830),(390,195)),
+            'pan_q15_pele.jpg': ('pan',2,(56,488,501,712),(475,240)),
+            'pan_q17_grafico.jpg': ('pan',2,(645,149,1013,428),(390,295)),
+            'pan_q1_estroboscopica.jpg': ('pan',1,(32,174,268,358),(250,195)),
+            'pan_q27_debret.jpg': ('pan',3,(617,623,1055,940),(465,335)),
+            'pan_q8_cebolinha.jpg': ('pan',1,(624,133,1054,297),(460,175)),
+          }
+          for name, (group, page, box, size) in params.items():
+              pagefile = src / group / f'page-{page}.png'
+              if not pagefile.exists():
+                  raise SystemExit(f'pagina ausente: {pagefile}')
+              im = Image.open(pagefile).convert('RGB').crop(box).resize(size, Image.Resampling.LANCZOS)
+              dest = out / name
+              if dest.suffix.lower() == '.png':
+                  im.save(dest, format='PNG', optimize=True)
+              else:
+                  im.save(dest, format='JPEG', quality=92, subsampling=0, optimize=True)
+              chk = Image.open(dest)
+              if chk.size != size:
+                  raise SystemExit(f'dimensao incorreta: {dest}: {chk.size} != {size}')
+              print(dest, chk.size)
+          if len(params) != 22:
+              raise SystemExit('esperados 22 ativos visuais')
+          PY
+      - name: Auditoria estrutural antes do commit
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          root=Path('BancoDeQuestoes/cinematica/lancamentos/listas2026')
+          q=sorted(root.rglob('*.Rnw'))
+          assert len(q)==40, len(q)
+          names=[]
+          for p in q:
+              s=p.read_text(encoding='utf-8')
+              m=re.search(r'\\exname\{([^}]+)\}',s)
+              assert m, p
+              names.append(m.group(1))
+              for x in re.findall(r'include_supplement\("([^"]+)"',s):
+                  assert Path('BancoDeQuestoes/figuras',x).exists(), (p,x)
+          assert len(set(names))==40
+          assert len(list((root/'lista1').glob('*.Rnw')))==15
+          assert len(list((root/'lista2').glob('*.Rnw')))==15
+          assert len(list((root/'reserva').glob('*.Rnw')))==10
+          print('OK: 40 questoes, IDs unicos, 15+15+10 e suplementos presentes')
+          PY
+      - name: Materializar branch e remover bootstrap
+        run: |
+          rm -rf ._bootstrap .github/workflows/zz-bootstrap-lancamento-obliquo.yml
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m 'Adiciona listas parametrizadas de lançamento oblíquo para 2026'
+          git push origin HEAD:expansao-lancamento-obliquo-parametrizado-2026
