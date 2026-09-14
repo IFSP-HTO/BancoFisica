@@ -1,0 +1,25 @@
+<<echo=FALSE, results=hide>>=
+g<-10
+configs<-data.frame(vx=c(6,8,10,12),vy=c(10,15,20,25),D=c(20,25.5,40,55)); i<-sample(seq_len(nrow(configs)),1); vx<-configs$vx[i]; vy<-configs$vy[i]; D<-configs$D[i]
+H<-vy^2/(2*g); T<-2*vy/g; R<-vx*T; d<-D-R; a<-2*d/T^2
+# keep only configurations with positive movement toward the ball; fallback original-like
+if(a<=0){vx<-8;vy<-15;D<-25.5;H<-vy^2/(2*g);T<-2*vy/g;R<-vx*T;d<-D-R;a<-2*d/T^2}
+opts<-c(a,0.5*a,0.75*a,1.25*a,1.5*a); fmt<-function(x,d=3) formatC(x,format="f",digits=d,decimal.mark=",")
+include_supplement("adv_q11_protasio.jpg", dir="../../../../figuras")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+Berstáquio e Protásio estão inicialmente separados por $\Sexpr{fmt(D,1)}\,\mathrm{m}$. Berstáquio lança uma bola que atinge altura máxima de $\Sexpr{fmt(H,2)}\,\mathrm{m}$; no ápice, a velocidade da bola é $\Sexpr{fmt(vx,1)}\,\mathrm{m/s}$. Protásio parte do repouso, com aceleração constante, em direção ao ponto em que pegará a bola no mesmo nível do lançamento. Adote $g=10\,\mathrm{m/s^2}$. Qual deve ser sua aceleração?
+\begin{center}\includegraphics[width=6cm,keepaspectratio]{adv_q11_protasio.jpg}\end{center}
+\begin{answerlist}\item $\Sexpr{fmt(opts[1])}\,\mathrm{m/s^2}$\item $\Sexpr{fmt(opts[2])}\,\mathrm{m/s^2}$\item $\Sexpr{fmt(opts[3])}\,\mathrm{m/s^2}$\item $\Sexpr{fmt(opts[4])}\,\mathrm{m/s^2}$\item $\Sexpr{fmt(opts[5])}\,\mathrm{m/s^2}$\end{answerlist}
+\end{question}
+\begin{solution}$v_{0y}=\Sexpr{fmt(vy,1)}$, $T=\Sexpr{fmt(T)}$, alcance da bola $R=\Sexpr{fmt(R)}$. Protásio percorre $d=D-R=\Sexpr{fmt(d)}$ partindo do repouso, então $d=aT^2/2$ e $a=\Sexpr{fmt(a)}$.\begin{answerlist}\item correta\item incorreta\item incorreta\item incorreta\item incorreta\end{answerlist}\end{solution}
+
+%% META-INFORMATION
+%% Fonte: PUC-SP/2012, parametrizada; figura original preservada.
+%% \extype{schoice}
+%% \exsolution{10000}
+%% \exname{LO26RQ05}
+%% \exsection{Mecanica; Cinematica; Lancamento obliquo; Reserva prova 2026}

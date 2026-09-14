@@ -1,31 +1,30 @@
+<<echo=FALSE, results=hide>>=
+g <- 10
+configs <- data.frame(vx=c(6,8,10,12,15), vy=c(8,10,12,15,20))
+i <- sample(seq_len(nrow(configs)),1); vx<-configs$vx[i]; vy<-configs$vy[i]
+H <- vy^2/(2*g); ts<-vy/g; T<-2*ts; A<-vx*T
+fmt <- function(x,d=2) formatC(x,format="f",digits=d,decimal.mark=",")
+@
 \usepackage[utf8]{inputenc}
-\usepackage{graphicx}
 
 \begin{question}
-Um projétil é lançado obliquamente e atinge altura máxima de \(7{,}2\,\mathrm{m}\). No ponto mais alto da trajetória, sua velocidade escalar é \(10\,\mathrm{m/s}\). Adote \(g=10\,\mathrm{m/s^2}\) e suponha que o projétil retorna ao mesmo nível em que foi lançado.
-
+Um projétil é lançado obliquamente e atinge altura máxima de $\Sexpr{fmt(H,2)}\,\mathrm{m}$. No ponto mais alto da trajetória, sua velocidade escalar é $\Sexpr{fmt(vx,1)}\,\mathrm{m/s}$. Adote $g=10\,\mathrm{m/s^2}$ e suponha que o projétil retorna ao mesmo nível em que foi lançado. Determine:
 \begin{answerlist}
-  \item tempo de subida, em \(\mathrm{s}\);
-  \item tempo total de voo, em \(\mathrm{s}\);
-  \item alcance horizontal, em \(\mathrm{m}\).
+\item tempo de subida, em $\mathrm{s}$;
+\item tempo total, em $\mathrm{s}$;
+\item alcance horizontal, em $\mathrm{m}$.
 \end{answerlist}
 \end{question}
-
 \begin{solution}
-No ápice, \(v_y=0\) e a velocidade de \(10\,\mathrm{m/s}\) é a componente horizontal. Pela altura máxima, \(v_{0y}=\sqrt{2gH}=\sqrt{144}=12\,\mathrm{m/s}\). Logo \(t_s=1{,}2\,\mathrm{s}\), \(T=2{,}4\,\mathrm{s}\) e \(A=10(2{,}4)=24\,\mathrm{m}\).
-
-\begin{answerlist}
-  \item tempo de subida, em \(\mathrm{s}\);
-  \item tempo total de voo, em \(\mathrm{s}\);
-  \item alcance horizontal, em \(\mathrm{m}\).
-\end{answerlist}
+No ápice, $v_y=0$ e a velocidade escalar é $v_x$. Da altura máxima, $v_{0y}=\sqrt{2gH}=\Sexpr{fmt(vy,1)}$. Logo $t_s=\Sexpr{fmt(ts,2)}$, $T=\Sexpr{fmt(T,2)}$ e $A=v_xT=\Sexpr{fmt(A,2)}$.
+\begin{answerlist}\item $\Sexpr{fmt(ts,2)}$\item $\Sexpr{fmt(T,2)}$\item $\Sexpr{fmt(A,2)}$\end{answerlist}
 \end{solution}
 
 %% META-INFORMATION
-%% Fonte: Lista do Colégio Equipe de Juiz de Fora, exercício 6 (PDF fornecido).
+%% Fonte: Colégio Equipe, exercício 6, parametrizado.
 %% \extype{cloze}
-%% \exsolution{1.2|2.4|24}
+%% \exsolution{\Sexpr{ts}|\Sexpr{T}|\Sexpr{A}}
 %% \exclozetype{num|num|num}
-%% \extol{0.02|0.02|0.05}
-%% \exname{Q04}
-%% \exusepackage[utf8]{inputenc}
+%% \extol{0.03|0.03|0.1}
+%% \exname{LO26L1Q04}
+%% \exsection{Mecanica; Cinematica; Lancamento obliquo; Listas 2026}

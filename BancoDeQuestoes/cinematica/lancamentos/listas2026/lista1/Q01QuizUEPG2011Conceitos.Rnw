@@ -1,0 +1,39 @@
+<<echo=FALSE, results=hide>>=
+include_supplement("adv_q3_trajetoria.jpg", dir="../../../../figuras")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+Um projétil é lançado obliquamente no vácuo com velocidade inicial \(V_0\), formando um ângulo \(\theta\) com a horizontal. A figura representa sua trajetória. Assinale as afirmações corretas.
+
+\begin{center}
+\includegraphics[width=7cm,keepaspectratio]{adv_q3_trajetoria.jpg}
+\end{center}
+\begin{answerlist}
+  \item As componentes da velocidade são \(V_x=V_0\cos\theta\) e \(V_y=V_0\sin\theta-gt\).
+  \item As componentes da posição são \(x=V_0\cos\theta\,t\) e \(y=V_0\sin\theta-\frac{1}{2}gt^2\).
+  \item O alcance horizontal depende da velocidade inicial e do ângulo de lançamento.
+  \item O tempo de voo, quando o projétil retorna ao nível de lançamento, é \(T=\frac{2V_0\sin\theta}{g}\).
+  \item O movimento é uniformemente variado na vertical e uniforme na horizontal.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+As afirmações 1, 3, 4 e 5 são corretas. Na afirmação 2 falta o fator \(t\) no termo \(V_0\sin\theta\,t\) da coordenada vertical. No padrão somatório original da UEPG, o resultado é \(01+04+08+16=29\).
+
+\begin{answerlist}
+  \item As componentes da velocidade são \(V_x=V_0\cos\theta\) e \(V_y=V_0\sin\theta-gt\).
+  \item As componentes da posição são \(x=V_0\cos\theta\,t\) e \(y=V_0\sin\theta-\frac{1}{2}gt^2\).
+  \item O alcance horizontal depende da velocidade inicial e do ângulo de lançamento.
+  \item O tempo de voo, quando o projétil retorna ao nível de lançamento, é \(T=\frac{2V_0\sin\theta}{g}\).
+  \item O movimento é uniformemente variado na vertical e uniforme na horizontal.
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: UEPG-PR 2011, reproduzida em "Balística - Avançada" (PDF fornecido).
+%% \extype{mchoice}
+%% \exsolution{10111}
+%% \exname{LO26L1Q01}
+%% \exusepackage[utf8]{inputenc}

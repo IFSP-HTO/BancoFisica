@@ -1,0 +1,24 @@
+<<echo=FALSE, results=hide>>=
+g<-10; v0<-sample(c(20,30,40,50),1); H<-v0^2/(4*g); A<-v0^2/g
+fmt<-function(x,d=2) formatC(x,format="f",digits=d,decimal.mark=",")
+include_supplement("pan_q27_debret.jpg", dir="../../../../figuras")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+Inspirado na pintura "Caboclo", de Jean-Baptiste Debret, considere uma flecha lançada do nível do chão com velocidade $\Sexpr{fmt(v0,0)}\,\mathrm{m/s}$, formando $45^\circ$ com a horizontal. Despreze a resistência do ar e adote $g=10\,\mathrm{m/s^2}$.
+\begin{center}\includegraphics[width=9cm,keepaspectratio]{pan_q27_debret.jpg}\end{center}
+Determine:
+\begin{answerlist}\item altura máxima, em $\mathrm{m}$;\item alcance, em $\mathrm{m}$.\end{answerlist}
+\end{question}
+\begin{solution}Para $45^\circ$, $H=v_0^2/(4g)=\Sexpr{fmt(H)}$ e $A=v_0^2/g=\Sexpr{fmt(A)}$.\begin{answerlist}\item $\Sexpr{fmt(H)}$\item $\Sexpr{fmt(A)}$\end{answerlist}\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Professor Panosso, exercício 27, parametrizado; imagem original de Debret preservada.
+%% \extype{cloze}
+%% \exsolution{\Sexpr{H}|\Sexpr{A}}
+%% \exclozetype{num|num}
+%% \extol{0.05|0.1}
+%% \exname{LO26RQ09}
+%% \exsection{Mecanica; Cinematica; Lancamento obliquo; Reserva prova 2026}

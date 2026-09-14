@@ -12,7 +12,8 @@ Imports:
     purrr (>= 0.2.4),
     callr (>= 3.0.0),
     tth (>= 4.3),
-    base64enc (>= 0.1)
+    base64enc (>= 0.1),
+    png (>= 0.1-8)
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
