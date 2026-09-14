@@ -108,9 +108,10 @@ jobs:
           assert Path('BancoDeQuestoes/figuras/adv_q12_campo.jpg').exists()
           print('OK: 40 questoes, IDs unicos, 15+15+10 e suplementos presentes')
           PY
-      - name: Materializar branch e remover bootstrap
+      - name: Materializar branch mantendo workflows fora do push da Action
         run: |
-          rm -rf ._bootstrap .github/workflows/zz-bootstrap-lancamento-obliquo.yml
+          rm -rf ._bootstrap
+          rm -f .github/workflows/lancamento-obliquo-listas-2026.yml
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add -A
