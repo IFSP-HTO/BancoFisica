@@ -29,6 +29,8 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p /tmp/lo-src/adv /tmp/lo-src/pan /tmp/lo-src/eq BancoDeQuestoes/figuras
+          base64 -d ._bootstrap/adv_q12_campo.jpg.b64 > BancoDeQuestoes/figuras/adv_q12_campo.jpg
+          echo 'c96ad392a170b0dba807b37f805f8046f8edd5f622832473356af242fca6fc98  BancoDeQuestoes/figuras/adv_q12_campo.jpg' | sha256sum -c -
           curl -L --fail --retry 3 -o /tmp/lo-src/adv.pdf 'https://loucosaber.wordpress.com/wp-content/uploads/2015/08/2013_lancamento_obliquo_avancado.pdf'
           curl -L --fail --retry 3 -o /tmp/lo-src/pan.pdf 'https://www.professorpanosso.com.br/documentos/lan%C3%A7amento%20obliquo%20panosso11.pdf'
           curl -L --fail --retry 3 -o /tmp/lo-src/eq.pdf 'https://www.colegioequipejf.com.br/site/uploads/arquivos_conteudo_aluno/1543/1588555775LYiIC6pw.pdf'
@@ -52,7 +54,6 @@ jobs:
             'LO26_UFTM2011_volei_fig1_base.png': ('adv',2,(559,144,1059,524),(540,410)),
             'LO26_UFTM2011_volei_fig2_base.png': ('adv',2,(602,585,1087,872),(525,310)),
             'adv_q11_protasio.jpg': ('adv',5,(608,572,985,902),(400,350)),
-            'adv_q12_campo.jpg': ('adv',6,(127,764,497,899),(395,145)),
             'adv_q3_trajetoria.jpg': ('adv',3,(99,155,548,525),(480,395)),
             'eq_q11_vetor.jpg': ('eq',3,(51,74,362,300),(330,240)),
             'eq_q12_moto.jpg': ('eq',3,(74,928,574,1094),(530,175)),
@@ -79,8 +80,10 @@ jobs:
               if chk.size != size:
                   raise SystemExit(f'dimensao incorreta: {dest}: {chk.size} != {size}')
               print(dest, chk.size)
-          if len(params) != 22:
-              raise SystemExit('esperados 22 ativos visuais')
+          if len(params) != 21:
+              raise SystemExit('esperados 21 ativos reconstruidos das fontes publicas')
+          if len(list(out.glob('LO26_*_base.png'))) != 9:
+              raise SystemExit('esperadas 9 imagens-base parametrizadas')
           PY
       - name: Auditoria estrutural antes do commit
         run: |
@@ -102,6 +105,7 @@ jobs:
           assert len(list((root/'lista1').glob('*.Rnw')))==15
           assert len(list((root/'lista2').glob('*.Rnw')))==15
           assert len(list((root/'reserva').glob('*.Rnw')))==10
+          assert Path('BancoDeQuestoes/figuras/adv_q12_campo.jpg').exists()
           print('OK: 40 questoes, IDs unicos, 15+15+10 e suplementos presentes')
           PY
       - name: Materializar branch e remover bootstrap
