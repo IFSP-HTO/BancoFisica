@@ -1,33 +1,41 @@
+<<echo=FALSE, results=hide>>=
+g <- 10
+u <- sample(c(12,14,16,18),1)
+recorde <- u^2/g
+u3 <- u-1
+A3 <- u3^2/g
+vspace <- sample(c(12,15,18),1)
+Alua <- 6*vspace^2/g
+kplanet <- sample(c(2.0,2.5,3.0),1)
+Aplanet <- vspace^2/(kplanet*g)
+fmt<-function(x,d=1) formatC(x,format="f",digits=d,decimal.mark=",")
+@
 \usepackage[utf8]{inputenc}
-\usepackage{graphicx}
 
 \begin{question}
-O recorde considerado para o salto em distância é \(19{,}6\,\mathrm{m}\). Adote \(g=10\,\mathrm{m/s^2}\) na Terra e, quando necessário, considere que a distância máxima para uma dada velocidade ocorre a \(45^\circ\). Identifique as afirmativas corretas.
-
+Considere como recorde de salto em distância o valor $\Sexpr{fmt(recorde)}\,\mathrm{m}$. Adote $g=10\,\mathrm{m/s^2}$ na Terra e, quando necessário, considere que a distância máxima para uma dada velocidade ocorre a $45^\circ$. Identifique as afirmativas corretas.
 \begin{answerlist}
-  \item Com ângulo de \(45^\circ\), uma velocidade inicial de \(14\,\mathrm{m/s}\) produz alcance de \(19{,}6\,\mathrm{m}\).
-  \item Com \(v_0=14\,\mathrm{m/s}\) e ângulo de \(60^\circ\), o atleta quebra o recorde de \(19{,}6\,\mathrm{m}\).
-  \item Com velocidade inicial de \(13\,\mathrm{m/s}\), o alcance máximo possível é \(16{,}9\,\mathrm{m}\).
-  \item Na Lua, com gravidade igual a \(1/6\) da terrestre e \(v_0=15\,\mathrm{m/s}\), o alcance máximo é \(135\,\mathrm{m}\).
-  \item Em um planeta com gravidade \(2{,}5\) vezes a terrestre e \(v_0=15\,\mathrm{m/s}\), o alcance máximo é \(9\,\mathrm{m}\).
+  \item Com ângulo de $45^\circ$, uma velocidade inicial de $\Sexpr{u}\,\mathrm{m/s}$ produz alcance de $\Sexpr{fmt(recorde)}\,\mathrm{m}$.
+  \item Com $v_0=\Sexpr{u}\,\mathrm{m/s}$ e ângulo de $60^\circ$, o atleta quebra o recorde de $\Sexpr{fmt(recorde)}\,\mathrm{m}$.
+  \item Com velocidade inicial de $\Sexpr{u3}\,\mathrm{m/s}$, o alcance máximo possível é $\Sexpr{fmt(A3)}\,\mathrm{m}$.
+  \item Na Lua, com gravidade igual a $1/6$ da terrestre e $v_0=\Sexpr{vspace}\,\mathrm{m/s}$, o alcance máximo é $\Sexpr{fmt(Alua)}\,\mathrm{m}$.
+  \item Em um planeta com gravidade $\Sexpr{fmt(kplanet)}$ vezes a terrestre e $v_0=\Sexpr{vspace}\,\mathrm{m/s}$, o alcance máximo é $\Sexpr{fmt(Aplanet)}\,\mathrm{m}$.
 \end{answerlist}
 \end{question}
-
 \begin{solution}
-Para o alcance máximo \(A_{\max}=v_0^2/g\). Assim: com \(14\,\mathrm{m/s}\), \(A_{\max}=19{,}6\,\mathrm{m}\); a \(60^\circ\), o alcance é menor que o máximo; com \(13\,\mathrm{m/s}\), \(A_{\max}=16{,}9\,\mathrm{m}\); na Lua \(A_{\max}=225/(10/6)=135\,\mathrm{m}\); e no planeta de gravidade \(25\,\mathrm{m/s^2}\), \(A_{\max}=225/25=9\,\mathrm{m}\).
-
+Para o alcance máximo, $A_{\max}=v_0^2/g$. A primeira afirmação é verdadeira por construção do recorde; a $60^\circ$ o alcance é menor do que o máximo a $45^\circ$; e as três últimas seguem diretamente de $A_{\max}=v_0^2/g$ usando, respectivamente, a velocidade menor, $g_{Lua}=g/6$ e $g_p=\Sexpr{fmt(kplanet)}g$.
 \begin{answerlist}
-  \item Com ângulo de \(45^\circ\), uma velocidade inicial de \(14\,\mathrm{m/s}\) produz alcance de \(19{,}6\,\mathrm{m}\).
-  \item Com \(v_0=14\,\mathrm{m/s}\) e ângulo de \(60^\circ\), o atleta quebra o recorde de \(19{,}6\,\mathrm{m}\).
-  \item Com velocidade inicial de \(13\,\mathrm{m/s}\), o alcance máximo possível é \(16{,}9\,\mathrm{m}\).
-  \item Na Lua, com gravidade igual a \(1/6\) da terrestre e \(v_0=15\,\mathrm{m/s}\), o alcance máximo é \(135\,\mathrm{m}\).
-  \item Em um planeta com gravidade \(2{,}5\) vezes a terrestre e \(v_0=15\,\mathrm{m/s}\), o alcance máximo é \(9\,\mathrm{m}\).
+  \item correta
+  \item incorreta
+  \item correta
+  \item correta
+  \item correta
 \end{answerlist}
 \end{solution}
 
 %% META-INFORMATION
-%% Fonte: UFPB 2010, reproduzida em "Balística - Avançada" (PDF fornecido).
+%% Fonte: UFPB 2010, reproduzida em "Balística - Avançada"; estrutura original preservada e valores parametrizados.
 %% \extype{mchoice}
 %% \exsolution{10111}
-%% \exname{LO26L2Q02UFPB2010SaltoPlanetas}
-%% \exusepackage[utf8]{inputenc}
+%% \exname{LO26L2Q02}
+%% \exsection{Mecanica; Cinematica; Lancamento obliquo; Listas 2026}

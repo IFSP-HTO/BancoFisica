@@ -1,0 +1,36 @@
+<<echo=FALSE, results=hide>>=
+g<-10; sen<-0.6; v0<-sample(c(10,15,20,25,30),1); T<-2*v0*sen/g
+opts<-c(T,0.5*T,0.75*T,1.25*T,1.5*T); fmt<-function(x,d=2) formatC(x,format="f",digits=d,decimal.mark=",")
+include_supplement("pan_q8_cebolinha.jpg", dir="../../../../figuras")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+Cebolinha salta com velocidade inicial de $\Sexpr{fmt(v0,0)}\,\mathrm{m/s}$, formando um ângulo $\alpha$ com a horizontal, com $\sin\alpha=0{,}6$ e $\cos\alpha=0{,}8$. Desprezando o ar e adotando $g=10\,\mathrm{m/s^2}$, qual é o intervalo de tempo entre o salto e a chegada ao mesmo nível?
+\begin{center}\includegraphics[width=6cm,keepaspectratio]{pan_q8_cebolinha.jpg}\end{center}
+\begin{answerlist}
+  \item $\Sexpr{fmt(opts[1])}\,\mathrm{s}$
+  \item $\Sexpr{fmt(opts[2])}\,\mathrm{s}$
+  \item $\Sexpr{fmt(opts[3])}\,\mathrm{s}$
+  \item $\Sexpr{fmt(opts[4])}\,\mathrm{s}$
+  \item $\Sexpr{fmt(opts[5])}\,\mathrm{s}$
+\end{answerlist}
+\end{question}
+\begin{solution}
+$T=2v_0\sin\alpha/g=\Sexpr{fmt(T)}\,\mathrm{s}$.
+\begin{answerlist}
+  \item correta
+  \item incorreta
+  \item incorreta
+  \item incorreta
+  \item incorreta
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Professor Panosso, exercício 8, parametrizado; figura original preservada.
+%% \extype{schoice}
+%% \exsolution{10000}
+%% \exname{LO26L1Q13}
+%% \exsection{Mecanica; Cinematica; Lancamento obliquo; Listas 2026}

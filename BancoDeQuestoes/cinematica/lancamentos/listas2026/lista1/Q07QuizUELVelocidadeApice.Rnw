@@ -1,33 +1,34 @@
+<<echo=FALSE, results=hide>>=
+v0 <- sample(c(20,30,40,50,60),1); vx<-0.5*v0
+opts<-c(vx,0.2*v0,0.4*v0,0.8*v0,v0)
+fmt<-function(x,d=1) formatC(x,format="f",digits=d,decimal.mark=",")
+@
 \usepackage[utf8]{inputenc}
-\usepackage{graphicx}
 
 \begin{question}
-Um corpo é lançado com velocidade inicial de \(50\,\mathrm{m/s}\), formando \(60^\circ\) com a horizontal. Desprezando a resistência do ar e usando \(\cos60^\circ=0{,}50\), qual é a velocidade escalar no ponto mais alto da trajetória?
-
+Um corpo é lançado com velocidade inicial de $\Sexpr{fmt(v0,0)}\,\mathrm{m/s}$, formando $60^\circ$ com a horizontal. Desprezando a resistência do ar e usando $\cos60^\circ=0{,}50$, qual é a velocidade escalar no ponto mais alto da trajetória?
 \begin{answerlist}
-  \item \(5\,\mathrm{m/s}\)
-  \item \(10\,\mathrm{m/s}\)
-  \item \(25\,\mathrm{m/s}\)
-  \item \(40\,\mathrm{m/s}\)
-  \item \(50\,\mathrm{m/s}\)
+\item $\Sexpr{fmt(opts[1])}\,\mathrm{m/s}$
+\item $\Sexpr{fmt(opts[2])}\,\mathrm{m/s}$
+\item $\Sexpr{fmt(opts[3])}\,\mathrm{m/s}$
+\item $\Sexpr{fmt(opts[4])}\,\mathrm{m/s}$
+\item $\Sexpr{fmt(opts[5])}\,\mathrm{m/s}$
 \end{answerlist}
 \end{question}
-
 \begin{solution}
-No ponto mais alto \(v_y=0\), enquanto \(v_x=v_0\cos60^\circ=50(0{,}50)=25\,\mathrm{m/s}\).
-
+No ápice, $v_y=0$ e $v=v_x=v_0\cos60^\circ=\Sexpr{fmt(vx)}\,\mathrm{m/s}$.
 \begin{answerlist}
-  \item \(5\,\mathrm{m/s}\)
-  \item \(10\,\mathrm{m/s}\)
-  \item \(25\,\mathrm{m/s}\)
-  \item \(40\,\mathrm{m/s}\)
-  \item \(50\,\mathrm{m/s}\)
+  \item correta
+  \item incorreta
+  \item incorreta
+  \item incorreta
+  \item incorreta
 \end{answerlist}
 \end{solution}
 
 %% META-INFORMATION
-%% Fonte: UEL-PR, reproduzida na lista do Colégio Equipe (PDF fornecido).
+%% Fonte: UEL-PR, adaptada e parametrizada.
 %% \extype{schoice}
-%% \exsolution{00100}
-%% \exname{Q07}
-%% \exusepackage[utf8]{inputenc}
+%% \exsolution{10000}
+%% \exname{LO26L1Q07}
+%% \exsection{Mecanica; Cinematica; Lancamento obliquo; Listas 2026}

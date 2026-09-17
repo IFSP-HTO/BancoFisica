@@ -1,0 +1,39 @@
+<<echo=FALSE, results=hide>>=
+include_supplement("eq_q8_duas_trajetorias.jpg", dir="../../../../figuras")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+Duas partículas são lançadas obliquamente do mesmo nível e voltam ao mesmo plano horizontal. Elas atingem a mesma altura máxima \(h\), mas seguem trajetórias diferentes, como na figura. Se seus tempos de voo são \(t_1\) e \(t_2\), qual relação é correta?
+
+\begin{center}
+\includegraphics[width=7cm,keepaspectratio]{eq_q8_duas_trajetorias.jpg}
+\end{center}
+\begin{answerlist}
+  \item \(v_1<v_2\) e \(t_1=t_2\)
+  \item \(v_1<v_2\) e \(t_1<t_2\)
+  \item \(v_1>v_2\) e \(t_1>t_2\)
+  \item \(v_1=v_2\) e \(t_1<t_2\)
+  \item \(v_1=v_2\) e \(t_1=t_2\)
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+A mesma altura máxima implica a mesma componente vertical inicial, portanto o mesmo tempo de voo. A trajetória 2 tem maior alcance no mesmo tempo, logo maior componente horizontal e, consequentemente, maior velocidade inicial: \(v_2>v_1\).
+
+\begin{answerlist}
+  \item \(v_1<v_2\) e \(t_1=t_2\)
+  \item \(v_1<v_2\) e \(t_1<t_2\)
+  \item \(v_1>v_2\) e \(t_1>t_2\)
+  \item \(v_1=v_2\) e \(t_1<t_2\)
+  \item \(v_1=v_2\) e \(t_1=t_2\)
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: FESO, reproduzida na lista do Colégio Equipe (PDF fornecido).
+%% \extype{schoice}
+%% \exsolution{10000}
+%% \exname{LO26L2Q04}
+%% \exusepackage[utf8]{inputenc}

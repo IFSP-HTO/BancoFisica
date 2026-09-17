@@ -1,0 +1,33 @@
+<<echo=FALSE, results=hide>>=
+g<-10; sen<-0.53; cos<-0.85; v0<-sample(c(20,25,30,35,40),1); T<-2*v0*sen/g; A<-v0*cos*T; largura<-2.1; ncar<-floor(A/largura)
+fmt<-function(x,d=2) formatC(x,format="f",digits=d,decimal.mark=",")
+include_supplement("eq_q12_moto.jpg", dir="../../../../figuras")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+Em um show de acrobacia, uma motocicleta abandona uma rampa com velocidade $\Sexpr{fmt(v0,0)}\,\mathrm{m/s}$, inclinada de $32^\circ$ em relação à horizontal, e aterrissa em outra rampa à mesma altura. Use $g=10\,\mathrm{m/s^2}$, $\sin32^\circ=0{,}53$ e $\cos32^\circ=0{,}85$. Cada automóvel ocupa $2{,}1\,\mathrm{m}$ de largura.
+\begin{center}\includegraphics[width=9cm,keepaspectratio]{eq_q12_moto.jpg}\end{center}
+Determine:
+\begin{answerlist}
+  \item o tempo de voo, em $\mathrm{s}$;
+  \item o número máximo de automóveis inteiros que cabem entre as rampas.
+\end{answerlist}
+\end{question}
+\begin{solution}
+$T=2v_0\sin32^\circ/g=\Sexpr{fmt(T)}\,\mathrm{s}$, $A=\Sexpr{fmt(A)}\,\mathrm{m}$ e $\lfloor A/2{,}1\rfloor=\Sexpr{ncar}$.
+\begin{answerlist}
+  \item $\Sexpr{fmt(T)}$
+  \item $\Sexpr{ncar}$
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: FMTM-MG/adaptada; parametrizada; figura original do PDF preservada.
+%% \extype{cloze}
+%% \exsolution{\Sexpr{T}|\Sexpr{ncar}}
+%% \exclozetype{num|num}
+%% \extol{0.03|0}
+%% \exname{LO26L2Q05}
+%% \exsection{Mecanica; Cinematica; Lancamento obliquo; Listas 2026}

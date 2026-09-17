@@ -1,33 +1,31 @@
+<<echo=FALSE, results=hide>>=
+g<-10; sen<-0.6; cos<-0.8
+configs<-data.frame(v0=c(30,35,40,45,50),x=c(40,48,64,72,80),hobs=c(10,14,20,22,25)); i<-sample(seq_len(nrow(configs)),1); v0<-configs$v0[i]; x<-configs$x[i]; hobs<-configs$hobs[i]
+t<-x/(v0*cos); y<-v0*sen*t-0.5*g*t^2; delta<-y-hobs
+fmt<-function(x,d=2) formatC(x,format="f",digits=d,decimal.mark=",")
+@
 \usepackage[utf8]{inputenc}
-\usepackage{graphicx}
 
 \begin{question}
-Um projétil é lançado com velocidade \(40\,\mathrm{m/s}\), formando \(37^\circ\) com a horizontal. A \(64\,\mathrm{m}\) do lançamento existe um obstáculo de \(20\,\mathrm{m}\) de altura. Use \(g=10\,\mathrm{m/s^2}\), \(\cos37^\circ=0{,}80\) e \(\sin37^\circ=0{,}60\). O que ocorre?
-
+Um projétil é lançado com velocidade $\Sexpr{fmt(v0,0)}\,\mathrm{m/s}$, formando $37^\circ$ com a horizontal. A $\Sexpr{x}\,\mathrm{m}$ do lançamento existe um obstáculo de $\Sexpr{hobs}\,\mathrm{m}$ de altura. Use $g=10\,\mathrm{m/s^2}$, $\cos37^\circ=0{,}80$ e $\sin37^\circ=0{,}60$. Determine a altura do projétil ao alcançar a posição do obstáculo e informe se ele passa acima dele.
 \begin{answerlist}
-  \item Passa \(2\,\mathrm{m}\) acima do obstáculo.
-  \item Passa \(8\,\mathrm{m}\) acima do obstáculo.
-  \item Choca-se com o obstáculo a \(12\,\mathrm{m}\) de altura.
-  \item Choca-se com o obstáculo a \(18\,\mathrm{m}\) de altura.
-  \item Cai no solo antes de chegar ao obstáculo.
+  \item altura do projétil, em $\mathrm{m}$;
+  \item diferença $y-h_{obs}$, em $\mathrm{m}$ (positiva se passa acima).
 \end{answerlist}
 \end{question}
-
 \begin{solution}
-As componentes são \(v_x=32\) e \(v_{0y}=24\,\mathrm{m/s}\). Para chegar a \(x=64\,\mathrm{m}\), \(t=2\,\mathrm{s}\). A altura é \(y=24(2)-5(2)^2=48-20=28\,\mathrm{m}\), isto é, \(8\,\mathrm{m}\) acima do obstáculo.
-
+$t=x/(v_0\cos37^\circ)=\Sexpr{fmt(t)}$ e $y=\Sexpr{fmt(y)}$. Assim $y-h_{obs}=\Sexpr{fmt(delta)}$.
 \begin{answerlist}
-  \item Passa \(2\,\mathrm{m}\) acima do obstáculo.
-  \item Passa \(8\,\mathrm{m}\) acima do obstáculo.
-  \item Choca-se com o obstáculo a \(12\,\mathrm{m}\) de altura.
-  \item Choca-se com o obstáculo a \(18\,\mathrm{m}\) de altura.
-  \item Cai no solo antes de chegar ao obstáculo.
+  \item $\Sexpr{fmt(y)}$
+  \item $\Sexpr{fmt(delta)}$
 \end{answerlist}
 \end{solution}
 
 %% META-INFORMATION
-%% Fonte: Professor Panosso, exercício 22 (PDF fornecido).
-%% \extype{schoice}
-%% \exsolution{01000}
-%% \exname{LO26RQ07Obstaculo64m}
-%% \exusepackage[utf8]{inputenc}
+%% Fonte: Professor Panosso, exercício 22, parametrizado em forma numérica equivalente.
+%% \extype{cloze}
+%% \exsolution{\Sexpr{y}|\Sexpr{delta}}
+%% \exclozetype{num|num}
+%% \extol{0.05|0.05}
+%% \exname{LO26RQ07}
+%% \exsection{Mecanica; Cinematica; Lancamento obliquo; Reserva prova 2026}

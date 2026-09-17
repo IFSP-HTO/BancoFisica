@@ -1,27 +1,29 @@
+<<echo=FALSE, results=hide>>=
+g<-10
+configs<-data.frame(vx=c(20,30,40,50,60),vy=c(10,20,30,40,50)); i<-sample(seq_len(nrow(configs)),1); vx<-configs$vx[i]; vy<-configs$vy[i]
+H<-vy^2/(2*g); T<-2*vy/g; A<-vx*T; v0<-sqrt(vx^2+vy^2)
+fmt<-function(x,d=2) formatC(x,format="f",digits=d,decimal.mark=",")
+@
 \usepackage[utf8]{inputenc}
-\usepackage{graphicx}
 
 \begin{question}
-Uma flecha é disparada e, desprezando a resistência do ar, atinge altura máxima de \(80\,\mathrm{m}\) e alcance horizontal de \(240\,\mathrm{m}\), retornando ao mesmo nível do lançamento. Adote \(g=10\,\mathrm{m/s^2}\). Determine a velocidade inicial.
-
+Uma flecha é disparada e, desprezando a resistência do ar, atinge altura máxima de $\Sexpr{fmt(H,1)}\,\mathrm{m}$ e alcance horizontal de $\Sexpr{fmt(A,1)}\,\mathrm{m}$, retornando ao mesmo nível do lançamento. Adote $g=10\,\mathrm{m/s^2}$. Determine a velocidade inicial.
 \begin{answerlist}
-  \item velocidade inicial, em \(\mathrm{m/s}\).
+  \item velocidade inicial, em $\mathrm{m/s}$.
 \end{answerlist}
 \end{question}
-
 \begin{solution}
-Da altura, \(v_{0y}=\sqrt{2gH}=\sqrt{1600}=40\,\mathrm{m/s}\). O tempo total é \(T=2v_{0y}/g=8\,\mathrm{s}\). Então \(v_{0x}=240/8=30\,\mathrm{m/s}\). Logo \(v_0=\sqrt{30^2+40^2}=50\,\mathrm{m/s}\).
-
+$v_{0y}=\sqrt{2gH}=\Sexpr{fmt(vy)}$, $T=2v_{0y}/g=\Sexpr{fmt(T)}$ e $v_{0x}=A/T=\Sexpr{fmt(vx)}$. Logo $v_0=\Sexpr{fmt(v0)}\,\mathrm{m/s}$.
 \begin{answerlist}
-  \item velocidade inicial, em \(\mathrm{m/s}\).
+  \item $\Sexpr{fmt(v0)}$
 \end{answerlist}
 \end{solution}
 
 %% META-INFORMATION
-%% Fonte: Professor Panosso, exercício 21 (PDF fornecido).
+%% Fonte: Professor Panosso, exercício 21, parametrizado.
 %% \extype{cloze}
-%% \exsolution{50}
+%% \exsolution{\Sexpr{v0}}
 %% \exclozetype{num}
 %% \extol{0.05}
-%% \exname{Q13}
-%% \exusepackage[utf8]{inputenc}
+%% \exname{LO26L2Q13}
+%% \exsection{Mecanica; Cinematica; Lancamento obliquo; Listas 2026}

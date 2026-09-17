@@ -1,0 +1,97 @@
+<<echo=FALSE, results=hide>>=
+g <- 10
+configs <- expand.grid(vx=c(8,10,12), vy=c(2,3,4), dx=c(4,5,6))
+configs <- subset(configs, dx/vx >= 0.35 & dx/vx <= 0.75)
+i <- sample(seq_len(nrow(configs)), 1)
+vx <- configs$vx[i]; vy <- configs$vy[i]; dx <- configs$dx[i]
+t <- dx/vx
+h <- vy*t + 0.5*g*t^2
+alts <- h + c(-0.50,-0.25,0,0.25,0.50)
+fmt <- function(x,d=2) formatC(x,format="f",digits=d,decimal.mark=",")
+render_overlay_png <- function(source, outfile, overlays) {
+  img <- png::readPNG(source)
+  h <- dim(img)[1]
+  w <- dim(img)[2]
+  grDevices::png(outfile, width=w, height=h, bg="white")
+  grid::grid.newpage()
+  grid::grid.raster(img, width=grid::unit(1,"npc"), height=grid::unit(1,"npc"), interpolate=FALSE)
+  for (o in overlays) {
+    grid::grid.rect(
+      x=grid::unit((o$x1+o$x2)/(2*w),"npc"),
+      y=grid::unit(1-(o$y1+o$y2)/(2*h),"npc"),
+      width=grid::unit((o$x2-o$x1)/w,"npc"),
+      height=grid::unit((o$y2-o$y1)/h,"npc"),
+      gp=grid::gpar(fill="white", col=NA)
+    )
+    rot <- if (is.null(o$rot)) 0 else o$rot
+    fontsize <- if (is.null(o$fontsize)) 12 else o$fontsize
+    just <- if (is.null(o$just)) c("left","top") else o$just
+    grid::grid.text(
+      o$text,
+      x=grid::unit(o$x/w,"npc"), y=grid::unit(1-o$y/h,"npc"),
+      just=just, rot=rot,
+      gp=grid::gpar(col="black", fontsize=fontsize, fontfamily="serif")
+    )
+  }
+  grDevices::dev.off()
+  invisible(outfile)
+}
+include_supplement("LO26_UFTM2011_volei_fig1_base.png", dir="../../../../figuras")
+base1_path <- "LO26_UFTM2011_volei_fig1_base.png"
+include_supplement("LO26_UFTM2011_volei_fig2_base.png", dir="../../../../figuras")
+base2_path <- "LO26_UFTM2011_volei_fig2_base.png"
+img1 <- "Q01_UFTM_fig1.png"
+img2 <- "Q01_UFTM_fig2.png"
+render_overlay_png(base1_path, img1, list(
+  list(x1=215,y1=300,x2=305,y2=343,text=paste0(dx," m"),x=230,y=305,fontsize=13)
+))
+render_overlay_png(base2_path, img2, list(
+  list(x1=245,y1=15,x2=385,y2=54,text=paste0("Vx = ",vx," m/s"),x=258,y=20,fontsize=12),
+  list(x1=350,y1=52,x2=500,y2=93,text=paste0("Vy = ",vy," m/s"),x=365,y=58,fontsize=12),
+  list(x1=188,y1=266,x2=300,y2=308,text=paste0(dx," m"),x=212,y=274,fontsize=12)
+))
+@
+
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+Num jogo de vôlei, uma atacante imprime à bola componentes de velocidade de módulos
+$V_x=\Sexpr{vx}\,\mathrm{m/s}$ e $V_y=\Sexpr{vy}\,\mathrm{m/s}$, sendo a componente vertical dirigida para baixo. A bola percorre $\Sexpr{dx}\,\mathrm{m}$ horizontalmente até tocar o solo. Adote $g=10\,\mathrm{m/s^2}$. Qual era a altura $h$ da bola no instante da cortada?
+
+\begin{center}
+\includegraphics[width=6.5cm,keepaspectratio]{\Sexpr{img1}}
+\qquad
+\includegraphics[width=6.5cm,keepaspectratio]{\Sexpr{img2}}
+\end{center}
+
+\begin{answerlist}
+  \item $\Sexpr{fmt(alts[1])}\,\mathrm{m}$
+  \item $\Sexpr{fmt(alts[2])}\,\mathrm{m}$
+  \item $\Sexpr{fmt(alts[3])}\,\mathrm{m}$
+  \item $\Sexpr{fmt(alts[4])}\,\mathrm{m}$
+  \item $\Sexpr{fmt(alts[5])}\,\mathrm{m}$
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+O tempo de voo após a cortada é $t=\Delta x/V_x=\Sexpr{fmt(t)}\,\mathrm{s}$. Tomando para baixo como positivo,
+\[
+h=V_y t+\frac12gt^2=\Sexpr{fmt(h)}\,\mathrm{m}.
+\]
+\begin{answerlist}
+  \item incorreta
+  \item incorreta
+  \item correta
+  \item incorreta
+  \item incorreta
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: UFTM 2011, reproduzida em "Balística - Avançada" (PDF fornecido).
+%% Figuras: recortes diretos do PDF original; apenas os rótulos numéricos são substituídos programaticamente em cada variante.
+%% \extype{schoice}
+%% \exsolution{00100}
+%% \exname{LO26L2Q01}
+%% \exsection{Mecanica; Cinematica; Lancamento obliquo; Listas 2026}

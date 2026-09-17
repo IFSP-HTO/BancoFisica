@@ -1,33 +1,32 @@
+<<echo=FALSE, results=hide>>=
+g<-10; v0<-sample(c(20,30,40,50,60),1); A<-v0^2/g; opts<-c(v0,0.5*v0,0.75*v0,1.25*v0,1.5*v0); fmt<-function(x,d=1) formatC(x,format="f",digits=d,decimal.mark=",")
+@
 \usepackage[utf8]{inputenc}
-\usepackage{graphicx}
 
 \begin{question}
-Num teste de balística, um projétil é lançado do solo a \(45^\circ\) e retorna ao solo \(360\,\mathrm{m}\) adiante. Adote \(g=10\,\mathrm{m/s^2}\). Qual é a velocidade de lançamento?
-
+Num teste de balística, um projétil é lançado do solo a $45^\circ$ e retorna ao solo $\Sexpr{fmt(A,0)}\,\mathrm{m}$ adiante. Adote $g=10\,\mathrm{m/s^2}$. Qual é a velocidade de lançamento?
 \begin{answerlist}
-  \item \(10\,\mathrm{m/s}\)
-  \item \(36\,\mathrm{m/s}\)
-  \item \(60\,\mathrm{m/s}\)
-  \item \(126\,\mathrm{m/s}\)
-  \item \(252\,\mathrm{m/s}\)
+  \item $\Sexpr{fmt(opts[1])}\,\mathrm{m/s}$
+  \item $\Sexpr{fmt(opts[2])}\,\mathrm{m/s}$
+  \item $\Sexpr{fmt(opts[3])}\,\mathrm{m/s}$
+  \item $\Sexpr{fmt(opts[4])}\,\mathrm{m/s}$
+  \item $\Sexpr{fmt(opts[5])}\,\mathrm{m/s}$
 \end{answerlist}
 \end{question}
-
 \begin{solution}
-Para \(45^\circ\), \(A=v_0^2/g\). Logo \(360=v_0^2/10\), \(v_0^2=3600\) e \(v_0=60\,\mathrm{m/s}\).
-
+Para $45^\circ$, $A=v_0^2/g$, portanto $v_0=\Sexpr{fmt(v0)}\,\mathrm{m/s}$.
 \begin{answerlist}
-  \item \(10\,\mathrm{m/s}\)
-  \item \(36\,\mathrm{m/s}\)
-  \item \(60\,\mathrm{m/s}\)
-  \item \(126\,\mathrm{m/s}\)
-  \item \(252\,\mathrm{m/s}\)
+  \item correta
+  \item incorreta
+  \item incorreta
+  \item incorreta
+  \item incorreta
 \end{answerlist}
 \end{solution}
 
 %% META-INFORMATION
-%% Fonte: Professor Panosso, exercício 20 (PDF fornecido).
+%% Fonte: Professor Panosso, exercício 20, parametrizado.
 %% \extype{schoice}
-%% \exsolution{00100}
-%% \exname{LO26RQ06Balistica45Alcance360}
-%% \exusepackage[utf8]{inputenc}
+%% \exsolution{10000}
+%% \exname{LO26RQ06}
+%% \exsection{Mecanica; Cinematica; Lancamento obliquo; Reserva prova 2026}

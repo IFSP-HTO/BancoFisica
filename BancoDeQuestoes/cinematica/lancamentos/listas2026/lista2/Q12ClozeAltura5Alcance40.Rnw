@@ -1,0 +1,69 @@
+<<echo=FALSE, results=hide>>=
+g <- 10
+D <- sample(seq(30,80,5),1)
+H <- sample(c(4,5,6,8,10,12),1)
+vy0 <- sqrt(2*g*H)
+T <- 2*vy0/g
+vx <- D/T
+v0 <- sqrt(vx^2 + vy0^2)
+fmt<-function(x,d=2) formatC(x,format="f",digits=d,decimal.mark=",")
+include_supplement("LO26_Panosso19_altura_alcance_base.png", dir="../../../../figuras")
+base_path <- "LO26_Panosso19_altura_alcance_base.png"
+render_overlay_png <- function(source, outfile, overlays) {
+img <- png::readPNG(source)
+  h <- dim(img)[1]
+  w <- dim(img)[2]
+  grDevices::png(outfile, width=w, height=h, bg="white")
+  grid::grid.newpage()
+  grid::grid.raster(img, width=grid::unit(1,"npc"), height=grid::unit(1,"npc"), interpolate=FALSE)
+  for (o in overlays) {
+    grid::grid.rect(
+      x=grid::unit((o$x1+o$x2)/(2*w),"npc"),
+      y=grid::unit(1-(o$y1+o$y2)/(2*h),"npc"),
+      width=grid::unit((o$x2-o$x1)/w,"npc"),
+      height=grid::unit((o$y2-o$y1)/h,"npc"),
+      gp=grid::gpar(fill="white", col=NA)
+    )
+    rot <- if (is.null(o$rot)) 0 else o$rot
+    fontsize <- if (is.null(o$fontsize)) 12 else o$fontsize
+    just <- if (is.null(o$just)) c("left","top") else o$just
+    grid::grid.text(
+      o$text,
+      x=grid::unit(o$x/w,"npc"), y=grid::unit(1-o$y/h,"npc"),
+      just=just, rot=rot,
+      gp=grid::gpar(col="black", fontsize=fontsize, fontfamily="serif")
+    )
+  }
+  grDevices::dev.off()
+  invisible(outfile)
+}
+img <- "Q12_AlturaAlcance.png"
+render_overlay_png(base_path, img, list(
+  list(x1=170,y1=122,x2=290,y2=160,text=paste0(D," m"),x=205,y=128,fontsize=13)
+))
+@
+
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\begin{question}
+Uma bola chutada do piso descreve uma trajetória parabólica, atinge altura máxima de $\Sexpr{H}\,\mathrm{m}$ e volta ao piso a $\Sexpr{D}\,\mathrm{m}$ do ponto de lançamento. Despreze o ar e adote $g=10\,\mathrm{m/s^2}$. Determine o módulo da velocidade inicial.
+\begin{center}\includegraphics[width=7cm,keepaspectratio]{\Sexpr{img}}\end{center}
+\begin{answerlist}
+  \item velocidade inicial, em $\mathrm{m/s}$.
+\end{answerlist}
+\end{question}
+\begin{solution}
+Da altura máxima, $v_{0y}=\sqrt{2gH}=\Sexpr{fmt(vy0)}\,\mathrm{m/s}$ e o tempo total é $T=\Sexpr{fmt(T)}\,\mathrm{s}$. Como o alcance é $\Sexpr{D}\,\mathrm{m}$, $v_{0x}=\Sexpr{fmt(vx)}\,\mathrm{m/s}$. Portanto $v_0=\Sexpr{fmt(v0)}\,\mathrm{m/s}$.
+\begin{answerlist}
+  \item $\Sexpr{fmt(v0)}$
+\end{answerlist}
+\end{solution}
+%% META-INFORMATION
+%% Fonte: Professor Panosso, exercício 19.
+%% Figura: recorte direto do PDF original; apenas o alcance é substituído programaticamente em cada variante.
+%% \extype{cloze}
+%% \exsolution{\Sexpr{v0}}
+%% \exclozetype{num}
+%% \extol{0.1}
+%% \exname{LO26L2Q12}
+%% \exsection{Mecanica; Cinematica; Lancamento obliquo; Listas 2026}

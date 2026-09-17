@@ -1,0 +1,39 @@
+<<echo=FALSE, results=hide>>=
+include_supplement("eq_q9_tabela.jpg", dir="../../../../figuras")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+Três blocos de mesmo volume, mas feitos de materiais e massas diferentes, são lançados obliquamente do mesmo ponto, na mesma direção e sentido, com a mesma velocidade inicial. Desprezando a resistência do ar, compare os alcances \(A_1\), \(A_2\) e \(A_3\).
+
+\begin{center}
+\includegraphics[width=6cm,keepaspectratio]{eq_q9_tabela.jpg}
+\end{center}
+\begin{answerlist}
+  \item \(A_1>A_2>A_3\)
+  \item \(A_1<A_2<A_3\)
+  \item \(A_1=A_2>A_3\)
+  \item \(A_1=A_2=A_3\)
+  \item \(A_1>A_2=A_3\)
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+Sem resistência do ar, a aceleração é a mesma para todos os corpos e independe da massa. Como as condições iniciais também são iguais, as trajetórias e os alcances são iguais.
+
+\begin{answerlist}
+  \item \(A_1>A_2>A_3\)
+  \item \(A_1<A_2<A_3\)
+  \item \(A_1=A_2>A_3\)
+  \item \(A_1=A_2=A_3\)
+  \item \(A_1>A_2=A_3\)
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: UERJ 2013, adaptada na lista do Colégio Equipe (PDF fornecido).
+%% \extype{schoice}
+%% \exsolution{00010}
+%% \exname{LO26L1Q06}
+%% \exusepackage[utf8]{inputenc}

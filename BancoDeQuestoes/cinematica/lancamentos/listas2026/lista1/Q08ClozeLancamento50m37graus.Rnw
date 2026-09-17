@@ -1,49 +1,40 @@
 <<echo=FALSE, results=hide>>=
-img_b64 <- "/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDABcQERQRDhcUEhQaGBcbIjklIh8fIkYyNSk5UkhXVVFIUE5bZoNvW2F8Yk5QcptzfIeLkpSSWG2grJ+OqoOPko3/2wBDARgaGiIeIkMlJUONXlBejY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY3/wgARCADwAUoDASIAAhEBAxEB/8QAGgABAQADAQEAAAAAAAAAAAAAAAECBAUDBv/EABcBAQEBAQAAAAAAAAAAAAAAAAABAgP/2gAMAwEAAhADEAAAAesAAAAAASKgqCoKgqCoKgqCoKgqCoKgqCigAAAAEsiGtmbLU2wlAAAAAAAAAAAMhugAAAAJZE5XV0Mz02ngc/rfMd2twQAAAAAAAAABkN0AAAABLIgzGGY5e9qdCqIAAAAAAAAAAyG6AAAAAlkQZgHO6HP6BQAAAAAAAAAAZDdAAAAASyIMwDndDn9AoAAAAAAAAAAMhugAAAAJZEGYBzuhz+gUAAAAAAAAAAGQ3QAAAAEsiDMA53Q5/QKAAAAAQrR15jq3X2LsAADIboAAAACWRBmAc7oc/oFA1NvzTn3YmeeznLrqA8vLWmML0amVL0AAAyG6AAAAAlkQZgHO6HP6BQAaGxkmM8udt2+uhhtzPju1dgoAAAGQ3QAAAAEsiDMA53Q5/QKABhdFPLL13ZjD0L0AAAAAAyG6AAAAAlkQZgHO6HP6BQPPy1Zlt5xfZLdAgAAAAAGQ3QAAAAEsiDMGiYdDg7ddPS89rONb13NN2avRTpfTHLXEEAAAAAAyG6AAAAA8fbyjzVmYcftcXT31/bwro7Xl75Y+XumvL0pIpIoiiKIoiiKIo2BugAAAAJZEGY1tkcDoY9CqIAAAAAAAAAA//8QAJhAAAgEDAwQDAAMAAAAAAAAAAQIAAxETMTRQEBIgQAQiMCEycP/aAAgBAQABBQL/AA0VP5yXq8RWPYaC2WNWt8hTccKyZKkrNanPjtdOHZe6FRnRO3iW3A04htwNOIbcDTiG3A04htwNOIbcDTiG3A04htwNOIbcDT8zGrQ1GMpXt7Lbgada1QpM7QV2im/i7hYbuaaXb2m3A06soM7UuqoTa3g9W0CM5VAIFt7bbgaeDmzoLS46E2j1LxKUtb3W3A08Cly39UuIXABLVClMD323A08WFwbJFQvFULwDbgaeBNo9W8SlLW4FtwNOrOFhZqhSmF4NtwNOlSr2xVNQgBBkEBvwTbgaE2j1bwUbykbSo1i+qacBWr9kLEunyZc1ClPt6VR9ioYYxALe61QKcyTMkNZbD7PKglCoop5kmZI9RTEqrbMkzJMyTMkzJMyTMkzJMyTMkzJMyTMkzJMyTMkzJ+zIrHEkxJDSSH6PcRj3GlRATEkxJMSTEkxJMSTEkxJMSTEkxJMSTEkxJMSTEkxJMSTEkxJMSelVoipDRtUpfHC8S24Gnrf/xAAeEQACAgICAwAAAAAAAAAAAAAAAQIREkAxURAwcP/aAAgBAwEBPwH5HmL3sp+XLox0aFItyEq0mxRvTb6IwfOnbZDihTSHpp0Pe//EABgRAQEBAQEAAAAAAAAAAAAAAAFAMBEQ/9oACAECAQE/Aa2VlZWVlZXLublzNlZWVlfCN3//xAAkEAABBAEDBAMBAAAAAAAAAAAAAREhMVACECASQGBhUXBxgP/aAAgBAQAGPwL6NUZMS3yTe3ofDfmy4tv6Jsnv0bFShRXKcI/BtI+rDXtGIgnEMg+rzltJIqKehGIwLHUMqEbo2Angq7OTg5QoooXZkJQoooooooooooooooooooors+kfwH//xAAjEAACAgEEAwEAAwAAAAAAAAAAARFhIRAxQFAgMEFRYHGB/9oACAEBAAE/If5C+qemKfwTfK0lTE56V6Y1uIVoG4UjJJEH+ukekI2glCMV3gct2PWn86R6RoncKYhOS+9I+qR9Uj6pH1SPqkfVI+qR8VJXFfCRoUkbhJjTDCZd/FfqRgn0f0kjJD8UGTakf5QlC4r9SfXoFiFhjaJNngrFbkybAhwhTuFvxn602sjP9Cds9EJka+4OYJExyH60VOzGCJEjO2QjYLZazyn7EkSRlkZzOBJC5b9aJTLGOM30EiY5j9SKMsgC2Fk/ec/SiMCTN4MIEyfhEnmvzRCSxjbhHmcjWQj8Maw6b9gyfNn4JeClvRlMbgcfghaZ30Yn/oyIw7C1hc2LMWFhPZG1wLH0WFhHZE82WFhYWFhYWFhYWFhYWFhYWFnulEhRKpCeIkZrBcQJLimelq601SqVSqVSqVSqVSqVSqVSqVSqVfc/BBnA6GzInL6R81P/2gAMAwEAAgADAAAAEAAAAAABjjjjjjjjjjjjjjgAAAAAAMfffffffffffffQAAAAAAO+6/ffffffffffQAAAAAALbdfffffffffffQAAAAAAPfV/ffffffffffQAAAAAAPfV/ffffffffffQAAAAAAPfV/ffffffffffQAAAAAAPfV/fffffa9PffQAAAAAAPfV/fZ9OazPfffQAAAAAAPfV/fc/G3PffffQAAAAAAPfV/ffPPffffffQAAAAAAPfV+ZwtPffffffQAAAAAAPf1Rse/fffffffQAAAAAAAxXecAQwwwwwwwwAAAAAAPbVffffffffffff//EAB0RAQACAwADAQAAAAAAAAAAAAEAESExQBAwQXD/2gAIAQMBAT8Q/IliDUSlvvKlELNwGs+PhA7thjgEKsBLYoo1BHEYVGydQAKOJqwisiJTTwrWYpo1CZYSWZIhVOIA1LFxW33f/8QAHhEAAgICAwEBAAAAAAAAAAAAAAERMRAhIDBAQVH/2gAIAQIBAT8Q5yiUSiUSiUSiUSiUSiUSiVzp5aCLY1Hipl+KmX4qZfipl+KmXzaIXVTLw60Q/wBy3+FpfXTLzAmS3QlHZTLy3AlPdTLw38Rr730wlI0yxqNoabF3UNEBjiRpMUGjRo0aNGjXOmExt9n/xAAmEAEAAgEDBAMBAQADAAAAAAABABExIVFxIEFh8RBAUJEwgbHw/9oACAEBAAE/EP11CWSyWbyzeWbyzeWbyzeWbyzeWbyzeWbyzeWbyzeWbyzeWbyzeWbyzeWbyzeWbyzeWbyzf/bL8rKLQviM6SLvCFizIaQxO3PC9fxcoliRaWotS1ssJ00BcZjTQYIiILv8TKOg8REcEaukMwKCIAqnVRPW1NumsINE03+Jl8AGwB4+Ehbp2j8GqO0LVe5PxMunPwTBx+Jl05+CYOPxMunPwTBx+Jl05+CYOPxMunPwTBx+Jl05+CYOPxMunPwTBx+Jl05+CYOP9lqDNDr9XLpz8Ewcf6WdFrsRGCruyvEHsSuRV3fq5dOfgmDjooh0W2T/AMCUZSl10lC9Or9LgqJ6deCo7WaPWEQFH1cunPwTBx0GiHauPdVwUPXDKIHj5UC1ogze+EbORrqyjmcRIIdTX1sunPwTBx0JZTGZ7yE55rGaBfh8sCHVo6NEdDR2YQAAaaH2MunPwTBx00yuXda0odoiIvgliBUurlLEXjSaoW+4FfZy6c/BMHHUQFQStIUiuxh0AMPiGR/5ft5dOfgmDjpbJHLNaOuihFYPBYQNAfcy6c/BMHHQxQGtJUpbdiWxatW+0ACjT7uXTn4Jg4+FAtagSKXwxZWDh2mnld8x0NIdBauAYK+7l0/9ZMHERoAReYHRYluNkDsBpbxMLTMajyTtrB6rPu5fK0QLXmRxKsU8VDXIMK5mrhf5Aib3SiKpRlD1BgNEShtH3dCZq/m0NGumAk2XZcorBBEGiGoQ6YFR+SbUXSUKl+/bbbbbbbbaBkFWz1E9BFVWU9orgJoghdf7G7oQ0gcrVWp4H8noJ4H8nifyegnoJ6CegnoJ6CegnoJ6CegnoJ6CegnoJ6CegnoP9sugsoQaIS8lM3UaO8tTEACjT8PLpz8EwcfX/9k="
-img_file <- "eq_q11_vetor.jpg"
-writeBin(base64enc::base64decode(img_b64), img_file)
+g<-10; v0<-sample(c(30,40,50,60,80),1); sen<-0.6; cos<-0.8
+vx<-v0*cos; vy<-v0*sen; ts<-vy/g; H<-vy^2/(2*g); T<-2*ts; vyf<- -vy; A<-vx*T
+fmt<-function(x,d=2) formatC(x,format="f",digits=d,decimal.mark=",")
+include_supplement("eq_q11_vetor.jpg", dir="../../../../figuras")
 @
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 
 \begin{question}
-Um corpo é lançado do solo com velocidade inicial \(50\,\mathrm{m/s}\), formando \(37^\circ\) com a horizontal. Use \(\sin37^\circ=0{,}6\), \(\cos37^\circ=0{,}8\), \(g=10\,\mathrm{m/s^2}\) e despreze a resistência do ar.
-
-\begin{center}
-\includegraphics[width=5cm,keepaspectratio]{eq_q11_vetor.jpg}
-\end{center}
+Um corpo é lançado obliquamente com velocidade inicial $\Sexpr{fmt(v0,0)}\,\mathrm{m/s}$ a $37^\circ$ da horizontal. Use $\sin37^\circ=0{,}6$, $\cos37^\circ=0{,}8$, $g=10\,\mathrm{m/s^2}$ e despreze a resistência do ar. Determine:
 \begin{answerlist}
-  \item \(v_{0x}\), em \(\mathrm{m/s}\);
-  \item \(v_{0y}\), em \(\mathrm{m/s}\);
-  \item tempo de subida, em \(\mathrm{s}\);
-  \item altura máxima, em \(\mathrm{m}\);
-  \item velocidade escalar no ápice, em \(\mathrm{m/s}\);
-  \item tempo total de voo, em \(\mathrm{s}\);
-  \item componente vertical da velocidade ao retornar ao solo, em \(\mathrm{m/s}\);
-  \item alcance, em \(\mathrm{m}\).
+\item $v_{0x}$ e $v_{0y}$, em $\mathrm{m/s}$;
+\item tempo de subida e altura máxima;
+\item velocidade escalar no ápice;
+\item tempo total de voo;
+\item componente vertical da velocidade ao atingir o solo;
+\item alcance horizontal.
 \end{answerlist}
 \end{question}
-
 \begin{solution}
-Temos \(v_{0x}=50(0{,}8)=40\) e \(v_{0y}=50(0{,}6)=30\,\mathrm{m/s}\). Assim \(t_s=3\,\mathrm{s}\), \(H=30^2/(2\cdot10)=45\,\mathrm{m}\), \(v_{\rm ápice}=40\,\mathrm{m/s}\), \(T=6\,\mathrm{s}\), \(v_y(T)=-30\,\mathrm{m/s}\) e \(A=40(6)=240\,\mathrm{m}\).
-
+$v_{0x}=\Sexpr{fmt(vx)}$, $v_{0y}=\Sexpr{fmt(vy)}$, $t_s=\Sexpr{fmt(ts)}$, $H=\Sexpr{fmt(H)}$, $v_{apice}=\Sexpr{fmt(vx)}$, $T=\Sexpr{fmt(T)}$, $v_{yf}=\Sexpr{fmt(vyf)}$ e $A=\Sexpr{fmt(A)}$.
 \begin{answerlist}
-  \item \(v_{0x}\), em \(\mathrm{m/s}\);
-  \item \(v_{0y}\), em \(\mathrm{m/s}\);
-  \item tempo de subida, em \(\mathrm{s}\);
-  \item altura máxima, em \(\mathrm{m}\);
-  \item velocidade escalar no ápice, em \(\mathrm{m/s}\);
-  \item tempo total de voo, em \(\mathrm{s}\);
-  \item componente vertical da velocidade ao retornar ao solo, em \(\mathrm{m/s}\);
-  \item alcance, em \(\mathrm{m}\).
+  \item $\Sexpr{fmt(vx)}$ e $\Sexpr{fmt(vy)}$
+  \item $\Sexpr{fmt(ts)}$ e $\Sexpr{fmt(H)}$
+  \item $\Sexpr{fmt(vx)}$
+  \item $\Sexpr{fmt(T)}$
+  \item $\Sexpr{fmt(vyf)}$
+  \item $\Sexpr{fmt(A)}$
 \end{answerlist}
 \end{solution}
 
 %% META-INFORMATION
-%% Fonte: Lista do Colégio Equipe de Juiz de Fora, exercício 11 (PDF fornecido).
+%% Fonte: Colégio Equipe, exercício 11, parametrizado.
 %% \extype{cloze}
-%% \exsolution{40|30|3|45|40|6|-30|240}
+%% \exsolution{\Sexpr{vx}|\Sexpr{vy}|\Sexpr{ts}|\Sexpr{H}|\Sexpr{vx}|\Sexpr{T}|\Sexpr{vyf}|\Sexpr{A}}
 %% \exclozetype{num|num|num|num|num|num|num|num}
-%% \extol{0.05|0.05|0.05|0.05|0.05|0.05|0.05|0.05}
-%% \exname{Q08}
-%% \exusepackage[utf8]{inputenc}
+%% \extol{0.05|0.05|0.03|0.1|0.05|0.03|0.05|0.2}
+%% \exname{LO26L1Q08}
+%% \exsection{Mecanica; Cinematica; Lancamento obliquo; Listas 2026}

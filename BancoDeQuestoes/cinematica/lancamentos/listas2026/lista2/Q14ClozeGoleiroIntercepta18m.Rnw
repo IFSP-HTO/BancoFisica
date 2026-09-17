@@ -1,27 +1,27 @@
+<<echo=FALSE, results=hide>>=
+g<-10; sen<-0.6; cos<-0.8; x<-18; v0<-sample(c(15,18,20,25,30),1); t<-x/(v0*cos); y<-v0*sen*t-0.5*g*t^2
+fmt<-function(x,d=2) formatC(x,format="f",digits=d,decimal.mark=",")
+@
 \usepackage[utf8]{inputenc}
-\usepackage{graphicx}
 
 \begin{question}
-Uma bola é chutada do solo com velocidade inicial \(15{,}0\,\mathrm{m/s}\), formando um ângulo \(\alpha\) tal que \(\sin\alpha=0{,}6\) e \(\cos\alpha=0{,}8\). Um goleiro a \(18{,}0\,\mathrm{m}\) do ponto do chute intercepta a bola no ar. Adote \(g=10\,\mathrm{m/s^2}\).
-
+Uma bola é chutada do solo com velocidade inicial $\Sexpr{fmt(v0,1)}\,\mathrm{m/s}$, formando um ângulo $\alpha$ tal que $\sin\alpha=0{,}6$ e $\cos\alpha=0{,}8$. Um goleiro a $18{,}0\,\mathrm{m}$ do ponto do chute intercepta a bola no ar. Adote $g=10\,\mathrm{m/s^2}$. Determine a altura da bola nesse instante.
 \begin{answerlist}
-  \item altura da bola no instante da interceptação, em \(\mathrm{m}\).
+  \item altura, em $\mathrm{m}$.
 \end{answerlist}
 \end{question}
-
 \begin{solution}
-Temos \(v_x=12\,\mathrm{m/s}\) e \(v_{0y}=9\,\mathrm{m/s}\). Para \(x=18\,\mathrm{m}\), \(t=18/12=1{,}5\,\mathrm{s}\). Logo \(y=9(1{,}5)-5(1{,}5)^2=13{,}5-11{,}25=2{,}25\,\mathrm{m}\).
-
+$t=x/(v_0\cos\alpha)=\Sexpr{fmt(t)}\,\mathrm{s}$ e $y=v_0\sin\alpha\,t-gt^2/2=\Sexpr{fmt(y)}\,\mathrm{m}$.
 \begin{answerlist}
-  \item altura da bola no instante da interceptação, em \(\mathrm{m}\).
+  \item $\Sexpr{fmt(y)}$
 \end{answerlist}
 \end{solution}
 
 %% META-INFORMATION
-%% Fonte: Professor Panosso, exercício 23 (PDF fornecido).
+%% Fonte: Professor Panosso, exercício 23, parametrizado.
 %% \extype{cloze}
-%% \exsolution{2.25}
+%% \exsolution{\Sexpr{y}}
 %% \exclozetype{num}
 %% \extol{0.05}
-%% \exname{Q14}
-%% \exusepackage[utf8]{inputenc}
+%% \exname{LO26L2Q14}
+%% \exsection{Mecanica; Cinematica; Lancamento obliquo; Listas 2026}

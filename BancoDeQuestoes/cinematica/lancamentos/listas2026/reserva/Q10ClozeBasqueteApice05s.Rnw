@@ -1,29 +1,29 @@
+<<echo=FALSE, results=hide>>=
+g<-10; sen<-0.5; cos<-0.87; ts<-sample(c(0.4,0.5,0.6,0.8,1.0),1); vy<-g*ts; v0<-vy/sen; x<-v0*cos*ts
+fmt<-function(x,d=2) formatC(x,format="f",digits=d,decimal.mark=",")
+@
 \usepackage[utf8]{inputenc}
-\usepackage{graphicx}
 
 \begin{question}
-Um jogador de basquete arremessa uma bola com velocidade inicial formando \(30^\circ\) com a horizontal. Após \(0{,}5\,\mathrm{s}\), a bola atinge a altura máxima. Considere \(g=10\,\mathrm{m/s^2}\), \(\sin30^\circ=0{,}50\) e \(\cos30^\circ=0{,}87\). Suponha que a cesta esteja na vertical do ponto de altura máxima, como indicado na figura original.
-
+Um jogador de basquete arremessa uma bola com velocidade inicial formando $30^\circ$ com a horizontal. Após $\Sexpr{fmt(ts,1)}\,\mathrm{s}$, a bola atinge a altura máxima. Considere $g=10\,\mathrm{m/s^2}$, $\sin30^\circ=0{,}50$ e $\cos30^\circ=0{,}87$. Suponha que a cesta esteja na vertical do ponto de altura máxima. Determine:
 \begin{answerlist}
-  \item módulo da velocidade inicial, em \(\mathrm{m/s}\);
-  \item distância horizontal até a vertical da cesta, em \(\mathrm{m}\).
+  \item velocidade inicial, em $\mathrm{m/s}$;
+  \item distância horizontal até a cesta, em $\mathrm{m}$.
 \end{answerlist}
 \end{question}
-
 \begin{solution}
-No ápice, \(v_y=0\), então \(v_{0y}=gt_s=10(0{,}5)=5\,\mathrm{m/s}\). Como \(v_{0y}=v_0\sin30^\circ\), resulta \(v_0=10\,\mathrm{m/s}\). A componente horizontal é \(v_x=10(0{,}87)=8{,}7\,\mathrm{m/s}\), e em \(0{,}5\,\mathrm{s}\) percorre \(x=4{,}35\,\mathrm{m}\).
-
+$v_{0y}=gt_s=\Sexpr{fmt(vy)}$, então $v_0=v_{0y}/0{,}5=\Sexpr{fmt(v0)}$. A distância é $x=v_0\cos30^\circ t_s=\Sexpr{fmt(x)}$.
 \begin{answerlist}
-  \item módulo da velocidade inicial, em \(\mathrm{m/s}\);
-  \item distância horizontal até a vertical da cesta, em \(\mathrm{m}\).
+  \item $\Sexpr{fmt(v0)}$
+  \item $\Sexpr{fmt(x)}$
 \end{answerlist}
 \end{solution}
 
 %% META-INFORMATION
-%% Fonte: Professor Panosso, exercício 28 (PDF fornecido), com a geometria do enunciado explicitada.
+%% Fonte: Professor Panosso, exercício 28, parametrizado e com hipótese geométrica explicitada.
 %% \extype{cloze}
-%% \exsolution{10|4.35}
+%% \exsolution{\Sexpr{v0}|\Sexpr{x}}
 %% \exclozetype{num|num}
 %% \extol{0.05|0.05}
-%% \exname{LO26RQ10BasqueteApice05s}
-%% \exusepackage[utf8]{inputenc}
+%% \exname{LO26RQ10}
+%% \exsection{Mecanica; Cinematica; Lancamento obliquo; Reserva prova 2026}

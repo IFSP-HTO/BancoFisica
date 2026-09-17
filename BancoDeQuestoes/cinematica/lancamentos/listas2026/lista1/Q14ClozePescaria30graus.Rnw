@@ -1,0 +1,68 @@
+<<echo=FALSE, results=hide>>=
+g <- 10
+configs <- data.frame(theta=c(30,37,45,53,60), sen=c(0.50,0.60,0.7071,0.80,0.866), cos=c(0.866,0.80,0.7071,0.60,0.50))
+i <- sample(seq_len(nrow(configs)),1)
+theta<-configs$theta[i]; sen<-configs$sen[i]; cos<-configs$cos[i]
+v0<-sample(c(10,15,20,25,30),1)
+T<-2*v0*sen/g; A<-v0*cos*T
+fmt<-function(x,d=2) formatC(x,format="f",digits=d,decimal.mark=",")
+include_supplement("LO26_Panosso16_pescaria_base.png", dir="../../../../figuras")
+base_path <- "LO26_Panosso16_pescaria_base.png"
+render_overlay_png <- function(source, outfile, overlays) {
+img <- png::readPNG(source)
+  h <- dim(img)[1]
+  w <- dim(img)[2]
+  grDevices::png(outfile, width=w, height=h, bg="white")
+  grid::grid.newpage()
+  grid::grid.raster(img, width=grid::unit(1,"npc"), height=grid::unit(1,"npc"), interpolate=FALSE)
+  for (o in overlays) {
+    grid::grid.rect(
+      x=grid::unit((o$x1+o$x2)/(2*w),"npc"),
+      y=grid::unit(1-(o$y1+o$y2)/(2*h),"npc"),
+      width=grid::unit((o$x2-o$x1)/w,"npc"),
+      height=grid::unit((o$y2-o$y1)/h,"npc"),
+      gp=grid::gpar(fill="white", col=NA)
+    )
+    rot <- if (is.null(o$rot)) 0 else o$rot
+    fontsize <- if (is.null(o$fontsize)) 12 else o$fontsize
+    just <- if (is.null(o$just)) c("left","top") else o$just
+    grid::grid.text(
+      o$text,
+      x=grid::unit(o$x/w,"npc"), y=grid::unit(1-o$y/h,"npc"),
+      just=just, rot=rot,
+      gp=grid::gpar(col="black", fontsize=fontsize, fontfamily="serif")
+    )
+  }
+  grDevices::dev.off()
+  invisible(outfile)
+}
+img <- "Q14_Pescaria.png"
+render_overlay_png(base_path, img, list(
+  list(x1=301,y1=1,x2=370,y2=43,text=paste0(theta,"°"),x=316,y=8,fontsize=13)
+))
+@
+
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\begin{question}
+Em uma pescaria, uma chumbada é lançada da superfície da água com velocidade $\Sexpr{v0}\,\mathrm{m/s}$, formando $\Sexpr{theta}^\circ$ com a horizontal. Despreze a resistência do ar e a ação da linha após o lançamento. Adote $g=10\,\mathrm{m/s^2}$, $\sin\Sexpr{theta}^\circ=\Sexpr{fmt(sen,4)}$ e $\cos\Sexpr{theta}^\circ=\Sexpr{fmt(cos,4)}$. Determine a distância horizontal até a chumbada voltar à água.
+\begin{center}\includegraphics[width=8cm,keepaspectratio]{\Sexpr{img}}\end{center}
+\begin{answerlist}
+  \item distância horizontal, em $\mathrm{m}$.
+\end{answerlist}
+\end{question}
+\begin{solution}
+$T=2v_0\sin\theta/g=\Sexpr{fmt(T)}\,\mathrm{s}$ e $A=v_0\cos\theta\,T=\Sexpr{fmt(A)}\,\mathrm{m}$.
+\begin{answerlist}
+  \item $\Sexpr{fmt(A)}$
+\end{answerlist}
+\end{solution}
+%% META-INFORMATION
+%% Fonte: Professor Panosso, exercício 16.
+%% Figura: recorte direto do PDF original; apenas o ângulo é substituído programaticamente em cada variante.
+%% \extype{cloze}
+%% \exsolution{\Sexpr{A}}
+%% \exclozetype{num}
+%% \extol{0.1}
+%% \exname{LO26L1Q14}
+%% \exsection{Mecanica; Cinematica; Lancamento obliquo; Listas 2026}

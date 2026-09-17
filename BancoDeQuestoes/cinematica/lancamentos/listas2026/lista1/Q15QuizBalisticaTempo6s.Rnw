@@ -1,33 +1,34 @@
+<<echo=FALSE, results=hide>>=
+g<-10; sen<-0.6; cos<-0.8; v0<-sample(c(20,30,40,50,60),1); T<-2*v0*sen/g; A<-v0*cos*T
+optsV<-c(v0,0.8*v0,1.2*v0,0.6*v0,1.4*v0); optsA<-c(A,0.5*A,0.75*A,1.25*A,1.5*A)
+fmt<-function(x,d=1) formatC(x,format="f",digits=d,decimal.mark=",")
+@
 \usepackage[utf8]{inputenc}
-\usepackage{graphicx}
 
 \begin{question}
-Num teste de balística, um projétil é lançado do solo sob um ângulo \(\alpha\), com \(\sin\alpha=0{,}6\) e \(\cos\alpha=0{,}8\), retornando ao solo em \(6{,}0\,\mathrm{s}\). Despreze o ar e adote \(g=10\,\mathrm{m/s^2}\). O módulo da velocidade inicial e o alcance são, respectivamente:
-
+Num teste de balística, um projétil é lançado do solo sob um ângulo $\alpha$, com $\sin\alpha=0{,}6$ e $\cos\alpha=0{,}8$, retornando ao solo em $\Sexpr{fmt(T,1)}\,\mathrm{s}$. Despreze o ar e adote $g=10\,\mathrm{m/s^2}$. O módulo da velocidade inicial e o alcance são, respectivamente:
 \begin{answerlist}
-  \item \(50\,\mathrm{m/s}\) e \(240\,\mathrm{m}\)
-  \item \(50\,\mathrm{m/s}\) e \(120\,\mathrm{m}\)
-  \item \(40\,\mathrm{m/s}\) e \(240\,\mathrm{m}\)
-  \item \(40\,\mathrm{m/s}\) e \(120\,\mathrm{m}\)
-  \item \(30\,\mathrm{m/s}\) e \(240\,\mathrm{m}\)
+\item $\Sexpr{fmt(optsV[1])}\,\mathrm{m/s}$ e $\Sexpr{fmt(optsA[1])}\,\mathrm{m}$
+\item $\Sexpr{fmt(optsV[2])}\,\mathrm{m/s}$ e $\Sexpr{fmt(optsA[2])}\,\mathrm{m}$
+\item $\Sexpr{fmt(optsV[3])}\,\mathrm{m/s}$ e $\Sexpr{fmt(optsA[3])}\,\mathrm{m}$
+\item $\Sexpr{fmt(optsV[4])}\,\mathrm{m/s}$ e $\Sexpr{fmt(optsA[4])}\,\mathrm{m}$
+\item $\Sexpr{fmt(optsV[5])}\,\mathrm{m/s}$ e $\Sexpr{fmt(optsA[5])}\,\mathrm{m}$
 \end{answerlist}
 \end{question}
-
 \begin{solution}
-Como \(T=2v_{0y}/g\), \(v_{0y}=30\,\mathrm{m/s}\). Assim \(v_0=30/0{,}6=50\,\mathrm{m/s}\), \(v_{0x}=40\,\mathrm{m/s}\) e \(A=40(6)=240\,\mathrm{m}\).
-
+$v_0=\Sexpr{fmt(v0)}\,\mathrm{m/s}$ e $A=\Sexpr{fmt(A)}\,\mathrm{m}$.
 \begin{answerlist}
-  \item \(50\,\mathrm{m/s}\) e \(240\,\mathrm{m}\)
-  \item \(50\,\mathrm{m/s}\) e \(120\,\mathrm{m}\)
-  \item \(40\,\mathrm{m/s}\) e \(240\,\mathrm{m}\)
-  \item \(40\,\mathrm{m/s}\) e \(120\,\mathrm{m}\)
-  \item \(30\,\mathrm{m/s}\) e \(240\,\mathrm{m}\)
+  \item correta
+  \item incorreta
+  \item incorreta
+  \item incorreta
+  \item incorreta
 \end{answerlist}
 \end{solution}
 
 %% META-INFORMATION
-%% Fonte: Professor Panosso, exercício 24 (PDF fornecido).
+%% Fonte: Professor Panosso, exercício 24, parametrizado.
 %% \extype{schoice}
 %% \exsolution{10000}
-%% \exname{Q15}
-%% \exusepackage[utf8]{inputenc}
+%% \exname{LO26L1Q15}
+%% \exsection{Mecanica; Cinematica; Lancamento obliquo; Listas 2026}

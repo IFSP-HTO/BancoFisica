@@ -1,27 +1,27 @@
+<<echo=FALSE, results=hide>>=
+g<-10; vms<-sample(c(20,25,30,35,40),1); vkmh<-3.6*vms; sen<-0.87; cos<-0.5; T<-2*vms*sen/g; A<-vms*cos*T
+fmt<-function(x,d=2) formatC(x,format="f",digits=d,decimal.mark=",")
+@
 \usepackage[utf8]{inputenc}
-\usepackage{graphicx}
 
 \begin{question}
-Uma bola é chutada com velocidade \(108\,\mathrm{km/h}\), formando \(60^\circ\) com a horizontal. Despreze a resistência do ar e adote \(g=10\,\mathrm{m/s^2}\). Determine o alcance, considerando que a bola retorna ao nível de lançamento.
-
+Uma bola é chutada com velocidade $\Sexpr{fmt(vkmh,0)}\,\mathrm{km/h}$, formando $60^\circ$ com a horizontal. Despreze a resistência do ar e adote $g=10\,\mathrm{m/s^2}$, $\sin60^\circ=0{,}87$ e $\cos60^\circ=0{,}50$. Determine o alcance, considerando que a bola retorna ao nível de lançamento.
 \begin{answerlist}
-  \item alcance, em \(\mathrm{m}\).
+  \item alcance, em $\mathrm{m}$.
 \end{answerlist}
 \end{question}
-
 \begin{solution}
-Primeiro, \(108\,\mathrm{km/h}=30\,\mathrm{m/s}\). Então \(A=v_0^2\sin(120^\circ)/g=900(0{,}866)/10\approx77{,}94\,\mathrm{m}\), equivalente a \(45\sqrt3\,\mathrm{m}\).
-
+$v_0=\Sexpr{fmt(vms)}\,\mathrm{m/s}$ e $A=v_0\cos60^\circ(2v_0\sin60^\circ/g)=\Sexpr{fmt(A)}\,\mathrm{m}$.
 \begin{answerlist}
-  \item alcance, em \(\mathrm{m}\).
+  \item $\Sexpr{fmt(A)}$
 \end{answerlist}
 \end{solution}
 
 %% META-INFORMATION
-%% Fonte: Professor Panosso, exercício 10 (PDF fornecido).
+%% Fonte: Professor Panosso, exercício 10, parametrizado.
 %% \extype{cloze}
-%% \exsolution{77.94}
+%% \exsolution{\Sexpr{A}}
 %% \exclozetype{num}
-%% \extol{0.15}
-%% \exname{LO26L2Q07Futebol108kmh60graus}
-%% \exusepackage[utf8]{inputenc}
+%% \extol{0.1}
+%% \exname{LO26L2Q07}
+%% \exsection{Mecanica; Cinematica; Lancamento obliquo; Listas 2026}
