@@ -13,9 +13,24 @@ include_supplement("adv_q11_protasio.jpg", dir="../../../../figuras")
 \begin{question}
 Berstáquio e Protásio estão inicialmente separados por $\Sexpr{fmt(D,1)}\,\mathrm{m}$. Berstáquio lança uma bola que atinge altura máxima de $\Sexpr{fmt(H,2)}\,\mathrm{m}$; no ápice, a velocidade da bola é $\Sexpr{fmt(vx,1)}\,\mathrm{m/s}$. Protásio parte do repouso, com aceleração constante, em direção ao ponto em que pegará a bola no mesmo nível do lançamento. Adote $g=10\,\mathrm{m/s^2}$. Qual deve ser sua aceleração?
 \begin{center}\includegraphics[width=6cm,keepaspectratio]{adv_q11_protasio.jpg}\end{center}
-\begin{answerlist}\item $\Sexpr{fmt(opts[1])}\,\mathrm{m/s^2}$\item $\Sexpr{fmt(opts[2])}\,\mathrm{m/s^2}$\item $\Sexpr{fmt(opts[3])}\,\mathrm{m/s^2}$\item $\Sexpr{fmt(opts[4])}\,\mathrm{m/s^2}$\item $\Sexpr{fmt(opts[5])}\,\mathrm{m/s^2}$\end{answerlist}
+\begin{answerlist}
+  \item $\Sexpr{fmt(opts[1])}\,\mathrm{m/s^2}$
+  \item $\Sexpr{fmt(opts[2])}\,\mathrm{m/s^2}$
+  \item $\Sexpr{fmt(opts[3])}\,\mathrm{m/s^2}$
+  \item $\Sexpr{fmt(opts[4])}\,\mathrm{m/s^2}$
+  \item $\Sexpr{fmt(opts[5])}\,\mathrm{m/s^2}$
+\end{answerlist}
 \end{question}
-\begin{solution}$v_{0y}=\Sexpr{fmt(vy,1)}$, $T=\Sexpr{fmt(T)}$, alcance da bola $R=\Sexpr{fmt(R)}$. Protásio percorre $d=D-R=\Sexpr{fmt(d)}$ partindo do repouso, então $d=aT^2/2$ e $a=\Sexpr{fmt(a)}$.\begin{answerlist}\item correta\item incorreta\item incorreta\item incorreta\item incorreta\end{answerlist}\end{solution}
+\begin{solution}
+$v_{0y}=\Sexpr{fmt(vy,1)}$, $T=\Sexpr{fmt(T)}$, alcance da bola $R=\Sexpr{fmt(R)}$. Protásio percorre $d=D-R=\Sexpr{fmt(d)}$ partindo do repouso, então $d=aT^2/2$ e $a=\Sexpr{fmt(a)}$.
+\begin{answerlist}
+  \item correta
+  \item incorreta
+  \item incorreta
+  \item incorreta
+  \item incorreta
+\end{answerlist}
+\end{solution}
 
 %% META-INFORMATION
 %% Fonte: PUC-SP/2012, parametrizada; figura original preservada.

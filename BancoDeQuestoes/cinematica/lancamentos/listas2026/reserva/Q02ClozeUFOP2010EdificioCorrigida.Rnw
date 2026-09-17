@@ -14,7 +14,8 @@ vy0<-v0*sen; vx<-v0*cos
 t <- (vy0 + sqrt(vy0^2 + 2*g*H))/g
 A <- vx*t
 fmt <- function(x,d=2) formatC(x,format="f",digits=d,decimal.mark=",")
-base_path <- file.path("../../../../figuras", "LO26_UFOP2010_edificio_base.png")
+include_supplement("LO26_UFOP2010_edificio_base.png", dir="../../../../figuras")
+base_path <- "LO26_UFOP2010_edificio_base.png"
 render_overlay_png <- function(source, outfile, overlays) {
 img <- png::readPNG(source)
   h <- dim(img)[1]
@@ -56,11 +57,15 @@ render_overlay_png(base_path, img, list(
 \begin{question}
 Uma pedra é lançada do alto de um edifício de $\Sexpr{H}\,\mathrm{m}$ com velocidade inicial $\Sexpr{v0}\,\mathrm{m/s}$, formando $\Sexpr{theta}^\circ$ com a horizontal. Adote $g=10\,\mathrm{m/s^2}$, $\sin\Sexpr{theta}^\circ=\Sexpr{fmt(sen,4)}$ e $\cos\Sexpr{theta}^\circ=\Sexpr{fmt(cos,4)}$. Determine a posição horizontal em que a pedra atinge o solo.
 \begin{center}\includegraphics[width=7cm,keepaspectratio]{\Sexpr{img}}\end{center}
-\begin{answerlist}\item alcance horizontal a partir da vertical do lançamento, em $\mathrm{m}$.\end{answerlist}
+\begin{answerlist}
+  \item alcance horizontal a partir da vertical do lançamento, em $\mathrm{m}$.
+\end{answerlist}
 \end{question}
 \begin{solution}
 Na vertical, $0=H+v_{0y}t-\frac12gt^2$, com $v_{0y}=\Sexpr{fmt(vy0)}\,\mathrm{m/s}$. A raiz positiva fornece $t=\Sexpr{fmt(t)}\,\mathrm{s}$. Como $v_x=\Sexpr{fmt(vx)}\,\mathrm{m/s}$, $A=v_xt=\Sexpr{fmt(A)}\,\mathrm{m}$.
-\begin{answerlist}\item $\Sexpr{fmt(A)}$\end{answerlist}
+\begin{answerlist}
+  \item $\Sexpr{fmt(A)}$
+\end{answerlist}
 \end{solution}
 %% META-INFORMATION
 %% Fonte: UFOP-MG 2010, reproduzida em "Balística - Avançada" e na lista do Colégio Equipe.

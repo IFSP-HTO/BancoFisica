@@ -36,8 +36,10 @@ render_overlay_png <- function(source, outfile, overlays) {
   grDevices::dev.off()
   invisible(outfile)
 }
-base1_path <- file.path("../../../../figuras", "LO26_UFTM2011_volei_fig1_base.png")
-base2_path <- file.path("../../../../figuras", "LO26_UFTM2011_volei_fig2_base.png")
+include_supplement("LO26_UFTM2011_volei_fig1_base.png", dir="../../../../figuras")
+base1_path <- "LO26_UFTM2011_volei_fig1_base.png"
+include_supplement("LO26_UFTM2011_volei_fig2_base.png", dir="../../../../figuras")
+base2_path <- "LO26_UFTM2011_volei_fig2_base.png"
 img1 <- "Q01_UFTM_fig1.png"
 img2 <- "Q01_UFTM_fig2.png"
 render_overlay_png(base1_path, img1, list(

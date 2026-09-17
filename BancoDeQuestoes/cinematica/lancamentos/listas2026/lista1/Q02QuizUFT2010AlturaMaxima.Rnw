@@ -20,7 +20,13 @@ Um jogador de futebol chuta uma bola com velocidade inicial que faz $30^\circ$ c
 \end{question}
 \begin{solution}
 No ponto mais alto, $v_y=0$. Assim, $H=v_{0y}^2/(2g)$ e $v_{0y}=v_0\sin30^\circ$. Logo, $v_0=\Sexpr{fmt(v0,1)}\,\mathrm{m/s}$.
-\begin{answerlist}\item correta\item incorreta\item incorreta\item incorreta\item incorreta\end{answerlist}
+\begin{answerlist}
+  \item correta
+  \item incorreta
+  \item incorreta
+  \item incorreta
+  \item incorreta
+\end{answerlist}
 \end{solution}
 
 %% META-INFORMATION

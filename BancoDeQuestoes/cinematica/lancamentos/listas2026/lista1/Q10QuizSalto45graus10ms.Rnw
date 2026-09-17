@@ -6,9 +6,24 @@ opts<-c(A,0.5*A,0.8*A,1.2*A,1.5*A); fmt<-function(x,d=1) formatC(x,format="f",di
 
 \begin{question}
 Um atleta realiza um salto com velocidade inicial de $\Sexpr{fmt(v0,0)}\,\mathrm{m/s}$, formando $45^\circ$ com a horizontal. Considerando lançamento e queda no mesmo nível, desprezando o ar e adotando $g=10\,\mathrm{m/s^2}$, qual é o alcance?
-\begin{answerlist}\item $\Sexpr{fmt(opts[1])}\,\mathrm{m}$\item $\Sexpr{fmt(opts[2])}\,\mathrm{m}$\item $\Sexpr{fmt(opts[3])}\,\mathrm{m}$\item $\Sexpr{fmt(opts[4])}\,\mathrm{m}$\item $\Sexpr{fmt(opts[5])}\,\mathrm{m}$\end{answerlist}
+\begin{answerlist}
+  \item $\Sexpr{fmt(opts[1])}\,\mathrm{m}$
+  \item $\Sexpr{fmt(opts[2])}\,\mathrm{m}$
+  \item $\Sexpr{fmt(opts[3])}\,\mathrm{m}$
+  \item $\Sexpr{fmt(opts[4])}\,\mathrm{m}$
+  \item $\Sexpr{fmt(opts[5])}\,\mathrm{m}$
+\end{answerlist}
 \end{question}
-\begin{solution}Para $45^\circ$, $A=v_0^2/g=\Sexpr{fmt(A)}\,\mathrm{m}$.\begin{answerlist}\item correta\item incorreta\item incorreta\item incorreta\item incorreta\end{answerlist}\end{solution}
+\begin{solution}
+Para $45^\circ$, $A=v_0^2/g=\Sexpr{fmt(A)}\,\mathrm{m}$.
+\begin{answerlist}
+  \item correta
+  \item incorreta
+  \item incorreta
+  \item incorreta
+  \item incorreta
+\end{answerlist}
+\end{solution}
 
 %% META-INFORMATION
 %% Fonte: Professor Panosso, exercício 2, parametrizado.

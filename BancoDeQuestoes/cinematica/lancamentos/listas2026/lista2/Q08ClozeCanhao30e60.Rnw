@@ -8,9 +8,26 @@ fmt<-function(x,d=2) formatC(x,format="f",digits=d,decimal.mark=",")
 
 \begin{question}
 Um canhão dispara projéteis sempre com velocidade de saída $\Sexpr{fmt(v0,0)}\,\mathrm{m/s}$. Adote $g=10\,\mathrm{m/s^2}$ e despreze a resistência do ar. Compare disparos feitos a $30^\circ$ e $60^\circ$ com a horizontal. Determine:
-\begin{answerlist}\item tempo de voo a $30^\circ$;\item altura máxima a $30^\circ$;\item alcance a $30^\circ$;\item tempo de voo a $60^\circ$;\item altura máxima a $60^\circ$;\item alcance a $60^\circ$.\end{answerlist}
+\begin{answerlist}
+  \item tempo de voo a $30^\circ$;
+  \item altura máxima a $30^\circ$;
+  \item alcance a $30^\circ$;
+  \item tempo de voo a $60^\circ$;
+  \item altura máxima a $60^\circ$;
+  \item alcance a $60^\circ$.
+\end{answerlist}
 \end{question}
-\begin{solution}Os alcances são iguais para ângulos complementares. Numericamente: $T_{30}=\Sexpr{fmt(T30)}$, $H_{30}=\Sexpr{fmt(H30)}$, $A_{30}=\Sexpr{fmt(A30)}$, $T_{60}=\Sexpr{fmt(T60)}$, $H_{60}=\Sexpr{fmt(H60)}$, $A_{60}=\Sexpr{fmt(A60)}$.\begin{answerlist}\item $\Sexpr{fmt(T30)}$\item $\Sexpr{fmt(H30)}$\item $\Sexpr{fmt(A30)}$\item $\Sexpr{fmt(T60)}$\item $\Sexpr{fmt(H60)}$\item $\Sexpr{fmt(A60)}$\end{answerlist}\end{solution}
+\begin{solution}
+Os alcances são iguais para ângulos complementares. Numericamente: $T_{30}=\Sexpr{fmt(T30)}$, $H_{30}=\Sexpr{fmt(H30)}$, $A_{30}=\Sexpr{fmt(A30)}$, $T_{60}=\Sexpr{fmt(T60)}$, $H_{60}=\Sexpr{fmt(H60)}$, $A_{60}=\Sexpr{fmt(A60)}$.
+\begin{answerlist}
+  \item $\Sexpr{fmt(T30)}$
+  \item $\Sexpr{fmt(H30)}$
+  \item $\Sexpr{fmt(A30)}$
+  \item $\Sexpr{fmt(T60)}$
+  \item $\Sexpr{fmt(H60)}$
+  \item $\Sexpr{fmt(A60)}$
+\end{answerlist}
+\end{solution}
 
 %% META-INFORMATION
 %% Fonte: Professor Panosso, exercício 11, parametrizado.

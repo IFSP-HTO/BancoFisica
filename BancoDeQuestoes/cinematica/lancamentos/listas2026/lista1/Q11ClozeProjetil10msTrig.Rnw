@@ -7,9 +7,18 @@ fmt<-function(x,d=2) formatC(x,format="f",digits=d,decimal.mark=",")
 
 \begin{question}
 Um projétil é lançado do solo com velocidade $\Sexpr{fmt(v0,0)}\,\mathrm{m/s}$, formando um ângulo $\alpha$ tal que $\sin\alpha=0{,}8$ e $\cos\alpha=0{,}6$. Adote $g=10\,\mathrm{m/s^2}$. Determine:
-\begin{answerlist}\item altura máxima, em $\mathrm{m}$;\item alcance horizontal, em $\mathrm{m}$.\end{answerlist}
+\begin{answerlist}
+  \item altura máxima, em $\mathrm{m}$;
+  \item alcance horizontal, em $\mathrm{m}$.
+\end{answerlist}
 \end{question}
-\begin{solution}$H=v_{0y}^2/(2g)=\Sexpr{fmt(H)}$ e $A=v_{0x}(2v_{0y}/g)=\Sexpr{fmt(A)}$.\begin{answerlist}\item $\Sexpr{fmt(H)}$\item $\Sexpr{fmt(A)}$\end{answerlist}\end{solution}
+\begin{solution}
+$H=v_{0y}^2/(2g)=\Sexpr{fmt(H)}$ e $A=v_{0x}(2v_{0y}/g)=\Sexpr{fmt(A)}$.
+\begin{answerlist}
+  \item $\Sexpr{fmt(H)}$
+  \item $\Sexpr{fmt(A)}$
+\end{answerlist}
+\end{solution}
 
 %% META-INFORMATION
 %% Fonte: Professor Panosso, exercício 3, parametrizado.

@@ -8,9 +8,16 @@ fmt<-function(x,d=2) formatC(x,format="f",digits=d,decimal.mark=",")
 
 \begin{question}
 Uma flecha é disparada e, desprezando a resistência do ar, atinge altura máxima de $\Sexpr{fmt(H,1)}\,\mathrm{m}$ e alcance horizontal de $\Sexpr{fmt(A,1)}\,\mathrm{m}$, retornando ao mesmo nível do lançamento. Adote $g=10\,\mathrm{m/s^2}$. Determine a velocidade inicial.
-\begin{answerlist}\item velocidade inicial, em $\mathrm{m/s}$.\end{answerlist}
+\begin{answerlist}
+  \item velocidade inicial, em $\mathrm{m/s}$.
+\end{answerlist}
 \end{question}
-\begin{solution}$v_{0y}=\sqrt{2gH}=\Sexpr{fmt(vy)}$, $T=2v_{0y}/g=\Sexpr{fmt(T)}$ e $v_{0x}=A/T=\Sexpr{fmt(vx)}$. Logo $v_0=\Sexpr{fmt(v0)}\,\mathrm{m/s}$.\begin{answerlist}\item $\Sexpr{fmt(v0)}$\end{answerlist}\end{solution}
+\begin{solution}
+$v_{0y}=\sqrt{2gH}=\Sexpr{fmt(vy)}$, $T=2v_{0y}/g=\Sexpr{fmt(T)}$ e $v_{0x}=A/T=\Sexpr{fmt(vx)}$. Logo $v_0=\Sexpr{fmt(v0)}\,\mathrm{m/s}$.
+\begin{answerlist}
+  \item $\Sexpr{fmt(v0)}$
+\end{answerlist}
+\end{solution}
 
 %% META-INFORMATION
 %% Fonte: Professor Panosso, exercício 21, parametrizado.

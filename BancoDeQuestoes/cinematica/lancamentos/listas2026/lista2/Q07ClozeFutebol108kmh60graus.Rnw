@@ -6,9 +6,16 @@ fmt<-function(x,d=2) formatC(x,format="f",digits=d,decimal.mark=",")
 
 \begin{question}
 Uma bola é chutada com velocidade $\Sexpr{fmt(vkmh,0)}\,\mathrm{km/h}$, formando $60^\circ$ com a horizontal. Despreze a resistência do ar e adote $g=10\,\mathrm{m/s^2}$, $\sin60^\circ=0{,}87$ e $\cos60^\circ=0{,}50$. Determine o alcance, considerando que a bola retorna ao nível de lançamento.
-\begin{answerlist}\item alcance, em $\mathrm{m}$.\end{answerlist}
+\begin{answerlist}
+  \item alcance, em $\mathrm{m}$.
+\end{answerlist}
 \end{question}
-\begin{solution}$v_0=\Sexpr{fmt(vms)}\,\mathrm{m/s}$ e $A=v_0\cos60^\circ(2v_0\sin60^\circ/g)=\Sexpr{fmt(A)}\,\mathrm{m}$.\begin{answerlist}\item $\Sexpr{fmt(A)}$\end{answerlist}\end{solution}
+\begin{solution}
+$v_0=\Sexpr{fmt(vms)}\,\mathrm{m/s}$ e $A=v_0\cos60^\circ(2v_0\sin60^\circ/g)=\Sexpr{fmt(A)}\,\mathrm{m}$.
+\begin{answerlist}
+  \item $\Sexpr{fmt(A)}$
+\end{answerlist}
+\end{solution}
 
 %% META-INFORMATION
 %% Fonte: Professor Panosso, exercício 10, parametrizado.

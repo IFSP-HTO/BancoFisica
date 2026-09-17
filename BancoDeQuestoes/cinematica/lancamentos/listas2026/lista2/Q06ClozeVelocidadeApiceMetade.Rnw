@@ -6,9 +6,16 @@ fmt<-function(x,d=2) formatC(x,format="f",digits=d,decimal.mark=",")
 
 \begin{question}
 Um projétil é lançado do solo com velocidade inicial $\Sexpr{fmt(v0,0)}\,\mathrm{m/s}$. No ponto mais alto de sua trajetória, sua velocidade escalar é igual à metade da velocidade inicial. Despreze a resistência do ar e adote $g=10\,\mathrm{m/s^2}$. Determine a altura máxima.
-\begin{answerlist}\item altura máxima, em $\mathrm{m}$.\end{answerlist}
+\begin{answerlist}
+  \item altura máxima, em $\mathrm{m}$.
+\end{answerlist}
 \end{question}
-\begin{solution}No ápice $v_x=v_0/2$. Portanto $v_{0y}=\sqrt{v_0^2-v_x^2}$ e $H=v_{0y}^2/(2g)=\Sexpr{fmt(H)}\,\mathrm{m}$.\begin{answerlist}\item $\Sexpr{fmt(H)}$\end{answerlist}\end{solution}
+\begin{solution}
+No ápice $v_x=v_0/2$. Portanto $v_{0y}=\sqrt{v_0^2-v_x^2}$ e $H=v_{0y}^2/(2g)=\Sexpr{fmt(H)}\,\mathrm{m}$.
+\begin{answerlist}
+  \item $\Sexpr{fmt(H)}$
+\end{answerlist}
+\end{solution}
 
 %% META-INFORMATION
 %% Fonte: Professor Panosso, exercício 9, parametrizado.

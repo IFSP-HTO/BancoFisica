@@ -15,7 +15,16 @@ Num teste de balística, um projétil é lançado do solo sob um ângulo $\alpha
 \item $\Sexpr{fmt(optsV[5])}\,\mathrm{m/s}$ e $\Sexpr{fmt(optsA[5])}\,\mathrm{m}$
 \end{answerlist}
 \end{question}
-\begin{solution}$v_0=\Sexpr{fmt(v0)}\,\mathrm{m/s}$ e $A=\Sexpr{fmt(A)}\,\mathrm{m}$.\begin{answerlist}\item correta\item incorreta\item incorreta\item incorreta\item incorreta\end{answerlist}\end{solution}
+\begin{solution}
+$v_0=\Sexpr{fmt(v0)}\,\mathrm{m/s}$ e $A=\Sexpr{fmt(A)}\,\mathrm{m}$.
+\begin{answerlist}
+  \item correta
+  \item incorreta
+  \item incorreta
+  \item incorreta
+  \item incorreta
+\end{answerlist}
+\end{solution}
 
 %% META-INFORMATION
 %% Fonte: Professor Panosso, exercício 24, parametrizado.

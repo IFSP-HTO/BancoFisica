@@ -20,7 +20,14 @@ Um corpo é lançado obliquamente com velocidade inicial $\Sexpr{fmt(v0,0)}\,\ma
 \end{question}
 \begin{solution}
 $v_{0x}=\Sexpr{fmt(vx)}$, $v_{0y}=\Sexpr{fmt(vy)}$, $t_s=\Sexpr{fmt(ts)}$, $H=\Sexpr{fmt(H)}$, $v_{apice}=\Sexpr{fmt(vx)}$, $T=\Sexpr{fmt(T)}$, $v_{yf}=\Sexpr{fmt(vyf)}$ e $A=\Sexpr{fmt(A)}$.
-\begin{answerlist}\item $\Sexpr{fmt(vx)}$ e $\Sexpr{fmt(vy)}$\item $\Sexpr{fmt(ts)}$ e $\Sexpr{fmt(H)}$\item $\Sexpr{fmt(vx)}$\item $\Sexpr{fmt(T)}$\item $\Sexpr{fmt(vyf)}$\item $\Sexpr{fmt(A)}$\end{answerlist}
+\begin{answerlist}
+  \item $\Sexpr{fmt(vx)}$ e $\Sexpr{fmt(vy)}$
+  \item $\Sexpr{fmt(ts)}$ e $\Sexpr{fmt(H)}$
+  \item $\Sexpr{fmt(vx)}$
+  \item $\Sexpr{fmt(T)}$
+  \item $\Sexpr{fmt(vyf)}$
+  \item $\Sexpr{fmt(A)}$
+\end{answerlist}
 \end{solution}
 
 %% META-INFORMATION

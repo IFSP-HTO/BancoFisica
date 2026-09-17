@@ -9,9 +9,18 @@ include_supplement("pan_q15_pele.jpg", dir="../../../../figuras")
 \begin{question}
 No célebre lance da Copa de 1970, modele a bola como um projétil lançado do solo com velocidade $\Sexpr{fmt(v0,0)}\,\mathrm{m/s}$, a $30^\circ$ da horizontal. Usando a aproximação do material, $\cos30^\circ=0{,}85$ e $\sin30^\circ=0{,}50$, determine o tempo de voo e a distância horizontal percorrida. Adote $g=10\,\mathrm{m/s^2}$.
 \begin{center}\includegraphics[width=9cm,keepaspectratio]{pan_q15_pele.jpg}\end{center}
-\begin{answerlist}\item tempo de voo, em $\mathrm{s}$;\item distância horizontal, em $\mathrm{m}$.\end{answerlist}
+\begin{answerlist}
+  \item tempo de voo, em $\mathrm{s}$;
+  \item distância horizontal, em $\mathrm{m}$.
+\end{answerlist}
 \end{question}
-\begin{solution}$T=2v_0\sin30^\circ/g=\Sexpr{fmt(T)}$ e $A=v_0\cos30^\circ T=\Sexpr{fmt(A)}$.\begin{answerlist}\item $\Sexpr{fmt(T)}$\item $\Sexpr{fmt(A)}$\end{answerlist}\end{solution}
+\begin{solution}
+$T=2v_0\sin30^\circ/g=\Sexpr{fmt(T)}$ e $A=v_0\cos30^\circ T=\Sexpr{fmt(A)}$.
+\begin{answerlist}
+  \item $\Sexpr{fmt(T)}$
+  \item $\Sexpr{fmt(A)}$
+\end{answerlist}
+\end{solution}
 
 %% META-INFORMATION
 %% Fonte: Professor Panosso, exercício 15, parametrizado; figura original preservada.

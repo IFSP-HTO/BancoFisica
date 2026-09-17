@@ -15,7 +15,16 @@ Um corpo é lançado com velocidade inicial de $\Sexpr{fmt(v0,0)}\,\mathrm{m/s}$
 \item $\Sexpr{fmt(opts[5])}\,\mathrm{m/s}$
 \end{answerlist}
 \end{question}
-\begin{solution}No ápice, $v_y=0$ e $v=v_x=v_0\cos60^\circ=\Sexpr{fmt(vx)}\,\mathrm{m/s}$.\begin{answerlist}\item correta\item incorreta\item incorreta\item incorreta\item incorreta\end{answerlist}\end{solution}
+\begin{solution}
+No ápice, $v_y=0$ e $v=v_x=v_0\cos60^\circ=\Sexpr{fmt(vx)}\,\mathrm{m/s}$.
+\begin{answerlist}
+  \item correta
+  \item incorreta
+  \item incorreta
+  \item incorreta
+  \item incorreta
+\end{answerlist}
+\end{solution}
 
 %% META-INFORMATION
 %% Fonte: UEL-PR, adaptada e parametrizada.

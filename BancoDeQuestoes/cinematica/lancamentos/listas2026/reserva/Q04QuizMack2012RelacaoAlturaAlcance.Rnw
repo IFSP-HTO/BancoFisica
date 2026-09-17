@@ -7,7 +7,8 @@ k <- ratios[i]
 tan_est <- 4*k
 solutions <- rep(FALSE,5); solutions[i] <- TRUE
 fmt <- function(x,d=2) formatC(x,format="f",digits=d,decimal.mark=",")
-base_path <- file.path("../../../../figuras", "LO26_MACK2012_altura_alcance_base.png")
+include_supplement("LO26_MACK2012_altura_alcance_base.png", dir="../../../../figuras")
+base_path <- "LO26_MACK2012_altura_alcance_base.png"
 render_overlay_png <- function(source, outfile, overlays) {
 img <- png::readPNG(source)
   h <- dim(img)[1]
@@ -47,11 +48,23 @@ render_overlay_png(base_path, img, list(
 \begin{question}
 Uma bola é lançada do solo e retorna ao mesmo nível. A figura informa que a altura máxima é $\Sexpr{fmt(k)}$ vezes o alcance horizontal $x$. Despreze a resistência do ar. Usando a tabela fornecida na própria figura, qual é aproximadamente o ângulo $\alpha$ de lançamento?
 \begin{center}\includegraphics[width=7cm,keepaspectratio]{\Sexpr{img}}\end{center}
-\begin{answerlist}\item $15^\circ$\item $30^\circ$\item $45^\circ$\item $50^\circ$\item $75^\circ$\end{answerlist}
+\begin{answerlist}
+  \item $15^\circ$
+  \item $30^\circ$
+  \item $45^\circ$
+  \item $50^\circ$
+  \item $75^\circ$
+\end{answerlist}
 \end{question}
 \begin{solution}
 Para lançamento e queda no mesmo nível, $H/A=\tan\alpha/4$. Assim, $\tan\alpha\approx4(\Sexpr{fmt(k)})=\Sexpr{fmt(tan_est)}$. O valor mais próximo na linha da tangente da tabela corresponde a $\Sexpr{angles[i]}^\circ$.
-\begin{answerlist}\item $15^\circ$\item $30^\circ$\item $45^\circ$\item $50^\circ$\item $75^\circ$\end{answerlist}
+\begin{answerlist}
+  \item $15^\circ$
+  \item $30^\circ$
+  \item $45^\circ$
+  \item $50^\circ$
+  \item $75^\circ$
+\end{answerlist}
 \end{solution}
 %% META-INFORMATION
 %% Fonte: Mackenzie-SP 2012, reproduzida em "Balística - Avançada" (PDF fornecido).

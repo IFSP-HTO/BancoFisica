@@ -17,7 +17,11 @@ Um projétil é lançado obliquamente e atinge altura máxima de $\Sexpr{fmt(H,2
 \end{question}
 \begin{solution}
 No ápice, $v_y=0$ e a velocidade escalar é $v_x$. Da altura máxima, $v_{0y}=\sqrt{2gH}=\Sexpr{fmt(vy,1)}$. Logo $t_s=\Sexpr{fmt(ts,2)}$, $T=\Sexpr{fmt(T,2)}$ e $A=v_xT=\Sexpr{fmt(A,2)}$.
-\begin{answerlist}\item $\Sexpr{fmt(ts,2)}$\item $\Sexpr{fmt(T,2)}$\item $\Sexpr{fmt(A,2)}$\end{answerlist}
+\begin{answerlist}
+  \item $\Sexpr{fmt(ts,2)}$
+  \item $\Sexpr{fmt(T,2)}$
+  \item $\Sexpr{fmt(A,2)}$
+\end{answerlist}
 \end{solution}
 
 %% META-INFORMATION

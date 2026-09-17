@@ -6,7 +6,8 @@ theta<-configs$theta[i]; sen<-configs$sen[i]; cos<-configs$cos[i]
 v0<-sample(c(10,15,20,25,30),1)
 T<-2*v0*sen/g; A<-v0*cos*T
 fmt<-function(x,d=2) formatC(x,format="f",digits=d,decimal.mark=",")
-base_path <- file.path("../../../../figuras", "LO26_Panosso16_pescaria_base.png")
+include_supplement("LO26_Panosso16_pescaria_base.png", dir="../../../../figuras")
+base_path <- "LO26_Panosso16_pescaria_base.png"
 render_overlay_png <- function(source, outfile, overlays) {
 img <- png::readPNG(source)
   h <- dim(img)[1]
@@ -46,11 +47,15 @@ render_overlay_png(base_path, img, list(
 \begin{question}
 Em uma pescaria, uma chumbada é lançada da superfície da água com velocidade $\Sexpr{v0}\,\mathrm{m/s}$, formando $\Sexpr{theta}^\circ$ com a horizontal. Despreze a resistência do ar e a ação da linha após o lançamento. Adote $g=10\,\mathrm{m/s^2}$, $\sin\Sexpr{theta}^\circ=\Sexpr{fmt(sen,4)}$ e $\cos\Sexpr{theta}^\circ=\Sexpr{fmt(cos,4)}$. Determine a distância horizontal até a chumbada voltar à água.
 \begin{center}\includegraphics[width=8cm,keepaspectratio]{\Sexpr{img}}\end{center}
-\begin{answerlist}\item distância horizontal, em $\mathrm{m}$.\end{answerlist}
+\begin{answerlist}
+  \item distância horizontal, em $\mathrm{m}$.
+\end{answerlist}
 \end{question}
 \begin{solution}
 $T=2v_0\sin\theta/g=\Sexpr{fmt(T)}\,\mathrm{s}$ e $A=v_0\cos\theta\,T=\Sexpr{fmt(A)}\,\mathrm{m}$.
-\begin{answerlist}\item $\Sexpr{fmt(A)}$\end{answerlist}
+\begin{answerlist}
+  \item $\Sexpr{fmt(A)}$
+\end{answerlist}
 \end{solution}
 %% META-INFORMATION
 %% Fonte: Professor Panosso, exercício 16.

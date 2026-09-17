@@ -8,9 +8,18 @@ fmt<-function(x,d=2) formatC(x,format="f",digits=d,decimal.mark=",")
 
 \begin{question}
 Um projétil é lançado com velocidade $\Sexpr{fmt(v0,0)}\,\mathrm{m/s}$, formando $37^\circ$ com a horizontal. A $\Sexpr{x}\,\mathrm{m}$ do lançamento existe um obstáculo de $\Sexpr{hobs}\,\mathrm{m}$ de altura. Use $g=10\,\mathrm{m/s^2}$, $\cos37^\circ=0{,}80$ e $\sin37^\circ=0{,}60$. Determine a altura do projétil ao alcançar a posição do obstáculo e informe se ele passa acima dele.
-\begin{answerlist}\item altura do projétil, em $\mathrm{m}$;\item diferença $y-h_{obs}$, em $\mathrm{m}$ (positiva se passa acima).\end{answerlist}
+\begin{answerlist}
+  \item altura do projétil, em $\mathrm{m}$;
+  \item diferença $y-h_{obs}$, em $\mathrm{m}$ (positiva se passa acima).
+\end{answerlist}
 \end{question}
-\begin{solution}$t=x/(v_0\cos37^\circ)=\Sexpr{fmt(t)}$ e $y=\Sexpr{fmt(y)}$. Assim $y-h_{obs}=\Sexpr{fmt(delta)}$.\begin{answerlist}\item $\Sexpr{fmt(y)}$\item $\Sexpr{fmt(delta)}$\end{answerlist}\end{solution}
+\begin{solution}
+$t=x/(v_0\cos37^\circ)=\Sexpr{fmt(t)}$ e $y=\Sexpr{fmt(y)}$. Assim $y-h_{obs}=\Sexpr{fmt(delta)}$.
+\begin{answerlist}
+  \item $\Sexpr{fmt(y)}$
+  \item $\Sexpr{fmt(delta)}$
+\end{answerlist}
+\end{solution}
 
 %% META-INFORMATION
 %% Fonte: Professor Panosso, exercício 22, parametrizado em forma numérica equivalente.

@@ -7,9 +7,18 @@ fmt<-function(x,d=2) formatC(x,format="f",digits=d,decimal.mark=",")
 
 \begin{question}
 Numa cobrança de falta, a bola é lançada do solo a $45^\circ$. Ela atinge a altura máxima quando está a $\Sexpr{fmt(xap,2)}\,\mathrm{m}$ horizontalmente do ponto do chute. O gol está a $\Sexpr{xgol}\,\mathrm{m}$ do ponto de lançamento. Adote $g=10\,\mathrm{m/s^2}$. Determine:
-\begin{answerlist}\item a velocidade inicial, em $\mathrm{m/s}$;\item a altura da bola ao cruzar a linha do gol, em $\mathrm{m}$.\end{answerlist}
+\begin{answerlist}
+  \item a velocidade inicial, em $\mathrm{m/s}$;
+  \item a altura da bola ao cruzar a linha do gol, em $\mathrm{m}$.
+\end{answerlist}
 \end{question}
-\begin{solution}Para $45^\circ$, $x_{ap}=v_0^2/(2g)$, logo $v_0=\Sexpr{fmt(v0)}$. Na linha do gol, $t=x/v_x$ e $y=v_yt-gt^2/2=\Sexpr{fmt(ygol)}$.\begin{answerlist}\item $\Sexpr{fmt(v0)}$\item $\Sexpr{fmt(ygol)}$\end{answerlist}\end{solution}
+\begin{solution}
+Para $45^\circ$, $x_{ap}=v_0^2/(2g)$, logo $v_0=\Sexpr{fmt(v0)}$. Na linha do gol, $t=x/v_x$ e $y=v_yt-gt^2/2=\Sexpr{fmt(ygol)}$.
+\begin{answerlist}
+  \item $\Sexpr{fmt(v0)}$
+  \item $\Sexpr{fmt(ygol)}$
+\end{answerlist}
+\end{solution}
 
 %% META-INFORMATION
 %% Fonte: UFU-MG/2010, parametrizada.

@@ -8,9 +8,18 @@ include_supplement("adv_q12_campo.jpg", dir="../../../../figuras")
 
 \begin{question}
 Uma bola é chutada a partir do chão com velocidade inicial $\Sexpr{fmt(v0,1)}\,\mathrm{m/s}$, formando $45^\circ$ com a horizontal. Ela é recebida imediatamente antes de voltar ao gramado. No instante do lançamento, o jogador que a recebe está a $16{,}0\,\mathrm{m}$ do ponto de queda estimado e corre perpendicularmente à trajetória horizontal da bola. Adote $g=10\,\mathrm{m/s^2}$. Determine:
-\begin{answerlist}\item a distância horizontal percorrida pela bola;\item a velocidade média do jogador, em $\mathrm{km/h}$.\end{answerlist}
+\begin{answerlist}
+  \item a distância horizontal percorrida pela bola;
+  \item a velocidade média do jogador, em $\mathrm{km/h}$.
+\end{answerlist}
 \end{question}
-\begin{solution}Para $45^\circ$, $A=v_0^2/g=\Sexpr{fmt(A)}\,\mathrm{m}$ e $T=\sqrt2v_0/g=\Sexpr{fmt(T)}\,\mathrm{s}$. Assim $v_m=16/T=\Sexpr{fmt(vm_kmh)}\,\mathrm{km/h}$.\begin{answerlist}\item $\Sexpr{fmt(A)}$\item $\Sexpr{fmt(vm_kmh)}$\end{answerlist}\end{solution}
+\begin{solution}
+Para $45^\circ$, $A=v_0^2/g=\Sexpr{fmt(A)}\,\mathrm{m}$ e $T=\sqrt2v_0/g=\Sexpr{fmt(T)}\,\mathrm{s}$. Assim $v_m=16/T=\Sexpr{fmt(vm_kmh)}\,\mathrm{km/h}$.
+\begin{answerlist}
+  \item $\Sexpr{fmt(A)}$
+  \item $\Sexpr{fmt(vm_kmh)}$
+\end{answerlist}
+\end{solution}
 
 %% META-INFORMATION
 %% Fonte: UNIFESP-SP/2010, parametrizada.

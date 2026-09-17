@@ -16,7 +16,8 @@ disc<-Bq^2-4*Aq*Cq
 roots<-c((-Bq+sqrt(disc))/(2*Aq),(-Bq-sqrt(disc))/(2*Aq))
 xline<-max(roots[roots>0])
 fmt<-function(x,d=2) formatC(x,format="f",digits=d,decimal.mark=",")
-base_path <- file.path("../../../../figuras", "LO26_Panosso26_goleiro_base.png")
+include_supplement("LO26_Panosso26_goleiro_base.png", dir="../../../../figuras")
+base_path <- "LO26_Panosso26_goleiro_base.png"
 render_overlay_png <- function(source, outfile, overlays) {
 img <- png::readPNG(source)
   h <- dim(img)[1]
@@ -58,11 +59,17 @@ render_overlay_png(base_path, img, list(
 Uma bola é chutada com $v_0=\Sexpr{v0}\,\mathrm{m/s}$, a $\Sexpr{theta}^\circ$ da horizontal. O goleiro está a $\Sexpr{xg}\,\mathrm{m}$ do ponto do chute e alcança até $3{,}0\,\mathrm{m}$ de altura. Se a bola passar por ele, cruza a linha do gol a $1{,}5\,\mathrm{m}$ do chão. Use $g=10\,\mathrm{m/s^2}$, $\sin\Sexpr{theta}^\circ=\Sexpr{fmt(sen,4)}$ e $\cos\Sexpr{theta}^\circ=\Sexpr{fmt(cos,4)}$.
 \begin{center}\includegraphics[width=9cm,keepaspectratio]{\Sexpr{img}}\end{center}
 Determine:
-\begin{answerlist}\item a altura da bola sobre o goleiro, em $\mathrm{m}$;\item a distância do chute até a linha do gol correspondente à passagem descendente por $1{,}5\,\mathrm{m}$, em $\mathrm{m}$.\end{answerlist}
+\begin{answerlist}
+  \item a altura da bola sobre o goleiro, em $\mathrm{m}$;
+  \item a distância do chute até a linha do gol correspondente à passagem descendente por $1{,}5\,\mathrm{m}$, em $\mathrm{m}$.
+\end{answerlist}
 \end{question}
 \begin{solution}
 Em $x=\Sexpr{xg}\,\mathrm{m}$, $y=\Sexpr{fmt(yg)}\,\mathrm{m}$, portanto a bola passa acima dos $3{,}0\,\mathrm{m}$ alcançados pelo goleiro. Pela equação da trajetória, impondo $y=1{,}5\,\mathrm{m}$ e escolhendo a raiz descendente, $x=\Sexpr{fmt(xline)}\,\mathrm{m}$.
-\begin{answerlist}\item $\Sexpr{fmt(yg)}$\item $\Sexpr{fmt(xline)}$\end{answerlist}
+\begin{answerlist}
+  \item $\Sexpr{fmt(yg)}$
+  \item $\Sexpr{fmt(xline)}$
+\end{answerlist}
 \end{solution}
 %% META-INFORMATION
 %% Fonte: Professor Panosso, exercício 26.

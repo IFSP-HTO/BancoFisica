@@ -7,9 +7,18 @@ fmt<-function(x,d=2) formatC(x,format="f",digits=d,decimal.mark=",")
 
 \begin{question}
 Numa cobrança de falta, a bola é lançada a $30^\circ$ com o gramado e atinge altura máxima de $\Sexpr{fmt(H,2)}\,\mathrm{m}$. Despreze a resistência do ar e adote $g=10\,\mathrm{m/s^2}$, $\sin30^\circ=0{,}50$ e $\cos30^\circ\approx0{,}87$. Determine:
-\begin{answerlist}\item módulo da velocidade inicial, em $\mathrm{m/s}$;\item alcance, em $\mathrm{m}$.\end{answerlist}
+\begin{answerlist}
+  \item módulo da velocidade inicial, em $\mathrm{m/s}$;
+  \item alcance, em $\mathrm{m}$.
+\end{answerlist}
 \end{question}
-\begin{solution}$v_0=\Sexpr{fmt(v0,1)}\,\mathrm{m/s}$ e $A=\Sexpr{fmt(A,2)}\,\mathrm{m}$.\begin{answerlist}\item $\Sexpr{fmt(v0,1)}$\item $\Sexpr{fmt(A,2)}$\end{answerlist}\end{solution}
+\begin{solution}
+$v_0=\Sexpr{fmt(v0,1)}\,\mathrm{m/s}$ e $A=\Sexpr{fmt(A,2)}\,\mathrm{m}$.
+\begin{answerlist}
+  \item $\Sexpr{fmt(v0,1)}$
+  \item $\Sexpr{fmt(A,2)}$
+\end{answerlist}
+\end{solution}
 
 %% META-INFORMATION
 %% Fonte: Professor Panosso, exercício 6, parametrizado.

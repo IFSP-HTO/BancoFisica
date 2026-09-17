@@ -6,7 +6,8 @@ theta<-configs$theta[i]; d0<-configs$d0[i]; sen<-configs$sen[i]; cos<-configs$co
 v0<-sample(c(20,25,30,35),1)
 T<-2*v0*sen/g; A<-v0*cos*T; vb<-(A-d0)/T
 fmt<-function(x,d=2) formatC(x,format="f",digits=d,decimal.mark=",")
-base_path <- file.path("../../../../figuras", "LO26_Panosso18_receptor_base.png")
+include_supplement("LO26_Panosso18_receptor_base.png", dir="../../../../figuras")
+base_path <- "LO26_Panosso18_receptor_base.png"
 render_overlay_png <- function(source, outfile, overlays) {
 img <- png::readPNG(source)
   h <- dim(img)[1]
@@ -48,11 +49,15 @@ render_overlay_png(base_path, img, list(
 No instante $t=0$, o atleta A lança uma bola com $v_0=\Sexpr{v0}\,\mathrm{m/s}$ a $\Sexpr{theta}^\circ$ da horizontal. O atleta B está $\Sexpr{d0}\,\mathrm{m}$ à frente de A e corre na mesma direção, com velocidade constante, para apanhar a bola quando ela volta à mesma altura do lançamento. Use $\sin\Sexpr{theta}^\circ=\Sexpr{fmt(sen,4)}$, $\cos\Sexpr{theta}^\circ=\Sexpr{fmt(cos,4)}$ e $g=10\,\mathrm{m/s^2}$.
 \begin{center}\includegraphics[width=9cm,keepaspectratio]{\Sexpr{img}}\end{center}
 Determine a velocidade de B.
-\begin{answerlist}\item velocidade, em $\mathrm{m/s}$.\end{answerlist}
+\begin{answerlist}
+  \item velocidade, em $\mathrm{m/s}$.
+\end{answerlist}
 \end{question}
 \begin{solution}
 $T=\Sexpr{fmt(T)}\,\mathrm{s}$ e a bola retorna ao nível de lançamento em $A=\Sexpr{fmt(A)}\,\mathrm{m}$. B percorre $A-d_0$ no mesmo tempo, então $v_B=\Sexpr{fmt(vb)}\,\mathrm{m/s}$.
-\begin{answerlist}\item $\Sexpr{fmt(vb)}$\end{answerlist}
+\begin{answerlist}
+  \item $\Sexpr{fmt(vb)}$
+\end{answerlist}
 \end{solution}
 %% META-INFORMATION
 %% Fonte: Professor Panosso, exercício 18.

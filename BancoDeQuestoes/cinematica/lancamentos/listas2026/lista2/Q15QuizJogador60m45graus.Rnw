@@ -7,7 +7,8 @@ v0<-sample(c(15,18,20),1)
 T<-2*v0*sen/g; A<-v0*cos*T; vp<-abs(D-A)/T
 opts<-c(vp,0.8*vp,1.2*vp,1.5*vp,2*vp)
 fmt<-function(x,d=2) formatC(x,format="f",digits=d,decimal.mark=",")
-base_path <- file.path("../../../../figuras", "LO26_Panosso25_jogador_base.png")
+include_supplement("LO26_Panosso25_jogador_base.png", dir="../../../../figuras")
+base_path <- "LO26_Panosso25_jogador_base.png"
 render_overlay_png <- function(source, outfile, overlays) {
 img <- png::readPNG(source)
   h <- dim(img)[1]
@@ -54,7 +55,13 @@ Uma bola é chutada com velocidade $\Sexpr{v0}\,\mathrm{m/s}$ a $\Sexpr{theta}^\
 \end{question}
 \begin{solution}
 $T=\Sexpr{fmt(T)}\,\mathrm{s}$ e $A=\Sexpr{fmt(A)}\,\mathrm{m}$. O jogador percorre $|D-A|=\Sexpr{fmt(abs(D-A))}\,\mathrm{m}$, logo $v=\Sexpr{fmt(vp)}\,\mathrm{m/s}$.
-\begin{answerlist}\item correta\item incorreta\item incorreta\item incorreta\item incorreta\end{answerlist}
+\begin{answerlist}
+  \item correta
+  \item incorreta
+  \item incorreta
+  \item incorreta
+  \item incorreta
+\end{answerlist}
 \end{solution}
 %% META-INFORMATION
 %% Fonte: Professor Panosso, exercício 25.
