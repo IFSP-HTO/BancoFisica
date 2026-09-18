@@ -27,11 +27,12 @@ img <- png::readPNG(source)
     rot <- if (is.null(o$rot)) 0 else o$rot
     fontsize <- if (is.null(o$fontsize)) 12 else o$fontsize
     just <- if (is.null(o$just)) c("left","top") else o$just
+    fontface <- if (is.null(o$fontface)) "plain" else o$fontface
     grid::grid.text(
       o$text,
       x=grid::unit(o$x/w,"npc"), y=grid::unit(1-o$y/h,"npc"),
       just=just, rot=rot,
-      gp=grid::gpar(col="black", fontsize=fontsize, fontfamily="serif")
+      gp=grid::gpar(col="black", fontsize=fontsize, fontfamily="serif", fontface=fontface)
     )
   }
   grDevices::dev.off()
@@ -39,7 +40,11 @@ img <- png::readPNG(source)
 }
 img <- "Q04_MACK.png"
 render_overlay_png(base_path, img, list(
-  list(x1=133,y1=34,x2=226,y2=72,text=paste0(fmt(k,2)," x"),x=145,y=41,fontsize=13)
+  list(
+    x1=165,y1=30,x2=228,y2=60,
+    text=paste0(fmt(k,2)," x"),
+    x=196,y=45,fontsize=13,just="centre",fontface="bold"
+  )
 ))
 @
 
