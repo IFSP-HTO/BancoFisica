@@ -238,15 +238,19 @@ for (i in seq_along(dirs)) {
   out <- output_for_subject(subject, out_dir, layout, seed)
   source_files <- list.files(source_dir, pattern = "\\.[Rr]nw$", ignore.case = TRUE)
 
-  ## Os XMLs de Ondas (pasta raiz e subassuntos) usam categorias por Q. Assim,
-  ## progressivas, cordas, interferencia etc. continuam em XMLs separados, e
-  ## dentro de cada um o Moodle recebe Q01, Q02, ... como subcategorias.
-  ondas_subject <- identical(subject, "ondas") || startsWith(subject, "ondas/")
-  category_root <- if (ondas_subject) basename(slug_path(subject)) else NULL
+## Os XMLs de Ondas, Oscilacoes e QtdMov/Impulso (pastas raiz e subassuntos)
+  ## usam categorias por Q. Assim, progressivas, cordas, interferencia, mhs,
+  ## pendulos, qtdmov-impulso etc. continuam em XMLs separados, e dentro de
+  ## cada um o Moodle recebe Q01, Q02, ... como subcategorias.
+  ondas_osc_subject <-
+    identical(subject, "ondas") || startsWith(subject, "ondas/") ||
+    identical(subject, "oscilacoes") || startsWith(subject, "oscilacoes/") ||
+    identical(subject, "qtdmov_impulso") || startsWith(subject, "qtdmov_impulso/")
+  category_root <- if (ondas_osc_subject) basename(slug_path(subject)) else NULL
 
   xml_files <- generate_subject(
     source_dir, out$dir, out$name, n_variants, seed, max_bytes,
-    question_categories = ondas_subject,
+    question_categories = ondas_osc_subject,
     category_root = category_root
   )
   n_questions <- sum(vapply(xml_files, function(f) validate_xml(f, max_bytes), integer(1)))
