@@ -1,0 +1,92 @@
+<<echo=FALSE, results=hide>>=
+casos <- data.frame(
+  m_g = c(100, 120, 80, 150),
+  v_desc = c(10, 12, 8, 14),
+  v_sub = c(9, 10, 6, 12),
+  dt = c(0.02, 0.02, 0.01, 0.03)
+)
+i <- sample(seq_len(nrow(casos)), 1)
+m_g <- casos$m_g[i]
+m <- m_g / 1000
+v_desc <- casos$v_desc[i]
+v_sub <- casos$v_sub[i]
+dt <- casos$dt[i]
+g <- 10
+h1 <- v_desc^2 / (2*g)
+h2 <- v_sub^2 / (2*g)
+I <- m * (v_desc + v_sub)
+F <- I / dt
+perda <- 100 * (1 - (v_sub^2 / v_desc^2))
+fmt <- function(x, d = 2) formatC(x, format = "f", digits = d, decimal.mark = ",")
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+(Adaptada do material \textit{Quantidade de Movimento}) Uma bola de massa $\Sexpr{m_g}\,\mathrm{g}$ é abandonada do repouso de uma altura de $\Sexpr{fmt(h1,2)}\,\mathrm{m}$ e atinge verticalmente o solo. Após a colisão, ela retorna e alcança uma altura máxima de $\Sexpr{fmt(h2,2)}\,\mathrm{m}$. O contato com o solo dura $\Sexpr{fmt(dt,2)}\,\mathrm{s}$. Adote $g=10\,\mathrm{m/s^2}$ e despreze o impulso do peso durante o curto intervalo da colisão.
+
+Determine:
+
+\begin{answerlist}
+  \item o módulo do impulso exercido pelo solo sobre a bola, em $\mathrm{N\,s}$;
+  \item o módulo da força média exercida pelo solo, em N;
+  \item a porcentagem da energia cinética dissipada na colisão.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Antes do impacto,
+\[
+v_1=\sqrt{2gh_1}
+=\Sexpr{fmt(v_desc,1)}\,\mathrm{m/s}.
+\]
+Depois do impacto,
+\[
+v_2=\sqrt{2gh_2}
+=\Sexpr{fmt(v_sub,1)}\,\mathrm{m/s}.
+\]
+
+Tomando o sentido para cima como positivo, a velocidade imediatamente antes da colisão é $-v_1$ e imediatamente depois é $+v_2$. Portanto,
+\[
+I=\Delta p=m(v_2-(-v_1))
+=m(v_1+v_2)
+=\Sexpr{fmt(I,2)}\,\mathrm{N\,s}.
+\]
+
+Desprezando o impulso do peso durante o contato,
+\[
+F_{\mathrm{m}}=\frac{I}{\Delta t}
+=\Sexpr{fmt(F,1)}\,\mathrm{N}.
+\]
+
+A fração da energia cinética perdida é
+\[
+\frac{K_i-K_f}{K_i}
+=1-\frac{v_2^2}{v_1^2}.
+\]
+Logo, a porcentagem dissipada é
+\[
+\Sexpr{fmt(perda,1)}\%.
+\]
+
+\begin{answerlist}
+  \item $\Sexpr{fmt(I,2)}\,\mathrm{N\,s}$
+  \item $\Sexpr{fmt(F,1)}\,\mathrm{N}$
+  \item $\Sexpr{fmt(perda,1)}\%$
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Quantidade de Movimento.pdf, exercício 6, adaptada e parametrizada.
+%% A hipótese de desprezar o impulso do peso durante o contato foi explicitada na adaptação.
+%% \extype{cloze}
+%% \exsolution{\Sexpr{I}|\Sexpr{F}|\Sexpr{perda}}
+%% \exclozetype{num|num|num}
+%% \extol{0.02|0.2|0.2}
+%% \exname{Q112ClozeBolaRebateImpulsoEnergia}
+%% \exsection{Mecanica; Impulso; Quantidade de movimento; Colisoes; Energia cinetica}
+%% \exusepackage[utf8]{inputenc}
