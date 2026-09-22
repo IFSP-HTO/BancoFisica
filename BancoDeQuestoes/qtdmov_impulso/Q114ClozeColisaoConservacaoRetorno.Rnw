@@ -1,0 +1,96 @@
+<<echo=FALSE, results=hide>>=
+casos <- data.frame(
+  m1  = c(1, 2, 1, 3),
+  m2  = c(3, 3, 2, 2),
+  v1i = c(10, 6, 8, 6),
+  v1f = c(-5, -3, -4, -2),
+  v2f = c(5, 6, 6, 12)
+)
+i <- sample(seq_len(nrow(casos)), 1)
+m1  <- casos$m1[i]
+m2  <- casos$m2[i]
+v1i <- casos$v1i[i]
+v1f <- casos$v1f[i]
+v2f <- casos$v2f[i]
+
+pi <- m1*v1i
+pf <- m1*v1f + m2*v2f
+
+fmt <- function(x, d = 1) formatC(x, format = "f", digits = d, decimal.mark = ",")
+include_supplement("Q114ColisaoRetorno.png")
+@
+
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+
+(Adaptada do material \textit{Colisões}) Duas bolas, 1 e 2, de massas
+$m_1=\Sexpr{fmt(m1,1)}\,\mathrm{kg}$ e
+$m_2=\Sexpr{fmt(m2,1)}\,\mathrm{kg}$, movem-se sobre uma mesma linha horizontal.
+Antes da colisão, a bola 2 está em repouso. Após o choque, a bola 1 retorna.
+
+\begin{center}
+\includegraphics[width=13.5cm,keepaspectratio]{Q114ColisaoRetorno.png}
+\end{center}
+
+Considere positivo o sentido para a direita. Os valores das velocidades são
+\[
+v_1=\Sexpr{fmt(v1i,1)}\,\mathrm{m/s},\qquad v_2=0,
+\]
+\[
+v'_1=\Sexpr{fmt(v1f,1)}\,\mathrm{m/s},\qquad
+v'_2=\Sexpr{fmt(v2f,1)}\,\mathrm{m/s}.
+\]
+
+Calcule:
+
+\begin{answerlist}
+  \item a quantidade de movimento total antes da colisão, em $\mathrm{kg\,m/s}$;
+  \item a quantidade de movimento total depois da colisão, em $\mathrm{kg\,m/s}$.
+\end{answerlist}
+
+A partir dos resultados, verifique se a quantidade de movimento total foi conservada.
+
+\end{question}
+
+\begin{solution}
+
+Antes da colisão,
+\[
+p_i=m_1v_1+m_2v_2
+=\Sexpr{fmt(m1,1)}\cdot\Sexpr{fmt(v1i,1)}
+=\Sexpr{fmt(pi,1)}\,\mathrm{kg\,m/s}.
+\]
+
+Depois da colisão, é essencial manter o sinal da velocidade da bola 1:
+\[
+p_f=m_1v'_1+m_2v'_2.
+\]
+Assim,
+\[
+p_f=
+\Sexpr{fmt(m1,1)}\cdot(\Sexpr{fmt(v1f,1)})
++\Sexpr{fmt(m2,1)}\cdot\Sexpr{fmt(v2f,1)}
+=\Sexpr{fmt(pf,1)}\,\mathrm{kg\,m/s}.
+\]
+
+Como $p_i=p_f$, a quantidade de movimento total foi conservada.
+
+\begin{answerlist}
+  \item $\Sexpr{fmt(pi,1)}\,\mathrm{kg\,m/s}$
+  \item $\Sexpr{fmt(pf,1)}\,\mathrm{kg\,m/s}$
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Colisoes.pdf, exercício 3, adaptada e parametrizada.
+%% Figura parametrizável preparada para o BancoFisica a partir do esquema da fonte.
+%% \extype{cloze}
+%% \exsolution{\Sexpr{pi}|\Sexpr{pf}}
+%% \exclozetype{num|num}
+%% \extol{0.01|0.01}
+%% \exname{Q114ClozeColisaoConservacaoRetorno}
+%% \exsection{Mecanica; Quantidade de movimento; Conservacao; Colisoes; Vetores}
+%% \exusepackage[utf8]{inputenc}
