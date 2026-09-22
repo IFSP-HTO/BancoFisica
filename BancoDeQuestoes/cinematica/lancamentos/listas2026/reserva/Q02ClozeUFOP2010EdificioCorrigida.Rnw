@@ -8,71 +8,46 @@ configs <- data.frame(
   cos=c(0.7071,0.8660,0.8000,0.6000,0.8660,0.8000)
 )
 i <- sample(seq_len(nrow(configs)),1)
-v0<-configs$v0[i]; H<-configs$H[i]; theta<-configs$theta[i]
-sen<-configs$sen[i]; cos<-configs$cos[i]
-vy0<-v0*sen; vx<-v0*cos
+v0 <- configs$v0[i]
+H <- configs$H[i]
+theta <- configs$theta[i]
+sen <- configs$sen[i]
+cos <- configs$cos[i]
+vy0 <- v0*sen
+vx <- v0*cos
 t <- (vy0 + sqrt(vy0^2 + 2*g*H))/g
-A <- vx*t
+xR <- vx*t
 fmt <- function(x,d=2) formatC(x,format="f",digits=d,decimal.mark=",")
-include_supplement("LO26_UFOP2010_edificio_base.png", dir="../../../../figuras")
-base_path <- "LO26_UFOP2010_edificio_base.png"
-render_overlay_png <- function(source, outfile, overlays) {
-img <- png::readPNG(source)
-  h <- dim(img)[1]
-  w <- dim(img)[2]
-  grDevices::png(outfile, width=w, height=h, bg="white")
-  grid::grid.newpage()
-  grid::grid.raster(img, width=grid::unit(1,"npc"), height=grid::unit(1,"npc"), interpolate=FALSE)
-  for (o in overlays) {
-    grid::grid.rect(
-      x=grid::unit((o$x1+o$x2)/(2*w),"npc"),
-      y=grid::unit(1-(o$y1+o$y2)/(2*h),"npc"),
-      width=grid::unit((o$x2-o$x1)/w,"npc"),
-      height=grid::unit((o$y2-o$y1)/h,"npc"),
-      gp=grid::gpar(fill="white", col=NA)
-    )
-    rot <- if (is.null(o$rot)) 0 else o$rot
-    fontsize <- if (is.null(o$fontsize)) 12 else o$fontsize
-    just <- if (is.null(o$just)) c("left","top") else o$just
-    grid::grid.text(
-      o$text,
-      x=grid::unit(o$x/w,"npc"), y=grid::unit(1-o$y/h,"npc"),
-      just=just, rot=rot,
-      gp=grid::gpar(col="black", fontsize=fontsize, fontfamily="serif")
-    )
-  }
-  grDevices::dev.off()
-  invisible(outfile)
-}
-img <- "Q02_UFOP.png"
-render_overlay_png(base_path, img, list(
-  list(x1=38,y1=25,x2=177,y2=72,text=paste0("v0 = ",v0," m/s"),x=54,y=34,fontsize=13),
-  list(x1=132,y1=70,x2=274,y2=125,text=paste0(theta,"°"),x=164,y=82,fontsize=13),
-  list(x1=10,y1=120,x2=62,y2=244,text=paste0(H," m"),x=34,y=184,rot=90,just="centre",fontsize=13)
-))
+include_supplement("LO26_UFOP2010_edificio_simbolica.png", dir="../../../../figuras")
+img <- "LO26_UFOP2010_edificio_simbolica.png"
 @
 
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 \begin{question}
-Uma pedra é lançada do alto de um edifício de $\Sexpr{H}\,\mathrm{m}$ com velocidade inicial $\Sexpr{v0}\,\mathrm{m/s}$, formando $\Sexpr{theta}^\circ$ com a horizontal. Adote $g=10\,\mathrm{m/s^2}$, $\sin\Sexpr{theta}^\circ=\Sexpr{fmt(sen,4)}$ e $\cos\Sexpr{theta}^\circ=\Sexpr{fmt(cos,4)}$. Determine a posição horizontal em que a pedra atinge o solo.
+Uma pedra é lançada do alto de um edifício de $H=\Sexpr{H}\,\mathrm{m}$ com velocidade inicial $v_0=\Sexpr{v0}\,\mathrm{m/s}$, formando $\Sexpr{theta}^\circ$ com a horizontal. Adote $g=10\,\mathrm{m/s^2}$, $\sin\Sexpr{theta}^\circ=\Sexpr{fmt(sen,4)}$ e $\cos\Sexpr{theta}^\circ=\Sexpr{fmt(cos,4)}$. Determine o alcance horizontal $x_R$ até a pedra atingir o solo.
 \begin{center}\includegraphics[width=7cm,keepaspectratio]{\Sexpr{img}}\end{center}
 \begin{answerlist}
-  \item alcance horizontal a partir da vertical do lançamento, em $\mathrm{m}$.
+  \item $x_R$, em $\mathrm{m}$.
 \end{answerlist}
 \end{question}
+
 \begin{solution}
-Na vertical, $0=H+v_{0y}t-\frac12gt^2$, com $v_{0y}=\Sexpr{fmt(vy0)}\,\mathrm{m/s}$. A raiz positiva fornece $t=\Sexpr{fmt(t)}\,\mathrm{s}$. Como $v_x=\Sexpr{fmt(vx)}\,\mathrm{m/s}$, $A=v_xt=\Sexpr{fmt(A)}\,\mathrm{m}$.
+Na vertical, $0=H+v_{0y}t-\frac12gt^2$, com $v_{0y}=\Sexpr{fmt(vy0)}\,\mathrm{m/s}$. A raiz positiva fornece $t=\Sexpr{fmt(t)}\,\mathrm{s}$. Como $v_x=\Sexpr{fmt(vx)}\,\mathrm{m/s}$,
+\[
+x_R=v_xt=\Sexpr{fmt(xR)}\,\mathrm{m}.
+\]
 \begin{answerlist}
-  \item $\Sexpr{fmt(A)}$
+  \item $\Sexpr{fmt(xR)}$
 \end{answerlist}
 \end{solution}
+
 %% META-INFORMATION
 %% Fonte: UFOP-MG 2010, reproduzida em "Balística - Avançada" e na lista do Colégio Equipe.
 %% O valor original incorreto cos30=0,8 foi corrigido; as variantes usam trigonometria consistente.
-%% Figura: recorte direto do PDF original; apenas os rótulos numéricos são substituídos programaticamente em cada variante.
+%% Figura: versão simbólica revisada pelo autor; v0, theta, H e x_R identificam os parâmetros da questão.
 %% \extype{cloze}
-%% \exsolution{\Sexpr{A}}
+%% \exsolution{\Sexpr{xR}}
 %% \exclozetype{num}
 %% \extol{0.5}
 %% \exname{LO26RQ02}

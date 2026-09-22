@@ -8,55 +8,29 @@ configs <- data.frame(
   cos=c(0.91,0.91,0.866,0.866,0.80,0.80)
 )
 i <- sample(seq_len(nrow(configs)),1)
-theta<-configs$theta[i]; xg<-configs$xg[i]; v0<-configs$v0[i]; sen<-configs$sen[i]; cos<-configs$cos[i]
-t<-xg/(v0*cos); yg<-v0*sen*t-0.5*g*t^2
+theta <- configs$theta[i]
+xg <- configs$xg[i]
+v0 <- configs$v0[i]
+sen <- configs$sen[i]
+cos <- configs$cos[i]
+t <- xg/(v0*cos)
+yg <- v0*sen*t - 0.5*g*t^2
 yline <- 1.5
-Aq<- -g/(2*(v0*cos)^2); Bq<-sen/cos; Cq<- -yline
-disc<-Bq^2-4*Aq*Cq
-roots<-c((-Bq+sqrt(disc))/(2*Aq),(-Bq-sqrt(disc))/(2*Aq))
-xline<-max(roots[roots>0])
-fmt<-function(x,d=2) formatC(x,format="f",digits=d,decimal.mark=",")
-include_supplement("LO26_Panosso26_goleiro_base.png", dir="../../../../figuras")
-base_path <- "LO26_Panosso26_goleiro_base.png"
-render_overlay_png <- function(source, outfile, overlays) {
-img <- png::readPNG(source)
-  h <- dim(img)[1]
-  w <- dim(img)[2]
-  grDevices::png(outfile, width=w, height=h, bg="white")
-  grid::grid.newpage()
-  grid::grid.raster(img, width=grid::unit(1,"npc"), height=grid::unit(1,"npc"), interpolate=FALSE)
-  for (o in overlays) {
-    grid::grid.rect(
-      x=grid::unit((o$x1+o$x2)/(2*w),"npc"),
-      y=grid::unit(1-(o$y1+o$y2)/(2*h),"npc"),
-      width=grid::unit((o$x2-o$x1)/w,"npc"),
-      height=grid::unit((o$y2-o$y1)/h,"npc"),
-      gp=grid::gpar(fill="white", col=NA)
-    )
-    rot <- if (is.null(o$rot)) 0 else o$rot
-    fontsize <- if (is.null(o$fontsize)) 12 else o$fontsize
-    just <- if (is.null(o$just)) c("left","top") else o$just
-    grid::grid.text(
-      o$text,
-      x=grid::unit(o$x/w,"npc"), y=grid::unit(1-o$y/h,"npc"),
-      just=just, rot=rot,
-      gp=grid::gpar(col="black", fontsize=fontsize, fontfamily="serif")
-    )
-  }
-  grDevices::dev.off()
-  invisible(outfile)
-}
-img <- "Q08_Goleiro.png"
-render_overlay_png(base_path, img, list(
-  list(x1=150,y1=42,x2=225,y2=90,text=paste0(theta,"°"),x=164,y=51,fontsize=13),
-  list(x1=207,y1=103,x2=315,y2=142,text=paste0(xg," m"),x=235,y=111,fontsize=13)
-))
+Aq <- -g/(2*(v0*cos)^2)
+Bq <- sen/cos
+Cq <- -yline
+disc <- Bq^2 - 4*Aq*Cq
+roots <- c((-Bq+sqrt(disc))/(2*Aq), (-Bq-sqrt(disc))/(2*Aq))
+xline <- max(roots[roots>0])
+fmt <- function(x,d=2) formatC(x,format="f",digits=d,decimal.mark=",")
+include_supplement("LO26_Panosso26_goleiro_simbolica.png", dir="../../../../figuras")
+img <- "LO26_Panosso26_goleiro_simbolica.png"
 @
 
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 \begin{question}
-Uma bola é chutada com $v_0=\Sexpr{v0}\,\mathrm{m/s}$, a $\Sexpr{theta}^\circ$ da horizontal. O goleiro está a $\Sexpr{xg}\,\mathrm{m}$ do ponto do chute e alcança até $3{,}0\,\mathrm{m}$ de altura. Se a bola passar por ele, cruza a linha do gol a $1{,}5\,\mathrm{m}$ do chão. Use $g=10\,\mathrm{m/s^2}$, $\sin\Sexpr{theta}^\circ=\Sexpr{fmt(sen,4)}$ e $\cos\Sexpr{theta}^\circ=\Sexpr{fmt(cos,4)}$.
+Uma bola é chutada com $v_0=\Sexpr{v0}\,\mathrm{m/s}$, a $\Sexpr{theta}^\circ$ da horizontal. O goleiro está a uma distância $D=\Sexpr{xg}\,\mathrm{m}$ do ponto do chute e alcança até $3{,}0\,\mathrm{m}$ de altura. Se a bola passar por ele, cruza a linha do gol a $1{,}5\,\mathrm{m}$ do chão. Use $g=10\,\mathrm{m/s^2}$, $\sin\Sexpr{theta}^\circ=\Sexpr{fmt(sen,4)}$ e $\cos\Sexpr{theta}^\circ=\Sexpr{fmt(cos,4)}$.
 \begin{center}\includegraphics[width=9cm,keepaspectratio]{\Sexpr{img}}\end{center}
 Determine:
 \begin{answerlist}
@@ -64,16 +38,18 @@ Determine:
   \item a distância do chute até a linha do gol correspondente à passagem descendente por $1{,}5\,\mathrm{m}$, em $\mathrm{m}$.
 \end{answerlist}
 \end{question}
+
 \begin{solution}
-Em $x=\Sexpr{xg}\,\mathrm{m}$, $y=\Sexpr{fmt(yg)}\,\mathrm{m}$, portanto a bola passa acima dos $3{,}0\,\mathrm{m}$ alcançados pelo goleiro. Pela equação da trajetória, impondo $y=1{,}5\,\mathrm{m}$ e escolhendo a raiz descendente, $x=\Sexpr{fmt(xline)}\,\mathrm{m}$.
+Em $x=D=\Sexpr{xg}\,\mathrm{m}$, $y=\Sexpr{fmt(yg)}\,\mathrm{m}$, portanto a bola passa acima dos $3{,}0\,\mathrm{m}$ alcançados pelo goleiro. Pela equação da trajetória, impondo $y=1{,}5\,\mathrm{m}$ e escolhendo a raiz descendente, $x=\Sexpr{fmt(xline)}\,\mathrm{m}$.
 \begin{answerlist}
   \item $\Sexpr{fmt(yg)}$
   \item $\Sexpr{fmt(xline)}$
 \end{answerlist}
 \end{solution}
+
 %% META-INFORMATION
 %% Fonte: Professor Panosso, exercício 26.
-%% Figura: recorte direto do PDF original; apenas o ângulo e a distância são substituídos programaticamente em cada variante.
+%% Figura: versão simbólica revisada pelo autor; theta e D representam os parâmetros numéricos informados no enunciado.
 %% \extype{cloze}
 %% \exsolution{\Sexpr{yg}|\Sexpr{xline}}
 %% \exclozetype{num|num}
