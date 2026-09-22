@@ -1,0 +1,53 @@
+<<echo=FALSE, results=hide>>=
+casos <- data.frame(
+  m = c(2, 4, 5, 8, 10),
+  v = c(10, 8, 6, 5, 4)
+)
+i <- sample(seq_len(nrow(casos)), 1)
+m <- casos$m[i]
+v <- casos$v[i]
+p <- m * v
+K <- 0.5 * m * v^2
+fmt <- function(x, d = 1) formatC(x, format = "f", digits = d, decimal.mark = ",")
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+(FATEC, adaptada e parametrizada) Em certo instante, um corpo em movimento possui energia cinética igual a $\Sexpr{fmt(K,1)}\,\mathrm{J}$ e quantidade de movimento de módulo $\Sexpr{fmt(p,1)}\,\mathrm{kg\,m/s}$.
+
+Determine a massa do corpo, em kg.
+
+\end{question}
+
+\begin{solution}
+
+Usando
+\[
+K=\frac{1}{2}mv^2
+\qquad\text{e}\qquad
+p=mv,
+\]
+podemos eliminar a velocidade. Como $v=p/m$,
+\[
+K=\frac{1}{2}m\left(\frac{p}{m}\right)^2
+=\frac{p^2}{2m}.
+\]
+Logo,
+\[
+m=\frac{p^2}{2K}
+=\frac{(\Sexpr{fmt(p,1)})^2}{2\cdot \Sexpr{fmt(K,1)}}
+=\Sexpr{fmt(m,1)}\,\mathrm{kg}.
+\]
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Quantidade de Movimento.pdf, exercício 1 (FATEC), adaptada e parametrizada.
+%% \extype{num}
+%% \exsolution{\Sexpr{m}}
+%% \exname{Q102ClozeFATECEnergiaMomento}
+%% \extol{0.01}
+%% \exsection{Mecanica; Quantidade de movimento; Energia cinetica}
+%% \exusepackage[utf8]{inputenc}
