@@ -1,0 +1,51 @@
+<<echo=FALSE, results=hide>>=
+casos <- data.frame(
+  m = c(1000, 800, 1200, 1500),
+  v = c(1.0, 1.5, 2.0, 2.0),
+  F = c(200, 200, 300, 500)
+)
+i <- sample(seq_len(nrow(casos)), 1)
+m <- casos$m[i]
+v <- casos$v[i]
+F <- casos$F[i]
+t <- m * v / F
+fmt <- function(x, d = 1) formatC(x, format = "f", digits = d, decimal.mark = ",")
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+(UNESP, adaptada e parametrizada) Uma nave espacial de massa $\Sexpr{fmt(m,0)}\,\mathrm{kg}$ move-se livre de forças externas relevantes com velocidade constante de $\Sexpr{fmt(v,1)}\,\mathrm{m/s}$. Para pará-la, um motor auxiliar passa a exercer uma força constante de módulo $\Sexpr{fmt(F,0)}\,\mathrm{N}$, na mesma direção e em sentido contrário ao movimento.
+
+Por quanto tempo, em segundos, o motor deve permanecer acionado?
+
+\end{question}
+
+\begin{solution}
+
+O impulso da força resultante é igual à variação da quantidade de movimento:
+\[
+F\Delta t=|\Delta p|.
+\]
+Como a nave é levada do módulo de velocidade $v$ ao repouso,
+\[
+|\Delta p|=mv.
+\]
+Assim,
+\[
+\Delta t=\frac{mv}{F}
+=\frac{\Sexpr{fmt(m,0)}\cdot\Sexpr{fmt(v,1)}}{\Sexpr{fmt(F,0)}}
+=\Sexpr{fmt(t,1)}\,\mathrm{s}.
+\]
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Quantidade de Movimento.pdf, exercício 4 (UNESP), adaptada e parametrizada.
+%% \extype{num}
+%% \exsolution{\Sexpr{t}}
+%% \exname{Q105ClozeUNESPNaveImpulso}
+%% \extol{0.01}
+%% \exsection{Mecanica; Impulso; Quantidade de movimento}
+%% \exusepackage[utf8]{inputenc}
