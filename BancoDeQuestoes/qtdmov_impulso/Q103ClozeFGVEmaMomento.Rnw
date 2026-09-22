@@ -1,0 +1,55 @@
+<<echo=FALSE, results=hide>>=
+casos <- data.frame(
+  m = c(36, 40, 45, 50),
+  v_kmh = c(60, 54, 72, 36)
+)
+i <- sample(seq_len(nrow(casos)), 1)
+m <- casos$m[i]
+v_kmh <- casos$v_kmh[i]
+g <- 10
+P <- m * g
+v <- v_kmh / 3.6
+p <- m * v
+fmt <- function(x, d = 1) formatC(x, format = "f", digits = d, decimal.mark = ",")
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+(FGV, adaptada e parametrizada) Uma ema tem peso aproximado de $\Sexpr{fmt(P,0)}\,\mathrm{N}$ e consegue desenvolver velocidade de $\Sexpr{fmt(v_kmh,0)}\,\mathrm{km/h}$. Adote $g=10\,\mathrm{m/s^2}$.
+
+Determine o módulo de sua quantidade de movimento, em $\mathrm{kg\,m/s}$.
+
+\end{question}
+
+\begin{solution}
+
+A massa é obtida a partir do peso:
+\[
+m=\frac{P}{g}
+=\frac{\Sexpr{fmt(P,0)}}{10}
+=\Sexpr{fmt(m,1)}\,\mathrm{kg}.
+\]
+A velocidade em unidades do SI vale
+\[
+v=\frac{\Sexpr{fmt(v_kmh,0)}}{3{,}6}
+=\Sexpr{fmt(v,1)}\,\mathrm{m/s}.
+\]
+Portanto,
+\[
+p=mv
+=\Sexpr{fmt(m,1)}\cdot \Sexpr{fmt(v,1)}
+=\Sexpr{fmt(p,1)}\,\mathrm{kg\,m/s}.
+\]
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Quantidade de Movimento.pdf, exercício 2 (FGV), adaptada e parametrizada.
+%% \extype{num}
+%% \exsolution{\Sexpr{p}}
+%% \exname{Q103ClozeFGVEmaMomento}
+%% \extol{0.1}
+%% \exsection{Mecanica; Quantidade de movimento}
+%% \exusepackage[utf8]{inputenc}
