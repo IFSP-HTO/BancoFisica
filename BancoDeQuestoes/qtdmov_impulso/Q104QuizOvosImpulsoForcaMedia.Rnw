@@ -1,0 +1,52 @@
+<<echo=FALSE, results=hide>>=
+alternativas <- c(
+  "os dois ovos sofrem variações de quantidade de movimento de mesmo módulo, mas o tapete aumenta o tempo de parada e reduz a força média.",
+  "o ovo que cai no piso sofre maior variação de quantidade de movimento, pois ele se quebra.",
+  "o ovo que cai no tapete sofre maior impulso, pois permanece mais tempo em contato com a superfície.",
+  "o tapete reduz a força média porque diminui o intervalo de tempo necessário para parar o ovo.",
+  "os dois ovos sofrem a mesma força média, pois foram abandonados da mesma altura."
+)
+ordem <- sample(seq_along(alternativas))
+questions <- alternativas[ordem]
+solutions <- ordem == 1
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+(Adaptada do material \textit{Quantidade de Movimento}) Dois ovos de mesma massa são abandonados da mesma altura. Um atinge um piso rígido e se quebra; o outro atinge um tapete espesso e não se quebra. Considere que os dois chegam ao impacto com a mesma velocidade e que, após o impacto, ficam em repouso.
+
+A explicação física correta é que
+
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(questions)
+@
+
+\end{question}
+
+\begin{solution}
+
+Nos dois casos, o estado inicial imediatamente antes do impacto é o mesmo e o estado final é o repouso. Portanto, os módulos das variações da quantidade de movimento são iguais:
+\[
+|\Delta p|=m|v_f-v_i|.
+\]
+Pelo teorema do impulso,
+\[
+I=\Delta p.
+\]
+O tapete não precisa diminuir o impulso; ele aumenta o intervalo de tempo em que a velocidade é reduzida. Como
+\[
+F_{\mathrm{m}}=\frac{|\Delta p|}{\Delta t},
+\]
+um tempo de parada maior corresponde a uma força média menor, reduzindo a chance de o ovo se quebrar.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Quantidade de Movimento.pdf, exercício 3, adaptada.
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q104QuizOvosImpulsoForcaMedia}
+%% \exsection{Mecanica; Impulso; Quantidade de movimento; Forca media}
+%% \exusepackage[utf8]{inputenc}
