@@ -54,3 +54,17 @@ Quando for útil para evitar confusão entre arquivos intermediários, registre 
 1. Antes de iniciar um novo lote, confirme que o branch parte do `master` atual ou compare explicitamente a divergência e atualize-o antes de acumular novas alterações.
 2. Mantenha PRs pequenos e temáticos quando isso facilitar revisão, diagnóstico e rollback.
 3. Não considere um PR finalizado apenas porque está `mergeable`; aguarde os checks exigidos e confirme o merge efetivo.
+
+
+## Provas impressas e OMR
+
+Quando o usuário pedir uma prova "no padrão BancoFisica", uma prova semelhante às avaliações impressas do IFSP, ou múltiplas versões para impressão:
+
+1. Leia primeiro `provas/README.md` e `provas/profiles/ifsp-omr.yaml`.
+2. Reutilize `provas/templates/ifsp-omr.tex`; não recrie o layout do zero.
+3. Por padrão, use 10 questões A--E, 5 fáceis + 5 médias e 10 versões equivalentes, salvo instrução diferente do usuário.
+4. O QR code identifica somente a versão; nunca codifique o gabarito nele.
+5. Mantenha a versão discreta para o aluno e gere gabarito/manifesto machine-readable separado.
+6. Antes de entregar PDFs, renderize e inspecione visualmente versões representativas e extremas; verifique páginas vazias, overflow, fórmulas fora de caixas, figuras/rótulos desalinhados e questões divididas de forma ruim.
+7. Para provas paralelas, compare `BF-Family`/habilidades e evite repetir o mesmo enunciado ou família quando o usuário pedir questões diferentes.
+8. Quando houver resultados reais, preserve dificuldade prevista e registre separadamente a dificuldade empírica em `analytics/item_history.csv`.
