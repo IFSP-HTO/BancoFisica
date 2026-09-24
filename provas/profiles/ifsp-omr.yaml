@@ -1,55 +1,59 @@
-{
-  "profile": "ifsp-omr",
-  "schema_version": 1,
-  "questions": 10,
-  "alternatives": [
-    "A",
-    "B",
-    "C",
-    "D",
-    "E"
-  ],
-  "versions_default": 10,
-  "difficulty_target": {
-    "easy": 5,
-    "medium": 5
-  },
-  "shuffle_alternatives": true,
-  "student_version_visible": false,
-  "qr_contains_answer_key": false,
-  "layout": {
-    "paper": "A4",
-    "columns": 2,
-    "answer_sheet_page": 1,
-    "target_pages": 4,
-    "full_header_only_on_page_1": true,
-    "keep_question_together_when_possible": true
-  },
-  "omr": {
-    "choices": [
-      "A",
-      "B",
-      "C",
-      "D",
-      "E"
-    ],
-    "corner_markers": true,
-    "qr_version_only": true,
-    "flag_blank": true,
-    "flag_multiple": true
-  },
-  "quality_gate": {
-    "require_five_choices": true,
-    "require_answer_key": true,
-    "render_and_inspect": true,
-    "check_page_count": true,
-    "check_overflow": true,
-    "check_figures": true
-  },
-  "privacy": {
-    "repository_student_data": false,
-    "aggregate_only": true,
-    "private_workdir": "build/private",
-    "qr_may_contain_student_identity": false
-  }
-}
+name: ifsp-omr
+schema_version: 1
+questions: 10
+alternatives: [A, B, C, D, E]
+versions_default: 10
+difficulty_target: {easy: 5, medium: 5}
+shuffle_alternatives: true
+student_version_visible: false
+qr_contains_answer_key: false
+
+layout:
+  paper: A4
+  columns: 2
+  answer_sheet_page: 1
+  target_pages: 4
+  full_header_only_on_page_1: true
+  page_plan:
+    - questions: [1, 2]
+      column_breaks_before: [2]
+    - questions: [3, 4, 5, 6, 7]
+      column_breaks_before: [6]
+    - questions: [8, 9, 10]
+      column_breaks_before: [9]
+
+omr:
+  choices: [A, B, C, D, E]
+  corner_markers: true
+  qr_version_only: true
+  marker_size_cm: 0.55
+  page_width_cm: 21.0
+  page_height_cm: 29.7
+  page_markers_cm:
+    top_left: [1.425, 1.425]
+    top_right: [19.575, 1.425]
+    bottom_left: [1.425, 28.275]
+    bottom_right: [19.575, 28.275]
+  card:
+    x_cm: 2.20
+    y_cm: 10.10
+    width_cm: 16.60
+    height_cm: 10.30
+  bubbles_cm:
+    left_x: [4.35, 5.13, 5.91, 6.69, 7.47]
+    right_x: [11.70, 12.48, 13.26, 14.04, 14.82]
+    y: [12.75, 13.98, 15.21, 16.44, 17.67]
+  bubble_radius_cm: 0.24
+  fill_threshold: 0.28
+  ambiguity_margin: 0.08
+  flag_blank: true
+  flag_multiple: true
+
+quality_gate:
+  require_five_choices: true
+  require_answer_key: true
+  render_and_inspect: true
+  check_page_count: true
+  check_overflow: true
+  check_figures: true
+  representative_versions: [1, 6, 10]
