@@ -1,0 +1,34 @@
+{
+  "profile": "ifsp-omr",
+  "schema_version": 1,
+  "questions": 10,
+  "alternatives": ["A", "B", "C", "D", "E"],
+  "versions_default": 10,
+  "difficulty_target": {"easy": 5, "medium": 5},
+  "shuffle_alternatives": true,
+  "student_version_visible": false,
+  "qr_contains_answer_key": false,
+  "layout": {
+    "paper": "A4",
+    "columns": 2,
+    "answer_sheet_page": 1,
+    "target_pages": 4,
+    "full_header_only_on_page_1": true,
+    "keep_question_together_when_possible": true
+  },
+  "omr": {
+    "choices": ["A", "B", "C", "D", "E"],
+    "corner_markers": true,
+    "qr_version_only": true,
+    "flag_blank": true,
+    "flag_multiple": true
+  },
+  "quality_gate": {
+    "require_five_choices": true,
+    "require_answer_key": true,
+    "render_and_inspect": true,
+    "check_page_count": true,
+    "check_overflow": true,
+    "check_figures": true
+  }
+}
