@@ -1,1 +1,1 @@
-date,exam_id,application_id,question_id,family,predicted_difficulty,n,correct_rate,aggregate_notes
+date,exam_id,cohort,question_id,difficulty_expected,skills,n_students,n_correct,p_correct,notes
