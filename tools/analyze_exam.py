@@ -1,14 +1,35 @@
 #!/usr/bin/env python3
-"""Summarize corrected BancoFisica exams and append item statistics."""
+"""Summarize corrected BancoFisica exams without persisting student-level data.
+
+Privacy rule: the responses CSV is a local/ephemeral input. Never commit it.
+If it lives inside the BancoFisica checkout, it must be under build/, which is
+gitignored. This script prints only aggregate statistics.
+"""
 from __future__ import annotations
 import argparse, csv, statistics
 from pathlib import Path
 
+ROOT = Path(__file__).resolve().parents[1]
+
+def assert_private_input(path: Path) -> None:
+    resolved = path.resolve()
+    try:
+        rel = resolved.relative_to(ROOT)
+    except ValueError:
+        return
+    if not rel.parts or rel.parts[0] != "build":
+        raise SystemExit(
+            "Privacy guard: student-level response files must not live in a "
+            "versioned repository path. Move the file outside the checkout or "
+            "under build/private/."
+        )
+
 def main():
     ap=argparse.ArgumentParser()
-    ap.add_argument("responses", type=Path, help="CSV with public_code and Q1..Q10")
+    ap.add_argument("responses", type=Path, help="LOCAL CSV with public_code and Q1..Q10; never commit")
     ap.add_argument("manifest", type=Path, help="gabarito_mestre.csv")
     args=ap.parse_args()
+    assert_private_input(args.responses)
     with args.manifest.open(encoding="utf-8") as f:
         keys={r["public_code"]:[r[f"Q{i}"] for i in range(1,11)] for r in csv.DictReader(f)}
     rows=list(csv.DictReader(args.responses.open(encoding="utf-8")))
