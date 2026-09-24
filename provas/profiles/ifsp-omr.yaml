@@ -2,9 +2,18 @@
   "profile": "ifsp-omr",
   "schema_version": 1,
   "questions": 10,
-  "alternatives": ["A", "B", "C", "D", "E"],
+  "alternatives": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E"
+  ],
   "versions_default": 10,
-  "difficulty_target": {"easy": 5, "medium": 5},
+  "difficulty_target": {
+    "easy": 5,
+    "medium": 5
+  },
   "shuffle_alternatives": true,
   "student_version_visible": false,
   "qr_contains_answer_key": false,
@@ -17,7 +26,13 @@
     "keep_question_together_when_possible": true
   },
   "omr": {
-    "choices": ["A", "B", "C", "D", "E"],
+    "choices": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
     "corner_markers": true,
     "qr_version_only": true,
     "flag_blank": true,
@@ -30,5 +45,11 @@
     "check_page_count": true,
     "check_overflow": true,
     "check_figures": true
+  },
+  "privacy": {
+    "repository_student_data": false,
+    "aggregate_only": true,
+    "private_workdir": "build/private",
+    "qr_may_contain_student_identity": false
   }
 }
