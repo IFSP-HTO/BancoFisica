@@ -1,72 +1,139 @@
-# Provas impressas e OMR
+# Provas impressas e OMR no BancoFisica
 
-Esta pasta define o padrão oficial de provas impressas do BancoFisica. Quando um usuário pedir uma prova **"no padrão BancoFisica"**, agentes e scripts devem reutilizar estes arquivos em vez de recriar o layout.
+Esta pasta define o padrão oficial para provas impressas geradas a partir do BancoFisica. O objetivo é tornar reprodutível o fluxo completo:
 
-## Padrão IFSP-OMR
+`BancoDeQuestoes -> seleção/adaptação -> 10 versões -> PDF -> folha OMR -> escaneamento -> correção -> análise de itens`.
 
-O perfil `profiles/ifsp-omr.yaml` registra as decisões consolidadas nas aplicações de 2026:
+O perfil de referência é `provas/profiles/ifsp-omr.yaml` e o template correspondente é `provas/templates/ifsp-omr.tex`.
 
-- 10 questões de múltipla escolha, sempre A--E;
+## Princípios do formato IFSP-OMR
+
+- primeira página exclusiva para identificação e cartão-resposta;
+- 10 questões objetivas, sempre com alternativas A--E;
 - por padrão, 5 fáceis + 5 médias;
-- 10 versões equivalentes, com parâmetros e alternativas embaralhados;
-- folha 1 exclusiva para identificação e cartão-resposta;
-- QR code contém **somente o identificador interno da versão**, nunca o gabarito;
-- versão não deve aparecer como "A", "B", "1", "2" etc. para o aluno;
-- páginas de questões em duas colunas;
-- cabeçalho discreto depois da folha de respostas;
-- alvo de 4 páginas, sem páginas quase vazias;
-- figuras devem caber na coluna e ser verificadas visualmente;
-- gabarito-mestre e manifesto machine-readable são obrigatórios.
+- 10 versões parametrizadas/equivalentes;
+- alternativas embaralhadas por versão;
+- versão não é exibida como "A/B/C" ao estudante;
+- QR code contém somente `exam_id` + código opaco da versão, nunca o gabarito;
+- quatro marcadores pretos externos permitem correção de perspectiva;
+- cabeçalho das páginas de questões é neutro, sem revelar a versão;
+- duas colunas e plano explícito de quebras para evitar páginas quase vazias;
+- toda prova deve passar por preflight visual antes de ser usada.
 
-## Fluxo recomendado
+## Instalação
 
-1. Selecionar questões do Banco por conteúdo, nível e habilidades.
-2. Evitar repetir a mesma família de questão quando a prova for paralela a outra turma.
-3. Parametrizar numericamente usando os mecanismos já presentes nos `.Rnw`.
-4. Embaralhar alternativas mantendo o gabarito correspondente.
-5. Criar um manifesto no formato de `examples/lancamento-obliquo/manifest.example.json`.
-6. Executar `python3 tools/generate_printed_exam.py manifest.json --compile`.
-7. Renderizar e inspecionar pelo menos as versões 1, 6 e 10 e também qualquer versão com valores extremos.
-8. Antes de imprimir, validar: 10 questões, A--E, QR/código, gabarito, 4 páginas, ausência de overflow, figuras legíveis.
-9. Após aplicação, usar o manifesto como fonte de verdade para correção OMR.
-10. Registrar em `analytics/item_history.csv` apenas estatísticas agregadas e anônimas quando houver resultados reais. **Nunca** versionar respostas, notas, nomes, scans ou qualquer outro dado de estudante. Veja `PRIVACY.md`.
-
-## Critérios pedagógicos
-
-"Fácil" significa uma aplicação direta ou um conceito fundamental, tipicamente uma etapa principal. "Médio" admite duas ou três etapas, mas não uma cadeia longa de cálculos. A dificuldade deve considerar também a população-alvo.
-
-Metadados recomendados nos `.Rnw`:
-
-```text
-%% BF-Difficulty: easy
-%% BF-Skills: apice; componentes-da-velocidade
-%% BF-Steps: 1
-%% BF-Family: LO-velocidade-no-apice
-%% BF-Level: 1ano
-%% BF-Print: suitable
+```bash
+python -m pip install -r provas/requirements.txt
 ```
 
-Para problemas integrados:
+Para questões vindas de `.Rnw`, é necessário também R + pacote `exams`. Para gerar PDF, é necessário `pdflatex`. Para corrigir PDF escaneado, é necessário `pdftoppm` (Poppler).
 
-```text
-%% BF-Difficulty: medium
-%% BF-Skills: movimento-horizontal; movimento-vertical
-%% BF-Steps: 2
-%% BF-Reasoning: x-to-t-to-y
+## Gerar uma prova
+
+Use o exemplo como ponto de partida:
+
+```bash
+python tools/generate_printed_exam.py provas/examples/lancamento-obliquo/prova.yaml
 ```
 
-## Formato do manifesto
+Saída padrão do exemplo:
 
-O gerador recebe JSON. Cada versão contém um código opaco, um ID interno, o gabarito e as questões já materializadas em LaTeX. Isso separa a seleção/parametrização pedagógica da montagem gráfica.
+```text
+build/provas/LO-DEMO/
+  prova_01.pdf
+  ...
+  prova_10.pdf
+  answer_key.csv
+  manifest.json
+  assets/
+```
 
-Veja `examples/lancamento-obliquo/manifest.example.json`.
+`manifest.json` é a fonte de verdade machine-readable para a correção. Ele relaciona código opaco, ID interno, gabarito e metadados pedagógicos de cada item.
 
-## Privacidade
+### Questões inline
 
-Dados de estudantes são sigilosos e não pertencem ao repositório. Arquivos com nomes, matrículas, respostas, notas, folhas OMR ou scans devem ficar fora do Git ou em `build/private/`, que é ignorado. O BancoFisica só preserva resultados agregados e anônimos por item. Consulte `PRIVACY.md` antes de trabalhar com dados de aplicação.
+Questões adaptadas para prova impressa podem ser descritas diretamente no YAML. Isso é especialmente útil para questões `cloze` que precisam virar uma única questão A--E. Use `parameter_sets` ou `variants` para fornecer diferentes versões numéricas.
 
-## Correção e análise
+A substituição usa apenas tokens `{{nome}}`; chaves normais de LaTeX não são interpretadas.
 
-O manifesto é a fonte de verdade: `codigo -> gabarito`. Marcações em branco ou múltiplas devem ser sinalizadas para revisão, nunca adivinhadas.
+### Questões `schoice` do R/exams
 
-O arquivo `analytics/item_history.csv` pode acumular somente dificuldade empírica **agregada e anônima** por aplicação. Não substitua dificuldade prevista por um único índice observado: registre ambos. Nunca inclua dados que permitam reconstruir o desempenho de um estudante.
+Uma questão simples de escolha única pode apontar diretamente para o banco:
+
+```yaml
+- id: LO26L1Q07
+  difficulty: easy
+  skills: [apice, componentes-da-velocidade]
+  source_rnw: BancoDeQuestoes/cinematica/lancamentos/listas2026/lista1/Q07QuizUELVelocidadeApice.Rnw
+```
+
+O gerador chama `tools/render_exam_question.R`, avalia a parametrização do `.Rnw`, lê `\\exsolution{...}`, embaralha as alternativas e copia imagens referenciadas para `assets/`.
+
+`cloze` e `mchoice` não são convertidos automaticamente, porque a adaptação para uma única resposta correta é uma decisão pedagógica. Nesses casos, registre a adaptação inline no YAML da prova.
+
+## Corrigir cartões OMR
+
+O desenho do cartão é absoluto e sua geometria está registrada no perfil. Escaneie apenas as folhas de resposta ou gere um PDF contendo uma folha por página.
+
+```bash
+python tools/grade_omr.py respostas.pdf \
+  --manifest build/provas/LO-DEMO/manifest.json \
+  --profile provas/profiles/ifsp-omr.yaml \
+  --output build/provas/LO-DEMO/notas.csv
+```
+
+Para associar nomes sem OCR, forneça um CSV opcional:
+
+```csv
+page,name
+1,Ana Silva
+2,Bruno Souza
+```
+
+```bash
+python tools/grade_omr.py respostas.pdf ... --names-csv nomes.csv
+```
+
+O corretor é conservador. Marcações em branco, múltiplas, ambíguas, QR ilegível ou falha nos marcadores resultam em `manual_review`; não são adivinhadas.
+
+## Analisar a prova
+
+```bash
+python tools/analyze_exam.py build/provas/LO-DEMO/notas.csv \
+  --manifest build/provas/LO-DEMO/manifest.json \
+  --cohort "1o ano Automação 2026" \
+  --output-dir build/provas/LO-DEMO/analysis
+```
+
+São produzidos `summary.json` e `item_analysis.csv`. Para acumular apenas estatísticas agregadas (sem nomes de alunos):
+
+```bash
+python tools/analyze_exam.py ... --history analytics/item_history.csv
+```
+
+Isso permite comparar a dificuldade prevista (`easy`, `medium`) com a proporção de acertos observada em aplicações reais.
+
+## Metadados pedagógicos
+
+Ao selecionar ou adaptar questões, registre pelo menos:
+
+- `id`: identificador estável;
+- `difficulty`: `easy`, `medium` ou outro nível explicitamente justificado;
+- `skills`: habilidades efetivamente exigidas;
+- se útil, termos como `x-para-t-para-y`, `raciocinio-inverso`, `apice`, `conversao-de-unidades`.
+
+Esses metadados devem descrever o que a questão exige, não apenas seu assunto.
+
+## Preflight obrigatório
+
+Antes de imprimir um lote:
+
+1. validar o YAML com `python tools/generate_printed_exam.py prova.yaml --validate-only`;
+2. gerar todas as versões;
+3. confirmar que todas têm o mesmo número de páginas;
+4. renderizar e inspecionar visualmente pelo menos as versões 1, 6 e 10;
+5. conferir formulário, figuras, quebras de coluna e alinhamento;
+6. conferir `answer_key.csv`/`manifest.json` contra pelo menos uma versão;
+7. fazer um teste real do cartão OMR preenchendo uma folha e passando por `grade_omr.py`.
+
+A geração automática não substitui essa revisão visual.
