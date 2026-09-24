@@ -1,32 +1,98 @@
 <<echo=FALSE, results=hide>>=
-# Marcelo C.
-
 include_supplement("Q06Col.jpg")
-resp=10
+
+casos <- data.frame(
+  mA = c(800, 600, 900, 750),
+  vA_kmh = c(45, 54, 36, 72),
+  mB = c(450, 400, 600, 500),
+  vB_kmh = c(60, 72, 54, 36)
+)
+i <- sample(seq_len(nrow(casos)), 1)
+
+mA <- casos$mA[i]
+vA_kmh <- casos$vA_kmh[i]
+mB <- casos$mB[i]
+vB_kmh <- casos$vB_kmh[i]
+
+vA <- vA_kmh/3.6
+vB <- vB_kmh/3.6
+M <- mA+mB
+
+px <- mA*vA
+py <- mB*vB
+vx <- px/M
+vy <- py/M
+resp <- sqrt(vx^2+vy^2)
+
+fmt <- function(x, d=2) formatC(x, format="f", digits=d, decimal.mark=",")
 @
+
+\usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 
 \begin{question}
 
-(PUC-adapt.) Nas grandes cidades é muito comum a colisão entre veículos nos cruzamentos de ruas e avenidas. Considere uma colisão inelástica entre dois veículos, ocorrida num cruzamento de duas avenidas largas e perpendiculares. 
+(PUC, adaptada e parametrizada) Em um cruzamento de duas avenidas largas e perpendiculares ocorre uma colisão perfeitamente inelástica entre dois veículos, que permanecem unidos após o choque.
 
 \begin{center}
 \includegraphics[height=3cm,keepaspectratio]{Q06Col.jpg}
 \end{center}
 
-Dado que o veiculo A possui 800 kg e velocidade de 45 km/h e o veículo B possui 450 kg e velocidade de 60 km/h, calcule o módulo da velocidade dos veículos, em $m/s$, após a colisão. 
+O veículo A possui massa $\Sexpr{mA}\,\mathrm{kg}$ e velocidade $\Sexpr{vA_kmh}\,\mathrm{km/h}$, enquanto o veículo B possui massa $\Sexpr{mB}\,\mathrm{kg}$ e velocidade $\Sexpr{vB_kmh}\,\mathrm{km/h}$. As velocidades iniciais têm direções perpendiculares, como indicado na figura.
+
+Determine o módulo da velocidade do conjunto imediatamente após a colisão, em $\mathrm{m/s}$.
 
 \end{question}
 
-%% SOLUTION
-\begin{solution}:
+\begin{solution}
 
-  \Sexpr{resp} 
-  
+Durante o curto intervalo da colisão, desprezamos o impulso externo horizontal. Assim, a quantidade de movimento do sistema conserva-se vetorialmente.
+
+Primeiro, convertendo as velocidades:
+\[
+v_A=\frac{\Sexpr{vA_kmh}}{3{,}6}
+=\Sexpr{fmt(vA,2)}\,\mathrm{m/s},
+\]
+\[
+v_B=\frac{\Sexpr{vB_kmh}}{3{,}6}
+=\Sexpr{fmt(vB,2)}\,\mathrm{m/s}.
+\]
+
+Escolhendo os eixos ao longo das duas avenidas,
+\[
+p_x=m_Av_A
+\qquad\text{e}\qquad
+p_y=m_Bv_B.
+\]
+
+Como os veículos ficam unidos, a massa final é
+\[
+M=m_A+m_B=\Sexpr{M}\,\mathrm{kg}.
+\]
+
+As componentes da velocidade final são
+\[
+v_x=\frac{m_Av_A}{M}
+=\Sexpr{fmt(vx,2)}\,\mathrm{m/s},
+\]
+\[
+v_y=\frac{m_Bv_B}{M}
+=\Sexpr{fmt(vy,2)}\,\mathrm{m/s}.
+\]
+
+Logo, o módulo da velocidade final é
+\[
+v_f=\sqrt{v_x^2+v_y^2}
+=\Sexpr{fmt(resp,2)}\,\mathrm{m/s}.
+\]
+
 \end{solution}
 
 %% META-INFORMATION
+%% Fonte: PUC, adaptada e parametrizada.
 %% \extype{num}
 %% \exsolution{\Sexpr{resp}}
 %% \exname{Q06Col}
-%% \extol{0.1}
+%% \extol{0.02}
+%% \exsection{Mecanica; Quantidade de movimento; Conservacao; Colisoes bidimensionais; Colisao perfeitamente inelastica}
+%% \exusepackage[utf8]{inputenc}
