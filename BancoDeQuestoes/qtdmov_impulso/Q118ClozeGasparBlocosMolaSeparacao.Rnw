@@ -1,0 +1,75 @@
+<<echo=FALSE, results=hide>>=
+casos <- data.frame(
+  mA = c(2.0, 3.0, 4.0, 5.0),
+  mB = c(3.0, 2.0, 6.0, 4.0),
+  vB = c(4.0, 6.0, 3.0, 5.0)
+)
+i <- sample(seq_len(nrow(casos)), 1)
+
+mA <- casos$mA[i]
+mB <- casos$mB[i]
+vB <- casos$vB[i]
+resp <- (mB/mA)*vB
+
+fmt <- function(x, d=1) formatC(x, format="f", digits=d, decimal.mark=",")
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+(Gaspar, adaptada e parametrizada) Dois blocos \(A\) e \(B\), de massas
+\(\Sexpr{fmt(mA,1)}\,\mathrm{kg}\) e
+\(\Sexpr{fmt(mB,1)}\,\mathrm{kg}\), estão inicialmente em repouso sobre um plano horizontal sem atrito. Entre eles há uma mola ideal, de massa desprezível, comprimida e mantida nessa condição por um fio.
+
+Quando o fio é rompido, a mola se expande e os blocos se separam. Verifica-se que o bloco \(B\) adquire velocidade de módulo
+\(\Sexpr{fmt(vB,1)}\,\mathrm{m/s}\).
+
+Determine, em \(\mathrm{m/s}\), o módulo da velocidade adquirida pelo bloco \(A\).
+
+\end{question}
+
+\begin{solution}
+
+O sistema bloco \(A\) + bloco \(B\) + mola está inicialmente em repouso. Como não há força externa horizontal resultante, a quantidade de movimento total conserva-se.
+
+Escolhendo como positivo o sentido do movimento de \(B\),
+\[
+p_i=0
+\]
+e
+\[
+p_f=-m_Av_A+m_Bv_B.
+\]
+
+Logo,
+\[
+0=-m_Av_A+m_Bv_B,
+\]
+de onde
+\[
+v_A=\frac{m_B}{m_A}v_B.
+\]
+
+Substituindo os valores:
+\[
+v_A=
+\frac{\Sexpr{fmt(mB,1)}}{\Sexpr{fmt(mA,1)}}
+\cdot
+\Sexpr{fmt(vB,1)}
+=
+\Sexpr{fmt(resp,2)}\,\mathrm{m/s}.
+\]
+
+O bloco \(A\) move-se em sentido oposto ao bloco \(B\); o valor acima é o módulo pedido.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Alberto Gaspar, Compreendendo a Física, vol. 1, cap. 17, exercício resolvido 5; adaptada e parametrizada.
+%% \extype{num}
+%% \exsolution{\Sexpr{resp}}
+%% \exname{Q118ClozeGasparBlocosMolaSeparacao}
+%% \extol{0.01}
+%% \exsection{Mecanica; Quantidade de movimento; Conservacao; Separacao de corpos; Sistema isolado}
+%% \exusepackage[utf8]{inputenc}
