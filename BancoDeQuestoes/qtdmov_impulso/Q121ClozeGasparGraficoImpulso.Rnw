@@ -1,0 +1,114 @@
+<<echo=FALSE, results=hide>>=
+casos <- data.frame(
+  F1 = c(120, 140, 160, 180, 150, 180),
+  F2 = c( 60,  80, 100, 120,  90, 110),
+  F3 = c( 40,  60,  80,  50,  70,  90)
+)
+i <- sample(seq_len(nrow(casos)), 1)
+
+F1 <- casos$F1[i]
+F2 <- casos$F2[i]
+F3 <- casos$F3[i]
+
+I1 <- 5*(F1 + F2)
+I2 <- 5*F2
+I3 <- 5*F3
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+(Gaspar, adaptada e parametrizada) O gráfico representa a componente $F$ da força resultante, ao longo de um eixo orientado, em função do tempo.
+
+<<echo=FALSE, fig=TRUE, width=6, height=4, eps=FALSE, results=hide>>=
+par(mar = c(4.2, 4.5, 0.8, 0.8))
+plot(NA,
+     xlim = c(0, 30),
+     ylim = c(-1.25*F3, 1.15*F1),
+     xlab = "t (s)",
+     ylab = "F (N)",
+     axes = FALSE)
+axis(1, at = c(0, 10, 20, 30))
+axis(2, at = c(-F3, 0, F2, F1), las = 1)
+box()
+abline(h = 0, lty = 2)
+lines(c(0, 10, 20, 30), c(F1, F2, 0, -F3), lwd = 2)
+points(c(0, 10, 20, 30), c(F1, F2, 0, -F3), pch = 16)
+@
+
+Determine o \textbf{módulo do impulso} da força resultante, em $\mathrm{N\,s}$, nos intervalos:
+
+\begin{answerlist}
+  \item de $0$ a $10\,\mathrm{s}$;
+  \item de $10$ a $20\,\mathrm{s}$;
+  \item de $20$ a $30\,\mathrm{s}$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+O impulso é a integral da força em relação ao tempo:
+\[
+I=\int F(t)\,dt.
+\]
+Geometricamente, ele corresponde à área algébrica sob o gráfico $F\times t$.
+
+\begin{answerlist}
+
+\item De $0$ a $10\,\mathrm{s}$, a região é um trapézio:
+\[
+I_{0\to10}
+=
+\frac{(F_1+F_2)\Delta t}{2}.
+\]
+Assim,
+\[
+|I_{0\to10}|
+=
+\frac{(\Sexpr{F1}+\Sexpr{F2})\cdot 10}{2}
+=
+\Sexpr{I1}\,\mathrm{N\,s}.
+\]
+
+\item De $10$ a $20\,\mathrm{s}$, a região é um triângulo acima do eixo:
+\[
+|I_{10\to20}|
+=
+\frac{F_2\Delta t}{2}
+=
+\frac{\Sexpr{F2}\cdot10}{2}
+=
+\Sexpr{I2}\,\mathrm{N\,s}.
+\]
+
+\item De $20$ a $30\,\mathrm{s}$, a região é um triângulo abaixo do eixo. O impulso algébrico é negativo:
+\[
+I_{20\to30}
+=
+-\frac{F_3\Delta t}{2}.
+\]
+Como o enunciado pede o módulo,
+\[
+|I_{20\to30}|
+=
+\frac{\Sexpr{F3}\cdot10}{2}
+=
+\Sexpr{I3}\,\mathrm{N\,s}.
+\]
+
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Alberto Gaspar, Compreendendo a Física, vol. 1, cap. 17, exercício 6; adaptada e parametrizada.
+%% O gráfico é gerado dinamicamente em R para acompanhar os valores sorteados.
+%% \extype{cloze}
+%% \exsolution{\Sexpr{I1}|\Sexpr{I2}|\Sexpr{I3}}
+%% \exclozetype{num|num|num}
+%% \extol{0.1|0.1|0.1}
+%% \exname{Q121ClozeGasparGraficoImpulso}
+%% \exsection{Mecanica; Impulso; Grafico forca-tempo; Quantidade de movimento}
+%% \exusepackage[utf8]{inputenc}
