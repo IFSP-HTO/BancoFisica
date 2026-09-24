@@ -15,6 +15,7 @@ Não faça commit de qualquer arquivo ou trecho que contenha:
 - caligrafia ou assinaturas;
 - saídas brutas de OCR/OMR ligadas a uma pessoa;
 - mapeamentos entre código de prova e estudante;
+- QR codes ou manifestos que codifiquem identidade de estudante;
 - qualquer combinação que permita reidentificação.
 
 A proibição vale também para exemplos, fixtures, logs, screenshots, issues e descrições de pull request.
