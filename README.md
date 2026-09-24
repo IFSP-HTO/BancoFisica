@@ -156,3 +156,16 @@ Nós criamos um [addin](https://cran.r-project.org/web/packages/addinslist/READM
 ## Licença
 
 GPL-v3
+
+
+## Provas impressas com OMR
+
+O BancoFisica também possui um padrão reproduzível para avaliações impressas com múltiplas versões e folha de respostas OMR. A documentação, o perfil pedagógico/layout, o template LaTeX e um manifesto de exemplo estão em [`provas/`](provas/README.md).
+
+Para montar uma prova a partir de um manifesto já materializado:
+
+```bash
+python3 tools/generate_printed_exam.py caminho/manifest.json --compile
+```
+
+O processo gera PDFs individuais, gabarito-mestre e um manifesto machine-readable que associa o código discreto de cada prova ao gabarito correspondente.
