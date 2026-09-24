@@ -1,36 +1,28 @@
 <<echo=FALSE, results=hide>>=
-##PROGRAMADO POR: MARCELO
-##FONTE:
-##TAGS:
-
-
-## QUESTION/ANSWER GENERATION
 questions <- character(5)
 solutions <- logical(5)
-explanations <- character(5)
-aleat = sample(1:4)
+aleat <- sample(1:4)
 
 include_supplement("Q04testCol.jpg")
 
-  questions[aleat[1]] <- "0; v-V"
-  solutions[aleat[1]] <- FALSE
-  questions[aleat[2]] <- "-v; v + V/2"
-  solutions[aleat[2]] <- FALSE
-  questions[aleat[3]] <- "-mv/M; MV/m"
-  solutions[aleat[3]] <- FALSE
-  questions[aleat[4]] <- "-mv/M; (mv - MV)/(M + m)"
-  solutions[aleat[4]] <- TRUE
-  questions[5] <- "(MV/2 - mv)/M; (mv - MV/2)/(M + m)"
-  solutions[5] <- FALSE
-
-explanations[1:5] <- " "
+questions[aleat[1]] <- "0; v-V"
+solutions[aleat[1]] <- FALSE
+questions[aleat[2]] <- "-v; v + V/2"
+solutions[aleat[2]] <- FALSE
+questions[aleat[3]] <- "-mv/M; MV/m"
+solutions[aleat[3]] <- FALSE
+questions[aleat[4]] <- "-mv/M; (mv - MV)/(M + m)"
+solutions[aleat[4]] <- TRUE
+questions[5] <- "(MV/2 - mv)/M; (mv - MV/2)/(M + m)"
+solutions[5] <- FALSE
 @
-\usepackage[portuguese]{babel}
+
+\usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 
 \begin{question}
 
-(FUVEST) Maria e Luísa, ambas de massa M, patinam no gelo. Luísa vai ao encontro de Maria com velocidade de módulo V. Maria, parada na pista, segura uma bola de massa m e, num certo instante, joga a bola para Luísa. A bola tem velocidade de módulo v, na mesma direção de V. Depois que Luísa agarra a bola, as velocidades de Maria e Luísa, em relação ao solo, são, respectivamente,
+(FUVEST) Maria e Luísa, ambas de massa $M$, patinam no gelo. Luísa vai ao encontro de Maria com velocidade de módulo $V$. Maria, parada na pista, segura uma bola de massa $m$ e, num certo instante, joga a bola para Luísa. A bola tem velocidade de módulo $v$, na mesma direção de $V$. Depois que Luísa agarra a bola, as velocidades de Maria e Luísa, em relação ao solo, são, respectivamente,
 
 \begin{center}
 \includegraphics[height=3cm,keepaspectratio]{Q04testCol.jpg}
@@ -42,19 +34,41 @@ answerlist(questions)
 
 \end{question}
 
-
 \begin{solution}
-<<echo=FALSE, results=hide, results=tex>>=
-answerlist(
-  paste("\\textbf{", ifelse(solutions, "Verdadeiro", "Falso"), "}", sep = ""),
-  explanations)
-@
 
+Adote como sentido positivo o sentido em que a bola é lançada, de Maria para Luísa.
+
+No lançamento da bola, o sistema Maria--bola estava inicialmente em repouso. Desprezando o impulso externo horizontal durante o lançamento,
+\[
+0=Mv_M+mv.
+\]
+Assim,
+\[
+v_M=-\frac{mv}{M}.
+\]
+
+Antes de Luísa agarrar a bola, Luísa move-se no sentido oposto ao positivo, portanto sua velocidade é $-V$. Na captura da bola,
+\[
+mv-MV=(M+m)v_L.
+\]
+Logo,
+\[
+v_L=\frac{mv-MV}{M+m}.
+\]
+
+Portanto, as velocidades de Maria e Luísa são, respectivamente,
+\[
+-\frac{mv}{M}
+\qquad\text{e}\qquad
+\frac{mv-MV}{M+m}.
+\]
 
 \end{solution}
 
 %% META-INFORMATION
+%% Fonte: FUVEST.
 %% \extype{schoice}
 %% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
 %% \exname{Q04testCol}
-
+%% \exsection{Mecanica; Quantidade de movimento; Conservacao; Colisoes}
+%% \exusepackage[utf8]{inputenc}
