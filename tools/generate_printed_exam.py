@@ -22,7 +22,25 @@ def omr_rows(n: int = 10) -> str:
         rows.append(f"{i} & {cells} \\\\[2.2mm]")
     return "\n".join(rows)
 
+PROHIBITED_STUDENT_FIELDS = {
+    "student", "students", "student_name", "student_id", "email",
+    "matricula", "registration", "grade", "score", "responses"
+}
+
+def assert_no_student_fields(value, path="manifest") -> None:
+    if isinstance(value, dict):
+        for key, child in value.items():
+            if str(key).lower() in PROHIBITED_STUDENT_FIELDS:
+                raise ValueError(
+                    f"{path}.{key}: student-level data is forbidden in BancoFisica exam manifests"
+                )
+            assert_no_student_fields(child, f"{path}.{key}")
+    elif isinstance(value, list):
+        for i, child in enumerate(value):
+            assert_no_student_fields(child, f"{path}[{i}]")
+
 def validate(data: dict) -> None:
+    assert_no_student_fields(data)
     versions=data.get("versions",[])
     if not versions:
         raise ValueError("manifest has no versions")
