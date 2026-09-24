@@ -89,3 +89,5 @@ Quando o usuário pedir uma prova "no padrão BancoFisica", uma prova semelhante
 6. Antes de entregar PDFs, renderize e inspecione visualmente versões representativas e extremas; verifique páginas vazias, overflow, fórmulas fora de caixas, figuras/rótulos desalinhados e questões divididas de forma ruim.
 7. Para provas paralelas, compare `BF-Family`/habilidades e evite repetir o mesmo enunciado ou família quando o usuário pedir questões diferentes.
 8. Quando houver resultados reais, preserve dificuldade prevista e registre separadamente **somente estatísticas agregadas e anônimas** em `analytics/item_history.csv`. Nunca inclua nomes, notas, respostas individuais, scans ou qualquer identificador de estudante; veja `provas/PRIVACY.md`.
+9. Use `tools/generate_printed_exam.py` para gerar as versões, `tools/grade_omr.py` para ler cartões e `tools/analyze_exam.py` para estatísticas agregadas.
+10. Questões `schoice` simples podem ser consumidas diretamente do `.Rnw`; `cloze` e `mchoice` devem ser adaptadas pedagogicamente no YAML quando a prova exigir uma única alternativa A--E. Não faça conversão automática que altere o que a questão mede.
