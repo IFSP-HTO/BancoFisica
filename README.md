@@ -90,6 +90,20 @@ Por fim, configure o comportamento do questionário.
 
 ![](.gitbook/assets/exemploquestao.gif)
 
+
+## Provas impressas com OMR
+
+O BancoFisica também possui um fluxo reprodutível para avaliações impressas: seleção/adaptação de questões, 10 versões equivalentes, PDF A4 em duas colunas, cartão-resposta OMR com QR de versão, correção conservadora e análise agregada de itens.
+
+O padrão oficial está documentado em [`provas/README.md`](provas/README.md). Para gerar o exemplo:
+
+```bash
+python3 -m pip install -r provas/requirements.txt
+python3 tools/generate_printed_exam.py provas/examples/lancamento-obliquo/prova.yaml
+```
+
+O gerador produz um PDF por versão, `answer_key.csv` e `manifest.json`. Questões `schoice` simples podem ser lidas diretamente dos `.Rnw`; adaptações pedagógicas de `cloze`/`mchoice` são declaradas no YAML da prova.
+
 ## Wiki
 
 Mais abaixo fornecemos algumas informações com relação a colaboração mas você pode checar maiores detalhes de como colaborar na nossa [wiki](https://github.com/IFSP-HTO/BancoFisica/wiki). Essa será a principal fonte de documentação do projeto para colaboradores.

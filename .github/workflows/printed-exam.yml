@@ -1,0 +1,43 @@
+name: Printed exam workflow
+
+on:
+  pull_request:
+    paths:
+      - "provas/**"
+      - "tools/generate_printed_exam.py"
+      - "tools/grade_omr.py"
+      - "tools/analyze_exam.py"
+      - "tools/render_exam_question.R"
+      - "tools/test_exam_workflow.py"
+      - ".github/workflows/printed-exam.yml"
+  push:
+    branches: [master]
+    paths:
+      - "provas/**"
+      - "tools/generate_printed_exam.py"
+      - "tools/grade_omr.py"
+      - "tools/analyze_exam.py"
+      - "tools/render_exam_question.R"
+      - "tools/test_exam_workflow.py"
+
+jobs:
+  python-workflow:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install printed-exam dependencies
+        run: python -m pip install -r provas/requirements.txt
+      - name: Unit checks
+        run: python tools/test_exam_workflow.py
+      - name: Validate example
+        run: python tools/generate_printed_exam.py provas/examples/lancamento-obliquo/prova.yaml --validate-only
+      - name: Generate example sources
+        run: python tools/generate_printed_exam.py provas/examples/lancamento-obliquo/prova.yaml --no-compile
+      - name: Check generated manifest
+        run: |
+          test -f build/provas/LO-DEMO/manifest.json
+          test -f build/provas/LO-DEMO/answer_key.csv
+          test "$(find build/provas/LO-DEMO -maxdepth 1 -name 'prova_*.tex' | wc -l)" -eq 10

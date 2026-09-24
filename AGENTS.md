@@ -54,3 +54,21 @@ Quando for útil para evitar confusão entre arquivos intermediários, registre 
 1. Antes de iniciar um novo lote, confirme que o branch parte do `master` atual ou compare explicitamente a divergência e atualize-o antes de acumular novas alterações.
 2. Mantenha PRs pequenos e temáticos quando isso facilitar revisão, diagnóstico e rollback.
 3. Não considere um PR finalizado apenas porque está `mergeable`; aguarde os checks exigidos e confirme o merge efetivo.
+
+
+## Provas impressas e OMR
+
+Quando o usuário pedir uma prova "no padrão BancoFisica", uma avaliação impressa com versões, ou correção por cartão-resposta:
+
+1. Leia primeiro `provas/README.md`, `provas/profiles/ifsp-omr.yaml` e `provas/templates/ifsp-omr.tex`. Não recrie o layout do zero.
+2. O padrão de referência usa 10 questões A--E, por padrão 5 fáceis + 5 médias, 10 versões equivalentes, alternativas embaralhadas e quatro páginas.
+3. A primeira página é exclusivamente identificação + cartão OMR; as páginas de questões usam cabeçalho neutro e não revelam a versão.
+4. O QR contém somente `exam_id` + código opaco da versão, nunca o gabarito.
+5. Use `tools/generate_printed_exam.py` para gerar versões e o manifesto, `tools/grade_omr.py` para leitura conservadora das bolhas e `tools/analyze_exam.py` para análise agregada.
+6. Questões `schoice` simples podem ser consumidas diretamente do `.Rnw`. Questões `cloze` e `mchoice` devem ser adaptadas pedagogicamente no YAML quando a prova exigir uma única resposta A--E; não faça conversão automática que altere o que a questão mede.
+7. Antes de imprimir, faça preflight: mesma paginação em todas as versões, inspeção visual de pelo menos 1, 6 e 10, conferência de figuras/formulário/gabarito e um teste real do OMR.
+8. Resultados reais podem alimentar `analytics/item_history.csv` apenas em forma agregada e anônima.
+
+## Privacidade e dados de estudantes
+
+Dados individuais de estudantes são estritamente locais e efêmeros. Nunca versione nomes, prontuários, e-mails, respostas, notas, scans, fotos de cartões ou arquivos que permitam reidentificação. Dentro do checkout, esses arquivos só podem existir em `build/private/`, que é ignorado pelo Git. Consulte `provas/PRIVACY.md`.
