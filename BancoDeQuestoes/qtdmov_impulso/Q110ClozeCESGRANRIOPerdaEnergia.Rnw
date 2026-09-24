@@ -1,0 +1,69 @@
+<<echo=FALSE, results=hide>>=
+casos <- data.frame(
+  m1 = c(2, 1, 3, 2),
+  m2 = c(4, 2, 6, 4),
+  v1 = c(6, 9, 6, 9)
+)
+i <- sample(seq_len(nrow(casos)), 1)
+m1 <- casos$m1[i]
+m2 <- casos$m2[i]
+v1 <- casos$v1[i]
+vf <- m1 * v1 / (m1 + m2)
+Ki <- 0.5 * m1 * v1^2
+Kf <- 0.5 * (m1 + m2) * vf^2
+perda <- Ki - Kf
+fmt <- function(x, d = 1) formatC(x, format = "f", digits = d, decimal.mark = ",")
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+(CESGRANRIO, adaptada e parametrizada) Um carrinho de massa $m_1=\Sexpr{m1}\,\mathrm{kg}$ move-se com velocidade $\Sexpr{v1}\,\mathrm{m/s}$ sobre um trilho horizontal sem atrito e colide com um segundo carrinho, de massa $m_2=\Sexpr{m2}\,\mathrm{kg}$, inicialmente em repouso. Após a colisão, os dois carrinhos permanecem ligados e passam a se mover juntos.
+
+Determine a energia mecânica dissipada na colisão, em J.
+
+\end{question}
+
+\begin{solution}
+
+Como os carrinhos ficam unidos, a colisão é perfeitamente inelástica. Conservando a quantidade de movimento,
+\[
+m_1v_1=(m_1+m_2)v_f.
+\]
+Logo,
+\[
+v_f=
+\frac{m_1v_1}{m_1+m_2}
+=
+\frac{\Sexpr{m1}\cdot\Sexpr{v1}}{\Sexpr{m1+m2}}
+=
+\Sexpr{fmt(vf,1)}\,\mathrm{m/s}.
+\]
+
+A energia cinética inicial é
+\[
+K_i=\frac12m_1v_1^2
+=\Sexpr{fmt(Ki,1)}\,\mathrm{J},
+\]
+e a energia cinética final é
+\[
+K_f=\frac12(m_1+m_2)v_f^2
+=\Sexpr{fmt(Kf,1)}\,\mathrm{J}.
+\]
+Portanto, a energia dissipada é
+\[
+E_{\mathrm{diss}}=K_i-K_f
+=\Sexpr{fmt(perda,1)}\,\mathrm{J}.
+\]
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Colisoes.pdf, exercício 5 (CESGRANRIO), adaptada e parametrizada.
+%% \extype{num}
+%% \exsolution{\Sexpr{perda}}
+%% \exname{Q110ClozeCESGRANRIOPerdaEnergia}
+%% \extol{0.01}
+%% \exsection{Mecanica; Quantidade de movimento; Colisoes; Energia cinetica}
+%% \exusepackage[utf8]{inputenc}

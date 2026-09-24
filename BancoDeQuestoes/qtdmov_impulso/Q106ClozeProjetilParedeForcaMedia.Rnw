@@ -1,0 +1,57 @@
+<<echo=FALSE, results=hide>>=
+casos <- data.frame(
+  m_g = c(50, 40, 60, 80),
+  v = c(200, 150, 250, 180),
+  dt = c(0.10, 0.05, 0.12, 0.08)
+)
+i <- sample(seq_len(nrow(casos)), 1)
+m_g <- casos$m_g[i]
+m <- m_g / 1000
+v <- casos$v[i]
+dt <- casos$dt[i]
+F <- m * v / dt
+fmt <- function(x, d = 2) formatC(x, format = "f", digits = d, decimal.mark = ",")
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+(Adaptada do material \textit{Quantidade de Movimento}) Um projétil de massa $\Sexpr{m_g}\,\mathrm{g}$ atinge perpendicularmente uma parede rígida com velocidade de $\Sexpr{v}\,\mathrm{m/s}$ e leva $\Sexpr{fmt(dt,2)}\,\mathrm{s}$ para parar completamente.
+
+Determine o módulo da força resultante média exercida sobre o projétil durante a colisão, em N.
+
+\end{question}
+
+\begin{solution}
+
+A variação do módulo da quantidade de movimento é
+\[
+|\Delta p|=m v.
+\]
+Pelo teorema do impulso,
+\[
+F_{\mathrm{m}}\Delta t=|\Delta p|.
+\]
+Convertendo a massa para quilogramas,
+\[
+m=\frac{\Sexpr{m_g}}{1000}=\Sexpr{fmt(m,3)}\,\mathrm{kg}.
+\]
+Logo,
+\[
+F_{\mathrm{m}}
+=\frac{mv}{\Delta t}
+=\frac{\Sexpr{fmt(m,3)}\cdot\Sexpr{v}}{\Sexpr{fmt(dt,2)}}
+=\Sexpr{fmt(F,1)}\,\mathrm{N}.
+\]
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Quantidade de Movimento.pdf, exercício 5, adaptada e parametrizada.
+%% \extype{num}
+%% \exsolution{\Sexpr{F}}
+%% \exname{Q106ClozeProjetilParedeForcaMedia}
+%% \extol{0.1}
+%% \exsection{Mecanica; Impulso; Quantidade de movimento; Forca media}
+%% \exusepackage[utf8]{inputenc}

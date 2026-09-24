@@ -1,0 +1,60 @@
+<<echo=FALSE, results=hide>>=
+casos <- data.frame(
+  m = c(2.0, 1.5, 2.5, 1.8),
+  v_kmh = c(900, 720, 1080, 900),
+  dt_ms = c(1, 2, 3, 2)
+)
+i <- sample(seq_len(nrow(casos)), 1)
+m <- casos$m[i]
+v_kmh <- casos$v_kmh[i]
+dt_ms <- casos$dt_ms[i]
+v <- v_kmh / 3.6
+dt <- dt_ms / 1000
+F <- m * v / dt
+fmt <- function(x, d = 1) formatC(x, format = "f", digits = d, decimal.mark = ",")
+nota <- function(x) formatC(x, format = "f", digits = 0, big.mark = ".", decimal.mark = ",")
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+(FUVEST, adaptada e parametrizada) Um avião desloca-se a $\Sexpr{v_kmh}\,\mathrm{km/h}$ quando um pássaro de massa $\Sexpr{fmt(m,1)}\,\mathrm{kg}$, inicialmente em repouso em relação ao solo, choca-se perpendicularmente com o vidro dianteiro da cabine. Considere que, durante o impacto, o pássaro é levado aproximadamente à velocidade do avião e que a interação dura $\Sexpr{dt_ms}\,\mathrm{ms}$.
+
+Determine o módulo da força média exercida durante o impacto, em N.
+
+\end{question}
+
+\begin{solution}
+
+A velocidade do avião em unidades do SI é
+\[
+v=\frac{\Sexpr{v_kmh}}{3{,}6}
+=\Sexpr{fmt(v,1)}\,\mathrm{m/s}.
+\]
+O intervalo de tempo é
+\[
+\Delta t=\Sexpr{dt_ms}\times10^{-3}\,\mathrm{s}.
+\]
+O módulo da variação da quantidade de movimento do pássaro é aproximadamente
+\[
+|\Delta p|=mv.
+\]
+Assim,
+\[
+F_{\mathrm{m}}
+=\frac{|\Delta p|}{\Delta t}
+=\frac{\Sexpr{fmt(m,1)}\cdot\Sexpr{fmt(v,1)}}{\Sexpr{fmt(dt,3)}}
+=\Sexpr{nota(F)}\,\mathrm{N}.
+\]
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Quantidade de Movimento.pdf, exercício 8 (FUVEST), adaptada e parametrizada.
+%% \extype{num}
+%% \exsolution{\Sexpr{F}}
+%% \exname{Q107ClozeFUVESTAviaoPassaro}
+%% \extol{10}
+%% \exsection{Mecanica; Impulso; Quantidade de movimento; Forca media}
+%% \exusepackage[utf8]{inputenc}
