@@ -60,3 +60,13 @@ BancoDeQuestoes/acel/acel1.pdf
 # Ignore files generated in subfolder
 BancoDeQuestoes/**/*.pdf
 Moodle/hidrostatica6-12018.xml
+
+# Private student/exam application data (never version)
+private/
+provas/private/
+analytics/private/
+**/student_responses*.csv
+**/grades*.csv
+**/notas*.csv
+**/omr_scans/
+**/scans_alunos/
