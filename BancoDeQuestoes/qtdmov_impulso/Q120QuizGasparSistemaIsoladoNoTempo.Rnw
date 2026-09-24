@@ -1,0 +1,63 @@
+<<echo=FALSE, results=hide>>=
+questions <- c(
+  "as forças externas sobre as bolas são rigorosamente nulas durante toda a colisão.",
+  "o impulso das forças externas durante o curto intervalo da colisão é desprezível em comparação com os impulsos internos.",
+  "a energia cinética do sistema necessariamente se conserva em qualquer colisão.",
+  "as forças internas entre as bolas deixam de existir durante o choque.",
+  "a força de atrito entre cada bola e a mesa é uma força interna ao sistema formado apenas pelas duas bolas."
+)
+solutions <- c(FALSE, TRUE, FALSE, FALSE, FALSE)
+
+ordem <- sample(seq_along(questions))
+questions <- questions[ordem]
+solutions <- solutions[ordem]
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+(Baseada em Gaspar) Duas bolas de bilhar colidem sobre uma mesa horizontal. Existe atrito entre as bolas e a mesa, portanto há forças externas horizontais atuando sobre o sistema formado pelas duas bolas. Mesmo assim, em muitas análises é uma boa aproximação aplicar a conservação da quantidade de movimento apenas durante o curtíssimo intervalo da colisão.
+
+A justificativa física correta é que
+
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(questions)
+@
+
+\end{question}
+
+\begin{solution}
+
+A conservação da quantidade de movimento exige que o impulso externo resultante sobre o sistema seja nulo ou desprezível:
+\[
+\Delta \vec p_{\mathrm{sist}}
+=
+\vec I_{\mathrm{ext}}.
+\]
+
+No caso das bolas de bilhar, forças externas como o atrito com a mesa existem. Entretanto, a colisão ocorre em um intervalo de tempo muito pequeno. Nesse intervalo, o impulso dessas forças externas é muito menor que os impulsos associados às forças de interação entre as bolas.
+
+Por isso,
+\[
+\vec I_{\mathrm{ext}}\approx 0
+\]
+durante a colisão e, consequentemente,
+\[
+\vec p_{\mathrm{antes}}
+\approx
+\vec p_{\mathrm{depois}}.
+\]
+
+Dizer que o sistema é \textit{isolado no tempo} significa justamente essa aproximação: as forças externas podem existir, mas seu impulso durante o intervalo analisado é desprezível.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte conceitual: Alberto Gaspar, Compreendendo a Física, vol. 1, cap. 17, discussão sobre sistemas isolados no tempo.
+%% Questao autoral baseada diretamente nessa discussao.
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q120QuizGasparSistemaIsoladoNoTempo}
+%% \exsection{Mecanica; Quantidade de movimento; Conservacao; Sistema isolado; Impulso externo}
+%% \exusepackage[utf8]{inputenc}
