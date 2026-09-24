@@ -1,0 +1,75 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+(Gaspar, adaptada de FUVEST-SP) Um pequeno tubo de massa \(M=15\,\mathrm{g}\), contendo uma gota de éter de massa desprezível, é fechado por uma rolha de massa \(m=3{,}0\,\mathrm{g}\). O tubo está suspenso por um fio leve de comprimento \(L=0{,}20\,\mathrm{m}\) e inicialmente se encontra em repouso na posição mais baixa.
+
+Ao aquecer o tubo, uma pequena explosão lança a rolha horizontalmente para a direita. Imediatamente após a explosão, o tubo move-se para a esquerda e, em seguida, sobe até o fio ficar horizontal.
+
+Despreze perdas de energia durante a subida do tubo e adote \(g=10\,\mathrm{m/s^2}\).
+
+Determine o módulo da velocidade, em \(\mathrm{m/s}\), com que a rolha abandona o tubo.
+
+\end{question}
+
+\begin{solution}
+
+O problema possui duas etapas.
+
+\textbf{1. Movimento do tubo após a explosão}
+
+Depois da explosão, o tubo sobe até que o fio fique horizontal. A elevação do tubo é igual ao comprimento do fio:
+\[
+\Delta h=L=0{,}20\,\mathrm{m}.
+\]
+
+Durante essa subida, conserva-se a energia mecânica:
+\[
+\frac12 MV^2=MgL,
+\]
+em que \(V\) é o módulo da velocidade do tubo imediatamente após a explosão.
+
+Cancelando \(M\),
+\[
+V=\sqrt{2gL}
+=
+\sqrt{2\cdot10\cdot0{,}20}
+=
+2{,}0\,\mathrm{m/s}.
+\]
+
+\textbf{2. Explosão}
+
+Antes da explosão, tubo e rolha estão em repouso, de modo que a quantidade de movimento horizontal total é nula. Durante o curtíssimo intervalo da explosão, o impulso externo horizontal é desprezível.
+
+Assim,
+\[
+mv-MV=0,
+\]
+onde \(v\) é o módulo da velocidade da rolha.
+
+Logo,
+\[
+v=\frac{M}{m}V
+=
+\frac{15}{3{,}0}\cdot2{,}0
+=
+10\,\mathrm{m/s}.
+\]
+
+Portanto, a rolha abandona o tubo com velocidade de módulo
+\[
+10\,\mathrm{m/s}.
+\]
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Alberto Gaspar, Compreendendo a Física, vol. 1, cap. 17, problema 19.
+%% A própria fonte informa que o exercício é adaptação de uma questão da FUVEST-SP.
+%% \extype{num}
+%% \exsolution{10}
+%% \exname{Q119ClozeGasparExplosaoTuboRolha}
+%% \extol{0.01}
+%% \exsection{Mecanica; Quantidade de movimento; Conservacao; Explosao; Energia mecanica}
+%% \exusepackage[utf8]{inputenc}

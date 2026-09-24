@@ -1,0 +1,74 @@
+<<echo=FALSE, results=hide>>=
+questions <- c("uma.", "duas.", "três.", "quatro.", "cinco.")
+solutions <- c(FALSE, FALSE, TRUE, FALSE, FALSE)
+ordem <- sample(seq_along(questions))
+questions <- questions[ordem]
+solutions <- solutions[ordem]
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+(UECE, adaptada) Oito esferas estão suspensas por fios flexíveis, inextensíveis e de massas desprezíveis, formando um pêndulo múltiplo. Da esquerda para a direita, há quatro esferas de massa \(M=150\,\mathrm{g}\) e quatro esferas de massa \(m=50\,\mathrm{g}\). A primeira esfera de massa \(M\) é deslocada até uma altura \(h\) e solta; ao retornar, colide frontalmente com o grupo de esferas inicialmente em repouso.
+
+Considere o choque idealmente perfeitamente elástico. O número de esferas de massa \(m\) que se moverão na extremidade oposta é
+
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(questions)
+@
+
+\end{question}
+
+\begin{solution}
+
+Seja \(v\) o módulo da velocidade da esfera de massa \(M\) imediatamente antes do choque e \(u\) o módulo da velocidade das esferas de massa \(m\) que saem na outra extremidade.
+
+No modelo ideal do pêndulo múltiplo, após a transmissão do choque as esferas de massa \(M\) ficam em repouso e \(n\) esferas de massa \(m\) saem com o mesmo módulo de velocidade \(u\).
+
+Como o sistema pode ser tratado como isolado durante o curto intervalo da colisão, conserva-se a quantidade de movimento:
+\[
+Mv=nmu.
+\]
+
+Como o choque é perfeitamente elástico, conserva-se também a energia cinética:
+\[
+\frac12 Mv^2
+=
+n\frac12 mu^2.
+\]
+
+Da primeira equação,
+\[
+u=\frac{Mv}{nm}.
+\]
+
+Substituindo na conservação da energia:
+\[
+Mv^2
+=
+nm\left(\frac{Mv}{nm}\right)^2
+=
+\frac{M^2v^2}{nm}.
+\]
+
+Cancelando os fatores comuns,
+\[
+n=\frac{M}{m}
+=
+\frac{150}{50}
+=3.
+\]
+
+Portanto, movem-se \textbf{três} esferas de massa \(m\).
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: UECE, presente em Colisões.pdf, exercício 6.
+%% A figura original foi substituída por uma descrição textual completa do arranjo para evitar alterar/redesenhar o ativo da fonte.
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q117QuizUECEPenduloMultiploElastico}
+%% \exsection{Mecanica; Colisoes; Colisao perfeitamente elastica; Quantidade de movimento; Energia cinetica}
+%% \exusepackage[utf8]{inputenc}
