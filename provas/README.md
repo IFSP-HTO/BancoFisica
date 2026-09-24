@@ -29,7 +29,7 @@ O perfil `profiles/ifsp-omr.yaml` registra as decisões consolidadas nas aplica�
 7. Renderizar e inspecionar pelo menos as versões 1, 6 e 10 e também qualquer versão com valores extremos.
 8. Antes de imprimir, validar: 10 questões, A--E, QR/código, gabarito, 4 páginas, ausência de overflow, figuras legíveis.
 9. Após aplicação, usar o manifesto como fonte de verdade para correção OMR.
-10. Registrar estatísticas por item em `analytics/item_history.csv` quando houver resultados reais.
+10. Registrar em `analytics/item_history.csv` apenas estatísticas agregadas e anônimas quando houver resultados reais. **Nunca** versionar respostas, notas, nomes, scans ou qualquer outro dado de estudante. Veja `PRIVACY.md`.
 
 ## Critérios pedagógicos
 
@@ -61,8 +61,12 @@ O gerador recebe JSON. Cada versão contém um código opaco, um ID interno, o g
 
 Veja `examples/lancamento-obliquo/manifest.example.json`.
 
+## Privacidade
+
+Dados de estudantes são sigilosos e não pertencem ao repositório. Arquivos com nomes, matrículas, respostas, notas, folhas OMR ou scans devem ficar fora do Git ou em `build/private/`, que é ignorado. O BancoFisica só preserva resultados agregados e anônimos por item. Consulte `PRIVACY.md` antes de trabalhar com dados de aplicação.
+
 ## Correção e análise
 
 O manifesto é a fonte de verdade: `codigo -> gabarito`. Marcações em branco ou múltiplas devem ser sinalizadas para revisão, nunca adivinhadas.
 
-O arquivo `analytics/item_history.csv` pode acumular dificuldade empírica por aplicação. Não substitua dificuldade prevista por um único índice observado: registre ambos.
+O arquivo `analytics/item_history.csv` pode acumular somente dificuldade empírica **agregada e anônima** por aplicação. Não substitua dificuldade prevista por um único índice observado: registre ambos. Nunca inclua dados que permitam reconstruir o desempenho de um estudante.
