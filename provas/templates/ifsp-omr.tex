@@ -1,0 +1,79 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage{qrcode}
+\usepackage{fancyhdr}
+\usepackage{array}
+\usepackage{graphicx}
+\usetikzlibrary{calc}
+\geometry{top=1.15cm,bottom=1.25cm,left=1.25cm,right=1.25cm}
+\setlength{\parindent}{0pt}
+\setlength{\columnsep}{0.65cm}
+\setlist[enumerate]{leftmargin=*,itemsep=1pt,topsep=2pt}
+\newenvironment{alts}{\begin{enumerate}[label=\Alph*),leftmargin=5.5mm]}{\end{enumerate}}
+\newcommand{\qtitle}[1]{\medskip\noindent\textbf{Questão #1.}\ }
+\newcommand{\bubble}[1]{\tikz[baseline=-0.6ex]\draw (0,0) circle (1.7mm) node {\scriptsize #1};}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small IFSP -- Câmpus Hortolândia}
+\fancyhead[R]{\small Física}
+\fancyfoot[C]{\thepage}
+\begin{document}
+\thispagestyle{empty}
+
+% Marcadores geométricos da folha OMR
+\begin{tikzpicture}[remember picture,overlay]
+\fill ($(current page.north west)+(8mm,-8mm)$) rectangle ++(5mm,-5mm);
+\fill ($(current page.north east)+(-13mm,-8mm)$) rectangle ++(5mm,-5mm);
+\fill ($(current page.south west)+(8mm,13mm)$) rectangle ++(5mm,-5mm);
+\fill ($(current page.south east)+(-13mm,13mm)$) rectangle ++(5mm,-5mm);
+\end{tikzpicture}
+
+\begin{center}
+{\Large\bfseries <<TITLE>>}\\[2mm]
+{\small <<SUBTITLE>>}
+\end{center}
+
+\vspace{2mm}
+\noindent\textbf{Nome completo:}\ \rule{12.5cm}{0.4pt}\\[3mm]
+\textbf{Turma:}\ \rule{4cm}{0.4pt}\hfill
+\textbf{Data:}\ \rule{3.5cm}{0.4pt}
+
+\vspace{4mm}
+\begin{center}
+\begin{minipage}{0.84\textwidth}
+\centering
+{\large\bfseries Folha de respostas}\\[2mm]
+Preencha completamente uma única alternativa por questão com caneta azul ou preta.\\[4mm]
+\begin{tabular}{c *{5}{>{\centering\arraybackslash}p{1.5cm}}}
+\textbf{Q} & \textbf{A}&\textbf{B}&\textbf{C}&\textbf{D}&\textbf{E}\\[1mm]
+<<OMR_ROWS>>
+\end{tabular}
+
+\vspace{5mm}
+\begin{tabular}{p{0.58\linewidth}p{0.32\linewidth}}
+\textbf{Código de controle:} <<PUBLIC_CODE>> &
+\centering\qrcode[height=2.0cm]{<<QR_PAYLOAD>>}
+\end{tabular}
+\end{minipage}
+\end{center}
+
+\vfill
+{\footnotesize O QR code identifica apenas a versão da prova; ele não contém o gabarito.}
+\newpage
+
+\begin{center}
+{\large\bfseries <<TITLE>>}
+\end{center}
+<<FORMULA_SHEET>>
+
+\begin{multicols}{2}
+<<QUESTIONS>>
+\end{multicols}
+\end{document}
