@@ -1,15 +1,36 @@
 <<echo=FALSE, results=hide>>=
-L <- 800
-H <- 400
-vn <- 50
-vc <- 30
-v_horizontal <- sqrt(vn^2 - vc^2)
-t1 <- L / v_horizontal
+# Conjunto de instancias escolhido para manter contas simples e fisicamente validas.
+# Em todas elas: vn > vc e (vx, vc, vn) forma uma tripla pitagorica.
+params <- data.frame(
+  L  = c(300, 360, 180, 300, 800, 135),
+  H  = c(200, 144, 144, 225, 400, 108),
+  vx = c( 20,  24,  12,  15,  40,   9),
+  vc = c( 15,  10,  16,   8,  30,  12),
+  vn = c( 25,  26,  20,  17,  50,  15)
+)
+
+i <- sample(seq_len(nrow(params)), 1)
+
+L  <- params$L[i]
+H  <- params$H[i]
+vx <- params$vx[i]
+vc <- params$vc[i]
+vn <- params$vn[i]
+
+t1 <- L / vx
 t2 <- H / (vn - vc)
-t3 <- L / v_horizontal
+t3 <- L / vx
 t4 <- H / (vn + vc)
 ttotal <- t1 + t2 + t3 + t4
-fmt <- function(x, d = 0) formatC(x, format = "f", digits = d, decimal.mark = ",")
+
+fmt <- function(x, d = 0) {
+  formatC(x, format = "f", digits = d, decimal.mark = ",")
+}
+
+# Checagens de consistencia da instancia sorteada.
+stopifnot(vn > vc)
+stopifnot(abs(vx - sqrt(vn^2 - vc^2)) < 1e-10)
+stopifnot(abs(ttotal - round(ttotal)) < 1e-10)
 @
 \usepackage[utf8]{inputenc}
 
@@ -19,44 +40,80 @@ Em uma maratona aquática, um nadador percorre, no sentido anti-horário, uma vo
 
 Uma corrente marítima constante de módulo $v_c=\Sexpr{vc}\,\mathrm{m/min}$ atua verticalmente para baixo na figura. A velocidade do nadador em relação à água tem módulo $v_n=\Sexpr{vn}\,\mathrm{m/min}$.
 
+Nos trechos horizontais $1\to2$ e $3\to4$, o nadador orienta seu nado obliquamente, como indicado pelos vetores $\vec v_n$, de modo a compensar a corrente e permanecer sobre o lado horizontal do circuito. Assim, sua velocidade resultante em relação à costa é horizontal. Nos trechos verticais, o movimento do nadador é colinear com a corrente.
+
 \begin{figure}[h!]
 \begin{center}
-<<fig=TRUE, height=3.8, width=6.4, echo=FALSE, eps=FALSE, results=hide>>=
-op <- par(mar = c(0.5, 0.5, 0.5, 0.5))
-plot(0, 0, type = "n", axes = FALSE, xlab = "", ylab = "",
-     xlim = c(0.2, 8.6), ylim = c(0.2, 5.1), asp = 1)
+<<fig=TRUE, height=4.2, width=6.8, echo=FALSE, eps=FALSE, results=hide>>=
+op <- par(mar = c(0.4, 0.4, 0.4, 0.4))
+
+# A geometria do retangulo acompanha a razao H/L.
+w <- 6
+h <- w * H / L
+
+x_left   <- 1.0
+x_right  <- x_left + w
+y_bottom <- 1.0
+y_top    <- y_bottom + h
+
+# A direcao de vn tambem e parametrizada.
+# Nos trechos horizontais, a componente vertical de vn deve valer vc.
+arrow_len <- 1.7
+dx <- arrow_len * vx / vn
+dy <- arrow_len * vc / vn
+
+plot(
+  0, 0, type = "n", axes = FALSE, xlab = "", ylab = "",
+  xlim = c(0.2, x_right + 1.35),
+  ylim = c(0.45, y_top + dy + 0.65),
+  asp = 1
+)
 
 # Circuito retangular
-segments(1, 1, 7, 1, lwd = 2, lty = 2)
-segments(7, 1, 7, 4, lwd = 2, lty = 2)
-segments(7, 4, 1, 4, lwd = 2, lty = 2)
-segments(1, 4, 1, 1, lwd = 2, lty = 2)
-points(c(1, 7, 7, 1), c(1, 1, 4, 4), pch = 19, cex = 1.4)
+segments(x_left,  y_bottom, x_right, y_bottom, lwd = 2, lty = 2)
+segments(x_right, y_bottom, x_right, y_top,    lwd = 2, lty = 2)
+segments(x_right, y_top,    x_left,  y_top,    lwd = 2, lty = 2)
+segments(x_left,  y_top,    x_left,  y_bottom, lwd = 2, lty = 2)
 
-# Boias e dimensões
-text(1, 0.55, "1", cex = 1)
-text(7, 0.55, "2", cex = 1)
-text(7, 4.35, "3", cex = 1)
-text(1, 4.35, "4", cex = 1)
-text(4, 4.28, paste(L, "m"), cex = 1)
-text(7.6, 2.5, paste(H, "m"), cex = 1)
+points(
+  c(x_left, x_right, x_right, x_left),
+  c(y_bottom, y_bottom, y_top, y_top),
+  pch = 19, cex = 1.45
+)
 
-# Corrente marítima
-arrows(6.25, 3.2, 6.25, 2.15, length = 0.10, lwd = 2)
-text(5.85, 2.75, expression(v[c]), cex = 1.1)
+# Pontos do percurso
+text(x_left,  y_bottom - 0.28, "1", cex = 1)
+text(x_right, y_bottom - 0.28, "2", cex = 1)
+text(x_right, y_top + 0.28,    "3", cex = 1)
+text(x_left,  y_top + 0.28,    "4", cex = 1)
 
-# Direções do nado nos lados horizontais
-arrows(2.55, 1.05, 3.75, 1.95, length = 0.10, lwd = 2)
-text(2.75, 1.85, expression(v[n]), cex = 1.1)
-arrows(5.45, 3.95, 4.25, 4.85, length = 0.10, lwd = 2)
-text(5.05, 4.72, expression(v[n]), cex = 1.1)
+# Dimensoes parametrizadas
+text((x_left + x_right) / 2, y_top + 0.25, paste(L, "m"), cex = 1)
+text(x_right + 0.58, (y_bottom + y_top) / 2, paste(H, "m"), cex = 1)
+
+# Corrente maritima: mesma escala vetorial usada para a componente vertical de vn
+xc <- x_left + 0.82 * w
+yc1 <- y_bottom + 0.72 * h
+yc2 <- yc1 - dy
+arrows(xc, yc1, xc, yc2, length = 0.10, lwd = 2)
+text(xc - 0.38, (yc1 + yc2) / 2, expression(vec(v)[c]), cex = 1.1)
+
+# vn no trecho 1 -> 2: componente horizontal +vx e vertical +vc
+x1i <- x_left + 0.27 * w
+y1i <- y_bottom + 0.02
+arrows(x1i, y1i, x1i + dx, y1i + dy, length = 0.10, lwd = 2)
+text(x1i + 0.45 * dx, y1i + 0.70 * dy, expression(vec(v)[n]), cex = 1.1)
+
+# vn no trecho 3 -> 4: componente horizontal -vx e vertical +vc
+x1s <- x_left + 0.62 * w
+y1s <- y_top + 0.02
+arrows(x1s, y1s, x1s - dx, y1s + dy, length = 0.10, lwd = 2)
+text(x1s - 0.50 * dx, y1s + 0.72 * dy, expression(vec(v)[n]), cex = 1.1)
 
 par(op)
 @
 \end{center}
 \end{figure}
-
-Nos trechos horizontais $1\to2$ e $3\to4$, o nadador orienta seu nado obliquamente, como indicado pelos vetores $\vec v_n$, de modo a compensar a corrente e permanecer sobre o lado horizontal do circuito. Assim, sua velocidade resultante em relação à costa é horizontal. Nos trechos verticais, o movimento do nadador é colinear com a corrente.
 
 Determine, em minutos, o tempo total para completar a volta.
 
@@ -76,55 +133,97 @@ Nos trechos horizontais, a componente vertical da velocidade do nadador deve can
 v_x=\sqrt{v_n^2-v_c^2}.
 \]
 
-Substituindo,
+Substituindo os valores sorteados,
 
 \[
-v_x=\sqrt{50^2-30^2}=40\,\mathrm{m/min}.
+v_x
+=
+\sqrt{\Sexpr{vn}^2-\Sexpr{vc}^2}
+=
+\Sexpr{vx}\,\mathrm{m/min}.
 \]
 
-Cada trecho horizontal tem $800\,\mathrm{m}$, então
+Cada trecho horizontal tem comprimento $\Sexpr{L}\,\mathrm{m}$, então
 
 \[
-t_h=\frac{800}{40}=20\,\mathrm{min}.
+t_h
+=
+\frac{\Sexpr{L}}{\Sexpr{vx}}
+=
+\Sexpr{fmt(t1)}\,\mathrm{min}.
 \]
 
-Como são dois trechos horizontais, o tempo total neles é $40\,\mathrm{min}$.
+Como são dois trechos horizontais, o tempo total neles é
+
+\[
+2t_h=\Sexpr{fmt(t1+t3)}\,\mathrm{min}.
+\]
 
 No trecho $2\to3$, o nadador se desloca para cima, contra a corrente. A velocidade resultante é
 
 \[
-v_{23}=50-30=20\,\mathrm{m/min},
+v_{23}
+=
+v_n-v_c
+=
+\Sexpr{vn}-\Sexpr{vc}
+=
+\Sexpr{vn-vc}\,\mathrm{m/min}.
 \]
 
-e, portanto,
+Logo,
 
 \[
-t_{23}=\frac{400}{20}=20\,\mathrm{min}.
+t_{23}
+=
+\frac{\Sexpr{H}}{\Sexpr{vn-vc}}
+=
+\Sexpr{fmt(t2)}\,\mathrm{min}.
 \]
 
 No trecho $4\to1$, o nadador se desloca para baixo, a favor da corrente:
 
 \[
-v_{41}=50+30=80\,\mathrm{m/min},
-\]
-
-logo,
-
-\[
-t_{41}=\frac{400}{80}=5\,\mathrm{min}.
+v_{41}
+=
+v_n+v_c
+=
+\Sexpr{vn}+\Sexpr{vc}
+=
+\Sexpr{vn+vc}\,\mathrm{m/min}.
 \]
 
 Assim,
 
 \[
-t_{\mathrm{total}}=20+20+20+5=65\,\mathrm{min}.
+t_{41}
+=
+\frac{\Sexpr{H}}{\Sexpr{vn+vc}}
+=
+\Sexpr{fmt(t4)}\,\mathrm{min}.
+\]
+
+Portanto,
+
+\[
+t_{\mathrm{total}}
+=
+\Sexpr{fmt(t1)}
++
+\Sexpr{fmt(t2)}
++
+\Sexpr{fmt(t3)}
++
+\Sexpr{fmt(t4)}
+=
+\Sexpr{fmt(ttotal)}\,\mathrm{min}.
 \]
 
 \end{solution}
 
 %% META-INFORMATION
 %% \extype{num}
-%% \exsolution{65}
+%% \exsolution{\Sexpr{round(ttotal,0)}}
 %% \extol{0.01}
 %% \exname{Q92ClozeNadadorCorrente}
 %% \exsection{Mecanica; Vetores; Movimento relativo; ENEM}
