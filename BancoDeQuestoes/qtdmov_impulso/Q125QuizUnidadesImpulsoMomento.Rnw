@@ -1,0 +1,63 @@
+<<echo=FALSE, results=hide>>=
+## Inspirada na seção de unidades do material "Quantidade de Movimento".
+## Objetivo: reconhecer a equivalência dimensional entre N.s e kg.m/s.
+
+questions <- c(
+  "$1\\,\\mathrm{N\\,s}=1\\,\\mathrm{kg\\,m/s}$",
+  "$1\\,\\mathrm{N\\,s}=1\\,\\mathrm{kg\\,m/s^2}$",
+  "$1\\,\\mathrm{N\\,s}=1\\,\\mathrm{kg\\,m^2/s}$",
+  "$1\\,\\mathrm{N\\,s}=1\\,\\mathrm{kg/s}$",
+  "$1\\,\\mathrm{N\\,s}=1\\,\\mathrm{J}$"
+)
+solutions <- c(TRUE, FALSE, FALSE, FALSE, FALSE)
+
+ord <- sample(seq_along(questions))
+questions <- questions[ord]
+solutions <- solutions[ord]
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+No Sistema Internacional, o impulso de uma força pode ser expresso em $\mathrm{N\,s}$, enquanto a quantidade de movimento é expressa em $\mathrm{kg\,m/s}$. Essas duas unidades são dimensionalmente equivalentes.
+
+Qual relação está correta?
+
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(questions)
+@
+
+\end{question}
+
+\begin{solution}
+
+Pela definição do newton,
+\[
+1\,\mathrm{N}=1\,\mathrm{kg\,m/s^2}.
+\]
+
+Multiplicando ambos os lados por segundo:
+\[
+1\,\mathrm{N\,s}
+=
+1\,\mathrm{kg\,m/s^2}\cdot\mathrm{s}
+=
+1\,\mathrm{kg\,m/s}.
+\]
+
+Essa equivalência é coerente com o teorema do impulso,
+\[
+I=\Delta p,
+\]
+pois impulso e variação da quantidade de movimento devem ter a mesma dimensão física.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: material "Quantidade de Movimento", seção sobre unidades de impulso e quantidade de movimento.
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q125QuizUnidadesImpulsoMomento}
+%% \exsection{Mecanica; Impulso; Quantidade de movimento; Unidades}
+%% \exusepackage[utf8]{inputenc}
