@@ -44,7 +44,21 @@ def parse_mapping(value: str) -> tuple[int, Path]:
     return q, Path(right)
 
 
-def variants_from(path: Path, q: int, expected: int) -> list[str]:
+def strip_embedded_images(block: str) -> str:
+    """Remove imagens incorporadas quando a figura é apenas ilustrativa."""
+    block = re.sub(r'<img\\b[^>]*?/?>', '', block, flags=re.I)
+    block = re.sub(
+        r'<file\\b[^>]*>.*?</file>\\s*',
+        '',
+        block,
+        flags=re.I | re.S,
+    )
+    return block
+
+
+def variants_from(
+    path: Path, q: int, expected: int, strip_images: bool = False
+) -> list[str]:
     text = path.read_text(encoding="utf-8")
     out: list[str] = []
 
@@ -57,6 +71,8 @@ def variants_from(path: Path, q: int, expected: int) -> list[str]:
         r = int(m.group(1))
         replacement = f'<name>\n<text>Q{q:02d}-R{r:03d}</text>\n</name>'
         block = NAME.sub(replacement, block, count=1)
+        if strip_images:
+            block = strip_embedded_images(block)
         out.append(block)
 
     if len(out) != expected:
@@ -81,9 +97,17 @@ def main() -> int:
     ap.add_argument("--prefix", required=True)
     ap.add_argument("--expected-variants", type=int, default=50)
     ap.add_argument("--output", required=True, type=Path)
+    ap.add_argument(
+        "--strip-images",
+        default="",
+        help="lista de questões sem figuras, por exemplo 1,2,5",
+    )
     ap.add_argument("mappings", nargs="+", type=parse_mapping)
     args = ap.parse_args()
 
+    strip_images = {
+        int(x) for x in args.strip_images.split(",") if x.strip()
+    }
     mappings = sorted(args.mappings, key=lambda x: x[0])
     qs = [q for q, _ in mappings]
     if qs != list(range(1, 11)):
@@ -92,7 +116,11 @@ def main() -> int:
     body: list[str] = []
     for q, path in mappings:
         body.append(category(args.prefix, q))
-        body.extend(variants_from(path, q, args.expected_variants))
+        body.extend(
+            variants_from(
+                path, q, args.expected_variants, strip_images=q in strip_images
+            )
+        )
 
     result = (
         '<?xml version="1.0" encoding="UTF-8"?>\n'
