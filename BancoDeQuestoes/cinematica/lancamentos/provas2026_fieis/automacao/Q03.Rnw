@@ -31,6 +31,6 @@ solution_bits <- paste(as.integer(LETTERS[1:5] == answer_letter), collapse="")
 A alternativa correta nesta versão é \textbf{\Sexpr{answer_letter}}.
 \end{solution}
 
-\exname{LO26AUTOQ03}
-\extype{schoice}
-\exsolution{\Sexpr{solution_bits}}
+%% \exname{LO26AUTOQ03}
+%% \extype{schoice}
+%% \exsolution{\Sexpr{solution_bits}}
