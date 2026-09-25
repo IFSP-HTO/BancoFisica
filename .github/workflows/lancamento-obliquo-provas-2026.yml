@@ -1,21 +1,20 @@
-name: Lançamento oblíquo — listas das provas 2026
+name: Lançamento oblíquo — listas fiéis às provas 2026
 
 on:
   pull_request:
     branches: [master]
     paths:
-      - "BancoDeQuestoes/cinematica/lancamentos/listas2026/**"
-      - "BancoDeQuestoes/figuras/LO26_*"
+      - "BancoDeQuestoes/cinematica/lancamentos/provas2026_fieis/**"
       - "tools/generate_lancamento_obliquo_provas_2026.R"
-      - "tools/assemble_lancamento_obliquo_exam_xml.py"
+      - "tools/rewrite_lancamento_obliquo_moodle.py"
       - ".github/workflows/lancamento-obliquo-provas-2026.yml"
       - "DESCRIPTION"
   workflow_dispatch:
     inputs:
       variants:
-        description: "Variantes por questão-base"
+        description: "Réplicas por questão"
         required: false
-        default: "50"
+        default: "25"
 
 permissions:
   contents: read
@@ -32,20 +31,44 @@ jobs:
           use-public-rspm: true
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
-          cache-version: lancamento-obliquo-provas-2026-1
+          cache-version: lancamento-obliquo-provas-fieis-2026-1
           dependencies: '"all"'
 
-      - name: Gerar os três XMLs
+      - name: Conferir fontes fiéis
         run: |
-          N="${{ github.event.inputs.variants || '50' }}"
+          python3 - <<'PY'
+          from pathlib import Path
+
+          root = Path("BancoDeQuestoes/cinematica/lancamentos/provas2026_fieis")
+          for turma in ("mecanica", "informatica", "automacao"):
+              d = root / turma
+              rnw = sorted(d.glob("Q??.Rnw"))
+              png = sorted((d / "assets").glob(f"{turma}_Q??_V??.png"))
+              if len(rnw) != 10:
+                  raise SystemExit(f"{turma}: esperados 10 Rnw, encontrados {len(rnw)}")
+              if len(png) != 100:
+                  raise SystemExit(f"{turma}: esperados 100 recortes, encontrados {len(png)}")
+              for q in range(1, 11):
+                  assets = sorted((d / "assets").glob(f"{turma}_Q{q:02d}_V??.png"))
+                  if len(assets) != 10:
+                      raise SystemExit(
+                          f"{turma} Q{q:02d}: esperados 10 recortes, encontrados {len(assets)}"
+                      )
+              print(turma, "OK: 10 Rnw + 100 recortes fiéis")
+          PY
+
+      - name: Gerar os três XMLs fiéis
+        run: |
+          N="${{ github.event.inputs.variants || '25' }}"
           Rscript tools/generate_lancamento_obliquo_provas_2026.R "$N"
 
-      - name: Validar estrutura Q01--Q10
+      - name: Validar fidelidade estrutural dos XMLs
         run: |
           python3 - <<'PY'
           from pathlib import Path
           import re
 
+          expected = 25
           out = Path("build/lancamento-obliquo-provas-2026")
           files = sorted(out.glob("*.xml"))
           if len(files) != 3:
@@ -56,7 +79,7 @@ jobs:
               cats = re.findall(r'<text>\$course\$/[^<]+/(Q\d{2})</text>', s)
               if sorted(cats) != [f"Q{i:02d}" for i in range(1, 11)]:
                   raise SystemExit(f"{p}: categorias inesperadas: {cats}")
-              expected = 25
+
               for i in range(1, 11):
                   q = f"Q{i:02d}"
                   names = re.findall(
@@ -66,15 +89,30 @@ jobs:
                   )
                   if len(names) != expected:
                       raise SystemExit(
-                          f"{p}: {q} possui {len(names)} variantes; esperado {expected}"
+                          f"{p}: {q} possui {len(names)} réplicas; esperado {expected}"
                       )
+
+              imgs = re.findall(r'<img\b[^>]*@@PLUGINFILE@@[^>]*>', s, re.I)
+              embedded = re.findall(r'<file\b[^>]*encoding="base64"[^>]*>', s, re.I)
+              if len(imgs) != 250:
+                  raise SystemExit(f"{p}: esperadas 250 imagens, encontradas {len(imgs)}")
+              if len(embedded) != 250:
+                  raise SystemExit(
+                      f"{p}: esperados 250 arquivos incorporados, encontrados {len(embedded)}"
+                  )
+
               if p.stat().st_size > 10 * 1024 * 1024:
                   raise SystemExit(f"{p}: excede 10 MiB")
-              print(p, "OK", p.stat().st_size / 1024**2, "MiB")
+
+              print(
+                  p, "OK:",
+                  "10 categorias,", "250 itens,", "250 imagens,",
+                  f"{p.stat().st_size / 1024**2:.2f} MiB"
+              )
           PY
 
       - name: Upload XMLs
         uses: actions/upload-artifact@v4
         with:
-          name: lancamento-obliquo-provas-2026-moodle
+          name: lancamento-obliquo-provas-2026-moodle-fieis
           path: build/lancamento-obliquo-provas-2026/*.xml
