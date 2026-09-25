@@ -25,7 +25,7 @@ x3 <- xc + vf*(t3-tc)
 m2 <- m1*(u/vf - 1)
 
 fmt <- function(x, d = 0) formatC(x, format = "f", digits = d, decimal.mark = ",")
-include_supplement("Q115ENEM2016TrilhoAr.png")
+include_supplement("Q115ENEM2016TrilhoAr.png", dir = "../figuras")
 @
 
 \usepackage[utf8]{inputenc}
