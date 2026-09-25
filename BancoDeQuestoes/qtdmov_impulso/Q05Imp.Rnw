@@ -1,33 +1,64 @@
 <<echo=FALSE, results=hide>>=
-# Marcelo C.
-
-m <- sample(seq(from=10,to=50,by=5),1)
+m_g <- sample(seq(from=10,to=50,by=5),1)
 v1 <- sample(seq(from=4,to=10,by=1),1)
 v2 <- sample(seq(from=3,to=v1-1,by=1),1)
-resp <- round(m*(v2+v1)/1000,4)
 
-options(OutDec=",")
+m <- m_g/1000
+resp <- m*(v1+v2)
+
+fmt <- function(x, d=3) formatC(x, format="f", digits=d, decimal.mark=",")
 @
+
+\usepackage[utf8]{inputenc}
 
 \begin{question}
 
-(UNIFESP) Uma esfera de massa $\Sexpr{m}$ gramas atinge uma parede rígida com velocidade de $\Sexpr{format(v1,nsmall=1)}$ m/s e volta na mesma direção com velocidade de $\Sexpr{format(v2,nsmall=1)}$ m/s. O impulso da força exercida pela parede sobre a esfera, em N.s, é, em módulo, de
+(UNIFESP, adaptada e parametrizada) Uma esfera de massa $\Sexpr{m_g}\,\mathrm{g}$ atinge perpendicularmente uma parede rígida com velocidade de módulo $\Sexpr{v1}\,\mathrm{m/s}$ e retorna na mesma direção, em sentido contrário, com velocidade de módulo $\Sexpr{v2}\,\mathrm{m/s}$.
+
+Determine o módulo do impulso da força exercida pela parede sobre a esfera, em $\mathrm{N\,s}$.
 
 \end{question}
 
-%% SOLUTION
-\begin{solution}:
+\begin{solution}
 
-  \Sexpr{resp} 
-  
+Escolha como positivo o sentido da velocidade da esfera antes da colisão. Assim,
+\[
+v_i=+\Sexpr{v1}\,\mathrm{m/s}
+\qquad\text{e}\qquad
+v_f=-\Sexpr{v2}\,\mathrm{m/s}.
+\]
+
+A massa em unidades do SI é
+\[
+m=\frac{\Sexpr{m_g}}{1000}
+=\Sexpr{fmt(m,3)}\,\mathrm{kg}.
+\]
+
+Pelo teorema do impulso,
+\[
+I=\Delta p=m(v_f-v_i).
+\]
+Portanto,
+\[
+I=\Sexpr{fmt(m,3)}
+\left(-\Sexpr{v2}-\Sexpr{v1}\right).
+\]
+
+Como se pede o módulo,
+\[
+|I|=m(v_1+v_2)
+=\Sexpr{fmt(resp,3)}\,\mathrm{N\,s}.
+\]
+
+O sinal da variação da quantidade de movimento dependeria da escolha do eixo; o módulo do impulso é o valor positivo acima.
+
 \end{solution}
 
-<<echo=FALSE, results=hide>>=
-options(OutDec=".")
-@
-
 %% META-INFORMATION
+%% Fonte: UNIFESP, adaptada e parametrizada.
 %% \extype{num}
 %% \exsolution{\Sexpr{resp}}
 %% \exname{Q05Imp}
 %% \extol{0.001}
+%% \exsection{Mecanica; Impulso; Quantidade de movimento; Colisoes}
+%% \exusepackage[utf8]{inputenc}

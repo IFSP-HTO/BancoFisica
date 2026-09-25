@@ -1,0 +1,52 @@
+<<echo=FALSE, results=hide>>=
+casos <- data.frame(
+  M = c(600, 800, 1000, 900),
+  m = c(3, 4, 5, 6),
+  vp = c(800, 600, 400, 600)
+)
+i <- sample(seq_len(nrow(casos)), 1)
+M <- casos$M[i]
+m <- casos$m[i]
+vp <- casos$vp[i]
+vc <- -(m * vp) / M
+fmt <- function(x, d = 1) formatC(x, format = "f", digits = d, decimal.mark = ",")
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+(PUC, adaptada e parametrizada) Um canhão inicialmente em repouso, de massa $\Sexpr{M}\,\mathrm{kg}$, dispara horizontalmente um projétil de massa $\Sexpr{m}\,\mathrm{kg}$ com velocidade $\Sexpr{vp}\,\mathrm{m/s}$ em relação ao solo. Despreze forças externas horizontais durante o disparo.
+
+Adotando como positivo o sentido do movimento do projétil, determine a velocidade de recuo do canhão, em $\mathrm{m/s}$.
+
+\end{question}
+
+\begin{solution}
+
+Antes do disparo, o sistema está em repouso, portanto sua quantidade de movimento total é nula. Durante o curto intervalo do disparo, desprezando o impulso externo horizontal,
+\[
+p_{\mathrm{antes}}=p_{\mathrm{depois}}.
+\]
+Assim,
+\[
+0=Mv_c+mv_p.
+\]
+Logo,
+\[
+v_c=-\frac{mv_p}{M}
+=-\frac{\Sexpr{m}\cdot\Sexpr{vp}}{\Sexpr{M}}
+=\Sexpr{fmt(vc,1)}\,\mathrm{m/s}.
+\]
+O sinal negativo indica que o canhão recua no sentido oposto ao projétil.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Colisoes.pdf, exercício 1 (PUC), adaptada e parametrizada.
+%% \extype{num}
+%% \exsolution{\Sexpr{vc}}
+%% \exname{Q108ClozePUCCanhaoRecuo}
+%% \extol{0.01}
+%% \exsection{Mecanica; Quantidade de movimento; Conservacao; Recuo}
+%% \exusepackage[utf8]{inputenc}

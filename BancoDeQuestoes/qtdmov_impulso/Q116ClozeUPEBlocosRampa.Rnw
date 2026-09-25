@@ -1,0 +1,77 @@
+<<echo=FALSE, results=hide>>=
+casos <- data.frame(
+  mA = c(2, 2, 3, 2, 1),
+  mB = c(8, 6, 2, 3, 1),
+  v0 = c(5, 8, 5, 10, 10)
+)
+i <- sample(seq_len(nrow(casos)), 1)
+mA <- casos$mA[i]
+mB <- casos$mB[i]
+v0 <- casos$v0[i]
+
+g <- 10
+vf <- mA*v0/(mA+mB)
+h <- vf^2/(2*g)
+hcm <- 100*h
+
+fmt <- function(x, d = 1) formatC(x, format = "f", digits = d, decimal.mark = ",")
+include_supplement("Q116UPEBlocosRampa.png")
+@
+
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+
+(UPE-PE, adaptada e parametrizada) O bloco $A$, de massa
+$m_A=\Sexpr{fmt(mA,1)}\,\mathrm{kg}$, move-se com velocidade
+$v_0=\Sexpr{fmt(v0,1)}\,\mathrm{m/s}$ e colide com o bloco $B$, de massa
+$m_B=\Sexpr{fmt(mB,1)}\,\mathrm{kg}$, inicialmente em repouso. Após a colisão, os blocos permanecem unidos e sobem uma rampa até atingir uma altura máxima $h$ em relação ao solo.
+
+\begin{center}
+\includegraphics[width=12.5cm,keepaspectratio]{Q116UPEBlocosRampa.png}
+\end{center}
+
+Despreze os atritos e adote $g=\Sexpr{g}\,\mathrm{m/s^2}$. Determine a altura máxima $h$, em cm.
+
+\end{question}
+
+\begin{solution}
+
+Durante a colisão, a quantidade de movimento horizontal é conservada:
+\[
+m_Av_0=(m_A+m_B)v_f.
+\]
+Portanto,
+\[
+v_f=
+\frac{m_Av_0}{m_A+m_B}
+=
+\frac{\Sexpr{fmt(mA,1)}\cdot\Sexpr{fmt(v0,1)}}
+{\Sexpr{fmt(mA+mB,1)}}
+=
+\Sexpr{fmt(vf,1)}\,\mathrm{m/s}.
+\]
+
+Depois da colisão, durante a subida pela rampa, a energia mecânica do conjunto é conservada:
+\[
+\frac12(m_A+m_B)v_f^2=(m_A+m_B)gh.
+\]
+Assim,
+\[
+h=\frac{v_f^2}{2g}
+=\Sexpr{fmt(h,2)}\,\mathrm{m}
+=\Sexpr{fmt(hcm,1)}\,\mathrm{cm}.
+\]
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Colisoes.pdf, exercício 7 (UPE-PE), adaptada e parametrizada.
+%% Figura parametrizável preparada para o BancoFisica a partir do esquema da fonte.
+%% \extype{num}
+%% \exsolution{\Sexpr{hcm}}
+%% \exname{Q116ClozeUPEBlocosRampa}
+%% \extol{0.1}
+%% \exsection{Mecanica; Quantidade de movimento; Colisoes; Energia mecanica}
+%% \exusepackage[utf8]{inputenc}

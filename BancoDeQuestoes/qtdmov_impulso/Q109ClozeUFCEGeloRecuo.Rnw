@@ -1,0 +1,53 @@
+<<echo=FALSE, results=hide>>=
+casos <- data.frame(
+  m_menino = c(40, 50, 60, 45),
+  m_homem = c(80, 100, 120, 90),
+  v_homem = c(0.25, 0.20, 0.30, 0.40)
+)
+i <- sample(seq_len(nrow(casos)), 1)
+m_menino <- casos$m_menino[i]
+m_homem <- casos$m_homem[i]
+v_homem <- casos$v_homem[i]
+v_menino <- -(m_homem * v_homem) / m_menino
+fmt <- function(x, d = 2) formatC(x, format = "f", digits = d, decimal.mark = ",")
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+(UFCE, adaptada e parametrizada) Sobre a superfície de um lago gelado, onde o atrito horizontal pode ser desprezado, um menino de massa $\Sexpr{m_menino}\,\mathrm{kg}$ empurra um homem de massa $\Sexpr{m_homem}\,\mathrm{kg}$. Os dois estavam inicialmente em repouso. Após o empurrão, o homem passa a se mover com velocidade $\Sexpr{fmt(v_homem,2)}\,\mathrm{m/s}$.
+
+Adotando como positivo o sentido do movimento do homem, determine a velocidade do menino, em $\mathrm{m/s}$.
+
+\end{question}
+
+\begin{solution}
+
+A quantidade de movimento horizontal inicial do sistema é nula. Como o impulso externo horizontal é desprezível,
+\[
+m_{\mathrm{menino}}v_{\mathrm{menino}}
++
+m_{\mathrm{homem}}v_{\mathrm{homem}}=0.
+\]
+Portanto,
+\[
+v_{\mathrm{menino}}
+=
+-\frac{m_{\mathrm{homem}}v_{\mathrm{homem}}}
+       {m_{\mathrm{menino}}}
+=
+\Sexpr{fmt(v_menino,2)}\,\mathrm{m/s}.
+\]
+O sinal negativo mostra que o menino se move no sentido oposto ao homem.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Colisoes.pdf, exercício 4 (UFCE), adaptada e parametrizada.
+%% \extype{num}
+%% \exsolution{\Sexpr{v_menino}}
+%% \exname{Q109ClozeUFCEGeloRecuo}
+%% \extol{0.01}
+%% \exsection{Mecanica; Quantidade de movimento; Conservacao; Recuo}
+%% \exusepackage[utf8]{inputenc}

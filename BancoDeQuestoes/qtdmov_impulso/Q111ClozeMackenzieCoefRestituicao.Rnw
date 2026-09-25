@@ -1,0 +1,53 @@
+<<echo=FALSE, results=hide>>=
+casos <- data.frame(
+  h1 = c(12, 20, 18, 8),
+  h2 = c(6, 5, 8, 2)
+)
+i <- sample(seq_len(nrow(casos)), 1)
+h1 <- casos$h1[i]
+h2 <- casos$h2[i]
+e <- sqrt(h2 / h1)
+fmt <- function(x, d = 3) formatC(x, format = "f", digits = d, decimal.mark = ",")
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+(MACKENZIE-SP, adaptada e parametrizada) Uma bola é abandonada do repouso de uma altura de $\Sexpr{h1}\,\mathrm{m}$ em relação ao solo. Após colidir verticalmente com o chão, ela sobe até uma altura máxima de $\Sexpr{h2}\,\mathrm{m}$.
+
+Desprezando a resistência do ar, determine o coeficiente de restituição entre a bola e o solo.
+
+\end{question}
+
+\begin{solution}
+
+Imediatamente antes da colisão,
+\[
+v_{\mathrm{aprox}}=\sqrt{2gh_1}.
+\]
+Imediatamente depois da colisão,
+\[
+v_{\mathrm{afast}}=\sqrt{2gh_2}.
+\]
+Como o solo permanece em repouso, o coeficiente de restituição é
+\[
+e=\frac{v_{\mathrm{afast}}}{v_{\mathrm{aprox}}}
+=\sqrt{\frac{h_2}{h_1}}.
+\]
+Assim,
+\[
+e=\sqrt{\frac{\Sexpr{h2}}{\Sexpr{h1}}}
+=\Sexpr{fmt(e,3)}.
+\]
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Colisoes.pdf, exercício 8 (MACKENZIE-SP), adaptada e parametrizada.
+%% \extype{num}
+%% \exsolution{\Sexpr{e}}
+%% \exname{Q111ClozeMackenzieCoefRestituicao}
+%% \extol{0.005}
+%% \exsection{Mecanica; Colisoes; Coeficiente de restituicao}
+%% \exusepackage[utf8]{inputenc}

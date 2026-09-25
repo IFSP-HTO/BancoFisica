@@ -1,0 +1,97 @@
+<<echo=FALSE, results=hide>>=
+casos <- data.frame(
+  m1 = c(150, 200, 120, 180),
+  u  = c(15, 12, 18, 20),
+  vf = c(5, 4, 6, 8),
+  x0 = c(15, 10, 10, 10)
+)
+i <- sample(seq_len(nrow(casos)), 1)
+m1 <- casos$m1[i]
+u  <- casos$u[i]
+vf <- casos$vf[i]
+x0 <- casos$x0[i]
+
+t0 <- 0
+t1 <- 1
+tc <- 2
+t2 <- 8
+t3 <- 11
+
+x1 <- x0 + u*(t1-t0)
+xc <- x0 + u*(tc-t0)
+x2 <- xc + vf*(t2-tc)
+x3 <- xc + vf*(t3-tc)
+
+m2 <- m1*(u/vf - 1)
+
+fmt <- function(x, d = 0) formatC(x, format = "f", digits = d, decimal.mark = ",")
+include_supplement("Q115ENEM2016TrilhoAr.png")
+@
+
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+
+(ENEM 2016, adaptada e parametrizada) Um trilho de ar permite estudar colisões com atrito desprezível. Dois carrinhos, 1 e 2, deslocam-se sobre o trilho da figura. Inicialmente, o carrinho 1, de massa $\Sexpr{m1}\,\mathrm{g}$, move-se com velocidade constante, enquanto o carrinho 2 está em repouso. Após a colisão, os carrinhos permanecem unidos e passam a se mover juntos.
+
+\begin{center}
+\includegraphics[width=13.5cm,keepaspectratio]{Q115ENEM2016TrilhoAr.png}
+\end{center}
+
+Os sensores registraram os seguintes dados:
+
+\begin{center}
+\begin{tabular}{cc|cc}
+\hline
+\multicolumn{2}{c|}{Carrinho 1} & \multicolumn{2}{c}{Carrinho 2}\\
+Posição (cm) & Instante (s) & Posição (cm) & Instante (s)\\
+\hline
+\Sexpr{x0} & 0  & \Sexpr{xc} & 0\\
+\Sexpr{x1} & 1  & \Sexpr{xc} & 1\\
+\Sexpr{x2} & 8  & \Sexpr{x2} & 8\\
+\Sexpr{x3} & 11 & \Sexpr{x3} & 11\\
+\hline
+\end{tabular}
+\end{center}
+
+Com base nos dados experimentais e na conservação da quantidade de movimento durante a colisão, determine a massa do carrinho 2, em g.
+
+\end{question}
+
+\begin{solution}
+
+Antes da colisão, a velocidade do carrinho 1 pode ser obtida pelas duas primeiras medidas:
+\[
+u_1=\frac{\Sexpr{x1}-\Sexpr{x0}}{1-0}
+=\Sexpr{u}\,\mathrm{cm/s}.
+\]
+
+Depois da colisão, os dois carrinhos movem-se juntos. Usando as duas últimas medidas,
+\[
+v_f=\frac{\Sexpr{x3}-\Sexpr{x2}}{11-8}
+=\Sexpr{vf}\,\mathrm{cm/s}.
+\]
+
+Como o carrinho 2 estava inicialmente em repouso,
+\[
+m_1u_1=(m_1+m_2)v_f.
+\]
+Logo,
+\[
+m_2=m_1\left(\frac{u_1}{v_f}-1\right)
+=\Sexpr{m1}\left(\frac{\Sexpr{u}}{\Sexpr{vf}}-1\right)
+=\Sexpr{fmt(m2)}\,\mathrm{g}.
+\]
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: ENEM 2016 Q69, reproduzida em Colisoes.pdf; adaptada e parametrizada.
+%% A figura do trilho foi preservada sem dados numéricos; a tabela foi recriada em LaTeX para permitir parametrização.
+%% \extype{num}
+%% \exsolution{\Sexpr{m2}}
+%% \exname{Q115ClozeENEM2016TrilhoAr}
+%% \extol{0.01}
+%% \exsection{Mecanica; Quantidade de movimento; Conservacao; Colisoes; ENEM}
+%% \exusepackage[utf8]{inputenc}

@@ -1,35 +1,51 @@
 <<echo=FALSE, results=hide>>=
-# Marcelo C.
-
-
 m <- sample(seq(from=0.1,to=2,by=0.1),1)
 a <- sample(seq(from=0.3,to=0.9,by=0.3),1)
 t <- sample(seq(from=1.0,to=6.0,by=1),1)
 
-resp <- round(m*a*t,1)
+v <- a*t
+resp <- m*v
 
-options(OutDec=",")
+fmt <- function(x, d=1) formatC(x, format="f", digits=d, decimal.mark=",")
 @
+
+\usepackage[utf8]{inputenc}
 
 \begin{question}
 
-(VUNESP adapt.) Um objeto de massa $\Sexpr{m}$ $kg$ está se deslocando ao longo de uma trajetória retilínea com aceleração escalar constante igual a $\Sexpr{a}$ $m/s^2$. Se partiu do repouso, determine o módulo da sua quantidade de movimento, em $kg\cdot m/s$, ao fim de $\Sexpr{format(t,nsmall=1)}$ $s$.
+(VUNESP, adaptada e parametrizada) Um objeto de massa $\Sexpr{fmt(m,1)}\,\mathrm{kg}$ desloca-se ao longo de uma trajetória retilínea com aceleração escalar constante igual a $\Sexpr{fmt(a,1)}\,\mathrm{m/s^2}$. Se partiu do repouso, determine o módulo de sua quantidade de movimento, em $\mathrm{kg\,m/s}$, ao fim de $\Sexpr{fmt(t,1)}\,\mathrm{s}$.
 
 \end{question}
 
-%% SOLUTION
-\begin{solution}:
+\begin{solution}
 
-  \Sexpr{resp} 
-  
+Como o objeto parte do repouso e a aceleração é constante,
+\[
+v=v_0+at=at.
+\]
+Logo,
+\[
+v=\Sexpr{fmt(a,1)}\cdot\Sexpr{fmt(t,1)}
+=\Sexpr{fmt(v,1)}\,\mathrm{m/s}.
+\]
+
+A quantidade de movimento tem módulo
+\[
+p=mv.
+\]
+Portanto,
+\[
+p=\Sexpr{fmt(m,1)}\cdot\Sexpr{fmt(v,1)}
+=\Sexpr{fmt(resp,2)}\,\mathrm{kg\,m/s}.
+\]
+
 \end{solution}
 
-<<echo=FALSE, results=hide>>=
-options(OutDec=".")
-@
-
 %% META-INFORMATION
+%% Fonte: VUNESP, adaptada e parametrizada.
 %% \extype{num}
 %% \exsolution{\Sexpr{resp}}
 %% \exname{Q01Qmov}
-%% \extol{0.1}
+%% \extol{0.01}
+%% \exsection{Mecanica; Quantidade de movimento}
+%% \exusepackage[utf8]{inputenc}
