@@ -1,64 +1,74 @@
-# Listas Moodle derivadas das três provas de lançamento oblíquo — 2026
+# Listas Moodle fiéis às provas de lançamento oblíquo — 2026
 
-Este diretório documenta o mapeamento entre as três avaliações impressas de
-lançamento oblíquo e as questões-base parametrizadas do BancoFisica.
+Este fluxo reproduz no Moodle as três avaliações impressas de lançamento
+oblíquo **como os estudantes as viram**, sem substituir questões, figuras ou
+alternativas por versões equivalentes do BancoFisica.
 
-O objetivo do gerador dedicado é produzir **um XML por turma**, com a seguinte
-estrutura lógica no Moodle:
+Associação dos lotes impressos:
+
+- **Mecânica**: `LO-2609`;
+- **Informática**: `LO2-2609` (T2);
+- **Automação**: `LO3-2609` (T3).
+
+## Fonte de verdade
+
+As fontes ficam em:
+
+```text
+BancoDeQuestoes/cinematica/lancamentos/provas2026_fieis/
+  mecanica/
+    Q01.Rnw ... Q10.Rnw
+    assets/
+  informatica/
+    Q01.Rnw ... Q10.Rnw
+    assets/
+  automacao/
+    Q01.Rnw ... Q10.Rnw
+    assets/
+```
+
+Cada questão possui **10 recortes visuais**, um para cada versão realmente
+impressa da prova. Os recortes foram obtidos diretamente dos PDFs limpos
+pré-aplicação. Eles preservam o enunciado, a figura, os valores numéricos e a
+ordem das alternativas A--E da prova impressa.
+
+Não são usados scans de estudantes, folhas respondidas, nomes, matrículas,
+notas ou qualquer outro dado individual.
+
+## Como a questão aparece no Moodle
+
+O bloco completo da questão impressa é mostrado como uma imagem fiel. Logo
+abaixo, o Moodle apresenta apenas o seletor A, B, C, D, E. O estudante marca
+a letra correspondente à alternativa já visível no recorte.
+
+O seletor **não é embaralhado**, pois a ordem A--E já está congelada na imagem
+da prova.
+
+Cada `.Rnw` sorteia uma das 10 versões efetivamente impressas para aquela
+posição. Ao gerar 25 réplicas, as variantes são amostras do conjunto real de
+10 versões; repetições são esperadas e deliberadas.
+
+## Estrutura no Moodle
+
+Cada turma é exportada em um único XML:
 
 ```text
 BancoFisica/Listas 2026/Lancamento Obliquo/<Turma>/
-  Q01/  -> 50 réplicas
-  Q02/  -> 50 réplicas
+  Q01/ -> Q01-R001 ... Q01-R025
+  Q02/ -> Q02-R001 ... Q02-R025
   ...
-  Q10/  -> 50 réplicas
+  Q10/ -> Q10-R001 ... Q10-R025
 ```
 
-Assim, o professor pode criar um questionário com uma questão aleatória de
-cada categoria Q01--Q10.
-
-## Associação das provas
-
-- **Mecânica**: lote impresso `LO-2609`;
-- **Informática**: lote impresso `LO2-2609` (T2);
-- **Automação**: lote impresso `LO3-2609` (T3).
-
-## Mapeamento para as questões-base
-
-| Q | Mecânica | Informática | Automação |
-|---|---|---|---|
-| Q01 | `lista1/Q09QuizPanossoEstroboscopica.Rnw` | `lista1/Q13QuizCebolinhaTempoVoo.Rnw` | `lista1/Q01QuizUEPG2011Conceitos.Rnw` |
-| Q02 | `lista1/Q05QuizPUCSPConceitualApice.Rnw` | `lista1/Q03ClozeComponentes100ms.Rnw` | `lista2/Q09ClozePele1970.Rnw` |
-| Q03 | `lista1/Q07QuizUELVelocidadeApice.Rnw` | `lista1/Q02QuizUFT2010AlturaMaxima.Rnw` | `lista2/Q08ClozeCanhao30e60.Rnw` |
-| Q04 | `lista1/Q10QuizSalto45graus10ms.Rnw` | `lista2/Q07ClozeFutebol108kmh60graus.Rnw` | `reserva/Q10ClozeBasqueteApice05s.Rnw` |
-| Q05 | `lista1/Q06QuizUERJMassasAlcance.Rnw` | `lista1/Q11ClozeProjetil10msTrig.Rnw` | `reserva/Q09ClozeDebretFlecha45.Rnw` |
-| Q06 | `lista2/Q04QuizFESOMesmaAltura.Rnw` | `lista1/Q04ClozeAltura72VelTopo10.Rnw` | `reserva/Q02ClozeUFOP2010EdificioCorrigida.Rnw` |
-| Q07 | `lista1/Q15QuizBalisticaTempo6s.Rnw` | `lista2/Q14ClozeGoleiroIntercepta18m.Rnw` | `reserva/Q07QuizObstaculo64m.Rnw` |
-| Q08 | `lista1/Q12ClozeFaltaAltura5m.Rnw` | `lista2/Q12ClozeAltura5Alcance40.Rnw` | `reserva/Q03ClozeUFU2010Ronaldinho.Rnw` |
-| Q09 | `lista2/Q01QuizUFTM2011Volei.Rnw` | `lista2/Q13ClozeFlechaH80A240.Rnw` | `lista2/Q05ClozeMotocicletaFuscas.Rnw` |
-| Q10 | `lista1/Q14ClozePescaria30graus.Rnw` | `lista2/Q10ClozeDaianeGrafico.Rnw` | `reserva/Q06QuizBalistica45Alcance360.Rnw` |
-
-As provas impressas converteram algumas questões-base `cloze`/`mchoice`
-em uma única alternativa A--E. Para as listas de estudo no Moodle, o gerador
-usa a **versão canônica parametrizada do BancoFisica**, preservando o conteúdo
-e a habilidade da questão-base. Em alguns itens, portanto, a versão Moodle é
-mais rica que a forma reduzida usada na prova impressa.
+São 10 categorias e 250 itens por turma.
 
 ## Geração
 
-Por padrão, as três turmas usam **25 réplicas por questão e preservam todas as imagens** das questões-base. Essa escolha mantém um único XML por turma abaixo do limite de upload do Moodle:
-
 ```bash
-Rscript tools/generate_lancamento_obliquo_provas_2026.R
+Rscript tools/generate_lancamento_obliquo_provas_2026.R 25
 ```
 
-Ou, explicitamente:
-
-```bash
-Rscript tools/generate_lancamento_obliquo_provas_2026.R 50
-```
-
-Arquivos de saída:
+Saída:
 
 ```text
 build/lancamento-obliquo-provas-2026/
@@ -67,18 +77,16 @@ build/lancamento-obliquo-provas-2026/
   lancamento-obliquo-mecanica.xml
 ```
 
-Cada XML deve conter exatamente 10 categorias e 500 variantes. O gerador
-falha se um arquivo único exceder 10 MiB, respeitando o limite operacional
-adotado para importação no Moodle institucional.
+O CI verifica para cada turma:
 
-Nenhum dado de estudante é utilizado ou armazenado neste fluxo.
+- 10 fontes `.Rnw`;
+- 100 recortes fiéis (10 versões × 10 questões);
+- categorias Q01--Q10;
+- 25 réplicas em cada categoria;
+- 250 imagens `@@PLUGINFILE@@` e 250 arquivos base64 incorporados ao XML;
+- tamanho inferior a 10 MiB.
 
-
-## Tamanho dos XMLs e figuras
-
-Repetir imagens em base64 em muitas variantes pode ultrapassar o limite de aproximadamente 10 MiB do Moodle. Por isso, as três turmas usam 25 réplicas por questão e **nenhuma imagem é removida**. O XML preserva integralmente as figuras geradas pelo R/exams.
-
-
-## Preservação de imagens
-
-As listas de Automação, Informática e Mecânica preservam integralmente as imagens das questões-base. Todas usam 25 réplicas por Q01--Q10 (250 variantes por turma). Essa decisão evita remover figuras da atividade e mantém cada arquivo único abaixo de 10 MiB.
+Este fluxo substitui o mapeamento anterior para questões canônicas
+“equivalentes” do Banco. Para listas que pretendem reproduzir uma avaliação
+aplicada, **equivalência conceitual não é suficiente: a fonte impressa é a
+referência**.
