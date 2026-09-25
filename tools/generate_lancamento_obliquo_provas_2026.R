@@ -50,7 +50,8 @@ sets <- list(
   automacao = list(
     prefix = "BancoFisica/Listas 2026/Lancamento Obliquo/Automacao",
     output = "lancamento-obliquo-automacao.xml",
-    strip_images = c(1, 2, 5, 6, 7, 9),
+    replicas = 25L,
+    strip_images = integer(0),
     files = c(
       file.path(L1, "Q01QuizUEPG2011Conceitos.Rnw"),
       file.path(L2, "Q09ClozePele1970.Rnw"),
@@ -68,6 +69,7 @@ sets <- list(
 
 for (key in names(sets)) {
   s <- sets[[key]]
+  n_set <- if (!is.null(s$replicas)) as.integer(s$replicas) else n
   if (length(s$files) != 10L) stop(key, ": esperado exatamente 10 questões-base")
   missing <- s$files[!file.exists(s$files)]
   if (length(missing)) stop(key, ": arquivos ausentes: ", paste(missing, collapse = ", "))
@@ -86,7 +88,7 @@ for (key in names(sets)) {
     set.seed(26092026L + match(key, names(sets)) * 1000L + q)
     exams2moodle(
       file = f,
-      n = n,
+      n = n_set,
       rule = "none",
       schoice = list(shuffle = TRUE),
       name = nm,
@@ -103,7 +105,7 @@ for (key in names(sets)) {
   cmd <- c(
     "tools/assemble_lancamento_obliquo_exam_xml.py",
     "--prefix", shQuote(s$prefix),
-    "--expected-variants", as.character(n),
+    "--expected-variants", as.character(n_set),
     "--output", shQuote(output),
     "--strip-images", shQuote(paste(s$strip_images, collapse = ",")),
     vapply(seq_along(xmls), function(q) {
@@ -119,5 +121,6 @@ for (key in names(sets)) {
 cat("XMLs gerados:\n")
 for (key in names(sets)) {
   p <- file.path(out_dir, sets[[key]]$output)
-  cat(sprintf("  %s (%0.2f MiB)\n", p, file.size(p) / 1024^2))
+  reps <- if (!is.null(sets[[key]]$replicas)) sets[[key]]$replicas else n
+  cat(sprintf("  %s: %d réplicas/Q (%0.2f MiB)\n", p, reps, file.size(p) / 1024^2))
 }
