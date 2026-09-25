@@ -63,7 +63,7 @@ E_{\mathrm{diss}}=K_i-K_f
 %% Fonte: Colisoes.pdf, exercício 5 (CESGRANRIO), adaptada e parametrizada.
 %% \extype{num}
 %% \exsolution{\Sexpr{perda}}
-%% \exname{Q110ClozeCESGRANRIOPerdaEnergia}
+%% \exname{Q110NumCESGRANRIOPerdaEnergia}
 %% \extol{0.01}
 %% \exsection{Mecanica; Quantidade de movimento; Colisoes; Energia cinetica}
 %% \exusepackage[utf8]{inputenc}

@@ -51,7 +51,7 @@ F_{\mathrm{m}}
 %% Fonte: Quantidade de Movimento.pdf, exercício 5, adaptada e parametrizada.
 %% \extype{num}
 %% \exsolution{\Sexpr{F}}
-%% \exname{Q106ClozeProjetilParedeForcaMedia}
+%% \exname{Q106NumProjetilParedeForcaMedia}
 %% \extol{0.1}
 %% \exsection{Mecanica; Impulso; Quantidade de movimento; Forca media}
 %% \exusepackage[utf8]{inputenc}

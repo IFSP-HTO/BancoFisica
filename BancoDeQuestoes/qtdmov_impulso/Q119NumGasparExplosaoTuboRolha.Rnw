@@ -69,7 +69,7 @@ Portanto, a rolha abandona o tubo com velocidade de módulo
 %% A própria fonte informa que o exercício é adaptação de uma questão da FUVEST-SP.
 %% \extype{num}
 %% \exsolution{10}
-%% \exname{Q119ClozeGasparExplosaoTuboRolha}
+%% \exname{Q119NumGasparExplosaoTuboRolha}
 %% \extol{0.01}
 %% \exsection{Mecanica; Quantidade de movimento; Conservacao; Explosao; Energia mecanica}
 %% \exusepackage[utf8]{inputenc}

@@ -91,7 +91,7 @@ m_2=m_1\left(\frac{u_1}{v_f}-1\right)
 %% A figura do trilho foi preservada sem dados numéricos; a tabela foi recriada em LaTeX para permitir parametrização.
 %% \extype{num}
 %% \exsolution{\Sexpr{m2}}
-%% \exname{Q115ClozeENEM2016TrilhoAr}
+%% \exname{Q115NumENEM2016TrilhoAr}
 %% \extol{0.01}
 %% \exsection{Mecanica; Quantidade de movimento; Conservacao; Colisoes; ENEM}
 %% \exusepackage[utf8]{inputenc}

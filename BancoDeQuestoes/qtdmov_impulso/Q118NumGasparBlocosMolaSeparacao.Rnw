@@ -69,7 +69,7 @@ O bloco \(A\) move-se em sentido oposto ao bloco \(B\); o valor acima é o módu
 %% Fonte: Alberto Gaspar, Compreendendo a Física, vol. 1, cap. 17, exercício resolvido 5; adaptada e parametrizada.
 %% \extype{num}
 %% \exsolution{\Sexpr{resp}}
-%% \exname{Q118ClozeGasparBlocosMolaSeparacao}
+%% \exname{Q118NumGasparBlocosMolaSeparacao}
 %% \extol{0.01}
 %% \exsection{Mecanica; Quantidade de movimento; Conservacao; Separacao de corpos; Sistema isolado}
 %% \exusepackage[utf8]{inputenc}
