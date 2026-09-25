@@ -1,0 +1,79 @@
+name: Lançamento oblíquo — listas das provas 2026
+
+on:
+  pull_request:
+    branches: [master]
+    paths:
+      - "BancoDeQuestoes/cinematica/lancamentos/listas2026/**"
+      - "BancoDeQuestoes/figuras/LO26_*"
+      - "tools/generate_lancamento_obliquo_provas_2026.R"
+      - "tools/assemble_lancamento_obliquo_exam_xml.py"
+      - ".github/workflows/lancamento-obliquo-provas-2026.yml"
+      - "DESCRIPTION"
+  workflow_dispatch:
+    inputs:
+      variants:
+        description: "Variantes por questão-base"
+        required: false
+        default: "50"
+
+permissions:
+  contents: read
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: r-lib/actions/setup-pandoc@v2
+      - uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: '4.4.3'
+          use-public-rspm: true
+      - uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          cache-version: lancamento-obliquo-provas-2026-1
+          dependencies: '"all"'
+
+      - name: Gerar os três XMLs
+        run: |
+          N="${{ github.event.inputs.variants || '50' }}"
+          Rscript tools/generate_lancamento_obliquo_provas_2026.R "$N"
+
+      - name: Validar estrutura Q01--Q10
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+
+          out = Path("build/lancamento-obliquo-provas-2026")
+          files = sorted(out.glob("*.xml"))
+          if len(files) != 3:
+              raise SystemExit(f"esperados 3 XMLs, encontrados {len(files)}")
+
+          for p in files:
+              s = p.read_text(encoding="utf-8")
+              cats = re.findall(r'<text>\$course\$/[^<]+/(Q\d{2})</text>', s)
+              if sorted(cats) != [f"Q{i:02d}" for i in range(1, 11)]:
+                  raise SystemExit(f"{p}: categorias inesperadas: {cats}")
+              for i in range(1, 11):
+                  q = f"Q{i:02d}"
+                  names = re.findall(
+                      rf'<name>\s*<text>{q}-R\d{{3}}</text>',
+                      s,
+                      re.S,
+                  )
+                  if len(names) != 50:
+                      raise SystemExit(
+                          f"{p}: {q} possui {len(names)} variantes; esperado 50"
+                      )
+              if p.stat().st_size > 10 * 1024 * 1024:
+                  raise SystemExit(f"{p}: excede 10 MiB")
+              print(p, "OK", p.stat().st_size / 1024**2, "MiB")
+          PY
+
+      - name: Upload XMLs
+        uses: actions/upload-artifact@v4
+        with:
+          name: lancamento-obliquo-provas-2026-moodle
+          path: build/lancamento-obliquo-provas-2026/*.xml
