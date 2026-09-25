@@ -113,6 +113,11 @@ python tools/analyze_exam.py ... --history analytics/item_history.csv
 
 Isso permite comparar a dificuldade prevista (`easy`, `medium`) com a proporção de acertos observada em aplicações reais.
 
+
+## Privacidade dos dados de aplicação
+
+Dados de estudantes não pertencem ao repositório. Nomes, matrículas, respostas, notas, scans e qualquer mapeamento entre aluno e versão devem permanecer fora do Git ou somente em `build/private/`. Identificadores de aplicação usados em estatísticas históricas devem ser opacos, não conter dados pessoais e não permitir reidentificação. Consulte `provas/PRIVACY.md`.
+
 ## Metadados pedagógicos
 
 Ao selecionar ou adaptar questões, registre pelo menos:
