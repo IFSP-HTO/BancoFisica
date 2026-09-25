@@ -1,0 +1,53 @@
+name: Lançamento oblíquo — provas fiéis 2026
+
+on:
+  pull_request:
+    branches: [master]
+    paths:
+      - "BancoDeQuestoes/cinematica/lancamentos/listas2026/provas2026/fieis/**"
+      - "tools/generate_lancamento_obliquo_provas_2026.R"
+      - "tools/assemble_lancamento_obliquo_exam_xml.py"
+      - ".github/workflows/lancamento-obliquo-provas-2026.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate-sources:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validar 30 fontes Rnw fiéis
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          root = Path("BancoDeQuestoes/cinematica/lancamentos/listas2026/provas2026/fieis")
+          for turma in ("mecanica", "informatica", "automacao"):
+              files = sorted((root / turma).glob("Q??ProvaFiel.Rnw"))
+              if len(files) != 10:
+                  raise SystemExit(f"{turma}: esperados 10 Rnw fiéis, encontrados {len(files)}")
+              for i, p in enumerate(files, 1):
+                  expected = f"Q{i:02d}ProvaFiel.Rnw"
+                  if p.name != expected:
+                      raise SystemExit(f"{turma}: esperado {expected}, encontrado {p.name}")
+                  s = p.read_text(encoding="utf-8")
+                  required = [
+                      "versao <- sample(1:10, 1)",
+                      "BF_PROVA_FIEL_ASSET_DIR",
+                      "include_supplement",
+                      "\\exshuffle{FALSE}",
+                      "\\extype{schoice}",
+                  ]
+                  missing = [x for x in required if x not in s]
+                  if missing:
+                      raise SystemExit(f"{p}: marcadores fiéis ausentes: {missing}")
+          print("30 Rnw fiéis validados")
+          PY
+
+      - name: Garantir que o gerador não substitui imagens da prova
+        run: |
+          grep -q 'BF_PROVA_FIEL_ASSET_DIR' tools/generate_lancamento_obliquo_provas_2026.R
+          ! grep -q 'lista1/Q' tools/generate_lancamento_obliquo_provas_2026.R
+          ! grep -q 'lista2/Q' tools/generate_lancamento_obliquo_provas_2026.R
+          ! grep -q 'reserva/Q' tools/generate_lancamento_obliquo_provas_2026.R
