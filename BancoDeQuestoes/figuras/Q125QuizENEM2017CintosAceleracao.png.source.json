@@ -1,0 +1,19 @@
+{
+  "source_pdf": "2017_PV_impresso_D2_CD6.pdf",
+  "source_sha256": "c42adbc2d4abaa162cab00e7f41cefb2b37ed17d9ca35ccbafdbd07454b59190",
+  "mode": "crop",
+  "page": 14,
+  "bbox_pdf_points": [
+    294,
+    257,
+    540,
+    410
+  ],
+  "source_render_dpi": 300,
+  "repository_asset": "Q125QuizENEM2017CintosAceleracao.png",
+  "repository_dimensions_px": [
+    360,
+    224
+  ],
+  "postprocess": "downscaled/optimized from the direct PDF crop only; no content redrawn or reconstructed"
+}
