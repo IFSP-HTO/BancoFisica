@@ -1,6 +1,6 @@
 <<echo=FALSE, results=hide>>=
 g <- 10
-H <- sample(c(5, 20, 45, 80), 1)
+H <- sample(c(1.8, 3.2, 5.0, 7.2), 1)
 V <- sqrt(2*g*H)/20
 perda <- 97.5
 fmt <- function(x, d = 2) formatC(x, format = "f", digits = d, decimal.mark = ",")
@@ -11,7 +11,7 @@ include_supplement("obfep2012_B_q7_rampa_carrinho.png")
 
 \begin{question}
 
-(OBFEP 2012 - 2ª Fase, Nível B, Questão 7, adaptada para resposta numérica) Um bloco de massa $m$ é abandonado em repouso do topo de uma rampa de altura $H=\Sexpr{H}\,\mathrm{m}$, com coeficiente de atrito cinético $0,5$, e cai sobre um carrinho de massa $M=9m$ inicialmente em repouso. O carrinho pode se mover livremente. Suponha que a velocidade com que o bloco abandona a rampa seja a mesma com que ele colide com o carrinho, desprezando a pequena diferença de altura entre o final da rampa e a base do carrinho. Adote $g=\Sexpr{g}\,\mathrm{m/s^2}$.
+(OBFEP 2012 - 2ª Fase, Nível B, Questão 7, adaptada para resposta numérica) Um bloco de massa $m$ é abandonado em repouso do topo de uma rampa de altura $H=\Sexpr{fmt(H,1)}\,\mathrm{m}$, com coeficiente de atrito cinético $0,5$, e cai sobre um carrinho de massa $M=9m$ inicialmente em repouso. O carrinho pode se mover livremente. Suponha que a velocidade com que o bloco abandona a rampa seja a mesma com que ele colide com o carrinho, desprezando a pequena diferença de altura entre o final da rampa e a base do carrinho. Adote $g=\Sexpr{g}\,\mathrm{m/s^2}$.
 
 \begin{center}
 \includegraphics[width=5.0cm,keepaspectratio]{obfep2012_B_q7_rampa_carrinho.png}
