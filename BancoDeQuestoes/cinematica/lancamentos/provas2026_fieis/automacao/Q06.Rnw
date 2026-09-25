@@ -1,0 +1,36 @@
+<<echo=FALSE, results=hide>>=
+variant <- sample(seq_len(10), 1)
+images <- sprintf("automacao_Q06_V%02d.png", seq_len(10))
+answers <- c("D","A","B","D","D","D","E","A","B","A")
+imgfile <- images[[variant]]
+include_supplement(imgfile, dir="assets")
+answer_letter <- answers[[variant]]
+solution_bits <- paste(as.integer(LETTERS[1:5] == answer_letter), collapse="")
+@
+
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+\begin{center}
+\includegraphics[width=0.98\textwidth,keepaspectratio]{\Sexpr{imgfile}}
+\end{center}
+
+\medskip
+\textbf{Marque a letra da alternativa escolhida na questão acima.}
+\begin{answerlist}
+  \item A
+  \item B
+  \item C
+  \item D
+  \item E
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+A alternativa correta nesta versão é \textbf{\Sexpr{answer_letter}}.
+\end{solution}
+
+\exname{LO26AUTOQ06}
+\extype{schoice}
+\exsolution{\Sexpr{solution_bits}}
