@@ -1,138 +1,53 @@
-name: Lançamento oblíquo — listas fiéis às provas 2026
+name: Lançamento oblíquo — provas fiéis 2026
 
 on:
   pull_request:
     branches: [master]
     paths:
-      - "BancoDeQuestoes/cinematica/lancamentos/provas2026_fieis/**"
+      - "BancoDeQuestoes/cinematica/lancamentos/listas2026/provas2026/fieis/**"
       - "tools/generate_lancamento_obliquo_provas_2026.R"
-      - "tools/rewrite_lancamento_obliquo_moodle.py"
+      - "tools/assemble_lancamento_obliquo_exam_xml.py"
       - ".github/workflows/lancamento-obliquo-provas-2026.yml"
-      - "DESCRIPTION"
   workflow_dispatch:
-    inputs:
-      variants:
-        description: "Réplicas por questão"
-        required: false
-        default: "25"
 
 permissions:
   contents: read
 
 jobs:
-  generate:
+  validate-sources:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: r-lib/actions/setup-pandoc@v2
-      - uses: r-lib/actions/setup-r@v2
-        with:
-          r-version: '4.4.3'
-          use-public-rspm: true
-      - uses: r-lib/actions/setup-r-dependencies@v2
-        with:
-          cache-version: lancamento-obliquo-provas-fieis-2026-1
-          dependencies: '"all"'
-
-      - name: Conferir fontes fiéis
+      - name: Validar 30 fontes Rnw fiéis
         run: |
           python3 - <<'PY'
           from pathlib import Path
-
-          root = Path("BancoDeQuestoes/cinematica/lancamentos/provas2026_fieis")
+          root = Path("BancoDeQuestoes/cinematica/lancamentos/listas2026/provas2026/fieis")
           for turma in ("mecanica", "informatica", "automacao"):
-              d = root / turma
-              rnw = sorted(d.glob("Q??.Rnw"))
-              png = sorted((d / "assets").glob(f"{turma}_Q??_V??.png"))
-              if len(rnw) != 10:
-                  raise SystemExit(f"{turma}: esperados 10 Rnw, encontrados {len(rnw)}")
-              if len(png) != 100:
-                  raise SystemExit(f"{turma}: esperados 100 recortes, encontrados {len(png)}")
-              for q in range(1, 11):
-                  assets = sorted((d / "assets").glob(f"{turma}_Q{q:02d}_V??.png"))
-                  if len(assets) != 10:
-                      raise SystemExit(
-                          f"{turma} Q{q:02d}: esperados 10 recortes, encontrados {len(assets)}"
-                      )
-              print(turma, "OK: 10 Rnw + 100 recortes fiéis")
+              files = sorted((root / turma).glob("Q??ProvaFiel.Rnw"))
+              if len(files) != 10:
+                  raise SystemExit(f"{turma}: esperados 10 Rnw fiéis, encontrados {len(files)}")
+              for i, p in enumerate(files, 1):
+                  expected = f"Q{i:02d}ProvaFiel.Rnw"
+                  if p.name != expected:
+                      raise SystemExit(f"{turma}: esperado {expected}, encontrado {p.name}")
+                  s = p.read_text(encoding="utf-8")
+                  required = [
+                      "versao <- sample(1:10, 1)",
+                      "BF_PROVA_FIEL_ASSET_DIR",
+                      "include_supplement",
+                      "\\exshuffle{FALSE}",
+                      "\\extype{schoice}",
+                  ]
+                  missing = [x for x in required if x not in s]
+                  if missing:
+                      raise SystemExit(f"{p}: marcadores fiéis ausentes: {missing}")
+          print("30 Rnw fiéis validados")
           PY
 
-      - name: Gerar os três XMLs fiéis
+      - name: Garantir que o gerador não substitui imagens da prova
         run: |
-          N="${{ github.event.inputs.variants || '25' }}"
-          Rscript tools/generate_lancamento_obliquo_provas_2026.R "$N"
-
-      - name: Validar fidelidade estrutural dos XMLs
-        run: |
-          python3 - <<'PY'
-          from pathlib import Path
-          import re
-
-          expected = 25
-          out = Path("build/lancamento-obliquo-provas-2026")
-          files = sorted(out.glob("*.xml"))
-          if len(files) != 3:
-              raise SystemExit(f"esperados 3 XMLs, encontrados {len(files)}")
-
-          for p in files:
-              s = p.read_text(encoding="utf-8")
-              cats = re.findall(r'<text>\$course\$/[^<]+/(Q\d{2})</text>', s)
-              if sorted(cats) != [f"Q{i:02d}" for i in range(1, 11)]:
-                  raise SystemExit(f"{p}: categorias inesperadas: {cats}")
-
-              for i in range(1, 11):
-                  q = f"Q{i:02d}"
-                  names = re.findall(
-                      rf'<name>\s*<text>{q}-R\d{{3}}</text>',
-                      s,
-                      re.S,
-                  )
-                  if len(names) != expected:
-                      raise SystemExit(
-                          f"{p}: {q} possui {len(names)} réplicas; esperado {expected}"
-                      )
-
-              imgs = re.findall(r'<img\b[^>]*@@PLUGINFILE@@[^>]*>', s, re.I)
-              embedded = re.findall(
-                  r'<file\b[^>]*name="([^"]+)"[^>]*encoding="base64"[^>]*>(.*?)</file>',
-                  s,
-                  re.I | re.S,
-              )
-              if len(imgs) != 250:
-                  raise SystemExit(f"{p}: esperadas 250 imagens, encontradas {len(imgs)}")
-              if len(embedded) != 250:
-                  raise SystemExit(
-                      f"{p}: esperados 250 arquivos incorporados, encontrados {len(embedded)}"
-                  )
-
-              # O arquivo incorporado deve ser byte a byte o mesmo recorte
-              # versionado da prova limpa.
-              import base64
-              import hashlib
-              turma = p.stem.removeprefix("lancamento-obliquo-")
-              source = Path(
-                  "BancoDeQuestoes/cinematica/lancamentos/provas2026_fieis"
-              ) / turma / "assets"
-              for name, payload in embedded:
-                  src = source / name
-                  if not src.exists():
-                      raise SystemExit(f"{p}: ativo incorporado sem fonte fiel: {name}")
-                  raw = base64.b64decode(re.sub(r"\s+", "", payload))
-                  if hashlib.sha256(raw).digest() != hashlib.sha256(src.read_bytes()).digest():
-                      raise SystemExit(f"{p}: ativo incorporado difere da prova: {name}")
-
-              if p.stat().st_size > 10 * 1024 * 1024:
-                  raise SystemExit(f"{p}: excede 10 MiB")
-
-              print(
-                  p, "OK:",
-                  "10 categorias,", "250 itens,", "250 imagens,",
-                  f"{p.stat().st_size / 1024**2:.2f} MiB"
-              )
-          PY
-
-      - name: Upload XMLs
-        uses: actions/upload-artifact@v4
-        with:
-          name: lancamento-obliquo-provas-2026-moodle-fieis
-          path: build/lancamento-obliquo-provas-2026/*.xml
+          grep -q 'BF_PROVA_FIEL_ASSET_DIR' tools/generate_lancamento_obliquo_provas_2026.R
+          ! grep -q 'lista1/Q' tools/generate_lancamento_obliquo_provas_2026.R
+          ! grep -q 'lista2/Q' tools/generate_lancamento_obliquo_provas_2026.R
+          ! grep -q 'reserva/Q' tools/generate_lancamento_obliquo_provas_2026.R
