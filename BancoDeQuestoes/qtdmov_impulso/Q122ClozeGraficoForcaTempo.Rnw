@@ -43,7 +43,7 @@ Determine:
 
 \begin{solution}
 
-Quando a força varia com o tempo, o impulso é numericamente igual à área sob o gráfico $F\times t$.
+Quando a força varia com o tempo, o impulso é dado pela área algébrica sob o gráfico $F\times t$.
 
 Neste caso, a região é um triângulo de base $\Sexpr{T}\,\mathrm{s}$ e altura $\Sexpr{Fmax}\,\mathrm{N}$. Logo,
 \[
