@@ -1,38 +1,23 @@
 <<echo=FALSE, results=hide>>=
+include_supplement("../figuras/Q125QuizENEM2017CintosAceleracao.png")
 questions <- c("Cinto 1.", "Cinto 2.", "Cinto 3.", "Cinto 4.", "Cinto 5.")
 solutions <- c(FALSE, TRUE, FALSE, FALSE, FALSE)
 @
 
 \usepackage[utf8]{inputenc}
+\usepackage{graphicx}
 
 \begin{question}
 
-(ENEM 2017, adaptada) Em uma colisão frontal entre dois automóveis, a força que o cinto de segurança exerce sobre o tórax e o abdômen do motorista pode causar lesões graves. Um fabricante testa cinco modelos de cinto em colisões de mesma duração, usando bonecos de mesma massa e com as mesmas velocidades imediatamente antes e após o impacto.
+(ENEM 2017) Em uma colisão frontal entre dois automóveis, a força que o cinto de segurança exerce sobre o tórax e o abdômen do motorista pode causar lesões graves. Pensando na segurança de seus futuros clientes, um fabricante de automóveis realizou testes em cinco modelos diferentes de cinto.
 
-Os acelerômetros registram o módulo da desaceleração em função do tempo. O gráfico abaixo é uma reconstrução esquemática dos perfis do caderno oficial, mantendo a mesma variação de velocidade para os cinco testes.
+Os testes simularam uma colisão de $0{,}30\,\mathrm{s}$ de duração, e os bonecos que representavam os ocupantes foram equipados com acelerômetros. Esse equipamento registra o módulo da desaceleração em função do tempo. Os resultados obtidos estão representados no gráfico oficial da prova.
 
-<<echo=FALSE, fig=TRUE, width=6.4, height=4.4, eps=FALSE, results=hide>>=
-tri <- function(t, center, height, width) {
-  pmax(0, height * (1 - abs(t-center)/(width/2)))
-}
+\begin{center}
+\includegraphics[width=0.82\linewidth,keepaspectratio]{../figuras/Q125QuizENEM2017CintosAceleracao.png}
+\end{center}
 
-t <- seq(0, 0.30, length.out=601)
-
-h <- c(150, 60, 180, 90, 170)
-w <- 18/h
-ctr <- c(0.08, 0.15, 0.15, 0.19, 0.245)
-
-A <- sapply(seq_along(h), function(i) tri(t, ctr[i], h[i], w[i]))
-
-par(mar=c(4.3,4.5,0.8,0.8))
-matplot(t, A, type="l", lty=1:5, lwd=2,
-        xlab="Tempo (s)", ylab=expression("Aceleração (m/s"^2*")"),
-        xlim=c(0,0.30), ylim=c(0,200))
-grid()
-legend("topright", legend=paste("Cinto",1:5), lty=1:5, lwd=2, bty="n")
-@
-
-Qual modelo de cinto oferece menor risco de lesão interna ao motorista, segundo o critério físico destacado no teste?
+Qual modelo de cinto oferece menor risco de lesão interna ao motorista?
 
 <<echo=FALSE, results=hide, results=tex>>=
 answerlist(questions)
@@ -42,35 +27,23 @@ answerlist(questions)
 
 \begin{solution}
 
-Como a massa dos bonecos e as velocidades antes e depois do impacto são as mesmas, a variação de quantidade de movimento também é a mesma nos cinco testes:
+Para o mesmo ocupante, a força exercida pelo cinto está relacionada à aceleração por
 \[
-|\Delta p|=m|\Delta v|.
+F=ma.
 \]
 
-Pelo teorema do impulso,
-\[
-|\Delta p|
-=
-\left|\int F(t)\,dt\right|
-=
-m\int a(t)\,dt.
-\]
+Assim, quanto menor for o maior valor do módulo da desaceleração registrado durante a colisão, menor será o pico de força exercido sobre o corpo do motorista.
 
-Assim, os testes correspondem à mesma área sob o gráfico \(a\times t\). Para reduzir a força instantânea exercida sobre o corpo, é desejável distribuir essa variação de velocidade por um intervalo maior, reduzindo o pico de desaceleração.
-
-Como
-\[
-F=ma,
-\]
-o menor pico de aceleração corresponde ao menor pico de força. No gráfico, isso ocorre para o \textbf{Cinto 2}.
+Observando o gráfico, o menor pico de desaceleração ocorre para o \textbf{Cinto 2}. Portanto, esse modelo oferece o menor risco segundo o critério apresentado.
 
 \end{solution}
 
 %% META-INFORMATION
-%% Fonte: ENEM 2017, 2º dia, Caderno 6 Cinza, questão 130. Gabarito oficial: B (modelo 2).
-%% Gráfico reconstituído de forma esquemática para o banco, preservando a mesma área sob cada curva e a hierarquia de picos relevante para a resolução.
+%% Fonte: ENEM 2017, 2º dia, Caderno 6 Cinza, questão 130. Gabarito oficial: B.
+%% SOURCE-VISUAL: original-crop
+%% Figura obtida diretamente do PDF oficial da prova; ver arquivo .source.json correspondente.
 %% \extype{schoice}
-%% \exsolution{01000}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
 %% \exname{Q125QuizENEM2017CintosAceleracao}
-%% \exsection{Mecanica; Impulso; Quantidade de movimento; Forca media; Seguranca veicular; ENEM}
+%% \exsection{Mecanica; Impulso; Quantidade de movimento; Forca; Seguranca veicular; ENEM}
 %% \exusepackage[utf8]{inputenc}
