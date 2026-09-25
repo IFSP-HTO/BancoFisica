@@ -46,7 +46,7 @@ mais rica que a forma reduzida usada na prova impressa.
 
 ## Geração
 
-Por padrão, Mecânica e Informática usam 50 réplicas por questão. **Automação usa 25 réplicas por questão e preserva todas as imagens**, para manter o XML único abaixo do limite de upload do Moodle:
+Por padrão, as três turmas usam **25 réplicas por questão e preservam todas as imagens** das questões-base. Essa escolha mantém um único XML por turma abaixo do limite de upload do Moodle:
 
 ```bash
 Rscript tools/generate_lancamento_obliquo_provas_2026.R
@@ -76,20 +76,9 @@ Nenhum dado de estudante é utilizado ou armazenado neste fluxo.
 
 ## Tamanho dos XMLs e figuras
 
-Com 50 réplicas, repetir imagens em base64 em cada variante pode ultrapassar o
-limite de aproximadamente 10 MiB do Moodle. Para preservar **um único XML por
-turma**, o montador remove imagens apenas quando elas são ilustrativas e todas
-as informações necessárias já aparecem no enunciado.
-
-São preservadas as figuras que carregam informação indispensável à resolução,
-como a comparação gráfica das trajetórias na Mecânica e o gráfico do salto na
-Informática. A remoção não altera parâmetros, respostas nem o número de
-réplicas.
+Repetir imagens em base64 em muitas variantes pode ultrapassar o limite de aproximadamente 10 MiB do Moodle. Por isso, as três turmas usam 25 réplicas por questão e **nenhuma imagem é removida**. O XML preserva integralmente as figuras geradas pelo R/exams.
 
 
-## Exceção da Automação
+## Preservação de imagens
 
-A lista de Automação preserva integralmente as imagens das questões-base. Para
-isso, usa 25 réplicas por Q01--Q10 (250 variantes no total), em vez de 50.
-Essa decisão evita remover figuras da atividade e mantém o arquivo único abaixo
-de 10 MiB.
+As listas de Automação, Informática e Mecânica preservam integralmente as imagens das questões-base. Todas usam 25 réplicas por Q01--Q10 (250 variantes por turma). Essa decisão evita remover figuras da atividade e mantém cada arquivo único abaixo de 10 MiB.
