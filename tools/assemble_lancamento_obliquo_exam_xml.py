@@ -46,15 +46,14 @@ def parse_mapping(value: str) -> tuple[int, Path]:
 
 def strip_embedded_images(block: str) -> str:
     """Remove imagens incorporadas quando a figura é apenas ilustrativa."""
-    block = re.sub(r'<img\\b[^>]*?/?>', '', block, flags=re.I)
+    block = re.sub(r'<img\b[^>]*?/?>', '', block, flags=re.I)
     block = re.sub(
-        r'<file\\b[^>]*>.*?</file>\\s*',
+        r'<file\b[^>]*>.*?</file>\s*',
         '',
         block,
         flags=re.I | re.S,
     )
     return block
-
 
 def variants_from(
     path: Path, q: int, expected: int, strip_images: bool = False
