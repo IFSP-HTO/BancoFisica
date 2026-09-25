@@ -93,13 +93,33 @@ jobs:
                       )
 
               imgs = re.findall(r'<img\b[^>]*@@PLUGINFILE@@[^>]*>', s, re.I)
-              embedded = re.findall(r'<file\b[^>]*encoding="base64"[^>]*>', s, re.I)
+              embedded = re.findall(
+                  r'<file\b[^>]*name="([^"]+)"[^>]*encoding="base64"[^>]*>(.*?)</file>',
+                  s,
+                  re.I | re.S,
+              )
               if len(imgs) != 250:
                   raise SystemExit(f"{p}: esperadas 250 imagens, encontradas {len(imgs)}")
               if len(embedded) != 250:
                   raise SystemExit(
                       f"{p}: esperados 250 arquivos incorporados, encontrados {len(embedded)}"
                   )
+
+              # O arquivo incorporado deve ser byte a byte o mesmo recorte
+              # versionado da prova limpa.
+              import base64
+              import hashlib
+              turma = p.stem.removeprefix("lancamento-obliquo-")
+              source = Path(
+                  "BancoDeQuestoes/cinematica/lancamentos/provas2026_fieis"
+              ) / turma / "assets"
+              for name, payload in embedded:
+                  src = source / name
+                  if not src.exists():
+                      raise SystemExit(f"{p}: ativo incorporado sem fonte fiel: {name}")
+                  raw = base64.b64decode(re.sub(r"\s+", "", payload))
+                  if hashlib.sha256(raw).digest() != hashlib.sha256(src.read_bytes()).digest():
+                      raise SystemExit(f"{p}: ativo incorporado difere da prova: {name}")
 
               if p.stat().st_size > 10 * 1024 * 1024:
                   raise SystemExit(f"{p}: excede 10 MiB")
