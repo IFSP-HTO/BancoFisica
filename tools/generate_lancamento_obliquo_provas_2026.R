@@ -2,127 +2,74 @@
 suppressPackageStartupMessages(library(exams))
 
 args <- commandArgs(trailingOnly = TRUE)
-n <- if (length(args)) as.integer(args[[1]]) else 50L
-if (is.na(n) || n < 1L) stop("Número de variantes inválido")
+n <- if (length(args)) as.integer(args[[1]]) else 25L
+if (is.na(n) || n < 1L) stop("Número de réplicas inválido")
 
 out_dir <- "build/lancamento-obliquo-provas-2026"
+source_root <- "BancoDeQuestoes/cinematica/lancamentos/provas2026_fieis"
 dir.create(out_dir, recursive = TRUE, showWarnings = FALSE)
-
-L1 <- "BancoDeQuestoes/cinematica/lancamentos/listas2026/lista1"
-L2 <- "BancoDeQuestoes/cinematica/lancamentos/listas2026/lista2"
-RS <- "BancoDeQuestoes/cinematica/lancamentos/listas2026/reserva"
 
 sets <- list(
   mecanica = list(
-    prefix = "BancoFisica/Listas 2026/Lancamento Obliquo/Mecanica",
-    output = "lancamento-obliquo-mecanica.xml",
-    replicas = 25L,
-    strip_images = integer(0),
-    files = c(
-      file.path(L1, "Q09QuizPanossoEstroboscopica.Rnw"),
-      file.path(L1, "Q05QuizPUCSPConceitualApice.Rnw"),
-      file.path(L1, "Q07QuizUELVelocidadeApice.Rnw"),
-      file.path(L1, "Q10QuizSalto45graus10ms.Rnw"),
-      file.path(L1, "Q06QuizUERJMassasAlcance.Rnw"),
-      file.path(L2, "Q04QuizFESOMesmaAltura.Rnw"),
-      file.path(L1, "Q15QuizBalisticaTempo6s.Rnw"),
-      file.path(L1, "Q12ClozeFaltaAltura5m.Rnw"),
-      file.path(L2, "Q01QuizUFTM2011Volei.Rnw"),
-      file.path(L1, "Q14ClozePescaria30graus.Rnw")
-    )
+    dir = file.path(source_root, "mecanica"),
+    name = "lancamento-obliquo-mecanica",
+    prefix = "BancoFisica/Listas 2026/Lancamento Obliquo/Mecanica"
   ),
   informatica = list(
-    prefix = "BancoFisica/Listas 2026/Lancamento Obliquo/Informatica",
-    output = "lancamento-obliquo-informatica.xml",
-    replicas = 25L,
-    strip_images = integer(0),
-    files = c(
-      file.path(L1, "Q13QuizCebolinhaTempoVoo.Rnw"),
-      file.path(L1, "Q03ClozeComponentes100ms.Rnw"),
-      file.path(L1, "Q02QuizUFT2010AlturaMaxima.Rnw"),
-      file.path(L2, "Q07ClozeFutebol108kmh60graus.Rnw"),
-      file.path(L1, "Q11ClozeProjetil10msTrig.Rnw"),
-      file.path(L1, "Q04ClozeAltura72VelTopo10.Rnw"),
-      file.path(L2, "Q14ClozeGoleiroIntercepta18m.Rnw"),
-      file.path(L2, "Q12ClozeAltura5Alcance40.Rnw"),
-      file.path(L2, "Q13ClozeFlechaH80A240.Rnw"),
-      file.path(L2, "Q10ClozeDaianeGrafico.Rnw")
-    )
+    dir = file.path(source_root, "informatica"),
+    name = "lancamento-obliquo-informatica",
+    prefix = "BancoFisica/Listas 2026/Lancamento Obliquo/Informatica"
   ),
   automacao = list(
-    prefix = "BancoFisica/Listas 2026/Lancamento Obliquo/Automacao",
-    output = "lancamento-obliquo-automacao.xml",
-    replicas = 25L,
-    strip_images = integer(0),
-    files = c(
-      file.path(L1, "Q01QuizUEPG2011Conceitos.Rnw"),
-      file.path(L2, "Q09ClozePele1970.Rnw"),
-      file.path(L2, "Q08ClozeCanhao30e60.Rnw"),
-      file.path(RS, "Q10ClozeBasqueteApice05s.Rnw"),
-      file.path(RS, "Q09ClozeDebretFlecha45.Rnw"),
-      file.path(RS, "Q02ClozeUFOP2010EdificioCorrigida.Rnw"),
-      file.path(RS, "Q07QuizObstaculo64m.Rnw"),
-      file.path(RS, "Q03ClozeUFU2010Ronaldinho.Rnw"),
-      file.path(L2, "Q05ClozeMotocicletaFuscas.Rnw"),
-      file.path(RS, "Q06QuizBalistica45Alcance360.Rnw")
-    )
+    dir = file.path(source_root, "automacao"),
+    name = "lancamento-obliquo-automacao",
+    prefix = "BancoFisica/Listas 2026/Lancamento Obliquo/Automacao"
   )
 )
 
 for (key in names(sets)) {
   s <- sets[[key]]
-  n_set <- if (!is.null(s$replicas)) as.integer(s$replicas) else n
-  if (length(s$files) != 10L) stop(key, ": esperado exatamente 10 questões-base")
-  missing <- s$files[!file.exists(s$files)]
-  if (length(missing)) stop(key, ": arquivos ausentes: ", paste(missing, collapse = ", "))
+  files <- sprintf("Q%02d.Rnw", seq_len(10))
+  full <- file.path(s$dir, files)
+  missing <- full[!file.exists(full)]
+  if (length(missing)) stop(key, ": fontes fiéis ausentes: ", paste(missing, collapse = ", "))
 
-  tmp_dir <- file.path(out_dir, paste0(".tmp-", key))
-  unlink(tmp_dir, recursive = TRUE)
-  dir.create(tmp_dir, recursive = TRUE, showWarnings = FALSE)
-
-  xmls <- character(10)
-  for (q in seq_along(s$files)) {
-    src <- s$files[[q]]
-    edir <- dirname(src)
-    f <- basename(src)
-    nm <- sprintf("%s-q%02d", key, q)
-
-    set.seed(26092026L + match(key, names(sets)) * 1000L + q)
-    exams2moodle(
-      file = f,
-      n = n_set,
-      rule = "none",
-      schoice = list(shuffle = TRUE),
-      name = nm,
-      encoding = "UTF-8",
-      dir = tmp_dir,
-      edir = edir,
-      converter = "pandoc-mathjax"
-    )
-    xmls[[q]] <- file.path(tmp_dir, paste0(nm, ".xml"))
-    if (!file.exists(xmls[[q]])) stop("Falha ao gerar ", key, " Q", sprintf("%02d", q))
-  }
-
-  output <- file.path(out_dir, s$output)
-  cmd <- c(
-    "tools/assemble_lancamento_obliquo_exam_xml.py",
-    "--prefix", shQuote(s$prefix),
-    "--expected-variants", as.character(n_set),
-    "--output", shQuote(output),
-    "--strip-images", shQuote(paste(s$strip_images, collapse = ",")),
-    vapply(seq_along(xmls), function(q) {
-      shQuote(paste0(q, "=", xmls[[q]]))
-    }, character(1))
+  # As alternativas A--E já aparecem na ordem correta dentro do recorte fiel.
+  # Portanto o seletor Moodle NUNCA pode ser embaralhado.
+  set.seed(26092026L + match(key, names(sets)) * 1000L)
+  exams2moodle(
+    file = files,
+    n = n,
+    rule = "none",
+    schoice = list(shuffle = FALSE),
+    name = s$name,
+    encoding = "UTF-8",
+    dir = out_dir,
+    edir = s$dir,
+    converter = "pandoc-mathjax"
   )
-  status <- system2("python3", cmd)
-  if (status != 0) stop("Falha ao montar XML único para ", key)
 
-  unlink(tmp_dir, recursive = TRUE)
+  xml <- file.path(out_dir, paste0(s$name, ".xml"))
+  status <- system2(
+    "python3",
+    c(
+      "tools/rewrite_lancamento_obliquo_moodle.py",
+      "--prefix", shQuote(s$prefix),
+      "--expected-variants", as.character(n),
+      shQuote(xml)
+    )
+  )
+  if (status != 0) stop("Falha ao pós-processar XML fiel de ", key)
+  if (!file.exists(xml)) stop("XML não gerado para ", key)
+  if (file.size(xml) > 10 * 1024^2) {
+    stop(key, ": XML fiel excede 10 MiB (",
+         sprintf("%.2f", file.size(xml) / 1024^2), " MiB)")
+  }
 }
 
-cat("XMLs gerados:\n")
+cat("XMLs fiéis gerados:\n")
 for (key in names(sets)) {
-  p <- file.path(out_dir, sets[[key]]$output)
-  reps <- if (!is.null(sets[[key]]$replicas)) sets[[key]]$replicas else n
-  cat(sprintf("  %s: %d réplicas/Q (%0.2f MiB)\n", p, reps, file.size(p) / 1024^2))
+  p <- file.path(out_dir, paste0(sets[[key]]$name, ".xml"))
+  cat(sprintf("  %s: %d réplicas/Q, %d itens (%0.2f MiB)\n",
+              p, n, 10L * n, file.size(p) / 1024^2))
 }
