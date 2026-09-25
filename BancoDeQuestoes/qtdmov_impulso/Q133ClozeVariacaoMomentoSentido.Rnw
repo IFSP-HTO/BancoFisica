@@ -79,6 +79,6 @@ O valor de $\Delta p$ não é zero: embora o módulo da velocidade seja o mesmo 
 %% \exsolution{\Sexpr{round(p_i,2)}|\Sexpr{round(p_f,2)}|\Sexpr{round(delta_p,2)}}
 %% \exclozetype{num|num|num}
 %% \extol{0.01|0.01|0.01}
-%% \exname{Q120ClozeVariacaoMomentoSentido}
+%% \exname{Q133ClozeVariacaoMomentoSentido}
 %% \exsection{Mecanica; Quantidade de movimento; Vetores}
 %% \exusepackage[utf8]{inputenc}

@@ -63,6 +63,6 @@ Como a força atua no mesmo sentido do movimento, o impulso é positivo e aument
 %% \exsolution{\Sexpr{round(I,2)}|\Sexpr{round(vf,2)}}
 %% \exclozetype{num|num}
 %% \extol{0.01|0.01}
-%% \exname{Q121ClozeImpulsoForcaConstante}
+%% \exname{Q134ClozeImpulsoForcaConstante}
 %% \exsection{Mecanica; Impulso; Quantidade de movimento}
 %% \exusepackage[utf8]{inputenc}
