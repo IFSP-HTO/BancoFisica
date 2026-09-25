@@ -16,7 +16,8 @@ sets <- list(
   mecanica = list(
     prefix = "BancoFisica/Listas 2026/Lancamento Obliquo/Mecanica",
     output = "lancamento-obliquo-mecanica.xml",
-    strip_images = c(1, 2, 5, 9, 10),
+    replicas = 25L,
+    strip_images = integer(0),
     files = c(
       file.path(L1, "Q09QuizPanossoEstroboscopica.Rnw"),
       file.path(L1, "Q05QuizPUCSPConceitualApice.Rnw"),
@@ -33,7 +34,8 @@ sets <- list(
   informatica = list(
     prefix = "BancoFisica/Listas 2026/Lancamento Obliquo/Informatica",
     output = "lancamento-obliquo-informatica.xml",
-    strip_images = c(1, 8),
+    replicas = 25L,
+    strip_images = integer(0),
     files = c(
       file.path(L1, "Q13QuizCebolinhaTempoVoo.Rnw"),
       file.path(L1, "Q03ClozeComponentes100ms.Rnw"),
