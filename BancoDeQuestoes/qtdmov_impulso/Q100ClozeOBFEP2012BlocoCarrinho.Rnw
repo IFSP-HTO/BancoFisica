@@ -4,7 +4,7 @@ H <- sample(c(1.8, 3.2, 5.0, 7.2), 1)
 V <- sqrt(2*g*H)/20
 perda <- 97.5
 fmt <- function(x, d = 2) formatC(x, format = "f", digits = d, decimal.mark = ",")
-include_supplement("obfep2012_B_q7_rampa_carrinho.png")
+include_supplement("obfep2012_B_q7_rampa_carrinho.png", dir = "../figuras")
 @
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
