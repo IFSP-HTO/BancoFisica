@@ -15,7 +15,7 @@ h <- vf^2/(2*g)
 hcm <- 100*h
 
 fmt <- function(x, d = 1) formatC(x, format = "f", digits = d, decimal.mark = ",")
-include_supplement("Q116UPEBlocosRampa.png")
+include_supplement("Q116UPEBlocosRampa.png", dir = "../figuras")
 @
 
 \usepackage[utf8]{inputenc}
