@@ -1,5 +1,5 @@
 <<echo=FALSE, results=hide>>=
-include_supplement("../figuras/Q135QuizENEM2024CrumpleZone.jpg")
+include_supplement("Q135QuizENEM2024CrumpleZone.jpg", dir = "../figuras")
 @
 
 \usepackage[utf8]{inputenc}
@@ -10,7 +10,7 @@ include_supplement("../figuras/Q135QuizENEM2024CrumpleZone.jpg")
 (ENEM 2024) Carros modernos possuem regiões estruturais projetadas para se deformar facilmente durante uma colisão, conhecidas como \textit{crumple zones} (regiões deformáveis), como indicado na figura.
 
 \begin{center}
-\includegraphics[width=0.58\linewidth,keepaspectratio]{../figuras/Q135QuizENEM2024CrumpleZone.jpg}
+\includegraphics[width=0.58\linewidth,keepaspectratio]{Q135QuizENEM2024CrumpleZone.jpg}
 \end{center}
 
 Considere o carro, seus ocupantes e o muro contra o qual ele colide como um sistema isolado.
@@ -46,5 +46,5 @@ A alternativa correta é a \textbf{B}.
 %% \extype{schoice}
 %% \exsolution{01000}
 %% \exname{Q135QuizENEM2024CrumpleZone}
-%% \exsection{Mecanica; Quantidade de movimento; Energia; Colisoes; Seguranca veicular; ENEM}
+%% \exsection{Mecanica; Energia; Energia cinetica; Colisoes; Quantidade de movimento; Seguranca veicular; ENEM}
 %% \exusepackage[utf8]{inputenc}
