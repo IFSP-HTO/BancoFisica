@@ -16,6 +16,7 @@ sets <- list(
   mecanica = list(
     prefix = "BancoFisica/Listas 2026/Lancamento Obliquo/Mecanica",
     output = "lancamento-obliquo-mecanica.xml",
+    strip_images = c(1, 2, 5, 9, 10),
     files = c(
       file.path(L1, "Q09QuizPanossoEstroboscopica.Rnw"),
       file.path(L1, "Q05QuizPUCSPConceitualApice.Rnw"),
@@ -32,6 +33,7 @@ sets <- list(
   informatica = list(
     prefix = "BancoFisica/Listas 2026/Lancamento Obliquo/Informatica",
     output = "lancamento-obliquo-informatica.xml",
+    strip_images = c(1, 8),
     files = c(
       file.path(L1, "Q13QuizCebolinhaTempoVoo.Rnw"),
       file.path(L1, "Q03ClozeComponentes100ms.Rnw"),
@@ -48,6 +50,7 @@ sets <- list(
   automacao = list(
     prefix = "BancoFisica/Listas 2026/Lancamento Obliquo/Automacao",
     output = "lancamento-obliquo-automacao.xml",
+    strip_images = c(1, 2, 5, 6, 7, 9),
     files = c(
       file.path(L1, "Q01QuizUEPG2011Conceitos.Rnw"),
       file.path(L2, "Q09ClozePele1970.Rnw"),
@@ -102,6 +105,7 @@ for (key in names(sets)) {
     "--prefix", shQuote(s$prefix),
     "--expected-variants", as.character(n),
     "--output", shQuote(output),
+    "--strip-images", shQuote(paste(s$strip_images, collapse = ",")),
     vapply(seq_along(xmls), function(q) {
       shQuote(paste0(q, "=", xmls[[q]]))
     }, character(1))
