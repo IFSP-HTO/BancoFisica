@@ -72,3 +72,16 @@ falha se um arquivo único exceder 10 MiB, respeitando o limite operacional
 adotado para importação no Moodle institucional.
 
 Nenhum dado de estudante é utilizado ou armazenado neste fluxo.
+
+
+## Tamanho dos XMLs e figuras
+
+Com 50 réplicas, repetir imagens em base64 em cada variante pode ultrapassar o
+limite de aproximadamente 10 MiB do Moodle. Para preservar **um único XML por
+turma**, o montador remove imagens apenas quando elas são ilustrativas e todas
+as informações necessárias já aparecem no enunciado.
+
+São preservadas as figuras que carregam informação indispensável à resolução,
+como a comparação gráfica das trajetórias na Mecânica e o gráfico do salto na
+Informática. A remoção não altera parâmetros, respostas nem o número de
+réplicas.
