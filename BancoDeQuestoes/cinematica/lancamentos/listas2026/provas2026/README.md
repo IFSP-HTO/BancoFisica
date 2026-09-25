@@ -46,7 +46,7 @@ mais rica que a forma reduzida usada na prova impressa.
 
 ## Geração
 
-Por padrão são produzidas 50 réplicas por questão:
+Por padrão, Mecânica e Informática usam 50 réplicas por questão. **Automação usa 25 réplicas por questão e preserva todas as imagens**, para manter o XML único abaixo do limite de upload do Moodle:
 
 ```bash
 Rscript tools/generate_lancamento_obliquo_provas_2026.R
@@ -85,3 +85,11 @@ São preservadas as figuras que carregam informação indispensável à resoluç
 como a comparação gráfica das trajetórias na Mecânica e o gráfico do salto na
 Informática. A remoção não altera parâmetros, respostas nem o número de
 réplicas.
+
+
+## Exceção da Automação
+
+A lista de Automação preserva integralmente as imagens das questões-base. Para
+isso, usa 25 réplicas por Q01--Q10 (250 variantes no total), em vez de 50.
+Essa decisão evita remover figuras da atividade e mantém o arquivo único abaixo
+de 10 MiB.
