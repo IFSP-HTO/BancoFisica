@@ -1,0 +1,38 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+(ENEM 2024, adaptada) Carros modernos possuem regiões estruturais projetadas para se deformar facilmente durante uma colisão, conhecidas como \textit{crumple zones}. Considere o carro, seus ocupantes e o muro contra o qual ele colide como um sistema isolado.
+
+O \textit{crumple zone} aumenta a segurança dos passageiros porque, durante uma colisão, a deformação da estrutura do carro
+
+\begin{answerlist}
+  \item aciona os airbags do veículo.
+  \item absorve a energia cinética do sistema.
+  \item consome a quantidade de movimento do sistema.
+  \item cria uma barreira de proteção para seus ocupantes.
+  \item diminui a velocidade do centro de massa do sistema.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Como o sistema é considerado isolado, sua quantidade de movimento total se conserva. Portanto, a deformação não consome quantidade de movimento e também não altera a velocidade do centro de massa do sistema.
+
+O papel da região deformável é permitir que parte da energia cinética macroscópica associada ao movimento relativo seja convertida em energia interna, principalmente por deformação dos materiais e aquecimento.
+
+Em linguagem do enunciado, a estrutura deformável \textbf{absorve a energia cinética do sistema}. Essa dissipação, associada também a um maior tempo de interação, reduz os efeitos mecânicos sobre os ocupantes.
+
+A alternativa correta é a \textbf{B}.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: ENEM 2024, 2º dia, Caderno 6 Cinza, questão 126. Gabarito oficial: B.
+%% Enunciado adaptado para tornar a figura dispensável; alternativas preservadas.
+%% \extype{schoice}
+%% \exsolution{01000}
+%% \exname{Q126QuizENEM2024CrumpleZone}
+%% \exsection{Mecanica; Quantidade de movimento; Energia; Colisoes; Seguranca veicular; ENEM}
+%% \exusepackage[utf8]{inputenc}
