@@ -3,7 +3,7 @@
 ## Força por trechos, sempre no mesmo sentido.
 
 m <- sample(c(2, 4, 5), 1)
-v0 <- sample(c(0, 1, 2, 3), 1)
+v0 <- sample(c(1, 2, 3), 1)
 F1 <- sample(c(10, 15, 20, 25), 1)
 F2 <- sample(c(20, 30, 40), 1)
 t1 <- sample(c(1, 2, 3), 1)
