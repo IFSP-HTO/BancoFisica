@@ -12,7 +12,7 @@ solutions <- solutions[ordem]
 
 (UECE, adaptada) Oito esferas estão suspensas por fios flexíveis, inextensíveis e de massas desprezíveis, formando um pêndulo múltiplo. Da esquerda para a direita, há quatro esferas de massa \(M=150\,\mathrm{g}\) e quatro esferas de massa \(m=50\,\mathrm{g}\). A primeira esfera de massa \(M\) é deslocada até uma altura \(h\) e solta; ao retornar, colide frontalmente com o grupo de esferas inicialmente em repouso.
 
-Considere o choque idealmente perfeitamente elástico. O número de esferas de massa \(m\) que se moverão na extremidade oposta é
+Considere o modelo ideal do pêndulo múltiplo: o choque é perfeitamente elástico, as esferas de massa \(M\) ficam em repouso após a transmissão do choque e as \(n\) esferas de massa \(m\) que saem na extremidade oposta movem-se com o mesmo módulo de velocidade. O número de esferas de massa \(m\) que se moverão é
 
 <<echo=FALSE, results=hide, results=tex>>=
 answerlist(questions)
