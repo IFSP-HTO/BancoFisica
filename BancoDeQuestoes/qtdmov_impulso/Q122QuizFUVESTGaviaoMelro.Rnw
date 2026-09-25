@@ -1,0 +1,59 @@
+<<echo=FALSE, results=hide>>=
+questions <- c("20.", "10.", "3.", "0,3.", "0,1.")
+solutions <- c(FALSE, TRUE, FALSE, FALSE, FALSE)
+ordem <- sample(seq_along(questions))
+questions <- questions[ordem]
+solutions <- solutions[ordem]
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+(FUVEST-SP) Um gavião avista, abaixo dele, um melro e, para apanhá-lo, passa a voar verticalmente, conseguindo agarrá-lo. Imediatamente antes da captura, o gavião, de massa \(M_G=300\,\mathrm{g}\), move-se verticalmente para baixo com velocidade de módulo \(V_G=80\,\mathrm{km/h}\), enquanto o melro, de massa \(M_M=100\,\mathrm{g}\), move-se horizontalmente para a direita com velocidade de módulo \(V_M=24\,\mathrm{km/h}\).
+
+Imediatamente após a captura, o gavião voa segurando o melro. Se o vetor velocidade do conjunto forma um ângulo \(\alpha\) com o plano horizontal, então \(\tan\alpha\) é aproximadamente igual a
+
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(questions)
+@
+
+\end{question}
+
+\begin{solution}
+
+Durante o curto intervalo da captura, o sistema gavião--melro pode ser tratado como isolado, de modo que a quantidade de movimento se conserva vetorialmente.
+
+A componente vertical inicial da quantidade de movimento é a do gavião:
+\[
+p_y=M_GV_G
+=0{,}300\cdot80
+=24\,\mathrm{kg\,km/h}.
+\]
+
+A componente horizontal é a do melro:
+\[
+p_x=M_MV_M
+=0{,}100\cdot24
+=2{,}4\,\mathrm{kg\,km/h}.
+\]
+
+Como a velocidade final tem a mesma direção da quantidade de movimento total,
+\[
+\tan\alpha=\frac{|p_y|}{|p_x|}
+=\frac{24}{2{,}4}
+=10.
+\]
+
+Portanto, a alternativa correta é a que contém \(10\).
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: FUVEST-SP, reproduzida em Alberto Gaspar, Compreendendo a Física, vol. 1, cap. 17, questão 5.
+%% Figura da fonte dispensada porque as direções das velocidades estão descritas integralmente no texto.
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q122QuizFUVESTGaviaoMelro}
+%% \exsection{Mecanica; Quantidade de movimento; Conservacao; Vetores; Colisao bidimensional; FUVEST}
+%% \exusepackage[utf8]{inputenc}
