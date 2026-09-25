@@ -1,0 +1,122 @@
+<<echo=FALSE, results=hide>>=
+## Impulso como área algébrica sob o gráfico F x t.
+## Há um trecho de força positiva e outro de força negativa.
+
+cenarios <- data.frame(
+  m  = c(2, 4, 5, 2, 4, 5),
+  v0 = c(3, 2, 4, 2, 4, 2),
+  Fp = c(8,12,10, 6,10,15),
+  tp = c(2, 1, 2, 1, 2, 1),
+  Fn = c(6, 8,10,10, 6, 5),
+  tn = c(1, 2, 3, 2, 3, 2)
+)
+
+k <- sample(seq_len(nrow(cenarios)), 1)
+m  <- cenarios$m[k]
+v0 <- cenarios$v0[k]
+Fp <- cenarios$Fp[k]
+tp <- cenarios$tp[k]
+Fn <- cenarios$Fn[k]
+tn <- cenarios$tn[k]
+
+Ipos <- Fp * tp
+Ineg <- -Fn * tn
+Itot <- Ipos + Ineg
+p0 <- m * v0
+pf <- p0 + Itot
+vf <- pf / m
+T <- tp + tn
+
+fmt <- function(x, d = 2) formatC(x, format = "f", digits = d, decimal.mark = ",")
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Um corpo de massa $\Sexpr{m}\,\mathrm{kg}$ move-se inicialmente para a direita com velocidade de $\Sexpr{v0}\,\mathrm{m/s}$. Adote a direita como sentido positivo. A força resultante horizontal sobre o corpo varia com o tempo conforme o gráfico.
+
+\begin{figure}[h!]
+\begin{center}
+<<fig=TRUE, height=3.8, width=6.0, echo=FALSE, eps=FALSE, results=hide>>=
+op <- par(mar = c(3.5, 3.8, 0.8, 0.8))
+lim <- 1.25 * max(Fp, Fn)
+plot(0, 0, type = "n",
+     xlim = c(0, T), ylim = c(-lim, lim),
+     xlab = "tempo (s)", ylab = "forca resultante (N)")
+abline(h = 0)
+segments(0, Fp, tp, Fp, lwd = 3)
+segments(tp, -Fn, T, -Fn, lwd = 3)
+segments(0, 0, 0, Fp)
+segments(tp, Fp, tp, -Fn, lty = 2)
+segments(T, -Fn, T, 0)
+axis(1, at = c(0, tp, T))
+par(op)
+@
+\end{center}
+\end{figure}
+
+Determine:
+
+\begin{answerlist}
+  \item o impulso no primeiro trecho, em $\mathrm{N\,s}$;
+  \item o impulso no segundo trecho, em $\mathrm{N\,s}$, com sinal;
+  \item o impulso resultante entre $0$ e $\Sexpr{T}\,\mathrm{s}$, em $\mathrm{N\,s}$;
+  \item a velocidade final do corpo, em $\mathrm{m/s}$, com sinal.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+O impulso é a área algébrica sob o gráfico $F\times t$.
+
+No primeiro trecho, a força é positiva:
+\[
+I_1=F_1\Delta t_1
+=\Sexpr{Fp}\cdot\Sexpr{tp}
+=\Sexpr{fmt(Ipos,2)}\,\mathrm{N\,s}.
+\]
+
+No segundo trecho, a força aponta para a esquerda e é negativa:
+\[
+I_2=F_2\Delta t_2
+=(-\Sexpr{Fn})\cdot\Sexpr{tn}
+=\Sexpr{fmt(Ineg,2)}\,\mathrm{N\,s}.
+\]
+
+Assim,
+\[
+I_{\rm total}=I_1+I_2
+=\Sexpr{fmt(Itot,2)}\,\mathrm{N\,s}.
+\]
+
+A quantidade de movimento inicial é
+\[
+p_0=mv_0=\Sexpr{fmt(p0,2)}\,\mathrm{kg\,m/s}.
+\]
+
+Pelo teorema do impulso,
+\[
+p_f=p_0+I_{\rm total}
+=\Sexpr{fmt(pf,2)}\,\mathrm{kg\,m/s}.
+\]
+
+Logo,
+\[
+v_f=\frac{p_f}{m}
+=\Sexpr{fmt(vf,2)}\,\mathrm{m/s}.
+\]
+
+O sinal da velocidade final indica o sentido do movimento ao final do intervalo.
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{\Sexpr{round(Ipos,2)}|\Sexpr{round(Ineg,2)}|\Sexpr{round(Itot,2)}|\Sexpr{round(vf,2)}}
+%% \exclozetype{num|num|num|num}
+%% \extol{0.01|0.01|0.01|0.01}
+%% \exname{Q128ClozeImpulsoAreasComSinal}
+%% \exsection{Mecanica; Impulso; Quantidade de movimento; Graficos; Vetores}
+%% \exusepackage[utf8]{inputenc}

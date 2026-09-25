@@ -1,0 +1,105 @@
+<<echo=FALSE, results=hide>>=
+## Leitura de gráfico p x t.
+## A inclinação do gráfico fornece a força resultante média em cada trecho.
+
+p0 <- sample(c(4, 6, 8), 1)
+t1 <- sample(c(2, 3), 1)
+F1 <- sample(c(2, 3, 4), 1)
+dt2 <- sample(c(2, 4), 1)
+F2 <- -sample(c(1, 2), 1)
+
+p1 <- p0 + F1 * t1
+p2 <- p1 + F2 * dt2
+T <- t1 + dt2
+
+I1 <- p1 - p0
+I2 <- p2 - p1
+Itot <- p2 - p0
+
+fmt <- function(x, d = 2) formatC(x, format = "f", digits = d, decimal.mark = ",")
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+A quantidade de movimento de um corpo varia com o tempo conforme o gráfico abaixo. Considere o movimento unidimensional e adote o sentido positivo indicado pelos valores positivos de $p$.
+
+\begin{figure}[h!]
+\begin{center}
+<<fig=TRUE, height=3.8, width=6.0, echo=FALSE, eps=FALSE, results=hide>>=
+op <- par(mar = c(3.5, 3.8, 0.8, 0.8))
+plot(c(0, t1, T), c(p0, p1, p2),
+     type = "b", pch = 16, lwd = 2,
+     xlim = c(0, T),
+     ylim = c(0, 1.15*max(p0,p1,p2)),
+     xlab = "tempo (s)",
+     ylab = "quantidade de movimento (kg.m/s)")
+axis(1, at = c(0, t1, T))
+par(op)
+@
+\end{center}
+\end{figure}
+
+Determine:
+
+\begin{answerlist}
+  \item o impulso entre $0$ e $\Sexpr{t1}\,\mathrm{s}$, em $\mathrm{N\,s}$;
+  \item a força resultante média nesse primeiro intervalo, em N;
+  \item o impulso entre $\Sexpr{t1}$ e $\Sexpr{T}\,\mathrm{s}$, em $\mathrm{N\,s}$;
+  \item a força resultante média nesse segundo intervalo, em N;
+  \item o impulso resultante em todo o intervalo, em $\mathrm{N\,s}$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Pelo teorema do impulso,
+\[
+I=\Delta p.
+\]
+
+No primeiro intervalo:
+\[
+I_1=p_1-p_0
+=\Sexpr{fmt(I1,2)}\,\mathrm{N\,s}.
+\]
+A força resultante média é
+\[
+F_{1,\mathrm{m}}
+=\frac{\Delta p}{\Delta t}
+=\frac{\Sexpr{fmt(I1,2)}}{\Sexpr{t1}}
+=\Sexpr{fmt(F1,2)}\,\mathrm{N}.
+\]
+
+No segundo intervalo:
+\[
+I_2=p_2-p_1
+=\Sexpr{fmt(I2,2)}\,\mathrm{N\,s}.
+\]
+Como a quantidade de movimento diminui, o impulso e a força resultante média são negativos:
+\[
+F_{2,\mathrm{m}}
+=\frac{I_2}{\Delta t_2}
+=\Sexpr{fmt(F2,2)}\,\mathrm{N}.
+\]
+
+No intervalo completo,
+\[
+I_{\rm total}=p_2-p_0
+=\Sexpr{fmt(Itot,2)}\,\mathrm{N\,s}.
+\]
+
+Assim, em um gráfico $p\times t$, a variação vertical fornece o impulso, enquanto a inclinação do trecho fornece a força resultante média.
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{\Sexpr{round(I1,2)}|\Sexpr{round(F1,2)}|\Sexpr{round(I2,2)}|\Sexpr{round(F2,2)}|\Sexpr{round(Itot,2)}}
+%% \exclozetype{num|num|num|num|num}
+%% \extol{0.01|0.01|0.01|0.01|0.01}
+%% \exname{Q130ClozeGraficoMomentoTempo}
+%% \exsection{Mecanica; Impulso; Quantidade de movimento; Graficos}
+%% \exusepackage[utf8]{inputenc}

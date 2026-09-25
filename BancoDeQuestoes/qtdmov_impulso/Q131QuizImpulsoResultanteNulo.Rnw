@@ -1,0 +1,95 @@
+<<echo=FALSE, results=hide>>=
+## Questão conceitual: forças não nulas podem produzir impulso resultante nulo.
+
+F <- sample(c(5, 10, 15, 20), 1)
+dt <- sample(c(1, 2, 3), 1)
+T <- 2 * dt
+
+questions <- c(
+  "a quantidade de movimento final é igual à quantidade de movimento inicial.",
+  "a quantidade de movimento final é necessariamente nula.",
+  "nenhuma força resultante atuou sobre o corpo durante o intervalo.",
+  "a força resultante foi nula em todos os instantes.",
+  "o corpo necessariamente permaneceu em repouso durante todo o intervalo."
+)
+solutions <- c(TRUE, FALSE, FALSE, FALSE, FALSE)
+
+ord <- sample(seq_along(questions))
+questions <- questions[ord]
+solutions <- solutions[ord]
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+A força resultante unidimensional sobre um corpo varia com o tempo conforme o gráfico. Durante os primeiros $\Sexpr{dt}\,\mathrm{s}$, a força vale $+\Sexpr{F}\,\mathrm{N}$; nos $\Sexpr{dt}\,\mathrm{s}$ seguintes, vale $-\Sexpr{F}\,\mathrm{N}$.
+
+\begin{figure}[h!]
+\begin{center}
+<<fig=TRUE, height=3.6, width=6.0, echo=FALSE, eps=FALSE, results=hide>>=
+op <- par(mar = c(3.5, 3.8, 0.8, 0.8))
+lim <- 1.3 * F
+plot(0, 0, type = "n",
+     xlim = c(0, T), ylim = c(-lim, lim),
+     xlab = "tempo (s)", ylab = "forca resultante (N)")
+abline(h = 0)
+segments(0, F, dt, F, lwd = 3)
+segments(dt, -F, T, -F, lwd = 3)
+segments(0, 0, 0, F)
+segments(dt, F, dt, -F, lty = 2)
+segments(T, -F, T, 0)
+axis(1, at = c(0, dt, T))
+par(op)
+@
+\end{center}
+\end{figure}
+
+Ao final dos $\Sexpr{T}\,\mathrm{s}$, é correto afirmar que
+
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(questions)
+@
+
+\end{question}
+
+\begin{solution}
+
+O impulso no primeiro trecho é
+\[
+I_1=+\Sexpr{F}\cdot\Sexpr{dt}
+=+\Sexpr{F*dt}\,\mathrm{N\,s}.
+\]
+
+No segundo trecho,
+\[
+I_2=-\Sexpr{F}\cdot\Sexpr{dt}
+=-\Sexpr{F*dt}\,\mathrm{N\,s}.
+\]
+
+Logo, o impulso resultante é
+\[
+I_{\rm total}=I_1+I_2=0.
+\]
+
+Pelo teorema do impulso,
+\[
+I_{\rm total}=\Delta p.
+\]
+Portanto,
+\[
+\Delta p=0
+\quad\Rightarrow\quad
+p_f=p_i.
+\]
+
+Isso não significa que a força tenha sido nula durante o intervalo. Ela atuou nos dois trechos, mas os impulsos tiveram módulos iguais e sentidos opostos.
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q131QuizImpulsoResultanteNulo}
+%% \exsection{Mecanica; Impulso; Quantidade de movimento; Graficos; Conceitual}
+%% \exusepackage[utf8]{inputenc}

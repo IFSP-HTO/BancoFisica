@@ -1,0 +1,99 @@
+<<echo=FALSE, results=hide>>=
+## Extensão didática do conceito de impulso como área sob o gráfico F x t.
+## Força por trechos, sempre no mesmo sentido.
+
+m <- sample(c(2, 4, 5), 1)
+v0 <- sample(c(0, 1, 2, 3), 1)
+F1 <- sample(c(10, 15, 20, 25), 1)
+F2 <- sample(c(20, 30, 40), 1)
+t1 <- sample(c(1, 2, 3), 1)
+t2 <- sample(c(1, 2, 3), 1)
+
+I1 <- F1 * t1
+I2 <- F2 * t2
+Itot <- I1 + I2
+vf <- v0 + Itot / m
+T <- t1 + t2
+
+fmt <- function(x, d = 2) formatC(x, format = "f", digits = d, decimal.mark = ",")
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Um bloco de massa $\Sexpr{m}\,\mathrm{kg}$ possui velocidade inicial de $\Sexpr{v0}\,\mathrm{m/s}$. Uma força resultante horizontal, sempre no mesmo sentido do movimento, varia com o tempo de acordo com o gráfico abaixo.
+
+\begin{figure}[h!]
+\begin{center}
+<<fig=TRUE, height=3.8, width=6.0, echo=FALSE, eps=FALSE, results=hide>>=
+op <- par(mar = c(3.5, 3.8, 0.8, 0.8))
+plot(0, 0, type = "n",
+     xlim = c(0, T), ylim = c(0, 1.2*max(F1,F2)),
+     xlab = "tempo (s)", ylab = "forca resultante (N)")
+segments(0, F1, t1, F1, lwd = 3)
+segments(t1, F2, T, F2, lwd = 3)
+segments(t1, F1, t1, F2, lty = 2)
+segments(0, 0, 0, F1)
+segments(T, 0, T, F2)
+axis(1, at = c(0, t1, T))
+par(op)
+@
+\end{center}
+\end{figure}
+
+Determine:
+
+\begin{answerlist}
+  \item o impulso no primeiro intervalo, em $\mathrm{N\,s}$;
+  \item o impulso total entre $0$ e $\Sexpr{T}\,\mathrm{s}$, em $\mathrm{N\,s}$;
+  \item a velocidade final do bloco, em $\mathrm{m/s}$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+O impulso corresponde à área sob o gráfico $F\times t$.
+
+No primeiro trecho:
+\[
+I_1=F_1\Delta t_1
+=\Sexpr{F1}\cdot\Sexpr{t1}
+=\Sexpr{fmt(I1,2)}\,\mathrm{N\,s}.
+\]
+
+No segundo trecho:
+\[
+I_2=F_2\Delta t_2
+=\Sexpr{F2}\cdot\Sexpr{t2}
+=\Sexpr{fmt(I2,2)}\,\mathrm{N\,s}.
+\]
+
+Como as forças têm o mesmo sentido, os impulsos somam-se:
+\[
+I_{\rm total}=I_1+I_2
+=\Sexpr{fmt(Itot,2)}\,\mathrm{N\,s}.
+\]
+
+Pelo teorema do impulso,
+\[
+I_{\rm total}=m(v_f-v_0).
+\]
+Assim,
+\[
+v_f=v_0+\frac{I_{\rm total}}{m}
+=\Sexpr{v0}+\frac{\Sexpr{fmt(Itot,2)}}{\Sexpr{m}}
+=\Sexpr{fmt(vf,2)}\,\mathrm{m/s}.
+\]
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{\Sexpr{round(I1,2)}|\Sexpr{round(Itot,2)}|\Sexpr{round(vf,2)}}
+%% \exclozetype{num|num|num}
+%% \extol{0.01|0.01|0.01}
+%% \exname{Q126ClozeGraficoForcaTempoTrechos}
+%% \exsection{Mecanica; Impulso; Quantidade de movimento; Graficos}
+%% \exusepackage[utf8]{inputenc}
