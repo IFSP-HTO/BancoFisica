@@ -56,6 +56,7 @@ jobs:
               cats = re.findall(r'<text>\$course\$/[^<]+/(Q\d{2})</text>', s)
               if sorted(cats) != [f"Q{i:02d}" for i in range(1, 11)]:
                   raise SystemExit(f"{p}: categorias inesperadas: {cats}")
+              expected = 25 if "automacao" in p.name else 50
               for i in range(1, 11):
                   q = f"Q{i:02d}"
                   names = re.findall(
@@ -63,9 +64,9 @@ jobs:
                       s,
                       re.S,
                   )
-                  if len(names) != 50:
+                  if len(names) != expected:
                       raise SystemExit(
-                          f"{p}: {q} possui {len(names)} variantes; esperado 50"
+                          f"{p}: {q} possui {len(names)} variantes; esperado {expected}"
                       )
               if p.stat().st_size > 10 * 1024 * 1024:
                   raise SystemExit(f"{p}: excede 10 MiB")
