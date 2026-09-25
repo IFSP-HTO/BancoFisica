@@ -71,7 +71,7 @@ h=\frac{v_f^2}{2g}
 %% Figura parametrizável preparada para o BancoFisica a partir do esquema da fonte.
 %% \extype{num}
 %% \exsolution{\Sexpr{hcm}}
-%% \exname{Q116ClozeUPEBlocosRampa}
+%% \exname{Q116NumUPEBlocosRampa}
 %% \extol{0.1}
 %% \exsection{Mecanica; Quantidade de movimento; Colisoes; Energia mecanica}
 %% \exusepackage[utf8]{inputenc}
