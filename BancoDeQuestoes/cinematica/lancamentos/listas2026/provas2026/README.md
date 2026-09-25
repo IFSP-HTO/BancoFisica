@@ -90,3 +90,22 @@ Este fluxo substitui o mapeamento anterior para questões canônicas
 “equivalentes” do Banco. Para listas que pretendem reproduzir uma avaliação
 aplicada, **equivalência conceitual não é suficiente: a fonte impressa é a
 referência**.
+
+
+## REGRA DE FIDELIDADE À PROVA IMPRESSA
+
+Para estas três avaliações, **não é permitido substituir uma questão por uma
+questão canônica equivalente do BancoFisica**.
+
+Os arquivos em `provas2026/fieis/<turma>/QxxProvaFiel.Rnw` foram criados
+especificamente para reproduzir o que foi efetivamente impresso. Cada réplica
+seleciona uma das dez versões reais aplicadas (`V01`--`V10`) e inclui a
+imagem exata do bloco da questão daquela versão, contendo o mesmo enunciado,
+a mesma figura, os mesmos valores numéricos e as mesmas alternativas A--E.
+
+As opções do Moodle são apenas as letras A--E e **não são embaralhadas**; o
+gabarito é o da versão impressa selecionada.
+
+As imagens exatas não podem ser substituídas pelas figuras históricas/canônicas
+do Banco. O diretório delas é fornecido ao gerador por
+`BF_PROVA_FIEL_ASSET_DIR`.
