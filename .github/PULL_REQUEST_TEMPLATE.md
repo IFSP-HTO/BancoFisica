@@ -30,6 +30,18 @@ Por favor liste também qualquer detalhe relevante para sua configuração de te
 * Ferramenta:
 * Código:
 
+
+### Fidelidade às fontes das questões
+
+Para toda questão nova ou adaptada a partir de prova, livro ou PDF:
+
+- [ ] Verifiquei se a fonte original contém figura, gráfico, diagrama, esquema, fotografia ou tabela relevante.
+- [ ] Cada questão nova declara `SOURCE-VISUAL: none | original-extract | original-crop | adapted-approved`.
+- [ ] Quando a fonte possui visual relevante e os dados não precisaram ser alterados, preservei o visual original por extração/recorte direto.
+- [ ] Não substituí visual da fonte por descrição textual, alternativas algébricas ou reconstrução apenas por conveniência.
+- [ ] Se houve alteração/redesenho de visual por parametrização, há aprovação explícita do responsável pelo banco registrada no PR.
+- [ ] Questões cujo ativo original não pôde ser obtido foram deixadas fora do PR como bloqueadas por ativo visual.
+
 ## Checklist:
 
 - [ ] Meu código segue as guidelines para esse projeto
