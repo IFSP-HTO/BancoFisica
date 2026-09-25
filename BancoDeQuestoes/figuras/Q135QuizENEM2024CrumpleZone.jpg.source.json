@@ -1,0 +1,17 @@
+{
+  "source_pdf": "2024_PV_impresso_D2_CD6.pdf",
+  "source_sha256": "3c336258a61d3061c200184be797853fc144e179668a5700df36bb383a287487",
+  "mode": "embedded-image-extract",
+  "page": 13,
+  "xref": 94,
+  "source_dimensions_px": [
+    669,
+    379
+  ],
+  "repository_asset": "Q135QuizENEM2024CrumpleZone.jpg",
+  "repository_dimensions_px": [
+    260,
+    147
+  ],
+  "postprocess": "downscaled/optimized from the extracted source image only; no content redrawn or reconstructed"
+}
