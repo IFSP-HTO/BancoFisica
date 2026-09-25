@@ -1,10 +1,10 @@
 <<echo=FALSE, results=hide>>=
 alternativas <- c(
-  "os dois ovos sofrem variações de quantidade de movimento de mesmo módulo, mas o tapete aumenta o tempo de parada e reduz a força média.",
+  "os dois ovos sofrem variações de quantidade de movimento de mesmo módulo, mas o tapete aumenta o tempo de parada e reduz a força resultante média.",
   "o ovo que cai no piso sofre maior variação de quantidade de movimento, pois ele se quebra.",
   "o ovo que cai no tapete sofre maior impulso, pois permanece mais tempo em contato com a superfície.",
-  "o tapete reduz a força média porque diminui o intervalo de tempo necessário para parar o ovo.",
-  "os dois ovos sofrem a mesma força média, pois foram abandonados da mesma altura."
+  "o tapete reduz a força resultante média porque diminui o intervalo de tempo necessário para parar o ovo.",
+  "os dois ovos sofrem a mesma força resultante média, pois foram abandonados da mesma altura."
 )
 ordem <- sample(seq_along(alternativas))
 questions <- alternativas[ordem]
@@ -37,9 +37,9 @@ I=\Delta p.
 \]
 O tapete não precisa diminuir o impulso; ele aumenta o intervalo de tempo em que a velocidade é reduzida. Como
 \[
-F_{\mathrm{m}}=\frac{|\Delta p|}{\Delta t},
+F_{\mathrm{res,m}}=\frac{|\Delta p|}{\Delta t},
 \]
-um tempo de parada maior corresponde a uma força média menor, reduzindo a chance de o ovo se quebrar.
+um tempo de parada maior corresponde a uma força resultante média menor, reduzindo a chance de o ovo se quebrar.
 
 \end{solution}
 
@@ -48,5 +48,5 @@ um tempo de parada maior corresponde a uma força média menor, reduzindo a chan
 %% \extype{schoice}
 %% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
 %% \exname{Q104QuizOvosImpulsoForcaMedia}
-%% \exsection{Mecanica; Impulso; Quantidade de movimento; Forca media}
+%% \exsection{Mecanica; Impulso; Quantidade de movimento; Forca resultante media}
 %% \exusepackage[utf8]{inputenc}
