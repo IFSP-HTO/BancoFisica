@@ -49,7 +49,7 @@ p=mv
 %% Fonte: Quantidade de Movimento.pdf, exercício 2 (FGV), adaptada e parametrizada.
 %% \extype{num}
 %% \exsolution{\Sexpr{p}}
-%% \exname{Q103ClozeFGVEmaMomento}
+%% \exname{Q103NumFGVEmaMomento}
 %% \extol{0.1}
 %% \exsection{Mecanica; Quantidade de movimento}
 %% \exusepackage[utf8]{inputenc}
