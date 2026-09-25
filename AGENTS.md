@@ -17,6 +17,23 @@ Quando uma questão estiver sendo criada ou adaptada a partir de um PDF-fonte e 
 
 Para várias figuras da mesma prova, prefira o modo `batch` com manifesto CSV. Ele mantém cada PDF aberto durante o processamento de todos os ativos daquele documento.
 
+### Gate obrigatório de fidelidade visual
+
+Antes de escrever ou adaptar qualquer `.Rnw` baseado em uma fonte externa, faça este preflight:
+
+1. Registre explicitamente se o enunciado, as alternativas ou a solução da fonte usam figura, gráfico, diagrama, esquema, fotografia ou tabela.
+2. Se houver um visual de fonte e os dados nele **não precisarem ser alterados**, preserve o visual original. É proibido omiti-lo por considerar a questão autossuficiente em texto, substituí-lo por descrição textual, converter alternativas gráficas em alternativas algébricas/textuais ou redesenhá-lo.
+3. Se a parametrização exigir modificar valores embutidos no visual, só adapte ou redesenhe após aprovação explícita do responsável pelo banco. Registre essa decisão no `.Rnw` e no PR.
+4. Se o visual original não puder ser materializado, extraído ou recortado diretamente da fonte com fidelidade verificável, marque a questão como **bloqueada por ativo visual** e não a inclua no PR até que o ativo esteja disponível.
+5. Toda questão nova derivada de fonte deve declarar nos metadados uma linha `SOURCE-VISUAL` com um destes estados:
+   - `none`: a fonte não contém visual relevante;
+   - `original-extract`: objeto raster original extraído da fonte;
+   - `original-crop`: recorte/renderização direta da região da fonte;
+   - `adapted-approved`: visual alterado com aprovação explícita do responsável pelo banco.
+6. Um PR não pode ser considerado pronto enquanto houver questão cujo visual de fonte foi omitido, reconstruído ou transformado sem um dos estados permitidos acima e sem a validação visual/compilação correspondente.
+
+Este gate tem precedência sobre conveniência editorial: **“a questão continua resolvível sem a figura” não é justificativa para removê-la quando a fonte a utiliza**.
+
 ## Trabalho iniciado antes deste fluxo
 
 Se uma questão ainda não foi finalizada e sua figura veio de screenshot indireto, reconstrução, geração ou outro fluxo intermediário, substitua o ativo pelo resultado de `tools/pdf_assets.py` antes de concluir o PR, desde que o PDF-fonte esteja disponível e a intenção seja preservar a imagem original.
