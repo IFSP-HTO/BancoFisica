@@ -1,0 +1,50 @@
+<<echo=FALSE, results=hide>>=
+include_supplement("../figuras/Q135QuizENEM2024CrumpleZone.jpg")
+@
+
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+
+(ENEM 2024) Carros modernos possuem regiões estruturais projetadas para se deformar facilmente durante uma colisão, conhecidas como \textit{crumple zones} (regiões deformáveis), como indicado na figura.
+
+\begin{center}
+\includegraphics[width=0.58\linewidth,keepaspectratio]{../figuras/Q135QuizENEM2024CrumpleZone.jpg}
+\end{center}
+
+Considere o carro, seus ocupantes e o muro contra o qual ele colide como um sistema isolado.
+
+O \textit{crumple zone} aumenta a segurança dos passageiros porque, durante uma colisão, a deformação da estrutura do carro
+
+\begin{answerlist}
+  \item aciona os airbags do veículo.
+  \item absorve a energia cinética do sistema.
+  \item consome a quantidade de movimento do sistema.
+  \item cria uma barreira de proteção para seus ocupantes.
+  \item diminui a velocidade do centro de massa do sistema.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Como o sistema é considerado isolado, sua quantidade de movimento total se conserva. Logo, a deformação da estrutura não consome quantidade de movimento e não é responsável por reduzir a velocidade do centro de massa do sistema.
+
+Durante a colisão, a deformação da \textit{crumple zone} converte parte da energia cinética macroscópica em outras formas de energia, principalmente energia interna associada à deformação dos materiais e ao aquecimento.
+
+Portanto, entre as alternativas apresentadas, a função relevante da região deformável é \textbf{absorver energia cinética do sistema}.
+
+A alternativa correta é a \textbf{B}.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: ENEM 2024, 2º dia, Caderno 6 Cinza, questão 126. Gabarito oficial: B.
+%% SOURCE-VISUAL: original-extract
+%% Figura extraída diretamente como objeto raster do PDF oficial da prova; ver arquivo .source.json correspondente.
+%% \extype{schoice}
+%% \exsolution{01000}
+%% \exname{Q135QuizENEM2024CrumpleZone}
+%% \exsection{Mecanica; Quantidade de movimento; Energia; Colisoes; Seguranca veicular; ENEM}
+%% \exusepackage[utf8]{inputenc}
