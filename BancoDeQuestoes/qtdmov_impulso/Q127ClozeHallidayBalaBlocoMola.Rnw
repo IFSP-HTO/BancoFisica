@@ -1,0 +1,78 @@
+<<echo=FALSE, results=hide>>=
+M <- 5.4
+m <- 9.5e-3
+v <- 630
+k <- 6000
+
+V <- m*v/(M+m)
+A <- V*sqrt((M+m)/k)
+Acm <- 100*A
+
+fmt <- function(x, d=2) formatC(x, format="f", digits=d, decimal.mark=",")
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+(Halliday, problema 33, adaptada) Um bloco de massa \(M=5{,}4\,\mathrm{kg}\), inicialmente em repouso sobre uma mesa horizontal sem atrito, está ligado a um suporte rígido por uma mola de constante elástica \(k=6000\,\mathrm{N/m}\). Uma bala de massa \(m=9{,}5\,\mathrm{g}\), com velocidade de módulo \(630\,\mathrm{m/s}\), colide com o bloco e fica alojada nele.
+
+Suponha que a compressão da mola seja desprezível durante o curto intervalo em que a bala se aloja no bloco.
+
+Determine:
+
+\begin{answerlist}
+  \item a velocidade do conjunto bloco--bala imediatamente após a colisão, em \(\mathrm{m/s}\);
+  \item a amplitude do movimento harmônico simples subsequente, em centímetros.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+\begin{answerlist}
+
+\item Durante a colisão, o intervalo de tempo é muito curto e o impulso da mola pode ser desprezado. Assim, conserva-se a quantidade de movimento do sistema bala--bloco:
+\[
+mv=(M+m)V.
+\]
+
+Logo,
+\[
+V=
+\frac{mv}{M+m}
+=
+\frac{0{,}0095\cdot630}{5{,}4+0{,}0095}
+\approx
+\Sexpr{fmt(V,2)}\,\mathrm{m/s}.
+\]
+
+\item Após a colisão, o conjunto de massa \(M+m\) passa a oscilar preso à mola. Tomando o instante logo após a colisão como \(x=0\), toda a energia mecânica inicial do oscilador é cinética:
+\[
+\frac12(M+m)V^2
+=
+\frac12 kA^2.
+\]
+
+Portanto,
+\[
+A=
+V\sqrt{\frac{M+m}{k}}
+\approx
+\Sexpr{fmt(Acm,2)}\,\mathrm{cm}.
+\]
+
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Halliday, Resnick e Walker, problema 33 do capítulo de movimento harmônico simples, material Oscilações e Ondas do projeto.
+%% Questao integradora: colisao perfeitamente inelastica seguida de MHS.
+%% \extype{cloze}
+%% \exsolution{\Sexpr{V}|\Sexpr{Acm}}
+%% \exclozetype{num|num}
+%% \extol{0.02|0.05}
+%% \exname{Q127ClozeHallidayBalaBlocoMola}
+%% \exsection{Mecanica; Quantidade de movimento; Colisao perfeitamente inelastica; Energia; Oscilacoes; MHS; Halliday}
+%% \exusepackage[utf8]{inputenc}
