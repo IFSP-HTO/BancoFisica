@@ -2,7 +2,7 @@
 ## Impulso como área sob o gráfico F x t.
 
 m <- sample(c(2, 4, 5), 1)
-v0 <- sample(c(0, 1, 2, 3), 1)
+v0 <- sample(c(1, 2, 3), 1)
 Fmax <- sample(c(20, 30, 40, 50, 60), 1)
 T <- sample(c(2, 4, 6), 1)
 
