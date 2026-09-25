@@ -1,8 +1,19 @@
+<<echo=FALSE, results=hide>>=
+include_supplement("../figuras/Q126QuizENEM2024CrumpleZone.jpg")
+@
+
 \usepackage[utf8]{inputenc}
+\usepackage{graphicx}
 
 \begin{question}
 
-(ENEM 2024, adaptada) Carros modernos possuem regiões estruturais projetadas para se deformar facilmente durante uma colisão, conhecidas como \textit{crumple zones}. Considere o carro, seus ocupantes e o muro contra o qual ele colide como um sistema isolado.
+(ENEM 2024) Carros modernos possuem regiões estruturais projetadas para se deformar facilmente durante uma colisão, conhecidas como \textit{crumple zones} (regiões deformáveis), como indicado na figura.
+
+\begin{center}
+\includegraphics[width=0.58\linewidth,keepaspectratio]{../figuras/Q126QuizENEM2024CrumpleZone.jpg}
+\end{center}
+
+Considere o carro, seus ocupantes e o muro contra o qual ele colide como um sistema isolado.
 
 O \textit{crumple zone} aumenta a segurança dos passageiros porque, durante uma colisão, a deformação da estrutura do carro
 
@@ -18,11 +29,11 @@ O \textit{crumple zone} aumenta a segurança dos passageiros porque, durante uma
 
 \begin{solution}
 
-Como o sistema é considerado isolado, sua quantidade de movimento total se conserva. Portanto, a deformação não consome quantidade de movimento e também não altera a velocidade do centro de massa do sistema.
+Como o sistema é considerado isolado, sua quantidade de movimento total se conserva. Logo, a deformação da estrutura não consome quantidade de movimento e não é responsável por reduzir a velocidade do centro de massa do sistema.
 
-O papel da região deformável é permitir que parte da energia cinética macroscópica associada ao movimento relativo seja convertida em energia interna, principalmente por deformação dos materiais e aquecimento.
+Durante a colisão, a deformação da \textit{crumple zone} converte parte da energia cinética macroscópica em outras formas de energia, principalmente energia interna associada à deformação dos materiais e ao aquecimento.
 
-Em linguagem do enunciado, a estrutura deformável \textbf{absorve a energia cinética do sistema}. Essa dissipação, associada também a um maior tempo de interação, reduz os efeitos mecânicos sobre os ocupantes.
+Portanto, entre as alternativas apresentadas, a função relevante da região deformável é \textbf{absorver energia cinética do sistema}.
 
 A alternativa correta é a \textbf{B}.
 
@@ -30,7 +41,8 @@ A alternativa correta é a \textbf{B}.
 
 %% META-INFORMATION
 %% Fonte: ENEM 2024, 2º dia, Caderno 6 Cinza, questão 126. Gabarito oficial: B.
-%% Enunciado adaptado para tornar a figura dispensável; alternativas preservadas.
+%% SOURCE-VISUAL: original-extract
+%% Figura extraída diretamente como objeto raster do PDF oficial da prova; ver arquivo .source.json correspondente.
 %% \extype{schoice}
 %% \exsolution{01000}
 %% \exname{Q126QuizENEM2024CrumpleZone}
