@@ -54,3 +54,40 @@ Quando for útil para evitar confusão entre arquivos intermediários, registre 
 1. Antes de iniciar um novo lote, confirme que o branch parte do `master` atual ou compare explicitamente a divergência e atualize-o antes de acumular novas alterações.
 2. Mantenha PRs pequenos e temáticos quando isso facilitar revisão, diagnóstico e rollback.
 3. Não considere um PR finalizado apenas porque está `mergeable`; aguarde os checks exigidos e confirme o merge efetivo.
+
+
+
+
+## Privacidade e dados de estudantes — regra absoluta
+
+**Nunca versionar dados de estudantes neste repositório.** Isso inclui, sem exceção:
+
+- nome, e-mail, prontuário/matrícula ou qualquer outro identificador;
+- nota individual;
+- respostas individuais;
+- planilhas de correção por aluno;
+- folhas de respostas, provas escaneadas, PDFs/fotos com escrita ou nome do estudante;
+- imagens de cartão OMR;
+- arquivos intermediários de OCR/OMR que permitam reidentificar um estudante;
+- qualquer combinação de dados que permita reconstruir o desempenho de uma pessoa.
+
+Arquivos de correção e scans devem permanecer fora do repositório ou somente em diretórios locais ignorados pelo Git, como `build/private/`.
+
+Só podem ser versionadas **estatísticas agregadas e anônimas**, por exemplo `n` e taxa de acerto por item. O identificador de aplicação/turma deve ser opaco e não conter nome de aluno. Notas de análise agregada também não podem citar estudantes.
+
+Antes de qualquer commit/PR que envolva correção ou análise de provas, revise explicitamente o diff procurando dados pessoais. Em caso de dúvida, não versione o arquivo.
+
+## Provas impressas e OMR
+
+Quando o usuário pedir uma prova "no padrão BancoFisica", uma prova semelhante às avaliações impressas do IFSP, ou múltiplas versões para impressão:
+
+1. Leia primeiro `provas/README.md` e `provas/profiles/ifsp-omr.yaml`.
+2. Reutilize `provas/templates/ifsp-omr.tex`; não recrie o layout do zero.
+3. Por padrão, use 10 questões A--E, 5 fáceis + 5 médias e 10 versões equivalentes, salvo instrução diferente do usuário.
+4. O QR code identifica somente a versão; nunca codifique o gabarito nele.
+5. Mantenha a versão discreta para o aluno e gere gabarito/manifesto machine-readable separado.
+6. Antes de entregar PDFs, renderize e inspecione visualmente versões representativas e extremas; verifique páginas vazias, overflow, fórmulas fora de caixas, figuras/rótulos desalinhados e questões divididas de forma ruim.
+7. Para provas paralelas, compare `BF-Family`/habilidades e evite repetir o mesmo enunciado ou família quando o usuário pedir questões diferentes.
+8. Quando houver resultados reais, preserve dificuldade prevista e registre separadamente **somente estatísticas agregadas e anônimas** em `analytics/item_history.csv`. Nunca inclua nomes, notas, respostas individuais, scans ou qualquer identificador de estudante; veja `provas/PRIVACY.md`.
+9. Use `tools/generate_printed_exam.py` para gerar as versões, `tools/grade_omr.py` para ler cartões e `tools/analyze_exam.py` para estatísticas agregadas.
+10. Questões `schoice` simples podem ser consumidas diretamente do `.Rnw`; `cloze` e `mchoice` devem ser adaptadas pedagogicamente no YAML quando a prova exigir uma única alternativa A--E. Não faça conversão automática que altere o que a questão mede.
