@@ -1,0 +1,65 @@
+<<echo=FALSE, results=hide>>=
+## Adaptada do Ex. 7 do material "Quantidade de Movimento".
+## O gabarito do material-fonte indica tempos diferentes, mas isso é
+## incompatível com I = Delta p quando |Delta p| e |F_media| são iguais.
+
+questions <- c(
+  "os dois corpos levam o mesmo intervalo de tempo para parar.",
+  "o corpo de menor massa leva menos tempo para parar.",
+  "o corpo de maior massa leva menos tempo para parar.",
+  "o tempo de parada depende apenas da massa de cada corpo.",
+  "não é possível comparar os tempos sem conhecer as velocidades."
+)
+solutions <- c(TRUE, FALSE, FALSE, FALSE, FALSE)
+
+ord <- sample(seq_along(questions))
+questions <- questions[ord]
+solutions <- solutions[ord]
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Dois corpos de massas diferentes movem-se em uma mesma direção e possuem, inicialmente, quantidades de movimento de mesmo módulo. Para pará-los, são aplicadas forças médias de mesmo módulo, em sentido contrário aos respectivos movimentos.
+
+Nessas condições,
+
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(questions)
+@
+
+\end{question}
+
+\begin{solution}
+
+Para cada corpo, o teorema do impulso fornece
+\[
+I=\Delta p.
+\]
+
+Como ambos são levados ao repouso e possuem inicialmente quantidades de movimento de mesmo módulo, o módulo da variação da quantidade de movimento é o mesmo para os dois:
+\[
+|\Delta p_1|=|\Delta p_2|.
+\]
+
+Além disso, as forças médias aplicadas têm o mesmo módulo. Usando
+\[
+|I|=F_{\mathrm{m}}\Delta t,
+\]
+temos
+\[
+\Delta t=\frac{|\Delta p|}{F_{\mathrm{m}}}.
+\]
+
+Como numerador e denominador são iguais nos dois casos, os intervalos de tempo também são iguais. A massa diferente implica velocidades iniciais diferentes, mas não altera essa conclusão.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: material "Quantidade de Movimento", Ex. 7 (adaptada; gabarito físico corrigido).
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q123QuizMesmoMomentoMesmaForca}
+%% \exsection{Mecanica; Impulso; Quantidade de movimento; Conceitual}
+%% \exusepackage[utf8]{inputenc}

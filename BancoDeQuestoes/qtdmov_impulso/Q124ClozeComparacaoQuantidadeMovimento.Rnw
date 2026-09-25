@@ -1,0 +1,84 @@
+<<echo=FALSE, results=hide>>=
+## Questão de comparação de quantidades de movimento.
+## Objetivo: consolidar p = mv sem reduzir o exercício a uma única substituição.
+
+m1 <- sample(c(400, 500, 600, 800), 1) / 1000
+v1 <- sample(c(4, 5, 6, 8), 1)
+
+fator_m <- sample(c(2, 3, 4), 1)
+fator_v <- sample(c(2, 3, 4), 1)
+
+m2 <- fator_m * m1
+v2 <- v1 / fator_v
+
+p1 <- m1 * v1
+p2 <- m2 * v2
+razao <- p2 / p1
+
+fmt <- function(x, d = 2) formatC(x, format = "f", digits = d, decimal.mark = ",")
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Dois corpos A e B movem-se na mesma direção e no mesmo sentido. O corpo A tem massa $\Sexpr{fmt(m1,2)}\,\mathrm{kg}$ e velocidade $\Sexpr{v1}\,\mathrm{m/s}$. O corpo B tem massa $\Sexpr{fator_m}$ vezes maior que a de A, mas sua velocidade é $\Sexpr{fator_v}$ vezes menor.
+
+Determine:
+
+\begin{answerlist}
+  \item o módulo da quantidade de movimento do corpo A, em $\mathrm{kg\,m/s}$;
+  \item o módulo da quantidade de movimento do corpo B, em $\mathrm{kg\,m/s}$;
+  \item a razão $p_B/p_A$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+A quantidade de movimento linear é
+\[
+p=mv.
+\]
+
+Para o corpo A:
+\[
+p_A=m_Av_A
+=\Sexpr{fmt(m1,2)}\cdot\Sexpr{v1}
+=\Sexpr{fmt(p1,2)}\,\mathrm{kg\,m/s}.
+\]
+
+Para o corpo B,
+\[
+m_B=\Sexpr{fator_m}m_A
+\quad\text{e}\quad
+v_B=\frac{v_A}{\Sexpr{fator_v}}.
+\]
+Logo,
+\[
+p_B=m_Bv_B
+=\Sexpr{fator_m}m_A\frac{v_A}{\Sexpr{fator_v}}
+=\frac{\Sexpr{fator_m}}{\Sexpr{fator_v}}p_A.
+\]
+
+Numericamente,
+\[
+p_B=\Sexpr{fmt(p2,2)}\,\mathrm{kg\,m/s},
+\]
+e
+\[
+\frac{p_B}{p_A}=\Sexpr{fmt(razao,2)}.
+\]
+
+Portanto, aumentar a massa não implica necessariamente aumentar a quantidade de movimento: é preciso considerar simultaneamente massa e velocidade.
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{\Sexpr{round(p1,2)}|\Sexpr{round(p2,2)}|\Sexpr{round(razao,2)}}
+%% \exclozetype{num|num|num}
+%% \extol{0.01|0.01|0.01}
+%% \exname{Q124ClozeComparacaoQuantidadeMovimento}
+%% \exsection{Mecanica; Quantidade de movimento; Conceitual}
+%% \exusepackage[utf8]{inputenc}

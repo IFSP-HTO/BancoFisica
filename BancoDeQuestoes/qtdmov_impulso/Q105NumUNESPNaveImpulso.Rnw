@@ -45,7 +45,7 @@ Assim,
 %% Fonte: Quantidade de Movimento.pdf, exercício 4 (UNESP), adaptada e parametrizada.
 %% \extype{num}
 %% \exsolution{\Sexpr{t}}
-%% \exname{Q105ClozeUNESPNaveImpulso}
+%% \exname{Q105NumUNESPNaveImpulso}
 %% \extol{0.01}
 %% \exsection{Mecanica; Impulso; Quantidade de movimento}
 %% \exusepackage[utf8]{inputenc}

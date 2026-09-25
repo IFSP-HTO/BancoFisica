@@ -1,0 +1,85 @@
+<<echo=FALSE, results=hide>>=
+## Impulso vetorial em duas dimensões.
+## A rapidez permanece constante, mas a direção da velocidade muda 90 graus.
+
+m_g <- sample(c(100, 200, 250, 400, 500), 1)
+v <- sample(c(4, 5, 6, 8, 10), 1)
+m <- m_g / 1000
+
+p <- m * v
+Ix <- -p
+Iy <-  p
+Imag <- sqrt(Ix^2 + Iy^2)
+
+fmt <- function(x, d = 2) formatC(x, format = "f", digits = d, decimal.mark = ",")
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Uma bola de massa $\Sexpr{m_g}\,\mathrm{g}$ move-se sobre uma superfície horizontal com velocidade de módulo $\Sexpr{v}\,\mathrm{m/s}$ para leste. Após uma breve interação, ela passa a mover-se para norte com o mesmo módulo de velocidade.
+
+Adote o eixo $x$ positivo para leste e o eixo $y$ positivo para norte. Determine:
+
+\begin{answerlist}
+  \item a componente $x$ do impulso recebido pela bola, em $\mathrm{N\,s}$;
+  \item a componente $y$ do impulso recebido pela bola, em $\mathrm{N\,s}$;
+  \item o módulo do impulso, em $\mathrm{N\,s}$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+A quantidade de movimento inicial é
+\[
+\vec p_i=(mv,0),
+\]
+pois a bola se move para leste.
+
+Depois da interação,
+\[
+\vec p_f=(0,mv),
+\]
+pois a bola passa a mover-se para norte com a mesma rapidez.
+
+O impulso é igual à variação da quantidade de movimento:
+\[
+\vec I=\Delta\vec p=\vec p_f-\vec p_i.
+\]
+
+Como
+\[
+mv=\Sexpr{fmt(m,3)}\cdot\Sexpr{v}
+=\Sexpr{fmt(p,2)}\,\mathrm{kg\,m/s},
+\]
+temos
+\[
+I_x=-mv=\Sexpr{fmt(Ix,2)}\,\mathrm{N\,s},
+\]
+e
+\[
+I_y=+mv=\Sexpr{fmt(Iy,2)}\,\mathrm{N\,s}.
+\]
+
+O módulo do impulso é
+\[
+|\vec I|
+=\sqrt{I_x^2+I_y^2}
+=mv\sqrt{2}
+=\Sexpr{fmt(Imag,2)}\,\mathrm{N\,s}.
+\]
+
+Mesmo que o módulo da velocidade não mude, existe impulso porque a direção da quantidade de movimento mudou.
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{\Sexpr{round(Ix,2)}|\Sexpr{round(Iy,2)}|\Sexpr{round(Imag,2)}}
+%% \exclozetype{num|num|num}
+%% \extol{0.01|0.01|0.02}
+%% \exname{Q129ClozeImpulsoVetorial2D}
+%% \exsection{Mecanica; Impulso; Quantidade de movimento; Vetores}
+%% \exusepackage[utf8]{inputenc}

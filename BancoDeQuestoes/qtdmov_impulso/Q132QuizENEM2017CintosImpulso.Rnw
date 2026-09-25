@@ -1,0 +1,72 @@
+<<echo=FALSE, results=hide>>=
+## ENEM 2017, Q130, adaptada.
+## O gráfico original foi recortado diretamente do PDF oficial disponibilizado
+## no projeto, sem redesenho.
+questions <- c(
+  "Cinto 1.",
+  "Cinto 2.",
+  "Cinto 3.",
+  "Cinto 4.",
+  "Cinto 5."
+)
+solutions <- c(FALSE, TRUE, FALSE, FALSE, FALSE)
+
+ord <- sample(seq_along(questions))
+questions <- questions[ord]
+solutions <- solutions[ord]
+
+include_supplement("Q132ENEM2017CintosDesaceleracao.png", dir = "../figuras")
+@
+
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+
+(ENEM 2017, adaptada) Em testes de segurança, cinco modelos de cinto foram usados em bonecos de mesma massa. As velocidades imediatamente antes e após o impacto foram iguais em todos os testes. A figura mostra o módulo da desaceleração de cada boneco em função do tempo.
+
+\begin{center}
+\includegraphics[width=0.82\textwidth,keepaspectratio]{Q132ENEM2017CintosDesaceleracao.png}
+\end{center}
+
+Considerando que forças muito intensas aumentam o risco de lesões internas, qual modelo de cinto oferece menor risco ao motorista?
+
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(questions)
+@
+
+\end{question}
+
+\begin{solution}
+
+Como a massa dos bonecos é a mesma em todos os testes, o módulo da força resultante em cada instante é proporcional ao módulo da aceleração:
+\[
+F=ma.
+\]
+
+Além disso, as velocidades imediatamente antes e após o impacto são as mesmas em todos os testes. Portanto, a variação da quantidade de movimento também é a mesma:
+\[
+\Delta p=m(v_f-v_i).
+\]
+
+Pelo teorema do impulso,
+\[
+I=\Delta p.
+\]
+Assim, todos os cintos produzem o mesmo impulso total sobre os bonecos. O que muda é a maneira como esse impulso é distribuído ao longo do tempo em cada teste.
+
+Para reduzir o risco de lesões, interessa diminuir os maiores valores instantâneos da força e, consequentemente, da desaceleração. Observando o gráfico, o \textbf{Cinto 2} apresenta o menor valor máximo de desaceleração, cerca de $65\,\mathrm{m/s^2}$.
+
+Logo, ele produz o menor pico de força sobre o ocupante e oferece o menor risco de lesão interna.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: ENEM 2017, 2º dia, Caderno 6 (cinza), questão 130 (adaptada).
+%% PDF-fonte SHA-256: c42adbc2d4abaa162cab00e7f41cefb2b37ed17d9ca35ccbafdbd07454b59190.
+%% Figura recortada diretamente da página 14 do PDF-fonte.
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q132QuizENEM2017CintosImpulso}
+%% \exsection{Mecanica; Impulso; Quantidade de movimento; Forca; Graficos; ENEM}
+%% \exusepackage[utf8]{inputenc}
