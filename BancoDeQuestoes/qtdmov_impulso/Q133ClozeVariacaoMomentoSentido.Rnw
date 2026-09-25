@@ -1,0 +1,84 @@
+<<echo=FALSE, results=hide>>=
+## Adaptada do Ex. 1 do material "Quantidade de Movimento".
+## Objetivo: trabalhar explicitamente o caráter vetorial da quantidade de movimento.
+
+m_g <- sample(c(40, 50, 60, 80, 100), 1)
+v <- sample(c(5, 6, 8, 10, 12), 1)
+
+m <- m_g / 1000
+p_i <- -m * v
+p_f <-  m * v
+delta_p <- p_f - p_i
+
+fmt <- function(x, d = 2) formatC(x, format = "f", digits = d, decimal.mark = ",")
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Uma bola de massa $\Sexpr{m_g}\,\mathrm{g}$ move-se verticalmente para baixo com velocidade de módulo $\Sexpr{v}\,\mathrm{m/s}$ imediatamente antes de atingir o chão. Após o contato, ela retorna verticalmente para cima com velocidade de mesmo módulo.
+
+Adote o sentido vertical para cima como positivo e determine:
+
+\begin{answerlist}
+  \item a quantidade de movimento imediatamente antes do contato, em $\mathrm{kg\,m/s}$;
+  \item a quantidade de movimento imediatamente após o contato, em $\mathrm{kg\,m/s}$;
+  \item a variação da quantidade de movimento, $\Delta p=p_f-p_i$, em $\mathrm{kg\,m/s}$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+A massa em unidades do SI é
+\[
+m=\frac{\Sexpr{m_g}}{1000}=\Sexpr{fmt(m,3)}\,\mathrm{kg}.
+\]
+
+Como adotamos o sentido para cima como positivo, a velocidade antes do contato é negativa:
+\[
+v_i=-\Sexpr{v}\,\mathrm{m/s},
+\]
+enquanto a velocidade depois do contato é positiva:
+\[
+v_f=+\Sexpr{v}\,\mathrm{m/s}.
+\]
+
+A quantidade de movimento é dada por
+\[
+p=mv.
+\]
+
+Antes do contato:
+\[
+p_i=\Sexpr{fmt(m,3)}(-\Sexpr{v})
+=\Sexpr{fmt(p_i,2)}\,\mathrm{kg\,m/s}.
+\]
+
+Depois do contato:
+\[
+p_f=\Sexpr{fmt(m,3)}(+\Sexpr{v})
+=\Sexpr{fmt(p_f,2)}\,\mathrm{kg\,m/s}.
+\]
+
+Logo,
+\[
+\Delta p=p_f-p_i
+=\Sexpr{fmt(p_f,2)}-\left(\Sexpr{fmt(p_i,2)}\right)
+=\Sexpr{fmt(delta_p,2)}\,\mathrm{kg\,m/s}.
+\]
+
+O valor de $\Delta p$ não é zero: embora o módulo da velocidade seja o mesmo antes e depois, o sentido do movimento mudou.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: material "Quantidade de Movimento", Ex. 1 (adaptada e parametrizada).
+%% \extype{cloze}
+%% \exsolution{\Sexpr{round(p_i,2)}|\Sexpr{round(p_f,2)}|\Sexpr{round(delta_p,2)}}
+%% \exclozetype{num|num|num}
+%% \extol{0.01|0.01|0.01}
+%% \exname{Q133ClozeVariacaoMomentoSentido}
+%% \exsection{Mecanica; Quantidade de movimento; Vetores}
+%% \exusepackage[utf8]{inputenc}

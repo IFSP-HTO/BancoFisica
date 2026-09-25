@@ -1,0 +1,79 @@
+<<echo=FALSE, results=hide>>=
+## Impulso em sentido contrário ao movimento.
+## Os parâmetros permitem tanto redução de velocidade quanto inversão de sentido.
+
+m <- sample(c(2, 4, 5), 1)
+v0 <- sample(c(4, 5, 6, 8), 1)
+F <- sample(c(6, 8, 10, 12), 1)
+dt <- sample(c(1, 2, 3, 4), 1)
+
+p0 <- m * v0
+I <- -F * dt
+pf <- p0 + I
+vf <- pf / m
+
+fmt <- function(x, d = 2) formatC(x, format = "f", digits = d, decimal.mark = ",")
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Um corpo de massa $\Sexpr{m}\,\mathrm{kg}$ desloca-se para a direita com velocidade inicial de $\Sexpr{v0}\,\mathrm{m/s}$. Durante $\Sexpr{dt}\,\mathrm{s}$, atua sobre ele uma força resultante constante de módulo $\Sexpr{F}\,\mathrm{N}$ para a esquerda.
+
+Adote a direita como sentido positivo e determine:
+
+\begin{answerlist}
+  \item o impulso da força resultante, em $\mathrm{N\,s}$;
+  \item a quantidade de movimento final, em $\mathrm{kg\,m/s}$;
+  \item a velocidade final, em $\mathrm{m/s}$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Como a força aponta para a esquerda e adotamos a direita como positiva, a força é negativa. Portanto, o impulso vale
+\[
+I=F\Delta t
+=(-\Sexpr{F})\cdot\Sexpr{dt}
+=\Sexpr{fmt(I,2)}\,\mathrm{N\,s}.
+\]
+
+A quantidade de movimento inicial é
+\[
+p_0=mv_0
+=\Sexpr{m}\cdot\Sexpr{v0}
+=\Sexpr{fmt(p0,2)}\,\mathrm{kg\,m/s}.
+\]
+
+Pelo teorema do impulso,
+\[
+I=\Delta p=p_f-p_0,
+\]
+de modo que
+\[
+p_f=p_0+I
+=\Sexpr{fmt(p0,2)}+\left(\Sexpr{fmt(I,2)}\right)
+=\Sexpr{fmt(pf,2)}\,\mathrm{kg\,m/s}.
+\]
+
+Finalmente,
+\[
+v_f=\frac{p_f}{m}
+=\frac{\Sexpr{fmt(pf,2)}}{\Sexpr{m}}
+=\Sexpr{fmt(vf,2)}\,\mathrm{m/s}.
+\]
+
+Se $v_f>0$, o corpo continua para a direita com velocidade menor. Se $v_f=0$, ele para exatamente ao final do intervalo. Se $v_f<0$, o impulso foi suficiente para inverter o sentido do movimento.
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{\Sexpr{round(I,2)}|\Sexpr{round(pf,2)}|\Sexpr{round(vf,2)}}
+%% \exclozetype{num|num|num}
+%% \extol{0.01|0.01|0.01}
+%% \exname{Q127ClozeImpulsoContrarioMovimento}
+%% \exsection{Mecanica; Impulso; Quantidade de movimento; Vetores}
+%% \exusepackage[utf8]{inputenc}
