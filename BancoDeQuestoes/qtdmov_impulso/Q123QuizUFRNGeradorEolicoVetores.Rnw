@@ -1,0 +1,60 @@
+<<echo=FALSE, results=hide>>=
+questions <- c(
+  "$\\Delta\\vec p=\\vec p_f+\\vec p_i$.",
+  "$\\Delta\\vec p=\\vec p_i-\\vec p_f$.",
+  "$\\Delta\\vec p=\\vec p_f+(-\\vec p_i)$.",
+  "$\\Delta\\vec p=-\\vec p_f-\\vec p_i$.",
+  "$\\Delta\\vec p=\\vec p_i+(-\\vec p_f)$."
+)
+solutions <- c(FALSE, FALSE, TRUE, FALSE, FALSE)
+ordem <- sample(seq_along(questions))
+questions <- questions[ordem]
+solutions <- solutions[ordem]
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+(UFRN, adaptada) O funcionamento de um gerador eólico baseia-se na interação entre suas pás e o vento. As pás desviam a massa de ar incidente, alterando a orientação do vetor quantidade de movimento do ar de \(\vec p_i\) para \(\vec p_f\).
+
+A construção vetorial correta para representar a variação da quantidade de movimento,
+\[
+\Delta\vec p=\vec p_f-\vec p_i,
+\]
+é equivalente a
+
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(questions)
+@
+
+\end{question}
+
+\begin{solution}
+
+Subtrair um vetor equivale a somar o seu oposto. Portanto,
+\[
+\Delta\vec p
+=
+\vec p_f-\vec p_i
+=
+\vec p_f+(-\vec p_i).
+\]
+
+Geometricamente, deve-se inverter o sentido de \(\vec p_i\) e então somá-lo a \(\vec p_f\) pela regra do paralelogramo ou pela regra do polígono.
+
+A alternativa correta é
+\[
+\Delta\vec p=\vec p_f+(-\vec p_i).
+\]
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: UFRN, reproduzida em Alberto Gaspar, Compreendendo a Física, vol. 1, cap. 17, questão 15.
+%% Adaptacao textual das alternativas originalmente gráficas.
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q123QuizUFRNGeradorEolicoVetores}
+%% \exsection{Mecanica; Quantidade de movimento; Vetores; Variacao da quantidade de movimento; UFRN}
+%% \exusepackage[utf8]{inputenc}
