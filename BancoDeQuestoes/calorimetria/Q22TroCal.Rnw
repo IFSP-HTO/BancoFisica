@@ -5,11 +5,11 @@
   
   mass2 <- sample(seq(from=40,to=100,by=1),1)
   
-  temp1 <- sample(seq(from=30,to=120,by=1),1)
+  temp1 <- sample(seq(from=20,to=40,by=1),1)
   
-  temp2 <- sample(seq(from=130,to=150,by=1),1)
+  temp2 <- sample(seq(from=60,to=90,by=1),1)
   
-  resp1 <- round((mass1*temp1)+(mass2*temp2)/(mass1+mass2), digits = 1)
+  resp1 <- round((mass1*temp1+mass2*temp2)/(mass1+mass2), digits = 1)
   
 @
   
@@ -22,10 +22,26 @@ João misturou $\Sexpr{mass1}$ kg de água (calor específico sensível = $1,0$ 
 \end{question}
   
 %% SOLUTION
-\begin{solution}:
-  
-  \Sexpr{resp1} °C
-  
+\begin{solution}
+Como as duas porções são de água e não há perdas de calor, o calor cedido pela porção quente é igual ao calor recebido pela porção fria:
+\[
+  m_1c(T_f-T_1)+m_2c(T_f-T_2)=0.
+\]
+
+O calor específico \(c\) é o mesmo e pode ser cancelado. Assim,
+\[
+  T_f=\frac{m_1T_1+m_2T_2}{m_1+m_2}.
+\]
+
+Substituindo os valores,
+\[
+  T_f=
+  \frac{\Sexpr{mass1}\cdot\Sexpr{temp1}
+        +\Sexpr{mass2}\cdot\Sexpr{temp2}}
+       {\Sexpr{mass1}+\Sexpr{mass2}}
+  =\Sexpr{resp1}\,^{\circ}\mathrm{C}.
+\]
+
 \end{solution}
   
 %% META-INFORMATION
