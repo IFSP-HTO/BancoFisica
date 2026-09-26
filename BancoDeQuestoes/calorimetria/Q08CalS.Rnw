@@ -19,9 +19,23 @@ Dado: densidade da água: 1g/cm³ ; calor específico da água: 1 cal/g°C.
 
 %% SOLUTION
 \begin{solution}
-  
-  \Sexpr{resp} cal
-  
+Como a densidade da água é \(1\,\mathrm{g/cm^3}\), cada litro de água tem massa de \(1000\,\mathrm{g}\). Portanto,
+\[
+  m=\Sexpr{qtd}\cdot1000
+   =\Sexpr{qtd*1000}\,\mathrm{g}.
+\]
+
+A água esfria de \(\Sexpr{tagua}\,^{\circ}\mathrm{C}\) para \(\Sexpr{tamb}\,^{\circ}\mathrm{C}\). O módulo do calor cedido é
+\[
+  |Q|=mc(T_i-T_f).
+\]
+Assim,
+\[
+  |Q|=\Sexpr{qtd*1000}\cdot1\cdot
+       (\Sexpr{tagua}-\Sexpr{tamb})
+      =\Sexpr{resp}\,\mathrm{cal}.
+\]
+
 \end{solution}
 
 %% META-INFORMATION
