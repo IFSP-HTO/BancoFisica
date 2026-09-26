@@ -1,9 +1,0 @@
-{
-  "source_pdf": "2021_PV_impresso_D2_CD5_ampliada.pdf",
-  "source_sha256": "8a42aa3965240ffe9102b50ab09e0a87892284ac771b3e3fafe73ee94d359c84",
-  "mode": "crop",
-  "page": 17,
-  "bbox_pdf_points": [55.0, 235.0, 735.0, 847.0],
-  "dpi": 200,
-  "output": "BancoDeQuestoes/figuras/Q93QuizIlhaCalorTransferencia.png"
-}
