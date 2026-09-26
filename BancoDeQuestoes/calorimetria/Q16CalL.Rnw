@@ -19,15 +19,22 @@ Um corpo de massa $\Sexpr{mass}$ g encontra-se em sua temperatura de fusão. Dur
   
 %% SOLUTION
 \begin{solution}
-Durante a fusão, a temperatura permanece constante e o calor recebido é latente:
+
+Como o corpo já está na temperatura de fusão, não há aquecimento sensível nesta etapa: durante a mudança de fase a temperatura permanece constante. Toda a energia recebida é usada para transformar o material do estado sólido para o líquido.
+
+Para uma fusão completa, a quantidade de calor latente é
 \[
-  Q=mL.
+  Q=mL,
 \]
-Assim,
+em que \(m\) é a massa do corpo e \(L\) é o calor latente de fusão.
+
+Substituindo os valores da variante,
 \[
   Q=\Sexpr{mass}\cdot\Sexpr{lat}
    =\Sexpr{resp1}\,\mathrm{cal}.
 \]
+
+Portanto, o corpo deve receber \(\Sexpr{resp1}\,\mathrm{cal}\) durante a fusão.
 
 \end{solution}
   
