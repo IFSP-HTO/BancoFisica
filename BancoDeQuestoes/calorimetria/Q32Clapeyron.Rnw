@@ -5,8 +5,9 @@ vol  <- sample(seq(from=7,to=12,by=0.1),1)
 m1  <- sample(seq(from=200,to=300,by=5),1)
 temp1 <- sample(seq(from=20,to=40,by=1),1)
 p2 <- sample(seq(from=2,to=5,by=0.1),1)
-p1 <- round(m1*0.082*(temp1+273)/(32*vol), digits = 1)
-m2 <- round(m1-p2*m1/p1, digits = 2)
+p1_exact <- m1*0.082*(temp1+273)/(32*vol)
+p1 <- round(p1_exact, digits = 2)
+m2 <- round(m1-p2*m1/p1_exact, digits = 2)
 
 @
   
@@ -26,11 +27,40 @@ m2 <- round(m1-p2*m1/p1, digits = 2)
 \end{question}
   
 %% SOLUTION
-\begin{solution}:
-    
+\begin{solution}
 \begin{answerlist}
-  \item A pressão inicial é $\Sexpr{p1}$ atm.
-  \item A massa de gás liberada é $\Sexpr{m2}$ g.
+  \item A quantidade de matéria inicial é
+  \[
+    n=\frac{m}{M}
+     =\frac{\Sexpr{m1}}{32}\,\mathrm{mol}.
+  \]
+  Pela equação de Clapeyron,
+  \[
+    p_1V=nRT.
+  \]
+  Logo,
+  \[
+    p_1=
+    \frac{(\Sexpr{m1}/32)\,0{,}082\,(\Sexpr{temp1}+273)}
+         {\Sexpr{vol}}
+    =\Sexpr{p1}\,\mathrm{atm}.
+  \]
+
+  \item Como \(V\) e \(T\) permanecem constantes, a pressão é proporcional ao número de mols e, portanto, à massa do gás:
+  \[
+    \frac{p_2}{p_1}=\frac{m_{\mathrm{restante}}}{m_1}.
+  \]
+  Assim,
+  \[
+    m_{\mathrm{restante}}
+    =\Sexpr{m1}\frac{\Sexpr{p2}}{\Sexpr{round(p1_exact,2)}}.
+  \]
+  A massa liberada é
+  \[
+    m_{\mathrm{lib}}
+    =m_1-m_{\mathrm{restante}}
+    =\Sexpr{m2}\,\mathrm{g}.
+  \]
 \end{answerlist}
 
 \end{solution}
@@ -40,4 +70,4 @@ m2 <- round(m1-p2*m1/p1, digits = 2)
 %% \exsolution{\Sexpr{p1}|\Sexpr{m2}}
 %% \exclozetype{num|num}
 %% \exname{Q32Clapeyron}
-%% \extol{0.1|0.1}
+%% \extol{0.01|0.01}
