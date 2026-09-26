@@ -1,0 +1,19 @@
+{
+  "source_pdf": "2021_PV_impresso_D2_CD5_ampliada.pdf",
+  "source_sha256": "8a42aa3965240ffe9102b50ab09e0a87892284ac771b3e3fafe73ee94d359c84",
+  "mode": "crop",
+  "page": 17,
+  "bbox_pdf_points": [
+    55,
+    235,
+    735,
+    847
+  ],
+  "dpi": 200,
+  "repository_asset": "Q93QuizIlhaCalorTransferencia.jpg",
+  "repository_dimensions_px": [
+    1400,
+    1260
+  ],
+  "postprocess": "downscaled to 1400 px width and JPEG-optimized from the direct crop only; no content redrawn or reconstructed"
+}
