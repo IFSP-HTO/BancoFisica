@@ -42,6 +42,12 @@ answerlist(questions)
 
 
 \begin{solution}
+O peso do portão e o peso adicional do garoto, aplicado longe da linha das dobradiças, produzem um momento que precisa ser equilibrado pelas forças exercidas pelas duas dobradiças.
+
+As reações em \(A\) e \(B\) formam um binário que impede a rotação do portão. Nesse equilíbrio, a dobradiça superior \(A\) fica mais solicitada no sentido de se afastar do muro. Se as duas dobradiças suportam a mesma reação máxima, \(A\) é a mais provável de atingir primeiro esse limite.
+
+Portanto, a afirmação correta é que a dobradiça \(A\) tende a arrebentar antes de \(B\).
+
 <<echo=FALSE, results=hide, results=tex>>=
 answerlist(
   paste("\\textbf{", ifelse(solutions, "Verdadeiro", "Falso"), "}"))
