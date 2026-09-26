@@ -1,0 +1,9 @@
+{
+  "source_pdf": "2021_PV_impresso_D2_CD5_ampliada.pdf",
+  "source_sha256": "8a42aa3965240ffe9102b50ab09e0a87892284ac771b3e3fafe73ee94d359c84",
+  "mode": "crop",
+  "page": 34,
+  "bbox_pdf_points": [205.0, 158.0, 625.0, 603.0],
+  "dpi": 200,
+  "output": "BancoDeQuestoes/figuras/Q99QuizSinoVentoFrequencia.jpg"
+}
