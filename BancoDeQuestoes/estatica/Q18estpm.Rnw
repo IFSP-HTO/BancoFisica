@@ -24,8 +24,29 @@ Determine o alongamento da mola, em $cm$ nesta nova situação. Caso necessário
 \end{question}
 
 \begin{solution}
-%% Supply a solution here!
-  \Sexpr{resp} cm
+Na figura 1, a mola sustenta o peso \(\Sexpr{p1}\,\mathrm{N}\) e se alonga \(\Sexpr{xo}\,\mathrm{cm}\). Pela lei de Hooke,
+\[
+  k=\frac{\Sexpr{p1}}{\Sexpr{xo}},
+\]
+se mantivermos a razão força/alongamento nas mesmas unidades.
+
+Na figura 2, apenas a componente do peso paralela ao plano precisa ser equilibrada pela mola:
+\[
+  F_{\parallel}=\Sexpr{p2}\sin37^\circ
+               =0{,}6\,\Sexpr{p2}.
+\]
+
+Como o alongamento é proporcional à força,
+\[
+  \frac{x}{\Sexpr{xo}}
+  =\frac{0{,}6\,\Sexpr{p2}}{\Sexpr{p1}}.
+\]
+Logo,
+\[
+  x=\Sexpr{xo}\,
+    \frac{0{,}6\,\Sexpr{p2}}{\Sexpr{p1}}
+   =\Sexpr{resp}\,\mathrm{cm}.
+\]
 
 \end{solution}
 
