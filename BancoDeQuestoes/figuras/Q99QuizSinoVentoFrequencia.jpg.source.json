@@ -3,7 +3,17 @@
   "source_sha256": "8a42aa3965240ffe9102b50ab09e0a87892284ac771b3e3fafe73ee94d359c84",
   "mode": "crop",
   "page": 34,
-  "bbox_pdf_points": [205.0, 158.0, 625.0, 603.0],
+  "bbox_pdf_points": [
+    205,
+    158,
+    625,
+    603
+  ],
   "dpi": 200,
-  "output": "BancoDeQuestoes/figuras/Q99QuizSinoVentoFrequencia.jpg"
+  "repository_asset": "Q99QuizSinoVentoFrequencia.jpg",
+  "repository_dimensions_px": [
+    850,
+    900
+  ],
+  "postprocess": "downscaled to 850 px width and JPEG-optimized from the direct crop only; no content redrawn or reconstructed"
 }
