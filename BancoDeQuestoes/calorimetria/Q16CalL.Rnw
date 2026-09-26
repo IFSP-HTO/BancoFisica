@@ -13,19 +13,26 @@ resp1 <- round((mass)*(lat), digits = 1)
 
 \begin{question}
   
-Um corpo de massa $\Sexpr{mass}$ g em estado sólido, é aquecido até o ponto de fusão. E sabe-se que o calor latente do corpo é de $\Sexpr{lat}$ cal/g. A quantidade de calor recebida pelo corpo, é de:
+Um corpo de massa $\Sexpr{mass}$ g encontra-se em sua temperatura de fusão. Durante a fusão completa, seu calor latente de fusão é $\Sexpr{lat}$ cal/g. Qual é a quantidade de calor recebida pelo corpo durante essa mudança de fase?
 
 \end{question}
   
 %% SOLUTION
-\begin{solution}:
-    
-  \Sexpr{resp1}cal
-  
+\begin{solution}
+Durante a fusão, a temperatura permanece constante e o calor recebido é latente:
+\[
+  Q=mL.
+\]
+Assim,
+\[
+  Q=\Sexpr{mass}\cdot\Sexpr{lat}
+   =\Sexpr{resp1}\,\mathrm{cal}.
+\]
+
 \end{solution}
   
 %% META-INFORMATION
 %% \extype{num}
 %% \exsolution{\Sexpr{resp1}}
-%% \exname{Q26CalL}
+%% \exname{Q16CalL}
 %% \extol{1|}
