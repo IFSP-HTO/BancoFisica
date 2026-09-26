@@ -7,7 +7,7 @@
   
   temp1 <- sample(seq(from=100,to=150,by=1),1)
   
-  resp1 <- round((mass1*(3.3*10^-2)*temp1)*4.186/(pot1), digits = 1)
+  resp1 <- round((mass1*(3.3*10^-2)*temp1)*4.186/(pot1), digits = 2)
   
 @
   
@@ -20,14 +20,34 @@ Uma fonte de potência constante igual a $\Sexpr{pot1}$ W é utilizada para aume
 \end{question}
   
 %% SOLUTION
-\begin{solution}:
-    
-  \Sexpr{resp1}s
-  
+\begin{solution}
+A energia térmica necessária, em calorias, é
+\[
+  Q=mc\Delta T.
+\]
+Como o mercúrio vai de \(0\,^{\circ}\mathrm{C}\) a \(\Sexpr{temp1}\,^{\circ}\mathrm{C}\),
+\[
+  Q=\Sexpr{mass1}\cdot0{,}033\cdot\Sexpr{temp1}
+   =\Sexpr{mass1*0.033*temp1}\,\mathrm{cal}.
+\]
+
+Convertendo para joules,
+\[
+  E=Q\cdot4{,}186
+   =\Sexpr{mass1*0.033*temp1*4.186}\,\mathrm{J}.
+\]
+
+Como \(P=E/\Delta t\),
+\[
+  \Delta t=\frac{E}{P}
+          =\frac{\Sexpr{mass1*0.033*temp1*4.186}}{\Sexpr{pot1}}
+          =\Sexpr{resp1}\,\mathrm{s}.
+\]
+
 \end{solution}
   
 %% META-INFORMATION
 %% \extype{num}
 %% \exsolution{\Sexpr{resp1}}
 %% \exname{Q18CalS}
-%% \extol{1}
+%% \extol{0.01}
