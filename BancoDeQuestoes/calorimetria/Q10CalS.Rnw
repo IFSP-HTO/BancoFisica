@@ -30,7 +30,25 @@ Determine o calor específico da substância em $cal/g^\circ C$. Dê sua respost
 \end{question}
 
 \begin{solution}
-  \Sexpr{resp} $c = cal/g^\circ C$
+A fonte fornece calor a uma taxa constante de \(\Sexpr{P}\,\mathrm{cal/min}\) durante \(\Sexpr{tmax}\,\mathrm{min}\). Logo,
+\[
+  Q=\Sexpr{P}\cdot\Sexpr{tmax}
+   =\Sexpr{P*tmax}\,\mathrm{cal}.
+\]
+
+Pelo gráfico, a temperatura varia de \(\Sexpr{Tmin}\,^{\circ}\mathrm{C}\) para \(\Sexpr{Tmax}\,^{\circ}\mathrm{C}\), portanto
+\[
+  \Delta T=\Sexpr{Tmax-Tmin}\,^{\circ}\mathrm{C}.
+\]
+
+Usando \(Q=mc\Delta T\),
+\[
+  c=\frac{Q}{m\Delta T}
+   =\frac{\Sexpr{P*tmax}}
+          {\Sexpr{m}\cdot\Sexpr{Tmax-Tmin}}
+   =\Sexpr{resp}\,\mathrm{cal/(g\,^{\circ}C)}.
+\]
+
 \end{solution}
 
 %% META-INFORMATION
