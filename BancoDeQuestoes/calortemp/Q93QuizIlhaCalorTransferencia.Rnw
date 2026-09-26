@@ -1,5 +1,5 @@
 <<echo=FALSE, results=hide>>=
-include_supplement("Q93QuizIlhaCalorTransferencia.png", dir = "../figuras")
+include_supplement("Q93QuizIlhaCalorTransferencia.jpg", dir = "../figuras")
 @
 
 \usepackage[utf8]{inputenc}
@@ -10,7 +10,7 @@ include_supplement("Q93QuizIlhaCalorTransferencia.png", dir = "../figuras")
 Em uma grande cidade, superfícies urbanas aquecidas pela energia recebida do Sol formam uma ilha de calor. O ar em contato com essas superfícies aquece, torna-se menos denso e sobe, interferindo na circulação da brisa marítima. A imagem representa os três subsistemas envolvidos nesse processo.
 
 \begin{center}
-\includegraphics[width=0.82\linewidth,keepaspectratio]{Q93QuizIlhaCalorTransferencia.png}
+\includegraphics[width=0.82\linewidth,keepaspectratio]{Q93QuizIlhaCalorTransferencia.jpg}
 \end{center}
 
 Os mecanismos dominantes de transferência de energia térmica entre o Sol e a ilha de calor e entre a ilha de calor e a brisa marítima são, respectivamente,
