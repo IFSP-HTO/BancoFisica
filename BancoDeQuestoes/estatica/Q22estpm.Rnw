@@ -19,8 +19,18 @@ include_supplement("Q22estpm.jpg")
 \end{question}
 
 \begin{solution}
-%% Supply a solution here!
-  \Sexpr{resp} N
+Em um sistema ideal, a tração tem o mesmo módulo \(T\) em todo o fio. Pela geometria mostrada, o conjunto móvel ligado à caixa é sustentado por três segmentos do fio, cada um exercendo força \(T\) para cima.
+
+No limite para iniciar a elevação,
+\[
+  3T=mg.
+\]
+Como a força aplicada na extremidade livre é \(F=T\),
+\[
+  F=\frac{mg}{3}
+   =\frac{\Sexpr{m}\cdot10}{3}
+   =\Sexpr{resp}\,\mathrm{N}.
+\]
 
 \end{solution}
 
