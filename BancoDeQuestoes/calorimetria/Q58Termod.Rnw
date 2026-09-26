@@ -13,15 +13,30 @@
   
 \begin{question}
   
-Considere um gás perfeito na temperatura de $\Sexpr{temp1}$ K e a energia interna $\Sexpr{u}$ J. Dado R=8,31 J/mol.K, quanto(s) mols há do gás?
+Considere um gás ideal monoatômico na temperatura de $\Sexpr{temp1}$ K e a energia interna $\Sexpr{u}$ J. Dado R=8,31 J/mol.K, quanto(s) mols há do gás?
 
 \end{question}
   
 %% SOLUTION
-\begin{solution}:
-    
-  \Sexpr{resp1}mols
-  
+\begin{solution}
+Para um gás ideal monoatômico,
+\[
+  U=\frac{3}{2}nRT.
+\]
+
+Isolando \(n\),
+\[
+  n=\frac{2U}{3RT}.
+\]
+Substituindo \(U=\Sexpr{u}\,\mathrm{J}\) e
+\(T=\Sexpr{temp1}\,\mathrm{K}\),
+\[
+  n=
+  \frac{2\cdot\Sexpr{u}}
+       {3\cdot8{,}31\cdot\Sexpr{temp1}}
+  =\Sexpr{resp1}\,\mathrm{mol}.
+\]
+
 \end{solution}
   
 %% META-INFORMATION
