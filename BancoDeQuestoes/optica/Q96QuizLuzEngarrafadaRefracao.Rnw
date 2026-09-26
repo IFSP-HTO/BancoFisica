@@ -1,5 +1,5 @@
 <<echo=FALSE, results=hide>>=
-include_supplement("Q96QuizLuzEngarrafadaRefracao.png", dir = "../figuras")
+include_supplement("Q96QuizLuzEngarrafadaRefracao.jpg", dir = "../figuras")
 @
 
 \usepackage[utf8]{inputenc}
@@ -10,7 +10,7 @@ include_supplement("Q96QuizLuzEngarrafadaRefracao.png", dir = "../figuras")
 Uma solução de iluminação diurna utiliza garrafas PET transparentes preenchidas com água e cloro e instaladas atravessando o telhado de uma casa, como mostram as fotografias. Cada garrafa ocupa um orifício com diâmetro muito maior que o comprimento de onda da luz.
 
 \begin{center}
-\includegraphics[width=0.78\linewidth,keepaspectratio]{Q96QuizLuzEngarrafadaRefracao.png}
+\includegraphics[width=0.78\linewidth,keepaspectratio]{Q96QuizLuzEngarrafadaRefracao.jpg}
 \end{center}
 
 O fenômeno óptico essencial para explicar o funcionamento dessa ``luz engarrafada'' é a
