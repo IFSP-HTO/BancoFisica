@@ -20,14 +20,29 @@ nota_cient <- function(x,digits) {
   
 \begin{question}
   
-Considere $\Sexpr{nota_cient(vol1)}$ cm³ de gás ideal sob pressão de $\Sexpr{press1}$ Pa? Qual a energia interna do gás?
+Considere $\Sexpr{nota_cient(vol1)}$ cm³ de um gás ideal monoatômico sob pressão de $\Sexpr{press1}$ Pa. Qual é a energia interna do gás?
 
 \end{question}
   
-\begin{solution}:
-    
-  \Sexpr{resp1}J
-  
+\begin{solution}
+Para um gás ideal monoatômico,
+\[
+  U=\frac{3}{2}PV.
+\]
+
+Como \(1\,\mathrm{cm^3}=10^{-6}\,\mathrm{m^3}\),
+\[
+  V=\Sexpr{nota_cient(vol1)}\cdot10^{-6}
+   =\Sexpr{vol1*1e-6}\,\mathrm{m^3}.
+\]
+
+Assim,
+\[
+  U=\frac{3}{2}\,
+    \Sexpr{press1}\cdot\Sexpr{vol1*1e-6}
+   =\Sexpr{resp1}\,\mathrm{J}.
+\]
+
 \end{solution}
   
 %% META-INFORMATION
