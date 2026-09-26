@@ -1,10 +1,19 @@
+<<echo=FALSE, results=hide>>=
+include_supplement("Q96QuizLuzEngarrafadaRefracao.png", dir = "../figuras")
+@
+
 \usepackage[utf8]{inputenc}
+\usepackage{graphicx}
 
 \begin{question}
 
-Uma solução simples de iluminação diurna utiliza uma garrafa PET transparente cheia de água, instalada atravessando o telhado de uma casa. A luz solar entra pela parte externa da garrafa e se espalha para o interior do ambiente após atravessar as interfaces entre ar, plástico e água.
+Uma solução de iluminação diurna utiliza garrafas PET transparentes preenchidas com água e cloro e instaladas atravessando o telhado de uma casa, como mostram as fotografias. Cada garrafa ocupa um orifício com diâmetro muito maior que o comprimento de onda da luz.
 
-O fenômeno óptico essencial para explicar a mudança de direção dos raios luminosos nessas interfaces é a
+\begin{center}
+\includegraphics[width=0.78\linewidth,keepaspectratio]{Q96QuizLuzEngarrafadaRefracao.png}
+\end{center}
+
+O fenômeno óptico essencial para explicar o funcionamento dessa ``luz engarrafada'' é a
 
 \begin{answerlist}
   \item difração.
@@ -18,16 +27,18 @@ O fenômeno óptico essencial para explicar a mudança de direção dos raios lu
 
 \begin{solution}
 
-Quando a luz passa de um meio para outro com índice de refração diferente, sua velocidade de propagação muda. Em geral, isso provoca também uma mudança na direção do raio luminoso.
+Quando a luz passa de um meio para outro com índice de refração diferente, sua velocidade de propagação muda. Em geral, isso também altera a direção dos raios luminosos.
 
-Esse fenômeno é a \textbf{refração}. Na garrafa, as sucessivas refrações ajudam a redistribuir a luz solar para o interior do ambiente.
+Esse fenômeno é a \textbf{refração}. Nas garrafas mostradas nas fotografias, as sucessivas refrações nas interfaces entre os meios contribuem para redistribuir a luz solar no interior do ambiente.
 
 A alternativa correta é a \textbf{E}.
 
 \end{solution}
 
 %% META-INFORMATION
-%% Fonte: questão inspirada no ENEM 2022 Q125.
+%% Fonte: ENEM 2022, 2º dia, Caderno 8 Rosa, questão 125. Adaptação textual com preservação das fotografias originais.
+%% SOURCE-VISUAL: original-crop
+%% Fotografias recortadas diretamente do PDF oficial da prova; a extração raster bruta altera a aparência por causa da transformação de cor do PDF, por isso foi usado recorte renderizado. Ver arquivo .source.json correspondente.
 %% \extype{schoice}
 %% \exsolution{00001}
 %% \exname{Q96QuizLuzEngarrafadaRefracao}
