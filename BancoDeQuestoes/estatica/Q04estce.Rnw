@@ -18,8 +18,17 @@ resp <- 1.5*peso
 
 
 \begin{solution}
-%% Supply a solution here!
-  \Sexpr{resp} N
+A maior carga ocorre no limite de tombamento, quando a reação do apoio traseiro se anula e o guindaste fica prestes a girar em torno do apoio em \(x=0\).
+
+O peso do guindaste atua em \(x=-3\,\mathrm{m}\), portanto seu braço de alavanca é \(3\,\mathrm{m}\). A carga \(P\) atua em \(x=2\,\mathrm{m}\), com braço de \(2\,\mathrm{m}\). No limite,
+\[
+  \Sexpr{peso}\cdot 3=P\cdot 2.
+\]
+Assim,
+\[
+  P=\frac{3}{2}\,\Sexpr{peso}
+   =\Sexpr{resp}\,\mathrm{N}.
+\]
 
 \end{solution}
 
