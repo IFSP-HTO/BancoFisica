@@ -26,12 +26,33 @@ Adotando $g = 10m/s^2$, determine:
 \end{question}
 
 \begin{solution}
-%% Supply a solution here!
+A parede é lisa, portanto em \(P\) atua apenas uma força normal horizontal. No chão, em \(C\), atuam a normal \(N_C\) e a força de atrito \(f_C\).
+
+Pelo equilíbrio vertical,
+\[
+  N_C=mg=\Sexpr{m}\cdot10=\Sexpr{respa}\,\mathrm{N}.
+\]
+
+Para determinar a força horizontal, tomamos os torques em torno de \(C\). A escada forma um triângulo \(3\)-\(4\)-\(5\); seu peso atua no centro, a \(1{,}5\,\mathrm{m}\) horizontalmente de \(C\), e a normal da parede atua a \(4\,\mathrm{m}\) de altura. Assim,
+\[
+  N_P\cdot4=mg\cdot1{,}5,
+\]
+de modo que
+\[
+  N_P=\frac{3}{8}mg.
+\]
+
+Pelo equilíbrio horizontal, \(f_C=N_P\). Logo,
+\[
+  f_C=\frac{3}{8}\,\Sexpr{m}\cdot10
+     =\Sexpr{respb}\,\mathrm{N}.
+\]
+
 \begin{answerlist}
   \item \Sexpr{respa} N
   \item \Sexpr{respb} N
 \end{answerlist}
-  
+
 \end{solution}
 
 %% META-INFORMATION
