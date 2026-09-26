@@ -13,15 +13,34 @@
   
 \begin{question}
   
-Considere $\Sexpr{vol1}$ m³ de gás ideal sob pressão de $\Sexpr{press1}$ atm? Qual a energia interna do gás?
+Considere $\Sexpr{vol1}$ m³ de um gás ideal monoatômico sob pressão de $\Sexpr{press1}$ atm. Adote $1\,\mathrm{atm}=10^5\,\mathrm{Pa}$. Qual é a energia interna do gás?
 
 \end{question}
   
 %% SOLUTION
-\begin{solution}:
-    
-  \Sexpr{resp1}J
-  
+\begin{solution}
+Para um gás ideal monoatômico,
+\[
+  U=\frac{3}{2}nRT.
+\]
+Usando \(PV=nRT\),
+\[
+  U=\frac{3}{2}PV.
+\]
+
+A pressão em pascals é
+\[
+  P=\Sexpr{press1}\cdot10^5
+   =\Sexpr{press1*1e5}\,\mathrm{Pa}.
+\]
+
+Logo,
+\[
+  U=\frac{3}{2}\,
+    \Sexpr{press1*1e5}\cdot\Sexpr{vol1}
+   =\Sexpr{resp1}\,\mathrm{J}.
+\]
+
 \end{solution}
   
 %% META-INFORMATION

@@ -7,7 +7,7 @@
   
   trab1  <- sample(seq(from=1,to=5,by=1),1)
   
-  resp1  <- round((trab1/press1+vol1), digits = 1)
+  resp1  <- round((trab1*1000/press1+vol1), digits = 1)
   
 @
   
@@ -19,10 +19,26 @@ Um gás ideal de volume $\Sexpr{vol1}$ m³ sofre uma transformação, permanecen
 
 \end{question}
   
-\begin{solution}:
-    
-  \Sexpr{resp1}m³
-  
+\begin{solution}
+Em uma transformação isobárica, o trabalho realizado pelo gás é
+\[
+  W=P(V_f-V_i).
+\]
+
+O trabalho fornecido no enunciado está em quilojoules:
+\[
+  W=\Sexpr{trab1}\,\mathrm{kJ}
+   =\Sexpr{trab1*1000}\,\mathrm{J}.
+\]
+
+Assim,
+\[
+  V_f=V_i+\frac{W}{P}
+     =\Sexpr{vol1}
+      +\frac{\Sexpr{trab1*1000}}{\Sexpr{press1}}
+     =\Sexpr{resp1}\,\mathrm{m^3}.
+\]
+
 \end{solution}
   
 %% META-INFORMATION

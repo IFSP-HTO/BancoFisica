@@ -17,15 +17,29 @@
 
 \begin{question}
   
-Quando são colocados $\Sexpr{mols1}$ moles de um gás em um recipiente com êmbolo que mantém a pressão igual a da atmosfera, inicialmente ocupando $\Sexpr{vol1}$ m³. Ao empurrar-se o êmbolo, o volume ocupado passa a ser $\Sexpr{vol2}$ m³. A pressão atmosférica que se encontra o gás é igual a $\Sexpr{press1}$ N/m². Qual é o trabalho realizado sob o gás?
+Um gás encontra-se em um recipiente com êmbolo, sob pressão constante igual à pressão atmosférica, ocupando inicialmente $\Sexpr{vol1}$ m³. Ao empurrar o êmbolo, seu volume passa a $\Sexpr{vol2}$ m³. A pressão é $\Sexpr{press1}$ N/m². Qual é o trabalho realizado sobre o gás?
 
 \end{question}
   
 %% SOLUTION
-\begin{solution}:
-    
-  \Sexpr{resp1}J
-  
+\begin{solution}
+O trabalho realizado pelo gás em uma transformação isobárica é
+\[
+  W_{\mathrm{gás}}=P(V_f-V_i).
+\]
+Como ocorre compressão, \(V_f<V_i\), esse trabalho é negativo. O trabalho realizado \emph{sobre} o gás tem o mesmo módulo e sinal positivo:
+\[
+  W_{\mathrm{sobre}}=P(V_i-V_f).
+\]
+
+Portanto,
+\[
+  W_{\mathrm{sobre}}
+  =\Sexpr{press1}\,
+   (\Sexpr{vol1}-\Sexpr{vol2})
+  =\Sexpr{resp1}\,\mathrm{J}.
+\]
+
 \end{solution}
   
 %% META-INFORMATION

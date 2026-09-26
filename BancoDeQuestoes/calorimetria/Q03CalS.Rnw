@@ -20,9 +20,23 @@ result <- signif((c_recebido * 20) / capac, digits = 3)
 
 %% SOLUTION
 \begin{solution}
-  
-  \Sexpr{result} °C
-  
+A fonte fornece calor à taxa de \(\Sexpr{c_recebido}\,\mathrm{cal/min}\) durante \(20\,\mathrm{min}\). Assim, o calor recebido é
+\[
+  Q=\Sexpr{c_recebido}\cdot20
+   =\Sexpr{c_recebido*20}\,\mathrm{cal}.
+\]
+
+A capacidade térmica é definida por
+\[
+  C=\frac{Q}{\Delta T}.
+\]
+Portanto,
+\[
+  \Delta T=\frac{Q}{C}
+          =\frac{\Sexpr{c_recebido*20}}{\Sexpr{capac}}
+          =\Sexpr{result}\,^{\circ}\mathrm{C}.
+\]
+
 \end{solution}
 
 %% META-INFORMATION

@@ -15,7 +15,7 @@ p2 <- sample(seq(from=p1+0.1,to=p1+1,by=0.1),1)*100000
 p1 <- p1*100000
 temp1 <- sample(seq(from=20,to=50,by=1),1)
 
-resp2 <- round(p2*(temp1+273)/p1-273, digits = 2)
+resp2 <- round(p2*(temp1+273)/p1-273, digits = 1)
 
 @
   
@@ -35,14 +35,31 @@ resp2 <- round(p2*(temp1+273)/p1-273, digits = 2)
 \end{question}
   
 %% SOLUTION
-\begin{solution}:
-    
+\begin{solution}
 \begin{answerlist}
-  \item O volume é $\Sexpr{vol}$ L
-  \item A temperatura do gás é $\Sexpr{resp2}$ ºC.
+  \item A transformação é isocórica, isto é, ocorre a volume constante. Portanto,
+  \[
+    V_2=V_1=\Sexpr{vol}\,\mathrm{L}.
+  \]
+
+  \item Em uma transformação isocórica de uma quantidade fixa de gás ideal,
+  \[
+    \frac{p_1}{T_1}=\frac{p_2}{T_2},
+  \]
+  com as temperaturas em kelvin. Assim,
+  \[
+    T_2=
+    \frac{p_2}{p_1}(\Sexpr{temp1}+273).
+  \]
+  Convertendo o resultado de volta para graus Celsius,
+  \[
+    t_2=
+    \frac{\Sexpr{nota_cient(p2)}}{\Sexpr{nota_cient(p1)}}
+    (\Sexpr{temp1}+273)-273
+    =\Sexpr{resp2}\,^{\circ}\mathrm{C}.
+  \]
 \end{answerlist}
 
-  
 \end{solution}
   
 %% META-INFORMATION
@@ -50,4 +67,4 @@ resp2 <- round(p2*(temp1+273)/p1-273, digits = 2)
 %% \exsolution{\Sexpr{vol}|\Sexpr{resp2}}
 %% \exclozetype{num|num}
 %% \exname{Q33TransfGasosas}
-%% \extol{0.1}
+%% \extol{0.1|0.1}

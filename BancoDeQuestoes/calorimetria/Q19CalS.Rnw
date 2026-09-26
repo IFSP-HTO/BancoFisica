@@ -12,7 +12,7 @@ fator <- switch (string,
 calor_especifico <- 4
 
 ## Resposta
-resp <- round(fator*1000*P/calor_especifico*(28-temp_media))
+resp <- round(fator*1000*P/(calor_especifico*(28-temp_media)))
 @
 \usepackage[portuguese]{babel}
 
@@ -23,8 +23,32 @@ Durante a primeira fase do projeto de uma usina de geração de energia elétric
 \end{question}
 
 \begin{solution}
+A potência térmica que precisa ser retirada pela água é \(\Sexpr{string}\) da potência elétrica da usina:
+\[
+  P_{\mathrm{term}}=\Sexpr{fator}\cdot\Sexpr{P}\,\mathrm{MW}.
+\]
+Como \(1\,\mathrm{MW}=1000\,\mathrm{kJ/s}\),
+\[
+  P_{\mathrm{term}}=\Sexpr{fator*1000*P}\,\mathrm{kJ/s}.
+\]
 
-  \Sexpr{resp} kg/s
+Se \(\dot m\) é o fluxo de massa de água, então
+\[
+  P_{\mathrm{term}}=\dot m\,c\,\Delta T.
+\]
+Aqui,
+\[
+  \Delta T=28-\Sexpr{temp_media}
+          =\Sexpr{28-temp_media}\,^{\circ}\mathrm{C}.
+\]
+
+Logo,
+\[
+  \dot m=
+  \frac{\Sexpr{fator*1000*P}}
+       {\Sexpr{calor_especifico}\cdot\Sexpr{28-temp_media}}
+  =\Sexpr{resp}\,\mathrm{kg/s}.
+\]
 
 \end{solution}
 

@@ -15,9 +15,21 @@ Em um experimento verifica-se que é necessário fornecer \Sexpr{calor} calorias
 
 %% SOLUTION
 \begin{solution}
-  
-  \Sexpr{resp} cal/g°C
-  
+A variação de temperatura é
+\[
+  \Delta T=60-20=40\,^{\circ}\mathrm{C}.
+\]
+Para calor sensível,
+\[
+  Q=mc\Delta T.
+\]
+Logo,
+\[
+  c=\frac{Q}{m\Delta T}
+   =\frac{\Sexpr{calor}}{200\cdot40}
+   =\Sexpr{resp}\,\mathrm{cal/(g\,^{\circ}C)}.
+\]
+
 \end{solution}
 
 %% META-INFORMATION

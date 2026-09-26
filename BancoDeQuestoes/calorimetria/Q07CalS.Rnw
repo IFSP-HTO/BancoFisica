@@ -19,9 +19,30 @@ Quando um corpo de certa massa \textit{m}, formado por determinada matéria, abs
 
 %% SOLUTION
 \begin{solution}
-  
-  \Sexpr{resp} °C
-  
+Para o primeiro corpo,
+\[
+  Q_1=mc\Delta T_1,
+\]
+portanto
+\[
+  c=\frac{Q_1}{m\Delta T_1}.
+\]
+
+O segundo corpo tem massa \(2m\). Assim,
+\[
+  Q_2=(2m)c\Delta T_2.
+\]
+Substituindo a expressão de \(c\),
+\[
+  Q_2=2m\frac{Q_1}{m\Delta T_1}\Delta T_2.
+\]
+Logo,
+\[
+  \Delta T_2=\frac{Q_2\Delta T_1}{2Q_1}
+            =\frac{\Sexpr{Q2}\cdot\Sexpr{dt1}}{2\cdot\Sexpr{Q1}}
+            =\Sexpr{resp}\,^{\circ}\mathrm{C}.
+\]
+
 \end{solution}
 
 %% META-INFORMATION
