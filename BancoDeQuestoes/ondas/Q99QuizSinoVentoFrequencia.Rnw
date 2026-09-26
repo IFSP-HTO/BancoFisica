@@ -1,5 +1,5 @@
 <<echo=FALSE, results=hide>>=
-include_supplement("Q99QuizSinoVentoFrequencia.png", dir = "../figuras")
+include_supplement("Q99QuizSinoVentoFrequencia.jpg", dir = "../figuras")
 @
 
 \usepackage[utf8]{inputenc}
@@ -10,7 +10,7 @@ include_supplement("Q99QuizSinoVentoFrequencia.png", dir = "../figuras")
 Um sino dos ventos é composto por várias barras metálicas de mesmo material e espessura, mas de comprimentos diferentes, como indicado na figura.
 
 \begin{center}
-\includegraphics[width=0.58\linewidth,keepaspectratio]{Q99QuizSinoVentoFrequencia.png}
+\includegraphics[width=0.58\linewidth,keepaspectratio]{Q99QuizSinoVentoFrequencia.jpg}
 \end{center}
 
 Considere $f_1$ e $v_1$, respectivamente, a frequência fundamental e a velocidade de propagação do som emitido pela barra de menor comprimento (Comprimento 1), e $f_2$ e $v_2$ as grandezas correspondentes à barra de maior comprimento (Comprimento 2).
