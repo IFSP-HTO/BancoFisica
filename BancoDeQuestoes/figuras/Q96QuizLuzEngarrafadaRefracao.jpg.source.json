@@ -1,0 +1,9 @@
+{
+  "source_pdf": "2022_PV_impresso_D2_CD8.pdf",
+  "source_sha256": "925c9b6c93e64143555c4d30754cb666310f7d2ca21404315960969e4ef56430",
+  "mode": "crop",
+  "page": 13,
+  "bbox_pdf_points": [289.0, 345.0, 536.0, 533.0],
+  "dpi": 200,
+  "output": "BancoDeQuestoes/figuras/Q96QuizLuzEngarrafadaRefracao.jpg"
+}
