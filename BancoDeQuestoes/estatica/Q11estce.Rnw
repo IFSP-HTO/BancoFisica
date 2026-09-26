@@ -17,8 +17,24 @@ include_supplement("Q11estce.jpg")
 \end{question}
 
 \begin{solution}
-%% Supply a solution here!
-  \Sexpr{resp} cm
+Na configuração limite, o bloco superior está com o maior avanço possível sobre o bloco inferior: seu centro de massa fica exatamente sobre a extremidade direita do bloco 2. Assim, o centro de massa do bloco 1 está a uma distância \(x\) à direita da borda da mesa.
+
+O centro de massa do bloco 2 está a \(L/2-x\) à esquerda dessa borda. Como os blocos são idênticos, no limite de tombamento o centro de massa do conjunto deve estar exatamente sobre a borda:
+\[
+  m\,x=m\left(\frac{L}{2}-x\right).
+\]
+Logo,
+\[
+  2x=\frac{L}{2}
+  \quad\Rightarrow\quad
+  x=\frac{L}{4}.
+\]
+
+Para \(L=\Sexpr{L}\,\mathrm{cm}\),
+\[
+  x=\frac{\Sexpr{L}}{4}
+   =\Sexpr{resp}\,\mathrm{cm}.
+\]
 
 \end{solution}
 
