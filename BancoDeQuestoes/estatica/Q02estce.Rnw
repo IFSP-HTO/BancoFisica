@@ -19,8 +19,22 @@ extremidade onde o gancho era preso. A outra extremidade era puxada por um conju
 
 
 \begin{solution}
-%% Supply a solution here!
-  \Sexpr{resp} N
+O peso do barco é
+\[
+  P=mg=\Sexpr{m}\cdot 10=\Sexpr{10*m}\,\mathrm{N}.
+\]
+O eixo está a \(12\,\mathrm{m}\) do gancho. Como a peça tem \(20\,\mathrm{m}\), o braço da força dos bois é \(20-12=8\,\mathrm{m}\).
+
+No equilíbrio de rotação,
+\[
+  P\cdot 12 = F\cdot 8.
+\]
+Portanto,
+\[
+  F=\frac{12}{8}P
+   =\frac{12}{8}\,\Sexpr{10*m}
+   =\Sexpr{resp}\,\mathrm{N}.
+\]
 
 \end{solution}
 

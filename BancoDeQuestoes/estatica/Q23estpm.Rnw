@@ -18,8 +18,18 @@ include_supplement("Q23estpm.jpg")
 \end{question}
 
 \begin{solution}
-%% Supply a solution here!
-  \Sexpr{resp} N
+No sistema ideal, a tração \(T\) é a mesma em todos os segmentos do fio. O bloco móvel ligado à carga é sustentado por quatro segmentos, de modo que a força total para cima é \(4T\).
+
+No limite para elevar a caixa,
+\[
+  4T=mg.
+\]
+A força aplicada na extremidade livre vale \(F=T\). Portanto,
+\[
+  F=\frac{mg}{4}
+   =\frac{\Sexpr{m}\cdot10}{4}
+   =\Sexpr{resp}\,\mathrm{N}.
+\]
 
 \end{solution}
 
