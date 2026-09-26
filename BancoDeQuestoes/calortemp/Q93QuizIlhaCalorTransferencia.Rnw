@@ -1,10 +1,19 @@
+<<echo=FALSE, results=hide>>=
+include_supplement("Q93QuizIlhaCalorTransferencia.png", dir = "../figuras")
+@
+
 \usepackage[utf8]{inputenc}
+\usepackage{graphicx}
 
 \begin{question}
 
-Em uma grande cidade, superfícies urbanas aquecidas pela energia recebida do Sol formam uma ilha de calor. O ar em contato com essas superfícies aquece, torna-se menos denso e sobe, interferindo na circulação da brisa marítima.
+Em uma grande cidade, superfícies urbanas aquecidas pela energia recebida do Sol formam uma ilha de calor. O ar em contato com essas superfícies aquece, torna-se menos denso e sobe, interferindo na circulação da brisa marítima. A imagem representa os três subsistemas envolvidos nesse processo.
 
-Os mecanismos dominantes de transferência de energia térmica entre o Sol e a superfície urbana e entre a superfície urbana e o ar são, respectivamente,
+\begin{center}
+\includegraphics[width=0.82\linewidth,keepaspectratio]{Q93QuizIlhaCalorTransferencia.png}
+\end{center}
+
+Os mecanismos dominantes de transferência de energia térmica entre o Sol e a ilha de calor e entre a ilha de calor e a brisa marítima são, respectivamente,
 
 \begin{answerlist}
   \item irradiação e convecção.
@@ -18,14 +27,16 @@ Os mecanismos dominantes de transferência de energia térmica entre o Sol e a s
 
 \begin{solution}
 
-A energia do Sol chega à Terra por ondas eletromagnéticas, portanto o mecanismo é a \textbf{irradiação}.
+A energia do Sol chega à superfície terrestre por ondas eletromagnéticas, portanto o primeiro mecanismo é a \textbf{irradiação}.
 
-Já o ar aquecido junto às superfícies urbanas se movimenta por diferença de densidade, caracterizando \textbf{convecção}. Assim, a sequência correta é irradiação e convecção.
+Já o ar aquecido junto às superfícies urbanas se expande, torna-se menos denso e sobe. O transporte de energia associado ao movimento do fluido caracteriza \textbf{convecção}. Assim, a sequência correta é irradiação e convecção.
 
 \end{solution}
 
 %% META-INFORMATION
-%% Fonte: questão inspirada no ENEM 2021 Q111; a figura original foi dispensada por não ser necessária na adaptação textual.
+%% Fonte: ENEM 2021, 2º dia, Caderno 5 Amarelo, questão 111. Adaptação textual com preservação do esquema original.
+%% SOURCE-VISUAL: original-crop
+%% Figura recortada diretamente do PDF oficial da prova; ver arquivo .source.json correspondente.
 %% \extype{schoice}
 %% \exsolution{10000}
 %% \exname{Q93QuizIlhaCalorTransferencia}
