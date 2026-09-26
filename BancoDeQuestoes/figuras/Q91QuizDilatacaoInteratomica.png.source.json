@@ -3,7 +3,17 @@
   "source_sha256": "79345b9540b7b584858fefbe4a7c50064dc385b04be288b9828ade11b288492d",
   "mode": "crop",
   "page": 11,
-  "bbox_pdf_points": [56.0, 307.0, 315.0, 469.0],
+  "bbox_pdf_points": [
+    56,
+    307,
+    315,
+    469
+  ],
   "dpi": 200,
-  "output": "BancoDeQuestoes/figuras/Q91QuizDilatacaoInteratomica.png"
+  "repository_asset": "Q91QuizDilatacaoInteratomica.png",
+  "repository_dimensions_px": [
+    720,
+    451
+  ],
+  "postprocess": "grayscale PNG optimization only; no content redrawn or reconstructed"
 }
