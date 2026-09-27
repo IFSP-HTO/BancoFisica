@@ -4,13 +4,20 @@ solutions <- c(FALSE, FALSE, TRUE, FALSE, FALSE)
 ordem <- sample(seq_along(questions))
 questions <- questions[ordem]
 solutions <- solutions[ordem]
+
+include_supplement("Q117QuizUECEPenduloMultiploElastico.png", dir = "../figuras")
 @
 
 \usepackage[utf8]{inputenc}
+\usepackage{graphicx}
 
 \begin{question}
 
 (UECE, adaptada) Oito esferas estão suspensas por fios flexíveis, inextensíveis e de massas desprezíveis, formando um pêndulo múltiplo. Da esquerda para a direita, há quatro esferas de massa \(M=150\,\mathrm{g}\) e quatro esferas de massa \(m=50\,\mathrm{g}\). A primeira esfera de massa \(M\) é deslocada até uma altura \(h\) e solta; ao retornar, colide frontalmente com o grupo de esferas inicialmente em repouso.
+
+\begin{center}
+\includegraphics[width=0.92\textwidth,keepaspectratio]{Q117QuizUECEPenduloMultiploElastico.png}
+\end{center}
 
 Considere o modelo ideal do pêndulo múltiplo: o choque é perfeitamente elástico, as esferas de massa \(M\) ficam em repouso após a transmissão do choque e as \(n\) esferas de massa \(m\) que saem na extremidade oposta movem-se com o mesmo módulo de velocidade. O número de esferas de massa \(m\) que se moverão é
 
@@ -66,7 +73,9 @@ Portanto, movem-se \textbf{três} esferas de massa \(m\).
 
 %% META-INFORMATION
 %% Fonte: UECE, presente em Colisões.pdf, exercício 6.
-%% A figura original foi substituída por uma descrição textual completa do arranjo para evitar alterar/redesenhar o ativo da fonte.
+%% SOURCE-VISUAL: adapted-approved
+%% Figura fornecida e aprovada explicitamente pelo responsável pelo banco em 27/09/2026.
+%% O arquivo foi apenas redimensionado/otimizado para uso em PDF e Moodle, sem alteração do conteúdo pedagógico.
 %% \extype{schoice}
 %% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
 %% \exname{Q117QuizUECEPenduloMultiploElastico}
