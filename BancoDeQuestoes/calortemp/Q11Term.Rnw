@@ -2,7 +2,7 @@
   ##feito por Matheus Bertos
   ##gera valores
   temp <- sample(seq(from=-10,to=12,by=0.5),1)
-  resp <- round((temp*1.8)+32)
+  resp <- round((temp*1.8)+32, digits = 1)
   ##gera a resposta
 
   aleat = sample(5)
@@ -12,9 +12,9 @@
   
   questions[aleat[1]] <- resp - 2*1.8
   questions[aleat[2]] <- resp 
-  questions[aleat[3]] <- temp + 32
+  questions[aleat[3]] <- resp + 5
   questions[aleat[4]] <- resp + 2*1.8
-  questions[aleat[5]] <- temp *2
+  questions[aleat[5]] <- resp - 10
   
   solutions[aleat[1]] <-  FALSE
   solutions[aleat[2]] <-  TRUE
@@ -35,9 +35,23 @@
 \end{question}
 
 \begin{solution}
+A relação entre as escalas Celsius e Fahrenheit é
+\[
+  T_F=1{,}8T_C+32.
+\]
+
+Para a temperatura sorteada,
+\[
+  T_F=1{,}8\,(\Sexpr{temp})+32
+     =\Sexpr{resp}\,^{\circ}\mathrm{F}.
+\]
+
+Portanto, a alternativa correta é \(\Sexpr{resp}\,^{\circ}\mathrm{F}\).
+
 <<echo=FALSE, results=hide, results=tex>>=
-    answerlist(paste("\\textbf{", ifelse(solutions, "Verdadeiro", "Falso"), "}"))
+answerlist(ifelse(solutions, paste("\\textbf{", questions, "}", sep=""), questions))
 @
+
 \end{solution}
 %% META-INFORMATION
 %% \extype{schoice}
