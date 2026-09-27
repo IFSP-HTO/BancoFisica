@@ -1,0 +1,14 @@
+{
+  "source_pdf": "fuvest2026-fase1-prova-V1.pdf",
+  "source_sha256": "93b417ad6ea7e81a3b6adc46337920fd71c213306849846723f13583074f9025",
+  "mode": "crop",
+  "page": 31,
+  "bbox_pdf_points": [
+    315.467,
+    172.61,
+    571.411,
+    408.37
+  ],
+  "dpi": 300,
+  "output": "BancoDeQuestoes/figuras/Q24QuizFUVEST2026EquilibrioColher.png"
+}
