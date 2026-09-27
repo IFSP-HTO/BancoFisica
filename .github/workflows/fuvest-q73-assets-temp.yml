@@ -34,7 +34,7 @@ jobs:
         run: |
           python tools/pdf_assets.py crop /tmp/fuvest2026-fase1-prova-V1.pdf \
             --page 31 \
-            --bbox-percent 53 20.5 96 48.5 \
+            --bbox-percent 53 20.5 96 46.5 \
             --dpi 300 \
             --output BancoDeQuestoes/figuras/Q24QuizFUVEST2026EquilibrioColher.png \
             --provenance --force
