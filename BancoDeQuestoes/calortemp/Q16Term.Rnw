@@ -5,9 +5,9 @@ temp1 <- sample(seq(from=100, to=102, by=0.2),1)
 
 temp2 <- sample(seq(from=2.0,to=2.3, by=0.1),1)
 
-resp1 <- round(5/9*(temp1 - 32), digits = 1)
-
-resp2 <- round(5/9*((temp1-temp2) - 32), digits = 1)
+temp_anterior_f <- temp1 + temp2
+resp1 <- round(5/9*(temp_anterior_f - 32), digits = 1)
+resp2 <- round(5/9*(temp1 - 32), digits = 1)
 @
 \usepackage[utf8]{inputenc}
 \begin{question}
@@ -16,9 +16,9 @@ Um turista brasileiro sente-se mal durante uma viagem à Nova Iorque. Ao ser exa
 
 \begin{answerlist}
 
-  \item Qual era a sua temperatura anteriormente em °C?
+  \item Qual era sua temperatura antes da queda da febre, em °C?
   
-  \item E qual sua temperatura atual em °C?
+  \item Qual é sua temperatura atual, em °C?
   
 \end{answerlist}
 
@@ -26,17 +26,36 @@ Um turista brasileiro sente-se mal durante uma viagem à Nova Iorque. Ao ser exa
 
 
 %% SOLUTION
-\begin{solution}:
-    
-  \begin{answerlist}
-    
-    \item
-    \Sexpr{resp1}°C
-  
-    \item
-    \Sexpr{resp2}°C
-  
-  \end{answerlist}
+\begin{solution}
+A temperatura informada pela enfermeira, \(\Sexpr{temp1}\,^{\circ}\mathrm{F}\), é a temperatura atual. Como a febre já havia diminuído \(\Sexpr{temp2}\,^{\circ}\mathrm{F}\), a temperatura anterior era
+\[
+  T_{\mathrm{ant},F}=\Sexpr{temp1}+\Sexpr{temp2}
+                    =\Sexpr{temp_anterior_f}\,^{\circ}\mathrm{F}.
+\]
+
+Para converter uma temperatura Fahrenheit para Celsius, usamos
+\[
+  T_C=\frac{5}{9}(T_F-32).
+\]
+
+Assim, a temperatura anterior era
+\[
+  T_{\mathrm{ant},C}
+  =\frac{5}{9}(\Sexpr{temp_anterior_f}-32)
+  =\Sexpr{resp1}\,^{\circ}\mathrm{C},
+\]
+e a temperatura atual é
+\[
+  T_{\mathrm{atual},C}
+  =\frac{5}{9}(\Sexpr{temp1}-32)
+  =\Sexpr{resp2}\,^{\circ}\mathrm{C}.
+\]
+
+\begin{answerlist}
+  \item \Sexpr{resp1} °C
+  \item \Sexpr{resp2} °C
+\end{answerlist}
+
 \end{solution}
   
 %% META-INFORMATION

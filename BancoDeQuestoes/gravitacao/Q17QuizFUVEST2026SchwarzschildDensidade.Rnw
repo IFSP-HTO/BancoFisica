@@ -1,0 +1,74 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+(FUVEST 2026 - 1ª Fase, questão 60) Desde as primeiras descobertas, os buracos negros despertam enorme interesse da humanidade. Eles são caracterizados por regiões suficientemente densas e massivas em que o campo gravitacional é tão intenso que nada que esteja a distâncias inferiores a $R_{\mathrm{Sc}}$ do buraco negro consegue escapar de sua atração, nem a luz ou outras formas de radiação. Esse raio, também conhecido como raio de Schwarzschild, é expresso por
+\[
+R_{\mathrm{Sc}}=\frac{2GM}{c^2},
+\]
+sendo $G$ a constante de gravitação universal, $M$ a massa do buraco negro e $c$ a velocidade da luz.
+
+Considere, por simplicidade, um buraco negro de massa igual à massa solar $M_{\mathrm{Sol}}=2\times10^{30}\,\mathrm{kg}$ e de raio igual a $R_{\mathrm{Sc}}$. Nesse caso, a razão entre a densidade volumétrica de um buraco negro e a densidade volumétrica do Sol apresenta uma ordem de grandeza mais próxima de:
+
+\begin{answerlist}
+  \item $10^{-2}$
+  \item $10^{4}$
+  \item $10^{10}$
+  \item $10^{16}$
+  \item $10^{22}$
+\end{answerlist}
+
+\textbf{Note e adote:}
+
+Suponha uniformes as densidades volumétricas do Sol e do buraco negro.
+
+Considere que o buraco negro e o Sol sejam esféricos e tenham distribuição de massa uniforme.
+
+$G=10^{-10}\,\mathrm{N\,m^2/kg^2}$; $R_{\mathrm{Sol}}=10^9\,\mathrm{m}$; $c=3\times10^8\,\mathrm{m/s}$.
+
+\end{question}
+
+\begin{solution}
+
+O raio de Schwarzschild é
+\[
+R_{\mathrm{Sc}}
+=\frac{2GM}{c^2}
+=\frac{2(10^{-10})(2\times10^{30})}{(3\times10^8)^2}
+\approx 4{,}4\times10^3\,\mathrm{m}.
+\]
+
+Como o buraco negro e o Sol têm a mesma massa e são tratados como esferas de densidade uniforme,
+\[
+\rho=\frac{M}{\frac43\pi R^3}.
+\]
+Logo,
+\[
+\frac{\rho_{\mathrm{BN}}}{\rho_{\mathrm{Sol}}}
+=
+\left(\frac{R_{\mathrm{Sol}}}{R_{\mathrm{Sc}}}\right)^3.
+\]
+Assim,
+\[
+\frac{\rho_{\mathrm{BN}}}{\rho_{\mathrm{Sol}}}
+\approx
+\left(\frac{10^9}{4{,}4\times10^3}\right)^3
+\approx 1{,}2\times10^{16}.
+\]
+
+Portanto, a ordem de grandeza mais próxima é
+\[
+10^{16}.
+\]
+
+A alternativa correta é a \textbf{D}.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: FUVEST 2026, 1ª Fase, caderno V1, questão 60.
+%% \extype{schoice}
+%% \exsolution{00010}
+%% \exname{Q17QuizFUVEST2026SchwarzschildDensidade}
+%% \exsection{Gravitacao; Buraco negro; Raio de Schwarzschild; Densidade; Ordem de grandeza; FUVEST}
+%% \exusepackage[utf8]{inputenc}
