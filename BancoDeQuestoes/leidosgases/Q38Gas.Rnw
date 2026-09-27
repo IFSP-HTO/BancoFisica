@@ -7,7 +7,7 @@
   
   vol1   <- sample(seq(from=2,to=10,by=1),1)
   
-  resp1  <- round((vol1*temp2)/temp1, digits = 1)
+  resp1  <- round((vol1*temp2)/temp1, digits = 2)
   
 @
   
@@ -20,10 +20,25 @@
 \end{question}
   
 %% SOLUTION
-\begin{solution}:
-    
-  \Sexpr{resp1}litros
-  
+\begin{solution}
+Como a transformação ocorre a pressão constante, aplica-se a lei de Charles:
+\[
+  \frac{V_1}{T_1}=\frac{V_2}{T_2}.
+\]
+
+As temperaturas já estão em kelvin, portanto
+\[
+  V_2=V_1\frac{T_2}{T_1}.
+\]
+
+Substituindo,
+\[
+  V_2=
+  \Sexpr{vol1}
+  \frac{\Sexpr{temp2}}{\Sexpr{temp1}}
+  =\Sexpr{resp1}\,\mathrm{L}.
+\]
+
 \end{solution}
   
 %% META-INFORMATION
