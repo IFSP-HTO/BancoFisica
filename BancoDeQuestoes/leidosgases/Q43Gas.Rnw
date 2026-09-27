@@ -20,10 +20,25 @@
 \end{question}
   
 %% SOLUTION
-\begin{solution}:
-    
-  \Sexpr{resp1}Pa
-  
+\begin{solution}
+Como o volume permanece constante,
+\[
+  \frac{P_1}{T_1}=\frac{P_2}{T_2}.
+\]
+
+As temperaturas já estão em kelvin. Isolando a pressão inicial,
+\[
+  P_1=P_2\frac{T_1}{T_2}.
+\]
+
+Substituindo,
+\[
+  P_1=
+  \Sexpr{press2}
+  \frac{\Sexpr{temp1}}{\Sexpr{temp2}}
+  =\Sexpr{resp1}\,\mathrm{Pa}.
+\]
+
 \end{solution}
   
 %% META-INFORMATION
