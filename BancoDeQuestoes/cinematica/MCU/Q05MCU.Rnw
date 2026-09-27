@@ -23,7 +23,25 @@ Um brinquedo muito comum em parques de diversões consiste em uma cabine cilínd
 \end{question}
 
 \begin{solution}
-A velocidade angular mínima é \Sexpr{omega} rad/s.
+A parede exerce sobre a pessoa uma força normal horizontal que fornece a força centrípeta:
+\[
+  N=m\omega^2R.
+\]
+Quando o chão desce, o atrito estático precisa equilibrar o peso. No limite de não escorregar,
+\[
+  f_{at,\max}=\mu N=mg.
+\]
+Substituindo a normal,
+\[
+  \mu m\omega^2R=mg.
+\]
+Logo,
+\[
+  \omega_{\min}=\sqrt{\frac{g}{\mu R}}
+  =\sqrt{\frac{10}{\Sexpr{mu}\cdot\Sexpr{R}}}
+  =\Sexpr{omega}\,\mathrm{rad/s}.
+\]
+
 \end{solution}
 
 %% META-INFORMATION
