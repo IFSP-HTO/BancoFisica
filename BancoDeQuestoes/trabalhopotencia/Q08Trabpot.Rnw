@@ -1,34 +1,37 @@
 <<echo=FALSE, results=hide>>=
 #Programado por: Marcelo C.
-## Funções
-nota_cient <- function(x,digits) {
-  if (x==0) return("0")
-  ord <- floor(log(abs(x),10))
-  x <- x / 10^ord
-  if (!missing(digits)) x <- format(x,digits=digits)
-  if (ord==0) return(as.character(x))
-  return(paste(x,"\\\\times 10^{",ord,"}",sep=""))
-}
 
 ## Parâmetros
 pot <- sample(seq(from=7000,to=58000, by=500),1)
+pot_exp <- floor(log10(pot))
+pot_mant <- pot/10^pot_exp
 
 ## Resposta
+resp_w <- round(pot*1055/3600,1)
 resp <- round(pot*1.055/3600,1)
 @
 \usepackage[utf8]{inputenc}
 
 \begin{question}
 
-(UFCSPA-adapt.) Uma sala com equipamentos hospitalares deve ser mantida em determinada temperatura e, para isso, foi solicitada a instalação de um condicionador de ar com potência de $\Sexpr{nota_cient(pot)}$ BTU/h. Sabendo-se que 1 BTU corresponde a $1.055$ J, determine a potência, em $kW$, deste aparelho.
+(UFCSPA-adapt.) Uma sala com equipamentos hospitalares deve ser mantida em determinada temperatura e, para isso, foi solicitada a instalação de um condicionador de ar com potência de $\Sexpr{pot_mant}\times 10^{\Sexpr{pot_exp}}$ BTU/h. Sabendo-se que 1 BTU corresponde a $1055$ J, determine a potência, em $kW$, deste aparelho.
 
 \end{question}
 
 %% SOLUTION
-\begin{solution}:
-  
-  \Sexpr{resp} kW
-  
+\begin{solution}
+A potência é a energia transferida por unidade de tempo. Convertendo a energia de BTU para joules e o intervalo de uma hora para segundos (\(1\,\mathrm h=3600\,\mathrm s\)):
+\[
+  P=\frac{\Sexpr{pot}\ \text{BTU}}{1\ \mathrm h}
+    =\frac{\Sexpr{pot}\cdot 1055\ \mathrm J}{3600\ \mathrm s}
+    =\Sexpr{resp_w}\,\mathrm W.
+\]
+Em quilowatts (\(1\,\mathrm{kW}=1000\,\mathrm W\)),
+\[
+  P=\frac{\Sexpr{resp_w}}{1000}
+    =\Sexpr{resp}\,\mathrm{kW}.
+\]
+
 \end{solution}
 
 %% META-INFORMATION

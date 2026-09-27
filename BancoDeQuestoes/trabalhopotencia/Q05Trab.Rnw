@@ -26,15 +26,33 @@ resp2 <- round(P/(d/1800))
 \end{question}
 
 %% SOLUTION
-\begin{solution}:
-  \begin{answerlist}
-  
-    \item  \Sexpr{resp1} cal
-        
-    \item  \Sexpr{resp2} N
-  
-  \end{answerlist}      
-  
+\begin{solution}
+O tempo de prova é \(t=0{,}50\,\mathrm h=1800\,\mathrm s\). A energia consumida é
+\[
+  E=P\,t=\Sexpr{P}\cdot 1800=\Sexpr{P*1800}\,\mathrm J.
+\]
+Como \(1\,\mathrm{cal}=4{,}2\,\mathrm J\),
+\[
+  E=\frac{\Sexpr{P*1800}}{4{,}2}\approx\Sexpr{resp1}\,\mathrm{cal}.
+\]
+
+Para velocidade constante, \(P=Fv\). A velocidade média é
+\[
+  v=\frac{d}{t}=\frac{\Sexpr{d}}{1800}\,\mathrm{m/s},
+\]
+logo
+\[
+  F=\frac{P}{v}=\frac{\Sexpr{P}\cdot 1800}{\Sexpr{d}}\approx\Sexpr{resp2}\,\mathrm N.
+\]
+
+\begin{answerlist}
+
+  \item \(\Sexpr{resp1}\,\mathrm{cal}\)
+
+  \item \(\Sexpr{resp2}\,\mathrm N\)
+
+\end{answerlist}
+
 \end{solution}
 
 %% META-INFORMATION

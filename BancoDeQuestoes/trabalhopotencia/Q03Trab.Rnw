@@ -11,17 +11,23 @@ resp <- round(fr*d*0.8)
 
 \begin{question}
 
-(PUC-BA) A força F de módulo \Sexpr{fr} N atua sobre um objeto formando um ângulo constante de 37° com a direção do deslocamento d do objeto. Se d = \Sexpr{d} m, determine o trabalho realizado pela força F. \textit{Caso necessário, arrendonde sua resposta para o número inteiro mais próximo}.
+(PUC-BA) A força F de módulo \Sexpr{fr} N atua sobre um objeto formando um ângulo constante de 37° com a direção do deslocamento d do objeto. Se d = \Sexpr{d} m, determine o trabalho realizado pela força F. \textit{Caso necessário, arredonde sua resposta para o número inteiro mais próximo}.
 
 Dados: sen(37°) = 0,6 e cos(37°) = 0,8.
 
 \end{question}
 
 %% SOLUTION
-\begin{solution}:
-
-  \Sexpr{resp} J
-
+\begin{solution}
+O trabalho de uma força constante é dado por
+\[
+  \tau = F\,d\,\cos\theta,
+\]
+onde \(\theta\) é o ângulo entre a força e o deslocamento. Neste caso,
+\[
+  \tau = \Sexpr{fr}\cdot\Sexpr{d}\cdot 0{,}8
+      = \Sexpr{resp}\,\mathrm J.
+\]
 \end{solution}
 
 %% META-INFORMATION

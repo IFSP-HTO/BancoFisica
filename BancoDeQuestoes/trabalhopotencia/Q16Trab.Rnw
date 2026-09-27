@@ -6,8 +6,8 @@ velocidade <- sample(seq(from=5,to=15,by=1),1)
 distancia <- sample(seq(from=20,to=30,by=2),1)
 
 ## Respostas
-resp1 <- massa*(velocidade^2)/2
-resp2 <- round(resp1/distancia,digits = 2)
+resp1 <- round(massa*(velocidade^2)/2, 1)
+resp2 <- round(resp1/distancia, digits = 2)
 
 ## Figuras
 
@@ -30,18 +30,32 @@ resp2 <- round(resp1/distancia,digits = 2)
 \end{question}
 
 \begin{solution}
-  
-  \begin{answerlist}
-  
-      \item \Sexpr{resp1} J
-      \item \Sexpr{resp2} N
-  
-  \end{answerlist}
-  
+Pelo teorema do trabalho--energia cinética, como o corpo parte do repouso,
+\[
+  \tau=\Delta K=\frac12 m v^2
+      =\frac12\cdot\Sexpr{massa}\cdot(\Sexpr{velocidade})^2
+      =\Sexpr{resp1}\,\mathrm J.
+\]
+Sendo a força constante e paralela ao deslocamento,
+\[
+  F=\frac{\tau}{d}
+    =\frac{\Sexpr{resp1}}{\Sexpr{distancia}}
+    =\Sexpr{resp2}\,\mathrm N.
+\]
+
+\begin{answerlist}
+
+  \item \(\Sexpr{resp1}\,\mathrm J\)
+
+  \item \(\Sexpr{resp2}\,\mathrm N\)
+
+\end{answerlist}
+
 \end{solution}
 
 %% META-INFORMATION
-%% \extype{num}
+%% \extype{cloze}
+%% \exclozetype{num|num}
 %% \exsolution{\Sexpr{resp1}|\Sexpr{resp2}}
 %% \exname{Q16Trab}
-%% \extol{0.1}
+%% \extol{0.1|0.1}

@@ -16,24 +16,43 @@ De acordo com publicação médica especializada, uma pessoa caminhando à veloc
 
   \begin{answerlist}
 
-  \item A potência desenvolvida pelo organismo em watts. \textit{Caso necessário, arrendonde sua resposta para o número inteiro mais próximo}
+  \item A potência desenvolvida pelo organismo em watts. \textit{Caso necessário, arredonde sua resposta para o número inteiro mais próximo}
 
-  \item força motriz média exercida pelo solo, por meio do atrito, sobre os pés dessa pessoa. Dê sua resposta em newton. \textit{Caso necessário, arrendonde sua resposta para o número inteiro mais próximo}
+  \item força motriz média exercida pelo solo, por meio do atrito, sobre os pés dessa pessoa. Dê sua resposta em newton. \textit{Caso necessário, arredonde sua resposta para o número inteiro mais próximo}
 
   \end{answerlist}
 
 \end{question}
 
 %% SOLUTION
-\begin{solution}:
-  \begin{answerlist}
-  
-    \item  \Sexpr{resp1} W
-        
-    \item  \Sexpr{resp2} N
-  
-  \end{answerlist}      
-  
+\begin{solution}
+Em uma hora, \(t=3600\,\mathrm s\), a energia consumida é
+\[
+  E = \Sexpr{energia}\,\text{kcal}\cdot 4200\,\frac{\mathrm J}{\mathrm{kcal}}
+    = \Sexpr{energia*4200}\,\mathrm J.
+\]
+A potência desenvolvida é a energia por unidade de tempo:
+\[
+  P=\frac{E}{t}=\frac{\Sexpr{energia*4200}}{3600}=\Sexpr{resp1}\,\mathrm W.
+\]
+
+Como a velocidade é constante, a potência também pode ser escrita como \(P=Fv\). A velocidade em $\mathrm{m/s}$ é
+\[
+  v=\frac{\Sexpr{v}}{3{,}6}\,\mathrm{m/s},
+\]
+de modo que a força motriz média vale
+\[
+  F=\frac{P}{v}=\frac{\Sexpr{resp1}\cdot 3{,}6}{\Sexpr{v}}=\Sexpr{resp2}\,\mathrm N.
+\]
+
+\begin{answerlist}
+
+  \item \(\Sexpr{resp1}\,\mathrm W\)
+
+  \item \(\Sexpr{resp2}\,\mathrm N\)
+
+\end{answerlist}
+
 \end{solution}
 
 %% META-INFORMATION
