@@ -18,7 +18,22 @@ Devido à alta velocidade, um dos problemas a ser enfrentado na escolha do traje
 \end{question}
 
 \begin{solution}
-O raio mínimo é \Sexpr{R} m.
+A velocidade média usada na estimativa é
+\[
+  v=\frac{\Sexpr{D*1000}}{3600+60\cdot\Sexpr{tempo}}
+   =\Sexpr{round(v_media,2)}\,\mathrm{m/s}.
+\]
+Nas curvas, a aceleração centrípeta não deve ultrapassar \(\Sexpr{frac_g}g\):
+\[
+  a_c=\frac{v^2}{R}=\Sexpr{frac_g}\cdot10.
+\]
+Logo,
+\[
+  R=\frac{v^2}{\Sexpr{frac_g}\cdot10}
+   =\Sexpr{R}\,\mathrm{m}.
+\]
+Esse é o raio mínimo compatível com o limite de aceleração lateral adotado.
+
 \end{solution}
 
 %% META-INFORMATION
