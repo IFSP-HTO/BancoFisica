@@ -1,39 +1,56 @@
 <<echo=FALSE, results=hide>>=
 #Programado por: Jmduly - corrigido para uma variação de temperatura plausível
 
-temp1 <- sample(seq(from=0.1, to=10, by=0.1),1)
+temp1 <- sample(seq(from=10, to=30, by=0.5),1)
 
-resp1 <- sample(temp1 - 273)
+resp1 <- round(temp1 - 273, digits = 1)
 
-resp2 <- round(5/9*((resp1) - 32), digits = 1)
+resp2 <- round(1.8*resp1 + 32, digits = 1)
 @
 \usepackage[utf8]{inputenc}
 
 \begin{question}
 
-Um astrônomo analisa um buraco negro no espaço. Após muitos estudos ele chegou a conclusão que este corpo celeste tinha temperatura de $\Sexpr{temp1}$ K.
+Um astrônomo analisa uma nuvem molecular muito fria no espaço e estima que sua temperatura seja de $\Sexpr{temp1}$ K.
 
   \begin{answerlist}
 
-    \item Qual a temperatura do buraco negro na escala Celsius?
+    \item Qual é essa temperatura na escala Celsius?
   
-    \item E qual a temperatura do buraco negro na escala Fahrenheit?
+    \item E qual é essa temperatura na escala Fahrenheit?
 
   \end{answerlist}
 
 \end{question}
  
   %% SOLUTION
-\begin{solution}:
-    
-  \begin{answerlist}
-    \item
-      \Sexpr{resp1}
-  
-    \item
-      \Sexpr{resp2}
-  
-  \end{answerlist}
+\begin{solution}
+Na aproximação adotada no banco,
+\[
+  T_C=T_K-273.
+\]
+
+Logo,
+\[
+  T_C=\Sexpr{temp1}-273
+     =\Sexpr{resp1}\,^{\circ}\mathrm{C}.
+\]
+
+Para converter de Celsius para Fahrenheit,
+\[
+  T_F=1{,}8T_C+32.
+\]
+Portanto,
+\[
+  T_F=1{,}8(\Sexpr{resp1})+32
+     =\Sexpr{resp2}\,^{\circ}\mathrm{F}.
+\]
+
+\begin{answerlist}
+  \item \Sexpr{resp1} °C
+  \item \Sexpr{resp2} °F
+\end{answerlist}
+
 \end{solution}
   
 %% META-INFORMATION
