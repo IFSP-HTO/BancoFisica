@@ -24,7 +24,20 @@ Se em um anemômetro a distância entre as conchas e o centro de rotação é r 
 \end{question}
 
 \begin{solution}
-A frequência será f = \Sexpr{f} rpm.
+No modelo ideal, a velocidade do vento é igual à velocidade linear das conchas:
+\[
+  v=\omega r=2\pi f r,
+\]
+com \(f\) em hertz. Portanto,
+\[
+  f=\frac{v}{2\pi r}.
+\]
+Como \(r=\Sexpr{R_cm}\,\mathrm{cm}=\Sexpr{R_m}\,\mathrm{m}\) e \(\pi=3\), a frequência em rpm é
+\[
+  f_{rpm}=60\frac{\Sexpr{v}}{6\cdot\Sexpr{R_m}}
+         =\Sexpr{f}\,\mathrm{rpm}.
+\]
+
 \end{solution}
 
 %% META-INFORMATION
