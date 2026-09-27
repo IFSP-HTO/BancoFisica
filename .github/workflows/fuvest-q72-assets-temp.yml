@@ -41,7 +41,7 @@ jobs:
         run: |
           python tools/pdf_assets.py crop /tmp/fuvest2026-fase1-prova-V1.pdf \
             --page 31 \
-            --bbox-percent 4 7 49 21 \
+            --bbox-percent 4 7 49 19.8 \
             --dpi 300 \
             --output BancoDeQuestoes/figuras/Q105QuizFUVEST2026CafeJato.png \
             --provenance --force
