@@ -17,9 +17,19 @@ Dois Term\^ometros, um graduado na escala Kelvin e o outro graduado na escala Ce
 
 %% SOLUTION
 \begin{solution}
+As escalas Celsius e Kelvin possuem o mesmo tamanho de intervalo; elas diferem apenas pela origem. Na aproximação adotada no banco,
+\[
+  T_K=T_C+273.
+\]
 
-  \Sexpr{kelvin_temp} K
-  
+Logo,
+\[
+  T_K=\Sexpr{celsius_temp}+273
+     =\Sexpr{kelvin_temp}\,\mathrm{K}.
+\]
+
+Portanto, o termômetro Kelvin indica \(\Sexpr{kelvin_temp}\,\mathrm{K}\).
+
 \end{solution}
 
 %% META-INFORMATION

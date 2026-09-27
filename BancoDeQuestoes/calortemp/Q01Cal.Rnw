@@ -30,12 +30,15 @@ answerlist(questions)
 \end{question}
 
 \begin{solution}
+As duas placas permaneceram no mesmo ambiente e estão em equilíbrio térmico, portanto possuem a mesma temperatura. A diferença de sensação ao toque não significa que o ferro esteja realmente a uma temperatura menor.
+
+O ferro possui condutividade térmica maior que a madeira. Ao tocá-lo, a energia térmica é transferida da mão para o ferro mais rapidamente, produzindo uma sensação mais intensa de frio.
+
+Logo, a alternativa correta é: \textbf{o ferro é melhor condutor de calor que a madeira}.
+
 <<echo=FALSE, results=hide, results=tex>>=
-answerlist(
-  paste("\\textbf{", ifelse(solutions, "Verdadeiro", "Falso"), "}"))
+answerlist(ifelse(solutions, paste("\\textbf{", questions, "}", sep=""), questions))
 @
-
-
 
 \end{solution}
 

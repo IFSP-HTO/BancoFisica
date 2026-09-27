@@ -30,12 +30,15 @@ answerlist(questions)
 \end{question}
 
 \begin{solution}
+Primeiro, a energia atravessa o fundo sólido da panela. Em sólidos, a transferência de calor ocorre predominantemente por \textbf{condução}.
+
+Depois, a água aquecida junto ao fundo se torna menos densa e sobe, enquanto porções mais frias descem. Esse movimento do fluido caracteriza a \textbf{convecção}.
+
+Portanto, a sequência correta é \textbf{condução e convecção}.
+
 <<echo=FALSE, results=hide, results=tex>>=
-answerlist(
-  paste("\\textbf{", ifelse(solutions, "Verdadeiro", "Falso"), "}"))
+answerlist(ifelse(solutions, paste("\\textbf{", questions, "}", sep=""), questions))
 @
-
-
 
 \end{solution}
 

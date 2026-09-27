@@ -29,12 +29,15 @@ answerlist(questions)
 \end{question}
 
 \begin{solution}
+A condução e a convecção exigem a presença de matéria. A condução ocorre pela interação microscópica entre partículas, enquanto a convecção envolve movimento macroscópico de um fluido.
+
+Por isso, a convecção ocorre em líquidos e gases, mas não no vácuo nem, no tratamento elementar, em sólidos rígidos. A radiação térmica, por outro lado, pode propagar-se inclusive no vácuo.
+
+Logo, a alternativa correta é a que afirma que \textbf{a convecção térmica só ocorre nos fluidos}.
+
 <<echo=FALSE, results=hide, results=tex>>=
-answerlist(
-  paste("\\textbf{", ifelse(solutions, "Verdadeiro", "Falso"), "}"))
+answerlist(ifelse(solutions, paste("\\textbf{", questions, "}", sep=""), questions))
 @
-
-
 
 \end{solution}
 
