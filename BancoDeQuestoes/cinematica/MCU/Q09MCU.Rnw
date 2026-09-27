@@ -12,7 +12,21 @@ Deseja-se construir uma nave espacial com uma seção rotacional para simular gr
 \end{question}
 
 \begin{solution}
-A frequência é \Sexpr{f} rpm.
+Na borda da seção rotacional, a aceleração centrípeta deve reproduzir \(g\):
+\[
+  a_c=\omega^2R=g.
+\]
+Logo,
+\[
+  \omega=\sqrt{\frac{g}{R}}
+  =\sqrt{\frac{10}{\Sexpr{R}}}\,\mathrm{rad/s}.
+\]
+A frequência em hertz é \(f=\omega/(2\pi)\). Convertendo para rotações por minuto,
+\[
+  f_{rpm}=60\frac{\omega}{2\pi}
+         =\Sexpr{f}\,\mathrm{rpm}.
+\]
+
 \end{solution}
 
 %% META-INFORMATION
