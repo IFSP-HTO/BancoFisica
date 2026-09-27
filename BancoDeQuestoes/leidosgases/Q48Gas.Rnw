@@ -4,12 +4,11 @@
   press1 <- sample(seq(from=2,to=8,by=1),1)
   
   vol1   <- sample(seq(from=90,to=150,by=1),1)
-  
-  mass1  <- sample(seq(from=140,to=300,by=1),1)
-  
   temp1  <- sample(seq(from=17,to=27,by=1),1)
   
-  resp1  <- round((press1*vol1*6.02*10^23)/(0.082*(temp1+273)), digits = 1)
+  n_mols <- press1*vol1/(0.082*(temp1+273))
+  
+  resp1 <- round(n_mols*6.02, digits = 2)
   
 @
   
@@ -17,14 +16,45 @@
   
 \begin{question}
   
-Um certo gás, cuja massa vale $\Sexpr{mass1}$ g, ocupa um volume de $\Sexpr{vol1}$ litros, sob pressão $\Sexpr{press1}$ atmosferas a temperatura de $\Sexpr{temp1}$ °C. O número de Avogadro vale 6,02.10²³ e a constante universal dos gases perfeitos R= 0,082 atm.L/mol.K. Nessas condições, o número de moléculas contidas no gás é aproximadamente de:
+Um gás ideal ocupa um volume de $\Sexpr{vol1}$ litros, sob pressão de $\Sexpr{press1}$ atm, à temperatura de $\Sexpr{temp1}$ °C. Considere $N_A=6{,}02\times10^{23}\,\mathrm{mol^{-1}}$ e $R=0{,}082\,\mathrm{atm\,L/(mol\,K)}$. Determine o número de moléculas, fornecendo como resposta apenas o coeficiente que multiplica $10^{23}$.
 
 \end{question}
   
 %% SOLUTION
-\begin{solution}:
-    
-  \Sexpr{resp1} moléculas
+\begin{solution}
+Primeiro determinamos a quantidade de matéria pela equação do gás ideal:
+\[
+  PV=nRT.
+\]
+
+A temperatura absoluta é
+\[
+  T=\Sexpr{temp1}+273
+   =\Sexpr{temp1+273}\,\mathrm{K}.
+\]
+
+Assim,
+\[
+  n=
+  \frac{\Sexpr{press1}\cdot\Sexpr{vol1}}
+       {0{,}082\cdot\Sexpr{temp1+273}}
+  =\Sexpr{round(n_mols,3)}\,\mathrm{mol}.
+\]
+
+O número de moléculas é
+\[
+  N=nN_A.
+\]
+Logo,
+\[
+  N=
+  \Sexpr{round(n_mols,3)}
+  \cdot6{,}02\times10^{23}
+  \approx
+  \Sexpr{resp1}\times10^{23}.
+\]
+
+Portanto, o coeficiente solicitado é \(\Sexpr{resp1}\).
 
 \end{solution}
   
