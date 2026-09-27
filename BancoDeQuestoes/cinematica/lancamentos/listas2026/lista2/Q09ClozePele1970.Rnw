@@ -15,11 +15,33 @@ No célebre lance da Copa de 1970, modele a bola como um projétil lançado do s
 \end{answerlist}
 \end{question}
 \begin{solution}
-$T=2v_0\sin30^\circ/g=\Sexpr{fmt(T)}$ e $A=v_0\cos30^\circ T=\Sexpr{fmt(A)}$.
+A componente vertical da velocidade inicial é
+\[
+  v_{0y}=v_0\sin30^\circ
+        =\Sexpr{fmt(v0,0)}\cdot0{,}50.
+\]
+Como a bola retorna ao mesmo nível de lançamento, o tempo total de voo é
+\[
+  T=\frac{2v_{0y}}{g}
+   =\frac{2\cdot\Sexpr{fmt(v0,0)}\cdot0{,}50}{10}
+   =\Sexpr{fmt(T)}\,\mathrm{s}.
+\]
+A componente horizontal permanece constante:
+\[
+  v_{0x}=v_0\cos30^\circ
+        =\Sexpr{fmt(v0,0)}\cdot0{,}85.
+\]
+Portanto,
+\[
+  A=v_{0x}T
+   =\Sexpr{fmt(A)}\,\mathrm{m}.
+\]
+
 \begin{answerlist}
-  \item $\Sexpr{fmt(T)}$
-  \item $\Sexpr{fmt(A)}$
+  \item \Sexpr{fmt(T)}
+  \item \Sexpr{fmt(A)}
 \end{answerlist}
+
 \end{solution}
 
 %% META-INFORMATION
