@@ -37,10 +37,26 @@ answerlist(questions)
 \end{question}
 
 \begin{solution}
+Durante a ultrapassagem, a motocicleta precisa avançar, em relação ao trem, uma distância igual ao comprimento do trem. A velocidade relativa é
+\[
+  v_{\mathrm{rel}}=\Sexpr{v1}-\Sexpr{v2}=\Sexpr{v1-v2}\,\mathrm{m/s}.
+\]
+Logo, o tempo de ultrapassagem é
+\[
+  t=\frac{\Sexpr{comprimento}}{\Sexpr{v1-v2}}
+   =\Sexpr{tempo_ultrapassagem}\,\mathrm{s}.
+\]
+Nesse intervalo, a motocicleta se desloca
+\[
+  \Delta s=v_1t
+          =\Sexpr{v1}\cdot\Sexpr{tempo_ultrapassagem}
+          =\Sexpr{resp}\,\mathrm{m}.
+\]
+
 <<echo=FALSE, results=hide, results=tex>>=
-answerlist(
-  paste("\\textbf{", ifelse(solutions, "Verdadeiro", "Falso"), "}"))
+answerlist(ifelse(solutions, paste("\\textbf{", questions, "}", sep=""), questions))
 @
+
 \end{solution}
 
 %% META-INFORMATION
