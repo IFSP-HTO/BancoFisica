@@ -4,11 +4,14 @@
 massa <- sample(seq(from=800,to=1200,by=100),1)
 velocidadeKM <-  sample(seq(from=60,to=100,by=10),1)
 velocidadeMS <-  round(velocidadeKM/3.6 , digits = 2)
-altura1 <- sample(seq(from=0.45,to=0.55,by=0.05),1)
-altura2 <- sample(seq(from=0.20,to=0.45,by=0.05),1)
 
-resp1 <- round((10*(35-15)/2+(velocidadeMS/4))/2, digits = 2)
-resp2 <- round(sqrt(35-15+((velocidadeMS^2)/2))/2, digits = 2)
+## Desnível lido na figura: y = 35 m em x = 20 m e y = 15 m em x = 120 m.
+g <- 10
+dh <- 35 - 15
+v2 <- velocidadeMS^2 + 2*g*dh
+
+resp1 <- round(sqrt(v2/2), digits = 2)
+resp2 <- round(massa*v2/4, digits = 1)
 
 ##Imagem
 include_supplement("Q18Trab.png")
@@ -36,18 +39,49 @@ include_supplement("Q18Trab.png")
 \end{question}
 
 \begin{solution}
-  
-  \begin{answerlist}
-  
-      \item \Sexpr{resp1} m/s
-      \item \Sexpr{resp2} J
-  
-  \end{answerlist}
-  
+Da figura, entre \(x=20\,\mathrm m\) e \(x=120\,\mathrm m\) o carro desce de \(y=35\,\mathrm m\) para \(y=15\,\mathrm m\), ou seja, \(\Delta h=20\,\mathrm m\). A velocidade inicial é
+\[
+  v_0=\frac{\Sexpr{velocidadeKM}}{3{,}6}=\Sexpr{velocidadeMS}\,\mathrm{m/s}.
+\]
+
+Se não houvesse dissipação, a conservação da energia mecânica daria
+\[
+  v_{\text{ideal}}^2=v_0^2+2g\Delta h
+    =\Sexpr{velocidadeMS}^2+2\cdot10\cdot20
+    =\Sexpr{v2}.
+\]
+Como ao chegar à pedra a energia cinética é metade da ideal,
+\[
+  K_{\text{real}}=\frac12 K_{\text{ideal}}
+  \quad\Rightarrow\quad
+  v_{\text{real}}=\frac{v_{\text{ideal}}}{\sqrt2},
+\]
+\[
+  v_{\text{real}}=\sqrt{\frac{\Sexpr{v2}}{2}}
+    =\Sexpr{resp1}\,\mathrm{m/s}.
+\]
+
+Para parar rente à pedra, os freios devem dissipar toda a energia cinética restante:
+\[
+  E_{\text{diss}}=K_{\text{real}}=\frac12 m v_{\text{real}}^2
+   =\frac{m}{4}\bigl(v_0^2+2g\Delta h\bigr)
+   =\frac{\Sexpr{massa}\cdot\Sexpr{v2}}{4}
+   =\Sexpr{resp2}\,\mathrm J.
+\]
+
+\begin{answerlist}
+
+  \item \(\Sexpr{resp1}\,\mathrm{m/s}\)
+
+  \item \(\Sexpr{resp2}\,\mathrm J\)
+
+\end{answerlist}
+
 \end{solution}
 
 %% META-INFORMATION
-%% \extype{num}
+%% \extype{cloze}
+%% \exclozetype{num|num}
 %% \exsolution{\Sexpr{resp1}|\Sexpr{resp2}}
 %% \exname{Q18Trab}
-%% \extol{0.1}
+%% \extol{0.1|0.1}

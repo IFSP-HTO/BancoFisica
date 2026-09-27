@@ -5,7 +5,7 @@ massa <- sample(seq(from=0.10,to=0.20,by=0.05),1)
 altura1 <- sample(seq(from=0.50,to=0.65,by=0.05),1)
 altura2 <- sample(seq(from=0.20,to=0.40,by=0.05),1)
 
-resp1 <- round(massa*10*(altura1-altura2), digits = 3)
+resp1 <- round(massa*10*(altura1-altura2), digits = 2)
 resp2 <- 0
 
 ##Imagem
@@ -15,7 +15,7 @@ include_supplement("Q20Trab.png")
 
 \begin{question}
  
-        (Ufrj) Uma esfera de aço de massa m= \Sexpr{massa} kg, suspensa por um fio a um suporte, é afastada de sua posição de equilíbrio e abandonada a uma altura $H_0$ = \Sexpr{altura1} cm, como mostra a figura 1. Ao completar a primeira oscilação, verifica-se que ela consegue atingir apenas uma altura $H_1$ = \Sexpr{altura2} cm, como mostra a figura 2. (OBS: apresente o resultado com duas casas decimais.)
+        (Ufrj) Uma esfera de aço de massa m= \Sexpr{massa} kg, suspensa por um fio a um suporte, é afastada de sua posição de equilíbrio e abandonada a uma altura $H_0$ = \Sexpr{altura1} m, como mostra a figura 1. Ao completar a primeira oscilação, verifica-se que ela consegue atingir apenas uma altura $H_1$ = \Sexpr{altura2} m, como mostra a figura 2. (OBS: apresente o resultado com duas casas decimais.)
         
   \begin{figure}[h!]
     \centering
@@ -34,18 +34,29 @@ include_supplement("Q20Trab.png")
 \end{question}
 
 \begin{solution}
-  
-  \begin{answerlist}
-  
-      \item \Sexpr{resp1} J
-      \item \Sexpr{resp2} J
-  
-  \end{answerlist}
-  
+Nas duas posições extremas a esfera está momentaneamente em repouso, de modo que a energia mecânica perdida é a diferença entre as energias potenciais inicial e final:
+\[
+  E_{\text{diss}}=m g (H_0-H_1)
+    =\Sexpr{massa}\cdot 10\cdot(\Sexpr{altura1}-\Sexpr{altura2})
+    =\Sexpr{resp1}\,\mathrm J.
+\]
+O trabalho realizado pelos atritos tem módulo igual a \(\Sexpr{resp1}\,\mathrm J\) e é negativo, pois se opõe ao movimento; a energia dissipada vale, portanto, \(\Sexpr{resp1}\,\mathrm J\).
+
+A tração no fio é sempre perpendicular ao deslocamento da esfera ao longo da trajetória circular. Como \(\tau = F d\cos 90^\circ = 0\), o trabalho da tensão é nulo.
+
+\begin{answerlist}
+
+  \item \(\Sexpr{resp1}\,\mathrm J\)
+
+  \item \(\Sexpr{resp2}\,\mathrm J\)
+
+\end{answerlist}
+
 \end{solution}
 
 %% META-INFORMATION
-%% \extype{num}
+%% \extype{cloze}
+%% \exclozetype{num|num}
 %% \exsolution{\Sexpr{resp1}|\Sexpr{resp2}}
 %% \exname{Q20Trab}
-%% \extol{0.01}
+%% \extol{0.01|0.01}

@@ -34,7 +34,21 @@ abline(h=seq(0,Fmax,Fmax/8), v=seq(0,4*xpasso,xpasso/2), col="gray", lty=3)
 \end{question}
 
 \begin{solution}
-  $\tau = \Sexpr{resp} J$
+O trabalho de uma força variável é numericamente igual à área sob o gráfico \(F \times x\). No trecho de \(x=\Sexpr{xpasso}\,\mathrm m\) a \(x=\Sexpr{2*xpasso}\,\mathrm m\), a força cai linearmente de \(\Sexpr{Fmax}\,\mathrm N\) a \(\Sexpr{Fmax/2}\,\mathrm N\), formando um trapézio de área
+\[
+  A_1=\frac{F_{\max}+F_{\max}/2}{2}\,\Sexpr{xpasso}
+     =\frac34 F_{\max}\,\Sexpr{xpasso}.
+\]
+De \(x=\Sexpr{2*xpasso}\,\mathrm m\) a \(x=\Sexpr{3*xpasso}\,\mathrm m\), a força é constante e igual a \(\Sexpr{Fmax/2}\,\mathrm N\), de modo que
+\[
+  A_2=\frac{F_{\max}}{2}\,\Sexpr{xpasso}
+     =\frac12 F_{\max}\,\Sexpr{xpasso}.
+\]
+Somando os dois trechos,
+\[
+  \tau=A_1+A_2=\frac54 F_{\max}\,\Sexpr{xpasso}
+      =\Sexpr{resp}\,\mathrm J.
+\]
 \end{solution}
 
 %% META-INFORMATION
