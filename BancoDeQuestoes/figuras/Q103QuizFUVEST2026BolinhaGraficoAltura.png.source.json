@@ -1,0 +1,14 @@
+{
+  "source_pdf": "fuvest2026-fase1-prova-V1.pdf",
+  "source_sha256": "93b417ad6ea7e81a3b6adc46337920fd71c213306849846723f13583074f9025",
+  "mode": "crop",
+  "page": 32,
+  "bbox_pdf_points": [
+    312.49,
+    117.88,
+    574.387,
+    606.24
+  ],
+  "dpi": 300,
+  "output": "BancoDeQuestoes/figuras/Q103QuizFUVEST2026BolinhaGraficoAltura.png"
+}
