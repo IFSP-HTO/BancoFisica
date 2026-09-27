@@ -22,10 +22,29 @@
 \end{question}
   
 %% SOLUTION
-\begin{solution}:
-    
-  \Sexpr{resp1} atm
-  
+\begin{solution}
+O recipiente é indeformável e hermeticamente fechado, portanto o volume e a quantidade de gás permanecem constantes. Assim,
+\[
+  \frac{P_1}{T_1}=\frac{P_2}{T_2}.
+\]
+
+As temperaturas absolutas são
+\[
+  T_1=\Sexpr{temp1}+273=\Sexpr{temp1+273}\,\mathrm{K},
+\]
+e
+\[
+  T_2=\Sexpr{temp2}+273=\Sexpr{temp2+273}\,\mathrm{K}.
+\]
+
+Portanto,
+\[
+  P_2=
+  \Sexpr{press1}
+  \frac{\Sexpr{temp2+273}}{\Sexpr{temp1+273}}
+  =\Sexpr{resp1}\,\mathrm{atm}.
+\]
+
 \end{solution}
   
 %% META-INFORMATION

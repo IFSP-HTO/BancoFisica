@@ -15,15 +15,34 @@
   
 \begin{question}
   
-  O pneu de um automóvel foi regulado de forma a manter uma pressão interna de $\Sexpr{press1}$ libras-força por polegada quadrada, a uma temperatura de $\Sexpr{temp1}$ °C. Durante o movimento do automóvel, no entanto, a temperatura do pneu elevou-se a $\Sexpr{temp2}$ °C. Determine a pressão interna correspondente, em libras-força por polegada quadrada, desprezando a variação de volume do pneu. OBS: apresente o resultado com uma decimal.
+  O pneu de um automóvel foi regulado de forma a manter uma pressão absoluta interna de $\Sexpr{press1}$ libras-força por polegada quadrada, a uma temperatura de $\Sexpr{temp1}$ °C. Durante o movimento do automóvel, no entanto, a temperatura do pneu elevou-se a $\Sexpr{temp2}$ °C. Determine a pressão absoluta interna correspondente, em libras-força por polegada quadrada, desprezando a variação de volume do pneu. OBS: apresente o resultado com uma decimal.
 
 \end{question}
   
 %% SOLUTION
-\begin{solution}:
-    
-  \Sexpr{resp1} psi
-  
+\begin{solution}
+Como a quantidade de gás e o volume do pneu são considerados constantes,
+\[
+  \frac{P_1}{T_1}=\frac{P_2}{T_2},
+\]
+com as temperaturas na escala absoluta.
+
+Convertendo para kelvin,
+\[
+  T_1=\Sexpr{temp1}+273=\Sexpr{temp1+273}\,\mathrm{K},
+\]
+\[
+  T_2=\Sexpr{temp2}+273=\Sexpr{temp2+273}\,\mathrm{K}.
+\]
+
+Logo,
+\[
+  P_2=P_1\frac{T_2}{T_1}
+     =\Sexpr{press1}
+      \frac{\Sexpr{temp2+273}}{\Sexpr{temp1+273}}
+     =\Sexpr{resp1}\,\mathrm{psi}.
+\]
+
 \end{solution}
   
 %% META-INFORMATION

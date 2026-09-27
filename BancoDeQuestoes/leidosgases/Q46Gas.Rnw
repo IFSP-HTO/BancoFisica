@@ -15,15 +15,30 @@
   
 \begin{question}
   
-Um gás de $\Sexpr{vol1}$ litros , a uma pressão de $\Sexpr{press1}$ atm e a uma temperatura de $\Sexpr{temp1}$ K. (Dado: R = 0,082 atm.L/mol.K. Determine o número de mols desse gás.
+Um gás ideal ocupa $\Sexpr{vol1}$ litros, sob pressão de $\Sexpr{press1}$ atm e à temperatura de $\Sexpr{temp1}$ K. Dado: $R=0{,}082\,\mathrm{atm\,L/(mol\,K)}$. Determine o número de mols desse gás.
 
 \end{question}
   
 %% SOLUTION
-\begin{solution}:
-    
-  \Sexpr{resp1}mols
-  
+\begin{solution}
+Pela equação de estado do gás ideal,
+\[
+  PV=nRT.
+\]
+
+Isolando a quantidade de matéria,
+\[
+  n=\frac{PV}{RT}.
+\]
+
+Substituindo,
+\[
+  n=
+  \frac{\Sexpr{press1}\cdot\Sexpr{vol1}}
+       {0{,}082\cdot\Sexpr{temp1}}
+  =\Sexpr{resp1}\,\mathrm{mol}.
+\]
+
 \end{solution}
   
 %% META-INFORMATION

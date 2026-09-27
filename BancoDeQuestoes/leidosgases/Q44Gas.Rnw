@@ -8,14 +8,14 @@ nota_cient <- function(x,digits) {
   if (ord==0) return(as.character(x))
   return(paste(x,"\\\\times 10^{",ord,"}",sep=""))
 }
-  atm=10000
+  atm=100000
   temp1  <- sample(seq(from=20,to=50,by=1),1)
   
   press1 <- sample(seq(from=5000,to=15000,by=1),1)
   
   mol1   <- sample(seq(from=1,to=10,by=1),1)
   
-  resp1  <- round((mol1*0.082*(temp1+273))/(press1/100000), digits = 1)
+  resp1  <- round((mol1*0.082*(temp1+273))/(press1/atm), digits = 1)
   
 @
   
@@ -23,15 +23,39 @@ nota_cient <- function(x,digits) {
   
 \begin{question}
   
-   Qual é o volume ocupado por $\Sexpr{mol1}$ mols de gás perfeito submetido à pressão de $\Sexpr{press1}$ N/m², a uma temperatura igual a $\Sexpr{temp1}$ °C? Dado: R = 0.082 atm.l/mol.K e 1 atm = $\Sexpr{nota_cient(atm)}$ N/m². Qual era a pressão inicial?
+   Qual é o volume ocupado por $\Sexpr{mol1}$ mols de gás perfeito submetido à pressão de $\Sexpr{press1}$ N/m², a uma temperatura igual a $\Sexpr{temp1}$ °C? Dados: $R = 0{,}082\,\mathrm{atm\,L/(mol\,K)}$ e $1\,\mathrm{atm} = \Sexpr{nota_cient(atm)}\,\mathrm{N/m^2}$.
 
 \end{question}
   
 %% SOLUTION
-\begin{solution}:
-    
-  \Sexpr{resp1}litros
-  
+\begin{solution}
+Usamos a equação de estado do gás ideal,
+\[
+  PV=nRT.
+\]
+
+Como a constante \(R\) está expressa em
+\(\mathrm{atm\,L/(mol\,K)}\), primeiro convertemos a pressão:
+\[
+  P=\frac{\Sexpr{press1}}{\Sexpr{atm}}
+   =\Sexpr{press1/atm}\,\mathrm{atm}.
+\]
+
+A temperatura absoluta é
+\[
+  T=\Sexpr{temp1}+273
+   =\Sexpr{temp1+273}\,\mathrm{K}.
+\]
+
+Isolando o volume,
+\[
+  V=\frac{nRT}{P}
+   =
+  \frac{\Sexpr{mol1}\cdot0{,}082\cdot\Sexpr{temp1+273}}
+       {\Sexpr{press1/atm}}
+  =\Sexpr{resp1}\,\mathrm{L}.
+\]
+
 \end{solution}
   
 %% META-INFORMATION
