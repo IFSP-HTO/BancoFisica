@@ -42,7 +42,7 @@ jobs:
         run: |
           python tools/pdf_assets.py crop /tmp/fuvest2026-fase1-prova-V1.pdf \
             --page 30 \
-            --bbox-percent 52 32 97 47 \
+            --bbox-percent 52 32 97 42.5 \
             --dpi 300 \
             --output BancoDeQuestoes/figuras/Q96QuizFUVEST2026OvosCalorimetria.png \
             --provenance --force
