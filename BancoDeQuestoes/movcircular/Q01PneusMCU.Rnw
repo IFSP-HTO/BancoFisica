@@ -4,9 +4,10 @@
 diam  <- sample(seq(from=48,to=65,by=1),1)
 dist  <- sample(seq(from=100,to=600,by=10),1)
 
-resp1 <- round((dist/60)/(3.14*(diam/100)), digits = 2)
-resp2 <- round(resp1*60, digits = 0)
-resp3 <- round(1/resp1, digits = 2)
+freq_exact <- (dist/60)/(3.14*(diam/100))
+resp1 <- round(freq_exact, digits = 2)
+resp2 <- floor(freq_exact*60)
+resp3 <- round(1/freq_exact, digits = 2)
 
 @
 
@@ -22,13 +23,33 @@ resp3 <- round(1/resp1, digits = 2)
 \end{question}
 
 \begin{solution}
-%% Solution
+A velocidade linear do automóvel é
+\[
+  v=\frac{\Sexpr{dist}}{60}\,\mathrm{m/s}.
+\]
+Como não há deslizamento, em cada volta o pneu percorre um comprimento de circunferência
+\[
+  C=\pi d=3{,}14\cdot\frac{\Sexpr{diam}}{100}\,\mathrm{m}.
+\]
+A frequência de rotação é
+\[
+  f=\frac{v}{C}=\Sexpr{resp1}\,\mathrm{Hz}.
+\]
+Em 60 s, o número de voltas é \(N=f\cdot60\). Como se pedem voltas completas,
+\[
+  N_{\mathrm{comp}}=\Sexpr{resp2}.
+\]
+O período é
+\[
+  T=\frac{1}{f}=\Sexpr{resp3}\,\mathrm{s}.
+\]
 
 \begin{answerlist}
-  \item $\Sexpr{resp1}$ Hz
-  \item $\Sexpr{resp2}$ voltas
-  \item $\Sexpr{resp3}$ s
+  \item \Sexpr{resp1} Hz
+  \item \Sexpr{resp2} voltas completas
+  \item \Sexpr{resp3} s
 \end{answerlist}
+
 \end{solution}
 
 %% META-INFORMATION
