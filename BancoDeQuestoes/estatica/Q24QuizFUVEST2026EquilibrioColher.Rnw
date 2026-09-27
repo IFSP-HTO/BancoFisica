@@ -1,0 +1,55 @@
+<<echo=FALSE, results=hide>>=
+include_supplement("Q24QuizFUVEST2026EquilibrioColher.png", dir="../figuras")
+@
+
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+
+(FUVEST 2026 - 1ª Fase, questão 73) Uma definição possível de equilíbrio mecânico estável é a seguinte:
+
+``Se um corpo está em uma posição de equilíbrio mecânico e, ao sofrer pequenos deslocamentos em torno dessa posição, sua tendência for retornar à posição original de equilíbrio, dizemos que o equilíbrio é estável.''
+
+As imagens a seguir mostram uma colher em diferentes situações de equilíbrio mecânico em cima de uma xícara.
+
+\begin{center}
+\includegraphics[width=0.82\textwidth,keepaspectratio]{Q24QuizFUVEST2026EquilibrioColher.png}
+\end{center}
+
+Com base na definição apresentada e nos seus conhecimentos, quais imagens ilustram situações em que a colher está em equilíbrio estável em relação a pequenos deslocamentos nas direções indicadas pelas setas?
+
+\begin{answerlist}
+  \item 1 e 2
+  \item 2 e 4
+  \item 1 e 3
+  \item 3 e 4
+  \item 2 e 3
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Na situação 2, um pequeno deslocamento horizontal eleva o centro de massa da colher e surge uma tendência de retorno à posição inicial. Portanto, o equilíbrio é estável.
+
+Na situação 3, uma pequena rotação em torno do apoio também produz um torque restaurador, levando a colher de volta à posição de equilíbrio. Portanto, o equilíbrio é estável.
+
+Nas situações 1 e 4, os deslocamentos indicados não produzem uma ação restauradora capaz de levar espontaneamente a colher à posição original; o equilíbrio não é estável nessas direções.
+
+Assim, as situações de equilíbrio estável são 2 e 3.
+
+A alternativa correta é a \textbf{E}.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: FUVEST 2026, 1ª Fase, caderno V1, questão 73.
+%% SOURCE-VISUAL: original-crop
+%% PDF oficial SHA-256: 93b417ad6ea7e81a3b6adc46337920fd71c213306849846723f13583074f9025.
+%% Figura extraída diretamente da página 31 do PDF oficial conforme docs/PDF_SOURCE_WORKFLOW.md.
+%% \extype{schoice}
+%% \exsolution{00001}
+%% \exname{Q24QuizFUVEST2026EquilibrioColher}
+%% \exsection{Estatica; Equilibrio; Equilibrio estavel; Torque; Centro de massa; FUVEST}
+%% \exusepackage[utf8]{inputenc}
