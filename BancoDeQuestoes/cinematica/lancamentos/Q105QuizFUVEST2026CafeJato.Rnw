@@ -1,0 +1,70 @@
+<<echo=FALSE, results=hide>>=
+include_supplement("Q105QuizFUVEST2026CafeJato.png", dir="../../figuras")
+@
+
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+
+(FUVEST 2026 - 1ª Fase, questão 72)
+
+\begin{center}
+\includegraphics[width=0.88\textwidth,keepaspectratio]{Q105QuizFUVEST2026CafeJato.png}
+\end{center}
+
+Park, E. et al. ``Pour-over coffee: Mixing by a water jet impinging on a granular bed with avalanche dynamics''. \textit{Phys. Fluids} 37, 043332 (2025). Adaptado.
+
+Um artigo recentemente publicado na revista \textit{Physics of Fluids} investigou de que modo fatores como a altura e a velocidade da água despejada na preparação de café filtrado (parte (a) da figura) influenciam no sabor da bebida pronta.
+
+Um dos parâmetros importantes é a velocidade do jato de água ao atingir a lâmina de água que já está no filtro. Uma das conclusões do estudo é que velocidades acima de $2\,\mathrm{m/s}$ levam a uma melhor mistura do pó de café com a água.
+
+A parte (b) da figura esquematiza a situação descrita, em que $H$ é a altura da lâmina de água e $D$ a altura de despejo da água do bule, medidas que têm a base do filtro como referência.
+
+Assumindo que seja desprezível a velocidade do jato quando a água começa a ser despejada no bico do bule, para uma altura $H=8\,\mathrm{cm}$, qual a altura mínima $D$ de despejo para que a velocidade do jato, ao atingir a água, seja de, pelo menos, $2\,\mathrm{m/s}$?
+
+\begin{answerlist}
+  \item $4\,\mathrm{cm}$
+  \item $8{,}2\,\mathrm{cm}$
+  \item $10\,\mathrm{cm}$
+  \item $18\,\mathrm{cm}$
+  \item $28\,\mathrm{cm}$
+\end{answerlist}
+
+\textbf{Note e adote:}
+
+Densidade (massa específica) da água: $d=1000\,\mathrm{kg/m^3}$.
+
+Aceleração da gravidade: $g=10\,\mathrm{m/s^2}$.
+
+\end{question}
+
+\begin{solution}
+
+Entre o bico do bule, à altura $D$, e a superfície da água, à altura $H$, o jato cai uma distância $D-H$. Como a velocidade inicial é desprezível,
+\[
+v^2=2g(D-H).
+\]
+Para $v=2\,\mathrm{m/s}$ e $g=10\,\mathrm{m/s^2}$,
+\[
+D-H=\frac{v^2}{2g}=\frac{4}{20}=0{,}20\,\mathrm{m}=20\,\mathrm{cm}.
+\]
+Como $H=8\,\mathrm{cm}$,
+\[
+D=20\,\mathrm{cm}+8\,\mathrm{cm}=28\,\mathrm{cm}.
+\]
+
+A alternativa correta é a \textbf{E}.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: FUVEST 2026, 1ª Fase, caderno V1, questão 72.
+%% SOURCE-VISUAL: original-crop
+%% PDF oficial SHA-256: 93b417ad6ea7e81a3b6adc46337920fd71c213306849846723f13583074f9025.
+%% Figura extraída diretamente da página 31 do PDF oficial conforme docs/PDF_SOURCE_WORKFLOW.md.
+%% \extype{schoice}
+%% \exsolution{00001}
+%% \exname{Q105QuizFUVEST2026CafeJato}
+%% \exsection{Mecanica; Cinematica; Queda livre; Torricelli; FUVEST}
+%% \exusepackage[utf8]{inputenc}
