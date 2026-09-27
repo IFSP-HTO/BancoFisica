@@ -7,7 +7,7 @@
   
   press1 <- sample(seq(from=150,to=300,by=1),1)
   
-  resp1 <- round((vol2*press1)/(vol1), digits = 1)
+  resp1 <- round((press1*vol1)/vol2, digits = 1)
   
 @
   
@@ -15,19 +15,36 @@
   
 \begin{question}
   
-  Certo gás contido em um recipiente de $\Sexpr{vol1}$ m³ com êmbolo exerce uma pressão de $\Sexpr{press1}$ Pa e é comprimido isotermicamente a um volume de $\Sexpr{vol2}$ m³. Qual será a pressão exercida pelo gás?
+  Certo gás contido em um recipiente de $\Sexpr{vol1}$ m³ com êmbolo exerce uma pressão de $\Sexpr{press1}$ Pa e se expande isotermicamente até atingir um volume de $\Sexpr{vol2}$ m³. Qual será a pressão exercida pelo gás?
 
 \end{question}
   
 %% SOLUTION
-\begin{solution}:
-    
-  \Sexpr{resp1}Pa
-  
+\begin{solution}
+Como a transformação é isotérmica e a quantidade de gás permanece constante, vale a lei de Boyle:
+\[
+  P_1V_1=P_2V_2.
+\]
+
+Isolando a pressão final,
+\[
+  P_2=\frac{P_1V_1}{V_2}.
+\]
+
+Substituindo os valores,
+\[
+  P_2=
+  \frac{\Sexpr{press1}\cdot\Sexpr{vol1}}
+       {\Sexpr{vol2}}
+  =\Sexpr{resp1}\,\mathrm{Pa}.
+\]
+
+Como o gás se expande, \(V_2>V_1\), e a pressão final é menor que a inicial, como esperado.
+
 \end{solution}
   
 %% META-INFORMATION
 %% \extype{num}
 %% \exsolution{\Sexpr{resp1}}
 %% \exname{Q35Gas}
-%% \extol{0.01}
+%% \extol{0.1}
