@@ -14,8 +14,22 @@ Uma pessoa caminha numa pista de Cooper de $\Sexpr{lap}$ metros de comprimento, 
 \end{question}
 
 %% SOLUTION
-\begin{solution}:
-  \Sexpr{result} voltas
+\begin{solution}
+Em \(\Sexpr{time}\) min, o tempo total é
+\[
+  t=60\cdot\Sexpr{time}\,\mathrm{s}.
+\]
+A distância percorrida nesse intervalo é
+\[
+  d=vt=\Sexpr{speed}\cdot60\cdot\Sexpr{time}\,\mathrm{m}.
+\]
+O número de voltas é a distância dividida pelo comprimento da pista. Como são pedidas apenas voltas completas, tomamos a parte inteira:
+\[
+  N=\left\lfloor\frac{d}{\Sexpr{lap}}\right\rfloor
+   =\Sexpr{result}.
+\]
+Portanto, a pessoa completa \(\Sexpr{result}\) voltas.
+
 \end{solution}
 
 %% META-INFORMATION
