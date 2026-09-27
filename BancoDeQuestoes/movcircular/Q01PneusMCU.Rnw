@@ -17,7 +17,7 @@ resp3 <- round(1/freq_exact, digits = 2)
 
 \begin{answerlist}
   \item A frequência do movimento de rotação dos pneus, em Hz. \textit{Dê sua resposta com duas decimais}
-  \item O número de voltas executado pelo pneu. \textit{Arredonde para um número inteiro de voltas completas}
+  \item O número de voltas completas executadas pelo pneu.
   \item O período do movimento de rotação dos pneus, em segundos. \textit{Dê sua resposta com duas decimais}
 \end{answerlist}
 \end{question}
