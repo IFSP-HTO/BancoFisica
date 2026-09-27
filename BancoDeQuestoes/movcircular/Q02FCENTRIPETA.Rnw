@@ -65,7 +65,11 @@ A maior velocidade sem perda de contato ocorre quando a força normal se anula:
 \]
 Portanto,
 \[
-  v_{\max}=\sqrt{gR}=\Sexpr{resp2}\,\mathrm{km/h}.
+  v_{\max}=\sqrt{gR}
+\]
+fornece a velocidade em m/s. Convertendo o resultado para km/h,
+\[
+  v_{\max}=\Sexpr{resp2}\,\mathrm{km/h}.
 \]
 
 \begin{answerlist}
