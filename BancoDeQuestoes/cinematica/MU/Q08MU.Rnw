@@ -17,9 +17,24 @@ nos passos intermedi\'arios).
 
 %% SOLUTION
 \begin{solution}
+Como as duas metades do percurso têm a mesma distância, não podemos calcular a média aritmética simples das velocidades. Seja \(d\) a distância de cada metade.
 
-  \Sexpr{resp} km/h
-  
+Os tempos gastos são
+\[
+  t_1=\frac{d}{v_1},\qquad t_2=\frac{d}{v_2}.
+\]
+A velocidade média no percurso total \(2d\) é
+\[
+  v_m=\frac{2d}{d/v_1+d/v_2}
+     =\frac{2v_1v_2}{v_1+v_2}.
+\]
+Substituindo,
+\[
+  v_m=\frac{2\cdot\Sexpr{v1}\cdot\Sexpr{v2}}
+             {\Sexpr{v1}+\Sexpr{v2}}
+     =\Sexpr{resp}\,\mathrm{km/h}.
+\]
+
 \end{solution}
 
 <<echo=FALSE, results=hide>>=
