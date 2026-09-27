@@ -29,7 +29,7 @@ Para efeito de cálculo, considere a distância entre os centros de duas bolas c
 
 \begin{tabular}{l|c|c|}
     \hline
-        Número da exposição & Tempo em segundos      & Distância da bola em à bola da 1ª exposição (em metros)\\
+        Número da exposição & Tempo em segundos      & Distância da bola em relação à 1ª exposição (em metros)\\
     \hline
         1ª   & a 0.00 & e 0.00\\
         2ª   & b ##ANSWER1## & f ##ANSWER5##\\
