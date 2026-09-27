@@ -24,13 +24,27 @@ options(OutDec=",")
 \end{question}
 
 %% SOLUTION
-\begin{solution}:
+\begin{solution}
+A velocidade de B em relação a A é a diferença entre as velocidades, pois os carros se movem no mesmo sentido:
+\[
+  v_{B/A}=|V_B-V_A|.
+\]
+Convertendo de km/h para m/s,
+\[
+  v_{B/A}=\frac{|\Sexpr{vA}-\Sexpr{vB}|}{3{,}6}
+          =\Sexpr{respa}\,\mathrm{m/s}.
+\]
+
+Para A alcançar B, a distância inicial de \(\Sexpr{dist}\,\mathrm{m}\) deve ser vencida com essa velocidade relativa:
+\[
+  \Delta t=\frac{\Delta s}{v_{\mathrm{rel}}}
+          =\frac{\Sexpr{dist}}{\Sexpr{respa}}
+          =\Sexpr{respb}\,\mathrm{s}.
+\]
 
 \begin{answerlist}
-
-    \item \Sexpr{respa} km/h
-    \item \Sexpr{respb} s
-
+  \item \Sexpr{respa} m/s
+  \item \Sexpr{respb} s
 \end{answerlist}
 
 \end{solution}
