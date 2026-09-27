@@ -26,13 +26,27 @@ Considere: sen(30°) = 0,5
 \end{question}
 
 %% SOLUTION
-\begin{solution}:
+\begin{solution}
+A componente vertical da velocidade é
+\[
+  v_y=v\sin30^\circ.
+\]
+Como \(\sin30^\circ=0{,}5\),
+\[
+  v_y=\Sexpr{v}\cdot0{,}5
+     =\Sexpr{respa}\,\mathrm{m/s}.
+\]
+
+A profundidade corresponde ao deslocamento vertical realizado durante \(\Sexpr{t}\,\mathrm{s}\):
+\[
+  h=v_y t
+   =\Sexpr{respa}\cdot\Sexpr{t}
+   =\Sexpr{respb}\,\mathrm{m}.
+\]
 
 \begin{answerlist}
-
-    \item \Sexpr{respa} m/s
-    \item \Sexpr{respb} m
-
+  \item \Sexpr{respa} m/s
+  \item \Sexpr{respb} m
 \end{answerlist}
 
 \end{solution}
