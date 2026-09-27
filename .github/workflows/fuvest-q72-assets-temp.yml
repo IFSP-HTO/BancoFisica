@@ -1,0 +1,67 @@
+name: FUVEST Q72 asset extraction
+
+on:
+  push:
+    branches:
+      - fuvest-2026-q72-fiel
+    paths:
+      - .github/workflows/fuvest-q72-assets-temp.yml
+
+permissions:
+  contents: write
+
+jobs:
+  extract-q72:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: fuvest-2026-q72-fiel
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install PyMuPDF
+        run: python -m pip install pymupdf
+
+      - name: Download official FUVEST 2026 V1 PDF
+        run: |
+          curl -L --fail --retry 5 --retry-delay 2 \
+            -A 'Mozilla/5.0' \
+            'https://www.fuvest.br/wp-content/uploads/fuvest2026-fase1-prova-V1.pdf' \
+            -o /tmp/fuvest2026-fase1-prova-V1.pdf
+
+      - name: Inspect embedded images on Q72 page
+        run: python tools/pdf_assets.py images /tmp/fuvest2026-fase1-prova-V1.pdf --page 31
+
+      - name: Crop original Q72 figure
+        run: |
+          python tools/pdf_assets.py crop /tmp/fuvest2026-fase1-prova-V1.pdf \
+            --page 31 \
+            --bbox-percent 4 7 49 21 \
+            --dpi 300 \
+            --output BancoDeQuestoes/figuras/Q105QuizFUVEST2026CafeJato.png \
+            --provenance --force
+
+      - name: Upload asset for inspection
+        uses: actions/upload-artifact@v4
+        with:
+          name: fuvest-q72-asset
+          path: |
+            BancoDeQuestoes/figuras/Q105QuizFUVEST2026CafeJato.png
+            BancoDeQuestoes/figuras/Q105QuizFUVEST2026CafeJato.png.source.json
+
+      - name: Commit extracted asset
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add BancoDeQuestoes/figuras/Q105QuizFUVEST2026CafeJato.png*
+          if git diff --cached --quiet; then
+            echo 'No changes to commit.'
+          else
+            git commit -m 'assets: extrai figura original FUVEST 2026 Q72'
+            git push origin HEAD:fuvest-2026-q72-fiel
+          fi
