@@ -22,7 +22,21 @@ Devido ao movimento do carretel, essas perfurações estão defasadas 30°, como
 \end{question}
 
 \begin{solution}
-A velocidade é \Sexpr{vel} m/s.
+A frequência de rotação é \(\Sexpr{f}\,\mathrm{Hz}\), portanto o período do carretel é
+\[
+  T=\frac{1}{f}.
+\]
+A defasagem de \(30^\circ\) corresponde a \(30/360=1/12\) de uma volta. Para o menor intervalo de tempo possível,
+\[
+  \Delta t=\frac{T}{12}=\frac{1}{12f}.
+\]
+O projétil percorre \(0{,}40\,\mathrm{m}\) nesse tempo. Assim,
+\[
+  v=\frac{0{,}40}{\Delta t}
+   =0{,}40\cdot12\cdot\Sexpr{f}
+   =\Sexpr{vel}\,\mathrm{m/s}.
+\]
+
 \end{solution}
 
 %% META-INFORMATION

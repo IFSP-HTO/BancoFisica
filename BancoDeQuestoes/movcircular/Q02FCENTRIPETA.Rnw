@@ -18,9 +18,10 @@ Normal <- sample(seq(from=Peso-6000,to=Peso-4000,by=10),1)
 
 vel  <- sample(seq(from=50,to=90,by=5),1)
 
-resp1 <- round(massa*(vel/3.6)^2/(Peso-Normal), digits = 1)
+raio_exact <- massa*(vel/3.6)^2/(Peso-Normal)
+resp1 <- round(raio_exact, digits = 1)
 
-resp2 <- round(sqrt(resp1*10)*3.6, digits = 1)
+resp2 <- round(sqrt(raio_exact*10)*3.6, digits = 1)
 
 include_supplement("Q02FCENTRIPETA.jpg")
 @
@@ -45,11 +46,36 @@ include_supplement("Q02FCENTRIPETA.jpg")
   
 %% SOLUTION
 \begin{solution}
-    
-  \begin{answerlist}
-    \item O raio R = $\Sexpr{resp1}$ m
-    \item A velocidade máxima corresponde a $\Sexpr{resp2}$ km/h
-  \end{answerlist}
+No ponto mais alto, o peso aponta para o centro da trajetória e a normal aponta para fora. Assim,
+\[
+  mg-N=\frac{mv^2}{R}.
+\]
+Logo,
+\[
+  R=\frac{mv^2}{mg-N}.
+\]
+Usando \(v=\Sexpr{vel}/3{,}6\,\mathrm{m/s}\), obtemos
+\[
+  R=\Sexpr{resp1}\,\mathrm{m}.
+\]
+
+A maior velocidade sem perda de contato ocorre quando a força normal se anula:
+\[
+  mg=\frac{mv_{\max}^2}{R}.
+\]
+Portanto,
+\[
+  v_{\max}=\sqrt{gR}
+\]
+fornece a velocidade em m/s. Convertendo o resultado para km/h,
+\[
+  v_{\max}=\Sexpr{resp2}\,\mathrm{km/h}.
+\]
+
+\begin{answerlist}
+  \item \Sexpr{resp1} m
+  \item \Sexpr{resp2} km/h
+\end{answerlist}
 
 \end{solution}
 %% META-INFORMATION

@@ -46,15 +46,26 @@ grid(NULL, NULL, lty = 6, col = "black")
 \end{question}
 
 \begin{solution}
+Em um gráfico posição versus tempo de movimento uniforme, o coeficiente angular da reta é a velocidade:
+\[
+  v=\frac{\Delta s}{\Delta t}.
+\]
+Os pontos usados para construir a reta são \((0,\Sexpr{pt1y})\) e \((\Sexpr{pt2x},\Sexpr{pt2y})\). Portanto,
+\[
+  v=\frac{\Sexpr{pt2y}-\Sexpr{pt1y}}{\Sexpr{pt2x}-0}
+   =\Sexpr{v}\,\mathrm{m/s}.
+\]
+A posição inicial é o valor de \(s\) quando \(t=0\):
+\[
+  s_0=\Sexpr{s_zero}\,\mathrm{m}.
+\]
+Logo, a função horária é \(s(t)=\Sexpr{s_zero}+\Sexpr{v}t\).
 
-  \begin{answerlist}
-    \item
-      $\Sexpr{v}$ m/s
+\begin{answerlist}
+  \item \Sexpr{v} m/s
+  \item \Sexpr{s_zero} m
+\end{answerlist}
 
-    \item
-      $\Sexpr{s_zero}$ m
-  \end{answerlist}
-  
 \end{solution}
 
 %% META-INFORMATION

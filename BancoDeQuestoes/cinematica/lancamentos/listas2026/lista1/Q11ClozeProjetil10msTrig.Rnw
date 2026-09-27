@@ -13,11 +13,36 @@ Um projétil é lançado do solo com velocidade $\Sexpr{fmt(v0,0)}\,\mathrm{m/s}
 \end{answerlist}
 \end{question}
 \begin{solution}
-$H=v_{0y}^2/(2g)=\Sexpr{fmt(H)}$ e $A=v_{0x}(2v_{0y}/g)=\Sexpr{fmt(A)}$.
+Decompomos a velocidade inicial nas direções horizontal e vertical:
+\[
+  v_{0x}=v_0\cos\alpha=\Sexpr{fmt(v0,0)}\cdot0{,}6=\Sexpr{fmt(vx)}\,\mathrm{m/s},
+\]
+\[
+  v_{0y}=v_0\sin\alpha=\Sexpr{fmt(v0,0)}\cdot0{,}8=\Sexpr{fmt(vy)}\,\mathrm{m/s}.
+\]
+
+No ponto mais alto, a velocidade vertical é nula. Assim,
+\[
+  H=\frac{v_{0y}^2}{2g}
+   =\frac{\Sexpr{fmt(vy)}^2}{20}
+   =\Sexpr{fmt(H)}\,\mathrm{m}.
+\]
+O tempo total de voo é
+\[
+  T=\frac{2v_{0y}}{g}=\Sexpr{fmt(T)}\,\mathrm{s}.
+\]
+Logo, o alcance horizontal é
+\[
+  A=v_{0x}T
+   =\Sexpr{fmt(vx)}\cdot\Sexpr{fmt(T)}
+   =\Sexpr{fmt(A)}\,\mathrm{m}.
+\]
+
 \begin{answerlist}
-  \item $\Sexpr{fmt(H)}$
-  \item $\Sexpr{fmt(A)}$
+  \item \Sexpr{fmt(H)}
+  \item \Sexpr{fmt(A)}
 \end{answerlist}
+
 \end{solution}
 
 %% META-INFORMATION

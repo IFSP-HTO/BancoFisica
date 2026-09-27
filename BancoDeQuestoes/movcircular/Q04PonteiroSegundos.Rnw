@@ -18,12 +18,26 @@ resp3 <- 1                   ## frequência, em rpm
 \end{question}
 
 \begin{solution}
+O período é o tempo necessário para uma volta completa. Como o ponteiro dos segundos completa uma volta em 60 s,
+\[
+  T=60\,\mathrm{s}.
+\]
+A frequência em hertz é
+\[
+  f=\frac{1}{T}=\frac{1}{60}
+   \approx\Sexpr{resp2}\,\mathrm{Hz}.
+\]
+Como ocorre exatamente uma volta a cada minuto,
+\[
+  f=1\,\mathrm{rpm}.
+\]
 
 \begin{answerlist}
-  \item $T = \Sexpr{resp1}$ s
-  \item $f = \dfrac{1}{60} \approx \Sexpr{resp2}$ Hz
-  \item $f = \Sexpr{resp3}$ rpm
+  \item \Sexpr{resp1} s
+  \item \Sexpr{resp2} Hz
+  \item \Sexpr{resp3} rpm
 \end{answerlist}
+
 \end{solution}
 
 %% META-INFORMATION

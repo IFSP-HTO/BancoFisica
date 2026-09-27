@@ -16,11 +16,35 @@ Determine:
 \end{answerlist}
 \end{question}
 \begin{solution}
-Para $45^\circ$, $H=v_0^2/(4g)=\Sexpr{fmt(H)}$ e $A=v_0^2/g=\Sexpr{fmt(A)}$.
+Para lançamento a \(45^\circ\), temos \(\sin45^\circ=\cos45^\circ=\sqrt{2}/2\).
+
+A altura máxima pode ser escrita como
+\[
+  H=\frac{v_0^2\sin^2 45^\circ}{2g}
+   =\frac{v_0^2}{4g}.
+\]
+Assim,
+\[
+  H=\frac{\Sexpr{fmt(v0,0)}^2}{40}
+   =\Sexpr{fmt(H)}\,\mathrm{m}.
+\]
+
+O alcance para lançamento e queda no mesmo nível é
+\[
+  A=\frac{v_0^2\sin(2\theta)}{g}.
+\]
+Como \(2\theta=90^\circ\),
+\[
+  A=\frac{v_0^2}{g}
+   =\frac{\Sexpr{fmt(v0,0)}^2}{10}
+   =\Sexpr{fmt(A)}\,\mathrm{m}.
+\]
+
 \begin{answerlist}
-  \item $\Sexpr{fmt(H)}$
-  \item $\Sexpr{fmt(A)}$
+  \item \Sexpr{fmt(H)}
+  \item \Sexpr{fmt(A)}
 \end{answerlist}
+
 \end{solution}
 
 %% META-INFORMATION

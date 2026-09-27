@@ -21,7 +21,20 @@ As máquinas cortadeiras e colheitadeiras de cana-de-açúcar podem substituir d
 \end{question}
 
 \begin{solution}
-A velocidade é \Sexpr{v} m/s.
+A frequência dada em rpm deve ser convertida para hertz:
+\[
+  f=\frac{\Sexpr{f}}{60}=\Sexpr{f/60}\,\mathrm{Hz}.
+\]
+A velocidade linear de um ponto a distância \(R\) do eixo é
+\[
+  v=2\pi Rf.
+\]
+Adotando \(\pi=3\) e \(R=\Sexpr{R}\,\mathrm{m}\),
+\[
+  v=2\cdot3\cdot\Sexpr{R}\cdot\frac{\Sexpr{f}}{60}
+   =\Sexpr{v}\,\mathrm{m/s}.
+\]
+
 \end{solution}
 
 %% META-INFORMATION

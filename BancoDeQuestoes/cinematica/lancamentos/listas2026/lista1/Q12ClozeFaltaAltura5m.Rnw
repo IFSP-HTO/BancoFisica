@@ -13,11 +13,37 @@ Numa cobrança de falta, a bola é lançada a $30^\circ$ com o gramado e atinge 
 \end{answerlist}
 \end{question}
 \begin{solution}
-$v_0=\Sexpr{fmt(v0,1)}\,\mathrm{m/s}$ e $A=\Sexpr{fmt(A,2)}\,\mathrm{m}$.
+A componente vertical da velocidade inicial é
+\[
+  v_{0y}=v_0\sin30^\circ=0{,}50v_0.
+\]
+A altura máxima satisfaz
+\[
+  H=\frac{v_{0y}^2}{2g}
+   =\frac{(0{,}50v_0)^2}{20}.
+\]
+Usando a altura fornecida no enunciado, obtemos
+\[
+  v_0=\Sexpr{fmt(v0,1)}\,\mathrm{m/s}.
+\]
+
+O tempo total de voo é
+\[
+  T=\frac{2v_0\sin30^\circ}{g}
+   =\Sexpr{fmt(T)}\,\mathrm{s}.
+\]
+A componente horizontal é \(v_{0x}=v_0\cos30^\circ\), então
+\[
+  A=v_{0x}T
+   =\Sexpr{fmt(v0*cos)}\cdot\Sexpr{fmt(T)}
+   =\Sexpr{fmt(A,2)}\,\mathrm{m}.
+\]
+
 \begin{answerlist}
-  \item $\Sexpr{fmt(v0,1)}$
-  \item $\Sexpr{fmt(A,2)}$
+  \item \Sexpr{fmt(v0,1)}
+  \item \Sexpr{fmt(A,2)}
 \end{answerlist}
+
 \end{solution}
 
 %% META-INFORMATION

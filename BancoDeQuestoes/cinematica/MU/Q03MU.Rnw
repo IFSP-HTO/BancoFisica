@@ -14,10 +14,21 @@ nos passos intermedi\'arios).
 \end{question}
 
 %% SOLUTION
-\begin{solution}:
+\begin{solution}
+A velocidade média é a razão entre a distância total percorrida e o tempo gasto:
+\[
+  v_m=\frac{\Delta s}{\Delta t}.
+\]
+O intervalo de \(\Sexpr{dt}\) min corresponde a
+\[
+  \Delta t=\frac{\Sexpr{dt}}{60}\,\mathrm{h}.
+\]
+Logo,
+\[
+  v_m=\frac{10}{\Sexpr{dt}/60}
+     =\Sexpr{resp}\,\mathrm{km/h}.
+\]
 
-  \Sexpr{resp} km/h
-  
 \end{solution}
 
 %% META-INFORMATION

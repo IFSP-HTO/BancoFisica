@@ -15,8 +15,20 @@ A velocidade angular média de um móvel numa trajetória circular de raio $\Sex
 \end{question}
 
 \begin{solution}
-
-$\Delta\theta = \omega \cdot t = \Sexpr{omega} \cdot \Sexpr{t} = \Sexpr{resp}$ rad.
+A velocidade angular média é definida por
+\[
+  \omega=\frac{\Delta\theta}{\Delta t}.
+\]
+Portanto,
+\[
+  \Delta\theta=\omega\Delta t.
+\]
+Substituindo os valores,
+\[
+  \Delta\theta=\Sexpr{omega}\cdot\Sexpr{t}
+              =\Sexpr{resp}\,\mathrm{rad}.
+\]
+O raio não entra neste cálculo porque a velocidade angular já foi fornecida.
 
 \end{solution}
 

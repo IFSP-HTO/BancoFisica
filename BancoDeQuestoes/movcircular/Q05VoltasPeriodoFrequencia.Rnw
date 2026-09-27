@@ -4,8 +4,8 @@
 voltas <- sample(5:40, 1)
 tempo  <- sample(c(4, 5, 8, 10, 12, 15, 20), 1) * 60
 
-resp1 <- tempo / voltas            ## período (s)
-resp2 <- voltas / tempo            ## frequência (Hz)
+resp1 <- round(tempo / voltas, 2)   ## período (s)
+resp2 <- round(voltas / tempo, 4)   ## frequência (Hz)
 @
 
 \begin{question}
@@ -19,11 +19,23 @@ Um corpo em movimento circular uniforme completa \Sexpr{voltas} voltas em $\Sexp
 \end{question}
 
 \begin{solution}
+O período é o tempo total dividido pelo número de voltas:
+\[
+  T=\frac{\Sexpr{tempo}}{\Sexpr{voltas}}
+   =\Sexpr{resp1}\,\mathrm{s}.
+\]
+A frequência é o número de voltas por unidade de tempo:
+\[
+  f=\frac{\Sexpr{voltas}}{\Sexpr{tempo}}
+   =\Sexpr{resp2}\,\mathrm{Hz}.
+\]
+Como esperado, as grandezas são inversas: \(f=1/T\).
 
 \begin{answerlist}
-  \item T = $\Sexpr{resp1}$ s
-  \item f = $\Sexpr{resp2}$ Hz
+  \item \Sexpr{resp1} s
+  \item \Sexpr{resp2} Hz
 \end{answerlist}
+
 \end{solution}
 
 %% META-INFORMATION
