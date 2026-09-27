@@ -25,7 +25,7 @@ aleat = sample(1:15)
   questions[aleat[6]] <- "A porta da geladeira fechada impede a saída do frio."
   solutions[aleat[6]] <- FALSE
   explanations[aleat[6]] <- "Falso!!! Impede a entrada do calor"
-  questions[aleat[7]] <- "Calor mede a transferência de energia térmica de um corpo ao outro."
+  questions[aleat[7]] <- "Calor é energia transferida entre sistemas em razão de uma diferença de temperatura."
   solutions[aleat[7]] <-TRUE
   explanations[aleat[7]] <- ""
   questions[aleat[8]] <- "Dois corpos estão em equilíbrio térmico quando possuem quantidades iguais de energia térmica."
@@ -66,6 +66,10 @@ answerlist(questions[1:5])
 \end{question}
 
 \begin{solution}
+Cada afirmação deve ser analisada distinguindo três ideias: temperatura é uma grandeza de estado; energia interna pertence ao sistema; e calor é energia em trânsito devido a uma diferença de temperatura.
+
+Assim, expressões como ``um corpo possui calor'', ``o frio entra ou sai'' ou ``equilíbrio térmico significa mesma quantidade de energia'' não são adequadas. Em equilíbrio térmico, os corpos têm a mesma temperatura, e materiais isolantes apenas reduzem a taxa de transferência de energia.
+
 <<echo=FALSE, results=hide, results=tex>>=
 answerlist(
   paste("\\textbf{", ifelse(solutions[1:5], "Verdadeiro", "Falso"), "}", sep = ""),
