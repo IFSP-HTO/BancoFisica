@@ -1,0 +1,41 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+(FUVEST 2026 - 1ª Fase, questão 61) Em 1905, Albert Einstein propôs que a luz, um tipo de radiação eletromagnética, é composta por fótons, sendo que cada fóton tem energia proporcional à frequência da luz ($f$) e à constante de Planck ($h$). Nesses termos, $E=hf$, e a intensidade da luz é a medida da quantidade de fótons. Essa interpretação foi fundamental para o desenvolvimento da teoria quântica da luz e para explicar o efeito fotoelétrico. Esse efeito consiste em um fenômeno físico no qual elétrons são ejetados de um material, geralmente um metal, quando este é irradiado com luz cujos fótons têm energia maior que a energia de ligação do elétron ao material, também conhecida como função trabalho. Assim, quando o fóton incide sobre a superfície do material, a energia excedente transforma-se na energia cinética do elétron que escapa da superfície.
+
+Em qual das situações a seguir a energia cinética do elétron ejetado no efeito fotoelétrico aumenta?
+
+\begin{answerlist}
+  \item Aumentando a intensidade da luz incidente.
+  \item Usando uma superfície maior.
+  \item Aumentando a frequência da luz incidente.
+  \item Usando um material com função trabalho maior.
+  \item Diminuindo a energia do fóton incidente.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+No efeito fotoelétrico, a energia cinética máxima do elétron ejetado satisfaz
+\[
+K_{\max}=hf-\phi,
+\]
+em que $\phi$ é a função trabalho do material.
+
+Mantendo o material, $\phi$ permanece constante. Assim, para aumentar $K_{\max}$ é necessário aumentar a energia do fóton $hf$, o que se obtém aumentando a frequência $f$ da luz incidente.
+
+Aumentar a intensidade, sem mudar a frequência, aumenta a quantidade de fótons incidentes e pode aumentar o número de elétrons ejetados, mas não a energia de cada fóton. Uma função trabalho maior reduziria a energia cinética disponível.
+
+Portanto, a alternativa correta é a \textbf{C}.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: FUVEST 2026, 1ª Fase, caderno V1, questão 61.
+%% \extype{schoice}
+%% \exsolution{00100}
+%% \exname{Q116QuizFUVEST2026Fotoeletrico}
+%% \exsection{Fisica moderna; Efeito fotoeletrico; Fotons; Energia; Frequencia; FUVEST}
+%% \exusepackage[utf8]{inputenc}
