@@ -47,7 +47,7 @@ O sinal negativo mostra que o menino se move no sentido oposto ao homem.
 %% Fonte: Colisoes.pdf, exercício 4 (UFCE), adaptada e parametrizada.
 %% \extype{num}
 %% \exsolution{\Sexpr{v_menino}}
-%% \exname{Q109ClozeUFCEGeloRecuo}
+%% \exname{Q109NumUFCEGeloRecuo}
 %% \extol{0.01}
 %% \exsection{Mecanica; Quantidade de movimento; Conservacao; Recuo}
 %% \exusepackage[utf8]{inputenc}

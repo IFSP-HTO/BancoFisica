@@ -12,8 +12,19 @@
 	Quanta energia térmica é necessária fornecer a uma massa de \Sexpr{M} gramas de cobre para sua temperatura elevar-se de \Sexpr{t1} °C para 80 °C? Dado: calor específico do cobre: 0,09 cal/g°C
 \end{question}
 
-\begin{solution}:
-  \Sexpr{result} cal
+\begin{solution}
+A variação de temperatura é
+\[
+  \Delta T=80-\Sexpr{t1}\,^{\circ}\mathrm{C}.
+\]
+Usando \(Q=mc\Delta T\),
+\[
+  Q=\Sexpr{M}\cdot0{,}09\,(80-\Sexpr{t1})
+   =\Sexpr{result}\,\mathrm{cal}.
+\]
+
+Essa é a energia térmica que deve ser fornecida ao cobre.
+
 \end{solution}
 
 %% META-INFORMATION

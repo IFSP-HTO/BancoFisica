@@ -21,17 +21,27 @@ Quando um term\^ometro na escala Celsius sofrer uma varia\c{c}\~ao de $\Sexpr{dt
 \end{question}
 
 %% SOLUTION
-\begin{solution}:
+\begin{solution}
+Uma variação de temperatura de \(1\,^{\circ}\mathrm{C}\) corresponde numericamente a \(1\,\mathrm{K}\). Portanto,
+\[
+  \Delta T_K=\Delta T_C=\Sexpr{dtc}\,\mathrm{K}.
+\]
+
+Já entre Celsius e Fahrenheit,
+\[
+  \Delta T_F=1{,}8\,\Delta T_C.
+\]
+Assim,
+\[
+  \Delta T_F=1{,}8\cdot\Sexpr{dtc}
+             =\Sexpr{resp2}\,^{\circ}\mathrm{F}.
+\]
 
 \begin{answerlist}
-\item
-
-  \Sexpr{resp1}
-  
-\item
-  \Sexpr{resp2}  
-  
+  \item \Sexpr{resp1} K
+  \item \Sexpr{resp2} °F
 \end{answerlist}
+
 \end{solution}
 
 %% META-INFORMATION
@@ -39,4 +49,4 @@ Quando um term\^ometro na escala Celsius sofrer uma varia\c{c}\~ao de $\Sexpr{dt
 %% \exclozetype{num|num}
 %% \exsolution{\Sexpr{resp1}|\Sexpr{resp2}}
 %% \exname{Q13term}
-%% \extol{0.01}
+%% \extol{0.01|0.01}

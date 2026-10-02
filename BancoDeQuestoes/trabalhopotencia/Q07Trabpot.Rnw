@@ -27,24 +27,42 @@ Uma pessoa de \Sexpr{m} kg sobe \Sexpr{deg} degraus dessa escada em \Sexpr{t} s,
 
 \begin{answerlist}
 
-  \item O trabalho, em joules, realizado durante a subida. Caso necessário, arrendonde sua resposta para 1 casa decimal.
+  \item O trabalho, em joules, realizado durante a subida. Caso necessário, arredonde sua resposta para 1 casa decimal.
 
-  \item A potência média, em watts, durante a subida. Caso necessário, arrendonde sua resposta para 1 casa decimal.
+  \item A potência média, em watts, durante a subida. Caso necessário, arredonde sua resposta para 1 casa decimal.
   
 \end{answerlist}
 
 \end{question}
 
 %% SOLUTION
-\begin{solution}:
-  \begin{answerlist}
-  
-    \item  \Sexpr{resp1} J
-        
-    \item  \Sexpr{resp2} W
-  
-  \end{answerlist}      
-  
+\begin{solution}
+Cada degrau tem 0,150 m de altura, como indica a figura. Ao subir \(\Sexpr{deg}\) degraus, a pessoa eleva-se
+\[
+  h=\Sexpr{deg}\cdot 0{,}150\,\mathrm m.
+\]
+O trabalho realizado contra a gravidade é igual à variação da energia potencial:
+\[
+  \tau=m g h
+      =\Sexpr{m}\cdot 10\cdot\Sexpr{deg}\cdot 0{,}150
+      =\Sexpr{resp1}\,\mathrm J.
+\]
+
+A potência média é a razão entre o trabalho e o tempo:
+\[
+  P=\frac{\tau}{\Delta t}
+    =\frac{\Sexpr{resp1}}{\Sexpr{t}}
+    =\Sexpr{resp2}\,\mathrm W.
+\]
+
+\begin{answerlist}
+
+  \item \(\Sexpr{resp1}\,\mathrm J\)
+
+  \item \(\Sexpr{resp2}\,\mathrm W\)
+
+\end{answerlist}
+
 \end{solution}
 
 %% META-INFORMATION

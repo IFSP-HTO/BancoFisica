@@ -16,24 +16,42 @@ A água é muito comum no nosso cotidiano, e sabe-se que ela possui densidade de
   
   \begin{answerlist}
   
-    \item A quantidade de calor (em Kcal) necessária para evaporar $\Sexpr{vol}$ litros de água é de:
-    \item A quantidade de calor (em Kcal) necessária para solidificar $\Sexpr{vol}$ litros de água é de:
+    \item A quantidade de calor (em kcal) necessária para evaporar $\Sexpr{vol}$ litros de água é de:
+    \item O módulo da quantidade de calor (em kcal) cedida ao solidificar $\Sexpr{vol}$ litros de água é de:
   
   \end{answerlist}
   
 \end{question}
   
 %% SOLUTION
-\begin{solution}:
-    
-  \begin{answerlist}
-    \item
-      \Sexpr{resp1}Kcal
-  
-    \item
-      \Sexpr{resp2}Kcal
-  
-  \end{answerlist}
+\begin{solution}
+Como a densidade da água é \(1\,\mathrm{g/cm^3}\), \(\Sexpr{vol}\,\mathrm{L}\) correspondem a
+\[
+  m=\Sexpr{vol}\cdot1000
+   =\Sexpr{vol*1000}\,\mathrm{g}.
+\]
+
+Durante uma mudança de fase,
+\[
+  Q=mL.
+\]
+
+\begin{answerlist}
+  \item Para a vaporização,
+  \[
+    Q_v=\Sexpr{vol*1000}\cdot540
+       =\Sexpr{vol*1000*540}\,\mathrm{cal}
+       =\Sexpr{resp1}\,\mathrm{kcal}.
+  \]
+
+  \item Na solidificação, a água cede calor. O módulo é
+  \[
+    |Q_s|=\Sexpr{vol*1000}\cdot80
+         =\Sexpr{vol*1000*80}\,\mathrm{cal}
+         =\Sexpr{resp2}\,\mathrm{kcal}.
+  \]
+\end{answerlist}
+
 \end{solution}
   
   

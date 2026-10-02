@@ -26,15 +26,28 @@ resp2 <- round(resp1/d,1)
 \end{question}
 
 %% SOLUTION
-\begin{solution}:
-  \begin{answerlist}
-  
-    \item  \Sexpr{resp1} J
-        
-    \item  \Sexpr{resp2} N
-  
-  \end{answerlist}      
-  
+\begin{solution}
+Pelo teorema do trabalho--energia cinética, o trabalho da força resultante é igual à variação da energia cinética. Partindo do repouso,
+\[
+  \tau=\Delta K=\frac12 m v^2
+      =\frac12\cdot\Sexpr{m}\cdot(\Sexpr{v})^2
+      =\Sexpr{resp1}\,\mathrm J.
+\]
+
+Se a força é constante e paralela ao deslocamento \(d=\Sexpr{d}\,\mathrm m\), então
+\[
+  F=\frac{\tau}{d}=\frac{\Sexpr{resp1}}{\Sexpr{d}}
+    =\Sexpr{resp2}\,\mathrm N.
+\]
+
+\begin{answerlist}
+
+  \item \(\Sexpr{resp1}\,\mathrm J\)
+
+  \item \(\Sexpr{resp2}\,\mathrm N\)
+
+\end{answerlist}
+
 \end{solution}
 
 %% META-INFORMATION

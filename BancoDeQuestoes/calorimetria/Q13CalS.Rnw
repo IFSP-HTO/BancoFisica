@@ -18,10 +18,27 @@ Um bloco de ferro de $\Sexpr{vol1}$ cm³ é resfriado de $\Sexpr{temp1}$ °C par
 \end{question}
 
 %% SOLUTION
-\begin{solution}:
-  
-  \Sexpr{resp1}cal
-        
+\begin{solution}
+A massa do bloco é obtida pela densidade:
+\[
+  m=\rho V
+   =7{,}85\cdot\Sexpr{vol1}
+   =\Sexpr{7.85*vol1}\,\mathrm{g}.
+\]
+
+Como o bloco esfria, o módulo da variação de temperatura é
+\[
+  |\Delta T|=\Sexpr{temp1}-\Sexpr{temp2}
+            =\Sexpr{temp1-temp2}\,^{\circ}\mathrm{C}.
+\]
+
+O módulo do calor cedido é
+\[
+  |Q|=mc|\Delta T|
+     =\Sexpr{7.85*vol1}\cdot0{,}10\cdot\Sexpr{temp1-temp2}
+     =\Sexpr{resp1}\,\mathrm{cal}.
+\]
+
 \end{solution}
 
 %% META-INFORMATION

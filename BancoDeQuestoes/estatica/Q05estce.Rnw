@@ -30,13 +30,30 @@ Considerando a aceleração da gravidade igual a $10 m/s^2$ e considerando até 
 
 
 \begin{solution}
-%% Supply a solution here!
-  \begin{answerlist}
-    \item \Sexpr{respa} N
+A barra está em equilíbrio translacional e rotacional. Tomando os torques em torno de \(A\), a reação em \(A\) não produz momento. O peso da barra atua em seu centro, a \(0{,}5\,\mathrm{m}\) de \(A\), e o bloco está a \(0{,}8\,\mathrm{m}\) de \(A\). Logo,
+\[
+  R_B\cdot 1
+  =(\Sexpr{mb}\cdot 10)\,0{,}5
+   +(\Sexpr{mcaixa}\cdot 10)\,0{,}8,
+\]
+portanto
+\[
+  R_B=\Sexpr{respb}\,\mathrm{N}.
+\]
 
-    \item \Sexpr{respb} N
+Pelo equilíbrio vertical,
+\[
+  R_A+R_B=(\Sexpr{mb}+\Sexpr{mcaixa})\,10,
+\]
+e então
+\[
+  R_A=\Sexpr{respa}\,\mathrm{N}.
+\]
 
-  \end{answerlist}
+\begin{answerlist}
+  \item \Sexpr{respa} N
+  \item \Sexpr{respb} N
+\end{answerlist}
 
 \end{solution}
 

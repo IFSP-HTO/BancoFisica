@@ -13,8 +13,8 @@ questions[aleat[5]] <- "as operações II e III."
 
 solutions[aleat[1]] <-  FALSE
 solutions[aleat[2]] <-  FALSE
-solutions[aleat[3]] <-  TRUE
-solutions[aleat[4]] <-  FALSE
+solutions[aleat[3]] <-  FALSE
+solutions[aleat[4]] <-  TRUE
 solutions[aleat[5]] <-  FALSE
 
 @
@@ -35,10 +35,18 @@ answerlist(questions)
 \end{question}
 
 \begin{solution}
+A operação I é adequada: deixar espaços entre os alimentos favorece a circulação do ar por convecção no interior da geladeira.
+
+A operação II é inadequada. Uma camada espessa de gelo atua como resistência térmica adicional e prejudica a troca de calor necessária ao funcionamento eficiente do aparelho.
+
+A operação III também é adequada: poeira e gordura no condensador traseiro dificultam a transferência de energia para o ambiente.
+
+Portanto, as operações corretas são \textbf{I e III}.
+
 <<echo=FALSE, results=hide, results=tex>>=
-answerlist(
-  paste("\\textbf{", ifelse(solutions, "Verdadeiro", "Falso"), "}"))
+answerlist(ifelse(solutions, paste("\\textbf{", questions, "}", sep=""), questions))
 @
+
 \end{solution}
 %% META-INFORMATION
 %% \extype{schoice}

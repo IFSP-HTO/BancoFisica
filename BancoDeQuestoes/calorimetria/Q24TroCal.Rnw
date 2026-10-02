@@ -22,10 +22,34 @@
 \end{question}
   
 %% SOLUTION
-\begin{solution}:
+\begin{solution}
+Como as duas porções são de água, possuem o mesmo calor específico. A massa da água quente é
+\[
+  m_1=\Sexpr{vol1}\,\mathrm{L}
+     =\Sexpr{vol1*1000}\,\mathrm{g},
+\]
+enquanto a massa adicionada é \(m_2=\Sexpr{vol2}\,\mathrm{g}\).
 
-  \Sexpr{resp1} °C
-  
+Sem perdas de calor,
+\[
+  m_1c(T_f-100)+m_2c(T_f-\Sexpr{temp2})=0.
+\]
+Cancelando \(c\),
+\[
+  T_f=
+  \frac{m_1\cdot100+m_2\cdot\Sexpr{temp2}}
+       {m_1+m_2}.
+\]
+
+Portanto,
+\[
+  T_f=
+  \frac{\Sexpr{vol1*1000}\cdot100+
+        \Sexpr{vol2}\cdot\Sexpr{temp2}}
+       {\Sexpr{vol1*1000}+\Sexpr{vol2}}
+  =\Sexpr{resp1}\,^{\circ}\mathrm{C}.
+\]
+
 \end{solution}
   
 %% META-INFORMATION

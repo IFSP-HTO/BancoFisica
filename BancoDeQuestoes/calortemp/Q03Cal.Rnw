@@ -30,10 +30,14 @@ answerlist(questions)
 \end{question}
 
 \begin{solution}
+Se os dois pisos estão no mesmo ambiente há tempo suficiente, suas temperaturas podem ser praticamente iguais. A sensação térmica depende, porém, da taxa com que cada material troca energia com o pé.
+
+A cerâmica conduz energia térmica mais rapidamente que a madeira. Assim, quando o piso está mais frio que o pé, a cerâmica retira energia do corpo mais rapidamente e parece mais fria.
+
+Logo, a alternativa correta é a que afirma que \textbf{o piso de madeira troca menos calor com nossos pés, produzindo menor sensação de frio}.
 
 <<echo=FALSE, results=hide, results=tex>>=
-answerlist(
-  paste("\\textbf{", ifelse(solutions, "Verdadeiro", "Falso"), "}"))
+answerlist(ifelse(solutions, paste("\\textbf{", questions, "}", sep=""), questions))
 @
 
 \end{solution}

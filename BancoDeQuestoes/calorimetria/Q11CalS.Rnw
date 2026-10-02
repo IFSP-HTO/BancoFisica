@@ -5,9 +5,9 @@
   
   time1 <- sample(seq(from=1,to=5,by=1),1)
   
-  temp1 <- sample(seq(from=150,to=300,by=1),1)
+  temp1 <- sample(seq(from=20,to=40,by=1),1)
   
-  temp2 <- sample(seq(from=400,to=550,by=1),1)
+  temp2 <- sample(seq(from=60,to=90,by=1),1)
   
   resp1 <- round((pot1*time1*60)/(temp2-temp1), digits = 1)
   
@@ -22,10 +22,27 @@ Uma fonte calorífica fornece calor continuamente, à razão de $\Sexpr{pot1}$ c
 \end{question}
   
 %% SOLUTION
-\begin{solution}:
-    
-  \Sexpr{resp1}g
-  
+\begin{solution}
+A fonte fornece energia à taxa de \(\Sexpr{pot1}\,\mathrm{cal/s}\). Em \(\Sexpr{time1}\,\mathrm{min}=\Sexpr{time1*60}\,\mathrm{s}\),
+\[
+  Q=\Sexpr{pot1}\cdot\Sexpr{time1*60}
+   =\Sexpr{pot1*time1*60}\,\mathrm{cal}.
+\]
+
+A variação de temperatura da água é
+\[
+  \Delta T=\Sexpr{temp2}-\Sexpr{temp1}
+          =\Sexpr{temp2-temp1}\,^{\circ}\mathrm{C}.
+\]
+
+Como \(Q=mc\Delta T\) e \(c=1\,\mathrm{cal/(g\,^{\circ}C)}\),
+\[
+  m=\frac{Q}{c\Delta T}
+   =\frac{\Sexpr{pot1*time1*60}}
+          {1\cdot\Sexpr{temp2-temp1}}
+   =\Sexpr{resp1}\,\mathrm{g}.
+\]
+
 \end{solution}
   
 %% META-INFORMATION

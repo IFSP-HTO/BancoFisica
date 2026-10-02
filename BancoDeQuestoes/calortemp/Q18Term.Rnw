@@ -23,16 +23,34 @@ Existe uma temperatura que tem o mesmo valor na escala Celsius e na escala Fahre
 \end{question}
 
 %% SOLUTION
-\begin{solution}:
-    
-    \begin{answerlist}
-      \item
-        \Sexpr{resp1} °C
-  
-      \item
-        \Sexpr{resp2}K
-  
-  \end{answerlist}
+\begin{solution}
+Procuramos uma temperatura cujo valor numérico seja o mesmo nas escalas Celsius e Fahrenheit. Usando
+\[
+  T_F=1{,}8T_C+32
+\]
+e impondo \(T_F=T_C=T\), temos
+\[
+  T=1{,}8T+32.
+\]
+Assim,
+\[
+  -0{,}8T=32
+  \quad\Rightarrow\quad
+  T=-40.
+\]
+
+Logo, \(-40\,^{\circ}\mathrm{C}=-40\,^{\circ}\mathrm{F}\).
+
+Na escala Kelvin, usando \(T_K=T_C+273\),
+\[
+  T_K=-40+273=233\,\mathrm{K}.
+\]
+
+\begin{answerlist}
+  \item \Sexpr{resp1} °C
+  \item \Sexpr{resp2} K
+\end{answerlist}
+
 \end{solution}
   
 %% META-INFORMATION

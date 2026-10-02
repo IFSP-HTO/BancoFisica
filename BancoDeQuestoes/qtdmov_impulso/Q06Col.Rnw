@@ -1,5 +1,5 @@
 <<echo=FALSE, results=hide>>=
-include_supplement("Q06Col.jpg")
+include_supplement("Q06Col.jpg", dir = "../figuras")
 
 casos <- data.frame(
   mA = c(800, 600, 900, 750),

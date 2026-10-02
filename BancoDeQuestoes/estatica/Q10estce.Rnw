@@ -19,8 +19,20 @@ include_supplement("Q10estce.jpg")
 \end{question}
 
 \begin{solution}
-%% Supply a solution here!
-  \Sexpr{resp} kg
+A criança mais pesada está a \(1{,}0\,\mathrm{m}\) do apoio. Como a tábua mede \(3\,\mathrm{m}\), a criança mais leve está a \(2{,}0\,\mathrm{m}\) do apoio.
+
+O centro de massa da tábua está no seu ponto médio, a \(1{,}5\,\mathrm{m}\) da extremidade onde está a criança mais pesada. Portanto, ele fica a \(0{,}5\,\mathrm{m}\) do apoio, do lado da criança mais leve.
+
+Se \(M\) é a massa da tábua, o equilíbrio dos torques fornece
+\[
+  \Sexpr{m2}g\cdot1
+  =\Sexpr{m1}g\cdot2+Mg\cdot0{,}5.
+\]
+Cancelando \(g\),
+\[
+  M=2\left(\Sexpr{m2}-2\Sexpr{m1}\right)
+   =\Sexpr{resp}\,\mathrm{kg}.
+\]
 
 \end{solution}
 

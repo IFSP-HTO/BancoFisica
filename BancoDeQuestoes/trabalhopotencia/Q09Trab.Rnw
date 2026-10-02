@@ -6,8 +6,8 @@ d <- sample(seq(from=0.2,to=2,by=0.1),1)
 
 include_supplement("Q09Trab.jpg")
 
-resp1 <- round(Fx*d/5,1)
-resp2 <- round(Fx*d,1)
+resp1 <- round(Fx/5,1)
+resp2 <- round(-Fx*d,1)
 
 @
 \usepackage[utf8]{inputenc}
@@ -32,15 +32,33 @@ resp2 <- round(Fx*d,1)
 \end{question}
 
 %% SOLUTION
-\begin{solution}:
-  \begin{answerlist}
-  
-    \item  \Sexpr{resp1} kg
-        
-    \item  \Sexpr{resp2} J
-  
-  \end{answerlist}      
-  
+\begin{solution}
+Como o bloco sobe o plano com velocidade constante, a força resultante é nula. Na direção do plano, a componente do peso para baixo é \(mg\sin 30^\circ\), de modo que
+\[
+  F=mg\sin 30^\circ
+  \quad\Rightarrow\quad
+  m=\frac{F}{g\sin 30^\circ}
+   =\frac{\Sexpr{Fx}}{10\cdot 0{,}5}
+   =\Sexpr{resp1}\,\mathrm{kg}.
+\]
+
+O peso atua na vertical e o deslocamento forma \(30^\circ\) com a horizontal; o ângulo entre eles é \(120^\circ\). Assim,
+\[
+  \tau_{\text{peso}}=m g d\cos 120^\circ
+    =-m g d\sin 30^\circ
+    =-\Sexpr{Fx}\cdot\Sexpr{d}
+    =\Sexpr{resp2}\,\mathrm J.
+\]
+O sinal negativo indica que o peso se opõe ao deslocamento.
+
+\begin{answerlist}
+
+  \item \(\Sexpr{resp1}\,\mathrm{kg}\)
+
+  \item \(\Sexpr{resp2}\,\mathrm J\)
+
+\end{answerlist}
+
 \end{solution}
 
 %% META-INFORMATION

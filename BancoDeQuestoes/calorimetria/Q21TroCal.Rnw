@@ -25,10 +25,36 @@ Ao esquentar a água para o chimarrão, um gaúcho utiliza uma chaleira de capac
 \end{question}
   
 %% SOLUTION
-\begin{solution}:
-    
-  \Sexpr{resp1} cal
-  
+\begin{solution}
+A água e a chaleira sofrem a mesma variação de temperatura:
+\[
+  \Delta T=\Sexpr{temp2}-\Sexpr{temp1}
+          =\Sexpr{temp2-temp1}\,^{\circ}\mathrm{C}.
+\]
+
+A massa de \(\Sexpr{vol}\,\mathrm{L}\) de água é
+\[
+  m=\Sexpr{vol}\cdot1000
+   =\Sexpr{vol*1000}\,\mathrm{g}.
+\]
+
+O calor recebido pela água é
+\[
+  Q_{\mathrm{agua}}=mc\Delta T,
+\]
+e o recebido pela chaleira é
+\[
+  Q_{\mathrm{chaleira}}=C\Delta T.
+\]
+
+Portanto,
+\[
+  Q_{\mathrm{total}}
+  =\left(\Sexpr{vol*1000}\cdot1+\Sexpr{czinho}\right)
+   \Sexpr{temp2-temp1}
+  =\Sexpr{resp1}\,\mathrm{cal}.
+\]
+
 \end{solution}
   
 %% META-INFORMATION

@@ -28,12 +28,38 @@ Desprezando o peso do antebraço e da mão e adotando $g = 10 m/s^2$, determine:
 \end{question}
 
 \begin{solution}
-%% Supply a solution here!
+O peso do objeto é
+\[
+  P=Mg=\Sexpr{m}\cdot10.
+\]
+
+Tomando os torques em relação ao cotovelo, a força \(C\) não produz momento. Para o equilíbrio,
+\[
+  Fd=Pa.
+\]
+Com \(d=0{,}04\,\mathrm{m}\) e \(a=0{,}30\,\mathrm{m}\),
+\[
+  F=\frac{a}{d}P
+   =\frac{0{,}30}{0{,}04}\,(\Sexpr{m}\cdot10)
+   =\Sexpr{respa}\,\mathrm{N}.
+\]
+
+No equilíbrio vertical, a força do bíceps é equilibrada pelo peso do objeto e pela força \(C\), que aponta para baixo:
+\[
+  F=P+C.
+\]
+Assim,
+\[
+  C=F-P
+   =\Sexpr{respa}-\Sexpr{10*m}
+   =\Sexpr{respb}\,\mathrm{N}.
+\]
+
 \begin{answerlist}
   \item \Sexpr{respa} N
   \item \Sexpr{respb} N
 \end{answerlist}
-  
+
 \end{solution}
 
 %% META-INFORMATION

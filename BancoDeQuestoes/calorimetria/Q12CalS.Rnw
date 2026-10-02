@@ -19,10 +19,26 @@ João queria aquecer uma barra de ferro de $\Sexpr{mass1}$ kg de $\Sexpr{temp1}$
 \end{question}
 
 %% SOLUTION
-\begin{solution}:
-    
-  \Sexpr{resp1} cal
-  
+\begin{solution}
+A massa deve ser expressa em gramas:
+\[
+  m=\Sexpr{mass1}\,\mathrm{kg}
+   =\Sexpr{1000*mass1}\,\mathrm{g}.
+\]
+
+A variação de temperatura é
+\[
+  \Delta T=\Sexpr{temp2}-\Sexpr{temp1}
+          =\Sexpr{temp2-temp1}\,^{\circ}\mathrm{C}.
+\]
+
+Assim,
+\[
+  Q=mc\Delta T
+   =\Sexpr{1000*mass1}\cdot0{,}12\cdot\Sexpr{temp2-temp1}
+   =\Sexpr{resp1}\,\mathrm{cal}.
+\]
+
 \end{solution}
   
 %% META-INFORMATION

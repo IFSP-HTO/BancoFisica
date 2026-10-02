@@ -5,9 +5,9 @@ aleat = sample(1:5)
 questions <- numeric(5)
 solutions <- logical(5)
 
-questions[aleat[1]] <- "O somatório de toda a energia de agitação das partículas de um corpo é a energia térmica desse corpo."
+questions[aleat[1]] <- "A energia térmica de um corpo está associada à energia microscópica de suas partículas."
 questions[aleat[2]] <- "Dois corpos atingem o equilíbrio térmico quando suas temperaturas se tornam iguais."
-questions[aleat[3]] <- "A energia térmica de um corpo é função da sua temperatura."
+questions[aleat[3]] <- "Mantidas a quantidade de matéria e as condições do sistema, uma alteração de temperatura está associada a uma alteração de sua energia térmica."
 questions[aleat[4]] <- "Somente podemos chamar de calor a energia térmica em trânsito; assim, não podemos afirmar que um corpo contém calor."
 questions[aleat[5]] <- "A quantidade de calor que um corpo contém depende de sua temperatura e do número de partículas nele existentes."
 
@@ -30,13 +30,13 @@ answerlist(questions)
 \end{question}
 
 \begin{solution}
+Calor não é uma quantidade armazenada em um corpo. Em Física, chamamos de calor a energia transferida entre sistemas em razão de uma diferença de temperatura.
+
+Por isso, a proposição falsa é a que afirma que um corpo ``contém calor''. Um corpo possui energia interna ou energia térmica, mas calor designa energia em trânsito.
 
 <<echo=FALSE, results=hide, results=tex>>=
-answerlist(
-  paste("\\textbf{", ifelse(solutions, "Verdadeiro", "Falso"), "}"))
+answerlist(ifelse(solutions, paste("\\textbf{", questions, "}", sep=""), questions))
 @
-
-
 
 \end{solution}
 

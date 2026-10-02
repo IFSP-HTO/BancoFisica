@@ -6,8 +6,9 @@ v  <- sample(c(18, 36, 54, 72, 90), 1)       ## velocidade escalar (km/h)
 t  <- sample(c(5, 10, 15, 20), 1)            ## tempo (s)
 
 v_ms <- v / 3.6
-omega  <- v_ms / r                            ## velocidade angular média (rad/s)
-angulo <- omega * t                           ## ângulo descrito (rad)
+omega_exact <- v_ms / r
+omega  <- round(omega_exact, 3)               ## velocidade angular média (rad/s)
+angulo <- round(omega_exact * t, 3)           ## ângulo descrito (rad)
 @
 
 \begin{question}
@@ -21,11 +22,31 @@ Uma circunferência de raio $\Sexpr{r}$ m é percorrida durante $\Sexpr{t}$ s po
 \end{question}
 
 \begin{solution}
+Primeiro convertemos a velocidade linear para o SI:
+\[
+  v=\frac{\Sexpr{v}}{3{,}6}=\Sexpr{v_ms}\,\mathrm{m/s}.
+\]
+Para movimento circular,
+\[
+  v=\omega r.
+\]
+Logo,
+\[
+  \omega=\frac{v}{r}
+        =\frac{\Sexpr{v_ms}}{\Sexpr{r}}
+        =\Sexpr{omega}\,\mathrm{rad/s}.
+\]
+O ângulo descrito em \(\Sexpr{t}\) s é
+\[
+  \Delta\theta=\omega t
+              =\Sexpr{angulo}\,\mathrm{rad}.
+\]
 
 \begin{answerlist}
-  \item $\omega = \Sexpr{omega}$ rad/s
-  \item $\Delta\theta = \Sexpr{angulo}$ rad
+  \item \Sexpr{omega} rad/s
+  \item \Sexpr{angulo} rad
 \end{answerlist}
+
 \end{solution}
 
 %% META-INFORMATION

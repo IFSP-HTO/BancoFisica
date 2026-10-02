@@ -15,14 +15,29 @@
   
 \begin{question}
   
-Um gás de $\Sexpr{mols1}$ ocupa volume de $\Sexpr{vol1}$ litros e está a uma pressão de $\Sexpr{press1}$ atm. Determine a temperatura que se encontra o gás. Dado: R = 0,082 atm.L/mol.K
+Uma amostra de $\Sexpr{mols1}$ mol de gás ideal ocupa um volume de $\Sexpr{vol1}$ litros e está a uma pressão de $\Sexpr{press1}$ atm. Determine a temperatura do gás. Dado: R = 0,082 atm.L/mol.K
 
 \end{question}
   
 %% SOLUTION
-\begin{solution}:
-    
-  \Sexpr{resp1}K
+\begin{solution}
+Pela equação de estado do gás ideal,
+\[
+  PV=nRT.
+\]
+
+Isolando a temperatura,
+\[
+  T=\frac{PV}{nR}.
+\]
+
+Substituindo,
+\[
+  T=
+  \frac{\Sexpr{press1}\cdot\Sexpr{vol1}}
+       {\Sexpr{mols1}\cdot0{,}082}
+  =\Sexpr{resp1}\,\mathrm{K}.
+\]
 
 \end{solution}
   

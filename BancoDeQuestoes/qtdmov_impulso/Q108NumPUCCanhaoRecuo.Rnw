@@ -46,7 +46,7 @@ O sinal negativo indica que o canhão recua no sentido oposto ao projétil.
 %% Fonte: Colisoes.pdf, exercício 1 (PUC), adaptada e parametrizada.
 %% \extype{num}
 %% \exsolution{\Sexpr{vc}}
-%% \exname{Q108ClozePUCCanhaoRecuo}
+%% \exname{Q108NumPUCCanhaoRecuo}
 %% \extol{0.01}
 %% \exsection{Mecanica; Quantidade de movimento; Conservacao; Recuo}
 %% \exusepackage[utf8]{inputenc}

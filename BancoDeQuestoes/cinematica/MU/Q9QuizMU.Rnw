@@ -36,10 +36,20 @@ answerlist(questions)
 \end{question}
 
 \begin{solution}
+A motocicleta e o trem se movem no mesmo sentido, então a velocidade relativa é
+\[
+  v_{\mathrm{rel}}=\Sexpr{v1}-\Sexpr{v2}=\Sexpr{v1-v2}\,\mathrm{m/s}.
+\]
+Para ultrapassar completamente o trem, a motocicleta precisa avançar 100 m em relação a ele. Logo,
+\[
+  t=\frac{100}{\Sexpr{v1-v2}}
+   =\Sexpr{resp}\,\mathrm{s}.
+\]
+
 <<echo=FALSE, results=hide, results=tex>>=
-answerlist(
-  paste("\\textbf{", ifelse(solutions, "Verdadeiro", "Falso"), "}"))
+answerlist(ifelse(solutions, paste("\\textbf{", questions, "}", sep=""), questions))
 @
+
 \end{solution}
 
 %% META-INFORMATION

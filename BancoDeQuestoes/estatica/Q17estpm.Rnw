@@ -21,8 +21,37 @@ Determine o peso da carga Q,  em kgf. Caso necessário, arredonde sua resposta p
 \end{question}
 
 \begin{solution}
-%% Supply a solution here!
-  \Sexpr{resp} kgf
+A corda que passa pela polia ideal tem a mesma tração em todos os seus pontos. Logo, a tração do ramo da direita vale
+\[
+  T_D=\Sexpr{Fa}\,\mathrm{N}.
+\]
+
+Se \(T_E\) é a tração do cabo da esquerda, o equilíbrio horizontal do nó fornece
+\[
+  T_E\sin\theta=T_D\cos\theta.
+\]
+Com \(\sin\theta=0{,}6\) e \(\cos\theta=0{,}8\),
+\[
+  T_E=\frac{0{,}8}{0{,}6}T_D
+     =\frac{4}{3}T_D.
+\]
+
+No eixo vertical, o peso \(Q\) é
+\[
+  Q=T_E\cos\theta+T_D\sin\theta.
+\]
+Assim,
+\[
+  Q=\frac{4}{3}T_D(0{,}8)+T_D(0{,}6)
+   =\frac{5}{3}T_D
+   =\frac{5}{3}\,\Sexpr{Fa}\,\mathrm{N}.
+\]
+
+Como \(1\,\mathrm{kgf}=10\,\mathrm{N}\),
+\[
+  Q=\frac{\Sexpr{Fa}}{6}
+   =\Sexpr{resp}\,\mathrm{kgf}.
+\]
 
 \end{solution}
 

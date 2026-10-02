@@ -2,21 +2,53 @@
 
 
 m <- sample(seq(from=10,to=400,by=5),1)
-resp <- round(600/m,1)
+q_fusao_inicio <- 400
+q_fusao_fim <- 1000
+delta_q_fusao <- q_fusao_fim - q_fusao_inicio
+resp <- round(delta_q_fusao/m,1)
 @
 \usepackage[portuguese]{babel}
 \usepackage{graphicx}
 
 \begin{question}
  
-O gráfico representa a temperatura de uma amostra de massa \Sexpr{m} gramas de determinado metal, inicialmente sólido, em função da quantidade de calor por ela absorvida. Determine o calor latente de fusão desse metal, em cal/g. \textit{Arredonde sua resposta para 1 casa decimal.}
+O gráfico representa a temperatura de uma amostra de massa \Sexpr{m} gramas de determinado metal, inicialmente sólido, em função da quantidade de calor por ela absorvida.
+
+\begin{figure}[h!]
+\begin{center}
+<<fig=TRUE, height=4, width=6, echo=FALSE, eps=FALSE, results=hide>>=
+q <- c(0, q_fusao_inicio, q_fusao_fim, 1400)
+temp <- c(20, 100, 100, 160)
+plot(q, temp, type="l", lwd=2,
+     xlab="Calor absorvido (cal)",
+     ylab="Temperatura (graus Celsius)",
+     xaxt="n")
+axis(1, at=c(0, q_fusao_inicio, q_fusao_fim, 1400))
+points(q, temp, pch=20)
+@
+\end{center}
+\end{figure}
+
+Determine o calor latente de fusão desse metal, em cal/g. \textit{Arredonde sua resposta para 1 casa decimal.}
 
 \end{question}
 
 \begin{solution}
-  
-  \Sexpr{resp} cal/g
-  
+Durante a fusão, a temperatura permanece constante. Pelo gráfico, o patamar de fusão começa quando a amostra já absorveu \(\Sexpr{q_fusao_inicio}\,\mathrm{cal}\) e termina em \(\Sexpr{q_fusao_fim}\,\mathrm{cal}\).
+
+Assim, o calor usado apenas na mudança de fase é
+\[
+  Q_L=\Sexpr{q_fusao_fim}-\Sexpr{q_fusao_inicio}
+     =\Sexpr{delta_q_fusao}\,\mathrm{cal}.
+\]
+
+Como \(Q_L=mL\),
+\[
+  L=\frac{Q_L}{m}
+   =\frac{\Sexpr{delta_q_fusao}}{\Sexpr{m}}
+   =\Sexpr{resp}\,\mathrm{cal/g}.
+\]
+
 \end{solution}
 
 %% META-INFORMATION

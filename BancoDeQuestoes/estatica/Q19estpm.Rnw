@@ -20,8 +20,23 @@ include_supplement("Q19estpm.jpg")
 \end{question}
 
 \begin{solution}
-%% Supply a solution here!
-  \Sexpr{resp} N/m
+A mola se alonga
+\[
+  \Delta L=L-L_0
+          =\Sexpr{l}-\Sexpr{lo}
+          =\Sexpr{round(l-lo,2)}\,\mathrm{m}.
+\]
+
+Como não há atrito, no equilíbrio a força elástica equilibra a componente do peso paralela ao plano:
+\[
+  k\Delta L=mg\sin30^\circ.
+\]
+Com \(g=10\,\mathrm{m/s^2}\) e \(\sin30^\circ=0{,}5\),
+\[
+  k=\frac{\Sexpr{m}\cdot10\cdot0{,}5}
+          {\Sexpr{round(l-lo,2)}}
+   =\Sexpr{resp}\,\mathrm{N/m}.
+\]
 
 \end{solution}
 

@@ -21,8 +21,33 @@ Considerando os fios ideais e de pesos desprezíveis, determine a tração na co
 \end{question}
 
 \begin{solution}
-%% Supply a solution here!
-  \Sexpr{resp} N
+No nó \(B\) atuam três forças: o peso \(mg\), a tração \(T_{AB}\) e a tração \(T_{BC}\).
+
+No eixo horizontal,
+\[
+  T_{AB}\cos30^\circ=T_{BC}\cos60^\circ.
+\]
+Como \(\cos30^\circ=\sqrt{3}/2\) e \(\cos60^\circ=1/2\),
+\[
+  T_{BC}=\sqrt{3}\,T_{AB}.
+\]
+
+No eixo vertical,
+\[
+  T_{AB}\sin30^\circ+T_{BC}\sin60^\circ=mg.
+\]
+Substituindo \(T_{BC}=\sqrt{3}T_{AB}\),
+\[
+  \frac{1}{2}T_{AB}
+  +\frac{\sqrt{3}}{2}\left(\sqrt{3}T_{AB}\right)
+  =2T_{AB}=mg.
+\]
+Portanto,
+\[
+  T_{BC}=\frac{\sqrt{3}}{2}mg
+        =\frac{\sqrt{3}}{2}\,\Sexpr{m}\cdot10
+        =\Sexpr{resp}\,\mathrm{N}.
+\]
 
 \end{solution}
 

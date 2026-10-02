@@ -23,7 +23,7 @@ include_supplement("Q132ENEM2017CintosDesaceleracao.png", dir = "../figuras")
 
 \begin{question}
 
-(ENEM 2017, adaptada) Em testes de segurança, cinco modelos de cinto foram usados em bonecos de mesma massa submetidos a colisões de mesma duração. As velocidades imediatamente antes e após o impacto também foram iguais em todos os testes. A figura mostra o módulo da desaceleração de cada boneco em função do tempo.
+(ENEM 2017, adaptada) Em testes de segurança, cinco modelos de cinto foram usados em bonecos de mesma massa. As velocidades imediatamente antes e após o impacto foram iguais em todos os testes. A figura mostra o módulo da desaceleração de cada boneco em função do tempo.
 
 \begin{center}
 \includegraphics[width=0.82\textwidth,keepaspectratio]{Q132ENEM2017CintosDesaceleracao.png}
@@ -53,7 +53,7 @@ Pelo teorema do impulso,
 \[
 I=\Delta p.
 \]
-Assim, todos os cintos produzem o mesmo impulso total sobre os bonecos. O que muda é a maneira como esse impulso é distribuído durante o intervalo da colisão.
+Assim, todos os cintos produzem o mesmo impulso total sobre os bonecos. O que muda é a maneira como esse impulso é distribuído ao longo do tempo em cada teste.
 
 Para reduzir o risco de lesões, interessa diminuir os maiores valores instantâneos da força e, consequentemente, da desaceleração. Observando o gráfico, o \textbf{Cinto 2} apresenta o menor valor máximo de desaceleração, cerca de $65\,\mathrm{m/s^2}$.
 

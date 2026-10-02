@@ -51,11 +51,29 @@ answerlist(questions)
 \end{question}
 
 %% SOLUTION
-\begin{solution}:
+\begin{solution}
+No percurso completo, o ônibus percorre \(350\,\mathrm{km}\) entre 8 h e 11 h \(\Sexpr{tmin}\) min. O tempo total é
+\[
+  \Delta t=3+\frac{\Sexpr{tmin}}{60}\,\mathrm{h}.
+\]
+Assim, a velocidade média é
+\[
+  v_m=\frac{350}{3+\Sexpr{tmin}/60}
+     =\Sexpr{resp1}\,\mathrm{km/h}.
+\]
 
-<<echo=FALSE, results=hide, results=tex>>=
-answerlist(paste(solutions, ".", sep = ""))
-@
+No trecho Jundiaí--Campinas,
+\[
+  \Delta t=\frac{45}{\Sexpr{v2}}\,\mathrm{h}
+           =\frac{45}{\Sexpr{v2}}\cdot60\,\mathrm{min}.
+\]
+Separando a parte inteira dos minutos e convertendo a fração restante em segundos, obtemos \(\Sexpr{resp2}\) min e \(\Sexpr{resp3}\) s.
+
+\begin{answerlist}
+  \item \Sexpr{resp1} km/h
+  \item \Sexpr{resp2} min
+  \item \Sexpr{resp3} s
+\end{answerlist}
 
 \end{solution}
 

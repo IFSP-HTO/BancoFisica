@@ -32,14 +32,29 @@ options(OutDec=",")
 %% SOLUTION
 
 \begin{solution}
+O comprimento total da composição é
+\[
+  L=20\cdot\Sexpr{elements}=\Sexpr{20*elements}\,\mathrm{m}.
+\]
 
-  \begin{answerlist}
+Para ultrapassar um sinaleiro, o trem precisa avançar uma distância igual ao próprio comprimento:
+\[
+  t_1=\frac{L}{v}
+     =\frac{\Sexpr{20*elements}}{\Sexpr{speed}}
+     =\Sexpr{result_a}\,\mathrm{s}.
+\]
 
-    \item \Sexpr{result_a}
+Para atravessar completamente uma ponte de \(100\,\mathrm{m}\), a frente do trem deve percorrer \(L+100\):
+\[
+  t_2=\frac{L+100}{v}
+     =\frac{\Sexpr{20*elements+100}}{\Sexpr{speed}}
+     =\Sexpr{result_b}\,\mathrm{s}.
+\]
 
-    \item \Sexpr{result_b}
-
-  \end{answerlist}
+\begin{answerlist}
+  \item \Sexpr{result_a} s
+  \item \Sexpr{result_b} s
+\end{answerlist}
 
 \end{solution}
 

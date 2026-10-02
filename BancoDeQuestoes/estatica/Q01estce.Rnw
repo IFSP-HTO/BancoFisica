@@ -18,8 +18,18 @@ include_supplement("Q01estce.jpg")
 \end{question}
 
 \begin{solution}
-%% Supply a solution here!
-  \Sexpr{resp} kN
+No equilíbrio, a soma dos torques em torno do eixo de rotação do braço deve ser nula. O flutuador atua a \(24\,\mathrm{m}\) do eixo, enquanto o pistão atua a \(2\,\mathrm{m}\). Assim,
+\[
+  \Sexpr{force}\cdot 24 = F_p\cdot 2.
+\]
+Logo,
+\[
+  F_p = 12\cdot \Sexpr{force}
+      = \Sexpr{12*force}\,\mathrm{N}
+      = \Sexpr{resp}\,\mathrm{kN}.
+\]
+
+Portanto, a força exercida pelo braço sobre o pistão é \(\Sexpr{resp}\,\mathrm{kN}\).
 
 \end{solution}
 

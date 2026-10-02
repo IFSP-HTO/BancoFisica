@@ -54,7 +54,7 @@ F_{\mathrm{m}}
 %% Fonte: Quantidade de Movimento.pdf, exercício 8 (FUVEST), adaptada e parametrizada.
 %% \extype{num}
 %% \exsolution{\Sexpr{F}}
-%% \exname{Q107ClozeFUVESTAviaoPassaro}
+%% \exname{Q107NumFUVESTAviaoPassaro}
 %% \extol{10}
 %% \exsection{Mecanica; Impulso; Quantidade de movimento; Forca media}
 %% \exusepackage[utf8]{inputenc}

@@ -17,7 +17,7 @@ pi <- m1*v1i
 pf <- m1*v1f + m2*v2f
 
 fmt <- function(x, d = 1) formatC(x, format = "f", digits = d, decimal.mark = ",")
-include_supplement("Q114ColisaoRetorno.png")
+include_supplement("Q114ColisaoRetorno.png", dir = "../figuras")
 @
 
 \usepackage[utf8]{inputenc}

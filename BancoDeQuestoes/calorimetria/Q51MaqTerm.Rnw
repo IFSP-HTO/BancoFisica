@@ -5,7 +5,7 @@
   
   temp2  <- sample(seq(from=-70,to=-10,by=1),1)
   
-  resp1  <- round((1-((temp2+273)/(temp1+273))), digits = 1)
+  resp1  <- round((1-((temp2+273)/(temp1+273))), digits = 2)
     
 @
   
@@ -13,15 +13,37 @@
   
 \begin{question}
   
- Uma máquina que opera em ciclo de Carnot tem a temperatura de sua fonte quente igual a $\Sexpr{temp1}$ °C e fonte fria à $\Sexpr{temp2}$ °C. Qual é o rendimento dessa máquina?
+ Uma máquina que opera em ciclo de Carnot tem a temperatura de sua fonte quente igual a $\Sexpr{temp1}$ °C e fonte fria à $\Sexpr{temp2}$ °C. Qual é o rendimento dessa máquina, em forma decimal? Dê a resposta com duas casas decimais.
 
 \end{question}
   
 %% SOLUTION
-\begin{solution}:
-    
-  \Sexpr{resp1}
-  
+\begin{solution}
+Para uma máquina de Carnot,
+\[
+  \eta=1-\frac{T_f}{T_q},
+\]
+com as temperaturas em kelvin.
+
+Assim,
+\[
+  T_q=\Sexpr{temp1}+273=\Sexpr{temp1+273}\,\mathrm{K},
+\]
+e
+\[
+  T_f=\Sexpr{temp2}+273=\Sexpr{temp2+273}\,\mathrm{K}.
+\]
+
+Logo,
+\[
+  \eta
+  =1-\frac{\Sexpr{temp2+273}}{\Sexpr{temp1+273}}
+  =\Sexpr{resp1}.
+\]
+
+Em porcentagem, isso corresponde a aproximadamente
+\(\Sexpr{round(100*resp1,0)}\%\).
+
 \end{solution}
   
 %% META-INFORMATION

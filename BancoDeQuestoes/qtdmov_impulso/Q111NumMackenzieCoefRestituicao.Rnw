@@ -47,7 +47,7 @@ e=\sqrt{\frac{\Sexpr{h2}}{\Sexpr{h1}}}
 %% Fonte: Colisoes.pdf, exercício 8 (MACKENZIE-SP), adaptada e parametrizada.
 %% \extype{num}
 %% \exsolution{\Sexpr{e}}
-%% \exname{Q111ClozeMackenzieCoefRestituicao}
+%% \exname{Q111NumMackenzieCoefRestituicao}
 %% \extol{0.005}
 %% \exsection{Mecanica; Colisoes; Coeficiente de restituicao}
 %% \exusepackage[utf8]{inputenc}

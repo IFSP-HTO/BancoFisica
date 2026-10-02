@@ -13,14 +13,22 @@ resp1 <- round((calor)/(mass), digits = 1)
   
 \begin{question}
   
-Inicialmente em estado líquido, um corpo com massa igual a $\Sexpr{mass}$ g, é resfriado e alcança devido ao resfriamento o estado de fusão. Sabendo que a quantidade de calor é $\Sexpr{calor}$ cal. Qual o calor latente de fusão desse corpo?
+Um corpo de massa $\Sexpr{mass}$ g encontra-se inicialmente no estado líquido, em sua temperatura de solidificação. Ao solidificar completamente, ele cede $\Sexpr{calor}$ cal ao ambiente. Determine, em módulo, o calor latente de fusão do material.
 
 \end{question}
   
 %% SOLUTION
-\begin{solution}:
-    
-  \Sexpr{resp1} cal/g
+\begin{solution}
+Na solidificação completa, o módulo do calor cedido é
+\[
+  |Q|=mL.
+\]
+O calor latente de solidificação tem o mesmo módulo do calor latente de fusão. Portanto,
+\[
+  L=\frac{|Q|}{m}
+   =\frac{\Sexpr{calor}}{\Sexpr{mass}}
+   =\Sexpr{resp1}\,\mathrm{cal/g}.
+\]
 
 \end{solution}
   

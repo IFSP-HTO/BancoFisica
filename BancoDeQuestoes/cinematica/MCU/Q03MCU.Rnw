@@ -23,7 +23,17 @@ Vemos uma foto da polonesa Anita Wlodarczyk antes de conseguir seu recorde mundi
 \end{question}
 
 \begin{solution}
-A força será \Sexpr{forca} N.
+Desprezando o efeito da gravidade nesse instante, a tração fornece a força centrípeta necessária para manter a esfera na trajetória circular:
+\[
+  T=F_c=\frac{mv^2}{R}.
+\]
+Substituindo os dados,
+\[
+  T=\frac{\Sexpr{m}\,(\Sexpr{vel})^2}{\Sexpr{L}}
+   =\Sexpr{forca}\,\mathrm{N}.
+\]
+Portanto, a tração no cabo imediatamente antes do lançamento é aproximadamente \(\Sexpr{forca}\,\mathrm{N}\).
+
 \end{solution}
 
 %% META-INFORMATION

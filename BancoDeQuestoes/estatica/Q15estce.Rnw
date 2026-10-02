@@ -22,8 +22,23 @@ A barra é fixa em A, numa parede, através de uma articulação, conforme indic
 \end{question}
 
 \begin{solution}
-%% Supply a solution here!
-  \Sexpr{resp} cm
+O menor valor de \(x\) ocorre quando o fio trabalha exatamente no seu limite de resistência,
+\[
+  T=F_{\mathrm{lim}}=\Sexpr{Flim}\,\mathrm{N}.
+\]
+
+Tomando os torques em relação à articulação \(A\), a tração atua a uma distância \(x\), enquanto o peso da haste homogênea atua em seu centro, a \(l/2\):
+\[
+  T\,x=P\frac{l}{2}.
+\]
+
+Assim,
+\[
+  x=\frac{Pl}{2T}
+   =\frac{\Sexpr{P}\cdot\Sexpr{l}}
+          {2\cdot\Sexpr{Flim}}
+   =\Sexpr{resp}\,\mathrm{cm}.
+\]
 
 \end{solution}
 

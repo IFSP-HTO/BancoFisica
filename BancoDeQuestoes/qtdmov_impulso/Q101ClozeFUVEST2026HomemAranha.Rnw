@@ -104,5 +104,5 @@ h_{\max}=1+5=6\,\mathrm{m}.
 %% \exclozetype{num|num|num}
 %% \extol{0.1|0.01|0.1}
 %% \exname{Q101ClozeFUVEST2026HomemAranha}
-%% \exsection{Quantidade de movimento; Colisao perfeitamente inelastica; Energia mecanica; FUVEST}
+%% \exsection{Mecanica; Quantidade de movimento; Colisao perfeitamente inelastica; Energia mecanica; FUVEST}
 %% \exusepackage[utf8]{inputenc}

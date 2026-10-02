@@ -3,7 +3,7 @@
 
 massa <- sample(seq(from=20, to= 300, by=10), 1)
 pot <- sample(seq(from=400, to= 500, by=50), 1)
-resp <- pot*30*60/(100*massa*1000)
+resp <- round(pot*30*60/(4*100*massa*1000), 3)
 
 @
 \usepackage[utf8]{inputenc}
@@ -17,9 +17,27 @@ Adote 1 cal = 4 Joules.
 
 %% SOLUTION
 \begin{solution}
-  
-  \Sexpr{resp} cal/g°C
-  
+A energia fornecida pelo forno em \(30\,\mathrm{min}=1800\,\mathrm{s}\) é
+\[
+  E=P\Delta t
+   =\Sexpr{pot}\cdot1800
+   =\Sexpr{pot*1800}\,\mathrm{J}.
+\]
+
+Como \(1\,\mathrm{cal}=4\,\mathrm{J}\),
+\[
+  Q=\frac{\Sexpr{pot*1800}}{4}
+   =\Sexpr{pot*1800/4}\,\mathrm{cal}.
+\]
+
+A massa é \(\Sexpr{massa}\,\mathrm{kg}=\Sexpr{massa*1000}\,\mathrm{g}\), e a variação de temperatura é \(100\,^{\circ}\mathrm{C}\). Usando \(Q=mc\Delta T\),
+\[
+  c=\frac{Q}{m\Delta T}
+   =\frac{\Sexpr{pot*1800/4}}
+          {\Sexpr{massa*1000}\cdot100}
+   =\Sexpr{resp}\,\mathrm{cal/(g\,^{\circ}C)}.
+\]
+
 \end{solution}
 
 %% META-INFORMATION

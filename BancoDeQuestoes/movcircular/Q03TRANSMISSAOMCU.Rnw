@@ -28,8 +28,27 @@ include_supplement("Q03TRANSMISSAOMCU.jpg")
   
 %% SOLUTION
 \begin{solution}
-    
-  Frequência f = $\Sexpr{resp}$ rpm
+Sem deslizamento, a velocidade linear da bicicleta é igual à velocidade tangencial do pneu:
+\[
+  v=\omega_r\frac{d_r}{2}.
+\]
+A roda dentada traseira gira com a mesma velocidade angular da roda, portanto a velocidade da corrente é proporcional ao diâmetro dessa roda dentada. Isso fornece
+\[
+  v_c=v\frac{d_c}{d_r}.
+\]
+Substituindo os valores,
+\[
+  v_c=\frac{\Sexpr{vel}}{3{,}6}\frac{\Sexpr{dc}}{\Sexpr{dr}}\,\mathrm{m/s}.
+\]
+Na coroa junto ao pedal,
+\[
+  v_c=\pi d_{co} f.
+\]
+Logo, convertendo para rpm,
+\[
+  f_{rpm}=60\frac{v_c}{\pi d_{co}}
+         =\Sexpr{resp}\,\mathrm{rpm}.
+\]
 
 \end{solution}
 %% META-INFORMATION

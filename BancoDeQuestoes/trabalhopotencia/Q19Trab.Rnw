@@ -5,8 +5,10 @@ massa <- sample(seq(from=1,to=5,by=1),1)
 velocidade <- sample(seq(from=5,to=15,by=1),1)
 altura <- sample(seq(from=3,to=6,by=1),1)
 
-resp1 <- round(sqrt(10*altura+(velocidade^2)/2), digits = 2)
-resp2 <- round(massa*(velocidade/2) , digits = 2)
+vb2 <- velocidade^2 + 2*10*altura
+
+resp1 <- round(sqrt(vb2), digits = 2)
+resp2 <- round(-massa*vb2/2, digits = 2)
 
 ##Imagem
 include_supplement("Q19Trab.png")
@@ -15,7 +17,7 @@ include_supplement("Q19Trab.png")
 
 \begin{question}
  
-       (Udesc) Um corpo de massa \Sexpr{massa} possui velocidade inicial em A de \Sexpr{velocidade} m/s. Sabe-se que o corpo percorre a trajetória ABC, parando em C. O trecho AB é perfeitamente liso (atrito desprezível)e possui altura H de \Sexpr{altura} m. A partir do ponto B até C existe atrito. Determine:
+       (Udesc) Um corpo de massa \Sexpr{massa} possui velocidade inicial em A de \Sexpr{velocidade} m/s. Sabe-se que o corpo percorre a trajetória ABC, parando em C. O trecho AB é perfeitamente liso (atrito desprezível) e possui altura H de \Sexpr{altura} m. A partir do ponto B até C existe atrito. Determine:
   \begin{figure}[h!]
     \centering
     \includegraphics[height=5cm, keepaspectratio]{Q19Trab.png}
@@ -26,25 +28,45 @@ include_supplement("Q19Trab.png")
     \item a velocidade do corpo ao atingir o ponto B. 
 
   
-    \item  o trabalho realizado pela força de atrito, no trecho BC Dado: g = 10 m/s
+    \item  o trabalho realizado pela força de atrito, no trecho BC. Dado: g = 10 m/s².
 
   \end{answerlist}
 
 \end{question}
 
 \begin{solution}
-  
-  \begin{answerlist}
-  
-      \item \Sexpr{resp1} m/s
-      \item \Sexpr{resp2} J
-  
-  \end{answerlist}
-  
+No trecho AB não há atrito, de modo que a energia mecânica se conserva. Tomando o nível de B como referência,
+\[
+  \frac12 m v_A^2 + m g H = \frac12 m v_B^2.
+\]
+Assim,
+\[
+  v_B=\sqrt{v_A^2+2gH}
+     =\sqrt{\Sexpr{velocidade}^2+2\cdot10\cdot\Sexpr{altura}}
+     =\Sexpr{resp1}\,\mathrm{m/s}.
+\]
+
+No trecho BC o corpo para em C, logo o trabalho da força de atrito é igual à variação da energia cinética:
+\[
+  \tau_{\text{atrito}}=0-\frac12 m v_B^2
+    =-\frac12\cdot\Sexpr{massa}\cdot\Sexpr{vb2}
+    =\Sexpr{resp2}\,\mathrm J.
+\]
+O sinal negativo indica que a força de atrito se opõe ao movimento.
+
+\begin{answerlist}
+
+  \item \(\Sexpr{resp1}\,\mathrm{m/s}\)
+
+  \item \(\Sexpr{resp2}\,\mathrm J\)
+
+\end{answerlist}
+
 \end{solution}
 
 %% META-INFORMATION
-%% \extype{num}
+%% \extype{cloze}
+%% \exclozetype{num|num}
 %% \exsolution{\Sexpr{resp1}|\Sexpr{resp2}}
 %% \exname{Q19Trab}
-%% \extol{0.1}
+%% \extol{0.1|0.1}

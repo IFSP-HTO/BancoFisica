@@ -22,7 +22,7 @@ O calor específico do zinco é aproximadamente igual a $0,1$ cal/g°C. Determin
 
   \item A quantidade de calor absorvida (em calorias) por uma massa de 1 g de zinco que eleva sua temperatura em $\Sexpr{dta}$ °C
   
-  \item A quantidade de calor cedida ao meio ambiente (em calorias) por uma massa de $\Sexpr{mb}$ g de zinco se sua temperatura se elevar de 1 °C
+  \item A quantidade de calor absorvida (em calorias) por uma massa de $\Sexpr{mb}$ g de zinco se sua temperatura se elevar em 1 °C
 
   \item A quantidade de calor cedida ao meio ambiente (em calorias) por uma massa de $\Sexpr{mc}$ g de zinco se sua temperatura diminuir em $\Sexpr{dtc}$ °C
   
@@ -33,22 +33,43 @@ O calor específico do zinco é aproximadamente igual a $0,1$ cal/g°C. Determin
 \end{question}
 
 %% SOLUTION
-\begin{solution}:
-  
-  \begin{answerlist}
-    \item
-      \Sexpr{respa} cal
+\begin{solution}
+Para calor sensível, usamos
+\[
+  Q=mc\Delta T,
+\]
+com \(c=0{,}1\,\mathrm{cal/(g\,^{\circ}C)}\).
 
-    \item
-      \Sexpr{respb} cal
+\begin{answerlist}
+  \item Para \(m=1\,\mathrm{g}\) e \(\Delta T=\Sexpr{dta}\,^{\circ}\mathrm{C}\),
+  \[
+    Q=1\cdot0{,}1\cdot\Sexpr{dta}
+     =\Sexpr{respa}\,\mathrm{cal}.
+  \]
 
-    \item
-      \Sexpr{respc} cal
+  \item Para \(m=\Sexpr{mb}\,\mathrm{g}\) e \(\Delta T=1\,^{\circ}\mathrm{C}\),
+  \[
+    Q=\Sexpr{mb}\cdot0{,}1\cdot1
+     =\Sexpr{respb}\,\mathrm{cal}.
+  \]
 
-    \item
-      \Sexpr{respd} cal
-        
-  \end{answerlist}
+  \item Como a temperatura diminui, o zinco cede calor. O módulo é
+  \[
+    |Q|=\Sexpr{mc}\cdot0{,}1\cdot\Sexpr{dtc}
+       =\Sexpr{respc}\,\mathrm{cal}.
+  \]
+
+  \item A variação de temperatura, em módulo, é
+  \[
+    |\Delta T|=40-\Sexpr{tdf}.
+  \]
+  Portanto,
+  \[
+    |Q|=20\cdot0{,}1\,(40-\Sexpr{tdf})
+       =\Sexpr{respd}\,\mathrm{cal}.
+  \]
+\end{answerlist}
+
 \end{solution}
 
 %% META-INFORMATION

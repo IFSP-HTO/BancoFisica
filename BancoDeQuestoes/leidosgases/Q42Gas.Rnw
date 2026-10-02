@@ -20,14 +20,32 @@ Um gás de volume $\Sexpr{vol1}$ m³ à temperatura de $\Sexpr{temp1}$ °C é aq
 \end{question}
   
 %% SOLUTION
-\begin{solution}:
-    
-  \Sexpr{resp1}cm³
-  
+\begin{solution}
+Como a transformação ocorre sob pressão constante,
+\[
+  \frac{V_1}{T_1}=\frac{V_2}{T_2}.
+\]
+
+Convertendo as temperaturas para kelvin,
+\[
+  T_1=\Sexpr{temp1}+273=\Sexpr{temp1+273}\,\mathrm{K},
+\]
+\[
+  T_2=\Sexpr{temp2}+273=\Sexpr{temp2+273}\,\mathrm{K}.
+\]
+
+Logo,
+\[
+  V_2=
+  \Sexpr{vol1}
+  \frac{\Sexpr{temp2+273}}{\Sexpr{temp1+273}}
+  =\Sexpr{resp1}\,\mathrm{m^3}.
+\]
+
 \end{solution}
   
 %% META-INFORMATION
 %% \extype{num}
 %% \exsolution{\Sexpr{resp1}}
 %% \exname{Q42Gas}
-%% \extol{0.0|}
+%% \extol{0.1}

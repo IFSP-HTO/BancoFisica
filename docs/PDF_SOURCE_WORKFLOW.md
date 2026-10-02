@@ -16,6 +16,16 @@ O fluxo preferencial é:
 6. revisar visualmente o arquivo antes de referenciá-lo no `.Rnw`;
 7. compilar/validar a questão normalmente.
 
+## Gate antes da adaptação
+
+Antes de adaptar o texto da questão, determine se a fonte contém algum visual relevante no enunciado, nas alternativas ou na solução.
+
+- Se contém e não é necessário alterar dados embutidos, o visual original é obrigatório.
+- Não substitua a figura por descrição textual nem transforme alternativas gráficas em texto/álgebra apenas por conveniência.
+- Se uma parametrização exigir alterar o visual, obtenha aprovação explícita do responsável pelo banco antes de redesenhar.
+- Se os bytes/página da fonte não estiverem acessíveis para extração ou recorte fiel, bloqueie a questão e deixe-a fora do PR.
+- Registre no `.Rnw`: `SOURCE-VISUAL: none | original-extract | original-crop | adapted-approved`.
+
 ## Dependência
 
 O utilitário usa PyMuPDF:

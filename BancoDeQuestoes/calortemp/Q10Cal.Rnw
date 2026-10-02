@@ -21,7 +21,7 @@ solutions[aleat[5]] <- FALSE
 \usepackage[utf8]{inputenc}
 \begin{question}
 
-Considere a garrafa térmica esquematizada abaixo. Assinale a alternativa correta: 
+Considere uma garrafa térmica de paredes duplas, com vácuo entre elas e superfícies espelhadas. Assinale a alternativa correta: 
 <<echo=FALSE, results=hide, results=tex>>=
 answerlist(questions)
 @
@@ -29,12 +29,15 @@ answerlist(questions)
 \end{question}
 
 \begin{solution}
+Uma garrafa térmica procura reduzir os três mecanismos de transferência de energia.
+
+O vácuo entre as paredes reduz fortemente a \textbf{condução} e impede a \textbf{convecção} entre essas paredes. As superfícies espelhadas reduzem a troca por \textbf{radiação}. Além disso, manter a garrafa bem fechada reduz a circulação de ar com o ambiente e, portanto, as perdas por convecção.
+
+Logo, a alternativa correta é a que afirma que \textbf{a garrafa deve permanecer bem fechada para reduzir perdas de calor por convecção}.
+
 <<echo=FALSE, results=hide, results=tex>>=
-answerlist(
-  paste("\\textbf{", ifelse(solutions, "Verdadeiro", "Falso"), "}"))
+answerlist(ifelse(solutions, paste("\\textbf{", questions, "}", sep=""), questions))
 @
-
-
 
 \end{solution}
 

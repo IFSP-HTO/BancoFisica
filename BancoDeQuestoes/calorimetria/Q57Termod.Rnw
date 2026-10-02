@@ -15,15 +15,31 @@
   
 \begin{question}
 
-Considere um gás perfeito na temperatura de $\Sexpr{temp1}$ °C que varia para $\Sexpr{temp2}$ °C, e a variação da energia interna $\Sexpr{u}$.Dados: R=8,31 J/mol.K. Quanto(s) mols há do gás?
+Considere um gás ideal monoatômico na temperatura de $\Sexpr{temp1}$ °C que varia para $\Sexpr{temp2}$ °C, e a variação da energia interna é $\Sexpr{u}$ J. Dados: R=8,31 J/mol.K. Quanto(s) mols há do gás?
 
 \end{question}
   
 %% SOLUTION
-\begin{solution}:
-    
-  \Sexpr{resp1}mols
-  
+\begin{solution}
+Para um gás ideal monoatômico,
+\[
+  \Delta U=\frac{3}{2}nR\Delta T.
+\]
+
+A variação de temperatura é
+\[
+  \Delta T=\Sexpr{temp2}-\Sexpr{temp1}
+          =\Sexpr{temp2-temp1}\,\mathrm{K}.
+\]
+
+Isolando o número de mols,
+\[
+  n=\frac{2\Delta U}{3R\Delta T}
+   =\frac{2\cdot\Sexpr{u}}
+          {3\cdot8{,}31\cdot\Sexpr{temp2-temp1}}
+   =\Sexpr{resp1}\,\mathrm{mol}.
+\]
+
 \end{solution}
   
 %% META-INFORMATION

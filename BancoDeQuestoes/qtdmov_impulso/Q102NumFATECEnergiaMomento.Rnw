@@ -47,7 +47,7 @@ m=\frac{p^2}{2K}
 %% Fonte: Quantidade de Movimento.pdf, exercício 1 (FATEC), adaptada e parametrizada.
 %% \extype{num}
 %% \exsolution{\Sexpr{m}}
-%% \exname{Q102ClozeFATECEnergiaMomento}
+%% \exname{Q102NumFATECEnergiaMomento}
 %% \extol{0.01}
 %% \exsection{Mecanica; Quantidade de movimento; Energia cinetica}
 %% \exusepackage[utf8]{inputenc}

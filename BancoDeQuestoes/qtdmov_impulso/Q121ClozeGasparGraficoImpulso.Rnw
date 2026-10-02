@@ -110,5 +110,5 @@ Como o enunciado pede o módulo,
 %% \exclozetype{num|num|num}
 %% \extol{0.1|0.1|0.1}
 %% \exname{Q121ClozeGasparGraficoImpulso}
-%% \exsection{Mecanica; Impulso; Grafico forca-tempo; Quantidade de movimento}
+%% \exsection{Mecanica; Impulso; Quantidade de movimento; Graficos}
 %% \exusepackage[utf8]{inputenc}

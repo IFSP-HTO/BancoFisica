@@ -11,7 +11,26 @@ O ingles Damien Walters, um praticante de Parkour, conseguiu completar um desafi
 \end{question}
 
 \begin{solution}
-A velocidade minima de entrada e \Sexpr{v} km/h.
+Para completar o loop mantendo contato no ponto mais alto, a condição mínima é ter força normal nula nesse ponto. Assim,
+\[
+  \frac{mv_{top}^2}{R}=mg
+  \quad\Rightarrow\quad
+  v_{top}^2=gR.
+\]
+Entre o ponto mais baixo e o topo, a altura aumenta em \(2R\). Pela conservação da energia mecânica,
+\[
+  \frac12mv_0^2=\frac12mv_{top}^2+mg(2R).
+\]
+Substituindo \(v_{top}^2=gR\),
+\[
+  v_0=\sqrt{5gR}.
+\]
+Para \(R=\Sexpr{R}\,\mathrm{m}\),
+\[
+  v_0=\Sexpr{round(sqrt(5*10*R),2)}\,\mathrm{m/s}
+     =\Sexpr{v}\,\mathrm{km/h}.
+\]
+
 \end{solution}
 
 %% META-INFORMATION

@@ -89,5 +89,6 @@ Como o impulso é o mesmo, aumentar o tempo de parada reduz a força média. O f
 %% \exclozetype{num|num|num}
 %% \extol{10|100|0.02}
 %% \exname{Q90ClozeImpulsoColisao}
-%% \exsection{Mecanica; Impulso; Colisao; ENEM}
+%% Fonte: Questao autoral inspirada em contextos de seguranca veicular.
+%% \exsection{Mecanica; Impulso; Quantidade de movimento; Forca media; Colisoes}
 %% \exusepackage[utf8]{inputenc}

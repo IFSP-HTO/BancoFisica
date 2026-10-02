@@ -15,9 +15,20 @@ options(OutDec=",")
 \end{question}
 
 \begin{solution}
+Como os carros se movem um ao encontro do outro, a velocidade de aproximação é a soma das velocidades:
+\[
+  v_{\mathrm{rel}}=\Sexpr{v1}+\Sexpr{v2}=\Sexpr{v1+v2}\,\mathrm{km/h}.
+\]
+O tempo até o encontro, em horas, é
+\[
+  t=\frac{\Sexpr{d}}{\Sexpr{v1+v2}}.
+\]
+Convertendo para segundos,
+\[
+  t=\frac{\Sexpr{d}}{\Sexpr{v1+v2}}\cdot3600
+   =\Sexpr{result}\,\mathrm{s}.
+\]
 
-  \Sexpr{result} segundos
-  
 \end{solution}
 
 <<echo=FALSE, results=hide>>=

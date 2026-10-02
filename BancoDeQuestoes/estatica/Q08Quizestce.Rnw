@@ -42,6 +42,17 @@ answerlist(questions)
 
 
 \begin{solution}
+O menino produz, em módulo, o torque
+\[
+  \tau_m=5\cdot2=10\,\mathrm{N\,m}.
+\]
+O homem produz torque no sentido oposto:
+\[
+  \tau_h=80\cdot0{,}10=8\,\mathrm{N\,m}.
+\]
+
+Como \(10>8\), o torque resultante tem o sentido produzido pelo menino. Pela figura, esse sentido corresponde à abertura da porta. Portanto, a alternativa correta é a que afirma que a porta gira no sentido de ser aberta.
+
 <<echo=FALSE, results=hide, results=tex>>=
 answerlist(
   paste("\\textbf{", ifelse(solutions, "Verdadeiro", "Falso"), "}"))

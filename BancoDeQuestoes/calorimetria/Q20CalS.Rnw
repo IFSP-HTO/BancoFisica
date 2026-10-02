@@ -15,15 +15,32 @@
   
 \begin{question}
   
-Uma fonte de potência constante é utilizada para aumentar a temperatura $\Sexpr{mass1}$ g de aço a $\Sexpr{temp1}$ °C em . Sendo o calor específico do aço 0,020 cal/g.°C e 1cal=4,186J e o processo é realizado em $\Sexpr{time1}$. Qual o fluxo de calor em Watts?
+Uma fonte de potência constante é utilizada para aquecer $\Sexpr{mass1}$ g de aço de $0$ °C até $\Sexpr{temp1}$ °C. Sendo o calor específico do aço $0,020$ cal/g.°C, $1$ cal $=4,186$ J e o processo realizado em $\Sexpr{time1}$ s, determine a potência térmica da fonte em watts.
 
 \end{question}
   
   %% SOLUTION
-\begin{solution}:
-    
-  \Sexpr{resp1}W
-  
+\begin{solution}
+A quantidade de calor necessária é
+\[
+  Q=mc\Delta T
+   =\Sexpr{mass1}\cdot0{,}020\cdot\Sexpr{temp1}
+   =\Sexpr{mass1*0.02*temp1}\,\mathrm{cal}.
+\]
+
+Em joules,
+\[
+  E=\Sexpr{mass1*0.02*temp1}\cdot4{,}186
+   =\Sexpr{mass1*0.02*temp1*4.186}\,\mathrm{J}.
+\]
+
+A potência é
+\[
+  P=\frac{E}{\Delta t}
+   =\frac{\Sexpr{mass1*0.02*temp1*4.186}}{\Sexpr{time1}}
+   =\Sexpr{resp1}\,\mathrm{W}.
+\]
+
 \end{solution}
   
 %% META-INFORMATION

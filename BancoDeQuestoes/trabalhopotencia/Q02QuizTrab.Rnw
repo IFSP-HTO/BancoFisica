@@ -37,6 +37,10 @@ answerlist(questions)
 \end{question}
 
 \begin{solution}
+A energia cinética aumenta sempre que a força resultante realiza trabalho positivo, isto é, sempre que ela tem o mesmo sentido do movimento. Como o corpo parte do repouso e a força representada no gráfico é positiva e não nula em todos os três intervalos (crescente em I, constante em II e decrescente, mas ainda positiva, em III), a aceleração mantém sempre o mesmo sentido da velocidade.
+
+Assim, a velocidade cresce continuamente e, com ela, a energia cinética, nos intervalos I, II e III. A alternativa correta é \textbf{nos intervalos I, II e III}.
+
 <<echo=FALSE, results=hide, results=tex>>=
 answerlist(
   paste("\\textbf{", ifelse(solutions, "Verdadeiro", "Falso"), "}"))

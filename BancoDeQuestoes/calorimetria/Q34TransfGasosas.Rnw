@@ -13,10 +13,8 @@ nota_cient <- function(x,digits) {
 vol2  <- sample(seq(from=0.5,to=2.2,by=0.1),1)
 vol1  <- sample(seq(from=vol2+0.8,to=6,by=0.1),1)
 p1 <- sample(seq(from=1.2,to=5.0,by=0.1),1)*100000
-p1
 
 resp <- round((p1*vol1)/(101000*(vol1+vol2)), digits = 2)
-resp
 include_supplement("Q34TransfGasosas.jpg")
 @
   
@@ -31,10 +29,34 @@ include_supplement("Q34TransfGasosas.jpg")
 \end{question}
   
 %% SOLUTION
-\begin{solution}:
-    
-  \Sexpr{resp} atm
-  
+\begin{solution}
+Inicialmente, o gás ocupa apenas o balão \(A\), de volume \(V_A=\Sexpr{vol1}\,\mathrm{L}\). Após abrir a torneira, ele ocupa o volume total
+\[
+  V_f=V_A+V_B
+     =\Sexpr{vol1}+\Sexpr{vol2}
+     =\Sexpr{vol1+vol2}\,\mathrm{L}.
+\]
+
+Como a temperatura final retorna ao valor inicial e a quantidade de gás é a mesma,
+\[
+  p_iV_i=p_fV_f.
+\]
+Logo,
+\[
+  p_f=
+  \frac{\Sexpr{nota_cient(p1)}\cdot\Sexpr{vol1}}
+       {\Sexpr{vol1+vol2}}
+  \,\mathrm{Pa}.
+\]
+
+Usando \(1\,\mathrm{atm}=101000\,\mathrm{Pa}\),
+\[
+  p_f=
+  \frac{\Sexpr{p1}\cdot\Sexpr{vol1}}
+       {101000\,(\Sexpr{vol1+vol2})}
+  =\Sexpr{resp}\,\mathrm{atm}.
+\]
+
 \end{solution}
   
 %% META-INFORMATION

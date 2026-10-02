@@ -25,7 +25,25 @@ Dados: despreze a resistência do ar, desconsidere a fase de movimento acelerado
 \end{question}
 
 \begin{solution}
-A velocidade angular máxima é \Sexpr{omega} rad/s.
+A força de atrito estático é a responsável por fornecer a força centrípeta à borracha. No limite antes de deslizar,
+\[
+  f_{at,\max}=\mu_e N=\mu_e mg.
+\]
+Para o movimento circular,
+\[
+  F_c=m\omega^2r.
+\]
+No limite,
+\[
+  m\omega^2r=\mu_e mg.
+\]
+Cancelando a massa,
+\[
+  \omega_{\max}=\sqrt{\frac{\mu_e g}{r}}
+  =\sqrt{\frac{\Sexpr{mu_e}\cdot10}{\Sexpr{raio_m}}}
+  =\Sexpr{omega}\,\mathrm{rad/s}.
+\]
+
 \end{solution}
 
 %% META-INFORMATION

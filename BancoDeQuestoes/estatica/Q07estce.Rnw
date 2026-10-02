@@ -31,14 +31,40 @@ Calcule o momento aplicado pela força $F$, em $N.m$, nas barras com relação a
 \end{question}
 
 \begin{solution}
-%% Supply a solution here!
-  \begin{answerlist}
-    \item \Sexpr{resp[1]} Nm
-    \item \Sexpr{resp[2]} Nm
-    \item \Sexpr{resp[3]} Nm
-    \item \Sexpr{resp[4]} Nm
-    \item \Sexpr{resp[5]} Nm
-  \end{answerlist}
+O módulo do momento de uma força em relação a \(O\) pode ser escrito como
+\[
+  \tau=F\,d_\perp,
+\]
+em que \(d_\perp\) é a distância perpendicular de \(O\) à linha de ação da força.
+
+Na figura:
+
+\begin{answerlist}
+  \item \(d_\perp=0{,}20\,\mathrm{m}\), então
+  \[
+    \tau=\Sexpr{Fa}\cdot0{,}20=\Sexpr{resp[1]}\,\mathrm{N\,m}.
+  \]
+
+  \item \(d_\perp=0{,}10\,\mathrm{m}\), então
+  \[
+    \tau=\Sexpr{Fa}\cdot0{,}10=\Sexpr{resp[2]}\,\mathrm{N\,m}.
+  \]
+
+  \item A distância perpendicular indicada é \(8\,\mathrm{cm}=0{,}08\,\mathrm{m}\):
+  \[
+    \tau=\Sexpr{Fa}\cdot0{,}08=\Sexpr{resp[3]}\,\mathrm{N\,m}.
+  \]
+
+  \item A linha de ação é horizontal e está \(8\,\mathrm{cm}\) abaixo de \(O\):
+  \[
+    \tau=\Sexpr{Fa}\cdot0{,}08=\Sexpr{resp[4]}\,\mathrm{N\,m}.
+  \]
+
+  \item A linha de ação é horizontal e está \(8\,\mathrm{cm}\) acima de \(O\):
+  \[
+    \tau=\Sexpr{Fa}\cdot0{,}08=\Sexpr{resp[5]}\,\mathrm{N\,m}.
+  \]
+\end{answerlist}
 
 \end{solution}
 

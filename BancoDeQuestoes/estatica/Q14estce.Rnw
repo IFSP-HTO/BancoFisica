@@ -18,8 +18,38 @@ ponto A. Se a massa da lua 4 é de $\Sexpr{m} g$, determine a massa da lua 1, em
 \end{question}
 
 \begin{solution}
-%% Supply a solution here!
-  \Sexpr{resp} gramas
+O equilíbrio pode ser resolvido de baixo para cima.
+
+Na barra inferior, o braço da lua 3 é \(L\) e o da lua 4 é \(2L\):
+\[
+  m_3g\,L=m_4g\,2L
+  \quad\Rightarrow\quad
+  m_3=2m_4.
+\]
+
+A barra imediatamente acima sustenta, do lado direito, todo o conjunto formado pelas luas 3 e 4. Portanto,
+\[
+  m_2g\,L=(m_3+m_4)g\,2L.
+\]
+Como \(m_3+m_4=3m_4\),
+\[
+  m_2=6m_4.
+\]
+
+Finalmente, a barra superior sustenta à direita as luas 2, 3 e 4:
+\[
+  m_1g\,L=(m_2+m_3+m_4)g\,2L.
+\]
+Logo,
+\[
+  m_1=2(6+2+1)m_4=18m_4.
+\]
+
+Como \(m_4=\Sexpr{m}\,\mathrm{g}\),
+\[
+  m_1=18\,\Sexpr{m}
+     =\Sexpr{resp}\,\mathrm{g}.
+\]
 
 \end{solution}
 

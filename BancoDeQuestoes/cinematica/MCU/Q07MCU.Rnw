@@ -22,7 +22,25 @@ Um avião realiza uma curva horizontal, mantendo altitude constante, com raio R 
 \end{question}
 
 \begin{solution}
-A força será de \Sexpr{forca} N.
+Na curva horizontal, a componente vertical da sustentação equilibra o peso,
+\[
+  F_y=mg,
+\]
+e a componente horizontal fornece a força centrípeta,
+\[
+  F_x=\frac{mv^2}{R}.
+\]
+Como essas componentes são perpendiculares,
+\[
+  F=\sqrt{F_x^2+F_y^2}
+   =m\sqrt{\left(\frac{v^2}{R}\right)^2+g^2}.
+\]
+Substituindo,
+\[
+  F=\Sexpr{m}\sqrt{\left(\frac{\Sexpr{v}^2}{\Sexpr{R}}\right)^2+10^2}
+   =\Sexpr{forca}\,\mathrm{N}.
+\]
+
 \end{solution}
 
 %% META-INFORMATION

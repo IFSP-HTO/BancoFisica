@@ -3,7 +3,7 @@ questions <- character(5)
 solutions <- logical(5)
 aleat <- sample(1:4)
 
-include_supplement("Q04testCol.jpg")
+include_supplement("Q04testCol.jpg", dir = "../figuras")
 
 questions[aleat[1]] <- "0; v-V"
 solutions[aleat[1]] <- FALSE

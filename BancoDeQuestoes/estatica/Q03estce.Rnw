@@ -3,7 +3,7 @@
 m <- sample(seq(from=60,to=90,by=1),1)
 b <- sample(seq(from=2.0,to=4.0,by=1),1)
 respa <- b*m
-respb <- m*10
+respb <- (m+respa)*10
 @
 
 \begin{question}
@@ -17,12 +17,27 @@ respb <- m*10
 \end{question}
 
 \begin{solution}
-%% Supply a solution here!
+Seja \(M\) a maior massa que pode ser levantada. No limite de equilíbrio, o peso do homem atua no braço de comprimento \(\Sexpr{b}\,\mathrm{m}\) e o peso do objeto no braço de \(1\,\mathrm{m}\). Pelo equilíbrio dos torques,
+\[
+  (mg)\,\Sexpr{b}=(Mg)\,1,
+\]
+de modo que
+\[
+  M=\Sexpr{b}\,m=\Sexpr{respa}\,\mathrm{kg}.
+\]
+
+A força no ponto de apoio deve equilibrar verticalmente os dois pesos. Portanto,
+\[
+  R=(m+M)g
+   =(\Sexpr{m}+\Sexpr{respa})\,10
+   =\Sexpr{respb}\,\mathrm{N}.
+\]
 
 \begin{answerlist}
   \item \Sexpr{respa} kg
   \item \Sexpr{respb} N
 \end{answerlist}
+
 \end{solution}
 
 %% META-INFORMATION

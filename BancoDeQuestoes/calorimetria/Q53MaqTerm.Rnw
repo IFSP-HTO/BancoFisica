@@ -5,7 +5,7 @@
   
   temp2  <- sample(seq(from=-50,to=-10,by=1),1)
   
-  resp1  <- round((-temp2-273)/((rend*0.01)-1), digits = 1)
+  resp1  <- round((temp2+273)/(1-rend*0.01), digits = 1)
     
 @
   
@@ -13,15 +13,36 @@
   
 \begin{question}
   
-O rendimento de uma máquina térmica de Carnot é de $\Sexpr{rend}$/100 e a fonte fria é a própria atmosfera a $\Sexpr{temp2}$ °C. Determine a temperatura da fonte quente.
+O rendimento de uma máquina térmica de Carnot é de $\Sexpr{rend}$/100 e a fonte fria é a própria atmosfera a $\Sexpr{temp2}$ °C. Determine a temperatura da fonte quente, em kelvin.
 
 \end{question}
   
 %% SOLUTION
-\begin{solution}:
-    
-  \Sexpr{resp1}
-  
+\begin{solution}
+O rendimento de uma máquina de Carnot é
+\[
+  \eta=1-\frac{T_f}{T_q},
+\]
+com as temperaturas absolutas em kelvin.
+
+A fonte fria está a
+\[
+  T_f=\Sexpr{temp2}+273
+     =\Sexpr{temp2+273}\,\mathrm{K},
+\]
+e
+\[
+  \eta=\frac{\Sexpr{rend}}{100}=\Sexpr{rend/100}.
+\]
+
+Isolando \(T_q\),
+\[
+  T_q=\frac{T_f}{1-\eta}
+     =\frac{\Sexpr{temp2+273}}
+            {1-\Sexpr{rend/100}}
+     =\Sexpr{resp1}\,\mathrm{K}.
+\]
+
 \end{solution}
   
 %% META-INFORMATION

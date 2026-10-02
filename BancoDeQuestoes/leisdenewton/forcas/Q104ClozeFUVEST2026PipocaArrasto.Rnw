@@ -1,0 +1,108 @@
+<<echo=FALSE, results=hide>>=
+g <- 10
+v0 <- 3
+m <- 0.2e-3
+b <- 0.4e-3
+
+dy_exp <- 0.42
+dy_sem_arrasto <- v0^2 / (2 * g)
+v_terminal <- sqrt(m * g / b)
+
+fmt <- function(x, d = 2) formatC(x, format = "f", digits = d, decimal.mark = ",")
+
+include_supplement("Q100ClozeFUVEST2026PipocaArrastoGrafico.png", dir="../../figuras")
+include_supplement("Q100ClozeFUVEST2026PipocaArrastoMontagem.png", dir="../../figuras")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+
+(FUVEST 2026 - 2ª Fase, F01) Um artigo publicado na \textit{Revista Brasileira de Ensino de Física}, em 2024, propõe um curioso experimento para medir a força de arrasto do ar em pipocas em movimento vertical. Para isso, os autores prepararam um sistema automatizado que mede a posição vertical $y$ (m) em função do tempo $t$ (s) de pipocas em voo após serem "estouradas" em uma panela aberta, como mostra a figura ao lado. O gráfico $y$ versus $t$ de um dos "voos" medidos também é exibido.
+
+\begin{center}
+\begin{minipage}[c]{0.35\textwidth}
+\centering
+\includegraphics[width=\textwidth,keepaspectratio]{Q100ClozeFUVEST2026PipocaArrastoMontagem.png}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.56\textwidth}
+\centering
+\includegraphics[width=\textwidth,keepaspectratio]{Q100ClozeFUVEST2026PipocaArrastoGrafico.png}
+\end{minipage}
+\end{center}
+
+\textbf{a)} Com base no gráfico $y$ versus $t$, determine o deslocamento vertical máximo da pipoca nesse "voo".
+
+##ANSWER1##
+
+\textbf{b)} Se a velocidade inicial da pipoca medida pelo experimento é de $3\,\mathrm{m/s}$ na vertical, qual seria o deslocamento vertical máximo na ausência de forças de arrasto e outras forças dissipativas?
+
+##ANSWER2##
+
+Uma das conclusões do artigo é que a força de arrasto em uma pipoca típica pode ser modelada pela expressão
+\[
+F_{\mathrm{arr}}=-bv^2,
+\]
+onde $v$ é o módulo da velocidade da pipoca, o sinal "$-$" indica que a força é sempre contrária ao movimento e a constante $b$ pode ser estimada pelas medidas do experimento como $b\simeq 0{,}4\,\mathrm{g/m}$ para velocidades acima de $2\,\mathrm{m/s}$.
+
+\textbf{c)} Com base nessa expressão, qual é a velocidade máxima que uma pipoca de massa $0{,}2\,\mathrm{g}$ atinge após começar o seu movimento de queda vertical com velocidade inicial nula?
+
+##ANSWER3##
+
+\textbf{Note e adote:}
+
+Aceleração da gravidade: $g=10\,\mathrm{m/s^2}$.
+
+\end{question}
+
+\begin{solution}
+
+\textbf{a)} Pela leitura do ponto mais alto do gráfico, o deslocamento vertical máximo é aproximadamente
+\[
+\Delta y_{\max}\simeq 0{,}42\,\mathrm{m}.
+\]
+
+\textbf{b)} Sem forças dissipativas, no ponto mais alto a velocidade é nula. Pela equação de Torricelli,
+\[
+0=v_0^2-2g\Delta y,
+\]
+de modo que
+\[
+\Delta y=\frac{v_0^2}{2g}
+=\frac{3^2}{2\cdot10}
+=0{,}45\,\mathrm{m}.
+\]
+
+\textbf{c)} A velocidade máxima na queda é a velocidade terminal, quando a força de arrasto equilibra o peso:
+\[
+mg=bv^2.
+\]
+Com $m=0{,}2\,\mathrm{g}=2{,}0\times10^{-4}\,\mathrm{kg}$ e
+$b=0{,}4\,\mathrm{g/m}=4{,}0\times10^{-4}\,\mathrm{kg/m}$,
+\[
+v=\sqrt{\frac{mg}{b}}
+=\sqrt{\frac{(2{,}0\times10^{-4})10}{4{,}0\times10^{-4}}}
+=\sqrt{5}
+\simeq 2{,}24\,\mathrm{m/s}.
+\]
+
+\begin{answerlist}
+  \item $0{,}42\,\mathrm{m}$
+  \item $0{,}45\,\mathrm{m}$
+  \item $2{,}24\,\mathrm{m/s}$
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: FUVEST 2026, 2ª Fase, 2º dia, questão F01.
+%% PDF oficial SHA-256: 77500abdde9cef9922669412e375665a1a271707f6d53299596feb6ff5917f05.
+%% Figuras extraídas diretamente do PDF oficial conforme AGENTS.md e docs/PDF_SOURCE_WORKFLOW.md.
+%% \extype{cloze}
+%% \exsolution{\Sexpr{dy_exp}|\Sexpr{dy_sem_arrasto}|\Sexpr{v_terminal}}
+%% \exclozetype{num|num|num}
+%% \extol{0.02|0.01|0.03}
+%% \exname{Q104ClozeFUVEST2026PipocaArrasto}
+%% \exsection{Mecanica; Leis de Newton; Forcas; Resistencia do ar; Velocidade terminal; Cinematica; FUVEST}
+%% \exusepackage[utf8]{inputenc}

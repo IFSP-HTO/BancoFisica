@@ -27,14 +27,40 @@ Determine:
 \end{question}
 
 \begin{solution}
+É conveniente começar pela carga e subir sucessivamente pelo sistema de polias. Em uma polia móvel ideal, duas partes do mesmo fio sustentam a carga; portanto, a tração necessária é metade da força transmitida ao estágio anterior.
 
-  \begin{answerlist}
+A carga tem peso \(\Sexpr{m}\,\mathrm{kgf}\). No estágio inferior,
+\[
+  2T_C=\Sexpr{m}
+  \quad\Rightarrow\quad
+  T_C=\frac{\Sexpr{m}}{2}
+     =\Sexpr{respc}\,\mathrm{kgf}.
+\]
 
-    \item \Sexpr{respa} kgf
-    \item \Sexpr{respb} kgf
-    \item \Sexpr{respc} kgf
+No estágio seguinte,
+\[
+  2T_B=T_C
+  \quad\Rightarrow\quad
+  T_B=\frac{\Sexpr{m}}{4}
+     =\Sexpr{respb}\,\mathrm{kgf}.
+\]
 
-  \end{answerlist}
+Finalmente,
+\[
+  2T_A=T_B
+  \quad\Rightarrow\quad
+  T_A=\frac{\Sexpr{m}}{8}
+     =\Sexpr{respa}\,\mathrm{kgf}.
+\]
+
+A força exercida pela superfície sobre o fio em cada ponto tem o módulo da tração correspondente.
+
+\begin{answerlist}
+  \item \Sexpr{respa} kgf
+  \item \Sexpr{respb} kgf
+  \item \Sexpr{respc} kgf
+\end{answerlist}
+
 \end{solution}
 
 %% META-INFORMATION
