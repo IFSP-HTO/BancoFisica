@@ -1,0 +1,53 @@
+<<echo=FALSE, results=hide>>=
+questions <- c(
+  "dois patinadores inicialmente em repouso se empurram sobre gelo de atrito desprezível, considerando o sistema formado pelos dois patinadores.",
+  "duas bolas de bilhar colidem durante um intervalo muito curto, e o impulso do atrito com a mesa nesse intervalo é desprezível.",
+  "um carrinho desce uma rampa por vários segundos sob ação da componente do peso ao longo da rampa, considerando apenas o carrinho como sistema.",
+  "um objeto explode no espaço, longe de corpos que exerçam forças externas relevantes sobre seus fragmentos.",
+  "dois carrinhos colidem sobre um trilho horizontal de atrito desprezível, considerando o sistema formado pelos dois carrinhos."
+)
+solutions <- c(FALSE, FALSE, TRUE, FALSE, FALSE)
+
+ordem <- sample(seq_along(questions))
+questions <- questions[ordem]
+solutions <- solutions[ordem]
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Em qual das situações abaixo \textbf{não} é adequado aplicar diretamente a conservação da quantidade de movimento ao sistema descrito durante todo o intervalo analisado?
+
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(questions)
+@
+
+\end{question}
+
+\begin{solution}
+
+A relação geral para um sistema é
+\[
+\Delta\vec p_{\mathrm{sist}}=\vec I_{\mathrm{ext}}.
+\]
+
+Portanto, a quantidade de movimento total só se conserva quando o impulso externo resultante é nulo ou desprezível no intervalo considerado.
+
+No carrinho que desce uma rampa por vários segundos, a componente do peso ao longo da rampa é uma força externa ao sistema formado apenas pelo carrinho e produz impulso apreciável. Assim,
+\[
+\vec I_{\mathrm{ext}}\neq 0,
+\]
+e a quantidade de movimento do carrinho muda.
+
+Nas demais situações, o sistema pode ser tratado como isolado ou aproximadamente isolado no intervalo considerado.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Questao autoral baseada na ideia de sistema isolado no tempo discutida por Alberto Gaspar.
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q138QuizQuandoNaoConservarMomento}
+%% \exsection{Mecanica; Quantidade de movimento; Conservacao; Sistema; Impulso externo; Conceitual}
+%% \exusepackage[utf8]{inputenc}
