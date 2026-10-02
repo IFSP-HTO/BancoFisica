@@ -20,7 +20,7 @@ include_supplement("Q152GasparCarrinhoTijolo.png", dir = "../figuras")
 
 \begin{question}
 
-(Baseada na discussão de Gaspar) Um carrinho de massa \\(1{,}0\\,\\mathrm{kg}\\) transporta um tijolo também de massa \\(1{,}0\\,\\mathrm{kg}\\). O conjunto desloca-se horizontalmente com velocidade \\(v_0=2{,}0\\,\\mathrm{m/s}\\). Uma pessoa retira o tijolo do carrinho, como indica a figura.
+(Baseada na discussão de Gaspar) Um carrinho de massa \(1{,}0\,\mathrm{kg}\) transporta um tijolo também de massa \(1{,}0\,\mathrm{kg}\). O conjunto desloca-se horizontalmente com velocidade \(v_0=2{,}0\,\mathrm{m/s}\). Uma pessoa retira o tijolo do carrinho, como indica a figura.
 
 \begin{center}
 \includegraphics[width=13cm,keepaspectratio]{Q152GasparCarrinhoTijolo.png}
