@@ -5,6 +5,5 @@
   "approval_date": "2026-09-27",
   "instruction": "Use esta imagem no exercício.",
   "original_upload_sha256": "4a069ed9859fda32e357af70aae1b209d0c21074f064c642f7190b189cb6ecf3",
-  "repository_asset_sha256": "1a40e14b947643438deb2dd831638f843b2d3496c1ff609f8edbcf5c8359b0de",
-  "processing": "Resized from 1024x385 to 640x241 and palette-optimized to 8 colors to reduce Moodle XML size; no semantic edits."
+  "processing": "Source image retained as the approved 1024x385 palette PNG; Q117 reads it with png::readPNG() and rasterizes a temporary JPEG during compilation for LaTeX/Moodle compatibility; no semantic edits."
 }
