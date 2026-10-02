@@ -1,0 +1,83 @@
+<<echo=FALSE, results=hide>>=
+m <- 0.20
+v0 <- 5.0
+v <- 4.0
+dt <- 0.020
+
+I <- m * (v + v0)
+Fmed <- I/dt
+
+include_supplement("Q151GasparBolaParede.png", dir = "../figuras")
+@
+
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+
+(Gaspar) Uma bola de massa \(0{,}20\,\mathrm{kg}\) choca-se perpendicularmente contra uma parede e retorna pela mesma direção, em sentido contrário. Ao atingir a parede, o módulo de sua velocidade é \(5{,}0\,\mathrm{m/s}\); ao se afastar da parede, o módulo é \(4{,}0\,\mathrm{m/s}\).
+
+\begin{center}
+\includegraphics[height=8.5cm,keepaspectratio]{Q151GasparBolaParede.png}
+\end{center}
+
+Sabendo que o tempo de interação entre a bola e a parede é \(0{,}020\,\mathrm{s}\), determine:
+
+\begin{answerlist}
+  \item o módulo do impulso exercido pela parede sobre a bola, em \(\mathrm{N\,s}\);
+  \item o módulo da força média exercida pela parede sobre a bola, em \(\mathrm{N}\).
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Adotando como positivo o sentido da velocidade da bola depois da colisão, a quantidade de movimento inicial é negativa:
+\[
+p_0=-mv_0,
+\]
+e a final é positiva:
+\[
+p=mv.
+\]
+
+O impulso exercido pela parede é a variação da quantidade de movimento:
+\[
+I=\Delta p=p-p_0.
+\]
+
+Assim,
+\[
+I=m(v+v_0)
+=0{,}20(4{,}0+5{,}0)
+=1{,}8\,\mathrm{N\,s}.
+\]
+
+O módulo da força média durante a interação satisfaz
+\[
+I=F_{\mathrm{méd}}\Delta t.
+\]
+
+Logo,
+\[
+F_{\mathrm{méd}}
+=
+\frac{1{,}8}{0{,}020}
+=
+90\,\mathrm{N}.
+\]
+
+A soma \(v+v_0\) aparece porque a bola inverte o sentido do movimento: a quantidade de movimento inicial e a final têm sinais opostos no referencial adotado.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Alberto Gaspar, Compreendendo a Fisica, vol. 1, cap. 17, exercicio resolvido 3, p. 223-224.
+%% Figura recortada da resolucao do exercicio.
+%% \extype{cloze}
+%% \exsolution{\Sexpr{I}|\Sexpr{Fmed}}
+%% \exclozetype{num|num}
+%% \extol{0.01|0.1}
+%% \exname{Q151ClozeGasparBolaParedeImpulso}
+%% \exsection{Mecanica; Impulso; Quantidade de movimento; Forca media; Colisao com parede; Vetores}
+%% \exusepackage[utf8]{inputenc}

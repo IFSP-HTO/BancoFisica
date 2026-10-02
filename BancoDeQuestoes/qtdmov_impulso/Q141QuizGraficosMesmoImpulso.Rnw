@@ -1,0 +1,81 @@
+<<echo=FALSE, results=hide>>=
+F <- sample(c(20,30,40,50),1)
+T <- sample(c(2,3,4),1)
+
+questions <- c(
+  "os dois gráficos representam o mesmo impulso, pois as áreas algébricas sob as curvas são iguais.",
+  "o gráfico A representa maior impulso, pois possui maior força máxima.",
+  "o gráfico B representa maior impulso, pois a força atua durante mais tempo.",
+  "não é possível comparar os impulsos sem conhecer a massa do corpo.",
+  "os impulsos só poderiam ser iguais se as forças fossem constantes."
+)
+solutions <- c(TRUE,FALSE,FALSE,FALSE,FALSE)
+
+ordem <- sample(seq_along(questions))
+questions <- questions[ordem]
+solutions <- solutions[ordem]
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Dois corpos recebem forças resultantes cujos módulos variam com o tempo conforme os gráficos A e B. Em ambos os casos, a força atua sempre no mesmo sentido.
+
+\begin{figure}[h!]
+\begin{center}
+<<echo=FALSE, fig=TRUE, height=4.2, width=8.5>>=
+par(mfrow=c(1,2), mar=c(4,4,1.5,1))
+plot(c(0,T/2,T), c(0,2*F,0), type="l", lwd=2,
+     xlab="t", ylab="F", main="A", xlim=c(0,T), ylim=c(0,2.2*F))
+polygon(c(0,T/2,T), c(0,2*F,0), border=NA, density=12)
+
+plot(c(0,T,T,0), c(F,F,0,0), type="n",
+     xlab="t", ylab="F", main="B", xlim=c(0,T), ylim=c(0,2.2*F))
+segments(0,F,T,F,lwd=2)
+segments(0,0,0,F,lwd=2)
+segments(T,0,T,F,lwd=2)
+polygon(c(0,T,T,0), c(0,0,F,F), border=NA, density=12)
+par(mfrow=c(1,1))
+@
+\end{center}
+\end{figure}
+
+A respeito dos impulsos representados,
+
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(questions)
+@
+
+\end{question}
+
+\begin{solution}
+
+O impulso é dado pela área algébrica sob o gráfico \(F\times t\).
+
+No gráfico A, a área triangular é
+\[
+I_A=\frac{1}{2}T(2F)=FT.
+\]
+
+No gráfico B, a área retangular é
+\[
+I_B=TF.
+\]
+
+Logo,
+\[
+I_A=I_B.
+\]
+
+Portanto, forças com formas temporais diferentes podem produzir o mesmo impulso.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Questao autoral sobre interpretacao grafica do impulso.
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q141QuizGraficosMesmoImpulso}
+%% \exsection{Mecanica; Impulso; Graficos; Forca variavel; Conceitual}
+%% \exusepackage[utf8]{inputenc}

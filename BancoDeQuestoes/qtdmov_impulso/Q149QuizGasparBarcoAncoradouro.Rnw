@@ -1,0 +1,59 @@
+<<echo=FALSE, results=hide>>=
+questions <- c(
+  "Sim. Como o barco estava inicialmente em repouso, ele permanece fixo enquanto o homem caminha para a proa.",
+  "Não. Ao caminhar em direção à proa, o homem adquire quantidade de movimento em um sentido e o barco recua no sentido oposto; sem impulso externo horizontal apreciável, a quantidade de movimento total permanece nula.",
+  "Sim. O peso do homem fornece a força horizontal necessária para manter o barco encostado no ancoradouro.",
+  "Não. O barco recua porque a força exercida pelo homem sobre ele é uma força externa ao sistema homem + barco.",
+  "Não. A quantidade de movimento do homem é sempre nula, pois ele se move apenas em relação ao barco."
+)
+solutions <- c(FALSE, TRUE, FALSE, FALSE, FALSE)
+
+ordem <- sample(seq_along(questions))
+questions <- questions[ordem]
+solutions <- solutions[ordem]
+
+include_supplement("Q149GasparBarcoAncoradouro.png", dir = "../figuras")
+@
+
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+
+(Gaspar) Um barco em repouso está encostado livremente em um ancoradouro. Um homem que está no barco começa a caminhar em direção à proa, como mostra a figura.
+
+\begin{center}
+\includegraphics[width=11.5cm,keepaspectratio]{Q149GasparBarcoAncoradouro.png}
+\end{center}
+
+Desprezando o impulso horizontal exercido pela água durante o movimento, qual afirmação descreve corretamente o que ocorre?
+
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(questions)
+@
+
+\end{question}
+
+\begin{solution}
+
+Considere o sistema formado pelo homem e pelo barco. Inicialmente, ambos estão em repouso e, portanto, a quantidade de movimento horizontal total é nula.
+
+Se o impulso externo horizontal for desprezível, a quantidade de movimento total deve permanecer nula:
+\[
+\vec p_{\mathrm{homem}}+\vec p_{\mathrm{barco}}=0.
+\]
+
+Assim, quando o homem caminha em direção à proa, o barco se desloca no sentido oposto. O movimento do barco faz a proa afastar-se do ancoradouro.
+
+O ponto central do problema é que as forças exercidas entre o homem e o barco são internas ao sistema homem + barco. Elas redistribuem a quantidade de movimento entre as partes, mas não alteram a quantidade de movimento total do sistema.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Alberto Gaspar, Compreendendo a Fisica, vol. 1, cap. 17, exercicio 14, p. 229.
+%% Figura recortada/adaptada da ilustracao do proprio exercicio.
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q149QuizGasparBarcoAncoradouro}
+%% \exsection{Mecanica; Quantidade de movimento; Conservacao; Sistema isolado; Barco; Conceitual}
+%% \exusepackage[utf8]{inputenc}

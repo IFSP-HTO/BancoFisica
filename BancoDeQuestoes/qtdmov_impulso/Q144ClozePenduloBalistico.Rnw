@@ -1,0 +1,65 @@
+<<echo=FALSE, results=hide>>=
+casos <- data.frame(
+  m = c(0.02,0.03,0.04,0.05),
+  M = c(0.98,0.97,0.96,0.95),
+  h = c(0.20,0.25,0.30,0.35)
+)
+i <- sample(seq_len(nrow(casos)),1)
+m <- casos$m[i]; M <- casos$M[i]; h <- casos$h[i]
+g <- 10
+V <- sqrt(2*g*h)
+v <- (M+m)*V/m
+fmt <- function(x,d=2) formatC(x,format="f",digits=d,decimal.mark=",")
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Um projétil de massa \(\Sexpr{fmt(1000*m,0)}\,\mathrm{g}\) atinge horizontalmente um bloco de massa \(\Sexpr{fmt(M,2)}\,\mathrm{kg}\), inicialmente em repouso e suspenso por fios leves. O projétil fica alojado no bloco. Após a colisão, o conjunto sobe até atingir altura máxima \(\Sexpr{fmt(h,2)}\,\mathrm{m}\).
+
+Adote \(g=10\,\mathrm{m/s^2}\). Determine:
+
+\begin{answerlist}
+\item a velocidade do conjunto imediatamente após a colisão, em \(\mathrm{m/s}\);
+\item a velocidade do projétil imediatamente antes da colisão, em \(\mathrm{m/s}\).
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Depois da colisão, o conjunto sobe convertendo energia cinética em potencial gravitacional:
+\[
+\frac12(M+m)V^2=(M+m)gh.
+\]
+Logo,
+\[
+V=\sqrt{2gh}
+=\Sexpr{fmt(V,2)}\,\mathrm{m/s}.
+\]
+
+Durante a colisão, o impulso externo horizontal é desprezível. Conserva-se, portanto, a quantidade de movimento horizontal:
+\[
+mv=(M+m)V.
+\]
+
+Assim,
+\[
+v=\frac{M+m}{m}V
+=\Sexpr{fmt(v,2)}\,\mathrm{m/s}.
+\]
+
+A energia mecânica não se conserva durante a colisão perfeitamente inelástica; ela é usada apenas na etapa posterior de subida do conjunto.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Figura: preferir figura original do Gaspar se houver equivalente adequada; esquema autoral provisório enquanto a fonte visual não for confrontada.
+%% \extype{cloze}
+%% \exsolution{\Sexpr{round(V,2)}|\Sexpr{round(v,2)}}
+%% \exclozetype{num|num}
+%% \extol{0.01|0.05}
+%% \exname{Q144ClozePenduloBalistico}
+%% \exsection{Mecanica; Quantidade de movimento; Conservacao; Colisao perfeitamente inelastica; Energia mecanica; Pendulo balistico}
+%% \exusepackage[utf8]{inputenc}

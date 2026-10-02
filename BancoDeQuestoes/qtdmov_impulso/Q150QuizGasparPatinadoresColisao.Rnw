@@ -1,0 +1,72 @@
+<<echo=FALSE, results=hide>>=
+questions <- c(
+  "A velocidade final é 4,0 m/s; portanto, a acrobacia planejada para 5,0 m/s não é possível nessas condições.",
+  "A velocidade final é 5,0 m/s; portanto, a acrobacia é possível exatamente como planejada.",
+  "A velocidade final é 6,0 m/s; portanto, a acrobacia é possível, mas com velocidade maior que a planejada.",
+  "A velocidade final é 2,5 m/s; portanto, a acrobacia não é possível nessas condições.",
+  "Não é possível determinar a velocidade final porque a colisão é inelástica e a energia cinética não se conserva."
+)
+solutions <- c(TRUE, FALSE, FALSE, FALSE, FALSE)
+
+ordem <- sample(seq_along(questions))
+questions <- questions[ordem]
+solutions <- solutions[ordem]
+
+include_supplement("Q150GasparPatinadores.png", dir = "../figuras")
+@
+
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+
+(UFRN, adaptada por Gaspar) Durante a preparação para uma competição de patinação no gelo, um casal planeja uma acrobacia em que ocorre uma colisão entre os patinadores. Inicialmente, o patinador de massa \(60\,\mathrm{kg}\) está em repouso, enquanto a patinadora de massa \(40\,\mathrm{kg}\) desloca-se em linha reta em sua direção com velocidade de \(10\,\mathrm{m/s}\). No choque, ele a segura, e os dois passam a se mover juntos.
+
+\begin{center}
+\includegraphics[width=11.5cm,keepaspectratio]{Q150GasparPatinadores.png}
+\end{center}
+
+Para a acrobacia planejada, eles deveriam sair da colisão com velocidade de \(5,0\,\mathrm{m/s}\). Desprezando o atrito com o gelo, qual conclusão é correta?
+
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(questions)
+@
+
+\end{question}
+
+\begin{solution}
+
+Durante a colisão, o impulso externo horizontal é desprezível. Portanto, conserva-se a quantidade de movimento:
+
+\[
+m_1v_1+m_2v_2=(m_1+m_2)v_f.
+\]
+
+Como o patinador está inicialmente em repouso,
+\[
+40\cdot 10 + 60\cdot 0=(40+60)v_f.
+\]
+
+Logo,
+\[
+400=100v_f,
+\]
+e
+\[
+v_f=4,0\,\mathrm{m/s}.
+\]
+
+Como a velocidade necessária à acrobacia era \(5,0\,\mathrm{m/s}\), o movimento planejado não pode ser realizado nessas condições.
+
+Não é necessário conservar a energia cinética: os patinadores permanecem juntos depois do choque, caracterizando uma colisão perfeitamente inelástica.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: UFRN, adaptada por Alberto Gaspar, Compreendendo a Fisica, vol. 1, cap. 17, problema 18, p. 235.
+%% Figura recortada da questao apresentada no capitulo.
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q150QuizGasparPatinadoresColisao}
+%% \exsection{Mecanica; Quantidade de movimento; Conservacao; Colisao perfeitamente inelastica; Patinadores}
+%% \exusepackage[utf8]{inputenc}
