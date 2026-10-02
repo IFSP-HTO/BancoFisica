@@ -1,9 +1,0 @@
-{
-  "source_visual": "adapted-approved",
-  "source_context": "UECE exercise reproduced in Colisões.pdf, exercício 6",
-  "supplied_by": "repository owner",
-  "approval_date": "2026-09-27",
-  "instruction": "Use esta imagem no exercício.",
-  "original_upload_sha256": "4a069ed9859fda32e357af70aae1b209d0c21074f064c642f7190b189cb6ecf3",
-  "processing": "Source image retained as the approved 1024x385 palette PNG; Q117 reads it with png::readPNG() and rasterizes a temporary JPEG during compilation for LaTeX/Moodle compatibility; no semantic edits."
-}
