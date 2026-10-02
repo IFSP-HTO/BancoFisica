@@ -1,0 +1,80 @@
+<<echo=FALSE, results=hide>>=
+casos <- data.frame(
+  m1=c(2,3,4,5),
+  v1=c(6,4,5,3),
+  m2=c(1,2,3,4)
+)
+i <- sample(seq_len(nrow(casos)),1)
+
+m1 <- casos$m1[i]
+v1 <- casos$v1[i]
+m2 <- casos$m2[i]
+
+vf <- m1*v1/(m1+m2)
+Ki <- 0.5*m1*v1^2
+Kf <- 0.5*(m1+m2)*vf^2
+dK <- Ki-Kf
+
+fmt <- function(x,d=2) formatC(x,format="f",digits=d,decimal.mark=",")
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Um carrinho de massa \(\Sexpr{m1}\,\mathrm{kg}\) move-se com velocidade \(\Sexpr{v1}\,\mathrm{m/s}\) e colide com outro carrinho de massa \(\Sexpr{m2}\,\mathrm{kg}\), inicialmente em repouso, sobre um trilho horizontal de atrito desprezível. Após a colisão, os carrinhos permanecem unidos.
+
+Determine:
+
+\begin{answerlist}
+  \item a velocidade do conjunto imediatamente após a colisão, em \(\mathrm{m/s}\);
+  \item a energia cinética inicial do sistema, em J;
+  \item a energia cinética final do sistema, em J;
+  \item a energia mecânica dissipada na colisão, em J.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Durante a colisão, o impulso externo horizontal é desprezível. Assim,
+\[
+m_1v_1=(m_1+m_2)v_f,
+\]
+e
+\[
+v_f=\frac{m_1v_1}{m_1+m_2}
+=\Sexpr{fmt(vf,2)}\,\mathrm{m/s}.
+\]
+
+A energia cinética inicial é
+\[
+K_i=\frac12m_1v_1^2
+=\Sexpr{fmt(Ki,2)}\,\mathrm{J}.
+\]
+
+A energia cinética final é
+\[
+K_f=\frac12(m_1+m_2)v_f^2
+=\Sexpr{fmt(Kf,2)}\,\mathrm{J}.
+\]
+
+Como os corpos permanecem unidos, a colisão é perfeitamente inelástica. A quantidade de movimento se conserva, mas a energia cinética não.
+
+A energia dissipada é
+\[
+E_{\mathrm{diss}}=K_i-K_f
+=\Sexpr{fmt(dK,2)}\,\mathrm{J}.
+\]
+
+\end{solution}
+
+%% META-INFORMATION
+%% Questao autoral integrando conservacao da quantidade de movimento e energia.
+%% \extype{cloze}
+%% \exsolution{\Sexpr{round(vf,2)}|\Sexpr{round(Ki,2)}|\Sexpr{round(Kf,2)}|\Sexpr{round(dK,2)}}
+%% \exclozetype{num|num|num|num}
+%% \extol{0.01|0.01|0.01|0.01}
+%% \exname{Q142ClozeMomentoEnergiaColisao}
+%% \exsection{Mecanica; Quantidade de movimento; Conservacao; Energia; Colisao perfeitamente inelastica}
+%% \exusepackage[utf8]{inputenc}
