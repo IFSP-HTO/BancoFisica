@@ -4,35 +4,51 @@ solutions <- c(FALSE, FALSE, TRUE, FALSE, FALSE)
 ordem <- sample(seq_along(questions))
 questions <- questions[ordem]
 solutions <- solutions[ordem]
-
-include_supplement("Q117QuizUECEPenduloMultiploElastico.png", dir = "../figuras")
-source_img <- "Q117QuizUECEPenduloMultiploElastico.png"
-render_img <- "Q117QuizUECEPenduloMultiploElastico_render.jpg"
-
-img <- png::readPNG(source_img)
-h <- dim(img)[1]
-w <- dim(img)[2]
-grDevices::jpeg(render_img, width = w, height = h, quality = 95, bg = "white")
-grid::grid.newpage()
-grid::grid.raster(
-  img,
-  width = grid::unit(1, "npc"),
-  height = grid::unit(1, "npc"),
-  interpolate = FALSE
-)
-grDevices::dev.off()
 @
 
 \usepackage[utf8]{inputenc}
-\usepackage{graphicx}
 
 \begin{question}
 
-(UECE, adaptada) Oito esferas estão suspensas por fios flexíveis, inextensíveis e de massas desprezíveis, formando um pêndulo múltiplo. Da esquerda para a direita, há quatro esferas de massa \(M=150\,\mathrm{g}\) e quatro esferas de massa \(m=50\,\mathrm{g}\). A primeira esfera de massa \(M\) é deslocada até uma altura \(h\) e solta; ao retornar, colide frontalmente com o grupo de esferas inicialmente em repouso.
+(UECE, adaptada) Oito esferas estão suspensas por fios flexíveis, inextensíveis e de massas desprezíveis, formando um pêndulo múltiplo. Há quatro esferas de massa \(M=150\,\mathrm{g}\) e quatro esferas de massa \(m=50\,\mathrm{g}\). Uma das esferas de massa \(M\), situada na extremidade esquerda, é deslocada até uma altura \(h\) e solta; ao retornar, colide frontalmente com o grupo de esferas inicialmente em repouso, conforme o esquema.
 
-\begin{center}
-\includegraphics[width=0.92\textwidth,keepaspectratio]{\Sexpr{render_img}}
-\end{center}
+<<echo=FALSE, fig=TRUE, width=7.2, height=2.7, eps=FALSE, results=hide>>=
+op <- par(mar = c(0, 0, 0, 0))
+plot(NA, xlim = c(0, 11), ylim = c(0, 3.8),
+     xlab = "", ylab = "", axes = FALSE, asp = 1)
+
+## Suporte
+segments(0.15, 3.60, 10.85, 3.60, lwd = 2)
+segments(0.15, 3.30, 10.85, 3.30, lwd = 1.5)
+
+circle <- function(x, y, r, label, cex = 1.25) {
+  th <- seq(0, 2*pi, length.out = 200)
+  polygon(x + r*cos(th), y + r*sin(th),
+          col = "lightblue", border = "black", lwd = 1.5)
+  text(x, y, labels = label, cex = cex, font = 2)
+}
+
+## Esfera M deslocada
+segments(3.05, 3.30, 1.35, 1.65, lwd = 1.5)
+circle(1.05, 1.35, 0.56, "M", 1.35)
+
+## Grupo inicialmente em repouso: 3 esferas M + 4 esferas m
+xM <- c(4.15, 5.30, 6.45)
+xm <- c(7.38, 8.18, 8.98, 9.78)
+y0 <- 0.72
+
+for (x in xM) {
+  segments(x, 3.30, x, y0 + 0.56, lwd = 1.25)
+  circle(x, y0, 0.56, "M", 1.25)
+}
+
+for (x in xm) {
+  segments(x, 3.30, x, y0 + 0.39, lwd = 1.25)
+  circle(x, y0, 0.39, "m", 1.05)
+}
+
+par(op)
+@
 
 Considere o modelo ideal do pêndulo múltiplo: o choque é perfeitamente elástico, as esferas de massa \(M\) ficam em repouso após a transmissão do choque e as \(n\) esferas de massa \(m\) que saem na extremidade oposta movem-se com o mesmo módulo de velocidade. O número de esferas de massa \(m\) que se moverão é
 
@@ -89,8 +105,8 @@ Portanto, movem-se \textbf{três} esferas de massa \(m\).
 %% META-INFORMATION
 %% Fonte: UECE, presente em Colisões.pdf, exercício 6.
 %% SOURCE-VISUAL: adapted-approved
-%% Figura fornecida e aprovada explicitamente pelo responsável pelo banco em 27/09/2026.
-%% O ativo-fonte é a imagem fornecida pelo responsável. Durante a compilação, ela é apenas rasterizada para JPEG por compatibilidade com o LaTeX/Moodle, sem alteração do conteúdo pedagógico.
+%% Esquema reconstruído proceduralmente em R a partir da imagem fornecida e aprovada pelo responsável pelo banco.
+%% A reconstrução preserva o arranjo físico relevante: 4 esferas M (uma deslocada) e 4 esferas m.
 %% \extype{schoice}
 %% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
 %% \exname{Q117QuizUECEPenduloMultiploElastico}
