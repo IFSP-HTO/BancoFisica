@@ -1,0 +1,67 @@
+<<echo=FALSE, results=hide>>=
+questions <- c(
+  "A velocidade do carrinho dobra para \(4\,\mathrm{m/s}\), pois a massa do sistema é reduzida à metade e a quantidade de movimento deve conservar-se.",
+  "A velocidade do carrinho permanece \(2\,\mathrm{m/s}\) no modelo idealizado; não se pode aplicar a conservação da quantidade de movimento ao sistema carrinho + tijolo durante a retirada, pois a pessoa exerce uma força externa sobre esse sistema.",
+  "A velocidade do carrinho cai imediatamente para zero porque o tijolo fornecia metade da quantidade de movimento total.",
+  "A conservação da quantidade de movimento exige que a velocidade final seja \(1\,\mathrm{m/s}\), pois apenas metade da massa permanece no carrinho.",
+  "Não é possível afirmar nada sobre o carrinho, pois a primeira lei de Newton deixa de ser válida quando um corpo é retirado dele."
+)
+solutions <- c(FALSE, TRUE, FALSE, FALSE, FALSE)
+
+ordem <- sample(seq_along(questions))
+questions <- questions[ordem]
+solutions <- solutions[ordem]
+
+include_supplement("Q152GasparCarrinhoTijolo.png", dir = "../figuras")
+@
+
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+
+(Baseada na discussão de Gaspar) Um carrinho de massa \(1{,}0\,\mathrm{kg}\) transporta um tijolo também de massa \(1{,}0\,\mathrm{kg}\). O conjunto desloca-se horizontalmente com velocidade \(v_0=2{,}0\,\mathrm{m/s}\). Uma pessoa retira o tijolo do carrinho, como indica a figura.
+
+\begin{center}
+\includegraphics[width=13cm,keepaspectratio]{Q152GasparCarrinhoTijolo.png}
+\end{center}
+
+Desprezando efeitos horizontais sobre o carrinho durante a retirada, qual afirmação é correta?
+
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(questions)
+@
+
+\end{question}
+
+\begin{solution}
+
+Uma aplicação incorreta da conservação da quantidade de movimento seria escrever
+\[
+(m_c+m_t)v_0=m_cv,
+\]
+o que levaria a
+\[
+(1+1)\cdot2=1\cdot v
+\quad\Rightarrow\quad
+v=4\,\mathrm{m/s}.
+\]
+
+Esse resultado é inadequado porque, durante a retirada, a pessoa exerce uma força externa sobre o sistema carrinho + tijolo. Portanto, esse sistema não é isolado durante o processo e sua quantidade de movimento total não precisa permanecer constante.
+
+No modelo idealizado em que nenhuma ação horizontal é exercida sobre o carrinho, a primeira lei de Newton implica que sua velocidade não se altera:
+\[
+v=v_0=2{,}0\,\mathrm{m/s}.
+\]
+
+Na prática, pode haver alguma alteração devido à interação por atrito entre tijolo e carrinho durante a retirada, mas isso não justifica a aplicação da conservação da quantidade de movimento ao sistema original.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte conceitual e figura: Alberto Gaspar, Compreendendo a Fisica, vol. 1, cap. 17, discussao da p. 226.
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q152QuizGasparCarrinhoTijolo}
+%% \exsection{Mecanica; Quantidade de movimento; Conservacao; Sistema; Forca externa; Inercia; Conceitual}
+%% \exusepackage[utf8]{inputenc}
