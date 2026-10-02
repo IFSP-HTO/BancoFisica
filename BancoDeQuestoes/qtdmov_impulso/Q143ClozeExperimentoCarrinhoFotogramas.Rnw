@@ -1,0 +1,74 @@
+<<echo=FALSE, results=hide>>=
+m <- sample(c(0.4,0.5,0.6,0.8),1)
+dt <- sample(c(0.1,0.2),1)
+dx1 <- sample(c(0.20,0.25,0.30),1)
+dx2 <- sample(c(0.05,0.10,0.15),1)
+
+v1 <- dx1/dt
+v2 <- -dx2/dt
+pi <- m*v1
+pf <- m*v2
+I <- pf-pi
+Fmed <- I/dt
+
+fmt <- function(x,d=2) formatC(x,format="f",digits=d,decimal.mark=",")
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Em uma experiência, a posição de um carrinho de massa \(\Sexpr{fmt(m,1)}\,\mathrm{kg}\) é registrada em intervalos iguais de \(\Sexpr{fmt(dt,1)}\,\mathrm{s}\). Imediatamente antes de colidir com um anteparo, o carrinho percorre \(\Sexpr{fmt(dx1,2)}\,\mathrm{m}\) para a direita entre dois registros sucessivos. Imediatamente após a colisão, percorre \(\Sexpr{fmt(dx2,2)}\,\mathrm{m}\) para a esquerda no mesmo intervalo de tempo.
+
+Adote a direita como sentido positivo e suponha que essas velocidades representem adequadamente os instantes imediatamente antes e depois da colisão.
+
+Determine:
+
+\begin{answerlist}
+  \item a velocidade imediatamente antes da colisão, em \(\mathrm{m/s}\);
+  \item a velocidade imediatamente após a colisão, em \(\mathrm{m/s}\);
+  \item o impulso recebido pelo carrinho, em \(\mathrm{N\,s}\);
+  \item a força média resultante durante um contato de duração \(\Sexpr{fmt(dt,1)}\,\mathrm{s}\), em N.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+A velocidade antes da colisão é estimada pela razão entre deslocamento e intervalo de tempo:
+\[
+v_i=\frac{\Delta x_1}{\Delta t}
+=\Sexpr{fmt(v1,2)}\,\mathrm{m/s}.
+\]
+
+Após a colisão, o movimento é para a esquerda:
+\[
+v_f=-\frac{\Delta x_2}{\Delta t}
+=\Sexpr{fmt(v2,2)}\,\mathrm{m/s}.
+\]
+
+O impulso resultante vale
+\[
+I=\Delta p=m(v_f-v_i)
+=\Sexpr{fmt(I,2)}\,\mathrm{N\,s}.
+\]
+
+A força média é
+\[
+F_{\mathrm{med}}=\frac{I}{\Delta t}
+=\Sexpr{fmt(Fmed,2)}\,\mathrm{N}.
+\]
+
+O sinal negativo indica que o impulso e a força média resultante apontam para a esquerda.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Questao autoral de interpretacao experimental.
+%% \extype{cloze}
+%% \exsolution{\Sexpr{round(v1,2)}|\Sexpr{round(v2,2)}|\Sexpr{round(I,2)}|\Sexpr{round(Fmed,2)}}
+%% \exclozetype{num|num|num|num}
+%% \extol{0.01|0.01|0.01|0.01}
+%% \exname{Q143ClozeExperimentoCarrinhoFotogramas}
+%% \exsection{Mecanica; Quantidade de movimento; Impulso; Experimento; Cinematica; Forca media}
+%% \exusepackage[utf8]{inputenc}
