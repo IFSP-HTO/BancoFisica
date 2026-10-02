@@ -1,0 +1,46 @@
+<<echo=FALSE, results=hide>>=
+questions <- c(
+  "considerar apenas o carrinho, pois a mola exerce uma força interna sobre ele.",
+  "considerar carrinho + mola, pois assim a força elástica passa a ser interna ao sistema escolhido.",
+  "considerar apenas a mola, porque sua massa pode ser desprezada.",
+  "qualquer escolha de sistema leva automaticamente à conservação da quantidade de movimento.",
+  "não é possível aplicar conceitos de quantidade de movimento quando há uma mola."
+)
+solutions <- c(FALSE, TRUE, FALSE, FALSE, FALSE)
+
+ordem <- sample(seq_along(questions))
+questions <- questions[ordem]
+solutions <- solutions[ordem]
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Um carrinho interage com uma mola comprimida sobre uma superfície horizontal de atrito desprezível. Deseja-se analisar a troca de quantidade de movimento durante a liberação da mola de modo que a força elástica seja tratada como força interna.
+
+A escolha mais adequada para o sistema é
+
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(questions)
+@
+
+\end{question}
+
+\begin{solution}
+
+A classificação de uma força como interna ou externa depende da escolha do sistema.
+
+Se o sistema for formado apenas pelo carrinho, a força exercida pela mola é externa ao sistema.
+
+Se o sistema for formado por carrinho + mola, a interação entre ambos passa a ser interna. Assim, na ausência de outras forças externas horizontais relevantes, pode-se analisar a conservação da quantidade de movimento do sistema escolhido.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Questao autoral inspirada na abordagem de sistemas de Alberto Gaspar.
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q140QuizEscolhaDoSistema}
+%% \exsection{Mecanica; Quantidade de movimento; Sistema; Forcas internas; Conceitual}
+%% \exusepackage[utf8]{inputenc}
