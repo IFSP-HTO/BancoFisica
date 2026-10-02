@@ -1,0 +1,137 @@
+exam_id: LO-DEMO
+profile: provas/profiles/ifsp-omr.yaml
+template: provas/templates/ifsp-omr.tex
+output_dir: build/provas/LO-DEMO
+institution: Instituto Federal de São Paulo
+campus: Câmpus Hortolândia
+subject: Física
+title: Avaliação de Física - Lançamento Oblíquo
+header_left: IFSP - Câmpus Hortolândia
+header_right: Física - Lançamento Oblíquo
+versions: 10
+seed: 26092026
+shuffle_alternatives: true
+extra_instructions_tex: |
+  \item Despreze a resistência do ar. Quando não houver indicação diferente, use $g=10\,\mathrm{m/s^2}$.
+formula_sheet_tex: |
+  \instructionbox{\textbf{Formulário de lançamento oblíquo}\medskip
+  \begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}X@{}}
+  \textbf{Decomposição} & \textbf{Movimento horizontal}\\
+  \[v_{0x}=v_0\cos\theta,\quad v_{0y}=v_0\sin\theta\] & \[x=x_0+v_{0x}t,\quad v_x=v_{0x}\]\\[-0.8em]
+  \textbf{Movimento vertical} & \textbf{Velocidade vertical}\\
+  \[y=y_0+v_{0y}t-\frac{gt^2}{2}\] & \[v_y=v_{0y}-gt\]\\[-0.8em]
+  \textbf{Altura máxima} & \textbf{Retorno ao mesmo nível}\\
+  \[\Delta H_{\max}=\frac{v_{0y}^2}{2g}\] & \[T=\frac{2v_{0y}}{g},\quad A=v_{0x}T\]
+  \end{tabularx}}
+
+questions:
+  - id: LO-DEMO-Q01
+    difficulty: easy
+    skills: [componentes-da-velocidade]
+    prompt: |
+      Um projétil é lançado no vácuo com velocidade inicial $v_0$ a um ângulo $\theta$. Qual relação descreve corretamente as componentes da velocidade no instante $t$?
+    alternatives:
+      - '$v_x=v_0\cos\theta$ e $v_y=v_0\sin\theta-gt$.'
+      - '$v_x=v_0\cos\theta$ e $v_y=v_0\sin\theta$.'
+      - '$v_x=v_0\cos\theta-gt$ e $v_y=v_0\sin\theta$.'
+      - '$v_x=v_0\sin\theta$ e $v_y=v_0\cos\theta-gt$.'
+      - '$v_x=v_0\cos\theta+gt$ e $v_y=v_0\sin\theta$.'
+    answer: A
+
+  - id: LO-DEMO-Q02
+    difficulty: easy
+    skills: [tempo-de-voo]
+    prompt: |
+      Um corpo é lançado com $v_0={{v0}}\,\mathrm{m/s}$ e $\sin\theta={{sen}}$. Se retorna ao nível de lançamento, qual é o tempo total de voo?
+    parameter_sets:
+      - {v0: 20, sen: "0{,}50"}
+      - {v0: 30, sen: "0{,}50"}
+      - {v0: 25, sen: "0{,}60"}
+      - {v0: 40, sen: "0{,}50"}
+      - {v0: 20, sen: "0{,}60"}
+    alternatives: ['$2{,}0\,\mathrm{s}$', '$1{,}0\,\mathrm{s}$', '$3{,}0\,\mathrm{s}$', '$4{,}0\,\mathrm{s}$', '$5{,}0\,\mathrm{s}$']
+    answer: A
+
+  - id: LO-DEMO-Q03
+    difficulty: easy
+    skills: [apice]
+    prompt: |
+      No ponto mais alto de um lançamento oblíquo sem resistência do ar, qual afirmação é correta?
+    alternatives:
+      - '$v_y=0$ e $v_x$ permanece constante.'
+      - "A velocidade total é nula."
+      - "A aceleração é nula."
+      - '$v_x=0$ e $v_y$ é máximo.'
+      - "As duas componentes da velocidade são constantes."
+    answer: A
+
+  - id: LO-DEMO-Q04
+    difficulty: easy
+    skills: [alcance]
+    prompt: |
+      Para lançamento e queda no mesmo nível, qual ângulo produz alcance máximo para uma velocidade inicial fixa?
+    alternatives: ['$45^\circ$', '$30^\circ$', '$60^\circ$', '$15^\circ$', '$75^\circ$']
+    answer: A
+
+  - id: LO-DEMO-Q05
+    difficulty: easy
+    skills: [independencia-da-massa]
+    prompt: |
+      Dois corpos de massas diferentes são lançados com a mesma velocidade inicial e o mesmo ângulo, desprezando o ar. Seus alcances horizontais serão:
+    alternatives:
+      - "iguais."
+      - "maior para o corpo mais pesado."
+      - "maior para o corpo mais leve."
+      - "iguais somente se as massas forem iguais."
+      - "impossíveis de comparar sem conhecer as massas."
+    answer: A
+
+  - id: LO-DEMO-Q06
+    difficulty: medium
+    skills: [x-para-t-para-y]
+    prompt: |
+      Um projétil possui $v_x=10\,\mathrm{m/s}$. Para atingir $x=20\,\mathrm{m}$, quanto tempo decorre?
+    alternatives: ['$2\,\mathrm{s}$', '$1\,\mathrm{s}$', '$0{,}5\,\mathrm{s}$', '$4\,\mathrm{s}$', '$5\,\mathrm{s}$']
+    answer: A
+
+  - id: LO-DEMO-Q07
+    difficulty: medium
+    skills: [altura-maxima]
+    prompt: |
+      A componente vertical inicial vale $20\,\mathrm{m/s}$. Qual é a altura máxima acima do ponto de lançamento?
+    alternatives: ['$20\,\mathrm{m}$', '$10\,\mathrm{m}$', '$40\,\mathrm{m}$', '$5\,\mathrm{m}$', '$80\,\mathrm{m}$']
+    answer: A
+
+  - id: LO-DEMO-Q08
+    difficulty: medium
+    skills: [raciocinio-inverso]
+    prompt: |
+      Um projétil lançado a $45^\circ$ tem alcance $160\,\mathrm{m}$. Com $g=10\,\mathrm{m/s^2}$, sua velocidade inicial é:
+    alternatives: ['$40\,\mathrm{m/s}$', '$20\,\mathrm{m/s}$', '$30\,\mathrm{m/s}$', '$50\,\mathrm{m/s}$', '$60\,\mathrm{m/s}$']
+    answer: A
+
+  - id: LO-DEMO-Q09
+    difficulty: medium
+    skills: [angulos-complementares]
+    prompt: |
+      Com a mesma velocidade inicial, disparos a $30^\circ$ e $60^\circ$ retornam ao mesmo nível. Os alcances são:
+    alternatives:
+      - "iguais."
+      - 'maior a $30^\circ$.'
+      - 'maior a $60^\circ$.'
+      - "iguais somente se $g=0$."
+      - "impossíveis de comparar."
+    answer: A
+
+  - id: LO-DEMO-Q10
+    difficulty: medium
+    skills: [modelagem]
+    prompt: |
+      Para descobrir a altura de um projétil quando ele alcança uma posição horizontal conhecida $x$, uma estratégia correta é:
+    alternatives:
+      - "obter primeiro $t$ pelo movimento horizontal e usar esse mesmo $t$ no vertical."
+      - "calcular $y$ sem determinar o tempo."
+      - "usar tempos diferentes nos eixos horizontal e vertical."
+      - "considerar $v_x=0$ durante todo o movimento."
+      - "considerar $g$ também no movimento horizontal."
+    answer: A

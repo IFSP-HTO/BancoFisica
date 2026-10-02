@@ -60,3 +60,14 @@ BancoDeQuestoes/acel/acel1.pdf
 # Ignore files generated in subfolder
 BancoDeQuestoes/**/*.pdf
 Moodle/hidrostatica6-12018.xml
+
+
+# Sensitive student assessment artifacts (never commit)
+private/
+provas/private/
+analytics/private/
+*.student-responses.csv
+*.student-grades.csv
+*.omr-scan.pdf
+*.omr-scan.png
+*.omr-scan.jpg

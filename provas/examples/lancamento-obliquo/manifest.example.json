@@ -1,0 +1,26 @@
+{
+  "title": "Avaliação de Física - Lançamento Oblíquo",
+  "subtitle": "1º ano - exemplo de estrutura",
+  "formula_sheet_tex": "\\textbf{Dados:} adote $g=10\\,\\mathrm{m/s^2}$ quando necessário.",
+  "versions": [
+    {
+      "internal_id": "LO-EXAMPLE-01",
+      "public_code": "7K3P",
+      "qr_payload": "BF|LO-EXAMPLE-01",
+      "answer_key": ["D","C","B","E","A","D","B","C","E","A"],
+      "questions_tex": [
+        "\\qtitle{1} Substitua este texto pela questão materializada.\\begin{alts}\\item A\\item B\\item C\\item D\\item E\\end{alts}",
+        "\\qtitle{2} Exemplo.\\begin{alts}\\item A\\item B\\item C\\item D\\item E\\end{alts}",
+        "\\qtitle{3} Exemplo.\\begin{alts}\\item A\\item B\\item C\\item D\\item E\\end{alts}",
+        "\\qtitle{4} Exemplo.\\begin{alts}\\item A\\item B\\item C\\item D\\item E\\end{alts}",
+        "\\qtitle{5} Exemplo.\\begin{alts}\\item A\\item B\\item C\\item D\\item E\\end{alts}",
+        "\\qtitle{6} Exemplo.\\begin{alts}\\item A\\item B\\item C\\item D\\item E\\end{alts}",
+        "\\qtitle{7} Exemplo.\\begin{alts}\\item A\\item B\\item C\\item D\\item E\\end{alts}",
+        "\\qtitle{8} Exemplo.\\begin{alts}\\item A\\item B\\item C\\item D\\item E\\end{alts}",
+        "\\qtitle{9} Exemplo.\\begin{alts}\\item A\\item B\\item C\\item D\\item E\\end{alts}",
+        "\\qtitle{10} Exemplo.\\begin{alts}\\item A\\item B\\item C\\item D\\item E\\end{alts}"
+      ],
+      "parameters": {"seed": 21092026}
+    }
+  ]
+}
