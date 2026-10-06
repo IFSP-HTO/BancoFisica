@@ -34,6 +34,16 @@ Antes de escrever ou adaptar qualquer `.Rnw` baseado em uma fonte externa, faça
 
 Este gate tem precedência sobre conveniência editorial: **“a questão continua resolvível sem a figura” não é justificativa para removê-la quando a fonte a utiliza**.
 
+## Listas fiéis a avaliações aplicadas
+
+Quando a finalidade for reproduzir no Moodle uma prova que já foi aplicada:
+
+1. A própria prova impressa limpa é a fonte de verdade. Não substitua uma questão por outra questão canônica ou conceitualmente equivalente do Banco.
+2. Preserve exatamente enunciado, figura, parâmetros, ordem das alternativas e gabarito da versão impressa.
+3. Se necessário, crie um `.Rnw` específico da avaliação em vez de reutilizar uma fonte que apenas cobre a mesma habilidade.
+4. Use apenas PDFs limpos pré-aplicação. Nunca derive ativos de scans respondidos, fotos de estudantes, planilhas de correção ou qualquer material com dados individuais.
+5. O CI da lista fiel deve validar a presença dos ativos visuais incorporados, além da quantidade de categorias/réplicas e do limite de tamanho do Moodle.
+
 ## Trabalho iniciado antes deste fluxo
 
 Se uma questão ainda não foi finalizada e sua figura veio de screenshot indireto, reconstrução, geração ou outro fluxo intermediário, substitua o ativo pelo resultado de `tools/pdf_assets.py` antes de concluir o PR, desde que o PDF-fonte esteja disponível e a intenção seja preservar a imagem original.
