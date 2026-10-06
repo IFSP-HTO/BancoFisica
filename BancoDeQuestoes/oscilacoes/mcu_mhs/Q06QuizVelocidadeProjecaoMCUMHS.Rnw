@@ -1,0 +1,71 @@
+<<echo=FALSE, results=hide>>=
+Afig <- 1
+theta <- sample(c(pi/6, pi/4, pi/3, 2*pi/3), 1)
+xp <- cos(theta)
+yp <- sin(theta)
+ang <- seq(0, 2*pi, length.out = 500)
+scale_v <- 0.65
+vx_end <- xp - scale_v * sin(theta)
+vy_end <- yp + scale_v * cos(theta)
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Uma partícula de referência executa MCU de raio $A$ em sentido anti-horário, com velocidade angular $\omega$. Sua projeção sobre o eixo $x$ executa MHS. No esquema, o vetor tangente representa a velocidade da partícula de referência.
+
+<<fig=TRUE, height=5, width=6, echo=FALSE, eps=FALSE, results=hide>>=
+par(mar = c(3.8, 1.0, 0.8, 0.8))
+plot(cos(ang), sin(ang), type = "l", lwd = 2, asp = 1,
+     axes = FALSE, xlab = "", ylab = "",
+     xlim = c(-1.45, 1.45), ylim = c(-1.25, 1.55))
+abline(h = 0, v = 0, lty = 3)
+segments(0, 0, xp, yp, lwd = 2)
+segments(xp, yp, xp, 0, lty = 2)
+points(xp, yp, pch = 19, cex = 1.2)
+points(xp, 0, pch = 19, cex = 1.2)
+arrows(xp, yp, vx_end, vy_end, length = 0.10, lwd = 2)
+segments(xp, yp, vx_end, yp, lty = 2)
+text(vx_end, vy_end, labels = "v", pos = 3)
+text((xp + vx_end)/2, yp, labels = "v_x", pos = 1)
+axis(1, at = c(-1, 0, 1), labels = c("-A", "0", "A"))
+mtext("eixo x", side = 1, line = 2.2)
+@
+
+Sabendo que a fase instantânea é $\theta=\omega t+\phi$, qual expressão representa a velocidade $v_x$ da projeção?
+
+\begin{answerlist}
+  \item $v_x=-\omega A\sin(\omega t+\phi)$.
+  \item $v_x=+\omega A\sin(\omega t+\phi)$.
+  \item $v_x=-\omega^2 A\sin(\omega t+\phi)$.
+  \item $v_x=\omega A\cos(\omega t+\phi)$.
+  \item $v_x=-\omega A\cos(\omega t+\phi)$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+No MCU, o módulo da velocidade tangencial é
+\[
+v=\omega A.
+\]
+Para uma posição angular $\theta$, a componente horizontal do vetor tangente vale
+\[
+v_x=-v\sin\theta.
+\]
+Logo,
+\[
+v_x=-\omega A\sin\theta
+   =-\omega A\sin(\omega t+\phi).
+\]
+O sinal negativo é consequência da orientação da componente horizontal do vetor tangente; ele também aparece ao derivar $x(t)=A\cos(\omega t+\phi)$ em relação ao tempo.
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{10000}
+%% \exname{Q06QuizVelocidadeProjecaoMCUMHS}
+%% \exsection{Mecanica; Oscilacoes; MHS e MCU; Velocidade}
+%% \exusepackage[utf8]{inputenc}

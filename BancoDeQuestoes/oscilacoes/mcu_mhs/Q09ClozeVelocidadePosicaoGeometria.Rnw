@@ -1,0 +1,94 @@
+<<echo=FALSE, results=hide>>=
+casos <- data.frame(
+  A = c(5, 5, 10, 13, 13),
+  x = c(3, 4, 6, 5, 12),
+  y = c(4, 3, 8, 12, 5)
+)
+i <- sample(seq_len(nrow(casos)), 1)
+A <- casos$A[i]
+x <- casos$x[i]
+y <- casos$y[i]
+omega <- sample(c(2, 3, 4), 1)
+vx_abs <- omega * y
+ang <- seq(0, 2*pi, length.out = 500)
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Uma partícula de referência executa MCU em uma circunferência de raio $A=\Sexpr{A}\,\mathrm{cm}$ com velocidade angular $\omega=\Sexpr{omega}\,\mathrm{rad/s}$. No instante mostrado, sua projeção sobre o eixo $x$ encontra-se em $x=\Sexpr{x}\,\mathrm{cm}$.
+
+No plano auxiliar do círculo, chame de $y$ a componente perpendicular ao eixo de projeção.
+
+<<fig=TRUE, height=5, width=6, echo=FALSE, eps=FALSE, results=hide>>=
+par(mar = c(3.8, 3.8, 0.8, 0.8))
+plot(A*cos(ang), A*sin(ang), type = "l", lwd = 2, asp = 1,
+     axes = FALSE, xlab = "", ylab = "",
+     xlim = c(-1.15*A, 1.15*A), ylim = c(-1.15*A, 1.15*A))
+abline(h = 0, v = 0, lty = 3)
+segments(0, 0, x, y, lwd = 2)
+segments(x, 0, x, y, lty = 2)
+segments(0, 0, x, 0, lwd = 1.5)
+points(x, y, pch = 19, cex = 1.2)
+points(x, 0, pch = 19, cex = 1.2)
+text(x/2, 0, labels = "x", pos = 1)
+text(x, y/2, labels = "y", pos = 4)
+text(x/2, y/2, labels = "A", pos = 3)
+axis(1, at = c(-A, 0, x, A), labels = c("-A", "0", as.character(x), "A"))
+axis(2, at = c(-A, 0, A), labels = c("-A", "0", "A"))
+mtext("eixo de projeção x (cm)", side = 1, line = 2.2)
+mtext("componente auxiliar y", side = 2, line = 2.2)
+@
+
+Usando apenas a geometria do círculo e a projeção da velocidade tangencial, determine:
+
+\begin{answerlist}
+  \item o módulo $|y|$, em centímetros;
+  \item o módulo $|v_x|$ da velocidade da projeção, em $\mathrm{cm/s}$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+O raio $A$ e as componentes $x$ e $y$ formam um triângulo retângulo. Portanto,
+\[
+A^2=x^2+y^2,
+\]
+e
+\[
+|y|=\sqrt{A^2-x^2}
+=\sqrt{\Sexpr{A}^2-\Sexpr{x}^2}
+=\Sexpr{y}\,\mathrm{cm}.
+\]
+
+No MCU, o módulo da velocidade tangencial é $\omega A$. Para um ponto de coordenadas $(x,y)$, sua componente horizontal satisfaz
+\[
+v_x=-\omega y.
+\]
+Assim,
+\[
+|v_x|=\omega|y|=\Sexpr{omega}\cdot\Sexpr{y}
+=\Sexpr{vx_abs}\,\mathrm{cm/s}.
+\]
+Eliminando $y$, obtemos a relação geral
+\[
+\boxed{v_x^2=\omega^2\left(A^2-x^2\right)},
+\]
+que foi deduzida diretamente da geometria do MCU de referência.
+
+\begin{answerlist}
+  \item $\Sexpr{y}\,\mathrm{cm}$;
+  \item $\Sexpr{vx_abs}\,\mathrm{cm/s}$.
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{y}|\Sexpr{vx_abs}}
+%% \extol{0.01|0.01}
+%% \exname{Q09ClozeVelocidadePosicaoGeometria}
+%% \exsection{Mecanica; Oscilacoes; MHS e MCU; Velocidade e posicao}
+%% \exusepackage[utf8]{inputenc}

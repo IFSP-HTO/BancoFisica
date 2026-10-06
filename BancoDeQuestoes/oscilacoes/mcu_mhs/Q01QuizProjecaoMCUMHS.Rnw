@@ -1,0 +1,63 @@
+<<echo=FALSE, results=hide>>=
+A <- sample(c(3, 4, 5), 1)
+theta <- sample(c(pi/6, pi/4, pi/3, 2*pi/3, 3*pi/4, 5*pi/6), 1)
+xp <- A * cos(theta)
+yp <- A * sin(theta)
+ang <- seq(0, 2*pi, length.out = 500)
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Uma partícula de referência $P'$ descreve um movimento circular uniforme em uma circunferência de raio $A$. O ponto $P$ é a projeção ortogonal de $P'$ sobre o eixo horizontal $x$.
+
+<<fig=TRUE, height=5, width=6, echo=FALSE, eps=FALSE, results=hide>>=
+par(mar = c(3.8, 1.0, 0.8, 0.8))
+plot(A*cos(ang), A*sin(ang), type = "l", lwd = 2, asp = 1,
+     axes = FALSE, xlab = "", ylab = "",
+     xlim = c(-1.25*A, 1.25*A), ylim = c(-1.15*A, 1.25*A))
+abline(h = 0, v = 0, lty = 3)
+segments(0, 0, xp, yp, lwd = 2)
+segments(xp, yp, xp, 0, lty = 2)
+points(xp, yp, pch = 19, cex = 1.2)
+points(xp, 0, pch = 19, cex = 1.2)
+text(xp, yp, labels = "P'", pos = 3)
+text(xp, 0, labels = "P", pos = 1)
+axis(1, at = c(-A, 0, A), labels = c("-A", "0", "A"))
+mtext("eixo de projeção x", side = 1, line = 2.2)
+@
+
+Qual afirmação descreve corretamente a coordenada $x$ do ponto $P$?
+
+\begin{answerlist}
+  \item $x$ é a componente horizontal do vetor posição de $P'$ e varia entre $-A$ e $+A$.
+  \item $x$ é o comprimento do arco percorrido por $P'$ desde o início do movimento.
+  \item $x$ é sempre igual ao raio $A$, pois $P'$ permanece sobre a circunferência.
+  \item $x$ mede a distância entre $P'$ e $P$ e, por isso, nunca pode ser negativa.
+  \item $x$ é a componente vertical do vetor posição de $P'$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+O ponto $P$ é obtido pela projeção ortogonal de $P'$ sobre o eixo $x$. Portanto, sua coordenada é exatamente a componente horizontal do vetor posição da partícula de referência.
+
+Se a posição angular de $P'$ é $\theta$, então
+\[
+x=A\cos\theta.
+\]
+Como $-1\leq\cos\theta\leq 1$, a projeção percorre o intervalo
+\[
+-A\leq x\leq A.
+\]
+Assim, o raio da circunferência de referência é também a amplitude do movimento projetado.
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{10000}
+%% \exname{Q01QuizProjecaoMCUMHS}
+%% \exsection{Mecanica; Oscilacoes; MHS e MCU; Projecao}
+%% \exusepackage[utf8]{inputenc}

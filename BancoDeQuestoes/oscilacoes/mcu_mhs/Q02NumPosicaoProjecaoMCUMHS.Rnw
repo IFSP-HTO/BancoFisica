@@ -1,0 +1,61 @@
+<<echo=FALSE, results=hide>>=
+A <- sample(c(4, 6, 8, 10), 1)
+theta_deg <- sample(c(30, 60, 120, 150), 1)
+theta <- theta_deg * pi / 180
+x <- A * cos(theta)
+y <- A * sin(theta)
+ang <- seq(0, 2*pi, length.out = 500)
+fmt <- function(z) formatC(z, format = "f", digits = 2, decimal.mark = ",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Uma partícula de referência executa MCU em uma circunferência de raio $A=\Sexpr{A}\,\mathrm{cm}$. No instante representado, seu vetor posição forma um ângulo de $\Sexpr{theta_deg}^{\circ}$ com o semieixo positivo de $x$.
+
+<<fig=TRUE, height=5, width=6, echo=FALSE, eps=FALSE, results=hide>>=
+par(mar = c(3.8, 1.0, 0.8, 0.8))
+plot(A*cos(ang), A*sin(ang), type = "l", lwd = 2, asp = 1,
+     axes = FALSE, xlab = "", ylab = "",
+     xlim = c(-1.25*A, 1.25*A), ylim = c(-1.15*A, 1.25*A))
+abline(h = 0, v = 0, lty = 3)
+segments(0, 0, x, y, lwd = 2)
+segments(x, y, x, 0, lty = 2)
+points(x, y, pch = 19, cex = 1.2)
+points(x, 0, pch = 19, cex = 1.2)
+tt <- seq(0, theta, length.out = 80)
+lines(0.42*A*cos(tt), 0.42*A*sin(tt), lwd = 1.5)
+text(0.58*A*cos(theta/2), 0.58*A*sin(theta/2),
+     labels = paste0(theta_deg, " graus"), cex = 0.9)
+text(x, y, labels = "P'", pos = 3)
+text(x, 0, labels = "P", pos = 1)
+axis(1, at = c(-A, 0, A), labels = c("-A", "0", "A"))
+mtext("eixo x", side = 1, line = 2.2)
+@
+
+Determine a posição $x$ da projeção $P$, em centímetros. Considere o eixo positivo orientado para a direita.
+
+\end{question}
+
+\begin{solution}
+
+A posição do MHS é a projeção do vetor posição do MCU sobre o eixo $x$:
+\[
+x=A\cos\theta.
+\]
+Substituindo os dados,
+\[
+x=\Sexpr{A}\cos(\Sexpr{theta_deg}^{\circ})
+ =\Sexpr{fmt(x)}\,\mathrm{cm}.
+\]
+O sinal do resultado indica em qual lado da posição de equilíbrio a projeção se encontra.
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{round(x,4)}}
+%% \extol{0.02}
+%% \exname{Q02NumPosicaoProjecaoMCUMHS}
+%% \exsection{Mecanica; Oscilacoes; MHS e MCU; Posicao}
+%% \exusepackage[utf8]{inputenc}
