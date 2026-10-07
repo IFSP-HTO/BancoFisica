@@ -1,0 +1,81 @@
+<<echo=FALSE, results=hide>>=
+g <- 10
+v <- sample(c(8, 10, 12, 15), 1)
+D <- 2 * v^2 / g
+
+fmt <- function(x, d=1) formatC(x, format="f", digits=d, decimal.mark=",")
+
+include_supplement("PM007_Q25_base.b64", dir="../../../figuras")
+img_b64 <- paste(readLines("PM007_Q25_base.b64", warn=FALSE), collapse="")
+img <- "PM007_Q25_base.png"
+writeBin(base64enc::base64decode(img_b64), img)
+file.remove("PM007_Q25_base.b64")
+@
+
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+
+Um motociclista de MotoCross move-se horizontalmente com velocidade
+$v=\Sexpr{fmt(v,0)}\,\mathrm{m/s}$ até deixar a borda em $A$. Abaixo de $A$ há
+uma rampa inclinada de $45^\circ$ com a horizontal, conforme a figura. A
+distância horizontal $D$ até o ponto em que o motociclista reencontra a rampa
+é igual à queda vertical $H$ nesse ponto.
+
+Despreze a resistência do ar e adote $g=10\,\mathrm{m/s^2}$.
+
+\begin{center}
+\includegraphics[width=7cm,keepaspectratio]{\Sexpr{img}}
+\end{center}
+
+Determine $D$, em metros.
+
+\begin{answerlist}
+  \item distância $D$, em $\mathrm{m}$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Tomando a origem em $A$, com $y$ positivo para baixo, o lançamento é
+horizontal:
+\[
+x=vt,
+\qquad
+y=\frac12gt^2.
+\]
+
+Na rampa de $45^\circ$, a queda vertical é igual ao deslocamento horizontal:
+\[
+y=x.
+\]
+
+Substituindo $t=x/v$,
+\[
+x=\frac12g\left(\frac{x}{v}\right)^2.
+\]
+Além da solução $x=0$, correspondente ao ponto $A$, a nova interseção ocorre em
+\[
+D=x=\frac{2v^2}{g}
+=\Sexpr{fmt(D,1)}\,\mathrm{m}.
+\]
+
+\begin{answerlist}
+  \item $\Sexpr{fmt(D,1)}$
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Projeto Medicina / Futuro Militar, exercício 25 de
+%% 007_fisica_lancamento_horizontal_obliquo.pdf.
+%% Figura: recorte original do PDF, sem alterações.
+%% \extype{cloze}
+%% \exsolution{\Sexpr{D}}
+%% \exclozetype{num}
+%% \extol{0.05}
+%% \exname{PM007Q25MotoCrossRampa45}
+%% \exsection{Mecanica; Cinematica; Lancamento horizontal; Expansao PDF007}
+%% \exusepackage[utf8]{inputenc}
