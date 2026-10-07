@@ -1,0 +1,70 @@
+<<echo=FALSE, results=hide>>=
+include_supplement("PM007_Q10_base.b64", dir="../../../figuras")
+img_b64 <- paste(readLines("PM007_Q10_base.b64", warn=FALSE), collapse="")
+img <- "PM007_Q10_base.png"
+writeBin(base64enc::base64decode(img_b64), img)
+file.remove("PM007_Q10_base.b64")
+@
+
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+
+A partir de uma mesma altura, uma esfera $X$ é abandonada do repouso e uma
+esfera $Y$ é lançada horizontalmente com velocidade de $1\,\mathrm{m/s}$.
+A figura mostra, em um painel quadriculado, a posição inicial de $Y$ e as
+posições ocupadas por $X$ a cada intervalo de $0{,}1\,\mathrm{s}$.
+
+Adote $g=10\,\mathrm{m/s^2}$ e despreze a resistência do ar.
+
+\begin{center}
+\includegraphics[width=6cm,keepaspectratio]{\Sexpr{img}}
+\end{center}
+
+Por qual dos pontos indicados na figura a esfera $Y$ passará?
+
+\begin{answerlist}
+  \item A
+  \item B
+  \item C
+  \item D
+  \item E
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+As duas esferas possuem exatamente o mesmo movimento vertical, pois ambas
+partem com componente vertical da velocidade igual a zero e estão submetidas à
+mesma aceleração $g$.
+
+Portanto, quando $X$ chega à linha inferior do painel, em
+$t=0{,}3\,\mathrm{s}$, $Y$ também está nessa mesma altura.
+
+Na horizontal,
+\[
+\Delta x=v_xt=1\cdot0{,}3=0{,}3\,\mathrm{m}.
+\]
+Pela escala da malha, esse deslocamento corresponde ao ponto B.
+
+\begin{answerlist}
+  \item incorreta
+  \item correta
+  \item incorreta
+  \item incorreta
+  \item incorreta
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Projeto Medicina / Futuro Militar, exercício 10 de
+%% 007_fisica_lancamento_horizontal_obliquo.pdf.
+%% Figura: recorte original do PDF, sem alterações.
+%% \extype{schoice}
+%% \exsolution{01000}
+%% \exname{PM007Q10PainelQuedaELancamentoHorizontal}
+%% \exsection{Mecanica; Cinematica; Lancamento horizontal; Expansao PDF007}
+%% \exusepackage[utf8]{inputenc}
