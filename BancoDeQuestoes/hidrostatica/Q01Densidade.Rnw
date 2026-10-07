@@ -1,64 +1,74 @@
 <<echo=FALSE, results=hide>>=
-## IMPLEMENTADA POR Flavio Barros 
-## Carregandos funções necessárias
-nota_cient <- function(x,digits) {
-  if (x==0) return("0")
-  ord <- floor(log(abs(x),10))
+## Implementada por Flavio Barros
+nota_cient <- function(x, digits) {
+  if (x == 0) return("0")
+  ord <- floor(log(abs(x), 10))
   x <- x / 10^ord
-  if (!missing(digits)) x <- format(x,digits=digits)
-  if (ord==0) return(as.character(x))
-  return(paste(x,"\\\\times 10^{",ord,"}",sep=""))
+  if (!missing(digits)) x <- format(x, digits = digits)
+  if (ord == 0) return(as.character(x))
+  paste(x, "\\times 10^{", ord, "}", sep = "")
 }
 
 ## Parâmetros
-peso <- round(runif(n = 1, min = 0.2, max = 1.5),2)
-vel_gotas <-  sample(x = 2:10, size = 1)
-volume <- round(runif(n = 1, min = 1e-7, max = 5e-7),8)
-densidade <- 1e3
+densidade <- 1000
 g <- 10
+vel_gotas <- sample(2:10, 1)
+tempo <- sample(10:60, 1)
+n_gotas <- vel_gotas * tempo
+volume <- sample(seq(1e-7, 5e-7, by = 5e-8), 1)
+peso <- n_gotas * densidade * volume * g
 
 ## Resposta
-n_gotas <- peso/(densidade*volume*g)
-resp <- round(n_gotas/vel_gotas,1)
+resp <- tempo
 @
 
 \begin{question}
-Uma balança de braços iguais t\^em em um dos pratos um peso de \Sexpr{peso} N 
-e no outro prato um recipiente de peso desprezível. Sobre o recipiente existe 
-uma torneira pingando \Sexpr{vel_gotas} gotas de água por segundo, cada gota com
-um volume de $\Sexpr{nota_cient(volume)}$ m³. Considerando a densidade da água 
-$\Sexpr{nota_cient(densidade)}$ kg/m³ e g=\Sexpr{g} m/s², determine o tempo necessário, 
-em segundos, para que os pratos da balança fiquem nivelados. (OBS: apresente a resposta com uma casa decimal.)
+Uma balança de braços iguais tem, em um dos pratos, um corpo de peso
+$\Sexpr{nota_cient(peso, 3)}\,\mathrm{N}$ e, no outro, um recipiente de peso
+desprezível. Uma torneira pinga água nesse recipiente à taxa de
+$\Sexpr{vel_gotas}$ gotas por segundo, e cada gota possui volume
+$\Sexpr{nota_cient(volume, 2)}\,\mathrm{m^3}$.
 
+Considerando a densidade da água igual a
+$\Sexpr{nota_cient(densidade)}\,\mathrm{kg/m^3}$ e
+$g=\Sexpr{g}\,\mathrm{m/s^2}$, determine o tempo necessário, em segundos,
+para que os pratos da balança fiquem nivelados.
 \end{question}
 
 \begin{solution}
-%% Solution
-Seja P o peso em um dos pratos, n o n\'umero de gotas, g a gravidade, $\rho$ a densidade da \'agua, V o volume da gota,  ent\~ao, depois que o peso do recipiente for tal que o sistema entre em equil\'ibrio, temos:
+No equilíbrio, o peso da água acumulada no recipiente deve ser igual ao peso
+colocado no outro prato.
 
-\begin{displaymath}
-P = n \cdot \rho \cdot V \cdot g
-\end{displaymath}
+Se $n$ é o número de gotas acumuladas, a massa de uma gota é
+\[
+m_{\text{gota}}=\rho V,
+\]
+e o peso de $n$ gotas é
+\[
+P_{\text{água}}=n\rho Vg.
+\]
 
-Assim, isolando n temos:
+Portanto,
+\[
+n=\frac{P}{\rho Vg}
+=\frac{\Sexpr{nota_cient(peso, 3)}}
+{\Sexpr{densidade}\cdot\Sexpr{nota_cient(volume, 2)}\cdot\Sexpr{g}}
+=\Sexpr{n_gotas}\ \text{gotas}.
+\]
 
-\begin{displaymath}
-n =  \frac{P}{ \rho \cdot V \cdot g} = \frac{\Sexpr{peso}}{\Sexpr{nota_cient(densidade)} \cdot \Sexpr{nota_cient(volume)} \cdot \Sexpr{g}} = \Sexpr{n_gotas}
-\end{displaymath}
+Como caem $\Sexpr{vel_gotas}$ gotas por segundo,
+\[
+t=\frac{n}{\Sexpr{vel_gotas}}
+=\frac{\Sexpr{n_gotas}}{\Sexpr{vel_gotas}}
+=\Sexpr{resp}\,\mathrm{s}.
+\]
 
-
-O tempo necess\'ario para pingar esse n\'umero de gotas \'e dado por:
-
-\begin{displaymath}
-T = \frac{n}{v_{gotas}} = \Sexpr{resp}
-\end{displaymath}
-
-
-Assim, depois de \Sexpr{resp} segundos os braços da balança estarão equilibrados.
+Logo, o equilíbrio ocorre após $\Sexpr{resp}\,\mathrm{s}$.
 \end{solution}
 
 %% META-INFORMATION
 %% \extype{num}
 %% \exsolution{\Sexpr{resp}}
 %% \exname{Q01Densidade}
-%% \extol{0.1}
+%% \extol{0.01}
+%% \exsection{Hidrostatica; Densidade}

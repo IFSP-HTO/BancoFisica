@@ -1,39 +1,64 @@
 <<echo=FALSE, results=hide>>=
 ## Criado por Flavio Barros 04/06/2018
-## Funções
-nota_cient <- function(x,digits) {
-  if (x==0) return("0")
-  ord <- floor(log(abs(x),10))
+
+nota_cient <- function(x, digits) {
+  if (x == 0) return("0")
+  ord <- floor(log(abs(x), 10))
   x <- x / 10^ord
-  if (!missing(digits)) x <- format(x,digits=digits)
-  if (ord==0) return(as.character(x))
-  return(paste(x,"\\\\times 10^{",ord,"}",sep=""))
+  if (!missing(digits)) x <- format(x, digits = digits)
+  if (ord == 0) return(as.character(x))
+  paste(x, "\\times 10^{", ord, "}", sep = "")
 }
 
 ## Parâmetros
-pot_dez <-'e-4'
-inteiro <- sample(1:9, size = 1)
-pressao <- as.numeric(paste0(inteiro,pot_dez))
+pressao <- sample(1:9, 1) * 1e-4
 atm <- 1e5
-## Resposta
-pSI <- round(pressao*atm/760,3)
 
+## Resposta
+pSI <- pressao * atm / 760
+resp <- round(pSI, 3)
 @
 
 \begin{question}
-%% Enunciado
-(Ita) Embora a tendência geral em Ciência e Tecnologia seja a de adotar exclusivamente o Sistema Internacional de Unidades (SI), em algumas áreas existem pessoas que, por questão de costume, ainda utilizam outras unidades. Na área da Tecnologia do Vácuo, por exemplo, alguns pesquisadores ainda costumam fornecer a pressão em milímetros de mercúrio. Se alguém lhe disser que a pressão no interior de um sistema é de $\Sexpr{nota_cient(pressao)}$ mmHg, como essa grandeza deveria ser expressa em unidades SI? (OBS: apresente a resposta com 3 decimais.)
+(ITA) Embora a tendência geral em Ciência e Tecnologia seja adotar o Sistema
+Internacional de Unidades (SI), algumas áreas ainda utilizam unidades
+tradicionais. Na Tecnologia do Vácuo, por exemplo, é comum expressar pressões
+em milímetros de mercúrio.
 
+Se a pressão no interior de um sistema é
+$\Sexpr{nota_cient(pressao)}\,\mathrm{mmHg}$, expresse-a em pascals.
+Considere $760\,\mathrm{mmHg}=1{,}0\times10^5\,\mathrm{Pa}$ e apresente a
+resposta com três casas decimais.
 \end{question}
 
 \begin{solution}
-%% Solution
+Usamos a equivalência
+\[
+760\,\mathrm{mmHg}=1{,}0\times10^5\,\mathrm{Pa}.
+\]
 
-A pressão será $\Sexpr{nota_cient(pSI)}$ Pa.
+Assim,
+\[
+P=
+\Sexpr{nota_cient(pressao)}\,\mathrm{mmHg}
+\left(
+\frac{1{,}0\times10^5\,\mathrm{Pa}}
+{760\,\mathrm{mmHg}}
+\right).
+\]
+
+Portanto,
+\[
+P\approx \Sexpr{resp}\,\mathrm{Pa}.
+\]
+
+Logo, a pressão em unidades do SI é
+$\Sexpr{resp}\,\mathrm{Pa}$.
 \end{solution}
 
 %% META-INFORMATION
 %% \extype{num}
-%% \exsolution{\Sexpr{pSI}}
+%% \exsolution{\Sexpr{resp}}
 %% \exname{Q07Pressao}
-%% \extol{0.01}
+%% \extol{0.001}
+%% \exsection{Hidrostatica; Pressao; Conversao de unidades; ITA}
