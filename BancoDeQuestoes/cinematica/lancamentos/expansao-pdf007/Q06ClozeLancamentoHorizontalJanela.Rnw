@@ -1,0 +1,92 @@
+<<echo=FALSE, results=hide>>=
+g <- 10
+configs <- data.frame(
+  T = c(0.6, 0.8, 1.2, 1.5),
+  v0 = c(8, 6, 5, 8)
+)
+i <- sample(seq_len(nrow(configs)), 1)
+T <- configs$T[i]
+v0 <- configs$v0[i]
+h <- 0.5 * g * T^2
+d <- v0 * T
+vy_impact <- g * T
+v_impact <- sqrt(v0^2 + vy_impact^2)
+
+fmt <- function(x, d=2) formatC(x, format="f", digits=d, decimal.mark=",")
+
+include_supplement("PM007_Q06_symbolic.b64", dir="../../../figuras")
+img_b64 <- paste(readLines("PM007_Q06_symbolic.b64", warn=FALSE), collapse="")
+img <- "PM007_Q06_symbolic.png"
+writeBin(base64enc::base64decode(img_b64), img)
+file.remove("PM007_Q06_symbolic.b64")
+@
+
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+
+Uma pequena esfera é lançada horizontalmente do parapeito de uma janela a uma altura
+$h=\Sexpr{fmt(h,2)}\,\mathrm{m}$ do solo e atinge o chão a uma distância horizontal
+$d=\Sexpr{fmt(d,2)}\,\mathrm{m}$ da parede. Despreze a resistência do ar e adote
+$g=10\,\mathrm{m/s^2}$.
+
+\begin{center}
+\includegraphics[width=5.5cm,keepaspectratio]{\Sexpr{img}}
+\end{center}
+
+Determine:
+
+\begin{answerlist}
+  \item o módulo da velocidade horizontal inicial $v_0$, em $\mathrm{m/s}$;
+  \item o módulo da velocidade com que a esfera atinge o solo, em $\mathrm{m/s}$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Na direção vertical,
+\[
+h=\frac12gt^2
+\quad\Rightarrow\quad
+t=\sqrt{\frac{2h}{g}}
+=\Sexpr{fmt(T,2)}\,\mathrm{s}.
+\]
+
+Na direção horizontal,
+\[
+v_0=\frac{d}{t}
+=\frac{\Sexpr{fmt(d,2)}}{\Sexpr{fmt(T,2)}}
+=\Sexpr{fmt(v0,2)}\,\mathrm{m/s}.
+\]
+
+Ao atingir o solo,
+\[
+v_y=gt=\Sexpr{fmt(vy_impact,2)}\,\mathrm{m/s},
+\]
+e, como $v_x=v_0$ permanece constante,
+\[
+v=\sqrt{v_x^2+v_y^2}
+=\Sexpr{fmt(v_impact,2)}\,\mathrm{m/s}.
+\]
+
+\begin{answerlist}
+  \item $\Sexpr{fmt(v0,2)}$
+  \item $\Sexpr{fmt(v_impact,2)}$
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Projeto Medicina / Futuro Militar, exercício 6 de
+%% 007_fisica_lancamento_horizontal_obliquo.pdf.
+%% Figura: recorte original preservado como fonte; versão de uso obtida
+%% substituindo uma única vez os valores numéricos por h e d.
+%% \extype{cloze}
+%% \exsolution{\Sexpr{v0}|\Sexpr{v_impact}}
+%% \exclozetype{num|num}
+%% \extol{0.02|0.03}
+%% \exname{PM007Q06LancamentoHorizontalJanela}
+%% \exsection{Mecanica; Cinematica; Lancamento horizontal; Expansao PDF007}
+%% \exusepackage[utf8]{inputenc}
