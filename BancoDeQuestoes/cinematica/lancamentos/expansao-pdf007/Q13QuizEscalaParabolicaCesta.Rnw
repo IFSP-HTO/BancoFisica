@@ -1,0 +1,81 @@
+<<echo=FALSE, results=hide>>=
+include_supplement("PM007_Q13_base.b64", dir="../../../figuras")
+img_b64 <- paste(readLines("PM007_Q13_base.b64", warn=FALSE), collapse="")
+img <- "PM007_Q13_base.png"
+writeBin(base64enc::base64decode(img_b64), img)
+file.remove("PM007_Q13_base.b64")
+@
+
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+
+Uma bola é solta sempre da mesma posição em um plano inclinado, rola sobre a
+mesa e abandona horizontalmente sua borda. Em uma primeira experiência, uma
+cesta colocada a uma distância horizontal $d$ da mesa recebe a bola quando ela
+está a uma distância vertical $y$ abaixo do tampo, conforme a figura.
+
+\begin{center}
+\includegraphics[width=7cm,keepaspectratio]{\Sexpr{img}}
+\end{center}
+
+Sem alterar o ponto de partida da bola, se a cesta fosse colocada a uma
+distância horizontal $2d$ da mesa, a que distância abaixo do tampo ela deveria
+ser posicionada?
+
+\begin{answerlist}
+  \item $\dfrac{y}{2}$
+  \item $2y$
+  \item $3y$
+  \item $4y$
+  \item $5y$
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Como a bola parte sempre do mesmo ponto no plano inclinado, ela abandona a
+mesa com o mesmo módulo de velocidade horizontal.
+
+Na horizontal,
+\[
+x=v_xt.
+\]
+Portanto, ao passar de $d$ para $2d$, o tempo de voo dobra:
+\[
+t_2=2t_1.
+\]
+
+Na vertical, a bola abandona a mesa com velocidade vertical inicial nula:
+\[
+y=\frac12gt^2.
+\]
+Assim,
+\[
+\frac{y_2}{y_1}
+=\left(\frac{t_2}{t_1}\right)^2
+=2^2=4.
+\]
+Logo, a nova distância vertical deve ser $4y$.
+
+\begin{answerlist}
+  \item incorreta
+  \item incorreta
+  \item incorreta
+  \item correta
+  \item incorreta
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Projeto Medicina / Futuro Militar, exercício 13 de
+%% 007_fisica_lancamento_horizontal_obliquo.pdf.
+%% Figura: recorte original do PDF, sem alterações.
+%% \extype{schoice}
+%% \exsolution{00010}
+%% \exname{PM007Q13EscalaParabolicaCesta}
+%% \exsection{Mecanica; Cinematica; Lancamento horizontal; Expansao PDF007}
+%% \exusepackage[utf8]{inputenc}
