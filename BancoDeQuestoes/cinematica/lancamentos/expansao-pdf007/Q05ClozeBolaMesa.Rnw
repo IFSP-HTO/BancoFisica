@@ -1,0 +1,66 @@
+<<echo=FALSE, results=hide>>=
+g <- 10
+configs <- data.frame(
+  T = c(0.4, 0.5, 0.6, 0.8),
+  d = c(0.8, 1.5, 2.4, 4.0)
+)
+i <- sample(seq_len(nrow(configs)), 1)
+T <- configs$T[i]
+d <- configs$d[i]
+h <- 0.5 * g * T^2
+v0 <- d / T
+
+fmt <- function(x, digits=2)
+  formatC(x, format="f", digits=digits, decimal.mark=",")
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Uma bola abandona horizontalmente a borda de uma mesa de altura
+$\Sexpr{fmt(h,2)}\,\mathrm{m}$ e atinge o chão após percorrer
+$\Sexpr{fmt(d,2)}\,\mathrm{m}$ na horizontal.
+
+Despreze a resistência do ar e adote $g=10\,\mathrm{m/s^2}$.
+
+Qual era o módulo da velocidade da bola ao abandonar a mesa?
+
+\begin{answerlist}
+  \item velocidade, em $\mathrm{m/s}$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Pelo movimento vertical,
+\[
+h=\frac12gt^2
+\quad\Rightarrow\quad
+t=\sqrt{\frac{2h}{g}}
+=\Sexpr{fmt(T,2)}\,\mathrm{s}.
+\]
+
+Na horizontal,
+\[
+v_0=\frac{d}{t}
+=\Sexpr{fmt(v0,2)}\,\mathrm{m/s}.
+\]
+
+\begin{answerlist}
+  \item $\Sexpr{fmt(v0,2)}$
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Projeto Medicina / Futuro Militar, exercício 5 de
+%% 007_fisica_lancamento_horizontal_obliquo.pdf.
+%% \extype{cloze}
+%% \exsolution{\Sexpr{v0}}
+%% \exclozetype{num}
+%% \extol{0.02}
+%% \exname{PM007Q05BolaMesa}
+%% \exsection{Mecanica; Cinematica; Lancamento horizontal; Expansao PDF007}
+%% \exusepackage[utf8]{inputenc}
