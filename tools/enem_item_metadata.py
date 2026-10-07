@@ -22,6 +22,7 @@ OUTPUT_FIELDS = [
     "source_application",
     "source_caderno",
     "source_color",
+    "source_question_number",
     "source_position",
     "source_co_prova",
     "co_item",
@@ -38,7 +39,6 @@ OUTPUT_FIELDS = [
 ]
 
 INEP_COPY_FIELDS = {
-    "CO_PROVA": "source_co_prova",
     "CO_ITEM": "co_item",
     "SG_AREA": "sg_area",
     "CO_HABILIDADE": "co_habilidade",
@@ -58,7 +58,16 @@ def clean(value: object) -> str:
 def normalize_color(value: object) -> str:
     text = clean(value).upper()
     translations = str.maketrans("ÁÀÂÃÉÊÍÓÔÕÚÇ", "AAAAEEIOOOUC")
-    return text.translate(translations)
+    text = text.translate(translations)
+    aliases = {
+        "AMARELO": "AMARELA",
+        "AMARELA": "AMARELA",
+        "BRANCO": "BRANCA",
+        "BRANCA": "BRANCA",
+        "ROXO": "ROXA",
+        "ROXA": "ROXA",
+    }
+    return aliases.get(text, text)
 
 
 def read_delimited_bytes(data: bytes) -> list[dict[str, str]]:
@@ -114,10 +123,15 @@ def load_inventory(path: Path) -> list[dict[str, str]]:
 
 
 def unique_by_item(rows: list[dict[str, str]]) -> list[dict[str, str]]:
-    seen: set[tuple[str, str]] = set()
+    """Collapse repeated appearances of the same calibrated item across booklets.
+
+    The same CO_ITEM may occur in more than one CO_PROVA and at different positions.
+    For matching purposes the item identity, not the booklet copy, is what matters.
+    """
+    seen: set[str] = set()
     out: list[dict[str, str]] = []
     for row in rows:
-        key = (clean(row.get("CO_ITEM")), clean(row.get("CO_PROVA")))
+        key = clean(row.get("CO_ITEM"))
         if key not in seen:
             seen.add(key)
             out.append(row)
