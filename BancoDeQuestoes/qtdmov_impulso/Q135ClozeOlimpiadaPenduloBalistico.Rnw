@@ -1,0 +1,103 @@
+<<echo=FALSE, results=hide>>=
+g <- 10
+
+cand <- expand.grid(
+  m_g = c(40,50,60,80),
+  M_g = c(180,200,240,300),
+  v0 = c(15,18,20,22,25),
+  L = c(0.8,1.0,1.2,1.5)
+)
+
+cand$u <- with(cand, (m_g/(m_g+M_g))*v0)
+cand$h <- cand$u^2/(2*g)
+cand$costh <- 1-cand$h/cand$L
+cand <- cand[cand$costh > 0.20 & cand$costh < 0.95, ]
+
+row <- cand[sample(seq_len(nrow(cand)),1), ]
+m_g <- row$m_g
+M_g <- row$M_g
+v0 <- row$v0
+L <- row$L
+u <- row$u
+h <- row$h
+theta <- acos(row$costh)*180/pi
+
+fmt <- function(x, d=2) formatC(x, format="f", digits=d, decimal.mark=",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Um projétil de massa \(\Sexpr{m_g}\,\mathrm{g}\) desloca-se horizontalmente com velocidade \(\Sexpr{v0}\,\mathrm{m/s}\) e atinge um bloco de massa \(\Sexpr{M_g}\,\mathrm{g}\) preso à extremidade de um fio ideal de comprimento \(\Sexpr{fmt(L,1)}\,\mathrm{m}\). O bloco estava inicialmente em repouso.
+
+O projétil fica incrustado no bloco. Em seguida, o conjunto sobe como um pêndulo até atingir um ângulo máximo \(\theta\) com a vertical. Despreze perdas depois da colisão e adote \(g=10\,\mathrm{m/s^2}\).
+
+Determine:
+\begin{answerlist}
+  \item a velocidade do conjunto imediatamente após a colisão, em \(\mathrm{m/s}\);
+  \item o ângulo máximo \(\theta\), em graus.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+A colisão é perfeitamente inelástica. Durante o curto intervalo da colisão, conserva-se a quantidade de movimento horizontal:
+\[
+mv_0=(m+M)u.
+\]
+Portanto,
+\[
+u=\frac{m}{m+M}v_0
+=
+\Sexpr{fmt(u,2)}\,\mathrm{m/s}.
+\]
+
+Depois da colisão, o conjunto sobe sem perdas mecânicas. Agora aplicamos conservação da energia:
+\[
+\frac{1}{2}(m+M)u^2=(m+M)gh.
+\]
+Assim,
+\[
+h=\frac{u^2}{2g}
+=
+\Sexpr{fmt(h,3)}\,\mathrm{m}.
+\]
+
+A elevação do pêndulo está relacionada ao ângulo máximo por
+\[
+h=L(1-\cos\theta).
+\]
+Logo,
+\[
+\cos\theta=1-\frac{h}{L},
+\]
+e
+\[
+\theta=
+\arccos\left(1-\frac{\Sexpr{fmt(h,3)}}{\Sexpr{fmt(L,1)}}\right)
+=
+\Sexpr{fmt(theta,2)}^\circ.
+\]
+
+É importante separar as duas etapas: a energia mecânica não se conserva durante a colisão inelástica, enquanto a quantidade de movimento horizontal é a grandeza adequada nessa etapa; depois da colisão, a energia mecânica passa a ser conservada.
+
+\begin{answerlist}
+  \item \(\Sexpr{fmt(u,2)}\,\mathrm{m/s}\)
+  \item \(\Sexpr{fmt(theta,2)}^\circ\)
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte de inspiracao: AAPT F=ma 2025, questao 12. Adaptacao forte e parametrizada.
+%% Source URL: https://www.aapt.org/physicsteam/upload/FMA_solutions.pdf
+%% OLYMPIC-LEVEL: O3
+%% SOURCE-VISUAL: none
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{round(u,2)}|\Sexpr{round(theta,2)}}
+%% \extol{0.03|0.10}
+%% \exname{Q135ClozeOlimpiadaPenduloBalistico}
+%% \exsection{Mecanica; Quantidade de movimento; Colisao inelastica; Energia; Olimpiada}
+%% \exusepackage[utf8]{inputenc}
