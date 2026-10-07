@@ -71,3 +71,8 @@ analytics/private/
 *.omr-scan.pdf
 *.omr-scan.png
 *.omr-scan.jpg
+
+
+# ENEM microdata packages (large upstream files; keep only curated item metadata)
+microdados_enem_*.zip
+metadata/enem/raw/
