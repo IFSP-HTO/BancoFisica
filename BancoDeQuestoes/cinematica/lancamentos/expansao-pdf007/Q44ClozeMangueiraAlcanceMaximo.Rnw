@@ -1,0 +1,57 @@
+<<echo=FALSE, results=hide>>=
+g <- 10
+v0 <- sample(c(8, 9, 10, 11), 1)
+Rmax <- v0^2 / g
+
+fmt <- function(x, digits=2)
+  formatC(x, format="f", digits=digits, decimal.mark=",")
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Uma mangueira está junto ao solo e a água sai com velocidade escalar constante.
+Ao variar o ângulo de lançamento, observa-se que o jato nunca ultrapassa a
+distância horizontal de $\Sexpr{fmt(Rmax,2)}\,\mathrm{m}$ em relação ao ponto
+de saída.
+
+Despreze a resistência do ar e adote $g=10\,\mathrm{m/s^2}$.
+
+Qual é o módulo da velocidade de saída da água?
+
+\begin{answerlist}
+  \item velocidade, em $\mathrm{m/s}$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Para lançamento e queda no mesmo nível, o alcance máximo ocorre a
+$45^\circ$:
+\[
+R_{\max}=\frac{v_0^2}{g}.
+\]
+Logo,
+\[
+v_0=\sqrt{gR_{\max}}
+=\Sexpr{fmt(v0,2)}\,\mathrm{m/s}.
+\]
+
+\begin{answerlist}
+  \item $\Sexpr{fmt(v0,2)}$
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Projeto Medicina / Futuro Militar, exercício 44 de
+%% 007_fisica_lancamento_horizontal_obliquo.pdf.
+%% \extype{cloze}
+%% \exsolution{\Sexpr{v0}}
+%% \exclozetype{num}
+%% \extol{0.02}
+%% \exname{PM007Q44MangueiraAlcanceMaximo}
+%% \exsection{Mecanica; Cinematica; Lancamento obliquo; Alcance maximo; Expansao PDF007}
+%% \exusepackage[utf8]{inputenc}
