@@ -1,0 +1,38 @@
+name: ENEM metadata
+
+on:
+  pull_request:
+    branches:
+      - master
+    paths:
+      - "metadata/enem/**"
+      - "tools/enem_item_metadata.py"
+      - "tools/test_enem_item_metadata.py"
+      - "docs/enem-tri-metadata.md"
+      - ".github/workflows/enem-metadata.yml"
+  push:
+    branches:
+      - master
+    paths:
+      - "metadata/enem/**"
+      - "tools/enem_item_metadata.py"
+      - "tools/test_enem_item_metadata.py"
+      - "docs/enem-tri-metadata.md"
+      - ".github/workflows/enem-metadata.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Validate ENEM metadata inventory
+        run: python3 tools/enem_item_metadata.py validate
+
+      - name: Run ENEM metadata unit tests
+        run: python3 -m unittest tools/test_enem_item_metadata.py
