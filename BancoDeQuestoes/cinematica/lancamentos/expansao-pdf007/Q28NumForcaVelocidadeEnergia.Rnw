@@ -1,0 +1,65 @@
+<<echo=FALSE, results=hide>>=
+include_supplement("PM007_Q28_base.b64", dir="../../../figuras")
+img_b64 <- paste(readLines("PM007_Q28_base.b64", warn=FALSE), collapse="")
+img <- "PM007_Q28_base.png"
+writeBin(base64enc::base64decode(img_b64), img)
+file.remove("PM007_Q28_base.b64")
+@
+
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+
+O goleiro de um time de futebol bate um tiro de meta e a bola percorre a
+trajetória esquematizada abaixo. Despreze a resistência do ar. O ponto $B$
+corresponde ao instante em que a bola atinge o solo.
+
+\begin{center}
+\includegraphics[width=8.5cm,keepaspectratio]{\Sexpr{img}}
+\end{center}
+
+Considere as afirmações:
+
+\begin{answerlist}
+  \item[01.] No ponto $A$, a resultante das forças sobre a bola é para a direita e para cima.
+  \item[02.] No ponto $B$, a resultante das forças sobre a bola é nula.
+  \item[04.] No ponto $A$, a velocidade da bola é para a direita e para cima.
+  \item[08.] No ponto $B$, a velocidade da bola é nula.
+  \item[16.] No ponto $A$, a energia mecânica total da bola é maior que no ponto $B$.
+\end{answerlist}
+
+Dê como resposta a soma dos números correspondentes às afirmações corretas.
+
+\end{question}
+
+\begin{solution}
+
+Desprezando o ar, durante o voo a única força sobre a bola é seu peso,
+vertical e dirigido para baixo. Portanto, as afirmações 01 e 02 são falsas.
+
+No ponto $A$, a bola está subindo e avançando para a direita, logo sua
+velocidade aponta para a direita e para cima: a afirmação 04 é verdadeira.
+
+Ao chegar a $B$, a bola ainda possui velocidade, portanto 08 é falsa.
+
+Como apenas a força gravitacional, conservativa, realiza trabalho, a energia
+mecânica total conserva-se entre $A$ e $B$. Logo, 16 é falsa.
+
+A única afirmação correta é 04, portanto a soma pedida é
+\[
+\boxed{4}.
+\]
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Projeto Medicina / Futuro Militar, exercício 28 de
+%% 007_fisica_lancamento_horizontal_obliquo.pdf.
+%% Figura: recorte original do PDF, sem alterações.
+%% \extype{num}
+%% \exsolution{4}
+%% \extol{0}
+%% \exname{PM007Q28ForcaVelocidadeEnergia}
+%% \exsection{Mecanica; Cinematica; Lancamento obliquo; Energia; Expansao PDF007}
+%% \exusepackage[utf8]{inputenc}
