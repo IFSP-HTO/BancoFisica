@@ -1,0 +1,65 @@
+<<echo=FALSE, results=hide>>=
+g <- 10
+R <- sample(c(4,5,6,8), 1)
+alpha <- sample(c(25,30,35,40,45), 1)
+alpha_rad <- alpha*pi/180
+
+omega <- sqrt(g/(R*tan(alpha_rad)))
+
+fmt <- function(x, d=2) formatC(x, format="f", digits=d, decimal.mark=",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Em uma atração giratória, uma pessoa permanece encostada em uma parede externa lisa. A parede faz um ângulo de \(\Sexpr{alpha}^\circ\) com a vertical, e o centro de massa da pessoa descreve uma circunferência horizontal de raio \(\Sexpr{R}\,\mathrm{m}\).
+
+À medida que a velocidade angular aumenta, chega um instante em que os pés da pessoa deixam de exercer força sobre o piso. Desprezando o atrito com a parede e adotando \(g=10\,\mathrm{m/s^2}\), determine a velocidade angular nesse instante, em \(\mathrm{rad/s}\).
+
+\end{question}
+
+\begin{solution}
+
+No instante em que os pés deixam de pressionar o piso, a força normal do piso é nula. Restam o peso \(mg\) e a normal \(N\) exercida pela parede.
+
+Como a parede faz ângulo \(\alpha\) com a vertical, a normal possui componente vertical \(N\sin\alpha\) e componente horizontal radial \(N\cos\alpha\).
+
+Na vertical não há aceleração:
+\[
+N\sin\alpha=mg.
+\]
+
+Na direção radial, a componente horizontal fornece a aceleração centrípeta:
+\[
+N\cos\alpha=m\omega^2R.
+\]
+
+Dividindo as duas equações,
+\[
+\tan\alpha=\frac{g}{\omega^2R}.
+\]
+Portanto,
+\[
+\omega=
+\sqrt{\frac{g}{R\tan\alpha}}
+=
+\sqrt{\frac{10}{\Sexpr{R}\tan(\Sexpr{alpha}^\circ)}}
+=
+\Sexpr{fmt(omega,2)}\,\mathrm{rad/s}.
+\]
+
+Observe que a massa se cancela: a condição de perda de contato depende apenas da geometria, do raio e de \(g\).
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte de inspiracao: AAPT F=ma 2024, questao 2. Adaptacao forte e parametrizada.
+%% Source URL: https://www.aapt.org/physicsteam/2024/upload/F-ma-2024-Solutions_v2.pdf
+%% OLYMPIC-LEVEL: O3
+%% SOURCE-VISUAL: none
+%% \extype{num}
+%% \exsolution{\Sexpr{round(omega,2)}}
+%% \extol{0.02}
+%% \exname{Q29ClozeOlimpiadaParedeInclinada}
+%% \exsection{Mecanica; Movimento circular; Forca centripeta; Olimpiada}
+%% \exusepackage[utf8]{inputenc}
