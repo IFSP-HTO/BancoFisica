@@ -1,0 +1,83 @@
+<<echo=FALSE, results=hide>>=
+d1 <- sample(c(1,2,3,4), 1)
+fator <- sample(c(4,9,16), 1)
+d2 <- d1*fator
+L1 <- sample(c(40,50,60,70,80), 1)
+L2 <- L1*sqrt(fator)
+
+fmt <- function(x, d=1) formatC(x, format="f", digits=d, decimal.mark=",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Uma haste cilíndrica muito fina, feita de um material frágil e homogêneo, é apoiada horizontalmente pelo centro. Para um diâmetro de \(\Sexpr{d1}\,\mathrm{mm}\), observa-se que ela começa a romper sob o próprio peso quando seu comprimento atinge \(\Sexpr{L1}\,\mathrm{cm}\).
+
+Considere agora uma haste do mesmo material e com o mesmo formato de seção transversal, mas com diâmetro \(\Sexpr{d2}\,\mathrm{mm}\). Admitindo que a ruptura ocorre quando a tensão mecânica característica atinge o mesmo valor crítico, estime o maior comprimento que a nova haste pode ter sem romper sob o próprio peso. Dê a resposta em centímetros.
+
+\end{question}
+
+\begin{solution}
+
+O objetivo é obter uma lei de escala, sem precisar conhecer a constante exata de resistência do material.
+
+Considere metade da haste. Sua massa escala como
+\[
+m\propto d^2L.
+\]
+O braço de alavanca característico do peso também escala com \(L\). Portanto, o momento fletor causado pelo próprio peso escala como
+\[
+\tau_{\rm peso}\propto d^2L^2.
+\]
+
+Por outro lado, se a tensão crítica de ruptura é a mesma para hastes do mesmo material, a força interna característica escala como a tensão vezes a área da seção:
+\[
+F_{\rm int}\propto d^2.
+\]
+O braço de alavanca interno é da ordem de \(d\), de modo que o momento resistente escala como
+\[
+\tau_{\rm res}\propto d^3.
+\]
+
+No limiar de ruptura,
+\[
+d^2L^2\propto d^3,
+\]
+portanto
+\[
+L\propto \sqrt{d}.
+\]
+
+Assim,
+\[
+\frac{L_2}{L_1}
+=
+\sqrt{\frac{d_2}{d_1}}
+=
+\sqrt{\frac{\Sexpr{d2}}{\Sexpr{d1}}}.
+\]
+Logo,
+\[
+L_2
+=
+\Sexpr{L1}
+\sqrt{\frac{\Sexpr{d2}}{\Sexpr{d1}}}
+=
+\Sexpr{fmt(L2,1)}\,\mathrm{cm}.
+\]
+
+A haste mais grossa suporta um comprimento maior, mas o crescimento é proporcional à raiz quadrada do diâmetro, e não diretamente ao diâmetro.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte de inspiracao: IPhO 2022, problema teorico 3, parte A (Scaling laws: Spaghetto). Adaptacao forte e parametrizada.
+%% Source URL: https://ipho.physics.bme.hu/pdfs/ipho_probs/2022/T3.pdf
+%% OLYMPIC-LEVEL: O4
+%% SOURCE-VISUAL: none
+%% \extype{num}
+%% \exsolution{\Sexpr{round(L2,1)}}
+%% \extol{0.2}
+%% \exname{Q91ClozeOlimpiadaLeiEscalaHaste}
+%% \exsection{Introducao a Fisica; Analise dimensional; Leis de escala; Estatica; Olimpiada}
+%% \exusepackage[utf8]{inputenc}
