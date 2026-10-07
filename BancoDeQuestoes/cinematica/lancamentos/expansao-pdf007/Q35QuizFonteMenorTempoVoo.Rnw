@@ -1,0 +1,63 @@
+<<echo=FALSE, results=hide>>=
+include_supplement("PM007_Q35_base.b64", dir="../../../figuras")
+img_b64 <- paste(readLines("PM007_Q35_base.b64", warn=FALSE), collapse="")
+img <- "PM007_Q35_base.png"
+writeBin(base64enc::base64decode(img_b64), img)
+file.remove("PM007_Q35_base.b64")
+@
+
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+
+A fonte de uma praça dispara cinco jatos de água, cujas trajetórias
+parabólicas são numeradas na figura. Desconsidere a resistência do ar.
+
+\begin{center}
+\includegraphics[width=8cm,keepaspectratio]{\Sexpr{img}}
+\end{center}
+
+Qual jato completa o voo parabólico no menor tempo?
+
+\begin{answerlist}
+  \item 1
+  \item 2
+  \item 3
+  \item 4
+  \item 5
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Como cada jato parte e chega ao mesmo nível, o tempo total de voo é
+\[
+T=\frac{2v_{0y}}{g}.
+\]
+Equivalentemente, quanto menor a componente vertical inicial, menor a altura
+máxima e menor o tempo de voo.
+
+Na figura, a trajetória 4 é a que atinge a menor altura máxima. Portanto, ela
+corresponde ao menor tempo de voo.
+
+\begin{answerlist}
+  \item incorreta
+  \item incorreta
+  \item incorreta
+  \item correta
+  \item incorreta
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Projeto Medicina / Futuro Militar, exercício 35 de
+%% 007_fisica_lancamento_horizontal_obliquo.pdf.
+%% Figura: recorte original do PDF, sem alterações.
+%% \extype{schoice}
+%% \exsolution{00010}
+%% \exname{PM007Q35FonteMenorTempoVoo}
+%% \exsection{Mecanica; Cinematica; Lancamento obliquo; Expansao PDF007}
+%% \exusepackage[utf8]{inputenc}
