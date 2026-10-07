@@ -1,0 +1,72 @@
+<<echo=FALSE, results=hide>>=
+g <- 10
+configs <- data.frame(
+  T = c(3, 4, 5, 6),
+  vx = c(4, 6, 8, 10)
+)
+i <- sample(seq_len(nrow(configs)), 1)
+T <- configs$T[i]
+vx <- configs$vx[i]
+h <- 0.5 * g * T^2
+d <- vx * T
+
+fmt <- function(x, digits=1)
+  formatC(x, format="f", digits=digits, decimal.mark=",")
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Um balão desloca-se horizontalmente a uma altura
+$\Sexpr{fmt(h,1)}\,\mathrm{m}$ do solo, com velocidade constante de módulo
+$\Sexpr{fmt(vx,1)}\,\mathrm{m/s}$. Ao passar exatamente sobre uma pessoa
+parada no solo, um pequeno saco de areia é abandonado.
+
+Despreze a resistência do ar e adote $g=10\,\mathrm{m/s^2}$.
+
+Determine:
+
+\begin{answerlist}
+  \item o tempo para o saco atingir o solo, em $\mathrm{s}$;
+  \item a distância horizontal entre a pessoa e o ponto de impacto, em $\mathrm{m}$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+O saco conserva a velocidade horizontal do balão no instante em que é solto.
+
+Na vertical,
+\[
+h=\frac12gt^2
+\quad\Rightarrow\quad
+t=\sqrt{\frac{2h}{g}}
+=\Sexpr{fmt(T,1)}\,\mathrm{s}.
+\]
+
+Na horizontal,
+\[
+d=v_xt
+=\Sexpr{fmt(vx,1)}\cdot\Sexpr{fmt(T,1)}
+=\Sexpr{fmt(d,1)}\,\mathrm{m}.
+\]
+
+\begin{answerlist}
+  \item $\Sexpr{fmt(T,1)}$
+  \item $\Sexpr{fmt(d,1)}$
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Projeto Medicina / Futuro Militar, exercício 7 de
+%% 007_fisica_lancamento_horizontal_obliquo.pdf.
+%% \extype{cloze}
+%% \exsolution{\Sexpr{T}|\Sexpr{d}}
+%% \exclozetype{num|num}
+%% \extol{0.02|0.05}
+%% \exname{PM007Q07BalaoSaquinho}
+%% \exsection{Mecanica; Cinematica; Lancamento horizontal; Expansao PDF007}
+%% \exusepackage[utf8]{inputenc}
