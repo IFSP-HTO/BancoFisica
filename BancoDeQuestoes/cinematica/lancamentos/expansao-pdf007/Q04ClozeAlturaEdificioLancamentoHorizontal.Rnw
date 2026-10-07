@@ -1,0 +1,65 @@
+<<echo=FALSE, results=hide>>=
+g <- 10
+configs <- data.frame(
+  T = c(2, 3, 4, 5),
+  vx = c(6, 8, 10, 12)
+)
+i <- sample(seq_len(nrow(configs)), 1)
+T <- configs$T[i]
+vx <- configs$vx[i]
+R <- vx * T
+h <- 0.5 * g * T^2
+
+fmt <- function(x, digits=1)
+  formatC(x, format="f", digits=digits, decimal.mark=",")
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Do alto de um edifício, uma pequena esfera é lançada horizontalmente com
+velocidade de módulo $\Sexpr{fmt(vx,0)}\,\mathrm{m/s}$. Ela toca o solo a uma
+distância horizontal de $\Sexpr{fmt(R,0)}\,\mathrm{m}$ da vertical que passa
+pelo ponto de lançamento.
+
+Despreze a resistência do ar e adote $g=10\,\mathrm{m/s^2}$.
+
+Determine a altura do edifício.
+
+\begin{answerlist}
+  \item altura, em $\mathrm{m}$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Na horizontal,
+\[
+t=\frac{R}{v_x}
+=\Sexpr{fmt(T,1)}\,\mathrm{s}.
+\]
+
+Como a componente vertical inicial é nula,
+\[
+h=\frac12gt^2
+=\Sexpr{fmt(h,1)}\,\mathrm{m}.
+\]
+
+\begin{answerlist}
+  \item $\Sexpr{fmt(h,1)}$
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Projeto Medicina / Futuro Militar, exercício 4 de
+%% 007_fisica_lancamento_horizontal_obliquo.pdf.
+%% \extype{cloze}
+%% \exsolution{\Sexpr{h}}
+%% \exclozetype{num}
+%% \extol{0.05}
+%% \exname{PM007Q04AlturaEdificioLancamentoHorizontal}
+%% \exsection{Mecanica; Cinematica; Lancamento horizontal; Expansao PDF007}
+%% \exusepackage[utf8]{inputenc}
