@@ -5,7 +5,7 @@
 massa_homem <- sample(60:100, 1)
 alt_homem <- round(runif(1, min = 1.65, max = 2.00), 2)
 consumo_homem <- sample(seq(1.5, 3.0, by = 0.1), 1)
-alt_crianca <- sample(seq(0.5, 0.9, by = 0.1), 1)
+alt_crianca <- sample(seq(0.9, 1.4, by = 0.1), 1)
 g <- 9.8
 
 ## Razões de escala
