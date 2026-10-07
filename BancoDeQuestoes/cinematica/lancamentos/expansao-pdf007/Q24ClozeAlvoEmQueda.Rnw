@@ -1,0 +1,87 @@
+<<echo=FALSE, results=hide>>=
+g <- 10
+h_torre <- 20
+x <- 400
+v0 <- 200
+sen <- 0.26
+cos <- sqrt(1 - sen^2)
+tan <- sen / cos
+
+h_balao <- h_torre + x * tan
+T <- x / (v0 * cos)
+h_encontro <- h_balao - 0.5 * g * T^2
+
+fmt <- function(x, digits=2)
+  formatC(x, format="f", digits=digits, decimal.mark=",")
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Do alto de uma torre de $20\,\mathrm{m}$, um artilheiro mira diretamente um
+balão inicialmente parado. A projeção vertical do balão no solo está a
+$400\,\mathrm{m}$ do pé da torre e a linha de visada faz $15^\circ$ com a
+horizontal. No instante em que o projétil é disparado com velocidade
+$200\,\mathrm{m/s}$ na direção do balão, um objeto é abandonado do balão.
+
+Despreze a resistência do ar, adote $g=10\,\mathrm{m/s^2}$ e use
+$\sin15^\circ=0{,}26$.
+
+Determine:
+
+\begin{answerlist}
+  \item o instante do encontro entre projétil e objeto, em $\mathrm{s}$;
+  \item a altura do encontro em relação ao solo, em $\mathrm{m}$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Como projétil e objeto passam a ter a mesma aceleração gravitacional, a
+aceleração relativa entre eles é nula. O projétil foi disparado exatamente na
+direção inicial do alvo, portanto mantém-se apontado para ele no movimento
+relativo.
+
+De $\sin15^\circ=0{,}26$,
+\[
+\cos15^\circ=\sqrt{1-0{,}26^2}
+=\Sexpr{fmt(cos,4)}.
+\]
+
+O tempo para fechar a separação horizontal é
+\[
+t=\frac{400}{200\cos15^\circ}
+=\Sexpr{fmt(T,2)}\,\mathrm{s}.
+\]
+
+A altura inicial do balão é
+\[
+h_B=20+400\tan15^\circ
+=\Sexpr{fmt(h_balao,2)}\,\mathrm{m}.
+\]
+
+Como o objeto é abandonado do repouso na vertical,
+\[
+h=h_B-\frac12gt^2
+=\Sexpr{fmt(h_encontro,2)}\,\mathrm{m}.
+\]
+
+\begin{answerlist}
+  \item $\Sexpr{fmt(T,2)}$
+  \item $\Sexpr{fmt(h_encontro,2)}$
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Projeto Medicina / Futuro Militar, exercício 24 de
+%% 007_fisica_lancamento_horizontal_obliquo.pdf.
+%% \extype{cloze}
+%% \exsolution{\Sexpr{T}|\Sexpr{h_encontro}}
+%% \exclozetype{num|num}
+%% \extol{0.03|0.2}
+%% \exname{PM007Q24AlvoEmQueda}
+%% \exsection{Mecanica; Cinematica; Lancamento obliquo; Movimento relativo; Expansao PDF007}
+%% \exusepackage[utf8]{inputenc}
