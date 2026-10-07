@@ -1,0 +1,66 @@
+<<echo=FALSE, results=hide>>=
+g <- 10
+v0 <- sample(c(8, 9, 10, 11), 1)
+R <- v0^2 / g
+H <- v0^2 / (4 * g)
+
+fmt <- function(x, digits=2)
+  formatC(x, format="f", digits=digits, decimal.mark=",")
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Para participar de uma competição de salto em distância, um atleta deve
+atingir no mínimo $\Sexpr{fmt(R,2)}\,\mathrm{m}$. Ao abandonar o solo, sua
+velocidade forma um ângulo de $45^\circ$ com a horizontal. Suponha que o
+centro de gravidade retorne ao mesmo nível em que iniciou o voo.
+
+Despreze a resistência do ar e adote $g=10\,\mathrm{m/s^2}$.
+
+Determine:
+
+\begin{answerlist}
+  \item o menor módulo de velocidade inicial necessário, em $\mathrm{m/s}$;
+  \item a altura máxima atingida acima do nível de lançamento, em $\mathrm{m}$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Para lançamento a $45^\circ$ com queda no mesmo nível,
+\[
+R=\frac{v_0^2}{g}.
+\]
+Portanto,
+\[
+v_0=\sqrt{gR}
+=\Sexpr{fmt(v0,2)}\,\mathrm{m/s}.
+\]
+
+A componente vertical inicial é $v_{0y}=v_0/\sqrt2$. Assim,
+\[
+H=\frac{v_{0y}^2}{2g}
+=\frac{v_0^2}{4g}
+=\Sexpr{fmt(H,2)}\,\mathrm{m}.
+\]
+
+\begin{answerlist}
+  \item $\Sexpr{fmt(v0,2)}$
+  \item $\Sexpr{fmt(H,2)}$
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Projeto Medicina / Futuro Militar, exercício 42 de
+%% 007_fisica_lancamento_horizontal_obliquo.pdf.
+%% \extype{cloze}
+%% \exsolution{\Sexpr{v0}|\Sexpr{H}}
+%% \exclozetype{num|num}
+%% \extol{0.02|0.02}
+%% \exname{PM007Q42SaltoPanAmericano45}
+%% \exsection{Mecanica; Cinematica; Lancamento obliquo; Expansao PDF007}
+%% \exusepackage[utf8]{inputenc}
