@@ -1,0 +1,76 @@
+<<echo=FALSE, results=hide>>=
+include_supplement("PM007_Q49_base.b64", dir="../../../figuras")
+img_b64 <- paste(readLines("PM007_Q49_base.b64", warn=FALSE), collapse="")
+img <- "PM007_Q49_base.png"
+writeBin(base64enc::base64decode(img_b64), img)
+file.remove("PM007_Q49_base.b64")
+@
+
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+
+A figura representa a trajetória bidimensional de uma partícula no plano
+$xy$. A partícula passa pelo ponto $P$ no instante $t$ e pelo ponto $Q$ exatamente
+$1\,\mathrm{s}$ depois.
+
+\begin{center}
+\includegraphics[width=7cm,keepaspectratio]{\Sexpr{img}}
+\end{center}
+
+No Sistema Internacional, o vetor velocidade média da partícula entre $P$ e
+$Q$ é
+
+\begin{answerlist}
+  \item $6\,\hat{\imath}+3\,\hat{\jmath}\,\mathrm{m/s}$
+  \item $2\,\hat{\imath}+3\,\hat{\jmath}\,\mathrm{m/s}$
+  \item $2\,\hat{\imath}+2\,\hat{\jmath}\,\mathrm{m/s}$
+  \item $6\,\hat{\imath}+2\,\hat{\jmath}\,\mathrm{m/s}$
+  \item $3\,\hat{\imath}+6\,\hat{\jmath}\,\mathrm{m/s}$
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Da figura,
+\[
+P=(2,4)\,\mathrm{m},
+\qquad
+Q=(8,6)\,\mathrm{m}.
+\]
+Logo, o deslocamento no intervalo é
+\[
+\Delta\vec r
+=(8-2)\hat{\imath}+(6-4)\hat{\jmath}
+=6\hat{\imath}+2\hat{\jmath}\,\mathrm{m}.
+\]
+
+Como $\Delta t=1\,\mathrm{s}$,
+\[
+\vec v_m=\frac{\Delta\vec r}{\Delta t}
+=6\hat{\imath}+2\hat{\jmath}\,\mathrm{m/s}.
+\]
+
+\begin{answerlist}
+  \item incorreta
+  \item incorreta
+  \item incorreta
+  \item correta
+  \item incorreta
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Projeto Medicina / Futuro Militar, exercício 49 de
+%% 007_fisica_lancamento_horizontal_obliquo.pdf.
+%% Figura: recorte da figura original do PDF, preservando a malha e os pontos P e Q.
+%% Este item pertence mais naturalmente a cinematica vetorial do que ao nucleo de
+%% lancamento obliquo, mas foi mantido nesta frente por sua origem na lista.
+%% \extype{schoice}
+%% \exsolution{00010}
+%% \exname{PM007Q49VelocidadeMediaVetorial}
+%% \exsection{Mecanica; Cinematica; Cinematica vetorial; Velocidade media; Expansao PDF007}
+%% \exusepackage[utf8]{inputenc}
