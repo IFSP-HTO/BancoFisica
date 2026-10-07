@@ -1,0 +1,119 @@
+<<echo=FALSE, results=hide>>=
+a <- 15
+d <- 70
+h <- 100
+g <- 10
+
+t_borda <- sqrt(2 * d / a)
+v_papal <- d / t_borda
+v_borda <- a * t_borda
+
+t_queda <- sqrt(2 * h / g)
+x_vale <- v_borda * t_queda + 0.5 * a * t_queda^2
+vx_imp <- v_borda + a * t_queda
+vy_imp <- -g * t_queda
+
+fmt <- function(x, digits=1)
+  formatC(x, format="f", digits=digits, decimal.mark=",")
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+O Coiote está perseguindo o Papa-Léguas. Ele parte do repouso a
+$70\,\mathrm{m}$ da borda de um precipício usando patins a jato que produzem
+aceleração horizontal constante de $15\,\mathrm{m/s^2}$. No mesmo instante, o
+Papa-Léguas passa por ele correndo em direção à borda com velocidade constante.
+
+Na borda, o Papa-Léguas faz a curva e escapa, mas o Coiote continua em linha
+reta. Seus patins permanecem horizontais e continuam funcionando durante o
+voo, de modo que sua aceleração passa a ser
+\[
+\vec a=(15\,\hat{\imath}-10\,\hat{\jmath})\,\mathrm{m/s^2}.
+\]
+O precipício tem $100\,\mathrm{m}$ de altura.
+
+Determine:
+
+\begin{answerlist}
+  \item a velocidade escalar mínima do Papa-Léguas para chegar à borda antes do Coiote, em $\mathrm{m/s}$;
+  \item a distância horizontal, medida a partir da borda, em que o Coiote atinge o vale, em $\mathrm{m}$;
+  \item a componente horizontal da velocidade de impacto do Coiote, em $\mathrm{m/s}$;
+  \item a componente vertical da velocidade de impacto do Coiote, em $\mathrm{m/s}$, tomando o sentido para cima como positivo.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Até a borda, o Coiote parte do repouso:
+\[
+d=\frac12at^2.
+\]
+Logo,
+\[
+t_{\rm borda}=\sqrt{\frac{2d}{a}}
+=\Sexpr{fmt(t_borda,3)}\,\mathrm{s}.
+\]
+
+Para o Papa-Léguas chegar à borda nesse mesmo tempo,
+\[
+v_{\min}=\frac{d}{t_{\rm borda}}
+=\Sexpr{fmt(v_papal,1)}\,\mathrm{m/s}.
+\]
+
+A velocidade horizontal do Coiote ao deixar a borda é
+\[
+v_{x0}=at_{\rm borda}
+=\Sexpr{fmt(v_borda,1)}\,\mathrm{m/s}.
+\]
+
+Durante a queda,
+\[
+h=\frac12gt^2
+\quad\Rightarrow\quad
+t_{\rm queda}=\sqrt{\frac{2h}{g}}
+=\Sexpr{fmt(t_queda,3)}\,\mathrm{s}.
+\]
+
+Como os patins continuam produzindo aceleração horizontal,
+\[
+x=v_{x0}t+\frac12a_xt^2
+=\Sexpr{fmt(x_vale,1)}\,\mathrm{m}.
+\]
+
+As componentes da velocidade de impacto são
+\[
+v_x=v_{x0}+a_xt
+=\Sexpr{fmt(vx_imp,1)}\,\mathrm{m/s},
+\]
+e
+\[
+v_y=-gt
+=\Sexpr{fmt(vy_imp,1)}\,\mathrm{m/s}.
+\]
+
+\begin{answerlist}
+  \item $\Sexpr{fmt(v_papal,1)}$
+  \item $\Sexpr{fmt(x_vale,1)}$
+  \item $\Sexpr{fmt(vx_imp,1)}$
+  \item $\Sexpr{fmt(vy_imp,1)}$
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Projeto Medicina / Futuro Militar, exercício 20 de
+%% 007_fisica_lancamento_horizontal_obliquo.pdf.
+%% A solução foi recalculada diretamente das equações do movimento.
+%% O gabarito-fonte informa 354,3 m no item (b); com os dados impressos,
+%% o valor obtido é aproximadamente 354,9 m.
+%% Item avançado: movimento bidimensional com aceleracao horizontal nao nula.
+%% \extype{cloze}
+%% \exsolution{\Sexpr{v_papal}|\Sexpr{x_vale}|\Sexpr{vx_imp}|\Sexpr{vy_imp}}
+%% \exclozetype{num|num|num|num}
+%% \extol{0.15|0.2|0.15|0.15}
+%% \exname{PM007Q20CoiotePatinsJato}
+%% \exsection{Mecanica; Cinematica; Movimento bidimensional; Aceleracao constante; Expansao PDF007}
+%% \exusepackage[utf8]{inputenc}
