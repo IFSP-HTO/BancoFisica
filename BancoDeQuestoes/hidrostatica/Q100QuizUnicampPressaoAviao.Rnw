@@ -1,0 +1,70 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+(Comvest / Vestibular Unicamp 2018, 1ª fase, Q43) Em junho de 2017, uma intensa onda de calor atingiu os Estados Unidos, acarretando uma série de cancelamentos de voos no aeroporto de Phoenix, no Arizona. O ar atmosférico se torna menos denso quando a temperatura sobe muito, o que diminui a força de sustentação da aeronave em voo.
+
+Essa força, vertical e dirigida de baixo para cima, está associada à diferença de pressão $\Delta P$ entre as partes inferior e superior do avião.
+
+Considere um avião de massa total
+\[
+m=3{,}0\times10^5\,\mathrm{kg}
+\]
+em voo horizontal, com área efetiva de sustentação
+\[
+A=500\,\mathrm{m^2}.
+\]
+Adote $g=10\,\mathrm{m/s^2}$.
+
+Nessa situação, a diferença de pressão $\Delta P$ vale
+
+\begin{answerlist}
+  \item $5{,}0\times10^3\,\mathrm{N/m^2}$.
+  \item $6{,}0\times10^3\,\mathrm{N/m^2}$.
+  \item $1{,}5\times10^6\,\mathrm{N/m^2}$.
+  \item $1{,}5\times10^8\,\mathrm{N/m^2}$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Como o avião está em voo horizontal sem aceleração vertical, a força resultante na direção vertical é nula. Portanto, a força de sustentação equilibra o peso:
+\[
+F_{\mathrm{sust}}=mg.
+\]
+
+A força produzida pela diferença de pressão sobre a área efetiva de sustentação é
+\[
+F_{\mathrm{sust}}=\Delta P\,A.
+\]
+
+Assim,
+\[
+\Delta P\,A=mg
+\]
+e, portanto,
+\[
+\Delta P=\frac{mg}{A}.
+\]
+
+Substituindo os valores,
+\[
+\Delta P=
+\frac{(3{,}0\times10^5)(10)}{500}
+=6{,}0\times10^3\,\mathrm{Pa}.
+\]
+
+Como $1\,\mathrm{Pa}=1\,\mathrm{N/m^2}$, a alternativa correta é a \textbf{B}.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Comvest / Vestibular Unicamp 2018, 1ª fase, questão 43.
+%% Adaptação editorial mínima: valor de g explicitado para tornar o item autocontido.
+%% SOURCE-VISUAL: none
+%% \extype{schoice}
+%% \exsolution{0100}
+%% \exname{Q100QuizUnicampPressaoAviao}
+%% \exsection{Hidrostatica; Pressao; Forca de pressao; Equilibrio; Unicamp}
+%% \exusepackage[utf8]{inputenc}
