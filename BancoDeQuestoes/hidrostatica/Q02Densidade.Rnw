@@ -1,75 +1,92 @@
 <<echo=FALSE, results=hide>>=
-## DATA GENERATION by Flavio Barros 01/06/2018
+## Data generation by Flavio Barros 01/06/2018
 
 ## Parâmetros
-massa_homem <- round(runif(n = 1, min = 60, max = 100),0)
-alt_homem <- round(runif(n = 1, min = 1.65, max = 2),2)
-## Supondo que o homem perde 40% em evaporação e que a densidade de um
-## corpo humando está em torno de 35e-3 kg/litro
-volume_homem = round(35e-3 * massa_homem * 0.4,1)
-g = 9.8
+massa_homem <- sample(60:100, 1)
+alt_homem <- round(runif(1, min = 1.65, max = 2.00), 2)
+consumo_homem <- sample(seq(1.5, 3.0, by = 0.1), 1)
+alt_crianca <- sample(seq(0.5, 0.9, by = 0.1), 1)
+g <- 9.8
 
-## Resposta
-alt_crianca <- round(runif(n = 1, min = 0.5, max = 0.9),1)
-beta <- alt_homem/alt_crianca
+## Razões de escala
+beta <- alt_homem / alt_crianca
 beta2 <- beta^2
 beta3 <- beta^3
 
-## item a)
-massa_crianca <- massa_homem/beta3
-peso_crianca <- round(massa_crianca*g,1)
-
-## item b)
-volume_crianca <- round(volume_homem/beta2,1)
+## Respostas
+massa_crianca <- massa_homem / beta3
+peso_crianca <- round(massa_crianca * g, 1)
+consumo_crianca <- round(consumo_homem / beta2, 1)
 @
 
 \begin{question}
-%% Texto da questão
-Se dois corpos t\^em todas as suas dimens\~oes lineares proporcionais por um fator de escala $\beta$, então a razão entre suas superf\'icies \'e $\beta$² e entre seus volumes \'e $\beta$³. Seres vivos perdem \'agua por evapora\c{c}\~ao proporcionalmente \`as suas superf\'icies. Ent\~ao eles devem ingerir l\'iquidos regularmente para repor essas perdas de \'agua. Considere um homem e uma crian\c{c}a com todas as dimens\~oes proporcionais. Considere ainda que o homem t\^em \Sexpr{massa_homem} kg; \Sexpr{alt_homem} m de altura e bebe \Sexpr{volume_homem} litros de \'agua por dia para repor as perdas devidas apenas \`a evapora\c{c}\~ao. (OBS: Utilize g = 9,8 m/s e arredonde as respostas para uma decimal.)
+Se dois corpos geometricamente semelhantes têm todas as dimensões lineares
+proporcionais por um fator de escala $\beta$, então suas áreas são
+proporcionais a $\beta^2$ e seus volumes a $\beta^3$.
+
+Considere um homem e uma criança geometricamente semelhantes e com a mesma
+densidade média. O homem tem massa $\Sexpr{massa_homem}\,\mathrm{kg}$,
+altura $\Sexpr{alt_homem}\,\mathrm{m}$ e bebe
+$\Sexpr{consumo_homem}\,\mathrm{L}$ de água por dia para repor perdas por
+evaporação. Admita que essas perdas sejam proporcionais à área superficial do
+corpo.
+
+Use $g=9{,}8\,\mathrm{m/s^2}$ e arredonde as respostas para uma casa decimal.
 
 \begin{answerlist}
-  \item Se a altura da crian\c{c}a é \Sexpr{alt_crianca} m, qual \'e seu peso?
-  \item Quantos litros de \'agua por dia ela deve beber apenas para repor suas perdas por evapora\c{c}\~ao?
+  \item Se a altura da criança é $\Sexpr{alt_crianca}\,\mathrm{m}$, qual é o seu peso, em newtons?
+  \item Quantos litros de água por dia ela deve beber para repor as perdas por evaporação?
 \end{answerlist}
-
 \end{question}
 
 \begin{solution}
-%% Resposta
+A razão entre as dimensões lineares do homem e da criança é
+\[
+\beta=\frac{H_{\text{homem}}}{H_{\text{criança}}}
+=\frac{\Sexpr{alt_homem}}{\Sexpr{alt_crianca}}
+\approx \Sexpr{round(beta, 2)}.
+\]
 
-a) Inicialmente, com base nos dados, vamos encontrar o valor de $\beta$:
+Como os corpos têm a mesma densidade média, a massa é proporcional ao volume.
+Assim,
+\[
+\frac{m_{\text{homem}}}{m_{\text{criança}}}=\beta^3,
+\]
+de modo que
+\[
+m_{\text{criança}}
+=\frac{\Sexpr{massa_homem}}{\Sexpr{round(beta3, 3)}}
+\approx \Sexpr{round(massa_crianca, 1)}\,\mathrm{kg}.
+\]
 
-\begin{displaymath}
-\beta = \frac{H_{homem}}{H_{crianc}} = \Sexpr{round(beta,2)}
-\end{displaymath}
+O peso da criança é
+\[
+P=m_{\text{criança}}g
+\approx \Sexpr{round(massa_crianca, 1)}\cdot\Sexpr{g}
+=\Sexpr{peso_crianca}\,\mathrm{N}.
+\]
 
-Assim, supondo que a densidade dos dois corpos é igual, nesse caso volume = massa. Portanto:
-
-\begin{displaymath}
-\frac{V_{homem}}{V_{crianc}} = \beta^2 \rightarrow V_{crianc} = \frac{V_{homem}}{\beta^2} = \Sexpr{round(massa_crianca,1)} 
-\end{displaymath}
-
-Sabendo a massa da crian\c{c}a \'e poss\'ivel obter o peso por meio de $P = m \cdot g$ tal que:
-
-\begin{displaymath}
-P = \Sexpr{round(massa_crianca,1)} \cdot \Sexpr{g} = \Sexpr{peso_crianca} N
-\end{displaymath}
-
-b) A ingest\~ao de l\'iquidos est\'a relacionada a superf\'icie corporal. Assim, sendo $L_{h}$ o consumo em litros do homem e $L_{c}$ o consumo em listros da criança:
-
-\begin{displaymath}
-\frac{L_{h}}{L_{c}} = \beta^2 \rightarrow L_{c} = \frac{L_{h}}{\beta^2} = \frac{\Sexpr{volume_homem}}{\Sexpr{round(beta2,2)}} = \Sexpr{volume_crianca}
-\end{displaymath}
+Já a perda de água por evaporação é proporcional à área superficial. Portanto,
+\[
+\frac{L_{\text{homem}}}{L_{\text{criança}}}=\beta^2,
+\]
+e
+\[
+L_{\text{criança}}
+=\frac{\Sexpr{consumo_homem}}{\Sexpr{round(beta2, 3)}}
+\approx \Sexpr{consumo_crianca}\,\mathrm{L/dia}.
+\]
 
 \begin{answerlist}
-  \item O peso da crian\c{c}a \'e \Sexpr{peso_crianca} Kg.
-  \item A crian\c{c}a precisa tomar \Sexpr{volume_crianca} litros para repor suas perdas.
+  \item $\Sexpr{peso_crianca}\,\mathrm{N}$.
+  \item $\Sexpr{consumo_crianca}\,\mathrm{L/dia}$.
 \end{answerlist}
 \end{solution}
 
 %% META-INFORMATION
 %% \extype{cloze}
-%% \exsolution{\Sexpr{peso_crianca}|\Sexpr{volume_crianca}}
+%% \exsolution{\Sexpr{peso_crianca}|\Sexpr{consumo_crianca}}
 %% \exclozetype{num|num}
+%% \extol{0.05|0.05}
 %% \exname{Q02Densidade}
-%% \extol{0.01}
+%% \exsection{Hidrostatica; Densidade; Escala}

@@ -1,18 +1,32 @@
 <<echo=FALSE, results=hide>>=
-## DATA GENERATION by Flavio Barros 01/06/2018
-volume <- sample(x = 2:100, 1)
-resp <- round(volume*1000,2)
+## Data generation by Flavio Barros 01/06/2018
+volume <- sample(2:100, 1)
+resp <- volume * 1000
 @
 
 \begin{question}
-%% Enunciado
-A \'agua contida em 1 litro possui massa igual a 1 kg. Qual a massa de \'agua contida em \Sexpr{volume} metros c\'ubicos?
-
+A água contida em $1\,\mathrm{L}$ possui massa igual a $1\,\mathrm{kg}$.
+Qual é a massa de água contida em $\Sexpr{volume}\,\mathrm{m^3}$?
 \end{question}
 
 \begin{solution}
-%% Resposta simples
-A massa ser\'a de \Sexpr{resp} kg.
+Como
+\[
+1\,\mathrm{m^3}=1000\,\mathrm{L},
+\]
+o volume dado corresponde a
+\[
+\Sexpr{volume}\,\mathrm{m^3}
+=\Sexpr{volume * 1000}\,\mathrm{L}.
+\]
+
+Se cada litro de água possui massa de $1\,\mathrm{kg}$, então
+\[
+m=\Sexpr{volume * 1000}\times 1
+=\Sexpr{resp}\,\mathrm{kg}.
+\]
+
+Logo, a massa de água é $\Sexpr{resp}\,\mathrm{kg}$.
 \end{solution}
 
 %% META-INFORMATION
@@ -20,3 +34,4 @@ A massa ser\'a de \Sexpr{resp} kg.
 %% \exsolution{\Sexpr{resp}}
 %% \exname{Q03Densidade}
 %% \extol{0.01}
+%% \exsection{Hidrostatica; Densidade; Conversao de unidades}

@@ -1,38 +1,50 @@
 <<echo=FALSE, results=hide>>=
-## DATA GENERATION by Flavio Barros
-## Parâmetros
-densidade <- round(runif(n = 1, min = 0.92, max = 7.2),2)
-aresta1 <- sample(x = 1:20, size = 1)
-aresta2 <- aresta1/sample(x = 2:5, size = 1)
-massa1 <- round((densidade*aresta1^3),1)
+## Data generation by Flavio Barros
 
-## Resposta
-massa2 <- round((densidade*aresta2^3),1)
-massa2
+## Parâmetros
+densidade <- sample(seq(0.8, 7.8, by = 0.2), 1)
+fator <- sample(2:4, 1)
+aresta2 <- sample(2:6, 1)
+aresta1 <- fator * aresta2
+massa1 <- round(densidade * aresta1^3, 1)
+
+## Resposta calculada a partir dos dados efetivamente exibidos
+massa2 <- round(massa1 * (aresta2 / aresta1)^3, 1)
 @
 
 \begin{question}
-%% Enunciado
-Um cubo de material homog\^eneo, tem \Sexpr{aresta1} cm de aresta e massa igual a \Sexpr{massa1} g. Outro cubo de mesmo
-material e igualmente homog\^eneo, tem \Sexpr{aresta2} cm de aresta. Qual \'e o valor da sua massa em gramas? (OBS: arredonde para uma decimal.)
+Um cubo homogêneo tem aresta $\Sexpr{aresta1}\,\mathrm{cm}$ e massa
+$\Sexpr{massa1}\,\mathrm{g}$. Outro cubo, feito do mesmo material, tem aresta
+$\Sexpr{aresta2}\,\mathrm{cm}$.
 
-
+Qual é a massa do segundo cubo, em gramas? Arredonde para uma casa decimal.
 \end{question}
 
 \begin{solution}
+Como os cubos são feitos do mesmo material, possuem a mesma densidade. Logo, a
+massa é proporcional ao volume.
 
-Como os dois cubos são feitos do mesmo material homogêneo, eles têm a mesma densidade. O volume de um cubo é dado pela aresta elevada ao cubo.
+Para um cubo, $V=a^3$. Portanto,
+\[
+\frac{m_2}{m_1}
+=\frac{V_2}{V_1}
+=\left(\frac{a_2}{a_1}\right)^3.
+\]
 
-Para o primeiro cubo, o volume é \Sexpr{aresta1} ao cubo, isto é, \Sexpr{aresta1^3} cm³. A densidade do material é então aproximadamente \Sexpr{round(massa1/aresta1^3,2)} g/cm³.
+Substituindo os valores,
+\[
+m_2
+=\Sexpr{massa1}
+\left(\frac{\Sexpr{aresta2}}{\Sexpr{aresta1}}\right)^3
+=\Sexpr{massa2}\,\mathrm{g}.
+\]
 
-O segundo cubo tem volume aproximadamente \Sexpr{round(aresta2^3,3)} cm³. Multiplicando esse volume pela mesma densidade, obtemos a massa \Sexpr{massa2} g.
-
-Portanto, a massa do segundo cubo é \Sexpr{massa2} g.
-
+Logo, a massa do segundo cubo é $\Sexpr{massa2}\,\mathrm{g}$.
 \end{solution}
 
 %% META-INFORMATION
 %% \extype{num}
 %% \exsolution{\Sexpr{massa2}}
 %% \exname{Q04Densidade}
-%% \extol{0.1}
+%% \extol{0.05}
+%% \exsection{Hidrostatica; Densidade; Escala}
