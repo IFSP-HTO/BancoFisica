@@ -1,0 +1,101 @@
+<<echo=FALSE, results=hide>>=
+rho <- 1000
+A1_cm2 <- sample(c(2.0,2.5,3.0,4.0), 1)
+A2_cm2 <- sample(c(0.015,0.020,0.025,0.030), 1)
+v1_cms <- sample(c(0.8,1.0,1.2,1.5), 1)
+
+A1 <- A1_cm2*1e-4
+A2 <- A2_cm2*1e-4
+v1 <- v1_cms/100
+
+v2 <- A1*v1/A2
+delta_p <- 0.5*rho*(v2^2-v1^2)
+F <- delta_p*A1
+
+fmt <- function(x, d=3) formatC(x, format="f", digits=d, decimal.mark=",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Uma seringa horizontal contém água de densidade \(1000\,\mathrm{kg/m^3}\). A seção transversal do êmbolo tem área \(\Sexpr{fmt(A1_cm2,1)}\,\mathrm{cm^2}\), enquanto a abertura de saída tem área \(\Sexpr{fmt(A2_cm2,3)}\,\mathrm{cm^2}\).
+
+O êmbolo é empurrado para dentro com velocidade constante de \(\Sexpr{fmt(v1_cms,1)}\,\mathrm{cm/s}\). Considere a água incompressível, de viscosidade desprezível, e suponha que a água saia para a atmosfera na mesma altura do êmbolo.
+
+Determine:
+\begin{answerlist}
+  \item a velocidade da água na saída, em \(\mathrm{m/s}\);
+  \item a força adicional sobre o êmbolo necessária para manter esse escoamento, em newtons, desprezando atritos mecânicos.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Pela continuidade do escoamento,
+\[
+A_1v_1=A_2v_2,
+\]
+de modo que
+\[
+v_2=\frac{A_1}{A_2}v_1.
+\]
+Como as duas áreas foram dadas na mesma unidade, a razão pode ser feita diretamente:
+\[
+v_2=
+\frac{\Sexpr{fmt(A1_cm2,1)}}{\Sexpr{fmt(A2_cm2,3)}}
+\left(\frac{\Sexpr{fmt(v1_cms,1)}}{100}\right)
+=
+\Sexpr{fmt(v2,3)}\,\mathrm{m/s}.
+\]
+
+Aplicando Bernoulli entre o interior da seringa e a saída, na mesma altura,
+\[
+p_1+\frac{\rho v_1^2}{2}
+=
+p_{\rm atm}+\frac{\rho v_2^2}{2}.
+\]
+Logo,
+\[
+\Delta p=p_1-p_{\rm atm}
+=
+\frac{\rho}{2}(v_2^2-v_1^2).
+\]
+
+A força sobre o êmbolo associada a essa diferença de pressão é
+\[
+F=\Delta p\,A_1.
+\]
+Com \(A_1=\Sexpr{fmt(A1,6)}\,\mathrm{m^2}\),
+\[
+F=
+\frac{1000}{2}
+\left[
+\left(\Sexpr{fmt(v2,3)}\right)^2
+-
+\left(\Sexpr{fmt(v1,3)}\right)^2
+\right]
+\Sexpr{fmt(A1,6)}
+=
+\Sexpr{fmt(F,3)}\,\mathrm{N}.
+\]
+
+\begin{answerlist}
+  \item \(\Sexpr{fmt(v2,3)}\,\mathrm{m/s}\)
+  \item \(\Sexpr{fmt(F,3)}\,\mathrm{N}\)
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte de inspiracao: AAPT F=ma 2024, questao 21. Adaptacao forte, parametrizada e com Bernoulli exato.
+%% Source URL: https://www.aapt.org/physicsteam/2024/upload/F-ma-2024-Solutions_v2.pdf
+%% OLYMPIC-LEVEL: O4
+%% SOURCE-VISUAL: none
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{round(v2,3)}|\Sexpr{round(F,3)}}
+%% \extol{0.005|0.005}
+%% \exname{Q01ClozeOlimpiadaSeringaBernoulli}
+%% \exsection{Mecanica dos fluidos; Hidrodinamica; Continuidade; Bernoulli; Olimpiada}
+%% \exusepackage[utf8]{inputenc}
