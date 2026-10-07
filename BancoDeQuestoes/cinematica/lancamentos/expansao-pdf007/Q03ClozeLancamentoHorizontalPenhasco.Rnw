@@ -1,0 +1,117 @@
+<<echo=FALSE, results=hide>>=
+g <- 9.8
+T <- sample(c(2, 3, 4, 5), 1)
+h <- 0.5 * g * T^2
+v0 <- sample(c(10, 12, 15, 18, 20), 1)
+A <- v0 * T
+
+fmt <- function(x, d=1) formatC(x, format="f", digits=d, decimal.mark=",")
+
+render_overlay_png <- function(source, outfile, overlays) {
+  img <- png::readPNG(source)
+  hpx <- dim(img)[1]
+  wpx <- dim(img)[2]
+  grDevices::png(outfile, width=wpx, height=hpx, bg="white")
+  grid::grid.newpage()
+  grid::grid.raster(
+    img,
+    width=grid::unit(1, "npc"),
+    height=grid::unit(1, "npc"),
+    interpolate=FALSE
+  )
+  for (o in overlays) {
+    grid::grid.rect(
+      x=grid::unit((o$x1 + o$x2)/(2*wpx), "npc"),
+      y=grid::unit(1 - (o$y1 + o$y2)/(2*hpx), "npc"),
+      width=grid::unit((o$x2 - o$x1)/wpx, "npc"),
+      height=grid::unit((o$y2 - o$y1)/hpx, "npc"),
+      gp=grid::gpar(fill="white", col=NA)
+    )
+    grid::grid.text(
+      o$text,
+      x=grid::unit(o$x/wpx, "npc"),
+      y=grid::unit(1 - o$y/hpx, "npc"),
+      just=c("left", "top"),
+      gp=grid::gpar(col="black", fontsize=12, fontfamily="serif")
+    )
+  }
+  grDevices::dev.off()
+  invisible(outfile)
+}
+
+include_supplement("PM007_Q03_base.png", dir="../../../figuras")
+base_path <- "PM007_Q03_base.png"
+img <- "PM007_Q03_variante.png"
+
+render_overlay_png(
+  base_path,
+  img,
+  list(
+    list(
+      x1=163, y1=77, x2=262, y2=113,
+      text=paste0(fmt(h, 1), " m"),
+      x=174, y=83
+    )
+  )
+)
+@
+
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+
+Um canhão encontra-se na borda de um penhasco diante do mar. O projétil é disparado horizontalmente com velocidade inicial de $\Sexpr{fmt(v0,0)}\,\mathrm{m/s}$, a uma altura de $\Sexpr{fmt(h,1)}\,\mathrm{m}$ acima do nível do mar. Despreze a resistência do ar e adote $g=9{,}8\,\mathrm{m/s^2}$.
+
+\begin{center}
+\includegraphics[width=5.8cm,keepaspectratio]{\Sexpr{img}}
+\end{center}
+
+Determine:
+
+\begin{answerlist}
+  \item o tempo para o projétil atingir o mar, em $\mathrm{s}$;
+  \item a distância horizontal entre o ponto de impacto e a base do penhasco, em $\mathrm{m}$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Na direção vertical, o projétil inicia com velocidade nula. Assim,
+\[
+h=\frac12gt^2.
+\]
+Logo,
+\[
+t=\sqrt{\frac{2h}{g}}
+=\sqrt{\frac{2\cdot \Sexpr{fmt(h,1)}}{9{,}8}}
+=\Sexpr{fmt(T,1)}\,\mathrm{s}.
+\]
+
+Na direção horizontal, o movimento é uniforme:
+\[
+x=v_0t
+=\Sexpr{fmt(v0,0)}\cdot\Sexpr{fmt(T,1)}
+=\Sexpr{fmt(A,1)}\,\mathrm{m}.
+\]
+
+\begin{answerlist}
+  \item $\Sexpr{fmt(T,1)}$
+  \item $\Sexpr{fmt(A,1)}$
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Projeto Medicina / Futuro Militar, exercício 3 de
+%% 007_fisica_lancamento_horizontal_obliquo.pdf.
+%% Figura: objeto original extraído diretamente do PDF; apenas o rótulo
+%% numérico da altura é substituído programaticamente em cada variante.
+%% \extype{cloze}
+%% \exsolution{\Sexpr{T}|\Sexpr{A}}
+%% \exclozetype{num|num}
+%% \extol{0.02|0.05}
+%% \exname{PM007Q03LancamentoHorizontalPenhasco}
+%% \exsection{Mecanica; Cinematica; Lancamento horizontal; Expansao PDF007}
+%% \exusepackage[utf8]{inputenc}
