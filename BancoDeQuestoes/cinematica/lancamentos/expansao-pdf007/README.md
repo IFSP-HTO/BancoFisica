@@ -51,12 +51,17 @@ Quando a região do rótulo permite uma sobreposição robusta, os valores podem
 
 Para Q11, a figura deverá ser gerada a partir dos mesmos parâmetros usados na solução, mantendo o estilo simples de eixos e grade da fonte.
 
-### D. Reaproveitamento / não criar nova figura
+### D. Reaproveitamento / sem nova figura
 
 | Questão | Decisão |
 |---|---|
 | Q41 | a família já existe no Banco e possui figura simbólica revisada (`LO26_Panosso18_receptor_simbolica.png`) |
-| Q49 | não é central para lançamento oblíquo; manter fora desta expansão por enquanto |
+
+### E. Figura original recortada especificamente para o item
+
+| Questão | Procedimento |
+|---|---|
+| Q49 | preservar a malha e os pontos P e Q da figura original; usar recorte monocromático sem redesenhar a geometria |
 
 ## Nomes propostos para imagens-base
 
@@ -79,16 +84,16 @@ As imagens extraídas da fonte devem ficar em `BancoDeQuestoes/figuras/` com nom
 - `PM007_Q38_base.png`
 - `PM007_Q43_base.jpg`
 - `PM007_Q46_base.png`
+- `PM007_Q49_base.b64`
 
-Q41 reutiliza o ativo já existente e Q49 não entra nesta frente.
+Q41 reutiliza o ativo já existente.
 
 ## Próxima etapa
 
-1. adicionar as imagens-base originais ao repositório;
-2. implementar primeiro as questões com figura direta;
-3. implementar o helper de overlay nas questões do grupo B;
-4. gerar e validar visualmente várias variantes de cada figura parametrizada;
-5. só então fechar a seleção dos itens para as três provas substitutivas.
+1. validar no CI todas as questões da frente;
+2. revisar visualmente as variantes com figuras;
+3. auditar consistência física, gabaritos e tolerâncias;
+4. separar o que pertence ao acervo geral do que deve entrar nas três provas substitutivas.
 
 
 ## Estado da implementação
@@ -118,39 +123,45 @@ Os arquivos com sufixo `_base.b64` representam o recorte-fonte; os arquivos
 `_symbolic.b64` representam uma derivação manual mínima, em que apenas os
 rótulos numéricos foram substituídos por símbolos.
 
-### Próxima leva
+### Observação sobre as figuras diretas
 
-Tratar as figuras que podem ser usadas diretamente, sem qualquer modificação:
-Q01, Q09, Q10, Q13, Q25, Q27, Q28, Q35 e Q46.
+Q01, Q09, Q10, Q13, Q25, Q27, Q28, Q35 e Q46 usam recortes originais sem
+alteração de conteúdo. A Q49 usa um recorte monocromático da própria figura
+original, preservando coordenadas, malha, curva e pontos P e Q.
 
 
-## Lote atual — 40 questões implementadas
+## Lote atual — 45 questões implementadas
 
-A frente já contém 30 arquivos `.Rnw`:
+A frente já contém 45 arquivos `.Rnw`.
+
+Cobertura principal:
 
 - lançamento horizontal e independência dos movimentos: Q01, Q03, Q04, Q05, Q06, Q07, Q08, Q09, Q10, Q12, Q13, Q25, Q30 e Q31;
 - referenciais e composição de velocidades: Q02 e Q34;
 - lançamento oblíquo / problemas inversos: Q15, Q16, Q21, Q22, Q23, Q24, Q27, Q36, Q37, Q38, Q39, Q40, Q42, Q43, Q44, Q45, Q46 e Q48;
 - aplicações diferenciadas: Q18 (vazão), Q19 (interceptação) e Q35 (comparação gráfica de tempos);
-- leitura de gráficos: Q11;
 - força, velocidade e energia: Q28;
-- conceitos em formato somatório: Q17 e Q48.
+- conceitos em formato somatório: Q17 e Q48;
+- cinemática vetorial e tópicos avançados: Q14 e Q26 (raio de curvatura), Q20 (aceleração horizontal ativa), Q49 (velocidade média vetorial) e Q50 (aceleração horizontal dependente do tempo);
+- leitura de gráficos: Q11 e Q49.
 
-Os números acima preservam a numeração da lista-fonte; lacunas correspondem a
-itens ainda não tratados, duplicatas, itens já representados no Banco ou
-questões deixadas para uma etapa posterior.
+Os números preservam a numeração da lista-fonte. As únicas questões não
+incorporadas nesta frente são:
 
-### Itens deixados fora deste lote
-
-- Q14 e Q26: raio de curvatura, nível acima do núcleo usual das provas;
-- Q20: movimento bidimensional com aceleração horizontal ativa durante o voo;
 - Q29: família já representada no Banco;
 - Q32, Q33 e Q47: duplicatas internas da própria lista-fonte;
-- Q41: família já implementada no Banco com figura revisada;
-- Q49: velocidade média no plano, melhor classificada em cinemática vetorial;
-- Q50: aceleração horizontal variável, candidato a item avançado.
+- Q41: família já implementada no Banco com figura revisada.
 
-A Q22 exigiu uma adaptação explícita: a fonte fornece a velocidade e a
-inclinação do plano, mas não explicita o valor de g. Nesta implementação foi
-adotado g=10 m/s2, valor recorrente nos exercícios vizinhos, e essa intervenção
-fica registrada no próprio arquivo da questão.
+### Correções e adaptações documentadas
+
+- Q20: o gabarito-fonte informa 354,3 m no item (b), mas as equações com os
+  dados impressos fornecem aproximadamente 354,9 m; o Banco usa o valor
+  recalculado.
+- Q22: a fonte fornece a velocidade e a inclinação do plano, mas não explicita
+  o valor de `g`; foi adotado `g=10 m/s2`, registrado no arquivo.
+- Q26: a fonte não explicita `g`; foi adotado `g=9,8 m/s2`, que reproduz o
+  gabarito de aproximadamente 305 m.
+- Q50: o gabarito-fonte registra `0,4 s` para a queda de 80 m, mas com
+  `g=10 m/s2` o valor correto é `4,0 s`; a implementação corrige o erro
+  tipográfico e mantém os demais resultados compatíveis (`51,2 m/s` e
+  `42,7 m`).
