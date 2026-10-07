@@ -47,6 +47,28 @@ class EnemMetadataTests(unittest.TestCase):
         self.assertEqual(len(found), 1)
         self.assertEqual(found[0]["CO_ITEM"], "11")
 
+    def test_color_alias_yellow(self):
+        self.assertEqual(mod.normalize_color("Amarelo"), "AMARELA")
+        self.assertEqual(mod.normalize_color("AMARELA"), "AMARELA")
+
+    def test_same_item_in_multiple_booklets_is_one_candidate(self):
+        inv = {field: "" for field in mod.OUTPUT_FIELDS}
+        inv.update(
+            {
+                "bank_path": "BancoDeQuestoes/x/Q.Rnw",
+                "relation": "direct",
+                "source_year": "2016",
+                "co_item": "6781",
+            }
+        )
+        items = [
+            {"CO_ITEM": "6781", "CO_PROVA": "331", "SG_AREA": "CN"},
+            {"CO_ITEM": "6781", "CO_PROVA": "351", "SG_AREA": "CN"},
+        ]
+        found = mod.candidates(inv, items)
+        self.assertEqual(len(found), 1)
+        self.assertEqual(found[0]["CO_ITEM"], "6781")
+
     def test_pre_tri_is_not_matched(self):
         inv = {field: "" for field in mod.OUTPUT_FIELDS}
         inv.update({"bank_path": "x", "relation": "direct", "source_year": "2001"})
