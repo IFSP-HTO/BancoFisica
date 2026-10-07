@@ -122,3 +122,33 @@ rótulos numéricos foram substituídos por símbolos.
 
 Tratar as figuras que podem ser usadas diretamente, sem qualquer modificação:
 Q01, Q09, Q10, Q13, Q25, Q27, Q28, Q35 e Q46.
+
+
+## Lote atual — 30 questões implementadas
+
+A frente já contém 30 arquivos `.Rnw`:
+
+- lançamento horizontal e independência dos movimentos: Q01, Q03, Q06, Q07, Q08, Q09, Q10, Q12, Q13, Q25 e Q31;
+- referenciais e composição de velocidades: Q02 e Q34;
+- lançamento oblíquo / problemas inversos: Q15, Q16, Q21, Q27, Q38, Q39, Q40, Q42, Q43, Q44, Q45 e Q46;
+- aplicações diferenciadas: Q18 (vazão), Q19 (interceptação) e Q35 (comparação gráfica de tempos);
+- leitura de gráficos: Q11;
+- força, velocidade e energia: Q28.
+
+Os números acima preservam a numeração da lista-fonte; lacunas correspondem a
+itens ainda não tratados, duplicatas, itens já representados no Banco ou
+questões deixadas para uma etapa posterior.
+
+### Itens ainda interessantes para esta expansão
+
+Antes de encerrar a frente, permanecem como candidatos prioritários:
+
+- Q23 — problema inverso de alcance;
+- Q24 — alvo abandonado no instante do disparo;
+- Q30 — queda livre versus lançamento horizontal;
+- Q36 e Q37 — paralelas úteis para provas equivalentes;
+- Q48 — questão conceitual em formato somatório.
+
+Q14 e Q26 (raio de curvatura), Q20 (aceleração horizontal durante o voo),
+Q49 (velocidade média no plano) e Q50 (aceleração horizontal variável) ficam
+marcadas como itens avançados ou de outra subcategoria.
