@@ -20,7 +20,9 @@ Fonte primária:
 
 Os pacotes anuais contêm a tabela `ITENS_PROVA_<ANO>.csv`. O Inep descreve essa tabela como a base com informações dos itens das provas. Nas edições do novo ENEM ela inclui posição, área, habilidade, gabarito e parâmetros psicométricos.
 
-O fluxo local deve usar o ZIP oficial do Inep ou a pasta extraída desse ZIP. Não é necessário ler nem versionar os microdados de participantes.
+O fluxo local deve usar preferencialmente o ZIP oficial do Inep ou a pasta extraída desse ZIP. Não é necessário ler nem versionar os microdados de participantes.
+
+Para a carga inicial desta frente foi usada, **somente como cache de transporte**, a cópia normalizada das tabelas `ITENS_PROVA` mantida em `HenriqueLindemann/analise-enem`. O manifesto desse repositório registra o caminho do arquivo oficial do Inep e os hashes SHA-256 do arquivo-fonte e da cópia normalizada. Os hashes dos anos efetivamente usados nesta carga estão preservados em `metadata/enem/inep_item_sources.csv`. A procedência dos dados continua sendo o Inep; o espelho não é tratado como fonte substantiva independente.
 
 ## Base canônica
 
@@ -31,7 +33,9 @@ Campos principais:
 - `bank_path`: arquivo `.Rnw` do BancoFisica;
 - `relation`: `direct` ou `inspired`;
 - `adaptation_kind`: natureza da adaptação; inicialmente `pending_review`;
-- `source_year`, `source_application`, `source_caderno`, `source_color`, `source_position`: referência editorial do item-fonte;
+- `source_year`, `source_application`, `source_caderno`, `source_color`: identificação editorial da aplicação/caderno;
+- `source_question_number`: número impresso da questão no caderno;
+- `source_position`: valor oficial de `CO_POSICAO` na tabela de itens — não necessariamente igual ao número impresso;
 - `source_co_prova`: código da prova no microdado, quando identificado;
 - `co_item`: identificador do item no Inep;
 - `sg_area`, `co_habilidade`, `tx_gabarito`: metadados oficiais;
@@ -79,6 +83,18 @@ O cruzamento automático é conservador.
 6. O script nunca escolhe arbitrariamente um item quando faltam dados para distingui-lo.
 
 Depois da revisão manual, os identificadores oficiais confirmados podem ser promovidos para a base canônica.
+
+### Estado da carga inicial
+
+A carga inicial registra 35 relações diretas BancoFisica ↔ ENEM:
+
+- 2 itens pré-TRI (1998 e 2001), mantidos apenas para procedência;
+- 33 relações no período 2009–2025 com `CO_ITEM` identificado;
+- 32 dessas 33 relações possuem também `CO_PROVA` específico identificado;
+- a questão da 2ª aplicação de 2016 (Grand Canyon) possui `CO_ITEM=6781`, mas o item aparece nos códigos de prova 331 e 351 com os mesmos metadados psicométricos; por isso `source_co_prova` permanece vazio até uma auditoria específica do código de caderno;
+- o item-fonte do ENEM 2024 Q100 está corretamente marcado como abandonado (`IN_ITEM_ABAN=1`, motivo pedagógico), com gabarito `X` e sem parâmetros `a`, `b` e `c`.
+
+Em 2016 e 2017, `source_question_number` e `source_position` deixam explícita uma diferença de convenção presente nos microdados. Nunca inferir `CO_POSICAO` diretamente do número impresso sem consultar a tabela do respectivo ano.
 
 ## Integração futura nos .Rnw e no site
 
