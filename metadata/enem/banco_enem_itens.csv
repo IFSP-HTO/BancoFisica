@@ -1,6 +1,6 @@
 bank_path,relation,adaptation_kind,source_year,source_application,source_caderno,source_color,source_question_number,source_position,source_co_prova,co_item,sg_area,co_habilidade,tx_gabarito,in_item_aban,tx_motivo_aban,nu_param_a,nu_param_b,nu_param_c,match_status,notes
-BancoDeQuestoes/estatica/Q09Quizestce.Rnw,direct,pending_review,1998,regular,1,Azul,7,,,,,,,,,,,Pré-TRI; manter procedência sem parâmetros 3PL.,pre_tri,
-BancoDeQuestoes/calortemp/Q07Cal.Rnw,direct,pending_review,2001,regular,1,Amarelo,49,,,,,,,,,,,Pré-TRI; manter procedência sem parâmetros 3PL.,pre_tri,
+BancoDeQuestoes/estatica/Q09Quizestce.Rnw,direct,pending_review,1998,regular,1,Azul,7,,,,,,,,,,,,pre_tri,Pré-TRI; manter procedência sem parâmetros 3PL.
+BancoDeQuestoes/calortemp/Q07Cal.Rnw,direct,pending_review,2001,regular,1,Amarelo,49,,,,,,,,,,,,pre_tri,Pré-TRI; manter procedência sem parâmetros 3PL.
 BancoDeQuestoes/movcircular/Q23TremBalaCurvas.Rnw,direct,pending_review,2009,regular,1,Azul,21,21,49,60133,CN,,C,0,,3.08201,1.3096,0.21834,matched,CO_HABILIDADE ausente na tabela ITENS_PROVA_2009.
 BancoDeQuestoes/fisicamoderna/Q109QuizReacaoCadeiaUranio.Rnw,direct,pending_review,2015,regular,1,Azul,73,73,235,54393,CN,22,C,0,,2.55499,1.34587,0.1744,matched,
 BancoDeQuestoes/movcircular/Q14EngrenagensENEM.Rnw,direct,pending_review,2016,regular,2,Amarelo,80,125,292,97445,CN,17,B,0,,2.68655,1.88996,0.11149,matched,Mesmo item-fonte de Q93QuizEngrenagensRPM.
