@@ -8,9 +8,9 @@ Este diretório documenta a triagem das questões e, em particular, a política 
 
 1. Preservar a figura original sempre que possível.
 2. Extrair o objeto de imagem embutido no PDF, em vez de usar captura de tela da página.
-3. Quando números estiverem gravados na figura, manter uma imagem-base original e substituir somente as pequenas regiões numéricas em tempo de geração, seguindo o padrão já usado nas listas de lançamento oblíquo de 2026 (`render_overlay_png()` com `png` + `grid`).
-4. Não alterar permanentemente a imagem-base. Cada variante gera uma imagem derivada temporária.
-5. Redesenhar por código somente quando a geometria/gráfico em si precisar variar, e não apenas os rótulos.
+3. Quando números estiverem gravados na figura, manter uma imagem-base original. Há duas estratégias aceitas: (a) substituir somente a pequena região numérica em tempo de geração com `png` + `grid`; ou (b) produzir uma única versão simbólica da própria figura original, trocando apenas os números por letras como `h`, `d` e `theta`.
+4. Não alterar permanentemente a imagem-base original. As versões derivadas ficam identificadas separadamente.
+5. Redesenhar por código somente quando a geometria/gráfico em si precisar variar, ou quando a figura-fonte tiver qualidade insuficiente para uso em prova.
 
 ## Inventário das figuras
 
@@ -40,13 +40,14 @@ Este diretório documenta a triagem das questões e, em particular, a política 
 | Q38 | 30 graus e 10 m | substituir ângulo e altura do alvo por valores sorteados |
 | Q43 | 2,5 m | substituir o desnível por valor sorteado |
 
-A preferência é escrever na figura os **valores efetivamente sorteados**, e não apenas trocar os números por letras. Assim, figura e enunciado permanecem autocontidos em cada variante.
+Quando a região do rótulo permite uma sobreposição robusta, os valores podem ser escritos programaticamente. Quando isso fragiliza a figura, usa-se uma versão simbólica única (`h`, `d`, `theta` etc.) e os valores sorteados ficam no enunciado. Em ambos os casos, a geometria e a arte da figura original são preservadas.
 
 ### C. Figura gerada por código
 
 | Questão | Motivo |
 |---|---|
 | Q11 | os próprios gráficos x(t) e y(x) definem os dados; variar somente os rótulos não é suficiente |
+| Q19 | a figura-fonte é muito pequena e contém artefatos de digitalização; o esquema é regenerado preservando os elementos físicos essenciais |
 
 Para Q11, a figura deverá ser gerada a partir dos mesmos parâmetros usados na solução, mantendo o estilo simples de eixos e grade da fonte.
 
@@ -88,3 +89,36 @@ Q41 reutiliza o ativo já existente e Q49 não entra nesta frente.
 3. implementar o helper de overlay nas questões do grupo B;
 4. gerar e validar visualmente várias variantes de cada figura parametrizada;
 5. só então fechar a seleção dos itens para as três provas substitutivas.
+
+
+## Estado da implementação
+
+Questões já implementadas nesta frente:
+
+| Questão | Figura | Parametrização |
+|---|---|---|
+| Q03 | original + sobreposição do rótulo de altura | altura e velocidade horizontal |
+| Q06 | original preservada + versão simbólica h/d | altura, alcance, velocidade inicial e velocidade de impacto |
+| Q08 | original preservada + versão simbólica h/d | altura, alcance e velocidade inicial |
+| Q11 | gráficos gerados por código | velocidade horizontal e gravidade do planeta |
+| Q12 | original + sobreposição do rótulo de altura | altura, velocidade horizontal, tempo e separação |
+| Q19 | esquema gerado por código | velocidade do míssil, alturas e instante de encontro |
+| Q38 | original preservada + versão simbólica theta/h | ângulo, velocidade, altura do alvo, distância e altura máxima |
+| Q43 | original + substituição local de 2,5 m por h | altura inicial, velocidade, ângulo e alcance |
+
+### Armazenamento dos recortes
+
+Alguns recortes são mantidos em `.b64` dentro de `BancoDeQuestoes/figuras/` e
+reconstruídos como PNG temporário no bloco R da questão com
+`base64enc::base64decode()`. Esse padrão já existe no BancoFisica e permite
+preservar exatamente os pixels do recorte-fonte mesmo quando o arquivo precisa
+ser transportado como texto.
+
+Os arquivos com sufixo `_base.b64` representam o recorte-fonte; os arquivos
+`_symbolic.b64` representam uma derivação manual mínima, em que apenas os
+rótulos numéricos foram substituídos por símbolos.
+
+### Próxima leva
+
+Tratar as figuras que podem ser usadas diretamente, sem qualquer modificação:
+Q01, Q09, Q10, Q13, Q25, Q27, Q28, Q35 e Q46.
