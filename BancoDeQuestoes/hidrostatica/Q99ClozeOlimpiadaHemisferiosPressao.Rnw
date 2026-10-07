@@ -3,7 +3,7 @@ r_cm <- sample(c(20,25,30,35,40), 1)
 r <- r_cm/100
 p_ext_kpa <- sample(c(90,100,105), 1)
 frac <- sample(c(0.35,0.45,0.55,0.65), 1)
-p_int_kpa <- frac*p_ext_kpa
+p_int_kpa <- round(frac*p_ext_kpa, 1)
 
 delta_p <- (p_ext_kpa-p_int_kpa)*1000
 F <- delta_p*pi*r^2
