@@ -124,31 +124,33 @@ Tratar as figuras que podem ser usadas diretamente, sem qualquer modificação:
 Q01, Q09, Q10, Q13, Q25, Q27, Q28, Q35 e Q46.
 
 
-## Lote atual — 30 questões implementadas
+## Lote atual — 40 questões implementadas
 
 A frente já contém 30 arquivos `.Rnw`:
 
-- lançamento horizontal e independência dos movimentos: Q01, Q03, Q06, Q07, Q08, Q09, Q10, Q12, Q13, Q25 e Q31;
+- lançamento horizontal e independência dos movimentos: Q01, Q03, Q04, Q05, Q06, Q07, Q08, Q09, Q10, Q12, Q13, Q25, Q30 e Q31;
 - referenciais e composição de velocidades: Q02 e Q34;
-- lançamento oblíquo / problemas inversos: Q15, Q16, Q21, Q27, Q38, Q39, Q40, Q42, Q43, Q44, Q45 e Q46;
+- lançamento oblíquo / problemas inversos: Q15, Q16, Q21, Q22, Q23, Q24, Q27, Q36, Q37, Q38, Q39, Q40, Q42, Q43, Q44, Q45, Q46 e Q48;
 - aplicações diferenciadas: Q18 (vazão), Q19 (interceptação) e Q35 (comparação gráfica de tempos);
 - leitura de gráficos: Q11;
-- força, velocidade e energia: Q28.
+- força, velocidade e energia: Q28;
+- conceitos em formato somatório: Q17 e Q48.
 
 Os números acima preservam a numeração da lista-fonte; lacunas correspondem a
 itens ainda não tratados, duplicatas, itens já representados no Banco ou
 questões deixadas para uma etapa posterior.
 
-### Itens ainda interessantes para esta expansão
+### Itens deixados fora deste lote
 
-Antes de encerrar a frente, permanecem como candidatos prioritários:
+- Q14 e Q26: raio de curvatura, nível acima do núcleo usual das provas;
+- Q20: movimento bidimensional com aceleração horizontal ativa durante o voo;
+- Q29: família já representada no Banco;
+- Q32, Q33 e Q47: duplicatas internas da própria lista-fonte;
+- Q41: família já implementada no Banco com figura revisada;
+- Q49: velocidade média no plano, melhor classificada em cinemática vetorial;
+- Q50: aceleração horizontal variável, candidato a item avançado.
 
-- Q23 — problema inverso de alcance;
-- Q24 — alvo abandonado no instante do disparo;
-- Q30 — queda livre versus lançamento horizontal;
-- Q36 e Q37 — paralelas úteis para provas equivalentes;
-- Q48 — questão conceitual em formato somatório.
-
-Q14 e Q26 (raio de curvatura), Q20 (aceleração horizontal durante o voo),
-Q49 (velocidade média no plano) e Q50 (aceleração horizontal variável) ficam
-marcadas como itens avançados ou de outra subcategoria.
+A Q22 exigiu uma adaptação explícita: a fonte fornece a velocidade e a
+inclinação do plano, mas não explicita o valor de g. Nesta implementação foi
+adotado g=10 m/s2, valor recorrente nos exercícios vizinhos, e essa intervenção
+fica registrada no próprio arquivo da questão.
