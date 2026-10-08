@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import sys
 from pathlib import Path
 from typing import Any
@@ -43,6 +44,60 @@ def require_string(value: Any, context: str) -> str:
     return value
 
 
+def validate_enem_source(source: Any, context: str) -> None:
+    if source is None:
+        return
+
+    source = require_object(source, context)
+
+    integer_fields = ("year", "questionNumber", "coItem")
+    for field in integer_fields:
+        value = source.get(field)
+        if not isinstance(value, int) or value <= 0:
+            fail(f"{context}.{field} must be a positive integer")
+
+    if source["year"] < 2009:
+        fail(f"{context}.year must be >= 2009 for TRI metadata")
+
+    string_fields = (
+        "application",
+        "caderno",
+        "color",
+        "skillCode",
+        "skillText",
+        "originalAnswer",
+        "parametersReferTo",
+        "adaptationNote",
+        "sourceUrl",
+    )
+    for field in string_fields:
+        require_string(source.get(field), f"{context}.{field}")
+
+    if not re.fullmatch(r"H(?:[1-9]|[12][0-9]|30)", source["skillCode"]):
+        fail(f"{context}.skillCode must be H1 through H30")
+
+    if source["parametersReferTo"] != "item-original-inep":
+        fail(
+            f"{context}.parametersReferTo must be 'item-original-inep' "
+            "to avoid attributing ENEM calibration to the adapted demo question"
+        )
+
+    abandoned = source.get("abandoned")
+    if not isinstance(abandoned, bool):
+        fail(f"{context}.abandoned must be boolean")
+
+    for field in ("a", "b", "c"):
+        value = source.get(field)
+        if value is None and abandoned:
+            continue
+        if not isinstance(value, (int, float)) or isinstance(value, bool):
+            fail(f"{context}.{field} must be numeric, or null only for abandoned items")
+
+    reason = source.get("abandonmentReason", "")
+    if not isinstance(reason, str):
+        fail(f"{context}.abandonmentReason must be a string")
+
+
 def validate_question(question: dict[str, Any], index: int) -> None:
     prefix = f"questions[{index}]"
 
@@ -61,6 +116,8 @@ def validate_question(question: dict[str, Any], index: int) -> None:
 
     for tag_index, tag in enumerate(tags):
         require_string(tag, f"{prefix}.tags[{tag_index}]")
+
+    validate_enem_source(question.get("enemSource"), f"{prefix}.enemSource")
 
 
 

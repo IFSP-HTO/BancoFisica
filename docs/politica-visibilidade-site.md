@@ -84,3 +84,17 @@ Antes de publicar ou automatizar dados para o site, revise se:
 ## Relação com o projeto do site
 
 Esta política atende à issue #38 e deve orientar as próximas etapas do projeto do site, especialmente o gerador automático de `site/data/questoes-demo.json`.
+
+
+## Metadados de itens-fonte do ENEM
+
+Questões `demo` podem exibir metadados públicos do item-fonte do ENEM, incluindo ano, caderno, `CO_ITEM`, habilidade, gabarito original e parâmetros TRI, desde que:
+
+- a questão publicada seja explicitamente `demo`;
+- nenhum `bank_path`, caminho `.Rnw` ou vínculo com questão avaliativa privada seja exportado;
+- os parâmetros sejam rotulados como pertencentes ao **item original aplicado pelo Inep**;
+- versões adaptadas deixem explícito que a calibração não é transferida para a questão demonstrativa;
+- itens abandonados sejam identificados como tais e não recebam parâmetros inexistentes;
+- a tabela canônica interna `metadata/enem/banco_enem_itens.csv` nunca seja copiada diretamente para `site/data/`.
+
+O objetivo é permitir demonstrações de procedência e TRI sem tornar o site um índice público do banco avaliativo.

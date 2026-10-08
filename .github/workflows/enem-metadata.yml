@@ -9,6 +9,10 @@ on:
       - "tools/enem_item_metadata.py"
       - "tools/test_enem_item_metadata.py"
       - "docs/enem-tri-metadata.md"
+      - "docs/politica-visibilidade-site.md"
+      - "site/**"
+      - "tools/generate_demo_site_data.py"
+      - "tools/validate_public_site.py"
       - ".github/workflows/enem-metadata.yml"
   push:
     branches:
@@ -18,6 +22,10 @@ on:
       - "tools/enem_item_metadata.py"
       - "tools/test_enem_item_metadata.py"
       - "docs/enem-tri-metadata.md"
+      - "docs/politica-visibilidade-site.md"
+      - "site/**"
+      - "tools/generate_demo_site_data.py"
+      - "tools/validate_public_site.py"
       - ".github/workflows/enem-metadata.yml"
   workflow_dispatch:
 
@@ -36,3 +44,9 @@ jobs:
 
       - name: Run ENEM metadata unit tests
         run: python3 -m unittest tools/test_enem_item_metadata.py
+
+      - name: Validate demo-site ENEM integration
+        run: |
+          python3 tools/generate_demo_site_data.py
+          python3 tools/validate_public_site.py
+          node --check site/js/app.js
