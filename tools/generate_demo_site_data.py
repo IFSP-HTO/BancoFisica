@@ -64,7 +64,6 @@ def validate_enem_source(source: Any, context: str) -> None:
         "caderno",
         "color",
         "skillCode",
-        "skillText",
         "originalAnswer",
         "parametersReferTo",
         "adaptationNote",
