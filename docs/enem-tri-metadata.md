@@ -96,8 +96,7 @@ A carga inicial registra 35 relações diretas BancoFisica ↔ ENEM:
 
 - 2 itens pré-TRI (1998 e 2001), mantidos apenas para procedência;
 - 33 relações no período 2009–2025 com `CO_ITEM` identificado;
-- 32 dessas 33 relações possuem também `CO_PROVA` específico identificado;
-- a questão da 2ª aplicação de 2016 (Grand Canyon) possui `CO_ITEM=6781`, mas o item aparece nos códigos de prova 331 e 351 com os mesmos metadados psicométricos; por isso `source_co_prova` permanece vazio até uma auditoria específica do código de caderno;
+- as 33 relações possuem `CO_PROVA` identificado; na reaplicação de 2016, o Leia-me oficial dos microdados informa que as provas CN 331 e 351 são equivalentes, e o Banco adota 331 como código canônico para o item do Grand Canyon (`CO_ITEM=6781`);
 - o item-fonte do ENEM 2024 Q100 está corretamente marcado como abandonado (`IN_ITEM_ABAN=1`, motivo pedagógico), com gabarito `X` e sem parâmetros `a`, `b` e `c`.
 
 Em 2016 e 2017, `source_question_number` e `source_position` deixam explícita uma diferença de convenção presente nos microdados. Nunca inferir `CO_POSICAO` diretamente do número impresso sem consultar a tabela do respectivo ano.
