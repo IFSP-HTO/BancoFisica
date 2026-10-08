@@ -32,7 +32,13 @@ Campos principais:
 
 - `bank_path`: arquivo `.Rnw` do BancoFisica;
 - `relation`: `direct` ou `inspired`;
-- `adaptation_kind`: natureza da adaptação; inicialmente `pending_review`;
+- `adaptation_kind`: natureza da relação entre a versão do Banco e o item-fonte:
+  - `reproduction`: item essencialmente preservado; mudanças apenas de formatação ou ordem de alternativas;
+  - `text_adaptation`: enunciado/alternativas reescritos sem parametrização numérica;
+  - `fixed_numeric_adaptation`: um ou mais dados numéricos foram alterados de forma fixa;
+  - `numeric_parameterization`: dados variam programaticamente entre instâncias;
+  - `conceptual_adaptation`: situação/tarefa materialmente reconstruída mantendo o item apenas como base conceitual;
+  - `inspired`: não é derivação direta; apenas inspiração temática/conceitual;
 - `source_year`, `source_application`, `source_caderno`, `source_color`: identificação editorial da aplicação/caderno;
 - `source_question_number`: número impresso da questão no caderno;
 - `source_position`: valor oficial de `CO_POSICAO` na tabela de itens — não necessariamente igual ao número impresso;
@@ -118,3 +124,15 @@ A vitrine pública suporta um objeto opcional `enemSource` apenas em questões m
 Esse objeto pode apresentar procedência, habilidade e parâmetros TRI do item-fonte e gerar a CCI 3PL no navegador. A exportação pública não consulta nem replica automaticamente `metadata/enem/banco_enem_itens.csv`: os metadados de uma demonstração devem ser selecionados explicitamente.
 
 O site exibe obrigatoriamente o aviso de que os parâmetros pertencem ao item original aplicado pelo Inep e não constituem calibração da versão adaptada do BancoFisica.
+
+
+### Classificação inicial das 35 relações diretas
+
+Após revisão dos arquivos `.Rnw`, a carga atual ficou:
+
+- 6 `reproduction`;
+- 26 `text_adaptation`;
+- 2 `numeric_parameterization`;
+- 1 `fixed_numeric_adaptation` (ENEM 2024 Q100, cafeteira anulada, com tempo corrigido).
+
+A classificação é conservadora: embaralhamento de alternativas e reconstrução gráfica sem mudança substantiva do item não contam como parametrização. `numeric_parameterization` é reservado a casos em que os dados efetivamente variam entre instâncias.
