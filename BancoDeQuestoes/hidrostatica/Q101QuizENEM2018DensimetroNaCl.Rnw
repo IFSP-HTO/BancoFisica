@@ -1,0 +1,74 @@
+<<echo=FALSE, results=hide>>=
+include_supplement("Q101QuizENEM2018DensimetroNaClReferencia.png", dir = "../figuras")
+include_supplement("Q101QuizENEM2018DensimetroNaClAlternativas.png", dir = "../figuras")
+@
+
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+
+(ENEM 2018, 2º dia, Caderno 5 Amarelo, Q127) Usando um densímetro cuja menor divisão da escala, isto é, a diferença entre duas marcações consecutivas, é de
+$5{,}0\times10^{-2}\,\mathrm{g/cm^3}$, um estudante realizou um teste de densidade: colocou esse instrumento na água pura e observou que ele atingiu o repouso na posição mostrada.
+
+\begin{center}
+\includegraphics[width=0.34\linewidth,keepaspectratio]{Q101QuizENEM2018DensimetroNaClReferencia.png}
+\end{center}
+
+Em dois outros recipientes A e B, contendo $2\,\mathrm{L}$ de água pura em cada um, ele adicionou $100\,\mathrm{g}$ e $200\,\mathrm{g}$ de NaCl, respectivamente.
+
+Quando o cloreto de sódio é adicionado à água pura, ocorre sua dissociação, formando os íons $\mathrm{Na^+}$ e $\mathrm{Cl^-}$. Considere que esses íons ocupam os espaços intermoleculares na solução.
+
+Nesses recipientes, a posição de equilíbrio do densímetro está representada em uma das alternativas gráficas abaixo.
+
+\begin{center}
+\includegraphics[width=0.48\linewidth,keepaspectratio]{Q101QuizENEM2018DensimetroNaClAlternativas.png}
+\end{center}
+
+Assinale a alternativa representada na figura.
+
+\begin{answerlist}
+  \item A.
+  \item B.
+  \item C.
+  \item D.
+  \item E.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Quando o densímetro flutua em equilíbrio, seu peso é equilibrado pelo empuxo:
+\[
+P=E=\rho_{\ell}\,g\,V_{\mathrm{sub}},
+\]
+em que $\rho_{\ell}$ é a densidade do líquido e $V_{\mathrm{sub}}$ é o volume submerso do densímetro.
+
+Como o peso do densímetro é o mesmo em todos os recipientes,
+\[
+V_{\mathrm{sub}}=\frac{P}{\rho_{\ell}g}.
+\]
+Logo, quanto maior a densidade da solução, menor deve ser o volume submerso: o densímetro fica mais alto.
+
+Segundo a hipótese do enunciado, a adição de NaCl aumenta a massa sem alterar significativamente o volume da solução. Como o recipiente B recebe mais sal que o recipiente A,
+\[
+\rho_B>\rho_A>\rho_{\text{água}}.
+\]
+
+Portanto, o densímetro deve ficar mais alto em A do que na água pura e ainda mais alto em B. Essa configuração corresponde à alternativa \textbf{D}.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: ENEM 2018, 2º dia, Caderno 5 Amarelo, questão 127. Gabarito oficial: D.
+%% PDF-fonte: 2DIA_05_AMARELO_BAIXA.pdf.
+%% PDF SHA-256: 79345b9540b7b584858fefbe4a7c50064dc385b04be288b9828ade11b288492d.
+%% SOURCE-VISUAL: original-crop
+%% Figuras recortadas diretamente da página 12 do PDF-fonte; ver arquivos .source.json correspondentes.
+%% \extype{schoice}
+%% \exsolution{00010}
+%% \exshuffle{FALSE}
+%% \exname{Q101QuizENEM2018DensimetroNaCl}
+%% \exsection{Hidrostatica; Densimetro; Empuxo; Densidade; Flutuacao; ENEM}
+%% \exusepackage[utf8]{inputenc}

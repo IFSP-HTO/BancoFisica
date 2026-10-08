@@ -1,0 +1,9 @@
+{
+  "source_pdf": "2DIA_05_AMARELO_BAIXA.pdf",
+  "source_sha256": "79345b9540b7b584858fefbe4a7c50064dc385b04be288b9828ade11b288492d",
+  "mode": "crop",
+  "page": 12,
+  "bbox_pdf_points": [310.0, 385.0, 510.0, 765.0],
+  "dpi": 72,
+  "output": "BancoDeQuestoes/figuras/Q101QuizENEM2018DensimetroNaClAlternativas.png"
+}
