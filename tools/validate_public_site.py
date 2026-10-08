@@ -23,7 +23,10 @@ REQUIRED_FILES = (
     Path("site/js/app.js"),
     Path("site/data/questoes-demo-source.json"),
     Path("site/data/questoes-demo.json"),
+    Path("site/data/enem-habilidades-cn.json"),
+    Path("metadata/enem/cn_habilidades_resumo.json"),
     Path("tools/generate_demo_site_data.py"),
+    Path("tools/generate_enem_skill_data.py"),
 )
 
 PUBLIC_TEXT_FILES = (
@@ -82,7 +85,7 @@ def assert_required_files() -> None:
             fail(f"required public/workflow file is missing: {path}")
 
 
-def assert_demo_catalog(path: Path) -> None:
+def assert_demo_catalog(path: Path, valid_skill_codes: set[str]) -> None:
     catalog = load_json(path)
     metadata = catalog.get("metadata")
     if not isinstance(metadata, dict):
@@ -129,7 +132,7 @@ def assert_demo_catalog(path: Path) -> None:
                 )
             if not isinstance(source.get("coItem"), int):
                 fail(f"{path}: questions[{index}].enemSource.coItem must be an integer")
-            if not isinstance(source.get("skillCode"), str) or not source["skillCode"].startswith("H"):
+            if not isinstance(source.get("skillCode"), str) or source["skillCode"] not in valid_skill_codes:
                 fail(f"{path}: questions[{index}].enemSource.skillCode is invalid")
 
 
@@ -138,6 +141,37 @@ def assert_generated_matches_source() -> None:
     generated = load_json(Path("site/data/questoes-demo.json"))
     if source != generated:
         fail("site/data/questoes-demo.json is not synchronized with questoes-demo-source.json")
+
+
+def assert_skill_summaries() -> set[str]:
+    canonical = load_json(Path("metadata/enem/cn_habilidades_resumo.json"))
+    public = load_json(Path("site/data/enem-habilidades-cn.json"))
+    if canonical != public:
+        fail("public ENEM skill summaries are not synchronized with canonical metadata")
+
+    skills = canonical.get("skills")
+    if not isinstance(skills, list) or len(skills) != 30:
+        fail("ENEM CN skill summary data must contain exactly H1-H30")
+
+    expected = {f"H{i}" for i in range(1, 31)}
+    seen: set[str] = set()
+    for index, skill in enumerate(skills):
+        if not isinstance(skill, dict):
+            fail(f"skills[{index}] must be an object")
+        code = skill.get("code")
+        label = skill.get("label")
+        if code in seen:
+            fail(f"duplicated ENEM skill code: {code}")
+        if code not in expected:
+            fail(f"invalid ENEM skill code: {code}")
+        if not isinstance(label, str) or not label.strip():
+            fail(f"skills[{index}].label must be a non-empty string")
+        seen.add(code)
+
+    if seen != expected:
+        fail("ENEM CN skill summary data must cover every code from H1 through H30")
+
+    return seen
 
 
 def iter_public_files() -> list[Path]:
@@ -160,6 +194,8 @@ def assert_site_references_demo_json() -> None:
     app = Path("site/js/app.js").read_text(encoding="utf-8")
     if "data/questoes-demo.json" not in app:
         fail("site/js/app.js must load data/questoes-demo.json")
+    if "data/enem-habilidades-cn.json" not in app:
+        fail("site/js/app.js must load centralized ENEM skill summaries")
     if "visibility === 'demo'" not in app:
         fail("site/js/app.js must filter public questions by visibility === 'demo'")
     disclaimer = (
@@ -175,8 +211,9 @@ def assert_site_references_demo_json() -> None:
 def main() -> None:
     assert_required_files()
     assert_generated_matches_source()
-    assert_demo_catalog(Path("site/data/questoes-demo-source.json"))
-    assert_demo_catalog(Path("site/data/questoes-demo.json"))
+    skill_codes = assert_skill_summaries()
+    assert_demo_catalog(Path("site/data/questoes-demo-source.json"), skill_codes)
+    assert_demo_catalog(Path("site/data/questoes-demo.json"), skill_codes)
     assert_no_private_tokens()
     assert_site_references_demo_json()
     print("Public site validation passed.")
