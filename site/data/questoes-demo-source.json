@@ -12,7 +12,11 @@
       "subject": "Cinemática",
       "level": "Ensino Médio",
       "visibility": "demo",
-      "tags": ["velocidade média", "unidades", "moodle"],
+      "tags": [
+        "velocidade média",
+        "unidades",
+        "moodle"
+      ],
       "statementHtml": "<p>Um estudante percorre uma distância de \\(120\\,\\text{m}\\) em \\(30\\,\\text{s}\\), mantendo movimento retilíneo. Qual é a velocidade média nesse trecho?</p><ol type=\"A\"><li>\\(2\\,\\text{m/s}\\)</li><li>\\(4\\,\\text{m/s}\\)</li><li>\\(30\\,\\text{m/s}\\)</li><li>\\(150\\,\\text{m/s}\\)</li></ol>",
       "solutionHtml": "<p>A velocidade média é dada por \\(v_m = \\Delta s / \\Delta t\\). Portanto, \\(v_m = 120/30 = 4\\,\\text{m/s}\\). A alternativa correta é B.</p>"
     },
@@ -23,7 +27,11 @@
       "subject": "Temperatura",
       "level": "Ensino Médio",
       "visibility": "demo",
-      "tags": ["temperatura", "Celsius", "Kelvin"],
+      "tags": [
+        "temperatura",
+        "Celsius",
+        "Kelvin"
+      ],
       "statementHtml": "<p>Em uma atividade de laboratório, a temperatura de uma amostra é medida como \\(27\\,^{\\circ}\\text{C}\\). Qual é o valor aproximado dessa temperatura na escala Kelvin?</p><ol type=\"A\"><li>\\(27\\,\\text{K}\\)</li><li>\\(100\\,\\text{K}\\)</li><li>\\(246\\,\\text{K}\\)</li><li>\\(300\\,\\text{K}\\)</li></ol>",
       "solutionHtml": "<p>Para converter Celsius em Kelvin, usamos \\(T_K = T_C + 273\\). Assim, \\(T_K = 27 + 273 = 300\\,\\text{K}\\). A alternativa correta é D.</p>"
     },
@@ -34,9 +42,48 @@
       "subject": "Circuitos elétricos",
       "level": "Ensino Médio",
       "visibility": "demo",
-      "tags": ["lei de Ohm", "resistência elétrica", "corrente elétrica"],
+      "tags": [
+        "lei de Ohm",
+        "resistência elétrica",
+        "corrente elétrica"
+      ],
       "statementHtml": "<p>Um resistor de resistência \\(6\\,\\Omega\\) é submetido a uma diferença de potencial de \\(12\\,\\text{V}\\). Qual é a corrente elétrica que atravessa o resistor?</p><ol type=\"A\"><li>\\(0{,}5\\,\\text{A}\\)</li><li>\\(2\\,\\text{A}\\)</li><li>\\(6\\,\\text{A}\\)</li><li>\\(72\\,\\text{A}\\)</li></ol>",
       "solutionHtml": "<p>Pela lei de Ohm, \\(U = R i\\). Logo, \\(i = U/R = 12/6 = 2\\,\\text{A}\\). A alternativa correta é B.</p>"
+    },
+    {
+      "id": "DEMO-ENEM-001",
+      "title": "Região deformável em colisões",
+      "area": "Mecânica",
+      "subject": "Energia e colisões",
+      "level": "Ensino Médio",
+      "visibility": "demo",
+      "tags": [
+        "ENEM",
+        "energia cinética",
+        "colisões",
+        "TRI"
+      ],
+      "statementHtml": "<p>Em uma demonstração de segurança veicular, uma região da carroceria é projetada para se deformar durante uma colisão. Considerando o carro, seus ocupantes e o obstáculo como um sistema isolado, qual efeito físico explica a contribuição dessa região para a segurança?</p><ol type=\"A\"><li>Aumentar a quantidade de movimento total do sistema.</li><li>Converter parte da energia cinética macroscópica em energia interna associada à deformação.</li><li>Impedir qualquer transformação de energia durante a colisão.</li><li>Eliminar instantaneamente a velocidade do centro de massa do sistema.</li><li>Produzir energia mecânica adicional para afastar o veículo do obstáculo.</li></ol>",
+      "solutionHtml": "<p>Em um sistema isolado, a quantidade de movimento total se conserva. A deformação da estrutura transforma parte da energia cinética macroscópica em energia interna, deformação e aquecimento. Por isso, a alternativa correta é B.</p>",
+      "enemSource": {
+        "year": 2024,
+        "application": "regular",
+        "caderno": "6",
+        "color": "Cinza",
+        "questionNumber": 126,
+        "coItem": 84075,
+        "skillCode": "H18",
+        "skillText": "Relacionar propriedades físicas, químicas ou biológicas de produtos, sistemas ou procedimentos tecnológicos às finalidades a que se destinam.",
+        "originalAnswer": "B",
+        "a": 1.80537,
+        "b": 0.46767,
+        "c": 0.00115,
+        "abandoned": false,
+        "abandonmentReason": "",
+        "parametersReferTo": "item-original-inep",
+        "adaptationNote": "Esta é uma adaptação demonstrativa; os parâmetros pertencem ao item original do ENEM 2024.",
+        "sourceUrl": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos"
+      }
     }
   ]
 }
