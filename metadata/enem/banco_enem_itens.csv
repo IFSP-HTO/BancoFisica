@@ -1,36 +1,36 @@
 bank_path,relation,adaptation_kind,source_year,source_application,source_caderno,source_color,source_question_number,source_position,source_co_prova,co_item,sg_area,co_habilidade,tx_gabarito,in_item_aban,tx_motivo_aban,nu_param_a,nu_param_b,nu_param_c,match_status,notes
-BancoDeQuestoes/estatica/Q09Quizestce.Rnw,direct,pending_review,1998,regular,1,Azul,7,,,,,,,,,,,,pre_tri,Pré-TRI; manter procedência sem parâmetros 3PL.
-BancoDeQuestoes/calortemp/Q07Cal.Rnw,direct,pending_review,2001,regular,1,Amarelo,49,,,,,,,,,,,,pre_tri,Pré-TRI; manter procedência sem parâmetros 3PL.
-BancoDeQuestoes/movcircular/Q23TremBalaCurvas.Rnw,direct,pending_review,2009,regular,1,Azul,21,21,49,60133,CN,,C,0,,3.08201,1.3096,0.21834,matched,CO_HABILIDADE ausente na tabela ITENS_PROVA_2009.
-BancoDeQuestoes/fisicamoderna/Q109QuizReacaoCadeiaUranio.Rnw,direct,pending_review,2015,regular,1,Azul,73,73,235,54393,CN,22,C,0,,2.55499,1.34587,0.1744,matched,
-BancoDeQuestoes/movcircular/Q14EngrenagensENEM.Rnw,direct,pending_review,2016,regular,2,Amarelo,80,125,292,97445,CN,17,B,0,,2.68655,1.88996,0.11149,matched,Mesmo item-fonte de Q93QuizEngrenagensRPM.
-BancoDeQuestoes/cinematica/MCU/Q93QuizEngrenagensRPM.Rnw,direct,pending_review,2016,regular,2,Amarelo,80,125,292,97445,CN,17,B,0,,2.68655,1.88996,0.11149,matched,Mesmo item-fonte de Q14EngrenagensENEM.
-BancoDeQuestoes/cinematica/Q02testQmov.Rnw,direct,pending_review,2016,segunda_aplicacao,1,Azul,83,128,,6781,CN,20,D,0,,1.92177,1.41536,0.20508,matched,O mesmo CO_ITEM aparece nos CO_PROVA 331 e 351; código específico do caderno mantido em aberto.
-BancoDeQuestoes/qtdmov_impulso/Q115NumENEM2016TrilhoAr.Rnw,direct,pending_review,2016,regular,2,Amarelo,69,114,292,85599,CN,20,C,0,,2.93466,1.72917,0.23804,matched,
-BancoDeQuestoes/trabalhopotencia/Q107QuizItaipuPotenciaNaoAproveitada.Rnw,direct,pending_review,2016,regular,2,Amarelo,59,104,292,48829,CN,8,C,0,,1.12326,2.01306,0.29664,matched,
-BancoDeQuestoes/qtdmov_impulso/Q132QuizENEM2017CintosImpulso.Rnw,direct,pending_review,2017,regular,6,Cinza,130,40,393,83923,CN,2,B,0,,1.47709,0.91191,0.34312,matched,
-BancoDeQuestoes/fisicamoderna/Q110QuizCarbono14Datacao.Rnw,direct,pending_review,2017,regular,6,Cinza,123,33,393,62247,CN,19,C,0,,1.90393,1.8785,0.27172,matched,
-BancoDeQuestoes/trabalhopotencia/Q96QuizCamaElasticaEnergiaCinetica.Rnw,direct,pending_review,2017,regular,6,Cinza,104,14,393,59829,CN,1,C,0,,2.90199,2.46786,0.0832,matched,
-BancoDeQuestoes/hidrostatica/Q98QuizCanudosPressaoAtmosferica.Rnw,direct,pending_review,2018,regular,5,Amarelo,103,103,448,83440,CN,20,E,0,,2.3472,1.81929,0.05895,matched,
-BancoDeQuestoes/trabalhopotencia/Q94QuizMolaLancadorVelocidade.Rnw,direct,pending_review,2018,regular,5,Amarelo,98,98,448,17449,CN,20,B,0,,8.00279,2.09568,0.33632,matched,
-BancoDeQuestoes/cinematica/MU/Q94QuizVantSobreposicao.Rnw,direct,pending_review,2019,regular,6,Cinza,97,97,505,111705,CN,2,B,0,,1.78669,1.78124,0.20473,matched,
-BancoDeQuestoes/qtdmov_impulso/Q91QuizTijoloCapaceteImpulso.Rnw,direct,pending_review,2019,regular,6,Cinza,118,118,505,97169,CN,20,A,0,,5.93339,1.98881,0.13188,matched,
-BancoDeQuestoes/cinematica/MCU/Q95QuizFogueteVelocidadeAngularTerra.Rnw,direct,pending_review,2019,regular,6,Cinza,122,122,505,7629,CN,20,B,0,,0.75316,1.83643,0.10672,matched,
-BancoDeQuestoes/cinematica/MCU/Q94QuizEspectrometroHelicoidal.Rnw,direct,pending_review,2019,regular,6,Cinza,126,126,505,96556,CN,21,A,0,,1.66258,1.3767,0.17468,matched,
-BancoDeQuestoes/fisicamoderna/Q111QuizBombaAtomicaFissao.Rnw,direct,pending_review,2020,regular,5,Amarelo,99,99,598,111709,CN,23,A,0,,2.21526,0.67088,0.17268,matched,
-BancoDeQuestoes/trabalhopotencia/Q95QuizParqueSolarArea.Rnw,direct,pending_review,2022,regular,8,Rosa,103,103,1088,111668,CN,23,B,0,,1.98964,1.87763,0.19415,matched,
-BancoDeQuestoes/leisdenewton/atrito/Q92QuizMuletaForcas.Rnw,direct,pending_review,2022,regular,8,Rosa,113,113,1088,85445,CN,20,E,0,,4.44898,1.4048,0.15587,matched,
-BancoDeQuestoes/gravitacao/Q16QuizBuracoNegroMesmaMassaSolar.Rnw,direct,pending_review,2022,regular,8,Rosa,118,118,1088,87998,CN,3,E,0,,2.14355,1.77912,0.08867,matched,
-BancoDeQuestoes/qtdmov_impulso/Q92QuizBarreirasColisaoImpulsoEnergia.Rnw,direct,pending_review,2022,regular,8,Rosa,132,132,1088,28034,CN,18,A,0,,1.51222,1.41874,0.14908,matched,
-BancoDeQuestoes/fisicamoderna/Q112QuizEnergiaNuclearCombustiveisFosseis.Rnw,direct,pending_review,2023,regular,7,Azul,93,93,1221,117887,CN,12,E,0,,2.73097,0.32923,0.13662,matched,
-BancoDeQuestoes/leisdenewton/maquinas_simples/Q90ClozePoliasAparelhos.Rnw,direct,pending_review,2023,regular,7,Azul,109,109,1221,83552,CN,7,D,0,,2.40735,1.62185,0.13073,matched,
-BancoDeQuestoes/leisdenewton/atrito/Q91QuizCaminhaoCargaAtrito.Rnw,direct,pending_review,2023,regular,7,Azul,114,114,1221,97149,CN,17,A,0,,0.99037,1.55817,0.20321,matched,
-BancoDeQuestoes/fisicamoderna/Q113QuizRaiosCosmicosDose.Rnw,direct,pending_review,2023,regular,7,Azul,117,117,1221,82333,CN,22,A,0,,2.71433,1.9822,0.05932,matched,
-BancoDeQuestoes/cinematica/vetores/Q92ClozeNadadorCorrente.Rnw,direct,pending_review,2024,regular,6,Cinza,96,96,1422,117932,CN,20,B,0,,3.88018,1.84281,0.25883,matched,
-BancoDeQuestoes/leisdenewton/forcas/Q92QuizForcaContatoChao.Rnw,direct,pending_review,2024,regular,6,Cinza,98,98,1422,141621,CN,20,A,0,,1.21508,1.69932,0.15114,matched,
-BancoDeQuestoes/calorimetria/Q43QuizCalS.Rnw,direct,pending_review,2024,regular,6,Cinza,100,100,1422,61076,CN,6,X,1,Pedagógico,,,,matched,Item original abandonado/anulado; parâmetros TRI ausentes no microdado.
-BancoDeQuestoes/fisicamoderna/Q114QuizRaiosXBagagem.Rnw,direct,pending_review,2024,regular,6,Cinza,120,120,1422,111475,CN,19,D,0,,1.11115,1.46269,0.22184,matched,
-BancoDeQuestoes/trabalhopotencia/Q135QuizENEM2024CrumpleZone.Rnw,direct,pending_review,2024,regular,6,Cinza,126,126,1422,84075,CN,18,B,0,,1.80537,0.46767,0.00115,matched,
-BancoDeQuestoes/leisdenewton/estatica/Q93QuizBalanceamentoRoda.Rnw,direct,pending_review,2024,regular,6,Cinza,134,134,1422,111400,CN,1,C,0,,2.32009,0.55237,0.13443,matched,
-BancoDeQuestoes/fisicamoderna/Q115QuizCobalto60MeiaVida.Rnw,direct,pending_review,2025,regular,5,Amarelo,110,110,1484,87716,CN,22,E,0,,3.12069,1.04345,0.16952,matched,
-BancoDeQuestoes/cinematica/vetores/Q94ClozeAviaoVentoComponentes.Rnw,direct,pending_review,2025,regular,5,Amarelo,128,128,1484,61018,CN,20,D,0,,2.29917,1.62756,0.1603,matched,
+BancoDeQuestoes/estatica/Q09Quizestce.Rnw,direct,reproduction,1998,regular,1,Azul,7,,,,,,,,,,,,pre_tri,Pré-TRI; manter procedência sem parâmetros 3PL.
+BancoDeQuestoes/calortemp/Q07Cal.Rnw,direct,reproduction,2001,regular,1,Amarelo,49,,,,,,,,,,,,pre_tri,Pré-TRI; manter procedência sem parâmetros 3PL.
+BancoDeQuestoes/movcircular/Q23TremBalaCurvas.Rnw,direct,reproduction,2009,regular,1,Azul,21,21,49,60133,CN,,C,0,,3.08201,1.3096,0.21834,matched,CO_HABILIDADE ausente na tabela ITENS_PROVA_2009.
+BancoDeQuestoes/fisicamoderna/Q109QuizReacaoCadeiaUranio.Rnw,direct,text_adaptation,2015,regular,1,Azul,73,73,235,54393,CN,22,C,0,,2.55499,1.34587,0.1744,matched,
+BancoDeQuestoes/movcircular/Q14EngrenagensENEM.Rnw,direct,reproduction,2016,regular,2,Amarelo,80,125,292,97445,CN,17,B,0,,2.68655,1.88996,0.11149,matched,Mesmo item-fonte de Q93QuizEngrenagensRPM.
+BancoDeQuestoes/cinematica/MCU/Q93QuizEngrenagensRPM.Rnw,direct,text_adaptation,2016,regular,2,Amarelo,80,125,292,97445,CN,17,B,0,,2.68655,1.88996,0.11149,matched,Mesmo item-fonte de Q14EngrenagensENEM.
+BancoDeQuestoes/cinematica/Q02testQmov.Rnw,direct,reproduction,2016,segunda_aplicacao,1,Azul,83,128,,6781,CN,20,D,0,,1.92177,1.41536,0.20508,matched,O mesmo CO_ITEM aparece nos CO_PROVA 331 e 351; código específico do caderno mantido em aberto.
+BancoDeQuestoes/qtdmov_impulso/Q115NumENEM2016TrilhoAr.Rnw,direct,numeric_parameterization,2016,regular,2,Amarelo,69,114,292,85599,CN,20,C,0,,2.93466,1.72917,0.23804,matched,
+BancoDeQuestoes/trabalhopotencia/Q107QuizItaipuPotenciaNaoAproveitada.Rnw,direct,text_adaptation,2016,regular,2,Amarelo,59,104,292,48829,CN,8,C,0,,1.12326,2.01306,0.29664,matched,
+BancoDeQuestoes/qtdmov_impulso/Q132QuizENEM2017CintosImpulso.Rnw,direct,text_adaptation,2017,regular,6,Cinza,130,40,393,83923,CN,2,B,0,,1.47709,0.91191,0.34312,matched,
+BancoDeQuestoes/fisicamoderna/Q110QuizCarbono14Datacao.Rnw,direct,text_adaptation,2017,regular,6,Cinza,123,33,393,62247,CN,19,C,0,,1.90393,1.8785,0.27172,matched,
+BancoDeQuestoes/trabalhopotencia/Q96QuizCamaElasticaEnergiaCinetica.Rnw,direct,text_adaptation,2017,regular,6,Cinza,104,14,393,59829,CN,1,C,0,,2.90199,2.46786,0.0832,matched,
+BancoDeQuestoes/hidrostatica/Q98QuizCanudosPressaoAtmosferica.Rnw,direct,text_adaptation,2018,regular,5,Amarelo,103,103,448,83440,CN,20,E,0,,2.3472,1.81929,0.05895,matched,
+BancoDeQuestoes/trabalhopotencia/Q94QuizMolaLancadorVelocidade.Rnw,direct,text_adaptation,2018,regular,5,Amarelo,98,98,448,17449,CN,20,B,0,,8.00279,2.09568,0.33632,matched,
+BancoDeQuestoes/cinematica/MU/Q94QuizVantSobreposicao.Rnw,direct,text_adaptation,2019,regular,6,Cinza,97,97,505,111705,CN,2,B,0,,1.78669,1.78124,0.20473,matched,
+BancoDeQuestoes/qtdmov_impulso/Q91QuizTijoloCapaceteImpulso.Rnw,direct,text_adaptation,2019,regular,6,Cinza,118,118,505,97169,CN,20,A,0,,5.93339,1.98881,0.13188,matched,
+BancoDeQuestoes/cinematica/MCU/Q95QuizFogueteVelocidadeAngularTerra.Rnw,direct,text_adaptation,2019,regular,6,Cinza,122,122,505,7629,CN,20,B,0,,0.75316,1.83643,0.10672,matched,
+BancoDeQuestoes/cinematica/MCU/Q94QuizEspectrometroHelicoidal.Rnw,direct,text_adaptation,2019,regular,6,Cinza,126,126,505,96556,CN,21,A,0,,1.66258,1.3767,0.17468,matched,
+BancoDeQuestoes/fisicamoderna/Q111QuizBombaAtomicaFissao.Rnw,direct,text_adaptation,2020,regular,5,Amarelo,99,99,598,111709,CN,23,A,0,,2.21526,0.67088,0.17268,matched,
+BancoDeQuestoes/trabalhopotencia/Q95QuizParqueSolarArea.Rnw,direct,text_adaptation,2022,regular,8,Rosa,103,103,1088,111668,CN,23,B,0,,1.98964,1.87763,0.19415,matched,
+BancoDeQuestoes/leisdenewton/atrito/Q92QuizMuletaForcas.Rnw,direct,text_adaptation,2022,regular,8,Rosa,113,113,1088,85445,CN,20,E,0,,4.44898,1.4048,0.15587,matched,
+BancoDeQuestoes/gravitacao/Q16QuizBuracoNegroMesmaMassaSolar.Rnw,direct,text_adaptation,2022,regular,8,Rosa,118,118,1088,87998,CN,3,E,0,,2.14355,1.77912,0.08867,matched,
+BancoDeQuestoes/qtdmov_impulso/Q92QuizBarreirasColisaoImpulsoEnergia.Rnw,direct,text_adaptation,2022,regular,8,Rosa,132,132,1088,28034,CN,18,A,0,,1.51222,1.41874,0.14908,matched,
+BancoDeQuestoes/fisicamoderna/Q112QuizEnergiaNuclearCombustiveisFosseis.Rnw,direct,text_adaptation,2023,regular,7,Azul,93,93,1221,117887,CN,12,E,0,,2.73097,0.32923,0.13662,matched,
+BancoDeQuestoes/leisdenewton/maquinas_simples/Q90ClozePoliasAparelhos.Rnw,direct,text_adaptation,2023,regular,7,Azul,109,109,1221,83552,CN,7,D,0,,2.40735,1.62185,0.13073,matched,
+BancoDeQuestoes/leisdenewton/atrito/Q91QuizCaminhaoCargaAtrito.Rnw,direct,text_adaptation,2023,regular,7,Azul,114,114,1221,97149,CN,17,A,0,,0.99037,1.55817,0.20321,matched,
+BancoDeQuestoes/fisicamoderna/Q113QuizRaiosCosmicosDose.Rnw,direct,text_adaptation,2023,regular,7,Azul,117,117,1221,82333,CN,22,A,0,,2.71433,1.9822,0.05932,matched,
+BancoDeQuestoes/cinematica/vetores/Q92ClozeNadadorCorrente.Rnw,direct,numeric_parameterization,2024,regular,6,Cinza,96,96,1422,117932,CN,20,B,0,,3.88018,1.84281,0.25883,matched,
+BancoDeQuestoes/leisdenewton/forcas/Q92QuizForcaContatoChao.Rnw,direct,text_adaptation,2024,regular,6,Cinza,98,98,1422,141621,CN,20,A,0,,1.21508,1.69932,0.15114,matched,
+BancoDeQuestoes/calorimetria/Q43QuizCalS.Rnw,direct,fixed_numeric_adaptation,2024,regular,6,Cinza,100,100,1422,61076,CN,6,X,1,Pedagógico,,,,matched,Item original abandonado/anulado; parâmetros TRI ausentes no microdado.
+BancoDeQuestoes/fisicamoderna/Q114QuizRaiosXBagagem.Rnw,direct,text_adaptation,2024,regular,6,Cinza,120,120,1422,111475,CN,19,D,0,,1.11115,1.46269,0.22184,matched,
+BancoDeQuestoes/trabalhopotencia/Q135QuizENEM2024CrumpleZone.Rnw,direct,reproduction,2024,regular,6,Cinza,126,126,1422,84075,CN,18,B,0,,1.80537,0.46767,0.00115,matched,
+BancoDeQuestoes/leisdenewton/estatica/Q93QuizBalanceamentoRoda.Rnw,direct,text_adaptation,2024,regular,6,Cinza,134,134,1422,111400,CN,1,C,0,,2.32009,0.55237,0.13443,matched,
+BancoDeQuestoes/fisicamoderna/Q115QuizCobalto60MeiaVida.Rnw,direct,text_adaptation,2025,regular,5,Amarelo,110,110,1484,87716,CN,22,E,0,,3.12069,1.04345,0.16952,matched,
+BancoDeQuestoes/cinematica/vetores/Q94ClozeAviaoVentoComponentes.Rnw,direct,text_adaptation,2025,regular,5,Amarelo,128,128,1484,61018,CN,20,D,0,,2.29917,1.62756,0.1603,matched,
