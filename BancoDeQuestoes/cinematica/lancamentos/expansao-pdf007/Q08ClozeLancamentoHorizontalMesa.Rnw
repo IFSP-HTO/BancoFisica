@@ -12,11 +12,8 @@ d <- v0 * T
 
 fmt <- function(x, d=2) formatC(x, format="f", digits=d, decimal.mark=",")
 
-include_supplement("PM007_Q08_symbolic.b64", dir="../../../figuras")
-img_b64 <- paste(readLines("PM007_Q08_symbolic.b64", warn=FALSE), collapse="")
-img <- "PM007_Q08_symbolic.png"
-writeBin(base64enc::base64decode(img_b64), img)
-file.remove("PM007_Q08_symbolic.b64")
+include_supplement("PM007_Q08_revisada.png", dir="../../../figuras")
+img <- "PM007_Q08_revisada.png"
 @
 
 \usepackage[utf8]{inputenc}
@@ -68,8 +65,8 @@ v_0=\frac{d}{t}
 %% META-INFORMATION
 %% Fonte: Projeto Medicina / Futuro Militar, exercício 8 de
 %% 007_fisica_lancamento_horizontal_obliquo.pdf.
-%% Figura: recorte original preservado como fonte; versão de uso obtida
-%% substituindo uma única vez os valores numéricos por h e d.
+%% Figura: arte revisada manualmente pelo autor do BancoFisica durante a
+%% revisão visual desta expansão; arquivo PM007_Q08_revisada.png.
 %% \extype{cloze}
 %% \exsolution{\Sexpr{v0}}
 %% \exclozetype{num}

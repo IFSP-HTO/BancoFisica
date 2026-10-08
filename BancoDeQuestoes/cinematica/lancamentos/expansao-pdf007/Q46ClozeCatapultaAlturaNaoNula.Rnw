@@ -2,20 +2,17 @@
 g <- 10
 configs <- data.frame(
   h = c(1, 2, 4, 5),
-  R = c(19, 18, 21, 20)
+  D = c(19, 18, 21, 20)
 )
 i <- sample(seq_len(nrow(configs)), 1)
 h <- configs$h[i]
-R <- configs$R[i]
-v0 <- sqrt(g * R^2 / (h + R))
+D <- configs$D[i]
+v0 <- sqrt(g * D^2 / (h + D))
 
 fmt <- function(x, d=2) formatC(x, format="f", digits=d, decimal.mark=",")
 
-include_supplement("PM007_Q46_base.b64", dir="../../../figuras")
-img_b64 <- paste(readLines("PM007_Q46_base.b64", warn=FALSE), collapse="")
-img <- "PM007_Q46_base.png"
-writeBin(base64enc::base64decode(img_b64), img)
-file.remove("PM007_Q46_base.b64")
+include_supplement("PM007_Q46_revisada.png", dir="../../../figuras")
+img <- "PM007_Q46_revisada.png"
 @
 
 \usepackage[utf8]{inputenc}
@@ -27,7 +24,7 @@ A figura mostra uma catapulta no instante em que o objeto se solta do braço.
 No lançamento, o objeto está a uma altura
 $h=\Sexpr{fmt(h,0)}\,\mathrm{m}$ acima do solo e sua velocidade inicial forma
 um ângulo de $45^\circ$ com a horizontal. O objeto atinge o solo a uma
-distância horizontal $R=\Sexpr{fmt(R,0)}\,\mathrm{m}$ do ponto de lançamento.
+distância horizontal $D=\Sexpr{fmt(D,0)}\,\mathrm{m}$ do ponto de lançamento.
 
 Despreze a resistência do ar e adote $g=10\,\mathrm{m/s^2}$.
 
@@ -52,7 +49,7 @@ v_{0x}=v_{0y}=\frac{v_0}{\sqrt{2}}.
 
 O tempo de voo pode ser escrito a partir do movimento horizontal:
 \[
-t=\frac{R}{v_{0x}}=\frac{R\sqrt{2}}{v_0}.
+t=\frac{D}{v_{0x}}=\frac{D\sqrt{2}}{v_0}.
 \]
 
 Na vertical, tomando o solo como $y=0$,
@@ -61,11 +58,11 @@ Na vertical, tomando o solo como $y=0$,
 \]
 Substituindo as expressões acima,
 \[
-0=h+R-\frac{gR^2}{v_0^2}.
+0=h+D-\frac{gD^2}{v_0^2}.
 \]
 Logo,
 \[
-v_0=\sqrt{\frac{gR^2}{h+R}}
+v_0=\sqrt{\frac{gD^2}{h+D}}
 =\Sexpr{fmt(v0,2)}\,\mathrm{m/s}.
 \]
 
@@ -78,7 +75,8 @@ v_0=\sqrt{\frac{gR^2}{h+R}}
 %% META-INFORMATION
 %% Fonte: Projeto Medicina / Futuro Militar, exercício 46 de
 %% 007_fisica_lancamento_horizontal_obliquo.pdf.
-%% Figura: recorte original do PDF, sem alterações.
+%% Figura: arte revisada manualmente pelo autor do BancoFisica durante a
+%% revisão visual desta expansão; arquivo PM007_Q46_revisada.png.
 %% \extype{cloze}
 %% \exsolution{\Sexpr{v0}}
 %% \exclozetype{num}

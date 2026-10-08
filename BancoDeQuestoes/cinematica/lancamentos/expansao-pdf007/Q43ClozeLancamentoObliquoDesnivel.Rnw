@@ -22,43 +22,8 @@ d <- vx * t
 fmt <- function(x, digits=2)
   formatC(x, format="f", digits=digits, decimal.mark=",")
 
-render_overlay_png <- function(source, outfile) {
-  img <- png::readPNG(source)
-  hpx <- dim(img)[1]
-  wpx <- dim(img)[2]
-  grDevices::png(outfile, width=wpx, height=hpx, bg="white")
-  grid::grid.newpage()
-  grid::grid.raster(img, width=grid::unit(1,"npc"),
-                    height=grid::unit(1,"npc"), interpolate=FALSE)
-
-  # Apaga apenas o rótulo "2,5 m" da figura original.
-  grid::grid.rect(
-    x=grid::unit(53/wpx,"npc"),
-    y=grid::unit(1-102/hpx,"npc"),
-    width=grid::unit(52/wpx,"npc"),
-    height=grid::unit(39/hpx,"npc"),
-    gp=grid::gpar(fill="white", col=NA)
-  )
-
-  # Mantém a geometria original e substitui o dado numérico por h.
-  grid::grid.text(
-    "h",
-    x=grid::unit(52/wpx,"npc"),
-    y=grid::unit(1-100/hpx,"npc"),
-    gp=grid::gpar(col="black", fontsize=13, fontfamily="serif")
-  )
-
-  grDevices::dev.off()
-  invisible(outfile)
-}
-
-include_supplement("PM007_Q43_base.b64", dir="../../../figuras")
-img_b64 <- paste(readLines("PM007_Q43_base.b64", warn=FALSE), collapse="")
-base_img <- "PM007_Q43_base.png"
-writeBin(base64enc::base64decode(img_b64), base_img)
-img <- "PM007_Q43_variante.png"
-render_overlay_png(base_img, img)
-file.remove("PM007_Q43_base.b64", base_img)
+include_supplement("PM007_Q43_revisada.png", dir="../../../figuras")
+img <- "PM007_Q43_revisada.png"
 @
 
 \usepackage[utf8]{inputenc}
@@ -123,8 +88,8 @@ d=v_xt
 %% META-INFORMATION
 %% Fonte: Projeto Medicina / Futuro Militar, exercício 43 de
 %% 007_fisica_lancamento_horizontal_obliquo.pdf.
-%% Figura: recorte original preservado; apenas o rótulo "2,5 m" é ocultado
-%% e substituído pela variável h em tempo de geração.
+%% Figura: arte revisada manualmente pelo autor do BancoFisica durante a
+%% revisão visual desta expansão; arquivo PM007_Q43_revisada.png.
 %% \extype{cloze}
 %% \exsolution{\Sexpr{d}}
 %% \exclozetype{num}

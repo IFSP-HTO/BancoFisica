@@ -1,9 +1,6 @@
 <<echo=FALSE, results=hide>>=
-include_supplement("PM007_Q49_base.b64", dir="../../../figuras")
-img_b64 <- paste(readLines("PM007_Q49_base.b64", warn=FALSE), collapse="")
-img <- "PM007_Q49_base.png"
-writeBin(base64enc::base64decode(img_b64), img)
-file.remove("PM007_Q49_base.b64")
+include_supplement("PM007_Q49_revisada.png", dir="../../../figuras")
+img <- "PM007_Q49_revisada.png"
 @
 
 \usepackage[utf8]{inputenc}
@@ -66,7 +63,8 @@ Como $\Delta t=1\,\mathrm{s}$,
 %% META-INFORMATION
 %% Fonte: Projeto Medicina / Futuro Militar, exercício 49 de
 %% 007_fisica_lancamento_horizontal_obliquo.pdf.
-%% Figura: recorte da figura original do PDF, preservando a malha e os pontos P e Q.
+%% Figura: arte revisada manualmente pelo autor do BancoFisica durante a
+%% revisão visual desta expansão; arquivo PM007_Q49_revisada.png.
 %% Este item pertence mais naturalmente a cinematica vetorial do que ao nucleo de
 %% lancamento obliquo, mas foi mantido nesta frente por sua origem na lista.
 %% \extype{schoice}

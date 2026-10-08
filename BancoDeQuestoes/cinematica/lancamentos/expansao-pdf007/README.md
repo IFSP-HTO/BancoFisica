@@ -165,3 +165,26 @@ incorporadas nesta frente são:
   `g=10 m/s2` o valor correto é `4,0 s`; a implementação corrige o erro
   tipográfico e mantém os demais resultados compatíveis (`51,2 m/s` e
   `42,7 m`).
+
+
+## Revisão visual manual das figuras — 08/10/2026
+
+Após inspeção questão a questão, foram substituídas pelas artes revistas e
+aprovadas manualmente as figuras de Q06, Q08, Q09, Q10, Q12, Q13, Q19, Q25,
+Q27, Q28, Q35, Q38, Q43, Q46 e Q49. As novas artes são mantidas como PNGs
+independentes com sufixo `_revisada`.
+
+Permaneceram sem alteração nesta rodada:
+
+- Q01: figura já aprovada;
+- Q03: o valor mostrado na figura é gerado a partir da própria parametrização;
+- Q11: gráficos gerados por código já aprovados.
+
+Critério consolidado: quando a figura é simbólica, os valores numéricos ficam
+no enunciado e os símbolos da figura devem representar exatamente as mesmas
+grandezas e os mesmos intervalos geométricos. Quando a figura é gerada por
+código, enunciado, figura e solução devem compartilhar as mesmas variáveis.
+
+A Q46 passou a usar a letra `D` também no enunciado e na solução, de modo a
+coincidir com a arte revisada. A Q28 mantém no Banco a soma fisicamente
+consistente 4 e registra a divergência com o gabarito da lista-fonte.

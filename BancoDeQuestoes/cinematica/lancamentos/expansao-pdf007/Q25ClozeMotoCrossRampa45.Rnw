@@ -5,11 +5,8 @@ D <- 2 * v^2 / g
 
 fmt <- function(x, d=1) formatC(x, format="f", digits=d, decimal.mark=",")
 
-include_supplement("PM007_Q25_base.b64", dir="../../../figuras")
-img_b64 <- paste(readLines("PM007_Q25_base.b64", warn=FALSE), collapse="")
-img <- "PM007_Q25_base.png"
-writeBin(base64enc::base64decode(img_b64), img)
-file.remove("PM007_Q25_base.b64")
+include_supplement("PM007_Q25_revisada.png", dir="../../../figuras")
+img <- "PM007_Q25_revisada.png"
 @
 
 \usepackage[utf8]{inputenc}
@@ -19,7 +16,7 @@ file.remove("PM007_Q25_base.b64")
 
 Um motociclista de MotoCross move-se horizontalmente com velocidade
 $v=\Sexpr{fmt(v,0)}\,\mathrm{m/s}$ até deixar a borda em $A$. Abaixo de $A$ há
-uma rampa inclinada de $45^\circ$ com a horizontal, conforme a figura. A
+uma rampa inclinada de $45^\circ$ com a horizontal, conforme a figura (nela, $\theta=45^\circ$). A
 distância horizontal $D$ até o ponto em que o motociclista reencontra a rampa
 é igual à queda vertical $H$ nesse ponto.
 
@@ -71,7 +68,8 @@ D=x=\frac{2v^2}{g}
 %% META-INFORMATION
 %% Fonte: Projeto Medicina / Futuro Militar, exercício 25 de
 %% 007_fisica_lancamento_horizontal_obliquo.pdf.
-%% Figura: recorte original do PDF, sem alterações.
+%% Figura: arte revisada manualmente pelo autor do BancoFisica durante a
+%% revisão visual desta expansão; arquivo PM007_Q25_revisada.png.
 %% \extype{cloze}
 %% \exsolution{\Sexpr{D}}
 %% \exclozetype{num}

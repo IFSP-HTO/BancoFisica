@@ -1,9 +1,6 @@
 <<echo=FALSE, results=hide>>=
-include_supplement("PM007_Q13_base.b64", dir="../../../figuras")
-img_b64 <- paste(readLines("PM007_Q13_base.b64", warn=FALSE), collapse="")
-img <- "PM007_Q13_base.png"
-writeBin(base64enc::base64decode(img_b64), img)
-file.remove("PM007_Q13_base.b64")
+include_supplement("PM007_Q13_revisada.png", dir="../../../figuras")
+img <- "PM007_Q13_revisada.png"
 @
 
 \usepackage[utf8]{inputenc}
@@ -73,7 +70,8 @@ Logo, a nova distância vertical deve ser $4y$.
 %% META-INFORMATION
 %% Fonte: Projeto Medicina / Futuro Militar, exercício 13 de
 %% 007_fisica_lancamento_horizontal_obliquo.pdf.
-%% Figura: recorte original do PDF, sem alterações.
+%% Figura: arte revisada manualmente pelo autor do BancoFisica durante a
+%% revisão visual desta expansão; arquivo PM007_Q13_revisada.png.
 %% \extype{schoice}
 %% \exsolution{00010}
 %% \exname{PM007Q13EscalaParabolicaCesta}
