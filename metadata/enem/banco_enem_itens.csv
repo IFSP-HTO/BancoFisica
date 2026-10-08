@@ -5,7 +5,7 @@ BancoDeQuestoes/movcircular/Q23TremBalaCurvas.Rnw,direct,reproduction,2009,regul
 BancoDeQuestoes/fisicamoderna/Q109QuizReacaoCadeiaUranio.Rnw,direct,text_adaptation,2015,regular,1,Azul,73,73,235,54393,CN,22,C,0,,2.55499,1.34587,0.1744,matched,
 BancoDeQuestoes/movcircular/Q14EngrenagensENEM.Rnw,direct,reproduction,2016,regular,2,Amarelo,80,125,292,97445,CN,17,B,0,,2.68655,1.88996,0.11149,matched,Mesmo item-fonte de Q93QuizEngrenagensRPM.
 BancoDeQuestoes/cinematica/MCU/Q93QuizEngrenagensRPM.Rnw,direct,text_adaptation,2016,regular,2,Amarelo,80,125,292,97445,CN,17,B,0,,2.68655,1.88996,0.11149,matched,Mesmo item-fonte de Q14EngrenagensENEM.
-BancoDeQuestoes/cinematica/Q02testQmov.Rnw,direct,reproduction,2016,segunda_aplicacao,1,Azul,83,128,,6781,CN,20,D,0,,1.92177,1.41536,0.20508,matched,O mesmo CO_ITEM aparece nos CO_PROVA 331 e 351; código específico do caderno mantido em aberto.
+BancoDeQuestoes/cinematica/Q02testQmov.Rnw,direct,reproduction,2016,segunda_aplicacao,1,Azul,83,128,331,6781,CN,20,D,0,,1.92177,1.41536,0.20508,matched,Reaplicação: o Leia-me oficial dos microdados 2016 registra CO_PROVA 331 e 351 como equivalentes; 331 adotado como código canônico.
 BancoDeQuestoes/qtdmov_impulso/Q115NumENEM2016TrilhoAr.Rnw,direct,numeric_parameterization,2016,regular,2,Amarelo,69,114,292,85599,CN,20,C,0,,2.93466,1.72917,0.23804,matched,
 BancoDeQuestoes/trabalhopotencia/Q107QuizItaipuPotenciaNaoAproveitada.Rnw,direct,text_adaptation,2016,regular,2,Amarelo,59,104,292,48829,CN,8,C,0,,1.12326,2.01306,0.29664,matched,
 BancoDeQuestoes/qtdmov_impulso/Q132QuizENEM2017CintosImpulso.Rnw,direct,text_adaptation,2017,regular,6,Cinza,130,40,393,83923,CN,2,B,0,,1.47709,0.91191,0.34312,matched,
