@@ -246,6 +246,21 @@ def validate_inventory(rows: list[dict[str, str]], repo_root: Path | None = None
         if relation not in {"direct", "inspired"}:
             errors.append(f"line {idx}: invalid relation {relation!r}")
 
+        adaptation_kind = clean(row.get("adaptation_kind"))
+        allowed_kinds = {
+            "reproduction",
+            "text_adaptation",
+            "fixed_numeric_adaptation",
+            "numeric_parameterization",
+            "conceptual_adaptation",
+            "inspired",
+        }
+        if adaptation_kind not in allowed_kinds:
+            errors.append(
+                f"line {idx}: invalid adaptation_kind {adaptation_kind!r}; "
+                f"expected one of {sorted(allowed_kinds)}"
+            )
+
         year = clean(row.get("source_year"))
         if year and (not year.isdigit() or not 1998 <= int(year) <= 2100):
             errors.append(f"line {idx}: invalid source_year {year!r}")
