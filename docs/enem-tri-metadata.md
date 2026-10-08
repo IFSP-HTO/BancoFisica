@@ -32,7 +32,13 @@ Campos principais:
 
 - `bank_path`: arquivo `.Rnw` do BancoFisica;
 - `relation`: `direct` ou `inspired`;
-- `adaptation_kind`: natureza da adaptação; inicialmente `pending_review`;
+- `adaptation_kind`: natureza da relação entre a versão do Banco e o item-fonte:
+  - `reproduction`: item essencialmente preservado; mudanças apenas de formatação ou ordem de alternativas;
+  - `text_adaptation`: enunciado/alternativas reescritos sem parametrização numérica;
+  - `fixed_numeric_adaptation`: um ou mais dados numéricos foram alterados de forma fixa;
+  - `numeric_parameterization`: dados variam programaticamente entre instâncias;
+  - `conceptual_adaptation`: situação/tarefa materialmente reconstruída mantendo o item apenas como base conceitual;
+  - `inspired`: não é derivação direta; apenas inspiração temática/conceitual;
 - `source_year`, `source_application`, `source_caderno`, `source_color`: identificação editorial da aplicação/caderno;
 - `source_question_number`: número impresso da questão no caderno;
 - `source_position`: valor oficial de `CO_POSICAO` na tabela de itens — não necessariamente igual ao número impresso;
@@ -90,8 +96,7 @@ A carga inicial registra 35 relações diretas BancoFisica ↔ ENEM:
 
 - 2 itens pré-TRI (1998 e 2001), mantidos apenas para procedência;
 - 33 relações no período 2009–2025 com `CO_ITEM` identificado;
-- 32 dessas 33 relações possuem também `CO_PROVA` específico identificado;
-- a questão da 2ª aplicação de 2016 (Grand Canyon) possui `CO_ITEM=6781`, mas o item aparece nos códigos de prova 331 e 351 com os mesmos metadados psicométricos; por isso `source_co_prova` permanece vazio até uma auditoria específica do código de caderno;
+- as 33 relações possuem `CO_PROVA` identificado; na reaplicação de 2016, o Leia-me oficial dos microdados informa que as provas CN 331 e 351 são equivalentes, e o Banco adota 331 como código canônico para o item do Grand Canyon (`CO_ITEM=6781`);
 - o item-fonte do ENEM 2024 Q100 está corretamente marcado como abandonado (`IN_ITEM_ABAN=1`, motivo pedagógico), com gabarito `X` e sem parâmetros `a`, `b` e `c`.
 
 Em 2016 e 2017, `source_question_number` e `source_position` deixam explícita uma diferença de convenção presente nos microdados. Nunca inferir `CO_POSICAO` diretamente do número impresso sem consultar a tabela do respectivo ano.
@@ -118,3 +123,15 @@ A vitrine pública suporta um objeto opcional `enemSource` apenas em questões m
 Esse objeto pode apresentar procedência, habilidade e parâmetros TRI do item-fonte e gerar a CCI 3PL no navegador. A exportação pública não consulta nem replica automaticamente `metadata/enem/banco_enem_itens.csv`: os metadados de uma demonstração devem ser selecionados explicitamente.
 
 O site exibe obrigatoriamente o aviso de que os parâmetros pertencem ao item original aplicado pelo Inep e não constituem calibração da versão adaptada do BancoFisica.
+
+
+### Classificação inicial das 35 relações diretas
+
+Após revisão dos arquivos `.Rnw`, a carga atual ficou:
+
+- 6 `reproduction`;
+- 26 `text_adaptation`;
+- 2 `numeric_parameterization`;
+- 1 `fixed_numeric_adaptation` (ENEM 2024 Q100, cafeteira anulada, com tempo corrigido).
+
+A classificação é conservadora: embaralhamento de alternativas e reconstrução gráfica sem mudança substantiva do item não contam como parametrização. `numeric_parameterization` é reservado a casos em que os dados efetivamente variam entre instâncias.

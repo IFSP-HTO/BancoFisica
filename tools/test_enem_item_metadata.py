@@ -76,6 +76,28 @@ class EnemMetadataTests(unittest.TestCase):
         self.assertEqual(out[0]["match_status"], "pre_tri")
         self.assertEqual(messages, [])
 
+    def test_canonical_inventory_has_reviewed_adaptation_kinds(self):
+        repo_root = MODULE_PATH.parent.parent
+        inventory = repo_root / "metadata" / "enem" / "banco_enem_itens.csv"
+        rows = mod.load_inventory(inventory)
+        errors = mod.validate_inventory(rows, repo_root)
+        self.assertEqual(errors, [])
+
+        counts = {}
+        for row in rows:
+            kind = row["adaptation_kind"]
+            counts[kind] = counts.get(kind, 0) + 1
+
+        self.assertEqual(
+            counts,
+            {
+                "reproduction": 6,
+                "text_adaptation": 26,
+                "numeric_parameterization": 2,
+                "fixed_numeric_adaptation": 1,
+            },
+        )
+
     def test_reads_item_csv_inside_zip(self):
         with tempfile.TemporaryDirectory() as td:
             zpath = Path(td) / "microdados_enem_2024.zip"
