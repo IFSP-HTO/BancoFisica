@@ -2,13 +2,29 @@ const state = {
   questions: [],
   search: '',
   area: '',
-  subject: ''
+  subject: '',
+  enemYear: '',
+  enemSkill: '',
+  aMin: null,
+  aMax: null,
+  bMin: null,
+  bMax: null,
+  cMin: null,
+  cMax: null
 };
 
 const elements = {
   search: document.querySelector('#search'),
   areaFilter: document.querySelector('#area-filter'),
   subjectFilter: document.querySelector('#subject-filter'),
+  enemYearFilter: document.querySelector('#enem-year-filter'),
+  enemSkillFilter: document.querySelector('#enem-skill-filter'),
+  aMin: document.querySelector('#param-a-min'),
+  aMax: document.querySelector('#param-a-max'),
+  bMin: document.querySelector('#param-b-min'),
+  bMax: document.querySelector('#param-b-max'),
+  cMin: document.querySelector('#param-c-min'),
+  cMax: document.querySelector('#param-c-max'),
   count: document.querySelector('#count'),
   catalog: document.querySelector('#catalog'),
   template: document.querySelector('#question-template')
@@ -38,9 +54,22 @@ async function loadQuestions() {
 function setupFilters() {
   const areas = uniqueSorted(state.questions.map((question) => question.area));
   const subjects = uniqueSorted(state.questions.map((question) => question.subject));
+  const enemYears = uniqueSorted(
+    state.questions
+      .map((question) => question.enemSource?.year)
+      .filter(Boolean)
+      .map(String)
+  );
+  const enemSkills = uniqueSorted(
+    state.questions
+      .map((question) => question.enemSource?.skillCode)
+      .filter(Boolean)
+  );
 
   fillSelect(elements.areaFilter, areas, 'Todas');
   fillSelect(elements.subjectFilter, subjects, 'Todos');
+  fillSelect(elements.enemYearFilter, enemYears, 'Todos');
+  fillSelect(elements.enemSkillFilter, enemSkills, 'Todas');
 
   elements.search.addEventListener('input', (event) => {
     state.search = event.target.value.trim().toLowerCase();
@@ -55,6 +84,30 @@ function setupFilters() {
   elements.subjectFilter.addEventListener('change', (event) => {
     state.subject = event.target.value;
     render();
+  });
+
+  elements.enemYearFilter.addEventListener('change', (event) => {
+    state.enemYear = event.target.value;
+    render();
+  });
+
+  elements.enemSkillFilter.addEventListener('change', (event) => {
+    state.enemSkill = event.target.value;
+    render();
+  });
+
+  [
+    ['aMin', elements.aMin],
+    ['aMax', elements.aMax],
+    ['bMin', elements.bMin],
+    ['bMax', elements.bMax],
+    ['cMin', elements.cMin],
+    ['cMax', elements.cMax]
+  ].forEach(([stateKey, input]) => {
+    input.addEventListener('input', (event) => {
+      state[stateKey] = parseOptionalNumber(event.target.value);
+      render();
+    });
   });
 }
 
@@ -100,6 +153,10 @@ function matchesFilters(question) {
     question.area,
     question.subject,
     question.level,
+    question.enemSource?.year,
+    question.enemSource?.skillCode,
+    question.enemSource?.skillText,
+    question.enemSource?.coItem,
     ...(question.tags || [])
   ]
     .join(' ')
@@ -108,7 +165,12 @@ function matchesFilters(question) {
   return (
     (!state.search || haystack.includes(state.search)) &&
     (!state.area || question.area === state.area) &&
-    (!state.subject || question.subject === state.subject)
+    (!state.subject || question.subject === state.subject) &&
+    (!state.enemYear || String(question.enemSource?.year || '') === state.enemYear) &&
+    (!state.enemSkill || question.enemSource?.skillCode === state.enemSkill) &&
+    parameterInRange(question.enemSource?.a, state.aMin, state.aMax) &&
+    parameterInRange(question.enemSource?.b, state.bMin, state.bMax) &&
+    parameterInRange(question.enemSource?.c, state.cMin, state.cMax)
   );
 }
 
@@ -119,6 +181,7 @@ function renderQuestion(question, index) {
   const id = fragment.querySelector('.question-id');
   const meta = fragment.querySelector('.question-meta');
   const tags = fragment.querySelector('.tags');
+  const enemSource = fragment.querySelector('.enem-source');
   const body = fragment.querySelector('.question-body');
   const solution = fragment.querySelector('.solution-body');
   const moodlePreview = fragment.querySelector('.moodle-preview');
@@ -131,6 +194,7 @@ function renderQuestion(question, index) {
   body.innerHTML = question.statementHtml;
   solution.innerHTML = question.solutionHtml;
   moodlePreview.innerHTML = renderMoodlePreview(question, index);
+  enemSource.innerHTML = question.enemSource ? renderEnemSource(question.enemSource) : '';
 
   (question.tags || []).forEach((tag) => {
     const item = document.createElement('span');
@@ -140,6 +204,115 @@ function renderQuestion(question, index) {
   });
 
   return fragment;
+}
+
+function renderEnemSource(source) {
+  const abandoned = source.abandoned
+    ? `<span class="enem-status abandoned">Item abandonado${source.abandonmentReason ? `: ${escapeHtml(source.abandonmentReason)}` : ''}</span>`
+    : '<span class="enem-status">Item calibrado</span>';
+
+  const parameters = source.abandoned
+    ? '<p class="enem-parameters">Parâmetros TRI indisponíveis para este item abandonado.</p>'
+    : `
+      <dl class="enem-parameters">
+        <div><dt>a</dt><dd>${formatParameter(source.a)}</dd></div>
+        <div><dt>b</dt><dd>${formatParameter(source.b)}</dd></div>
+        <div><dt>c</dt><dd>${formatParameter(source.c)}</dd></div>
+      </dl>
+    `;
+
+  return `
+    <details class="enem-source-card">
+      <summary>Metadados do item-fonte ENEM</summary>
+      <div class="enem-source-content">
+        <div class="enem-source-heading">
+          <div>
+            <p class="eyebrow">Item-fonte ENEM</p>
+            <h3>ENEM ${escapeHtml(source.year)} · questão ${escapeHtml(source.questionNumber)}</h3>
+          </div>
+          ${abandoned}
+        </div>
+
+        <dl class="enem-meta-grid">
+          <div><dt>Aplicação</dt><dd>${escapeHtml(source.application)}</dd></div>
+          <div><dt>Caderno</dt><dd>${escapeHtml(source.caderno)} · ${escapeHtml(source.color)}</dd></div>
+          <div><dt>CO_ITEM</dt><dd>${escapeHtml(source.coItem)}</dd></div>
+          <div><dt>Habilidade</dt><dd>${escapeHtml(source.skillCode)}</dd></div>
+          <div><dt>Gabarito original</dt><dd>${escapeHtml(source.originalAnswer)}</dd></div>
+        </dl>
+
+        <p class="enem-skill"><strong>${escapeHtml(source.skillCode)}:</strong> ${escapeHtml(source.skillText)}</p>
+        ${parameters}
+        ${renderIcc(source)}
+        <p class="enem-warning">
+          Parâmetros referentes ao item original aplicado pelo Inep; não constituem calibração da versão adaptada do BancoFisica.
+        </p>
+        <p class="enem-adaptation">${escapeHtml(source.adaptationNote)}</p>
+        <p><a href="${escapeHtml(source.sourceUrl)}" rel="noopener noreferrer">Consultar fonte oficial do Inep</a></p>
+      </div>
+    </details>
+  `;
+}
+
+function renderIcc(source) {
+  if (source.abandoned) {
+    return '';
+  }
+
+  const a = Number(source.a);
+  const b = Number(source.b);
+  const c = Number(source.c);
+  if (![a, b, c].every(Number.isFinite)) {
+    return '';
+  }
+
+  const width = 520;
+  const height = 260;
+  const left = 44;
+  const right = 18;
+  const top = 18;
+  const bottom = 40;
+  const plotWidth = width - left - right;
+  const plotHeight = height - top - bottom;
+
+  const x = (theta) => left + ((theta + 3) / 6) * plotWidth;
+  const y = (probability) => top + (1 - probability) * plotHeight;
+  const probability = (theta) => c + (1 - c) / (1 + Math.exp(-a * (theta - b)));
+
+  const points = [];
+  for (let i = 0; i <= 120; i += 1) {
+    const theta = -3 + i * 0.05;
+    points.push(`${x(theta).toFixed(1)},${y(probability(theta)).toFixed(1)}`);
+  }
+
+  const xTicks = [-3, -2, -1, 0, 1, 2, 3]
+    .map((tick) => `
+      <line x1="${x(tick)}" y1="${top + plotHeight}" x2="${x(tick)}" y2="${top + plotHeight + 5}" class="icc-axis" />
+      <text x="${x(tick)}" y="${height - 12}" text-anchor="middle" class="icc-label">${tick}</text>
+    `)
+    .join('');
+
+  const yTicks = [0, 0.25, 0.5, 0.75, 1]
+    .map((tick) => `
+      <line x1="${left - 5}" y1="${y(tick)}" x2="${left}" y2="${y(tick)}" class="icc-axis" />
+      <text x="${left - 9}" y="${y(tick) + 4}" text-anchor="end" class="icc-label">${tick.toFixed(2)}</text>
+    `)
+    .join('');
+
+  return `
+    <figure class="icc-figure">
+      <svg viewBox="0 0 ${width} ${height}" role="img" aria-label="Curva característica do item original do ENEM">
+        <line x1="${left}" y1="${top}" x2="${left}" y2="${top + plotHeight}" class="icc-axis" />
+        <line x1="${left}" y1="${top + plotHeight}" x2="${left + plotWidth}" y2="${top + plotHeight}" class="icc-axis" />
+        ${xTicks}
+        ${yTicks}
+        <polyline points="${points.join(' ')}" class="icc-line" />
+        <text x="${left + plotWidth / 2}" y="${height - 1}" text-anchor="middle" class="icc-label">proficiência θ</text>
+        <text x="13" y="${top + plotHeight / 2}" text-anchor="middle" transform="rotate(-90 13 ${top + plotHeight / 2})" class="icc-label">P(acerto)</text>
+      </svg>
+      <figcaption>CCI 3PL do item original do ENEM, calculada com os parâmetros publicados pelo Inep.</figcaption>
+    </figure>
+  `;
 }
 
 function renderMoodlePreview(question, index) {
@@ -206,12 +379,35 @@ function renderMoodlePreview(question, index) {
   `;
 }
 
+function formatParameter(value) {
+  return Number(value).toLocaleString('pt-BR', { minimumFractionDigits: 3, maximumFractionDigits: 5 });
+}
+
+function parseOptionalNumber(value) {
+  if (value === '') {
+    return null;
+  }
+  const parsed = Number(value);
+  return Number.isFinite(parsed) ? parsed : null;
+}
+
+function parameterInRange(value, min, max) {
+  if (min === null && max === null) {
+    return true;
+  }
+  const numeric = Number(value);
+  if (!Number.isFinite(numeric)) {
+    return false;
+  }
+  return (min === null || numeric >= min) && (max === null || numeric <= max);
+}
+
 function uniqueSorted(values) {
   return [...new Set(values.filter(Boolean))].sort((a, b) => a.localeCompare(b, 'pt-BR'));
 }
 
 function escapeHtml(value) {
-  return value
+  return String(value)
     .replaceAll('&', '&amp;')
     .replaceAll('<', '&lt;')
     .replaceAll('>', '&gt;')
