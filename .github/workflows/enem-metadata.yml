@@ -12,6 +12,7 @@ on:
       - "docs/politica-visibilidade-site.md"
       - "site/**"
       - "tools/generate_demo_site_data.py"
+      - "tools/generate_enem_skill_data.py"
       - "tools/validate_public_site.py"
       - ".github/workflows/enem-metadata.yml"
   push:
@@ -25,6 +26,7 @@ on:
       - "docs/politica-visibilidade-site.md"
       - "site/**"
       - "tools/generate_demo_site_data.py"
+      - "tools/generate_enem_skill_data.py"
       - "tools/validate_public_site.py"
       - ".github/workflows/enem-metadata.yml"
   workflow_dispatch:
@@ -47,6 +49,7 @@ jobs:
 
       - name: Validate demo-site ENEM integration
         run: |
+          python3 tools/generate_enem_skill_data.py
           python3 tools/generate_demo_site_data.py
           python3 tools/validate_public_site.py
           node --check site/js/app.js

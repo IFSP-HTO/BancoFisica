@@ -1,0 +1,161 @@
+{
+  "metadata": {
+    "project": "BancoFisica",
+    "area": "Ciências da Natureza e suas Tecnologias",
+    "description": "Sínteses curtas das habilidades H1–H30 para uso na interface pública.",
+    "sourceLabel": "Matriz de Referência do Enem — Inep",
+    "sourceUrl": "https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/outros-documentos"
+  },
+  "skills": [
+    {
+      "code": "H1",
+      "competency": 1,
+      "label": "Ondas e oscilações: propriedades e usos"
+    },
+    {
+      "code": "H2",
+      "competency": 1,
+      "label": "Ciência e tecnologia em problemas cotidianos"
+    },
+    {
+      "code": "H3",
+      "competency": 1,
+      "label": "Interpretações científicas e senso comum"
+    },
+    {
+      "code": "H4",
+      "competency": 1,
+      "label": "Intervenções ambientais e conservação da biodiversidade"
+    },
+    {
+      "code": "H5",
+      "competency": 2,
+      "label": "Dimensionamento de circuitos e dispositivos elétricos"
+    },
+    {
+      "code": "H6",
+      "competency": 2,
+      "label": "Leitura de manuais e sistemas tecnológicos"
+    },
+    {
+      "code": "H7",
+      "competency": 2,
+      "label": "Controle e comparação de materiais e produtos"
+    },
+    {
+      "code": "H8",
+      "competency": 3,
+      "label": "Obtenção, transformação e reciclagem de recursos"
+    },
+    {
+      "code": "H9",
+      "competency": 3,
+      "label": "Ciclos biogeoquímicos e fluxo de energia"
+    },
+    {
+      "code": "H10",
+      "competency": 3,
+      "label": "Fontes, transporte e efeitos de poluentes"
+    },
+    {
+      "code": "H11",
+      "competency": 3,
+      "label": "Biotecnologia: benefícios, limites e ética"
+    },
+    {
+      "code": "H12",
+      "competency": 3,
+      "label": "Impactos ambientais de atividades humanas"
+    },
+    {
+      "code": "H13",
+      "competency": 4,
+      "label": "Hereditariedade e manifestação de características"
+    },
+    {
+      "code": "H14",
+      "competency": 4,
+      "label": "Padrões e processos vitais dos organismos"
+    },
+    {
+      "code": "H15",
+      "competency": 4,
+      "label": "Modelos e experimentos em processos biológicos"
+    },
+    {
+      "code": "H16",
+      "competency": 4,
+      "label": "Evolução e organização dos seres vivos"
+    },
+    {
+      "code": "H17",
+      "competency": 5,
+      "label": "Linguagens e representações científicas"
+    },
+    {
+      "code": "H18",
+      "competency": 5,
+      "label": "Propriedades de produtos e tecnologias e suas finalidades"
+    },
+    {
+      "code": "H19",
+      "competency": 5,
+      "label": "Métodos científicos aplicados a problemas reais"
+    },
+    {
+      "code": "H20",
+      "competency": 6,
+      "label": "Causas e efeitos do movimento"
+    },
+    {
+      "code": "H21",
+      "competency": 6,
+      "label": "Leis físicas e químicas em processos naturais e tecnológicos"
+    },
+    {
+      "code": "H22",
+      "competency": 6,
+      "label": "Interação entre radiação e matéria"
+    },
+    {
+      "code": "H23",
+      "competency": 6,
+      "label": "Geração, uso e transformação de energia"
+    },
+    {
+      "code": "H24",
+      "competency": 7,
+      "label": "Códigos e nomenclatura química"
+    },
+    {
+      "code": "H25",
+      "competency": 7,
+      "label": "Materiais e substâncias: obtenção e produção"
+    },
+    {
+      "code": "H26",
+      "competency": 7,
+      "label": "Recursos energéticos e minerais: impactos e transformações"
+    },
+    {
+      "code": "H27",
+      "competency": 7,
+      "label": "Intervenções ambientais com conhecimentos químicos"
+    },
+    {
+      "code": "H28",
+      "competency": 8,
+      "label": "Adaptações dos organismos e distribuição ambiental"
+    },
+    {
+      "code": "H29",
+      "competency": 8,
+      "label": "Técnicas com seres vivos e suas implicações"
+    },
+    {
+      "code": "H30",
+      "competency": 8,
+      "label": "Saúde individual, coletiva e ambiente"
+    }
+  ]
+}

@@ -10,7 +10,8 @@ const state = {
   bMin: null,
   bMax: null,
   cMin: null,
-  cMax: null
+  cMax: null,
+  skills: {}
 };
 
 const elements = {
@@ -32,13 +33,23 @@ const elements = {
 
 async function loadQuestions() {
   try {
-    const response = await fetch('data/questoes-demo.json');
-    if (!response.ok) {
-      throw new Error(`Erro ao carregar dados: ${response.status}`);
+    const [questionsResponse, skillsResponse] = await Promise.all([
+      fetch('data/questoes-demo.json'),
+      fetch('data/enem-habilidades-cn.json')
+    ]);
+    if (!questionsResponse.ok) {
+      throw new Error(`Erro ao carregar questões: ${questionsResponse.status}`);
+    }
+    if (!skillsResponse.ok) {
+      throw new Error(`Erro ao carregar habilidades ENEM: ${skillsResponse.status}`);
     }
 
-    const data = await response.json();
+    const data = await questionsResponse.json();
+    const skillData = await skillsResponse.json();
     state.questions = data.questions.filter((question) => question.visibility === 'demo');
+    state.skills = Object.fromEntries(
+      skillData.skills.map((skill) => [skill.code, skill])
+    );
     setupFilters();
     render();
   } catch (error) {
@@ -64,7 +75,10 @@ function setupFilters() {
     state.questions
       .map((question) => question.enemSource?.skillCode)
       .filter(Boolean)
-  );
+  ).map((code) => ({
+    value: code,
+    label: `${code} — ${skillLabel(code)}`
+  }));
 
   fillSelect(elements.areaFilter, areas, 'Todas');
   fillSelect(elements.subjectFilter, subjects, 'Todos');
@@ -113,10 +127,12 @@ function setupFilters() {
 
 function fillSelect(select, values, defaultLabel) {
   select.innerHTML = `<option value="">${defaultLabel}</option>`;
-  values.forEach((value) => {
+  values.forEach((item) => {
+    const value = typeof item === 'string' ? item : item.value;
+    const label = typeof item === 'string' ? item : item.label;
     const option = document.createElement('option');
     option.value = value;
-    option.textContent = value;
+    option.textContent = label;
     select.appendChild(option);
   });
 }
@@ -241,7 +257,7 @@ function renderEnemSource(source) {
           <div><dt>Gabarito original</dt><dd>${escapeHtml(source.originalAnswer)}</dd></div>
         </dl>
 
-        <p class="enem-skill"><strong>${escapeHtml(source.skillCode)}:</strong> ${escapeHtml(source.skillText)}</p>
+        <p class="enem-skill"><strong>${escapeHtml(source.skillCode)}:</strong> ${escapeHtml(skillLabel(source.skillCode))}</p>
         ${parameters}
         ${renderIcc(source)}
         <p class="enem-warning">
@@ -377,6 +393,10 @@ function renderMoodlePreview(question, index) {
       </p>
     </section>
   `;
+}
+
+function skillLabel(code) {
+  return state.skills[code]?.label || code;
 }
 
 function formatParameter(value) {

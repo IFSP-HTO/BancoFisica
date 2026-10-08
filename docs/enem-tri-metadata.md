@@ -135,3 +135,18 @@ Após revisão dos arquivos `.Rnw`, a carga atual ficou:
 - 1 `fixed_numeric_adaptation` (ENEM 2024 Q100, cafeteira anulada, com tempo corrigido).
 
 A classificação é conservadora: embaralhamento de alternativas e reconstrução gráfica sem mudança substantiva do item não contam como parametrização. `numeric_parameterization` é reservado a casos em que os dados efetivamente variam entre instâncias.
+
+
+## Habilidades H1–H30 na interface
+
+As descrições usadas pela interface ficam centralizadas em `metadata/enem/cn_habilidades_resumo.json`. O arquivo contém as 30 habilidades de Ciências da Natureza organizadas por competência e usa **sínteses curtas para navegação**, não transcrições integrais da Matriz de Referência.
+
+A cópia pública `site/data/enem-habilidades-cn.json` é gerada automaticamente por `tools/generate_enem_skill_data.py`. O gerador valida:
+
+- cobertura exata de H1 a H30;
+- ausência de códigos duplicados;
+- competência entre 1 e 8;
+- rótulos curtos adequados à interface;
+- presença do link para a fonte oficial do Inep.
+
+O código da habilidade (`CO_HABILIDADE`) continua sendo o identificador canônico recebido dos microdados. A síntese textual é apenas uma camada de apresentação; para a redação integral deve-se consultar a Matriz de Referência oficial indicada no próprio arquivo.
