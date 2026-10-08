@@ -53,7 +53,7 @@ Logo, quanto maior a densidade da solução, menor deve ser o volume submerso: o
 
 Segundo a hipótese do enunciado, a adição de NaCl aumenta a massa sem alterar significativamente o volume da solução. Como o recipiente B recebe mais sal que o recipiente A,
 \[
-\rho_B>\rho_A>\rho_{\mathrm{água}}.
+\rho_B>\rho_A>\rho_{\text{água}}.
 \]
 
 Portanto, o densímetro deve ficar mais alto em A do que na água pura e ainda mais alto em B. Essa configuração corresponde à alternativa \textbf{D}.
