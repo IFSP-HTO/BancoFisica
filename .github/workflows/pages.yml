@@ -7,7 +7,9 @@ on:
     paths:
       - 'site/**'
       - 'BancoDeQuestoes/**'
+      - 'metadata/enem/cn_habilidades_resumo.json'
       - 'tools/generate_demo_site_data.py'
+      - 'tools/generate_enem_skill_data.py'
       - 'tools/validate_public_site.py'
       - 'tools/question_counts.R'
       - 'README.md'
@@ -36,6 +38,7 @@ jobs:
 
       - name: Generate and validate public demo question catalog
         run: |
+          python3 tools/generate_enem_skill_data.py
           python3 tools/generate_demo_site_data.py
           python3 tools/validate_public_site.py
 
