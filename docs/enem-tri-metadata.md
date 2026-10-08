@@ -109,3 +109,12 @@ A tabela continuará sendo a fonte canônica. O site poderá então apresentar h
 ## Privacidade
 
 Esta integração usa apenas metadados públicos de itens. Nenhum registro individual de participante deve ser baixado para o repositório ou versionado.
+
+
+## Vitrine pública
+
+A vitrine pública suporta um objeto opcional `enemSource` apenas em questões marcadas como `visibility=demo`.
+
+Esse objeto pode apresentar procedência, habilidade e parâmetros TRI do item-fonte e gerar a CCI 3PL no navegador. A exportação pública não consulta nem replica automaticamente `metadata/enem/banco_enem_itens.csv`: os metadados de uma demonstração devem ser selecionados explicitamente.
+
+O site exibe obrigatoriamente o aviso de que os parâmetros pertencem ao item original aplicado pelo Inep e não constituem calibração da versão adaptada do BancoFisica.
