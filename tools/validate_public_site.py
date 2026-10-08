@@ -35,6 +35,7 @@ PUBLIC_TEXT_FILES = (
 
 FORBIDDEN_PUBLIC_TOKENS = (
     "BancoDeQuestoes",
+    "metadata/enem/banco_enem_itens.csv",
     ".Rnw",
     "exams2moodle",
     "exsolution",
@@ -117,6 +118,20 @@ def assert_demo_catalog(path: Path) -> None:
             if not isinstance(value, str) or "<" not in value or ">" not in value:
                 fail(f"{path}: questions[{index}].{html_field} must contain HTML")
 
+        source = question.get("enemSource")
+        if source is not None:
+            if not isinstance(source, dict):
+                fail(f"{path}: questions[{index}].enemSource must be an object")
+            if source.get("parametersReferTo") != "item-original-inep":
+                fail(
+                    f"{path}: questions[{index}].enemSource must declare "
+                    "parametersReferTo='item-original-inep'"
+                )
+            if not isinstance(source.get("coItem"), int):
+                fail(f"{path}: questions[{index}].enemSource.coItem must be an integer")
+            if not isinstance(source.get("skillCode"), str) or not source["skillCode"].startswith("H"):
+                fail(f"{path}: questions[{index}].enemSource.skillCode is invalid")
+
 
 def assert_generated_matches_source() -> None:
     source = load_json(Path("site/data/questoes-demo-source.json"))
@@ -147,6 +162,14 @@ def assert_site_references_demo_json() -> None:
         fail("site/js/app.js must load data/questoes-demo.json")
     if "visibility === 'demo'" not in app:
         fail("site/js/app.js must filter public questions by visibility === 'demo'")
+    disclaimer = (
+        "Parâmetros referentes ao item original aplicado pelo Inep; "
+        "não constituem calibração da versão adaptada do BancoFisica."
+    )
+    if disclaimer not in app:
+        fail("site/js/app.js must show the ENEM source-calibration disclaimer")
+    if "renderIcc" not in app:
+        fail("site/js/app.js must render the source-item characteristic curve")
 
 
 def main() -> None:
