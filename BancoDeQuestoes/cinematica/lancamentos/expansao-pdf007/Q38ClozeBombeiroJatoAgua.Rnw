@@ -1,0 +1,108 @@
+<<echo=FALSE, results=hide>>=
+g <- 10
+configs <- data.frame(
+  theta = c(37, 53, 37, 53),
+  v0 = c(25, 25, 50, 50),
+  h = c(10, 15, 40, 60),
+  sen = c(0.60, 0.80, 0.60, 0.80),
+  cos = c(0.80, 0.60, 0.80, 0.60)
+)
+i <- sample(seq_len(nrow(configs)), 1)
+theta <- configs$theta[i]
+v0 <- configs$v0[i]
+h <- configs$h[i]
+sen <- configs$sen[i]
+cos <- configs$cos[i]
+
+vx <- v0 * cos
+vy <- v0 * sen
+disc <- sqrt(vy^2 - 2 * g * h)
+t_far <- (vy + disc) / g
+D <- vx * t_far
+H <- vy^2 / (2 * g)
+
+fmt <- function(x, d=2) formatC(x, format="f", digits=d, decimal.mark=",")
+
+include_supplement("PM007_Q38_revisada.png", dir="../../../figuras")
+img <- "PM007_Q38_revisada.png"
+@
+
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+
+Um bombeiro deseja atingir com um jato de água um ponto de um edifício situado
+a uma altura $h=\Sexpr{fmt(h,0)}\,\mathrm{m}$ do solo. A água sai da mangueira
+com velocidade $v_0=\Sexpr{fmt(v0,0)}\,\mathrm{m/s}$ formando um ângulo de
+$\Sexpr{theta}^\circ$ com a horizontal. Despreze a altura da saída da mangueira,
+a resistência do ar e adote $g=10\,\mathrm{m/s^2}$.
+
+Use
+$\sin\Sexpr{theta}^\circ=\Sexpr{fmt(sen,2)}$ e
+$\cos\Sexpr{theta}^\circ=\Sexpr{fmt(cos,2)}$.
+
+\begin{center}
+\includegraphics[width=8.0cm,keepaspectratio]{\Sexpr{img}}
+\end{center}
+
+Determine:
+
+\begin{answerlist}
+  \item a maior distância horizontal $D$ entre o bombeiro e o edifício para que
+        a água ainda atinja a altura $h$, em $\mathrm{m}$;
+  \item a altura máxima $H$ atingida pela água, em $\mathrm{m}$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+As componentes da velocidade inicial são
+\[
+v_x=v_0\cos\theta=\Sexpr{fmt(vx,2)}\,\mathrm{m/s},
+\qquad
+v_y=v_0\sin\theta=\Sexpr{fmt(vy,2)}\,\mathrm{m/s}.
+\]
+
+Para atingir a altura $h$,
+\[
+h=v_yt-\frac12gt^2.
+\]
+A maior distância corresponde ao instante mais tardio, isto é, ao ramo
+descendente da trajetória:
+\[
+t=\frac{v_y+\sqrt{v_y^2-2gh}}{g}
+=\Sexpr{fmt(t_far,2)}\,\mathrm{s}.
+\]
+Logo,
+\[
+D=v_xt
+=\Sexpr{fmt(D,2)}\,\mathrm{m}.
+\]
+
+A altura máxima é
+\[
+H=\frac{v_y^2}{2g}
+=\Sexpr{fmt(H,2)}\,\mathrm{m}.
+\]
+
+\begin{answerlist}
+  \item $\Sexpr{fmt(D,2)}$
+  \item $\Sexpr{fmt(H,2)}$
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Projeto Medicina / Futuro Militar, exercício 38 de
+%% 007_fisica_lancamento_horizontal_obliquo.pdf.
+%% Figura: arte revisada manualmente pelo autor do BancoFisica durante a
+%% revisão visual desta expansão; arquivo PM007_Q38_revisada.png.
+%% \extype{cloze}
+%% \exsolution{\Sexpr{D}|\Sexpr{H}}
+%% \exclozetype{num|num}
+%% \extol{0.05|0.05}
+%% \exname{PM007Q38BombeiroJatoAgua}
+%% \exsection{Mecanica; Cinematica; Lancamento obliquo; Expansao PDF007}
+%% \exusepackage[utf8]{inputenc}

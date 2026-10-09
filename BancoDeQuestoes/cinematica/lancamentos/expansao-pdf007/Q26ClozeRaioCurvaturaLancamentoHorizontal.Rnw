@@ -1,0 +1,76 @@
+<<echo=FALSE, results=hide>>=
+v0 <- 36 / 3.6
+g <- 9.8
+T <- 3
+rho <- (v0^2 + (g*T)^2)^(3/2) / (g*v0)
+
+fmt <- function(x, digits=1)
+  formatC(x, format="f", digits=digits, decimal.mark=",")
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Uma bolinha é lançada horizontalmente com velocidade de
+$36\,\mathrm{km/h}$. Adote $g=9{,}8\,\mathrm{m/s^2}$ e despreze a resistência
+do ar.
+
+Determine o raio de curvatura $R$ da trajetória $3\,\mathrm{s}$ após o
+lançamento.
+
+\begin{answerlist}
+  \item raio de curvatura, em $\mathrm{m}$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Inicialmente,
+\[
+v_x=36/3{,}6=10\,\mathrm{m/s}.
+\]
+Após $3\,\mathrm{s}$,
+\[
+v_y=-gt=-29{,}4\,\mathrm{m/s}.
+\]
+Portanto,
+\[
+v=\sqrt{v_x^2+v_y^2}.
+\]
+
+Para um movimento plano,
+\[
+R=\frac{v^3}{|\vec v\times\vec a|}.
+\]
+Como $\vec a=(0,-g)$,
+\[
+|\vec v\times\vec a|=gv_x.
+\]
+Assim,
+\[
+R=
+\frac{\left[v_x^2+(gt)^2\right]^{3/2}}{gv_x}
+=\Sexpr{fmt(rho,1)}\,\mathrm{m}.
+\]
+
+\begin{answerlist}
+  \item $\Sexpr{fmt(rho,1)}$
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Projeto Medicina / Futuro Militar, exercício 26 de
+%% 007_fisica_lancamento_horizontal_obliquo.pdf.
+%% A fonte não explicita g; foi adotado g=9,8 m/s2 porque esse valor reproduz
+%% o gabarito-fonte de aproximadamente 305 m.
+%% Item avançado: conecta lançamento horizontal e curvatura de trajetória.
+%% \extype{cloze}
+%% \exsolution{\Sexpr{rho}}
+%% \exclozetype{num}
+%% \extol{0.5}
+%% \exname{PM007Q26RaioCurvaturaLancamentoHorizontal}
+%% \exsection{Mecanica; Cinematica; Lancamento horizontal; Cinematica vetorial; Curvatura; Expansao PDF007}
+%% \exusepackage[utf8]{inputenc}

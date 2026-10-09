@@ -1,0 +1,85 @@
+<<echo=FALSE, results=hide>>=
+g <- 10
+v0 <- 300
+phi <- 30
+drop <- 2 * v0^2 / (3 * g)
+
+fmt <- function(x, digits=0)
+  formatC(x, format="f", digits=digits, decimal.mark=",")
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Uma arma é disparada a partir de um ponto pertencente a um plano inclinado de
+$30^\circ$ com a horizontal. O cano da arma é perpendicular ao plano e o
+projétil sai com velocidade de módulo $300\,\mathrm{m/s}$. O projétil volta a
+atingir o mesmo plano em outro ponto.
+
+Despreze a resistência do ar e adote $g=10\,\mathrm{m/s^2}$.
+
+Qual é o módulo da diferença de nível entre o ponto de lançamento e o ponto de
+impacto no plano?
+
+\begin{answerlist}
+  \item diferença de nível, em $\mathrm{m}$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Escolha um eixo $s$ ao longo do plano, positivo no sentido descendente, e um
+eixo $n$ perpendicular ao plano. A velocidade inicial é inteiramente normal
+ao plano:
+\[
+v_{0n}=v_0.
+\]
+
+A componente da gravidade perpendicular ao plano é
+\[
+g_n=g\cos30^\circ.
+\]
+O projétil retorna ao plano quando sua coordenada normal volta a zero:
+\[
+0=v_0t-\frac12g\cos30^\circ\,t^2.
+\]
+Para a solução não nula,
+\[
+t=\frac{2v_0}{g\cos30^\circ}.
+\]
+
+Ao longo do plano, a componente da gravidade é
+\[
+g_s=g\sin30^\circ,
+\]
+e a velocidade inicial nessa direção é nula. Portanto,
+\[
+s=\frac12g\sin30^\circ\,t^2.
+\]
+
+A diferença vertical entre os dois pontos é
+\[
+\Delta h=s\sin30^\circ
+=\frac{2v_0^2}{3g}
+=\Sexpr{fmt(drop)}\,\mathrm{m}.
+\]
+
+\begin{answerlist}
+  \item $\Sexpr{fmt(drop)}$
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Projeto Medicina / Futuro Militar, exercício 22 de
+%% 007_fisica_lancamento_horizontal_obliquo.pdf.
+%% Foi explicitado g=10 m/s2, valor usado na lista em exercícios vizinhos.
+%% \extype{cloze}
+%% \exsolution{\Sexpr{drop}}
+%% \exclozetype{num}
+%% \extol{0.5}
+%% \exname{PM007Q22PlanoInclinadoPerpendicular}
+%% \exsection{Mecanica; Cinematica; Lancamento obliquo; Plano inclinado; Expansao PDF007}
+%% \exusepackage[utf8]{inputenc}

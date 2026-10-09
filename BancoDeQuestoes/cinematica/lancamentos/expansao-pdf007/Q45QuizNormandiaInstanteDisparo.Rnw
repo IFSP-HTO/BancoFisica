@@ -1,0 +1,56 @@
+<<echo=FALSE, results=hide>>=
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Durante a invasão da Normandia, projéteis deveriam atingir alvos na praia às
+$6\,\mathrm{h}\,30\,\mathrm{min}\,00\,\mathrm{s}$. Considere que o ponto de
+lançamento e o alvo estão no mesmo nível horizontal, que a componente vertical
+inicial da velocidade é $v_{0y}=10\,\mathrm{m/s}$ e que
+$g=10\,\mathrm{m/s^2}$. Despreze a resistência do ar.
+
+Em que instante o disparo deve ocorrer?
+
+\begin{answerlist}
+  \item $6\,\mathrm{h}\,30\,\mathrm{min}\,02\,\mathrm{s}$
+  \item $6\,\mathrm{h}\,29\,\mathrm{min}\,58\,\mathrm{s}$
+  \item $5\,\mathrm{h}\,30\,\mathrm{min}\,02\,\mathrm{s}$
+  \item $5\,\mathrm{h}\,29\,\mathrm{min}\,58\,\mathrm{s}$
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Como lançamento e chegada ocorrem no mesmo nível,
+\[
+T=\frac{2v_{0y}}{g}
+=\frac{2\cdot10}{10}
+=2\,\mathrm{s}.
+\]
+
+Portanto, para atingir o alvo exatamente às $6{:}30{:}00$, o projétil deve ser
+disparado dois segundos antes:
+\[
+6{:}29{:}58.
+\]
+
+\begin{answerlist}
+  \item incorreta
+  \item correta
+  \item incorreta
+  \item incorreta
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Projeto Medicina / Futuro Militar, exercício 45 de
+%% 007_fisica_lancamento_horizontal_obliquo.pdf.
+%% \extype{schoice}
+%% \exsolution{0100}
+%% \exname{PM007Q45NormandiaInstanteDisparo}
+%% \exsection{Mecanica; Cinematica; Lancamento obliquo; Tempo de voo; Expansao PDF007}
+%% \exusepackage[utf8]{inputenc}

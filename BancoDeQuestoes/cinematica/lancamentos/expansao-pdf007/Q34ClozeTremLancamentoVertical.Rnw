@@ -1,0 +1,78 @@
+<<echo=FALSE, results=hide>>=
+g <- 10
+configs <- data.frame(
+  vt = c(10, 15, 20, 25),
+  vy0 = c(4, 5, 4, 6)
+)
+i <- sample(seq_len(nrow(configs)), 1)
+vt <- configs$vt[i]
+vy0 <- configs$vy0[i]
+H <- vy0^2 / (2 * g)
+T <- 2 * vy0 / g
+vapice <- vt
+
+fmt <- function(x, digits=2)
+  formatC(x, format="f", digits=digits, decimal.mark=",")
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Uma pessoa sentada em um trem que se desloca horizontalmente com velocidade
+constante de $\Sexpr{fmt(vt,0)}\,\mathrm{m/s}$ lança uma bola verticalmente
+para cima, em relação ao trem, e a apanha de volta no mesmo nível. A bola
+atinge uma altura máxima de $\Sexpr{fmt(H,2)}\,\mathrm{m}$ em relação ao ponto
+de lançamento.
+
+Despreze a resistência do ar e adote $g=10\,\mathrm{m/s^2}$.
+
+Determine:
+
+\begin{answerlist}
+  \item o módulo da velocidade da bola em relação ao solo quando ela atinge a altura máxima, em $\mathrm{m/s}$;
+  \item o tempo total durante o qual a bola permanece no ar, em $\mathrm{s}$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+No ápice, a componente vertical da velocidade da bola é nula. Entretanto, no
+referencial do solo, ela conserva a componente horizontal da velocidade do
+trem. Logo,
+\[
+v_{\rm ápice}=\Sexpr{fmt(vapice,2)}\,\mathrm{m/s}.
+\]
+
+Da altura máxima,
+\[
+H=\frac{v_{0y}^2}{2g},
+\]
+de modo que
+\[
+v_{0y}=\Sexpr{fmt(vy0,2)}\,\mathrm{m/s}.
+\]
+Como a bola retorna ao mesmo nível,
+\[
+T=\frac{2v_{0y}}{g}
+=\Sexpr{fmt(T,2)}\,\mathrm{s}.
+\]
+
+\begin{answerlist}
+  \item $\Sexpr{fmt(vapice,2)}$
+  \item $\Sexpr{fmt(T,2)}$
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Projeto Medicina / Futuro Militar, exercício 34 de
+%% 007_fisica_lancamento_horizontal_obliquo.pdf.
+%% \extype{cloze}
+%% \exsolution{\Sexpr{vapice}|\Sexpr{T}}
+%% \exclozetype{num|num}
+%% \extol{0.02|0.02}
+%% \exname{PM007Q34TremLancamentoVertical}
+%% \exsection{Mecanica; Cinematica; Lancamento obliquo; Referenciais; Expansao PDF007}
+%% \exusepackage[utf8]{inputenc}

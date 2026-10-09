@@ -1,0 +1,63 @@
+<<echo=FALSE, results=hide>>=
+include_supplement("PM007_Q01_base.b64", dir="../../../figuras")
+img_b64 <- paste(readLines("PM007_Q01_base.b64", warn=FALSE), collapse="")
+img <- "PM007_Q01_base.png"
+writeBin(base64enc::base64decode(img_b64), img)
+file.remove("PM007_Q01_base.b64")
+@
+
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+
+Uma mesma bolinha é lançada horizontalmente de cima de uma mesa com três
+velocidades diferentes, produzindo as três trajetórias mostradas na figura.
+Despreze a resistência do ar.
+
+\begin{center}
+\includegraphics[width=8.5cm,keepaspectratio]{\Sexpr{img}}
+\end{center}
+
+Qual é a relação entre os tempos de queda $T_1$, $T_2$ e $T_3$?
+
+\begin{answerlist}
+  \item $T_1>T_2>T_3$
+  \item $T_1<T_2<T_3$
+  \item $T_1<T_2>T_3$
+  \item $T_1>T_2<T_3$
+  \item $T_1=T_2=T_3$
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+As três bolinhas partem da mesma altura e têm a mesma componente vertical
+inicial da velocidade, igual a zero. O movimento vertical é idêntico nos três
+casos e independe da velocidade horizontal.
+
+Portanto,
+\[
+T_1=T_2=T_3.
+\]
+
+\begin{answerlist}
+  \item incorreta
+  \item incorreta
+  \item incorreta
+  \item incorreta
+  \item correta
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Projeto Medicina / Futuro Militar, exercício 1 de
+%% 007_fisica_lancamento_horizontal_obliquo.pdf.
+%% Figura: recorte original do PDF, sem alterações.
+%% \extype{schoice}
+%% \exsolution{00001}
+%% \exname{PM007Q01TemposQuedaLancamentoHorizontal}
+%% \exsection{Mecanica; Cinematica; Lancamento horizontal; Expansao PDF007}
+%% \exusepackage[utf8]{inputenc}

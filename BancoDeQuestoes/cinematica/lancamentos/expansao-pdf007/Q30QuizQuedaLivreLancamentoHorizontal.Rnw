@@ -1,0 +1,51 @@
+<<echo=FALSE, results=hide>>=
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Duas bolinhas idênticas, $A$ e $B$, partem simultaneamente da mesma altura
+$h$ acima do solo. A bolinha $A$ é abandonada em queda livre e a bolinha $B$
+é lançada horizontalmente com velocidade inicial $v_0$.
+
+Despreze a resistência do ar.
+
+Qual afirmação é correta?
+
+\begin{answerlist}
+  \item As duas chegam juntas ao solo.
+  \item $A$ chega primeiro ao solo.
+  \item $A$ chega logo depois de $B$.
+  \item Uma delas chega primeiro dependendo de $v_0$.
+  \item Uma delas chega primeiro dependendo de $h$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+As duas bolinhas têm exatamente o mesmo movimento vertical: mesma altura
+inicial, velocidade vertical inicial nula e aceleração $g$.
+
+A velocidade horizontal de $B$ não altera seu tempo de queda. Portanto, as
+duas chegam ao solo no mesmo instante.
+
+\begin{answerlist}
+  \item correta
+  \item incorreta
+  \item incorreta
+  \item incorreta
+  \item incorreta
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Projeto Medicina / Futuro Militar, exercício 30 de
+%% 007_fisica_lancamento_horizontal_obliquo.pdf.
+%% \extype{schoice}
+%% \exsolution{10000}
+%% \exname{PM007Q30QuedaLivreLancamentoHorizontal}
+%% \exsection{Mecanica; Cinematica; Lancamento horizontal; Conceitual; Expansao PDF007}
+%% \exusepackage[utf8]{inputenc}
