@@ -7,53 +7,28 @@ A <- v0 * T
 
 fmt <- function(x, d=1) formatC(x, format="f", digits=d, decimal.mark=",")
 
-render_overlay_png <- function(source, outfile, overlays) {
-  img <- png::readPNG(source)
-  hpx <- dim(img)[1]
-  wpx <- dim(img)[2]
-  grDevices::png(outfile, width=wpx, height=hpx, bg="white")
-  grid::grid.newpage()
-  grid::grid.raster(
-    img,
-    width=grid::unit(1, "npc"),
-    height=grid::unit(1, "npc"),
-    interpolate=FALSE
-  )
-  for (o in overlays) {
-    grid::grid.rect(
-      x=grid::unit((o$x1 + o$x2)/(2*wpx), "npc"),
-      y=grid::unit(1 - (o$y1 + o$y2)/(2*hpx), "npc"),
-      width=grid::unit((o$x2 - o$x1)/wpx, "npc"),
-      height=grid::unit((o$y2 - o$y1)/hpx, "npc"),
-      gp=grid::gpar(fill="white", col=NA)
-    )
-    grid::grid.text(
-      o$text,
-      x=grid::unit(o$x/wpx, "npc"),
-      y=grid::unit(1 - o$y/hpx, "npc"),
-      just=c("left", "top"),
-      gp=grid::gpar(col="black", fontsize=12, fontfamily="serif")
-    )
-  }
-  grDevices::dev.off()
-  invisible(outfile)
-}
-
-include_supplement("PM007_Q03_base.png", dir="../../../figuras")
-base_path <- "PM007_Q03_base.png"
+# Desenho gerado diretamente, sem decodificar imagem PNG externa.
+# Mantém os elementos físicos da figura original e atualiza a cota sorteada.
 img <- "PM007_Q03_variante.png"
+grDevices::png(img, width=700, height=390, bg="white", res=120)
+par(mar=c(0.3,0.3,0.3,0.3), xaxs="i", yaxs="i")
+plot.new()
+plot.window(xlim=c(0,10), ylim=c(0,6), asp=1)
 
-render_overlay_png(
-  base_path,
-  img,
-  list(
-    list(
-      x1=163, y1=77, x2=262, y2=113,
-      text=paste0(fmt(h, 1), " m"),
-      x=174, y=83
-    )
-  )
-)
+# Perfil do penhasco e nível do mar.
+segments(0,4.7,4.2,4.7,lwd=2)
+segments(4.2,4.7,4.2,0.8,lwd=2)
+segments(4.2,0.8,10,0.8,lwd=2)
+# Canhão orientado horizontalmente no alto do penhasco.
+symbols(3.5,4.95,circles=0.18,inches=FALSE,add=TRUE,bg="white",fg="black")
+segments(3.5,4.95,4.35,4.95,lwd=5)
+segments(3.5,4.95,4.35,4.95,lwd=1,col="gray40")
+# Cota vertical, com altura definida pela mesma variável do enunciado.
+segments(5.1,4.7,5.1,0.8,lwd=1.4)
+segments(4.9,4.7,5.3,4.7,lwd=1.4)
+segments(4.9,0.8,5.3,0.8,lwd=1.4)
+text(5.4,2.75,paste0(fmt(h,1)," m"),adj=0,cex=1)
+grDevices::dev.off()
 @
 
 \usepackage[utf8]{inputenc}
