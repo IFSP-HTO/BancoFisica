@@ -1,9 +1,27 @@
 <<echo=FALSE, results=hide>>=
-include_supplement("PM007_Q01_base.b64", dir="../../../figuras")
-img_b64 <- paste(readLines("PM007_Q01_base.b64", warn=FALSE), collapse="")
+# Desenho parametrico das tres trajetorias de lancamento horizontal.
+# Evita dependência de PNG externo na compilacao PDF.
 img <- "PM007_Q01_base.png"
-writeBin(base64enc::base64decode(img_b64), img)
-file.remove("PM007_Q01_base.b64")
+grDevices::png(img, width=850, height=410, bg="white", res=130)
+par(mar=c(0.5,0.5,0.5,0.5), xaxs="i", yaxs="i")
+plot.new()
+plot.window(xlim=c(0,12), ylim=c(-0.5,5.5))
+# Mesa e solo
+rect(0.7,3.5,2.6,3.65,col="gray85",border="black")
+segments(0.8,3.5,0.8,0.2,lwd=2)
+segments(0.1,0.2,11.7,0.2,lwd=2)
+# Altura e componente vertical inicial iguais: velocidades horizontais distintas.
+xx <- seq(0,1,length.out=100)
+vrel <- c(0.9,1.6,2.4)
+cores <- c("gray25","gray45","gray65")
+for (i in seq_along(vrel)) {
+  x <- 2.6 + 3.2*vrel[i]*xx
+  y <- 3.55 - 3.35*xx^2
+  lines(x,y,lwd=2.5,col=cores[i])
+  text(tail(x,1),0.65,paste0("T",i),pos=3,cex=1.05)
+}
+points(2.6,3.55,pch=19,cex=1)
+grDevices::dev.off()
 @
 
 \usepackage[utf8]{inputenc}
