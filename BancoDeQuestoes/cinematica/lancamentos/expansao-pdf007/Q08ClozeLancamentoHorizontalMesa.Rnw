@@ -1,0 +1,76 @@
+<<echo=FALSE, results=hide>>=
+g <- 10
+configs <- data.frame(
+  T = c(0.4, 0.5, 0.6, 0.8, 1.0),
+  v0 = c(4, 5, 6, 7.5, 8)
+)
+i <- sample(seq_len(nrow(configs)), 1)
+T <- configs$T[i]
+v0 <- configs$v0[i]
+h <- 0.5 * g * T^2
+d <- v0 * T
+
+fmt <- function(x, d=2) formatC(x, format="f", digits=d, decimal.mark=",")
+
+include_supplement("PM007_Q08_revisada.png", dir="../../../figuras")
+img <- "PM007_Q08_revisada.png"
+@
+
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+
+Uma bola rola sobre uma mesa horizontal de altura
+$h=\Sexpr{fmt(h,2)}\,\mathrm{m}$ e, ao abandonar a borda, atinge o solo a uma
+distância horizontal $d=\Sexpr{fmt(d,2)}\,\mathrm{m}$ da vertical que passa
+pela borda da mesa. Despreze a resistência do ar e adote $g=10\,\mathrm{m/s^2}$.
+
+\begin{center}
+\includegraphics[width=6.0cm,keepaspectratio]{\Sexpr{img}}
+\end{center}
+
+Qual é o módulo da velocidade da bola no instante em que ela abandona a mesa?
+
+\begin{answerlist}
+  \item velocidade, em $\mathrm{m/s}$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+O tempo de queda é obtido pelo movimento vertical:
+\[
+h=\frac12gt^2
+\quad\Rightarrow\quad
+t=\sqrt{\frac{2h}{g}}
+=\Sexpr{fmt(T,2)}\,\mathrm{s}.
+\]
+
+Na horizontal, o movimento é uniforme:
+\[
+d=v_0t
+\quad\Rightarrow\quad
+v_0=\frac{d}{t}
+=\Sexpr{fmt(v0,2)}\,\mathrm{m/s}.
+\]
+
+\begin{answerlist}
+  \item $\Sexpr{fmt(v0,2)}$
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Projeto Medicina / Futuro Militar, exercício 8 de
+%% 007_fisica_lancamento_horizontal_obliquo.pdf.
+%% Figura: arte revisada manualmente pelo autor do BancoFisica durante a
+%% revisão visual desta expansão; arquivo PM007_Q08_revisada.png.
+%% \extype{cloze}
+%% \exsolution{\Sexpr{v0}}
+%% \exclozetype{num}
+%% \extol{0.02}
+%% \exname{PM007Q08LancamentoHorizontalMesa}
+%% \exsection{Mecanica; Cinematica; Lancamento horizontal; Expansao PDF007}
+%% \exusepackage[utf8]{inputenc}

@@ -1,0 +1,92 @@
+<<echo=FALSE, results=hide>>=
+g <- 9.8
+T <- sample(c(2, 3, 4, 5), 1)
+h <- 0.5 * g * T^2
+v0 <- sample(c(10, 12, 15, 18, 20), 1)
+A <- v0 * T
+
+fmt <- function(x, d=1) formatC(x, format="f", digits=d, decimal.mark=",")
+
+# Desenho gerado diretamente, sem decodificar imagem PNG externa.
+# Mantém os elementos físicos da figura original e atualiza a cota sorteada.
+img <- "PM007_Q03_variante.png"
+grDevices::png(img, width=700, height=390, bg="white", res=120)
+par(mar=c(0.3,0.3,0.3,0.3), xaxs="i", yaxs="i")
+plot.new()
+plot.window(xlim=c(0,10), ylim=c(0,6), asp=1)
+
+# Perfil do penhasco e nível do mar.
+segments(0,4.7,4.2,4.7,lwd=2)
+segments(4.2,4.7,4.2,0.8,lwd=2)
+segments(4.2,0.8,10,0.8,lwd=2)
+# Canhão orientado horizontalmente no alto do penhasco.
+symbols(3.5,4.95,circles=0.18,inches=FALSE,add=TRUE,bg="white",fg="black")
+segments(3.5,4.95,4.35,4.95,lwd=5)
+segments(3.5,4.95,4.35,4.95,lwd=1,col="gray40")
+# Cota vertical, com altura definida pela mesma variável do enunciado.
+segments(5.1,4.7,5.1,0.8,lwd=1.4)
+segments(4.9,4.7,5.3,4.7,lwd=1.4)
+segments(4.9,0.8,5.3,0.8,lwd=1.4)
+text(5.4,2.75,paste0(fmt(h,1)," m"),adj=0,cex=1)
+grDevices::dev.off()
+@
+
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+
+Um canhão encontra-se na borda de um penhasco diante do mar. O projétil é disparado horizontalmente com velocidade inicial de $\Sexpr{fmt(v0,0)}\,\mathrm{m/s}$, a uma altura de $\Sexpr{fmt(h,1)}\,\mathrm{m}$ acima do nível do mar. Despreze a resistência do ar e adote $g=9{,}8\,\mathrm{m/s^2}$.
+
+\begin{center}
+\includegraphics[width=5.8cm,keepaspectratio]{\Sexpr{img}}
+\end{center}
+
+Determine:
+
+\begin{answerlist}
+  \item o tempo para o projétil atingir o mar, em $\mathrm{s}$;
+  \item a distância horizontal entre o ponto de impacto e a base do penhasco, em $\mathrm{m}$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Na direção vertical, o projétil inicia com velocidade nula. Assim,
+\[
+h=\frac12gt^2.
+\]
+Logo,
+\[
+t=\sqrt{\frac{2h}{g}}
+=\sqrt{\frac{2\cdot \Sexpr{fmt(h,1)}}{9{,}8}}
+=\Sexpr{fmt(T,1)}\,\mathrm{s}.
+\]
+
+Na direção horizontal, o movimento é uniforme:
+\[
+x=v_0t
+=\Sexpr{fmt(v0,0)}\cdot\Sexpr{fmt(T,1)}
+=\Sexpr{fmt(A,1)}\,\mathrm{m}.
+\]
+
+\begin{answerlist}
+  \item $\Sexpr{fmt(T,1)}$
+  \item $\Sexpr{fmt(A,1)}$
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Projeto Medicina / Futuro Militar, exercício 3 de
+%% 007_fisica_lancamento_horizontal_obliquo.pdf.
+%% Figura: objeto original extraído diretamente do PDF; apenas o rótulo
+%% numérico da altura é substituído programaticamente em cada variante.
+%% \extype{cloze}
+%% \exsolution{\Sexpr{T}|\Sexpr{A}}
+%% \exclozetype{num|num}
+%% \extol{0.02|0.05}
+%% \exname{PM007Q03LancamentoHorizontalPenhasco}
+%% \exsection{Mecanica; Cinematica; Lancamento horizontal; Expansao PDF007}
+%% \exusepackage[utf8]{inputenc}

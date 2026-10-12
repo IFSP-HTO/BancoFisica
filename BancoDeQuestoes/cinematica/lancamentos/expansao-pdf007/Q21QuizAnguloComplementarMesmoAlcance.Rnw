@@ -1,0 +1,70 @@
+<<echo=FALSE, results=hide>>=
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Um projétil é disparado do solo no vácuo. Para certo ângulo $\alpha$, sua
+altura máxima em relação ao ponto de lançamento é
+$150\sqrt{3}\,\mathrm{m}$ e seu alcance horizontal é $600\,\mathrm{m}$.
+
+Usando a mesma arma, com o mesmo módulo de velocidade inicial, qual outro
+ângulo $\beta$ produz o mesmo alcance horizontal?
+
+\begin{answerlist}
+  \item $30^\circ$
+  \item $45^\circ$
+  \item $60^\circ$
+  \item $75^\circ$
+  \item $90^\circ$
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Para lançamento e queda no mesmo nível,
+\[
+H=\frac{v_0^2\sin^2\alpha}{2g},
+\qquad
+R=\frac{v_0^2\sin2\alpha}{g}.
+\]
+Dividindo,
+\[
+\frac{H}{R}=\frac{\tan\alpha}{4}.
+\]
+
+Como
+\[
+\frac{H}{R}=\frac{150\sqrt3}{600}=\frac{\sqrt3}{4},
+\]
+segue que
+\[
+\tan\alpha=\sqrt3,
+\]
+portanto $\alpha=60^\circ$.
+
+Para o mesmo $v_0$, os ângulos complementares produzem o mesmo alcance:
+\[
+\beta=90^\circ-\alpha=30^\circ.
+\]
+
+\begin{answerlist}
+  \item correta
+  \item incorreta
+  \item incorreta
+  \item incorreta
+  \item incorreta
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Projeto Medicina / Futuro Militar, exercício 21 de
+%% 007_fisica_lancamento_horizontal_obliquo.pdf.
+%% \extype{schoice}
+%% \exsolution{10000}
+%% \exname{PM007Q21AnguloComplementarMesmoAlcance}
+%% \exsection{Mecanica; Cinematica; Lancamento obliquo; Expansao PDF007}
+%% \exusepackage[utf8]{inputenc}

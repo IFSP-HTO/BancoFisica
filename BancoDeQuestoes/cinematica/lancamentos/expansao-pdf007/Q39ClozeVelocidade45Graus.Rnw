@@ -1,0 +1,73 @@
+<<echo=FALSE, results=hide>>=
+g <- 10
+v0 <- sample(c(100, 120, 160, 200), 1)
+vx <- 0.5 * v0
+vy0_sq <- 0.75 * v0^2
+vy_sq <- vx^2
+h <- (vy0_sq - vy_sq) / (2 * g)
+
+fmt <- function(x, digits=1)
+  formatC(x, format="f", digits=digits, decimal.mark=",")
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Um projétil é lançado com velocidade inicial de módulo
+$\Sexpr{fmt(v0,0)}\,\mathrm{m/s}$, formando um ângulo de $60^\circ$ com a
+horizontal. Despreze a resistência do ar e adote $g=10\,\mathrm{m/s^2}$.
+
+Qual é a altura do projétil, em relação ao nível do lançamento, quando o vetor
+velocidade faz um ângulo de $45^\circ$ com a horizontal?
+
+\begin{answerlist}
+  \item altura, em $\mathrm{m}$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+A componente horizontal da velocidade é constante:
+\[
+v_x=v_0\cos60^\circ=\frac{v_0}{2}
+=\Sexpr{fmt(vx,1)}\,\mathrm{m/s}.
+\]
+
+Quando a velocidade faz $45^\circ$ com a horizontal, os módulos das componentes
+são iguais:
+\[
+|v_y|=v_x.
+\]
+
+A componente vertical inicial satisfaz
+\[
+v_{0y}^2=v_0^2\sin^260^\circ=\frac34v_0^2.
+\]
+Pela equação de Torricelli no eixo vertical,
+\[
+v_y^2=v_{0y}^2-2gh.
+\]
+Logo,
+\[
+h=\frac{v_{0y}^2-v_y^2}{2g}
+=\Sexpr{fmt(h,1)}\,\mathrm{m}.
+\]
+
+\begin{answerlist}
+  \item $\Sexpr{fmt(h,1)}$
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Projeto Medicina / Futuro Militar, exercício 39 de
+%% 007_fisica_lancamento_horizontal_obliquo.pdf.
+%% \extype{cloze}
+%% \exsolution{\Sexpr{h}}
+%% \exclozetype{num}
+%% \extol{0.1}
+%% \exname{PM007Q39Velocidade45Graus}
+%% \exsection{Mecanica; Cinematica; Lancamento obliquo; Velocidade instantanea; Expansao PDF007}
+%% \exusepackage[utf8]{inputenc}

@@ -1,0 +1,79 @@
+<<echo=FALSE, results=hide>>=
+g <- 10
+sen <- 0.60
+cos <- 0.80
+configs <- data.frame(
+  v0 = c(20, 25, 30, 40),
+  h = c(2, 5, 2, 5)
+)
+i <- sample(seq_len(nrow(configs)), 1)
+v0 <- configs$v0[i]
+h <- configs$h[i]
+vx <- v0 * cos
+vy <- v0 * sen
+T <- (vy + sqrt(vy^2 + 2 * g * h)) / g
+R <- vx * T
+
+fmt <- function(x, digits=1)
+  formatC(x, format="f", digits=digits, decimal.mark=",")
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Um projétil é disparado a partir de uma altura
+$h=\Sexpr{fmt(h,0)}\,\mathrm{m}$ acima do solo, formando um ângulo de
+$37^\circ$ com a horizontal. Ele atinge o solo a
+$\Sexpr{fmt(R,1)}\,\mathrm{m}$ horizontalmente do ponto de lançamento.
+
+Despreze a resistência do ar, adote $g=10\,\mathrm{m/s^2}$ e use
+$\sin37^\circ=0{,}60$ e $\cos37^\circ=0{,}80$.
+
+Determine o módulo da velocidade inicial.
+
+\begin{answerlist}
+  \item velocidade inicial, em $\mathrm{m/s}$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Se $v_0$ é a velocidade de lançamento,
+\[
+v_x=0{,}80v_0,
+\qquad
+v_y=0{,}60v_0.
+\]
+
+O tempo de voo é
+\[
+t=\frac{R}{0{,}80v_0}.
+\]
+Esse tempo deve satisfazer a equação vertical
+\[
+0=h+0{,}60v_0t-\frac12gt^2.
+\]
+
+Substituindo os dados e resolvendo para $v_0$, obtém-se
+\[
+v_0=\Sexpr{fmt(v0,1)}\,\mathrm{m/s}.
+\]
+
+\begin{answerlist}
+  \item $\Sexpr{fmt(v0,1)}$
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Projeto Medicina / Futuro Militar, exercício 15 de
+%% 007_fisica_lancamento_horizontal_obliquo.pdf.
+%% \extype{cloze}
+%% \exsolution{\Sexpr{v0}}
+%% \exclozetype{num}
+%% \extol{0.15}
+%% \exname{PM007Q15AtiradorAlturaNaoNula}
+%% \exsection{Mecanica; Cinematica; Lancamento obliquo; Problema inverso; Expansao PDF007}
+%% \exusepackage[utf8]{inputenc}

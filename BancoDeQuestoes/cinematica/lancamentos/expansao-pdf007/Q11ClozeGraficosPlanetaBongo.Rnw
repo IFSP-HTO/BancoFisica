@@ -1,0 +1,107 @@
+<<echo=FALSE, results=hide>>=
+g <- sample(c(2, 4, 6), 1)
+vx <- sample(c(1, 1.5, 2), 1)
+T <- sample(c(2, 3), 1)
+
+H <- 0.5 * g * T^2
+R <- vx * T
+
+fmt <- function(x, d=1) {
+  if (abs(x - round(x)) < 1e-10) {
+    formatC(x, format="f", digits=0, decimal.mark=",")
+  } else {
+    formatC(x, format="f", digits=d, decimal.mark=",")
+  }
+}
+
+img <- "PM007_Q11_graficos.png"
+grDevices::png(img, width=850, height=360, bg="white", res=120)
+par(mfrow=c(1,2), mar=c(4.2,4.3,1.0,0.8), mgp=c(2.4,0.8,0))
+
+xx <- seq(0, R, length.out=250)
+yy <- H - (g/(2*vx^2))*xx^2
+plot(
+  xx, yy, type="l", lwd=2,
+  xlim=c(0, R*1.10), ylim=c(0, H*1.08),
+  xlab="x (m)", ylab="y (m)",
+  xaxs="i", yaxs="i"
+)
+grid(nx=NA, ny=NULL, lty=3, col="gray80")
+lines(xx, yy, lwd=2)
+
+tt <- seq(0, T, length.out=100)
+xt <- vx*tt
+plot(
+  tt, xt, type="l", lwd=2,
+  xlim=c(0, T*1.08), ylim=c(0, R*1.08),
+  xlab="t (s)", ylab="x (m)",
+  xaxs="i", yaxs="i"
+)
+grid(nx=NA, ny=NULL, lty=3, col="gray80")
+lines(tt, xt, lwd=2)
+
+grDevices::dev.off()
+@
+
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+
+Um habitante do planeta Bongo lança horizontalmente uma flecha. Os gráficos mostram a coordenada vertical $y$ em função da posição horizontal $x$ e a posição horizontal $x$ em função do tempo $t$. Despreze a resistência do ar.
+
+\begin{center}
+\includegraphics[width=12cm,keepaspectratio]{\Sexpr{img}}
+\end{center}
+
+A partir exclusivamente dos gráficos, determine:
+
+\begin{answerlist}
+  \item o módulo da velocidade horizontal da flecha, em $\mathrm{m/s}$;
+  \item o módulo da aceleração da gravidade no planeta Bongo, em $\mathrm{m/s^2}$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+O gráfico $x(t)$ é uma reta. Seu coeficiente angular é a velocidade horizontal:
+\[
+v_x=\frac{\Delta x}{\Delta t}
+=\frac{\Sexpr{fmt(R)}}{\Sexpr{fmt(T)}}
+=\Sexpr{fmt(vx)}\,\mathrm{m/s}.
+\]
+
+Pelo gráfico $y(x)$, a flecha parte de $y=\Sexpr{fmt(H)}\,\mathrm{m}$ e chega a $y=0$ quando $x=\Sexpr{fmt(R)}\,\mathrm{m}$. Do gráfico $x(t)$, esse deslocamento horizontal ocorre em $t=\Sexpr{fmt(T)}\,\mathrm{s}$.
+
+Como o lançamento é horizontal, $v_{0y}=0$. Assim,
+\[
+0=H-\frac12gt^2,
+\]
+de onde
+\[
+g=\frac{2H}{t^2}
+=\frac{2\cdot\Sexpr{fmt(H)}}{(\Sexpr{fmt(T)})^2}
+=\Sexpr{fmt(g)}\,\mathrm{m/s^2}.
+\]
+
+\begin{answerlist}
+  \item $\Sexpr{fmt(vx)}$
+  \item $\Sexpr{fmt(g)}$
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Projeto Medicina / Futuro Militar, exercício 11 de
+%% 007_fisica_lancamento_horizontal_obliquo.pdf.
+%% A figura original foi usada como referência visual. Como a geometria dos
+%% gráficos precisa variar junto com os parâmetros, os gráficos são gerados
+%% programaticamente a partir dos mesmos valores usados na solução.
+%% \extype{cloze}
+%% \exsolution{\Sexpr{vx}|\Sexpr{g}}
+%% \exclozetype{num|num}
+%% \extol{0.02|0.02}
+%% \exname{PM007Q11GraficosLancamentoHorizontal}
+%% \exsection{Mecanica; Cinematica; Lancamento horizontal; Graficos; Expansao PDF007}
+%% \exusepackage[utf8]{inputenc}

@@ -1,0 +1,81 @@
+<<echo=FALSE, results=hide>>=
+# Desenho parametrico das tres trajetorias de lancamento horizontal.
+# Evita dependência de PNG externo na compilacao PDF.
+img <- "PM007_Q01_base.png"
+grDevices::png(img, width=850, height=410, bg="white", res=130)
+par(mar=c(0.5,0.5,0.5,0.5), xaxs="i", yaxs="i")
+plot.new()
+plot.window(xlim=c(0,12), ylim=c(-0.5,5.5))
+# Mesa e solo
+rect(0.7,3.5,2.6,3.65,col="gray85",border="black")
+segments(0.8,3.5,0.8,0.2,lwd=2)
+segments(0.1,0.2,11.7,0.2,lwd=2)
+# Altura e componente vertical inicial iguais: velocidades horizontais distintas.
+xx <- seq(0,1,length.out=100)
+vrel <- c(0.9,1.6,2.4)
+cores <- c("gray25","gray45","gray65")
+for (i in seq_along(vrel)) {
+  x <- 2.6 + 3.2*vrel[i]*xx
+  y <- 3.55 - 3.35*xx^2
+  lines(x,y,lwd=2.5,col=cores[i])
+  text(tail(x,1),0.65,paste0("T",i),pos=3,cex=1.05)
+}
+points(2.6,3.55,pch=19,cex=1)
+grDevices::dev.off()
+@
+
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+
+Uma mesma bolinha é lançada horizontalmente de cima de uma mesa com três
+velocidades diferentes, produzindo as três trajetórias mostradas na figura.
+Despreze a resistência do ar.
+
+\begin{center}
+\includegraphics[width=8.5cm,keepaspectratio]{\Sexpr{img}}
+\end{center}
+
+Qual é a relação entre os tempos de queda $T_1$, $T_2$ e $T_3$?
+
+\begin{answerlist}
+  \item $T_1>T_2>T_3$
+  \item $T_1<T_2<T_3$
+  \item $T_1<T_2>T_3$
+  \item $T_1>T_2<T_3$
+  \item $T_1=T_2=T_3$
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+As três bolinhas partem da mesma altura e têm a mesma componente vertical
+inicial da velocidade, igual a zero. O movimento vertical é idêntico nos três
+casos e independe da velocidade horizontal.
+
+Portanto,
+\[
+T_1=T_2=T_3.
+\]
+
+\begin{answerlist}
+  \item incorreta
+  \item incorreta
+  \item incorreta
+  \item incorreta
+  \item correta
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Projeto Medicina / Futuro Militar, exercício 1 de
+%% 007_fisica_lancamento_horizontal_obliquo.pdf.
+%% Figura: recorte original do PDF, sem alterações.
+%% \extype{schoice}
+%% \exsolution{00001}
+%% \exname{PM007Q01TemposQuedaLancamentoHorizontal}
+%% \exsection{Mecanica; Cinematica; Lancamento horizontal; Expansao PDF007}
+%% \exusepackage[utf8]{inputenc}

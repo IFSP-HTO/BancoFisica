@@ -1,0 +1,71 @@
+<<echo=FALSE, results=hide>>=
+g <- 10
+T <- sample(c(0.3, 0.4, 0.5, 0.6), 1)
+h <- 0.5 * g * T^2
+v0 <- sample(c(3, 4, 5, 6), 1)
+x <- v0 * T
+
+fmt <- function(x, d=2) formatC(x, format="f", digits=d, decimal.mark=",")
+
+include_supplement("PM007_Q12_revisada.png", dir="../../../figuras")
+img <- "PM007_Q12_revisada.png"
+@
+
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+
+Duas mesas de mesma altura estão apoiadas sobre um piso horizontal. Duas pequenas esferas iniciam seus movimentos simultaneamente no topo das mesas. A esfera da esquerda é lançada horizontalmente, em direção à outra, com velocidade de módulo $\Sexpr{fmt(v0,1)}\,\mathrm{m/s}$. A esfera da direita é abandonada do repouso. Despreze a resistência do ar e adote $g=10\,\mathrm{m/s^2}$.
+
+\begin{center}
+\includegraphics[width=7.2cm,keepaspectratio]{\Sexpr{img}}
+\end{center}
+
+Sabendo que as duas esferas se chocam no instante em que atingem o chão, determine:
+
+\begin{answerlist}
+  \item o tempo de queda, em $\mathrm{s}$;
+  \item a distância horizontal $x$ entre os pontos iniciais dos movimentos, em $\mathrm{m}$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+As duas esferas têm o mesmo movimento vertical: ambas partem com componente vertical da velocidade igual a zero e caem da mesma altura. Portanto,
+\[
+h=\frac12gt^2.
+\]
+Assim,
+\[
+t=\sqrt{\frac{2h}{g}}
+=\Sexpr{fmt(T,2)}\,\mathrm{s}.
+\]
+
+Durante esse mesmo intervalo, a esfera lançada horizontalmente percorre
+\[
+x=v_0t
+=\Sexpr{fmt(v0,1)}\cdot\Sexpr{fmt(T,2)}
+=\Sexpr{fmt(x,2)}\,\mathrm{m}.
+\]
+
+\begin{answerlist}
+  \item $\Sexpr{fmt(T,2)}$
+  \item $\Sexpr{fmt(x,2)}$
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Projeto Medicina / Futuro Militar, exercício 12 de
+%% 007_fisica_lancamento_horizontal_obliquo.pdf.
+%% Figura: arte revisada manualmente pelo autor do BancoFisica durante a
+%% revisão visual desta expansão; arquivo PM007_Q12_revisada.png.
+%% \extype{cloze}
+%% \exsolution{\Sexpr{T}|\Sexpr{x}}
+%% \exclozetype{num|num}
+%% \extol{0.02|0.03}
+%% \exname{PM007Q12DuasEsferasMesmaAltura}
+%% \exsection{Mecanica; Cinematica; Lancamento horizontal; Expansao PDF007}
+%% \exusepackage[utf8]{inputenc}

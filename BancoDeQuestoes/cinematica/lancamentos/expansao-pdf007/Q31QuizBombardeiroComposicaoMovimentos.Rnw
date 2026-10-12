@@ -1,0 +1,66 @@
+<<echo=FALSE, results=hide>>=
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Um bombardeiro voa horizontalmente com velocidade constante. Em certo
+instante, uma bomba é solta do avião. Despreze a resistência do ar.
+
+Considere as afirmações:
+
+I. A bomba cai verticalmente para um observador fixo na Terra.
+
+II. O movimento da bomba pode ser decomposto em MRUV na vertical e MRU na
+horizontal.
+
+III. Enquanto o avião mantiver sua velocidade horizontal constante, a bomba
+permanece verticalmente abaixo dele.
+
+IV. A bomba possui aceleração vertical igual à aceleração da gravidade $g$.
+
+Estão corretas:
+
+\begin{answerlist}
+  \item II, III e IV
+  \item II e IV
+  \item II e III
+  \item I, II e IV
+  \item todas
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Ao ser solta, a bomba conserva a componente horizontal da velocidade do avião.
+Por isso, para um observador na Terra, sua trajetória não é vertical: I é
+falsa.
+
+Na horizontal, desprezando o ar, o movimento é uniforme. Na vertical, a bomba
+tem aceleração constante $g$: II e IV são verdadeiras.
+
+Como avião e bomba têm a mesma velocidade horizontal, a separação horizontal
+entre eles permanece nula durante a queda. Portanto, III também é verdadeira.
+
+Logo, estão corretas II, III e IV.
+
+\begin{answerlist}
+  \item correta
+  \item incorreta
+  \item incorreta
+  \item incorreta
+  \item incorreta
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Projeto Medicina / Futuro Militar, exercício 31 de
+%% 007_fisica_lancamento_horizontal_obliquo.pdf.
+%% \extype{schoice}
+%% \exsolution{10000}
+%% \exname{PM007Q31BombardeiroComposicaoMovimentos}
+%% \exsection{Mecanica; Cinematica; Lancamento horizontal; Conceitual; Expansao PDF007}
+%% \exusepackage[utf8]{inputenc}

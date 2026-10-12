@@ -1,0 +1,81 @@
+<<echo=FALSE, results=hide>>=
+g <- 10
+R <- 8.9
+h0 <- 1.0
+hmax <- 2.0
+hf <- 0.20
+vy0 <- sqrt(2 * g * (hmax - h0))
+dy <- hf - h0
+T <- (vy0 + sqrt(vy0^2 - 2 * g * dy)) / g
+vx <- R / T
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Durante as Olimpíadas de 1968, na Cidade do México, Bob Beamon estabeleceu
+recorde no salto em distância com $8{,}9\,\mathrm{m}$. Suponha que o centro de
+gravidade do atleta estivesse a $1{,}0\,\mathrm{m}$ do solo no início do salto,
+atingisse altura máxima de $2{,}0\,\mathrm{m}$ e estivesse a
+$0{,}20\,\mathrm{m}$ do solo no final.
+
+Despreze a resistência do ar e adote $g=10\,\mathrm{m/s^2}$.
+
+A componente horizontal da velocidade inicial do salto é aproximadamente
+
+\begin{answerlist}
+  \item $8{,}5\,\mathrm{m/s}$
+  \item $7{,}5\,\mathrm{m/s}$
+  \item $6{,}5\,\mathrm{m/s}$
+  \item $5{,}2\,\mathrm{m/s}$
+  \item $4{,}5\,\mathrm{m/s}$
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+A elevação do centro de gravidade até o ápice é
+\[
+\Delta h=2{,}0-1{,}0=1{,}0\,\mathrm{m}.
+\]
+Assim,
+\[
+v_{0y}=\sqrt{2g\Delta h}=\sqrt{20}\,\mathrm{m/s}.
+\]
+
+Entre o início e o final do salto, a variação vertical é
+\[
+\Delta y=0{,}20-1{,}0=-0{,}80\,\mathrm{m}.
+\]
+Da equação
+\[
+\Delta y=v_{0y}t-\frac12gt^2,
+\]
+obtém-se $t\approx1{,}047\,\mathrm{s}$.
+
+Logo,
+\[
+v_x=\frac{8{,}9}{1{,}047}\approx8{,}5\,\mathrm{m/s}.
+\]
+
+\begin{answerlist}
+  \item correta
+  \item incorreta
+  \item incorreta
+  \item incorreta
+  \item incorreta
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Projeto Medicina / Futuro Militar, exercício 40 de
+%% 007_fisica_lancamento_horizontal_obliquo.pdf.
+%% O nome foi grafado como Bob Beamon, forma histórica correta.
+%% \extype{schoice}
+%% \exsolution{10000}
+%% \exname{PM007Q40SaltoBeamon1968}
+%% \exsection{Mecanica; Cinematica; Lancamento obliquo; Expansao PDF007}
+%% \exusepackage[utf8]{inputenc}

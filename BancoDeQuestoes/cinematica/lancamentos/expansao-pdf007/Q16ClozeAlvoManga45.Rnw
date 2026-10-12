@@ -1,0 +1,69 @@
+<<echo=FALSE, results=hide>>=
+g <- 10
+configs <- data.frame(
+  x = c(10, 15, 20, 12),
+  y = c(5, 5, 10, 4)
+)
+i <- sample(seq_len(nrow(configs)), 1)
+x <- configs$x[i]
+y <- configs$y[i]
+v0 <- sqrt(g * x^2 / (x - y))
+
+fmt <- function(x, digits=2)
+  formatC(x, format="f", digits=digits, decimal.mark=",")
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Um garoto lança uma pedra com ângulo de $45^\circ$ para atingir uma manga.
+Em relação ao ponto de lançamento, a manga está a
+$\Sexpr{fmt(x,0)}\,\mathrm{m}$ na horizontal e
+$\Sexpr{fmt(y,0)}\,\mathrm{m}$ acima.
+
+Despreze a resistência do ar e adote $g=10\,\mathrm{m/s^2}$.
+
+Qual deve ser o módulo da velocidade inicial da pedra?
+
+\begin{answerlist}
+  \item velocidade inicial, em $\mathrm{m/s}$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+A equação da trajetória é
+\[
+y=x\tan\theta-\frac{gx^2}{2v_0^2\cos^2\theta}.
+\]
+
+Para $\theta=45^\circ$, $\tan45^\circ=1$ e
+$2\cos^245^\circ=1$. Portanto,
+\[
+y=x-\frac{gx^2}{v_0^2}.
+\]
+
+Isolando $v_0$,
+\[
+v_0=\sqrt{\frac{gx^2}{x-y}}
+=\Sexpr{fmt(v0,2)}\,\mathrm{m/s}.
+\]
+
+\begin{answerlist}
+  \item $\Sexpr{fmt(v0,2)}$
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Projeto Medicina / Futuro Militar, exercício 16 de
+%% 007_fisica_lancamento_horizontal_obliquo.pdf.
+%% \extype{cloze}
+%% \exsolution{\Sexpr{v0}}
+%% \exclozetype{num}
+%% \extol{0.03}
+%% \exname{PM007Q16AlvoManga45}
+%% \exsection{Mecanica; Cinematica; Lancamento obliquo; Alvo; Expansao PDF007}
+%% \exusepackage[utf8]{inputenc}

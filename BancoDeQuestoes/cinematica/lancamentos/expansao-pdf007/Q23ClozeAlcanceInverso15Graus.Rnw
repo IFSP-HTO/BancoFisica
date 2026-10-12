@@ -1,0 +1,64 @@
+<<echo=FALSE, results=hide>>=
+vref <- sample(c(10, 12, 15, 20), 1)
+v0 <- vref * sqrt(2)
+
+fmt <- function(x, digits=2)
+  formatC(x, format="f", digits=digits, decimal.mark=",")
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Um projétil é lançado do solo com ângulo de $15^\circ$ e atinge um alvo no
+mesmo nível. A distância até o alvo é igual ao alcance máximo que seria obtido
+por outro projétil lançado, no mesmo local, com velocidade
+$\Sexpr{fmt(vref,0)}\,\mathrm{m/s}$.
+
+Qual é o módulo da velocidade inicial do primeiro projétil?
+
+\begin{answerlist}
+  \item velocidade inicial, em $\mathrm{m/s}$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+O alcance máximo do projétil de referência ocorre a $45^\circ$:
+\[
+R_{\max}=\frac{v_{\rm ref}^2}{g}.
+\]
+
+Para o lançamento a $15^\circ$,
+\[
+R=\frac{v_0^2\sin30^\circ}{g}
+=\frac{v_0^2}{2g}.
+\]
+
+Como os dois alcances são iguais,
+\[
+\frac{v_0^2}{2g}=\frac{v_{\rm ref}^2}{g},
+\]
+logo
+\[
+v_0=\sqrt2\,v_{\rm ref}
+=\Sexpr{fmt(v0,2)}\,\mathrm{m/s}.
+\]
+
+\begin{answerlist}
+  \item $\Sexpr{fmt(v0,2)}$
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Projeto Medicina / Futuro Militar, exercício 23 de
+%% 007_fisica_lancamento_horizontal_obliquo.pdf.
+%% \extype{cloze}
+%% \exsolution{\Sexpr{v0}}
+%% \exclozetype{num}
+%% \extol{0.03}
+%% \exname{PM007Q23AlcanceInverso15Graus}
+%% \exsection{Mecanica; Cinematica; Lancamento obliquo; Problema inverso; Expansao PDF007}
+%% \exusepackage[utf8]{inputenc}

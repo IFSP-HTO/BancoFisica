@@ -1,0 +1,77 @@
+<<echo=FALSE, results=hide>>=
+g <- 10
+H <- 15
+vx <- 10
+vy0 <- sqrt(2 * g * H)
+v0 <- sqrt(vx^2 + vy0^2)
+theta <- atan2(vy0, vx) * 180 / pi
+
+fmt <- function(x, digits=2)
+  formatC(x, format="f", digits=digits, decimal.mark=",")
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Um projétil é lançado do solo e retorna ao mesmo nível. Sua altura máxima é
+$15\,\mathrm{m}$ e, no ponto mais alto da trajetória, sua velocidade escalar
+é $10\,\mathrm{m/s}$.
+
+Despreze a resistência do ar e adote $g=10\,\mathrm{m/s^2}$.
+
+Determine:
+
+\begin{answerlist}
+  \item o módulo da velocidade inicial, em $\mathrm{m/s}$;
+  \item o ângulo de lançamento com a horizontal, em graus.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+No ponto mais alto,
+\[
+v_y=0,
+\]
+portanto a velocidade de $10\,\mathrm{m/s}$ é a componente horizontal:
+\[
+v_x=10\,\mathrm{m/s}.
+\]
+
+Da altura máxima,
+\[
+H=\frac{v_{0y}^2}{2g}
+\quad\Rightarrow\quad
+v_{0y}=\sqrt{2gH}=10\sqrt3\,\mathrm{m/s}.
+\]
+
+Assim,
+\[
+v_0=\sqrt{v_x^2+v_{0y}^2}
+=20\,\mathrm{m/s},
+\]
+e
+\[
+\tan\theta=\frac{v_{0y}}{v_x}=\sqrt3,
+\]
+logo $\theta=60^\circ$.
+
+\begin{answerlist}
+  \item $\Sexpr{fmt(v0,2)}$
+  \item $\Sexpr{fmt(theta,1)}$
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Projeto Medicina / Futuro Militar, exercício 36 de
+%% 007_fisica_lancamento_horizontal_obliquo.pdf.
+%% \extype{cloze}
+%% \exsolution{\Sexpr{v0}|\Sexpr{theta}}
+%% \exclozetype{num|num}
+%% \extol{0.02|0.1}
+%% \exname{PM007Q36AlturaMaximaVelocidadeApice}
+%% \exsection{Mecanica; Cinematica; Lancamento obliquo; Expansao PDF007}
+%% \exusepackage[utf8]{inputenc}

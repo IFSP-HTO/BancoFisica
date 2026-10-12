@@ -1,0 +1,99 @@
+<<echo=FALSE, results=hide>>=
+g <- 10
+configs <- data.frame(
+  theta = c(37, 37, 53, 53),
+  v0 = c(10, 15, 10, 15),
+  t = c(1.5, 2.0, 2.0, 3.0),
+  sen = c(0.60, 0.60, 0.80, 0.80),
+  cos = c(0.80, 0.80, 0.60, 0.60)
+)
+i <- sample(seq_len(nrow(configs)), 1)
+theta <- configs$theta[i]
+v0 <- configs$v0[i]
+t <- configs$t[i]
+sen <- configs$sen[i]
+cos <- configs$cos[i]
+
+vx <- v0 * cos
+vy <- v0 * sen
+h <- 0.5 * g * t^2 - vy * t
+d <- vx * t
+
+fmt <- function(x, digits=2)
+  formatC(x, format="f", digits=digits, decimal.mark=",")
+
+include_supplement("PM007_Q43_revisada.png", dir="../../../figuras")
+img <- "PM007_Q43_revisada.png"
+@
+
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+
+Uma pedra é lançada do ponto $P$, situado a uma altura
+$h=\Sexpr{fmt(h,2)}\,\mathrm{m}$ acima do solo, com velocidade inicial de módulo
+$v_0=\Sexpr{fmt(v0,1)}\,\mathrm{m/s}$ e ângulo
+$\theta=\Sexpr{theta}^\circ$ com a horizontal. Despreze a resistência do ar e
+adote $g=10\,\mathrm{m/s^2}$.
+
+Use
+$\sin\Sexpr{theta}^\circ=\Sexpr{fmt(sen,2)}$ e
+$\cos\Sexpr{theta}^\circ=\Sexpr{fmt(cos,2)}$.
+
+\begin{center}
+\includegraphics[width=9cm,keepaspectratio]{\Sexpr{img}}
+\end{center}
+
+Determine a distância horizontal $d$ entre a vertical que passa por $P$ e o
+ponto $Q$ em que a pedra atinge o solo.
+
+\begin{answerlist}
+  \item distância $d$, em $\mathrm{m}$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+As componentes da velocidade inicial são
+\[
+v_x=v_0\cos\theta=\Sexpr{fmt(vx,2)}\,\mathrm{m/s},
+\qquad
+v_y=v_0\sin\theta=\Sexpr{fmt(vy,2)}\,\mathrm{m/s}.
+\]
+
+Tomando o solo como $y=0$ e o ponto de lançamento como $y=h$,
+\[
+0=h+v_yt-\frac12gt^2.
+\]
+A raiz positiva é
+\[
+t=\frac{v_y+\sqrt{v_y^2+2gh}}{g}
+=\Sexpr{fmt(t,2)}\,\mathrm{s}.
+\]
+
+Na horizontal,
+\[
+d=v_xt
+=\Sexpr{fmt(d,2)}\,\mathrm{m}.
+\]
+
+\begin{answerlist}
+  \item $\Sexpr{fmt(d,2)}$
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Projeto Medicina / Futuro Militar, exercício 43 de
+%% 007_fisica_lancamento_horizontal_obliquo.pdf.
+%% Figura: arte revisada manualmente pelo autor do BancoFisica durante a
+%% revisão visual desta expansão; arquivo PM007_Q43_revisada.png.
+%% \extype{cloze}
+%% \exsolution{\Sexpr{d}}
+%% \exclozetype{num}
+%% \extol{0.03}
+%% \exname{PM007Q43LancamentoObliquoDesnivel}
+%% \exsection{Mecanica; Cinematica; Lancamento obliquo; Expansao PDF007}
+%% \exusepackage[utf8]{inputenc}
