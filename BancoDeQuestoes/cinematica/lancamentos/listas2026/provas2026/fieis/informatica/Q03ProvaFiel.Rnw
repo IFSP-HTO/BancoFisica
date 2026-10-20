@@ -1,0 +1,44 @@
+<<echo=FALSE, results=hide>>=
+# Questão fiel à prova impressa de lançamento oblíquo de 2026.
+# A réplica sorteia uma das 10 versões efetivamente aplicadas.
+versao <- sample(1:10, 1)
+gabaritos <- c("A", "C", "A", "D", "C", "C", "C", "E", "B", "D")
+correta <- match(gabaritos[versao], LETTERS[1:5])
+img <- sprintf("Q03_V%02d.png", versao)
+asset_root <- Sys.getenv("BF_PROVA_FIEL_ASSET_DIR")
+if (!nzchar(asset_root)) stop("BF_PROVA_FIEL_ASSET_DIR não definido")
+include_supplement(img, dir=file.path(asset_root, "informatica"))
+sol <- paste(as.integer(seq_len(5) == correta), collapse="")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+\begin{center}
+\includegraphics[width=0.98\linewidth]{\Sexpr{img}}
+\end{center}
+\begin{answerlist}
+  \item A
+  \item B
+  \item C
+  \item D
+  \item E
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+A alternativa correta é a letra \Sexpr{gabaritos[versao]}.
+\begin{answerlist}
+  \item A
+  \item B
+  \item C
+  \item D
+  \item E
+\end{answerlist}
+\end{solution}
+
+\exname{BF-LO26-INFO-Q03}
+\extype{schoice}
+\exsolution{\Sexpr{sol}}
+\exshuffle{FALSE}
+\exsection{Mecanica; Cinematica; Lancamento obliquo; Provas 2026 fieis; informatica; Q03}
