@@ -1,0 +1,48 @@
+<<echo=FALSE, results=hide>>=
+questions <- c(
+  "o primeiro carrinho para e o segundo passa a mover-se com a velocidade inicial do primeiro.",
+  "os dois carrinhos permanecem unidos e passam a mover-se com metade da velocidade inicial.",
+  "o primeiro carrinho retorna com a mesma rapidez e o segundo permanece em repouso.",
+  "os dois carrinhos passam a mover-se juntos com a mesma rapidez do primeiro antes da colisão.",
+  "o segundo carrinho adquire velocidade duas vezes maior que a velocidade inicial do primeiro."
+)
+solutions <- c(TRUE,FALSE,FALSE,FALSE,FALSE)
+ordem <- sample(seq_along(questions))
+questions <- questions[ordem]; solutions <- solutions[ordem]
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Dois carrinhos de massas iguais movem-se sobre um trilho horizontal sem atrito. Antes da colisão, o carrinho 1 move-se com velocidade \(v\) e o carrinho 2 está em repouso. A colisão é perfeitamente elástica e unidimensional.
+
+Após a colisão,
+
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(questions)
+@
+
+\end{question}
+
+\begin{solution}
+
+Em uma colisão perfeitamente elástica conservam-se simultaneamente a quantidade de movimento e a energia cinética.
+
+Para massas iguais, com o segundo corpo inicialmente em repouso, a solução dessas duas condições resulta na troca de velocidades:
+\[
+v_{1f}=0,
+\qquad
+v_{2f}=v.
+\]
+
+Portanto, o primeiro carrinho para e o segundo passa a mover-se com a velocidade que o primeiro possuía antes da colisão.
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q145QuizColisaoElasticaMassasIguais}
+%% \exsection{Mecanica; Quantidade de movimento; Conservacao; Colisao elastica; Energia cinetica; Conceitual}
+%% \exusepackage[utf8]{inputenc}

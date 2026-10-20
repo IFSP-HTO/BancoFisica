@@ -1,0 +1,113 @@
+<<echo=FALSE, results=hide>>=
+casos <- data.frame(
+  m = c(2, 3, 4, 5),
+  v0 = c(3, 4, 2, 5),
+  F1 = c(12, 15, 20, 25),
+  F2 = c(4, 6, 8, 10),
+  dt = c(2, 2, 3, 2)
+)
+i <- sample(seq_len(nrow(casos)), 1)
+
+m <- casos$m[i]
+v0 <- casos$v0[i]
+F1 <- casos$F1[i]
+F2 <- casos$F2[i]
+dt <- casos$dt[i]
+
+I1 <- F1 * dt
+I2 <- -F2 * dt
+IR <- I1 + I2
+p0 <- m * v0
+pf <- p0 + IR
+vf <- pf / m
+
+fmt <- function(x, d=2) formatC(x, format="f", digits=d, decimal.mark=",")
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Um bloco de massa \(\Sexpr{m}\,\mathrm{kg}\) move-se para a direita com velocidade inicial de \(\Sexpr{v0}\,\mathrm{m/s}\). Durante \(\Sexpr{dt}\,\mathrm{s}\), duas forças horizontais constantes atuam simultaneamente sobre ele:
+
+\[
+F_1=\Sexpr{F1}\,\mathrm{N}
+\]
+para a direita e
+\[
+F_2=\Sexpr{F2}\,\mathrm{N}
+\]
+para a esquerda.
+
+Adote a direita como sentido positivo. Determine:
+
+\begin{answerlist}
+  \item o impulso de \(F_1\), em \(\mathrm{N\,s}\);
+  \item o impulso de \(F_2\), em \(\mathrm{N\,s}\);
+  \item o impulso da força resultante, em \(\mathrm{N\,s}\);
+  \item a velocidade final do bloco, em \(\mathrm{m/s}\).
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+O impulso de cada força é
+\[
+I=F\Delta t.
+\]
+
+Para \(F_1\),
+\[
+I_1=F_1\Delta t
+=\Sexpr{F1}\cdot\Sexpr{dt}
+=\Sexpr{fmt(I1,2)}\,\mathrm{N\,s}.
+\]
+
+Como \(F_2\) aponta para a esquerda,
+\[
+I_2=-F_2\Delta t
+=-\Sexpr{F2}\cdot\Sexpr{dt}
+=\Sexpr{fmt(I2,2)}\,\mathrm{N\,s}.
+\]
+
+O impulso da força resultante é a soma vetorial dos impulsos:
+\[
+I_R=I_1+I_2
+=\Sexpr{fmt(IR,2)}\,\mathrm{N\,s}.
+\]
+
+É \(I_R\), e não cada impulso isoladamente, que se relaciona com a variação da quantidade de movimento:
+\[
+I_R=\Delta p=p_f-p_i.
+\]
+
+A quantidade de movimento inicial é
+\[
+p_i=mv_0
+=\Sexpr{m}\cdot\Sexpr{v0}
+=\Sexpr{fmt(p0,2)}\,\mathrm{kg\,m/s}.
+\]
+
+Então,
+\[
+p_f=p_i+I_R
+=\Sexpr{fmt(pf,2)}\,\mathrm{kg\,m/s},
+\]
+e
+\[
+v_f=\frac{p_f}{m}
+=\Sexpr{fmt(vf,2)}\,\mathrm{m/s}.
+\]
+
+\end{solution}
+
+%% META-INFORMATION
+%% Questao autoral baseada na distincao entre impulso de uma forca e impulso da forca resultante.
+%% \extype{cloze}
+%% \exsolution{\Sexpr{round(I1,2)}|\Sexpr{round(I2,2)}|\Sexpr{round(IR,2)}|\Sexpr{round(vf,2)}}
+%% \exclozetype{num|num|num|num}
+%% \extol{0.01|0.01|0.01|0.01}
+%% \exname{Q139ClozeImpulsosIndividuaisResultante}
+%% \exsection{Mecanica; Impulso; Quantidade de movimento; Forca resultante; Vetores}
+%% \exusepackage[utf8]{inputenc}

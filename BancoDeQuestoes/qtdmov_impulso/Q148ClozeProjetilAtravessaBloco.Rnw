@@ -1,0 +1,74 @@
+<<echo=FALSE, results=hide>>=
+casos <- data.frame(
+  m=c(0.02,0.03,0.04,0.05),
+  M=c(1.0,1.5,2.0,2.5),
+  vi=c(300,240,200,180),
+  vf=c(100,80,60,40)
+)
+i<-sample(seq_len(nrow(casos)),1)
+m<-casos$m[i]; M<-casos$M[i]; vi<-casos$vi[i]; vf<-casos$vf[i]
+V <- m*(vi-vf)/M
+dpp <- m*(vf-vi)
+dpb <- M*V
+fmt <- function(x,d=2) formatC(x,format="f",digits=d,decimal.mark=",")
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Um projétil de massa \(\Sexpr{fmt(1000*m,0)}\,\mathrm{g}\) atravessa horizontalmente um bloco de massa \(\Sexpr{fmt(M,2)}\,\mathrm{kg}\), inicialmente em repouso sobre uma superfície de atrito desprezível. O projétil entra no bloco com velocidade \(\Sexpr{vi}\,\mathrm{m/s}\) e sai pelo outro lado, no mesmo sentido, com velocidade \(\Sexpr{vf}\,\mathrm{m/s}\).
+
+Determine:
+
+\begin{answerlist}
+\item a velocidade adquirida pelo bloco, em \(\mathrm{m/s}\);
+\item a variação da quantidade de movimento do projétil, em \(\mathrm{kg\,m/s}\);
+\item a variação da quantidade de movimento do bloco, em \(\mathrm{kg\,m/s}\).
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Durante a interação, o impulso externo horizontal sobre o sistema projétil + bloco é desprezível. Portanto,
+\[
+m v_i = m v_f + MV.
+\]
+
+Assim,
+\[
+V=\frac{m(v_i-v_f)}{M}
+=\Sexpr{fmt(V,2)}\,\mathrm{m/s}.
+\]
+
+Para o projétil,
+\[
+\Delta p_p=m(v_f-v_i)
+=\Sexpr{fmt(dpp,2)}\,\mathrm{kg\,m/s}.
+\]
+
+Para o bloco,
+\[
+\Delta p_b=MV
+=\Sexpr{fmt(dpb,2)}\,\mathrm{kg\,m/s}.
+\]
+
+Logo,
+\[
+\Delta p_p+\Delta p_b=0.
+\]
+
+As variações são iguais em módulo e opostas em sinal, como consequência dos impulsos internos de ação e reação.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Figura: preferir figura original do Gaspar se houver equivalente adequada; esquema autoral provisório enquanto a fonte visual não for confrontada.
+%% \extype{cloze}
+%% \exsolution{\Sexpr{round(V,2)}|\Sexpr{round(dpp,2)}|\Sexpr{round(dpb,2)}}
+%% \exclozetype{num|num|num}
+%% \extol{0.01|0.01|0.01}
+%% \exname{Q148ClozeProjetilAtravessaBloco}
+%% \exsection{Mecanica; Quantidade de movimento; Conservacao; Impulso; Projetil; Interacao}
+%% \exusepackage[utf8]{inputenc}
