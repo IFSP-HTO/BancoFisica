@@ -1,0 +1,14 @@
+{
+  "source_pdf": "fuvest2026-fase1-prova-V1.pdf",
+  "source_sha256": "93b417ad6ea7e81a3b6adc46337920fd71c213306849846723f13583074f9025",
+  "mode": "crop",
+  "page": 30,
+  "bbox_pdf_points": [
+    309.514,
+    269.44,
+    577.363,
+    357.85
+  ],
+  "dpi": 300,
+  "output": "BancoDeQuestoes/figuras/Q96QuizFUVEST2026OvosCalorimetria.png"
+}

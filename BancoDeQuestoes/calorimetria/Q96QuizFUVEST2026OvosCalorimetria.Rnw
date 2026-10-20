@@ -1,0 +1,98 @@
+<<echo=FALSE, results=hide>>=
+include_supplement("Q96QuizFUVEST2026OvosCalorimetria.png", dir="../figuras")
+@
+
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+
+(FUVEST 2026 - 1ª Fase, questão 71) Para muitas pessoas, um ovo perfeitamente cozido tem uma gema cremosa e uma clara firme. A gema atinge uma textura cremosa a $65\,^\circ\mathrm{C}$, mas a clara fica totalmente firme a $85\,^\circ\mathrm{C}$.
+
+Métodos comuns de cozimento frequentemente resultam em um ovo com clara e gema duras (1), um ovo com clara dura e gema cremosa (2) ou um ovo com clara e gema cremosas (3).
+
+Pesquisadores da Universidade de Nápoles, entretanto, perceberam que alternar o cozimento dos ovos em água a $100\,^\circ\mathrm{C}$ e $30\,^\circ\mathrm{C}$ a cada dois minutos, totalizando 32 minutos (4), faz com que as duas regiões do ovo (clara e gema) respondam de formas diferentes às temperaturas alternadas. Aplicando o método estudado (4), a temperatura da clara oscila antes de finalmente se estabilizar em torno de $85\,^\circ\mathrm{C}$, enquanto a temperatura da gema sobe lentamente até atingir $67\,^\circ\mathrm{C}$, quando chega à consistência desejada.
+
+A figura a seguir compara o ovo cozido para cada um dos métodos descritos.
+
+\begin{center}
+\includegraphics[width=0.93\textwidth,keepaspectratio]{Q96QuizFUVEST2026OvosCalorimetria.png}
+\end{center}
+
+Di Lorenzo, E., Romano, F., Ciriaco, L. et al. ``Periodic cooking of eggs''. \textit{Commun Eng} 4, 5 (2025). Adaptado.
+
+Suponha que, em cada método de cozimento, cada parte do ovo (clara e gema) seja aquecida de uma temperatura inicial de $20\,^\circ\mathrm{C}$ até as respectivas temperaturas finais apresentadas na figura. A quantidade de calor total recebida $Q_n$ pelo conjunto gema + clara para o método de cozimento ($n=1,2,3,4$), em ordem crescente, é:
+
+\begin{answerlist}
+  \item $Q_4<Q_1<Q_3<Q_2$
+  \item $Q_3<Q_4<Q_2<Q_1$
+  \item $Q_1<Q_3<Q_2<Q_4$
+  \item $Q_3<Q_2<Q_4<Q_1$
+  \item $Q_4<Q_3<Q_1<Q_2$
+\end{answerlist}
+
+\textbf{Note e adote:}
+
+Calor específico a pressão constante:
+
+Clara: $3{,}8\,\mathrm{J/(g\,K)}$; Gema: $3{,}1\,\mathrm{J/(g\,K)}$.
+
+Massa do ovo $=50\,\mathrm{g}$.
+
+Assuma que a massa da clara seja igual à da gema.
+
+\end{question}
+
+\begin{solution}
+
+Como a massa total do ovo é $50\,\mathrm{g}$ e as massas da clara e da gema são iguais, cada parte tem massa $25\,\mathrm{g}$.
+
+Para cada método,
+\[
+Q_n=m c_{\mathrm{clara}}\Delta T_{\mathrm{clara}}
++m c_{\mathrm{gema}}\Delta T_{\mathrm{gema}}.
+\]
+
+No método 1,
+\[
+Q_1=25\left[3{,}8(100-20)+3{,}1(100-20)\right]
+=13800\,\mathrm{J}.
+\]
+
+No método 2,
+\[
+Q_2=25\left[3{,}8(97-20)+3{,}1(82-20)\right]
+=12120\,\mathrm{J}.
+\]
+
+No método 3,
+\[
+Q_3=25\left[3{,}8(65-20)+3{,}1(65-20)\right]
+=7762{,}5\,\mathrm{J}.
+\]
+
+No método 4,
+\[
+Q_4=25\left[3{,}8(85-20)+3{,}1(67-20)\right]
+=9817{,}5\,\mathrm{J}.
+\]
+
+Portanto,
+\[
+Q_3<Q_4<Q_2<Q_1.
+\]
+
+A alternativa correta é a \textbf{B}.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: FUVEST 2026, 1ª Fase, caderno V1, questão 71.
+%% SOURCE-VISUAL: original-crop
+%% PDF oficial SHA-256: 93b417ad6ea7e81a3b6adc46337920fd71c213306849846723f13583074f9025.
+%% Figura extraída diretamente da página 30 do PDF oficial conforme docs/PDF_SOURCE_WORKFLOW.md.
+%% \extype{schoice}
+%% \exsolution{01000}
+%% \exname{Q96QuizFUVEST2026OvosCalorimetria}
+%% \exsection{Calorimetria; Calor sensivel; Calor especifico; FUVEST}
+%% \exusepackage[utf8]{inputenc}
