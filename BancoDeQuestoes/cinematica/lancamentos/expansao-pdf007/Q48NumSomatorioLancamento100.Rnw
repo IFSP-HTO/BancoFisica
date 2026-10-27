@@ -1,0 +1,75 @@
+<<echo=FALSE, results=hide>>=
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Um objeto é lançado do nível do mar com velocidade inicial de
+$100\,\mathrm{m/s}$ e ângulo $\theta$ tal que
+$\cos\theta=0{,}60$. Despreze a resistência do ar e adote
+$g=10\,\mathrm{m/s^2}$.
+
+Considere as afirmações:
+
+01) As componentes iniciais da velocidade são
+$V_x=60\,\mathrm{m/s}$ e $V_y=80\,\mathrm{m/s}$.
+
+02) O objeto não retorna ao nível de lançamento.
+
+04) O alcance horizontal é superior a $500\,\mathrm{m}$.
+
+08) O tempo necessário para o objeto atingir o alcance horizontal total é
+$16\,\mathrm{s}$.
+
+16) A componente da velocidade paralela ao solo permanece constante durante o
+voo.
+
+Dê como resposta a soma dos números correspondentes às afirmações corretas.
+
+\end{question}
+
+\begin{solution}
+
+Como $\cos\theta=0{,}60$, temos $\sin\theta=0{,}80$. Portanto,
+\[
+V_x=60\,\mathrm{m/s},
+\qquad
+V_y=80\,\mathrm{m/s},
+\]
+e 01 é correta.
+
+O objeto retorna ao nível de lançamento, portanto 02 é falsa.
+
+O tempo total de voo é
+\[
+T=\frac{2V_y}{g}
+=\frac{160}{10}
+=16\,\mathrm{s},
+\]
+logo 08 é correta.
+
+O alcance é
+\[
+R=V_xT=60\cdot16=960\,\mathrm{m},
+\]
+portanto 04 é correta.
+
+Sem resistência do ar, $V_x$ permanece constante, então 16 também é correta.
+
+A soma é
+\[
+1+4+8+16=29.
+\]
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Projeto Medicina / Futuro Militar, exercício 48 de
+%% 007_fisica_lancamento_horizontal_obliquo.pdf.
+%% \extype{num}
+%% \exsolution{29}
+%% \extol{0}
+%% \exname{PM007Q48SomatorioLancamento100}
+%% \exsection{Mecanica; Cinematica; Lancamento obliquo; Conceitual; Expansao PDF007}
+%% \exusepackage[utf8]{inputenc}

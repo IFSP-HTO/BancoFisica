@@ -1,0 +1,113 @@
+<<echo=FALSE, results=hide>>=
+g <- 10
+configs <- data.frame(
+  T = c(3, 4, 5),
+  k = c(2, 4, 3)
+)
+i <- sample(seq_len(nrow(configs)), 1)
+T <- configs$T[i]
+k <- configs$k[i]
+
+h <- 0.5 * g * T^2
+vx <- 0.5 * k * T^2
+vy <- -g * T
+v <- sqrt(vx^2 + vy^2)
+x <- (k / 6) * T^3
+
+fmt <- function(x, digits=2)
+  formatC(x, format="f", digits=digits, decimal.mark=",")
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Uma bolinha é solta do repouso de uma altura
+$h=\Sexpr{fmt(h,0)}\,\mathrm{m}$. Além da aceleração da gravidade, de módulo
+$g=10\,\mathrm{m/s^2}$, ela fica submetida a uma aceleração horizontal
+variável com o tempo dada por
+\[
+a_x=\Sexpr{fmt(k,0)}\,t\quad(\mathrm{m/s^2}),
+\]
+com $t$ medido em segundos.
+
+Determine:
+
+\begin{answerlist}
+  \item o tempo de queda, em $\mathrm{s}$;
+  \item o módulo da velocidade no instante em que a bolinha atinge o solo, em $\mathrm{m/s}$;
+  \item o alcance horizontal, em $\mathrm{m}$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+O movimento vertical não depende da aceleração horizontal:
+\[
+h=\frac12gt^2.
+\]
+Portanto,
+\[
+t=\sqrt{\frac{2h}{g}}
+=\Sexpr{fmt(T,2)}\,\mathrm{s}.
+\]
+
+Na horizontal,
+\[
+a_x=kt.
+\]
+Como a bolinha é solta sem velocidade horizontal inicial,
+\[
+v_x(t)=\int_0^t k\tau\,d\tau
+=\frac{k}{2}t^2.
+\]
+No impacto,
+\[
+v_x=\Sexpr{fmt(vx,2)}\,\mathrm{m/s}.
+\]
+
+Na vertical,
+\[
+v_y=-gt
+=\Sexpr{fmt(vy,2)}\,\mathrm{m/s}.
+\]
+Logo,
+\[
+v=\sqrt{v_x^2+v_y^2}
+=\Sexpr{fmt(v,2)}\,\mathrm{m/s}.
+\]
+
+O deslocamento horizontal é
+\[
+x(t)=\int_0^t v_x(\tau)\,d\tau
+=\frac{k}{6}t^3,
+\]
+portanto
+\[
+x=\Sexpr{fmt(x,2)}\,\mathrm{m}.
+\]
+
+\begin{answerlist}
+  \item $\Sexpr{fmt(T,2)}$
+  \item $\Sexpr{fmt(v,2)}$
+  \item $\Sexpr{fmt(x,2)}$
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Projeto Medicina / Futuro Militar, exercício 50 de
+%% 007_fisica_lancamento_horizontal_obliquo.pdf.
+%% A versao original corresponde a h=80 m e k=4, para a qual t=4,0 s,
+%% |v|=51,2 m/s e x=42,7 m.
+%% O gabarito-fonte registra 0,4 s no item (a), mas isso e incompatível com
+%% h=80 m e g=10 m/s2; trata-se de erro tipografico. A solucao foi corrigida.
+%% Item avancado: movimento bidimensional com aceleracao horizontal dependente do tempo.
+%% \extype{cloze}
+%% \exsolution{\Sexpr{T}|\Sexpr{v}|\Sexpr{x}}
+%% \exclozetype{num|num|num}
+%% \extol{0.02|0.05|0.05}
+%% \exname{PM007Q50AceleracaoHorizontalVariavel}
+%% \exsection{Mecanica; Cinematica; Movimento bidimensional; Aceleracao variavel; Expansao PDF007}
+%% \exusepackage[utf8]{inputenc}

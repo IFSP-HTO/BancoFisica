@@ -1,0 +1,67 @@
+<<echo=FALSE, results=hide>>=
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Sobre um projétil lançado obliquamente para cima, desprezando a resistência do
+ar e considerando que ele retorna ao mesmo nível de lançamento, analise:
+
+01) As componentes vertical e horizontal da velocidade permanecem constantes.
+
+02) Na altura máxima, a velocidade do projétil é nula.
+
+04) O alcance horizontal é igual à componente horizontal da velocidade
+multiplicada pelo dobro do tempo de subida.
+
+08) As acelerações durante a subida e a descida têm o mesmo módulo, mas sentidos
+opostos.
+
+16) Mantido o ângulo de lançamento, o tempo total de voo é diretamente
+proporcional ao módulo da velocidade inicial e inversamente proporcional a $g$.
+
+Dê como resposta a soma dos números correspondentes às afirmações corretas.
+
+\end{question}
+
+\begin{solution}
+
+01 é falsa: apenas a componente horizontal permanece constante; a vertical
+varia com o tempo.
+
+02 é falsa: no ápice, apenas $v_y=0$; a componente horizontal permanece não
+nula.
+
+04 é verdadeira, pois
+\[
+R=v_xT
+\quad\text{e}\quad
+T=2t_{\rm subida}.
+\]
+
+08 é falsa: a aceleração é a mesma durante todo o voo, vertical e para baixo.
+
+16 é verdadeira para ângulo fixo, pois
+\[
+T=\frac{2v_0\sin\theta}{g}.
+\]
+
+Logo, a soma é
+\[
+4+16=20.
+\]
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Projeto Medicina / Futuro Militar, exercício 17 de
+%% 007_fisica_lancamento_horizontal_obliquo.pdf.
+%% O enunciado explicita "ângulo mantido" no item 16 para retirar uma
+%% ambiguidade proporcional presente na redação-fonte.
+%% \extype{num}
+%% \exsolution{20}
+%% \extol{0}
+%% \exname{PM007Q17SomatorioConceitos}
+%% \exsection{Mecanica; Cinematica; Lancamento obliquo; Conceitual; Expansao PDF007}
+%% \exusepackage[utf8]{inputenc}

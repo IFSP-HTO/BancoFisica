@@ -1,0 +1,72 @@
+<<echo=FALSE, results=hide>>=
+g <- 10
+configs <- data.frame(
+  vr = c(2.5, 3, 4, 5),
+  vy = c(4, 5, 5, 6)
+)
+i <- sample(seq_len(nrow(configs)), 1)
+vr <- configs$vr[i]
+vy <- configs$vy[i]
+T <- 2 * vy / g
+d <- vr * T
+
+fmt <- function(x, digits=2)
+  formatC(x, format="f", digits=digits, decimal.mark=",")
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Um robô move-se horizontalmente com velocidade constante de módulo
+$\Sexpr{fmt(vr,1)}\,\mathrm{m/s}$ em relação ao solo. No referencial do robô,
+uma bolinha é lançada verticalmente para cima com velocidade inicial de
+$\Sexpr{fmt(vy,1)}\,\mathrm{m/s}$ e é apanhada novamente no mesmo nível.
+
+Despreze a resistência do ar e adote $g=10\,\mathrm{m/s^2}$.
+
+Qual distância a bolinha percorre na direção horizontal, para um observador
+fixo no solo?
+
+\begin{answerlist}
+  \item distância horizontal, em $\mathrm{m}$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+No referencial do solo, a bolinha conserva a componente horizontal da
+velocidade do robô:
+\[
+v_x=\Sexpr{fmt(vr,1)}\,\mathrm{m/s}.
+\]
+
+O movimento vertical retorna ao mesmo nível, portanto o tempo total é
+\[
+T=\frac{2v_{0y}}{g}
+=\Sexpr{fmt(T,2)}\,\mathrm{s}.
+\]
+
+Logo,
+\[
+d=v_xT
+=\Sexpr{fmt(d,2)}\,\mathrm{m}.
+\]
+
+\begin{answerlist}
+  \item $\Sexpr{fmt(d,2)}$
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Projeto Medicina / Futuro Militar, exercício 2 de
+%% 007_fisica_lancamento_horizontal_obliquo.pdf.
+%% \extype{cloze}
+%% \exsolution{\Sexpr{d}}
+%% \exclozetype{num}
+%% \extol{0.02}
+%% \exname{PM007Q02RoboReferencial}
+%% \exsection{Mecanica; Cinematica; Lancamento obliquo; Referenciais; Expansao PDF007}
+%% \exusepackage[utf8]{inputenc}

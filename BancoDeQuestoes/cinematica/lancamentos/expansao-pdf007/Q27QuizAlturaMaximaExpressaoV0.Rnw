@@ -1,0 +1,67 @@
+<<echo=FALSE, results=hide>>=
+include_supplement("PM007_Q27_revisada.png", dir="../../../figuras")
+img <- "PM007_Q27_revisada.png"
+@
+
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+
+Uma partícula é lançada nas proximidades da superfície terrestre com velocidade
+inicial de módulo $v_0$, formando um ângulo $\theta$ com a horizontal, como
+mostra a figura. A intensidade do campo gravitacional é $g$.
+
+\begin{center}
+\includegraphics[width=6.2cm,keepaspectratio]{\Sexpr{img}}
+\end{center}
+
+Para que a partícula atinja altura máxima $h$, o módulo da velocidade de
+lançamento deve ser
+
+\begin{answerlist}
+  \item $\sqrt{\dfrac{gh}{2}}$
+  \item $\sqrt{2gh}$
+  \item $\dfrac{\sqrt{2gh}}{\cos\theta}$
+  \item $\dfrac{\sqrt{2gh}}{\sin\theta}$
+  \item $\sqrt{gh}\tan\theta$
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+No ponto mais alto da trajetória, a componente vertical da velocidade é nula.
+Aplicando a equação de Torricelli ao movimento vertical,
+\[
+0=(v_0\sin\theta)^2-2gh.
+\]
+Logo,
+\[
+v_0\sin\theta=\sqrt{2gh},
+\]
+e portanto
+\[
+v_0=\frac{\sqrt{2gh}}{\sin\theta}.
+\]
+
+\begin{answerlist}
+  \item incorreta
+  \item incorreta
+  \item incorreta
+  \item correta
+  \item incorreta
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Projeto Medicina / Futuro Militar, exercício 27 de
+%% 007_fisica_lancamento_horizontal_obliquo.pdf.
+%% Figura: arte revisada manualmente pelo autor do BancoFisica durante a
+%% revisão visual desta expansão; arquivo PM007_Q27_revisada.png.
+%% \extype{schoice}
+%% \exsolution{00010}
+%% \exname{PM007Q27AlturaMaximaExpressaoV0}
+%% \exsection{Mecanica; Cinematica; Lancamento obliquo; Expansao PDF007}
+%% \exusepackage[utf8]{inputenc}

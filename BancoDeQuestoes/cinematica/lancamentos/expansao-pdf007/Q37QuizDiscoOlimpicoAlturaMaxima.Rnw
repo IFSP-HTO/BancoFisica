@@ -1,0 +1,59 @@
+<<echo=FALSE, results=hide>>=
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Em uma competição, um atleta arremessa um disco com velocidade de módulo
+$72\,\mathrm{km/h}$, formando um ângulo de $30^\circ$ com a horizontal.
+
+Despreze a resistência do ar e adote $g=10\,\mathrm{m/s^2}$.
+
+A altura máxima atingida acima do ponto de lançamento é
+
+\begin{answerlist}
+  \item $5{,}0\,\mathrm{m}$
+  \item $10{,}0\,\mathrm{m}$
+  \item $15{,}0\,\mathrm{m}$
+  \item $25{,}0\,\mathrm{m}$
+  \item $30{,}0\,\mathrm{m}$
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+A velocidade inicial é
+\[
+72\,\mathrm{km/h}=20\,\mathrm{m/s}.
+\]
+A componente vertical vale
+\[
+v_{0y}=20\sin30^\circ=10\,\mathrm{m/s}.
+\]
+Logo,
+\[
+H=\frac{v_{0y}^2}{2g}
+=\frac{100}{20}
+=5{,}0\,\mathrm{m}.
+\]
+
+\begin{answerlist}
+  \item correta
+  \item incorreta
+  \item incorreta
+  \item incorreta
+  \item incorreta
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Projeto Medicina / Futuro Militar, exercício 37 de
+%% 007_fisica_lancamento_horizontal_obliquo.pdf.
+%% \extype{schoice}
+%% \exsolution{10000}
+%% \exname{PM007Q37DiscoOlimpicoAlturaMaxima}
+%% \exsection{Mecanica; Cinematica; Lancamento obliquo; Expansao PDF007}
+%% \exusepackage[utf8]{inputenc}

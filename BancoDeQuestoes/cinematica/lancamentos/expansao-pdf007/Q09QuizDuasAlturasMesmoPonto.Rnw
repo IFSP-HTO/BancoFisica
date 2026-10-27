@@ -1,0 +1,75 @@
+<<echo=FALSE, results=hide>>=
+include_supplement("PM007_Q09_revisada.png", dir="../../../figuras")
+img <- "PM007_Q09_revisada.png"
+@
+
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+
+Duas partículas, 1 e 2, estão inicialmente na mesma vertical, a alturas
+$h_1$ e $h_2$ do solo, com $h_1=4h_2$. Elas são lançadas horizontalmente
+de modo que atinjam o solo no mesmo ponto $P$, como mostra a figura.
+
+\begin{center}
+\includegraphics[width=5.8cm,keepaspectratio]{\Sexpr{img}}
+\end{center}
+
+Qual é a razão $\dfrac{v_1}{v_2}$ entre os módulos das velocidades horizontais
+de lançamento?
+
+\begin{answerlist}
+  \item $\dfrac14$
+  \item $\dfrac12$
+  \item $1$
+  \item $2$
+  \item $4$
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Para um lançamento horizontal a partir de uma altura $h$,
+\[
+t=\sqrt{\frac{2h}{g}}.
+\]
+Logo,
+\[
+\frac{t_1}{t_2}
+=\sqrt{\frac{h_1}{h_2}}
+=\sqrt{4}=2.
+\]
+
+Como as duas partículas percorrem a mesma distância horizontal até $P$,
+\[
+v_1t_1=v_2t_2.
+\]
+Portanto,
+\[
+\frac{v_1}{v_2}
+=\frac{t_2}{t_1}
+=\frac12.
+\]
+
+\begin{answerlist}
+  \item incorreta
+  \item correta
+  \item incorreta
+  \item incorreta
+  \item incorreta
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Projeto Medicina / Futuro Militar, exercício 9 de
+%% 007_fisica_lancamento_horizontal_obliquo.pdf.
+%% Figura: arte revisada manualmente pelo autor do BancoFisica durante a
+%% revisão visual desta expansão; arquivo PM007_Q09_revisada.png.
+%% \extype{schoice}
+%% \exsolution{01000}
+%% \exname{PM007Q09DuasAlturasMesmoPonto}
+%% \exsection{Mecanica; Cinematica; Lancamento horizontal; Expansao PDF007}
+%% \exusepackage[utf8]{inputenc}

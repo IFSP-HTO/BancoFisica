@@ -1,0 +1,83 @@
+<<echo=FALSE, results=hide>>=
+g <- 10
+configs <- data.frame(
+  v_kmh = c(36, 54, 72, 90),
+  q_lmin = c(15, 12, 18, 24)
+)
+i <- sample(seq_len(nrow(configs)), 1)
+v_kmh <- configs$v_kmh[i]
+q_lmin <- configs$q_lmin[i]
+v <- v_kmh / 3.6
+vy <- 0.5 * v
+T <- 2 * vy / g
+volume <- (q_lmin / 60) * T
+
+fmt <- function(x, digits=2)
+  formatC(x, format="f", digits=digits, decimal.mark=",")
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Um cano de irrigação ao nível do solo ejeta água continuamente a uma vazão de
+$\Sexpr{fmt(q_lmin,0)}\,\mathrm{L/min}$, com velocidade de
+$\Sexpr{fmt(v_kmh,0)}\,\mathrm{km/h}$ e ângulo de $30^\circ$ acima da
+horizontal.
+
+Despreze a resistência do ar e adote $g=10\,\mathrm{m/s^2}$.
+
+Quantos litros de água estão no ar, entre a saída do cano e o ponto em que o
+jato retorna ao solo, em regime permanente?
+
+\begin{answerlist}
+  \item volume de água, em litros.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Convertendo a velocidade,
+\[
+v_0=\frac{\Sexpr{fmt(v_kmh,0)}}{3{,}6}
+=\Sexpr{fmt(v,2)}\,\mathrm{m/s}.
+\]
+Como $\sin30^\circ=1/2$,
+\[
+v_{0y}=\frac{v_0}{2}
+=\Sexpr{fmt(vy,2)}\,\mathrm{m/s}.
+\]
+
+O jato retorna ao mesmo nível, logo
+\[
+T=\frac{2v_{0y}}{g}
+=\Sexpr{fmt(T,2)}\,\mathrm{s}.
+\]
+
+A vazão em litros por segundo é
+\[
+Q=\frac{\Sexpr{fmt(q_lmin,0)}}{60}\,\mathrm{L/s}.
+\]
+Assim, o volume simultaneamente no ar é
+\[
+V=QT
+=\Sexpr{fmt(volume,2)}\,\mathrm{L}.
+\]
+
+\begin{answerlist}
+  \item $\Sexpr{fmt(volume,2)}$
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Projeto Medicina / Futuro Militar, exercício 18 de
+%% 007_fisica_lancamento_horizontal_obliquo.pdf.
+%% \extype{cloze}
+%% \exsolution{\Sexpr{volume}}
+%% \exclozetype{num}
+%% \extol{0.02}
+%% \exname{PM007Q18IrrigacaoVolumeNoAr}
+%% \exsection{Mecanica; Cinematica; Lancamento obliquo; Vazao; Expansao PDF007}
+%% \exusepackage[utf8]{inputenc}

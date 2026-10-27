@@ -1,0 +1,108 @@
+<<echo=FALSE, results=hide>>=
+g <- 10
+configs <- data.frame(
+  u = c(120, 150, 180, 200),
+  hc = c(200, 250, 300, 400),
+  t = c(15, 18, 25, 20)
+)
+i <- sample(seq_len(nrow(configs)), 1)
+u <- configs$u[i]
+hc <- configs$hc[i]
+t <- configs$t[i]
+
+Hm <- hc + u * t
+ymeet <- Hm - 0.5 * g * t^2
+v0 <- u * sqrt(2)
+
+fmt <- function(x, digits=0)
+  formatC(x, format="f", digits=digits, decimal.mark=",")
+
+include_supplement("PM007_Q19_revisada.png", dir="../../../figuras")
+img <- "PM007_Q19_revisada.png"
+@
+
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+
+Um míssil desloca-se horizontalmente com velocidade de módulo
+$\Sexpr{fmt(u)}\,\mathrm{m/s}$ a uma altitude de
+$\Sexpr{fmt(Hm)}\,\mathrm{m}$. No instante em que passa exatamente sobre um
+canhão, o combustível do míssil acaba. Nesse mesmo instante, o canhão, situado
+no topo de uma colina de $\Sexpr{fmt(hc)}\,\mathrm{m}$ de altura, dispara um
+projétil a $45^\circ$ com a horizontal e o atinge.
+
+Despreze a resistência do ar e adote $g=10\,\mathrm{m/s^2}$.
+
+\begin{center}
+\includegraphics[width=10cm,keepaspectratio]{\Sexpr{img}}
+\end{center}
+
+Determine a altura, em relação ao solo, em que ocorre o encontro entre o
+projétil e o míssil.
+
+\begin{answerlist}
+  \item altura do encontro, em $\mathrm{m}$.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Depois que o combustível acaba, tanto o míssil quanto o projétil ficam
+submetidos à mesma aceleração vertical $g$. Na horizontal, ambos partem da
+mesma coordenada no instante $t=0$.
+
+Para que voltem a ter a mesma coordenada horizontal em um instante $t>0$, a
+componente horizontal da velocidade do projétil deve ser igual à velocidade do
+míssil:
+\[
+v_{0x}=\Sexpr{fmt(u)}\,\mathrm{m/s}.
+\]
+
+Como o disparo é feito a $45^\circ$,
+\[
+v_{0y}=v_{0x}=\Sexpr{fmt(u)}\,\mathrm{m/s}.
+\]
+
+A separação vertical inicial entre o míssil e o canhão é
+\[
+\Delta y_0=
+\Sexpr{fmt(Hm)}-\Sexpr{fmt(hc)}
+=\Sexpr{fmt(Hm-hc)}\,\mathrm{m}.
+\]
+Como os dois corpos têm a mesma aceleração vertical, a aceleração relativa é
+nula. Portanto, a separação fecha com velocidade relativa
+$v_{0y}=\Sexpr{fmt(u)}\,\mathrm{m/s}$:
+\[
+t=\frac{\Delta y_0}{v_{0y}}
+=\Sexpr{fmt(t)}\,\mathrm{s}.
+\]
+
+A altura do míssil nesse instante é
+\[
+y=\Sexpr{fmt(Hm)}
+-\frac12\,10\,(\Sexpr{fmt(t)})^2
+=\Sexpr{fmt(ymeet)}\,\mathrm{m}.
+\]
+
+\begin{answerlist}
+  \item $\Sexpr{fmt(ymeet)}$
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Projeto Medicina / Futuro Militar, exercício 19 de
+%% 007_fisica_lancamento_horizontal_obliquo.pdf.
+%% A figura original tem baixa resolução e artefatos de digitalização.
+%% O esquema é gerado por código preservando os elementos físicos essenciais:
+%% míssil, canhão em colina, alturas, solo e ângulo de 45 graus.
+%% \extype{cloze}
+%% \exsolution{\Sexpr{ymeet}}
+%% \exclozetype{num}
+%% \extol{0.1}
+%% \exname{PM007Q19InterceptacaoMissilCanhao}
+%% \exsection{Mecanica; Cinematica; Lancamento obliquo; Movimento relativo; Expansao PDF007}
+%% \exusepackage[utf8]{inputenc}

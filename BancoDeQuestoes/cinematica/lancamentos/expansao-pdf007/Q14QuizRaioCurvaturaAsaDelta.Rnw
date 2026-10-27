@@ -1,0 +1,72 @@
+<<echo=FALSE, results=hide>>=
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Uma asa-delta mantém voo horizontal com velocidade constante de módulo $v_0$
+em relação ao solo. No instante $t=0$, o piloto deixa cair uma máquina
+fotográfica. Considere o campo gravitacional uniforme, de módulo $g$, e
+despreze a resistência do ar.
+
+O raio de curvatura $\rho$ da trajetória da câmera no instante $t=T$ é
+
+\begin{answerlist}
+  \item $\displaystyle \frac{(2v_0^2+g^2T^2)^{3/2}}{gv_0}$
+  \item $\displaystyle \frac{(v_0^2+2g^2T^2)^{3/2}}{gv_0}$
+  \item $\displaystyle \frac{(v_0^2-g^2T^2)^{3/2}}{gv_0}$
+  \item $\displaystyle \frac{(v_0^2-g^2T^2)^{3/2}}{2gv_0}$
+  \item $\displaystyle \frac{(v_0^2+g^2T^2)^{3/2}}{gv_0}$
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+A velocidade da câmera no instante $T$ é
+\[
+\vec v=(v_0,-gT),
+\]
+de modo que
+\[
+v=\sqrt{v_0^2+g^2T^2}.
+\]
+
+Para movimento plano, o raio de curvatura pode ser escrito como
+\[
+\rho=\frac{v^3}{|\vec v\times\vec a|}.
+\]
+Como
+\[
+\vec a=(0,-g),
+\]
+temos
+\[
+|\vec v\times\vec a|=gv_0.
+\]
+Logo,
+\[
+\rho=
+\frac{(v_0^2+g^2T^2)^{3/2}}{gv_0}.
+\]
+
+\begin{answerlist}
+  \item incorreta
+  \item incorreta
+  \item incorreta
+  \item incorreta
+  \item correta
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Projeto Medicina / Futuro Militar, exercício 14 de
+%% 007_fisica_lancamento_horizontal_obliquo.pdf.
+%% Item avançado: conecta lançamento horizontal e curvatura de trajetória.
+%% \extype{schoice}
+%% \exsolution{00001}
+%% \exname{PM007Q14RaioCurvaturaAsaDelta}
+%% \exsection{Mecanica; Cinematica; Lancamento horizontal; Cinematica vetorial; Curvatura; Expansao PDF007}
+%% \exusepackage[utf8]{inputenc}
