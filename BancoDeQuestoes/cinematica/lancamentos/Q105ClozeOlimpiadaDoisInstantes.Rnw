@@ -1,0 +1,90 @@
+<<echo=FALSE, results=hide>>=
+g <- 10
+pares <- data.frame(
+  t1 = c(0.8, 1.0, 1.2, 1.5, 1.6, 2.0),
+  t2 = c(2.5, 3.0, 3.2, 3.5, 4.0, 4.5)
+)
+i <- sample(seq_len(nrow(pares)), 1)
+t1 <- pares$t1[i]
+t2 <- pares$t2[i]
+
+v0 <- g * (t1 + t2) / 2
+h <- g * t1 * t2 / 2
+
+fmt <- function(x, d=2) formatC(x, format="f", digits=d, decimal.mark=",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Uma pequena esfera é lançada verticalmente para cima a partir do solo. Um sensor situado a uma altura desconhecida \(h\) registra a passagem da esfera duas vezes: na subida, em \(t_1=\Sexpr{fmt(t1,1)}\,\mathrm{s}\), e na descida, em \(t_2=\Sexpr{fmt(t2,1)}\,\mathrm{s}\).
+
+Despreze a resistência do ar e adote \(g=10\,\mathrm{m/s^2}\).
+
+Determine:
+\begin{answerlist}
+  \item a velocidade inicial de lançamento, em \(\mathrm{m/s}\);
+  \item a altura \(h\) do sensor, em metros.
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+A posição vertical da esfera é
+\[
+y(t)=v_0t-\frac{gt^2}{2}.
+\]
+Nos dois instantes registrados, \(y=h\). Portanto,
+\[
+\frac{g}{2}t^2-v_0t+h=0
+\]
+tem como raízes \(t_1\) e \(t_2\).
+
+Pelas relações entre raízes e coeficientes,
+\[
+t_1+t_2=\frac{2v_0}{g}
+\quad\Rightarrow\quad
+v_0=\frac{g(t_1+t_2)}{2}.
+\]
+Assim,
+\[
+v_0=
+\frac{10\left(\Sexpr{fmt(t1,1)}+\Sexpr{fmt(t2,1)}\right)}{2}
+=\Sexpr{fmt(v0,2)}\,\mathrm{m/s}.
+\]
+
+Também,
+\[
+t_1t_2=\frac{2h}{g}
+\quad\Rightarrow\quad
+h=\frac{g\,t_1t_2}{2}.
+\]
+Logo,
+\[
+h=
+\frac{10\cdot\Sexpr{fmt(t1,1)}\cdot\Sexpr{fmt(t2,1)}}{2}
+=\Sexpr{fmt(h,2)}\,\mathrm{m}.
+\]
+
+A ideia central é usar o fato de que a mesma altura é atingida em dois instantes distintos, o que transforma esses instantes nas duas raízes de uma mesma equação quadrática.
+
+\begin{answerlist}
+  \item \(\Sexpr{fmt(v0,2)}\,\mathrm{m/s}\)
+  \item \(\Sexpr{fmt(h,2)}\,\mathrm{m}\)
+\end{answerlist}
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte de inspiracao: AAPT F=ma 2024, questao 1. Adaptacao forte e parametrizada.
+%% Source URL: https://www.aapt.org/physicsteam/2024/upload/F-ma-2024-Solutions_v2.pdf
+%% OLYMPIC-LEVEL: O3
+%% SOURCE-VISUAL: none
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{round(v0,2)}|\Sexpr{round(h,2)}}
+%% \extol{0.02|0.02}
+%% \exname{Q105ClozeOlimpiadaDoisInstantes}
+%% \exsection{Mecanica; Cinematica; Lancamento vertical; Olimpiada}
+%% \exusepackage[utf8]{inputenc}

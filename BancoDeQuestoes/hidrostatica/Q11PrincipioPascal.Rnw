@@ -1,0 +1,61 @@
+<<echo=FALSE, results=hide>>=
+## Programada por Flavio Barros 11/06/2018
+
+## Parâmetros
+A1 <- sample(20:30, 1)             # cm²
+A1_m2 <- A1 * 1e-4                 # m²
+fator <- sample(4:9, 1)
+A2 <- A1_m2 * fator                # m²
+Force <- sample(seq(50, 100, by = 5), 1)
+
+## Resposta
+resp <- round((A2 / A1_m2) * Force, 2)
+
+## Figura
+include_supplement('Q11PrincipioPascal.png')
+@
+
+\begin{question}
+(Fei) No macaco hidráulico representado na figura, as áreas das secções
+transversais dos êmbolos são
+$A_1=\Sexpr{A1}\,\mathrm{cm^2}$ e
+$A_2=\Sexpr{A2}\,\mathrm{m^2}$.
+
+Qual é o peso máximo que o macaco pode sustentar quando se aplica uma força
+$F_1=\Sexpr{Force}\,\mathrm{N}$ sobre o êmbolo de área $A_1$?
+
+\includegraphics[height=6cm, keepaspectratio]{Q11PrincipioPascal.png}
+\end{question}
+
+\begin{solution}
+Pelo princípio de Pascal, a pressão aplicada ao fluido é transmitida aos
+demais pontos. Assim,
+\[
+\frac{F_1}{A_1}=\frac{F_2}{A_2}.
+\]
+
+Antes de substituir os valores, convertemos
+\[
+A_1=\Sexpr{A1}\,\mathrm{cm^2}
+=\Sexpr{A1_m2}\,\mathrm{m^2}.
+\]
+
+Logo,
+\[
+F_2
+=F_1\frac{A_2}{A_1}
+=\Sexpr{Force}
+\frac{\Sexpr{A2}}{\Sexpr{A1_m2}}
+=\Sexpr{resp}\,\mathrm{N}.
+\]
+
+Portanto, o peso máximo sustentado pelo macaco é
+$\Sexpr{resp}\,\mathrm{N}$.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{resp}}
+%% \exname{Q11PrincipioPascal}
+%% \extol{0.05}
+%% \exsection{Hidrostatica; Principio de Pascal; Prensa hidraulica}

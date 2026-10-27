@@ -1,0 +1,72 @@
+<<echo=FALSE, results=hide>>=
+h1 <- sample(c(8,10,12,15,20), 1)
+ratio <- sample(c(1.5,2.0,2.5), 1)
+h2 <- h1*ratio
+P1 <- sample(c(4,5,6,8,10,12,15), 1)
+P2 <- P1*ratio^3
+
+fmt <- function(x, d=2) formatC(x, format="f", digits=d, decimal.mark=",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Em uma região próxima ao solo, admita que a velocidade média do vento seja diretamente proporcional à altura \(h\). Uma turbina de área varrida fixa e rendimento constante fornece potência elétrica de \(\Sexpr{P1}\,\mathrm{kW}\) quando seu rotor está a uma altura característica de \(\Sexpr{h1}\,\mathrm{m}\).
+
+Mantidas as demais condições, estime a potência fornecida se a mesma turbina operar a \(\Sexpr{fmt(h2,1)}\,\mathrm{m}\). Dê a resposta em quilowatts.
+
+\end{question}
+
+\begin{solution}
+
+Em um intervalo de tempo \(\Delta t\), o volume de ar que atravessa uma área fixa \(A\) é proporcional a
+\[
+A\,v\,\Delta t.
+\]
+Logo, a massa de ar que atravessa o rotor por unidade de tempo é proporcional a \(v\).
+
+A energia cinética por unidade de massa é proporcional a \(v^2\). Assim, a potência disponível no vento escala como
+\[
+P\propto v\cdot v^2=v^3.
+\]
+
+Como, por hipótese,
+\[
+v\propto h,
+\]
+segue que
+\[
+P\propto h^3.
+\]
+
+Portanto,
+\[
+\frac{P_2}{P_1}
+=
+\left(\frac{h_2}{h_1}\right)^3
+=
+\left(\Sexpr{fmt(ratio,1)}\right)^3.
+\]
+Então,
+\[
+P_2=
+\Sexpr{P1}\left(\Sexpr{fmt(ratio,1)}\right)^3
+=
+\Sexpr{fmt(P2,2)}\,\mathrm{kW}.
+\]
+
+A dependência cúbica é o ponto central: dobrar a velocidade do vento multiplica por oito a potência disponível, se área e rendimento permanecerem constantes.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte de inspiracao: AAPT F=ma 2025, questao 19. Adaptacao forte e parametrizada.
+%% Source URL: https://www.aapt.org/physicsteam/upload/FMA_solutions.pdf
+%% OLYMPIC-LEVEL: O3-O4
+%% SOURCE-VISUAL: none
+%% \extype{num}
+%% \exsolution{\Sexpr{round(P2,2)}}
+%% \extol{0.05}
+%% \exname{Q137ClozeOlimpiadaTurbinaEscala}
+%% \exsection{Mecanica; Potencia; Energia cinetica; Leis de escala; Olimpiada}
+%% \exusepackage[utf8]{inputenc}

@@ -1,60 +1,81 @@
 <<echo=FALSE, results=hide>>=
-## Criando por Flavio Barros
-## Funções
-nota_cient <- function(x,digits) {
-  if (x==0) return("0")
-  ord <- floor(log(abs(x),10))
+## Criado por Flavio Barros
+
+nota_cient <- function(x, digits) {
+  if (x == 0) return("0")
+  ord <- floor(log(abs(x), 10))
   x <- x / 10^ord
-  if (!missing(digits)) x <- format(x,digits=digits)
-  if (ord==0) return(as.character(x))
-  return(paste(x,"\\\\times 10^{",ord,"}",sep=""))
+  if (!missing(digits)) x <- format(x, digits = digits)
+  if (ord == 0) return(as.character(x))
+  paste(x, "\\times 10^{", ord, "}", sep = "")
 }
 
 ## Parâmetros
 g <- 10
-rho_agua <- 1e3
-inteiro <- sample(1:9,1)
-massa <- sample(seq(0.1,0.9,0.1),1)
-peso <- massa*g
-empuxo <- round(runif(n = 1, min = 1.1, max = 10),1)*peso
-volume <- empuxo/(rho_agua*g)
+rho_agua <- 1000
+massa <- sample(seq(0.1, 0.9, by = 0.1), 1)
+volumes_cm3 <- seq(200, 1000, by = 50)
+volume_cm3 <- sample(volumes_cm3[volumes_cm3 > massa * 1000], 1)
+volume <- volume_cm3 * 1e-6
 
-## Resposta
-resp <- empuxo - peso
+## Forças
+peso <- massa * g
+empuxo <- rho_agua * g * volume
+resp <- round(empuxo - peso, 2)
 
 ## Figura
 include_supplement('Q09Empuxo.png')
 @
 
 \begin{question}
-%% Enunciado
-(Unesp) Uma pequena bola de borracha está presa por um fio leve ao fundo de um recipiente cheio com água, como mostra a figura adiante.
+(Unesp) Uma pequena bola de borracha está presa por um fio leve ao fundo de
+um recipiente cheio de água, como mostra a figura.
 
 \includegraphics[height=5cm, keepaspectratio]{Q09Empuxo.png}
 
-Se o volume da bola submersa for $\Sexpr{nota_cient(volume)}$ m³ e sua massa for $\Sexpr{nota_cient(massa)}$ kg, qual será a tensão no fio? (Considere a aceleração da gravidade local igual a 10 m/s² e a massa específica da água 10³ kg/m³).
+Se o volume da bola submersa é
+$\Sexpr{nota_cient(volume, 3)}\,\mathrm{m^3}$ e sua massa é
+$\Sexpr{massa}\,\mathrm{kg}$, determine a tensão no fio.
 
+Considere $g=\Sexpr{g}\,\mathrm{m/s^2}$ e
+$\rho_{\text{água}}=\Sexpr{rho_agua}\,\mathrm{kg/m^3}$.
 \end{question}
 
 \begin{solution}
-%% Solutions
-Se a bola está presa no fundo há um equilíbrio das forças peso do objeto (P), do empuxo (E) e da tensão no fio (T). Logo:
+Sobre a bola atuam três forças: o empuxo $E$, para cima, e o peso $P$ e a
+tensão $T$, para baixo. Como a bola está em equilíbrio,
+\[
+E=P+T.
+\]
 
-$$
-T + P = E
-$$
+O empuxo é
+\[
+E=\rho_{\text{água}}gV
+=\Sexpr{rho_agua}\cdot\Sexpr{g}\cdot
+\Sexpr{nota_cient(volume, 3)}
+=\Sexpr{round(empuxo, 2)}\,\mathrm{N}.
+\]
 
-Assim, como $E = \rho \cdot g \cdot V$ e $P = m \cdot g$ então:
+O peso da bola é
+\[
+P=mg
+=\Sexpr{massa}\cdot\Sexpr{g}
+=\Sexpr{round(peso, 2)}\,\mathrm{N}.
+\]
 
-$$
-T = E - P \Rightarrow T = \rho \cdot g \cdot V - m \cdot g = \Sexpr{empuxo} - \Sexpr{peso} = \Sexpr{resp}
-$$
+Portanto,
+\[
+T=E-P
+=\Sexpr{round(empuxo, 2)}-\Sexpr{round(peso, 2)}
+=\Sexpr{resp}\,\mathrm{N}.
+\]
 
-A tensão será \Sexpr{resp} N.
+Logo, a tensão no fio é $\Sexpr{resp}\,\mathrm{N}$.
 \end{solution}
 
 %% META-INFORMATION
 %% \extype{num}
 %% \exsolution{\Sexpr{resp}}
 %% \exname{Q09Empuxo}
-%% \extol{0.1}
+%% \extol{0.01}
+%% \exsection{Hidrostatica; Empuxo; Principio de Arquimedes}

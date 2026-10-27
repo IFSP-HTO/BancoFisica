@@ -1,0 +1,66 @@
+<<echo=FALSE, results=hide>>=
+r_cm <- sample(c(20,25,30,35,40), 1)
+r <- r_cm/100
+p_ext_kpa <- sample(c(90,100,105), 1)
+frac <- sample(c(0.35,0.45,0.55,0.65), 1)
+p_int_kpa <- round(frac*p_ext_kpa, 1)
+
+delta_p <- (p_ext_kpa-p_int_kpa)*1000
+F <- delta_p*pi*r^2
+F_kN <- F/1000
+
+fmt <- function(x, d=2) formatC(x, format="f", digits=d, decimal.mark=",")
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Duas cascas hemisféricas rígidas formam uma esfera hermética de raio \(\Sexpr{r_cm}\,\mathrm{cm}\). A esfera é fechada em um ambiente onde a pressão interna fica em \(\Sexpr{fmt(p_int_kpa,1)}\,\mathrm{kPa}\) e depois é levada para um local onde a pressão externa é \(\Sexpr{p_ext_kpa}\,\mathrm{kPa}\).
+
+Despreze o peso das cascas e determine o módulo da força mínima que deve ser aplicada para fora em \emph{cada} hemisfério para iniciar a separação. Dê a resposta em quilonewtons.
+
+\end{question}
+
+\begin{solution}
+
+As componentes laterais das forças de pressão se cancelam por simetria. A resultante que mantém cada hemisfério unido ao outro é igual à diferença de pressão multiplicada pela área projetada circular:
+\[
+F=\Delta p\,\pi r^2.
+\]
+
+A diferença de pressão é
+\[
+\Delta p=
+\left(\Sexpr{p_ext_kpa}-\Sexpr{fmt(p_int_kpa,1)}\right)\,\mathrm{kPa}
+=
+\Sexpr{fmt((p_ext_kpa-p_int_kpa),1)}\times10^3\,\mathrm{Pa}.
+\]
+
+Com
+\[
+r=\Sexpr{fmt(r,2)}\,\mathrm{m},
+\]
+temos
+\[
+F=
+\Sexpr{fmt(delta_p,0)}\,\pi
+\left(\Sexpr{fmt(r,2)}\right)^2
+=
+\Sexpr{fmt(F_kN,2)}\,\mathrm{kN}.
+\]
+
+O uso da área projetada \(\pi r^2\), e não da área curva \(2\pi r^2\), é essencial: as forças elementares de pressão atuam em direções diferentes sobre a superfície hemisférica.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte de inspiracao: AAPT F=ma 2024, questao 11. Adaptacao forte e parametrizada.
+%% Source URL: https://www.aapt.org/physicsteam/2024/upload/F-ma-2024-Solutions_v2.pdf
+%% OLYMPIC-LEVEL: O3
+%% SOURCE-VISUAL: none
+%% \extype{num}
+%% \exsolution{\Sexpr{round(F_kN,2)}}
+%% \extol{0.03}
+%% \exname{Q99ClozeOlimpiadaHemisferiosPressao}
+%% \exsection{Hidrostatica; Pressao; Forca de pressao; Olimpiada}
+%% \exusepackage[utf8]{inputenc}

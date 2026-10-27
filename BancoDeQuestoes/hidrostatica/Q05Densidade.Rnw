@@ -1,44 +1,70 @@
 <<echo=FALSE, results=hide>>=
 ## Criado por Flavio Barros 04/06/2018
-## Parâmetros
-densidade <- signif(runif(n = 1, min = 0.2, max = 3),2)
-massa <- sample(200000:2000000,1)
-volume <- round(massa/densidade,1)
 
-## Solução
-solutions <- c(0.5, 0.75, 1, 2.5, 1.5) > densidade
-solutions
+## Parâmetros do líquido
+densidade <- sample(setdiff(seq(80, 220, by = 5), c(100, 150)), 1) / 100
+volume_liquido <- sample(seq(0.5, 2.0, by = 0.1), 1)
+massa_liquido <- round(densidade * 1000 * volume_liquido, 1)
+
+## Densidades das alternativas, em g/cm³
+densidades_opcoes <- c(0.50, 0.75, 1.00, 2.50, 1.50)
+solutions <- densidades_opcoes > densidade
+
 ## Figura
 include_supplement('Q05Densidade.png')
 @
 
 \begin{question}
-%% Enunciado
 Observe a figura:
 
 \includegraphics[height=6cm, keepaspectratio]{Q05Densidade.png}
 
-O líquido contido no recipiente nessa figura tem um volume V' = \Sexpr{round(volume/100^3,2)}m³, e sua massa é m'=\Sexpr{round(massa/1000,2)}kg. Uma esfera maciça, de massa m, volume V e densidade d, é abandonada no interior do líquido, na posição indicada na figura. Indique a ou as alternativas que fornecem valores para d, m ou V, em que a esfera afundará, ao ser abandonada.
+O líquido contido no recipiente possui volume
+$V'=\Sexpr{volume_liquido}\,\mathrm{m^3}$ e massa
+$m'=\Sexpr{massa_liquido}\,\mathrm{kg}$. Uma esfera maciça é abandonada no
+interior do líquido, na posição indicada.
+
+Indique a ou as alternativas em que os valores fornecidos para a densidade
+$d$, a massa $m$ ou o volume $V$ da esfera fazem com que ela afunde.
 
 \begin{answerlist}
-  \item d = 0,50g/cm³ e m = 400g
-  \item m = 150g e V = 200cm³
-  \item d = 1,0g/cm³ e V = 1000cm³
-  \item d = 2,5g/cm³ e V = 1,5cm³
-  \item m = 1500g e V = 1000cm³
+  \item $d=0{,}50\,\mathrm{g/cm^3}$ e $m=400\,\mathrm{g}$
+  \item $m=150\,\mathrm{g}$ e $V=200\,\mathrm{cm^3}$
+  \item $d=1{,}00\,\mathrm{g/cm^3}$ e $V=1000\,\mathrm{cm^3}$
+  \item $d=2{,}50\,\mathrm{g/cm^3}$ e $V=1{,}5\,\mathrm{cm^3}$
+  \item $m=1500\,\mathrm{g}$ e $V=1000\,\mathrm{cm^3}$
 \end{answerlist}
 \end{question}
 
 \begin{solution}
-A densidade do líquido é obtida por massa dividida pelo volume. Pelos valores do enunciado, ela é aproximadamente \Sexpr{densidade} g/cm³.
+A densidade do líquido é
+\[
+\rho_{\ell}
+=\frac{m'}{V'}
+=\frac{\Sexpr{massa_liquido}}{\Sexpr{volume_liquido}}
+=\Sexpr{round(densidade * 1000, 1)}\,\mathrm{kg/m^3}
+=\Sexpr{densidade}\,\mathrm{g/cm^3}.
+\]
 
-Uma esfera afunda quando sua densidade é maior que a densidade do líquido. Assim, basta comparar a densidade de cada alternativa com \Sexpr{densidade} g/cm³.
+Um corpo totalmente mergulhado tende a afundar quando sua densidade média é
+maior que a densidade do líquido.
 
-As alternativas que afundam são:
+As densidades correspondentes às cinco alternativas são, respectivamente,
+\[
+0{,}50;\quad
+\frac{150}{200}=0{,}75;\quad
+1{,}00;\quad
+2{,}50;\quad
+\frac{1500}{1000}=1{,}50
+\quad \mathrm{g/cm^3}.
+\]
+
+Comparando cada valor com
+$\rho_{\ell}=\Sexpr{densidade}\,\mathrm{g/cm^3}$, obtêm-se como corretas:
+
 <<echo=FALSE, results=tex>>=
 answerlist(solutions)
 @
-
 \end{solution}
 
 %% META-INFORMATION
@@ -46,3 +72,4 @@ answerlist(solutions)
 %% \exsolution{\Sexpr{mchoice2string(solutions)}}
 %% \exname{Q05Densidade}
 %% \exshuffle{TRUE}
+%% \exsection{Hidrostatica; Densidade; Flutuacao}

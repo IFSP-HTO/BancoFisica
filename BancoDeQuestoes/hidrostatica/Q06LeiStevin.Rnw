@@ -1,78 +1,95 @@
 <<echo=FALSE, results=hide>>=
-## DATA GENERATION by Flavio Barros 01/06/2018
+## Data generation by Flavio Barros 01/06/2018
+
 ## Parâmetros
-A1 = sample(seq(from = 1.5, to = 5, by = 0.5),1)
-A2 = A1 - 1
-limite = sample(seq(from = 5000, to = 15000, by = 2000),1)
-dens_agua = 1000
-v_total = (A1 + A2)*sample(1:5,1)
-v_esfera = v_total/5
-g = 10
+A1 <- sample(seq(1.5, 5.0, by = 0.5), 1)
+A2 <- A1 - 1
+limite <- sample(seq(5000, 15000, by = 2000), 1)
+dens_agua <- 1000
+g <- 10
+v_total <- (A1 + A2) * sample(1:5, 1)
+v_esfera <- v_total / 5
 
-## Resposta
-## item a)
-H1 = limite/(dens_agua*g)
-V1 = round(A1*H1,2)
-## item b)
-H2 = round((v_total+v_esfera)/(A1 + A2),2)
+## Respostas
+H1 <- limite / (dens_agua * g)
+V1 <- round(A1 * H1, 2)
+H2 <- round((v_total + v_esfera) / (A1 + A2), 2)
 
-## Incluindo a figura
+## Figura
 include_supplement('Q06LeiStevin.png')
 @
 
 \begin{question}
-%% Enunciado
-Dois reservat\'orios cil\'indricos $S_1$ e $S_2$‚ de paredes verticais e \'areas das bases de \Sexpr{A1}m² e \Sexpr{A2}m²,
-respectivamente, est\~ao ligadas, pela parte inferior, por um tubo de di\^ametro e volume desprez\'iveis. Numa das
-extremidades do tubo existe uma parede fina AB que veda o reservat\'orio grande. Ela se rompe, deixando passar água para o reservat\'orio pequeno, quando a press\~ao sobre ela supera \Sexpr{limite} Pa.
+Dois reservatórios cilíndricos $S_1$ e $S_2$, de paredes verticais e áreas
+das bases iguais a $\Sexpr{A1}\,\mathrm{m^2}$ e
+$\Sexpr{A2}\,\mathrm{m^2}$, respectivamente, estão ligados pela parte
+inferior por um tubo de volume desprezível.
+
+Uma parede fina AB fecha a comunicação entre os reservatórios e se rompe quando
+a diferença de pressão entre suas duas faces supera
+$\Sexpr{limite}\,\mathrm{Pa}$.
 
 \includegraphics[height=6cm,keepaspectratio]{Q06LeiStevin.png}
 
 \begin{answerlist}
-  \item Estando o reservat\'orio pequeno vazio, determine o volume m\'aximo de \'agua que se pode armazenar no
-reservat\'orio grande sem que se rompa a parede AB, sabendo que a densidade da \'agua vale \Sexpr{dens_agua} kg/m³ e a aceleração da gravidade é g = 10m/s². (dica: na ausência de líquido a pressão em $S_2$ é 1 atm.)
-  
-  \item Remove-se a parede AB e esvaziam-se os reservat\'orios. Em seguida coloca-se no sistema um volume total de
-\Sexpr{v_total} m³ de \'agua e, no reservat\'orio $S_1$, imerge-se lentamente uma esfera de ferro de \Sexpr{v_esfera} m³ de volume at\'e que pouse no fundo. Determine a altura da \'agua no reservat\'orio $S_2$, ap\'os alcançado o equil\'ibrio.
+  \item Com $S_2$ vazio e aberto à atmosfera, determine o volume máximo de água que pode ser colocado em $S_1$ sem romper a parede AB. Use $\rho_{\text{água}}=\Sexpr{dens_agua}\,\mathrm{kg/m^3}$ e $g=\Sexpr{g}\,\mathrm{m/s^2}$.
+  \item A parede AB é removida e os reservatórios são esvaziados. Colocam-se então $\Sexpr{v_total}\,\mathrm{m^3}$ de água no sistema e uma esfera de ferro de volume $\Sexpr{v_esfera}\,\mathrm{m^3}$ é totalmente imersa em $S_1$ até repousar no fundo. Determine a altura final da água em $S_2$.
 \end{answerlist}
 \end{question}
 
 \begin{solution}
-%% Supply a solution here!
+No item (a), a face da parede voltada para $S_2$ está submetida à pressão
+atmosférica. Na face voltada para $S_1$, a pressão à profundidade $H$ é
+\[
+P=P_{\text{atm}}+\rho gH.
+\]
+Logo, a diferença de pressão entre as faces é
+\[
+\Delta P=\rho gH.
+\]
 
-a) De acordo com a Lei de Stevin a press\~ao da \'agua \'e dada por:
+No limite de ruptura,
+\[
+\Sexpr{limite}
+=\Sexpr{dens_agua}\cdot\Sexpr{g}\cdot H,
+\]
+portanto
+\[
+H=\frac{\Sexpr{limite}}
+{\Sexpr{dens_agua}\cdot\Sexpr{g}}
+=\Sexpr{round(H1, 2)}\,\mathrm{m}.
+\]
 
-\begin{displaymath}
-P = \rho_{agua} \cdot g \cdot H \rightarrow \Sexpr{limite} = \Sexpr{dens_agua} \cdot 10 \cdot H \rightarrow H = \frac{\Sexpr{limite}}{\Sexpr{dens_agua} \cdot 10} = \Sexpr{round(H1,2)}
-\end{displaymath}
+O volume correspondente em $S_1$ é
+\[
+V_{\max}=A_1H
+=\Sexpr{A1}\cdot\Sexpr{round(H1, 2)}
+=\Sexpr{V1}\,\mathrm{m^3}.
+\]
 
-Assim, o volume de \'agua necess\'ario para que a parede fina se rompa \'e dado por:
+No item (b), após a retirada da parede, os dois reservatórios formam vasos
+comunicantes. No equilíbrio, as superfícies livres ficam à mesma altura $H$.
 
-\begin{displaymath}
-V = \Sexpr{A1}*\Sexpr{H1} = \Sexpr{V1}
-\end{displaymath}
+Abaixo dessa altura, o volume geométrico ocupado é
+\[
+(A_1+A_2)H.
+\]
+Esse volume é preenchido pela água e pela esfera totalmente imersa. Assim,
+\[
+(A_1+A_2)H=V_{\text{água}}+V_{\text{esfera}}.
+\]
 
-b) Como o volume total ser\'a o volume adicionado, que chamaremos de $V_{total}$, somado ao volume da esfera, que chamaremos de $V_{esfera}$ ent\~ao:
-
-\begin{displaymath}
-S_1 + S_2 = V_{total} + V_{esfera}
-\end{displaymath}
-
-Como $S_1 = \Sexpr{A1} \cdot H_1$ e $S_2 = \Sexpr{A2} \cdot H_2$ e sabendo que no equi\'ibrio $H_1 = H_2$, ent\~ao:
-
-\begin{displaymath}
-\Sexpr{A1} \cdot H_1 + \Sexpr{A2} \cdot H_2 = V_{total} + V_{esfera} \rightarrow \Sexpr{A1} \cdot H + \Sexpr{A2} \cdot H = V_{total} + V_{esfera}
-\end{displaymath}
-
-tal que
-
-\begin{displaymath}
-\Sexpr{A1 + A2} \cdot H = V_{total} + V_{esfera} \rightarrow H = \frac{V_{total} + V_{esfera}}{\Sexpr{A1 + A2}} = \frac{\Sexpr{v_total + v_esfera}}{\Sexpr{A1 + A2}} = \Sexpr{H2}
-\end{displaymath}
+Portanto,
+\[
+H=
+\frac{\Sexpr{v_total}+\Sexpr{v_esfera}}
+{\Sexpr{A1 + A2}}
+=\Sexpr{H2}\,\mathrm{m}.
+\]
 
 \begin{answerlist}
-  \item O volume é \Sexpr{V1} m³.
-  \item A altura é \Sexpr{H2} m.
+  \item $\Sexpr{V1}\,\mathrm{m^3}$.
+  \item $\Sexpr{H2}\,\mathrm{m}$.
 \end{answerlist}
 \end{solution}
 
@@ -80,5 +97,6 @@ tal que
 %% \extype{cloze}
 %% \exsolution{\Sexpr{V1}|\Sexpr{H2}}
 %% \exclozetype{num|num}
-%% \exname{Q05LeiStevin}
-%% \extol{0.01}
+%% \exname{Q06LeiStevin}
+%% \extol{0.05|0.05}
+%% \exsection{Hidrostatica; Lei de Stevin; Vasos comunicantes}
