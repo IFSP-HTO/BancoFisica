@@ -2,16 +2,18 @@
 casos <- data.frame(
   m1=c(2,3,4,5),
   v1=c(6,4,5,3),
-  m2=c(1,2,3,4)
+  m2=c(1,2,3,4),
+  v2=c(-2,-1,1,-1)
 )
 i <- sample(seq_len(nrow(casos)),1)
 
 m1 <- casos$m1[i]
 v1 <- casos$v1[i]
 m2 <- casos$m2[i]
+v2 <- casos$v2[i]
 
-vf <- m1*v1/(m1+m2)
-Ki <- 0.5*m1*v1^2
+vf <- (m1*v1 + m2*v2)/(m1+m2)
+Ki <- 0.5*m1*v1^2 + 0.5*m2*v2^2
 Kf <- 0.5*(m1+m2)*vf^2
 dK <- Ki-Kf
 
@@ -22,7 +24,7 @@ fmt <- function(x,d=2) formatC(x,format="f",digits=d,decimal.mark=",")
 
 \begin{question}
 
-Um carrinho de massa \(\Sexpr{m1}\,\mathrm{kg}\) move-se com velocidade \(\Sexpr{v1}\,\mathrm{m/s}\) e colide com outro carrinho de massa \(\Sexpr{m2}\,\mathrm{kg}\), inicialmente em repouso, sobre um trilho horizontal de atrito desprezível. Após a colisão, os carrinhos permanecem unidos.
+Dois carrinhos movem-se sobre o mesmo trilho horizontal de atrito desprezível. O carrinho 1 tem massa \(\Sexpr{m1}\,\mathrm{kg}\) e velocidade \(\Sexpr{v1}\,\mathrm{m/s}\); o carrinho 2 tem massa \(\Sexpr{m2}\,\mathrm{kg}\) e velocidade \(\Sexpr{v2}\,\mathrm{m/s}\). Adote a direita como sentido positivo; valores negativos representam movimento para a esquerda. Os carrinhos colidem e permanecem unidos.
 
 Determine:
 
@@ -39,17 +41,17 @@ Determine:
 
 Durante a colisão, o impulso externo horizontal é desprezível. Assim,
 \[
-m_1v_1=(m_1+m_2)v_f,
+m_1v_1+m_2v_2=(m_1+m_2)v_f,
 \]
 e
 \[
-v_f=\frac{m_1v_1}{m_1+m_2}
+v_f=\frac{m_1v_1+m_2v_2}{m_1+m_2}
 =\Sexpr{fmt(vf,2)}\,\mathrm{m/s}.
 \]
 
 A energia cinética inicial é
 \[
-K_i=\frac12m_1v_1^2
+K_i=\frac12m_1v_1^2+\frac12m_2v_2^2
 =\Sexpr{fmt(Ki,2)}\,\mathrm{J}.
 \]
 
@@ -70,7 +72,7 @@ E_{\mathrm{diss}}=K_i-K_f
 \end{solution}
 
 %% META-INFORMATION
-%% Questao autoral integrando conservacao da quantidade de movimento e energia.
+%% Questao autoral com ambos os carrinhos inicialmente em movimento; distingue-se da Q110 (segundo corpo em repouso).
 %% \extype{cloze}
 %% \exsolution{\Sexpr{round(vf,2)}|\Sexpr{round(Ki,2)}|\Sexpr{round(Kf,2)}|\Sexpr{round(dK,2)}}
 %% \exclozetype{num|num|num|num}

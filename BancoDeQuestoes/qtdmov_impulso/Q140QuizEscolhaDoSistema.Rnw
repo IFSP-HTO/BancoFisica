@@ -1,8 +1,8 @@
 <<echo=FALSE, results=hide>>=
 questions <- c(
-  "considerar apenas o carrinho, pois a mola exerce uma força interna sobre ele.",
-  "considerar carrinho + mola, pois assim a força elástica passa a ser interna ao sistema escolhido.",
-  "considerar apenas a mola, porque sua massa pode ser desprezada.",
+  "considerar apenas o carrinho A, pois a força exercida pela mola sobre ele é interna ao sistema formado apenas por A.",
+  "considerar os dois carrinhos e a mola, pois assim as interações elásticas entre os componentes do conjunto são internas ao sistema.",
+  "considerar somente a mola, pois sua massa desprezível torna nulo o impulso horizontal sobre os carrinhos.",
   "qualquer escolha de sistema leva automaticamente à conservação da quantidade de movimento.",
   "não é possível aplicar conceitos de quantidade de movimento quando há uma mola."
 )
@@ -17,9 +17,9 @@ solutions <- solutions[ordem]
 
 \begin{question}
 
-Um carrinho interage com uma mola comprimida sobre uma superfície horizontal de atrito desprezível. Deseja-se analisar a troca de quantidade de movimento durante a liberação da mola de modo que a força elástica seja tratada como força interna.
+Dois carrinhos, A e B, estão sobre um trilho horizontal de atrito desprezível, com uma mola comprimida e de massa desprezível entre eles. A mola não está presa a suportes externos. Quando a mola é liberada, os carrinhos se afastam.
 
-A escolha mais adequada para o sistema é
+Para analisar a conservação da quantidade de movimento horizontal e tratar como internas as forças de interação mediadas pela mola, a escolha mais adequada para o sistema é
 
 <<echo=FALSE, results=hide, results=tex>>=
 answerlist(questions)
@@ -31,9 +31,9 @@ answerlist(questions)
 
 A classificação de uma força como interna ou externa depende da escolha do sistema.
 
-Se o sistema for formado apenas pelo carrinho, a força exercida pela mola é externa ao sistema.
+Se o sistema for formado por apenas um dos carrinhos, a força exercida sobre ele pela mola é externa ao sistema.
 
-Se o sistema for formado por carrinho + mola, a interação entre ambos passa a ser interna. Assim, na ausência de outras forças externas horizontais relevantes, pode-se analisar a conservação da quantidade de movimento do sistema escolhido.
+Considerando os dois carrinhos e a mola como um único sistema, as forças elásticas entre seus componentes são internas. Como o conjunto não está preso a um suporte externo e o atrito horizontal é desprezível, o impulso externo horizontal sobre o sistema é nulo, e a quantidade de movimento total horizontal se conserva.
 
 \end{solution}
 

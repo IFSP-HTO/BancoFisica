@@ -1,6 +1,7 @@
 <<echo=FALSE, results=hide>>=
 m <- sample(c(0.4,0.5,0.6,0.8),1)
 dt <- sample(c(0.1,0.2),1)
+dt_contato <- sample(c(0.02,0.04,0.05),1)
 dx1 <- sample(c(0.20,0.25,0.30),1)
 dx2 <- sample(c(0.05,0.10,0.15),1)
 
@@ -9,7 +10,7 @@ v2 <- -dx2/dt
 pi <- m*v1
 pf <- m*v2
 I <- pf-pi
-Fmed <- I/dt
+Fmed <- I/dt_contato
 
 fmt <- function(x,d=2) formatC(x,format="f",digits=d,decimal.mark=",")
 @
@@ -28,7 +29,7 @@ Determine:
   \item a velocidade imediatamente antes da colisão, em \(\mathrm{m/s}\);
   \item a velocidade imediatamente após a colisão, em \(\mathrm{m/s}\);
   \item o impulso recebido pelo carrinho, em \(\mathrm{N\,s}\);
-  \item a força média resultante durante um contato de duração \(\Sexpr{fmt(dt,1)}\,\mathrm{s}\), em N.
+  \item a força média resultante durante o contato com o anteparo, de duração \(\Sexpr{fmt(dt_contato,2)}\,\mathrm{s}\), em N.
 \end{answerlist}
 
 \end{question}
@@ -55,11 +56,11 @@ I=\Delta p=m(v_f-v_i)
 
 A força média é
 \[
-F_{\mathrm{med}}=\frac{I}{\Delta t}
+F_{\mathrm{med}}=\frac{I}{\Delta t_{\mathrm{contato}}}
 =\Sexpr{fmt(Fmed,2)}\,\mathrm{N}.
 \]
 
-O sinal negativo indica que o impulso e a força média resultante apontam para a esquerda.
+O intervalo entre registros fotográficos é usado para estimar as velocidades; o tempo de contato, especificado separadamente, é usado para calcular a força média. O sinal negativo indica que o impulso e a força média resultante apontam para a esquerda.
 
 \end{solution}
 
