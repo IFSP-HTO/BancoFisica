@@ -12,7 +12,7 @@ ordem <- sample(seq_along(questions))
 questions <- questions[ordem]
 solutions <- solutions[ordem]
 
-include_supplement("Q149GasparBarcoAncoradouro.png", dir = "../figuras")
+# Figura autoral gerada em R no corpo da questão; PNG original estava danificado.
 @
 
 \usepackage[utf8]{inputenc}
@@ -22,9 +22,28 @@ include_supplement("Q149GasparBarcoAncoradouro.png", dir = "../figuras")
 
 (Gaspar) Um barco em repouso está encostado livremente em um ancoradouro. Um homem que está no barco começa a caminhar em direção à proa, como mostra a figura.
 
+\begin{figure}[h!]
 \begin{center}
-\includegraphics[width=11.5cm,keepaspectratio]{Q149GasparBarcoAncoradouro.png}
+<<echo=FALSE, fig=TRUE, height=3.0, width=8.0>>=
+par(mar=c(0,0,0,0))
+plot(NA, xlim=c(0,10), ylim=c(0,4), axes=FALSE, xlab="", ylab="")
+segments(0,0.7,10,0.7,lty=3,col="grey60")
+polygon(c(1,8.3,7.7,1.5), c(1.6,1.6,0.95,0.95), col="grey90", border="black", lwd=2)
+segments(1,1.6,8.3,1.6,lwd=2)
+rect(8.55,0.5,9.4,2.2,col="grey80",border="black")
+text(8.95,2.45,"ancoradouro",cex=0.85)
+points(5.2,2.95,pch=21,cex=1.8,bg="white")
+segments(5.2,2.75,5.2,2.15,lwd=2)
+segments(5.2,2.15,4.95,1.65,lwd=2)
+segments(5.2,2.15,5.48,1.65,lwd=2)
+segments(5.2,2.55,4.9,2.3,lwd=2)
+segments(5.2,2.55,5.5,2.3,lwd=2)
+arrows(5.75,3.1,7.65,3.1,length=0.12,lwd=2)
+text(6.7,3.45,"homem caminha para a proa",cex=0.82)
+text(2.6,1.95,"barco",cex=0.88)
+@
 \end{center}
+\end{figure}
 
 Desprezando o impulso horizontal exercido pela água durante o movimento, qual afirmação descreve corretamente o que ocorre?
 
