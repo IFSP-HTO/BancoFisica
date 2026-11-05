@@ -1,0 +1,85 @@
+<<echo=FALSE, results=hide>>=
+casos <- data.frame(
+  M=c(6,8,10,12),
+  v0=c(4,3,5,2),
+  m1=c(2,3,4,5),
+  v1=c(6,4,5,3)
+)
+i <- sample(seq_len(nrow(casos)),1)
+M<-casos$M[i]; v0<-casos$v0[i]; m1<-casos$m1[i]; v1<-casos$v1[i]
+m2<-M-m1
+px2 <- M*v0
+py2 <- -m1*v1
+vx2 <- px2/m2
+vy2 <- py2/m2
+v2 <- sqrt(vx2^2+vy2^2)
+fmt <- function(x,d=2) formatC(x,format="f",digits=d,decimal.mark=",")
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Um corpo de massa total \(\Sexpr{M}\,\mathrm{kg}\) move-se para leste com velocidade \(\Sexpr{v0}\,\mathrm{m/s}\). Em certo instante ele explode em dois fragmentos. O fragmento 1, de massa \(\Sexpr{m1}\,\mathrm{kg}\), passa a mover-se para norte com velocidade \(\Sexpr{v1}\,\mathrm{m/s}\). Considere desprezível o impulso externo durante a explosão.
+
+Adote \(+x\) para leste e \(+y\) para norte. Determine, para o fragmento 2:
+
+\begin{answerlist}
+\item a componente \(v_{2x}\), em \(\mathrm{m/s}\);
+\item a componente \(v_{2y}\), em \(\mathrm{m/s}\);
+\item o módulo de sua velocidade, em \(\mathrm{m/s}\).
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Antes da explosão,
+\[
+\vec p_i=(Mv_0,0).
+\]
+
+Depois,
+\[
+\vec p_f=(0,m_1v_1)+m_2(v_{2x},v_{2y}).
+\]
+
+Como \(\vec p_i=\vec p_f\), pelas componentes:
+\[
+Mv_0=m_2v_{2x},
+\]
+logo
+\[
+v_{2x}=\frac{Mv_0}{m_2}
+=\Sexpr{fmt(vx2,2)}\,\mathrm{m/s}.
+\]
+
+Na direção \(y\),
+\[
+0=m_1v_1+m_2v_{2y},
+\]
+portanto
+\[
+v_{2y}=-\frac{m_1v_1}{m_2}
+=\Sexpr{fmt(vy2,2)}\,\mathrm{m/s}.
+\]
+
+Assim,
+\[
+v_2=\sqrt{v_{2x}^2+v_{2y}^2}
+=\Sexpr{fmt(v2,2)}\,\mathrm{m/s}.
+\]
+
+O sinal negativo de \(v_{2y}\) mostra que o segundo fragmento possui componente para o sul.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Figura: preferir figura original do Gaspar se houver equivalente adequada; esquema autoral provisório enquanto a fonte visual não for confrontada.
+%% \extype{cloze}
+%% \exsolution{\Sexpr{round(vx2,2)}|\Sexpr{round(vy2,2)}|\Sexpr{round(v2,2)}}
+%% \exclozetype{num|num|num}
+%% \extol{0.01|0.01|0.02}
+%% \exname{Q146ClozeExplosao2D}
+%% \exsection{Mecanica; Quantidade de movimento; Conservacao; Explosao; Vetores; Duas dimensoes}
+%% \exusepackage[utf8]{inputenc}

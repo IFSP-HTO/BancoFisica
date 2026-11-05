@@ -1,0 +1,89 @@
+<<echo=FALSE, results=hide>>=
+casos <- data.frame(
+  mA = c(2, 3, 4, 5),
+  vA = c(6, 4, 5, 3),
+  mB = c(3, 2, 5, 4),
+  vB = c(4, 6, 2, 5)
+)
+i <- sample(seq_len(nrow(casos)), 1)
+
+mA <- casos$mA[i]
+vA <- casos$vA[i]
+mB <- casos$mB[i]
+vB <- casos$vB[i]
+
+px <- mA * vA
+py <- mB * vB
+pmod <- sqrt(px^2 + py^2)
+
+fmt <- function(x, d=2) formatC(x, format="f", digits=d, decimal.mark=",")
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Dois carrinhos movem-se simultaneamente sobre uma superfície horizontal. O carrinho \(A\), de massa \(\Sexpr{mA}\,\mathrm{kg}\), move-se para leste com velocidade de \(\Sexpr{vA}\,\mathrm{m/s}\). O carrinho \(B\), de massa \(\Sexpr{mB}\,\mathrm{kg}\), move-se para norte com velocidade de \(\Sexpr{vB}\,\mathrm{m/s}\).
+
+Adote \(+x\) para leste e \(+y\) para norte. Para o sistema formado pelos dois carrinhos, determine:
+
+\begin{answerlist}
+  \item a componente \(x\) da quantidade de movimento total, em \(\mathrm{kg\,m/s}\);
+  \item a componente \(y\) da quantidade de movimento total, em \(\mathrm{kg\,m/s}\);
+  \item o módulo da quantidade de movimento total, em \(\mathrm{kg\,m/s}\).
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+A quantidade de movimento total de um sistema é a soma vetorial das quantidades de movimento de seus corpos.
+
+Para o carrinho \(A\),
+\[
+\vec p_A=(m_Av_A,0),
+\]
+portanto
+\[
+p_x=m_Av_A
+=\Sexpr{mA}\cdot\Sexpr{vA}
+=\Sexpr{fmt(px,2)}\,\mathrm{kg\,m/s}.
+\]
+
+Para o carrinho \(B\),
+\[
+\vec p_B=(0,m_Bv_B),
+\]
+logo
+\[
+p_y=m_Bv_B
+=\Sexpr{mB}\cdot\Sexpr{vB}
+=\Sexpr{fmt(py,2)}\,\mathrm{kg\,m/s}.
+\]
+
+Assim,
+\[
+\vec p_{\mathrm{tot}}=(p_x,p_y).
+\]
+
+Seu módulo é
+\[
+|\vec p_{\mathrm{tot}}|
+=
+\sqrt{p_x^2+p_y^2}
+=
+\Sexpr{fmt(pmod,2)}\,\mathrm{kg\,m/s}.
+\]
+
+O ponto essencial é que a quantidade de movimento total é uma grandeza vetorial; não se devem simplesmente somar os módulos quando as direções são diferentes.
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{\Sexpr{round(px,2)}|\Sexpr{round(py,2)}|\Sexpr{round(pmod,2)}}
+%% \exclozetype{num|num|num}
+%% \extol{0.01|0.01|0.02}
+%% \exname{Q136ClozeMomentoTotalVetorial2D}
+%% \exsection{Mecanica; Quantidade de movimento; Sistema; Vetores; Duas dimensoes}
+%% \exusepackage[utf8]{inputenc}

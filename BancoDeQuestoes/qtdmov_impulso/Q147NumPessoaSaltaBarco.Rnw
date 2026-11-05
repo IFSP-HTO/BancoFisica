@@ -1,0 +1,54 @@
+<<echo=FALSE, results=hide>>=
+casos <- data.frame(
+  mp=c(60,70,80,90),
+  mb=c(120,140,160,180),
+  vp=c(3,4,5,6)
+)
+i<-sample(seq_len(nrow(casos)),1)
+mp<-casos$mp[i]; mb<-casos$mb[i]; vp<-casos$vp[i]
+vb <- -(mp/mb)*vp
+fmt <- function(x,d=2) formatC(x,format="f",digits=d,decimal.mark=",")
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Uma pessoa de massa \(\Sexpr{mp}\,\mathrm{kg}\) está inicialmente em repouso sobre um pequeno barco de massa \(\Sexpr{mb}\,\mathrm{kg}\), também em repouso em relação à margem. A resistência horizontal da água é desprezível durante o curto intervalo do salto.
+
+A pessoa salta horizontalmente para a direita com velocidade \(\Sexpr{vp}\,\mathrm{m/s}\) em relação à margem.
+
+Adotando a direita como sentido positivo, determine a velocidade do barco imediatamente após o salto, em \(\mathrm{m/s}\).
+
+\end{question}
+
+\begin{solution}
+
+A quantidade de movimento horizontal inicial do sistema pessoa + barco é nula:
+\[
+p_i=0.
+\]
+
+Durante o salto, o impulso externo horizontal é desprezível. Assim,
+\[
+0=m_pv_p+m_bv_b.
+\]
+
+Logo,
+\[
+v_b=-\frac{m_p}{m_b}v_p
+=\Sexpr{fmt(vb,2)}\,\mathrm{m/s}.
+\]
+
+O sinal negativo indica que o barco se move para a esquerda, em sentido oposto ao salto da pessoa.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Figura: preferir figura original do Gaspar se houver equivalente adequada; esquema autoral provisório enquanto a fonte visual não for confrontada.
+%% \extype{num}
+%% \exsolution{\Sexpr{vb}}
+%% \extol{0.01}
+%% \exname{Q147NumPessoaSaltaBarco}
+%% \exsection{Mecanica; Quantidade de movimento; Conservacao; Recuo; Sistema isolado}
+%% \exusepackage[utf8]{inputenc}

@@ -1,0 +1,97 @@
+<<echo=FALSE, results=hide>>=
+m <- 0.20
+v0 <- 5.0
+v <- 4.0
+dt <- 0.020
+
+I <- m * (v + v0)
+Fmed <- I/dt
+
+# Figura autoral gerada em R no corpo da questão; PNG original estava danificado.
+@
+
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+
+(Gaspar) Uma bola de massa \(0{,}20\,\mathrm{kg}\) choca-se perpendicularmente contra uma parede e retorna pela mesma direção, em sentido contrário. Ao atingir a parede, o módulo de sua velocidade é \(5{,}0\,\mathrm{m/s}\); ao se afastar da parede, o módulo é \(4{,}0\,\mathrm{m/s}\).
+
+\begin{figure}[h!]
+\begin{center}
+<<echo=FALSE, fig=TRUE, height=3.0, width=7.2>>=
+par(mar=c(0,0,0,0))
+plot(NA, xlim=c(0,10), ylim=c(0,5), axes=FALSE, xlab="", ylab="")
+rect(1.0,0.45,1.55,4.65,col="grey70",border="black")
+text(1.25,4.9,"parede",cex=0.9)
+segments(1.55,2.5,9.7,2.5,lty=3,col="grey55")
+points(c(5.1,5.1),c(3.65,1.3),pch=21,bg="white",cex=4.4)
+arrows(4.4,3.65,2.4,3.65,length=0.13,lwd=2)
+arrows(5.8,1.3,8.1,1.3,length=0.13,lwd=2)
+text(6.6,4.2,"antes: 5,0 m/s",cex=0.95)
+text(7.4,1.85,"depois: 4,0 m/s",cex=0.95)
+text(9.1,0.65,"sentido +",cex=0.85)
+@
+\end{center}
+\end{figure}
+
+Sabendo que o tempo de interação entre a bola e a parede é \(0{,}020\,\mathrm{s}\), determine:
+
+\begin{answerlist}
+  \item o módulo do impulso exercido pela parede sobre a bola, em \(\mathrm{N\,s}\);
+  \item o módulo da força média exercida pela parede sobre a bola, em \(\mathrm{N}\).
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Adotando como positivo o sentido da velocidade da bola depois da colisão, a quantidade de movimento inicial é negativa:
+\[
+p_0=-mv_0,
+\]
+e a final é positiva:
+\[
+p=mv.
+\]
+
+O impulso exercido pela parede é a variação da quantidade de movimento:
+\[
+I=\Delta p=p-p_0.
+\]
+
+Assim,
+\[
+I=m(v+v_0)
+=0{,}20(4{,}0+5{,}0)
+=1{,}8\,\mathrm{N\,s}.
+\]
+
+O módulo da força média durante a interação satisfaz
+\[
+I=F_{\mathrm{méd}}\Delta t.
+\]
+
+Logo,
+\[
+F_{\mathrm{méd}}
+=
+\frac{1{,}8}{0{,}020}
+=
+90\,\mathrm{N}.
+\]
+
+A soma \(v+v_0\) aparece porque a bola inverte o sentido do movimento: a quantidade de movimento inicial e a final têm sinais opostos no referencial adotado.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Alberto Gaspar, Compreendendo a Fisica, vol. 1, cap. 17, exercicio resolvido 3, p. 223-224.
+%% Figura recortada da resolucao do exercicio.
+%% \extype{cloze}
+%% \exsolution{\Sexpr{I}|\Sexpr{Fmed}}
+%% \exclozetype{num|num}
+%% \extol{0.01|0.1}
+%% \exname{Q151ClozeGasparBolaParedeImpulso}
+%% \exsection{Mecanica; Impulso; Quantidade de movimento; Forca media; Colisao com parede; Vetores}
+%% \exusepackage[utf8]{inputenc}

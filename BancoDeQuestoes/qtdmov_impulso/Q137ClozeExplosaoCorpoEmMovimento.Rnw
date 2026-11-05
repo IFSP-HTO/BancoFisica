@@ -1,0 +1,86 @@
+<<echo=FALSE, results=hide>>=
+casos <- data.frame(
+  M = c(8, 10, 12, 15),
+  v0 = c(5, 4, 3, 2),
+  m1 = c(3, 4, 5, 6),
+  v1 = c(1, 0, -1, 4)
+)
+i <- sample(seq_len(nrow(casos)), 1)
+
+M <- casos$M[i]
+v0 <- casos$v0[i]
+m1 <- casos$m1[i]
+v1 <- casos$v1[i]
+m2 <- M - m1
+
+p0 <- M * v0
+v2 <- (p0 - m1*v1) / m2
+
+fmt <- function(x, d=2) formatC(x, format="f", digits=d, decimal.mark=",")
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Um carrinho de massa total \(\Sexpr{M}\,\mathrm{kg}\) move-se para a direita com velocidade \(\Sexpr{v0}\,\mathrm{m/s}\) sobre um trilho horizontal sem atrito. Em certo instante, um mecanismo interno provoca sua separação em dois fragmentos.
+
+O fragmento 1 tem massa \(\Sexpr{m1}\,\mathrm{kg}\) e, imediatamente após a separação, possui velocidade \(\Sexpr{v1}\,\mathrm{m/s}\), adotando-se a direita como sentido positivo.
+
+Determine:
+
+\begin{answerlist}
+  \item a quantidade de movimento total do sistema imediatamente antes da separação, em \(\mathrm{kg\,m/s}\);
+  \item a velocidade do fragmento 2 imediatamente após a separação, em \(\mathrm{m/s}\).
+\end{answerlist}
+
+\end{question}
+
+\begin{solution}
+
+Antes da separação, o sistema inteiro possui
+\[
+p_i=Mv_0
+=\Sexpr{M}\cdot\Sexpr{v0}
+=\Sexpr{fmt(p0,2)}\,\mathrm{kg\,m/s}.
+\]
+
+Durante o curtíssimo intervalo da separação, o impulso externo horizontal é nulo. Logo,
+\[
+p_i=p_f.
+\]
+
+Após a separação,
+\[
+p_f=m_1v_1+m_2v_2,
+\]
+com
+\[
+m_2=M-m_1=\Sexpr{m2}\,\mathrm{kg}.
+\]
+
+Portanto,
+\[
+Mv_0=m_1v_1+m_2v_2,
+\]
+e
+\[
+v_2=
+\frac{Mv_0-m_1v_1}{m_2}
+=
+\Sexpr{fmt(v2,2)}\,\mathrm{m/s}.
+\]
+
+O sinal de \(v_2\) indica o sentido do movimento do segundo fragmento. Diferentemente do caso de uma explosão a partir do repouso, aqui a quantidade de movimento inicial do sistema não é nula.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Questao autoral inspirada na abordagem de Gaspar sobre conservacao da quantidade de movimento em separacoes e explosoes.
+%% \extype{cloze}
+%% \exsolution{\Sexpr{round(p0,2)}|\Sexpr{round(v2,2)}}
+%% \exclozetype{num|num}
+%% \extol{0.01|0.01}
+%% \exname{Q137ClozeExplosaoCorpoEmMovimento}
+%% \exsection{Mecanica; Quantidade de movimento; Conservacao; Explosao; Sistema em movimento}
+%% \exusepackage[utf8]{inputenc}

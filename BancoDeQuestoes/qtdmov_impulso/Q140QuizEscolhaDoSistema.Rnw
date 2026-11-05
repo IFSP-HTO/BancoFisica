@@ -1,0 +1,46 @@
+<<echo=FALSE, results=hide>>=
+questions <- c(
+  "considerar apenas o carrinho A, pois a força exercida pela mola sobre ele é interna ao sistema formado apenas por A.",
+  "considerar os dois carrinhos e a mola, pois assim as interações elásticas entre os componentes do conjunto são internas ao sistema.",
+  "considerar somente a mola, pois sua massa desprezível torna nulo o impulso horizontal sobre os carrinhos.",
+  "qualquer escolha de sistema leva automaticamente à conservação da quantidade de movimento.",
+  "não é possível aplicar conceitos de quantidade de movimento quando há uma mola."
+)
+solutions <- c(FALSE, TRUE, FALSE, FALSE, FALSE)
+
+ordem <- sample(seq_along(questions))
+questions <- questions[ordem]
+solutions <- solutions[ordem]
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+Dois carrinhos, A e B, estão sobre um trilho horizontal de atrito desprezível, com uma mola comprimida e de massa desprezível entre eles. A mola não está presa a suportes externos. Quando a mola é liberada, os carrinhos se afastam.
+
+Para analisar a conservação da quantidade de movimento horizontal e tratar como internas as forças de interação mediadas pela mola, a escolha mais adequada para o sistema é
+
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(questions)
+@
+
+\end{question}
+
+\begin{solution}
+
+A classificação de uma força como interna ou externa depende da escolha do sistema.
+
+Se o sistema for formado por apenas um dos carrinhos, a força exercida sobre ele pela mola é externa ao sistema.
+
+Considerando os dois carrinhos e a mola como um único sistema, as forças elásticas entre seus componentes são internas. Como o conjunto não está preso a um suporte externo e o atrito horizontal é desprezível, o impulso externo horizontal sobre o sistema é nulo, e a quantidade de movimento total horizontal se conserva.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Questao autoral inspirada na abordagem de sistemas de Alberto Gaspar.
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q140QuizEscolhaDoSistema}
+%% \exsection{Mecanica; Quantidade de movimento; Sistema; Forcas internas; Conceitual}
+%% \exusepackage[utf8]{inputenc}

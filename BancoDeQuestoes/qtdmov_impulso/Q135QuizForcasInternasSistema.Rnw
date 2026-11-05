@@ -1,0 +1,60 @@
+<<echo=FALSE, results=hide>>=
+questions <- c(
+  "as forças internas podem alterar a quantidade de movimento total do sistema, desde que sejam suficientemente intensas.",
+  "os impulsos das forças internas aparecem aos pares, com mesma intensidade e sentidos opostos, e por isso sua soma vetorial sobre o sistema é nula.",
+  "a quantidade de movimento total do sistema conserva-se porque cada corpo conserva separadamente sua própria quantidade de movimento.",
+  "as forças internas deixam de atuar quando os corpos interagem durante um intervalo muito curto.",
+  "a conservação da quantidade de movimento exige que não exista nenhuma força interna no sistema."
+)
+solutions <- c(FALSE, TRUE, FALSE, FALSE, FALSE)
+
+ordem <- sample(seq_along(questions))
+questions <- questions[ordem]
+solutions <- solutions[ordem]
+@
+
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+
+(Baseada na abordagem de Gaspar) Dois carrinhos interagem entre si sobre um trilho horizontal de atrito desprezível. Durante a interação, cada carrinho exerce uma força sobre o outro. Considerando o sistema formado pelos dois carrinhos, a explicação correta para o fato de essas forças internas não alterarem a quantidade de movimento total do sistema é que
+
+<<echo=FALSE, results=hide, results=tex>>=
+answerlist(questions)
+@
+
+\end{question}
+
+\begin{solution}
+
+As forças de interação entre os carrinhos formam um par de ação e reação. Em cada instante,
+\[
+\vec F_{12}=-\vec F_{21}.
+\]
+
+Como atuam durante o mesmo intervalo de tempo, seus impulsos também satisfazem
+\[
+\vec I_{12}=-\vec I_{21}.
+\]
+
+Assim, a soma dos impulsos internos sobre o sistema é nula:
+\[
+\vec I_{\mathrm{int,tot}}=0.
+\]
+
+Logo, somente o impulso das forças externas pode alterar a quantidade de movimento total:
+\[
+\Delta \vec p_{\mathrm{sist}}=\vec I_{\mathrm{ext}}.
+\]
+
+Portanto, quando o impulso externo é nulo ou desprezível, a quantidade de movimento total do sistema se conserva, mesmo que as forças internas durante a interação sejam muito intensas.
+
+\end{solution}
+
+%% META-INFORMATION
+%% Questao autoral baseada na abordagem de Alberto Gaspar para sistemas e conservacao da quantidade de movimento.
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q135QuizForcasInternasSistema}
+%% \exsection{Mecanica; Quantidade de movimento; Conservacao; Sistema; Forcas internas; Impulso externo}
+%% \exusepackage[utf8]{inputenc}
