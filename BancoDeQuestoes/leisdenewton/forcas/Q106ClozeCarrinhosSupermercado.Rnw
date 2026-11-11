@@ -1,0 +1,65 @@
+<<echo=FALSE, results=hide>>=
+## DATA GENERATION
+## m1: carrinho da frente; m2: carrinho de tras.
+## Massas e aceleracoes sorteadas produzem forcas inteiras.
+m1 <- sample(c(30, 40, 50, 60), 1)
+m2 <- sample(c(60, 70, 80, 90, 100), 1)
+a  <- sample(c(0.4, 0.5, 0.6, 0.8), 1)
+T  <- m2 * a
+F  <- (m1 + m2) * a
+include_supplement("Q106CarrinhosSupermercado.png")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+Dois carrinhos de supermercado estão ligados por uma pequena
+corrente esticada. O carrinho da frente tem massa total
+$m_1=\Sexpr{m1}\,\mathrm{kg}$ e o de trás tem massa total
+$m_2=\Sexpr{m2}\,\mathrm{kg}$, incluindo as mercadorias.
+Uma pessoa puxa horizontalmente o carrinho da frente, no sentido
+indicado na figura, produzindo aceleração de módulo
+$\Sexpr{a}\,\mathrm{m/s^2}$ em ambos. Despreze as forças resistivas.
+
+\begin{center}
+\includegraphics[width=0.84\linewidth,keepaspectratio]{Q106CarrinhosSupermercado.png}
+\end{center}
+
+Calcule:
+\begin{answerlist}
+  \item a tração na corrente, em newtons;
+  \item o módulo da força horizontal exercida pela pessoa, em newtons.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+O carrinho de trás ($m_2$) é puxado horizontalmente apenas pela
+corrente. Portanto, pela segunda lei de Newton:
+\[
+T=m_2a=\Sexpr{m2}\cdot\Sexpr{a}
+ =\Sexpr{T}\,\mathrm{N}.
+\]
+Para os dois carrinhos considerados como um único sistema, as
+trações internas se cancelam. Assim,
+\[
+F=(m_1+m_2)a
+ =(\Sexpr{m1}+\Sexpr{m2})\cdot\Sexpr{a}
+ =\Sexpr{F}\,\mathrm{N}.
+\]
+A força aplicada pela pessoa acelera os dois carrinhos,
+enquanto a corrente acelera apenas o de trás.
+\begin{answerlist}
+  \item $\Sexpr{T}\,\mathrm{N}$
+  \item $\Sexpr{F}\,\mathrm{N}$
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte conceitual: lista "Aplicacao: leis de Newton", Prof. Panosso, questao 2; redacao parametrizada.
+%% Figura: versao fornecida pelo usuario; verificar autorizacao de redistribuicao antes da publicacao.
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{T}|\Sexpr{F}}
+%% \extol{0.01|0.01}
+%% \exname{Q106ClozeCarrinhosSupermercado}
+%% \exsection{Mecanica; Leis de Newton; Tracao; Sistemas de corpos; Cotidiano}
