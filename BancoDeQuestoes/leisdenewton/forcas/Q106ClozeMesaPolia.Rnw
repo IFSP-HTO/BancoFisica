@@ -11,7 +11,10 @@ include_supplement("Q106ClozeMesaPolia.png", dir="../../figuras")
 \begin{question}
 Um bloco de massa $m_1=\Sexpr{m1}\,\mathrm{kg}$ está sobre uma mesa horizontal sem atrito. Ele está ligado, por um fio ideal e uma polia ideal, a um corpo suspenso de massa $m_2=\Sexpr{m2}\,\mathrm{kg}$. Considere $g=10\,\mathrm{m/s^2}$.
 \begin{center}\includegraphics[width=0.66\linewidth,height=7.2cm,keepaspectratio]{Q106ClozeMesaPolia.png}\end{center}
-Calcule: \begin{answerlist}\item a aceleração comum, em $\mathrm{m/s^2}$; \item a tensão no fio, em $\mathrm N$.\end{answerlist}
+Calcule: \begin{answerlist}
+  \item a aceleração comum, em $\mathrm{m/s^2}$;
+  \item a tensão no fio, em $\mathrm N$.
+\end{answerlist}
 \end{question}
 \begin{solution}
 No bloco sobre a mesa, $T=m_1a$. No corpo suspenso, $m_2g-T=m_2a$. Logo
