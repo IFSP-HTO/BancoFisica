@@ -1,0 +1,31 @@
+<<echo=FALSE, results=hide>>=
+m1 <- sample(c(2,3,4,5),1)
+m2 <- sample(c(6,7,8,9),1)
+g <- 10
+a <- (m2-m1)*g/(m1+m2)
+T <- 2*m1*m2*g/(m1+m2)
+include_supplement("Q105ClozeAtwood.png", dir="../../figuras")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\begin{question}
+Dois corpos de massas $m_1=\Sexpr{m1}\,\mathrm{kg}$ e $m_2=\Sexpr{m2}\,\mathrm{kg}$ estão ligados por um fio ideal que passa por uma polia ideal. O sistema parte do repouso. Adote $g=10\,\mathrm{m/s^2}$.
+\begin{center}\includegraphics[width=0.66\linewidth,height=7.2cm,keepaspectratio]{Q105ClozeAtwood.png}\end{center}
+Determine: \begin{answerlist}
+  \item o módulo da aceleração, em $\mathrm{m/s^2}$;
+  \item a tensão no fio, em $\mathrm{N}$.
+\end{answerlist}
+\end{question}
+\begin{solution}
+Como $m_2>m_1$, a massa $m_2$ desce e $m_1$ sobe. Aplicando a segunda lei a cada corpo:
+\[m_2g-T=m_2a,\qquad T-m_1g=m_1a.\]
+Somando, $a=(m_2-m_1)g/(m_1+m_2)=\Sexpr{round(a,2)}\,\mathrm{m/s^2}$. Da equação de $m_1$, $T=m_1(g+a)=\Sexpr{round(T,2)}\,\mathrm N$.
+\end{solution}
+%% META-INFORMATION
+%% Fonte visual: figura fornecida pelo usuario, originaria de material OpenStax (credito e licenca especifica a conferir).
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{round(a,2)}|\Sexpr{round(T,2)}}
+%% \extol{0.02|0.02}
+%% \exname{Q105ClozeAtwood}
+%% \exsection{Mecanica; Leis de Newton; ClozeAtwood}

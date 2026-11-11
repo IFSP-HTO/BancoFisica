@@ -1,0 +1,36 @@
+<<echo=FALSE, results=hide>>=
+theta1 <- sample(c(35,40,45),1)
+theta2 <- sample(c(45,50,55),1)
+m <- sample(c(12,15,18,20),1)
+g <- 10
+w <- m*g
+denom <- sin((theta1+theta2)*pi/180)
+T1 <- w*cos(theta2*pi/180)/denom
+T2 <- w*cos(theta1*pi/180)/denom
+T3 <- w
+include_supplement("Q111ClozeSemaforoEquilibrio.png", dir="../figuras")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\begin{question}
+Um semáforo de massa $m=\Sexpr{m}\,\mathrm{kg}$ permanece em equilíbrio sustentado por três cabos. Os cabos superiores fazem ângulos $\theta_1=\Sexpr{theta1}^\circ$ e $\theta_2=\Sexpr{theta2}^\circ$ com a \textbf{horizontal}, conforme a figura (esquemática, fora de escala). Adote $g=10\,\mathrm{m/s^2}$.
+\begin{center}\includegraphics[width=0.66\linewidth,height=7.2cm,keepaspectratio]{Q111ClozeSemaforoEquilibrio.png}\end{center}
+Calcule os módulos das três tensões: \begin{answerlist}
+  \item $T_1$, em $\mathrm N$;
+  \item $T_2$, em $\mathrm N$;
+  \item $T_3$, em $\mathrm N$.
+\end{answerlist}
+\end{question}
+\begin{solution}
+O cabo vertical transmite o peso: $T_3=mg=\Sexpr{round(T3,2)}\,\mathrm N$. No nó, temos $T_1\cos\theta_1=T_2\cos\theta_2$ e $T_1\sin\theta_1+T_2\sin\theta_2=mg$. Logo
+\[T_1=\frac{mg\cos\theta_2}{\sin(\theta_1+\theta_2)}=\Sexpr{round(T1,2)}\,\mathrm N,\]
+\[T_2=\frac{mg\cos\theta_1}{\sin(\theta_1+\theta_2)}=\Sexpr{round(T2,2)}\,\mathrm N.\]
+\end{solution}
+%% META-INFORMATION
+%% Fonte visual: figura fornecida pelo usuario, originaria de material OpenStax (credito e licenca especifica a conferir).
+%% \extype{cloze}
+%% \exclozetype{num|num|num}
+%% \exsolution{\Sexpr{round(T1,2)}|\Sexpr{round(T2,2)}|\Sexpr{round(T3,2)}}
+%% \extol{0.03|0.03|0.01}
+%% \exname{Q111ClozeSemaforoEquilibrio}
+%% \exsection{Mecanica; Estatica; ClozeSemaforoEquilibrio}

@@ -1,0 +1,33 @@
+<<echo=FALSE, results=hide>>=
+theta1 <- sample(c(15,20,25),1)
+theta2 <- sample(c(10,15,20),1)
+m <- sample(c(50,55,60,65),1)
+g <- 10
+w <- m*g
+T <- w*cos(theta2*pi/180)/cos((theta1-theta2)*pi/180)
+Fpernas <- T*sin(theta1*pi/180)/cos(theta2*pi/180)
+include_supplement("Q113ClozeEscaladoraEquilibrio.png", dir="../figuras")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\begin{question}
+Uma escaladora de massa $m=\Sexpr{m}\,\mathrm{kg}$ está em equilíbrio junto a uma parede. A corda exerce uma tração $T$ que faz $\theta_1=\Sexpr{theta1}^\circ$ com a \textbf{vertical}. A força resultante exercida pela parede sobre seus pés tem módulo $F_{\rm pernas}$ e faz $\theta_2=\Sexpr{theta2}^\circ$ \textbf{acima da horizontal}, como na figura esquemática. Adote $g=10\,\mathrm{m/s^2}$.
+\begin{center}\includegraphics[width=0.66\linewidth,height=7.2cm,keepaspectratio]{Q113ClozeEscaladoraEquilibrio.png}\end{center}
+Calcule: \begin{answerlist}
+  \item a tração na corda, em $\mathrm N$;
+  \item o módulo da força da parede sobre os pés, em $\mathrm N$.
+\end{answerlist}
+\end{question}
+\begin{solution}
+No eixo horizontal, $F_{\rm pernas}\cos\theta_2=T\sin\theta_1$. No eixo vertical, $T\cos\theta_1+F_{\rm pernas}\sin\theta_2=mg$. Assim,
+\[T=\frac{mg\cos\theta_2}{\cos(\theta_1-\theta_2)}=\Sexpr{round(T,2)}\,\mathrm N,\]
+\[F_{\rm pernas}=\frac{T\sin\theta_1}{\cos\theta_2}=\Sexpr{round(Fpernas,2)}\,\mathrm N.\]
+\end{solution}
+%% META-INFORMATION
+%% Fonte visual: figura fornecida pelo usuario, originaria de material OpenStax (credito e licenca especifica a conferir).
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{round(T,2)}|\Sexpr{round(Fpernas,2)}}
+%% \extol{0.03|0.03}
+%% \exname{Q113ClozeEscaladoraEquilibrio}
+%% \exsection{Mecanica; Estatica; ClozeEscaladoraEquilibrio}

@@ -1,0 +1,35 @@
+<<echo=FALSE, results=hide>>=
+theta1 <- 37; theta2 <- 53
+s1 <- 0.6; s2 <- 0.8
+m1 <- sample(c(3,4,5),1)
+m2 <- sample(c(7,8,9),1)
+g <- 10
+a <- g*(m2*s2-m1*s1)/(m1+m2)
+T <- m1*g*s1 + m1*a
+include_supplement("Q107ClozePlanosInclinadosOpostos.png", dir="../../figuras")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\begin{question}
+Dois carrinhos de massas $m_1=\Sexpr{m1}\,\mathrm{kg}$ e $m_2=\Sexpr{m2}\,\mathrm{kg}$ estão conectados por um fio ideal que passa por uma polia ideal, em dois planos inclinados sem atrito. Na figura, $\theta_1=37^\circ$ e $\theta_2=53^\circ$. Adote $g=10\,\mathrm{m/s^2}$, $\sin 37^\circ=0{,}6$ e $\sin 53^\circ=0{,}8$.
+\begin{center}\includegraphics[width=0.66\linewidth,height=7.2cm,keepaspectratio]{Q107ClozePlanosInclinadosOpostos.png}\end{center}
+Determine: \begin{answerlist}
+  \item o módulo da aceleração, em $\mathrm{m/s^2}$;
+  \item a tensão no fio, em $\mathrm N$.
+\end{answerlist}
+\end{question}
+\begin{solution}
+Como $m_2g\sin53^\circ>m_1g\sin37^\circ$, o carrinho $m_2$ desce seu plano. Nas direções paralelas às rampas:
+\[T-m_1g\sin37^\circ=m_1a,\quad m_2g\sin53^\circ-T=m_2a.\]
+Portanto,
+\[a=\frac{g(m_2\sin53^\circ-m_1\sin37^\circ)}{m_1+m_2}=\Sexpr{round(a,2)}\,\mathrm{m/s^2},\]
+\[T=m_1(g\sin37^\circ+a)=\Sexpr{round(T,2)}\,\mathrm N.\]
+\end{solution}
+%% META-INFORMATION
+%% Fonte visual: figura fornecida pelo usuario, originaria de material OpenStax (credito e licenca especifica a conferir).
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{round(a,2)}|\Sexpr{round(T,2)}}
+%% \extol{0.02|0.02}
+%% \exname{Q107ClozePlanosInclinadosOpostos}
+%% \exsection{Mecanica; Leis de Newton; ClozePlanosInclinadosOpostos}

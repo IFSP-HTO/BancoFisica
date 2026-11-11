@@ -1,0 +1,34 @@
+<<echo=FALSE, results=hide>>=
+m <- sample(c(5,6,8),1)
+F <- sample(c(65,75,85),1)
+theta <- sample(c(20,30),1)
+mu <- sample(c(0.10,0.15,0.20),1)
+g <- 10
+N <- m*g + F*sin(theta*pi/180)
+fat <- mu*N
+a <- (F*cos(theta*pi/180)-fat)/m
+stopifnot(a>0)
+include_supplement("Q109ClozeBlocoEmpurradoAngulo.png", dir="../../figuras")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\begin{question}
+Uma pessoa empurra um bloco de gelo de massa $m=\Sexpr{m}\,\mathrm{kg}$ com uma força $F=\Sexpr{F}\,\mathrm N$ que faz um ângulo de $\Sexpr{theta}^\circ$ \textbf{abaixo} da horizontal. O coeficiente de atrito cinético com o piso é $\mu=\Sexpr{mu}$. Considere o bloco já em movimento e adote $g=10\,\mathrm{m/s^2}$.
+\begin{center}\includegraphics[width=0.66\linewidth,height=7.2cm,keepaspectratio]{Q109ClozeBlocoEmpurradoAngulo.png}\end{center}
+Calcule: \begin{answerlist}
+  \item a força normal, em $\mathrm N$;
+  \item a aceleração horizontal, em $\mathrm{m/s^2}$.
+\end{answerlist}
+\end{question}
+\begin{solution}
+A componente vertical da força aplicada é para baixo: $N=mg+F\sin\theta=\Sexpr{round(N,2)}\,\mathrm N$. A força de atrito é $f_k=\mu N$. Aplicando a segunda lei na horizontal:
+\[a=\frac{F\cos\theta-\mu(mg+F\sin\theta)}{m}=\Sexpr{round(a,2)}\,\mathrm{m/s^2}.\]
+\end{solution}
+%% META-INFORMATION
+%% Fonte visual: figura fornecida pelo usuario, originaria de material OpenStax (credito e licenca especifica a conferir).
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{round(N,2)}|\Sexpr{round(a,2)}}
+%% \extol{0.03|0.03}
+%% \exname{Q109ClozeBlocoEmpurradoAngulo}
+%% \exsection{Mecanica; Leis de Newton; ClozeBlocoEmpurradoAngulo}

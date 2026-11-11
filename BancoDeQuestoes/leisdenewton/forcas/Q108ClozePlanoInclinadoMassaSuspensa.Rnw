@@ -1,0 +1,32 @@
+<<echo=FALSE, results=hide>>=
+theta <- 37; sn <- 0.6
+m1 <- sample(c(3,4,5),1)
+m2 <- sample(c(6,7,8),1)
+g <- 10
+a <- g*(m2-m1*sn)/(m1+m2)
+T <- m1*(g*sn+a)
+include_supplement("Q108ClozePlanoInclinadoMassaSuspensa.png", dir="../../figuras")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\begin{question}
+Um bloco de massa $m_1=\Sexpr{m1}\,\mathrm{kg}$ está sobre um plano inclinado sem atrito e é ligado por um fio e uma polia ideais a um corpo suspenso de massa $m_2=\Sexpr{m2}\,\mathrm{kg}$. O plano faz $37^\circ$ com a horizontal. Use $g=10\,\mathrm{m/s^2}$ e $\sin37^\circ=0{,}6$.
+\begin{center}\includegraphics[width=0.66\linewidth,height=7.2cm,keepaspectratio]{Q108ClozePlanoInclinadoMassaSuspensa.png}\end{center}
+Determine: \begin{answerlist}
+  \item o módulo da aceleração comum, em $\mathrm{m/s^2}$;
+  \item a tensão no fio, em $\mathrm N$.
+\end{answerlist}
+\end{question}
+\begin{solution}
+O corpo $m_2$ desce, enquanto $m_1$ sobe o plano:
+\[T-m_1g\sin37^\circ=m_1a,\qquad m_2g-T=m_2a.\]
+Então $a=g(m_2-m_1\sin37^\circ)/(m_1+m_2)=\Sexpr{round(a,2)}\,\mathrm{m/s^2}$ e $T=m_1(a+g\sin37^\circ)=\Sexpr{round(T,2)}\,\mathrm N$.
+\end{solution}
+%% META-INFORMATION
+%% Fonte visual: figura fornecida pelo usuario, originaria de material OpenStax (credito e licenca especifica a conferir).
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{round(a,2)}|\Sexpr{round(T,2)}}
+%% \extol{0.02|0.02}
+%% \exname{Q108ClozePlanoInclinadoMassaSuspensa}
+%% \exsection{Mecanica; Leis de Newton; ClozePlanoInclinadoMassaSuspensa}

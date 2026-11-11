@@ -1,0 +1,31 @@
+<<echo=FALSE, results=hide>>=
+theta1 <- sample(c(15,20,25),1)
+theta2 <- sample(c(15,20,25),1)
+F <- sample(c(600,750,900,1050),1)
+denom <- sin((theta1+theta2)*pi/180)
+F1 <- F*sin(theta2*pi/180)/denom
+F2 <- F*sin(theta1*pi/180)/denom
+include_supplement("Q114ClozeTendaoAquiles.png", dir="../figuras")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\begin{question}
+Na figura, os músculos gastrocnêmios medial e lateral exercem forças $F_1$ e $F_2$ em um tendão. Suas direções fazem ângulos $\theta_1=\Sexpr{theta1}^\circ$ e $\theta_2=\Sexpr{theta2}^\circ$ com o eixo vertical. Considere que a resultante dessas duas forças é \textbf{vertical} e tem módulo $F=\Sexpr{F}\,\mathrm N$. A imagem é esquemática e os ângulos são parâmetros do modelo.
+\begin{center}\includegraphics[width=0.66\linewidth,height=7.2cm,keepaspectratio]{Q114ClozeTendaoAquiles.png}\end{center}
+Calcule: \begin{answerlist}
+  \item o módulo de $F_1$, em $\mathrm N$;
+  \item o módulo de $F_2$, em $\mathrm N$.
+\end{answerlist}
+\end{question}
+\begin{solution}
+As componentes horizontais se anulam: $F_1\sin\theta_1=F_2\sin\theta_2$. As verticais somam $F$: $F_1\cos\theta_1+F_2\cos\theta_2=F$. Resolvendo,
+\[F_1=\frac{F\sin\theta_2}{\sin(\theta_1+\theta_2)}=\Sexpr{round(F1,2)}\,\mathrm N,\qquad F_2=\frac{F\sin\theta_1}{\sin(\theta_1+\theta_2)}=\Sexpr{round(F2,2)}\,\mathrm N.\]
+\end{solution}
+%% META-INFORMATION
+%% Fonte visual: figura fornecida pelo usuario, originaria de material OpenStax (credito e licenca especifica a conferir).
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{round(F1,2)}|\Sexpr{round(F2,2)}}
+%% \extol{0.03|0.03}
+%% \exname{Q114ClozeTendaoAquiles}
+%% \exsection{Mecanica; Estatica; ClozeTendaoAquiles}
