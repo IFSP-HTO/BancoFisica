@@ -15,7 +15,10 @@ include_supplement("Q109ClozeBlocoEmpurradoAngulo.png", dir="../../figuras")
 \begin{question}
 Uma pessoa empurra um bloco de gelo de massa $m=\Sexpr{m}\,\mathrm{kg}$ com uma força $F=\Sexpr{F}\,\mathrm N$ que faz um ângulo de $\Sexpr{theta}^\circ$ \textbf{abaixo} da horizontal. O coeficiente de atrito cinético com o piso é $\mu=\Sexpr{mu}$. Considere o bloco já em movimento e adote $g=10\,\mathrm{m/s^2}$.
 \begin{center}\includegraphics[width=0.66\linewidth,height=7.2cm,keepaspectratio]{Q109ClozeBlocoEmpurradoAngulo.png}\end{center}
-Calcule: \begin{answerlist}\item a força normal, em $\mathrm N$; \item a aceleração horizontal, em $\mathrm{m/s^2}$.\end{answerlist}
+Calcule: \begin{answerlist}
+  \item a força normal, em $\mathrm N$;
+  \item a aceleração horizontal, em $\mathrm{m/s^2}$.
+\end{answerlist}
 \end{question}
 \begin{solution}
 A componente vertical da força aplicada é para baixo: $N=mg+F\sin\theta=\Sexpr{round(N,2)}\,\mathrm N$. A força de atrito é $f_k=\mu N$. Aplicando a segunda lei na horizontal:
