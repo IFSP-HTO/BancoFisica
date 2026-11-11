@@ -15,7 +15,10 @@ include_supplement("Q116ClozeLoopNormalAngulo.png", dir="../../figuras")
 \begin{question}
 Um carrinho de massa $m=\Sexpr{m}\,\mathrm{kg}$ percorre a parte interna do topo de um loop, de raio de curvatura constante $R=\Sexpr{R}\,\mathrm m$ \textbf{no arco entre A e B}. O ponto B está a $\theta=\Sexpr{theta}^\circ$ da vertical que passa pelo ponto mais alto A. A velocidade em A é $v_A=\Sexpr{vA}\,\mathrm{m/s}$. Ignore atrito e adote $g=10\,\mathrm{m/s^2}$.
 \begin{center}\includegraphics[width=0.66\linewidth,height=7.2cm,keepaspectratio]{Q116ClozeLoopNormalAngulo.png}\end{center}
-Calcule: \begin{answerlist}\item a força normal em A, em $\mathrm N$; \item a força normal em B, em $\mathrm N$.\end{answerlist}
+Calcule: \begin{answerlist}
+  \item a força normal em A, em $\mathrm N$;
+  \item a força normal em B, em $\mathrm N$.
+\end{answerlist}
 \end{question}
 \begin{solution}
 A conservação da energia entre A e B fornece $v_B^2=v_A^2+2gR(1-\cos\theta)$. Na direção radial para o centro: no topo, $N_A+mg=mv_A^2/R$; em B, $N_B+mg\cos\theta=mv_B^2/R$. Portanto,
