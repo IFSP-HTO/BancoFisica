@@ -1,0 +1,59 @@
+<<echo=FALSE, results=hide>>=
+## DATA GENERATION
+## A massa de A nao interfere na tracao entre A e B.
+mA <- sample(c(2, 3, 4, 5, 6), 1)
+mB <- sample(c(2, 3, 4, 5), 1)
+a  <- sample(c(1, 2, 3, 4), 1)
+g  <- 10
+T  <- mB * (g + a)
+F  <- (mA + mB) * (g + a)  # forca externa que torna o movimento possivel
+stopifnot(F > (mA + mB)*g)
+include_supplement("Q108BlocosVerticais.png")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+Na figura, dois blocos A e B, de massas
+$m_A=\Sexpr{mA}\,\mathrm{kg}$ e
+$m_B=\Sexpr{mB}\,\mathrm{kg}$, estão ligados por um fio ideal.
+Uma força vertical $\vec{F}$ aplicada ao conjunto faz com que,
+\textbf{depois que B perde contato com o solo}, ambos subam com
+aceleração constante de módulo
+$\Sexpr{a}\,\mathrm{m/s^2}$. Adote
+$g=10\,\mathrm{m/s^2}$ e despreze a resistência do ar.
+
+\begin{center}
+\includegraphics[width=0.25\linewidth,keepaspectratio]{Q108BlocosVerticais.png}
+\end{center}
+
+Calcule o módulo da tração no fio que une A e B, em newtons.
+\end{question}
+
+\begin{solution}
+Analisamos somente B, enquanto ele sobe sem tocar o solo.
+Sobre esse bloco atuam a tração $T$ para cima e o peso
+$P_B=m_Bg$ para baixo. Tomando o sentido positivo para cima,
+pela segunda lei de Newton:
+\[
+T-m_Bg=m_Ba
+\quad\Longrightarrow\quad
+T=m_B(g+a).
+\]
+Substituindo os dados:
+\[
+T=\Sexpr{mB}(10+\Sexpr{a})
+ =\Sexpr{T}\,\mathrm{N}.
+\]
+Note que a massa de A não entra nessa conta, pois escolhemos
+apenas o bloco B como sistema de análise.
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte conceitual: lista "Aplicacao: leis de Newton", Prof. Panosso, questao 4; redacao parametrizada.
+%% Figura: versao fornecida pelo usuario; verificar autorizacao de redistribuicao antes da publicacao.
+%% \extype{num}
+%% \exsolution{\Sexpr{T}}
+%% \extol{0.01}
+%% \exname{Q108NumBlocosVerticaisTracao}
+%% \exsection{Mecanica; Leis de Newton; Tracao; Movimento vertical}

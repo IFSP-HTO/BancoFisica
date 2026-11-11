@@ -1,0 +1,65 @@
+<<echo=FALSE, results=hide>>=
+## DATA GENERATION
+## Os blocos se movem para a direita; T e a permanecem positivos.
+mA <- sample(c(2, 3, 4, 5, 6), 1)
+mB <- sample(c(3, 4, 5, 6, 8), 1)
+a  <- sample(c(1, 2, 3, 4), 1)
+F  <- (mA + mB) * a
+T  <- mA * a
+include_supplement("Q105DoisBlocosForcaEmB.png")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+Dois blocos, A e B, de massas $\Sexpr{mA}\,\mathrm{kg}$ e
+$\Sexpr{mB}\,\mathrm{kg}$, respectivamente, estão ligados por um fio
+ideal sobre uma superfície horizontal sem atrito. Uma força
+horizontal de módulo $\Sexpr{F}\,\mathrm{N}$ atua sobre B, como
+mostra a figura. Considere o fio sempre esticado.
+
+\begin{center}
+\includegraphics[width=0.78\linewidth,keepaspectratio]{Q105DoisBlocosForcaEmB.png}
+\end{center}
+
+Determine:
+\begin{answerlist}
+  \item o módulo da aceleração comum aos blocos, em $\mathrm{m/s^2}$;
+  \item o módulo da tração no fio, em newtons.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+Para o conjunto formado por A e B, a tração é uma força
+interna e se cancela ao somarmos as equações de Newton. Como
+não há atrito, a resultante horizontal externa é $F$:
+\[
+F=(m_A+m_B)a
+\quad\Longrightarrow\quad
+a=\frac{F}{m_A+m_B}
+ =\frac{\Sexpr{F}}{\Sexpr{mA}+\Sexpr{mB}}
+ =\Sexpr{a}\,\mathrm{m/s^2}.
+\]
+No bloco A, a única força horizontal é a tração,
+que aponta para a direita:
+\[
+T=m_Aa=\Sexpr{mA}\cdot\Sexpr{a}
+ =\Sexpr{T}\,\mathrm{N}.
+\]
+Portanto, a tração depende da massa que o fio precisa acelerar,
+e não apenas da força aplicada ao conjunto.
+\begin{answerlist}
+  \item $\Sexpr{a}\,\mathrm{m/s^2}$
+  \item $\Sexpr{T}\,\mathrm{N}$
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte conceitual: lista "Aplicacao: leis de Newton", Prof. Panosso, questao 1; redacao parametrizada.
+%% Figura: versao fornecida pelo usuario; verificar autorizacao de redistribuicao antes da publicacao.
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{a}|\Sexpr{T}}
+%% \extol{0.01|0.01}
+%% \exname{Q105ClozeDoisBlocosForcaEmB}
+%% \exsection{Mecanica; Leis de Newton; Tracao; Sistemas de blocos}

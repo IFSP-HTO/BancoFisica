@@ -1,0 +1,77 @@
+<<echo=FALSE, results=hide>>=
+## DATA GENERATION
+## Selecionar somente trincas que gerem aceleracao inteira.
+## Evita arredondamento intermediario na resposta e na solucao.
+g <- 10
+casos <- expand.grid(mA=2:7, mB=2:7, mC=2:12)
+casos$a <- g * casos$mC / (casos$mA + casos$mB + casos$mC)
+casos <- casos[abs(casos$a - round(casos$a)) < 1e-10 &
+                 casos$a %in% c(2, 3, 4, 5, 6), ]
+i <- sample(seq_len(nrow(casos)), 1)
+mA <- casos$mA[i]
+mB <- casos$mB[i]
+mC <- casos$mC[i]
+a  <- round(casos$a[i])
+TAB <- mA * a
+TBC <- mC * (g - a)  # tracao do fio que liga B a C (controle)
+stopifnot(TBC == (mA + mB) * a)
+include_supplement("Q107BlocosMesaPolia.png")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+Os blocos A e B, com massas $m_A=\Sexpr{mA}\,\mathrm{kg}$
+e $m_B=\Sexpr{mB}\,\mathrm{kg}$, movem-se sobre uma mesa
+horizontal sem atrito. O bloco C, de massa
+$m_C=\Sexpr{mC}\,\mathrm{kg}$, está suspenso. O fio que une A a B e o fio que liga B a C são independentes e ideais;
+este último passa pela polia ideal indicada na figura. Adote
+$g=10\,\mathrm{m/s^2}$. O conjunto é abandonado do repouso.
+
+\begin{center}
+\includegraphics[width=0.85\linewidth,keepaspectratio]{Q107BlocosMesaPolia.png}
+\end{center}
+
+Determine:
+\begin{answerlist}
+  \item o módulo da aceleração comum aos três blocos, em $\mathrm{m/s^2}$;
+  \item a tração no fio que liga A a B, em newtons.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+O peso de C acelera todo o sistema: A e B para a direita, C para
+baixo. As trações são internas ao conjunto, mas os dois
+fios podem ter trações diferentes. Na direção dos
+movimentos, a resultante externa do conjunto é $m_Cg$:
+\[
+m_Cg=(m_A+m_B+m_C)a.
+\]
+Assim,
+\[
+a=\frac{m_Cg}{m_A+m_B+m_C}
+ =\frac{\Sexpr{mC}\cdot 10}{\Sexpr{mA}+\Sexpr{mB}+\Sexpr{mC}}
+ =\Sexpr{a}\,\mathrm{m/s^2}.
+\]
+No bloco A, a única força horizontal é a tração
+$T_{AB}$, dirigida para a direita. Logo,
+\[
+T_{AB}=m_Aa
+ =\Sexpr{mA}\cdot\Sexpr{a}
+ =\Sexpr{TAB}\,\mathrm{N}.
+\]
+\begin{answerlist}
+  \item $\Sexpr{a}\,\mathrm{m/s^2}$
+  \item $\Sexpr{TAB}\,\mathrm{N}$
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte conceitual: lista "Aplicacao: leis de Newton", Prof. Panosso, questao 3; redacao parametrizada.
+%% Figura: versao fornecida pelo usuario; verificar autorizacao de redistribuicao antes da publicacao.
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{a}|\Sexpr{TAB}}
+%% \extol{0.01|0.01}
+%% \exname{Q107ClozeBlocosMesaPolia}
+%% \exsection{Mecanica; Leis de Newton; Tracao; Polias; Sistemas de corpos}
