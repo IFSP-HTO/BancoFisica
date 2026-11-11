@@ -12,7 +12,10 @@ include_supplement("Q108ClozePlanoInclinadoMassaSuspensa.png", dir="../../figura
 \begin{question}
 Um bloco de massa $m_1=\Sexpr{m1}\,\mathrm{kg}$ está sobre um plano inclinado sem atrito e é ligado por um fio e uma polia ideais a um corpo suspenso de massa $m_2=\Sexpr{m2}\,\mathrm{kg}$. O plano faz $37^\circ$ com a horizontal. Use $g=10\,\mathrm{m/s^2}$ e $\sin37^\circ=0{,}6$.
 \begin{center}\includegraphics[width=0.66\linewidth,height=7.2cm,keepaspectratio]{Q108ClozePlanoInclinadoMassaSuspensa.png}\end{center}
-Determine: \begin{answerlist}\item o módulo da aceleração comum, em $\mathrm{m/s^2}$; \item a tensão no fio, em $\mathrm N$.\end{answerlist}
+Determine: \begin{answerlist}
+  \item o módulo da aceleração comum, em $\mathrm{m/s^2}$;
+  \item a tensão no fio, em $\mathrm N$.
+\end{answerlist}
 \end{question}
 \begin{solution}
 O corpo $m_2$ desce, enquanto $m_1$ sobe o plano:
