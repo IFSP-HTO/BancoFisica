@@ -5,9 +5,9 @@ theta <- sample(c(30,40,45),1)
 vA <- sample(c(14,16,18),1)
 g <- 10
 vB2 <- vA^2+2*g*R*(1-cos(theta*pi/180))
-NA <- m*(vA^2/R-g)
-NB <- m*(vB2/R-g*cos(theta*pi/180))
-stopifnot(NA>0,NB>0)
+N_A_calc <- m*(vA^2/R-g)
+N_B_calc <- m*(vB2/R-g*cos(theta*pi/180))
+stopifnot(N_A_calc>0,N_B_calc>0)
 include_supplement("Q116ClozeLoopNormalAngulo.png", dir="../figuras")
 @
 \usepackage[utf8]{inputenc}
@@ -22,14 +22,14 @@ Calcule: \begin{answerlist}
 \end{question}
 \begin{solution}
 A conservação da energia entre A e B fornece $v_B^2=v_A^2+2gR(1-\cos\theta)$. Na direção radial para o centro: no topo, $N_A+mg=mv_A^2/R$; em B, $N_B+mg\cos\theta=mv_B^2/R$. Portanto,
-\[N_A=m(v_A^2/R-g)=\Sexpr{round(NA,2)}\,\mathrm N,\]
-\[N_B=m(v_B^2/R-g\cos\theta)=\Sexpr{round(NB,2)}\,\mathrm N.\]
+\[N_A=m(v_A^2/R-g)=\Sexpr{round(N_A_calc,2)}\,\mathrm N,\]
+\[N_B=m(v_B^2/R-g\cos\theta)=\Sexpr{round(N_B_calc,2)}\,\mathrm N.\]
 \end{solution}
 %% META-INFORMATION
 %% Fonte visual: figura fornecida pelo usuario, originaria de material OpenStax (credito e licenca especifica a conferir).
 %% \extype{cloze}
 %% \exclozetype{num|num}
-%% \exsolution{\Sexpr{round(NA,2)}|\Sexpr{round(NB,2)}}
+%% \exsolution{\Sexpr{round(N_A_calc,2)}|\Sexpr{round(N_B_calc,2)}}
 %% \extol{0.03|0.03}
 %% \exname{Q116ClozeLoopNormalAngulo}
 %% \exsection{Mecanica; Movimento circular; ClozeLoopNormalAngulo}
