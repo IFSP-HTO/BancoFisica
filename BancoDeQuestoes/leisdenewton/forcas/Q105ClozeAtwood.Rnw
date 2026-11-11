@@ -11,7 +11,10 @@ include_supplement("Q105ClozeAtwood.png", dir="../../figuras")
 \begin{question}
 Dois corpos de massas $m_1=\Sexpr{m1}\,\mathrm{kg}$ e $m_2=\Sexpr{m2}\,\mathrm{kg}$ estão ligados por um fio ideal que passa por uma polia ideal. O sistema parte do repouso. Adote $g=10\,\mathrm{m/s^2}$.
 \begin{center}\includegraphics[width=0.66\linewidth,height=7.2cm,keepaspectratio]{Q105ClozeAtwood.png}\end{center}
-Determine: \begin{answerlist}\item o módulo da aceleração, em $\mathrm{m/s^2}$; \item a tensão no fio, em $\mathrm{N}$.\end{answerlist}
+Determine: \begin{answerlist}
+  \item o módulo da aceleração, em $\mathrm{m/s^2}$;
+  \item a tensão no fio, em $\mathrm{N}$.
+\end{answerlist}
 \end{question}
 \begin{solution}
 Como $m_2>m_1$, a massa $m_2$ desce e $m_1$ sobe. Aplicando a segunda lei a cada corpo:
