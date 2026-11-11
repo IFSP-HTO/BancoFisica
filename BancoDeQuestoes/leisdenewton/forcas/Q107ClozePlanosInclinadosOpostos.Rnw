@@ -13,7 +13,10 @@ include_supplement("Q107ClozePlanosInclinadosOpostos.png", dir="../../figuras")
 \begin{question}
 Dois carrinhos de massas $m_1=\Sexpr{m1}\,\mathrm{kg}$ e $m_2=\Sexpr{m2}\,\mathrm{kg}$ estão conectados por um fio ideal que passa por uma polia ideal, em dois planos inclinados sem atrito. Na figura, $\theta_1=37^\circ$ e $\theta_2=53^\circ$. Adote $g=10\,\mathrm{m/s^2}$, $\sin 37^\circ=0{,}6$ e $\sin 53^\circ=0{,}8$.
 \begin{center}\includegraphics[width=0.66\linewidth,height=7.2cm,keepaspectratio]{Q107ClozePlanosInclinadosOpostos.png}\end{center}
-Determine: \begin{answerlist}\item o módulo da aceleração, em $\mathrm{m/s^2}$; \item a tensão no fio, em $\mathrm N$.\end{answerlist}
+Determine: \begin{answerlist}
+  \item o módulo da aceleração, em $\mathrm{m/s^2}$;
+  \item a tensão no fio, em $\mathrm N$.
+\end{answerlist}
 \end{question}
 \begin{solution}
 Como $m_2g\sin53^\circ>m_1g\sin37^\circ$, o carrinho $m_2$ desce seu plano. Nas direções paralelas às rampas:
