@@ -6,7 +6,7 @@ g <- 10
 w <- m*g
 T <- w*cos(theta2*pi/180)/cos((theta1-theta2)*pi/180)
 Fpernas <- T*sin(theta1*pi/180)/cos(theta2*pi/180)
-include_supplement("Q113ClozeEscaladoraEquilibrio.png", dir="../../figuras")
+include_supplement("Q113ClozeEscaladoraEquilibrio.png", dir="../figuras")
 @
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
