@@ -13,7 +13,10 @@ include_supplement("Q113ClozeEscaladoraEquilibrio.png", dir="../../figuras")
 \begin{question}
 Uma escaladora de massa $m=\Sexpr{m}\,\mathrm{kg}$ está em equilíbrio junto a uma parede. A corda exerce uma tração $T$ que faz $\theta_1=\Sexpr{theta1}^\circ$ com a \textbf{vertical}. A força resultante exercida pela parede sobre seus pés tem módulo $F_{\rm pernas}$ e faz $\theta_2=\Sexpr{theta2}^\circ$ \textbf{acima da horizontal}, como na figura esquemática. Adote $g=10\,\mathrm{m/s^2}$.
 \begin{center}\includegraphics[width=0.66\linewidth,height=7.2cm,keepaspectratio]{Q113ClozeEscaladoraEquilibrio.png}\end{center}
-Calcule: \begin{answerlist}\item a tração na corda, em $\mathrm N$; \item o módulo da força da parede sobre os pés, em $\mathrm N$.\end{answerlist}
+Calcule: \begin{answerlist}
+  \item a tração na corda, em $\mathrm N$;
+  \item o módulo da força da parede sobre os pés, em $\mathrm N$.
+\end{answerlist}
 \end{question}
 \begin{solution}
 No eixo horizontal, $F_{\rm pernas}\cos\theta_2=T\sin\theta_1$. No eixo vertical, $T\cos\theta_1+F_{\rm pernas}\sin\theta_2=mg$. Assim,
