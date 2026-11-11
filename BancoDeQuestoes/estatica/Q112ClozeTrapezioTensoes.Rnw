@@ -13,7 +13,10 @@ include_supplement("Q112ClozeTrapezioTensoes.png", dir="../../figuras")
 \begin{question}
 Uma ginasta de massa $m=\Sexpr{m}\,\mathrm{kg}$ está em equilíbrio, sustentada pela força $T_1$ de uma corda inclinada $\theta_1=\Sexpr{theta1}^\circ$ em relação à \textbf{vertical}, e por uma força $T_2$ inclinada $\theta_2=\Sexpr{theta2}^\circ$ \textbf{acima da horizontal}. A figura é esquemática. Adote $g=10\,\mathrm{m/s^2}$.
 \begin{center}\includegraphics[width=0.66\linewidth,height=7.2cm,keepaspectratio]{Q112ClozeTrapezioTensoes.png}\end{center}
-Determine: \begin{answerlist}\item $T_1$, em $\mathrm N$; \item $T_2$, em $\mathrm N$.\end{answerlist}
+Determine: \begin{answerlist}
+  \item $T_1$, em $\mathrm N$;
+  \item $T_2$, em $\mathrm N$.
+\end{answerlist}
 \end{question}
 \begin{solution}
 Do equilíbrio horizontal, $T_2\cos\theta_2=T_1\sin\theta_1$. No eixo vertical, $T_1\cos\theta_1+T_2\sin\theta_2=mg$. Eliminando $T_2$:
