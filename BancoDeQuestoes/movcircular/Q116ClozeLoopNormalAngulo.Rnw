@@ -8,7 +8,7 @@ vB2 <- vA^2+2*g*R*(1-cos(theta*pi/180))
 NA <- m*(vA^2/R-g)
 NB <- m*(vB2/R-g*cos(theta*pi/180))
 stopifnot(NA>0,NB>0)
-include_supplement("Q116ClozeLoopNormalAngulo.png", dir="../../figuras")
+include_supplement("Q116ClozeLoopNormalAngulo.png", dir="../figuras")
 @
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
