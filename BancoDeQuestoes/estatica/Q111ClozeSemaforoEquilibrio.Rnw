@@ -8,7 +8,7 @@ denom <- sin((theta1+theta2)*pi/180)
 T1 <- w*cos(theta2*pi/180)/denom
 T2 <- w*cos(theta1*pi/180)/denom
 T3 <- w
-include_supplement("Q111ClozeSemaforoEquilibrio.png", dir="../../figuras")
+include_supplement("Q111ClozeSemaforoEquilibrio.png", dir="../figuras")
 @
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
