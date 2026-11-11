@@ -1,0 +1,74 @@
+[
+  {
+    "num": 105,
+    "name": "ClozeAtwood",
+    "topic": "leisdenewton/forcas",
+    "filename": "Q105ClozeAtwood.png"
+  },
+  {
+    "num": 106,
+    "name": "ClozeMesaPolia",
+    "topic": "leisdenewton/forcas",
+    "filename": "Q106ClozeMesaPolia.png"
+  },
+  {
+    "num": 107,
+    "name": "ClozePlanosInclinadosOpostos",
+    "topic": "leisdenewton/forcas",
+    "filename": "Q107ClozePlanosInclinadosOpostos.png"
+  },
+  {
+    "num": 108,
+    "name": "ClozePlanoInclinadoMassaSuspensa",
+    "topic": "leisdenewton/forcas",
+    "filename": "Q108ClozePlanoInclinadoMassaSuspensa.png"
+  },
+  {
+    "num": 109,
+    "name": "ClozeBlocoEmpurradoAngulo",
+    "topic": "leisdenewton/atrito",
+    "filename": "Q109ClozeBlocoEmpurradoAngulo.png"
+  },
+  {
+    "num": 110,
+    "name": "ClozeBlocoPuxadoAngulo",
+    "topic": "leisdenewton/atrito",
+    "filename": "Q110ClozeBlocoPuxadoAngulo.png"
+  },
+  {
+    "num": 111,
+    "name": "ClozeSemaforoEquilibrio",
+    "topic": "estatica",
+    "filename": "Q111ClozeSemaforoEquilibrio.png"
+  },
+  {
+    "num": 112,
+    "name": "ClozeTrapezioTensoes",
+    "topic": "estatica",
+    "filename": "Q112ClozeTrapezioTensoes.png"
+  },
+  {
+    "num": 113,
+    "name": "ClozeEscaladoraEquilibrio",
+    "topic": "estatica",
+    "filename": "Q113ClozeEscaladoraEquilibrio.png"
+  },
+  {
+    "num": 114,
+    "name": "ClozeTendaoAquiles",
+    "topic": "estatica",
+    "filename": "Q114ClozeTendaoAquiles.png"
+  },
+  {
+    "num": 115,
+    "name": "ClozeLoopRaioCurvatura",
+    "topic": "movcircular",
+    "filename": "Q115ClozeLoopRaioCurvatura.png"
+  },
+  {
+    "num": 116,
+    "name": "ClozeLoopNormalAngulo",
+    "topic": "movcircular",
+    "filename": "Q116ClozeLoopNormalAngulo.png"
+  }
+]

@@ -1,0 +1,30 @@
+<<echo=FALSE, results=hide>>=
+theta1 <- sample(c(10,15,20),1)
+theta2 <- sample(c(10,15,20),1)
+m <- sample(c(45,50,55,60),1)
+g <- 10
+w <- m*g
+T1 <- w*cos(theta2*pi/180)/cos((theta1-theta2)*pi/180)
+T2 <- T1*sin(theta1*pi/180)/cos(theta2*pi/180)
+include_supplement("Q112ClozeTrapezioTensoes.png", dir="../../figuras")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\begin{question}
+Uma ginasta de massa $m=\Sexpr{m}\,\mathrm{kg}$ está em equilíbrio, sustentada pela força $T_1$ de uma corda inclinada $\theta_1=\Sexpr{theta1}^\circ$ em relação à \textbf{vertical}, e por uma força $T_2$ inclinada $\theta_2=\Sexpr{theta2}^\circ$ \textbf{acima da horizontal}. A figura é esquemática. Adote $g=10\,\mathrm{m/s^2}$.
+\begin{center}\includegraphics[width=0.66\linewidth,height=7.2cm,keepaspectratio]{Q112ClozeTrapezioTensoes.png}\end{center}
+Determine: \begin{answerlist}\item $T_1$, em $\mathrm N$; \item $T_2$, em $\mathrm N$.\end{answerlist}
+\end{question}
+\begin{solution}
+Do equilíbrio horizontal, $T_2\cos\theta_2=T_1\sin\theta_1$. No eixo vertical, $T_1\cos\theta_1+T_2\sin\theta_2=mg$. Eliminando $T_2$:
+\[T_1=\frac{mg\cos\theta_2}{\cos(\theta_1-\theta_2)}=\Sexpr{round(T1,2)}\,\mathrm N,\]
+\[T_2=\frac{T_1\sin\theta_1}{\cos\theta_2}=\Sexpr{round(T2,2)}\,\mathrm N.\]
+\end{solution}
+%% META-INFORMATION
+%% Fonte visual: figura fornecida pelo usuario, originaria de material OpenStax (credito e licenca especifica a conferir).
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{round(T1,2)}|\Sexpr{round(T2,2)}}
+%% \extol{0.03|0.03}
+%% \exname{Q112ClozeTrapezioTensoes}
+%% \exsection{Mecanica; Estatica; ClozeTrapezioTensoes}
