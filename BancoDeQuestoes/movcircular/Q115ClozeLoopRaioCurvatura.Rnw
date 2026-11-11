@@ -8,7 +8,7 @@ vbottom <- sample(c(22,24,26),1)
 Ntop <- m*(vtop^2/rmin-g)
 Nbottom <- m*(vbottom^2/rmax+g)
 stopifnot(Ntop>0)
-include_supplement("Q115ClozeLoopRaioCurvatura.png", dir="../../figuras")
+include_supplement("Q115ClozeLoopRaioCurvatura.png", dir="../figuras")
 @
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
