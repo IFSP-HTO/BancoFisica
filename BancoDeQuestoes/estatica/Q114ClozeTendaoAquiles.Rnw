@@ -12,7 +12,10 @@ include_supplement("Q114ClozeTendaoAquiles.png", dir="../../figuras")
 \begin{question}
 Na figura, os músculos gastrocnêmios medial e lateral exercem forças $F_1$ e $F_2$ em um tendão. Suas direções fazem ângulos $\theta_1=\Sexpr{theta1}^\circ$ e $\theta_2=\Sexpr{theta2}^\circ$ com o eixo vertical. Considere que a resultante dessas duas forças é \textbf{vertical} e tem módulo $F=\Sexpr{F}\,\mathrm N$. A imagem é esquemática e os ângulos são parâmetros do modelo.
 \begin{center}\includegraphics[width=0.66\linewidth,height=7.2cm,keepaspectratio]{Q114ClozeTendaoAquiles.png}\end{center}
-Calcule: \begin{answerlist}\item o módulo de $F_1$, em $\mathrm N$; \item o módulo de $F_2$, em $\mathrm N$.\end{answerlist}
+Calcule: \begin{answerlist}
+  \item o módulo de $F_1$, em $\mathrm N$;
+  \item o módulo de $F_2$, em $\mathrm N$.
+\end{answerlist}
 \end{question}
 \begin{solution}
 As componentes horizontais se anulam: $F_1\sin\theta_1=F_2\sin\theta_2$. As verticais somam $F$: $F_1\cos\theta_1+F_2\cos\theta_2=F$. Resolvendo,
