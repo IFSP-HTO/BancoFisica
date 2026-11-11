@@ -5,7 +5,7 @@ F <- sample(c(600,750,900,1050),1)
 denom <- sin((theta1+theta2)*pi/180)
 F1 <- F*sin(theta2*pi/180)/denom
 F2 <- F*sin(theta1*pi/180)/denom
-include_supplement("Q114ClozeTendaoAquiles.png", dir="../../figuras")
+include_supplement("Q114ClozeTendaoAquiles.png", dir="../figuras")
 @
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
