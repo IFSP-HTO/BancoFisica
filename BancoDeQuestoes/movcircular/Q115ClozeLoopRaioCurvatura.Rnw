@@ -15,7 +15,10 @@ include_supplement("Q115ClozeLoopRaioCurvatura.png", dir="../../figuras")
 \begin{question}
 Um carrinho de massa $m=\Sexpr{m}\,\mathrm{kg}$ percorre a parte interna de um trilho em formato de loop. O raio de curvatura local é $r_{\min}=\Sexpr{rmin}\,\mathrm m$ no \textbf{topo} e $r_{\max}=\Sexpr{rmax}\,\mathrm m$ na \textbf{base}. O carrinho tem velocidades $v_{\rm topo}=\Sexpr{vtop}\,\mathrm{m/s}$ e $v_{\rm base}=\Sexpr{vbottom}\,\mathrm{m/s}$ nesses pontos. Adote $g=10\,\mathrm{m/s^2}$; despreze o atrito.
 \begin{center}\includegraphics[width=0.66\linewidth,height=7.2cm,keepaspectratio]{Q115ClozeLoopRaioCurvatura.png}\end{center}
-Determine: \begin{answerlist}\item a força normal no topo, em $\mathrm N$; \item a força normal na base, em $\mathrm N$.\end{answerlist}
+Determine: \begin{answerlist}
+  \item a força normal no topo, em $\mathrm N$;
+  \item a força normal na base, em $\mathrm N$.
+\end{answerlist}
 \end{question}
 \begin{solution}
 No topo, a aceleração centrípeta aponta para baixo: $N_{\rm topo}+mg=mv_{\rm topo}^2/r_{\min}$. Na base, aponta para cima: $N_{\rm base}-mg=mv_{\rm base}^2/r_{\max}$. Logo,
