@@ -123,7 +123,7 @@ de onda tambem diminui. Logo, a alternativa correta e \textbf{D}.
 %% \exsolution{00010}
 %% \exname{QSCSantaCasa2027Q66Refracao}
 %% \exsection{Optica; Refracao; Lei de Snell; Comprimento de onda; Santa Casa 2027}
-%% SOURCE-VISUAL: original-extract
+%% SOURCE-VISUAL: original-crop
 %% SOURCE: ''' + source + "\n")
 
 
@@ -147,12 +147,19 @@ def main():
         width, height = im.size
     if width < 200 or height < 150 or len(content) < 1000:
         raise ValueError("Imagem suspeita: dimensoes ou tamanho insuficientes")
-    fname = f"SantaCasa{year}Q{number}Original.png"
+    # Recorte de pixels originais: apenas a figura, sem texto duplicado.
+    # Coordenadas verificadas visualmente para Santa Casa 2027 Q66.
+    with Image.open(BytesIO(content)) as im:
+        cropped = im.crop((190, 220, 480, 575))
+        buffer = BytesIO()
+        cropped.save(buffer, format="PNG")
+        figure_bytes = buffer.getvalue()
+    fname = f"SantaCasa{year}Q{number}Figura.png"
     stem = f"QSCSantaCasa{year}Q{number}Refracao"
     rnw = build_rnw(intro, alternatives, fname, args.url)
     report = {"source": args.url, "image_url": image_url, "image_name": fname,
-              "sha256": hashlib.sha256(content).hexdigest(), "width": width,
-              "height": height, "bytes": len(content), "source_visual": "original-extract",
+              "sha256": hashlib.sha256(figure_bytes).hexdigest(), "source_sha256": hashlib.sha256(content).hexdigest(), "width": 290,
+              "height": 355, "bytes": len(figure_bytes), "source_visual": "original-crop",
               "status": "pending-visual-review"}
     print(json.dumps(report, ensure_ascii=False, indent=2))
     if args.dry_run:
@@ -163,7 +170,7 @@ def main():
     image_path = FIGURE_DIR / fname
     if question_path.exists() or image_path.exists():
         raise FileExistsError("Questao/imagem ja existente; nao sobrescrever")
-    image_path.write_bytes(content)
+    image_path.write_bytes(figure_bytes)
     question_path.write_text(rnw, encoding="utf-8")
     (ROOT / "import-filatte-report.json").write_text(
         json.dumps(report, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
