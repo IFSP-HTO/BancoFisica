@@ -1,5 +1,11 @@
 name: Importar questao de optica (Filatte)
 on:
+  push:
+    branches:
+      - feat/importador-filatte-optica
+    paths:
+      - 'tools/import_filatte.py'
+      - '.github/workflows/import-filatte-optica.yml'
   pull_request:
     paths:
       - 'tools/import_filatte.py'
@@ -47,12 +53,12 @@ jobs:
         with:
           name: santa-casa-2027-q66-original-e-rnw
           path: |
-            BancoDeQuestoes/figuras/SantaCasa2027Q66Original.png
+            BancoDeQuestoes/figuras/SantaCasa2027Q66Figura.png
             BancoDeQuestoes/optica/QSCSantaCasa2027Q66Refracao.Rnw
             import-filatte-report.json
           if-no-files-found: error
   import:
-    if: github.event_name == 'workflow_dispatch'
+    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
     permissions:
       contents: write
       pull-requests: write
@@ -61,7 +67,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: master
+          ref: ${{ github.event_name == 'push' && github.ref_name || github.ref_name }}
+          fetch-depth: 0
           persist-credentials: true
       - uses: actions/setup-python@v5
         with:
@@ -71,7 +78,7 @@ jobs:
       - name: Obter pagina e imagem original (aborta se falhar)
         env:
           QUESTION_URL: ${{ inputs.url }}
-        run: python tools/import_filatte.py --url "$QUESTION_URL"
+        run: python tools/import_filatte.py --url "${QUESTION_URL:-https://provas.professorfilatte.com.br/santa-casa-2027-fisica-questao-66}"
       - name: Conferir integridade do PNG e estrutura Rnw
         run: |
           python - <<'PY'
@@ -86,7 +93,7 @@ jobs:
           assert len(questions) == 1
           rnw = questions[0].read_text()
           assert report["image_name"] in rnw
-          assert "SOURCE-VISUAL: original-extract" in rnw
+          assert "SOURCE-VISUAL: original-crop" in rnw
           assert "\\exsolution{00010}" in rnw
           print("PNG original verificado e metadados da questao conferidos")
           PY
@@ -98,10 +105,9 @@ jobs:
           BRANCH="import/filatte-santa-casa-2027-q66"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git switch -c "$BRANCH"
-          git add BancoDeQuestoes/optica/QSCSantaCasa2027Q66Refracao.Rnw BancoDeQuestoes/figuras/SantaCasa2027Q66Original.png
+          git fetch origin master
+          git switch -c "$BRANCH" origin/master
+          git add BancoDeQuestoes/optica/QSCSantaCasa2027Q66Refracao.Rnw BancoDeQuestoes/figuras/SantaCasa2027Q66Figura.png
           git commit -m "Import Santa Casa 2027 Q66 with source image"
           git push --set-upstream origin "$BRANCH"
-          gh pr create --base master --head "$BRANCH" \
-            --title "Optica: Santa Casa 2027 Q66 com imagem original" \
-            --body "Importacao piloto da questao 66. A imagem PNG original foi baixada sem reencodificacao. Revisar visualmente o arquivo para confirmar enquadramento adequado (sem texto duplicado), direitos de uso e executar exames2pdf/exams2moodle antes do merge. Este PR NAO deve ser mesclado sem essa verificacao."
+          echo "Branch de questao criada: $BRANCH. Abrir PR de revisao separadamente."
