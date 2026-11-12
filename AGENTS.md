@@ -17,6 +17,11 @@ Quando uma questão estiver sendo criada ou adaptada a partir de um PDF-fonte e 
 
 Para várias figuras da mesma prova, prefira o modo `batch` com manifesto CSV. Ele mantém cada PDF aberto durante o processamento de todos os ativos daquele documento.
 
+### Imagens finais editadas no ChatGPT: transporte pelo conector GitHub
+
+Quando o arquivo final existe no ambiente do ChatGPT, mas não há checkout Git autenticado compartilhando o sistema de arquivos, seguir [docs/CHAT_IMAGE_GITHUB_WORKFLOW.md](docs/CHAT_IMAGE_GITHUB_WORKFLOW.md) e usar a ferramenta tools/verify_image_blob.py para verificar o SHA Git dos bytes locais antes de associar blobs à branch. O conector aceita Base64 via create_blob, mas **não aceita um caminho local**. Quando o arquivo estiver em /mnt/data, empregar a ponte automática comprovada: gerar Base64 em linhas de 4096 caracteres, colocá-lo temporariamente na Biblioteca do ChatGPT via ferramenta Files, recuperar as linhas pela própria ferramenta Files e chamar create_blob no mesmo fluxo conectado. Conferir SHA, depois retirar o arquivo temporário da Biblioteca ativa (a exclusão o move para a lixeira). Confirmar acesso efetivo aos bytes e respeitar limites do canal. Comparar o SHA de retorno, verificar caminho/tree/commit e só então afirmar que o arquivo foi enviado. Se não houver acesso aos bytes ou o transporte falhar, marcar bloqueio ou usar o fallback documentado; nunca alegar sucesso, gerar placeholder, nem substituir figura original de PDF por desenho aproximado. Para PDFs e checkouts no mesmo ambiente, continua valendo o fluxo direto por tools/pdf_assets.py, sem Base64.
+
+
 ### Gate obrigatório de fidelidade visual
 
 Antes de escrever ou adaptar qualquer `.Rnw` baseado em uma fonte externa, faça este preflight:
