@@ -1,0 +1,72 @@
+<<echo=FALSE, results=hide>>=
+## Construir F a partir de massas positivas e aceleracao para
+## garantir mC positivo e respostas consistentes.
+casos <- expand.grid(mA=2:8, mB=2:8, mC=2:10,
+                      a=c(0.5,0.6,0.8,1.0,1.2))
+casos$F <- (casos$mA+casos$mB+casos$mC)*casos$a
+casos <- casos[abs(casos$F-round(casos$F)) < 1e-10, ]
+i <- sample(seq_len(nrow(casos)), 1)
+mA <- casos$mA[i]
+mB <- casos$mB[i]
+mC <- casos$mC[i]
+a <- casos$a[i]
+F <- round(casos$F[i])
+TBC <- round((mA+mB)*a, 2)
+stopifnot(abs(F-(mA+mB+mC)*a) < 1e-10)
+include_supplement("Q114TresBlocosHorizontais.png")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\begin{question}
+Três blocos A, B e C estão ligados por dois fios ideais e
+deslizam sobre uma superfície horizontal sem atrito. Uma força
+horizontal de módulo $F=\Sexpr{F}\,\mathrm{N}$ é aplicada ao
+bloco C, como mostra a figura. O conjunto possui aceleração
+de módulo $a=\Sexpr{a}\,\mathrm{m/s^2}$. As massas conhecidas
+são $m_A=\Sexpr{mA}\,\mathrm{kg}$ e
+$m_B=\Sexpr{mB}\,\mathrm{kg}$.
+
+\begin{center}
+\includegraphics[width=0.86\linewidth,keepaspectratio]{Q114TresBlocosHorizontais.png}
+\end{center}
+
+Determine:
+\begin{answerlist}
+ \item a massa do bloco C, em quilogramas;
+ \item a tração no fio que liga B a C, em newtons.
+\end{answerlist}
+\end{question}
+\begin{solution}
+Para os três blocos como sistema, a única força horizontal
+externa é F. Pela segunda lei de Newton:
+\[
+F=(m_A+m_B+m_C)a.
+\]
+Isolando a massa de C:
+\[
+m_C=\frac{F}{a}-m_A-m_B
+=\frac{\Sexpr{F}}{\Sexpr{a}}
+ -\Sexpr{mA}-\Sexpr{mB}
+=\Sexpr{mC}\,\mathrm{kg}.
+\]
+O fio que liga B a C acelera o subsistema formado por A e B.
+Logo,
+\[
+T_{BC}=(m_A+m_B)a
+=(\Sexpr{mA}+\Sexpr{mB})\cdot\Sexpr{a}
+=\Sexpr{TBC}\,\mathrm{N}.
+\]
+\begin{answerlist}
+ \item $\Sexpr{mC}\,\mathrm{kg}$;
+ \item $\Sexpr{TBC}\,\mathrm{N}$.
+\end{answerlist}
+\end{solution}
+%% META-INFORMATION
+%% Inspirada na questao 11 da lista de Leis de Newton, Prof. Panosso; enunciado reescrito.
+%% Figura enviada e adaptada pelo usuario; confirmar permissao de redistribuicao.
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{mC}|\Sexpr{TBC}}
+%% \extol{0.01|0.01}
+%% \exname{Q114ClozeTresBlocosHorizontaisMassa}
+%% \exsection{Mecanica; Leis de Newton; Sistemas de corpos; Tracao; Massa}

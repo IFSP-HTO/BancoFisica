@@ -1,0 +1,86 @@
+<<echo=FALSE, results=hide>>=
+## A esta inicialmente preso ao solo pelo fio 3.
+## Depois do corte, B e C descem e A sobe, a partir do repouso.
+g <- 10
+casos <- expand.grid(mA=2:9, mB=2:10, mC=3:12)
+casos$a <- g*(casos$mB+casos$mC-casos$mA)/
+             (casos$mA+casos$mB+casos$mC)
+casos <- casos[casos$mB+casos$mC > casos$mA &
+  abs(casos$a-round(casos$a)) < 1e-10 &
+  round(casos$a) %in% c(2,4,6), ]
+i <- sample(seq_len(nrow(casos)), 1)
+mA <- casos$mA[i]
+mB <- casos$mB[i]
+mC <- casos$mC[i]
+a <- round(casos$a[i])
+t <- sample(if (a == 6) 1 else c(1,2), 1)
+h <- a*t*t/2
+T2 <- mA*(g+a)
+T1 <- mC*(g-a)
+stopifnot(T2 == (mB+mC)*(g-a))
+stopifnot(abs(h-a*t*t/2) < 1e-10)
+include_supplement("Q112TresFiosPolia.png")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\begin{question}
+Na figura, o bloco A tem massa $m_A=\Sexpr{mA}\,\mathrm{kg}$,
+o bloco B tem massa $m_B=\Sexpr{mB}\,\mathrm{kg}$ e o bloco C
+tem massa $m_C=\Sexpr{mC}\,\mathrm{kg}$. Inicialmente, o sistema
+está em repouso porque o fio 3 prende A ao solo. Os fios 1 e 2
+e a polia são ideais. No instante em que o fio 3 é cortado, o
+bloco C está a uma altura $h=\Sexpr{h}\,\mathrm{m}$ do solo.
+Despreze a resistência do ar e adote
+$g=10\,\mathrm{m/s^2}$. Considere o movimento \emph{até o
+primeiro contato de C com o solo}.
+
+\begin{center}
+\includegraphics[width=0.47\linewidth,keepaspectratio]{Q112TresFiosPolia.png}
+\end{center}
+
+Determine:
+\begin{answerlist}
+ \item o tempo até C tocar o solo, em segundos;
+ \item a tração no fio 2 imediatamente após o corte, em newtons.
+\end{answerlist}
+\end{question}
+\begin{solution}
+Após o corte do fio 3, o lado de B e C é mais pesado. Assim,
+A sobe, enquanto B e C descem com a mesma aceleração em módulo.
+Somando a segunda lei para os três corpos:
+\[
+(m_B+m_C-m_A)g=(m_A+m_B+m_C)a.
+\]
+Portanto,
+\[
+a=\frac{(\Sexpr{mB}+\Sexpr{mC}-\Sexpr{mA})\cdot 10}
+       {\Sexpr{mA}+\Sexpr{mB}+\Sexpr{mC}}
+ =\Sexpr{a}\,\mathrm{m/s^2}.
+\]
+O movimento de C começa do repouso, e
+$h=\tfrac12 at^2$. Portanto:
+\[
+t=\sqrt{\frac{2h}{a}}
+ =\sqrt{\frac{2\cdot\Sexpr{h}}{\Sexpr{a}}}
+ =\Sexpr{t}\,\mathrm{s}.
+\]
+No bloco A, que acelera para cima:
+\[
+T_2-m_Ag=m_Aa
+\quad\Rightarrow\quad
+T_2=m_A(g+a)=\Sexpr{T2}\,\mathrm{N}.
+\]
+\begin{answerlist}
+ \item $\Sexpr{t}\,\mathrm{s}$;
+ \item $\Sexpr{T2}\,\mathrm{N}$.
+\end{answerlist}
+\end{solution}
+%% META-INFORMATION
+%% Inspirada na questao 9 da lista de Leis de Newton, Prof. Panosso; enunciado reescrito.
+%% Figura enviada e adaptada pelo usuario; confirmar permissao de redistribuicao.
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{t}|\Sexpr{T2}}
+%% \extol{0.01|0.01}
+%% \exname{Q112ClozePoliaCorteFioTempoTracao}
+%% \exsection{Mecanica; Leis de Newton; Polias; Tracoes; Cinematica}

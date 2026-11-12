@@ -1,0 +1,83 @@
+<<echo=FALSE, results=hide>>=
+## B movimenta-se para a direita, A sobe e C desce.
+g <- 10
+casos <- expand.grid(mA=2:8, mB=2:8, mC=3:14)
+casos$a <- g*(casos$mC-casos$mA)/(casos$mA+casos$mB+casos$mC)
+casos <- casos[casos$mC > casos$mA &
+  abs(casos$a-round(casos$a)) < 1e-10 &
+  round(casos$a) %in% 1:6, ]
+i <- sample(seq_len(nrow(casos)), 1)
+mA <- casos$mA[i]
+mB <- casos$mB[i]
+mC <- casos$mC[i]
+a <- round(casos$a[i])
+TA <- mA*(g+a)
+TC <- mC*(g-a)
+stopifnot(TC-TA == mB*a)
+include_supplement("Q110DuasPoliasTresBlocos.png")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\begin{question}
+Três blocos A, B e C têm massas
+$m_A=\Sexpr{mA}\,\mathrm{kg}$,
+$m_B=\Sexpr{mB}\,\mathrm{kg}$ e
+$m_C=\Sexpr{mC}\,\mathrm{kg}$.
+B pode deslizar sem atrito sobre a superfície horizontal.
+Dois fios independentes, ideais, ligam B aos corpos pendurados A
+e C por meio de duas polias fixas e ideais, como mostra a figura.
+O sistema é abandonado do repouso, com os fios esticados.
+Adote $g=10\,\mathrm{m/s^2}$.
+
+\begin{center}
+\includegraphics[width=0.83\linewidth,keepaspectratio]{Q110DuasPoliasTresBlocos.png}
+\end{center}
+
+Calcule:
+\begin{answerlist}
+ \item o módulo da aceleração comum, em $\mathrm{m/s^2}$;
+ \item a tração no fio à esquerda, ligado a A, em newtons;
+ \item a tração no fio à direita, ligado a C, em newtons.
+\end{answerlist}
+\end{question}
+\begin{solution}
+Como $m_C>m_A$, B acelera para a direita, A sobe e C desce.
+Somando a segunda lei para os três corpos, as trações internas
+se cancelam:
+\[
+(m_C-m_A)g=(m_A+m_B+m_C)a.
+\]
+Portanto,
+\[
+a=\frac{(\Sexpr{mC}-\Sexpr{mA})\cdot 10}
+        {\Sexpr{mA}+\Sexpr{mB}+\Sexpr{mC}}
+ =\Sexpr{a}\,\mathrm{m/s^2}.
+\]
+No corpo A (sentido positivo para cima):
+\[
+T_A-m_Ag=m_Aa
+\ \Rightarrow\
+T_A=m_A(g+a)=\Sexpr{TA}\,\mathrm{N}.
+\]
+No corpo C (sentido positivo para baixo):
+\[
+m_Cg-T_C=m_Ca
+\ \Rightarrow\
+T_C=m_C(g-a)=\Sexpr{TC}\,\mathrm{N}.
+\]
+Conferindo B: $T_C-T_A=m_Ba$.
+\begin{answerlist}
+ \item $\Sexpr{a}\,\mathrm{m/s^2}$;
+ \item $\Sexpr{TA}\,\mathrm{N}$;
+ \item $\Sexpr{TC}\,\mathrm{N}$.
+\end{answerlist}
+\end{solution}
+%% META-INFORMATION
+%% Inspirada na questao 5 da lista de Leis de Newton, Prof. Panosso; enunciado reescrito.
+%% Figura enviada e adaptada pelo usuario; confirmar permissao de redistribuicao.
+%% \extype{cloze}
+%% \exclozetype{num|num|num}
+%% \exsolution{\Sexpr{a}|\Sexpr{TA}|\Sexpr{TC}}
+%% \extol{0.01|0.01|0.01}
+%% \exname{Q110ClozeTresCorposDuasPolias}
+%% \exsection{Mecanica; Leis de Newton; Polias; Tracoes; Sistemas de corpos}
