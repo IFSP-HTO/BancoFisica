@@ -1,0 +1,49 @@
+<<echo=FALSE, results=hide>>=
+# Fonte: INEP, ENEM 2015, primeiro dia, caderno azul, questao 85
+# Equivalente a questao 58 do caderno amarelo.
+# Imagem original extraida do PDF oficial do caderno azul.
+include_supplement("enem2015_alhazen_camara_escura.jpg")
+
+alternativas <- c("íris.", "retina.", "pupila.", "córnea.", "cristalino.")
+solutions <- c(FALSE, TRUE, FALSE, FALSE, FALSE)
+ordem <- sample(seq_along(alternativas))
+alternativas <- alternativas[ordem]
+solutions <- solutions[ordem]
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+
+Em seus estudos sobre a câmara escura, Ibn al-Haytham (Alhazen) descreveu a formação de uma imagem invertida de objetos exteriores sobre um tecido colocado no interior de um recinto escuro. A ilustração a seguir representa essa montagem.
+
+\begin{center}
+\includegraphics[width=0.78\linewidth,keepaspectratio]{enem2015_alhazen_camara_escura.jpg}
+\end{center}
+
+Na analogia entre a câmara escura e o olho humano, qual estrutura corresponde ao tecido usado como anteparo, sobre o qual a imagem se forma?
+
+<<echo=FALSE, results=tex>>=
+answerlist(alternativas)
+@
+
+\end{question}
+
+\begin{solution}
+
+A \textbf{retina} é a estrutura sensível à luz localizada no fundo do olho, sobre a qual se forma a imagem. Na analogia, a pupila corresponde à abertura por onde a luz entra, a íris regula essa abertura, e a córnea e o cristalino participam da focalização. Assim, o tecido que recebe a projeção corresponde à retina.
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(solutions, paste0("\\textbf{",alternativas,"}"), alternativas))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: INEP, ENEM 2015, 1o dia, caderno azul, Q85 (amarelo Q58), adaptada.
+%% SOURCE-VISUAL: original-extract
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q113QuizEnem2015AlhazenCamaraEscura}
+%% \exsection{Optica; Optica geometrica; Camara escura; Visao; ENEM}
+%% \exusepackage[utf8]{inputenc}

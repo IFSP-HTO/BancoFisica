@@ -1,0 +1,56 @@
+<<echo=FALSE, results=hide>>=
+# Fonte: INEP, ENADE 2024, Licenciatura em Fisica, caderno 1, questao 49.
+# Fotografia original extraida diretamente do PDF oficial, pagina 36.
+# Adaptacao: quinta alternativa acrescida e opcoes embaralhadas.
+include_supplement("enade2024_eclipse_folhas_original.jpeg")
+
+alternativas <- c(
+  "uma câmara escura de orifício.",
+  "uma mira telescópica.",
+  "uma rede de difração.",
+  "uma lente de aumento.",
+  "um espelho plano."
+)
+solutions <- c(TRUE, FALSE, FALSE, FALSE, FALSE)
+ordem <- sample(seq_along(alternativas))
+alternativas <- alternativas[ordem]
+solutions <- solutions[ordem]
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+
+Durante um eclipse solar parcial, pequenas aberturas entre as folhas de uma árvore permitem a passagem da luz do Sol e produzem no solo várias imagens com formato de crescente, como mostra a fotografia.
+
+\begin{center}
+\includegraphics[width=0.39\linewidth,keepaspectratio]{enade2024_eclipse_folhas_original.jpeg}
+\end{center}
+
+A formação dessas imagens pode ser explicada pelo mesmo princípio de funcionamento de
+
+<<echo=FALSE, results=tex>>=
+answerlist(alternativas)
+@
+
+\end{question}
+
+\begin{solution}
+
+Cada pequena abertura entre as folhas funciona aproximadamente como o orifício de uma \textbf{câmara escura}. Pela propagação retilínea da luz, raios provenientes de diferentes pontos da parte visível do disco solar atravessam a abertura e formam uma imagem projetada no solo. Durante um eclipse parcial, essa imagem reproduz aproximadamente a porção não encoberta do Sol, com aspecto de crescente. Não se trata da imagem formada por uma lente, espelho ou rede de difração.
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(solutions, paste0("\\textbf{", alternativas, "}"), alternativas))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: INEP, ENADE 2024, Licenciatura em Fisica, caderno 1, Q49, adaptada.
+%% SOURCE-VISUAL: original-extract
+%% Visual original: fotografia do eclipse projetado por aberturas entre folhas, PDF p. 36.
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q114QuizEnade2024EclipseCamaraEscura}
+%% \exsection{Optica; Optica geometrica; Propagacao retilinea; Camara escura; Eclipse; ENADE}
+%% \exusepackage[utf8]{inputenc}
