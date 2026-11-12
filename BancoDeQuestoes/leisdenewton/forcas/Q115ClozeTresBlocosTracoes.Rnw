@@ -1,0 +1,50 @@
+<<echo=FALSE, results=hide>>=
+mA <- sample(2:6,1)
+mB <- sample(2:6,1)
+mC <- sample(2:8,1)
+a <- sample(1:4,1)
+F <- (mA+mB+mC)*a
+TAB <- mA*a
+TBC <- (mA+mB)*a
+stopifnot(TAB>0,TBC>TAB,F>TBC)
+include_supplement("Q114TresBlocosHorizontais.png")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\begin{question}
+Três blocos A, B e C, de massas $m_A=\Sexpr{mA}\,\mathrm{kg}$,
+$m_B=\Sexpr{mB}\,\mathrm{kg}$ e $m_C=\Sexpr{mC}\,\mathrm{kg}$,
+são ligados por fios ideais sobre uma superfície horizontal sem atrito.
+Uma força horizontal de módulo $F=\Sexpr{F}\,\mathrm{N}$ atua em C.
+\begin{center}
+\includegraphics[width=0.88\linewidth,keepaspectratio]{Q114TresBlocosHorizontais.png}
+\end{center}
+Determine os módulos das trações, em newtons:
+\begin{answerlist}
+\item no fio entre A e B;
+\item no fio entre B e C.
+\end{answerlist}
+\end{question}
+\begin{solution}
+O conjunto acelera a
+\[a=\frac{F}{m_A+m_B+m_C}
+=\frac{\Sexpr{F}}{\Sexpr{mA}+\Sexpr{mB}+\Sexpr{mC}}
+=\Sexpr{a}\,\mathrm{m/s^2}.\]
+No bloco A, a única força horizontal é a tração $T_{AB}$:
+\[T_{AB}=m_Aa=\Sexpr{mA}\cdot\Sexpr{a}=\Sexpr{TAB}\,\mathrm{N}.\]
+No subsistema A+B, a força horizontal externa é $T_{BC}$:
+\[T_{BC}=(m_A+m_B)a
+=(\Sexpr{mA}+\Sexpr{mB})\cdot\Sexpr{a}=\Sexpr{TBC}\,\mathrm{N}.\]
+\begin{answerlist}
+\item $\Sexpr{TAB}\,\mathrm{N}$
+\item $\Sexpr{TBC}\,\mathrm{N}$
+\end{answerlist}
+\end{solution}
+%% META-INFORMATION
+%% Reutiliza a imagem Q114 ja existente; variacao sobre tracoes internas.
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{TAB}|\Sexpr{TBC}}
+%% \extol{0.01|0.01}
+%% \exname{Q115ClozeTresBlocosTracoes}
+%% \exsection{Mecanica; Leis de Newton; Tracao; Sistemas de blocos}

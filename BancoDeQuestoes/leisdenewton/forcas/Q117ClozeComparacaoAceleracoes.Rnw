@@ -1,0 +1,46 @@
+<<echo=FALSE, results=hide>>=
+m <- sample(c(1,2,3,4,5,6),1)
+r21 <- 2/3
+r31 <- 4/3
+include_supplement("Q117ComparacaoAceleracoes.png")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\begin{question}
+Nos três sistemas da figura, todos os blocos possuem a mesma
+massa $m=\Sexpr{m}\,\mathrm{kg}$. Os fios e as polias são ideais,
+não há atrito e cada sistema é abandonado do repouso.
+$a_1$, $a_2$ e $a_3$ indicam os módulos das acelerações
+dos blocos nas montagens 1, 2 e 3.
+\begin{center}
+\includegraphics[width=0.92\linewidth,keepaspectratio]{Q117ComparacaoAceleracoes.png}
+\end{center}
+Determine as razões, sem unidades:
+\begin{answerlist}
+\item $a_2/a_1$;
+\item $a_3/a_1$.
+\end{answerlist}
+\end{question}
+\begin{solution}
+Somamos as forças na direção do movimento e consideramos
+a massa total acelerada em cada sistema. Assim:
+\[a_1=\frac{mg}{2m}=\frac{g}{2},\qquad
+a_2=\frac{mg}{3m}=\frac{g}{3},\qquad
+a_3=\frac{2mg}{3m}=\frac{2g}{3}.\]
+Logo:
+\[\frac{a_2}{a_1}=\frac{2}{3},\qquad
+\frac{a_3}{a_1}=\frac{4}{3}.\]
+\begin{answerlist}
+\item $\Sexpr{round(r21,4)}$;
+\item $\Sexpr{round(r31,4)}$.
+\end{answerlist}
+\end{solution}
+%% META-INFORMATION
+%% Inspirada na questao 17 da lista Aplicacao: leis de Newton, Prof. Panosso.
+%% Comparacao conceitual: razoes independem da massa sorteada.
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{r21}|\Sexpr{r31}}
+%% \extol{0.01|0.01}
+%% \exname{Q117ClozeComparacaoAceleracoes}
+%% \exsection{Mecanica; Leis de Newton; Polias; Razoes de aceleracoes}
