@@ -10,7 +10,7 @@ T <- muAB*mA*g
 fatChao <- muChao*(mA+mB)*g
 P <- 2*T+fatChao
 stopifnot(P>0)
-include_supplement("AtritoBlocosPoliaEmpilhados.png", dir="../figuras")
+include_supplement("AtritoBlocosPoliaEmpilhados.png", dir="../../figuras")
 @
 \usepackage{graphicx}
 \begin{question}
