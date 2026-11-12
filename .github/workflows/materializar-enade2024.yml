@@ -1,0 +1,43 @@
+name: Materializar lote ENADE 2024
+on:
+  push:
+    branches: [enade2024-seis-questoes-fisica]
+    paths: [.github/workflows/materializar-enade2024.yml]
+permissions:
+  contents: write
+jobs:
+  materialize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Extrair os arquivos sem transformar imagens
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import pathlib, zipfile
+          path = pathlib.Path(".incoming/enade2024-seis-questoes.zip")
+          with zipfile.ZipFile(path) as z:
+              names=z.namelist()
+              assert len(names)==16, f"Expected 16 files, got {len(names)}"
+              assert len(set(names))==len(names)
+              for info in z.infolist():
+                  p=pathlib.PurePosixPath(info.filename)
+                  assert not info.is_dir()
+                  assert not p.is_absolute() and ".." not in p.parts and p.parts[0]=="BancoDeQuestoes"
+                  assert p.suffix.lower() in (".rnw",".jpg",".jpeg",".png")
+                  target=pathlib.Path(*p.parts)
+                  assert not target.exists(), "Refusing overwrite of "+str(target)
+                  target.parent.mkdir(parents=True,exist_ok=True)
+                  target.write_bytes(z.read(info))
+                  print("Created:",target,len(z.read(info)))
+          PY
+      - name: Versionar as seis questões e dez recursos visuais
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add BancoDeQuestoes
+          git rm .incoming/enade2024-seis-questoes.zip
+          git commit -m "Inclui seis questões ENADE 2024 com recursos visuais originais"
+          git push origin HEAD:enade2024-seis-questoes-fisica
