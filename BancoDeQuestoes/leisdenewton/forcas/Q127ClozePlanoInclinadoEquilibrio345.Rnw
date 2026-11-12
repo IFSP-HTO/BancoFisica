@@ -1,0 +1,54 @@
+<<echo=FALSE, results=hide>>=
+g <- 10
+m1 <- sample(seq(5,40,5),1)
+sen <- 3/5
+m2 <- m1*sen
+T <- m2*g
+stopifnot(m1*g*sen==T)
+include_supplement("Q127PlanoInclinadoPolia345.png")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\begin{question}
+Um bloco de massa $m_1=\Sexpr{m1}\,\mathrm{kg}$ está apoiado sobre
+um plano inclinado sem atrito e ligado por um fio ideal a outro bloco
+suspenso de massa $m_2$, por meio de uma polia ideal.
+A geometria do plano está indicada: altura de 30 cm, base de
+40 cm e comprimento de 50 cm. O sistema está em equilíbrio
+em qualquer posição, com o fio sempre esticado.
+Adote $g=10\,\mathrm{m/s^2}$.
+\begin{center}
+\includegraphics[width=0.86\linewidth,keepaspectratio]{Q127PlanoInclinadoPolia345.png}
+\end{center}
+Determine:
+\begin{answerlist}
+\item a massa $m_2$ necessária ao equilíbrio, em quilogramas;
+\item a tração no fio, em newtons.
+\end{answerlist}
+\end{question}
+\begin{solution}
+Pela geometria, $\sin\theta=30/50=3/5$.
+Em equilíbrio, $T=m_1g\sin\theta=m_2g$. Portanto,
+\[
+m_2=m_1\sin\theta
+=\Sexpr{m1}\cdot\frac35
+=\Sexpr{m2}\,\mathrm{kg}.
+\]
+\[
+T=m_2g=\Sexpr{m2}\cdot 10=\Sexpr{T}\,\mathrm{N}.
+\]
+Observe que $m_1/m_2=5/3$ em qualquer variante.
+\begin{answerlist}
+\item $\Sexpr{m2}\,\mathrm{kg}$
+\item $\Sexpr{T}\,\mathrm{N}$
+\end{answerlist}
+\end{solution}
+%% META-INFORMATION
+%% Base conceitual: questao 20 da lista Aplicacao: leis de Newton, Prof. Panosso.
+%% Figura adaptada fornecida pelo usuario; verificar permissao de redistribuicao.
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{m2}|\Sexpr{T}}
+%% \extol{0.01|0.01}
+%% \exname{Q127ClozePlanoInclinadoEquilibrio345}
+%% \exsection{Mecanica; Leis de Newton; Plano inclinado; Polias; Equilibrio}

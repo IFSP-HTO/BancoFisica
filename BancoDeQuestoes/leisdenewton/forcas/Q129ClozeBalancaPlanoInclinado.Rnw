@@ -1,0 +1,58 @@
+<<echo=FALSE, results=hide>>=
+fator <- sample(c(5,10,15,20),1)
+h <- 3*fator
+b <- 4*fator
+L <- 5*fator
+P <- sample(c(50,75,100,125,150,200),1)
+FB <- P*b/L
+reducao <- P-FB
+stopifnot(h*h+b*b==L*L,FB>0,FB<P,abs(FB/P-4/5)<1e-12)
+include_supplement("Q129BalancaEmPlanoInclinado.png")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\begin{question}
+Uma balança de mola, ideal, mede o módulo da força normal exercida
+sobre um objeto em repouso. Na posição horizontal A, a indicação
+é $F_0=\Sexpr{P}\,\mathrm{N}$. Na posição B, o mesmo conjunto
+é colocado em uma rampa inclinada, de altura
+$h=\Sexpr{h}\,\mathrm{cm}$ e base $b=\Sexpr{b}\,\mathrm{cm}$.
+O objeto permanece em repouso em relação à plataforma;
+não há aceleração perpendicular à rampa.
+\begin{center}
+\includegraphics[width=0.86\linewidth,keepaspectratio]{Q129BalancaEmPlanoInclinado.png}
+\end{center}
+Determine:
+\begin{answerlist}
+\item a indicação da balança em B, em newtons;
+\item a redução da leitura em relação a A, em newtons.
+\end{answerlist}
+\end{question}
+\begin{solution}
+Em A, a leitura é igual ao peso $P=\Sexpr{P}\,\mathrm{N}$.
+Na inclinação B,
+\[
+\cos\theta=\frac{b}{\sqrt{b^2+h^2}}
+=\frac{\Sexpr{b}}{\sqrt{\Sexpr{b}^2+\Sexpr{h}^2}}=\frac45.
+\]
+A balança mede a componente normal do peso:
+\[
+F=P\cos\theta
+=\Sexpr{P}\cdot\frac45=\Sexpr{FB}\,\mathrm{N}.
+\]
+A redução é $F_0-F=\Sexpr{P}-\Sexpr{FB}
+=\Sexpr{reducao}\,\mathrm{N}$.
+\begin{answerlist}
+\item $\Sexpr{FB}\,\mathrm{N}$
+\item $\Sexpr{reducao}\,\mathrm{N}$
+\end{answerlist}
+\end{solution}
+%% META-INFORMATION
+%% Base conceitual: questao 23 da lista Aplicacao: leis de Newton, Prof. Panosso.
+%% Figura adaptada fornecida pelo usuario; verificar permissao de redistribuicao.
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{FB}|\Sexpr{reducao}}
+%% \extol{0.01|0.01}
+%% \exname{Q129ClozeBalancaPlanoInclinado}
+%% \exsection{Mecanica; Leis de Newton; Plano inclinado; Normal; Balanca}

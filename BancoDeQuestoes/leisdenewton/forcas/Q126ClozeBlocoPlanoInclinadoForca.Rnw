@@ -1,0 +1,59 @@
+<<echo=FALSE, results=hide>>=
+m <- sample(c(10,15,20,25,30,40),1)
+theta <- sample(c(37,53),1)
+sen <- if (theta==37) 0.6 else 0.8
+cos <- if (theta==37) 0.8 else 0.6
+g <- 10
+a <- sample(c(1,2,3,4),1)
+F <- m*(a+g*sen)
+N <- m*g*cos
+stopifnot(F-m*g*sen==m*a,N>0,F>0)
+include_supplement("Q126BlocoPlanoInclinadoForca.png")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\begin{question}
+Um bloco de massa $m=\Sexpr{m}\,\mathrm{kg}$ desliza sobre um plano inclinado
+de $\Sexpr{theta}^{\circ}$ em relação à horizontal, sem atrito. Uma força
+$\vec F$, paralela ao plano e dirigida para cima, provoca aceleração
+$a=\Sexpr{a}\,\mathrm{m/s^2}$ também para cima do plano.
+Adote $g=10\,\mathrm{m/s^2}$, $\sin\Sexpr{theta}^{\circ}=\Sexpr{sen}$
+e $\cos\Sexpr{theta}^{\circ}=\Sexpr{cos}$.
+\begin{center}
+\includegraphics[width=0.78\linewidth,keepaspectratio]{Q126BlocoPlanoInclinadoForca.png}
+\end{center}
+Determine:
+\begin{answerlist}
+\item o módulo da força aplicada, em newtons;
+\item o módulo da força normal exercida pelo plano, em newtons.
+\end{answerlist}
+\end{question}
+\begin{solution}
+Na direção tangencial, positiva para cima:
+\[
+F-mg\sin\theta=ma
+\quad\Rightarrow\quad
+F=m(a+g\sin\theta)=\Sexpr{m}(\Sexpr{a}+10\cdot\Sexpr{sen})
+=\Sexpr{F}\,\mathrm{N}.
+\]
+Na direção perpendicular a aceleração é nula e
+a força aplicada não tem componente normal:
+\[
+N=mg\cos\theta
+=\Sexpr{m}\cdot10\cdot\Sexpr{cos}
+=\Sexpr{N}\,\mathrm{N}.
+\]
+\begin{answerlist}
+\item $\Sexpr{F}\,\mathrm{N}$
+\item $\Sexpr{N}\,\mathrm{N}$
+\end{answerlist}
+\end{solution}
+%% META-INFORMATION
+%% Base conceitual: questao 19 da lista Aplicacao: leis de Newton, Prof. Panosso.
+%% Figura adaptada fornecida pelo usuario; verificar permissao de redistribuicao.
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{F}|\Sexpr{N}}
+%% \extol{0.01|0.01}
+%% \exname{Q126ClozeBlocoPlanoInclinadoForca}
+%% \exsection{Mecanica; Leis de Newton; Plano inclinado; Normal}
