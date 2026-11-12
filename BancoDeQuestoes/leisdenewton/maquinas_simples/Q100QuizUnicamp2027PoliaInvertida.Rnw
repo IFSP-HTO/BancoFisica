@@ -1,0 +1,72 @@
+<<echo=FALSE, results=hide>>=
+# Unicamp 2027, primeira fase (questao 65 no caderno Q/Y).
+# A polia movel e puxada PARA CIMA pelo seu eixo, e seus dois
+# ramos do segundo fio exercem tracoes PARA BAIXO.
+g <- 10
+m <- sample(c(6, 8, 10, 12, 14, 16, 18), 1)
+T <- m * g
+F <- 2 * T
+altA <- m                 # confundir massa com forca
+altB <- T / 2             # usar mecanicamente F = mg/2
+altC <- T                 # ignorar o segundo ramo do fio
+altD <- F                 # correta
+stopifnot(F == 2*m*g, length(unique(c(altA, altB, altC, altD))) == 4)
+include_supplement("PoliasUnicamp2027Questao65.png", dir="../../figuras")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+(UNICAMP 2027, 1\textordfeminine{} fase, adaptada) Um aparelho de
+musculacao utiliza duas polias fixas e uma polia movel, ligadas
+por fios ideais e sem atrito, conforme a figura. Uma das extremidades
+de um fio esta presa a base; na outra, ha uma massa
+$m=\Sexpr{m}\,\mathrm{kg}$. Uma pessoa aplica a forca $F$ na extremidade
+do outro fio, que esta preso ao eixo da polia movel.
+Considere $g=10\,\mathrm{m/s^2}$.
+
+\begin{center}
+\includegraphics[width=0.75\linewidth,height=7.8cm,keepaspectratio]{PoliasUnicamp2027Questao65.png}
+\end{center}
+
+Qual e o modulo de $F$, em newtons, na iminencia de a massa ser levantada?
+
+\begin{answerlist}
+\item $\Sexpr{altA}\,\mathrm{N}$.
+\item $\Sexpr{altB}\,\mathrm{N}$.
+\item $\Sexpr{altC}\,\mathrm{N}$.
+\item $\Sexpr{altD}\,\mathrm{N}$.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+Na iminencia de o corpo comecar a subir, a tracao $T$ no fio que
+sustenta a massa e igual ao peso do corpo:
+\[
+  T=mg=\Sexpr{m}\cdot10=\Sexpr{T}\,\mathrm{N}.
+\]
+Por ser ideal, esse mesmo fio exerce tracao $T$ nos dois ramos
+que passam \emph{por cima} da polia movel. Os dois ramos puxam a
+polia movel \emph{para baixo}, com uma forca resultante $2T$.
+O fio preso ao \emph{eixo} da polia movel deve, portanto, exercer
+uma forca para cima de modulo $2T$. As duas polias fixas apenas
+mudam a direcao da tracao desse fio, sem alterar seu modulo.
+Assim,
+\[
+  F=2T=2mg=2\cdot\Sexpr{m}\cdot10
+   =\boxed{\Sexpr{F}\,\mathrm{N}}.
+\]
+Observe que este arranjo \emph{nao} reduz a forca aplicada pela metade:
+o eixo e puxado para cima enquanto os dois ramos do outro fio
+puxam a polia movel para baixo. Por isso, $F=2mg$, e nao $mg/2$.
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: COMVEST/UNICAMP, vestibular 2027, 1a fase (18/10/2026).
+%% Questao 65 no caderno Q/Y; texto adaptado e massa parametrizada.
+%% Figura original: imagem enviada pelo usuario em 12/11/2026, preservada sem alteracao.
+%% SOURCE-VISUAL: original-extract
+%% \extype{schoice}
+%% \exsolution{0001}
+%% \exname{Q100QuizUnicamp2027PoliaInvertida}
+%% \exsection{Mecanica; Leis de Newton; Polias; Maquinas simples; Tracao; Unicamp}
