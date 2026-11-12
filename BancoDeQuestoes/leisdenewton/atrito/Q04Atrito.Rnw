@@ -1,0 +1,57 @@
+<<echo=FALSE, results=hide>>=
+# Adaptacao do exercicio 5 (mola), com diagrama proprio em R base.
+m <- sample(c(0.5, 0.6, 0.8, 1.0), 1)
+k <- sample(c(10, 15, 20), 1)
+x_cm <- sample(c(10, 15, 20), 1)
+x <- x_cm/100
+g <- 10
+mu_e <- round(k*x/(m*g), 2)
+
+png("Q04MolaAtrito.png", width=1100, height=430, res=150)
+par(mar=c(0,0,0,0), xaxs="i", yaxs="i")
+plot.new(); plot.window(xlim=c(0,10), ylim=c(0,4), asp=1)
+segments(0.4,1.0,9.6,1.0,lwd=3,col="#485566")
+for (xx in seq(0.7,9.2,by=0.45))
+  segments(xx,1.0,xx-0.24,0.78,col="#9ca3af")
+rect(0.9,1.1,1.25,3.1,col="#d1d5db",border="#374151",lwd=2)
+points(1.25,1.9,pch=16,cex=1.2,col="#374151")
+tt <- seq(0,1,length.out=180)
+lines(1.3+4.1*tt, 1.9+0.3*sin(12*pi*tt),lwd=3,col="#2563eb")
+rect(5.45,1.1,7.65,2.75,col="#e0ebf5",border="#1f2937",lwd=3)
+text(6.55,1.92,"m",cex=1.7,font=2)
+dev.off()
+include_supplement("Q04MolaAtrito.png")
+@
+\usepackage[utf8]{inputenc}
+\begin{question}
+Um bloco de massa $\Sexpr{m}$ kg repousa sobre uma mesa horizontal
+com atrito. Uma mola horizontal de constante elástica
+$k=\Sexpr{k}\,\mathrm{N/m}$ é tracionada lentamente até que o bloco
+atinja a iminência de deslizamento.
+
+\begin{center}
+\includegraphics[width=0.70\linewidth,keepaspectratio]{Q04MolaAtrito.png}
+\end{center}
+
+Nesse instante, a distensão da mola é de $\Sexpr{x_cm}$ cm.
+Calcule o coeficiente de atrito estático entre bloco e mesa.
+Adote $g=10\,\mathrm{m/s^2}$.
+\end{question}
+
+\begin{solution}
+No limite de equilíbrio, a força elástica se iguala ao atrito
+estático máximo: $kx=\mu_e mg$. Portanto,
+\[
+ \mu_e=\frac{kx}{mg}
+ =\frac{\Sexpr{k}\cdot\Sexpr{x}}
+ {\Sexpr{m}\cdot 10}=\Sexpr{mu_e}.
+\]
+Note que a distensão deve ser convertida de centímetros para metros.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{mu_e}}
+%% \exname{Q04Atrito}
+%% \extol{0.01}
+%% \exsection{Leis de Newton: atrito e lei de Hooke}
