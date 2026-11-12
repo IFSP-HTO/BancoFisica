@@ -1,0 +1,54 @@
+<<echo=FALSE, results=hide>>=
+# Adaptacao do exercicio 14, modelo idealizado de frenagem.
+v_kmh <- sample(c(72, 90, 108), 1)
+mu_e <- sample(c(0.8, 0.9, 1.0), 1)
+mu_d <- sample(c(0.5, 0.6, 0.7), 1)
+g <- 10
+v0 <- v_kmh/3.6
+d_abs <- round(v0^2/(2*mu_e*g), 1)
+d_travado <- round(v0^2/(2*mu_d*g), 1)
+@
+\usepackage[utf8]{inputenc}
+\begin{question}
+Dois carros deslocam-se inicialmente com a mesma velocidade,
+$\Sexpr{v_kmh}\,\mathrm{km/h}$, em uma pista horizontal.
+Ambos iniciam a frenagem no mesmo ponto.
+
+No modelo idealizado desta questão, o carro 1, com sistema ABS,
+freia sem travar as rodas e utiliza o limite de aderência estática,
+com coeficiente $\mu_e=\Sexpr{mu_e}$. O carro 2 trava as rodas,
+passando a deslizar com coeficiente cinético $\mu_d=\Sexpr{mu_d}$.
+
+Adote $g=10\,\mathrm{m/s^2}$, despreze a resistência do ar e
+forneça as respostas com uma casa decimal.
+\begin{answerlist}
+ \item Distância de frenagem do carro com ABS, em metros.
+ \item Distância de frenagem do carro com rodas travadas, em metros.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+A velocidade inicial em unidades SI é
+$v_0=\Sexpr{v_kmh}/3{,}6
+=\Sexpr{round(v0,2)}\,\mathrm{m/s}$.
+Para desaceleração de módulo $|a|=\mu g$, a equação
+$0=v_0^2-2|a|d$ fornece
+\[
+ d=\frac{v_0^2}{2\mu g}.
+\]
+\begin{answerlist}
+  \item $d_1=\dfrac{v_0^2}{2\mu_e g}=\Sexpr{d_abs}\,\mathrm{m}$.
+  \item $d_2=\dfrac{v_0^2}{2\mu_d g}=\Sexpr{d_travado}\,\mathrm{m}$.
+\end{answerlist}
+Nesse modelo, o deslizamento aumenta a distância de frenagem.
+Em situações reais, o desempenho do ABS depende também da pista,
+dos pneus e do sistema de frenagem.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{d_abs}|\Sexpr{d_travado}}
+%% \exname{Q06Atrito}
+%% \extol{0.2|0.2}
+%% \exsection{Leis de Newton: frenagem e atrito}

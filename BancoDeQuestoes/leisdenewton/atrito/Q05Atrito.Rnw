@@ -1,0 +1,54 @@
+<<echo=FALSE, results=hide>>=
+# Adaptacao do exercicio 7 (parede), ilustracao original em R base.
+m <- sample(1:4, 1)
+mu_e <- sample(c(0.4, 0.5), 1)
+g <- 10
+Fmin <- m*g/mu_e
+
+png("Q05ParedeAtrito.png", width=950, height=500, res=150)
+par(mar=c(0,0,0,0), xaxs="i", yaxs="i")
+plot.new(); plot.window(xlim=c(0,9), ylim=c(0,5), asp=1)
+segments(6.75,0.4,6.75,4.8,lwd=4,col="#374151")
+for (yy in seq(0.6,4.6,by=0.35))
+  segments(6.75,yy,7.1,yy-0.3,col="#9ca3af")
+rect(4.7,1.7,6.68,3.3,col="#e0ebf5",border="#1f2937",lwd=3)
+text(5.7,2.5,"m",cex=1.7,font=2)
+arrows(1.0,2.5,4.55,2.5,length=0.17,code=2,lwd=3,col="#2563eb")
+text(2.6,3.0,"F",cex=1.6,font=2,col="#2563eb")
+dev.off()
+include_supplement("Q05ParedeAtrito.png")
+@
+\usepackage[utf8]{inputenc}
+\begin{question}
+Um bloco de massa $\Sexpr{m}$ kg é pressionado horizontalmente
+contra uma parede vertical por uma força de módulo $F$, como mostra
+a figura. O coeficiente de atrito estático entre bloco e parede é
+$\mu_e=\Sexpr{mu_e}$.
+
+\begin{center}
+\includegraphics[width=0.54\linewidth,keepaspectratio]{Q05ParedeAtrito.png}
+\end{center}
+
+Qual o \textbf{menor} valor de $F$, em newtons, necessário para
+manter o bloco em repouso? Adote $g=10\,\mathrm{m/s^2}$.
+\end{question}
+
+\begin{solution}
+No eixo horizontal, $N=F$. No eixo vertical, o atrito deve
+equilibrar o peso $mg=\Sexpr{m*g}\,\mathrm{N}$.
+Para que haja equilíbrio, $mg\leq\mu_e N$; logo
+\[
+ F_{\min}=\frac{mg}{\mu_e}
+ =\frac{\Sexpr{m}\cdot 10}{\Sexpr{mu_e}}
+ =\Sexpr{Fmin}\,\mathrm{N}.
+\]
+Aumentar a força horizontal aumenta o atrito \emph{máximo
+possível}, não necessariamente a força de atrito efetiva.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{Fmin}}
+%% \exname{Q05Atrito}
+%% \extol{0.1}
+%% \exsection{Leis de Newton: atrito em parede vertical}
