@@ -1,0 +1,45 @@
+<<echo=FALSE, results=hide>>=
+# Adaptacao conceitual: exercicio 8 da lista do Prof. Panosso.
+m <- sample(c(10, 20, 30, 40), 1)
+mu_e <- sample(c(0.3, 0.4, 0.5, 0.6), 1)
+g <- 10
+f_max <- mu_e*m*g
+F <- round(f_max*sample(c(0.4, 0.6, 0.8), 1), 1)
+@
+\usepackage[utf8]{inputenc}
+\begin{question}
+Uma caixa de massa $\Sexpr{m}$ kg está inicialmente em repouso sobre
+um piso horizontal. O coeficiente de atrito estático vale
+$\mu_e=\Sexpr{mu_e}$. Aplica-se à caixa uma força horizontal de
+$\Sexpr{F}\,\mathrm{N}$. Considere $g=10\,\mathrm{m/s^2}$.
+
+Assinale a afirmação fisicamente correta.
+\begin{answerlist}
+  \item A caixa permanece em repouso; o atrito tem módulo
+        $\Sexpr{F}\,\mathrm{N}$ e sentido contrário à força aplicada.
+  \item A caixa permanece em repouso; o atrito tem necessariamente
+        seu módulo máximo, $\Sexpr{f_max}\,\mathrm{N}$.
+  \item A caixa entra em movimento, pois qualquer força horizontal
+        produz aceleração.
+  \item A caixa permanece em repouso, mas o atrito é nulo.
+  \item O atrito tem o mesmo sentido da força aplicada.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+A normal vale $N=mg=\Sexpr{m*g}\,\mathrm{N}$. O \emph{limite}
+do atrito estático é
+\[
+  f_{e,\max}=\mu_eN=\Sexpr{mu_e}\cdot\Sexpr{m*g}
+  =\Sexpr{f_max}\,\mathrm{N}.
+\]
+Como $F=\Sexpr{F}\,\mathrm{N}<f_{e,\max}$, o corpo continua em
+repouso. O atrito estático efetivo vale $f_e=F=\Sexpr{F}\,\mathrm{N}$,
+opondo-se à tendência de deslizamento.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{10000}
+%% \exname{Q03QuizAtrito}
+%% \exsection{Leis de Newton: atrito estatico}
