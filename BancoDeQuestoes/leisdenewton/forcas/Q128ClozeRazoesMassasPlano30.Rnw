@@ -1,0 +1,54 @@
+<<echo=FALSE, results=hide>>=
+g <- 10
+sen <- 0.5
+a <- sample(c(1,2,2.5,3,4),1)
+r_eq <- 1/sen
+r_mov <- (g+a)/(g*sen-a)
+stopifnot(r_eq==2,r_mov>r_eq,a<g*sen,
+          abs((r_mov*g*sen-g)/(r_mov+1)-a)<1e-10)
+include_supplement("Q128PoliaPlano30Graus.png")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\begin{question}
+Um bloco A, de massa $m_A$, está sobre um plano inclinado
+sem atrito de $30^\circ$. Está ligado por fio e polia ideais
+ao bloco suspenso B, de massa $m_B$.
+Adote $g=10\,\mathrm{m/s^2}$ e $\sin30^\circ=1/2$.
+\begin{center}
+\includegraphics[width=0.75\linewidth,keepaspectratio]{Q128PoliaPlano30Graus.png}
+\end{center}
+Calcule a razão $m_A/m_B$ em duas situações independentes:
+\begin{answerlist}
+\item quando o sistema permanece em equilíbrio;
+\item quando A desce o plano com aceleração de módulo
+$\Sexpr{a}\,\mathrm{m/s^2}$ e B sobe.
+\end{answerlist}
+\end{question}
+\begin{solution}
+No equilíbrio, $m_Ag\sin30^\circ=m_Bg$, logo
+$\frac{m_A}{m_B}=2$.
+Quando A desce e B sobe:
+\[
+m_Ag\sin30^\circ-m_Bg=(m_A+m_B)a.
+\]
+Definindo $r=m_A/m_B$, obtemos
+\[
+r=\frac{g+a}{g\sin30^\circ-a}
+=\frac{10+\Sexpr{a}}{5-\Sexpr{a}}
+\approx \Sexpr{round(r_mov,4)}.
+\]
+\begin{answerlist}
+\item $\Sexpr{r_eq}$
+\item $\Sexpr{round(r_mov,4)}$
+\end{answerlist}
+\end{solution}
+%% META-INFORMATION
+%% Base conceitual: questao 21 da lista Aplicacao: leis de Newton, Prof. Panosso.
+%% Sentido do movimento explicitado para evitar ambiguidade do enunciado original.
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{r_eq}|\Sexpr{r_mov}}
+%% \extol{0.01|0.01}
+%% \exname{Q128ClozeRazoesMassasPlano30}
+%% \exsection{Mecanica; Leis de Newton; Plano inclinado; Polias; Razao de massas}

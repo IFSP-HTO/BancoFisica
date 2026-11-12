@@ -1,0 +1,76 @@
+<<echo=FALSE, results=hide>>=
+g <- 10
+sen <- 0.6
+cos <- 0.8
+casos <- expand.grid(mA=2:12,mB=2:12,mC=3:30)
+casos$a <- g*(casos$mC-(casos$mA+casos$mB)*sen)/
+           (casos$mA+casos$mB+casos$mC)
+casos <- casos[casos$a>0 &
+  abs(casos$a-round(casos$a))<1e-10 &
+  round(casos$a) %in% 1:4, ]
+i <- sample(seq_len(nrow(casos)),1)
+mA <- casos$mA[i]; mB <- casos$mB[i]; mC <- casos$mC[i]
+a <- round(casos$a[i])
+FAB <- mA*(a+g*sen)
+T <- mC*(g-a)
+stopifnot(FAB-mA*g*sen==mA*a,
+          T-FAB-mB*g*sen==mB*a,
+          mC*g-T==mC*a)
+include_supplement("Q130TresBlocosPlanoInclinado.png")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\begin{question}
+Os blocos A e B, com massas $m_A=\Sexpr{mA}\,\mathrm{kg}$
+e $m_B=\Sexpr{mB}\,\mathrm{kg}$, estão em contato sobre
+um plano inclinado sem atrito. Um fio ideal, preso
+diretamente ao bloco B, passa pela polia ideal e sustenta C,
+de massa $m_C=\Sexpr{mC}\,\mathrm{kg}$. O sistema é solto
+do repouso. Adote $g=10\,\mathrm{m/s^2}$,
+$\sin\alpha=0{,}6$ e $\cos\alpha=0{,}8$.
+\begin{center}
+\includegraphics[width=0.75\linewidth,keepaspectratio]{Q130TresBlocosPlanoInclinado.png}
+\end{center}
+Determine:
+\begin{answerlist}
+\item o módulo da aceleração comum, em $\mathrm{m/s^2}$;
+\item o módulo da força de contato exercida por A sobre B,
+paralela ao plano, em newtons.
+\end{answerlist}
+\end{question}
+\begin{solution}
+Como $m_C>(m_A+m_B)\sin\alpha$, C desce e A+B sobem.
+Aplicando a segunda lei ao conjunto:
+\[
+m_Cg-(m_A+m_B)g\sin\alpha=(m_A+m_B+m_C)a.
+\]
+\[
+a=\frac{10[\Sexpr{mC}-0{,}6(\Sexpr{mA}+\Sexpr{mB})]}
+{\Sexpr{mA}+\Sexpr{mB}+\Sexpr{mC}}
+=\Sexpr{a}\,\mathrm{m/s^2}.
+\]
+O bloco B empurra A para cima do plano. No bloco A:
+\[
+F_{BA}-m_Ag\sin\alpha=m_Aa
+\quad\Rightarrow\quad
+F_{BA}=m_A(a+g\sin\alpha)
+=\Sexpr{mA}(\Sexpr{a}+6)=\Sexpr{FAB}\,\mathrm{N}.
+\]
+Pela terceira lei de Newton,
+$|F_{AB}|=|F_{BA}|=\Sexpr{FAB}\,\mathrm{N}$.
+\begin{answerlist}
+\item $\Sexpr{a}\,\mathrm{m/s^2}$
+\item $\Sexpr{FAB}\,\mathrm{N}$
+\end{answerlist}
+\end{solution}
+%% META-INFORMATION
+%% Base conceitual: questao 25 da lista Aplicacao: leis de Newton, Prof. Panosso.
+%% ALERTA: para mA=6,mB=4,mC=10,sen=0.6,g=10, o resultado e 48 N;
+%% o gabarito original indica 32 N, incompatível com o arranjo desenhado.
+%% Figura adaptada fornecida pelo usuario; verificar permissao de redistribuicao.
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{a}|\Sexpr{FAB}}
+%% \extol{0.01|0.01}
+%% \exname{Q130ClozeContatoBlocosPlanoPolia}
+%% \exsection{Mecanica; Leis de Newton; Plano inclinado; Polia; Forca de contato}
