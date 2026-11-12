@@ -45,6 +45,9 @@ jobs:
           python3 tools/test_ci_test_scope.py
           python3 tools/test_ci_compile_cache.py
 
+      - name: Verify image blob transfer helper
+        run: python3 -m unittest discover -s tests -p 'test_verify_image_blob.py' -v
+
       - name: Detect affected questions
         id: scope
         shell: bash

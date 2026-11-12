@@ -49,6 +49,6 @@ Para lotes, conferir cada blob e preferir um único tree/commit temático. Não 
 
 ## Critério de conclusão e limite conhecido
 
-O teste de 11/11/2026 comprovou criação de blob remoto idêntico a PNG pequeno, com SHA Git coincidente. Os PRs #254 e #255 comprovam inclusão de PNG em commits. **Não está demonstrada uma ponte automática irrestrita entre qualquer anexo do chat e o conector.** O transporte sem intervenção humana depende do arquivo ser acessível e do tamanho caber no canal.
+Os testes de 11/11/2026 comprovaram dois blobs com SHA Git correspondente: um PNG pequeno de 78 bytes vindo do ambiente de arquivos do ChatGPT e um PNG válido de 512 × 384 pixels (590.321 bytes, Base64 com 787.096 caracteres) produzido programaticamente no ambiente do conector. Este PNG maior foi reconstituído independentemente com Python e validado com Pillow. Os PRs #254 e #255 comprovam inclusão de PNG em commits. **O teste maior não demonstra o transporte de um anexo arbitrário do chat até o conector**; comprova a capacidade do conector de receber uma carga binária realista já disponível no seu próprio contexto. **Não está demonstrada uma ponte automática irrestrita entre qualquer anexo do chat e o conector.** O transporte sem intervenção humana depende do arquivo ser acessível e do tamanho caber no canal.
 
 Um ativo visual estará pronto apenas após confirmação dos bytes finais, verificação do SHA retornado, associação ao tree/commit e caminho corretos, compilação/CI pertinente e revisão/merge quando autorizado.
