@@ -38,7 +38,12 @@ def main() -> int:
     parser.add_argument("image", type=Path, help="Arquivo PNG/JPEG final aprovado")
     parser.add_argument("--remote-sha", help="SHA retornado por create_blob ou pelo tree Git remoto")
     parser.add_argument("--base64-out", type=Path, help="Opcional: gravar Base64 FORA do repositorio")
+    parser.add_argument("--base64-line-width", type=int, default=4096,
+                        help="Largura das linhas Base64 (multiplo de 4; padrao 4096)")
     args = parser.parse_args()
+
+    if args.base64_line_width <= 0 or args.base64_line_width % 4:
+        parser.error("--base64-line-width deve ser multiplo positivo de 4")
 
     if not args.image.is_file():
         parser.error("Arquivo nao encontrado; use o caminho real do anexo salvo")
@@ -65,8 +70,13 @@ def main() -> int:
         result["remote_sha_matches"] = git_sha.lower() == args.remote_sha.strip().lower()
     if args.base64_out:
         args.base64_out.parent.mkdir(parents=True, exist_ok=True)
-        args.base64_out.write_text(base64.b64encode(data).decode("ascii"), encoding="ascii")
+        encoded = base64.b64encode(data).decode("ascii")
+        lines = [encoded[i:i + args.base64_line_width]
+                 for i in range(0, len(encoded), args.base64_line_width)]
+        args.base64_out.write_text("\n".join(lines) + "\n", encoding="ascii")
         result["base64_out"] = str(args.base64_out)
+        result["base64_chars"] = len(encoded)
+        result["base64_lines"] = len(lines)
 
     print(json.dumps(result, ensure_ascii=False, indent=2))
     if result["remote_sha_matches"] is False:

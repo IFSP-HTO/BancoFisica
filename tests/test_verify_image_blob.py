@@ -49,6 +49,20 @@ class ImageBlobVerifierTests(unittest.TestCase):
         self.assertEqual(res.returncode, 0, res.stderr)
         self.assertEqual(base64.b64decode(output.read_text()), PNG_DATA)
 
+    def test_wrapped_base64_is_lossless_and_line_width_enforced(self):
+        output = self.root / "wrapped.b64"
+        res = self.run_script("--base64-out", output, "--base64-line-width", 8)
+        self.assertEqual(res.returncode, 0, res.stderr)
+        lines = output.read_text().splitlines()
+        self.assertTrue(all(0 < len(line) <= 8 and len(line) % 4 == 0 for line in lines))
+        self.assertEqual(base64.b64decode("".join(lines)), PNG_DATA)
+        self.assertEqual(json.loads(res.stdout)["base64_lines"], len(lines))
+
+    def test_invalid_line_width_fails(self):
+        res = self.run_script("--base64-line-width", 10)
+        self.assertNotEqual(res.returncode, 0)
+        self.assertIn("multiplo positivo de 4", res.stderr)
+
     def test_rejects_missing_iend(self):
         self.image.write_bytes(PNG_DATA[:-12])
         res = self.run_script()
