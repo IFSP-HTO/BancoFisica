@@ -26,8 +26,31 @@ jobs:
         with:
           python-version: '3.12'
       - run: python -m pip install --disable-pip-version-check requests beautifulsoup4 Pillow
-      - name: Teste de rede, parser e PNG original sem alterar arquivos
-        run: python tools/import_filatte.py --dry-run
+      - name: Baixar PNG real e gerar Rnw temporarios no runner
+        run: python tools/import_filatte.py
+      - name: Validar arquivos de saida
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import hashlib, json
+          from PIL import Image
+          d = json.loads(Path('import-filatte-report.json').read_text())
+          image = Path('BancoDeQuestoes/figuras') / d['image_name']
+          assert hashlib.sha256(image.read_bytes()).hexdigest() == d['sha256']
+          with Image.open(image) as im:
+              im.verify()
+          q = Path('BancoDeQuestoes/optica/QSCSantaCasa2027Q66Refracao.Rnw')
+          assert q.is_file() and d['image_name'] in q.read_text()
+          print('PNG exato e Rnw presentes no runner')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: santa-casa-2027-q66-original-e-rnw
+          path: |
+            BancoDeQuestoes/figuras/SantaCasa2027Q66Original.png
+            BancoDeQuestoes/optica/QSCSantaCasa2027Q66Refracao.Rnw
+            import-filatte-report.json
+          if-no-files-found: error
   import:
     if: github.event_name == 'workflow_dispatch'
     permissions:
