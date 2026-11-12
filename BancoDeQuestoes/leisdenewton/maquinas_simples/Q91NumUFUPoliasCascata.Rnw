@@ -1,0 +1,45 @@
+<<echo=FALSE, results=hide>>=
+# Duas polias moveis em cascata: vantagem mecanica 4.
+F <- sample(seq(10, 60, by=5), 1)
+Q <- 4 * F
+stopifnot(Q == 4*F)
+include_supplement("PoliasVest01UFU.png", dir="../../figuras")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+(UFU-MG, adaptada) O sistema ilustrado possui duas polias móveis e uma polia fixa.
+Os fios e as polias são ideais, e as forças dissipativas podem ser desprezadas.
+Um rapaz exerce uma força constante de $\Sexpr{F}\,\mathrm{N}$ na extremidade livre
+do fio, mantendo a carga $Q$ em equilíbrio.
+
+\begin{center}
+\includegraphics[width=0.52\linewidth,height=8cm,keepaspectratio]{PoliasVest01UFU.png}
+\end{center}
+
+Determine o peso da carga $Q$, em newtons.
+\end{question}
+
+\begin{solution}
+Cada polia móvel, em equilíbrio, é sustentada por dois segmentos de um mesmo fio,
+ambos submetidos à mesma tração. Uma polia fixa ideal apenas muda a direção do
+esforço, sem alterar seu módulo.
+
+O fio puxado pelo rapaz tem tração $T=\Sexpr{F}\,\mathrm{N}$.
+A polia móvel superior transmite $2T$ à polia móvel inferior. Esta, por sua vez,
+sustenta a carga com duas trações de módulo $2T$, logo
+\[
+Q=2(2T)=4T=4\cdot\Sexpr{F}=\Sexpr{Q}\,\mathrm{N}.
+\]
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: UFU-MG, questao 01 da lista Polias e Roldanas (Física e Vestibular).
+%% Figura: fornecida pelo usuario, preservada integralmente.
+%% SOURCE-VISUAL: original-extract
+%% \extype{num}
+%% \exsolution{\Sexpr{Q}}
+%% \extol{0.01}
+%% \exname{Q91NumUFUPoliasCascata}
+%% \exsection{Mecanica; Leis de Newton; Polias; Maquinas simples; Equilibrio}

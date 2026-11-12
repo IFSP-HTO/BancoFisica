@@ -1,0 +1,54 @@
+<<echo=FALSE, results=hide>>=
+# Tres polias moveis em cascata e uma fixa.
+Fd <- sample(seq(160, 800, by=80), 1)
+g <- 10
+m <- Fd/(8*g)
+Tbaixo <- Fd/2
+Tmeio <- Fd/4
+Tcima <- Fd/8
+stopifnot(m*g == Tcima, Tbaixo*2 == Fd,
+          Tmeio*2 == Tbaixo, Tcima*2 == Tmeio)
+include_supplement("PoliasVest03MACKENZIE.png", dir="../../figuras")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+(MACKENZIE-SP, adaptada) Três polias móveis e uma polia fixa,
+todas ideais, estão associadas como mostra a figura.
+O conjunto permanece em repouso porque o dinamômetro $d$,
+de massa desprezível, está preso ao solo e indica
+$\Sexpr{Fd}\,\mathrm{N}$. Considere $g=10\,\mathrm{m/s^2}$.
+
+\begin{center}
+\includegraphics[width=0.57\linewidth,height=8cm,keepaspectratio]{PoliasVest03MACKENZIE.png}
+\end{center}
+
+Qual é a massa do corpo suspenso, em quilogramas?
+\end{question}
+
+\begin{solution}
+A leitura do dinamômetro corresponde à força que ele exerce para baixo
+no eixo da polia móvel inferior. Como as polias são ideais e o conjunto
+está em equilíbrio, as duas trações que sustentam essa polia satisfazem
+\[
+2T_1=\Sexpr{Fd}\quad\Rightarrow\quad T_1=\Sexpr{Tbaixo}\,\mathrm{N}.
+\]
+O eixo da segunda polia é tracionado para baixo pelo fio do primeiro estágio;
+logo $2T_2=T_1$ e $T_2=\Sexpr{Tmeio}\,\mathrm{N}$.
+No terceiro estágio, $2T_3=T_2$ e $T_3=\Sexpr{Tcima}\,\mathrm{N}$.
+A polia fixa superior só muda a direção do fio, de modo que $mg=T_3$.
+Portanto,
+\[
+m=\frac{\Sexpr{Fd}}{8\cdot10}=\Sexpr{m}\,\mathrm{kg}.\]
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: MACKENZIE-SP, questao 03 da lista Polias e Roldanas (Física e Vestibular).
+%% Figura: fornecida pelo usuario, preservada integralmente.
+%% SOURCE-VISUAL: original-extract
+%% \extype{num}
+%% \exsolution{\Sexpr{m}}
+%% \extol{0.01}
+%% \exname{Q93NumMACKDinamometroPolias}
+%% \exsection{Mecanica; Leis de Newton; Polias; Maquinas simples; Dinamometro}

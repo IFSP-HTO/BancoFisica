@@ -1,0 +1,55 @@
+<<echo=FALSE, results=hide>>=
+# Polia movel unica: equilibrio e conservacao do comprimento do fio.
+P <- sample(seq(300, 900, by=50), 1)
+L <- sample(c(1, 2, 3, 4), 1)
+F <- P/2
+h <- L/2
+stopifnot(2*F == P, 2*h == L)
+include_supplement("PoliasVest02FUVEST.png", dir="../../figuras")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+(FUVEST-SP, adaptada) Um corpo de peso $\Sexpr{P}\,\mathrm{N}$ está suspenso
+por uma polia móvel. O fio e as polias são ideais, conforme a figura.
+
+\begin{center}
+\includegraphics[width=0.48\linewidth,height=7.5cm,keepaspectratio]{PoliasVest02FUVEST.png}
+\end{center}
+
+Determine:
+\begin{answerlist}
+\item a intensidade da força vertical, em newtons, que o homem deve exercer
+para manter o corpo em equilíbrio;
+\item a altura, em metros, que o corpo sobe quando o homem puxa
+$\Sexpr{L}\,\mathrm{m}$ de corda.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+A polia móvel é sustentada por dois ramos de um mesmo fio, cada um com tração $F$.
+No equilíbrio da carga, $2F=P$ e, portanto,
+\[
+F=\frac{P}{2}=\frac{\Sexpr{P}}{2}=\Sexpr{F}\,\mathrm{N}.
+\]
+Como o fio é inextensível, quando a polia móvel sobe uma altura $h$,
+cada um de seus dois ramos encurta $h$. O comprimento puxado na
+extremidade livre é $L=2h$. Logo,
+\[
+h=\frac{L}{2}=\frac{\Sexpr{L}}{2}=\Sexpr{h}\,\mathrm{m}.
+\]
+Essa relação entre deslocamentos explica a troca entre força e distância
+na máquina simples ideal.
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: FUVEST-SP, questao 02 da lista Polias e Roldanas (Física e Vestibular).
+%% Figura: fornecida pelo usuario, preservada integralmente.
+%% SOURCE-VISUAL: original-extract
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{F}|\Sexpr{h}}
+%% \extol{0.01|0.01}
+%% \exname{Q92ClozeFUVESTPoliaMovel}
+%% \exsection{Mecanica; Leis de Newton; Polias; Maquinas simples; Deslocamento}
