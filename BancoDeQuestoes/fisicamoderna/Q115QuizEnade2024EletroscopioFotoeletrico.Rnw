@@ -1,0 +1,37 @@
+<<echo=FALSE, results=hide>>=
+# Fonte: INEP, ENADE 2024 Licenciatura em Fisica, caderno 1, Q62; adaptada.
+include_supplement("enade2024_q62_eletroscopio_1.png")
+alternativas <- c(
+  "A luz não possui carga elétrica, mas seus fótons podem transferir energia a elétrons do metal e provocar sua emissão, se a frequência for suficiente.",
+  "A estudante está correta: a luz não pode arrancar elétrons de um metal, qualquer que seja sua frequência.",
+  "A emissão de elétrons por luz exige obrigatoriamente contato mecânico do metal com outro corpo carregado.",
+  "Toda luz visível retira elétrons do metal, mesmo que sua frequência esteja abaixo da frequência de corte.",
+  "A descarga luminosa só ocorre se a luz transportar prótons livres até o eletroscópio."
+)
+solutions <- c(TRUE, FALSE, FALSE, FALSE, FALSE)
+ordem <- sample(seq_along(alternativas))
+alternativas <- alternativas[ordem]
+solutions <- solutions[ordem]
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\begin{question}
+Uma estudante observa um eletroscópio carregado negativamente e argumenta que ele não pode ser descarregado por luz porque a luz não possui carga e não há contato físico. Qual análise é fisicamente adequada?
+
+\begin{center}
+\includegraphics[width=0.7\linewidth,keepaspectratio]{enade2024_q62_eletroscopio_1.png}
+\end{center}
+<<echo=FALSE, results=tex>>=
+answerlist(alternativas)
+@
+\end{question}
+\begin{solution}
+No efeito fotoelétrico, fótons podem transferir energia a elétrons de um material. Se a energia hf ultrapassa a função trabalho, elétrons podem ser ejetados; a luz não precisa transportar carga nem tocar o eletroscópio por contato material. A possibilidade efetiva depende da frequência e do material.
+\end{solution}
+%% Fonte: INEP ENADE 2024, caderno 1, Q62 (adaptada).
+%% SOURCE-VISUAL: original-extract
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q115QuizEnade2024EletroscopioFotoeletrico}
+%% \exsection{Fisica moderna; Efeito fotoeletrico; Eletroscopio; Concepcoes alternativas; ENADE}
+%% \exusepackage[utf8]{inputenc}

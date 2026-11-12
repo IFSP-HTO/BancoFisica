@@ -1,0 +1,41 @@
+<<echo=FALSE, results=hide>>=
+# Fonte: INEP, ENADE 2024 Licenciatura em Fisica, caderno 1, Q47; adaptada.
+include_supplement("enade2024_q47_teatro_1.jpeg")
+include_supplement("enade2024_q47_teatro_2.jpeg")
+alternativas <- c(
+  "O raio identificado por D, que respeita a igualdade entre os ângulos de incidência e de reflexão medidos em relação à normal local.",
+  "O raio identificado por A, pois o espelho convexo obrigatoriamente reflete todos os raios em direção ao foco.",
+  "O raio identificado por B, pois a reflexão faz qualquer raio caminhar para o centro de curvatura.",
+  "O raio identificado por C, pois espelhos esféricos sempre refletem raios paralelamente ao eixo principal.",
+  "O raio incidente continua atravessando a superfície sem reflexão, porque o espelho é convexo."
+)
+solutions <- c(TRUE, FALSE, FALSE, FALSE, FALSE)
+ordem <- sample(seq_along(alternativas))
+alternativas <- alternativas[ordem]
+solutions <- solutions[ordem]
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\begin{question}
+A fotografia mostra uma superfície arquitetônica espelhada. O esquema da figura 2 representa um raio incidente na superfície curva, com centro C, foco F e vértice V. Qual alternativa indica corretamente o raio refletido?
+
+\begin{center}
+\includegraphics[width=0.7\linewidth,keepaspectratio]{enade2024_q47_teatro_1.jpeg}
+\end{center}
+\begin{center}
+\includegraphics[width=0.7\linewidth,keepaspectratio]{enade2024_q47_teatro_2.jpeg}
+\end{center}
+<<echo=FALSE, results=tex>>=
+answerlist(alternativas)
+@
+\end{question}
+\begin{solution}
+Na superfície de um espelho, a lei da reflexão estabelece igualdade entre os ângulos de incidência e reflexão em relação à normal local. Para a geometria desenhada na figura 2, a direção de reflexão é indicada por D. O caráter convexo do espelho não elimina essa lei.
+\end{solution}
+%% Fonte: INEP ENADE 2024, caderno 1, Q47 (adaptada).
+%% SOURCE-VISUAL: original-extract
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q117QuizEnade2024EspelhoArquitetura}
+%% \exsection{Optica; Espelhos esfericos; Reflexao; Espelho convexo; Arquitetura; ENADE}
+%% \exusepackage[utf8]{inputenc}

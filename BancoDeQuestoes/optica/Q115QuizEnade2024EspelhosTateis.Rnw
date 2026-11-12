@@ -1,0 +1,43 @@
+<<echo=FALSE, results=hide>>=
+# Fonte: INEP, ENADE 2024 Licenciatura em Fisica, caderno 1, Q28; adaptada.
+include_supplement("enade2024_q28_espelho_1.jpeg")
+include_supplement("enade2024_q28_espelho_2.jpeg")
+include_supplement("enade2024_q28_espelho_3.jpeg")
+include_supplement("enade2024_q28_espelho_4.jpeg")
+alternativas <- c(
+  "Adicionar na figura 3 um raio que parte do objeto, passa pelo foco e, depois da reflexão, segue paralelo ao eixo principal.",
+  "Considerar que a imagem da figura 2 é virtual apenas porque aparece invertida.",
+  "Substituir o foco do espelho côncavo pelo centro de curvatura, pois ambos determinam a mesma trajetória.",
+  "Desenhar na figura 1 um raio refletido que atravesse o espelho e se propague para trás dele.",
+  "Eliminar os raios refletidos da figura 4, porque espelhos côncavos não formam imagens virtuais."
+)
+solutions <- c(TRUE, FALSE, FALSE, FALSE, FALSE)
+ordem <- sample(seq_along(alternativas))
+alternativas <- alternativas[ordem]
+solutions <- solutions[ordem]
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\begin{question}
+Um professor apresenta modelos táteis de espelhos côncavos e formação de imagens, representados nas figuras 1 a 4. Qual intervenção completa corretamente a representação dos raios luminosos?
+
+\begin{center}
+\begin{tabular}{cc}
+\includegraphics[width=0.42\linewidth]{enade2024_q28_espelho_1.jpeg} & \includegraphics[width=0.42\linewidth]{enade2024_q28_espelho_2.jpeg} \\
+\includegraphics[width=0.42\linewidth]{enade2024_q28_espelho_3.jpeg} & \includegraphics[width=0.42\linewidth]{enade2024_q28_espelho_4.jpeg} \\
+\end{tabular}
+\end{center}
+<<echo=FALSE, results=tex>>=
+answerlist(alternativas)
+@
+\end{question}
+\begin{solution}
+A construção do raio notável que passa pelo foco e é refletido paralelamente ao eixo principal complementa corretamente a figura 3. As demais afirmações confundem imagem real/virtual e leis de reflexão.
+\end{solution}
+%% Fonte: INEP ENADE 2024, caderno 1, Q28 (adaptada).
+%% SOURCE-VISUAL: original-extract
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q115QuizEnade2024EspelhosTateis}
+%% \exsection{Optica; Espelhos esfericos; Raios notaveis; Inclusao; ENADE}
+%% \exusepackage[utf8]{inputenc}

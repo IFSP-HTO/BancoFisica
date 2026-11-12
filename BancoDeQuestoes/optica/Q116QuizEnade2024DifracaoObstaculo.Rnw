@@ -1,0 +1,33 @@
+<<echo=FALSE, results=hide>>=
+# Fonte: INEP, ENADE 2024 Licenciatura em Fisica, caderno 1, Q46; adaptada.
+alternativas <- c(
+  "Como a dimensão da abertura ou do obstáculo, comparada ao comprimento de onda da luz, afeta o espalhamento observado?",
+  "Qual é o número de elétrons que atravessa o obstáculo por segundo?",
+  "Qual valor de índice de refração faz a luz deixar de sofrer qualquer difração?",
+  "Qual é a massa da luz que precisa ultrapassar o obstáculo para formar uma sombra?",
+  "Por que a frequência da luz é sempre nula depois da passagem por uma fenda?"
+)
+solutions <- c(TRUE, FALSE, FALSE, FALSE, FALSE)
+ordem <- sample(seq_along(alternativas))
+alternativas <- alternativas[ordem]
+solutions <- solutions[ordem]
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\begin{question}
+Em uma atividade experimental, um laser atravessa uma fenda ou encontra um obstáculo de dimensão ajustável. O objetivo é evidenciar a transição entre uma descrição de raios retilíneos e o comportamento ondulatório da luz. Qual pergunta é adequada à investigação?
+
+<<echo=FALSE, results=tex>>=
+answerlist(alternativas)
+@
+\end{question}
+\begin{solution}
+A difração é mais perceptível quando as dimensões da abertura ou do obstáculo são comparáveis ao comprimento de onda. No limite em que essas dimensões são muito maiores, a aproximação da óptica geométrica frequentemente descreve bem a propagação.
+\end{solution}
+%% Fonte: INEP ENADE 2024, caderno 1, Q46 (adaptada).
+%% SOURCE-VISUAL: none
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q116QuizEnade2024DifracaoObstaculo}
+%% \exsection{Optica; Difracao; Optica ondulatoria; Limites da optica geometrica; ENADE}
+%% \exusepackage[utf8]{inputenc}
