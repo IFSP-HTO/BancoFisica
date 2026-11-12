@@ -1,0 +1,53 @@
+<<echo=FALSE, results=hide>>=
+M <- sample(c(80,90,100,120),1)
+pessoa <- sample(c(50,60,70,80),1)
+caixa <- sample(c(2,4,5,8,10),1)
+a <- sample(c(0.5,1,1.5,2),1)
+FR <- (M+pessoa+caixa)*a
+H <- caixa*a
+stopifnot(FR>0,H>0)
+include_supplement("Q119BarcoCargaRebocado.png")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\begin{question}
+Um barco de massa $M=\Sexpr{M}\,\mathrm{kg}$ transporta
+uma pessoa de $\Sexpr{pessoa}\,\mathrm{kg}$ segurando um pacote
+de massa $m_c=\Sexpr{caixa}\,\mathrm{kg}$.
+O barco é puxado por uma corda. A força horizontal
+\textbf{resultante externa} sobre o sistema barco+pessoa+pacote
+tem módulo $F_R=\Sexpr{FR}\,\mathrm{N}$ e aponta para a direita.
+Não há movimento relativo entre as partes e a resistência do
+ar sobre o pacote é desprezível.
+\begin{center}
+\includegraphics[width=0.88\linewidth,keepaspectratio]{Q119BarcoCargaRebocado.png}
+\end{center}
+Determine:
+\begin{answerlist}
+\item a aceleração do sistema, em $\mathrm{m/s^2}$;
+\item a força horizontal exercida pela pessoa sobre o pacote, em newtons.
+\end{answerlist}
+\end{question}
+\begin{solution}
+Pela segunda lei aplicada ao conjunto:
+\[a=\frac{F_R}{M+m_p+m_c}
+=\frac{\Sexpr{FR}}{\Sexpr{M}+\Sexpr{pessoa}+\Sexpr{caixa}}
+=\Sexpr{a}\,\mathrm{m/s^2}.\]
+Para o pacote isolado, a força horizontal da pessoa produz
+a mesma aceleração:
+\[F_{p\to c}=m_ca=\Sexpr{caixa}\cdot\Sexpr{a}
+=\Sexpr{H}\,\mathrm{N}.\]
+\begin{answerlist}
+\item $\Sexpr{a}\,\mathrm{m/s^2}$;
+\item $\Sexpr{H}\,\mathrm{N}$.
+\end{answerlist}
+\end{solution}
+%% META-INFORMATION
+%% Inspirada na questao 14 da lista Aplicacao: leis de Newton, Prof. Panosso.
+%% Figura adaptada pelo usuario; verificar autorizacao de redistribuicao.
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{a}|\Sexpr{H}}
+%% \extol{0.01|0.01}
+%% \exname{Q119ClozeBarcoRebocadoCarga}
+%% \exsection{Mecanica; Leis de Newton; Barco; Sistemas; Forca no pacote}

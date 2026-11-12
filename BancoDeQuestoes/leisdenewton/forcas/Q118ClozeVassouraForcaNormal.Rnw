@@ -1,0 +1,61 @@
+<<echo=FALSE, results=hide>>=
+tri <- data.frame(h0=c(3,4),d0=c(4,3),L0=c(5,5))
+i <- sample(1:2,1)
+esc <- sample(c(0.2,0.3,0.4),1)
+h <- round(tri$h0[i]*esc,2)
+d <- round(tri$d0[i]*esc,2)
+L <- round(tri$L0[i]*esc,2)
+m <- sample(c(0.5,0.8,1.0,1.2,1.5),1)
+F <- sample(c(5,10,15,20),1)
+g <- 10
+N <- round(m*g+F*h/L,2)
+Fh <- round(F*d/L,2)
+stopifnot(abs(h^2+d^2-L^2)<1e-9,N>m*g,Fh>0)
+include_supplement("Q118BarraInclinadaBloco.png")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\begin{question}
+Uma vassoura cuja base tem massa $m=\Sexpr{m}\,\mathrm{kg}$
+é empurrada para a direita por uma força de módulo
+$F=\Sexpr{F}\,\mathrm{N}$ aplicada ao longo do cabo e
+direcionada para a base, como na figura. Despreze a massa do cabo.
+O cabo tem comprimento $L=\Sexpr{L}\,\mathrm{m}$
+e projeções vertical $h=\Sexpr{h}\,\mathrm{m}$ e
+horizontal $d=\Sexpr{d}\,\mathrm{m}$.
+A base permanece em contato com o piso, sem aceleração vertical.
+Adote $g=10\,\mathrm{m/s^2}$.
+\begin{center}
+\includegraphics[width=0.78\linewidth,keepaspectratio]{Q118BarraInclinadaBloco.png}
+\end{center}
+Calcule:
+\begin{answerlist}
+\item a força normal do piso sobre a base, em newtons;
+\item a componente horizontal da força aplicada, em newtons.
+\end{answerlist}
+\end{question}
+\begin{solution}
+A componente vertical da força do cabo vale $F_v=Fh/L$
+e aponta para baixo. Como $a_y=0$:
+\[N-mg-F\frac{h}{L}=0
+\quad\Rightarrow\quad
+N=\Sexpr{m}\cdot 10+\Sexpr{F}\frac{\Sexpr{h}}{\Sexpr{L}}
+=\Sexpr{N}\,\mathrm{N}.\]
+A componente horizontal para a direita é:
+\[F_h=F\frac{d}{L}
+=\Sexpr{F}\frac{\Sexpr{d}}{\Sexpr{L}}
+=\Sexpr{Fh}\,\mathrm{N}.\]
+\begin{answerlist}
+\item $\Sexpr{N}\,\mathrm{N}$;
+\item $\Sexpr{Fh}\,\mathrm{N}$.
+\end{answerlist}
+\end{solution}
+%% META-INFORMATION
+%% Inspirada na questao 13 (vassoura) da lista Aplicacao: leis de Newton, Prof. Panosso.
+%% Figura adaptada pelo usuario; verificar autorizacao de redistribuicao.
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{N}|\Sexpr{Fh}}
+%% \extol{0.01|0.01}
+%% \exname{Q118ClozeVassouraForcaNormal}
+%% \exsection{Mecanica; Leis de Newton; Forca obliqua; Vassoura; Normal}

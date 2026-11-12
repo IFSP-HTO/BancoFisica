@@ -1,0 +1,57 @@
+<<echo=FALSE, results=hide>>=
+casos <- expand.grid(m=c(2,3,4,5,6,8),
+                     F=c(20,30,40,50,60),theta=c(37,53))
+casos$sn <- ifelse(casos$theta==37,0.6,0.8)
+casos$cs <- ifelse(casos$theta==37,0.8,0.6)
+casos$N <- casos$m*10+casos$F*casos$sn
+casos$a <- casos$F*casos$cs/casos$m
+casos <- casos[casos$a>=1 & casos$a<=12,]
+i <- sample(seq_len(nrow(casos)),1)
+m <- casos$m[i];F <- casos$F[i];theta <- casos$theta[i]
+sn <- casos$sn[i];cs <- casos$cs[i]
+N <- casos$N[i];a <- round(casos$a[i],2)
+stopifnot(N>m*10,a>0)
+include_supplement("Q116ForcaObliquaBloco.png")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\begin{question}
+Um bloco de massa $m=\Sexpr{m}\,\mathrm{kg}$ é empurrado
+para a direita sobre uma superfície horizontal sem atrito.
+A força aplicada, de módulo $F=\Sexpr{F}\,\mathrm{N}$,
+faz um ângulo de $\Sexpr{theta}^{\circ}$ abaixo da horizontal.
+Adote $g=10\,\mathrm{m/s^2}$, $\sin\Sexpr{theta}^{\circ}=\Sexpr{sn}$
+e $\cos\Sexpr{theta}^{\circ}=\Sexpr{cs}$.
+\begin{center}
+\includegraphics[width=0.76\linewidth,keepaspectratio]{Q116ForcaObliquaBloco.png}
+\end{center}
+Determine:
+\begin{answerlist}
+\item a força normal exercida pelo piso, em newtons;
+\item o módulo da aceleração horizontal, em $\mathrm{m/s^2}$.
+\end{answerlist}
+\end{question}
+\begin{solution}
+A componente vertical da força aplicada aponta para baixo.
+Como a aceleração vertical é nula:
+\[N=mg+F\sin\theta
+=\Sexpr{m}\cdot10+\Sexpr{F}\cdot\Sexpr{sn}
+=\Sexpr{N}\,\mathrm{N}.\]
+Não existe atrito; na horizontal, $ma=F\cos\theta$:
+\[a=\frac{F\cos\theta}{m}
+=\frac{\Sexpr{F}\cdot\Sexpr{cs}}{\Sexpr{m}}
+\approx\Sexpr{a}\,\mathrm{m/s^2}.\]
+\begin{answerlist}
+\item $\Sexpr{N}\,\mathrm{N}$
+\item $\Sexpr{a}\,\mathrm{m/s^2}$
+\end{answerlist}
+\end{solution}
+%% META-INFORMATION
+%% Inspirada na questao 12 da lista Aplicacao: leis de Newton, Prof. Panosso.
+%% Figura fornecida/adaptada pelo usuario; verificar permissao de redistribuicao.
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{N}|\Sexpr{a}}
+%% \extol{0.01|0.02}
+%% \exname{Q116ClozeForcaObliquaNormalAceleracao}
+%% \exsection{Mecanica; Leis de Newton; Forca obliqua; Normal; Aceleracao}
