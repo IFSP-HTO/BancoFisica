@@ -106,7 +106,6 @@ include_supplement("''' + image_name + r'''", dir="../figuras")
 \includegraphics[width=0.56\linewidth,keepaspectratio]{''' + image_name + r'''}
 \end{center}
 
-Na situa\c{c}\~ao descrita,
 \begin{answerlist}
 ''' + items + r'''
 \end{answerlist}
