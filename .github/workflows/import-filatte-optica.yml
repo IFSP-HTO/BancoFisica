@@ -1,5 +1,9 @@
 name: Importar questao de optica (Filatte)
 on:
+  pull_request:
+    paths:
+      - 'tools/import_filatte.py'
+      - '.github/workflows/import-filatte-optica.yml'
   workflow_dispatch:
     inputs:
       url:
@@ -9,11 +13,26 @@ on:
         type: string
 
 permissions:
-  contents: write
-  pull-requests: write
+  contents: read
 
 jobs:
+  smoke:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --disable-pip-version-check requests beautifulsoup4 Pillow
+      - name: Teste de rede, parser e PNG original sem alterar arquivos
+        run: python tools/import_filatte.py --dry-run
   import:
+    if: github.event_name == 'workflow_dispatch'
+    permissions:
+      contents: write
+      pull-requests: write
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
