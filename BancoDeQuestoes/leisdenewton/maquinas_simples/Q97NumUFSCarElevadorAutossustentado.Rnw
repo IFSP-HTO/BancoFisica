@@ -1,0 +1,57 @@
+<<echo=FALSE, results=hide>>=
+# O conjunto pessoa+cabine recebe duas tracoes externas para cima.
+M <- sample(c(200, 250, 300, 350, 400, 450), 1)
+m <- sample(c(50, 60, 70, 80, 90), 1)
+a <- sample(1:4, 1)
+g <- 10
+T <- (M + m) * (g + a) / 2
+stopifnot(abs(2*T - (M+m)*(g+a)) < 1e-10)
+include_supplement("PoliasVest17UFSCar.png", dir="../../figuras")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\begin{question}
+(UFSCar-SP, adaptada) Um elevador de massa $M=\Sexpr{M}\,\mathrm{kg}$
+transporta uma pessoa de massa $m=\Sexpr{m}\,\mathrm{kg}$. Uma das
+extremidades de uma corda ideal está presa ao teto da cabine e a outra,
+após passar por uma polia fixa ideal, é puxada pela própria pessoa,
+como mostra o esquema. A cabine e a pessoa sobem juntas com
+aceleração constante de módulo $a=\Sexpr{a}\,\mathrm{m/s^2}$.
+Considere $g=\Sexpr{g}\,\mathrm{m/s^2}$.
+
+\begin{center}
+\includegraphics[width=0.53\linewidth,height=7.2cm,keepaspectratio]{PoliasVest17UFSCar.png}
+\end{center}
+
+Qual é a intensidade, em newtons, da força que a pessoa exerce na corda?
+\end{question}
+
+\begin{solution}
+Considere como um único sistema a pessoa e a cabine. As forças
+externas verticais nesse sistema são o peso total $(M+m)g$, dirigido
+para baixo, e duas trações $T$ para cima: uma no ponto em que a corda
+está presa à cabine e outra nas mãos da pessoa. A força normal
+entre pessoa e piso é interna ao sistema escolhido e se cancela.
+
+Como o conjunto acelera para cima, a segunda lei de Newton fornece
+\[
+2T-(M+m)g=(M+m)a,
+\]
+portanto
+\[
+T=\frac{(M+m)(g+a)}{2}
+=\frac{(\Sexpr{M}+\Sexpr{m})(\Sexpr{g}+\Sexpr{a})}{2}
+=\Sexpr{T}\,\mathrm{N}.
+\]
+A intensidade da força com que a pessoa puxa a corda é $F=T$.
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: UFSCar-SP, questao 17 da lista Polias e Roldanas (Fisica e Vestibular); enunciado adaptado.
+%% Figura: fornecida pelo usuario, preservada integralmente.
+%% SOURCE-VISUAL: original-extract
+%% \extype{num}
+%% \exsolution{\Sexpr{T}}
+%% \extol{0.01}
+%% \exname{Q97NumUFSCarElevadorAutossustentado}
+%% \exsection{Mecanica; Leis de Newton; Polias; Sistemas de corpos; Dinamica}

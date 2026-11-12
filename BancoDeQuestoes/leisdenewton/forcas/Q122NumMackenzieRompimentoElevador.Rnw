@@ -1,0 +1,55 @@
+<<echo=FALSE, results=hide>>=
+# Fio rompe com aceleracao para cima estritamente maior que a_crit.
+mGramas <- sample(c(500, 600, 700, 800, 900, 1000),1)
+m <- mGramas / 1000
+g <- 10
+aCrit <- sample(c(1,2,3,4),1)
+Tlim <- round(m*(g+aCrit),3)
+stopifnot(abs(Tlim/m-g-aCrit)<1e-10)
+include_supplement("ElevadorVest16Mackenzie.png", dir="../../figuras")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\begin{question}
+(Mackenzie-SP, adaptada) Dentro de um elevador, uma pessoa segura
+por um barbante uma caixa de massa $\Sexpr{mGramas}\,\mathrm{g}$,
+em repouso relativamente à cabine, conforme a figura. O fio suporta,
+sem romper, uma tração máxima de $\Sexpr{Tlim}\,\mathrm{N}$.
+Considere $g=10\,\mathrm{m/s^2}$.
+
+\begin{center}
+\includegraphics[width=0.44\linewidth,height=6.8cm,keepaspectratio]{ElevadorVest16Mackenzie.png}
+\end{center}
+
+Determine a aceleração vertical crítica $a_{\mathrm{crit}}$,
+em $\mathrm{m/s^2}$, para cima, acima da qual o barbante se rompe.
+O rompimento também poderia ocorrer enquanto o elevador está
+\emph{descendo}? Justifique na resolução.
+\end{question}
+
+\begin{solution}
+A caixa acompanha a aceleração da cabine. Se a aceleração é para cima,
+\[
+T-mg=ma\quad\Rightarrow\quad T=m(g+a).
+\]
+Na condição-limite $T=T_{\max}$:
+\[
+a_{\mathrm{crit}}=\frac{T_{\max}}{m}-g
+=\frac{\Sexpr{Tlim}}{\Sexpr{m}}-10
+=\Sexpr{aCrit}\,\mathrm{m/s^2}.
+\]
+O fio se rompe para aceleração vertical dirigida para cima
+\emph{estritamente superior} ao valor crítico. Isso pode acontecer
+com a cabine subindo cada vez mais rápido ou descendo enquanto freia:
+a direção da aceleração, e não a da velocidade, é o que determina a tração.
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: Mackenzie-SP, questao 16 da lista Polias e Roldanas (Fisica e Vestibular); enunciado adaptado.
+%% Figura: fornecida pelo usuario, preservada integralmente.
+%% SOURCE-VISUAL: original-extract
+%% \extype{num}
+%% \exsolution{\Sexpr{aCrit}}
+%% \extol{0.01}
+%% \exname{Q122NumMackenzieRompimentoElevador}
+%% \exsection{Mecanica; Leis de Newton; Elevadores; Tracao; Aceleracao}

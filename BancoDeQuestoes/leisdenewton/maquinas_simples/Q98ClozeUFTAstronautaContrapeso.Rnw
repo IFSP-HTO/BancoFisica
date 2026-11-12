@@ -1,0 +1,74 @@
+<<echo=FALSE, results=hide>>=
+# Polia movel: a_ast = 2*a_contrapeso em modulo.
+g <- 10
+gLua <- 0.2*g
+mAst <- sample(c(165, 198, 220, 242, 275), 1)
+aAst <- gLua
+aCtr <- aAst/2
+T <- mAst * (g-aAst)
+mCtr <- 2*T/(g+aCtr)
+stopifnot(abs(mAst*g - T - mAst*aAst) < 1e-10,
+          abs(2*T - mCtr*g - mCtr*aCtr) < 1e-10,
+          abs(aAst - 2*aCtr) < 1e-10)
+include_supplement("PoliasVest22UFT.png", dir="../../figuras")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\begin{question}
+(UFT-TO, adaptada) Para simular a queda de um astronauta na Lua,
+um estúdio monta o sistema ilustrado: a corda, presa a um ponto
+fixo do teto, passa por uma polia móvel com um contrapeso, depois
+por duas polias fixas e termina presa ao astronauta. O cabo é
+inextensível, e as polias e o cabo têm massas desprezíveis e
+não apresentam atrito.
+
+\begin{center}
+\includegraphics[width=0.92\linewidth,height=6.2cm,keepaspectratio]{PoliasVest22UFT.png}
+\end{center}
+
+A massa do astronauta com os equipamentos é
+$\Sexpr{mAst}\,\mathrm{kg}$. Para que ele desça com aceleração igual
+a $20\%$ da gravidade terrestre, determine:
+\begin{answerlist}
+  \item a tração no cabo, em newtons;
+  \item a massa necessária do contrapeso, em quilogramas.
+\end{answerlist}
+Adote $g=10\,\mathrm{m/s^2}$.
+\end{question}
+
+\begin{solution}
+Como a corda tem comprimento constante, o deslocamento vertical do
+astronauta tem o dobro do deslocamento do centro da polia móvel.
+Assim, quando o astronauta acelera para baixo com
+$a_A=0{,}2g=\Sexpr{aAst}\,\mathrm{m/s^2}$, o contrapeso acelera
+para cima com $a_C=a_A/2=\Sexpr{aCtr}\,\mathrm{m/s^2}$.
+
+Para o astronauta, com sentido positivo para baixo:
+\[
+m_Ag-T=m_Aa_A\quad\Rightarrow\quad
+T=m_A(g-a_A)
+=\Sexpr{mAst}(10-\Sexpr{aAst})
+=\Sexpr{T}\,\mathrm{N}.
+\]
+A polia móvel e o contrapeso recebem duas trações verticais para
+cima. Com o sentido positivo para cima:
+\[
+2T-m_Cg=m_Ca_C\quad\Rightarrow\quad
+m_C=\frac{2T}{g+a_C}
+=\frac{2\cdot\Sexpr{T}}{10+\Sexpr{aCtr}}
+=\Sexpr{mCtr}\,\mathrm{kg}.
+\]
+A aceleração do contrapeso \emph{não} é igual à do astronauta:
+os módulos estão na razão $1:2$ em consequência da polia móvel.
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: UFT-TO, questao 22 da lista Polias e Roldanas (Fisica e Vestibular); enunciado adaptado; equacoes recalculadas.
+%% Figura: fornecida pelo usuario, preservada integralmente.
+%% SOURCE-VISUAL: original-extract
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{T}|\Sexpr{mCtr}}
+%% \extol{0.01|0.01}
+%% \exname{Q98ClozeUFTAstronautaContrapeso}
+%% \exsection{Mecanica; Leis de Newton; Polias; Aceleracao vinculada; Dinamica}

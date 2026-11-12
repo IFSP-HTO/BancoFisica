@@ -1,0 +1,61 @@
+<<echo=FALSE, results=hide>>=
+# Corda ideal: deslocamento/velocidade/aceleracao do astronauta = 2 x o da polia movel.
+aAst <- 2
+aCtr <- aAst / 2
+d0 <- sample(c(6, 9, 12, 15, 18),1)
+df <- d0/2
+delta <- d0-df
+t <- sqrt(2*delta/(aAst+aCtr))
+ans <- round(t,2)
+stopifnot(abs(delta - (aAst+aCtr)*t*t/2) < 1e-10)
+include_supplement("PoliasVest22UFT.png", dir="../../figuras")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\begin{question}
+(UFT-TO, adaptada) No sistema de polias representado, um astronauta
+começa a descer do repouso com aceleração constante de
+$2\,\mathrm{m/s^2}$ e o contrapeso, ligado ao eixo da polia móvel,
+começa a subir. Os fios e as polias são ideais.
+
+\begin{center}
+\includegraphics[width=0.88\linewidth,height=6.1cm,keepaspectratio]{PoliasVest22UFT.png}
+\end{center}
+
+Inicialmente, a distância vertical entre os centros de massa do
+astronauta e do contrapeso é de $\Sexpr{d0}\,\mathrm{m}$.
+Qual é o menor tempo, em segundos, necessário para essa distância
+ficar igual a $\Sexpr{df}\,\mathrm{m}$?
+Forneça a resposta com duas casas decimais.
+\end{question}
+
+\begin{solution}
+A polia móvel é sustentada por dois ramos da mesma corda.
+Conservando o comprimento do fio, o módulo da aceleração do
+contrapeso vale metade do módulo da aceleração do astronauta:
+\[
+a_C=\frac{a_A}{2}=\frac{2}{2}=1\,\mathrm{m/s^2}.
+\]
+Como um desce e o outro sobe, ambos saindo do repouso, a diminuição
+da distância entre seus centros de massa é a soma dos deslocamentos:
+\[
+\Delta d=\frac{a_A t^2}{2}+\frac{a_Ct^2}{2}
+=\frac{3t^2}{2}.
+\]
+Por outro lado, $\Delta d=\Sexpr{d0}-\Sexpr{df}
+=\Sexpr{delta}\,\mathrm{m}$. Assim,
+\[
+t=\sqrt{\frac{2\Delta d}{3}}
+=\Sexpr{formatC(ans,format="f",digits=2,decimal.mark=",")}\,\mathrm{s}.
+\]
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: UFT-TO, questao 23 da lista Polias e Roldanas (Fisica e Vestibular); enunciado adaptado; equacoes recalculadas.
+%% Figura: fornecida pelo usuario, preservada integralmente.
+%% SOURCE-VISUAL: original-extract
+%% \extype{num}
+%% \exsolution{\Sexpr{ans}}
+%% \extol{0.02}
+%% \exname{Q99NumUFTAstronautaDistancia}
+%% \exsection{Mecanica; Polias; Cinematica; Vinculo geometrico; Movimento uniformemente variado}

@@ -1,0 +1,57 @@
+<<echo=FALSE, results=hide>>=
+# O bloco 3 sustenta os blocos 1 e 2 acima dele.
+m <- sample(c(1,2,3,4,5),1)
+g <- 10
+a <- sample(1:4,1)
+N32 <- 2*m*(g-a)
+stopifnot(N32>0)
+include_supplement("ElevadorVest21ITA.png", dir="../../figuras")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\begin{question}
+(ITA-SP, adaptada) Seis blocos idênticos, numerados de 1 a 6 de
+cima para baixo, estão empilhados no piso de um elevador. Cada bloco
+tem massa $m=\Sexpr{m}\,\mathrm{kg}$. O elevador \emph{sobe com
+velocidade decrescente}, em movimento uniformemente variado, e a
+aceleração tem módulo $a=\Sexpr{a}\,\mathrm{m/s^2}$.
+Adote $g=10\,\mathrm{m/s^2}$.
+
+\begin{center}
+\includegraphics[width=0.59\linewidth,height=7.0cm,keepaspectratio]{ElevadorVest21ITA.png}
+\end{center}
+
+Determine, em newtons, o módulo da força de contato que o
+\emph{bloco 3 exerce sobre o bloco 2}.
+\end{question}
+
+\begin{solution}
+Como a cabine está subindo e desacelerando, a aceleração aponta
+para baixo. Considere como sistema apenas os blocos 1 e 2, ambos
+acima do bloco 3. Sobre esse sistema agem o peso $2mg$ para baixo
+e a normal $N_{3\to2}$ exercida pelo bloco 3 para cima.
+
+Tomando positivo para cima, a aceleração do conjunto é $-a$:
+\[
+N_{3\to2}-2mg=-2ma
+\quad\Rightarrow\quad
+N_{3\to2}=2m(g-a).
+\]
+Substituindo,
+\[
+N_{3\to2}=2\cdot\Sexpr{m}\cdot(10-\Sexpr{a})
+=\Sexpr{N32}\,\mathrm{N}.
+\]
+A força de contato depende de quantos blocos são sustentados
+pelo bloco 3, não da quantidade total de blocos na pilha.
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: ITA-SP, questao 21 da lista Polias e Roldanas (Fisica e Vestibular); enunciado adaptado.
+%% Figura: fornecida pelo usuario, preservada integralmente.
+%% SOURCE-VISUAL: original-extract
+%% \extype{num}
+%% \exsolution{\Sexpr{N32}}
+%% \extol{0.01}
+%% \exname{Q125NumITABlocosEmElevador}
+%% \exsection{Mecanica; Leis de Newton; Elevadores; Forca normal; Sistemas de corpos}
