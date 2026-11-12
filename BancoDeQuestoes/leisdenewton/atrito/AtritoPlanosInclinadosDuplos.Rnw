@@ -1,0 +1,77 @@
+<<echo=FALSE, results=hide>>=
+## Selecionar cenarios que efetivamente iniciam movimento com m2 descendo.
+g <- 10
+theta1 <- sample(c(25, 30), 1)
+theta2 <- sample(c(45, 50, 55), 1)
+mu_s1 <- sample(c(0.15, 0.20), 1)
+mu_s2 <- sample(c(0.15, 0.20), 1)
+mu_k1 <- mu_s1 - 0.05
+mu_k2 <- mu_s2 - 0.05
+ang1 <- theta1*pi/180
+ang2 <- theta2*pi/180
+casos <- expand.grid(m1=2:5, m2=6:10)
+D0 <- g*(casos$m2*sin(ang2)-casos$m1*sin(ang1))
+fsmax <- g*(mu_s1*casos$m1*cos(ang1)+mu_s2*casos$m2*cos(ang2))
+val <- which(D0 > fsmax + 0.5)
+stopifnot(length(val)>0)
+i <- sample(val, 1)
+m1 <- casos$m1[i]; m2 <- casos$m2[i]
+D <- D0[i]
+Fstat <- fsmax[i]
+sobra <- D-Fstat
+a <- (D-g*(mu_k1*m1*cos(ang1)+mu_k2*m2*cos(ang2)))/(m1+m2)
+T <- m1*a+m1*g*sin(ang1)+mu_k1*m1*g*cos(ang1)
+stopifnot(sobra>0,a>0,T>0,mu_s1>mu_k1,mu_s2>mu_k2)
+include_supplement("AtritoPlanosInclinadosDuplos.png", dir="../figuras")
+@
+\usepackage{graphicx}
+\begin{question}
+Dois blocos de massas $m_1=\Sexpr{m1}\,\mathrm{kg}$ e
+$m_2=\Sexpr{m2}\,\mathrm{kg}$ estao ligados por fio e polia ideais,
+sobre rampas de $\theta_1=\Sexpr{theta1}^{\circ}$ e
+$\theta_2=\Sexpr{theta2}^{\circ}$.
+No primeiro plano, os coeficientes sao
+$\mu_{s1}=\Sexpr{mu_s1}$ e $\mu_{k1}=\Sexpr{mu_k1}$;
+no segundo plano, $\mu_{s2}=\Sexpr{mu_s2}$ e
+$\mu_{k2}=\Sexpr{mu_k2}$.
+O sistema e liberado do repouso; use $g=10\,\mathrm{m/s^2}$.
+\begin{center}
+\includegraphics[width=0.78\linewidth,keepaspectratio]{AtritoPlanosInclinadosDuplos.png}
+\end{center}
+Para os dados sorteados, o peso tangencial de $m_2$ supera o de
+$m_1$. Determine:
+\begin{answerlist}
+  \item por quantos newtons a diferenca entre os pesos tangenciais
+  \textbf{supera o atrito estatico maximo total};
+  \item a aceleracao comum, em $\mathrm{m/s^2}$, depois de iniciar o movimento.
+\end{answerlist}
+\end{question}
+\begin{solution}
+A diferenca de pesos ao longo das rampas e
+$D=m_2g\sin\theta_2-m_1g\sin\theta_1
+=\Sexpr{round(D,2)}\,\mathrm{N}$.
+O atrito estatico maximo total e
+$f_{s,\max}=\mu_{s1}m_1g\cos\theta_1+
+\mu_{s2}m_2g\cos\theta_2
+=\Sexpr{round(Fstat,2)}\,\mathrm{N}$.
+Portanto a sobra e $D-f_{s,\max}=\Sexpr{round(sobra,2)}\,\mathrm{N}>0$:
+$m_2$ desce e $m_1$ sobe. Uma vez iniciado o movimento, usa-se
+atrito \textbf{cinetico}:
+\[
+a=\frac{D-\mu_{k1}m_1g\cos\theta_1
+-\mu_{k2}m_2g\cos\theta_2}{m_1+m_2}
+=\Sexpr{round(a,2)}\,\mathrm{m/s^2}.
+\]
+\begin{answerlist}
+  \item $\Sexpr{round(sobra,2)}\,\mathrm{N}$
+  \item $\Sexpr{round(a,2)}\,\mathrm{m/s^2}$
+\end{answerlist}
+\end{solution}
+%% META-INFORMATION
+%% Fonte visual: figura fornecida pelo usuario, baseada em exercicios de atrito em rampas; credito/licenca da origem a conferir.
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{round(sobra,2)}|\Sexpr{round(a,2)}}
+%% \extol{0.03|0.03}
+%% \exname{AtritoPlanosInclinadosDuplos}
+%% \exsection{Mecanica; Leis de Newton; Atrito; Planos inclinados; Polias}

@@ -1,0 +1,65 @@
+<<echo=FALSE, results=hide>>=
+## Piso sem atrito; so existe atrito estatico entre os blocos.
+g <- 10
+m1 <- sample(2:5, 1)
+m2 <- sample(4:8, 1)
+theta <- sample(c(15, 20, 30), 1)
+mu <- sample(c(0.20, 0.25, 0.30, 0.35), 1)
+ang <- theta*pi/180
+coef <- (m2/(m1+m2))*cos(ang)-mu*sin(ang)
+stopifnot(coef>0)
+Fmax <- mu*m1*g/coef
+amax <- Fmax*cos(ang)/(m1+m2)
+N <- m1*g+Fmax*sin(ang)
+fat <- Fmax*cos(ang)-m1*amax
+stopifnot(abs(fat-mu*N)<1e-8, amax>0)
+include_supplement("AtritoBlocosEmpilhadosForcaObliqua.png", dir="../figuras")
+@
+\usepackage{graphicx}
+\begin{question}
+O bloco superior tem massa $M_1=\Sexpr{m1}\,\mathrm{kg}$ e o inferior
+massa $M_2=\Sexpr{m2}\,\mathrm{kg}$. O piso sob $M_2$ e
+\textbf{sem atrito}; entre os blocos ha atrito estatico de
+coeficiente $\mu_s=\Sexpr{mu}$. Uma forca $F$ e aplicada ao bloco
+superior em direcao para a direita e para baixo, formando
+$\theta=\Sexpr{theta}^{\circ}$ abaixo da horizontal.
+Partindo do repouso, os blocos podem mover-se juntos, sem
+escorregamento relativo. Tome $g=10\,\mathrm{m/s^2}$.
+\begin{center}
+\includegraphics[width=0.75\linewidth,keepaspectratio]{AtritoBlocosEmpilhadosForcaObliqua.png}
+\end{center}
+Determine:
+\begin{answerlist}
+  \item o \textbf{maior modulo} de $F$, em $\mathrm{N}$, que ainda evita
+  deslizamento relativo;
+  \item a aceleracao comum, em $\mathrm{m/s^2}$, nesse limite.
+\end{answerlist}
+\end{question}
+\begin{solution}
+Se os blocos movem-se juntos, a aceleracao e
+$a=F\cos\theta/(M_1+M_2)$. Sobre o bloco superior, a forca de
+atrito estatico aponta para a esquerda e vale
+$f_s=F\cos\theta-M_1a=F\cos\theta\,M_2/(M_1+M_2)$.
+A normal de contato e $N=M_1g+F\sin\theta$.
+No limiar de deslizamento, $f_s=\mu_sN$:
+\[
+F_{\max}=\frac{\mu_sM_1g}{
+\frac{M_2}{M_1+M_2}\cos\theta-\mu_s\sin\theta}
+=\Sexpr{round(Fmax,2)}\,\mathrm{N}.
+\]
+A aceleracao no limite e
+$a_{\max}=F_{\max}\cos\theta/(M_1+M_2)
+=\Sexpr{round(amax,2)}\,\mathrm{m/s^2}$.
+\begin{answerlist}
+  \item $\Sexpr{round(Fmax,2)}\,\mathrm{N}$
+  \item $\Sexpr{round(amax,2)}\,\mathrm{m/s^2}$
+\end{answerlist}
+\end{solution}
+%% META-INFORMATION
+%% Fonte visual: figura fornecida pelo usuario, baseada em exercicios de blocos empilhados; credito/licenca da origem a conferir.
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{round(Fmax,2)}|\Sexpr{round(amax,2)}}
+%% \extol{0.03|0.03}
+%% \exname{AtritoBlocosEmpilhadosForcaObliqua}
+%% \exsection{Mecanica; Leis de Newton; Atrito estatico; Blocos empilhados}

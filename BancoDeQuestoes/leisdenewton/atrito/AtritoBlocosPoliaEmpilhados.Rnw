@@ -1,0 +1,64 @@
+<<echo=FALSE, results=hide>>=
+## Duas massas ligadas por fio sobre polia FIXA; sentidos opostos.
+## Movimento uniforme: mA para a direita e mB para a esquerda.
+g <- 10
+mA <- sample(2:6, 1)
+mB <- sample(5:10, 1)
+muAB <- sample(c(0.15, 0.20, 0.25, 0.30), 1)
+muChao <- sample(c(0.10, 0.15, 0.20), 1)
+T <- muAB*mA*g
+fatChao <- muChao*(mA+mB)*g
+P <- 2*T+fatChao
+stopifnot(P>0)
+include_supplement("AtritoBlocosPoliaEmpilhados.png", dir="../figuras")
+@
+\usepackage{graphicx}
+\begin{question}
+Os blocos $A$ (massa $m_A=\Sexpr{mA}\,\mathrm{kg}$) e $B$
+(massa $m_B=\Sexpr{mB}\,\mathrm{kg}$) estao empilhados e presos
+as extremidades de um mesmo fio inextensivel que passa por uma
+\textbf{polia fixa e ideal}, conforme a figura.
+Uma forca horizontal $P$ puxa $B$ para a esquerda. Considere que
+$B$ desliza para a esquerda e $A$ desliza para a direita, ambos
+com \textbf{velocidade constante}; assim, ha deslizamento entre
+$A$ e $B$ e entre $B$ e o chao.
+Os coeficientes de atrito \textbf{cinetico} sao
+$\mu_{AB}=\Sexpr{muAB}$ entre os blocos e
+$\mu_{Bc}=\Sexpr{muChao}$ entre $B$ e o chao.
+Adote $g=10\,\mathrm{m/s^2}$.
+\begin{center}
+\includegraphics[width=0.78\linewidth,keepaspectratio]{AtritoBlocosPoliaEmpilhados.png}
+\end{center}
+Determine:
+\begin{answerlist}
+  \item a tracao no fio, em $\mathrm{N}$;
+  \item o modulo da forca $P$, em $\mathrm{N}$.
+\end{answerlist}
+\end{question}
+\begin{solution}
+O fio implica deslocamentos de mesmo modulo e sentidos opostos,
+mas aqui ambas as aceleracoes sao zero. Sobre $A$, a tracao
+$T$ aponta para a direita e o atrito cinetico entre os blocos
+para a esquerda: $T=\mu_{AB}m_Ag=\Sexpr{round(T,2)}\,\mathrm{N}$.
+Em $B$, a tracao e a reacao do atrito exercido por $A$ apontam
+para a direita. O atrito com o chao tambem aponta para a direita,
+pois $B$ desliza para a esquerda, e vale
+$f_c=\mu_{Bc}(m_A+m_B)g=\Sexpr{round(fatChao,2)}\,\mathrm{N}$.
+Como $B$ tem aceleracao zero, $P=T+T+f_c$:
+\[
+P=2\mu_{AB}m_Ag+\mu_{Bc}(m_A+m_B)g
+=\Sexpr{round(P,2)}\,\mathrm{N}.
+\]
+\begin{answerlist}
+  \item $\Sexpr{round(T,2)}\,\mathrm{N}$
+  \item $\Sexpr{round(P,2)}\,\mathrm{N}$
+\end{answerlist}
+\end{solution}
+%% META-INFORMATION
+%% Fonte visual: figura fornecida pelo usuario, baseada em problema de blocos ligados por polia; credito/licenca da origem a conferir.
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{round(T,2)}|\Sexpr{round(P,2)}}
+%% \extol{0.03|0.03}
+%% \exname{AtritoBlocosPoliaEmpilhados}
+%% \exsection{Mecanica; Leis de Newton; Atrito; Blocos e polias}
