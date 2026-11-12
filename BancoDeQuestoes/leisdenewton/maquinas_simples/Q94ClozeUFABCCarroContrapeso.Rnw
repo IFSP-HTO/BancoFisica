@@ -1,0 +1,68 @@
+<<echo=FALSE, results=hide>>=
+# Tres fios independentes e duas polias moveis. T1=4P, T2=2P, T3=P.
+M <- sample(c(350, 490, 630, 700, 840, 1050, 1260),1)
+g <- 10
+P <- M*g/7
+m <- M/7
+Fcentral <- 2*P
+stopifnot(7*P == M*g, Fcentral == 2*P)
+include_supplement("PoliasVest04UFABC.png", dir="../../figuras")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+(UFABC-SP, adaptada) Um mecânico pretende manter um carro de massa
+$\Sexpr{M}\,\mathrm{kg}$ suspenso em equilíbrio usando um contrapeso
+mais leve, conforme o esquema. As polias e os três cabos são ideais,
+e os cabos estão presos ao carro de modo a impedir sua rotação.
+Adote $g=10\,\mathrm{m/s^2}$.
+
+\begin{center}
+\includegraphics[width=0.70\linewidth,height=6cm,keepaspectratio]{PoliasVest04UFABC.png}
+\end{center}
+
+Determine:
+\begin{answerlist}
+\item a massa mínima do contrapeso, em quilogramas, para o carro ficar suspenso;
+\item a intensidade da força exercida sobre o carro pelo cabo central,
+em newtons.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+Seja $P$ o peso do contrapeso. No fio inferior, a tração é $T_3=P$.
+A polia móvel inferior recebe duas trações $T_3$ para baixo,
+e o fio que a sustenta deve exercer $T_2=2T_3=2P$ para cima.
+Analogamente, na polia móvel intermediária, o fio superior exerce
+$T_1=2T_2=4P$.
+
+Assim, os três cabos presos ao carro o puxam para cima com forças
+$4P$, $2P$ e $P$. No equilíbrio:
+\[
+4P+2P+P=Mg
+\quad\Rightarrow\quad
+7P=\Sexpr{M}\cdot10.
+\]
+A massa do contrapeso é
+\[
+m=\frac{P}{g}=\frac{M}{7}=\frac{\Sexpr{M}}{7}
+=\Sexpr{m}\,\mathrm{kg}.
+\]
+O cabo central é o de tração $T_2=2P$. Logo,
+\[
+F_{\mathrm{central}}=2\frac{Mg}{7}
+=\Sexpr{Fcentral}\,\mathrm{N}.
+\]
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: UFABC-SP, questao 04 da lista Polias e Roldanas (Física e Vestibular).
+%% Figura: fornecida pelo usuario, preservada integralmente.
+%% SOURCE-VISUAL: original-extract
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{m}|\Sexpr{Fcentral}}
+%% \extol{0.01|0.01}
+%% \exname{Q94ClozeUFABCCarroContrapeso}
+%% \exsection{Mecanica; Leis de Newton; Polias; Maquinas simples; Equilibrio}

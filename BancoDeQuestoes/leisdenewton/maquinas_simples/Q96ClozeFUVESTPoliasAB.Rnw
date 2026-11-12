@@ -1,0 +1,50 @@
+<<echo=FALSE, results=hide>>=
+# A: polia movel ancorada ao solo; B: polia movel presa a carga.
+M <- sample(c(4,6,8,10,12,16),1)
+g <- 10
+FA <- M*g
+FB <- M*g/2
+stopifnot(FA == 2*FB)
+include_supplement("PoliasVest07FUVEST.png", dir="../../figuras")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+(FUVEST-SP, adaptada) Os dois arranjos de polias A e B são usados
+para sustentar um corpo de massa $M=\Sexpr{M}\,\mathrm{kg}$.
+Fios e polias são ideais; considere $g=10\,\mathrm{m/s^2}$.
+
+\begin{center}
+\includegraphics[width=0.94\linewidth,keepaspectratio]{PoliasVest07FUVEST.png}
+\end{center}
+
+Determine as intensidades das forças necessárias para manter o corpo
+em repouso:
+\begin{answerlist}
+\item $F_A$, em newtons;
+\item $F_B$, em newtons.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+No arranjo A, a polia móvel está presa ao solo e não sustenta a carga.
+A massa $M$ é sustentada por um único ramo de fio, cuja tração é
+$F_A=Mg$. Portanto,
+\[F_A=\Sexpr{M}\cdot10=\Sexpr{FA}\,\mathrm{N}.\]
+No arranjo B, a polia móvel acompanha a carga e é sustentada por dois
+ramos de fio com a mesma tração $F_B$. O equilíbrio exige
+$2F_B=Mg$. Logo,
+\[F_B=\frac{\Sexpr{M}\cdot10}{2}=\Sexpr{FB}\,\mathrm{N}.\]
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: FUVEST-SP, questao 07 da lista Polias e Roldanas (Física e Vestibular).
+%% Figura: fornecida pelo usuario, preservada integralmente.
+%% SOURCE-VISUAL: original-extract
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{FA}|\Sexpr{FB}}
+%% \extol{0.01|0.01}
+%% \exname{Q96ClozeFUVESTPoliasAB}
+%% \exsection{Mecanica; Leis de Newton; Polias; Maquinas simples; Equilibrio}

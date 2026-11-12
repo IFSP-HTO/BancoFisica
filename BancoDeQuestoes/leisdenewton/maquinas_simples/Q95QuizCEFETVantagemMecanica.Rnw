@@ -1,0 +1,49 @@
+<<echo=FALSE, results=hide>>=
+# Uma polia fixa inverte direcao e tres moveis multiplicam forca por 8.
+razao <- 8
+stopifnot(razao == 2^3)
+include_supplement("PoliasVest06CEFET.png", dir="../../figuras")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+(CEFET-SP, adaptada) Para retirar um caminhão atolado, uma equipe usa
+cabos de aço e quatro roldanas, aproveitando a ancoragem em uma
+colheitadeira, como no esquema. Considere fios e polias ideais.
+
+\begin{center}
+\includegraphics[width=0.92\linewidth,keepaspectratio]{PoliasVest06CEFET.png}
+\end{center}
+
+A força resistente $F_R$ pode ser vencida por uma força aplicada $F_P$
+quantas vezes menor que $F_R$?
+
+\begin{answerlist}
+\item Duas vezes.
+\item Quatro vezes.
+\item Seis vezes.
+\item Oito vezes.
+\item Dezesseis vezes.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+A roldana da extremidade esquerda está ancorada na colheitadeira;
+ela apenas desvia o fio. As outras três são móveis e, a cada estágio,
+a força transmitida ao eixo é o dobro da tração no fio daquele estágio.
+Assim, a vantagem mecânica total é
+\[
+2^3=8\quad\Rightarrow\quad F_R=8F_P.
+\]
+Logo, $F_P=F_R/8$: a força aplicada é oito vezes menor que a resistente.
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: CEFET-SP, questao 06 da lista Polias e Roldanas (Física e Vestibular).
+%% Figura: fornecida pelo usuario, preservada integralmente.
+%% SOURCE-VISUAL: original-extract
+%% \extype{schoice}
+%% \exsolution{00010}
+%% \exname{Q95QuizCEFETVantagemMecanica}
+%% \exsection{Mecanica; Leis de Newton; Polias; Maquinas simples; Vantagem mecanica}
