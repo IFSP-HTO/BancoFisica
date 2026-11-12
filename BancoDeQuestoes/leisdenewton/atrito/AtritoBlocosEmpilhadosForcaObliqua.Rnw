@@ -13,7 +13,7 @@ amax <- Fmax*cos(ang)/(m1+m2)
 N <- m1*g+Fmax*sin(ang)
 fat <- Fmax*cos(ang)-m1*amax
 stopifnot(abs(fat-mu*N)<1e-8, amax>0)
-include_supplement("AtritoBlocosEmpilhadosForcaObliqua.png", dir="../figuras")
+include_supplement("AtritoBlocosEmpilhadosForcaObliqua.png", dir="../../figuras")
 @
 \usepackage{graphicx}
 \begin{question}
