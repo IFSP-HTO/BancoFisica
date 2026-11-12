@@ -1,0 +1,81 @@
+<<echo=FALSE, results=hide>>=
+## O conjunto A+B desce; C sobe. T1 e T2 sao diferentes.
+g <- 10
+casos <- expand.grid(mA=2:9, mB=1:5, mC=1:9)
+casos$a <- g*(casos$mA+casos$mB-casos$mC)/
+             (casos$mA+casos$mB+casos$mC)
+casos <- casos[casos$mA+casos$mB > casos$mC &
+  abs(casos$a-round(casos$a)) < 1e-10 &
+  round(casos$a) %in% 1:6, ]
+i <- sample(seq_len(nrow(casos)), 1)
+mA <- casos$mA[i]
+mB <- casos$mB[i]
+mC <- casos$mC[i]
+a <- round(casos$a[i])
+T1 <- mA*(g-a)
+T2 <- mC*(g+a)
+stopifnot(mB*g+T1-T2 == mB*a)
+include_supplement("Q111TresCorposSuspensos.png")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\begin{question}
+Três corpos têm massas
+$m_A=\Sexpr{mA}\,\mathrm{kg}$,
+$m_B=\Sexpr{mB}\,\mathrm{kg}$ e
+$m_C=\Sexpr{mC}\,\mathrm{kg}$.
+Os corpos A e B estão ligados por um fio ideal cuja tração é
+$T_1$. Outro fio ideal passa por uma polia fixa ideal e liga B a C;
+sua tração é $T_2$. O sistema é solto do repouso, com os fios
+esticados. Adote $g=10\,\mathrm{m/s^2}$.
+
+\begin{center}
+\includegraphics[width=0.45\linewidth,keepaspectratio]{Q111TresCorposSuspensos.png}
+\end{center}
+
+Determine:
+\begin{answerlist}
+ \item o módulo da aceleração dos corpos, em $\mathrm{m/s^2}$;
+ \item a tração $T_1$, em newtons;
+ \item a tração $T_2$, em newtons.
+\end{answerlist}
+\end{question}
+\begin{solution}
+O lado esquerdo, formado por A e B, é mais pesado que C,
+portanto A e B descem, enquanto C sobe. Para o conjunto:
+\[
+(m_A+m_B-m_C)g=(m_A+m_B+m_C)a,
+\]
+logo
+\[
+a=\frac{(\Sexpr{mA}+\Sexpr{mB}-\Sexpr{mC})\cdot10}
+        {\Sexpr{mA}+\Sexpr{mB}+\Sexpr{mC}}
+  =\Sexpr{a}\,\mathrm{m/s^2}.
+\]
+No bloco A (sentido positivo para baixo):
+\[
+m_Ag-T_1=m_Aa
+\ \Rightarrow\
+T_1=m_A(g-a)=\Sexpr{T1}\,\mathrm{N}.
+\]
+No bloco C (sentido positivo para cima):
+\[
+T_2-m_Cg=m_Ca
+\ \Rightarrow\
+T_2=m_C(g+a)=\Sexpr{T2}\,\mathrm{N}.
+\]
+\begin{answerlist}
+ \item $\Sexpr{a}\,\mathrm{m/s^2}$;
+ \item $\Sexpr{T1}\,\mathrm{N}$;
+ \item $\Sexpr{T2}\,\mathrm{N}$.
+\end{answerlist}
+\end{solution}
+%% META-INFORMATION
+%% Inspirada na questao 8 da lista de Leis de Newton, Prof. Panosso; enunciado reescrito.
+%% Figura enviada e adaptada pelo usuario; confirmar permissao de redistribuicao.
+%% \extype{cloze}
+%% \exclozetype{num|num|num}
+%% \exsolution{\Sexpr{a}|\Sexpr{T1}|\Sexpr{T2}}
+%% \extol{0.01|0.01|0.01}
+%% \exname{Q111ClozeTresCorposSuspensosDuasTracoes}
+%% \exsection{Mecanica; Leis de Newton; Polias; Tracoes; Sistemas de corpos}

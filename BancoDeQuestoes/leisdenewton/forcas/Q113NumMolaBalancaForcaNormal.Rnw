@@ -1,0 +1,56 @@
+<<echo=FALSE, results=hide>>=
+## O corpo e' sustentado parcialmente pela mola e pela balanca.
+casos <- expand.grid(k=c(10,20,30,40), xcm=c(10,20,30), peso=5:20)
+casos$Fel <- casos$k*casos$xcm/100
+casos$N <- casos$peso-casos$Fel
+casos <- casos[casos$N >= 1 & casos$N <= 16, ]
+i <- sample(seq_len(nrow(casos)), 1)
+k <- casos$k[i]
+xcm <- casos$xcm[i]
+peso <- casos$peso[i]
+Fel <- casos$Fel[i]
+N <- casos$N[i]
+stopifnot(Fel+N == peso, N > 0)
+include_supplement("Q113MolaBalanca.png")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\begin{question}
+Um corpo de peso $P=\Sexpr{peso}\,\mathrm{N}$ repousa sobre
+uma balança horizontal, estando também preso a uma mola ideal,
+fixada no teto, conforme a figura. A mola está \emph{alongada}
+de $\Sexpr{xcm}\,\mathrm{cm}$ em relação ao comprimento natural
+e possui constante elástica $k=\Sexpr{k}\,\mathrm{N/m}$.
+O sistema está em equilíbrio e a balança mede a força normal
+exercida sobre o corpo.
+
+\begin{center}
+\includegraphics[width=0.40\linewidth,keepaspectratio]{Q113MolaBalanca.png}
+\end{center}
+
+Determine a indicação da balança, em newtons.
+\end{question}
+\begin{solution}
+As forças verticais sobre o corpo são: o peso $P$ para baixo,
+a força normal $N$ para cima e a força elástica $F_e$ para cima.
+Pela lei de Hooke:
+\[
+F_e=k\Delta x
+ =\Sexpr{k}\cdot\frac{\Sexpr{xcm}}{100}
+ =\Sexpr{Fel}\,\mathrm{N}.
+\]
+No equilíbrio, $N+F_e=P$. Logo,
+\[
+N=P-F_e
+ =\Sexpr{peso}-\Sexpr{Fel}
+ =\boxed{\Sexpr{N}\,\mathrm{N}}.
+\]
+\end{solution}
+%% META-INFORMATION
+%% Inspirada na questao 10 da lista de Leis de Newton, Prof. Panosso; enunciado reescrito.
+%% Figura enviada e adaptada pelo usuario; confirmar permissao de redistribuicao.
+%% \extype{num}
+%% \exsolution{\Sexpr{N}}
+%% \extol{0.01}
+%% \exname{Q113NumMolaBalancaForcaNormal}
+%% \exsection{Mecanica; Leis de Newton; Equilibrio; Forca elastica; Forca normal}

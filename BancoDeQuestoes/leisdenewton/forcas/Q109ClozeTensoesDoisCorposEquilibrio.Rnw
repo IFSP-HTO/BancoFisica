@@ -1,0 +1,53 @@
+<<echo=FALSE, results=hide>>=
+## Pesos em newtons, sem necessidade de calcular as massas.
+P1 <- sample(c(8,10,12,15,18,20,24,25,30), 1)
+P2 <- sample(c(10,12,15,18,20,25,30,35), 1)
+TP <- P1 + P2
+TQ <- P2
+stopifnot(TP > TQ, TQ > 0)
+include_supplement("Q109TensoesDoisCorpos.png")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\begin{question}
+Dois corpos, cujos pesos medem $P_1=\Sexpr{P1}\,\mathrm{N}$
+e $P_2=\Sexpr{P2}\,\mathrm{N}$, estão em equilíbrio, suspensos
+verticalmente pelos fios ideais P e Q, conforme a figura.
+Considere desprezíveis as massas dos fios.
+
+\begin{center}
+\includegraphics[width=0.33\linewidth,keepaspectratio]{Q109TensoesDoisCorpos.png}
+\end{center}
+
+Determine os módulos das trações, em newtons:
+\begin{answerlist}
+  \item no fio P, preso ao teto;
+  \item no fio Q, que liga os dois corpos.
+\end{answerlist}
+\end{question}
+\begin{solution}
+O corpo inferior está em equilíbrio. Nele atuam o peso $P_2$
+(para baixo) e a tração $T_Q$ (para cima):
+\[
+T_Q=P_2=\Sexpr{P2}\,\mathrm{N}.
+\]
+O fio superior sustenta o peso de ambos os corpos:
+\[
+T_P=P_1+P_2
+ =\Sexpr{P1}+\Sexpr{P2}
+ =\Sexpr{TP}\,\mathrm{N}.
+\]
+\begin{answerlist}
+ \item $T_P=\Sexpr{TP}\,\mathrm{N}$;
+ \item $T_Q=\Sexpr{TQ}\,\mathrm{N}$.
+\end{answerlist}
+\end{solution}
+%% META-INFORMATION
+%% Inspirada na questao 7 da lista de Leis de Newton, Prof. Panosso; enunciado reescrito.
+%% Figura enviada e adaptada pelo usuario; confirmar permissao de redistribuicao.
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{TP}|\Sexpr{TQ}}
+%% \extol{0.01|0.01}
+%% \exname{Q109ClozeTensoesDoisCorposEquilibrio}
+%% \exsection{Mecanica; Leis de Newton; Equilibrio; Tracao}
