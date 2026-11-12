@@ -1,0 +1,61 @@
+<<echo=FALSE, results=hide>>=
+# A partir de duas leituras da balanca, recuperam-se g e a.
+m <- sample(c(50, 60, 70, 80, 90), 1)
+g <- 10
+a <- sample(1:4, 1)
+Nup <- m*(g+a)
+Ndown <- m*(g-a)
+Neq <- (Nup+Ndown)/2
+stopifnot(abs((Nup+Ndown)/(2*m)-g)<1e-10,
+          abs((Nup-Ndown)/(2*m)-a)<1e-10)
+@
+\usepackage[utf8]{inputenc}
+\begin{question}
+(UFB, adaptada) Uma pessoa de massa $\Sexpr{m}\,\mathrm{kg}$ está
+sobre uma balança graduada em newtons dentro de um elevador.
+Quando a cabine acelera para cima, a balança marca
+$\Sexpr{Nup}\,\mathrm{N}$. Quando acelera para baixo com o mesmo
+módulo de aceleração, marca $\Sexpr{Ndown}\,\mathrm{N}$.
+
+A partir dessas duas medidas, calcule:
+\begin{answerlist}
+  \item a aceleração da gravidade local, em $\mathrm{m/s^2}$;
+  \item o módulo da aceleração da cabine, em $\mathrm{m/s^2}$;
+  \item a leitura da balança quando a aceleração do elevador é nula,
+  em newtons.
+\end{answerlist}
+
+Adicionalmente, explique o significado físico de uma leitura nula
+na balança, supondo contato habitual com o piso.
+\end{question}
+
+\begin{solution}
+A leitura da balança é a força normal sobre a pessoa. Na subida
+acelerada, $N_+=m(g+a)$; na descida acelerada, $N_-=m(g-a)$.
+Somando e subtraindo essas equações,
+\[
+g=\frac{N_+ +N_-}{2m}
+=\frac{\Sexpr{Nup}+\Sexpr{Ndown}}{2\cdot\Sexpr{m}}
+=\Sexpr{g}\,\mathrm{m/s^2},
+\]
+\[
+a=\frac{N_+-N_-}{2m}
+=\frac{\Sexpr{Nup}-\Sexpr{Ndown}}{2\cdot\Sexpr{m}}
+=\Sexpr{a}\,\mathrm{m/s^2}.
+\]
+Na ausência de aceleração, o elevador pode estar parado ou em
+movimento retilíneo uniforme, e $N=mg=\Sexpr{Neq}\,\mathrm{N}$.
+Uma leitura nula significa ausência de força normal: pessoa e cabine
+podem estar em queda livre, acelerando para baixo com módulo $g$.
+Isso não significa que a força gravitacional desapareceu.
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: UFB, questao 13 da lista Polias e Roldanas (Fisica e Vestibular); enunciado adaptado.
+%% SOURCE-VISUAL: none
+%% \extype{cloze}
+%% \exclozetype{num|num|num}
+%% \exsolution{\Sexpr{g}|\Sexpr{a}|\Sexpr{Neq}}
+%% \extol{0.01|0.01|0.01}
+%% \exname{Q121ClozeUFBBalancaGravidadeElevador}
+%% \exsection{Mecanica; Leis de Newton; Elevadores; Peso aparente; Aceleracao}

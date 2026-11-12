@@ -1,0 +1,54 @@
+<<echo=FALSE, results=hide>>=
+# O elevador continua descendo, mas seu peso vence o atrito dos freios.
+M <- sample(c(400, 500, 600, 700, 800),1)
+g <- 10
+a <- sample(1:4,1)
+f <- M*(g-a)/4
+stopifnot(abs(M*g-4*f-M*a)<1e-10)
+include_supplement("ElevadorVest19UFRJ.png", dir="../../figuras")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\begin{question}
+(UFRJ-RJ, adaptada) O cabo de sustentação de um elevador se rompe.
+Um dispositivo de emergência aciona freios contra os trilhos laterais,
+produzindo quatro forças verticais iguais, para cima, como na figura.
+A massa total da cabine e da carga é $M=\Sexpr{M}\,\mathrm{kg}$,
+e cada força de frenagem tem módulo $f=\Sexpr{f}\,\mathrm{N}$.
+Adote $g=10\,\mathrm{m/s^2}$.
+
+\begin{center}
+\includegraphics[width=0.53\linewidth,height=6.7cm,keepaspectratio]{ElevadorVest19UFRJ.png}
+\end{center}
+
+Calcule o módulo da aceleração do elevador, em $\mathrm{m/s^2}$,
+e indique seu sentido na resolução.
+\end{question}
+
+\begin{solution}
+As forças de frenagem resultam em uma força total de módulo $4f$
+para cima. O peso da cabine tem módulo $Mg$ e aponta para baixo.
+Como $Mg>4f$ neste caso, a resultante ainda é dirigida para baixo.
+Pela segunda lei de Newton,
+\[
+Mg-4f=Ma
+\quad\Rightarrow\quad
+a=g-\frac{4f}{M}
+=10-\frac{4\cdot\Sexpr{f}}{\Sexpr{M}}
+=\Sexpr{a}\,\mathrm{m/s^2}.
+\]
+A aceleração é \emph{para baixo}: os freios reduzem a aceleração
+que haveria em queda livre, mas não chegam a desacelerar a descida
+nesta situação. Para a velocidade diminuir, a resultante precisaria
+apontar para cima ($4f>Mg$).
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: UFRJ-RJ, questao 19 da lista Polias e Roldanas (Fisica e Vestibular); enunciado adaptado.
+%% Figura: fornecida pelo usuario, preservada integralmente.
+%% SOURCE-VISUAL: original-extract
+%% \extype{num}
+%% \exsolution{\Sexpr{a}}
+%% \extol{0.01}
+%% \exname{Q123NumUFRJElevadorFrenagemTrilhos}
+%% \exsection{Mecanica; Leis de Newton; Elevadores; Forca resultante; Frenagem}

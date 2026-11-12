@@ -1,0 +1,42 @@
+<<echo=FALSE, results=hide>>=
+# Embora desca, a cabine desacelera: aceleracao dirigida para cima.
+@
+\usepackage[utf8]{inputenc}
+\begin{question}
+(UFU-MG, adaptada) Uma pessoa de massa $m$ está no interior de uma
+cabine de elevador de massa $M$. O conjunto \emph{desce diminuindo
+a velocidade}, com aceleração de módulo $a$. A gravidade local tem
+módulo $g$. Despreze o atrito nos trilhos.
+
+Qual expressão fornece o módulo da tração do cabo que sustenta
+a cabine e a pessoa?
+\begin{answerlist}
+  \item $(M+m)(g-a)$
+  \item $(M+m)(g+a)$
+  \item $(M+m)(a-g)$
+  \item $(M-m)(g+a)$
+  \item $(M+m)g$
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+Embora o elevador esteja descendo, ele perde velocidade, portanto
+sua aceleração aponta para cima. Considerando o conjunto pessoa
+mais cabine, as forças externas verticais são a tração $T$ para cima
+e o peso $(M+m)g$ para baixo. Com sentido positivo para cima:
+\[
+T-(M+m)g=(M+m)a
+\quad\Rightarrow\quad
+\boxed{T=(M+m)(g+a)}.
+\]
+A resposta correta é a segunda alternativa. É essencial distinguir
+o \emph{sentido do movimento} do \emph{sentido da aceleração}.
+\end{solution}
+
+%% META-INFORMATION
+%% Fonte: UFU-MG, questao 20 da lista Polias e Roldanas (Fisica e Vestibular); enunciado adaptado.
+%% SOURCE-VISUAL: none
+%% \extype{schoice}
+%% \exsolution{01000}
+%% \exname{Q124QuizUFUElevadorDescidaRetardada}
+%% \exsection{Mecanica; Leis de Newton; Elevadores; Tracao; Aceleracao}
