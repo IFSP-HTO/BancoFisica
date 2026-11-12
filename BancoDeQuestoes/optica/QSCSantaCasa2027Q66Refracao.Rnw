@@ -1,0 +1,38 @@
+<<echo=FALSE, results=hide>>=
+include_supplement("SantaCasa2027Q66Figura.png", dir="../figuras")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+Um raio de luz monocromática propaga-se no ar e incide obliquamente sobre a superfície da água contida em um copo. Ao atravessar a fronteira entre o ar e a água, observa-se que o raio refratado desvia no sentido de se aproximar da reta normal (n) à superfície da água, como mostra a figura.
+
+Na situação descrita,
+
+\begin{center}
+\includegraphics[width=0.56\linewidth,keepaspectratio]{SantaCasa2027Q66Figura.png}
+\end{center}
+
+\begin{answerlist}
+  \item o raio luminoso poderia sofrer reflexão total ao tentar passar do ar para a água se o ângulo de incidência aumentasse.
+  \item a frequência da luz diminui quando ela atravessa a fronteira entre o ar e a água.
+  \item a velocidade da luz aumenta quando ela passa a se propagar na água, pois a água é mais refringente do que o ar.
+  \item o comprimento de onda da luz diminui quando ela passa a se propagar na água.
+  \item o índice de refração do ar é maior do que o da água, de acordo com o desvio sofrido pela luz.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+Ao passar do ar para a agua, o raio se aproxima da normal: pela lei de
+Snell, o indice de refracao da agua e maior. A frequencia permanece
+constante; a velocidade diminui e, como $v=\lambda f$, o comprimento
+de onda tambem diminui. Logo, a alternativa correta e \textbf{D}.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{00010}
+%% \exname{QSCSantaCasa2027Q66Refracao}
+%% \exsection{Optica; Refracao; Lei de Snell; Comprimento de onda; Santa Casa 2027}
+%% SOURCE-VISUAL: original-crop
+%% SOURCE: https://provas.professorfilatte.com.br/santa-casa-2027-fisica-questao-66
