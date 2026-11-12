@@ -17,7 +17,7 @@ N2 <- m2*g - F*sin(ang)
 a <- (F*cos(ang)-mu1*N1-mu2*N2)/(m1+m2)
 T <- m1*a + mu1*N1
 stopifnot(N2>0, a>0, T>0)
-include_supplement("AtritoDoisBlocosForcaObliqua.png", dir="../figuras")
+include_supplement("AtritoDoisBlocosForcaObliqua.png", dir="../../figuras")
 @
 \usepackage{graphicx}
 \begin{question}
