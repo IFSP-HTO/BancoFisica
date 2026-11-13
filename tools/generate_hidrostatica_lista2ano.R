@@ -65,6 +65,11 @@ xml_files <- generate_moodle_xml_limited(
   encoding = "UTF-8", converter = "pandoc-mathjax",
   max_bytes = moodle_size_limit(10)
 )
+# Resolver também as imagens das questões da exportação legada de 12 itens.
+code <- system2("python3", c("tools/embed_unresolved_moodle_images.py",
+                            shQuote(out_dir), shQuote(edir)))
+if (!identical(as.integer(code), 0L)) stop("Falha ao empacotar PNGs no XML")
+
 numbers <- vapply(xml_files, function(path) {
   doc <- xml2::read_xml(path)
   if (xml2::xml_name(xml2::xml_root(doc)) != "quiz")
