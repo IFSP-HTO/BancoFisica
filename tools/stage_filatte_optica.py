@@ -21,7 +21,7 @@ from io import BytesIO
 ROOT = Path(__file__).resolve().parents[1]
 ALLOWED_SITE = "provas.professorfilatte.com.br"
 ALLOWED_IMAGE_HOST = "wdlpxyudndyrkigvupfy.supabase.co"
-HEADERS = {"User-Agent": "BancoFisica importer (educational question archive; contact IFSP-HTO)"}
+HEADERS = {"User-Agent": "BancoFisica educational importer/1.0"}
 
 
 def read_html(session, url):
