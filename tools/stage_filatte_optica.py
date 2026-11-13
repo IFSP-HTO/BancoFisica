@@ -85,9 +85,22 @@ def parse_html(html, url):
 
 
 def stage(session, item, outdir):
-    metadata = parse_html(read_html(session, item["url"]), item["url"])
-    if item.get("correct") and metadata["correct"] != item["correct"]:
-        raise ValueError("Divergencia de gabarito para " + item["id"])
+    try:
+        metadata = parse_html(read_html(session, item["url"]), item["url"])
+        if item.get("correct") and metadata["correct"] != item["correct"]:
+            raise ValueError("Divergencia de gabarito para " + item["id"])
+        metadata["parser_status"] = "live-page"
+    except requests.HTTPError as err:
+        if err.response is None or err.response.status_code != 403 or not all(
+            item.get(k) for k in ("image_url", "correct", "title")
+        ):
+            raise
+        metadata = dict(url=item["url"], title=item["title"], correct=item["correct"],
+                        transcription="", alternatives={}, requires_visual=bool(item.get("requires_visual", True)),
+                        source_image_url=item["image_url"], parser_status="source-html-403-verified-by-review")
+        print("  HTML bloqueado (403); usando URL do PNG publico revisada no manifesto", flush=True)
+    if urlparse(metadata["source_image_url"]).hostname != ALLOWED_IMAGE_HOST:
+        raise ValueError("Host do PNG nao permitido")
     response = session.get(metadata["source_image_url"], timeout=40)
     response.raise_for_status()
     raw = response.content
