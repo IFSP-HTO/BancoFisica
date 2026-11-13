@@ -16,6 +16,10 @@ stopifnot(T>0)
 Um objeto de massa \(\Sexpr{m}\,\mathrm{kg}\) e volume \(\Sexpr{volume_cm3}\,\mathrm{cm^3}\) fica completamente imerso em água, suspenso por um dinamômetro. A densidade da água é \(1000\,\mathrm{kg/m^3}\). Adote \(g=10\,\mathrm{m/s^2}\).
 
 Qual é a leitura do dinamômetro, em newtons?
+
+\begin{center}\includegraphics[width=8cm,keepaspectratio]{Q108PesoAparente_Filatte.png}\end{center}
+
+\textit{Esquema de UFRGS 2018. As leituras fixas da imagem original foram ocultadas: use os valores sorteados neste enunciado.}
 \end{question}
 
 \begin{solution}
@@ -28,6 +32,7 @@ E=1000\cdot10\cdot(\Sexpr{volume_cm3}\times10^{-6})
 Logo, \(T=\Sexpr{P}-\Sexpr{E}=\Sexpr{T}\,\mathrm N\).
 \end{solution}
 
+%% SOURCE-VISUAL: Filatte original diagram crop; UFRGS 2018 — https://provas.professorfilatte.com.br/ufrgs-2018-fisica-questao-10
 %% META-INFORMATION
 %% \extype{num}
 %% \exsolution{\Sexpr{T}}
