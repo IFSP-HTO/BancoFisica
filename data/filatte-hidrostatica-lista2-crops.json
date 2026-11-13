@@ -21,7 +21,7 @@
   ],
   "figures": [
     {
-      "name": "Q105PascalForca_Filatte.png",
+      "name": "Q105PascalForca.png",
       "source_id": "unifimes2025_pistons",
       "crop": [
         89,
@@ -31,7 +31,7 @@
       ]
     },
     {
-      "name": "Q106PascalDeslocamento_Filatte.png",
+      "name": "Q106PascalDeslocamento.png",
       "source_id": "unifimes2025_pistons",
       "crop": [
         69,
@@ -41,7 +41,7 @@
       ]
     },
     {
-      "name": "Q107EmpuxoVolume_Filatte.png",
+      "name": "Q107EmpuxoVolume.png",
       "source_id": "ufrgs2018_dynamometer",
       "crop": [
         351,
@@ -51,7 +51,7 @@
       ]
     },
     {
-      "name": "Q108PesoAparente_Filatte.png",
+      "name": "Q108PesoAparente.png",
       "source_id": "ufrgs2018_dynamometer",
       "crop": [
         58,
@@ -81,7 +81,7 @@
       ]
     },
     {
-      "name": "Q109ClozeFracaoSubmersa_Filatte.png",
+      "name": "Q109ClozeFracaoSubmersa.png",
       "source_id": "humanitas2025_car",
       "crop": [
         79,
