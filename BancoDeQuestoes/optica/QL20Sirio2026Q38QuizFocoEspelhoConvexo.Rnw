@@ -1,0 +1,34 @@
+<<echo=FALSE, results=hide>>=
+include_supplement("Sirio2026Q38Espelho.png", dir="../figuras")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+Um raio incidente num espelho convexo é refletido paralelamente ao eixo principal, conforme a figura quadriculada, na qual cada intervalo horizontal vale $10\,\mathrm{cm}$. Usando o raio notável indicado, determine a distância da imagem ao vértice quando um objeto real é colocado a $60\,\mathrm{cm}$ diante do espelho.
+
+\begin{center}
+\includegraphics[width=0.71\linewidth,keepaspectratio]{Sirio2026Q38Espelho.png}
+\end{center}
+
+\begin{answerlist}
+  \item 8 cm
+  \item 30 cm
+  \item 16 cm
+  \item 24 cm
+  \item 18 cm
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+O prolongamento do raio incidente passa pelo foco virtual, localizado no desenho a $40\,\mathrm{cm}$ atrás do vértice. Assim $f=-40\,\mathrm{cm}$. Pela equação de Gauss, $1/p'=1/f-1/p=-1/40-1/60=-1/24$, ou $p'=-24\,\mathrm{cm}$. A distância pedida é $24\,\mathrm{cm}$. Alternativa \textbf{D}.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{00010}
+%% \exname{QL20Sirio2026Q38QuizFocoEspelhoConvexo}
+%% \exsection{Optica; Espelho convexo; Raio notavel; Equacao de Gauss; Vestibular 2026}
+%% SOURCE-VISUAL: original-crop
+%% SOURCE-IMAGE-SHA256: 88bc7795b8b20619b9ca646b9e6dcf4350eeaf5abd5c93fffbb0fa69b28af8f2
+%% SOURCE: https://provas.professorfilatte.com.br/sirio-libanes-2026-fisica-questao-38
