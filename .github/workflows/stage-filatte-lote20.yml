@@ -52,7 +52,26 @@ jobs:
         run: |
           python tools/crop_filatte_optica.py \
             --manifest data/filatte-optica-lote20-recortes.json \
-            --stage-dir build/filatte-lote20
+            --stage-dir build/filatte-lote20 \
+            --dest build/filatte-lote20-crops
+      - name: Check existing figures without overwriting any pixels
+        run: |
+          python - <<'PY'
+          import json, pathlib, shutil
+          m=json.loads(pathlib.Path('data/filatte-optica-lote20-recortes.json').read_text())
+          for entry in m['items']:
+              for fig in entry['figures']:
+                  name=fig['name']
+                  incoming=pathlib.Path('build/filatte-lote20-crops')/name
+                  final=pathlib.Path('BancoDeQuestoes/figuras')/name
+                  if final.exists():
+                      if final.read_bytes()!=incoming.read_bytes():
+                          raise RuntimeError('Existing PNG differs from the source crop: '+name)
+                  else:
+                      final.parent.mkdir(parents=True,exist_ok=True)
+                      shutil.copyfile(incoming,final)
+          print('All 14 cropped images are verified and preserved')
+          PY
       - name: Upload original sources and audit manifest
         if: always()
         uses: actions/upload-artifact@v4
@@ -60,6 +79,7 @@ jobs:
           name: optica-lote20-2026-sources
           path: |
             build/filatte-lote20/
+            build/filatte-lote20-crops/
             BancoDeQuestoes/figuras/*2026*.png
             BancoDeQuestoes/figuras/*2027*.png
           if-no-files-found: warn
