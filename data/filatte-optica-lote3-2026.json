@@ -1,0 +1,147 @@
+{
+  "lot": "optica-lote3-2026",
+  "target_count": 10,
+  "method": "Original PNG sources: exact direct URLs verified against Filatte pages. Gabarito and transcription verified on each individual page; source HTML may block GitHub runner (403).",
+  "questions": [
+    {
+      "id": "eear-2026-cfs-1-q61",
+      "url": "https://provas.professorfilatte.com.br/eear-2026-cfs-1-fisica-questao-61",
+      "correct": "B",
+      "title": "eear-2026-cfs-1 questão 61 de Física",
+      "topic": "Lâmina de faces paralelas",
+      "subject": "Óptica",
+      "tags": [
+        "Optica",
+        "Refracao"
+      ],
+      "image_url": "https://wdlpxyudndyrkigvupfy.supabase.co/storage/v1/object/public/questoes/eear126q61-v2.png",
+      "requires_visual": true
+    },
+    {
+      "id": "eear-2026-cfs-1-q64",
+      "url": "https://provas.professorfilatte.com.br/eear-2026-cfs-1-fisica-questao-64",
+      "correct": "B",
+      "title": "eear-2026-cfs-1 questão 64 de Física",
+      "topic": "Lupa, prisma e miopia",
+      "subject": "Óptica",
+      "tags": [
+        "Optica",
+        "Instrumentos opticos"
+      ],
+      "image_url": "https://wdlpxyudndyrkigvupfy.supabase.co/storage/v1/object/public/questoes/eear126q64-v2.png",
+      "requires_visual": false
+    },
+    {
+      "id": "eear-2026-cfs-2-q61",
+      "url": "https://provas.professorfilatte.com.br/eear-2026-cfs-2-fisica-questao-61",
+      "correct": "B",
+      "title": "eear-2026-cfs-2 questão 61 de Física",
+      "topic": "Espelhos planos angulares",
+      "subject": "Óptica",
+      "tags": [
+        "Optica",
+        "Espelhos planos"
+      ],
+      "image_url": "https://wdlpxyudndyrkigvupfy.supabase.co/storage/v1/object/public/questoes/eear226q61-v2.png",
+      "requires_visual": false
+    },
+    {
+      "id": "acafe-2026-verao-q31",
+      "url": "https://provas.professorfilatte.com.br/acafe-2026-verao-fisica-questao-31",
+      "correct": "C",
+      "title": "acafe-2026-verao questão 31 de Física",
+      "topic": "Lupa, microscópio e lunetas",
+      "subject": "Óptica",
+      "tags": [
+        "Optica",
+        "Instrumentos opticos"
+      ],
+      "image_url": "https://wdlpxyudndyrkigvupfy.supabase.co/storage/v1/object/public/questoes/acaf261q31.png",
+      "requires_visual": false
+    },
+    {
+      "id": "ufu-2026-2-q39",
+      "url": "https://provas.professorfilatte.com.br/ufu-2026-2-fisica-questao-39",
+      "correct": "A",
+      "title": "ufu-2026-2 questão 39 de Física",
+      "topic": "Imagem reduzida de lente divergente",
+      "subject": "Óptica",
+      "tags": [
+        "Optica",
+        "Lentes"
+      ],
+      "image_url": "https://wdlpxyudndyrkigvupfy.supabase.co/storage/v1/object/public/questoes/ufu262q39.png",
+      "requires_visual": true
+    },
+    {
+      "id": "puc-campinas-2026-q32",
+      "url": "https://provas.professorfilatte.com.br/puc-campinas-2026-fisica-questao-32",
+      "correct": "D",
+      "title": "puc-campinas-2026 questão 32 de Física",
+      "topic": "Retrovisor convexo e tamanho da imagem",
+      "subject": "Óptica",
+      "tags": [
+        "Optica",
+        "Espelhos esfericos"
+      ],
+      "image_url": "https://wdlpxyudndyrkigvupfy.supabase.co/storage/v1/object/public/questoes/pucc26q32.png",
+      "requires_visual": false
+    },
+    {
+      "id": "santa-marcelina-2026-q57",
+      "url": "https://provas.professorfilatte.com.br/santa-marcelina-2026-fisica-questao-57",
+      "correct": "C",
+      "title": "santa-marcelina-2026 questão 57 de Física",
+      "topic": "Simetria do mostrador em espelho horizontal",
+      "subject": "Óptica",
+      "tags": [
+        "Optica",
+        "Espelhos planos"
+      ],
+      "image_url": "https://wdlpxyudndyrkigvupfy.supabase.co/storage/v1/object/public/questoes/fasm26aq57.png",
+      "requires_visual": true
+    },
+    {
+      "id": "santa-marcelina-2026-2o-semestre-q57",
+      "url": "https://provas.professorfilatte.com.br/santa-marcelina-2026-2o-semestre-fisica-questao-57",
+      "correct": "D",
+      "title": "santa-marcelina-2026-2o-semestre questão 57 de Física",
+      "topic": "Objeto entre foco e centro no espelho côncavo",
+      "subject": "Óptica",
+      "tags": [
+        "Optica",
+        "Espelhos esfericos"
+      ],
+      "image_url": "https://wdlpxyudndyrkigvupfy.supabase.co/storage/v1/object/public/questoes/fasm26bq57.png",
+      "requires_visual": true
+    },
+    {
+      "id": "fameca-2026-q38",
+      "url": "https://provas.professorfilatte.com.br/fameca-2026-fisica-questao-38",
+      "correct": "C",
+      "title": "fameca-2026 questão 38 de Física",
+      "topic": "Profundidade da moeda e lei de Snell",
+      "subject": "Óptica",
+      "tags": [
+        "Optica",
+        "Refracao"
+      ],
+      "image_url": "https://wdlpxyudndyrkigvupfy.supabase.co/storage/v1/object/public/questoes/fameca26q38.png",
+      "requires_visual": true
+    },
+    {
+      "id": "unifimes-2026-mineiros-2o-semestre-q39",
+      "url": "https://provas.professorfilatte.com.br/unifimes-2026-mineiros-2o-semestre-fisica-questao-39",
+      "correct": "D",
+      "title": "unifimes-2026-mineiros-2o-semestre questão 39 de Física",
+      "topic": "Refração entre meios P e Q",
+      "subject": "Óptica",
+      "tags": [
+        "Optica",
+        "Refracao"
+      ],
+      "image_url": "https://wdlpxyudndyrkigvupfy.supabase.co/storage/v1/object/public/questoes/unfm26m2q39.png",
+      "requires_visual": true
+    }
+  ]
+}
