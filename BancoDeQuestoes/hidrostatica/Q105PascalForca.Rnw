@@ -12,7 +12,9 @@ F2 <- F1*f
 \begin{question}
 Um elevador hidráulico tem êmbolos com áreas de \(\Sexpr{A1}\,\mathrm{cm^2}\) e \(\Sexpr{A2}\,\mathrm{cm^2}\), à mesma altura. Aplica-se no menor uma força de \(\Sexpr{F1}\,\mathrm N\). Despreze perdas, atritos e pesos dos êmbolos.
 
-\begin{center}\includegraphics[width=7cm,keepaspectratio]{Q105PascalForca_Filatte.png}\end{center}
+\begin{center}
+\includegraphics[width=7cm,keepaspectratio]{Q105PascalForca_Filatte.png}
+\end{center}
 
 \textit{Esquema original: UNIFIMES 2025 (figura ilustrativa; os valores são os do enunciado).}
 
