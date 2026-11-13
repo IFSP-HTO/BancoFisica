@@ -1,0 +1,38 @@
+%% NOVO BANCOFISICA — adaptação independente; enunciado e parâmetros autorais.
+%% SOURCE-REFERENCE: https://provas.professorfilatte.com.br/humanitas-2024-2o-semestre-fisica-questao-38
+%% SOURCE-VISUAL: gerada no R/exams ou não aplicável; nenhuma imagem de terceiro é copiada.
+<<echo=FALSE, results=hide>>=
+patm_kpa <- 100
+delta_kpa <- sample(c(10,20,30),1)
+pgas_kpa <- patm_kpa+delta_kpa
+rho <- sample(c(2000,4000,5000),1)
+g <- 10
+h_cm <- round(delta_kpa*1000/(rho*g)*100,2)
+@
+
+\begin{question}
+Um manômetro de tubo aberto contém um líquido de massa específica \(\Sexpr{rho}\,\mathrm{kg/m^3}\). A pressão do gás no reservatório ligado a um dos ramos é de \(\Sexpr{pgas_kpa}\,\mathrm{kPa}\), e a pressão atmosférica no outro ramo é de \(100\,\mathrm{kPa}\). Adote \(g=10\,\mathrm{m/s^2}\).
+
+Qual é o desnível entre as superfícies do líquido nos dois ramos, em centímetros?
+\end{question}
+
+\begin{solution}
+Em equilíbrio, a diferença de pressão aplicada aos ramos é sustentada pelo desnível:
+\[
+\Delta p=p_{\mathrm{gas}}-p_{\mathrm{atm}}
+=(\Sexpr{pgas_kpa}-100)\times1000\,\mathrm{Pa}=\rho gh.
+\]
+Logo,
+\[
+h=\frac{\Sexpr{delta_kpa}\times1000}{\Sexpr{rho}\cdot10}\,\mathrm m
+=\Sexpr{h_cm}\,\mathrm{cm}.
+\]
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{h_cm}}
+%% \extol{0.05}
+%% \exname{Q103ManometroAberto}
+%% \exsection{Hidrostatica; Lei de Stevin; Manometro de tubo aberto}
+%% \exusepackage[utf8]{inputenc}

@@ -1,0 +1,34 @@
+%% NOVO BANCOFISICA — adaptação independente; enunciado e parâmetros autorais.
+%% SOURCE-REFERENCE: https://provas.professorfilatte.com.br/unifimes-2025-trindade-1o-semestre-fisica-questao-37
+%% SOURCE-VISUAL: gerada no R/exams ou não aplicável; nenhuma imagem de terceiro é copiada.
+<<echo=FALSE, results=hide>>=
+A1 <- sample(c(10,15,20,25),1)
+f <- sample(3:8,1)
+A2 <- A1*f
+F1 <- sample(c(40,50,60),1)
+F2 <- F1*f
+@
+
+\begin{question}
+Um elevador hidráulico tem êmbolos com áreas de \(\Sexpr{A1}\,\mathrm{cm^2}\) e \(\Sexpr{A2}\,\mathrm{cm^2}\), à mesma altura. Aplica-se no menor uma força de \(\Sexpr{F1}\,\mathrm N\). Despreze perdas, atritos e pesos dos êmbolos.
+
+Qual é a força transmitida ao êmbolo maior, em newtons?
+\end{question}
+
+\begin{solution}
+Pelo princípio de Pascal,
+\[
+\frac{F_1}{A_1}=\frac{F_2}{A_2}
+\quad\Rightarrow\quad
+F_2=\Sexpr{F1}\frac{\Sexpr{A2}}{\Sexpr{A1}}
+=\Sexpr{F2}\,\mathrm N.
+\]
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{F2}}
+%% \extol{0.05}
+%% \exname{Q105PascalForca}
+%% \exsection{Hidrostatica; Principio de Pascal; Prensa hidraulica; Forca}
+%% \exusepackage[utf8]{inputenc}

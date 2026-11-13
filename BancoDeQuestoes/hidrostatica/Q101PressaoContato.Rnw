@@ -1,0 +1,36 @@
+%% NOVO BANCOFISICA — adaptação independente; enunciado e parâmetros autorais.
+%% SOURCE-REFERENCE: https://provas.professorfilatte.com.br/eear-2026-cfs-2-fisica-questao-66
+%% SOURCE-VISUAL: gerada no R/exams ou não aplicável; nenhuma imagem de terceiro é copiada.
+<<echo=FALSE, results=hide>>=
+m <- sample(c(18,24,30,36),1)
+g <- 10
+area_cm2 <- sample(c(150,200,300),1)
+area_m2 <- area_cm2*1e-4
+p_kpa <- round(m*g/area_m2/1000,2)
+@
+
+\begin{question}
+Uma caixa de massa \(\Sexpr{m}\,\mathrm{kg}\) está apoiada em piso horizontal por uma base plana de área \(\Sexpr{area_cm2}\,\mathrm{cm^2}\). Adote \(g=\Sexpr{g}\,\mathrm{m/s^2}\).
+
+Qual é a pressão média que a caixa exerce no piso, em \(\mathrm{kPa}\)?
+\end{question}
+
+\begin{solution}
+O peso é \(P=mg=\Sexpr{m}\cdot\Sexpr{g}\,\mathrm N\). Convertendo a área:
+\[
+A=\Sexpr{area_cm2}\,\mathrm{cm^2}=\Sexpr{area_m2}\,\mathrm{m^2}.
+\]
+Portanto,
+\[
+p=\frac{mg}{A}=\frac{\Sexpr{m}\cdot\Sexpr{g}}{\Sexpr{area_m2}}\mathrm{Pa}
+=\Sexpr{p_kpa}\,\mathrm{kPa}.
+\]
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{p_kpa}}
+%% \extol{0.05}
+%% \exname{Q101PressaoContato}
+%% \exsection{Hidrostatica; Pressao; Forca por area; Conversao de unidades}
+%% \exusepackage[utf8]{inputenc}

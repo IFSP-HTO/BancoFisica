@@ -1,0 +1,33 @@
+%% NOVO BANCOFISICA — adaptação independente; enunciado e parâmetros autorais.
+%% SOURCE-REFERENCE: https://provas.professorfilatte.com.br/acafe-2025-inverno-fisica-questao-30
+%% SOURCE-VISUAL: gerada no R/exams ou não aplicável; nenhuma imagem de terceiro é copiada.
+<<echo=FALSE, results=hide>>=
+rho <- 1000
+g <- 10
+volume_cm3 <- sample(seq(300,1500,by=100),1)
+volume_m3 <- volume_cm3*1e-6
+E <- round(rho*g*volume_m3,2)
+@
+
+\begin{question}
+Um bloco de volume \(\Sexpr{volume_cm3}\,\mathrm{cm^3}\) está completamente imerso em água, sem encostar no fundo. A densidade da água é \(1000\,\mathrm{kg/m^3}\) e \(g=10\,\mathrm{m/s^2}\).
+
+Determine o módulo do empuxo exercido pela água, em newtons.
+\end{question}
+
+\begin{solution}
+Pelo princípio de Arquimedes:
+\[
+V=\Sexpr{volume_cm3}\times10^{-6}\,\mathrm{m^3},\quad
+E=\rho gV=1000\cdot10\cdot\Sexpr{volume_m3}
+=\Sexpr{E}\,\mathrm N.
+\]
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{E}}
+%% \extol{0.05}
+%% \exname{Q107EmpuxoVolume}
+%% \exsection{Hidrostatica; Principio de Arquimedes; Empuxo; Volume deslocado}
+%% \exusepackage[utf8]{inputenc}

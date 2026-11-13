@@ -1,0 +1,43 @@
+%% NOVO BANCOFISICA — adaptação independente; enunciado e parâmetros autorais.
+%% SOURCE-REFERENCE: https://provas.professorfilatte.com.br/ufrgs-2025-fisica-questao-20
+%% SOURCE-VISUAL: gerada no R/exams ou não aplicável; nenhuma imagem de terceiro é copiada.
+<<echo=FALSE, results=hide>>=
+h <- sample(2:7, 1)
+rho <- 1000
+g <- 10
+patm <- 100 # kPa
+pman <- rho*g*h/1000
+pabs <- patm+pman
+@
+
+\begin{question}
+Um mergulhador encontra-se a \(\Sexpr{h}\,\mathrm{m}\) de profundidade em água. Considere \(\rho=1000\,\mathrm{kg/m^3}\), \(g=10\,\mathrm{m/s^2}\) e a pressão atmosférica de \(100\,\mathrm{kPa}\).
+
+Determine, em quilopascals:
+\begin{answerlist}
+\item a pressão manométrica;
+\item a pressão absoluta nessa profundidade.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+A pressão manométrica é \(p_m=\rho gh\), e a absoluta inclui a pressão atmosférica:
+\[
+p_m=\frac{1000\cdot10\cdot\Sexpr{h}}{1000}=\Sexpr{pman}\,\mathrm{kPa},
+\qquad
+p_{\mathrm{abs}}=100+\Sexpr{pman}=\Sexpr{pabs}\,\mathrm{kPa}.
+\]
+\begin{answerlist}
+\item \(\Sexpr{pman}\,\mathrm{kPa}\).
+\item \(\Sexpr{pabs}\,\mathrm{kPa}\).
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{\Sexpr{pman}|\Sexpr{pabs}}
+%% \exclozetype{num|num}
+%% \extol{0.05|0.05}
+%% \exname{Q100ClozePressaoAbsoluta}
+%% \exsection{Hidrostatica; Lei de Stevin; Pressao absoluta e manometrica}
+%% \exusepackage[utf8]{inputenc}
