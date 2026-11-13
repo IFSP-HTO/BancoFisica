@@ -1,6 +1,6 @@
 %% NOVO BANCOFISICA — adaptação independente; enunciado e parâmetros autorais.
 %% SOURCE-REFERENCE: https://provas.professorfilatte.com.br/puc-sp-2011-fisica-questao-17
-%% SOURCE-VISUAL: gerada no R/exams ou não aplicável; nenhuma imagem de terceiro é copiada.
+%% SOURCE-VISUAL: original-crop do enunciado de prova no catálogo Filatte, com procedência e SHA-256 em data/filatte-hidrostatica-lista2-audit.json.
 <<echo=FALSE, results=hide>>=
 f <- sample(3:8,1)
 d2 <- sample(c(4,5,6,8),1) # cm
