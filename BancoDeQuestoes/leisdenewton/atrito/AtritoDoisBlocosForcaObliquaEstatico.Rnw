@@ -1,0 +1,78 @@
+<<echo=FALSE, results=hide>>=
+g <- 10
+m1 <- sample(2:5, 1)
+m2 <- sample(3:7, 1)
+theta <- sample(c(20, 30, 35, 40), 1)
+mu1 <- sample(c(0.20, 0.25, 0.30), 1)
+mu2 <- sample(c(0.20, 0.25, 0.30), 1)
+ang <- theta*pi/180
+Fmin <- g*(mu1*m1 + mu2*m2)/(cos(ang) + mu2*sin(ang))
+while(Fmin*sin(ang) >= m2*g || Fmin < 10 || Fmin > 120){
+  m1 <- sample(2:5, 1)
+  m2 <- sample(3:7, 1)
+  theta <- sample(c(20, 30, 35, 40), 1)
+  mu1 <- sample(c(0.20, 0.25, 0.30), 1)
+  mu2 <- sample(c(0.20, 0.25, 0.30), 1)
+  ang <- theta*pi/180
+  Fmin <- g*(mu1*m1 + mu2*m2)/(cos(ang) + mu2*sin(ang))
+}
+Tlim <- mu1*m1*g
+N2 <- m2*g - Fmin*sin(ang)
+stopifnot(N2 > 0)
+include_supplement("AtritoDoisBlocosForcaObliquaEstatico.png", dir="../../figuras")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\begin{question}
+Dois blocos de massas $m_1=\Sexpr{m1}\,\mathrm{kg}$ e
+$m_2=\Sexpr{m2}\,\mathrm{kg}$ estão em repouso sobre um piso horizontal e
+ligados por um fio ideal. Uma força $F$ é aplicada ao bloco $m_2$, formando
+$\theta=\Sexpr{theta}^{\circ}$ acima da horizontal, conforme a figura.
+Os coeficientes de atrito \textbf{estático} com o piso são
+$\mu_{s1}=\Sexpr{mu1}$ e $\mu_{s2}=\Sexpr{mu2}$. Adote $g=10\,\mathrm{m/s^2}$.
+\begin{center}
+\includegraphics[width=0.86\linewidth,keepaspectratio]{AtritoDoisBlocosForcaObliquaEstatico.png}
+\end{center}
+Determine:
+\begin{answerlist}
+  \item o menor valor de $F$ capaz de colocar o sistema em movimento para a direita, em newtons;
+  \item a tração no fio nesse instante limite, em newtons.
+\end{answerlist}
+\end{question}
+\begin{solution}
+No instante de iminência de movimento para a direita, os atritos estáticos
+atingem seus valores máximos. Para o bloco 1,
+\[
+T=f_{1,\max}=\mu_{s1}m_1g.
+\]
+Logo,
+\[
+T=\Sexpr{mu1}\cdot\Sexpr{m1}\cdot 10 = \Sexpr{round(Tlim,2)}\,\mathrm{N}.
+\]
+Para o bloco 2, a normal é reduzida pela componente vertical de $F$:
+\[
+N_2=m_2g-F\sin\theta.
+\]
+Assim, o atrito máximo sobre $m_2$ é $f_{2,\max}=\mu_{s2}N_2$.
+No sistema todo, na iminência do movimento,
+\[
+F\cos\theta = \mu_{s1}m_1g + \mu_{s2}(m_2g-F\sin\theta).
+\]
+Isolando $F$,
+\[
+F=\frac{g(\mu_{s1}m_1+\mu_{s2}m_2)}{\cos\theta+\mu_{s2}\sin\theta}
+=\Sexpr{round(Fmin,2)}\,\mathrm{N}.
+\]
+\begin{answerlist}
+  \item $\Sexpr{round(Fmin,2)}\,\mathrm{N}$
+  \item $\Sexpr{round(Tlim,2)}\,\mathrm{N}$
+\end{answerlist}
+\end{solution}
+%% META-INFORMATION
+%% Fonte visual: figura fornecida pelo usuário; versão estática de problema com força oblíqua e atrito.
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{round(Fmin,2)}|\Sexpr{round(Tlim,2)}}
+%% \extol{0.05|0.03}
+%% \exname{AtritoDoisBlocosForcaObliquaEstatico}
+%% \exsection{Mecanica; Leis de Newton; Atrito estatico; Blocos com tracao}

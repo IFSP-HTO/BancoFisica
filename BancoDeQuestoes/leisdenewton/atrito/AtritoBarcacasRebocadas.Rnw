@@ -1,0 +1,69 @@
+<<echo=FALSE, results=hide>>=
+g <- 10
+m1 <- sample(seq(2000, 5000, by = 500), 1)
+m2 <- sample(seq(3000, 6000, by = 500), 1)
+R1 <- sample(seq(800, 1800, by = 200), 1)
+R2 <- sample(seq(1000, 2200, by = 200), 1)
+Fchoices <- seq(9000, 17000, by = 500)
+achoices <- (Fchoices - R1 - R2)/(m1 + m2)
+valid <- which(achoices > 0.40 & achoices < 1.80)
+stopifnot(length(valid) > 0)
+Ftug <- sample(Fchoices[valid], 1)
+a <- (Ftug - R1 - R2)/(m1 + m2)
+T12 <- m1 * a + R1
+stopifnot(a > 0, T12 > 0)
+include_supplement("AtritoBarcacasRebocadas.png", dir="../../figuras")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\begin{question}
+Duas barcaças de massas $m_1=\Sexpr{m1}\,\mathrm{kg}$ e
+$m_2=\Sexpr{m2}\,\mathrm{kg}$ são rebocadas por um barco, como na figura.
+O conjunto move-se para a direita. A força horizontal exercida pelo rebocador
+sobre a barcaça da frente tem módulo $F=\Sexpr{Ftug}\,\mathrm{N}$.
+A água exerce forças resistivas constantes de módulos
+$R_1=\Sexpr{R1}\,\mathrm{N}$ e $R_2=\Sexpr{R2}\,\mathrm{N}$, respectivamente,
+para a esquerda sobre as barcaças $m_1$ e $m_2$.
+Adote $g=10\,\mathrm{m/s^2}$ e despreze a massa dos cabos.
+\begin{center}
+\includegraphics[width=0.88\linewidth,keepaspectratio]{AtritoBarcacasRebocadas.png}
+\end{center}
+Determine:
+\begin{answerlist}
+  \item a aceleração horizontal do conjunto, em $\mathrm{m/s^2}$;
+  \item a tração no cabo entre as duas barcaças, em newtons.
+\end{answerlist}
+\end{question}
+\begin{solution}
+Para o conjunto das duas barcaças, a resultante horizontal é
+\[
+F-R_1-R_2=(m_1+m_2)a.
+\]
+Logo,
+\[
+a=\frac{F-R_1-R_2}{m_1+m_2}
+=\frac{\Sexpr{Ftug}-\Sexpr{R1}-\Sexpr{R2}}{\Sexpr{m1}+\Sexpr{m2}}
+=\Sexpr{round(a,2)}\,\mathrm{m/s^2}.
+\]
+Para a barcaça de trás, a tração $T$ atua para a direita e a resistência $R_1$
+para a esquerda:
+\[
+T-R_1=m_1a.
+\]
+Assim,
+\[
+T=m_1a+R_1=\Sexpr{round(T12,2)}\,\mathrm{N}.
+\]
+\begin{answerlist}
+  \item $\Sexpr{round(a,2)}\,\mathrm{m/s^2}$
+  \item $\Sexpr{round(T12,2)}\,\mathrm{N}$
+\end{answerlist}
+\end{solution}
+%% META-INFORMATION
+%% Fonte conceitual: problema de reboque de barcaças inspirado em OpenStax, cap. 6; figura fornecida pelo usuário.
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{round(a,2)}|\Sexpr{round(T12,2)}}
+%% \extol{0.03|0.05}
+%% \exname{AtritoBarcacasRebocadas}
+%% \exsection{Mecanica; Leis de Newton; Atrito; Sistemas de corpos}
