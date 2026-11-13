@@ -1,0 +1,25 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Sobre aplicações da óptica, escolha a afirmação correta.
+
+\begin{answerlist}
+  \item A luz solar, ao atravessar um prisma, separa-se obrigatoriamente em exatamente quatro cores.
+  \item A lupa é uma lente convergente de distância focal curta, usada para observar uma imagem ampliada.
+  \item A miopia é corrigida com lentes convergentes porque o míope não enxerga bem de perto.
+  \item Projetores utilizam objetivas divergentes e exigem fontes luminosas de baixa intensidade.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+Uma lupa usa lente convergente com o objeto entre a lente e seu foco para formar uma imagem virtual, direita e maior. Um prisma produz dispersão espectral, não exatamente quatro cores; a miopia é corrigida com lente divergente; projetores usam objetiva convergente e iluminação intensa. Alternativa \textbf{B}.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{0100}
+%% \exname{QL3EEAR2026CFS1Q64QuizInstrumentos}
+%% \exsection{Optica; Instrumentos opticos; Lupa; Prisma; Miopia; EEAR 2026 CFS 1 Q64}
+%% SOURCE-VISUAL: none
+%% SOURCE-ADAPTATION: pedagogical paraphrase preserving data and answer
+%% SOURCE: https://provas.professorfilatte.com.br/eear-2026-cfs-1-fisica-questao-64
