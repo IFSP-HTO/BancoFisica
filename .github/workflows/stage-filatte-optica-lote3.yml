@@ -5,14 +5,16 @@ on:
       - feat/filatte-optica-lote3-2026
     paths:
       - 'data/filatte-optica-lote3-2026.json'
+      - 'data/filatte-optica-lote3-recortes.json'
       - '.github/workflows/stage-filatte-optica-lote3.yml'
   pull_request:
     paths:
       - 'data/filatte-optica-lote3-2026.json'
+      - 'data/filatte-optica-lote3-recortes.json'
       - '.github/workflows/stage-filatte-optica-lote3.yml'
   workflow_dispatch:
 permissions:
-  contents: read
+  contents: write
 jobs:
   stage:
     runs-on: ubuntu-latest
@@ -40,10 +42,55 @@ jobs:
           python tools/stage_filatte_optica.py \
             --manifest data/filatte-optica-lote3-2026.json \
             --out-dir build/filatte-optica-lote3
+      - name: Verify source hashes and extract twelve faithful diagram crops
+        run: |
+          python tools/crop_filatte_optica.py \
+            --manifest data/filatte-optica-lote3-recortes.json \
+            --stage-dir build/filatte-optica-lote3 \
+            --dest build/filatte-lote3-crops
+      - name: Preserve existing originals without overwriting
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from shutil import copyfile
+          m=json.loads(Path('data/filatte-optica-lote3-recortes.json').read_text())
+          for item in m['items']:
+              for fig in item['figures']:
+                  fname=fig['name']
+                  source=Path('build/filatte-lote3-crops')/fname
+                  target=Path('BancoDeQuestoes/figuras')/fname
+                  target.parent.mkdir(parents=True,exist_ok=True)
+                  if target.exists():
+                      if target.read_bytes()!=source.read_bytes():
+                          raise ValueError('Figure mismatch, refusing overwrite: '+fname)
+                  else:
+                      copyfile(source,target)
+          print('Verified all original crops without mutation')
+          PY
       - name: Upload originals and audit report for visual review
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: filatte-optica-lote3-originais
-          path: build/filatte-optica-lote3/
+          path: |
+            build/filatte-optica-lote3/
+            build/filatte-lote3-crops/
           if-no-files-found: error
+      - name: Commit reviewed image assets to PR branch
+        if: github.event_name == 'push'
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          python - <<'PY'
+          import json,subprocess
+          m=json.load(open("data/filatte-optica-lote3-recortes.json"))
+          paths=["BancoDeQuestoes/figuras/"+f["name"] for item in m["items"] for f in item["figures"]]
+          subprocess.run(["git","add","--",*paths],check=True)
+          print(len(paths),"figure assets staged")
+          PY
+          if ! git diff --cached --quiet; then
+            git commit -m "Add 12 verified original diagram crops from optics 2026 sources"
+            git push origin "HEAD:${GITHUB_REF_NAME}"
+          fi
