@@ -1,0 +1,152 @@
+{
+  "lot": "optica-lote3-2026",
+  "source_run": 43354333132,
+  "source_artifact": 14005053207,
+  "review": "all pixel crops manually inspected, graphical A-E preserved individually",
+  "items": [
+    {
+      "id": "eear-2026-cfs-1-q61",
+      "source_sha256": "bad6c326cbf6f4671df496d49dc8ef5938d15426a784b2b1746213a0d83ae433",
+      "figures": [
+        {
+          "name": "L3EEAR2026CFS1Q61Lamina.png",
+          "box": [
+            12,
+            326,
+            614,
+            688
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ufu-2026-2-q39",
+      "source_sha256": "ca4ec56422138086cd3dcfa06c41a9620caf7dfbf61bab2eb65faaba99082e82",
+      "figures": [
+        {
+          "name": "L3UFU2026Q39Jornal.png",
+          "box": [
+            287,
+            123,
+            935,
+            614
+          ]
+        }
+      ]
+    },
+    {
+      "id": "santa-marcelina-2026-q57",
+      "source_sha256": "867b588dd67059b91e1e8ce41edd926429b1fc42530cb6fa6d8c777c75834c37",
+      "figures": [
+        {
+          "name": "L3SantaMarcelina2026Q57Relogio.png",
+          "box": [
+            117,
+            121,
+            472,
+            361
+          ]
+        },
+        {
+          "name": "L3SantaMarcelina2026Q57Digitos.png",
+          "box": [
+            143,
+            457,
+            460,
+            680
+          ]
+        }
+      ]
+    },
+    {
+      "id": "santa-marcelina-2026-2o-semestre-q57",
+      "source_sha256": "31508f275949856ed9412e2bee7788f8a36a192863d90d0200b9feb9ad3b96b8",
+      "figures": [
+        {
+          "name": "L3SantaMarcelina2026B57Objeto.png",
+          "box": [
+            49,
+            177,
+            545,
+            377
+          ]
+        },
+        {
+          "name": "L3SantaMarcelina2026B57A.png",
+          "box": [
+            50,
+            552,
+            529,
+            745
+          ]
+        },
+        {
+          "name": "L3SantaMarcelina2026B57B.png",
+          "box": [
+            50,
+            767,
+            529,
+            958
+          ]
+        },
+        {
+          "name": "L3SantaMarcelina2026B57C.png",
+          "box": [
+            50,
+            977,
+            529,
+            1171
+          ]
+        },
+        {
+          "name": "L3SantaMarcelina2026B57D.png",
+          "box": [
+            50,
+            1190,
+            529,
+            1383
+          ]
+        },
+        {
+          "name": "L3SantaMarcelina2026B57E.png",
+          "box": [
+            50,
+            1404,
+            529,
+            1601
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fameca-2026-q38",
+      "source_sha256": "9c867e762efa01ffbd74af163204925509c0766232dec16cc0d0849e1a3ad883",
+      "figures": [
+        {
+          "name": "L3Fameca2026Q38Moeda.png",
+          "box": [
+            107,
+            296,
+            511,
+            663
+          ]
+        }
+      ]
+    },
+    {
+      "id": "unifimes-2026-mineiros-2o-semestre-q39",
+      "source_sha256": "52b2bfd113faeb1f93f927be28d2d30398063b6f632461d4bc9555b09d10f8df",
+      "figures": [
+        {
+          "name": "L3Unifimes2026Q39Raio.png",
+          "box": [
+            76,
+            207,
+            535,
+            426
+          ]
+        }
+      ]
+    }
+  ]
+}
