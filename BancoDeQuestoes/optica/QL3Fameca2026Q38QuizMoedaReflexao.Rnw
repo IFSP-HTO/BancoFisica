@@ -1,0 +1,40 @@
+<<echo=FALSE, results=hide>>=
+include_supplement("L3Fameca2026Q38Moeda.png", dir="../figuras")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+Uma moeda de diâmetro $d=27\,\mathrm{mm}$ está no fundo de um copo com água. Um raio sai de uma borda da moeda e atinge a superfície exatamente acima da borda oposta, seguindo depois para o olho do observador, como ilustra a figura. Sendo $n_{\mathrm{água}}=4/3$, $n_{\mathrm{ar}}=1$ e $\sin r=2/3$, determine a profundidade $h$ da face superior da moeda.
+
+Considere $\sin30^\circ=1/2$ e $\cos30^\circ=\sqrt3/2$.
+
+\begin{center}
+\includegraphics[width=0.58\linewidth,keepaspectratio]{L3Fameca2026Q38Moeda.png}
+\end{center}
+
+\begin{answerlist}
+  \item $27\sqrt2\,\mathrm{mm}$
+  \item $27\,\mathrm{mm}$
+  \item $27\sqrt3\,\mathrm{mm}$
+  \item $54\,\mathrm{mm}$
+  \item $54\sqrt2\,\mathrm{mm}$
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+Snell na interface água--ar: $(4/3)\sin i=\sin r=2/3$, logo $\sin i=1/2$ e $i=30^\circ$. Pelo triângulo indicado no desenho, $\tan i=d/h$. Portanto
+\[
+h=\frac{d}{\tan30^\circ}=27\sqrt3\,\mathrm{mm}.
+\]
+Alternativa \textbf{C}.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{00100}
+%% \exname{QL3Fameca2026Q38QuizMoedaReflexao}
+%% \exsection{Optica; Refracao; Lei de Snell; Triangulos; Profundidade; FAMECA 2026}
+%% SOURCE-VISUAL: original-crop
+%% SOURCE-ADAPTATION: paraphrase with original source diagram
+%% SOURCE: https://provas.professorfilatte.com.br/fameca-2026-fisica-questao-38
