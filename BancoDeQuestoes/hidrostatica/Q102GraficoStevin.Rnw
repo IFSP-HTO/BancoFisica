@@ -1,0 +1,46 @@
+%% NOVO BANCOFISICA — adaptação independente; enunciado e parâmetros autorais.
+%% SOURCE-REFERENCE: https://provas.professorfilatte.com.br/ufjf-2024-pism-modulo-2-fisica-questao-12
+%% SOURCE-VISUAL: gerada no R/exams ou não aplicável; nenhuma imagem de terceiro é copiada.
+<<echo=FALSE, results=hide>>=
+rho <- sample(c(600,800,1000,1200),1)
+g <- 10
+h <- sample(c(2,3,4),1)
+p_kpa <- rho*g*h/1000
+fmt <- function(x) formatC(x,format="f",digits=0)
+@
+
+\begin{question}
+O gráfico abaixo mostra a pressão \emph{manométrica} de um líquido em função da profundidade. Considerando \(g=10\,\mathrm{m/s^2}\), determine a densidade do líquido em \(\mathrm{kg/m^3}\).
+
+\begin{figure}[h!]
+\centering
+<<fig=TRUE, width=5.4, height=3.6, echo=FALSE, results=hide>>=
+op <- par(mar=c(4.3,4.4,0.6,0.6))
+plot(c(0,h),c(0,p_kpa),type="l",lwd=2,xlim=c(0,h*1.25),
+     ylim=c(0,p_kpa*1.3),xlab="Profundidade (m)",
+     ylab="Pressao manometrica (kPa)",axes=FALSE)
+axis(1,at=c(0,h)); axis(2,at=c(0,p_kpa),las=1)
+segments(h,0,h,p_kpa,lty=2); segments(0,p_kpa,h,p_kpa,lty=2)
+points(h,p_kpa,pch=19,cex=1.2)
+box()
+par(op)
+@
+\end{figure}
+\end{question}
+
+\begin{solution}
+A inclinação da reta é \(\Delta p/\Delta h=\rho g\). Portanto,
+\[
+\rho=\frac{\Sexpr{p_kpa}\times1000}{10\cdot\Sexpr{h}}
+=\Sexpr{rho}\,\mathrm{kg/m^3}.
+\]
+É necessário converter \(\mathrm{kPa}\) para \(\mathrm{Pa}\).
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{rho}}
+%% \extol{0.1}
+%% \exname{Q102GraficoStevin}
+%% \exsection{Hidrostatica; Lei de Stevin; Grafico pressao profundidade; Densidade}
+%% \exusepackage[utf8]{inputenc}
