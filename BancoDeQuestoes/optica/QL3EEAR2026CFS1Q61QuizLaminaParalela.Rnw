@@ -1,0 +1,41 @@
+<<echo=FALSE, results=hide>>=
+include_supplement("L3EEAR2026CFS1Q61Lamina.png", dir="../figuras")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+A figura apresenta uma lâmina de faces paralelas, de espessura $e=6\,\mathrm{cm}$ e índice de refração $n=\sqrt{2}$, imersa no ar ($n_{\mathrm{ar}}=1$). Um raio luminoso incide com ângulo de $45^\circ$ em relação à normal e emerge paralelo ao raio incidente, com um desvio lateral $d$. Calcule esse desvio, em centímetros.
+
+Use $\sin45^\circ=\sqrt{2}/2$, $\sin15^\circ=0{,}26$ e $\cos30^\circ=0{,}87$.
+
+\begin{center}
+\includegraphics[width=0.75\linewidth,keepaspectratio]{L3EEAR2026CFS1Q61Lamina.png}
+\end{center}
+
+\begin{answerlist}
+  \item $4$
+  \item $1{,}8$
+  \item $1{,}4$
+  \item $1$
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+Pela lei de Snell, $\sin45^\circ=\sqrt2\sin r$, de onde $\sin r=1/2$ e $r=30^\circ$. A geometria do desvio lateral na lâmina fornece
+\[
+d=\frac{e\sin(i-r)}{\cos r}
+ =\frac{6\sin15^\circ}{\cos30^\circ}
+ =\frac{6(0{,}26)}{0{,}87}\approx1{,}8\,\mathrm{cm}.
+\]
+Logo a resposta correta é a alternativa \textbf{B}.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{0100}
+%% \exname{QL3EEAR2026CFS1Q61QuizLaminaParalela}
+%% \exsection{Optica; Refracao; Lamina de faces paralelas; Desvio lateral; EEAR CFS 1 2026}
+%% SOURCE-VISUAL: original-crop
+%% SOURCE-ADAPTATION: paraphrase with original source diagram
+%% SOURCE: https://provas.professorfilatte.com.br/eear-2026-cfs-1-fisica-questao-61
