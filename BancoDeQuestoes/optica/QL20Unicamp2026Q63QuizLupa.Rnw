@@ -1,0 +1,24 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Um microscópio óptico permite examinar uma peça muito pequena por meio de lentes. Considerando uma lente delgada isolada que forneça imagem \emph{direita e maior} do que um objeto real, qual é a combinação possível de tipo de lente e posição do objeto?
+
+\begin{answerlist}
+  \item Lente convergente com objeto entre ela e seu foco.
+  \item Lente divergente com objeto dentro da distância focal.
+  \item Lente convergente com objeto além da distância focal.
+  \item Lente divergente com objeto além da distância focal.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+Uma lente divergente produz imagem direita, virtual e reduzida de objeto real. Já a convergente, quando o objeto se encontra entre a lente e o foco ($0<p<f$), produz imagem virtual, direita e ampliada: é o regime da lupa. Alternativa \textbf{A}.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{1000}
+%% \exname{QL20Unicamp2026Q63QuizLupa}
+%% \exsection{Optica; Lentes delgadas; Imagem virtual; Lupa; UNICAMP 2026}
+%% SOURCE-VISUAL: none
+%% SOURCE: https://provas.professorfilatte.com.br/unicamp-2026-fisica-questao-63
