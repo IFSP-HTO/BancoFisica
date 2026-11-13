@@ -5,15 +5,17 @@ on:
       - feat/optica-lote20-2026
     paths:
       - 'data/filatte-optica-lote20-2026.json'
+      - 'data/filatte-optica-lote20-recortes.json'
       - '.github/workflows/stage-filatte-lote20.yml'
   pull_request:
     paths:
       - 'data/filatte-optica-lote20-2026.json'
+      - 'data/filatte-optica-lote20-recortes.json'
       - '.github/workflows/stage-filatte-lote20.yml'
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   stage:
@@ -46,10 +48,37 @@ jobs:
           python tools/stage_filatte_optica.py \
             --manifest data/filatte-optica-lote20-2026.json \
             --out-dir build/filatte-lote20
+      - name: Extract and verify 14 original diagram crops
+        run: |
+          python tools/crop_filatte_optica.py \
+            --manifest data/filatte-optica-lote20-recortes.json \
+            --stage-dir build/filatte-lote20
       - name: Upload original sources and audit manifest
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: optica-lote20-2026-sources
-          path: build/filatte-lote20/
+          path: |
+            build/filatte-lote20/
+            BancoDeQuestoes/figuras/*2026*.png
+            BancoDeQuestoes/figuras/*2027*.png
           if-no-files-found: warn
+      - name: Commit reviewed diagram crops to PR branch
+        if: github.event_name == 'push'
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          python - <<'PY'
+          import json, subprocess
+          m=json.load(open("data/filatte-optica-lote20-recortes.json"))
+          paths=["BancoDeQuestoes/figuras/"+x["name"] for e in m["items"] for x in e["figures"]]
+          subprocess.run(["git","add","--",*paths],check=True)
+          print("Staged",len(paths),"source-faithful diagrams")
+          PY
+          if git diff --cached --quiet; then
+            echo "Original diagrams already committed."
+          else
+            git commit -m "Add 14 original cropped diagrams for optics batch 20"
+            git push origin "HEAD:${GITHUB_REF_NAME}"
+          fi
