@@ -1,0 +1,62 @@
+<<echo=FALSE, results=hide>>=
+# OpenStax University Physics v.1, Cap. 6, problemas adicionais 99 e 100.
+# Mantem as massas da ilustracao original, variando as forcas.
+mA <- 2000  # barcaca A
+mB <- 3000  # barcaca B
+forca <- sample(c(21000, 24000, 27000, 30000), 1)
+resA <- sample(c(6000, 7000, 8000), 1)
+resB <- sample(c(8000, 9000, 10000), 1)
+acel <- (forca-resA-resB)/(mA+mB)
+tracao_A_na_frente <- mB*acel+resB
+tracao_B_na_frente <- mA*acel+resA
+stopifnot(acel>0, tracao_A_na_frente>0, tracao_B_na_frente>0)
+@
+\usepackage{graphicx}
+\begin{question}
+Duas barcacas, A e B, de massas $m_A=2000\,\mathrm{kg}$
+e $m_B=3000\,\mathrm{kg}$, sao ligadas por um cabo ideal
+sobre a agua. Um rebocador aplica uma forca horizontal constante de
+$F=\Sexpr{forca}\,\mathrm{N}$ sobre a barcaca da frente.
+A agua exerce forcas de resistencia de modulos
+$r_A=\Sexpr{resA}\,\mathrm{N}$ e $r_B=\Sexpr{resB}\,\mathrm{N}$,
+sempre opostas ao movimento e associadas a cada barcaca.
+Despreze outras forcas horizontais.
+
+Calcule:
+\begin{answerlist}
+  \item a aceleracao do conjunto, em $\mathrm{m/s^2}$;
+  \item a tracao no cabo quando A esta na frente, em newtons;
+  \item a tracao no cabo quando B esta na frente, em newtons.
+\end{answerlist}
+\end{question}
+\begin{solution}
+As resistencias da agua sao externas ao sistema e permanecem ligadas
+as respectivas barcacas quando a ordem e invertida:
+\[F-r_A-r_B=(m_A+m_B)a.\]
+Logo,
+\[a=\frac{F-r_A-r_B}{m_A+m_B}
+=\Sexpr{round(acel,2)}\,\mathrm{m/s^2}.\]
+Quando A e a barcaca dianteira, o cabo puxa B:
+\[T_{A\,\mathrm{frente}}-r_B=m_Ba,\]
+\[T_{A\,\mathrm{frente}}=m_Ba+r_B
+=\Sexpr{round(tracao_A_na_frente,2)}\,\mathrm{N}.\]
+Quando B passa a frente, o cabo puxa A:
+\[T_{B\,\mathrm{frente}}-r_A=m_Aa,\]
+\[T_{B\,\mathrm{frente}}=m_Aa+r_A
+=\Sexpr{round(tracao_B_na_frente,2)}\,\mathrm{N}.\]
+\begin{answerlist}
+  \item $\Sexpr{round(acel,2)}\,\mathrm{m/s^2}$
+  \item $\Sexpr{round(tracao_A_na_frente,2)}\,\mathrm{N}$
+  \item $\Sexpr{round(tracao_B_na_frente,2)}\,\mathrm{N}$
+\end{answerlist}
+\end{solution}
+%% META-INFORMATION
+%% Fonte: OpenStax, University Physics, v. 1, cap. 6, Additional Problems, exs. 99 e 100.
+%% Adaptacao: problemas combinados; massas conservadas e forcas parametrizadas.
+%% Figura: pendente; arte original identifica massas fixas 2000 e 3000 kg.
+%% \extype{cloze}
+%% \exclozetype{num|num|num}
+%% \exsolution{\Sexpr{round(acel,2)}|\Sexpr{round(tracao_A_na_frente,2)}|\Sexpr{round(tracao_B_na_frente,2)}}
+%% \extol{0.03|0.03|0.03}
+%% \exname{BFATR122BarcacasResistenciaReboque}
+%% \exsection{Mecanica; Leis de Newton; Resistencia; Corpos conectados}
