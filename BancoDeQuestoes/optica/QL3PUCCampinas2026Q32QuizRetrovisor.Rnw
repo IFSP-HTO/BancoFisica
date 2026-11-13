@@ -1,0 +1,26 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Um espelho retrovisor externo convexo amplia o campo de visão, mas faz outros veículos parecerem mais distantes do que realmente estão. Isso decorre do fato de que esse espelho forma, a partir de objetos reais, imagens
+
+\begin{answerlist}
+  \item reais e do mesmo tamanho.
+  \item reais e reduzidas.
+  \item virtuais e do mesmo tamanho.
+  \item virtuais e reduzidas.
+  \item virtuais e ampliadas.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+Espelhos convexos são divergentes e formam, para qualquer objeto real, imagem virtual, direita e menor. A redução do tamanho angular faz o motorista perceber o veículo aparentemente mais distante, embora a imagem virtual fique mais próxima do espelho do que o próprio objeto. Alternativa \textbf{D}.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{00010}
+%% \exname{QL3PUCCampinas2026Q32QuizRetrovisor}
+%% \exsection{Optica; Espelhos esfericos; Espelho convexo; Retrovisor; PUC-Campinas 2026 Q32}
+%% SOURCE-VISUAL: none
+%% SOURCE-ADAPTATION: pedagogical paraphrase preserving data and answer
+%% SOURCE: https://provas.professorfilatte.com.br/puc-campinas-2026-fisica-questao-32
