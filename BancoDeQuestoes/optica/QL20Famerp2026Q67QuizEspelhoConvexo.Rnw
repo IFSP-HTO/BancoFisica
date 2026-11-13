@@ -1,0 +1,25 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Um espelho esférico convexo é utilizado para observar uma área ampla, por exemplo em estacionamentos. Para qualquer posição de um objeto real diante desse espelho, como é a imagem formada?
+
+\begin{answerlist}
+  \item Invertida e menor.
+  \item Invertida e maior.
+  \item Direita e maior.
+  \item Direita e menor.
+  \item Direita e de mesmo tamanho.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+Raios refletidos por um espelho convexo divergem; seus prolongamentos se encontram atrás do espelho. Assim a imagem é sempre \emph{virtual, direita e menor} para objetos reais. A ampliação reduzida contribui para ampliar o campo de visão. Alternativa \textbf{D}.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{00010}
+%% \exname{QL20Famerp2026Q67QuizEspelhoConvexo}
+%% \exsection{Optica; Espelhos esfericos; Espelho convexo; FAMERP 2026}
+%% SOURCE-VISUAL: none
+%% SOURCE: https://provas.professorfilatte.com.br/famerp-2026-fisica-questao-67
