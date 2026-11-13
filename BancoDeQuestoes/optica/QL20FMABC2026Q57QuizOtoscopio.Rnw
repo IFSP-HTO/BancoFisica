@@ -1,0 +1,34 @@
+<<echo=FALSE, results=hide>>=
+include_supplement("FMABC2026Q57Otoscopio.png", dir="../figuras")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+Um otoscópio utiliza uma lente convergente que produz imagem direita, ampliada três vezes, de um objeto colocado a $6{,}0\,\mathrm{cm}$ da lente. A fotografia mostra o instrumento. Admitindo uma lente delgada, determine sua distância focal.
+
+\begin{center}
+\includegraphics[width=0.68\linewidth,keepaspectratio]{FMABC2026Q57Otoscopio.png}
+\end{center}
+
+\begin{answerlist}
+  \item 6,0 cm
+  \item 7,5 cm
+  \item 9,0 cm
+  \item 3,0 cm
+  \item 4,5 cm
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+Como a imagem é direita e ampliada, é virtual: $A=+3=-p'/p$ implica $p'=-18\,\mathrm{cm}$, para $p=6\,\mathrm{cm}$. Pela equação de Gauss, $1/f=1/6-1/18=1/9\,\mathrm{cm}^{-1}$. Assim, $f=9\,\mathrm{cm}$. Alternativa \textbf{C}.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{00100}
+%% \exname{QL20FMABC2026Q57QuizOtoscopio}
+%% \exsection{Optica; Lente convergente; Lupa; Aumento linear; Vestibular 2026}
+%% SOURCE-VISUAL: original-crop
+%% SOURCE-IMAGE-SHA256: e218d533cb8ab7c45bf4220978ff9697b19a9bebe8ad58f3a2cc7b8862864043
+%% SOURCE: https://provas.professorfilatte.com.br/fmabc-2026-fisica-questao-57

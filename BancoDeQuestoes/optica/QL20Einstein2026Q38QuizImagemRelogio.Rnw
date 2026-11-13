@@ -1,0 +1,34 @@
+<<echo=FALSE, results=hide>>=
+include_supplement("Einstein2026Q38Reflexo.png", dir="../figuras")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+Renato está a $1{,}2\,\mathrm m$ de um espelho plano, diante do qual enxerga tanto seu reflexo quanto o reflexo de um relógio pendurado na parede atrás de si. A figura mostra a cena refletida. A separação espacial entre as duas imagens virtuais é $4{,}6\,\mathrm m$. Qual é a distância entre a parede do relógio e a parede do espelho?
+
+\begin{center}
+\includegraphics[width=0.45\linewidth,keepaspectratio]{Einstein2026Q38Reflexo.png}
+\end{center}
+
+\begin{answerlist}
+  \item $5{,}2\,\mathrm m$
+  \item $11{,}6\,\mathrm m$
+  \item $7{,}0\,\mathrm m$
+  \item $5{,}8\,\mathrm m$
+  \item $2{,}4\,\mathrm m$
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+No espelho plano, cada imagem fica atrás da superfície à mesma distância que seu objeto está à frente. A imagem de Renato encontra-se a $1{,}2\,\mathrm m$ do espelho; a do relógio fica a uma distância $L$ do espelho, sendo $L$ a separação entre as paredes. A distância entre imagens é $L-1{,}2=4{,}6$, de onde $L=5{,}8\,\mathrm m$. Alternativa \textbf{D}.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{00010}
+%% \exname{QL20Einstein2026Q38QuizImagemRelogio}
+%% \exsection{Optica; Espelhos planos; Simetria; Posicao de imagem; Vestibular 2026}
+%% SOURCE-VISUAL: original-crop
+%% SOURCE-IMAGE-SHA256: 14fdc0b015bf117a1b3719b8941cb8840243d2e7900f2d43440b0c00e68bd0b7
+%% SOURCE: https://provas.professorfilatte.com.br/einstein-2026-fisica-questao-38

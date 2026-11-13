@@ -1,0 +1,24 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Uma fonte pontual está a altura $h$, muito menor que a distância focal $f$, diante de um espelho côncavo, e emite um raio paralelo ao eixo principal. Em condições paraxiais, o raio se reflete e encontra o eixo a qual distância aproximada do ponto de incidência no espelho?
+
+\begin{answerlist}
+  \item $\sqrt{h^2+f^2}$
+  \item $\sqrt{h^2+(2f)^2}$
+  \item $\sqrt{2h^2+(f/2)^2}$
+  \item $4h+2f$
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+Todo raio incidente paralelo ao eixo principal de um espelho côncavo passa, depois da reflexão, pelo foco. A diferença vertical entre o ponto de reflexão e o foco vale aproximadamente $h$; a distância horizontal vale $f$. Pelo teorema de Pitágoras, a trajetória refletida mede aproximadamente $\sqrt{h^2+f^2}$. Alternativa \textbf{A}.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{1000}
+%% \exname{QL20UECE2026Q41QuizEspelhoConcavo}
+%% \exsection{Optica; Espelhos esfericos; Raios notaveis; UECE 2026.2}
+%% SOURCE-VISUAL: none
+%% SOURCE: https://provas.professorfilatte.com.br/uece-2026-2-fisica-questao-41

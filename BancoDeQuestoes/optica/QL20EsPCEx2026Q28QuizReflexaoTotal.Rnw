@@ -1,0 +1,36 @@
+<<echo=FALSE, results=hide>>=
+include_supplement("EsPCEx2026Q28Aquario.png", dir="../figuras")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+Um feixe laser que se propaga dentro de um aquário com água atinge a superfície água--ar. A figura mostra uma incidência para a qual a refração é rasante. Considere $n_{\mathrm{água}}=4/3$, $n_{\mathrm{ar}}=1$ e $\sin60^\circ=0{,}87$.
+
+Se o ângulo de incidência na interface passar a ser $60^\circ$, o que ocorrerá?
+
+\begin{center}
+\includegraphics[width=0.76\linewidth,keepaspectratio]{EsPCEx2026Q28Aquario.png}
+\end{center}
+
+\begin{answerlist}
+  \item A luz sairá para o ar segundo a normal.
+  \item O feixe sofrerá reflexão total e permanecerá na água.
+  \item O feixe sairá para o ar fazendo um ângulo entre $0^\circ$ e $90^\circ$.
+  \item O feixe será refratado no ar a $45^\circ$.
+  \item O raio continuará apresentando refração rasante.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+No ângulo limite $L$, a refração tem $r=90^\circ$, e $n_{\mathrm{água}}\sin L=n_{\mathrm{ar}}$, portanto $\sin L=3/4=0{,}75$. Como $\sin60^\circ=0{,}87>0{,}75$, o novo ângulo ultrapassa o limite e a refração não é possível. Há reflexão total interna. Alternativa \textbf{B}.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{01000}
+%% \exname{QL20EsPCEx2026Q28QuizReflexaoTotal}
+%% \exsection{Optica; Refracao; Angulo limite; Reflexao total; Vestibular 2026}
+%% SOURCE-VISUAL: original-crop
+%% SOURCE-IMAGE-SHA256: 0288c4a5f006c060b60dfc86864b420e755a11f6fa3e54574a2846a810b0d8b4
+%% SOURCE: https://provas.professorfilatte.com.br/espcex-2026-2027-fisica-questao-28

@@ -1,0 +1,25 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+A velocidade de um feixe luminoso em um meio 1 é $2{,}5\times10^8\,\mathrm{m/s}$. Ao passar ao meio 2, essa velocidade cai $20\%$. Sabendo que $c=3{,}0\times10^8\,\mathrm{m/s}$, calcule o índice de refração absoluto do meio 2.
+
+\begin{answerlist}
+  \item $1{,}5$
+  \item $1{,}8$
+  \item $1{,}6$
+  \item $1{,}2$
+  \item $1{,}1$
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+A velocidade no segundo meio passa a ser $v_2=0{,}80(2{,}5\times10^8)=2{,}0\times10^8\,\mathrm{m/s}$. Logo $n_2=c/v_2=3{,}0/2{,}0=1{,}5$. Alternativa \textbf{A}.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{10000}
+%% \exname{QL20Unimes2026Q39QuizIndiceAbsoluto}
+%% \exsection{Optica; Refracao; Indice absoluto; UNIMES 2026}
+%% SOURCE-VISUAL: none
+%% SOURCE: https://provas.professorfilatte.com.br/unimes-2026-fisica-questao-39

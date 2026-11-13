@@ -1,0 +1,34 @@
+<<echo=FALSE, results=hide>>=
+include_supplement("FAMEMA2026Q39Canhao.png", dir="../figuras")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+Um canhão de luz tem $2{,}0\,\mathrm m$ de comprimento, abertura circular de diâmetro $D$ e fonte extensa preenchendo o fundo do tubo. Suas paredes internas são negras. A abertura fica a $9{,}0\,\mathrm m$ de um pano, e a mancha luminosa projetada possui diâmetro $2{,}0\,\mathrm m$. O desenho apresenta os raios extremos do sistema. Determine $D$.
+
+\begin{center}
+\includegraphics[width=0.78\linewidth,keepaspectratio]{FAMEMA2026Q39Canhao.png}
+\end{center}
+
+\begin{answerlist}
+  \item 15 cm
+  \item 35 cm
+  \item 20 cm
+  \item 25 cm
+  \item 30 cm
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+Os raios extremos se cruzam no centro do tubo, a $1{,}0\,\mathrm m$ da abertura. Do cruzamento até o pano há $1+9=10\,\mathrm m$. Pela semelhança de triângulos, $D/1{,}0=2{,}0/10$, resultando $D=0{,}20\,\mathrm m=20\,\mathrm{cm}$. Alternativa \textbf{C}.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{00100}
+%% \exname{QL20FAMEMA2026Q39QuizCanhaoLuz}
+%% \exsection{Optica; Propagacao retilinea; Semelhanca de triangulos; Vestibular 2026}
+%% SOURCE-VISUAL: original-crop
+%% SOURCE-IMAGE-SHA256: 2adf4e18171c6508657d974f97866e42083211a950c579a22d21858a7f7d4e8c
+%% SOURCE: https://provas.professorfilatte.com.br/famema-2026-fisica-questao-39

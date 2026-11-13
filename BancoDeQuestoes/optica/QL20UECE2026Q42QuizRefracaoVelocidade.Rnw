@@ -1,0 +1,24 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Um raio de luz monocromática atravessa a interface entre dois materiais transparentes A e B, com $n_A>n_B$. Admitindo que haja transmissão de luz, assinale a afirmação correta.
+
+\begin{answerlist}
+  \item O comprimento de onda é maior em A que em B.
+  \item Na passagem de A para B, o raio transmitido aproxima-se da normal.
+  \item A frequência aumenta quando o raio atravessa a interface.
+  \item A velocidade de propagação em A é menor que em B.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+Como $v=c/n$, o índice maior em A implica velocidade menor em A: $v_A<v_B$. A frequência não muda de meio e, portanto, o comprimento de onda em A também é menor ($\lambda=v/f$). Na transmissão, o raio se afasta da normal. Alternativa \textbf{D}.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{0001}
+%% \exname{QL20UECE2026Q42QuizRefracaoVelocidade}
+%% \exsection{Optica; Refracao; Velocidade; Comprimento de onda; UECE 2026.1}
+%% SOURCE-VISUAL: none
+%% SOURCE: https://provas.professorfilatte.com.br/uece-2026-1-fisica-questao-42
