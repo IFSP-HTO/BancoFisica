@@ -1,0 +1,37 @@
+%% NOVO BANCOFISICA — adaptação independente; enunciado e parâmetros autorais.
+%% SOURCE-REFERENCE: https://provas.professorfilatte.com.br/puc-rio-2023-grupo-3-fisica-questao-11
+%% SOURCE-VISUAL: gerada no R/exams ou não aplicável; nenhuma imagem de terceiro é copiada.
+<<echo=FALSE, results=hide>>=
+rho_agua <- 1000
+rho_oleo <- sample(c(600,700,800,900),1)
+h_oleo <- sample(c(20,30,40),1) # cm
+h_agua <- round(h_oleo*rho_oleo/rho_agua,2)
+@
+
+\begin{question}
+Um tubo em U possui água e óleo, que não se misturam. Os dois ramos estão abertos à atmosfera. No ramo do óleo, a coluna de óleo acima da interface óleo--água tem \(\Sexpr{h_oleo}\,\mathrm{cm}\) de altura. No outro ramo, a superfície livre de água está \(\Sexpr{h_agua}\,\mathrm{cm}\) acima do mesmo nível horizontal da interface. Considere a densidade da água igual a \(1000\,\mathrm{kg/m^3}\).
+
+Determine a densidade do óleo, em \(\mathrm{kg/m^3}\).
+\end{question}
+
+\begin{solution}
+Igualando as pressões na altura da interface:
+\[
+p_{\mathrm{atm}}+\rho_o g h_o
+=p_{\mathrm{atm}}+\rho_a g h_a.
+\]
+Assim,
+\[
+\rho_o=\rho_a\frac{h_a}{h_o}
+=1000\frac{\Sexpr{h_agua}}{\Sexpr{h_oleo}}
+=\Sexpr{rho_oleo}\,\mathrm{kg/m^3}.
+\]
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{rho_oleo}}
+%% \extol{0.1}
+%% \exname{Q104TuboULiquidos}
+%% \exsection{Hidrostatica; Vasos comunicantes; Liquidos imisciveis; Lei de Stevin}
+%% \exusepackage[utf8]{inputenc}
