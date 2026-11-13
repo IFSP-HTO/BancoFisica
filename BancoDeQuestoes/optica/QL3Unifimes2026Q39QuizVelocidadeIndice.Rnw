@@ -1,0 +1,34 @@
+<<echo=FALSE, results=hide>>=
+include_supplement("L3Unifimes2026Q39Raio.png", dir="../figuras")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+Um raio laser atravessa a fronteira entre dois meios ópticos transparentes, P e Q. O desenho mostra que, ao entrar no meio Q, o raio se aproxima da reta normal à interface. Complete: no meio Q, a velocidade de propagação da luz é \underline{\hspace{1.4cm}} do que em P, e o meio Q é \underline{\hspace{1.4cm}} refringente.
+
+\begin{center}
+\includegraphics[width=0.73\linewidth,keepaspectratio]{L3Unifimes2026Q39Raio.png}
+\end{center}
+
+\begin{answerlist}
+  \item igual; mais
+  \item menor; menos
+  \item maior; menos
+  \item menor; mais
+  \item maior; mais
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+Pela lei de Snell, $n_P\sin i=n_Q\sin r$. Como o raio se aproxima da normal, $r<i$ e, consequentemente, $n_Q>n_P$. Como $v=c/n$, a velocidade é menor em Q e este é mais refringente. Alternativa \textbf{D}.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{00010}
+%% \exname{QL3Unifimes2026Q39QuizVelocidadeIndice}
+%% \exsection{Optica; Refracao; Indice de refracao; Velocidade da luz; UNIFIMES Mineiros 2026 2o semestre}
+%% SOURCE-VISUAL: original-crop
+%% SOURCE-ADAPTATION: paraphrase with original source diagram
+%% SOURCE: https://provas.professorfilatte.com.br/unifimes-2026-mineiros-2o-semestre-fisica-questao-39

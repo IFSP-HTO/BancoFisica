@@ -1,0 +1,39 @@
+<<echo=FALSE, results=hide>>=
+include_supplement("L3SantaMarcelina2026B57Objeto.png", dir="../figuras")
+include_supplement("L3SantaMarcelina2026B57A.png", dir="../figuras")
+include_supplement("L3SantaMarcelina2026B57B.png", dir="../figuras")
+include_supplement("L3SantaMarcelina2026B57C.png", dir="../figuras")
+include_supplement("L3SantaMarcelina2026B57D.png", dir="../figuras")
+include_supplement("L3SantaMarcelina2026B57E.png", dir="../figuras")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+Um palito está diante de um espelho esférico côncavo, sobre seu eixo principal, entre o foco $F$ e o centro de curvatura $C$ (primeira figura). A imagem formada é real e pode ser projetada em um anteparo. Qual das figuras A--E mostra corretamente a posição desse anteparo perpendicular ao eixo?
+
+\begin{center}
+\includegraphics[width=0.61\linewidth,keepaspectratio]{L3SantaMarcelina2026B57Objeto.png}
+\end{center}
+
+\begin{answerlist}
+  \item \includegraphics[height=1.6cm,keepaspectratio]{L3SantaMarcelina2026B57A.png}
+  \item \includegraphics[height=1.6cm,keepaspectratio]{L3SantaMarcelina2026B57B.png}
+  \item \includegraphics[height=1.6cm,keepaspectratio]{L3SantaMarcelina2026B57C.png}
+  \item \includegraphics[height=1.6cm,keepaspectratio]{L3SantaMarcelina2026B57D.png}
+  \item \includegraphics[height=1.6cm,keepaspectratio]{L3SantaMarcelina2026B57E.png}
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+Para um espelho côncavo, se o objeto real está entre $F$ e $C$, sua imagem real e invertida forma-se além do centro de curvatura. Por exemplo, se $p=3f/2$, pela equação dos pontos conjugados, $p'=3f>2f$. Entre as alternativas gráficas, a posição correta é a que mostra o anteparo além de $C$ (figura originalmente identificada como D).
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{00010}
+%% \exname{QL3SantaMarcelina2026B57QuizEspelhoConcavo}
+%% \exsection{Optica; Espelhos esfericos; Espelho concavo; Formacao de imagem real; Santa Marcelina 2026 2o semestre}
+%% SOURCE-VISUAL: original-crop
+%% SOURCE-ADAPTATION: graphical A-E options preserved as original pixel crops
+%% SOURCE: https://provas.professorfilatte.com.br/santa-marcelina-2026-2o-semestre-fisica-questao-57

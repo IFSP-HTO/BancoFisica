@@ -1,0 +1,25 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Uma vela está entre dois espelhos planos cuja abertura angular é $45^\circ$. Desprezando dimensões e efeitos de borda, qual é o número máximo de imagens distintas da vela?
+
+\begin{answerlist}
+  \item 8
+  \item 7
+  \item 6
+  \item 5
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+Para dois espelhos planos formando ângulo $\alpha$ tal que $360^\circ/\alpha$ é inteiro par, o número máximo de imagens é $N=360^\circ/\alpha-1$. Portanto $N=360/45-1=7$. Alternativa \textbf{B}.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{0100}
+%% \exname{QL3EEAR2026CFS2Q61QuizEspelhosAngulares}
+%% \exsection{Optica; Espelhos planos; Espelhos angulares; Numero de imagens; EEAR 2026 CFS 2 Q61}
+%% SOURCE-VISUAL: none
+%% SOURCE-ADAPTATION: pedagogical paraphrase preserving data and answer
+%% SOURCE: https://provas.professorfilatte.com.br/eear-2026-cfs-2-fisica-questao-61
