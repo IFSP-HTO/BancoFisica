@@ -1,0 +1,44 @@
+<<echo=FALSE, results=hide>>=
+include_supplement("Humanitas2027Q38Lente.png", dir="../figuras")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+Para que uma lente seja confeccionada, a depender do grau ou vergência, $D$, que ela apresentará, é preferível que sejam escolhidos materiais com maior índice de refração, $n$, de forma que essa lente seja o menos espessa possível. Por exemplo, para uma lente plano-convexa imersa no ar, como a representada na figura, a dimensão do raio de curvatura, $R$, define a espessura da lente. Para essa lente, $R$, em metros, $D$, em dioptrias e $n$ estão relacionados por:
+\[
+D = \frac{n-1}{R}.
+\]
+
+\begin{center}
+\includegraphics[width=0.43\linewidth,keepaspectratio]{Humanitas2027Q38Lente.png}
+\end{center}
+
+Considere que essa lente terá 8 dioptrias e que, para sua construção, estejam disponíveis as resinas 1 e 2, com índices de refração $n_1 = 1{,}48$ e $n_2 = 1{,}80$, respectivamente. A escolha da resina 2 para essa construção, em relação à resina 1, permitirá que o raio $R$ seja
+
+\begin{answerlist}
+  \item reduzido em 4 cm.
+  \item reduzido em 12 cm.
+  \item acrescido em 12 cm.
+  \item acrescido em 24 cm.
+  \item acrescido em 4 cm.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+Da equação apresentada, $R=(n-1)/D$. Para a mesma vergência $D=8$ dioptrias:
+\[
+R_1=\frac{1{,}48-1}{8}=0{,}06\,\mathrm{m}=6\,\mathrm{cm},\qquad
+R_2=\frac{1{,}80-1}{8}=0{,}10\,\mathrm{m}=10\,\mathrm{cm}.
+\]
+Portanto, $\Delta R=R_2-R_1=+4\,\mathrm{cm}$: o raio de curvatura aumenta. Uma lente de raio maior tem superfície menos curva, coerentemente com a possibilidade de menor espessura. Alternativa correta: \textbf{E}.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{00001}
+%% \exname{QHumanitas2027Q38QuizLente}
+%% \exsection{Optica; Lentes esfericas; Vergencia; Indice de refracao; Humanitas 2027}
+%% SOURCE-VISUAL: original-crop
+%% SOURCE-IMAGE-SHA256: 5d021fbbb48fc38d8ee30b2111611491d76f454d467c68523c47307f81ec9666
+%% SOURCE: https://provas.professorfilatte.com.br/humanitas-2027-fisica-questao-38
