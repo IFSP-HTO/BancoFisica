@@ -1,0 +1,45 @@
+<<echo=FALSE, results=hide>>=
+include_supplement("Einstein2027Q38Endoscopia.png", dir="../figuras")
+include_supplement("Einstein2027Q38Fibra.png", dir="../figuras")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+A endoscopia é um exame das estruturas internas do corpo por meio de um tubo flexível (endoscópio) que possui, em sua extremidade, uma fonte de luz e uma pequena câmera, que permitem ao médico visualizar o revestimento do trato digestório. Esse exame baseia-se no fenômeno da reflexão total interna em cabos de fibras ópticas para iluminar o interior do corpo humano e transmitir imagens de alta resolução para um monitor externo por meio dessas fibras.
+
+A figura ilustra uma endoscopia do trato digestório de uma pessoa e, em detalhe, uma fibra óptica conduzindo um raio de luz. Essa fibra é composta de um núcleo (N) revestido por uma casca (C), ambos transparentes e imersos no ar.
+
+\begin{center}
+\includegraphics[width=0.51\linewidth,keepaspectratio]{Einstein2027Q38Endoscopia.png}
+\hfill
+\includegraphics[height=5.8cm,keepaspectratio]{Einstein2027Q38Fibra.png}
+\end{center}
+
+Sendo $n_{\mathrm{Ar}}$, $n_N$ e $n_C$ os índices de refração absolutos do ar, do núcleo e da casca, respectivamente, para que o fenômeno da reflexão total ocorra dentro das fibras ópticas, é necessário que:
+
+\begin{answerlist}
+  \item $n_N > n_C = n_{\mathrm{Ar}}$.
+  \item $n_N > n_C > n_{\mathrm{Ar}}$.
+  \item $n_N < n_C = n_{\mathrm{Ar}}$.
+  \item $n_N < n_C < n_{\mathrm{Ar}}$.
+  \item $n_N = n_C > n_{\mathrm{Ar}}$.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+A reflexão total na interface núcleo--casca exige que a luz vá do meio de maior índice de refração para o de menor índice, isto é, $n_N>n_C$, com ângulo de incidência superior ao ângulo limite. Em uma fibra usual, a casca de vidro ou polímero também apresenta índice maior que o do ar, $n_C>n_{\mathrm{Ar}}$. Nessa situação, a hierarquia indicada pela prova é
+\[
+n_N>n_C>n_{\mathrm{Ar}}.
+\]
+Alternativa correta: \textbf{B}. Nota conceitual: a desigualdade $n_C>n_{\mathrm{Ar}}$ descreve os materiais usuais da questão, mas a condição matemática para a reflexão total na interface núcleo--casca é $n_N>n_C$ e ângulo acima do limite; isoladamente, ela não requer comparar $n_C$ ao índice do ar.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{01000}
+%% \exname{QEinstein2027Q38QuizFibraOptica}
+%% \exsection{Optica; Reflexao total; Fibra optica; Indice de refracao; Einstein 2027}
+%% SOURCE-VISUAL: original-crop
+%% SOURCE-IMAGE-SHA256: 0926e6fd4b2d89013d7b9152db4ede93a1475ceebbf1f1a0fd4b4aaf41d7b4f1
+%% SOURCE: https://provas.professorfilatte.com.br/einstein-2027-fisica-questao-38

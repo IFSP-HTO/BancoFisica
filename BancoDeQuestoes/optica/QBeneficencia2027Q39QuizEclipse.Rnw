@@ -1,0 +1,36 @@
+<<echo=FALSE, results=hide>>=
+include_supplement("Beneficencia2027Q39Eclipse.png", dir="../figuras")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+A figura mostra, fora de escala, as posições relativas do Sol, da Lua e da superfície da Terra no momento em que ocorre um eclipse solar. No mesmo instante, um observador que estiver posicionado na região indicada pelo número 2 vê o eclipse como total, enquanto um observador que estiver posicionado nas regiões indicadas pelo número 1 vê o eclipse como parcial.
+
+\begin{center}
+\includegraphics[width=0.77\linewidth,keepaspectratio]{Beneficencia2027Q39Eclipse.png}
+\end{center}
+
+Um eclipse solar pode ser visto simultaneamente como parcial e como total na superfície da Terra porque
+
+\begin{answerlist}
+  \item a órbita da Lua ao redor da Terra é elíptica.
+  \item o Sol é uma fonte extensa de luz.
+  \item a luz proveniente do Sol sofre refração na atmosfera da Terra.
+  \item a distância entre o Sol e a Terra varia no decorrer do ano.
+  \item a Lua não é perfeitamente esférica.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+Como o Sol é uma fonte de luz \emph{extensa}, a Lua pode encobrir todo o disco solar para observadores na região de umbra (2), mas apenas parte do disco para observadores na penumbra (1). A existência simultânea dessas regiões permite observar o eclipse como total ou parcial em locais distintos. Alternativa correta: \textbf{B}. A excentricidade orbital e a variação da distância Terra--Sol não explicam a existência simultânea de umbra e penumbra.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{01000}
+%% \exname{QBeneficencia2027Q39QuizEclipse}
+%% \exsection{Optica; Propagacao retilinea; Sombra; Penumbra; Eclipse solar; Beneficencia Portuguesa 2027}
+%% SOURCE-VISUAL: original-crop
+%% SOURCE-IMAGE-SHA256: 734f90a886ae6e9626a44e79342034454533b6b7b6a509eead50f32892845b23
+%% SOURCE: https://provas.professorfilatte.com.br/beneficencia-portuguesa-2027-fisica-questao-39
