@@ -1,0 +1,43 @@
+{
+  "questions": [
+    {
+      "id": "humanitas-2027-q38",
+      "url": "https://provas.professorfilatte.com.br/humanitas-2027-fisica-questao-38",
+      "correct": "E",
+      "tags": [
+        "Optica",
+        "Lentes",
+        "Vergencia"
+      ],
+      "image_url": "https://wdlpxyudndyrkigvupfy.supabase.co/storage/v1/object/public/questoes/hum27q38.png",
+      "title": "Humanitas 2027 — questão 38 de Física",
+      "requires_visual": true
+    },
+    {
+      "id": "einstein-2027-q38",
+      "url": "https://provas.professorfilatte.com.br/einstein-2027-fisica-questao-38",
+      "correct": "B",
+      "tags": [
+        "Optica",
+        "Reflexao total",
+        "Fibra optica"
+      ],
+      "image_url": "https://wdlpxyudndyrkigvupfy.supabase.co/storage/v1/object/public/questoes/ein27q38.png",
+      "title": "Einstein 2027 — questão 38 de Física",
+      "requires_visual": true
+    },
+    {
+      "id": "beneficencia-portuguesa-2027-q39",
+      "url": "https://provas.professorfilatte.com.br/beneficencia-portuguesa-2027-fisica-questao-39",
+      "correct": "B",
+      "tags": [
+        "Optica",
+        "Sombra",
+        "Penumbra"
+      ],
+      "image_url": "https://wdlpxyudndyrkigvupfy.supabase.co/storage/v1/object/public/questoes/bp27aq39.png",
+      "title": "Beneficência Portuguesa 2027 — questão 39 de Física",
+      "requires_visual": true
+    }
+  ]
+}
