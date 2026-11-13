@@ -1,0 +1,61 @@
+<<echo=FALSE, results=hide>>=
+# OpenStax University Physics v.1, Cap. 6, problema adicional 124.
+# O esquema original usa massas 2M e M, mantidas nesta versao.
+g <- 10
+M <- sample(c(1, 2, 3, 4), 1)
+muE <- sample(c(0.10, 0.15, 0.20, 0.25), 1)
+muD <- sample(c(0.20, 0.25, 0.30, 0.35), 1)
+fatE <- muE * 2*M*g
+fatD <- muD * M*g
+opcoes <- seq(15, 80, by = 5)
+opcoes <- opcoes[opcoes > fatE + fatD]
+stopifnot(length(opcoes) > 0L)
+forca <- sample(opcoes, 1)
+acel <- (forca - fatE - fatD) / (3*M)
+tracao <- 2*M*acel + fatE
+stopifnot(acel > 0, tracao > 0)
+@
+\usepackage{graphicx}
+\begin{question}
+Dois blocos, de massas $2M$ e $M$, com
+$M=\Sexpr{M}\,\mathrm{kg}$, estao ligados por um fio ideal sobre
+uma superficie horizontal. O bloco de massa $2M$ esta a esquerda.
+Uma forca horizontal $F=\Sexpr{forca}\,\mathrm{N}$ puxa o bloco
+de massa $M$ para a direita e ambos ja se deslocam nesse sentido.
+Os coeficientes de atrito \textbf{cinetico} com o piso sao
+$\mu_{k,2M}=\Sexpr{muE}$ e $\mu_{k,M}=\Sexpr{muD}$.
+Considere $g=10\,\mathrm{m/s^2}$.
+
+Calcule:
+\begin{answerlist}
+  \item a aceleracao dos blocos, em $\mathrm{m/s^2}$;
+  \item a tracao no fio, em newtons.
+\end{answerlist}
+\end{question}
+\begin{solution}
+Cada atrito cinetico se opoe ao movimento. Os modulos sao
+$f_{2M}=\mu_{k,2M}(2M)g=\Sexpr{round(fatE,2)}\,\mathrm{N}$
+e $f_{M}=\mu_{k,M}Mg=\Sexpr{round(fatD,2)}\,\mathrm{N}$.
+Para o conjunto,
+\[F-f_{2M}-f_M=3Ma,\]
+\[a=\frac{F-2\mu_{k,2M}Mg-\mu_{k,M}Mg}{3M}
+=\Sexpr{round(acel,2)}\,\mathrm{m/s^2}.\]
+Sobre o bloco de massa $2M$ atuam a tracao para a direita e o atrito
+para a esquerda. Logo,
+\[T-f_{2M}=2Ma,\quad
+T=2M(a+\mu_{k,2M}g)=\Sexpr{round(tracao,2)}\,\mathrm{N}.\]
+\begin{answerlist}
+  \item $\Sexpr{round(acel,2)}\,\mathrm{m/s^2}$
+  \item $\Sexpr{round(tracao,2)}\,\mathrm{N}$
+\end{answerlist}
+\end{solution}
+%% META-INFORMATION
+%% Fonte: OpenStax, University Physics, v. 1, cap. 6, Additional Problems, ex. 124.
+%% Adaptacao: sorteio de M, coeficientes e F, alem da aceleracao.
+%% Figura: original ainda nao incorporada; rotulos 2M e M permanecem validos.
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{round(acel,2)}|\Sexpr{round(tracao,2)}}
+%% \extol{0.03|0.03}
+%% \exname{BFATR121DoisBlocosAtritosDiferentes}
+%% \exsection{Mecanica; Leis de Newton; Atrito; Blocos conectados}
