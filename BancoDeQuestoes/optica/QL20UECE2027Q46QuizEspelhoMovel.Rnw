@@ -1,0 +1,24 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Uma pessoa anda em direção a um espelho plano a $2{,}0\,\mathrm{m/s}$, enquanto o próprio espelho se desloca em sua direção a $1{,}0\,\mathrm{m/s}$. Inicialmente, a separação pessoa--espelho é $4{,}0\,\mathrm m$. Depois de $1{,}0\,\mathrm s$, qual será a distância entre a pessoa e sua imagem?
+
+\begin{answerlist}
+  \item $2,\mathrm m$
+  \item $6,\mathrm m$
+  \item $3,\mathrm m$
+  \item $5,\mathrm m$
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+A velocidade relativa de aproximação é $2+1=3\,\mathrm{m/s}$; após um segundo restam $4-3=1\,\mathrm m$ entre pessoa e espelho. A imagem do espelho plano está à mesma distância atrás do espelho. Logo, a distância entre a pessoa e a imagem é $2(1)=2\,\mathrm m$. Alternativa \textbf{A}.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{1000}
+%% \exname{QL20UECE2027Q46QuizEspelhoMovel}
+%% \exsection{Optica; Espelhos planos; Movimento relativo; UECE 2027.1}
+%% SOURCE-VISUAL: none
+%% SOURCE: https://provas.professorfilatte.com.br/uece-2027-1-fisica-questao-46
