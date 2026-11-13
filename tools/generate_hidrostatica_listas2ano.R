@@ -61,7 +61,14 @@ listas <- list(
   lista2 = list(
     sources = c(file.path(hidro, lista2_hidro),
                 file.path(dinam, lista2_dinam)),
-    figures = file.path(hidro, "Q05Densidade.png"),
+    figures = file.path(hidro, c(
+      "Q05Densidade.png",
+      "Q105PascalForca.png",
+      "Q106PascalDeslocamento.png",
+      "Q107EmpuxoVolume.png",
+      "Q108PesoAparente.png",
+      "Q109ClozeFracaoSubmersa.png"
+    )),
     subjects = c("Pascal: forcas", "Pascal: deslocamentos",
       "Flutuacao", "Afundar ou flutuar", "Empuxo",
       "Peso aparente", "Fracao submersa", "Continuidade e vazao",
@@ -108,6 +115,12 @@ for (nome in names(listas)) {
     encoding = "UTF-8", converter = "pandoc-mathjax",
     max_bytes = moodle_size_limit(10)
   )
+  # O conversor deixa alguns PNGs locais como src relativo. Empacotar em
+  # @@PLUGINFILE@@ evita imagens quebradas no Moodle.
+  code <- system2("python3", c("tools/embed_unresolved_moodle_images.py",
+                              shQuote(dest), shQuote(edir)))
+  if (!identical(as.integer(code), 0L)) stop("Falha ao embutir imagens em ", nome)
+
   counts <- vapply(xmls, function(f) {
     doc <- xml2::read_xml(f)
     if (xml2::xml_name(xml2::xml_root(doc)) != "quiz")

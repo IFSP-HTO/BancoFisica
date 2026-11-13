@@ -12,6 +12,25 @@ Q_Ls <- A1_cm2 * 1e-4 * v1 * 1000
 \begin{question}
 Água escoa de modo permanente por uma tubulação horizontal, sem vazamentos. A seção de entrada tem área \(\Sexpr{A1_cm2}\,\mathrm{cm^2}\) e a velocidade da água nessa seção é \(\Sexpr{v1}\,\mathrm{m/s}\). Na saída, a área diminui para \(\Sexpr{A2_cm2}\,\mathrm{cm^2}\).
 
+O esquema mostra o estreitamento de uma tubulação e a direção do escoamento, sem escala.
+
+\begin{center}
+<<fig=TRUE, width=5.4, height=2.8, echo=FALSE, eps=FALSE, results=hide>>=
+op <- par(mar = c(0.3, 0.3, 0.3, 0.3))
+plot.new(); plot.window(xlim=c(0,10), ylim=c(-2.1,2.1), asp=1)
+polygon(c(0.5,4,5.5,9.5,9.5,5.5,4,0.5),
+        c(-1.25,-1.25,-0.60,-0.60,0.60,0.60,1.25,1.25),
+        col="lightblue", border="black", lwd=2)
+arrows(1.2,0,3.0,0,lwd=2,length=0.12)
+arrows(6.5,0,8.4,0,lwd=2,length=0.12)
+text(2.25,1.55,"Secao 1",cex=0.9)
+text(7.5,1.0,"Secao 2",cex=0.9)
+text(2.25,-1.6,"A1, v1",cex=0.9)
+text(7.5,-1.10,"A2, v2",cex=0.9)
+par(op)
+@
+\end{center}
+
 Considerando a água incompressível, determine:
 \begin{answerlist}
 \item a velocidade da água na seção de saída, em \(\mathrm{m/s}\);

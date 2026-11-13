@@ -1,0 +1,24 @@
+{
+  "images": [
+    {
+      "id": "unifimes2025_pistons",
+      "page": "https://provas.professorfilatte.com.br/unifimes-2025-trindade-1o-semestre-fisica-questao-37",
+      "url": "https://wdlpxyudndyrkigvupfy.supabase.co/storage/v1/object/public/questoes/unfm25t1q37.png"
+    },
+    {
+      "id": "ufrgs2018_dynamometer",
+      "page": "https://provas.professorfilatte.com.br/ufrgs-2018-fisica-questao-10",
+      "url": "https://wdlpxyudndyrkigvupfy.supabase.co/storage/v1/object/public/questoes/ufrgs18q10.png"
+    },
+    {
+      "id": "santamarcelina2025_float",
+      "page": "https://provas.professorfilatte.com.br/santa-marcelina-2025-fisica-questao-55",
+      "url": "https://wdlpxyudndyrkigvupfy.supabase.co/storage/v1/object/public/questoes/fasm25aq55.png"
+    },
+    {
+      "id": "humanitas2025_car",
+      "page": "https://provas.professorfilatte.com.br/humanitas-2025-2o-semestre-fisica-questao-37",
+      "url": "https://wdlpxyudndyrkigvupfy.supabase.co/storage/v1/object/public/questoes/hum25bq37.png"
+    }
+  ]
+}

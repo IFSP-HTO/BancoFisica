@@ -13,6 +13,27 @@ Um reservatório grande e aberto à atmosfera contém água. Um pequeno orifíci
 
 Suponha que a superfície livre permaneça praticamente imóvel, que a pressão na superfície e na saída seja atmosférica e que as perdas por atrito sejam desprezíveis. Adote \(g=10\,\mathrm{m/s^2}\).
 
+A situação está representada no esquema (fora de escala).
+
+\begin{center}
+<<fig=TRUE, width=5, height=3.5, echo=FALSE, eps=FALSE, results=hide>>=
+op <- par(mar=c(0.2,0.2,0.2,0.2))
+plot.new(); plot.window(xlim=c(0,8), ylim=c(0,6.2), asp=1)
+rect(1.2,0.5,4.4,5.25,border=NA,col="lightblue")
+segments(1.2,0.45,1.2,5.85,lwd=2)
+segments(4.4,0.45,4.4,1.35,lwd=2)
+segments(4.4,1.6,4.4,5.85,lwd=2)
+segments(1.2,0.45,4.4,0.45,lwd=2)
+segments(1.25,5.25,4.35,5.25,col="blue",lwd=1.8)
+arrows(4.45,1.48,6.4,1.48,code=2,length=0.12,col="blue",lwd=2)
+arrows(5.15,1.50,5.15,5.25,code=3,length=0.11,lwd=1.2)
+text(5.35,3.38,"h",pos=4,cex=1.2)
+text(2.8,5.67,"superficie livre",cex=0.85)
+text(5.6,0.93,"saida",cex=0.95)
+par(op)
+@
+\end{center}
+
 Usando a equação de Bernoulli, determine:
 \begin{answerlist}
 \item a velocidade de saída da água, em \(\mathrm{m/s}\);

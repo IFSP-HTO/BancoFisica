@@ -1,0 +1,27 @@
+name: Stage original Filatte images for hydrostatics list 2
+on:
+  pull_request:
+    branches: [master]
+    paths:
+      - "tools/stage_filatte_hidro_lista2.py"
+      - "data/filatte-hidrostática-lista2-originais.json"
+      - ".github/workflows/stage-filatte-hidro-lista2.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  stage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install requests Pillow
+      - run: python tools/stage_filatte_hidro_lista2.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: filatte-hidro-lista2-originais
+          path: build/filatte-hidrostática-lista2-originais/
+          if-no-files-found: error

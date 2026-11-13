@@ -7,6 +7,8 @@ on:
       - 'BancoDeQuestoes/hidrostatica/**'
       - 'BancoDeQuestoes/hidrodinamica/**'
       - 'tools/generate_hidrostatica_listas2ano.R'
+      - 'tools/embed_unresolved_moodle_images.py'
+      - 'tools/check_hidro_lista2_media.py'
       - '.github/workflows/moodle-hidrostatica-listas2ano.yml'
   pull_request:
     branches: [master]
@@ -14,6 +16,8 @@ on:
       - 'BancoDeQuestoes/hidrostatica/**'
       - 'BancoDeQuestoes/hidrodinamica/**'
       - 'tools/generate_hidrostatica_listas2ano.R'
+      - 'tools/embed_unresolved_moodle_images.py'
+      - 'tools/check_hidro_lista2_media.py'
       - '.github/workflows/moodle-hidrostatica-listas2ano.yml'
   workflow_dispatch:
     inputs:
@@ -51,6 +55,15 @@ jobs:
           Rscript tools/generate_hidrostatica_listas2ano.R \
             --n "$VARIANTS" --seed "$SEED" \
             --out-dir build/moodle-hidrostatica-listas-2ano
+      - name: Verificar se as figuras chegaram ao XML da Lista 2
+        run: python3 tools/check_hidro_lista2_media.py build/moodle-hidrostatica-listas-2ano/lista2
+      - name: Guardar XMLs para diagnóstico mesmo em falha da auditoria
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: debug-listas-hidro-xml
+          path: build/moodle-hidrostatica-listas-2ano/
+          if-no-files-found: warn
       - name: Disponibilizar XML da Lista 1
         if: success()
         uses: actions/upload-artifact@v4

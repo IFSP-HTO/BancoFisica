@@ -6,12 +6,14 @@ on:
     paths:
       - 'BancoDeQuestoes/hidrostatica/**'
       - 'tools/generate_hidrostatica_lista2ano.R'
+      - 'tools/embed_unresolved_moodle_images.py'
       - '.github/workflows/moodle-hidrostatica-lista2ano.yml'
   pull_request:
     branches: [master]
     paths:
       - 'BancoDeQuestoes/hidrostatica/**'
       - 'tools/generate_hidrostatica_lista2ano.R'
+      - 'tools/embed_unresolved_moodle_images.py'
       - '.github/workflows/moodle-hidrostatica-lista2ano.yml'
   workflow_dispatch:
     inputs:

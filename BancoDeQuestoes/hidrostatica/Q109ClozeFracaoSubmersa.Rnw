@@ -1,6 +1,6 @@
 %% NOVO BANCOFISICA — adaptação independente; enunciado e parâmetros autorais.
 %% SOURCE-REFERENCE: https://provas.professorfilatte.com.br/humanitas-2025-2o-semestre-fisica-questao-37
-%% SOURCE-VISUAL: gerada no R/exams ou não aplicável; nenhuma imagem de terceiro é copiada.
+%% SOURCE-VISUAL: original-crop do enunciado de prova no catálogo Filatte, com procedência e SHA-256 em data/filatte-hidrostatica-lista2-audit.json.
 <<echo=FALSE, results=hide>>=
 rho <- 1000
 V <- sample(c(1.0,1.2,1.5,2.0),1)
@@ -11,7 +11,13 @@ percentual <- round(100*Vsub/V,2)
 @
 
 \begin{question}
-Uma plataforma hermética de massa total \(\Sexpr{m}\,\mathrm{kg}\) e volume externo \(\Sexpr{V}\,\mathrm{m^3}\) flutua em água de densidade \(1000\,\mathrm{kg/m^3}\), sem tocar o fundo. Despreze a massa de ar deslocado.
+Um veículo experimental fechado, semelhante ao ilustrado na fotografia, possui massa total \(\Sexpr{m}\,\mathrm{kg}\) e volume externo \(\Sexpr{V}\,\mathrm{m^3}\). Em uma emergência ele flutua em água de densidade \(1000\,\mathrm{kg/m^3}\), sem tocar o fundo. Despreze o empuxo do ar.
+
+\begin{center}
+\includegraphics[width=8cm,keepaspectratio]{Q109ClozeFracaoSubmersa.png}
+\end{center}
+
+\textit{Fotografia ilustrativa: Humanitas 2025. Ela não representa a fração submersa calculada neste problema.}
 
 Determine:
 \begin{answerlist}
@@ -37,6 +43,7 @@ A porcentagem é
 \end{answerlist}
 \end{solution}
 
+%% SOURCE-VISUAL: Filatte original diagram crop; Humanitas 2025 — https://provas.professorfilatte.com.br/humanitas-2025-2o-semestre-fisica-questao-37
 %% META-INFORMATION
 %% \extype{cloze}
 %% \exsolution{\Sexpr{Vsub}|\Sexpr{percentual}}
