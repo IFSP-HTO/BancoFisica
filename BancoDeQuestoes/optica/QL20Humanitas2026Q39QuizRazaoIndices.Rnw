@@ -1,0 +1,38 @@
+<<echo=FALSE, results=hide>>=
+include_supplement("Humanitas2026Q39Refracao.png", dir="../figuras")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+O desenho mostra a refração de luz monocromática da água para uma lâmina de vidro. Os ângulos dos raios com a normal à interface são $\theta_{\mathrm{AG}}$ e $\theta_{\mathrm{VI}}$, respectivamente. Qual é a expressão para a razão entre os índices de refração $n_{\mathrm{AG}}/n_{\mathrm{VI}}$?
+
+\begin{center}
+\includegraphics[width=0.64\linewidth,keepaspectratio]{Humanitas2026Q39Refracao.png}
+\end{center}
+
+\begin{answerlist}
+  \item $\dfrac{\theta_{\mathrm{AG}}}{\theta_{\mathrm{VI}}}$
+  \item $\dfrac{\theta_{\mathrm{VI}}}{\theta_{\mathrm{AG}}}$
+  \item $\sin\theta_{\mathrm{AG}}\,\sin\theta_{\mathrm{VI}}$
+  \item $\dfrac{\sin\theta_{\mathrm{AG}}}{\sin\theta_{\mathrm{VI}}}$
+  \item $\dfrac{\sin\theta_{\mathrm{VI}}}{\sin\theta_{\mathrm{AG}}}$
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+Pela lei de Snell, $n_{\mathrm{AG}}\sin\theta_{\mathrm{AG}}=n_{\mathrm{VI}}\sin\theta_{\mathrm{VI}}$. Portanto,
+\[
+\frac{n_{\mathrm{AG}}}{n_{\mathrm{VI}}}=\frac{\sin\theta_{\mathrm{VI}}}{\sin\theta_{\mathrm{AG}}}.
+\]
+Alternativa \textbf{E}.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{00001}
+%% \exname{QL20Humanitas2026Q39QuizRazaoIndices}
+%% \exsection{Optica; Lei de Snell; Indice relativo; Agua e vidro; Vestibular 2026}
+%% SOURCE-VISUAL: original-crop
+%% SOURCE-IMAGE-SHA256: ae28c8bdfd45dd2bc472dfdf8b44e7b18c5f607c9311f45351efeefcc07703f3
+%% SOURCE: https://provas.professorfilatte.com.br/humanitas-2026-fisica-questao-39
