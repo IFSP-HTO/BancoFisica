@@ -1,0 +1,33 @@
+<<echo=FALSE, results=hide>>=
+include_supplement("L3UFU2026Q39Jornal.png", dir="../figuras")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+Uma lente colocada sobre uma folha de jornal permite ver as letras em sua posição usual, porém menores do que aquelas observadas fora da lente, conforme a fotografia. Que tipo de lente é esse e qual é a natureza da imagem formada?
+
+\begin{center}
+\includegraphics[width=0.75\linewidth,keepaspectratio]{L3UFU2026Q39Jornal.png}
+\end{center}
+
+\begin{answerlist}
+  \item Lente divergente, imagem virtual.
+  \item Lente convergente, imagem virtual.
+  \item Lente divergente, imagem real.
+  \item Lente convergente, imagem real.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+Para objetos reais, uma lente divergente forma sempre uma imagem virtual, direita e reduzida. Já a lente convergente, para formar uma imagem virtual, precisa ter o objeto entre a lente e seu foco; nesse caso a imagem fica ampliada. A foto exibe redução sem inversão, portanto a resposta é \textbf{A}.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{1000}
+%% \exname{QL3UFU2026Q39QuizLenteDivergente}
+%% \exsection{Optica; Lentes; Imagem virtual; Lente divergente; UFU 2026-2}
+%% SOURCE-VISUAL: original-crop
+%% SOURCE-ADAPTATION: paraphrase with original source diagram
+%% SOURCE: https://provas.professorfilatte.com.br/ufu-2026-2-fisica-questao-39
