@@ -1,0 +1,59 @@
+{
+  "source_run": 43347712577,
+  "items": [
+    {
+      "id": "humanitas-2027-q38",
+      "source_sha256": "5d021fbbb48fc38d8ee30b2111611491d76f454d467c68523c47307f81ec9666",
+      "figures": [
+        {
+          "name": "Humanitas2027Q38Lente.png",
+          "box": [
+            177,
+            397,
+            509,
+            711
+          ]
+        }
+      ]
+    },
+    {
+      "id": "einstein-2027-q38",
+      "source_sha256": "0926e6fd4b2d89013d7b9152db4ede93a1475ceebbf1f1a0fd4b4aaf41d7b4f1",
+      "figures": [
+        {
+          "name": "Einstein2027Q38Endoscopia.png",
+          "box": [
+            78,
+            498,
+            689,
+            1010
+          ]
+        },
+        {
+          "name": "Einstein2027Q38Fibra.png",
+          "box": [
+            212,
+            1063,
+            543,
+            1581
+          ]
+        }
+      ]
+    },
+    {
+      "id": "beneficencia-portuguesa-2027-q39",
+      "source_sha256": "734f90a886ae6e9626a44e79342034454533b6b7b6a509eead50f32892845b23",
+      "figures": [
+        {
+          "name": "Beneficencia2027Q39Eclipse.png",
+          "box": [
+            25,
+            269,
+            559,
+            549
+          ]
+        }
+      ]
+    }
+  ]
+}
