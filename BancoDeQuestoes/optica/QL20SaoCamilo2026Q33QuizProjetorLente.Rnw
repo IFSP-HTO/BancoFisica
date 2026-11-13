@@ -1,0 +1,34 @@
+<<echo=FALSE, results=hide>>=
+include_supplement("SaoCamilo2026Q33Projetor.png", dir="../figuras")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+Um estudante projeta a imagem real de uma luminária em uma folha usando uma lente convergente. A folha está a $30\,\mathrm{cm}$ da lente. A luminária mede $80\,\mathrm{cm}$ de comprimento e sua imagem nítida mede $12\,\mathrm{cm}$, como na figura. Qual é a distância da luminária até a lente?
+
+\begin{center}
+\includegraphics[width=0.65\linewidth,keepaspectratio]{SaoCamilo2026Q33Projetor.png}
+\end{center}
+
+\begin{answerlist}
+  \item $2{,}0\,\mathrm m$
+  \item $1{,}8\,\mathrm m$
+  \item $1{,}4\,\mathrm m$
+  \item $1{,}2\,\mathrm m$
+  \item $1{,}6\,\mathrm m$
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+O aumento linear transversal em módulo é $|A|=h'/h=12/80=0{,}15$. Para uma lente delgada, $|A|=|p'/p|$. Como $p'=30\,\mathrm{cm}$, segue $p=30/0{,}15=200\,\mathrm{cm}=2{,}0\,\mathrm m$. Alternativa \textbf{A}.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{10000}
+%% \exname{QL20SaoCamilo2026Q33QuizProjetorLente}
+%% \exsection{Optica; Lente convergente; Projetor; Aumento linear; Vestibular 2026}
+%% SOURCE-VISUAL: original-crop
+%% SOURCE-IMAGE-SHA256: 4206f40a65dcaf86873cf2b1b479a60c547c15672250f93c48f4c2779f57e723
+%% SOURCE: https://provas.professorfilatte.com.br/sao-camilo-2026-fisica-questao-33
