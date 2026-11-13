@@ -1,0 +1,36 @@
+<<echo=FALSE, results=hide>>=
+include_supplement("L3SantaMarcelina2026Q57Relogio.png", dir="../figuras")
+include_supplement("L3SantaMarcelina2026Q57Digitos.png", dir="../figuras")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+Um relógio digital é colocado sobre um espelho plano horizontal (figura 1). Os algarismos de seu mostrador são formados pelos segmentos representados na figura 2. Quais algarismos permanecem com a \emph{mesma forma} na reflexão em relação ao plano horizontal do espelho?
+
+\begin{center}
+\includegraphics[width=0.47\linewidth,keepaspectratio]{L3SantaMarcelina2026Q57Relogio.png}
+\includegraphics[width=0.48\linewidth,keepaspectratio]{L3SantaMarcelina2026Q57Digitos.png}
+\end{center}
+
+\begin{answerlist}
+  \item 0, 1, 2, 5 e 8.
+  \item 0, 1 e 8.
+  \item 0, 1, 3 e 8.
+  \item 0 e 8.
+  \item 0, 6, 8 e 9.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+A reflexão no plano horizontal corresponde à inversão de cima para baixo do algarismo; a simetria lateral não é a relevante. Nos caracteres exibidos, apenas $0$, $1$, $3$ e $8$ são simétricos em relação à linha horizontal mediana. Portanto, a alternativa correta é \textbf{C}.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{00100}
+%% \exname{QL3SantaMarcelina2026Q57QuizDigitosEspelho}
+%% \exsection{Optica; Espelhos planos; Simetria horizontal; Mostrador digital; Santa Marcelina 2026}
+%% SOURCE-VISUAL: original-crop
+%% SOURCE-ADAPTATION: paraphrase with original source diagram
+%% SOURCE: https://provas.professorfilatte.com.br/santa-marcelina-2026-fisica-questao-57
