@@ -1,0 +1,37 @@
+%% NOVO BANCOFISICA — adaptação independente; enunciado e parâmetros autorais.
+%% SOURCE-REFERENCE: https://provas.professorfilatte.com.br/acafe-2025-inverno-fisica-questao-30
+%% SOURCE-VISUAL: gerada no R/exams ou não aplicável; nenhuma imagem de terceiro é copiada.
+<<echo=FALSE, results=hide>>=
+m <- sample(c(3,4,5,6),1)
+volume_cm3 <- sample(c(500,1000,1500),1)
+rho <- 1000
+g <- 10
+P <- m*g
+E <- rho*g*volume_cm3*1e-6
+T <- round(P-E,2)
+stopifnot(T>0)
+@
+
+\begin{question}
+Um objeto de massa \(\Sexpr{m}\,\mathrm{kg}\) e volume \(\Sexpr{volume_cm3}\,\mathrm{cm^3}\) fica completamente imerso em água, suspenso por um dinamômetro. A densidade da água é \(1000\,\mathrm{kg/m^3}\). Adote \(g=10\,\mathrm{m/s^2}\).
+
+Qual é a leitura do dinamômetro, em newtons?
+\end{question}
+
+\begin{solution}
+Em equilíbrio, a tração registrada no dinamômetro é \(T=P-E\).
+\[
+P=\Sexpr{m}\cdot10=\Sexpr{P}\,\mathrm N,\quad
+E=1000\cdot10\cdot(\Sexpr{volume_cm3}\times10^{-6})
+=\Sexpr{E}\,\mathrm N.
+\]
+Logo, \(T=\Sexpr{P}-\Sexpr{E}=\Sexpr{T}\,\mathrm N\).
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{T}}
+%% \extol{0.05}
+%% \exname{Q108PesoAparente}
+%% \exsection{Hidrostatica; Principio de Arquimedes; Peso aparente; Dinamometro}
+%% \exusepackage[utf8]{inputenc}
