@@ -1,0 +1,25 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Uma radiação monocromática entra em um material onde seu comprimento de onda é $500\,\mathrm{nm}$ e sua velocidade é $2{,}0\times10^8\,\mathrm{m/s}$. No ar, considere $3{,}0\times10^8\,\mathrm{m/s}$. O índice de refração do material (em relação ao ar) e a frequência da radiação são, respectivamente,
+
+\begin{answerlist}
+  \item $2{,}00$ e $4{,}0\times10^{14}\,\mathrm{Hz}$.
+  \item $3{,}00$ e $2{,}0\times10^{14}\,\mathrm{Hz}$.
+  \item $2{,}50$ e $3{,}0\times10^{14}\,\mathrm{Hz}$.
+  \item $1{,}05$ e $2{,}0\times10^{14}\,\mathrm{Hz}$.
+  \item $1{,}50$ e $4{,}0\times10^{14}\,\mathrm{Hz}$.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+O índice é $n=c/v=(3{,}0\times10^8)/(2{,}0\times10^8)=1{,}50$. Pela relação ondulatória $f=v/\lambda=2{,}0\times10^8/(500\times10^{-9})=4{,}0\times10^{14}\,\mathrm{Hz}$. Alternativa \textbf{E}.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{00001}
+%% \exname{QL20Unitau2026Q45QuizIndiceFrequencia}
+%% \exsection{Optica; Refracao; Indice de refracao; Frequencia; UNITAU 2026 inverno}
+%% SOURCE-VISUAL: none
+%% SOURCE: https://provas.professorfilatte.com.br/unitau-2026-inverno-fisica-questao-45
