@@ -7,8 +7,22 @@ A2 <- A1 - 1
 limite <- sample(seq(5000, 15000, by = 2000), 1)
 dens_agua <- 1000
 g <- 10
-v_total <- (A1 + A2) * sample(1:5, 1)
-v_esfera <- v_total / 5
+## Gerar apenas configurações fisicamente possíveis para a esfera no fundo de S1.
+## O raio da esfera deve ser menor que o raio de S1 e a água deve
+## alcançar pelo menos o diâmetro da esfera após o equilíbrio.
+niveis <- 1:5
+volumes_agua <- (A1 + A2) * niveis
+volumes_esfera <- volumes_agua / 5
+raio_S1 <- sqrt(A1 / pi)
+raios_esfera <- (3 * volumes_esfera / (4 * pi))^(1/3)
+alturas_finais <- (volumes_agua + volumes_esfera) / (A1 + A2)
+configuracoes_validas <- which(
+  raios_esfera < raio_S1 & 2 * raios_esfera <= alturas_finais
+)
+stopifnot(length(configuracoes_validas) > 0L)
+indice <- configuracoes_validas[sample.int(length(configuracoes_validas), 1)]
+v_total <- volumes_agua[indice]
+v_esfera <- volumes_esfera[indice]
 
 ## Respostas
 H1 <- limite / (dens_agua * g)

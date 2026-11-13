@@ -3,10 +3,14 @@
 ## Física central: densidade e volume deslocado em proveta.
 
 massa <- sample(seq(54, 162, by = 6), 1)
-rho <- sample(c(2.7, 3.0, 4.5, 5.4, 7.8, 8.9), 1)
+rho_referencia <- sample(c(2.7, 3.0, 4.5, 5.4, 7.8, 8.9), 1)
 V0 <- sample(seq(30, 80, by = 5), 1)
-Vobj <- massa / rho
+## O volume deslocado é lido com uma casa decimal na proveta.
+## Recalcular a densidade a partir dessa leitura evita que o gabarito
+## use uma precisão não disponível ao estudante.
+Vobj <- round(massa / rho_referencia, 1)
 Vf <- V0 + Vobj
+rho_medida <- round(massa / Vobj, 2)
 fmt <- function(x, d = 1) formatC(x, format = "f", digits = d, decimal.mark = ",")
 @
 \usepackage[utf8]{inputenc}
@@ -36,19 +40,19 @@ A densidade é dada por
 \]
 Assim,
 \[
-\rho = \frac{\Sexpr{massa}}{\Sexpr{fmt(Vobj)}} = \Sexpr{fmt(rho)}\,\mathrm{g/cm^3}.
+\rho = \frac{\Sexpr{massa}}{\Sexpr{fmt(Vobj)}} = \Sexpr{fmt(rho_medida, 2)}\,\mathrm{g/cm^3}.
 \]
 
 \begin{answerlist}
   \item $\Sexpr{fmt(Vobj)}\,\mathrm{cm^3}$
-  \item $\Sexpr{fmt(rho)}\,\mathrm{g/cm^3}$
+  \item $\Sexpr{fmt(rho_medida, 2)}\,\mathrm{g/cm^3}$
 \end{answerlist}
 
 \end{solution}
 
 %% META-INFORMATION
 %% \extype{cloze}
-%% \exsolution{\Sexpr{round(Vobj, 2)}|\Sexpr{round(rho, 2)}}
+%% \exsolution{\Sexpr{round(Vobj, 2)}|\Sexpr{rho_medida}}
 %% \exclozetype{num|num}
 %% \extol{0.05|0.05}
 %% \exname{Q92ClozeDensidadeProveta}
