@@ -15,11 +15,11 @@ from pathlib import Path
 
 REQUIRED = {
     "Q05Densidade": "Q05Densidade.png",
-    "Q105PascalForca": "Q105PascalForca_Filatte.png",
-    "Q106PascalDeslocamento": "Q106PascalDeslocamento_Filatte.png",
-    "Q107EmpuxoVolume": "Q107EmpuxoVolume_Filatte.png",
-    "Q108PesoAparente": "Q108PesoAparente_Filatte.png",
-    "Q109ClozeFracaoSubmersa": "Q109ClozeFracaoSubmersa_Filatte.png",
+    "Q105PascalForca": "Q105PascalForca.png",
+    "Q106PascalDeslocamento": "Q106PascalDeslocamento.png",
+    "Q107EmpuxoVolume": "Q107EmpuxoVolume.png",
+    "Q108PesoAparente": "Q108PesoAparente.png",
+    "Q109ClozeFracaoSubmersa": "Q109ClozeFracaoSubmersa.png",
     "Q02ClozeContinuidadeVazao": None,   # plot do R/exams
     "Q03ClozeBernoulliReservatorio": None,  # plot do R/exams
 }
