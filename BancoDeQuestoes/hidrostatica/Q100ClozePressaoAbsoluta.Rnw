@@ -23,7 +23,7 @@ Determine, em quilopascals:
 \begin{solution}
 A pressão manométrica é \(p_m=\rho gh\), e a absoluta inclui a pressão atmosférica:
 \[
-p_m=1000\cdot10\cdot\Sexpr{h}=\Sexpr{pman}\,\mathrm{kPa},
+p_m=\frac{1000\cdot10\cdot\Sexpr{h}}{1000}=\Sexpr{pman}\,\mathrm{kPa},
 \qquad
 p_{\mathrm{abs}}=100+\Sexpr{pman}=\Sexpr{pabs}\,\mathrm{kPa}.
 \]
