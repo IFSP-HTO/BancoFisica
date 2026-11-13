@@ -14,7 +14,7 @@ O gráfico abaixo mostra a pressão \emph{manométrica} de um líquido em funç�
 
 \begin{figure}[h!]
 \centering
-<<fig=TRUE, width=5.4, height=3.6, echo=FALSE, results=hide>>=
+<<fig=TRUE, width=5.4, height=3.6, echo=FALSE, eps=FALSE, results=hide>>=
 op <- par(mar=c(4.3,4.4,0.6,0.6))
 plot(c(0,h),c(0,p_kpa),type="l",lwd=2,xlim=c(0,h*1.25),
      ylim=c(0,p_kpa*1.3),xlab="Profundidade (m)",
