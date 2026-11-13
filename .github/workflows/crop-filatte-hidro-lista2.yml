@@ -28,6 +28,11 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add BancoDeQuestoes/hidrostatica/Q*Filatte.png data/filatte-hidrostatica-lista2-audit.json
+          git add BancoDeQuestoes/hidrostatica/Q105PascalForca.png \
+                  BancoDeQuestoes/hidrostatica/Q106PascalDeslocamento.png \
+                  BancoDeQuestoes/hidrostatica/Q107EmpuxoVolume.png \
+                  BancoDeQuestoes/hidrostatica/Q108PesoAparente.png \
+                  BancoDeQuestoes/hidrostatica/Q109ClozeFracaoSubmersa.png \
+                  data/filatte-hidrostatica-lista2-audit.json
           git commit -m 'Inclui cinco recortes auditados das figuras originais Filatte'
           git push origin HEAD:fix/lista2-figuras-filatte-2026-11-13
