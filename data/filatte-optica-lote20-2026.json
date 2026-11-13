@@ -1,0 +1,287 @@
+{
+  "lot": "optica-2026-2027-lote20",
+  "target_count": 20,
+  "notes": "URLs e gabaritos conferidos a partir das paginas de questoes; imagens completas estagiadas para inspeção e recorte posterior; nenhum enunciado gerado neste passo.",
+  "questions": [
+    {
+      "id": "uece-2027-1-q46",
+      "url": "https://provas.professorfilatte.com.br/uece-2027-1-fisica-questao-46",
+      "correct": "A",
+      "title": "UECE 2027.1 — questão 46 de Física",
+      "topic": "Espelho plano em movimento",
+      "subject": "Óptica",
+      "tags": [
+        "Optica",
+        "Espelhos planos"
+      ],
+      "requires_visual": true,
+      "image_url": "https://wdlpxyudndyrkigvupfy.supabase.co/storage/v1/object/public/questoes/uece27aq46.png"
+    },
+    {
+      "id": "unesp-2026-q79",
+      "url": "https://provas.professorfilatte.com.br/unesp-2026-fisica-questao-79",
+      "correct": "C",
+      "title": "UNESP 2026 — questão 79 de Física",
+      "topic": "Espelho convexo e velocidade",
+      "subject": "Óptica",
+      "tags": [
+        "Optica",
+        "Espelhos esfericos"
+      ],
+      "requires_visual": true,
+      "image_url": "https://wdlpxyudndyrkigvupfy.supabase.co/storage/v1/object/public/questoes/un26q79.png"
+    },
+    {
+      "id": "unicamp-2026-q63",
+      "url": "https://provas.professorfilatte.com.br/unicamp-2026-fisica-questao-63",
+      "correct": "A",
+      "title": "UNICAMP 2026 — questão 63 de Física",
+      "topic": "Lentes delgadas e microscopia",
+      "subject": "Óptica",
+      "tags": [
+        "Optica",
+        "Lentes"
+      ],
+      "requires_visual": true,
+      "image_url": "https://wdlpxyudndyrkigvupfy.supabase.co/storage/v1/object/public/questoes/uni26q63.png"
+    },
+    {
+      "id": "espcex-2026-2027-q28",
+      "url": "https://provas.professorfilatte.com.br/espcex-2026-2027-fisica-questao-28",
+      "correct": "B",
+      "title": "EsPCEx 2026/2027 — questão 28 de Física",
+      "topic": "Reflexao total em aquario",
+      "subject": "Óptica",
+      "tags": [
+        "Optica",
+        "Refracao"
+      ],
+      "requires_visual": true,
+      "image_url": "https://wdlpxyudndyrkigvupfy.supabase.co/storage/v1/object/public/questoes/epx26q28.png"
+    },
+    {
+      "id": "einstein-2026-q38",
+      "url": "https://provas.professorfilatte.com.br/einstein-2026-fisica-questao-38",
+      "correct": "D",
+      "title": "Einstein 2026 — questão 38 de Física",
+      "topic": "Imagens em espelho plano",
+      "subject": "Óptica",
+      "tags": [
+        "Optica",
+        "Espelhos planos"
+      ],
+      "requires_visual": true,
+      "image_url": "https://wdlpxyudndyrkigvupfy.supabase.co/storage/v1/object/public/questoes/ein26q38.png"
+    },
+    {
+      "id": "famerp-2026-q67",
+      "url": "https://provas.professorfilatte.com.br/famerp-2026-fisica-questao-67",
+      "correct": "D",
+      "title": "FAMERP 2026 — questão 67 de Física",
+      "topic": "Imagem em espelho convexo",
+      "subject": "Óptica",
+      "tags": [
+        "Optica",
+        "Espelhos esfericos"
+      ],
+      "requires_visual": true,
+      "image_url": "https://wdlpxyudndyrkigvupfy.supabase.co/storage/v1/object/public/questoes/fmrp26q67.png"
+    },
+    {
+      "id": "famema-2026-q39",
+      "url": "https://provas.professorfilatte.com.br/famema-2026-fisica-questao-39",
+      "correct": "C",
+      "title": "FAMEMA 2026 — questão 39 de Física",
+      "topic": "Propagacao retilinea e iluminacao",
+      "subject": "Óptica",
+      "tags": [
+        "Optica",
+        "Propagacao retilinea"
+      ],
+      "requires_visual": true,
+      "image_url": "https://wdlpxyudndyrkigvupfy.supabase.co/storage/v1/object/public/questoes/fmma26q39.png"
+    },
+    {
+      "id": "unitau-2026-inverno-q45",
+      "url": "https://provas.professorfilatte.com.br/unitau-2026-inverno-fisica-questao-45",
+      "correct": "E",
+      "title": "UNITAU 2026 Inverno — questão 45 de Física",
+      "topic": "Indice de refracao e frequencia",
+      "subject": "Óptica",
+      "tags": [
+        "Optica",
+        "Refracao"
+      ],
+      "requires_visual": true,
+      "image_url": "https://wdlpxyudndyrkigvupfy.supabase.co/storage/v1/object/public/questoes/utau26iq45.png"
+    },
+    {
+      "id": "fmabc-2026-q57",
+      "url": "https://provas.professorfilatte.com.br/fmabc-2026-fisica-questao-57",
+      "correct": "C",
+      "title": "FMABC 2026 — questão 57 de Física",
+      "topic": "Lupa e aumento linear",
+      "subject": "Óptica",
+      "tags": [
+        "Optica",
+        "Instrumentos opticos"
+      ],
+      "requires_visual": true,
+      "image_url": "https://wdlpxyudndyrkigvupfy.supabase.co/storage/v1/object/public/questoes/fabc26q57.png"
+    },
+    {
+      "id": "santa-casa-2026-q65",
+      "url": "https://provas.professorfilatte.com.br/santa-casa-2026-fisica-questao-65",
+      "correct": "D",
+      "title": "Santa Casa 2026 — questão 65 de Física",
+      "topic": "Espelho plano e campo visual",
+      "subject": "Óptica",
+      "tags": [
+        "Optica",
+        "Espelhos planos"
+      ],
+      "requires_visual": true,
+      "image_url": "https://wdlpxyudndyrkigvupfy.supabase.co/storage/v1/object/public/questoes/sc26q65.png"
+    },
+    {
+      "id": "santa-casa-2026-q66",
+      "url": "https://provas.professorfilatte.com.br/santa-casa-2026-fisica-questao-66",
+      "correct": "A",
+      "title": "Santa Casa 2026 — questão 66 de Física",
+      "topic": "Lei de Snell e angulo limite",
+      "subject": "Óptica",
+      "tags": [
+        "Optica",
+        "Refracao"
+      ],
+      "requires_visual": true,
+      "image_url": "https://wdlpxyudndyrkigvupfy.supabase.co/storage/v1/object/public/questoes/sc26q66.png"
+    },
+    {
+      "id": "humanitas-2026-q39",
+      "url": "https://provas.professorfilatte.com.br/humanitas-2026-fisica-questao-39",
+      "correct": "E",
+      "title": "Humanitas 2026 — questão 39 de Física",
+      "topic": "Razao de indices de refracao",
+      "subject": "Óptica",
+      "tags": [
+        "Optica",
+        "Refracao"
+      ],
+      "requires_visual": true,
+      "image_url": "https://wdlpxyudndyrkigvupfy.supabase.co/storage/v1/object/public/questoes/hum26aq39.png"
+    },
+    {
+      "id": "sao-camilo-2026-q33",
+      "url": "https://provas.professorfilatte.com.br/sao-camilo-2026-fisica-questao-33",
+      "correct": "A",
+      "title": "Sao Camilo 2026 — questão 33 de Física",
+      "topic": "Lente convergente e projetor",
+      "subject": "Óptica",
+      "tags": [
+        "Optica",
+        "Lentes"
+      ],
+      "requires_visual": true,
+      "image_url": "https://wdlpxyudndyrkigvupfy.supabase.co/storage/v1/object/public/questoes/scam26aq33.png"
+    },
+    {
+      "id": "uscs-2026-q38",
+      "url": "https://provas.professorfilatte.com.br/uscs-2026-fisica-questao-38",
+      "correct": "B",
+      "title": "USCS 2026 — questão 38 de Física",
+      "topic": "Campo iluminado por espelho plano",
+      "subject": "Óptica",
+      "tags": [
+        "Optica",
+        "Espelhos planos"
+      ],
+      "requires_visual": true,
+      "image_url": "https://wdlpxyudndyrkigvupfy.supabase.co/storage/v1/object/public/questoes/uscs26aq38.png"
+    },
+    {
+      "id": "unimes-2026-q39",
+      "url": "https://provas.professorfilatte.com.br/unimes-2026-fisica-questao-39",
+      "correct": "A",
+      "title": "Unimes 2026 — questão 39 de Física",
+      "topic": "Indice de refracao absoluto",
+      "subject": "Óptica",
+      "tags": [
+        "Optica",
+        "Refracao"
+      ],
+      "requires_visual": true,
+      "image_url": "https://wdlpxyudndyrkigvupfy.supabase.co/storage/v1/object/public/questoes/unimes26q39.png"
+    },
+    {
+      "id": "sirio-libanes-2026-q38",
+      "url": "https://provas.professorfilatte.com.br/sirio-libanes-2026-fisica-questao-38",
+      "correct": "D",
+      "title": "Sirio-Libanes 2026 — questão 38 de Física",
+      "topic": "Espelho esferico convexo",
+      "subject": "Óptica",
+      "tags": [
+        "Optica",
+        "Espelhos esfericos"
+      ],
+      "requires_visual": true,
+      "image_url": "https://wdlpxyudndyrkigvupfy.supabase.co/storage/v1/object/public/questoes/sirio26aq38.png"
+    },
+    {
+      "id": "univesp-2026-q55",
+      "url": "https://provas.professorfilatte.com.br/univesp-2026-fisica-questao-55",
+      "correct": "C",
+      "title": "Univesp 2026 — questão 55 de Física",
+      "topic": "Posicao de imagem em espelho plano",
+      "subject": "Óptica",
+      "tags": [
+        "Optica",
+        "Espelhos planos"
+      ],
+      "requires_visual": true,
+      "image_url": "https://wdlpxyudndyrkigvupfy.supabase.co/storage/v1/object/public/questoes/univ26q55.png"
+    },
+    {
+      "id": "uece-2026-1-q42",
+      "url": "https://provas.professorfilatte.com.br/uece-2026-1-fisica-questao-42",
+      "correct": "D",
+      "title": "UECE 2026.1 — questão 42 de Física",
+      "topic": "Velocidade na refracao",
+      "subject": "Óptica",
+      "tags": [
+        "Optica",
+        "Refracao"
+      ],
+      "requires_visual": true,
+      "image_url": "https://wdlpxyudndyrkigvupfy.supabase.co/storage/v1/object/public/questoes/uece26aq42.png"
+    },
+    {
+      "id": "uece-2026-2-q41",
+      "url": "https://provas.professorfilatte.com.br/uece-2026-2-fisica-questao-41",
+      "correct": "A",
+      "title": "UECE 2026.2 — questão 41 de Física",
+      "topic": "Raio notavel do espelho concavo",
+      "subject": "Óptica",
+      "tags": [
+        "Optica",
+        "Espelhos esfericos"
+      ],
+      "requires_visual": true,
+      "image_url": "https://wdlpxyudndyrkigvupfy.supabase.co/storage/v1/object/public/questoes/uece26bq41.png"
+    },
+    {
+      "id": "santa-casa-2026-outros-cursos-q51",
+      "url": "https://provas.professorfilatte.com.br/santa-casa-2026-outros-cursos-fisica-questao-51",
+      "correct": "D",
+      "title": "Santa Casa 2026 Outros Cursos — questão 51 de Física",
+      "topic": "Concha metalica concava e convexa",
+      "subject": "Óptica",
+      "tags": [
+        "Optica",
+        "Espelhos esfericos"
+      ],
+      "requires_visual": true,
+      "image_url": "https://wdlpxyudndyrkigvupfy.supabase.co/storage/v1/object/public/questoes/sc26oq51.png"
+    }
+  ]
+}
