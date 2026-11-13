@@ -11,6 +11,10 @@ d1 <- f*d2
 Dois êmbolos estão ligados por um fluido incompressível. A área do êmbolo maior é \(\Sexpr{f}\) vezes a área do menor. O menor é empurrado \(\Sexpr{d1}\,\mathrm{cm}\) para baixo.
 
 Quanto o êmbolo maior sobe, em centímetros? Despreze vazamentos.
+
+\begin{center}\includegraphics[width=9cm,keepaspectratio]{Q106PascalDeslocamento_Filatte.png}\end{center}
+
+\textit{Esquema dos dois êmbolos: UNIFIMES 2025; os deslocamentos são informados no texto.}
 \end{question}
 
 \begin{solution}
@@ -24,6 +28,7 @@ d_2=\frac{\Sexpr{d1}}{\Sexpr{f}}=\Sexpr{d2}\,\mathrm{cm}.
 \]
 \end{solution}
 
+%% SOURCE-VISUAL: Filatte original diagram crop; UNIFIMES 2025 — https://provas.professorfilatte.com.br/unifimes-2025-trindade-1o-semestre-fisica-questao-37
 %% META-INFORMATION
 %% \extype{num}
 %% \exsolution{\Sexpr{d2}}
