@@ -1,0 +1,47 @@
+%% NOVO BANCOFISICA — adaptação independente; enunciado e parâmetros autorais.
+%% SOURCE-REFERENCE: https://provas.professorfilatte.com.br/humanitas-2025-2o-semestre-fisica-questao-37
+%% SOURCE-VISUAL: gerada no R/exams ou não aplicável; nenhuma imagem de terceiro é copiada.
+<<echo=FALSE, results=hide>>=
+rho <- 1000
+V <- sample(c(1.0,1.2,1.5,2.0),1)
+fracao <- sample(c(0.2,0.25,0.3,0.4,0.5,0.6),1)
+m <- round(rho*V*fracao,2)
+Vsub <- round(m/rho,3)
+percentual <- round(100*Vsub/V,2)
+@
+
+\begin{question}
+Uma plataforma hermética de massa total \(\Sexpr{m}\,\mathrm{kg}\) e volume externo \(\Sexpr{V}\,\mathrm{m^3}\) flutua em água de densidade \(1000\,\mathrm{kg/m^3}\), sem tocar o fundo. Despreze a massa de ar deslocado.
+
+Determine:
+\begin{answerlist}
+\item o volume submerso, em \(\mathrm{m^3}\);
+\item a porcentagem do volume total que fica submersa.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+Enquanto a plataforma flutua em equilíbrio, \(E=P\):
+\[
+\rho gV_s=mg\quad\Rightarrow\quad
+V_s=\frac{\Sexpr{m}}{1000}=\Sexpr{Vsub}\,\mathrm{m^3}.
+\]
+A porcentagem é
+\[
+100\frac{V_s}{V}=100\frac{\Sexpr{Vsub}}{\Sexpr{V}}
+=\Sexpr{percentual}\%.
+\]
+\begin{answerlist}
+\item \(\Sexpr{Vsub}\,\mathrm{m^3}\).
+\item \(\Sexpr{percentual}\%\).
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{\Sexpr{Vsub}|\Sexpr{percentual}}
+%% \exclozetype{num|num}
+%% \extol{0.01|0.05}
+%% \exname{Q109ClozeFracaoSubmersa}
+%% \exsection{Hidrostatica; Principio de Arquimedes; Flutuacao; Fracao submersa}
+%% \exusepackage[utf8]{inputenc}
