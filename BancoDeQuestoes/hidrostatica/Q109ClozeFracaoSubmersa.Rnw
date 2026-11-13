@@ -14,7 +14,7 @@ percentual <- round(100*Vsub/V,2)
 Um veículo experimental fechado, semelhante ao ilustrado na fotografia, possui massa total \(\Sexpr{m}\,\mathrm{kg}\) e volume externo \(\Sexpr{V}\,\mathrm{m^3}\). Em uma emergência ele flutua em água de densidade \(1000\,\mathrm{kg/m^3}\), sem tocar o fundo. Despreze o empuxo do ar.
 
 \begin{center}
-\includegraphics[width=8cm,keepaspectratio]{Q109ClozeFracaoSubmersa_Filatte.png}
+\includegraphics[width=8cm,keepaspectratio]{Q109ClozeFracaoSubmersa.png}
 \end{center}
 
 \textit{Fotografia ilustrativa: Humanitas 2025. Ela não representa a fração submersa calculada neste problema.}
