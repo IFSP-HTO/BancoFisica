@@ -1,0 +1,43 @@
+{
+  "questions": [
+    {
+      "id": "humanitas-2027-q38",
+      "url": "https://provas.professorfilatte.com.br/humanitas-2027-fisica-questao-38",
+      "correct": "E",
+      "tags": [
+        "Optica",
+        "Lentes",
+        "Vergencia"
+      ]
+    },
+    {
+      "id": "einstein-2027-q38",
+      "url": "https://provas.professorfilatte.com.br/einstein-2027-fisica-questao-38",
+      "correct": "B",
+      "tags": [
+        "Optica",
+        "Reflexao total",
+        "Fibra optica"
+      ]
+    },
+    {
+      "id": "beneficencia-portuguesa-2027-q39",
+      "url": "https://provas.professorfilatte.com.br/beneficencia-portuguesa-2027-fisica-questao-39",
+      "correct": "B",
+      "tags": [
+        "Optica",
+        "Sombra",
+        "Penumbra"
+      ]
+    },
+    {
+      "id": "uece-2027-1-q46",
+      "url": "https://provas.professorfilatte.com.br/uece-2027-1-fisica-questao-46",
+      "correct": "A",
+      "tags": [
+        "Optica",
+        "Espelho plano"
+      ]
+    }
+  ]
+}
