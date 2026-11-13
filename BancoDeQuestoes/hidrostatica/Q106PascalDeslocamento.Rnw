@@ -1,0 +1,33 @@
+%% NOVO BANCOFISICA — adaptação independente; enunciado e parâmetros autorais.
+%% SOURCE-REFERENCE: https://provas.professorfilatte.com.br/puc-sp-2011-fisica-questao-17
+%% SOURCE-VISUAL: gerada no R/exams ou não aplicável; nenhuma imagem de terceiro é copiada.
+<<echo=FALSE, results=hide>>=
+f <- sample(3:8,1)
+d2 <- sample(c(4,5,6,8),1) # cm
+d1 <- f*d2
+@
+
+\begin{question}
+Dois êmbolos estão ligados por um fluido incompressível. A área do êmbolo maior é \(\Sexpr{f}\) vezes a área do menor. O menor é empurrado \(\Sexpr{d1}\,\mathrm{cm}\) para baixo.
+
+Quanto o êmbolo maior sobe, em centímetros? Despreze vazamentos.
+\end{question}
+
+\begin{solution}
+O volume que sai do êmbolo menor entra no maior:
+\[
+A_1d_1=A_2d_2.
+\]
+Como \(A_2=\Sexpr{f}A_1\),
+\[
+d_2=\frac{\Sexpr{d1}}{\Sexpr{f}}=\Sexpr{d2}\,\mathrm{cm}.
+\]
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{d2}}
+%% \extol{0.05}
+%% \exname{Q106PascalDeslocamento}
+%% \exsection{Hidrostatica; Principio de Pascal; Conservacao de volume; Deslocamentos}
+%% \exusepackage[utf8]{inputenc}
