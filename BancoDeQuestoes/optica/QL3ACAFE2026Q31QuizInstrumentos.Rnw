@@ -1,0 +1,39 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Analise as proposições sobre instrumentos ópticos clássicos:
+
+I. Uma lupa convergente pode formar uma imagem virtual, direita e ampliada.
+
+II. Em um microscópio composto, a objetiva forma uma imagem intermediária real e invertida, ampliada pela ocular; a imagem final observada é virtual e invertida em relação ao objeto.
+
+III. A luneta astronômica de duas lentes convergentes fornece necessariamente imagem final real e invertida.
+
+IV. Em geral, a objetiva de um microscópio tem distância focal menor que a ocular, enquanto a objetiva de uma luneta astronômica tem distância focal maior que a ocular.
+
+V. A luneta de Galileu utiliza ocular divergente e fornece imagem final direita.
+
+VI. A ocular da luneta de Galileu tem vergência positiva e a da luneta astronômica, negativa.
+
+Quais proposições são verdadeiras?
+
+\begin{answerlist}
+  \item Somente I, III e VI.
+  \item Somente III, IV e V.
+  \item Somente I, II, IV e V.
+  \item Somente II e VI.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+I é verdadeira: lupa é uma lente convergente em regime de imagem virtual. II é verdadeira: no microscópio, a objetiva forma imagem real e invertida, e a ocular amplia-a. III é falsa: no ajuste visual usual, a imagem final da luneta astronômica é virtual, não real. IV é verdadeira pela escolha das distâncias focais dos dois instrumentos. V é verdadeira para a luneta galileana. VI é falsa: a ocular divergente possui vergência negativa, e a convergente, positiva. Logo I, II, IV e V são verdadeiras, alternativa \textbf{C}.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{0010}
+%% \exname{QL3ACAFE2026Q31QuizInstrumentos}
+%% \exsection{Optica; Instrumentos opticos; Microscopia; Luneta; Vergencia; ACAFE 2026 Verao Q31}
+%% SOURCE-VISUAL: none
+%% SOURCE-ADAPTATION: pedagogical paraphrase preserving data and answer
+%% SOURCE: https://provas.professorfilatte.com.br/acafe-2026-verao-fisica-questao-31
