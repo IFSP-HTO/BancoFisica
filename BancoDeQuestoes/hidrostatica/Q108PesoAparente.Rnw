@@ -18,7 +18,7 @@ Um objeto de massa \(\Sexpr{m}\,\mathrm{kg}\) e volume \(\Sexpr{volume_cm3}\,\ma
 Qual é a leitura do dinamômetro, em newtons?
 
 \begin{center}
-\includegraphics[width=8cm,keepaspectratio]{Q108PesoAparente_Filatte.png}
+\includegraphics[width=8cm,keepaspectratio]{Q108PesoAparente.png}
 \end{center}
 
 \textit{Esquema de UFRGS 2018. As leituras fixas da imagem original foram ocultadas: use os valores sorteados neste enunciado.}
