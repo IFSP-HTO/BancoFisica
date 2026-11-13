@@ -1,0 +1,38 @@
+<<echo=FALSE, results=hide>>=
+include_supplement("UNESP2026Q79Carro.png", dir="../figuras")
+include_supplement("UNESP2026Q79Espelho.png", dir="../figuras")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+Um automóvel dá marcha à ré e se aproxima perpendicularmente de um muro com velocidade constante. O espelho lateral convexo do carro produz imagens virtuais do muro. Na situação inicial, a distância da imagem ao espelho é $8/11\,\mathrm m$; dois segundos depois, essa distância é $20/29\,\mathrm m$. As figuras ilustram os instantes e a geometria.
+
+O espelho possui distância focal $f=-0{,}8\,\mathrm m$. Qual é o módulo da velocidade do automóvel?
+
+\begin{center}
+\includegraphics[width=0.68\linewidth,keepaspectratio]{UNESP2026Q79Carro.png}
+\includegraphics[width=0.74\linewidth,keepaspectratio]{UNESP2026Q79Espelho.png}
+\end{center}
+
+\begin{answerlist}
+  \item $0{,}5\,\mathrm{m/s}$
+  \item $1{,}2\,\mathrm{m/s}$
+  \item $1{,}5\,\mathrm{m/s}$
+  \item $0{,}8\,\mathrm{m/s}$
+  \item $1{,}0\,\mathrm{m/s}$
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+A imagem de um espelho convexo é virtual, portanto $p'<0$. Pela equação dos espelhos, $1/p=1/f-1/p'$. No primeiro instante, $1/p_0=-1/0{,}8+11/8=1/8$, logo $p_0=8\,\mathrm m$. No segundo, $1/p_1=-1/0{,}8+29/20=1/5$, logo $p_1=5\,\mathrm m$. Assim, em $2\,\mathrm s$ o deslocamento foi $3\,\mathrm m$, correspondendo a $v=1{,}5\,\mathrm{m/s}$. Alternativa \textbf{C}.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{00100}
+%% \exname{QL20UNESP2026Q79QuizEspelhoConvexoVel}
+%% \exsection{Optica; Espelho convexo; Equacao de Gauss; Cinematica; Vestibular 2026}
+%% SOURCE-VISUAL: original-crop
+%% SOURCE-IMAGE-SHA256: fa9c7328b281a9c859ff6e118e42667786dc99e76003bcea283d06ba2b88fd3c
+%% SOURCE: https://provas.professorfilatte.com.br/unesp-2026-fisica-questao-79
