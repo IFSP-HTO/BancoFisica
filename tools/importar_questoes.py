@@ -175,6 +175,8 @@ def command_validate(args):
     decisions = Counter((q.get("pedagogy") or {}).get("decision", "sem_decisao")
                         for q in data.get("questions", []) if isinstance(q, dict))
     if args.require_approved:
+        if not data.get("questions"):
+            problems.append("Não é possível aprovar um lote vazio")
         for q in data.get("questions", []):
             if q.get("pedagogy", {}).get("decision") != "aprovada":
                 problems.append(q.get("id", "?") + ": não está aprovada para publicação")
