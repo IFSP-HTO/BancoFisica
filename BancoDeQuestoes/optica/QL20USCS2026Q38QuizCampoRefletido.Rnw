@@ -1,0 +1,34 @@
+<<echo=FALSE, results=hide>>=
+include_supplement("USCS2026Q38Espelho.png", dir="../figuras")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+Um fotógrafo direciona luz de uma fonte pontual por meio de um espelho plano inclinado a $45^\circ$. A malha da figura mostra a fonte, o espelho e seis objetos numerados. Considerando os limites do espelho e a propagação retilínea, quais objetos estão no campo iluminado \emph{pela luz refletida}?
+
+\begin{center}
+\includegraphics[width=0.79\linewidth,keepaspectratio]{USCS2026Q38Espelho.png}
+\end{center}
+
+\begin{answerlist}
+  \item 2, 3, 4 e 5.
+  \item 3, 4 e 5.
+  \item 1, 2 e 3.
+  \item 4, 5 e 6.
+  \item 2, 3 e 4.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+Construa a imagem virtual da fonte atrás do espelho e prolongue as retas que partem dela e atravessam as duas extremidades do segmento refletor. A região compreendida entre esses raios-limite, no semiplano iluminado, contém os objetos identificados por 3, 4 e 5, mas não 1, 2 ou 6. Alternativa \textbf{B}.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{01000}
+%% \exname{QL20USCS2026Q38QuizCampoRefletido}
+%% \exsection{Optica; Espelho plano; Reflexao; Campo iluminado; Vestibular 2026}
+%% SOURCE-VISUAL: original-crop
+%% SOURCE-IMAGE-SHA256: e8acf798fdac4162203f2f4150785d3b86c89b07d8fee631560a7704126ff88d
+%% SOURCE: https://provas.professorfilatte.com.br/uscs-2026-fisica-questao-38
