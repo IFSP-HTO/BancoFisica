@@ -1,0 +1,58 @@
+<<echo=FALSE, results=hide>>=
+g <- 10
+m <- sample(20:80, 1)
+v0 <- sample(seq(8, 20, by = 2), 1)
+mu <- sample(c(0.20, 0.25, 0.30, 0.40, 0.50), 1)
+a <- mu*g
+tstop <- v0/a
+dstop <- v0^2/(2*a)
+include_supplement("AtritoCaixaLargadaCaminhao.png", dir="../../figuras")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\begin{question}
+Uma caixa de massa $m=\Sexpr{m}\,\mathrm{kg}$ move-se inicialmente com a mesma
+velocidade de um caminhão, $v_0=\Sexpr{v0}\,\mathrm{m/s}$, para a direita.
+Após ser descarregada, a caixa atinge uma pista horizontal rugosa com a velocidade
+horizontal $v_0$ e passa a deslizar enquanto o caminhão segue viagem,
+como ilustra a figura. Considere o movimento a partir do instante imediatamente
+posterior ao contato da caixa com a pista e despreze a fase de impacto.
+O coeficiente de atrito cinético entre a caixa e a pista é
+$\mu_k=\Sexpr{mu}$. Adote $g=10\,\mathrm{m/s^2}$ e despreze a resistência do ar.
+\begin{center}
+\includegraphics[width=0.88\linewidth,keepaspectratio]{AtritoCaixaLargadaCaminhao.png}
+\end{center}
+Determine:
+\begin{answerlist}
+  \item o tempo até a caixa parar, em segundos;
+  \item a distância percorrida pela caixa até parar, em metros.
+\end{answerlist}
+\end{question}
+\begin{solution}
+A única força horizontal na caixa é o atrito cinético, de módulo
+$f_k=\mu_kN=\mu_kmg$. Portanto, o módulo da desaceleração é
+\[
+a=\mu_kg=\Sexpr{mu}\cdot 10 = \Sexpr{round(a,2)}\,\mathrm{m/s^2}.
+\]
+Como a velocidade inicial da caixa é $v_0=\Sexpr{v0}\,\mathrm{m/s}$, o tempo até parar é
+\[
+t=\frac{v_0}{a}=\frac{\Sexpr{v0}}{\Sexpr{round(a,2)}}=\Sexpr{round(tstop,2)}\,\mathrm{s}.
+\]
+Usando $v^2=v_0^2+2\Delta x\,(-a)$ com $v=0$, obtemos
+\[
+\Delta x=\frac{v_0^2}{2a}=\frac{\Sexpr{v0}^2}{2\cdot\Sexpr{round(a,2)}}
+=\Sexpr{round(dstop,2)}\,\mathrm{m}.
+\]
+\begin{answerlist}
+  \item $\Sexpr{round(tstop,2)}\,\mathrm{s}$
+  \item $\Sexpr{round(dstop,2)}\,\mathrm{m}$
+\end{answerlist}
+\end{solution}
+%% META-INFORMATION
+%% Fonte visual: figura fornecida pelo usuário para problema de deslizamento por atrito após separação do caminhão.
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{round(tstop,2)}|\Sexpr{round(dstop,2)}}
+%% \extol{0.03|0.05}
+%% \exname{AtritoCaixaLargadaCaminhao}
+%% \exsection{Mecanica; Leis de Newton; Atrito; Cinematica}

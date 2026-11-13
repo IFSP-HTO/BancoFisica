@@ -1,0 +1,67 @@
+<<echo=FALSE, results=hide>>=
+g <- 10
+M <- sample(2:6, 1)
+muL <- sample(c(0.10, 0.15, 0.20), 1)
+muR <- sample(c(0.10, 0.15, 0.20), 1)
+Fchoices <- seq(20, 90, by = 5)
+valid <- Fchoices[sapply(Fchoices, function(F){
+  a <- (F - 2*muL*M*g - muR*M*g)/(3*M)
+  a > 0.40 && a < 5
+})]
+stopifnot(length(valid) > 0)
+F <- sample(valid, 1)
+a <- (F - 2*muL*M*g - muR*M*g)/(3*M)
+T <- 2*M*a + 2*muL*M*g
+stopifnot(a > 0, T > 0)
+include_supplement("AtritoDoisBlocos2M_M.png", dir="../../figuras")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\begin{question}
+Dois blocos de massas $2M$ e $M$ estão ligados por um fio ideal e
+\textbf{já deslizam para a direita} sobre um piso horizontal rugoso.
+Na situação representada, $M=\Sexpr{M}\,\mathrm{kg}$, a força aplicada tem módulo
+$F=\Sexpr{F}\,\mathrm{N}$, o coeficiente de atrito cinético do bloco de massa $2M$
+com o piso é $\mu_{k1}=\Sexpr{muL}$ e o do bloco de massa $M$ é
+$\mu_{k2}=\Sexpr{muR}$. Adote $g=10\,\mathrm{m/s^2}$.
+\begin{center}
+\includegraphics[width=0.84\linewidth,keepaspectratio]{AtritoDoisBlocos2M_M.png}
+\end{center}
+Determine:
+\begin{answerlist}
+  \item a aceleração comum dos blocos, em $\mathrm{m/s^2}$;
+  \item a tração no fio, em newtons.
+\end{answerlist}
+\end{question}
+\begin{solution}
+Os atritos cinéticos se opõem ao movimento e têm módulos
+$f_1=\mu_{k1}(2Mg)$ e $f_2=\mu_{k2}(Mg)$. Para o conjunto:
+\[
+F-f_1-f_2=(2M+M)a=3Ma.
+\]
+Portanto,
+\[
+a=\frac{F-2\mu_{k1}Mg-\mu_{k2}Mg}{3M}=\Sexpr{round(a,2)}\,\mathrm{m/s^2}.
+\]
+No bloco de massa $2M$, as forças horizontais são a tração $T$ para a direita
+e o atrito $f_1$ para a esquerda:
+\[
+T-f_1=2Ma.
+\]
+Assim,
+\[
+T=2Ma+2\mu_{k1}Mg=\Sexpr{round(T,2)}\,\mathrm{N}.
+\]
+\begin{answerlist}
+  \item $\Sexpr{round(a,2)}\,\mathrm{m/s^2}$
+  \item $\Sexpr{round(T,2)}\,\mathrm{N}$
+\end{answerlist}
+\end{solution}
+%% META-INFORMATION
+%% Fonte visual: figura fornecida pelo usuário; contexto similar a problemas OpenStax com atritos diferentes.
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{round(a,2)}|\Sexpr{round(T,2)}}
+%% \extol{0.03|0.05}
+%% \exname{AtritoDoisBlocos2M_M}
+%% \exsection{Mecanica; Leis de Newton; Atrito; Blocos com tracao}

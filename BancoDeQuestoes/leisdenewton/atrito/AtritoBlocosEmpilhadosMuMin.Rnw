@@ -1,0 +1,78 @@
+<<echo=FALSE, results=hide>>=
+g <- 10
+M1 <- sample(2:5, 1)
+M2 <- sample(4:9, 1)
+theta <- sample(c(20, 25, 30, 35), 1)
+ang <- theta*pi/180
+Fchoices <- seq(25, 80, by = 5)
+valid <- Fchoices[sapply(Fchoices, function(F){
+  a <- F*cos(ang)/(M1+M2)
+  mu <- (M2*a)/(M1*g + F*sin(ang))
+  a > 0.40 && a < 5 && mu < 0.90
+})]
+stopifnot(length(valid) > 0)
+F <- sample(valid, 1)
+a <- F*cos(ang)/(M1+M2)
+freq <- M2*a
+N <- M1*g + F*sin(ang)
+mumin <- freq/N
+stopifnot(a > 0, mumin > 0, mumin < 1)
+include_supplement("AtritoBlocosEmpilhadosMuMin.png", dir="../../figuras")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\begin{question}
+Dois blocos, de massas $M_1=\Sexpr{M1}\,\mathrm{kg}$ e
+$M_2=\Sexpr{M2}\,\mathrm{kg}$, estão empilhados, conforme a figura.
+Uma força $F=\Sexpr{F}\,\mathrm{N}$ é aplicada ao bloco superior, formando
+$\theta=\Sexpr{theta}^{\circ}$ abaixo da horizontal. O contato entre o bloco
+inferior e o solo é \textbf{sem atrito}. Adote $g=10\,\mathrm{m/s^2}$.
+\begin{center}
+\includegraphics[width=0.80\linewidth,keepaspectratio]{AtritoBlocosEmpilhadosMuMin.png}
+\end{center}
+Supondo que os blocos se movam juntos, sem deslizamento relativo, determine:
+\begin{answerlist}
+  \item a aceleração horizontal do conjunto, em $\mathrm{m/s^2}$;
+  \item o menor coeficiente de atrito estático entre os blocos para que isso seja possível.
+\end{answerlist}
+\end{question}
+\begin{solution}
+Como não há atrito com o solo, a única força horizontal externa no conjunto é a
+componente $F\cos\theta$. Assim,
+\[
+(M_1+M_2)a = F\cos\theta,
+\]
+o que fornece
+\[
+a=\frac{F\cos\theta}{M_1+M_2}=\Sexpr{round(a,2)}\,\mathrm{m/s^2}.
+\]
+Para acelerar o bloco inferior, a força de atrito estático deve ter módulo
+\[
+f=M_2a=\Sexpr{round(freq,2)}\,\mathrm{N}.
+\]
+A força normal entre os blocos vale
+\[
+N=M_1g+F\sin\theta=\Sexpr{round(N,2)}\,\mathrm{N},
+\]
+pois a componente vertical de $F$ aumenta a compressão entre eles.
+Na condição limite de não deslizamento,
+\[
+f=\mu_sN.
+\]
+Logo,
+\[
+\mu_{s,\min}=\frac{f}{N}=\Sexpr{round(mumin,2)}.
+\]
+\begin{answerlist}
+  \item $\Sexpr{round(a,2)}\,\mathrm{m/s^2}$
+  \item $\Sexpr{round(mumin,2)}$
+\end{answerlist}
+\end{solution}
+%% META-INFORMATION
+%% Fonte visual: figura fornecida pelo usuário; variante de blocos empilhados com atrito estático.
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{round(a,2)}|\Sexpr{round(mumin,2)}}
+%% \extol{0.03|0.03}
+%% \exname{AtritoBlocosEmpilhadosMuMin}
+%% \exsection{Mecanica; Leis de Newton; Atrito estatico; Blocos empilhados}

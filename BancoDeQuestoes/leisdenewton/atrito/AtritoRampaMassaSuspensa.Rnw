@@ -1,0 +1,75 @@
+<<echo=FALSE, results=hide>>=
+g <- 10
+m1 <- sample(2:5, 1)
+m2 <- sample(3:8, 1)
+theta <- sample(c(25, 30, 37), 1)
+mu <- sample(c(0.15, 0.20, 0.25, 0.30), 1)
+ang <- theta*pi/180
+valid <- m2*g - m1*g*(sin(ang) + mu*cos(ang))
+a <- valid/(m1 + m2)
+while(a <= 0.40 || a >= 5){
+  m1 <- sample(2:5, 1)
+  m2 <- sample(3:8, 1)
+  theta <- sample(c(25, 30, 37), 1)
+  mu <- sample(c(0.15, 0.20, 0.25, 0.30), 1)
+  ang <- theta*pi/180
+  valid <- m2*g - m1*g*(sin(ang) + mu*cos(ang))
+  a <- valid/(m1 + m2)
+}
+N <- m1*g*cos(ang)
+fk <- mu*N
+T <- m2*g - m2*a
+include_supplement("AtritoRampaMassaSuspensa.png", dir="../../figuras")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\begin{question}
+Um bloco de massa $m_1=\Sexpr{m1}\,\mathrm{kg}$ encontra-se sobre um plano inclinado
+rugoso de ângulo $\theta=\Sexpr{theta}^{\circ}$ e está ligado por um fio ideal a um
+bloco suspenso de massa $m_2=\Sexpr{m2}\,\mathrm{kg}$, como na figura. O coeficiente
+de atrito cinético entre $m_1$ e o plano é $\mu_k=\Sexpr{mu}$.
+Considere que os blocos \textbf{já se encontram em movimento}, com $m_2$ descendo e $m_1$ subindo a rampa, e que o fio permanece esticado.
+Adote $g=10\,\mathrm{m/s^2}$.
+\begin{center}
+\includegraphics[width=0.86\linewidth,keepaspectratio]{AtritoRampaMassaSuspensa.png}
+\end{center}
+Determine:
+\begin{answerlist}
+  \item a aceleração do sistema, em $\mathrm{m/s^2}$;
+  \item a tração no fio, em newtons.
+\end{answerlist}
+\end{question}
+\begin{solution}
+No bloco $m_1$, a normal é $N=m_1g\cos\theta=\Sexpr{round(N,2)}\,\mathrm{N}$.
+Como $m_1$ sobe a rampa, o atrito cinético atua para baixo, com módulo
+$f_k=\mu_kN=\Sexpr{round(fk,2)}\,\mathrm{N}$.
+As equações ao longo do movimento são
+\[
+T-m_1g\sin\theta-f_k=m_1a
+\]
+e
+\[
+m_2g-T=m_2a.
+\]
+Somando,
+\[
+a=\frac{m_2g-m_1g\sin\theta-\mu_km_1g\cos\theta}{m_1+m_2}
+=\Sexpr{round(a,2)}\,\mathrm{m/s^2}.
+\]
+Então,
+\[
+T=m_2g-m_2a=\Sexpr{round(T,2)}\,\mathrm{N}.
+\]
+\begin{answerlist}
+  \item $\Sexpr{round(a,2)}\,\mathrm{m/s^2}$
+  \item $\Sexpr{round(T,2)}\,\mathrm{N}$
+\end{answerlist}
+\end{solution}
+%% META-INFORMATION
+%% Fonte visual: figura fornecida pelo usuário, alinhada a problemas tipo OpenStax 109.
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{round(a,2)}|\Sexpr{round(T,2)}}
+%% \extol{0.03|0.05}
+%% \exname{AtritoRampaMassaSuspensa}
+%% \exsection{Mecanica; Leis de Newton; Atrito; Plano inclinado; Polia}

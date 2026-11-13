@@ -1,0 +1,75 @@
+<<echo=FALSE, results=hide>>=
+g <- 10
+m <- sample(2:6, 1)
+theta <- sample(c(20, 25, 30, 35), 1)
+mu <- sample(c(0.10, 0.15, 0.20, 0.25), 1)
+ang <- theta*pi/180
+Fchoices <- seq(10, 100, by = 5)
+valid <- Fchoices[sapply(Fchoices, function(F){
+  N <- m*g*cos(ang) + F*sin(ang)
+  a <- (F*cos(ang) - m*g*sin(ang) - mu*N)/m
+  a > 0.40 && a < 6
+})]
+stopifnot(length(valid) > 0)
+F <- sample(valid, 1)
+N <- m*g*cos(ang) + F*sin(ang)
+fk <- mu*N
+a <- (F*cos(ang) - m*g*sin(ang) - fk)/m
+stopifnot(N > 0, fk > 0, a > 0)
+include_supplement("AtritoBlocoRampaForcaHorizontal.png", dir="../../figuras")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\begin{question}
+Um bloco de massa $m=\Sexpr{m}\,\mathrm{kg}$ é empurrado por uma força
+horizontal $F=\Sexpr{F}\,\mathrm{N}$ ao longo de um plano inclinado de ângulo
+$\theta=\Sexpr{theta}^{\circ}$, conforme a figura. O bloco já está
+\textbf{deslizando para cima da rampa}. O coeficiente de atrito cinético entre o bloco
+e o plano é $\mu_k=\Sexpr{mu}$. Adote $g=10\,\mathrm{m/s^2}$.
+\begin{center}
+\includegraphics[width=0.82\linewidth,keepaspectratio]{AtritoBlocoRampaForcaHorizontal.png}
+\end{center}
+Determine:
+\begin{answerlist}
+  \item o módulo da aceleração do bloco ao longo do plano, em $\mathrm{m/s^2}$;
+  \item o módulo da força de atrito cinético, em newtons.
+\end{answerlist}
+\end{question}
+\begin{solution}
+Decompondo a força horizontal, a componente paralela ao plano é
+$F\cos\theta$ e a componente perpendicular, dirigida contra o plano, é
+$F\sin\theta$. Portanto,
+\[
+N=mg\cos\theta + F\sin\theta.
+\]
+Assim,
+\[
+N=\Sexpr{m}\cdot 10 \cos(\Sexpr{theta}^{\circ}) + \Sexpr{F}\sin(\Sexpr{theta}^{\circ})
+=\Sexpr{round(N,2)}\,\mathrm{N}.
+\]
+Como o movimento é para cima da rampa, o atrito cinético atua para baixo:
+\[
+f_k=\mu_k N=\Sexpr{mu}\cdot \Sexpr{round(N,2)}
+=\Sexpr{round(fk,2)}\,\mathrm{N}.
+\]
+Na direção do plano,
+\[
+ma=F\cos\theta-mg\sin\theta-f_k.
+\]
+Logo,
+\[
+a=\Sexpr{round(a,2)}\,\mathrm{m/s^2}.
+\]
+\begin{answerlist}
+  \item $\Sexpr{round(a,2)}\,\mathrm{m/s^2}$
+  \item $\Sexpr{round(fk,2)}\,\mathrm{N}$
+\end{answerlist}
+\end{solution}
+%% META-INFORMATION
+%% Fonte visual: figura fornecida pelo usuário, baseada em problema de bloco em rampa com atrito.
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{round(a,2)}|\Sexpr{round(fk,2)}}
+%% \extol{0.03|0.05}
+%% \exname{AtritoBlocoRampaForcaHorizontal}
+%% \exsection{Mecanica; Leis de Newton; Atrito; Plano inclinado}
