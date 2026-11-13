@@ -1,0 +1,94 @@
+{
+  "source_images": [
+    {
+      "source_id": "unifimes2025_pistons",
+      "url": "https://wdlpxyudndyrkigvupfy.supabase.co/storage/v1/object/public/questoes/unfm25t1q37.png",
+      "page": "https://provas.professorfilatte.com.br/unifimes-2025-trindade-1o-semestre-fisica-questao-37",
+      "sha256": "352a494489903e275e691f93963388299060cea29441a637913de7b99e8d4bf4"
+    },
+    {
+      "source_id": "ufrgs2018_dynamometer",
+      "url": "https://wdlpxyudndyrkigvupfy.supabase.co/storage/v1/object/public/questoes/ufrgs18q10.png",
+      "page": "https://provas.professorfilatte.com.br/ufrgs-2018-fisica-questao-10",
+      "sha256": "d41be02a4a39d3007d3d56026f59dd55d2a0bba15cbd037d1e7981d6a7e7fd04"
+    },
+    {
+      "source_id": "humanitas2025_car",
+      "url": "https://wdlpxyudndyrkigvupfy.supabase.co/storage/v1/object/public/questoes/hum25bq37.png",
+      "page": "https://provas.professorfilatte.com.br/humanitas-2025-2o-semestre-fisica-questao-37",
+      "sha256": "8454f781e05bfbf757f571601caeead9ee0a81b87b39f2212a2b28d58cf1fc6f"
+    }
+  ],
+  "figures": [
+    {
+      "name": "Q105PascalForca_Filatte.png",
+      "source_id": "unifimes2025_pistons",
+      "crop": [
+        89,
+        199,
+        490,
+        483
+      ]
+    },
+    {
+      "name": "Q106PascalDeslocamento_Filatte.png",
+      "source_id": "unifimes2025_pistons",
+      "crop": [
+        69,
+        592,
+        530,
+        743
+      ]
+    },
+    {
+      "name": "Q107EmpuxoVolume_Filatte.png",
+      "source_id": "ufrgs2018_dynamometer",
+      "crop": [
+        351,
+        469,
+        495,
+        681
+      ]
+    },
+    {
+      "name": "Q108PesoAparente_Filatte.png",
+      "source_id": "ufrgs2018_dynamometer",
+      "crop": [
+        58,
+        245,
+        508,
+        736
+      ],
+      "redactions": [
+        {
+          "box": [
+            62,
+            398,
+            119,
+            445
+          ],
+          "description": "Oculta valor fixo 16 N da prova original incompatível com sorteio"
+        },
+        {
+          "box": [
+            452,
+            376,
+            510,
+            435
+          ],
+          "description": "Oculta valor fixo 14 N da prova original incompatível com sorteio"
+        }
+      ]
+    },
+    {
+      "name": "Q109ClozeFracaoSubmersa_Filatte.png",
+      "source_id": "humanitas2025_car",
+      "crop": [
+        79,
+        175,
+        595,
+        521
+      ]
+    }
+  ]
+}
