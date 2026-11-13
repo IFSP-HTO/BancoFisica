@@ -1,0 +1,55 @@
+name: Stage 20 optics questions 2026-2027
+on:
+  push:
+    branches:
+      - feat/optica-lote20-2026
+    paths:
+      - 'data/filatte-optica-lote20-2026.json'
+      - '.github/workflows/stage-filatte-lote20.yml'
+  pull_request:
+    paths:
+      - 'data/filatte-optica-lote20-2026.json'
+      - '.github/workflows/stage-filatte-lote20.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  stage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: python -m pip install --disable-pip-version-check requests beautifulsoup4 Pillow
+      - name: Validate manifest and duplicates
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          m = json.loads(Path("data/filatte-optica-lote20-2026.json").read_text())
+          items = m["questions"]
+          assert m["target_count"] == len(items) == 20
+          ids = [r["id"] for r in items]
+          urls = [r["url"] for r in items]
+          assert len(set(ids)) == len(ids)
+          assert len(set(urls)) == len(urls)
+          assert all(r["subject"] == "Óptica" and r["correct"] in "ABCDE" for r in items)
+          print("Preflight: 20 unique optics items and reviewed answer keys")
+          PY
+      - name: Download full original scans and verify PNG integrity
+        run: |
+          python tools/stage_filatte_optica.py \
+            --manifest data/filatte-optica-lote20-2026.json \
+            --out-dir build/filatte-lote20
+      - name: Upload original sources and audit manifest
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: optica-lote20-2026-sources
+          path: build/filatte-lote20/
+          if-no-files-found: warn
