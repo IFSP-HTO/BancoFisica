@@ -1,0 +1,211 @@
+{
+  "source_run": 43350980567,
+  "source_artifact": 14003792532,
+  "visual_rule": "original-crop; recorte direto dos pixels, coordenadas aferidas visualmente",
+  "entries": [
+    {
+      "id": "unesp-2026-q79",
+      "source_sha256": "fa9c7328b281a9c859ff6e118e42667786dc99e76003bcea283d06ba2b88fd3c",
+      "figures": [
+        {
+          "filename": "UNESP2026Q79Carro.png",
+          "box": [
+            28,
+            241,
+            653,
+            526
+          ]
+        },
+        {
+          "filename": "UNESP2026Q79Espelho.png",
+          "box": [
+            6,
+            878,
+            680,
+            1558
+          ]
+        }
+      ]
+    },
+    {
+      "id": "espcex-2026-2027-q28",
+      "source_sha256": "0288c4a5f006c060b60dfc86864b420e755a11f6fa3e54574a2846a810b0d8b4",
+      "figures": [
+        {
+          "filename": "EsPCEx2026Q28Aquario.png",
+          "box": [
+            38,
+            176,
+            637,
+            459
+          ]
+        }
+      ]
+    },
+    {
+      "id": "einstein-2026-q38",
+      "source_sha256": "14fdc0b015bf117a1b3719b8941cb8840243d2e7900f2d43440b0c00e68bd0b7",
+      "figures": [
+        {
+          "filename": "Einstein2026Q38Reflexo.png",
+          "box": [
+            174,
+            212,
+            503,
+            698
+          ]
+        }
+      ]
+    },
+    {
+      "id": "famema-2026-q39",
+      "source_sha256": "2adf4e18171c6508657d974f97866e42083211a950c579a22d21858a7f7d4e8c",
+      "figures": [
+        {
+          "filename": "FAMEMA2026Q39Canhao.png",
+          "box": [
+            2,
+            191,
+            674,
+            537
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fmabc-2026-q57",
+      "source_sha256": "e218d533cb8ab7c45bf4220978ff9697b19a9bebe8ad58f3a2cc7b8862864043",
+      "figures": [
+        {
+          "filename": "FMABC2026Q57Otoscopio.png",
+          "box": [
+            90,
+            202,
+            593,
+            335
+          ]
+        }
+      ]
+    },
+    {
+      "id": "santa-casa-2026-q65",
+      "source_sha256": "2d61f9fec38e38b02de51350b381823bfe048f23df43589a60f79f4fb8c9f1f2",
+      "figures": [
+        {
+          "filename": "SantaCasa2026Q65Espelho.png",
+          "box": [
+            65,
+            165,
+            616,
+            723
+          ]
+        }
+      ]
+    },
+    {
+      "id": "santa-casa-2026-q66",
+      "source_sha256": "04c8f1569a0ddc544b3e9b97e88821e5d4ede75931a935e2b5eb861c12baed0e",
+      "figures": [
+        {
+          "filename": "SantaCasa2026Q66RaiosTabela.png",
+          "box": [
+            26,
+            169,
+            652,
+            766
+          ]
+        }
+      ]
+    },
+    {
+      "id": "humanitas-2026-q39",
+      "source_sha256": "ae28c8bdfd45dd2bc472dfdf8b44e7b18c5f607c9311f45351efeefcc07703f3",
+      "figures": [
+        {
+          "filename": "Humanitas2026Q39Refracao.png",
+          "box": [
+            111,
+            276,
+            562,
+            504
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sao-camilo-2026-q33",
+      "source_sha256": "4206f40a65dcaf86873cf2b1b479a60c547c15672250f93c48f4c2779f57e723",
+      "figures": [
+        {
+          "filename": "SaoCamilo2026Q33Projetor.png",
+          "box": [
+            76,
+            283,
+            601,
+            716
+          ]
+        }
+      ]
+    },
+    {
+      "id": "uscs-2026-q38",
+      "source_sha256": "e8acf798fdac4162203f2f4150785d3b86c89b07d8fee631560a7704126ff88d",
+      "figures": [
+        {
+          "filename": "USCS2026Q38Espelho.png",
+          "box": [
+            39,
+            177,
+            644,
+            602
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sirio-libanes-2026-q38",
+      "source_sha256": "88bc7795b8b20619b9ca646b9e6dcf4350eeaf5abd5c93fffbb0fa69b28af8f2",
+      "figures": [
+        {
+          "filename": "Sirio2026Q38Espelho.png",
+          "box": [
+            43,
+            197,
+            631,
+            780
+          ]
+        }
+      ]
+    },
+    {
+      "id": "univesp-2026-q55",
+      "source_sha256": "5460dc0f7ea14c57493696db482ba2e7ebc630e8f544cb8a4b83771720f9f4b5",
+      "figures": [
+        {
+          "filename": "Univesp2026Q55Palito.png",
+          "box": [
+            224,
+            139,
+            432,
+            377
+          ]
+        }
+      ]
+    },
+    {
+      "id": "santa-casa-2026-outros-cursos-q51",
+      "source_sha256": "ce522c8e6b4f0fe183590b4a7714915b4b79ef8e8e64e14280a0b82212d3fa6e",
+      "figures": [
+        {
+          "filename": "SantaCasa2026Q51Concha.png",
+          "box": [
+            87,
+            259,
+            596,
+            1041
+          ]
+        }
+      ]
+    }
+  ]
+}
