@@ -1,113 +1,39 @@
-name: Importar questao de optica (Filatte)
+name: Estagiar questões de Óptica do Filatte
 on:
+  pull_request:
+    paths:
+      - 'tools/stage_filatte_optica.py'
+      - 'data/filatte-optica-piloto.json'
+      - '.github/workflows/import-filatte-optica.yml'
   push:
     branches:
       - feat/importador-filatte-optica
     paths:
-      - 'tools/import_filatte.py'
-      - '.github/workflows/import-filatte-optica.yml'
-  pull_request:
-    paths:
-      - 'tools/import_filatte.py'
+      - 'tools/stage_filatte_optica.py'
+      - 'data/filatte-optica-piloto.json'
       - '.github/workflows/import-filatte-optica.yml'
   workflow_dispatch:
-    inputs:
-      url:
-        description: URL da questao para importacao piloto
-        required: true
-        default: https://provas.professorfilatte.com.br/santa-casa-2027-fisica-questao-66
-        type: string
 
 permissions:
   contents: read
 
 jobs:
-  smoke:
-    if: github.event_name == 'pull_request'
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-      - run: python -m pip install --disable-pip-version-check requests beautifulsoup4 Pillow
-      - name: Baixar PNG real e gerar Rnw temporarios no runner
-        run: python tools/import_filatte.py
-      - name: Validar arquivos de saida
-        run: |
-          python - <<'PY'
-          from pathlib import Path
-          import hashlib, json
-          from PIL import Image
-          d = json.loads(Path('import-filatte-report.json').read_text())
-          image = Path('BancoDeQuestoes/figuras') / d['image_name']
-          assert hashlib.sha256(image.read_bytes()).hexdigest() == d['sha256']
-          with Image.open(image) as im:
-              im.verify()
-          q = Path('BancoDeQuestoes/optica/QSCSantaCasa2027Q66Refracao.Rnw')
-          assert q.is_file() and d['image_name'] in q.read_text()
-          print('PNG exato e Rnw presentes no runner')
-          PY
-      - uses: actions/upload-artifact@v4
-        with:
-          name: santa-casa-2027-q66-original-e-rnw
-          path: |
-            BancoDeQuestoes/figuras/SantaCasa2027Q66Figura.png
-            BancoDeQuestoes/optica/QSCSantaCasa2027Q66Refracao.Rnw
-            import-filatte-report.json
-          if-no-files-found: error
-  import:
-    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
-    permissions:
-      contents: write
-      pull-requests: write
+  stage:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
-        with:
-          ref: ${{ github.event_name == 'push' && github.ref_name || github.ref_name }}
-          fetch-depth: 0
-          persist-credentials: true
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Dependencias
+      - name: Dependências
         run: python -m pip install --disable-pip-version-check requests beautifulsoup4 Pillow
-      - name: Obter pagina e imagem original (aborta se falhar)
-        env:
-          QUESTION_URL: ${{ inputs.url }}
-        run: python tools/import_filatte.py --url "${QUESTION_URL:-https://provas.professorfilatte.com.br/santa-casa-2027-fisica-questao-66}"
-      - name: Conferir integridade do PNG e estrutura Rnw
-        run: |
-          python - <<'PY'
-          from pathlib import Path
-          from PIL import Image
-          import json
-          report = json.loads(Path("import-filatte-report.json").read_text())
-          img = Path("BancoDeQuestoes/figuras") / report["image_name"]
-          with Image.open(img) as im:
-              im.verify()
-          questions = list(Path("BancoDeQuestoes/optica").glob("QSCSantaCasa2027Q66Refracao.Rnw"))
-          assert len(questions) == 1
-          rnw = questions[0].read_text()
-          assert report["image_name"] in rnw
-          assert "SOURCE-VISUAL: original-crop" in rnw
-          assert "\\exsolution{00010}" in rnw
-          print("PNG original verificado e metadados da questao conferidos")
-          PY
-      - name: Criar pull request para revisao (nao efetua merge)
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          set -euo pipefail
-          BRANCH="import/filatte-santa-casa-2027-q66"
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git fetch origin master
-          git switch -c "$BRANCH" origin/master
-          git add BancoDeQuestoes/optica/QSCSantaCasa2027Q66Refracao.Rnw BancoDeQuestoes/figuras/SantaCasa2027Q66Figura.png
-          git commit -m "Import Santa Casa 2027 Q66 with source image"
-          git push --set-upstream origin "$BRANCH"
-          echo "Branch de questao criada: $BRANCH. Abrir PR de revisao separadamente."
+      - name: Baixar fontes originais e conferir gabaritos
+        run: python tools/stage_filatte_optica.py --manifest data/filatte-optica-piloto.json
+      - name: Guardar material para revisão sem publicar questões
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: filatte-optica-fonte-4-questoes
+          path: build/filatte-stage/
+          if-no-files-found: warn
