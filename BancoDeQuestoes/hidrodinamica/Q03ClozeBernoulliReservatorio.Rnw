@@ -1,0 +1,51 @@
+%% BancoFisica — hidrodinamica: Bernoulli, Torricelli e vazao.
+%% Base pedagogica: Hidrostatica.pdf (slides 46 a 54, material de aula).
+<<echo=FALSE, results=hide>>=
+g <- 10
+h <- sample(c(0.8, 1.8, 3.2), 1)
+area_cm2 <- sample(c(2, 3, 4), 1)
+v <- sqrt(2 * g * h)
+Q_Ls <- round(area_cm2 * 1e-4 * v * 1000, 2)
+@
+
+\begin{question}
+Um reservatório grande e aberto à atmosfera contém água. Um pequeno orifício de área \(\Sexpr{area_cm2}\,\mathrm{cm^2}\) está localizado \(\Sexpr{h}\,\mathrm{m}\) abaixo da superfície livre da água.
+
+Suponha que a superfície livre permaneça praticamente imóvel, que a pressão na superfície e na saída seja atmosférica e que as perdas por atrito sejam desprezíveis. Adote \(g=10\,\mathrm{m/s^2}\).
+
+Usando a equação de Bernoulli, determine:
+\begin{answerlist}
+\item a velocidade de saída da água, em \(\mathrm{m/s}\);
+\item a vazão volumétrica, em \(\mathrm{L/s}\).
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+Aplicando Bernoulli entre a superfície livre (velocidade desprezível) e o orifício, as pressões atmosféricas se cancelam:
+\[
+ \rho gh=\frac{\rho v^2}{2}.
+\]
+Assim,
+\[
+ v=\sqrt{2gh}=\sqrt{2\cdot10\cdot\Sexpr{h}}
+ =\Sexpr{v}\,\mathrm{m/s}.
+\]
+A vazão é \(Q=Av\). Convertendo \(A\) para \(\mathrm{m^2}\) e depois a vazão para \(\mathrm{L/s}\):
+\[
+ Q=\Sexpr{area_cm2}\cdot10^{-4}\cdot\Sexpr{v}\cdot1000
+ =\Sexpr{Q_Ls}\,\mathrm{L/s}.
+\]
+\begin{answerlist}
+\item \(\Sexpr{v}\,\mathrm{m/s}\).
+\item \(\Sexpr{Q_Ls}\,\mathrm{L/s}\).
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{\Sexpr{round(v, 2)}|\Sexpr{Q_Ls}}
+%% \exclozetype{num|num}
+%% \extol{0.01|0.01}
+%% \exname{Q03ClozeBernoulliReservatorio}
+%% \exsection{Mecanica dos fluidos; Hidrodinamica; Bernoulli; Torricelli; Vazao}
+%% \exusepackage[utf8]{inputenc}

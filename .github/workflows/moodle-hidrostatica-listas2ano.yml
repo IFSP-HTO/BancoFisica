@@ -1,0 +1,67 @@
+name: Moodle - Listas Hidrostática da aula (2º ano)
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - 'BancoDeQuestoes/hidrostatica/**'
+      - 'BancoDeQuestoes/hidrodinamica/**'
+      - 'tools/generate_hidrostatica_listas2ano.R'
+      - '.github/workflows/moodle-hidrostatica-listas2ano.yml'
+  pull_request:
+    branches: [master]
+    paths:
+      - 'BancoDeQuestoes/hidrostatica/**'
+      - 'BancoDeQuestoes/hidrodinamica/**'
+      - 'tools/generate_hidrostatica_listas2ano.R'
+      - '.github/workflows/moodle-hidrostatica-listas2ano.yml'
+  workflow_dispatch:
+    inputs:
+      variants:
+        description: 'Versões por questão (1 a 100)'
+        required: false
+        default: '1'
+      seed:
+        description: 'Semente reprodutível'
+        required: false
+        default: '20261113'
+
+permissions:
+  contents: read
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: r-lib/actions/setup-pandoc@v2
+      - uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: '4.4.3'
+          use-public-rspm: true
+      - uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          cache-version: 'hidrostatica-listas2ano-1'
+          dependencies: '"all"'
+      - name: Gerar e validar as duas listas em XML
+        env:
+          VARIANTS: ${{ github.event.inputs.variants || '1' }}
+          SEED: ${{ github.event.inputs.seed || '20261113' }}
+        run: |
+          Rscript tools/generate_hidrostatica_listas2ano.R \
+            --n "$VARIANTS" --seed "$SEED" \
+            --out-dir build/moodle-hidrostatica-listas-2ano
+      - name: Disponibilizar XML da Lista 1
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: moodle-hidrostatica-lista1-2ano
+          path: build/moodle-hidrostatica-listas-2ano/lista1/
+          if-no-files-found: error
+      - name: Disponibilizar XML da Lista 2
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: moodle-hidrostatica-lista2-2ano
+          path: build/moodle-hidrostatica-listas-2ano/lista2/
+          if-no-files-found: error

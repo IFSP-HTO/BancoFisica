@@ -1,0 +1,35 @@
+%% BancoFisica — propriedades dos liquidos: tensao superficial.
+%% Base pedagogica: Hidrostatica.pdf (slides 3 a 6, material de aula).
+<<echo=FALSE, results=hide>>=
+alternativas <- c(
+  "As moleculas na superficie sofrem uma resultante das forcas de coesao voltada para o interior do liquido; por isso, uma pequena gota livre tende a reduzir sua area superficial.",
+  "A tensao superficial ocorre porque a gravidade deixa de atuar sobre as moleculas na superficie da agua.",
+  "A tensao superficial e causada somente pela pressao atmosferica e desaparece quando a agua e colocada em um recipiente fechado.",
+  "As moleculas na superficie da agua nao exercem forcas umas sobre as outras.",
+  "Uma gota de agua e sempre perfeitamente esferica, independentemente do contato com superficies e da acao da gravidade."
+)
+ordem <- sample(seq_along(alternativas))
+questions <- alternativas[ordem]
+solutions <- ordem == 1L
+@
+
+\begin{question}
+Uma pequena gota de água, em condições nas quais os efeitos da gravidade são pouco importantes, tende a adquirir forma aproximadamente esférica. Qual explicação física é mais adequada para esse comportamento?
+
+<<echo=FALSE, results=tex>>=
+answerlist(questions)
+@
+\end{question}
+
+\begin{solution}
+As forças de coesão molecular são responsáveis pela tensão superficial. Na superfície, as interações das moléculas com as demais moléculas do líquido não são simétricas como no interior. A superfície tende a minimizar sua área; para determinado volume, a forma esférica apresenta a menor área superficial.
+
+A conclusão é uma tendência: a gravidade e a interação com outras superfícies podem deformar a gota.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q110QuizTensaoSuperficial}
+%% \exsection{Hidrostatica; Coesao; Tensao superficial}
+%% \exusepackage[utf8]{inputenc}

@@ -1,0 +1,49 @@
+%% BancoFisica — hidrodinamica: continuidade e vazao volumetrica.
+%% Base pedagogica: Hidrostatica.pdf (slides 44 e 45, material de aula).
+<<echo=FALSE, results=hide>>=
+A1_cm2 <- sample(c(10, 20, 30, 40), 1)
+fator <- sample(c(2, 4, 5), 1)
+A2_cm2 <- A1_cm2 / fator
+v1 <- sample(c(1, 2, 3), 1)
+v2 <- fator * v1
+Q_Ls <- A1_cm2 * 1e-4 * v1 * 1000
+@
+
+\begin{question}
+Água escoa de modo permanente por uma tubulação horizontal, sem vazamentos. A seção de entrada tem área \(\Sexpr{A1_cm2}\,\mathrm{cm^2}\) e a velocidade da água nessa seção é \(\Sexpr{v1}\,\mathrm{m/s}\). Na saída, a área diminui para \(\Sexpr{A2_cm2}\,\mathrm{cm^2}\).
+
+Considerando a água incompressível, determine:
+\begin{answerlist}
+\item a velocidade da água na seção de saída, em \(\mathrm{m/s}\);
+\item a vazão volumétrica, em litros por segundo (\(\mathrm{L/s}\)).
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+A equação da continuidade estabelece que
+\[
+ A_1v_1=A_2v_2
+ \quad\Longrightarrow\quad
+ v_2=\frac{\Sexpr{A1_cm2}}{\Sexpr{A2_cm2}}\,\Sexpr{v1}
+ =\Sexpr{v2}\,\mathrm{m/s}.
+\]
+
+A vazão volumétrica é \(Q=A_1v_1\). Como \(1\,\mathrm{cm^2}=10^{-4}\,\mathrm{m^2}\) e \(1\,\mathrm{m^3}=1000\,\mathrm L\), temos
+\[
+ Q=\Sexpr{A1_cm2}\cdot10^{-4}\cdot\Sexpr{v1}\cdot1000
+ =\Sexpr{Q_Ls}\,\mathrm{L/s}.
+\]
+\begin{answerlist}
+\item \(\Sexpr{v2}\,\mathrm{m/s}\).
+\item \(\Sexpr{Q_Ls}\,\mathrm{L/s}\).
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{\Sexpr{v2}|\Sexpr{Q_Ls}}
+%% \exclozetype{num|num}
+%% \extol{0.01|0.01}
+%% \exname{Q02ClozeContinuidadeVazao}
+%% \exsection{Mecanica dos fluidos; Hidrodinamica; Continuidade; Vazao}
+%% \exusepackage[utf8]{inputenc}
