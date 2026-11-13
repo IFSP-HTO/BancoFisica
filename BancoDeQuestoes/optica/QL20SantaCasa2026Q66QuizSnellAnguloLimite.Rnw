@@ -1,0 +1,34 @@
+<<echo=FALSE, results=hide>>=
+include_supplement("SantaCasa2026Q66RaiosTabela.png", dir="../figuras")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+Dois raios monocromáticos atingem a fronteira entre o ar ($n_{\mathrm{ar}}=1$) e um líquido, conforme o esquema. O raio I incide pelo ar com ângulo $\theta$ e se refrata no líquido com ângulo $\beta$; o raio II incide pelo líquido com ângulo $\alpha$ e sai rasante pelo ar. A tabela do desenho fornece os senos de $\alpha$, $\beta$ e outros ângulos. Qual é o ângulo $\theta$?
+
+\begin{center}
+\includegraphics[width=0.74\linewidth,keepaspectratio]{SantaCasa2026Q66RaiosTabela.png}
+\end{center}
+
+\begin{answerlist}
+  \item $45^\circ$
+  \item $48^\circ$
+  \item $60^\circ$
+  \item $75^\circ$
+  \item $30^\circ$
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+A refração rasante do raio II fornece $n_L\sin\alpha=1$. No raio I, $\sin\theta=n_L\sin\beta=\sin\beta/\sin\alpha$. Pela tabela, $\sin\alpha=\sqrt3/3$ e $\sin\beta=\sqrt6/6$, logo $\sin\theta=(\sqrt6/6)/(\sqrt3/3)=\sqrt2/2$. Portanto, $\theta=45^\circ$. Alternativa \textbf{A}.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{10000}
+%% \exname{QL20SantaCasa2026Q66QuizSnellAnguloLimite}
+%% \exsection{Optica; Refracao; Lei de Snell; Angulo limite; Vestibular 2026}
+%% SOURCE-VISUAL: original-crop
+%% SOURCE-IMAGE-SHA256: 04c8f1569a0ddc544b3e9b97e88821e5d4ede75931a935e2b5eb861c12baed0e
+%% SOURCE: https://provas.professorfilatte.com.br/santa-casa-2026-fisica-questao-66
