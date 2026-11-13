@@ -7,6 +7,7 @@ on:
       - 'BancoDeQuestoes/hidrostatica/**'
       - 'BancoDeQuestoes/hidrodinamica/**'
       - 'tools/generate_hidrostatica_listas2ano.R'
+      - 'tools/embed_unresolved_moodle_images.py'
       - 'tools/check_hidro_lista2_media.py'
       - '.github/workflows/moodle-hidrostatica-listas2ano.yml'
   pull_request:
@@ -15,6 +16,7 @@ on:
       - 'BancoDeQuestoes/hidrostatica/**'
       - 'BancoDeQuestoes/hidrodinamica/**'
       - 'tools/generate_hidrostatica_listas2ano.R'
+      - 'tools/embed_unresolved_moodle_images.py'
       - 'tools/check_hidro_lista2_media.py'
       - '.github/workflows/moodle-hidrostatica-listas2ano.yml'
   workflow_dispatch:
