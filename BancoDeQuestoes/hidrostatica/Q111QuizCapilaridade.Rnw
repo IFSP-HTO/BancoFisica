@@ -1,0 +1,35 @@
+%% BancoFisica — propriedades dos liquidos: capilaridade.
+%% Base pedagogica: Hidrostatica.pdf (slide 7, material de aula).
+<<echo=FALSE, results=hide>>=
+alternativas <- c(
+  "A interacao de adesao entre a agua e o vidro favorece o molhamento das paredes; a tensao superficial e a curvatura do menisco contribuem para a subida no tubo estreito.",
+  "O liquido sobe porque sua densidade aumenta quando o tubo fica mais estreito.",
+  "A agua sobe apenas porque a pressao atmosferica e maior no interior do tubo que na superficie externa.",
+  "A subida acontece porque a gravidade atua para cima na agua dentro do capilar.",
+  "O nivel sobe porque a agua fica mais quente espontaneamente quando entra no tubo estreito."
+)
+ordem <- sample(seq_along(alternativas))
+questions <- alternativas[ordem]
+solutions <- ordem == 1L
+@
+
+\begin{question}
+Ao mergulhar verticalmente um tubo muito fino de vidro limpo em um recipiente com água, observa-se que o líquido pode atingir uma altura acima do nível externo. Qual alternativa explica corretamente o fenômeno de \emph{capilaridade}?
+
+<<echo=FALSE, results=tex>>=
+answerlist(questions)
+@
+\end{question}
+
+\begin{solution}
+A água tende a molhar o vidro limpo porque as interações de adesão com a parede favorecem esse contato. A superfície curva do líquido (menisco), associada à tensão superficial, produz uma resultante vertical que permite a elevação até que ocorra equilíbrio com o peso da coluna de água.
+
+A capilaridade depende das interações entre líquido e superfície, da tensão superficial, do raio do tubo e da gravidade. A densidade da água não aumenta por causa da diminuição do diâmetro do tubo.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{Q111QuizCapilaridade}
+%% \exsection{Hidrostatica; Capilaridade; Adesao e coesao}
+%% \exusepackage[utf8]{inputenc}
