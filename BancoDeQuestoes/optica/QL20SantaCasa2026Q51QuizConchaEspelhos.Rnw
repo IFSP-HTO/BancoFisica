@@ -1,0 +1,34 @@
+<<echo=FALSE, results=hide>>=
+include_supplement("SantaCasa2026Q51Concha.png", dir="../figuras")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+Uma concha metálica de servir alimentos tem duas faces refletoras aproximadamente esféricas. Uma criança olha para uma das faces e percebe a imagem invertida do rosto (figura 1); ao virar a concha, vê uma imagem direita e reduzida (figura 2). De acordo com a natureza das imagens representadas no esquema, elas são, respectivamente,
+
+\begin{center}
+\includegraphics[width=0.60\linewidth,keepaspectratio]{SantaCasa2026Q51Concha.png}
+\end{center}
+
+\begin{answerlist}
+  \item Real e imprópria.
+  \item Virtual e virtual.
+  \item Real e real.
+  \item Real e virtual.
+  \item Virtual e imprópria.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+Na face côncava, o rosto está além do foco e o esquema mostra uma imagem invertida produzida por convergência real dos raios refletidos. Na face oposta, convexa, os raios refletem de modo divergente, e apenas seus prolongamentos se cruzam atrás do espelho: a imagem é virtual e direita. Logo são, respectivamente, real e virtual. Alternativa \textbf{D}.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{00010}
+%% \exname{QL20SantaCasa2026Q51QuizConchaEspelhos}
+%% \exsection{Optica; Espelho concavo; Espelho convexo; Natureza da imagem; Vestibular 2026}
+%% SOURCE-VISUAL: original-crop
+%% SOURCE-IMAGE-SHA256: ce522c8e6b4f0fe183590b4a7714915b4b79ef8e8e64e14280a0b82212d3fa6e
+%% SOURCE: https://provas.professorfilatte.com.br/santa-casa-2026-outros-cursos-fisica-questao-51
