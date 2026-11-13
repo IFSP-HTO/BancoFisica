@@ -12,7 +12,9 @@ Dois êmbolos estão ligados por um fluido incompressível. A área do êmbolo m
 
 Quanto o êmbolo maior sobe, em centímetros? Despreze vazamentos.
 
-\begin{center}\includegraphics[width=9cm,keepaspectratio]{Q106PascalDeslocamento_Filatte.png}\end{center}
+\begin{center}
+\includegraphics[width=9cm,keepaspectratio]{Q106PascalDeslocamento_Filatte.png}
+\end{center}
 
 \textit{Esquema dos dois êmbolos: UNIFIMES 2025; os deslocamentos são informados no texto.}
 \end{question}
