@@ -1,0 +1,49 @@
+name: Stage Filatte optics lote 3 (2026)
+on:
+  push:
+    branches:
+      - feat/filatte-optica-lote3-2026
+    paths:
+      - 'data/filatte-optica-lote3-2026.json'
+      - '.github/workflows/stage-filatte-optica-lote3.yml'
+  pull_request:
+    paths:
+      - 'data/filatte-optica-lote3-2026.json'
+      - '.github/workflows/stage-filatte-optica-lote3.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  stage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --disable-pip-version-check requests beautifulsoup4 Pillow
+      - name: Verify manifest identifiers and expected answer keys
+        run: |
+          python - <<'PY'
+          import json
+          m=json.load(open("data/filatte-optica-lote3-2026.json"))
+          q=m["questions"]
+          assert len(q)==m["target_count"]==10
+          assert len({x["id"] for x in q})==len(q)
+          assert len({x["image_url"] for x in q})==len(q)
+          assert all(x["correct"] in "ABCDE" for x in q)
+          print("10 distinct, source-indexed optics items")
+          PY
+      - name: Download and audit 10 original source images
+        run: |
+          python tools/stage_filatte_optica.py \
+            --manifest data/filatte-optica-lote3-2026.json \
+            --out-dir build/filatte-optica-lote3
+      - name: Upload originals and audit report for visual review
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: filatte-optica-lote3-originais
+          path: build/filatte-optica-lote3/
+          if-no-files-found: error
