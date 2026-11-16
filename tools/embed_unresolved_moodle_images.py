@@ -28,15 +28,7 @@ def fix_file(xml_path,source_dir):
             if fname.startswith(".") or ".." in fname:
                 raise ValueError("Unsafe image path "+repr(fname))
             path=source_dir/fname
-            if not path.is_file():
-                # Figuras compartilhadas pelo banco sao versionadas em BancoDeQuestoes/figuras.
-                # O helper recebe o diretorio da questao; neste caso, procurar tambem
-                # o repositorio central sem relaxar a validacao do arquivo PNG.
-                shared=Path("BancoDeQuestoes")/"figuras"/fname
-                if shared.is_file():
-                    path=shared
-                else:
-                    raise FileNotFoundError("Imagem local ausente: "+str(path)+"; alternativa: "+str(shared))
+            if not path.is_file():raise FileNotFoundError("Imagem local ausente: "+str(path))
             raw=path.read_bytes()
             if len(raw)<250 or not raw.startswith(b"\x89PNG\r\n\x1a\n"):
                 raise ValueError("PNG de origem inválida: "+fname)
