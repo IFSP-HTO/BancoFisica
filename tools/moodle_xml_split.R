@@ -33,8 +33,8 @@ clean_moodle_outputs <- function(dir, name) {
 ## Este pos-processamento torna a divisao transparente para a identidade Moodle:
 ##   * Q nos nomes das variantes recebe `question_offset` (posicao global do
 ##     .Rnw no conjunto completo) e e sempre preenchido com zeros a esquerda
-##     (`q_width`, minimo 2), produzindo Q01, Q02, ... mesmo quando o
-##     exams2moodle emitiria Q1;
+##     (`q_width`, minimo 2), produzindo Q01, Q02, ... tanto em "R001 Q1 : ..."
+##     (n > 1) quanto em "Q1 : ..." (n = 1);
 ##   * R recebe `replica_offset`, mantendo R001, R002, ... continuos entre as
 ##     partes quando as replicas de uma questao isolada sao repartidas;
 ##   * a categoria "Exercise N" e reescrita para N = Q global da questao que a
@@ -53,10 +53,17 @@ rewrite_moodle_indices <- function(xml_file, question_offset = 0L,
   ## Em cada nome de variante (linha), registra o Q global. Em cada categoria
   ## "Exercise N", registra o indice da primeira linha de variante que a segue
   ## (as variantes da categoria sempre vêm logo após a categoria no XML).
+  ## O exams2moodle usa dois formatos: "R001 Q1 : ..." (n > 1) e "Q1 : ..."
+  ## (n = 1); ambos sao reconhecidos e o Q e zero-preenchido.
   name_q <- rep(NA_integer_, length(lines))
   name_r <- rep(NA_integer_, length(lines))
+  name_single <- logical(length(lines))
   cat_line <- integer()
   cat_name_line <- integer()
+
+  pad_q <- function(q) {
+    sprintf(paste0("%0", max(q_width, nchar(as.character(q))), "d"), as.integer(q))
+  }
 
   for (k in seq_along(lines)) {
     line <- lines[k]
@@ -77,9 +84,22 @@ rewrite_moodle_indices <- function(xml_file, question_offset = 0L,
       regexec("(<text>[[:space:]]*)R([0-9]+)[[:space:]]+Q([0-9]+)([[:space:]]*:)",
               line, perl = TRUE)
     )[[1]]
-    if (length(m_name) > 0L) {
+    if (length(m_name) == 0L) {
+      m_name <- regmatches(
+        line,
+        regexec("(<text>[[:space:]]*)Q([0-9]+)([[:space:]]*:)",
+                line, perl = TRUE)
+      )[[1]]
+      if (length(m_name) > 0L) {
+        name_single[k] <- TRUE
+        name_q[k] <- as.integer(m_name[3]) + question_offset
+      }
+    } else {
       name_r[k] <- as.integer(m_name[3])
       name_q[k] <- as.integer(m_name[4]) + question_offset
+    }
+
+    if (!is.na(name_q[k])) {
       last_cat <- length(cat_name_line)
       if (last_cat > 0L && is.na(cat_name_line[[last_cat]])) {
         cat_name_line[[last_cat]] <- k
@@ -89,18 +109,26 @@ rewrite_moodle_indices <- function(xml_file, question_offset = 0L,
 
   ## Reescreve R e Q nos nomes das variantes.
   for (k in seq_along(lines)) {
-    if (is.na(name_r[k])) next
-    m_name <- regmatches(
-      lines[k],
-      regexec("(<text>[[:space:]]*)R([0-9]+)[[:space:]]+Q([0-9]+)([[:space:]]*:)",
-              lines[k], perl = TRUE)
-    )[[1]]
-    global_r <- name_r[k] + replica_offset
-    r_width <- nchar(m_name[3])
-    r_text <- sprintf(paste0("%0", r_width, "d"), global_r)
-    q_text <- sprintf(paste0("%0", max(q_width, nchar(as.character(name_q[k]))), "d"),
-                     name_q[k])
-    replacement <- paste0(m_name[2], "R", r_text, " Q", q_text, m_name[5])
+    if (is.na(name_q[k])) next
+    q_text <- pad_q(name_q[k])
+    if (name_single[k]) {
+      m_name <- regmatches(
+        lines[k],
+        regexec("(<text>[[:space:]]*)Q([0-9]+)([[:space:]]*:)",
+                lines[k], perl = TRUE)
+      )[[1]]
+      replacement <- paste0(m_name[2], "Q", q_text, m_name[4])
+    } else {
+      m_name <- regmatches(
+        lines[k],
+        regexec("(<text>[[:space:]]*)R([0-9]+)[[:space:]]+Q([0-9]+)([[:space:]]*:)",
+                lines[k], perl = TRUE)
+      )[[1]]
+      global_r <- name_r[k] + replica_offset
+      r_width <- nchar(m_name[3])
+      r_text <- sprintf(paste0("%0", r_width, "d"), global_r)
+      replacement <- paste0(m_name[2], "R", r_text, " Q", q_text, m_name[5])
+    }
     lines[k] <- sub(m_name[1], replacement, lines[k], fixed = TRUE)
   }
 
@@ -114,9 +142,7 @@ rewrite_moodle_indices <- function(xml_file, question_offset = 0L,
               lines[cat_line[j]], perl = TRUE)
     )[[1]]
     if (length(m_cat) > 0L) {
-      q_text <- sprintf(paste0("%0", max(q_width, nchar(as.character(name_q[nk]))), "d"),
-                       name_q[nk])
-      replacement <- paste0(m_cat[2], q_text, m_cat[4])
+      replacement <- paste0(m_cat[2], pad_q(name_q[nk]), m_cat[4])
       lines[cat_line[j]] <- sub(m_cat[1], replacement, lines[cat_line[j]], fixed = TRUE)
     }
   }
@@ -166,14 +192,24 @@ validate_moodle_split_identity <- function(parts, total, n) {
       regexec("<text>[[:space:]]*R([0-9]+)[[:space:]]+Q([0-9]+)[[:space:]]*:",
               line, perl = TRUE)
     )[[1]]
-    if (length(m_name) == 0L) next
+    r_local <- NA_integer_
+    if (length(m_name) > 0L) {
+      r_local <- as.integer(m_name[2])
+      q_local <- as.integer(m_name[3])
+    } else {
+      ## n = 1: exams2moodle emite "Q01 : ..." (sem R).
+      m_name <- regmatches(
+        line,
+        regexec("<text>[[:space:]]*Q([0-9]+)[[:space:]]*:", line, perl = TRUE)
+      )[[1]]
+      if (length(m_name) == 0L) next
+      q_local <- as.integer(m_name[2])
+    }
 
     if (is.na(current_cat)) {
       stop("Moodle split identity error: variant found before any category in the XML parts")
     }
 
-    r_local <- as.integer(m_name[2])
-    q_local <- as.integer(m_name[3])
     questions <- c(questions, q_local)
     replicas <- c(replicas, r_local)
 
@@ -219,7 +255,8 @@ validate_moodle_split_identity <- function(parts, total, n) {
          " variants across parts, found ", length(questions))
   }
 
-  keys <- paste(questions, replicas, sep = ":")
+  keys <- ifelse(is.na(replicas), paste0(questions, ":single"),
+                 paste(questions, replicas, sep = ":"))
   if (anyDuplicated(keys)) {
     stop("Moodle split identity error: duplicate (Q,R) variant identity across XML parts")
   }
