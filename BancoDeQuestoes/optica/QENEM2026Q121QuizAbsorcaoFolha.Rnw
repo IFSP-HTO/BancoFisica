@@ -1,0 +1,40 @@
+%% SOURCE-REFERENCE: ENEM 2026, 2o dia, caderno 5 amarelo, questao 121 (pagina 12).
+%% SOURCE-VISUAL: original-crop; grafico de absorcao recortado diretamente do PDF-fonte.
+<<echo=FALSE, results=hide>>=
+include_supplement("enem2026_q121_grafico_absorcao.png")
+@
+\usepackage[utf8]{inputenc}
+\begin{question}
+Uma lâmpada emite luz vermelha de potência $6\,\mathrm W$ e comprimento de onda de $650\,\mathrm{nm}$. Uma folha, cuja superfície iluminada mede $4{,}0\,\mathrm{cm^2}$, encontra-se a $1{,}0\,\mathrm m$ da lâmpada. A curva indica a porcentagem de luz absorvida pela espécie vegetal em diferentes comprimentos de onda.
+\begin{center}
+\includegraphics[width=0.7\linewidth,keepaspectratio]{enem2026_q121_grafico_absorcao.png}
+\end{center}
+Considere a lâmpada uma fonte pontual, isotrópica, e use $\pi\approx3$. Qual é o valor aproximado da energia absorvida pela folha em cada segundo?
+\begin{answerlist}
+\item $3{,}8\times10^{-4}\,\mathrm J$.
+\item $4{,}8\times10^{-4}\,\mathrm J$.
+\item $2{,}0\times10^{-4}\,\mathrm J$.
+\item $1{,}8\times10^{-4}\,\mathrm J$.
+\item $1{,}2\times10^{-4}\,\mathrm J$.
+\end{answerlist}
+\end{question}
+\begin{solution}
+A intensidade luminosa na distância $r=1\,\mathrm m$ é
+\[
+I=\frac{P}{4\pi r^2}=\frac{6}{4\cdot3\cdot1^2}
+=0{,}5\,\mathrm{W/m^2}.
+\]
+A área vale $4{,}0\,\mathrm{cm^2}=4{,}0\times10^{-4}\,\mathrm{m^2}$. No comprimento de onda $650\,\mathrm{nm}$, a curva indica $60\%$ de absorção. Logo, em um segundo,
+\[
+E=I\,A\,(0{,}60)\,\Delta t
+=0{,}5\cdot4{,}0\times10^{-4}\cdot0{,}60\cdot1
+=1{,}2\times10^{-4}\,\mathrm J.
+\]
+Alternativa E.
+\end{solution}
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{00001}
+%% \exname{ENEM2026 Q121 Absorcao de luz pela folha}
+%% \exsection{Optica; Irradiancia; Potencia luminosa; Espectro de absorcao; ENEM 2026}
+%% \exusepackage[utf8]{inputenc}
