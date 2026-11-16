@@ -1,0 +1,36 @@
+%% SOURCE-REFERENCE: ENEM 2026, 2o dia, caderno 5 amarelo, questao 93 (pagina 2).
+%% SOURCE-VISUAL: none
+\usepackage[utf8]{inputenc}
+\begin{question}
+No Brasil, em 2022, eram coletadas aproximadamente 196 mil toneladas diárias de resíduos sólidos urbanos. Desse total, 45\% correspondiam a resíduos orgânicos e 60\% eram encaminhados a aterros sanitários. Considere, para esta estimativa, que essas parcelas possam ser aplicadas sucessivamente ao total coletado.
+
+Uma usina pode produzir $1\,\mathrm{m^3}$ de biogás com $20\,\mathrm{kg}$ de resíduos orgânicos, e cada metro cúbico de biogás permite gerar $1{,}2\,\mathrm{kWh}$ de eletricidade.
+
+Se todos os resíduos orgânicos encaminhados aos aterros fossem aproveitados, a energia elétrica diária gerada seria aproximadamente
+\begin{answerlist}
+\item $1{,}2\times10^7\,\mathrm{kWh}$.
+\item $7{,}1\times10^6\,\mathrm{kWh}$.
+\item $5{,}3\times10^6\,\mathrm{kWh}$.
+\item $3{,}2\times10^6\,\mathrm{kWh}$.
+\item $2{,}1\times10^6\,\mathrm{kWh}$.
+\end{answerlist}
+\end{question}
+\begin{solution}
+A massa diária destinada aos aterros e correspondente à fração orgânica é
+\[
+m=196000\cdot0{,}60\cdot0{,}45=52920\,\mathrm{t}
+=5{,}292\times 10^7\,\mathrm{kg}.
+\]
+O biogás produzido ocupa $V=m/20=2{,}646\times 10^6\,\mathrm{m^3}$. Logo,
+\[
+E=1{,}2V=3{,}1752\times10^6\,\mathrm{kWh}
+\approx3{,}2\times10^6\,\mathrm{kWh}.
+\]
+A alternativa correta é D.
+\end{solution}
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{00010}
+%% \exname{ENEM2026 Q93 Biogas energia}
+%% \exsection{Energia; Potencia; Biogas; Sustentabilidade; ENEM 2026}
+%% \exusepackage[utf8]{inputenc}
