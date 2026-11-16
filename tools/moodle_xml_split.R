@@ -32,7 +32,9 @@ clean_moodle_outputs <- function(dir, name) {
 ## questoes-base diferentes colidem no Moodle (por exemplo, duas "Exercise 1").
 ## Este pos-processamento torna a divisao transparente para a identidade Moodle:
 ##   * Q nos nomes das variantes recebe `question_offset` (posicao global do
-##     .Rnw no conjunto completo);
+##     .Rnw no conjunto completo) e e sempre preenchido com zeros a esquerda
+##     (`q_width`, minimo 2), produzindo Q01, Q02, ... mesmo quando o
+##     exams2moodle emitiria Q1;
 ##   * R recebe `replica_offset`, mantendo R001, R002, ... continuos entre as
 ##     partes quando as replicas de uma questao isolada sao repartidas;
 ##   * a categoria "Exercise N" e reescrita para N = Q global da questao que a
@@ -41,10 +43,10 @@ clean_moodle_outputs <- function(dir, name) {
 ##     numeracao local de "Exercise" pula essas questoes e, portanto, nao pode
 ##     ser derivada apenas da posicao do arquivo.
 rewrite_moodle_indices <- function(xml_file, question_offset = 0L,
-                                   replica_offset = 0L) {
+                                   replica_offset = 0L, q_width = 2L) {
   question_offset <- as.integer(question_offset)
   replica_offset <- as.integer(replica_offset)
-  if (question_offset == 0L && replica_offset == 0L) return(invisible(xml_file))
+  q_width <- max(1L, as.integer(q_width))
 
   lines <- readLines(xml_file, warn = FALSE, encoding = "UTF-8")
 
@@ -96,7 +98,9 @@ rewrite_moodle_indices <- function(xml_file, question_offset = 0L,
     global_r <- name_r[k] + replica_offset
     r_width <- nchar(m_name[3])
     r_text <- sprintf(paste0("%0", r_width, "d"), global_r)
-    replacement <- paste0(m_name[2], "R", r_text, " Q", name_q[k], m_name[5])
+    q_text <- sprintf(paste0("%0", max(q_width, nchar(as.character(name_q[k]))), "d"),
+                     name_q[k])
+    replacement <- paste0(m_name[2], "R", r_text, " Q", q_text, m_name[5])
     lines[k] <- sub(m_name[1], replacement, lines[k], fixed = TRUE)
   }
 
@@ -110,7 +114,9 @@ rewrite_moodle_indices <- function(xml_file, question_offset = 0L,
               lines[cat_line[j]], perl = TRUE)
     )[[1]]
     if (length(m_cat) > 0L) {
-      replacement <- paste0(m_cat[2], name_q[nk], m_cat[4])
+      q_text <- sprintf(paste0("%0", max(q_width, nchar(as.character(name_q[nk]))), "d"),
+                       name_q[nk])
+      replacement <- paste0(m_cat[2], q_text, m_cat[4])
       lines[cat_line[j]] <- sub(m_cat[1], replacement, lines[cat_line[j]], fixed = TRUE)
     }
   }
@@ -312,13 +318,19 @@ generate_moodle_xml_limited <- function(files, n = 1L, name, seed, edir, dir,
 
   ## Faz o rename da sonda `fp` (no diretorio `dir`) para o nome sequencial da
   ## proxima parte e devolve o caminho final. Supoe que `fp` esta dentro de
-  ## `dir`; usa o mesmo volume para nao quebrar com file.rename.
+  ## `dir`; usa o mesmo volume para nao quebrar com file.rename. A categoria
+  ## Moodle embutida na sonda carrega `tmp_name`; apos o rename ela e reescrita
+  ## para o `name` definitivo, senao o sufixo efemero vazaria para o Moodle.
   accept_part <- function(fp) {
     part_index <<- part_index + 1L
     final_path <- file.path(dir, paste0(name, "-part", sprintf("%02d", part_index), ".xml"))
     if (!file.rename(fp, final_path)) {
       stop("Could not rename generated part to ", final_path)
     }
+    lines <- readLines(final_path, warn = FALSE, encoding = "UTF-8")
+    fixed <- gsub(paste0("$course$/", tmp_name), paste0("$course$/", name),
+                  lines, fixed = TRUE)
+    if (!identical(lines, fixed)) writeLines(fixed, final_path, useBytes = TRUE)
     final_path
   }
 
