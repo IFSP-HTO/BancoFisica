@@ -1,0 +1,33 @@
+%% SOURCE-REFERENCE: ENEM 2026, 2o dia, caderno 5 amarelo, questao 118 (pagina 11).
+%% SOURCE-VISUAL: adapted-approved; figura melhorada fornecida pelo responsavel do BancoFisica.
+<<echo=FALSE, results=hide>>=
+include_supplement("../figuras/enem2026_q118_tubo_u.png")
+@
+\usepackage[utf8]{inputenc}
+\begin{question}
+Dois líquidos A e B, imiscíveis, encontram-se em equilíbrio hidrostático em um tubo em U de seção uniforme. A figura mostra as alturas $h_{A1}$ e $h_{B1}$, medidas entre as superfícies livres e o nível da interface dos líquidos. Um volume adicional do líquido A é despejado no ramo esquerdo e o sistema atinge um novo equilíbrio, com alturas $h_{A2}$ e $h_{B2}$, medidas da mesma maneira.
+\begin{center}
+\includegraphics[width=0.58\linewidth]{enem2026_q118_tubo_u.png}
+\end{center}
+Em relação às alturas iniciais, no novo equilíbrio ocorre
+\begin{answerlist}
+\item $h_{A2}=h_{A1}$ e $h_{B2}=h_{B1}$.
+\item $h_{A2}>h_{A1}$ e $h_{B2}=h_{B1}$.
+\item $h_{A2}>h_{A1}$ e $h_{B2}>h_{B1}$.
+\item $h_{A2}<h_{A1}$ e $h_{B2}>h_{B1}$.
+\item $h_{A2}=h_{A1}$ e $h_{B2}>h_{B1}$.
+\end{answerlist}
+\end{question}
+\begin{solution}
+Como o líquido B permanece integralmente no mesmo ramo, com seção transversal constante, seu volume e sua altura não mudam: $h_{B2}=h_{B1}$. Em cada equilíbrio, a igualdade das pressões na altura da interface exige
+\[
+\rho_A g h_A=\rho_B g h_B.
+\]
+Como as densidades não se alteram e $h_B$ é constante, também $h_A$ deve permanecer constante, apesar de as superfícies livres e a interface poderem se deslocar no tubo. Logo, $h_{A2}=h_{A1}$ e $h_{B2}=h_{B1}$. A alternativa correta é A.
+\end{solution}
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{10000}
+%% \exname{ENEM2026 Q118 Tubo U alturas}
+%% \exsection{Hidrostatica; Equilibrio hidrostatico; Tubo em U; Pressao; ENEM 2026}
+%% \exusepackage[utf8]{inputenc}
