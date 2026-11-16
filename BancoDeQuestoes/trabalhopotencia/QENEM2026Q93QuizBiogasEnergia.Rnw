@@ -1,12 +1,12 @@
 %% SOURCE-REFERENCE: ENEM 2026, 2o dia, caderno 5 amarelo, questao 93 (pagina 2).
 %% SOURCE-VISUAL: none
+%% CORRECAO LOTE 2: a prova considera TODOS os residuos organicos coletados,
+%% e nao apenas os que seguem para aterros. O resultado oficial da conta e alternativa C.
 \usepackage[utf8]{inputenc}
 \begin{question}
-No Brasil, em 2022, eram coletadas aproximadamente 196 mil toneladas diárias de resíduos sólidos urbanos. Desse total, 45\% correspondiam a resíduos orgânicos e 60\% eram encaminhados a aterros sanitários. Considere, para esta estimativa, que essas parcelas possam ser aplicadas sucessivamente ao total coletado.
+No Brasil, em 2022, foram geradas cerca de $211$ mil toneladas de resíduos sólidos urbanos por dia. Aproximadamente $93\%$ desses resíduos foram coletados, totalizando aproximadamente $196$ mil toneladas diárias. Os resíduos orgânicos representaram $45\%$ do total coletado. Para a produção de biogás, cerca de $20\,\mathrm{kg}$ de resíduos orgânicos produzem $1\,\mathrm{m^3}$ do gás; cada metro cúbico permite gerar $1{,}2\,\mathrm{kWh}$ de energia elétrica.
 
-Uma usina pode produzir $1\,\mathrm{m^3}$ de biogás com $20\,\mathrm{kg}$ de resíduos orgânicos, e cada metro cúbico de biogás permite gerar $1{,}2\,\mathrm{kWh}$ de eletricidade.
-
-Se todos os resíduos orgânicos encaminhados aos aterros fossem aproveitados, a energia elétrica diária gerada seria aproximadamente
+Se todos os resíduos orgânicos coletados fossem utilizados para produzir biogás, aproximadamente quanta energia elétrica poderia ser gerada por dia?
 \begin{answerlist}
 \item $1{,}2\times10^7\,\mathrm{kWh}$.
 \item $7{,}1\times10^6\,\mathrm{kWh}$.
@@ -16,21 +16,25 @@ Se todos os resíduos orgânicos encaminhados aos aterros fossem aproveitados, a
 \end{answerlist}
 \end{question}
 \begin{solution}
-A massa diária destinada aos aterros e correspondente à fração orgânica é
+A massa diária de resíduos orgânicos coletados é
 \[
-m=196000\cdot0{,}60\cdot0{,}45=52920\,\mathrm{t}
-=5{,}292\times 10^7\,\mathrm{kg}.
+m=196\,000\cdot0{,}45=88\,200\,\mathrm{t}
+=8{,}82\times10^7\,\mathrm{kg}.
 \]
-O biogás produzido ocupa $V=m/20=2{,}646\times 10^6\,\mathrm{m^3}$. Logo,
+O volume de biogás produzido seria
 \[
-E=1{,}2V=3{,}1752\times10^6\,\mathrm{kWh}
-\approx3{,}2\times10^6\,\mathrm{kWh}.
+V=\frac{8{,}82\times10^7}{20}=4{,}41\times10^6\,\mathrm{m^3}.
 \]
-A alternativa correta é D.
+Portanto, a energia elétrica diária é
+\[
+E=1{,}2\,V=5{,}292\times10^6\,\mathrm{kWh}
+\approx5{,}3\times10^6\,\mathrm{kWh}.
+\]
+Alternativa C. Os $60\%$ destinados a aterros sanitários não devem multiplicar essa conta, pois o enunciado pede \emph{todos} os resíduos orgânicos coletados.
 \end{solution}
 %% META-INFORMATION
 %% \extype{schoice}
-%% \exsolution{00010}
+%% \exsolution{00100}
 %% \exname{ENEM2026 Q93 Biogas energia}
 %% \exsection{Energia; Potencia; Biogas; Sustentabilidade; ENEM 2026}
 %% \exusepackage[utf8]{inputenc}
