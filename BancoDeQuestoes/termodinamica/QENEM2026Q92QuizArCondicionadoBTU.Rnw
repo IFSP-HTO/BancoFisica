@@ -1,0 +1,37 @@
+%% SOURCE-REFERENCE: ENEM 2026, 2o dia, caderno 5 amarelo, questao 92 (pagina 2).
+%% SOURCE-VISUAL: original-crop; tabela integral recortada diretamente do PDF-fonte.
+<<echo=FALSE, results=hide>>=
+include_supplement("enem2026_q92_tabela.png")
+@
+\usepackage[utf8]{inputenc}
+\begin{question}
+Uma engenheira dimensiona a capacidade de refrigeração de um ar-condicionado para um escritório no qual trabalham 20 pessoas. A tabela informa as quantidades de fontes de calor e a potência térmica dissipada individualmente. Considere que as paredes são perfeitamente isolantes e que o aparelho deve retirar o calor dissipado para manter a temperatura constante.
+\begin{center}
+\includegraphics[width=0.84\linewidth,keepaspectratio]{enem2026_q92_tabela.png}
+\end{center}
+Adote a conversão $1\,\mathrm{Btu/h}=0{,}3\,\mathrm W$. Qual é a menor capacidade de refrigeração, em Btu/h, necessária ao aparelho?
+\begin{answerlist}
+\item $7\,000\,\mathrm{Btu/h}$.
+\item $10\,000\,\mathrm{Btu/h}$.
+\item $12\,000\,\mathrm{Btu/h}$.
+\item $24\,000\,\mathrm{Btu/h}$.
+\item $30\,000\,\mathrm{Btu/h}$.
+\end{answerlist}
+\end{question}
+\begin{solution}
+A taxa total de produção de calor é a soma das contribuições:
+\[
+P=10(100)+20(150)+2(500)+20(200)=9\,000\,\mathrm W.
+\]
+A refrigeração precisa compensar essa potência. Como $1\,\mathrm{Btu/h}=0{,}3\,\mathrm W$, segue que
+\[
+C=\frac{9\,000}{0{,}3}=30\,000\,\mathrm{Btu/h}.
+\]
+Alternativa E.
+\end{solution}
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{00001}
+%% \exname{ENEM2026 Q92 Ar condicionado BTU}
+%% \exsection{Termodinamica; Fluxo de calor; Potencia termica; Conversao de unidades; ENEM 2026}
+%% \exusepackage[utf8]{inputenc}
