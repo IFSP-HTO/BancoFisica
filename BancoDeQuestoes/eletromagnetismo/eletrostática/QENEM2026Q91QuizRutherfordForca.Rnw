@@ -1,0 +1,37 @@
+%% SOURCE-REFERENCE: ENEM 2026, 2o dia, caderno 5 amarelo, questao 91 (pagina 2).
+%% SOURCE-VISUAL: adapted-approved; representacao do atomo melhorada pelo responsavel.
+%% As CINCO alternativas graficas provem de original-crop diretamente do PDF-fonte.
+<<echo=FALSE, results=hide>>=
+include_supplement("enem2026_q91_rutherford.png")
+include_supplement("enem2026_q91_grafico_a.png")
+include_supplement("enem2026_q91_grafico_b.png")
+include_supplement("enem2026_q91_grafico_c.png")
+include_supplement("enem2026_q91_grafico_d.png")
+include_supplement("enem2026_q91_grafico_e.png")
+@
+\usepackage[utf8]{inputenc}
+\begin{question}
+No modelo planetário de Rutherford, o núcleo de um átomo tem carga positiva e atrai eletricamente o elétron. De acordo com a lei de Coulomb, o módulo dessa força de atração é inversamente proporcional ao quadrado da distância entre o núcleo e o elétron.
+
+Pela eletrodinâmica clássica, um elétron acelerado emite radiação e perde energia. Nesse modelo, a órbita diminuiria e o elétron se aproximaria do núcleo, descrevendo uma espiral, o que contraria a estabilidade observada dos átomos.
+\begin{center}
+\includegraphics[width=5cm,keepaspectratio]{enem2026_q91_rutherford.png}
+\end{center}
+Considerando essa previsão clássica para o átomo de hidrogênio, qual dos gráficos representa corretamente a evolução da intensidade da força elétrica de atração em função do tempo?
+\begin{answerlist}
+\item \includegraphics[width=2.8cm,keepaspectratio]{enem2026_q91_grafico_a.png}
+\item \includegraphics[width=2.8cm,keepaspectratio]{enem2026_q91_grafico_b.png}
+\item \includegraphics[width=2.8cm,keepaspectratio]{enem2026_q91_grafico_c.png}
+\item \includegraphics[width=2.8cm,keepaspectratio]{enem2026_q91_grafico_d.png}
+\item \includegraphics[width=2.8cm,keepaspectratio]{enem2026_q91_grafico_e.png}
+\end{answerlist}
+\end{question}
+\begin{solution}
+Pela lei de Coulomb, $F=k\,e^2/r^2$. Na previsão clássica, a distância $r$ entre o núcleo e o elétron diminui com o tempo, de modo que o módulo da força de atração aumenta. O crescimento não é linear: o fator $1/r^2$ torna o aumento cada vez mais acentuado à medida que o elétron se aproxima do núcleo. Isso corresponde ao gráfico da alternativa D. A instabilidade orbital é uma limitação do modelo clássico, posteriormente superada pelo tratamento quântico.
+\end{solution}
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{00010}
+%% \exname{ENEM2026 Q91 Rutherford forca eletrica}
+%% \exsection{Eletrostatica; Lei de Coulomb; Modelos atomicos; Graficos; ENEM 2026}
+%% \exusepackage[utf8]{inputenc}
