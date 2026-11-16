@@ -180,6 +180,24 @@ compilar_isolado <- function(arquivo, diretorio, formato, ano, seed) {
           }
 
           xml_new <- xml_new[order(file.info(xml_new)$mtime, decreasing = TRUE)]
+
+          ## O exams2moodle pode deixar um PNG local referenciado por src="arquivo.png",
+          ## em vez de anexá-lo ao XML como @@PLUGINFILE@@. O exportador Moodle oficial
+          ## corrige isso com o helper abaixo. Fazer o mesmo no teste isolado,
+          ## ANTES da validação estrita, sem dispensar nenhuma checagem de mídia.
+          xml_raw <- paste(readLines(xml_new[1], warn = FALSE, encoding = "UTF-8"),
+                           collapse = "\n")
+          if (grepl('src="[A-Za-z0-9_.-]+\\.png"', xml_raw, perl = TRUE)) {
+            helper <- file.path(getwd(), "tools", "embed_unresolved_moodle_images.py")
+            if (!file.exists(helper)) stop("Helper Moodle indisponível: ", helper)
+            exit_code <- system2("python3",
+                                 c(shQuote(helper), shQuote(tempdir()),
+                                   shQuote(diretorio)))
+            if (!identical(as.integer(exit_code), 0L)) {
+              stop("Falha ao anexar os PNGs locais ao XML da questão: ",
+                   basename(arquivo))
+            }
+          }
           xml_info <- validate_moodle_xml(xml_new[1])
           return(c(list(ok = TRUE, message = ""), xml_info))
         }
