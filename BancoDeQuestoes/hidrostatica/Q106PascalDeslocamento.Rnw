@@ -2,6 +2,8 @@
 %% SOURCE-REFERENCE: https://provas.professorfilatte.com.br/puc-sp-2011-fisica-questao-17
 %% SOURCE-VISUAL: ilustração aprovada pelo professor (seringas); detalhes em data/lista2-imagens-aprovadas.json.
 <<echo=FALSE, results=hide>>=
+## Registrar o PNG como suplemento para exams2pdf e exams2moodle.
+include_supplement("Q106PascalDeslocamento.png")
 f <- sample(3:8,1)
 d2 <- sample(c(4,5,6,8),1) # cm
 d1 <- f*d2

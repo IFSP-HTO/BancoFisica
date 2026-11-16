@@ -2,6 +2,8 @@
 %% Base pedagogica: Hidrostatica.pdf (slides 44 e 45, material de aula).
 %% SOURCE-VISUAL: PNG da Lista 2 selecionado pelo professor; ver data/lista2-imagens-aprovadas.json.
 <<echo=FALSE, results=hide>>=
+## Registrar o PNG como suplemento para exams2pdf e exams2moodle.
+include_supplement("Q02ClozeContinuidadeVazao.png")
 A1_cm2 <- sample(c(10, 20, 30, 40), 1)
 fator <- sample(c(2, 4, 5), 1)
 A2_cm2 <- A1_cm2 / fator

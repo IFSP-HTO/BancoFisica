@@ -2,6 +2,8 @@
 %% SOURCE-REFERENCE: https://provas.professorfilatte.com.br/unifimes-2025-trindade-1o-semestre-fisica-questao-37
 %% SOURCE-VISUAL: ilustração aprovada pelo professor; detalhes em data/lista2-imagens-aprovadas.json.
 <<echo=FALSE, results=hide>>=
+## Registrar o PNG como suplemento para exams2pdf e exams2moodle.
+include_supplement("Q105PascalForca.png")
 A1 <- sample(c(10,15,20,25),1)
 f <- sample(3:8,1)
 A2 <- A1*f
