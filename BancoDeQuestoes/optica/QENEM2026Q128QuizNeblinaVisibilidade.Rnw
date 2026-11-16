@@ -1,0 +1,26 @@
+%% SOURCE-REFERENCE: ENEM 2026, 2o dia, caderno 5 amarelo, questao 128 (pagina 14).
+%% SOURCE-VISUAL: none
+\usepackage[utf8]{inputenc}
+\begin{question}
+Durante a noite, faróis acesos podem iluminar bem uma estrada quando o ar está relativamente seco. Na presença de neblina, porém, a visibilidade diminui mesmo sem reduzir a potência dos faróis.
+
+A redução da visibilidade é explicada principalmente pela
+\begin{answerlist}
+\item dispersão (espalhamento) da luz pelas gotículas de água suspensas no ar.
+\item polarização da luz pelas gotículas de água dispersas no ar.
+\item condensação das gotículas de água na superfície dos faróis.
+\item solubilização das gotículas de água presentes no ar.
+\item redução da potência luminosa produzida pelos faróis.
+\end{answerlist}
+\end{question}
+\begin{solution}
+As gotículas de água da neblina espalham a luz incidente em várias direções. Isso reduz o contraste das imagens da estrada e aumenta a luz retroespalhada em direção ao motorista. A potência elétrica ou luminosa da fonte não precisa diminuir para que a visibilidade piore.
+
+A alternativa correta é A.
+\end{solution}
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{10000}
+%% \exname{ENEM2026 Q128 Neblina visibilidade}
+%% \exsection{Optica; Espalhamento da luz; Visibilidade; Neblina; ENEM 2026}
+%% \exusepackage[utf8]{inputenc}
