@@ -1,7 +1,7 @@
 %% SOURCE-REFERENCE: ENEM 2026, 2o dia, caderno 5 amarelo, questao 99 (pagina 4).
 %% SOURCE-VISUAL: adapted-approved; figura melhorada fornecida pelo responsavel do BancoFisica.
 <<echo=FALSE, results=hide>>=
-include_supplement("../../figuras/enem2026_q99_lampadas.png", target = "enem2026_q99_lampadas.png")
+include_supplement("enem2026_q99_lampadas.png")
 @
 \usepackage[utf8]{inputenc}
 \begin{question}
