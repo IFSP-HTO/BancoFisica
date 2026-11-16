@@ -61,14 +61,18 @@ listas <- list(
   lista2 = list(
     sources = c(file.path(hidro, lista2_hidro),
                 file.path(dinam, lista2_dinam)),
-    figures = file.path(hidro, c(
-      "Q05Densidade.png",
-      "Q105PascalForca.png",
-      "Q106PascalDeslocamento.png",
-      "Q107EmpuxoVolume.png",
-      "Q108PesoAparente.png",
-      "Q109ClozeFracaoSubmersa.png"
-    )),
+    figures = c(
+      file.path(hidro, c(
+        "Q05Densidade.png",
+        "Q105PascalForca.png",
+        "Q106PascalDeslocamento.png",
+        "Q109ClozeFracaoSubmersa.png"
+      )),
+      file.path(dinam, c(
+        "Q02ClozeContinuidadeVazao.png",
+        "Q03ClozeBernoulliReservatorio.png"
+      ))
+    ),
     subjects = c("Pascal: forcas", "Pascal: deslocamentos",
       "Flutuacao", "Afundar ou flutuar", "Empuxo",
       "Peso aparente", "Fracao submersa", "Continuidade e vazao",
