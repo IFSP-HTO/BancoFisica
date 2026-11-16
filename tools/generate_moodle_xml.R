@@ -253,29 +253,6 @@ for (i in seq_along(dirs)) {
     question_categories = ondas_osc_subject,
     category_root = category_root
   )
-  ## Inclui nos XMLs os PNGs locais que o exams2moodle deixou com src simples,
-  ## inclusive figuras compartilhadas em BancoDeQuestoes/figuras. O auxiliar
-  ## preserva as demais referencias e falha se algum arquivo nao existir.
-  unresolved_png <- any(vapply(
-    xml_files,
-    function(f) {
-      xml_text <- paste(readLines(f, warn = FALSE, encoding = "UTF-8"),
-                        collapse = "\n")
-      grepl('src="[A-Za-z0-9_.-]+\\.png"', xml_text, perl = TRUE)
-    },
-    logical(1)
-  ))
-  if (unresolved_png) {
-    helper <- file.path(repo_root, "tools", "embed_unresolved_moodle_images.py")
-    if (!file.exists(helper)) stop("Helper de PNGs Moodle indisponivel: ", helper)
-    status <- system2("python3", c(shQuote(helper),
-                                    shQuote(dirname(xml_files[[1]])),
-                                    shQuote(source_dir)))
-    if (!identical(as.integer(status), 0L)) {
-      stop("Falha ao incorporar PNGs locais no XML do assunto: ", subject)
-    }
-  }
-
   n_questions <- sum(vapply(xml_files, function(f) validate_xml(f, max_bytes), integer(1)))
 
   cat(sprintf("[%d/%d] %s -> %d XML part(s)\n",
