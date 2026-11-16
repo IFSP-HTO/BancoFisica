@@ -1,0 +1,43 @@
+%% SOURCE-REFERENCE: ENEM 2026, 2o dia, caderno 5 amarelo, questao 95 (pagina 3).
+%% SOURCE-VISUAL: adapted-approved; figura melhorada fornecida pelo responsavel do BancoFisica; valores dos resistores explicitados no texto.
+<<echo=FALSE, results=hide>>=
+include_supplement("enem2026_q95_sensor_resistivo.png")
+@
+\usepackage[utf8]{inputenc}
+\begin{question}
+O circuito apresenta um sensor de temperatura de resistência variável $R_s$ e uma fonte ideal de $12\,\mathrm V$. A resistência varia com a temperatura, em kelvin, segundo
+\[
+R_s=20[1+0{,}002(T-300)]\,\Omega.
+\]
+Na figura, considere $R_1=40\,\Omega$, $R_2=40\,\Omega$ e $R_3=20\,\Omega$. Os terminais A e B estão desconectados um do outro.
+\begin{center}
+\includegraphics[width=0.82\linewidth]{enem2026_q95_sensor_resistivo.png}
+\end{center}
+Quando o sensor está a $800\,\mathrm K$, o módulo da diferença de potencial entre A e B é
+\begin{answerlist}
+\item $5{,}0\,\mathrm V$.
+\item $4{,}0\,\mathrm V$.
+\item $3{,}0\,\mathrm V$.
+\item $2{,}0\,\mathrm V$.
+\item $1{,}0\,\mathrm V$.
+\end{answerlist}
+\end{question}
+\begin{solution}
+A $800\,\mathrm K$, $R_s=20[1+0{,}002(800-300)]=40\,\Omega$. Os ramos esquerdo e direito são dois divisores de tensão independentes. Adotando o terminal inferior como potencial nulo,
+\[
+V_A=12\frac{R_s}{R_1+R_s}
+=12\frac{40}{40+40}=6\,\mathrm V
+\]
+e
+\[
+V_B=12\frac{R_3}{R_2+R_3}
+=12\frac{20}{40+20}=4\,\mathrm V.
+\]
+Assim, $|V_A-V_B|=2\,\mathrm V$. A alternativa correta é D.
+\end{solution}
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{00010}
+%% \exname{ENEM2026 Q95 Ponte sensor termico}
+%% \exsection{Eletrodinamica; Divisor de tensao; Resistencia eletrica; Sensor termico; ENEM 2026}
+%% \exusepackage[utf8]{inputenc}

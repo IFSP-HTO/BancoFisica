@@ -1,0 +1,34 @@
+%% SOURCE-REFERENCE: ENEM 2026, 2o dia, caderno 5 amarelo, questao 96 (pagina 3).
+%% SOURCE-VISUAL: adapted-approved; figura melhorada fornecida pelo responsavel do BancoFisica.
+<<echo=FALSE, results=hide>>=
+include_supplement("enem2026_q96_radar.png")
+@
+\usepackage[utf8]{inputenc}
+\begin{question}
+Um radar emite ondas eletromagnéticas que se propagam a $300\,000\,\mathrm{km/s}$. Um avião encontra-se a $75\,\mathrm{km}$ da antena. O operador mede o intervalo entre a emissão de um pulso e o recebimento do sinal refletido para calcular a distância até o avião.
+\begin{center}
+\includegraphics[width=0.88\linewidth]{enem2026_q96_radar.png}
+\end{center}
+O intervalo de tempo medido é
+\begin{answerlist}
+\item $2{,}0\times10^3\,\mathrm s$.
+\item $4{,}0\times10^0\,\mathrm s$.
+\item $5{,}0\times10^{-1}\,\mathrm s$.
+\item $1{,}5\times10^{-3}\,\mathrm s$.
+\item $5{,}0\times10^{-4}\,\mathrm s$.
+\end{answerlist}
+\end{question}
+\begin{solution}
+O sinal percorre duas vezes a distância entre a antena e o avião. Portanto,
+\[
+\Delta t=\frac{2d}{c}=\frac{2\cdot75}{300000}
+=5{,}0\times10^{-4}\,\mathrm s.
+\]
+A alternativa correta é E.
+\end{solution}
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{00001}
+%% \exname{ENEM2026 Q96 Radar eco}
+%% \exsection{Ondulatoria; Ondas eletromagneticas; Reflexao; Radar; ENEM 2026}
+%% \exusepackage[utf8]{inputenc}

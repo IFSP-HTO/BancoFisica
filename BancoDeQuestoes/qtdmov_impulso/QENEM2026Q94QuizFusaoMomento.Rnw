@@ -1,0 +1,37 @@
+%% SOURCE-REFERENCE: ENEM 2026, 2o dia, caderno 5 amarelo, questao 94 (pagina 3).
+%% SOURCE-VISUAL: none
+\usepackage[utf8]{inputenc}
+\begin{question}
+Em uma reação de fusão nuclear, um núcleo de deutério e um de trítio se unem, produzindo uma partícula alfa e um nêutron:
+\[
+{}^{2}\mathrm H+{}^{3}\mathrm H\longrightarrow {}^{4}\mathrm{He}+n.
+\]
+A partícula alfa tem dois prótons e dois nêutrons. Considere que os prótons e os nêutrons têm massas iguais, que o momento linear total dos reagentes é nulo e que os produtos recebem, juntos, $20\,\mathrm{MeV}$ de energia cinética.
+
+A energia cinética recebida pelo nêutron é
+\begin{answerlist}
+\item $4\,\mathrm{MeV}$.
+\item $10\,\mathrm{MeV}$.
+\item $13\,\mathrm{MeV}$.
+\item $15\,\mathrm{MeV}$.
+\item $16\,\mathrm{MeV}$.
+\end{answerlist}
+\end{question}
+\begin{solution}
+Pela conservação do momento linear, os dois produtos têm momentos de mesmo módulo, $p_\alpha=p_n=p$. No regime não relativístico, $K=p^2/(2m)$. Como a massa da partícula alfa é aproximadamente quatro vezes a do nêutron,
+\[
+\frac{K_n}{K_\alpha}=\frac{m_\alpha}{m_n}=4.
+\]
+Logo, $K_\alpha=K_n/4$ e
+\[
+20=K_n+\frac{K_n}{4}=\frac54K_n
+\quad\Longrightarrow\quad K_n=16\,\mathrm{MeV}.
+\]
+A alternativa correta é E.
+\end{solution}
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{00001}
+%% \exname{ENEM2026 Q94 Fusao momento}
+%% \exsection{Conservacao do momento linear; Fisica nuclear; Energia cinetica; ENEM 2026}
+%% \exusepackage[utf8]{inputenc}
