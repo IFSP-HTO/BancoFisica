@@ -1,6 +1,6 @@
 %% NOVO BANCOFISICA — adaptação independente; enunciado e parâmetros autorais.
 %% SOURCE-REFERENCE: https://provas.professorfilatte.com.br/unifimes-2025-trindade-1o-semestre-fisica-questao-37
-%% SOURCE-VISUAL: original-crop do enunciado de prova no catálogo Filatte, com procedência e SHA-256 em data/filatte-hidrostatica-lista2-audit.json.
+%% SOURCE-VISUAL: ilustração aprovada pelo professor; detalhes em data/lista2-imagens-aprovadas.json.
 <<echo=FALSE, results=hide>>=
 A1 <- sample(c(10,15,20,25),1)
 f <- sample(3:8,1)
@@ -16,7 +16,7 @@ Um elevador hidráulico tem êmbolos com áreas de \(\Sexpr{A1}\,\mathrm{cm^2}\)
 \includegraphics[width=7cm,keepaspectratio]{Q105PascalForca.png}
 \end{center}
 
-\textit{Esquema original: UNIFIMES 2025 (figura ilustrativa; os valores são os do enunciado).}
+\textit{Ilustração selecionada pelo professor; use os valores sorteados no enunciado.}
 
 Qual é a força transmitida ao êmbolo maior, em newtons?
 \end{question}
@@ -31,7 +31,7 @@ F_2=\Sexpr{F1}\frac{\Sexpr{A2}}{\Sexpr{A1}}
 \]
 \end{solution}
 
-%% SOURCE-VISUAL: Filatte original diagram crop; UNIFIMES 2025 — https://provas.professorfilatte.com.br/unifimes-2025-trindade-1o-semestre-fisica-questao-37
+%% SOURCE-VISUAL: Figura aprovada para a Lista 2; ver data/lista2-imagens-aprovadas.json
 %% META-INFORMATION
 %% \extype{num}
 %% \exsolution{\Sexpr{F2}}

@@ -1,6 +1,6 @@
 %% NOVO BANCOFISICA — adaptação independente; enunciado e parâmetros autorais.
 %% SOURCE-REFERENCE: https://provas.professorfilatte.com.br/acafe-2025-inverno-fisica-questao-30
-%% SOURCE-VISUAL: original-crop do enunciado de prova no catálogo Filatte, com procedência e SHA-256 em data/filatte-hidrostatica-lista2-audit.json.
+%% SOURCE-VISUAL: não utiliza imagem (decisão pedagógica para a Lista 2).
 <<echo=FALSE, results=hide>>=
 m <- sample(c(3,4,5,6),1)
 volume_cm3 <- sample(c(500,1000,1500),1)
@@ -17,11 +17,7 @@ Um objeto de massa \(\Sexpr{m}\,\mathrm{kg}\) e volume \(\Sexpr{volume_cm3}\,\ma
 
 Qual é a leitura do dinamômetro, em newtons?
 
-\begin{center}
-\includegraphics[width=8cm,keepaspectratio]{Q108PesoAparente.png}
-\end{center}
 
-\textit{Esquema de UFRGS 2018. As leituras fixas da imagem original foram ocultadas: use os valores sorteados neste enunciado.}
 \end{question}
 
 \begin{solution}
@@ -34,7 +30,6 @@ E=1000\cdot10\cdot(\Sexpr{volume_cm3}\times10^{-6})
 Logo, \(T=\Sexpr{P}-\Sexpr{E}=\Sexpr{T}\,\mathrm N\).
 \end{solution}
 
-%% SOURCE-VISUAL: Filatte original diagram crop; UFRGS 2018 — https://provas.professorfilatte.com.br/ufrgs-2018-fisica-questao-10
 %% META-INFORMATION
 %% \extype{num}
 %% \exsolution{\Sexpr{T}}

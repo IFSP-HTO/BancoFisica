@@ -1,5 +1,6 @@
 %% BancoFisica — hidrodinamica: continuidade e vazao volumetrica.
 %% Base pedagogica: Hidrostatica.pdf (slides 44 e 45, material de aula).
+%% SOURCE-VISUAL: PNG da Lista 2 selecionado pelo professor; ver data/lista2-imagens-aprovadas.json.
 <<echo=FALSE, results=hide>>=
 A1_cm2 <- sample(c(10, 20, 30, 40), 1)
 fator <- sample(c(2, 4, 5), 1)
@@ -15,20 +16,7 @@ Q_Ls <- A1_cm2 * 1e-4 * v1 * 1000
 O esquema mostra o estreitamento de uma tubulação e a direção do escoamento, sem escala.
 
 \begin{center}
-<<fig=TRUE, width=5.4, height=2.8, echo=FALSE, eps=FALSE, results=hide>>=
-op <- par(mar = c(0.3, 0.3, 0.3, 0.3))
-plot.new(); plot.window(xlim=c(0,10), ylim=c(-2.1,2.1), asp=1)
-polygon(c(0.5,4,5.5,9.5,9.5,5.5,4,0.5),
-        c(-1.25,-1.25,-0.60,-0.60,0.60,0.60,1.25,1.25),
-        col="lightblue", border="black", lwd=2)
-arrows(1.2,0,3.0,0,lwd=2,length=0.12)
-arrows(6.5,0,8.4,0,lwd=2,length=0.12)
-text(2.25,1.55,"Secao 1",cex=0.9)
-text(7.5,1.0,"Secao 2",cex=0.9)
-text(2.25,-1.6,"A1, v1",cex=0.9)
-text(7.5,-1.10,"A2, v2",cex=0.9)
-par(op)
-@
+\includegraphics[width=12cm,keepaspectratio]{Q02ClozeContinuidadeVazao.png}
 \end{center}
 
 Considerando a água incompressível, determine:
