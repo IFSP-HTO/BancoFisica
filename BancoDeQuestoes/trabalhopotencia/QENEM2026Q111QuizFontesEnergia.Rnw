@@ -1,0 +1,29 @@
+%% SOURCE-REFERENCE: ENEM 2026, 2o dia, caderno 5 amarelo, questao 111 (pagina 8).
+%% SOURCE-VISUAL: adapted-approved; painel de fontes de energia melhorado pelo responsavel do BancoFisica.
+<<echo=FALSE, results=hide>>=
+include_supplement("enem2026_q111_fontes_energia.png")
+@
+\usepackage[utf8]{inputenc}
+\begin{question}
+A demanda crescente de energia exige discutir fontes alternativas aos combustíveis fósseis. A ilustração apresenta diferentes formas de geração de eletricidade.
+\begin{center}
+\includegraphics[width=0.95\linewidth,keepaspectratio]{enem2026_q111_fontes_energia.png}
+\end{center}
+Entre essas fontes, qual utiliza um recurso não renovável para produzir energia e independe diretamente das condições climáticas para sua obtenção?
+\begin{answerlist}
+\item Nuclear, baseada na fissão de núcleos de urânio.
+\item Hidrelétrica, baseada na movimentação da água.
+\item Solar, baseada em células fotovoltaicas.
+\item Termelétrica, baseada na combustão de biomassa.
+\item Eólica, baseada na rotação das pás de aerogeradores.
+\end{answerlist}
+\end{question}
+\begin{solution}
+O urânio utilizado como combustível em reatores nucleares é um recurso mineral finito e, por isso, não renovável. A energia da fissão é liberada no reator sem depender diretamente da incidência solar, dos ventos ou do regime de chuvas. As demais alternativas citadas usam recursos renováveis (água, Sol, biomassa ou vento). Alternativa A. Isso não significa que uma usina nuclear esteja imune a impactos climáticos sobre sua operação, como os que afetam o resfriamento.
+\end{solution}
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{10000}
+%% \exname{ENEM2026 Q111 Fontes de energia}
+%% \exsection{Energia; Fontes renovaveis e nao renovaveis; Fissao nuclear; ENEM 2026}
+%% \exusepackage[utf8]{inputenc}
