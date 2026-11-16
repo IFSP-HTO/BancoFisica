@@ -1,0 +1,50 @@
+{
+  "purpose": "Fontes visuais finais e hashes SHA-256 das imagens aprovadas para a Lista 2 de fluidos (2o ano).",
+  "validated_against": "Lista2_Hidrostatica_XML_Final_Imagens.xml, versão aprovada na conversa em 2026-11-15",
+  "notes": "As figuras Q105, Q106, Q109 e Q03 foram fornecidas/selecionadas pelo professor; Q02 é o esquema aprovado na revisão. As figuras Q107 e Q108 não devem ser incluídas na Lista 2. O arquivo filatte-hidrostatica-lista2-audit.json documenta recortes antigos e NÃO descreve os PNGs atuais.",
+  "images": [
+    {
+      "question": "Q105PascalForca",
+      "path": "BancoDeQuestoes/hidrostatica/Q105PascalForca.png",
+      "source": "Imagem de prensa/cadeira odontológica selecionada e enviada pelo professor",
+      "sha256": "b6c62add8c040fe7c6fd126a15d06083e5517d4c1c15176c4e72b4934e437033",
+      "bytes": 65728
+    },
+    {
+      "question": "Q106PascalDeslocamento",
+      "path": "BancoDeQuestoes/hidrostatica/Q106PascalDeslocamento.png",
+      "source": "Imagem de duas seringas de prensa hidráulica selecionada e enviada pelo professor",
+      "sha256": "a9144b9b0db7c470e869839dd5763788c0af0abf938abc84b8212e034c0f83e0",
+      "bytes": 232588
+    },
+    {
+      "question": "Q109ClozeFracaoSubmersa",
+      "path": "BancoDeQuestoes/hidrostatica/Q109ClozeFracaoSubmersa.png",
+      "source": "Imagem de embarcação vazia/carregada enviada pelo professor",
+      "sha256": "879e6cd2a82b8f05c4a106406ce8e9f7f45c229f972116dd962b1ca106b61dd6",
+      "bytes": 116508
+    },
+    {
+      "question": "Q02ClozeContinuidadeVazao",
+      "path": "BancoDeQuestoes/hidrodinamica/Q02ClozeContinuidadeVazao.png",
+      "source": "Esquema da tubulação de duas seções preservado da Lista 2 revisada",
+      "sha256": "6b9b08eda9a5827ff23534023e093872df38ce73ab4ccf8ef1188a30d668fa9f",
+      "bytes": 7983
+    },
+    {
+      "question": "Q03ClozeBernoulliReservatorio",
+      "path": "BancoDeQuestoes/hidrodinamica/Q03ClozeBernoulliReservatorio.png",
+      "source": "Nova imagem de reservatório com orifício e altura h enviada pelo professor",
+      "sha256": "39b6c6a7f0c5369cd486138a279b1ce79a9cc938d406e5cda09f3d73dc559af4",
+      "bytes": 85879
+    }
+  ],
+  "other_images": [
+    "Q05Densidade: manter figura original do BancoFisica"
+  ],
+  "text_only": [
+    "Q93QuizDensidadeFlutuacao",
+    "Q107EmpuxoVolume",
+    "Q108PesoAparente"
+  ]
+}
