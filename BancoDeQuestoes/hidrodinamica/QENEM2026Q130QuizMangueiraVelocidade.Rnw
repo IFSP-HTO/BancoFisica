@@ -1,0 +1,26 @@
+%% SOURCE-REFERENCE: ENEM 2026, 2o dia, caderno 5 amarelo, questao 130 (pagina 14).
+%% SOURCE-VISUAL: none
+\usepackage[utf8]{inputenc}
+\begin{question}
+Um jardineiro percebe que a água de uma mangueira não alcança plantas distantes. Ao obstruir parcialmente a extremidade de saída com o polegar, consegue lançar o jato mais longe.
+
+O maior alcance do jato se deve ao aumento da
+\begin{answerlist}
+\item velocidade da água lançada.
+\item densidade da água lançada.
+\item volume da água lançada.
+\item massa da água lançada.
+\item vazão da água lançada.
+\end{answerlist}
+\end{question}
+\begin{solution}
+A redução da área de saída, sob condições adequadas de alimentação da mangueira, pode aumentar a velocidade da água que deixa o bico. Para um jato lançado com direção semelhante, uma velocidade inicial maior permite alcançar distâncias maiores. Não é necessário que a densidade, a massa total ou a vazão aumentem.
+
+A alternativa correta é A.
+\end{solution}
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{10000}
+%% \exname{ENEM2026 Q130 Mangueira alcance}
+%% \exsection{Hidrodinamica; Velocidade de escoamento; Jato de agua; ENEM 2026}
+%% \exusepackage[utf8]{inputenc}
