@@ -1,0 +1,32 @@
+name: Auditoria catálogo Filatte Hidrostática (sem importação)
+
+on:
+  pull_request:
+    paths:
+      - 'tools/audit_filatte_hidrostatica.py'
+      - '.github/workflows/audit-filatte-hidrostatica.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  catalog:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Dependências
+        run: python -m pip install --disable-pip-version-check requests beautifulsoup4
+      - name: Extrair catálogo e testar acesso às páginas
+        run: python tools/audit_filatte_hidrostatica.py --limit 411 --delay 1.25
+      - name: Publicar relatório de auditoria (inclusive quando bloqueado)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: auditoria-filatte-hidrostatica
+          path: build/filatte-hidro-audit/
+          if-no-files-found: error
