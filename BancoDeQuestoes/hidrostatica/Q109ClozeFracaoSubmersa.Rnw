@@ -1,6 +1,6 @@
 %% NOVO BANCOFISICA — adaptação independente; enunciado e parâmetros autorais.
 %% SOURCE-REFERENCE: https://provas.professorfilatte.com.br/humanitas-2025-2o-semestre-fisica-questao-37
-%% SOURCE-VISUAL: original-crop do enunciado de prova no catálogo Filatte, com procedência e SHA-256 em data/filatte-hidrostatica-lista2-audit.json.
+%% SOURCE-VISUAL: imagem de embarcação aprovada pelo professor; detalhes em data/lista2-imagens-aprovadas.json.
 <<echo=FALSE, results=hide>>=
 rho <- 1000
 V <- sample(c(1.0,1.2,1.5,2.0),1)
@@ -11,13 +11,13 @@ percentual <- round(100*Vsub/V,2)
 @
 
 \begin{question}
-Um veículo experimental fechado, semelhante ao ilustrado na fotografia, possui massa total \(\Sexpr{m}\,\mathrm{kg}\) e volume externo \(\Sexpr{V}\,\mathrm{m^3}\). Em uma emergência ele flutua em água de densidade \(1000\,\mathrm{kg/m^3}\), sem tocar o fundo. Despreze o empuxo do ar.
+Uma pequena embarcação de casco estanque possui massa total \(\Sexpr{m}\,\mathrm{kg}\) e volume externo \(\Sexpr{V}\,\mathrm{m^3}\). Ela flutua em água de densidade \(1000\,\mathrm{kg/m^3}\), sem tocar o fundo. Despreze o empuxo do ar.
 
 \begin{center}
 \includegraphics[width=8cm,keepaspectratio]{Q109ClozeFracaoSubmersa.png}
 \end{center}
 
-\textit{Fotografia ilustrativa: Humanitas 2025. Ela não representa a fração submersa calculada neste problema.}
+\textit{Ilustração selecionada pelo professor: embarcação vazia e carregada. Fora de escala; use os valores do enunciado.}
 
 Determine:
 \begin{answerlist}
@@ -27,7 +27,7 @@ Determine:
 \end{question}
 
 \begin{solution}
-Enquanto a plataforma flutua em equilíbrio, \(E=P\):
+Enquanto a embarcação flutua em equilíbrio, \(E=P\):
 \[
 \rho gV_s=mg\quad\Rightarrow\quad
 V_s=\frac{\Sexpr{m}}{1000}=\Sexpr{Vsub}\,\mathrm{m^3}.
@@ -43,7 +43,7 @@ A porcentagem é
 \end{answerlist}
 \end{solution}
 
-%% SOURCE-VISUAL: Filatte original diagram crop; Humanitas 2025 — https://provas.professorfilatte.com.br/humanitas-2025-2o-semestre-fisica-questao-37
+%% SOURCE-VISUAL: Figura aprovada para a Lista 2; ver data/lista2-imagens-aprovadas.json
 %% META-INFORMATION
 %% \extype{cloze}
 %% \exsolution{\Sexpr{Vsub}|\Sexpr{percentual}}
