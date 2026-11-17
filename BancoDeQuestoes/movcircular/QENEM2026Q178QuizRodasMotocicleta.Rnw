@@ -1,0 +1,34 @@
+%% SOURCE-REFERENCE: ENEM 2026, 2o dia, caderno 5, amarelo, questao 178, pagina 30.
+%% SOURCE-VISUAL: none
+%% SOURCE-AREA: Matematica e suas Tecnologias; aplicacao interdisciplinar para o BancoFisica.
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\begin{question}
+Uma motocicleta tem duas rodas com diâmetros externos diferentes: a dianteira mede $0{,}8\,\mathrm m$ e a traseira, $0{,}6\,\mathrm m$. Ela percorre $3600\,\mathrm m$ em linha reta, com rolamento sem deslizamento. Use $\pi\approx3$.
+Quantas voltas completas a roda traseira executa \emph{a mais} que a dianteira nesse trajeto?
+\begin{answerlist}
+\item 500.
+\item 1000.
+\item 1500.
+\item 2917.
+\item 5833.
+\end{answerlist}
+\end{question}
+\begin{solution}
+Sem deslizamento, o número de voltas de uma roda é a distância percorrida dividida pelo comprimento de sua circunferência, $N=s/(\pi d)$. Para a roda dianteira:
+\[
+N_d=\frac{3600}{3(0{,}8)}=1500.
+\]
+Para a roda traseira:
+\[
+N_t=\frac{3600}{3(0{,}6)}=2000.
+\]
+A diferença é $N_t-N_d=2000-1500=500$ voltas. Alternativa A.
+\end{solution}
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{10000}
+%% \exname{ENEM2026 Q178 RodasMotocicleta}
+%% \exsection{Movimento circular; Frequencia de rotacao; Rolamento sem deslizamento; ENEM 2026}
+%% \exusepackage[utf8]{inputenc}
+%% \exusepackage{graphicx}
