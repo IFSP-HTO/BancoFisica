@@ -1,0 +1,74 @@
+name: Moodle + PDF — Filatte Hidrostática Lote 1
+
+on:
+  pull_request:
+    branches: [master]
+    paths:
+      - 'BancoDeQuestoes/hidrostatica/Q11[2-8]*'
+      - 'BancoDeQuestoes/hidrodinamica/Q04Famerp*'
+      - 'tools/generate_filatte_hidro_lote1.R'
+      - 'tools/check_filatte_hidro_lote1.py'
+      - 'data/filatte-hidro-lote1-imagens.json'
+      - '.github/workflows/filatte-hidro-lote1.yml'
+  push:
+    branches: [master]
+    paths:
+      - 'BancoDeQuestoes/hidrostatica/Q11[2-8]*'
+      - 'BancoDeQuestoes/hidrodinamica/Q04Famerp*'
+      - 'tools/generate_filatte_hidro_lote1.R'
+      - 'tools/check_filatte_hidro_lote1.py'
+      - 'data/filatte-hidro-lote1-imagens.json'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: read
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Authenticate to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ github.token }}
+      - name: Pull CI image with R/exams, LaTeX and Python
+        run: |
+          set -euo pipefail
+          fingerprint="$(sha256sum docker/ci/Dockerfile DESCRIPTION | sha256sum | awk '{print $1}')"
+          image="ghcr.io/ifsp-hto/bancofisica-ci:env-${fingerprint}"
+          echo "BANK_CI_IMAGE=$image" >> "$GITHUB_ENV"
+          if ! docker pull "$image"; then docker build -f docker/ci/Dockerfile -t "$image" .; fi
+      - name: Exportar XML Moodle e PDF
+        run: |
+          docker run --rm \
+            -v "$GITHUB_WORKSPACE:/workspace" -w /workspace \
+            "$BANK_CI_IMAGE" \
+            Rscript tools/generate_filatte_hidro_lote1.R --n 3 --seed 20261116
+      - name: Conferir as figuras dentro de todas as réplicas do XML
+        run: python3 tools/check_filatte_hidro_lote1.py build/filatte-hidro-lote1/moodle data/filatte-hidro-lote1-imagens.json
+      - name: Conferir validade estrutural dos PDFs
+        run: |
+          docker run --rm \
+            -v "$GITHUB_WORKSPACE:/workspace" -w /workspace \
+            "$BANK_CI_IMAGE" bash -lc '
+              set -euo pipefail
+              shopt -s nullglob
+              files=(build/filatte-hidro-lote1/pdf/*.pdf)
+              test "${#files[@]}" -ge 1
+              for f in "${files[@]}"; do qpdf --check "$f"; done
+            '
+      - name: Guardar pacote Moodle e PDF para revisão
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: filatte-hidrostatica-lote1-8-questoes
+          path: |
+            build/filatte-hidro-lote1/moodle/
+            build/filatte-hidro-lote1/pdf/
+            build/filatte-hidro-lote1/manifest.csv
+          if-no-files-found: warn

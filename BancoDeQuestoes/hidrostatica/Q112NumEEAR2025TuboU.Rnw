@@ -1,0 +1,37 @@
+%% BancoFisica: adaptação parametrizada da EEAR 2025 (CFS2), Física Q64.
+%% SOURCE-REFERENCE: https://provas.professorfilatte.com.br/eear-2025-cfs-2-fisica-questao-64
+%% SOURCE-VISUAL: Figura fornecida/revisada pelo professor; original sem alterações.
+<<echo=FALSE, results=hide>>=
+include_supplement("Q112EEAR2025TuboU.png")
+rho_a <- 1000
+rho_o <- sample(c(500, 625, 800),1)
+razao <- 2*rho_a/rho_o - 1
+fmt <- function(x) formatC(x, format="f", digits=3, decimal.mark=",")
+stopifnot(razao > 0, rho_o < rho_a)
+@
+
+\begin{question}
+Um tubo em U de seção transversal uniforme inicialmente contém apenas água. Após adicionar óleo ao ramo esquerdo, obtém-se a situação (B), ilustrada abaixo. A altura $H$ é medida do nível inicial da água até o topo do óleo, e $h$ é a elevação da superfície livre no ramo direito em relação ao nível inicial. Os dois ramos estão abertos ao ar. A ilustração é esquemática, sem escala numérica.
+\begin{center}
+\includegraphics[width=12cm,keepaspectratio]{Q112EEAR2025TuboU.png}
+\end{center}
+Adote $\rho_{\mathrm{agua}}=1000\,\mathrm{kg/m^3}$ e $\rho_{\mathrm{oleo}}=\Sexpr{rho_o}\,\mathrm{kg/m^3}$. Qual é a razão $H/h$? Informe apenas o valor numérico.
+\end{question}
+
+\begin{solution}
+Como os dois ramos têm a mesma seção, a interface óleo--água no ramo esquerdo desce $h$ quando a água sobe $h$ no direito. A coluna de óleo mede $H+h$; a coluna de água à mesma altura do lado direito mede $2h$. Assim,
+\[
+\rho_o g(H+h)=\rho_a g(2h),\qquad
+\frac{H}{h}=\frac{2\rho_a}{\rho_o}-1
+=\frac{2\cdot1000}{\Sexpr{rho_o}}-1
+=\Sexpr{fmt(razao)}.
+\]
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{razao}}
+%% \extol{0.01}
+%% \exname{Q112NumEEAR2025TuboU}
+%% \exsection{Hidrostatica; Vasos comunicantes; Stevin; EEAR 2025}
+%% \exusepackage[utf8]{inputenc}

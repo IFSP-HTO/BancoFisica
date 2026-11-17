@@ -1,0 +1,38 @@
+%% BancoFisica: adaptação conceitual do ENEM 2019, Física Q131.
+%% SOURCE-REFERENCE: https://provas.professorfilatte.com.br/enem-2019-fisica-questao-131
+%% SOURCE-VISUAL: Figura fornecida/revisada pelo professor; original sem alterações.
+<<echo=FALSE, results=hide>>=
+include_supplement("Q117ENEM2019Capilaridade.png")
+alternativas <- c(
+ "Capilaridade, devido ao molhamento e à tensão superficial nos pequenos poros do papel.",
+ "Evaporação do etanol, que produz um fluxo ascendente de líquido dentro do papel.",
+ "Diferença entre densidades de dois líquidos imiscíveis dentro do papel.",
+ "Reação química entre etanol e celulose, que gera pressão ascendente.",
+ "Resistência viscosa, que por si só empurra o líquido para cima."
+)
+ordem <- sample(seq_along(alternativas))
+questions <- alternativas[ordem]
+solutions <- ordem==1L
+@
+
+\begin{question}
+Um papel de filtro é colocado em um copo com etanol, mantendo sua extremidade inferior em contato com o líquido. Depois de algum tempo, observa-se que o etanol sobe pelos poros do papel, mesmo contra a gravidade.
+\begin{center}
+\includegraphics[width=10cm,keepaspectratio]{Q117ENEM2019Capilaridade.png}
+\end{center}
+Qual fenômeno físico explica principalmente a subida do etanol?
+<<echo=FALSE, results=tex>>=
+answerlist(questions)
+@
+\end{question}
+
+\begin{solution}
+A adesão do etanol às fibras e a tensão superficial fazem o líquido subir pelos poros finos do papel, que funcionam como capilares. A subida termina quando o efeito capilar é equilibrado pelo peso da coluna de líquido. O nome desse fenômeno é \emph{capilaridade}.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions,single=TRUE)}}
+%% \exname{Q117QuizENEM2019CapilaridadePapel}
+%% \exsection{Hidrostatica; Capilaridade; Tensão superficial; ENEM 2019}
+%% \exusepackage[utf8]{inputenc}

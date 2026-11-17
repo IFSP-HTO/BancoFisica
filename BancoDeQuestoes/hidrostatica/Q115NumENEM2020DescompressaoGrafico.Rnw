@@ -1,0 +1,43 @@
+%% BancoFisica: adaptação semiparametrizada do ENEM 2020, Física Q134.
+%% SOURCE-REFERENCE: https://provas.professorfilatte.com.br/enem-2020-fisica-questao-134
+%% SOURCE-VISUAL: duas figuras melhoradas pelo professor; originais sem alterações.
+<<echo=FALSE, results=hide>>=
+include_supplement("Q115ENEM2020Bolsao.png")
+include_supplement("Q115ENEM2020Grafico.png")
+H <- sample(c(40,50,60,70),1)
+rho <- 1000
+g <- 10
+p_atm <- 100000
+DeltaP_kPa <- rho*g*H/1000
+minutos <- unname(c(`40`=40,`50`=60,`60`=80,`70`=100)[as.character(H)])
+stopifnot(length(minutos)==1L,!is.na(minutos))
+@
+
+\begin{question}
+Um mergulhador encontra abrigo em um bolsão de ar de uma caverna marinha, cuja entrada está situada a uma profundidade vertical $H=\Sexpr{H}\,\mathrm m$ abaixo da superfície. A figura apresenta a geometria da caverna e um gráfico experimental do tempo recomendado de descompressão em função da \emph{variação de pressão}.
+\begin{center}
+\includegraphics[width=9cm,keepaspectratio]{Q115ENEM2020Bolsao.png}
+\end{center}
+\begin{center}
+\includegraphics[width=9cm,keepaspectratio]{Q115ENEM2020Grafico.png}
+\end{center}
+Adote $\rho=1000\,\mathrm{kg/m^3}$, $g=10\,\mathrm{m/s^2}$ e $p_{\mathrm{atm}}=10^5\,\mathrm{Pa}$. Qual tempo de descompressão, em minutos, é indicado pelo gráfico para o retorno à superfície? Ignore os comprimentos horizontais na avaliação da pressão.
+\end{question}
+
+\begin{solution}
+A diferença entre a pressão no bolsão e a pressão atmosférica vale
+\[
+\Delta p=(p_{\mathrm{atm}}+\rho gH)-p_{\mathrm{atm}}
+=\rho gH=1000\cdot10\cdot\Sexpr{H}
+=\Sexpr{DeltaP_kPa}\,\mathrm{kPa}.
+\]
+No gráfico fornecido, essa diferença corresponde a aproximadamente $\Sexpr{minutos}\,\mathrm{min}$. Não se deve usar a pressão absoluta como entrada do gráfico, pois sua abscissa é a variação de pressão.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{as.numeric(minutos)}}
+%% \extol{1}
+%% \exname{Q115NumENEM2020DescompressaoGrafico}
+%% \exsection{Hidrostatica; Stevin; Grafico; Descompressao; ENEM 2020}
+%% \exusepackage[utf8]{inputenc}

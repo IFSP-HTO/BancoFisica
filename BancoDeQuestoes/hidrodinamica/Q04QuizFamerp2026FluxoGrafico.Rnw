@@ -1,0 +1,38 @@
+%% BancoFisica: adaptação autoral da FAMERP 2026, Física Q61.
+%% SOURCE-REFERENCE: https://provas.professorfilatte.com.br/famerp-2026-fisica-questao-61
+%% SOURCE-VISUAL: Figura fornecida/revisada pelo professor; original sem alterações.
+<<echo=FALSE, results=hide>>=
+include_supplement("Q04Famerp2026GraficoFluxo.png")
+alternativas <- c(
+  "O volume de sangue que atravessa a seção da artéria nesse intervalo.",
+  "A velocidade média do sangue ao atravessar a seção da artéria.",
+  "A vazão média do sangue durante o intervalo destacado.",
+  "A massa total de sangue que atravessa a artéria, sem informação adicional.",
+  "A aceleração média do sangue durante o intervalo destacado."
+)
+ordem <- sample(seq_along(alternativas))
+questions <- alternativas[ordem]
+solutions <- ordem == 1L
+@
+
+\begin{question}
+O gráfico apresenta a vazão sanguínea pela artéria aorta, em litros por segundo, em função do tempo. A região sombreada corresponde ao intervalo de $0{,}1$ a $0{,}3\,\mathrm{s}$.
+\begin{center}
+\includegraphics[width=10cm,keepaspectratio]{Q04Famerp2026GraficoFluxo.png}
+\end{center}
+Qual grandeza física é representada pela área sombreada sob a curva?
+<<echo=FALSE, results=tex>>=
+answerlist(questions)
+@
+\end{question}
+
+\begin{solution}
+A vazão volumétrica é $Q=dV/dt$. A área sob o gráfico de $Q$ em função do tempo tem unidade $\mathrm{L/s}\cdot\mathrm{s}=\mathrm L$ e corresponde a $\Delta V=\int Q(t)\,dt$, isto é, ao volume de sangue que atravessa a seção no intervalo destacado. A vazão média seria a área dividida pela duração do intervalo.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single=TRUE)}}
+%% \exname{Q04QuizFamerp2026FluxoGrafico}
+%% \exsection{Hidrodinamica; Vazao; Graficos; FAMERP 2026}
+%% \exusepackage[utf8]{inputenc}
