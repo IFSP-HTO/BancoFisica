@@ -1,0 +1,36 @@
+%% SOURCE-REFERENCE: ENEM 2026, 2o dia, caderno 5, amarelo, questao 150, pagina 19.
+%% SOURCE-VISUAL: none
+%% SOURCE-AREA: Matematica e suas Tecnologias; aplicacao interdisciplinar para o BancoFisica.
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\begin{question}
+Uma viagem de automóvel entre duas cidades pode ocorrer por duas rotas:
+\begin{itemize}
+ \item trajeto I: $100\,\mathrm{km}$ com velocidade média de $50\,\mathrm{km/h}$;
+ \item trajeto II: $120\,\mathrm{km}$ com velocidade média de $80\,\mathrm{km/h}$.
+\end{itemize}
+Admitindo essas velocidades médias durante cada percurso, a pessoa escolherá o trajeto que pode ser completado no menor tempo. Qual alternativa descreve essa escolha?
+\begin{answerlist}
+\item O trajeto I, por apresentar o menor comprimento.
+\item O trajeto I, pois necessita de 30 minutos.
+\item O trajeto I, por apresentar a menor soma de comprimento e velocidade.
+\item O trajeto II, por apresentar a menor diferença entre comprimento e velocidade.
+\item O trajeto II, pois necessita de 90 minutos.
+\end{answerlist}
+\end{question}
+\begin{solution}
+O tempo de percurso é $\Delta t=\Delta s/v_{\rm media}$. Assim,
+\[
+ t_I=\frac{100}{50}=2\,\mathrm h=120\,\mathrm{min}
+ \quad\text{e}\quad
+ t_{II}=\frac{120}{80}=1{,}5\,\mathrm h=90\,\mathrm{min}.
+\]
+O trajeto II é mais rápido, apesar de ser mais longo, pois permite uma velocidade média maior. Alternativa E.
+\end{solution}
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{00001}
+%% \exname{ENEM2026 Q150 MenorTempoViagem}
+%% \exsection{Cinematica; Movimento uniforme; Velocidade media; ENEM 2026}
+%% \exusepackage[utf8]{inputenc}
+%% \exusepackage{graphicx}
