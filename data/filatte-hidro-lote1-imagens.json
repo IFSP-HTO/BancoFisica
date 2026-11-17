@@ -1,0 +1,65 @@
+[
+  {
+    "original_upload": "image(20261116-024312).png",
+    "repo_path": "BancoDeQuestoes/hidrodinamica/Q04Famerp2026GraficoFluxo.png",
+    "question": "FAMERP 2026 Q61",
+    "sha256": "534ca385d98b18b7d418203219274a69734e0d3609ca9d3ace3ee07e4bb7ead4",
+    "bytes": 57032
+  },
+  {
+    "original_upload": "image(20261116-024427).png",
+    "repo_path": "BancoDeQuestoes/hidrostatica/Q112EEAR2025TuboU.png",
+    "question": "EEAR 2025 CFS2 Q64",
+    "sha256": "38ba9abca6974f8588603a32daa4fe8b9e388a27c6596817fe1e2c3a85dbbe80",
+    "bytes": 76840
+  },
+  {
+    "original_upload": "image(20261116-024534).png",
+    "repo_path": "BancoDeQuestoes/hidrostatica/Q115ENEM2020Bolsao.png",
+    "question": "ENEM 2020 Q134 image 1",
+    "sha256": "7f66dadc8416b1c6fab2ba55a2cab15d3478d041927742624a38d4e419b86c0f",
+    "bytes": 145682
+  },
+  {
+    "original_upload": "image(20261116-024634).png",
+    "repo_path": "BancoDeQuestoes/hidrostatica/Q116EEAR2020Vasos.png",
+    "question": "EEAR 2020 CFS1 Q73",
+    "sha256": "d333ada52019f153f7a7dede011da673ac3a077b136482eb17d2600f0f940b18",
+    "bytes": 86005
+  },
+  {
+    "original_upload": "image(20261116-024706).png",
+    "repo_path": "BancoDeQuestoes/hidrostatica/Q118Unicamp2019Temperatura.png",
+    "question": "UNICAMP 2019 Q41",
+    "sha256": "e8c554b06946594d86c22fa27852bda537d114bde0a32bea7b0b37933d0bae36",
+    "bytes": 58282
+  },
+  {
+    "original_upload": "image(20261116-024756).png",
+    "repo_path": "BancoDeQuestoes/hidrostatica/Q117ENEM2019Capilaridade.png",
+    "question": "ENEM 2019 Q131",
+    "sha256": "92c969a259f7d27c0278eb38cf004f87817b8277ee266dadaba45ebec4c0e4fa",
+    "bytes": 110219
+  },
+  {
+    "original_upload": "image(20261116-024959).png",
+    "repo_path": "BancoDeQuestoes/hidrostatica/Q114UFRGS2018Dinamometros.png",
+    "question": "UFRGS 2018 Q10",
+    "sha256": "4019ceec06109ca94564154882dc60fdf03a16d6b2b3d128d40ae7c4c0ea28ca",
+    "bytes": 85155
+  },
+  {
+    "original_upload": "image(20261116-025019).png",
+    "repo_path": "BancoDeQuestoes/hidrostatica/Q113ENEM2011Dinamometro.png",
+    "question": "ENEM 2011 Q70",
+    "sha256": "25468cdf6c81daf123853af9b07bd5a66c183590b0df3c8796bf641ea1520976",
+    "bytes": 205449
+  },
+  {
+    "original_upload": "image(20261116-031012).png",
+    "repo_path": "BancoDeQuestoes/hidrostatica/Q115ENEM2020Grafico.png",
+    "question": "ENEM 2020 Q134 image 2",
+    "sha256": "0e0e31204f9cd8ffc61a7dce860493c6b70d77319c40846a29020c3036760903",
+    "bytes": 69788
+  }
+]

@@ -1,0 +1,56 @@
+%% BancoFisica: adaptação parametrizada da UFRGS 2018, Física Q10.
+%% SOURCE-REFERENCE: https://provas.professorfilatte.com.br/ufrgs-2018-fisica-questao-10
+%% SOURCE-VISUAL: Figura fornecida/revisada pelo professor; original sem alterações.
+<<echo=FALSE, results=hide>>=
+include_supplement("Q114UFRGS2018Dinamometros.png")
+rho_agua <- 1000
+g <- 10
+volume_cm3 <- sample(c(200,300,400,500),1)
+rho_corpo <- sample(c(5000,8000,10000),1)
+V <- volume_cm3*1e-6
+F1 <- rho_corpo*g*V
+F2 <- F1-rho_agua*g*V
+fmt <- function(x,d=1) formatC(x,format="f",digits=d,decimal.mark=",")
+stopifnot(F2>0,abs((F1-F2)-rho_agua*g*V)<1e-9)
+@
+
+\begin{question}
+Na figura I, um bloco metálico está suspenso por um dinamômetro no ar; na figura II, o mesmo bloco está completamente submerso em água, sem tocar o fundo. As leituras são, respectivamente, $F_1=\Sexpr{fmt(F1)}\,\mathrm N$ e $F_2=\Sexpr{fmt(F2)}\,\mathrm N$.
+\begin{center}
+\includegraphics[width=10cm,keepaspectratio]{Q114UFRGS2018Dinamometros.png}
+\end{center}
+Considere $\rho_{\mathrm{agua}}=1000\,\mathrm{kg/m^3}$ e $g=10\,\mathrm{m/s^2}$; despreze o empuxo do ar. Determine:
+\begin{answerlist}
+\item o volume do corpo, em $\mathrm{cm^3}$;
+\item a densidade do material, em $\mathrm{kg/m^3}$.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+A perda de peso aparente é o empuxo:
+\[
+E=F_1-F_2=\Sexpr{fmt(F1)}-\Sexpr{fmt(F2)}=\Sexpr{fmt(F1-F2)}\,\mathrm N.
+\]
+Como o corpo está totalmente imerso, $E=\rho_{\mathrm{agua}}gV$ e
+\[
+V=\frac{E}{1000\cdot10}=\Sexpr{fmt(V,5)}\,\mathrm{m^3}
+=\Sexpr{volume_cm3}\,\mathrm{cm^3}.
+\]
+Do peso $F_1=mg$, obtém-se $m=F_1/g$ e
+\[
+\rho_{\mathrm{corpo}}=\frac{F_1/g}{V}=\Sexpr{rho_corpo}\,\mathrm{kg/m^3}.
+\]
+\begin{answerlist}
+\item $\Sexpr{volume_cm3}\,\mathrm{cm^3}$.
+\item $\Sexpr{rho_corpo}\,\mathrm{kg/m^3}$.
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exsolution{\Sexpr{volume_cm3}|\Sexpr{rho_corpo}}
+%% \exclozetype{num|num}
+%% \extol{0.01|0.1}
+%% \exname{Q114ClozeUFRGS2018VolumeDensidade}
+%% \exsection{Hidrostatica; Empuxo; Dinamometro; Densidade; UFRGS 2018}
+%% \exusepackage[utf8]{inputenc}

@@ -1,0 +1,37 @@
+%% BancoFisica: adaptação conceitual da EEAR 2020 (CFS1), Física Q73.
+%% SOURCE-REFERENCE: https://provas.professorfilatte.com.br/eear-2020-cfs-1-fisica-questao-73
+%% SOURCE-VISUAL: Figura fornecida/revisada pelo professor; original sem alterações.
+<<echo=FALSE, results=hide>>=
+include_supplement("Q116EEAR2020Vasos.png")
+alternativas <- c(
+ "As pressões nos pontos G e H são iguais.",
+ "As pressões nos pontos C e D são iguais.",
+ "As pressões nos pontos C e E são iguais.",
+ "As pressões nos pontos A e B são diferentes."
+)
+ordem <- sample(seq_along(alternativas))
+questions <- alternativas[ordem]
+solutions <- ordem==1L
+@
+
+\begin{question}
+Dois líquidos que não se misturam encontram-se em equilíbrio em vasos comunicantes abertos à atmosfera. As linhas tracejadas marcam pontos de mesma altura, mas alguns pontos estão em líquidos diferentes e outros estão no ar.
+\begin{center}
+\includegraphics[width=10cm,keepaspectratio]{Q116EEAR2020Vasos.png}
+\end{center}
+Qual afirmação sobre as pressões é necessariamente correta?
+<<echo=FALSE, results=tex>>=
+answerlist(questions)
+@
+\end{question}
+
+\begin{solution}
+Os pontos G e H estão à mesma altura no mesmo líquido contínuo, em repouso. Portanto, a lei de Stevin garante $p_G=p_H$. Os pontos C e E estão em profundidades diferentes; D está no ar; e A e B estão ambos submetidos à pressão atmosférica.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions,single=TRUE)}}
+%% \exname{Q116QuizEEAR2020PressaoVasos}
+%% \exsection{Hidrostatica; Vasos comunicantes; Stevin; Conceitual; EEAR 2020}
+%% \exusepackage[utf8]{inputenc}

@@ -1,0 +1,45 @@
+%% BancoFisica: adaptação parametrizada do ENEM 2011, Física Q70.
+%% SOURCE-REFERENCE: https://provas.professorfilatte.com.br/enem-2011-fisica-questao-70
+%% SOURCE-VISUAL: Figura fornecida/revisada pelo professor; original sem alterações.
+<<echo=FALSE, results=hide>>=
+include_supplement("Q113ENEM2011Dinamometro.png")
+aresta_cm <- 10
+massa <- sample(c(3,4,5),1)
+rho <- sample(c(1000,1100,1200),1)
+g <- 10
+volume_sub <- 0.5*(aresta_cm/100)^3
+F_ar <- massa*g
+F_agua <- F_ar - rho*g*volume_sub
+rho_gcm3 <- rho/1000
+fmt <- function(x,d=1) formatC(x,format="f",digits=d,decimal.mark=",")
+stopifnot(F_agua > 0)
+@
+
+\begin{question}
+Um cubo maciço de aresta $\Sexpr{aresta_cm}\,\mathrm{cm}$ e massa $\Sexpr{massa}\,\mathrm{kg}$ é suspenso por um dinamômetro, que indica $\Sexpr{fmt(F_ar)}\,\mathrm N$ no ar. Na água de um lago, ele é mantido com exatamente metade do volume submerso, como na figura, e a leitura passa para $\Sexpr{fmt(F_agua)}\,\mathrm N$.
+\begin{center}
+\includegraphics[width=8cm,keepaspectratio]{Q113ENEM2011Dinamometro.png}
+\end{center}
+Despreze o empuxo do ar e use $g=10\,\mathrm{m/s^2}$. Determine a densidade do líquido do lago, em $\mathrm{g/cm^3}$.
+\end{question}
+
+\begin{solution}
+A redução da leitura do dinamômetro é o empuxo:
+\[
+E=F_{\mathrm{ar}}-F_{\mathrm{agua}}=
+\Sexpr{fmt(F_ar)}-\Sexpr{fmt(F_agua)}=\Sexpr{fmt(F_ar-F_agua)}\,\mathrm N.
+\]
+O volume deslocado é metade de $(10\,\mathrm{cm})^3$, ou seja, $500\,\mathrm{cm^3}=5\times10^{-4}\,\mathrm{m^3}$. Logo,
+\[
+\rho=\frac{E}{gV_{\mathrm{sub}}}=\Sexpr{rho}\,\mathrm{kg/m^3}
+=\Sexpr{fmt(rho_gcm3,2)}\,\mathrm{g/cm^3}.
+\]
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{rho_gcm3}}
+%% \extol{0.01}
+%% \exname{Q113NumENEM2011DensidadeLago}
+%% \exsection{Hidrostatica; Empuxo; Dinamometro; Densidade; ENEM 2011}
+%% \exusepackage[utf8]{inputenc}

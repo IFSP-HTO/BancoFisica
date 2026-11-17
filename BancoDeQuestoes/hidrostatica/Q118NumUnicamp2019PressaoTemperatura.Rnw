@@ -1,0 +1,37 @@
+%% BancoFisica: adaptação semiparametrizada da UNICAMP 2019, Física Q41.
+%% SOURCE-REFERENCE: https://provas.professorfilatte.com.br/unicamp-2019-fisica-questao-41
+%% SOURCE-VISUAL: Gráfico fornecido/revisado pelo professor; original sem alterações.
+<<echo=FALSE, results=hide>>=
+include_supplement("Q118Unicamp2019Temperatura.png")
+profundidade <- sample(c(2,7),1)
+T <- unname(c(`2`="19,25",`7`="19,00")[as.character(profundidade)])
+rho <- 1000
+g <- 10
+DeltaP <- rho*g*profundidade
+stopifnot(length(T)==1,!is.na(T))
+@
+
+\begin{question}
+Um drone subaquático registra a temperatura da água conforme a profundidade, como mostra o gráfico. Considere a densidade da água uniforme, $\rho=1000\,\mathrm{kg/m^3}$, e $g=10\,\mathrm{m/s^2}$.
+\begin{center}
+\includegraphics[width=9cm,keepaspectratio]{Q118Unicamp2019Temperatura.png}
+\end{center}
+Qual é a \emph{diferença de pressão hidrostática} entre a superfície e o ponto do gráfico em que a temperatura vale $\Sexpr{T}\,^{\circ}\mathrm C$? Responda em pascals.
+\end{question}
+
+\begin{solution}
+O gráfico indica que $T=\Sexpr{T}\,^{\circ}\mathrm C$ corresponde à profundidade $d=\Sexpr{profundidade}\,\mathrm m$. Pela lei de Stevin,
+\[
+\Delta p=\rho gd=1000\cdot10\cdot\Sexpr{profundidade}=
+\Sexpr{DeltaP}\,\mathrm{Pa}.
+\]
+A temperatura é usada apenas para localizar a profundidade no gráfico; não entra diretamente no cálculo da diferença de pressão.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{\Sexpr{DeltaP}}
+%% \extol{0.5}
+%% \exname{Q118NumUnicamp2019PressaoTemperatura}
+%% \exsection{Hidrostatica; Stevin; Leitura de graficos; UNICAMP 2019}
+%% \exusepackage[utf8]{inputenc}
