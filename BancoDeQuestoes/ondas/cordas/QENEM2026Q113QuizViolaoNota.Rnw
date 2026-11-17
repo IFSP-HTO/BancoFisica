@@ -1,0 +1,36 @@
+%% SOURCE-REFERENCE: ENEM 2026, 2o dia, caderno 5 amarelo, questao 113 (pagina 9).
+%% SOURCE-VISUAL: adapted-approved; violao e tabela de frequencias melhorados pelo responsavel do BancoFisica.
+<<echo=FALSE, results=hide>>=
+include_supplement("enem2026_q113_violao_frequencias.png")
+@
+\usepackage[utf8]{inputenc}
+\begin{question}
+A frequência fundamental emitida pela corda de um violão depende do comprimento da parte que vibra. Ao pressionar a corda nos trastes, altera-se o comprimento oscilante. Considere que, mantendo a tração e a densidade linear, a frequência seja inversamente proporcional ao comprimento da corda.
+
+A primeira corda livre tem comprimento vibrante de $60\,\mathrm{cm}$ e emite a nota mi, de frequência $660\,\mathrm{Hz}$. A tabela da figura apresenta as frequências de notas do sistema temperado.
+\begin{center}
+\includegraphics[width=0.85\linewidth,keepaspectratio]{enem2026_q113_violao_frequencias.png}
+\end{center}
+Se a corda for pressionada e seu comprimento vibrante for reduzido para $45\,\mathrm{cm}$, qual nota será emitida?
+\begin{answerlist}
+\item Dó.
+\item Mi.
+\item Sol.
+\item Lá.
+\item Si.
+\end{answerlist}
+\end{question}
+\begin{solution}
+Na mesma corda e para as mesmas condições de tração, $fL$ permanece constante. Portanto,
+\[
+f_2=f_1\frac{L_1}{L_2}
+=660\,\frac{60}{45}=880\,\mathrm{Hz}.
+\]
+Pela tabela, $880\,\mathrm{Hz}$ corresponde à nota Lá, na quinta oitava. Alternativa D.
+\end{solution}
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{00010}
+%% \exname{ENEM2026 Q113 Violao frequencias}
+%% \exsection{Ondulatoria; Cordas vibrantes; Frequencia; Notas musicais; ENEM 2026}
+%% \exusepackage[utf8]{inputenc}

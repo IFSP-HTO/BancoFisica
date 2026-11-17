@@ -1,0 +1,29 @@
+%% SOURCE-REFERENCE: ENEM 2026, 2o dia, caderno 5 amarelo, questao 104 (pagina 6).
+%% SOURCE-VISUAL: adapted-approved; diagrama melhorado fornecido pelo responsavel do BancoFisica.
+<<echo=FALSE, results=hide>>=
+include_supplement("enem2026_q104_diagrama_fases.png")
+@
+\usepackage[utf8]{inputenc}
+\begin{question}
+O diagrama de fases da água apresenta as regiões de estabilidade dos estados sólido, líquido e gasoso, em função da pressão $p$ e da temperatura $T$. As curvas representam as condições de equilíbrio entre dois estados físicos.
+\begin{center}
+\includegraphics[width=0.72\linewidth,keepaspectratio]{enem2026_q104_diagrama_fases.png}
+\end{center}
+À pressão constante indicada pela linha pontilhada, a água passa do ponto A ao ponto B com aumento de temperatura. Qual mudança de estado ocorre nessa transformação?
+\begin{answerlist}
+\item Fusão, de sólido para líquido.
+\item Ebulição, de líquido para gasoso.
+\item Sublimação, de sólido diretamente para gasoso.
+\item Solidificação, de líquido para sólido.
+\item Condensação, de gasoso para líquido.
+\end{answerlist}
+\end{question}
+\begin{solution}
+A pressão indicada é inferior à do ponto triplo, onde coexistem as três fases. Nesse nível de pressão, o aquecimento à pressão constante cruza a fronteira de equilíbrio sólido--vapor sem atravessar a região do líquido. Portanto, a transformação de A para B é a sublimação: passagem direta do sólido ao gasoso. Alternativa C.
+\end{solution}
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{00100}
+%% \exname{ENEM2026 Q104 Sublimacao diagrama fases}
+%% \exsection{Calor e temperatura; Mudancas de fase; Ponto triplo; Diagramas; ENEM 2026}
+%% \exusepackage[utf8]{inputenc}

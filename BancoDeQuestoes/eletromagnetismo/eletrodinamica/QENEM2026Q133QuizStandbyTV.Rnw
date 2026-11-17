@@ -1,0 +1,34 @@
+%% SOURCE-REFERENCE: ENEM 2026, 2o dia, caderno 5 amarelo, questao 133 (pagina 15).
+%% SOURCE-VISUAL: original-crop; etiqueta de potencia da TV extraida do PDF-fonte.
+<<echo=FALSE, results=hide>>=
+include_supplement("enem2026_q133_etiqueta_tv.png")
+@
+\usepackage[utf8]{inputenc}
+\begin{question}
+O quadro a seguir, retirado de um manual de televisão, informa a potência elétrica nas condições de uso e de espera (\emph{standby}).
+\begin{center}
+\includegraphics[width=0.76\linewidth,keepaspectratio]{enem2026_q133_etiqueta_tv.png}
+\end{center}
+Uma pessoa assiste à televisão durante $4$ horas por dia e a mantém em espera nas $20$ horas restantes. Qual é, aproximadamente, a porcentagem da energia elétrica consumida em espera em relação ao consumo total diário do aparelho?
+\begin{answerlist}
+\item $0{,}2\%$.
+\item $0{,}6\%$.
+\item $1{,}0\%$.
+\item $3{,}0\%$.
+\item $20\%$.
+\end{answerlist}
+\end{question}
+\begin{solution}
+No período de uso, $E_{\rm uso}=158\cdot4=632\,\mathrm{Wh}$. Em espera, $E_{\rm espera}=1\cdot20=20\,\mathrm{Wh}$. Assim, o consumo diário total é $652\,\mathrm{Wh}$ e
+\[
+100\frac{E_{\rm espera}}{E_{\rm total}}
+=100\frac{20}{652}\approx3{,}07\%.
+\]
+O valor mais próximo é $3{,}0\%$, alternativa D.
+\end{solution}
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{00010}
+%% \exname{ENEM2026 Q133 Consumo standby TV}
+%% \exsection{Eletrodinamica; Potencia eletrica; Consumo de energia; Modo de espera; ENEM 2026}
+%% \exusepackage[utf8]{inputenc}
