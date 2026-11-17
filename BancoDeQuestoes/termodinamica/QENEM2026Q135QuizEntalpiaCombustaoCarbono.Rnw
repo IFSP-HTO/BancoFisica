@@ -1,0 +1,42 @@
+%% SOURCE-REFERENCE: ENEM 2026, 2o dia, caderno 5, amarelo, questao 135, pagina 15.
+%% SOURCE-VISUAL: original-crop; tabela de combustiveis e entalpias obtida diretamente da pagina da prova
+<<echo=FALSE, results=hide>>=
+include_supplement("enem2026_q135_tabela_entalpias.png")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\begin{question}
+A combustão de diferentes fontes energéticas libera calor, mas também pode produzir poluentes. A tabela apresenta as entalpias de combustão de cinco combustíveis, por mol de combustível.
+\begin{center}
+\includegraphics[width=0.95\linewidth,keepaspectratio]{enem2026_q135_tabela_entalpias.png}
+\end{center}
+Considerando a quantidade de energia liberada por \emph{mol de átomos de carbono} do combustível, qual dos cinco é o mais eficiente?
+\begin{answerlist}
+\item Etanol..
+\item Metano.
+\item Metanol.
+\item Acetileno (etino).
+\item Carvão (antracito).
+\end{answerlist}
+\end{question}
+\begin{solution}
+É necessário dividir o módulo da entalpia de combustão pela quantidade de átomos de carbono na fórmula de cada combustível:
+\[
+\begin{array}{ll}
+\text{Etanol:}&1368/2=684\\
+\text{Metano:}&890/1=890\\
+\text{Metanol:}&726/1=726\\
+\text{Acetileno:}&1301/2=650{,}5\\
+\text{Carvão:}&355/1=355
+\end{array}
+\quad \mathrm{kJ/mol\ de\ C}.
+\]
+A maior energia liberada por mol de carbono é a do metano. Alternativa B.
+\end{solution}
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{01000}
+%% \exname{ENEM2026 Q135 EntalpiaCombustaoCarbono}
+%% \exsection{Termodinamica; Combustiveis; Energia de combustao; Quimica e fisica; ENEM 2026}
+%% \exusepackage[utf8]{inputenc}
+%% \exusepackage{graphicx}
