@@ -93,7 +93,7 @@ gerar_moodle(dir("./BancoDeQuestoes/leidosgases", pattern = ".rnw", ignore.case 
 ############leis de newton - atrito##############
 gerar_moodle(dir("./BancoDeQuestoes/leisdenewton/atrito", pattern = ".rnw", ignore.case = TRUE),
              n = 100, name = "leisdenewton-12018", seed = 12018,
-             edir = "./BancoDeQuestoes/leisdenewton")
+             edir = "./BancoDeQuestoes/leisdenewton/atrito")
 
 ############### magnetismo ##################
 gerar_moodle(dir("./BancoDeQuestoes/magnetismo", pattern = ".rnw", ignore.case = TRUE),
