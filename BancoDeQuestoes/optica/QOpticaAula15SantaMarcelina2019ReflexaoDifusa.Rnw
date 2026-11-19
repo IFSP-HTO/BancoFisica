@@ -4,11 +4,11 @@
 superficie <- sample(c("uma parede de tinta fosca", "uma folha de papel opaca",
                         "um quadro de pintura com acabamento fosco"), 1)
 alternativas <- c(
-  "A luz e refletida em diferentes direcoes, podendo atingir observadores em varias posicoes.",
-  "Quanto mais lisa for a superficie, maior sera necessariamente o angulo entre o raio incidente e a normal.",
-  "Dois feixes luminosos que se cruzam passam a seguir uma unica trajetoria.",
-  "Raios paralelos que chegam a um espelho plano sao refletidos de modo a convergir num foco.",
-  "Os raios de luz nao podem sofrer reflexao em materiais que nao sao espelhos."
+  "A luz é refletida em diferentes direções, podendo atingir observadores em várias posições.",
+  "Quanto mais lisa for a superfície, maior será necessariamente o ângulo entre o raio incidente e a normal.",
+  "Dois feixes luminosos que se cruzam passam a seguir uma única trajetória.",
+  "Raios paralelos que chegam a um espelho plano são refletidos de modo a convergir num foco.",
+  "Os raios de luz não podem sofrer reflexão em materiais que não são espelhos."
 )
 solutions <- c(TRUE, FALSE, FALSE, FALSE, FALSE)
 ordem <- sample(seq_along(alternativas))
@@ -18,9 +18,9 @@ solutions <- solutions[ordem]
 \usepackage[utf8]{inputenc}
 
 \begin{question}
-Uma pessoa observa \Sexpr{superficie} em uma sala iluminada. O objeto nao emite luz propria e pode ser visto a partir de diferentes pontos da sala, sem que haja um obstaculo entre o objeto e o observador.
+Uma pessoa observa \Sexpr{superficie} em uma sala iluminada. O objeto não emite luz própria e pode ser visto a partir de diferentes pontos da sala, sem que haja um obstáculo entre o objeto e o observador.
 
-Qual afirmacao sobre a luz e os fenomenos opticos explica corretamente esse fato?
+Qual afirmação sobre a luz e os fenômenos ópticos explica corretamente esse fato?
 
 <<echo=FALSE, results=tex>>=
 answerlist(alternativas)
@@ -29,7 +29,7 @@ answerlist(alternativas)
 \end{question}
 
 \begin{solution}
-Na \textbf{reflexao difusa}, a luz incidente e redistribuida em diferentes direcoes, tornando uma superficie fosca visivel de varios pontos. Em cada ponto da superficie, as leis da reflexao continuam validas. A lisura nao altera a igualdade entre os angulos de incidencia e reflexao. O cruzamento dos feixes nao os funde, e um espelho plano nao faz raios incidentes paralelos convergirem num unico foco.
+Na \textbf{reflexão difusa}, a luz incidente é redistribuída em diferentes direções, tornando uma superfície fosca visível de vários pontos. Em cada ponto da superfície, as leis da reflexão continuam válidas. A lisura não altera a igualdade entre os ângulos de incidência e reflexão. O cruzamento dos feixes não os funde, e um espelho plano não faz raios incidentes paralelos convergirem num único foco.
 
 <<echo=FALSE, results=tex>>=
 answerlist(ifelse(solutions,paste0("\\textbf{",alternativas,"}"),alternativas))
