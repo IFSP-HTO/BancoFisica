@@ -1,0 +1,47 @@
+<<echo=FALSE, results=hide>>=
+# Base conceitual: Santa Marcelina 2019, 1o semestre, Fisica Q57.
+# Variacao sem figura: natureza do objeto de superficie fosca.
+superficie <- sample(c("uma parede de tinta fosca", "uma folha de papel opaca",
+                        "um quadro de pintura com acabamento fosco"), 1)
+alternativas <- c(
+  "A luz e refletida em diferentes direcoes, podendo atingir observadores em varias posicoes.",
+  "Quanto mais lisa for a superficie, maior sera necessariamente o angulo entre o raio incidente e a normal.",
+  "Dois feixes luminosos que se cruzam passam a seguir uma unica trajetoria.",
+  "Raios paralelos que chegam a um espelho plano sao refletidos de modo a convergir num foco.",
+  "Os raios de luz nao podem sofrer reflexao em materiais que nao sao espelhos."
+)
+solutions <- c(TRUE, FALSE, FALSE, FALSE, FALSE)
+ordem <- sample(seq_along(alternativas))
+alternativas <- alternativas[ordem]
+solutions <- solutions[ordem]
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Uma pessoa observa \Sexpr{superficie} em uma sala iluminada. O objeto nao emite luz propria e pode ser visto a partir de diferentes pontos da sala, sem que haja um obstaculo entre o objeto e o observador.
+
+Qual afirmacao sobre a luz e os fenomenos opticos explica corretamente esse fato?
+
+<<echo=FALSE, results=tex>>=
+answerlist(alternativas)
+@
+
+\end{question}
+
+\begin{solution}
+Na \textbf{reflexao difusa}, a luz incidente e redistribuida em diferentes direcoes, tornando uma superficie fosca visivel de varios pontos. Em cada ponto da superficie, as leis da reflexao continuam validas. A lisura nao altera a igualdade entre os angulos de incidencia e reflexao. O cruzamento dos feixes nao os funde, e um espelho plano nao faz raios incidentes paralelos convergirem num unico foco.
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(solutions,paste0("\\textbf{",alternativas,"}"),alternativas))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{QOpticaAula15SantaMarcelina2019ReflexaoDifusa}
+%% \exsection{Optica; Aula15; Reflexao difusa; Reflexao regular; Leis da reflexao; Intermediario; Santa Marcelina 2019}
+%% SOURCE-VISUAL: none
+%% SOURCE-ADAPTATION: enunciado e distratores reescritos; contexto de superficie fosca variavel; base Santa Marcelina 2019 Q57 (gabarito A na prova)
+%% SOURCE: https://provas.professorfilatte.com.br/santa-marcelina-2019-fisica-questao-57
