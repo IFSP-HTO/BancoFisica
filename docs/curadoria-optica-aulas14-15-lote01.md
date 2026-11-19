@@ -6,6 +6,8 @@ Objetivo: ampliar o BancoFisica em **óptica geométrica introdutória e espelho
 - **UNICAMP 2016 Q55**: cores vistas sob luz monocromática. Base: https://provas.professorfilatte.com.br/unicamp-2016-fisica-questao-55. Gabarito original B. Foi produzida uma **variante adaptada e parametrizada** (três cores incidentes), com gabarito dinâmico. Nível básico. A variante não replica literalmente o enunciado original.
 - **Insper 2020 Engenharias Q7**: eclipse solar e propagação retilínea. Base: https://provas.professorfilatte.com.br/insper-2020-engenharias-fisica-questao-7. Gabarito original A. Variante dinâmica entre eclipse solar e lunar. Nível básico.
 
+- **Santa Marcelina 2019 Q57**: reflexao difusa versus regular e principios da optica. Base: https://provas.professorfilatte.com.br/santa-marcelina-2019-fisica-questao-57. Gabarito original A. Variante dinamica com contextos de superficies foscas, sem figura. Nivel intermediario.
+
 ## Bloqueadas por figura (aguardam ativo editável do docente)
 **Não importar/parametrizar silenciosamente sem a figura refeita e aprovada.** Os arquivos originais da página têm enunciado/figura que precisariam ser separados. A parametrização exige ajustar rótulos, alternativas ou geometria juntamente com os parâmetros.
 
