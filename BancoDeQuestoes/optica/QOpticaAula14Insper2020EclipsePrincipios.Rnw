@@ -1,0 +1,57 @@
+<<echo=FALSE, results=hide>>=
+# Base conceitual: Insper 2020 Engenharias, questao 7.
+# Parametrizacao: tipo de eclipse; revisao do fenomeno e dos distratores.
+tipo <- sample(c("solar", "lunar"), 1)
+if (tipo == "solar") {
+  descricao <- "Durante o dia, o disco do Sol fica parcial ou totalmente encoberto por algum tempo, observado de uma regiao da Terra."
+  correta <- 1L
+  explicacao <- "No eclipse solar, a Lua se coloca entre o Sol e a Terra e bloqueia parte da luz solar. A sombra so se forma porque a luz se propaga aproximadamente em linha reta."
+} else {
+  descricao <- "Durante a noite, a Lua cheia tem uma parte de seu disco escurecida pela sombra da Terra."
+  correta <- 2L
+  explicacao <- "No eclipse lunar, a Terra se encontra entre o Sol e a Lua e projeta sua sombra sobre a Lua. O escurecimento observado resulta da propagacao retilinea da luz."
+}
+alternativas <- c(
+  "Lua entre Sol e Terra; propagacao retilinea da luz.",
+  "Terra entre Sol e Lua; propagacao retilinea da luz.",
+  "Lua entre Sol e Terra; reversibilidade dos raios.",
+  "Terra entre Sol e Lua; independencia dos raios.",
+  "Terra entre Sol e Lua; reversibilidade dos raios."
+)
+solutions <- seq_along(alternativas) == correta
+ordem <- sample(seq_along(alternativas))
+alternativas <- alternativas[ordem]
+solutions <- solutions[ordem]
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+\Sexpr{descricao}
+
+A configuracao dos astros e o principio da optica geometrica que explicam esse fenomeno sao, respectivamente,
+
+<<echo=FALSE, results=tex>>=
+answerlist(alternativas)
+@
+
+\end{question}
+
+\begin{solution}
+\Sexpr{explicacao}
+
+A independencia dos raios explica o comportamento de feixes que se cruzam; a reversibilidade descreve a possibilidade de inverter o sentido de propagacao de um raio no mesmo percurso. Nenhuma das duas e o principio responsavel pela existencia das regioes de sombra num eclipse.
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(solutions,paste0("\\textbf{",alternativas,"}"),alternativas))
+@
+
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single = TRUE)}}
+%% \exname{QOpticaAula14Insper2020EclipsePrincipios}
+%% \exsection{Optica; Aula14; Eclipse; Propagacao retilinea; Sombra; Basico; Insper 2020}
+%% SOURCE-VISUAL: none
+%% SOURCE-ADAPTATION: enunciado e distratores reescritos; tipo de eclipse parametrizado (solar/lunar); base Insper 2020 Engenharia Q7 (gabarito A na prova)
+%% SOURCE: https://provas.professorfilatte.com.br/insper-2020-engenharias-fisica-questao-7
