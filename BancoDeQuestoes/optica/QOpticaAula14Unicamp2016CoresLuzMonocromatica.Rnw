@@ -16,7 +16,7 @@ solutions <- solutions[ordem]
 \usepackage[utf8]{inputenc}
 
 \begin{question}
-Um painel apresenta duas regioes: uma azul e outra branca, quando observado sob luz solar. Ele e colocado numa sala escura e iluminado exclusivamente por luz monocromatica \Sexpr{cor_luz}. De acordo com a reflexao e absorcao seletivas da luz, as regioes azul e branca serao vistas, respectivamente, nas cores
+Um painel apresenta duas regiões: uma azul e outra branca, quando observado sob luz solar. Ele é colocado numa sala escura e iluminado exclusivamente por luz monocromática \Sexpr{cor_luz}. De acordo com a reflexão e absorção seletivas da luz, as regiões azul e branca serão vistas, respectivamente, nas cores
 
 <<echo=FALSE, results=tex>>=
 answerlist(alternativas)
@@ -25,7 +25,7 @@ answerlist(alternativas)
 \end{question}
 
 \begin{solution}
-Um objeto azul, nesse modelo idealizado de cor dos corpos, reflete predominantemente luz azul e absorve as outras componentes. Quando recebe apenas luz \Sexpr{cor_luz}, nao ha luz azul para refletir, e essa regiao aparece negra. A regiao branca reflete as cores incidentes e, por isso, aparece \Sexpr{cor_luz}. Nao e necessario supor mudanca da cor intrinseca do material: a cor percebida depende da iluminacao.
+Um objeto azul, nesse modelo idealizado de cor dos corpos, reflete predominantemente luz azul e absorve as outras componentes. Quando recebe apenas luz \Sexpr{cor_luz}, não há luz azul para refletir, e essa região aparece negra. A região branca reflete as cores incidentes e, por isso, aparece \Sexpr{cor_luz}. Não é necessário supor mudança da cor intrínseca do material: a cor percebida depende da iluminação.
 
 <<echo=FALSE, results=tex>>=
 answerlist(ifelse(solutions,paste0("\\textbf{",alternativas,"}"),alternativas))
