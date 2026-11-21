@@ -1,0 +1,49 @@
+%% SOURCE-REFERENCE: ENEM 2026, 2o dia, caderno 5, amarelo, questao 152, pagina 20.
+%% SOURCE-VISUAL: original-crop; grafico de lancamento e tabela de niveis preservados do PDF-fonte
+%% SOURCE-AREA: Matematica e suas Tecnologias; aplicacao interdisciplinar para o BancoFisica.
+<<echo=FALSE, results=hide>>=
+include_supplement("enem2026_q152_trajetoria.png")
+include_supplement("enem2026_q152_niveis.png")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\begin{question}
+O teste de segurança de um sinalizador registra a trajetória parabólica de um projétil em um plano cartesiano, com coordenadas em metros. O esquema identifica $D_1$, a distância em linha reta do lançamento até a altura máxima, e $D_2$, a distância em linha reta do lançamento até o ponto de explosão, situado na abscissa $k$.
+\begin{center}
+\includegraphics[width=0.55\linewidth,keepaspectratio]{enem2026_q152_trajetoria.png}
+\end{center}
+A tabela relaciona o nível de segurança aos valores de $D_1$ e $D_2$.
+\begin{center}
+\includegraphics[width=0.76\linewidth,keepaspectratio]{enem2026_q152_niveis.png}
+\end{center}
+No teste, a trajetória é modelada por $y=-0{,}24x^2+4{,}8x$ e mediu-se $k=15$. Qual foi o nível de segurança obtido?
+\begin{answerlist}
+\item 1.
+\item 2.
+\item 3.
+\item 4.
+\item 5.
+\end{answerlist}
+\end{question}
+\begin{solution}
+O vértice da parábola, que representa o ponto de altura máxima, está em
+\[
+x_v=-\frac{4{,}8}{2(-0{,}24)}=10,\qquad y_v=-0{,}24(10)^2+4{,}8(10)=24.
+\]
+A distância em linha reta entre $(0,0)$ e $(10,24)$ é
+\[
+D_1=\sqrt{10^2+24^2}=26\,\mathrm m.
+\]
+Em $k=15$, temos $y(15)=-0{,}24(225)+4{,}8(15)=18$, logo
+\[
+D_2=\sqrt{15^2+18^2}=\sqrt{549}\approx23{,}43\,\mathrm m.
+\]
+Portanto $D_1\ge 25$ e $23\le D_2<25$, o que corresponde ao nível 4 (alternativa D).
+\end{solution}
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{00010}
+%% \exname{ENEM2026 Q152 ParabolaSinalizador}
+%% \exsection{Cinematica; Lancamento obliquo; Parabola; Seguranca; ENEM 2026}
+%% \exusepackage[utf8]{inputenc}
+%% \exusepackage{graphicx}

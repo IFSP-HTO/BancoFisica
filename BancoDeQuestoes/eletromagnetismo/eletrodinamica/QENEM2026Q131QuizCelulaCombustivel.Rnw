@@ -1,0 +1,35 @@
+%% SOURCE-REFERENCE: ENEM 2026, 2o dia, caderno 5, amarelo, questao 131, pagina 14.
+%% SOURCE-VISUAL: original-crop; ilustracao da celula extraida do PDF-fonte, mantendo rotulos originais
+<<echo=FALSE, results=hide>>=
+include_supplement("enem2026_q131_celula_combustivel.png")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\begin{question}
+Uma célula a combustível transforma diretamente energia química em energia elétrica por meio de reações envolvendo hidrogênio e oxigênio. No dispositivo ilustrado, elétrons circulam pelo circuito externo enquanto íons atravessam uma membrana.
+\begin{center}
+\includegraphics[width=0.54\linewidth,keepaspectratio]{enem2026_q131_celula_combustivel.png}
+\end{center}
+Qual equação representa a reação química global que fornece energia ao dispositivo?
+\begin{answerlist}
+\item $\mathrm{H_2O}\longrightarrow \mathrm{H^+}+\mathrm{OH^-}$.
+\item $\mathrm{H_2}+2\mathrm{O_2}\longrightarrow 2\mathrm{H^+}+4\mathrm{O^{2-}}$.
+\item $2\mathrm{H_2O}\longrightarrow\mathrm{O_2}+2\mathrm{H^+}+\mathrm{H_2}+2\mathrm{e^-}$.
+\item $6\mathrm{H^+}+\mathrm{O_2}\longrightarrow 2\mathrm{H_2O}+\mathrm{H_2}$.
+\item $2\mathrm{H_2}+\mathrm{O_2}\longrightarrow 2\mathrm{H_2O}$.
+\end{answerlist}
+\end{question}
+\begin{solution}
+A célula consome hidrogênio e oxigênio e produz água. No eletrodo do hidrogênio ocorre a oxidação, liberando elétrons para o circuito externo; no eletrodo do oxigênio ocorre a redução, consumindo elétrons. Ao somar as semirreações, os elétrons se cancelam, obtendo-se
+\[
+ 2\mathrm{H_2}+\mathrm{O_2}\longrightarrow2\mathrm{H_2O}.
+\]
+A reação global corresponde à alternativa E. A produção de corrente elétrica decorre da transferência de elétrons pelo circuito.
+\end{solution}
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{00001}
+%% \exname{ENEM2026 Q131 CelulaCombustivel}
+%% \exsection{Eletrodinamica; Fontes de energia; Celulas a combustivel; Eletroquimica; ENEM 2026}
+%% \exusepackage[utf8]{inputenc}
+%% \exusepackage{graphicx}

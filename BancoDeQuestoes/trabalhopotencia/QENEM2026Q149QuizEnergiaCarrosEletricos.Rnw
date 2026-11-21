@@ -1,0 +1,38 @@
+%% SOURCE-REFERENCE: ENEM 2026, 2o dia, caderno 5, amarelo, questao 149, pagina 19.
+%% SOURCE-VISUAL: none
+%% SOURCE-AREA: Matematica e suas Tecnologias; aplicacao interdisciplinar para o BancoFisica.
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\begin{question}
+Uma pessoa compara dois modelos de automóveis elétricos para um percurso total de $3000\,\mathrm{km}$, sendo $1200\,\mathrm{km}$ em vias urbanas e $1800\,\mathrm{km}$ em rodovias. Seus consumos são:
+\begin{itemize}
+ \item carro I: $20\,\mathrm{MJ}$ a cada $48\,\mathrm{km}$ na cidade e $20\,\mathrm{MJ}$ a cada $32\,\mathrm{km}$ na estrada;
+ \item carro II: $25\,\mathrm{MJ}$ a cada $50\,\mathrm{km}$ na cidade e $25\,\mathrm{MJ}$ a cada $45\,\mathrm{km}$ na estrada.
+\end{itemize}
+Qual modelo apresenta o menor consumo energético para esse percurso?
+\begin{answerlist}
+\item O I, pois o consumo será de $81{,}25\,\mathrm{MJ}$.
+\item O I, pois o consumo será de $600\,\mathrm{MJ}$.
+\item O I, pois o consumo será de $1625\,\mathrm{MJ}$.
+\item O II, pois o consumo será de $64\,\mathrm{MJ}$.
+\item O II, pois o consumo será de $1600\,\mathrm{MJ}$.
+\end{answerlist}
+\end{question}
+\begin{solution}
+Para cada condição, a energia consumida é a razão entre o percurso realizado e o percurso que o carro faz com a energia indicada, multiplicada por essa energia. Para o carro I:
+\[
+E_I=\frac{1200}{48}(20)+\frac{1800}{32}(20)=500+1125=1625\,\mathrm{MJ}.
+\]
+Para o carro II:
+\[
+E_{II}=\frac{1200}{50}(25)+\frac{1800}{45}(25)=600+1000=1600\,\mathrm{MJ}.
+\]
+Logo, o menor consumo é o do carro II, de $1600\,\mathrm{MJ}$ (alternativa E).
+\end{solution}
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{00001}
+%% \exname{ENEM2026 Q149 EnergiaCarrosEletricos}
+%% \exsection{Energia; Consumo energetico; Transporte; ENEM 2026}
+%% \exusepackage[utf8]{inputenc}
+%% \exusepackage{graphicx}

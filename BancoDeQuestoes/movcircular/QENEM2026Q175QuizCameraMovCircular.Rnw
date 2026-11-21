@@ -1,0 +1,46 @@
+%% SOURCE-REFERENCE: ENEM 2026, 2o dia, caderno 5, amarelo, questao 175, pagina 29.
+%% SOURCE-VISUAL: original-crop; esquemas e cinco graficos preservados do PDF-fonte com letras de alternativa fora das figuras
+%% SOURCE-AREA: Matematica e suas Tecnologias; aplicacao interdisciplinar para o BancoFisica.
+<<echo=FALSE, results=hide>>=
+include_supplement("enem2026_q175_camera_esquemas.png")
+include_supplement("enem2026_q175_grafico_a.png")
+include_supplement("enem2026_q175_grafico_b.png")
+include_supplement("enem2026_q175_grafico_c.png")
+include_supplement("enem2026_q175_grafico_d.png")
+include_supplement("enem2026_q175_grafico_e.png")
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\begin{question}
+Uma câmera $P$, com ângulo de visão de $90^\circ$, desloca-se no sentido horário e com velocidade angular constante, do ponto $M$ ao ponto $N$, sobre um trilho que corresponde a um quarto de circunferência de raio $2\,\mathrm m$ e centro $O$. O percurso leva $30$ segundos. A câmera capta um trecho $OT$ de uma semirreta $s$ que parte de $O$ e é perpendicular ao segmento $OM$, como mostram os esquemas.
+\begin{center}
+\includegraphics[width=0.94\linewidth,keepaspectratio]{enem2026_q175_camera_esquemas.png}
+\end{center}
+Qual gráfico representa o comprimento $c=OT$, em metros, em função do tempo $t$, em segundos, durante o funcionamento da câmera?
+\begin{answerlist}
+\item \includegraphics[width=2.7cm,keepaspectratio]{enem2026_q175_grafico_a.png}
+\item \includegraphics[width=2.7cm,keepaspectratio]{enem2026_q175_grafico_b.png}
+\item \includegraphics[width=2.7cm,keepaspectratio]{enem2026_q175_grafico_c.png}
+\item \includegraphics[width=2.7cm,keepaspectratio]{enem2026_q175_grafico_d.png}
+\item \includegraphics[width=2.7cm,keepaspectratio]{enem2026_q175_grafico_e.png}
+\end{answerlist}
+\end{question}
+\begin{solution}
+Seja $\theta=\omega t$ o ângulo percorrido a partir de $M$. Como o movimento completa $90^\circ$ em $30$ segundos,
+\[
+\theta(t)=\frac{\pi}{60}t,\qquad 0<t\le 30.
+\]
+No triângulo retângulo $OPT$, o segmento $OT=c$ é a hipotenusa, $OP=2\,\mathrm m$ e o ângulo em $O$ entre $OP$ e $OT$ é $90^\circ-\theta$. Logo,
+\[
+\sin\theta=\frac{2}{c}\quad\Longrightarrow\quad
+c(t)=\frac{2}{\sin(\pi t/60)}.
+\]
+Quando $t\to0^+$, a distância cresce sem limite (assíntota vertical). À medida que $t$ aumenta, $c$ diminui e tende a $2\,\mathrm m$ no instante $t=30\,\mathrm s$. Isso corresponde ao gráfico E.
+\end{solution}
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{00001}
+%% \exname{ENEM2026 Q175 CameraMovCircular}
+%% \exsection{Movimento circular; Velocidade angular; Geometria; Graficos; ENEM 2026}
+%% \exusepackage[utf8]{inputenc}
+%% \exusepackage{graphicx}
