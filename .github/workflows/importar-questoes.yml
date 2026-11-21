@@ -1,0 +1,79 @@
+name: Questões — triagem e estágio auditável
+on:
+  pull_request:
+    paths:
+      - 'tools/importar_questoes.py'
+      - 'tests/test_importar_questoes.py'
+      - 'data/lotes/**'
+      - 'docs/importacao-questoes.md'
+      - '.github/workflows/importar-questoes.yml'
+  workflow_dispatch:
+    inputs:
+      manifest:
+        description: 'Manifesto revisado em data/lotes/'
+        required: true
+        default: 'data/lotes/filatte-hidrostatica-001.json'
+        type: string
+      crops:
+        description: 'Plano de recortes revisado (opcional, em data/lotes/)'
+        required: false
+        default: ''
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validar código Python e testes editoriais
+        run: |
+          python -m py_compile tools/importar_questoes.py
+          python -m unittest discover -s tests -p test_importar_questoes.py
+      - name: Conferir manifesto de Hidrostática sem publicação
+        run: python tools/importar_questoes.py validate --manifest data/lotes/filatte-hidrostatica-001.json
+
+  stage:
+    if: github.event_name == 'workflow_dispatch'
+    needs: validate
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      MANIFEST: ${{ inputs.manifest }}
+      CROPS: ${{ inputs.crops }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validar caminhos de entrada
+        run: |
+          [[ "$MANIFEST" =~ ^data/lotes/[a-zA-Z0-9._-]+\.json$ ]] || exit 1
+          if [[ -n "$CROPS" ]]; then
+            [[ "$CROPS" =~ ^data/lotes/[a-zA-Z0-9._-]+\.json$ ]] || exit 1
+          fi
+        shell: bash
+      - name: Dependências de leitura de PNG e HTML
+        run: python -m pip install --disable-pip-version-check requests beautifulsoup4 Pillow
+      - name: Estagiar imagens integrais e metadados da fonte
+        run: |
+          python tools/importar_questoes.py validate --manifest "$MANIFEST"
+          python tools/importar_questoes.py stage --manifest "$MANIFEST" --out-dir build/questoes-stage
+      - name: Recortar apenas com plano visualmente conferido
+        if: inputs.crops != ''
+        run: |
+          python tools/importar_questoes.py crop --manifest "$CROPS" --stage-dir build/questoes-stage --dest build/questoes-figuras
+      - name: Preservar imagens originais e auditoria, sem commit nem merge
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: questoes-lote-auditoria
+          path: |
+            build/questoes-stage/
+            build/questoes-figuras/
+          if-no-files-found: warn
