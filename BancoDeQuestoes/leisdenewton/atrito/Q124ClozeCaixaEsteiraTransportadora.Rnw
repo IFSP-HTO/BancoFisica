@@ -1,0 +1,53 @@
+<<echo=FALSE, results=hide>>=
+# OpenStax University Physics v.1, Cap. 6, problema adicional 107.
+# Distancia do bloco acrescentada ao problema original.
+g <- 10
+velEsteira <- sample(c(2.0, 2.5, 3.0, 3.5, 4.0), 1)
+muK <- sample(c(0.15, 0.20, 0.25, 0.30, 0.40), 1)
+acel <- muK * g
+tempo <- velEsteira / acel
+dist <- velEsteira^2 / (2*acel)
+stopifnot(tempo>0, dist>0)
+@
+\usepackage{graphicx}
+\begin{question}
+Uma esteira transportadora horizontal move-se para a direita com
+velocidade constante de $v=\Sexpr{velEsteira}\,\mathrm{m/s}$.
+Uma caixa e colocada sobre ela com velocidade horizontal inicial
+\textbf{nula em relacao ao solo}. Enquanto a caixa desliza, o
+coeficiente de atrito cinetico entre caixa e esteira e
+$\mu_k=\Sexpr{muK}$. Considere a esteira longa, ignore a
+resistencia do ar e adote $g=10\,\mathrm{m/s^2}$.
+
+Determine:
+\begin{answerlist}
+  \item o tempo necessario para a caixa atingir a velocidade da esteira, em segundos;
+  \item o deslocamento da caixa em relacao ao \textbf{solo} nesse intervalo, em metros.
+\end{answerlist}
+\end{question}
+\begin{solution}
+A caixa comeca deslizando para tras \emph{em relacao a esteira},
+portanto o atrito cinetico sobre ela atua para a direita.
+Seu modulo e $f_k=\mu_kmg$, e assim $a=\mu_kg$.
+A velocidade da caixa cresce de 0 ate a velocidade v da esteira:
+\[t=\frac{v}{\mu_kg}=\Sexpr{round(tempo,2)}\,\mathrm{s}.\]
+Como a aceleracao e constante,
+\[\Delta x=\frac{1}{2}at^2=\frac{v^2}{2\mu_kg}
+=\Sexpr{round(dist,2)}\,\mathrm{m}.\]
+Depois desse instante nao ha deslizamento relativo nem necessidade
+de atrito horizontal em regime uniforme.
+\begin{answerlist}
+  \item $\Sexpr{round(tempo,2)}\,\mathrm{s}$
+  \item $\Sexpr{round(dist,2)}\,\mathrm{m}$
+\end{answerlist}
+\end{solution}
+%% META-INFORMATION
+%% Fonte: OpenStax, University Physics, v. 1, cap. 6, Additional Problems, ex. 107.
+%% Adaptacao: velocidade e mu_k parametrizados; acrescida a distancia no referencial do solo.
+%% Figura: fonte nao apresenta ilustracao especifica; pendente de imagem do usuario.
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{round(tempo,2)}|\Sexpr{round(dist,2)}}
+%% \extol{0.03|0.03}
+%% \exname{BFATR124CaixaEsteiraTransportadora}
+%% \exsection{Mecanica; Leis de Newton; Atrito cinetico; Movimento relativo}

@@ -1,0 +1,60 @@
+<<echo=FALSE, results=hide>>=
+# OpenStax University Physics v.1, Cap. 6, problema adicional 109.
+# Figura original marca theta=37 graus: manter este angulo na parametrizacao.
+g <- 10
+theta <- 37
+sen <- 0.6
+cosi <- 0.8
+m1 <- sample(c(3, 4, 5, 6), 1)
+m2 <- sample(c(7, 8, 9, 10), 1)
+mu <- sample(c(0.15, 0.20, 0.25, 0.30, 0.40), 1)
+acel <- g * (m2 - m1 * (sen + mu * cosi)) / (m1 + m2)
+tracao <- m2 * (g - acel)
+stopifnot(acel > 0, tracao > 0)
+@
+\usepackage{graphicx}
+\begin{question}
+Dois blocos estao ligados por um fio ideal que passa por uma polia ideal.
+O primeiro, de massa $m_1=\Sexpr{m1}\,\mathrm{kg}$, desliza
+\textbf{para cima} em um plano inclinado a $37^\circ$ da horizontal.
+O segundo, suspenso, tem massa $m_2=\Sexpr{m2}\,\mathrm{kg}$
+e desce. O coeficiente de atrito \textbf{cinetico} entre o primeiro
+bloco e a rampa e $\mu_k=\Sexpr{mu}$. Despreze os demais atritos.
+Use $g=10\,\mathrm{m/s^2}$, $\sin37^\circ=0{,}6$ e
+$\cos37^\circ=0{,}8$.
+
+Determine:
+\begin{answerlist}
+  \item o modulo da aceleracao comum, em $\mathrm{m/s^2}$;
+  \item o modulo da tracao no fio, em newtons.
+\end{answerlist}
+\end{question}
+\begin{solution}
+O bloco 1 sobe a rampa, logo o atrito cinetico aponta para baixo.
+Projetando a segunda lei sobre as direcoes de movimento,
+\[
+T-m_1g\sin\theta-\mu_km_1g\cos\theta=m_1a,
+\qquad m_2g-T=m_2a.
+\]
+Somando,
+\[
+a=\frac{g[m_2-m_1(\sin\theta+\mu_k\cos\theta)]}{m_1+m_2}
+=\Sexpr{round(acel,2)}\,\mathrm{m/s^2}.
+\]
+Para o corpo suspenso,
+\[T=m_2(g-a)=\Sexpr{round(tracao,2)}\,\mathrm{N}.\]
+\begin{answerlist}
+  \item $\Sexpr{round(acel,2)}\,\mathrm{m/s^2}$
+  \item $\Sexpr{round(tracao,2)}\,\mathrm{N}$
+\end{answerlist}
+\end{solution}
+%% META-INFORMATION
+%% Fonte: OpenStax, University Physics, v. 1, cap. 6, Additional Problems, ex. 109.
+%% Adaptacao: parametros m1, m2, mu_k e pergunta sobre tensao.
+%% Figura: original ainda nao incorporada; theta=37 graus para compatibilidade.
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{round(acel,2)}|\Sexpr{round(tracao,2)}}
+%% \extol{0.03|0.03}
+%% \exname{BFATR120RampaRugosaCorpoSuspenso}
+%% \exsection{Mecanica; Leis de Newton; Atrito; Polias}

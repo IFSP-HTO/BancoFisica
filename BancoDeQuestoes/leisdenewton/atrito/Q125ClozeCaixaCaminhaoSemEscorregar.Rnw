@@ -1,0 +1,52 @@
+<<echo=FALSE, results=hide>>=
+# OpenStax University Physics v.1, Cap. 6, problema adicional 127.
+# Pergunta adicional: aceleracao maxima; massa nao e necessaria para o limite.
+g <- 10
+muS <- sample(c(0.20, 0.25, 0.30, 0.35, 0.40), 1)
+tempo <- sample(c(2, 3, 4, 5), 1)
+amax <- muS * g
+dmax <- 0.5 * amax * tempo^2
+stopifnot(amax>0, dmax>0)
+@
+\usepackage{graphicx}
+\begin{question}
+Uma caixa esta em repouso sobre a carroceria horizontal de um
+caminhao, sem cordas ou outros dispositivos de fixacao. O coeficiente
+de atrito \textbf{estatico} entre a caixa e a carroceria e
+$\mu_s=\Sexpr{muS}$. O caminhao parte do repouso e acelera
+horizontalmente de maneira constante durante
+$t=\Sexpr{tempo}\,\mathrm{s}$.
+Considere $g=10\,\mathrm{m/s^2}$.
+
+Determine:
+\begin{answerlist}
+  \item a aceleracao maxima do caminhao sem deslizamento da caixa, em $\mathrm{m/s^2}$;
+  \item a maior distancia percorrida pelo caminhao nesse intervalo sem deslizamento, em metros.
+\end{answerlist}
+\end{question}
+\begin{solution}
+A unica forca horizontal que pode acelerar a caixa e o atrito estatico.
+O modulo necessario e $f_s=ma$, enquanto seu maximo e
+$f_{s,\max}=\mu_smg$. Para manter o repouso relativo,
+\[ma\leq\mu_smg\quad\Rightarrow\quad
+a\leq\mu_sg.\]
+Portanto, $a_{\max}=\mu_sg=\Sexpr{round(amax,2)}\,\mathrm{m/s^2}$.
+Partindo do repouso e usando aceleracao maxima constante,
+\[d_{\max}=\frac12 a_{\max}t^2
+=\Sexpr{round(dmax,2)}\,\mathrm{m}.\]
+A massa da caixa cancela e nao influencia o resultado neste modelo.
+\begin{answerlist}
+  \item $\Sexpr{round(amax,2)}\,\mathrm{m/s^2}$
+  \item $\Sexpr{round(dmax,2)}\,\mathrm{m}$
+\end{answerlist}
+\end{solution}
+%% META-INFORMATION
+%% Fonte: OpenStax, University Physics, v. 1, cap. 6, Additional Problems, ex. 127.
+%% Adaptacao: mu_s e tempo parametrizados; inclui pergunta sobre aceleracao maxima.
+%% Figura: fonte nao apresenta ilustracao especifica; pendente de imagem do usuario.
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{round(amax,2)}|\Sexpr{round(dmax,2)}}
+%% \extol{0.03|0.03}
+%% \exname{BFATR125CaixaCaminhaoSemEscorregar}
+%% \exsection{Mecanica; Leis de Newton; Atrito estatico; Transportes}

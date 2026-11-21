@@ -1,0 +1,54 @@
+<<echo=FALSE, results=hide>>=
+# MIT OpenCourseWare, Classical Mechanics, PS.2.2: Pushing Stacked Blocks.
+# Forca sobre bloco INFERIOR; piso sem atrito; unico atrito estatico interno.
+g <- 10
+mbaixo <- sample(c(6, 8, 10, 12), 1)
+mcima <- sample(c(2, 3, 4, 5), 1)
+muS <- sample(c(0.20, 0.25, 0.30, 0.35, 0.40), 1)
+amax <- muS * g
+Fmax <- (mbaixo+mcima) * amax
+stopifnot(Fmax>0, amax>0)
+@
+\usepackage{graphicx}
+\begin{question}
+Um bloco de massa $m_1=\Sexpr{mbaixo}\,\mathrm{kg}$ repousa
+sobre uma mesa \textbf{sem atrito}. Sobre ele esta um bloco de massa
+$m_2=\Sexpr{mcima}\,\mathrm{kg}$. Entre os dois ha atrito
+\textbf{estatico} de coeficiente $\mu_s=\Sexpr{muS}$.
+Uma forca horizontal $F$ e aplicada \textbf{ao bloco inferior},
+para a direita, e cresce lentamente desde zero.
+Os blocos devem acelerar juntos, sem escorregar um sobre o outro.
+Adote $g=10\,\mathrm{m/s^2}$.
+
+Determine:
+\begin{answerlist}
+  \item a aceleracao maxima do conjunto sem deslizamento, em $\mathrm{m/s^2}$;
+  \item o maior modulo possivel da forca aplicada, em newtons.
+\end{answerlist}
+\end{question}
+\begin{solution}
+A unica forca horizontal que acelera o bloco superior e o atrito
+estatico: $f_s=m_2a$. Como $f_s\leq \mu_sm_2g$, temos
+\[a\leq \mu_sg,\qquad a_{\max}=\mu_sg
+=\Sexpr{round(amax,2)}\,\mathrm{m/s^2}.\]
+Para o conjunto, a resultante externa horizontal e somente F,
+pois nao ha atrito com a mesa:
+\[F=(m_1+m_2)a.\]
+No limite do movimento conjunto,
+\[F_{\max}=(m_1+m_2)\mu_sg
+=\Sexpr{round(Fmax,2)}\,\mathrm{N}.\]
+\begin{answerlist}
+  \item $\Sexpr{round(amax,2)}\,\mathrm{m/s^2}$
+  \item $\Sexpr{round(Fmax,2)}\,\mathrm{N}$
+\end{answerlist}
+\end{solution}
+%% META-INFORMATION
+%% Fonte: MIT OpenCourseWare 8.01SC, PS.2.2, Pushing Stacked Blocks (2016).
+%% Adaptacao: massas, mu_s e valores numericos parametrizados.
+%% Figura: pendente; confirmar licenca especifica do material visual.
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{round(amax,2)}|\Sexpr{round(Fmax,2)}}
+%% \extol{0.03|0.03}
+%% \exname{BFATR123EmpilhadosEmpurrarInferior}
+%% \exsection{Mecanica; Leis de Newton; Atrito estatico; Blocos empilhados}
