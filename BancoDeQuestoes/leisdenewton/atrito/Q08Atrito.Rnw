@@ -1,0 +1,75 @@
+<<echo=FALSE, results=hide>>=
+# Adaptacao do exercicio 15: dois blocos e tracao.
+m_A <- sample(c(3, 4, 5, 6), 1)
+m_B <- sample(c(2, 3, 4), 1)
+mu_d <- sample(c(0.2, 0.3, 0.4), 1)
+g <- 10
+a <- sample(2:5, 1)
+F <- (m_A+m_B)*(a+mu_d*g)
+T <- m_A*(a+mu_d*g)
+
+png("Q08DoisBlocosAtrito.png", width=1200, height=410, res=150)
+par(mar=c(0,0,0,0), xaxs="i", yaxs="i")
+plot.new(); plot.window(xlim=c(0,12), ylim=c(0,4), asp=1)
+segments(0.5,1,11.5,1,lwd=3,col="#374151")
+for (xx in seq(0.7,11.2,by=0.5))
+  segments(xx,1,xx-0.2,0.78,col="#9ca3af")
+rect(2,1.04,3.7,2.7,col="#e0ebf5",border="#1f2937",lwd=3)
+rect(5.1,1.04,6.8,2.7,col="#e0ebf5",border="#1f2937",lwd=3)
+text(2.85,1.88,"A",cex=1.6,font=2); text(5.95,1.88,"B",cex=1.6,font=2)
+segments(3.7,1.9,5.1,1.9,lwd=2.5,col="#2563eb")
+arrows(6.8,1.9,9.6,1.9,code=2,length=0.15,lwd=3,col="#2563eb")
+text(8.1,2.5,"F",cex=1.5,font=2,col="#2563eb")
+dev.off()
+include_supplement("Q08DoisBlocosAtrito.png")
+@
+\usepackage[utf8]{inputenc}
+\begin{question}
+Dois blocos, de massas $m_A=\Sexpr{m_A}$ kg e
+$m_B=\Sexpr{m_B}$ kg, ligados por um fio ideal,
+deslizam sobre um piso horizontal. Uma força horizontal de
+módulo $F=\Sexpr{F}\,\mathrm{N}$ puxa o bloco $B$
+para a direita, como mostra a figura.
+
+\begin{center}
+\includegraphics[width=0.78\linewidth,keepaspectratio]{Q08DoisBlocosAtrito.png}
+\end{center}
+
+O coeficiente de atrito cinético de ambos os blocos com o piso é
+$\mu_d=\Sexpr{mu_d}$. Adote $g=10\,\mathrm{m/s^2}$.
+\begin{answerlist}
+  \item Calcule o módulo da aceleração do conjunto, em $\mathrm{m/s^2}$.
+  \item Calcule o módulo da tração no fio, em newtons.
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+Sobre o conjunto de dois blocos, os atritos somam
+$\mu_d(m_A+m_B)g$. A Segunda Lei de Newton fornece
+\[
+ F-\mu_d(m_A+m_B)g=(m_A+m_B)a.
+\]
+\begin{answerlist}
+  \item
+  \[
+  a=\frac{\Sexpr{F}}{\Sexpr{m_A}+\Sexpr{m_B}}
+    -\Sexpr{mu_d}\cdot 10
+    =\Sexpr{a}\,\mathrm{m/s^2}.
+  \]
+  \item Para o bloco $A$, $T-\mu_d m_Ag=m_Aa$.
+  Portanto,
+  \[
+  T=m_A(a+\mu_dg)
+   =\Sexpr{m_A}(\Sexpr{a}+\Sexpr{mu_d}\cdot 10)
+   =\Sexpr{T}\,\mathrm{N}.
+  \]
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{a}|\Sexpr{T}}
+%% \exname{Q08Atrito}
+%% \extol{0.01|0.1}
+%% \exsection{Leis de Newton: dois blocos com atrito}

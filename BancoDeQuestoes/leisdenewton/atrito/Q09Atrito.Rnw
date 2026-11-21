@@ -1,0 +1,77 @@
+<<echo=FALSE, results=hide>>=
+# Adaptacao do exercicio 18: repouso e movimento no mesmo sistema.
+m_A <- sample(c(4, 6, 8, 10), 1)
+mu_e <- sample(c(0.3, 0.4, 0.5, 0.6), 1)
+mu_d <- sample(c(0.2, 0.25), 1)
+m_B <- sample(c(8, 10, 12, 14), 1)
+g <- 10
+m_B_max <- round(mu_e*m_A, 2)
+a <- (m_B*g-mu_d*m_A*g)/(m_A+m_B)
+T <- round(m_B*(g-a), 2)
+stopifnot(m_B>m_B_max)
+
+png("Q09PoliaMovimentoAtrito.png", width=1100, height=580, res=150)
+par(mar=c(0,0,0,0), xaxs="i", yaxs="i")
+plot.new(); plot.window(xlim=c(0,10), ylim=c(0,6), asp=1)
+segments(0.5,3.0,7.2,3.0,lwd=3,col="#374151")
+for (xx in seq(0.7,7.0,by=0.48))
+  segments(xx,3.0,xx-0.20,2.78,col="#9ca3af")
+rect(2.0,3.05,3.7,4.35,col="#e0ebf5",border="#1f2937",lwd=3)
+text(2.85,3.7,"A",cex=1.5,font=2)
+symbols(7.4,3.78,circles=0.38,inches=FALSE,add=TRUE,
+        bg="#e5e7eb",fg="#1f2937",lwd=2)
+points(7.4,3.78,pch=16,col="#1f2937",cex=0.7)
+segments(3.7,4.16,7.4,4.16,lwd=2.5,col="#2563eb")
+segments(7.78,3.78,7.78,2.45,lwd=2.5,col="#2563eb")
+rect(7.28,1.15,8.28,2.45,col="#e0ebf5",border="#1f2937",lwd=3)
+text(7.78,1.8,"B",cex=1.4,font=2)
+dev.off()
+include_supplement("Q09PoliaMovimentoAtrito.png")
+@
+\usepackage[utf8]{inputenc}
+\begin{question}
+O bloco $A$ de massa $\Sexpr{m_A}$ kg está sobre uma mesa horizontal
+e ligado, por fio e polia ideais, ao bloco suspenso $B$.
+Os coeficientes de atrito entre $A$ e a mesa são
+$\mu_e=\Sexpr{mu_e}$ (estático) e $\mu_d=\Sexpr{mu_d}$ (cinético).
+
+\begin{center}
+\includegraphics[width=0.66\linewidth,keepaspectratio]{Q09PoliaMovimentoAtrito.png}
+\end{center}
+
+Adote $g=10\,\mathrm{m/s^2}$.
+\begin{answerlist}
+  \item Determine a maior massa, em kg, que $B$ pode ter sem
+  colocar o sistema em movimento.
+  \item Se a massa de $B$ for $\Sexpr{m_B}$ kg e o sistema
+  for liberado do repouso, determine a tração no fio,
+  em newtons (duas casas decimais).
+\end{answerlist}
+\end{question}
+
+\begin{solution}
+\begin{answerlist}
+  \item No limite estático, $m_Bg=\mu_e m_Ag$. Assim,
+  \[
+   m_{B,\max}=\mu_e m_A
+   =\Sexpr{mu_e}\cdot\Sexpr{m_A}
+   =\Sexpr{m_B_max}\,\mathrm{kg}.
+  \]
+  \item Como $\Sexpr{m_B}>\Sexpr{m_B_max}$, o sistema se move.
+  As equações da Segunda Lei dão
+  \[
+   a=\frac{m_Bg-\mu_d m_Ag}{m_A+m_B}
+    =\Sexpr{round(a,3)}\,\mathrm{m/s^2}.
+  \]
+  Para o bloco suspenso, $m_Bg-T=m_Ba$.
+  Logo, $T=m_B(g-a)=\Sexpr{T}\,\mathrm{N}$.
+\end{answerlist}
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{m_B_max}|\Sexpr{T}}
+%% \exname{Q09Atrito}
+%% \extol{0.01|0.1}
+%% \exsection{Leis de Newton: transicao estatico-cinetico}

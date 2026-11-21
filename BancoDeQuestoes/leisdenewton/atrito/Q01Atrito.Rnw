@@ -13,7 +13,8 @@ if (Fat<Fa){
   resp3 <- round((Fa-resp2)/m, 2)
 } else{
   resp1 <- "N"  
-  resp2 <- Fat
+  # Em repouso, o atrito se ajusta ao modulo da forca aplicada.
+  resp2 <- Fa
   resp3 <- 0
 }
 
