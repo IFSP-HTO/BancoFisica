@@ -1,0 +1,66 @@
+<<echo=FALSE, results=hide>>=
+## Forca obliqua aplicada ao bloco 2; ambos deslizam para a direita.
+g <- 10
+m1 <- sample(2:5, 1)
+m2 <- sample(3:6, 1)
+theta <- sample(c(15, 20, 30), 1)
+mu1 <- sample(c(0.10, 0.15, 0.20), 1)
+mu2 <- sample(c(0.10, 0.15, 0.20), 1)
+ang <- theta * pi / 180
+Fchoices <- seq(40, 70, by=5)
+Fchoices <- Fchoices[Fchoices * sin(ang) < m2*g &
+  Fchoices * cos(ang) > mu1*m1*g + mu2*(m2*g-Fchoices*sin(ang))]
+stopifnot(length(Fchoices) > 0L)
+F <- sample(Fchoices, 1)
+N1 <- m1*g
+N2 <- m2*g - F*sin(ang)
+a <- (F*cos(ang)-mu1*N1-mu2*N2)/(m1+m2)
+T <- m1*a + mu1*N1
+stopifnot(N2>0, a>0, T>0)
+include_supplement("AtritoDoisBlocosForcaObliqua.png", dir="../../figuras")
+@
+\usepackage{graphicx}
+\begin{question}
+Dois blocos de massas $m_1=\Sexpr{m1}\,\mathrm{kg}$ e
+$m_2=\Sexpr{m2}\,\mathrm{kg}$ estao ligados por um fio ideal e
+\textbf{ja deslizam para a direita} sobre um piso horizontal.
+Uma forca $F=\Sexpr{F}\,\mathrm{N}$ atua no bloco 2, formando
+$\theta=\Sexpr{theta}^{\circ}$ acima da horizontal, como na figura.
+Os coeficientes de atrito \textbf{cinetico} com o piso sao
+$\mu_{k1}=\Sexpr{mu1}$ e $\mu_{k2}=\Sexpr{mu2}$.
+Considere $g=10\,\mathrm{m/s^2}$, fio ideal e despreze a resistencia do ar.
+\begin{center}
+\includegraphics[width=0.76\linewidth,keepaspectratio]{AtritoDoisBlocosForcaObliqua.png}
+\end{center}
+Determine:
+\begin{answerlist}
+  \item a aceleracao horizontal comum, em $\mathrm{m/s^2}$;
+  \item a tracao no fio, em $\mathrm{N}$.
+\end{answerlist}
+\end{question}
+\begin{solution}
+A forca obliqua diminui a normal de 2:
+$N_1=m_1g=\Sexpr{round(N1,2)}\,\mathrm{N}$ e
+$N_2=m_2g-F\sin\theta=\Sexpr{round(N2,2)}\,\mathrm{N}$.
+O atrito cinetico sobre cada bloco age para a esquerda.
+Para o conjunto:
+\[
+(m_1+m_2)a=F\cos\theta-\mu_{k1}m_1g
+-\mu_{k2}(m_2g-F\sin\theta).
+\]
+Logo, $a=\Sexpr{round(a,2)}\,\mathrm{m/s^2}$.
+No bloco 1, $T-\mu_{k1}m_1g=m_1a$, de modo que
+$T=m_1a+\mu_{k1}m_1g=\Sexpr{round(T,2)}\,\mathrm{N}$.
+\begin{answerlist}
+  \item $\Sexpr{round(a,2)}\,\mathrm{m/s^2}$
+  \item $\Sexpr{round(T,2)}\,\mathrm{N}$
+\end{answerlist}
+\end{solution}
+%% META-INFORMATION
+%% Fonte visual: figura fornecida pelo usuario, baseada em exercicios de dinamica com atrito; credito/licenca da origem a conferir.
+%% \extype{cloze}
+%% \exclozetype{num|num}
+%% \exsolution{\Sexpr{round(a,2)}|\Sexpr{round(T,2)}}
+%% \extol{0.03|0.03}
+%% \exname{AtritoDoisBlocosForcaObliqua}
+%% \exsection{Mecanica; Leis de Newton; Atrito; Blocos com tracao}
