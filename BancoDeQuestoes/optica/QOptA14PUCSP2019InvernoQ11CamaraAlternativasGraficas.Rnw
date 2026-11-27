@@ -1,0 +1,44 @@
+<<echo=FALSE, results=hide>>=
+# PUC-SP inverno 2019 Q11 — alternativas graficas recortadas
+# pixel a pixel do PNG original da prova. A correta e a figura C
+# da prova, mas a ordem mostrada ao aluno e sorteada.
+imgs <- c("PUCSP2019InvernoQ11A.png",
+          "PUCSP2019InvernoQ11B.png",
+          "PUCSP2019InvernoQ11C.png",
+          "PUCSP2019InvernoQ11D.png")
+for (f in imgs) include_supplement(f,dir="../figuras")
+solutions <- seq_along(imgs)==3L
+ix <- sample(seq_along(imgs))
+imgs <- imgs[ix]
+solutions <- solutions[ix]
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+Uma câmara escura de orifício projeta sobre o anteparo uma imagem de uma placa iluminada na qual aparece a letra G. Os raios atravessam uma pequena abertura e seguem em linha reta. Qual das imagens abaixo representa a orientação da letra no anteparo?
+
+<<echo=FALSE, results=tex>>=
+answerlist(paste0("\\includegraphics[height=1.75cm,keepaspectratio]{",imgs,"}"))
+@
+\end{question}
+
+\begin{solution}
+Na câmara de orifício, a passagem dos raios pelo pequeno furo inverte as direções horizontal e vertical da figura. Essa dupla inversão equivale a uma \textbf{rotação de $180^\circ$} no plano da imagem. A figura correta é a que corresponde à alternativa C do enunciado original; seu lugar na lista é sorteado com o gabarito.
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(solutions,
+    paste0("\\textbf{",paste0("\\includegraphics[height=1.75cm,keepaspectratio]{",imgs,"}"),"}"),
+    paste0("\\includegraphics[height=1.75cm,keepaspectratio]{",imgs,"}")))
+@
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single=TRUE)}}
+%% \exname{QOptA14PUCSP2019InvernoQ11CamaraAlternativasGraficas}
+%% \exsection{Optica; Aula14; Camara escura; Imagem invertida; Basico; PUCSP inverno 2019}
+%% SOURCE-VISUAL: original-crop
+%% SOURCE-IMAGE-SHA256: df73b94eab89d8eaa3ce90ba99075238ffb6fe19fcf82c2e42f92939e4742335
+%% SOURCE-ADAPTATION: quatro alternativas graficas independentes recortadas do PNG original; ordem permutada com gabarito correspondente
+%% SOURCE: https://provas.professorfilatte.com.br/puc-sp-2019-inverno-fisica-questao-11
