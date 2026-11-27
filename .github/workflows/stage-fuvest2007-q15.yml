@@ -16,6 +16,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: work/fuvest2007-q15-figures
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -70,7 +72,6 @@ jobs:
             BancoDeQuestoes/figuras/FUVEST2007Q15AlternativasOriginal.png
           if-no-files-found: warn
       - name: Publish audited source crops to feature branch
-        if: github.event_name == 'push'
         run: |
           set -euo pipefail
           git config user.name "github-actions[bot]"
