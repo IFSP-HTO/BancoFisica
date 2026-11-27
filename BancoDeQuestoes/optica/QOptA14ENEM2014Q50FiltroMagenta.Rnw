@@ -1,0 +1,34 @@
+<<echo=FALSE, results=hide>>=
+# Adaptação autoral da fonte ENEM 2014 Q50; alternativas permutadas com gabarito recalculado.
+alternativas <- c("Magenta.","Ciano.","Verde.","Amarelo.","Vermelho.")
+solutions <- c(TRUE,rep(FALSE,length(alternativas)-1))
+ix <- sample(seq_along(alternativas))
+alternativas <- alternativas[ix]
+solutions <- solutions[ix]
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Uma fotografia feita sob iluminação fluorescente apresenta forte dominante verde. Para reduzir a componente verde, mas conservar as componentes vermelha e azul, qual cor de filtro ideal é a mais adequada?
+
+<<echo=FALSE, results=tex>>=
+answerlist(alternativas)
+@
+\end{question}
+
+\begin{solution}
+No modelo aditivo de cores-luz, magenta combina vermelho e azul. Um filtro magenta ideal deixa passar essas componentes e atenua a verde, equilibrando a dominante verde na fotografia. Filtros ciano e amarelo deixam passar verde; filtro vermelho também eliminaria azul.
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(solutions,paste0("\\textbf{",alternativas,"}"),alternativas))
+@
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single=TRUE)}}
+%% \exname{QOptA14ENEM2014Q50FiltroMagenta}
+%% \exsection{Optica; Aulas14-15; Cores-luz; Filtros; Luz branca; Intermediario; ENEM 2014 Q50}
+%% SOURCE-VISUAL: none
+%% SOURCE-ADAPTATION: enunciado e alternativas redigidos de forma independente a partir da prova; ordem das alternativas dinâmica; dados físicos preservados
+%% SOURCE: https://provas.professorfilatte.com.br/enem-2014-fisica-questao-50
