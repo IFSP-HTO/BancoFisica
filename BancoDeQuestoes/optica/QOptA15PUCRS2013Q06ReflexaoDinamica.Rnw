@@ -1,0 +1,41 @@
+<<echo=FALSE, results=hide>>=
+# PUC-RS 2013 inverno Q6 — sem figura na fonte.
+incidencia <- sample(c(15,20,25,30,35,40,55,60),1)
+alternativas <- c(
+ paste0("$r=i$, uma reta inclinada a $45^\\circ$; para $i=",incidencia,"^\\circ$, $r=",incidencia,"^\\circ$."),
+ paste0("$r=90^\\circ-i$; para $i=",incidencia,"^\\circ$, $r=",90-incidencia,"^\\circ$."),
+ paste0("$r=i/2$; para $i=",incidencia,"^\\circ$, $r=",incidencia/2,"^\\circ$."),
+ paste0("A reflexao independe de $i$, portanto $r=0^\\circ$."),
+ paste0("$r=2i$, logo a inclinacao do grafico e de $60^\\circ$.")
+)
+solutions <- c(TRUE,FALSE,FALSE,FALSE,FALSE)
+ix <- sample(seq_along(alternativas))
+alternativas <- alternativas[ix]
+solutions <- solutions[ix]
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Num experimento, um estudante mede os ângulos de incidência $i$ e reflexão $r$, ambos em relação à normal a um espelho plano. Em uma das medições, obtém $i=\Sexpr{incidencia}^{\circ}$. Considerando eixos $i$ e $r$ na mesma escala, qual descrição do gráfico $r$ em função de $i$ e qual valor previsto para essa medição estão corretos?
+
+<<echo=FALSE, results=tex>>=
+answerlist(alternativas)
+@
+\end{question}
+
+\begin{solution}
+A segunda lei da reflexão estabelece $r=i$. Portanto o gráfico é a reta $r=i$ que passa pela origem; em eixos com escalas iguais ela faz $45^\circ$ com a horizontal. Para o ângulo sorteado, $r=\Sexpr{incidencia}^\circ$.
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(solutions,paste0("\\textbf{",alternativas,"}"),alternativas))
+@
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single=TRUE)}}
+%% \exname{QOptA15PUCRS2013Q06ReflexaoDinamica}
+%% \exsection{Optica; Aula15; Leis da reflexao; Grafico de r em funcao de i; Basico; PUCRS 2013}
+%% SOURCE-VISUAL: none
+%% SOURCE-ADAPTATION: pergunta adaptada com angulos variaveis, mantendo r=i e grafico de 45 graus; gabarito original B
+%% SOURCE: https://provas.professorfilatte.com.br/puc-rs-2013-inverno-fisica-questao-6

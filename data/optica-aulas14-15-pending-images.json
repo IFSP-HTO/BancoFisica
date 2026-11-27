@@ -1,0 +1,31 @@
+{
+  "lot": "aulas14-15-figuras-aprovadas-20261127",
+  "questions": [
+    {
+      "id": "puc-sp-2019-inverno-q11",
+      "title": "PUC-SP inverno 2019 Q11",
+      "url": "https://provas.professorfilatte.com.br/puc-sp-2019-inverno-fisica-questao-11",
+      "image_url": "https://wdlpxyudndyrkigvupfy.supabase.co/storage/v1/object/public/questoes/pucsp19iq11.png",
+      "correct": "C",
+      "tags": [
+        "Camara escura",
+        "Alternativas graficas"
+      ],
+      "requires_visual": true,
+      "review_requirement": "recortar A-D separadamente; alternativas precisam permutacao conjunta de imagem e gabarito"
+    },
+    {
+      "id": "univesp-2025-2o-semestre-q54",
+      "title": "Univesp 2025 2o semestre Q54",
+      "url": "https://provas.professorfilatte.com.br/univesp-2025-2o-semestre-fisica-questao-54",
+      "image_url": "https://wdlpxyudndyrkigvupfy.supabase.co/storage/v1/object/public/questoes/univ25q54.png",
+      "correct": "E",
+      "tags": [
+        "Camara escura",
+        "Propagacao retilinea"
+      ],
+      "requires_visual": true,
+      "review_requirement": "recortar figura original sem enunciado; nenhum dado numerico deve ser alterado"
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+name: Stage approved optics image sources
+on:
+  push:
+    branches:
+      - feat/optica-aulas14-15-aprovacoes-20261127
+    paths:
+      - 'data/optica-aulas14-15-pending-images.json'
+      - 'data/optica-aulas14-15-recortes-aprovados.json'
+      - '.github/workflows/stage-optica-approved-images.yml'
+  pull_request:
+    paths:
+      - 'data/optica-aulas14-15-pending-images.json'
+      - '.github/workflows/stage-optica-approved-images.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  stage-images:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --disable-pip-version-check requests beautifulsoup4 Pillow
+      - name: Recover approved source PNG bytes, metadata and SHA256
+        run: |
+          python tools/stage_filatte_optica.py \
+            --manifest data/optica-aulas14-15-pending-images.json \
+            --out-dir build/optica-aulas14-15-figuras
+      - name: Verify full PNG hashes and extract reviewed crops
+        run: |
+          python tools/crop_filatte_optica.py \
+            --manifest data/optica-aulas14-15-recortes-aprovados.json \
+            --stage-dir build/optica-aulas14-15-figuras \
+            --dest build/optica-aulas14-15-crops
+      - name: Preserve only exact original crop bytes in BancoDeQuestoes
+        run: |
+          python - <<'PY'
+          import json,shutil
+          from pathlib import Path
+          m=json.loads(Path("data/optica-aulas14-15-recortes-aprovados.json").read_text())
+          for item in m["items"]:
+              for fig in item["figures"]:
+                  name=fig["name"]
+                  source=Path("build/optica-aulas14-15-crops")/name
+                  dest=Path("BancoDeQuestoes/figuras")/name
+                  dest.parent.mkdir(parents=True,exist_ok=True)
+                  if dest.exists():
+                      if dest.read_bytes()!=source.read_bytes():
+                          raise RuntimeError("Asset mismatch, no overwrite allowed: "+name)
+                  else:
+                      shutil.copyfile(source,dest)
+          print("Verified",sum(len(x["figures"]) for x in m["items"]),"source pixel crops")
+          PY
+      - name: Archive audited source and crop images
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: optica-aulas14-15-imagens-fonte
+          path: |
+            build/optica-aulas14-15-figuras/
+            build/optica-aulas14-15-crops/
+          if-no-files-found: warn
+      - name: Commit reviewed figure assets to source branch
+        if: github.event_name == 'push'
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          python - <<'PY'
+          import json,subprocess
+          m=json.load(open("data/optica-aulas14-15-recortes-aprovados.json"))
+          paths=["BancoDeQuestoes/figuras/"+a["name"] for e in m["items"] for a in e["figures"]]
+          subprocess.run(["git","add","--",*paths],check=True)
+          print("Staged",len(paths),"original source crops")
+          PY
+          if ! git diff --cached --quiet; then
+            git commit -m "Preserve five reviewed original optics image crops"
+            git push origin "HEAD:${GITHUB_REF_NAME}"
+          fi

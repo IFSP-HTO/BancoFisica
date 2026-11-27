@@ -1,0 +1,77 @@
+<<echo=FALSE, results=hide>>=
+# PUC-Campinas 2010 Q30 — TikZ acrescentado por autorizacao do responsavel.
+casos <- data.frame(p0=c(2,3,4,3,4,6), i0=c(6,8,10,9,8,9), i1=c(4,6,8,6,4,6))
+c <- casos[sample(nrow(casos),1),]
+p0 <- c$p0
+i0 <- c$i0
+i1 <- c$i1
+p1 <- p0*i0/i1
+desloc <- p1-p0
+br <- function(x) gsub(".",",",format(round(x,2),trim=TRUE,scientific=FALSE),fixed=TRUE)
+alts <- c(
+ paste0("Afastar-se ",br(desloc)," m."),
+ paste0("Aproximar-se ",br(desloc)," m."),
+ paste0("Afastar-se ",br(2*desloc)," m."),
+ paste0("Aproximar-se ",br(2*desloc)," m."),
+ "Permanecer na mesma posição."
+)
+solutions <- seq_along(alts)==1L
+ix <- sample(seq_along(alts))
+alts <- alts[ix]
+solutions <- solutions[ix]
+@
+\usepackage[utf8]{inputenc}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+
+\begin{question}
+Uma pessoa está a $\Sexpr{br(p0)}\,\mathrm{m}$ do orifício de uma câmara escura. Sua imagem tem altura $\Sexpr{br(i0)}\,\mathrm{cm}$. Mantidas as dimensões da caixa, deseja-se que a imagem passe a ter altura $\Sexpr{br(i1)}\,\mathrm{cm}$. Qual deve ser o deslocamento da pessoa em relação à câmera?
+
+\begin{center}
+\begin{tikzpicture}[scale=0.73,>=Stealth]
+  \draw[thick,fill=gray!12] (0,-1.7) rectangle (3,1.7);
+  \draw[very thick] (0,-1.7)--(0,-0.12) (0,0.12)--(0,1.7);
+  \draw[very thick] (3,-1.7)--(3,1.7);
+  \fill (0,0) circle(2pt);
+  \draw[very thick,blue!70!black,-{Stealth}] (-4,-1.1)--(-4,1.1);
+  \draw[very thick,red!70!black,-{Stealth}] (3,0.77)--(3,-0.77);
+  \draw[blue!65!black] (-4,1.1)--(0,0)--(3,-0.77);
+  \draw[red!65!black] (-4,-1.1)--(0,0)--(3,0.77);
+  \node[above] at (-4,1.2) {Objeto};
+  \node[above] at (1.6,1.9) {Câmara escura};
+  \node[below] at (0,-0.13) {Orifício};
+  \node[right] at (3,0) {$i_0$};
+  \draw[<->] (-4,-2.1)--node[below] {$p_0=\Sexpr{br(p0)}\,\mathrm{m}$} (0,-2.1);
+  \draw[<->] (0,-2.1)--node[below] {$L$} (3,-2.1);
+\end{tikzpicture}
+\end{center}
+
+\textit{O esquema é ilustrativo e não está em escala.}
+
+<<echo=FALSE, results=tex>>=
+answerlist(alts)
+@
+\end{question}
+
+\begin{solution}
+Os triângulos determinados pelos raios que atravessam o orifício são semelhantes. Como o objeto e o comprimento da câmera não mudam, o produto entre a distância do objeto e a altura da imagem é constante:
+\[
+i_0p_0=i_1p_1
+\quad\Rightarrow\quad
+p_1=\frac{\Sexpr{br(i0)}\cdot\Sexpr{br(p0)}}{\Sexpr{br(i1)}}=\Sexpr{br(p1)}\,\mathrm{m}.
+\]
+Portanto, a pessoa deve \textbf{afastar-se} $\Sexpr{br(desloc)}\,\mathrm{m}$.
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(solutions,paste0("\\textbf{",alts,"}"),alts))
+@
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single=TRUE)}}
+%% \exname{QOptA14PUCCampinas2010Q30CamaraTikZ}
+%% \exsection{Optica; Aula14; Camara escura; Semelhanca de triangulos; Intermediario; PUCCampinas 2010}
+%% SOURCE-VISUAL: adapted-approved
+%% SOURCE-ADAPTATION: fonte sem imagem grafica; esquema original em TikZ criado com aprovacao para parametrizacao; valores sorteados
+%% SOURCE: https://provas.professorfilatte.com.br/puc-campinas-2010-fisica-questao-30

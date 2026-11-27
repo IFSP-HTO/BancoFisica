@@ -272,10 +272,12 @@ check_moodle_split <- function() {
     q_vals <- as.integer(sub("^.*Q([0-9]+)[[:space:]]*:.*$", "\\1", name_hits))
     r_vals <- as.integer(sub("^R([0-9]+).*$", "\\1", name_hits))
 
-    ## Limpeza de artefatos: roda de novo com limite folgado (-> arquivo unico)
-    ## e confere que as partes antigas desaparecem e so resta name.xml.
+    ## Regressao da limpeza: reutiliza o mesmo prefixo com apenas uma
+    ## questao pequena. Assim a nova geracao cabe em UM unico XML e as
+    ## partes criadas acima devem desaparecer, sem regenerar centenas de
+    ## replicas pesadas so para testar limpeza.
     single <- generate_moodle_xml_limited(
-      files = files, n = 12L, name = "split-test", seed = 12026,
+      files = files[1L], n = 1L, name = "split-test", seed = 12026,
       edir = edir, dir = out, max_bytes = 10 * 1024 * 1024
     )
     stale_parts <- list.files(out, pattern = "^split-test-part[0-9]+\\.xml$")
@@ -290,6 +292,9 @@ check_moodle_split <- function() {
       expected_variants = length(files) * 12L,
       dup_keys = anyDuplicated(paste(q_vals, r_vals, sep = ":")),
       single_stale_parts = length(stale_parts),
+      single_is_one_file = length(single) == 1L &&
+        identical(basename(single), "split-test.xml") &&
+        identical(files_now, "split-test.xml"),
       files_now = files_now
     )
   })
@@ -309,6 +314,9 @@ check_moodle_split <- function() {
   }
   if (!isTRUE(report$dup_keys == 0L)) {
     stop("Moodle XML split check: duplicate (Q,R) variant identity across parts")
+  }
+  if (!isTRUE(report$single_is_one_file)) {
+    stop("Moodle XML split check: test-only generous limit did not produce one XML")
   }
   if (!isTRUE(report$single_stale_parts == 0L)) {
     stop("Moodle XML split check left stale part files after regeneration")

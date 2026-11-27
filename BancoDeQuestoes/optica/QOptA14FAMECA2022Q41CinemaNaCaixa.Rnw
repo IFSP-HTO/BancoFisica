@@ -1,0 +1,34 @@
+<<echo=FALSE, results=hide>>=
+# Adaptação autoral da fonte FAMECA 2022 Q41; alternativas permutadas com gabarito recalculado.
+alternativas <- c("Propagação retilínea e independência dos raios luminosos.","Propagação retilínea e refração na abertura.","Independência dos raios e refração na abertura.","Propagação retilínea e reversibilidade como causa da inversão.","Independência dos raios e reversibilidade como causa da inversão.")
+solutions <- c(TRUE,rep(FALSE,length(alternativas)-1))
+ix <- sample(seq_along(alternativas))
+alternativas <- alternativas[ix]
+solutions <- solutions[ix]
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Uma turma monta uma grande caixa opaca com pequeno orifício em uma parede. Ao iluminar o exterior, forma-se na parede interna oposta uma imagem invertida. Qual combinação de princípios da óptica geométrica explica esse resultado?
+
+<<echo=FALSE, results=tex>>=
+answerlist(alternativas)
+@
+\end{question}
+
+\begin{solution}
+A propagação retilínea explica o cruzamento geométrico dos raios provenientes das extremidades do objeto, formando uma imagem invertida. A independência dos raios garante que a trajetória de um feixe não se altere porque outro o cruza. A câmara de orifício funciona sem lente e, portanto, não depende de refração para formar a imagem.
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(solutions,paste0("\\textbf{",alternativas,"}"),alternativas))
+@
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single=TRUE)}}
+%% \exname{QOptA14FAMECA2022Q41CinemaNaCaixa}
+%% \exsection{Optica; Aulas14-15; Camara escura; Independencia dos raios; Propagacao retilinea; Basico; FAMECA 2022 Q41}
+%% SOURCE-VISUAL: none
+%% SOURCE-ADAPTATION: enunciado e alternativas redigidos de forma independente a partir da prova; ordem das alternativas dinâmica; dados físicos preservados
+%% SOURCE: https://provas.professorfilatte.com.br/fameca-2022-fisica-questao-41

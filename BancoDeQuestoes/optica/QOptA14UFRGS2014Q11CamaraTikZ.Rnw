@@ -1,0 +1,68 @@
+<<echo=FALSE, results=hide>>=
+# UFRGS 2014 Q11 — esquema original de camera escura reconstruido
+# geometricamente em TikZ, autorizado pelo responsavel do BancoFisica.
+D <- sample(c(3,4,5),1)
+L <- sample(c(2,2.5,3),1)
+H <- sample(c(1.6,2.0,2.4),1)
+h <- H*L/D
+yf <- H/2
+yi <- h/2
+alternativas <- c(
+ "A luz se propaga em linha reta nos meios homogêneos e transparentes.",
+ "O ângulo refletido é sempre igual ao de incidência.",
+ "A luz atravessa o orifício por sofrer refração numa lente.",
+ "A imagem é virtual e se forma no prolongamento dos raios.",
+ "Os raios de luz fazem uma curva ao contornar a borda do orifício."
+)
+solutions <- c(TRUE,FALSE,FALSE,FALSE,FALSE)
+ix <- sample(seq_along(alternativas))
+alternativas <- alternativas[ix]
+solutions <- solutions[ix]
+@
+\usepackage[utf8]{inputenc}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+
+\begin{question}
+Uma câmara escura possui um pequeno orifício $O$ em uma face e um anteparo na face oposta. Um objeto luminoso vertical forma uma imagem invertida no anteparo, conforme o esquema paramétrico. Qual princípio explica diretamente a orientação da imagem?
+
+\begin{center}
+\begin{tikzpicture}[scale=0.66,>=Stealth]
+  \draw[step=1,gray!12,very thin] (-5.5,-2) grid (3.5,2);
+  \draw[fill=gray!12,thick] (0,-1.8) rectangle (\Sexpr{L},1.8);
+  \draw[white,line width=4pt] (0,-0.13)--(0,0.13);
+  \draw[very thick] (0,-1.8)--(0,-0.13) (0,0.13)--(0,1.8);
+  \draw[very thick] (\Sexpr{L},-1.8)--(\Sexpr{L},1.8);
+  \fill (0,0) circle (2.6pt);
+  \draw[thick,blue!80!black,-{Stealth}] (-\Sexpr{D},-\Sexpr{yf}) -- (-\Sexpr{D},\Sexpr{yf});
+  \draw[thick,red!80!black,-{Stealth}] (\Sexpr{L},\Sexpr{yi}) -- (\Sexpr{L},-\Sexpr{yi});
+  \draw[blue!80!black] (-\Sexpr{D},\Sexpr{yf}) -- (0,0) -- (\Sexpr{L},-\Sexpr{yi});
+  \draw[red!80!black] (-\Sexpr{D},-\Sexpr{yf}) -- (0,0) -- (\Sexpr{L},\Sexpr{yi});
+  \node[above] at (-\Sexpr{D},\Sexpr{yf}) {Objeto};
+  \node[above] at (1.2,1.9) {Câmara escura};
+  \node[below left] at (0,0) {$O$};
+  \node[right] at (\Sexpr{L},0.4) {Imagem};
+\end{tikzpicture}
+\end{center}
+
+<<echo=FALSE, results=tex>>=
+answerlist(alternativas)
+@
+\end{question}
+
+\begin{solution}
+O raio proveniente do topo do objeto atravessa o pequeno orifício sem mudar a direção, chegando à parte inferior do anteparo; o raio proveniente da base chega à parte superior. O encontro geométrico dos raios em $O$ e a inversão da imagem decorrem da \textbf{propagação retilínea da luz}. Não há espelho ou lente na montagem. A figura varia o afastamento do objeto, a profundidade da câmara e o tamanho da seta preservando a mesma lei.
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(solutions,paste0("\\textbf{",alternativas,"}"),alternativas))
+@
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single=TRUE)}}
+%% \exname{QOptA14UFRGS2014Q11CamaraTikZ}
+%% \exsection{Optica; Aula14; Camara escura; Propagacao retilinea; Basico; UFRGS 2014}
+%% SOURCE-VISUAL: adapted-approved
+%% SOURCE-ADAPTATION: camera escura desenhada em TikZ, reproduzindo geometria sem copiar pixels, com aprovacao do responsavel
+%% SOURCE: https://provas.professorfilatte.com.br/ufrgs-2014-fisica-questao-11

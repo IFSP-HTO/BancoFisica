@@ -1,0 +1,34 @@
+<<echo=FALSE, results=hide>>=
+# Adaptação autoral da fonte UFU 2023-2 Q20; alternativas permutadas com gabarito recalculado.
+alternativas <- c("Somente III e IV.","Somente I e II.","Somente V e VI.","Somente IV e V.")
+solutions <- c(TRUE,rep(FALSE,length(alternativas)-1))
+ix <- sample(seq_along(alternativas))
+alternativas <- alternativas[ix]
+solutions <- solutions[ix]
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Em um recinto completamente escuro, são colocados separadamente: I. papel branco; II. joia brilhante; III. um material fosforescente previamente exposto à luz; IV. metal incandescente; V. um gato; VI. um espelho. Sem qualquer iluminação externa, quais objetos podem ser vistos por emitirem luz própria?
+
+<<echo=FALSE, results=tex>>=
+answerlist(alternativas)
+@
+\end{question}
+
+\begin{solution}
+O material fosforescente previamente excitado pode continuar emitindo luz, enquanto o metal incandescente emite luz por temperatura elevada. Papel, joia, espelho e gato, na ausência de iluminação ou emissão própria relevante, não são vistos. Assim, apenas III e IV são fontes luminosas no contexto da questão. Gabarito original da prova: B.
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(solutions,paste0("\\textbf{",alternativas,"}"),alternativas))
+@
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single=TRUE)}}
+%% \exname{QOptA14UFU2023Q20FontesLuminosas}
+%% \exsection{Optica; Aulas14-15; Fontes primarias; Fontes secundarias; Escuro; Basico; UFU 2023-2 Q20}
+%% SOURCE-VISUAL: none
+%% SOURCE-ADAPTATION: enunciado e alternativas redigidos de forma independente a partir da prova; ordem das alternativas dinâmica; dados físicos preservados
+%% SOURCE: https://provas.professorfilatte.com.br/ufu-2023-2-fisica-questao-20

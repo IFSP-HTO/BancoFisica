@@ -1,0 +1,32 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Sobre a luz visível, as cores dos corpos e a relação entre frequência e comprimento de onda, identifique quais proposições são verdadeiras e \textbf{informe a soma dos números correspondentes}.
+
+\begin{enumerate}
+\item[(01)] Diferentes cores de luz visível estão associadas a diferentes intervalos de comprimento de onda.
+\item[(02)] No modelo ideal de cor por reflexão seletiva, um corpo azul reflete a componente azul da iluminação e absorve grande parte das demais.
+\item[(04)] Um corpo idealmente vermelho, iluminado por luz branca, deve aparecer preto.
+\item[(08)] A radiação vermelha apresenta comprimento de onda maior que a azul, no mesmo meio.
+\item[(16)] A luz violeta possui frequência maior que a luz verde.
+\end{enumerate}
+
+Digite como resposta o valor da soma.
+\end{question}
+
+\begin{solution}
+(01) Verdadeira: o comprimento de onda está ligado à cor percebida. (02) Verdadeira: a cor do objeto depende da luz incidente e de sua absorção/reflexão seletivas. (04) Falsa: a luz branca contém vermelho, que o corpo ideal reflete, aparecendo vermelho. (08) Verdadeira: no visível, o vermelho tem comprimento de onda maior que o azul. (16) Verdadeira: a frequência da luz violeta é maior que a verde. Logo:
+\[
+S=01+02+08+16=\boxed{27}.
+\]
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{27}
+%% \extol{0}
+%% \exname{QOptA14UEM2016Q20SomatoriaEspectro}
+%% \exsection{Optica; Aula14; Cores; Espectro visivel; Comprimento de onda; Frequencia; Avancado; UEM 2016}
+%% SOURCE-VISUAL: none
+%% SOURCE-ADAPTATION: itens reescritos e formato somatoria preservado, gabarito original 27
+%% SOURCE: https://provas.professorfilatte.com.br/uem-2016-inverno-conhecimentos-especificos-fisica-questao-20
