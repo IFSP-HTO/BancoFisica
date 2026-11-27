@@ -35,6 +35,7 @@ RUN apt-get update -qq \
         texlive-latex-base \
         texlive-latex-extra \
         texlive-latex-recommended \
+        texlive-pictures \
         tth \
         zlib1g-dev \
     && rm -rf /var/lib/apt/lists/*
