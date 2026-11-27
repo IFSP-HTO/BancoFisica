@@ -209,8 +209,17 @@ validate_moodle_split_identity <- function(parts, total, n) {
 
   expected_questions <- seq_len(as.integer(total))
   if (!identical(sort(unique(questions)), expected_questions)) {
-    stop("Moodle split identity error: Q numbering is not globally continuous (expected 1..",
-         total, ")")
+    observed <- sort(unique(questions))
+    missing <- setdiff(expected_questions, observed)
+    excess <- setdiff(observed, expected_questions)
+    stop(
+      "Moodle split identity error: Q numbering is not globally continuous (expected 1..",
+      total, "); parsed ", length(questions), " variants; observed unique Q=",
+      length(observed), " (min/max=", if (length(observed)) min(observed) else "none",
+      "/", if (length(observed)) max(observed) else "none", "); missing=",
+      paste(missing, collapse = ","), "; unexpected=",
+      paste(excess, collapse = ",")
+    )
   }
 
   expected_variants <- as.integer(total) * as.integer(n)
