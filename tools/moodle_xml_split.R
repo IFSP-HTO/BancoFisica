@@ -224,6 +224,13 @@ validate_moodle_split_identity <- function(parts, total, n) {
     message("Moodle split DEBUG parts and RQ lines: ", paste(part_summary, collapse = "; "))
     message("Moodle split DEBUG Q49-52 raw names: ",
             paste(utils::head(nearby, 12L), collapse = " || "))
+    for (j in intersect(c(5L, 6L, 17L, 28L, 29L), seq_along(parts))) {
+      raw <- readLines(parts[[j]], warn = FALSE, encoding = "UTF-8")
+      lines <- grep("<name>|R[0-9]+|Q[0-9]+|<text>", raw, value = TRUE)
+      lines <- substr(utils::head(lines, 18L), 1L, 180L)
+      message("Moodle split DEBUG part ", j, " (bytes=", file.size(parts[[j]]),
+              "): ", paste(lines, collapse = " || "))
+    }
     stop(
       "Moodle split identity error: Q numbering is not globally continuous (expected 1..",
       total, "); parsed ", length(questions), " variants; observed unique Q=",
