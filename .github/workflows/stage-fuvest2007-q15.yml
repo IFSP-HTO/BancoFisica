@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   stage:
@@ -37,11 +37,46 @@ jobs:
           page=doc[5]
           pix=page.get_pixmap(matrix=fitz.Matrix(2,2),alpha=False)
           pix.save(dst/"page6.png")
-          print(json.dumps({"source":url,"page":6,"pages":len(doc),"sha256":hashlib.sha256(content).hexdigest(),"width":pix.width,"height":pix.height}))
+          digest=hashlib.sha256(content).hexdigest()
+          assert digest=="e31eb27e18defa99b545c6cbf95ce2fa549619cb3e233dd802d7f82a35320b9d",digest
+          from PIL import Image
+          from io import BytesIO
+          rendered=Image.open(BytesIO(pix.tobytes("png")))
+          cuts=[
+             ("FUVEST2007Q15CenaOriginal.png",(286,160,588,341)),
+             ("FUVEST2007Q15AlternativasOriginal.png",(108,385,606,728)),
+          ]
+          folder=Path("BancoDeQuestoes/figuras")
+          folder.mkdir(parents=True,exist_ok=True)
+          for fname,box in cuts:
+              import io
+              b=io.BytesIO()
+              rendered.crop(box).save(b,format="PNG")
+              target=folder/fname
+              if target.exists():
+                  if target.read_bytes()!=b.getvalue(): raise ValueError("Source PNG crop changed "+fname)
+              else:
+                  target.write_bytes(b.getvalue())
+              print("verified cropped original",fname,target.stat().st_size,hashlib.sha256(target.read_bytes()).hexdigest())
+          print(json.dumps({"source":url,"page":6,"pages":len(doc),"sha256":digest,"width":pix.width,"height":pix.height}))
           PY
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: fuvest2007q15-original-source-page
-          path: build/fuvest-2007-q15
+          path: |
+            build/fuvest-2007-q15
+            BancoDeQuestoes/figuras/FUVEST2007Q15CenaOriginal.png
+            BancoDeQuestoes/figuras/FUVEST2007Q15AlternativasOriginal.png
           if-no-files-found: warn
+      - name: Publish audited source crops to feature branch
+        if: github.event_name == 'push'
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add BancoDeQuestoes/figuras/FUVEST2007Q15CenaOriginal.png BancoDeQuestoes/figuras/FUVEST2007Q15AlternativasOriginal.png
+          if ! git diff --cached --quiet; then
+            git commit -m "Preserve FUVEST 2007 Q15 source diagrams and five visual alternatives"
+            git push origin "HEAD:${GITHUB_REF_NAME}"
+          fi
