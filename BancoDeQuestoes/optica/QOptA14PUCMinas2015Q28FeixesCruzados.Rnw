@@ -1,0 +1,34 @@
+<<echo=FALSE, results=hide>>=
+# Adaptação autoral da fonte PUC Minas 2015 Q28; alternativas permutadas com gabarito recalculado.
+alternativas <- c("Cada um segue sua trajetória original, sem que o cruzamento provoque desvio.","Um dos feixes atua como espelho para o outro.","Os dois se unem definitivamente e formam um feixe único.","Os feixes são completamente absorvidos na interseção.")
+solutions <- c(TRUE,rep(FALSE,length(alternativas)-1))
+ix <- sample(seq_along(alternativas))
+alternativas <- alternativas[ix]
+solutions <- solutions[ix]
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+À noite, os fachos de dois faróis de veículos se cruzam numa estrada. Considerando propagação da luz em meio linear e transparente, o que acontece com os feixes depois da região de cruzamento?
+
+<<echo=FALSE, results=tex>>=
+answerlist(alternativas)
+@
+\end{question}
+
+\begin{solution}
+O princípio da independência dos raios luminosos estabelece que feixes que se cruzam seguem adiante sem modificar mutuamente suas trajetórias, desde que não haja um meio não linear ou outra interação significativa. O cruzamento não gera reflexão entre feixes nem sua fusão.
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(solutions,paste0("\\textbf{",alternativas,"}"),alternativas))
+@
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single=TRUE)}}
+%% \exname{QOptA14PUCMinas2015Q28FeixesCruzados}
+%% \exsection{Optica; Aulas14-15; Independencia dos raios; Feixes luminosos; Basico; PUC Minas 2015 Q28}
+%% SOURCE-VISUAL: none
+%% SOURCE-ADAPTATION: enunciado e alternativas redigidos de forma independente a partir da prova; ordem das alternativas dinâmica; dados físicos preservados
+%% SOURCE: https://provas.professorfilatte.com.br/puc-minas-2015-2o-semestre-fisica-i-fisica-questao-28
