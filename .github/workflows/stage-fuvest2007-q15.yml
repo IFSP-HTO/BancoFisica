@@ -1,0 +1,44 @@
+name: Stage official FUVEST 2007 Q15 diagrams
+on:
+  push:
+    branches:
+      - work/fuvest2007-q15-figures
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  stage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install requests pymupdf pillow
+      - name: Download official exam PDF and render question graphics
+        run: |
+          python - <<'PY'
+          import requests,fitz,hashlib,json
+          from pathlib import Path
+          url="https://www.fuvest.br/wp-content/uploads/fuvest_2007_1fase_prova_V.pdf"
+          response=requests.get(url,headers={"User-Agent":"Mozilla/5.0"},timeout=55)
+          response.raise_for_status()
+          content=response.content
+          if not content.startswith(b"%PDF"): raise ValueError("Not an official PDF stream")
+          dst=Path("build/fuvest-2007-q15")
+          dst.mkdir(parents=True,exist_ok=True)
+          doc=fitz.open(stream=content,filetype="pdf")
+          if len(doc)<6: raise RuntimeError("PDF too short")
+          page=doc[5]
+          pix=page.get_pixmap(matrix=fitz.Matrix(2,2),alpha=False)
+          pix.save(dst/"page6.png")
+          print(json.dumps({"source":url,"page":6,"pages":len(doc),"sha256":hashlib.sha256(content).hexdigest(),"width":pix.width,"height":pix.height}))
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: fuvest2007q15-original-source-page
+          path: build/fuvest-2007-q15
+          if-no-files-found: warn
