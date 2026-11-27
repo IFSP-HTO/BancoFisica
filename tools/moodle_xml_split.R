@@ -212,6 +212,18 @@ validate_moodle_split_identity <- function(parts, total, n) {
     observed <- sort(unique(questions))
     missing <- setdiff(expected_questions, observed)
     excess <- setdiff(observed, expected_questions)
+    ## Diagnostico temporario: diferenciar variantes ausentes de nomes
+    ## existentes no XML, mas nao reconhecidos pelo parser.
+    part_summary <- vapply(parts, function(p) {
+      lines <- readLines(p, warn = FALSE, encoding = "UTF-8")
+      paste0(basename(p), ":",
+             sum(grepl("R[0-9]+[[:space:]]+Q[0-9]+", lines, perl = TRUE)))
+    }, character(1))
+    nearby <- grep("Q0?(49|50|51|52)[[:space:]]*:", xml_lines,
+                   value = TRUE, perl = TRUE)
+    message("Moodle split DEBUG parts and RQ lines: ", paste(part_summary, collapse = "; "))
+    message("Moodle split DEBUG Q49-52 raw names: ",
+            paste(utils::head(nearby, 12L), collapse = " || "))
     stop(
       "Moodle split identity error: Q numbering is not globally continuous (expected 1..",
       total, "); parsed ", length(questions), " variants; observed unique Q=",
