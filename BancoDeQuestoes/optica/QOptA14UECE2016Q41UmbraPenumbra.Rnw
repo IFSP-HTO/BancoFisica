@@ -1,0 +1,34 @@
+<<echo=FALSE, results=hide>>=
+# Adaptação autoral da fonte UECE 2016.1 Q41; alternativas permutadas com gabarito recalculado.
+alternativas <- c("Óptica geométrica.","Eletrostática (lei de Coulomb).","Termodinâmica.","Gravitação universal, sem considerar raios luminosos.")
+solutions <- c(TRUE,rep(FALSE,length(alternativas)-1))
+ix <- sample(seq_along(alternativas))
+alternativas <- alternativas[ix]
+solutions <- solutions[ix]
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Durante um eclipse lunar, parte da Lua pode entrar numa região sem iluminação solar direta (umbra) e outra parte numa região parcialmente iluminada (penumbra). Qual área da Física explica diretamente a formação geométrica dessas regiões?
+
+<<echo=FALSE, results=tex>>=
+answerlist(alternativas)
+@
+\end{question}
+
+\begin{solution}
+A posição relativa dos astros depende da gravitação, mas a geometria das regiões de umbra e penumbra decorre da propagação aproximadamente retilínea dos raios emitidos por uma fonte extensa, o Sol. Esse é um problema típico de óptica geométrica.
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(solutions,paste0("\\textbf{",alternativas,"}"),alternativas))
+@
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single=TRUE)}}
+%% \exname{QOptA14UECE2016Q41UmbraPenumbra}
+%% \exsection{Optica; Aulas14-15; Eclipse lunar; Sombra; Penumbra; Basico; UECE 2016.1 Q41}
+%% SOURCE-VISUAL: none
+%% SOURCE-ADAPTATION: enunciado e alternativas redigidos de forma independente a partir da prova; ordem das alternativas dinâmica; dados físicos preservados
+%% SOURCE: https://provas.professorfilatte.com.br/uece-2016-1-fisica-questao-41
