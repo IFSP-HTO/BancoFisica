@@ -1,0 +1,28 @@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Uma folha branca contém escrita azul. Sob iluminação solar, vemos tanto o papel quanto as letras. Julgue as afirmações e \textbf{informe a soma dos números das afirmações corretas}.
+
+\begin{enumerate}
+\item[(01)] O papel é visível de diferentes posições porque reflete difusamente parte da luz incidente.
+\item[(02)] Sob iluminação exclusivamente amarela, o papel branco parece amarelo e o texto azul idealizado parece escuro.
+\item[(04)] A folha iluminada constitui uma fonte secundária de luz, e não uma fonte primária.
+\item[(08)] A reflexão difusa está associada às diferentes orientações das pequenas regiões da superfície.
+\end{enumerate}
+
+Digite como resposta o valor da soma.
+\end{question}
+
+\begin{solution}
+Todas as proposições estão corretas. A luz refletida pelo papel se espalha em muitas direções (01). O fundo branco reflete a radiação amarela incidente, enquanto a tinta azul não tem componente azul para refletir (02). O papel devolve luz recebida, sendo fonte secundária (04). A microestrutura da superfície produz direções de reflexão variadas, embora as leis da reflexão valham localmente (08). A soma é $1+2+4+8=\boxed{15}$.
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{num}
+%% \exsolution{15}
+%% \extol{0}
+%% \exname{QOptA14UEPG2024Q22SomatoriaCores}
+%% \exsection{Optica; Aula14; Cor dos corpos; Fontes secundarias; Reflexao difusa; Intermediario; UEPG 2024}
+%% SOURCE-VISUAL: none
+%% SOURCE-ADAPTATION: quatro afirmacoes reescritas e pesos 01-02-04-08 preservados, somatoria original 15
+%% SOURCE: https://provas.professorfilatte.com.br/uepg-2024-fisica-questao-22
