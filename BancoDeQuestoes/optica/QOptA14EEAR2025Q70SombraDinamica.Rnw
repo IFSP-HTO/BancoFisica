@@ -20,7 +20,7 @@ solutions <- solutions[ix]
 Uma luminária puntiforme encontra-se junto ao teto de uma sala. Debaixo dela, um tampo quadrado de mesa, horizontal e paralelo ao piso, está a \Sexpr{br(h)}\,m de altura. A área do tampo é $1{,}0\,\mathrm{m^2}$ e a área da sombra quadrada projetada no piso é $\Sexpr{br(area_sombra)}\,\mathrm{m^2}$. Desprezando a espessura do tampo, qual é a altura da sala?
 
 <<echo=FALSE, results=tex>>=
-answerlist(paste0("$",vapply(alts,br,character(1)),translate=FALSE,"\\,\\mathrm{m}$"))
+answerlist(paste0("$",vapply(alts,br,character(1)),"\\,\\mathrm{m}$"))
 @
 
 \end{question}
