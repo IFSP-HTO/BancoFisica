@@ -1,0 +1,52 @@
+<<echo=FALSE, results=hide>>=
+# FUVEST 2007, 1a fase, prova V, questao 15.
+# Os cinco esquemas permanecem juntos em figura original, para manter
+# indicacoes e geometrias; apenas a ordem dos TEXTOS das alternativas muda.
+include_supplement("FUVEST2007Q15CenaOriginal.png",dir="../figuras")
+include_supplement("FUVEST2007Q15AlternativasOriginal.png",dir="../figuras")
+alternativas <- paste0("O esquema (",letters[1:5],").")
+solutions <- letters[1:5]=="c"
+ix <- sample(seq_along(alternativas))
+alternativas <- alternativas[ix]
+solutions <- solutions[ix]
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+Uma janela basculante pode funcionar como espelho plano, refletindo a luz solar para um ponto $P$ de uma casa vizinha. A figura ilustra a direção de incidência da luz e o ponto que se deseja iluminar.
+
+\begin{center}
+\includegraphics[width=0.63\linewidth,keepaspectratio]{FUVEST2007Q15CenaOriginal.png}
+\end{center}
+
+Qual dos cinco esquemas originais indica a posição da janela que faz o raio refletido atingir $P$?
+
+\begin{center}
+\includegraphics[width=0.82\linewidth,keepaspectratio]{FUVEST2007Q15AlternativasOriginal.png}
+\end{center}
+
+<<echo=FALSE, results=tex>>=
+answerlist(alternativas)
+@
+\end{question}
+
+\begin{solution}
+A superfície plana da janela deve ser orientada para que a normal bissete o ângulo formado pela direção do raio que chega e a direção do raio refletido, conforme a lei da reflexão ($i=r$).
+
+Pela geometria do desenho, a janela deve ficar inclinada em torno de $33^\circ$ em relação à vertical, com sua parte inferior deslocada para a direção de $P$. Essa posição corresponde ao \textbf{esquema (c)} do original. A ordem das alternativas textuais é sorteada junto com o gabarito.
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(solutions,paste0("\\textbf{",alternativas,"}"),alternativas))
+@
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single=TRUE)}}
+%% \exname{QOptA15FUVEST2007Q15JanelaEspelhoOriginal}
+%% \exsection{Optica; Aula15; Leis da reflexao; Espelho plano inclinado; Raciocinio geometrico; Avancado; FUVEST 2007}
+%% SOURCE-VISUAL: original-crop
+%% SOURCE-IMAGE-SHA256: e31eb27e18defa99b545c6cbf95ce2fa549619cb3e233dd802d7f82a35320b9d
+%% SOURCE-ADAPTATION: imagens do PDF oficial FUVEST 2007 prova V pag 6 renderizadas em PNG e recortadas sem redesenho; cinco esquemas inteiros mantidos, apenas textos de escolha embaralhados
+%% SOURCE: https://www.fuvest.br/wp-content/uploads/fuvest_2007_1fase_prova_V.pdf
