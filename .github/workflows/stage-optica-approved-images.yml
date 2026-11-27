@@ -1,0 +1,39 @@
+name: Stage approved optics image sources
+on:
+  push:
+    branches:
+      - feat/optica-aulas14-15-aprovacoes-20261127
+    paths:
+      - 'data/optica-aulas14-15-pending-images.json'
+      - '.github/workflows/stage-optica-approved-images.yml'
+  pull_request:
+    paths:
+      - 'data/optica-aulas14-15-pending-images.json'
+      - '.github/workflows/stage-optica-approved-images.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  stage-images:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --disable-pip-version-check requests beautifulsoup4 Pillow
+      - name: Recover approved source PNG bytes, metadata and SHA256
+        run: |
+          python tools/stage_filatte_optica.py \
+            --manifest data/optica-aulas14-15-pending-images.json \
+            --out-dir build/optica-aulas14-15-figuras
+      - name: Archive source images only; do not commit unreviewed crops
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: optica-aulas14-15-imagens-fonte
+          path: build/optica-aulas14-15-figuras/
+          if-no-files-found: warn
