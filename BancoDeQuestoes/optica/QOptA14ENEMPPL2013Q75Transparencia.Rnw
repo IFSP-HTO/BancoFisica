@@ -1,0 +1,34 @@
+<<echo=FALSE, results=hide>>=
+# Adaptação autoral da fonte ENEM PPL 2013 Q75; alternativas permutadas com gabarito recalculado.
+alternativas <- c("Atravessa o material sem absorção relevante nem espalhamento difuso intenso, mantendo trajetórias regulares.","É totalmente absorvida e transformada em aquecimento.","É absorvida e reemitida de modo difuso em todas as direções.","É espalhada aleatoriamente, impedindo a formação de imagens.","Retorna integralmente na direção da fonte por reflexão.")
+solutions <- c(TRUE,rep(FALSE,length(alternativas)-1))
+ix <- sample(seq_along(alternativas))
+alternativas <- alternativas[ix]
+solutions <- solutions[ix]
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+O vidro é útil em janelas por permitir a passagem de luz e a formação de imagens nítidas através dele. Qual descrição aproxima melhor o comportamento da luz visível ao atravessar um vidro transparente?
+
+<<echo=FALSE, results=tex>>=
+answerlist(alternativas)
+@
+\end{question}
+
+\begin{solution}
+Para que um material seja transparente, a luz visível deve atravessá-lo com absorção e espalhamento difuso suficientemente pequenos. Uma interface pode refratar a luz, mas a propagação no interior preserva a informação espacial necessária à imagem. Absorção intensa caracteriza materiais opacos, enquanto espalhamento difuso compromete a nitidez.
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(solutions,paste0("\\textbf{",alternativas,"}"),alternativas))
+@
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single=TRUE)}}
+%% \exname{QOptA14ENEMPPL2013Q75Transparencia}
+%% \exsection{Optica; Aulas14-15; Meios transparentes; Espalhamento; Propagacao; Intermediario; ENEM PPL 2013 Q75}
+%% SOURCE-VISUAL: none
+%% SOURCE-ADAPTATION: enunciado e alternativas redigidos de forma independente a partir da prova; ordem das alternativas dinâmica; dados físicos preservados
+%% SOURCE: https://provas.professorfilatte.com.br/enem-2013-ppl-fisica-questao-75
