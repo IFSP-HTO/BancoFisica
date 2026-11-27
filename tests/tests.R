@@ -272,15 +272,13 @@ check_moodle_split <- function() {
     q_vals <- as.integer(sub("^.*Q([0-9]+)[[:space:]]*:.*$", "\\1", name_hits))
     r_vals <- as.integer(sub("^R([0-9]+).*$", "\\1", name_hits))
 
-    ## Limpeza de artefatos: o limite do TESTE precisa ser maior que
-    ## o volume atual de todas as 12 replicas (inclui figuras grandes).
-    ## O limite real de upload do Moodle, aplicado pelo gerador, nao muda.
-    ## Duas vezes a soma dos tamanhos das partes garante folga inclusive
-    ## para a diferenca de overhead entre XML repartido e XML unico.
-    limit_single_test <- max(10 * 1024^2, 2 * sum(sizes))
+    ## Regressao da limpeza: reutiliza o mesmo prefixo com apenas uma
+    ## questao pequena. Assim a nova geracao cabe em UM unico XML e as
+    ## partes criadas acima devem desaparecer, sem regenerar centenas de
+    ## replicas pesadas so para testar limpeza.
     single <- generate_moodle_xml_limited(
-      files = files, n = 12L, name = "split-test", seed = 12026,
-      edir = edir, dir = out, max_bytes = limit_single_test
+      files = files[1L], n = 1L, name = "split-test", seed = 12026,
+      edir = edir, dir = out, max_bytes = 10 * 1024 * 1024
     )
     stale_parts <- list.files(out, pattern = "^split-test-part[0-9]+\\.xml$")
     files_now <- sort(list.files(out, pattern = "\\.xml$"))
@@ -295,7 +293,8 @@ check_moodle_split <- function() {
       dup_keys = anyDuplicated(paste(q_vals, r_vals, sep = ":")),
       single_stale_parts = length(stale_parts),
       single_is_one_file = length(single) == 1L &&
-        identical(basename(single), "split-test.xml"),
+        identical(basename(single), "split-test.xml") &&
+        identical(files_now, "split-test.xml"),
       files_now = files_now
     )
   })
