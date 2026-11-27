@@ -1,5 +1,8 @@
 name: Stage official FUVEST 2007 Q15 diagrams
 on:
+  pull_request:
+    paths:
+      - '.github/workflows/stage-fuvest2007-q15.yml'
   push:
     branches:
       - work/fuvest2007-q15-figures
