@@ -17,13 +17,14 @@ moodle_size_limit <- function(mb = 10) {
 ## pode conter `name.xml` antigo e partes `name-partNN.xml` excedentes de uma
 ## rodada com mais partes. Nunca remove arquivos de outros assuntos.
 clean_moodle_outputs <- function(dir, name) {
-  esc <- gsub("([][{}()*+?.^$|\\\\])", "\\\\\\1", name)
-  stale <- list.files(
-    dir,
-    pattern = paste0("^", esc, "(\\.xml|\\-part[0-9]+\\.xml)$"),
-    full.names = TRUE
-  )
-  if (length(stale) > 0) unlink(stale)
+  ## Comparacao de prefixos literais: evita regex dinamica (e a sequencia
+  ## \\- para hifens), que podia deixar partes antigas no diretorio.
+  entries <- list.files(dir, full.names = FALSE)
+  part_prefix <- paste0(name, "-part")
+  is_part <- startsWith(entries, part_prefix) &
+    grepl("^[0-9]+[.]xml$", substring(entries, nchar(part_prefix) + 1L))
+  stale <- entries[entries == paste0(name, ".xml") | is_part]
+  if (length(stale) > 0L) unlink(file.path(dir, stale))
   invisible(TRUE)
 }
 
@@ -52,8 +53,7 @@ rewrite_moodle_indices <- function(xml_file, question_offset = 0L,
 
   ## Em cada nome de variante (linha), registra o Q global. Nomes
   ## sem prefixo R (gerados por exams2moodle com n=1) tambem sao
-  ## normalizados para R01 Qxx, com o offset global aplicado.
-  ## Em cada nome de variante (linha), registra o Q global. Em cada categoria
+  ## normalizados para R01 Qxx, com o offset global aplicado. Em cada categoria
   ## "Exercise N", registra o indice da primeira linha de variante que a segue
   ## (as variantes da categoria sempre vêm logo após a categoria no XML).
   name_q <- rep(NA_integer_, length(lines))
