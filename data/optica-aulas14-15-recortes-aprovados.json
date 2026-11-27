@@ -1,0 +1,64 @@
+{
+  "source_artifact": 15210130363,
+  "source_run": 46022093515,
+  "description": "Recortes conferidos visualmente. PUC-SP: quatro alternativas gráficas independentes, nenhuma letra de resposta dentro da imagem. Univesp: diagrama original sem enunciado nem alternativas.",
+  "items": [
+    {
+      "id": "puc-sp-2019-inverno-q11",
+      "source_sha256": "df73b94eab89d8eaa3ce90ba99075238ffb6fe19fcf82c2e42f92939e4742335",
+      "figures": [
+        {
+          "name": "PUCSP2019InvernoQ11A.png",
+          "box": [
+            61,
+            431,
+            187,
+            575
+          ]
+        },
+        {
+          "name": "PUCSP2019InvernoQ11B.png",
+          "box": [
+            60,
+            696,
+            189,
+            839
+          ]
+        },
+        {
+          "name": "PUCSP2019InvernoQ11C.png",
+          "box": [
+            333,
+            430,
+            469,
+            573
+          ]
+        },
+        {
+          "name": "PUCSP2019InvernoQ11D.png",
+          "box": [
+            334,
+            699,
+            471,
+            841
+          ]
+        }
+      ]
+    },
+    {
+      "id": "univesp-2025-2o-semestre-q54",
+      "source_sha256": "4bc969667a7082faddb9877df0e9cf88444e45e51aca7c9c91418daea1c718ad",
+      "figures": [
+        {
+          "name": "Univesp2025Q54CamaraOriginal.png",
+          "box": [
+            70,
+            226,
+            632,
+            536
+          ]
+        }
+      ]
+    }
+  ]
+}
