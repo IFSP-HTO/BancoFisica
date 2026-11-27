@@ -10,38 +10,49 @@ fracao <- sample(c(0.2,0.25,0.3,0.4,0.5,0.6),1)
 m <- round(rho*V*fracao,2)
 Vsub <- round(m/rho,3)
 percentual <- round(100*Vsub/V,2)
+fmt_br <- function(x, casas) formatC(x, format = "f", digits = casas, decimal.mark = ",")
 @
 
 \begin{question}
-Uma pequena embarcação de casco estanque possui massa total \(\Sexpr{m}\,\mathrm{kg}\) e volume externo \(\Sexpr{V}\,\mathrm{m^3}\). Ela flutua em água de densidade \(1000\,\mathrm{kg/m^3}\), sem tocar o fundo. Despreze o empuxo do ar.
+A figura mostra uma mesma embarcação em duas situações: \textbf{vazia} (à esquerda) e \textbf{carregada} (à direita). Ao receber carga, ela desloca um volume maior de água para continuar flutuando em equilíbrio.
 
 \begin{center}
 \includegraphics[width=8cm,keepaspectratio]{Q109ClozeFracaoSubmersa.png}
 \end{center}
 
-\textit{Ilustração selecionada pelo professor: embarcação vazia e carregada. Fora de escala; use os valores do enunciado.}
+\textit{Figura esquemática, fora de escala. Não estime a parte submersa pela proporção desenhada.}
 
-Determine:
+Considere somente a \textbf{embarcação carregada, à direita}. Sua \textbf{massa total}, incluindo a própria embarcação e toda a carga, é \(\Sexpr{m}\,\mathrm{kg}\). O \textbf{volume total da embarcação} é \(\Sexpr{fmt_br(V,1)}\,\mathrm{m^3}\): trata-se do volume delimitado pelo casco até sua borda superior, incluindo a região oca interna ocupada por ar.
+
+A embarcação flutua em água de densidade \(1000\,\mathrm{kg/m^3}\), sem tocar o fundo. Despreze o empuxo do ar.
+
+Determine, \textbf{na situação carregada}:
 \begin{answerlist}
-\item o volume submerso, em \(\mathrm{m^3}\);
-\item a porcentagem do volume total que fica submersa.
+\item o volume submerso da embarcação, em \(\mathrm{m^3}\);
+\item a porcentagem do volume total da embarcação que está submersa.
 \end{answerlist}
 \end{question}
 
 \begin{solution}
-Enquanto a embarcação flutua em equilíbrio, \(E=P\):
+Na situação carregada, a massa \(\Sexpr{m}\,\mathrm{kg}\) inclui a embarcação e sua carga. Como ela flutua em equilíbrio, o empuxo iguala seu peso:
 \[
-\rho gV_s=mg\quad\Rightarrow\quad
-V_s=\frac{\Sexpr{m}}{1000}=\Sexpr{Vsub}\,\mathrm{m^3}.
+E=P\quad\Longrightarrow\quad \rho_{\mathrm{agua}}gV_s=mg.
 \]
-A porcentagem é
+Logo, o volume de água deslocado, igual ao volume submerso do casco, é
 \[
-100\frac{V_s}{V}=100\frac{\Sexpr{Vsub}}{\Sexpr{V}}
-=\Sexpr{percentual}\%.
+V_s=\frac{m}{\rho_{\mathrm{agua}}}
+=\frac{\Sexpr{m}}{1000}
+=\Sexpr{fmt_br(Vsub,3)}\,\mathrm{m^3}.
+\]
+A porcentagem do volume total do casco que fica abaixo da linha d'água é
+\[
+100\frac{V_s}{V}
+=100\frac{\Sexpr{fmt_br(Vsub,3)}}{\Sexpr{fmt_br(V,1)}}
+=\Sexpr{fmt_br(percentual,0)}\%.
 \]
 \begin{answerlist}
-\item \(\Sexpr{Vsub}\,\mathrm{m^3}\).
-\item \(\Sexpr{percentual}\%\).
+\item \(\Sexpr{fmt_br(Vsub,3)}\,\mathrm{m^3}\).
+\item \(\Sexpr{fmt_br(percentual,0)}\%\).
 \end{answerlist}
 \end{solution}
 
