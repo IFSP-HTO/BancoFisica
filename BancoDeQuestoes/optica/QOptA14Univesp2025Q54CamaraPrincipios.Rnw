@@ -1,0 +1,50 @@
+<<echo=FALSE, results=hide>>=
+# Univesp 2025 (2o semestre) Q54: figura original recortada sem
+# enunciado e alternativas. A fonte original tem gabarito E.
+include_supplement("Univesp2025Q54CamaraOriginal.png",dir="../figuras")
+alternativas <- c(
+  "Independência dos raios de luz e propagação retilínea.",
+  "Propagação retilínea e refração na abertura.",
+  "Propagação retilínea e reversibilidade como causa essencial da inversão.",
+  "Reversibilidade dos raios e independência, sem necessidade de propagação retilínea.",
+  "Reversibilidade e refração em uma lente convergente."
+)
+solutions <- c(TRUE,FALSE,FALSE,FALSE,FALSE)
+ix <- sample(seq_along(alternativas))
+alternativas <- alternativas[ix]
+solutions <- solutions[ix]
+@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{question}
+Uma câmara escura de orifício forma no anteparo uma imagem invertida de um lápis externo, como mostra a figura extraída do vestibular.
+
+\begin{center}
+\includegraphics[width=0.74\linewidth,keepaspectratio]{Univesp2025Q54CamaraOriginal.png}
+\end{center}
+
+Quais princípios da óptica geométrica estão associados à formação dessa imagem sem lentes?
+
+<<echo=FALSE, results=tex>>=
+answerlist(alternativas)
+@
+\end{question}
+
+\begin{solution}
+Os raios provenientes de pontos distintos do objeto atravessam o pequeno orifício e continuam em linhas retas até o anteparo, de modo que o topo do lápis se projeta embaixo e a base se projeta acima. Esse é o princípio da \textbf{propagação retilínea}. O cruzamento dos raios no orifício não desvia mutuamente as trajetórias: \textbf{princípio da independência}. Não é necessário introduzir lente ou refração.
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(solutions,paste0("\\textbf{",alternativas,"}"),alternativas))
+@
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single=TRUE)}}
+%% \exname{QOptA14Univesp2025Q54CamaraPrincipios}
+%% \exsection{Optica; Aula14; Camara escura; Independencia e propagacao retilinea; Basico; Univesp 2025}
+%% SOURCE-VISUAL: original-crop
+%% SOURCE-IMAGE-SHA256: 4bc969667a7082faddb9877df0e9cf88444e45e51aca7c9c91418daea1c718ad
+%% SOURCE-ADAPTATION: imagem recortada fielmente do original, sem texto ou alternativas; enunciado reescrito e alternativas permutadas
+%% SOURCE: https://provas.professorfilatte.com.br/univesp-2025-2o-semestre-fisica-questao-54
