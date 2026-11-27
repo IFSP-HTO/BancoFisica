@@ -1,0 +1,47 @@
+<<echo=FALSE, results=hide>>=
+# EEAR 2025 CFS2 Q70 — variante dinamica sem figura na fonte.
+casos <- data.frame(h=c(1.2,1.5,1.0,1.6), ampliacao=c(1.6,1.5,2.0,1.8))
+c <- casos[sample(nrow(casos),1),]
+h <- c$h
+raz <- c$ampliacao
+area_tampo <- 1
+area_sombra <- raz^2
+altura_sala <- raz*h/(raz-1)
+br <- function(x) gsub(".",",",format(round(x,2), trim=TRUE, scientific=FALSE),fixed=TRUE)
+alts <- c(altura_sala, altura_sala+h, altura_sala-h, altura_sala+2*h, altura_sala+3*h)
+solutions <- seq_along(alts)==1L
+ix <- sample(seq_along(alts))
+alts <- alts[ix]
+solutions <- solutions[ix]
+@
+\usepackage[utf8]{inputenc}
+
+\begin{question}
+Uma luminária puntiforme encontra-se junto ao teto de uma sala. Debaixo dela, um tampo quadrado de mesa, horizontal e paralelo ao piso, está a \Sexpr{br(h)}\,m de altura. A área do tampo é $1{,}0\,\mathrm{m^2}$ e a área da sombra quadrada projetada no piso é $\Sexpr{br(area_sombra)}\,\mathrm{m^2}$. Desprezando a espessura do tampo, qual é a altura da sala?
+
+<<echo=FALSE, results=tex>>=
+answerlist(paste0("$",vapply(alts,br,character(1)),translate=FALSE,"\\,\\mathrm{m}$"))
+@
+
+\end{question}
+
+\begin{solution}
+Os lados das regiões quadradas medem, respectivamente, $1\,\mathrm{m}$ e $\Sexpr{br(raz)}\,\mathrm{m}$. A luz se propaga em linha reta; pela semelhança de triângulos, com $D$ sendo a altura da sala:
+\[
+\frac{D}{D-\Sexpr{br(h)}}=\Sexpr{br(raz)}.
+\]
+Daí $D=\Sexpr{br(raz)}\times\Sexpr{br(h)}/(\Sexpr{br(raz)}-1)=\Sexpr{br(altura_sala)}\,\mathrm{m}$. Os dados numéricos foram variáveis, mas a razão das áreas **não** deve ser usada diretamente no lugar da razão entre lados.
+
+<<echo=FALSE, results=tex>>=
+answerlist(ifelse(solutions,paste0("\\textbf{$",vapply(alts,br,character(1)),"\\,\\mathrm{m}$}"),paste0("$",vapply(alts,br,character(1)),"\\,\\mathrm{m}$")))
+@
+\end{solution}
+
+%% META-INFORMATION
+%% \extype{schoice}
+%% \exsolution{\Sexpr{mchoice2string(solutions, single=TRUE)}}
+%% \exname{QOptA14EEAR2025Q70SombraDinamica}
+%% \exsection{Optica; Aula14; Sombra; Semelhanca de triangulos; Intermediario; EEAR 2025}
+%% SOURCE-VISUAL: none
+%% SOURCE-ADAPTATION: problema adaptado e dados parametrizados; fonte EEAR CFS2 2025 Q70, gabarito original C
+%% SOURCE: https://provas.professorfilatte.com.br/eear-2025-cfs-2-fisica-questao-70
