@@ -50,6 +50,9 @@ rewrite_moodle_indices <- function(xml_file, question_offset = 0L,
 
   lines <- readLines(xml_file, warn = FALSE, encoding = "UTF-8")
 
+  ## Em cada nome de variante (linha), registra o Q global. Nomes
+  ## sem prefixo R (gerados por exams2moodle com n=1) tambem sao
+  ## normalizados para R01 Qxx, com o offset global aplicado.
   ## Em cada nome de variante (linha), registra o Q global. Em cada categoria
   ## "Exercise N", registra o indice da primeira linha de variante que a segue
   ## (as variantes da categoria sempre vêm logo após a categoria no XML).
@@ -74,11 +77,12 @@ rewrite_moodle_indices <- function(xml_file, question_offset = 0L,
 
     m_name <- regmatches(
       line,
-      regexec("(<text>[[:space:]]*)R([0-9]+)[[:space:]]+Q([0-9]+)([[:space:]]*:)",
+      regexec("(<text>[[:space:]]*)(?:R([0-9]+)[[:space:]]+)?Q([0-9]+)([[:space:]]*:)",
               line, perl = TRUE)
     )[[1]]
     if (length(m_name) > 0L) {
-      name_r[k] <- as.integer(m_name[3])
+      ## exams2moodle(n=1) omits R; in this case the local replica is 1.
+      name_r[k] <- if (is.na(m_name[3]) || !nzchar(m_name[3])) 1L else as.integer(m_name[3])
       name_q[k] <- as.integer(m_name[4]) + question_offset
       last_cat <- length(cat_name_line)
       if (last_cat > 0L && is.na(cat_name_line[[last_cat]])) {
@@ -92,11 +96,11 @@ rewrite_moodle_indices <- function(xml_file, question_offset = 0L,
     if (is.na(name_r[k])) next
     m_name <- regmatches(
       lines[k],
-      regexec("(<text>[[:space:]]*)R([0-9]+)[[:space:]]+Q([0-9]+)([[:space:]]*:)",
+      regexec("(<text>[[:space:]]*)(?:R([0-9]+)[[:space:]]+)?Q([0-9]+)([[:space:]]*:)",
               lines[k], perl = TRUE)
     )[[1]]
     global_r <- name_r[k] + replica_offset
-    r_width <- nchar(m_name[3])
+    r_width <- if (is.na(m_name[3]) || !nzchar(m_name[3])) 2L else nchar(m_name[3])
     r_text <- sprintf(paste0("%0", r_width, "d"), global_r)
     q_text <- sprintf(paste0("%0", max(q_width, nchar(as.character(name_q[k]))), "d"),
                      name_q[k])
@@ -212,25 +216,6 @@ validate_moodle_split_identity <- function(parts, total, n) {
     observed <- sort(unique(questions))
     missing <- setdiff(expected_questions, observed)
     excess <- setdiff(observed, expected_questions)
-    ## Diagnostico temporario: diferenciar variantes ausentes de nomes
-    ## existentes no XML, mas nao reconhecidos pelo parser.
-    part_summary <- vapply(parts, function(p) {
-      lines <- readLines(p, warn = FALSE, encoding = "UTF-8")
-      paste0(basename(p), ":",
-             sum(grepl("R[0-9]+[[:space:]]+Q[0-9]+", lines, perl = TRUE)))
-    }, character(1))
-    nearby <- grep("Q0?(49|50|51|52)[[:space:]]*:", xml_lines,
-                   value = TRUE, perl = TRUE)
-    message("Moodle split DEBUG parts and RQ lines: ", paste(part_summary, collapse = "; "))
-    message("Moodle split DEBUG Q49-52 raw names: ",
-            paste(utils::head(nearby, 12L), collapse = " || "))
-    for (j in intersect(c(5L, 6L, 17L, 28L, 29L), seq_along(parts))) {
-      raw <- readLines(parts[[j]], warn = FALSE, encoding = "UTF-8")
-      lines <- grep("<name>|R[0-9]+|Q[0-9]+|<text>", raw, value = TRUE)
-      lines <- substr(utils::head(lines, 18L), 1L, 180L)
-      message("Moodle split DEBUG part ", j, " (bytes=", file.size(parts[[j]]),
-              "): ", paste(lines, collapse = " || "))
-    }
     stop(
       "Moodle split identity error: Q numbering is not globally continuous (expected 1..",
       total, "); parsed ", length(questions), " variants; observed unique Q=",
